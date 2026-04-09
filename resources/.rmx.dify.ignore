@@ -1,0 +1,16 @@
+#| About: https://github.com/yamadashy/repomix#include-and-ignore
+#| Default: vcs, dependencies, logs, runtime, build, cache, temporary
+#| - See https://github.com/yamadashy/repomix/blob/main/src/config/defaultIgnore.ts
+#| Ignore.Files: .[git|repomix]ignore
+#| Ignore.Config: ignore.customPatterns in repomix.config.(json|ts|js)
+#| Ignore.Cli: -i/--ignore <comma separated glob>
+#| Format.Ignore.File: https://git-scm.com/docs/gitignore#_pattern_format
+#| Format.Ignore.Glob: https://github.com/mrmlnc/fast-glob#pattern-syntax
+
+#| This file uses ignore globs (read and passed on cli)
+
+## Lib
+packages/
+
+## UI
+web/
