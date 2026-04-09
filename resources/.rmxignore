@@ -1,0 +1,41 @@
+#| About: https://github.com/yamadashy/repomix#include-and-ignore
+#| Default: vcs, dependencies, logs, runtime, build, cache, temporary
+#| - See https://github.com/yamadashy/repomix/blob/main/src/config/defaultIgnore.ts
+#| Ignore.Files: .[git|repomix]ignore
+#| Ignore.Config: ignore.customPatterns in repomix.config.(json|ts|js)
+#| Ignore.Cli: -i/--ignore <comma separated glob>
+#| Format.Ignore.File: https://git-scm.com/docs/gitignore#_pattern_format
+#| Format.Ignore.Glob: https://github.com/mrmlnc/fast-glob#pattern-syntax
+
+#| This file uses ignore globs (read and passed on cli)
+
+## Assets
+**/{public,static,img,image,icon,asset,vendor,lib}{s,}/
+**/{3rd,third}{,-,_}party/
+**/swagger-ui*
+**/llms-{full,txt}.md
+
+## I18N
+**/README.*.md
+**/{i18n,locale}{s,}/
+**/{ar,bs,cn,cs,da,de,es,fr,it,ja,ko,nb,pl,pt,pt-br,pt-BR,ru,th,tr,vi,zh,zh-cn,zh-tw,zh-CN,zh-TW}/
+**/{ar,bs,cn,cs,da,de,es,fr,it,ja,ko,nb,pl,pt,pt-br,pt-BR,ru,th,tr,vi,zh,zh-cn,zh-tw,zh-CN,zh-TW}.*
+**/*{.,_,-}{ar,bs,cn,cs,da,de,es,fr,it,ja,ko,nb,pl,pt,pt-br,pt-BR,ru,th,tr,vi,zh,zh-cn,zh-tw,zh-CN,zh-TW}.{md,mdx,yml,yaml,htm,html}
+
+## Build
+**/{dist,logs}/
+**release{_,-}{notes,artifacts}
+**/tsconfig.tsbuildinfo
+
+## Data
+**/{cassette,fixture,migration,test,mock,eval,result,resource,run,cache,data,dataset,template}{s,}/**/*.{json,jsonl,yml,yaml,xml,csv,gz,pkl,pth,pdf,txt,htm,html}
+
+## Tests
+# **/{e2e,test,tests,__mocks__,__tests__}/
+# **/*.{test,spec}.*
+
+## UI: Styles
+**/storybook/
+**/theme{s,}/*.json
+**/style{s,}/
+**/*.{css,scss,less}
