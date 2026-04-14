@@ -1,0 +1,1 @@
+@setlocal enabledelayedexpansion && set "cmd=%~n0" && set "cmd=!cmd:.=!" && call x "!cmd!" --local -o git --log git\.log .prompt.md git.rmx\%~1*.xml

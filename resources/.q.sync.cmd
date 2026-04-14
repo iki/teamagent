@@ -1,0 +1,1 @@
+@for %%f in (.qgn.cmd .qgp.cmd .qgpn.cmd) do @cp -vf .qg.cmd %%f
