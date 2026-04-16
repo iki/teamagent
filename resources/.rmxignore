@@ -28,11 +28,21 @@
 **/tsconfig.tsbuildinfo
 
 ## Data
-**/{cassette,fixture,migration,test,mock,eval,result,resource,run,cache,data,dataset,template}{s,}/**/*.{json,jsonl,yml,yaml,xml,csv,gz,pkl,pth,pdf,txt,htm,html}
+**/{_,}{_,}{migration,test,mock,eval,result,resource,run,cache,data,dataset,template}{_,-,}{files,utils,s,}{_,}{_,}/**/*.{json,jsonl,yml,yaml,xml,csv,pkl,pth,pdf,txt,htm,html,gz}
+**/{_,}{_,}{cassette,fixture,recording,snapshot}{_,-,}{files,utils,s,}{_,}{_,}/
+**/{sample,test}*.{json,jsonl,yml,yaml,xml,csv,pkl,pth,pdf,txt,htm,html}
+**/*{-,_}data.{json,jsonl,yml,yaml,xml,csv,pkl,pth,pdf,txt,htm,html}
 
 ## Tests
-# **/{e2e,test,tests,__mocks__,__tests__}/
-# **/*.{test,spec}.*
+# **/{_,}{_,}{e2e,test,e2e-test,integration-test,mock}{_,-,}{files,utils,s,}{_,}{_,}/
+# **/*.{test,spec}{-d,}.{ts,tsx,js,jsx,cjs,mjs,json,yaml}
+
+## Changelog
+**/.changeset/
+**/CHANGELOG.{MD,md}
+	
+## Playground
+**/playground{-ui,}/
 
 ## UI: Styles
 **/storybook/
