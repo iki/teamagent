@@ -22,6 +22,9 @@
 **/{ar,bs,cn,cs,da,de,es,fr,it,ja,ko,nb,pl,pt,pt-br,pt-BR,ru,th,tr,vi,zh,zh-cn,zh-tw,zh-CN,zh-TW}.*
 **/*{.,_,-}{ar,bs,cn,cs,da,de,es,fr,it,ja,ko,nb,pl,pt,pt-br,pt-BR,ru,th,tr,vi,zh,zh-cn,zh-tw,zh-CN,zh-TW}.{md,mdx,yml,yaml,htm,html}
 
+## Boring
+**/{_,}{_,}{dotnet,java}{_,-,}{files,utils,s,}{_,}{_,}/
+
 ## Build
 **/{dist,logs}/
 **release{_,-}{notes,artifacts}
@@ -30,7 +33,7 @@
 
 ## Data
 **/{_,}{_,}{model,migration,test,mock,eval,sample,example,benchmark,result,resource,run,cache,data,dataset,template}{_,-,}{files,utils,s,}{_,}{_,}/**/*.{json,jsonl,yml,yaml,xml,csv,pkl,pth,pdf,txt,htm,html,gz}
-**/{_,}{_,}{cassette,fixture,recording,snapshot}{_,-,}{files,utils,s,}{_,}{_,}/
+**/{_,}{_,}{cassette,fixture,recording,snapshot,reference}{_,-,}{files,utils,s,}{_,}{_,}/
 **/{sample,test}*.{json,jsonl,yml,yaml,xml,csv,pkl,pth,pdf,txt,htm,html}
 **/*{-,_}data.{json,jsonl,yml,yaml,xml,csv,pkl,pth,pdf,txt,htm,html}
 
@@ -39,7 +42,8 @@
 # **/*.{test,spec}{-d,}.{ts,tsx,js,jsx,cjs,mjs,json,yaml}
 
 ## Skills: Tools
-**/ooxml/
+**/{ooxml,office}/
+{.,}{optional,}{_,-,}skills/**/scripts/
 
 ## Changelog
 **/.changeset/
