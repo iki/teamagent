@@ -105,7 +105,7 @@ Adding on top of LLM verification of generated instructions, we conduct human ev
 
 While our pipeline uses LLMs for conflict generation and verification, we note that LLM generation only operates on the level of *individual* instructions, which we believe already achieve human level for frontier models like Opus 4.6. On the other hand, correctly resolving *combinations* of constraints across multiple privilege levels, which is *combinatorially* harder than any single generation step, remains challenging (as shown in [§6.1\)](#page-6-0).
 
-<span id="page-6-2"></span>![](_page_6_Figure_1.jpeg)
+<span id="page-6-2"></span>![](.images/security.260413.many-ih.2604.09443.p6-1.jpg)
 
 Figure 2: **Left**: overall accuracy on MANYIH-BENCH. **Right**: accuracy by subset. Both frontier and open-source models struggle with ManyIH. Error bars show bootstrap 95% CIs.
 
@@ -119,13 +119,13 @@ We evaluate ten frontier proprietary and open-source models on MANYIH-BENCH: Gem
 
 In this subsection, we **disentangle instruction hierarchy difficulty with instruction following difficulty** and evaluate models on benchmarks with different privilege tiers per sample. We synthesize three variants the coding subset with different configurations in the instruction composition stage ([§5\)](#page-4-0): we vary the total number of instructions as well as the number of instruction hierarchy tiers, creating datasets with 6 tiers with no conflicting instruction pairs, 8 tiers with 4 conflicts, and 12 tiers with up to 11 conflicts (see Table [4](#page-15-1) for full statistics). Crucially, the number of style groups and winning instructions are held fixed across all three variants, maintaining instruction following difficulty.
 
-<span id="page-6-3"></span>![](_page_6_Figure_8.jpeg)
+<span id="page-6-3"></span>![](.images/security.260413.many-ih.2604.09443.p6-8.jpg)
 
 Figure 3: Accuracy across IH tiers on the coding subset. **Model performance consistently degrades as the number of IH tiers increases.**
 
 Figure [3](#page-6-3) shows that as the number of IH tiers increases, accuracy declines consistently across all models. Out of 12 model–transition pairs, 11 show a strict decrease, with drops
 
-<span id="page-7-0"></span>![](_page_7_Figure_1.jpeg)
+<span id="page-7-0"></span>![](.images/security.260413.many-ih.2604.09443.p7-1.jpg)
 
 (a) Distribution of CoT length across models.
 

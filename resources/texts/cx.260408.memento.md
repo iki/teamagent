@@ -4,7 +4,7 @@ Vasilis Kontonis Yuchen Zeng Shivam Garg Lingjiao Chen Hao Tang Ziyan Wang Ahmed
 
 Reasoning models think in long, unstructured streams with no mechanism for compressing or organizing their own intermediate state. We introduce MEMENTO: a method that teaches models to segment reasoning into blocks, compress each block into a *memento*, i.e., a dense state summary, and reason forward by attending only to mementos, reducing context, KV cache, and compute. To train MEMENTO models, we release OPENMEMENTOS, a public dataset of 228K reasoning traces derived from OpenThoughts-v3, segmented and annotated with intermediate summaries. We show that a two-stage SFT recipe on OPENMEMENTOS is effective across different model families (Qwen3, Phi-4, Olmo 3) and scales (8B–32B parameters). Trained models maintain strong accuracy on math, science, and coding benchmarks while achieving  $\sim$ 2.5× peak KV cache reduction. We extend vLLM to support our inference method, achieving up to 2× throughput improvement while also enabling us to perform RL and further improve accuracy. Finally, we identify a *dual information stream*: information from each reasoning block is carried both by the memento text and by the corresponding KV states, which retain implicit information from the original block. Removing this channel drops accuracy by 15 pp on AIME24.
 
-<span id="page-0-0"></span>![](_page_0_Figure_3.jpeg)
+<span id="page-0-0"></span>![](.images/cx.260408.memento.p0-3.jpg)
 
 Figure 1: **MEMENTO overview. Top left:** SFT data generation pipeline. Starting from a reasoning trace, we split text into sentences, use an LLM to score each sentence boundary as a potential stopping point, optimize boundary selection algorithmically, and finally use an LLM to summarize each block into a memento. **Top right:** Sparse attention during inference. The model produces alternating thinking blocks ( $T_i$ ) and mementos ( $M_i$ ); once a memento is generated, KV cache entries for its preceding thinking block are physically removed. The sawtooth KV trace shows the resulting memory pattern. **Bottom left:** Data scaling on Qwen2.5-7B-Instruct (AIME25); MEMENTO scales similarly to vanilla SFT on OpenThoughts (Guha et al., 2025) across dataset sizes (Figure 4). **Bottom center:** Accuracy across three models on AIME26, GPQA-D, and LCB; lighter bars show RL gains for Qwen3-8B (Section 5). **Bottom right:** Peak KV cache (GB), averaged across all benchmark categories, showing  $\sim$ 2-2.5× reduction.
 
@@ -84,7 +84,7 @@ Figure 2: Boundary scoring assigns each inter-sentence boundary a score from 0 t
 
 **Dataset statistics.** Figure [3](#page-5-0) characterizes the final OPENMEMENTOS dataset (228K samples: 54% math, 19% code, 27% science). Math and code traces produce more blocks per sample (median 9) than science (median 7), and math has the largest blocks (median 3.8K chars). Summary sizes are remarkably stable across domains (median 509–603 chars), yielding median compression ratios of 0.16 (math), 0.18 (code), and 0.23 (science)—corresponding to ∼4–6× block-level compression. Across the full dataset, the average block contains ∼1,150 tokens and the average memento ∼194 tokens, for a trace-level compression of ∼6× (from ∼10,900 block tokens to ∼1,850 memento tokens per trace).
 
-<span id="page-5-0"></span>![](_page_5_Figure_1.jpeg)
+<span id="page-5-0"></span>![](.images/cx.260408.memento.p5-1.jpg)
 
 Figure 3: **OPENMEMENTOS dataset distributions by domain** (228K samples). **(a)** Math and code have ∼9 blocks/sample; science has ∼7. **(b)** Block sizes range from 2.3K (science) to 3.8K (math) chars. **(c)** Summary sizes cluster around 509–603 chars across all domains, indicating a stable compression target. **(d)** Math achieves the tightest compression ratio (median 0.16) due to its larger blocks.
 
@@ -100,7 +100,7 @@ The attention mask implementation maintains a **block cache** that tracks whethe
 
 **Data Scaling.** When training "from scratch" a non-reasoning model (Qwen2.5-7B-Instruct), data scaling follows a similar monotonic trend as standard reasoning SFT [\(Guha et al.,](#page-14-0) [2025\)](#page-14-0). We study how performance scales with the amount of OPENMEMENTOS training data by fine-tuning Qwen2.5-7B-Instruct on varying amounts of data (1K, 3K, 10K, 31K, 100K examples), comparing vanilla OpenThoughts (OT), OPEN-MEMENTOS with full attention (OM/Full), and OPENMEMENTOS with memento attention (OM/Mem). As shown in Figure [4,](#page-6-0) all three methods improve monotonically from 1K to 100K. OT achieves the highest accuracy across all data budgets, while OM/Full and OM/Mem trail by a modest margin.
 
-<span id="page-6-0"></span>![](_page_6_Figure_0.jpeg)
+<span id="page-6-0"></span>![](.images/cx.260408.memento.p6-0.jpg)
 
 <span id="page-6-1"></span>Figure 4: **Training data scaling.** Pass@1 accuracy on AIME24 and AIME25 for Qwen2.5-7B-Instruct fine-tuned on 1K–100K examples. All methods improve monotonically with data size.
 
@@ -139,7 +139,7 @@ The attention mask implementation maintains a **block cache** that tracks whethe
 
 (window size 4096), while only 8 layers use full causal attention. Additionally, Olmo 3 uses multihead attention (MHA, 32 KV heads) rather than grouped query attention (GQA, 8 KV heads in Qwen3). MEMENTO transferred with no architecture-specific modifications: accuracy is well preserved, with Comp. Math dropping only 0.2 pp relative to Control and MATH-500 *improving* by 0.7 pp (Table [1\)](#page-7-0). However, KV cache savings are substantially more modest than for the other model families (∼0.85–0.93× peak vs.
 
-<span id="page-8-0"></span>![](_page_8_Figure_0.jpeg)
+<span id="page-8-0"></span>![](.images/cx.260408.memento.p8-0.jpg)
 
 Figure 5: **KV cache traces on individual problems (Qwen3-8B, both answers correct). (a)** AIME24 P2: typical sawtooth pattern with 6 compactions; peak 0.77 vs 2.17 GB (2.8× reduction). **(b)** AIME24 P26: MEMENTO solves the problem in 12k tokens (vs 23k); frequent compactions keep peak at 0.82 vs 3.41 GB (4.2×). **(c)** AIME24 P5: MEMENTO generates 3× more tokens (31k vs 10k) with many compactions. Peak is still lower (1.27 vs 1.55 GB), but the total KV area-under-curve is 2.1× *higher* than the base—a failure mode where block masking induces excessive generation.
 
@@ -149,7 +149,7 @@ Figure 5: **KV cache traces on individual problems (Qwen3-8B, both answers corre
 
 **Compression behavior.** How does compression vary across model families and benchmarks? Summary sizes are remarkably stable (median 260–615 chars), matching the training distribution (Figure [3\)](#page-5-0), while block sizes vary widely across models and tasks. This confirms the model learns a consistent compression skill that generalizes to harder problems. Figure [6](#page-8-1) shows the full CDF of compression ratios across all four MEMENTO models, revealing that the bulk of blocks achieve 5–20× compression with a thin tail of low-compression outliers.
 
-<span id="page-8-1"></span>![](_page_8_Figure_5.jpeg)
+<span id="page-8-1"></span>![](.images/cx.260408.memento.p8-5.jpg)
 
 Figure 6: **CDF of compression ratio** (summary chars / block chars). OLMo3-7B and Qwen3-8B achieve the tightest compression on competition math. Phi-4 has the widest compression spread, especially on MATH-500.
 
@@ -178,7 +178,7 @@ Majority voting recovers the gap. The coverage analysis above shows that MEMENTO
 
 bility problem—the correct answers are in the distribution, they are just not the mode; and (2) RL is a natural fix, since it can sharpen the distribution toward correct traces without needing to teach new skills.
 
-<span id="page-9-2"></span>![](_page_9_Figure_7.jpeg)
+<span id="page-9-2"></span>![](.images/cx.260408.memento.p9-7.jpg)
 
 Figure 7: **Majority-vote headroom and Qwen3-8B CISPO (MiniMax et al., 2025) RL trajectory.** Left: AIME 2026 maj@k for the three MEMENTO SFT models (Table 1); horizontal lines show each Base model's pass@1. All models match Base accuracy by k=2–3. Middle: per-step RL training accuracy (faint raw trace with 25-step moving average). Right: AIME'25 validation accuracy evaluated every 25 steps, peaking at 66.2% at step 350 (used in Table 1). Majority voting uses uniform tie-breaking among tied majority answers.
 
@@ -206,7 +206,7 @@ The middle and right panels of Figure [7](#page-9-2) show the training and valid
 
 MEMENTO's block masking requires *non-standard, data-dependent sparse attention*: which tokens are masked depends on the generated sequence itself, not on a fixed pattern known at compile time. To the best of our knowledge, no production inference framework, including vLLM [\(Kwon et al.,](#page-15-2) [2023\)](#page-15-2), SGLang [\(Zheng et al.,](#page-16-10) [2024\)](#page-16-10), or TensorRT-LLM, provides a built-in mechanism for request-level custom sparse attention masks that evolve during generation. We therefore build native block masking support directly into vLLM's V1 engine, extending it so that it *physically* removes masked tokens from the KV cache. Our approach operates purely at the Python level of vLLM, can be installed as a simple patch on top of an existing vLLM installation, and works with the vanilla FlashAttention and FlashInfer kernels, requiring no custom sparse attention kernel. For more details on the implementation, see Appendix [A.3.2.](#page-23-0)
 
-<span id="page-11-2"></span>![](_page_11_Figure_0.jpeg)
+<span id="page-11-2"></span>![](.images/cx.260408.memento.p11-0.jpg)
 
 <span id="page-11-1"></span>Figure 8: **Serving throughput (Qwen3-8B, 1**× **B200 GPU).** AIME24 × 8 repetitions (240 requests, 32K max tokens). Left: MEMENTO sustains 1.75× higher token throughput at full concurrency. Right: 1.58× faster batch completion. Vanilla plateaus as KV cache fills GPU memory.
 
@@ -238,7 +238,7 @@ The 15 pp drop confirms that memento KV states carry significant information fro
 | Memento att. (normal)<br>Memento att. + restart | 66.1%<br>50.8% |
 | Δ                                               | −15.3 pp       |
 
-![](_page_12_Figure_5.jpeg)
+![](.images/cx.260408.memento.p12-5.jpg)
 
 Figure 9: **Restart ablation.** *Step 1*:  $M_i$  is generated with full attention to  $T_i$  (same as normal memento attention). *Step 2*: KV cache is discarded and recomputed via prefill over prompt  $+ M_{1..i}$  only— $T_i$  is masked, so  $M_i$ 's KV states no longer encode block information. The 15 pp accuracy drop (Table 3) shows the KV channel carries significant reasoning capacity.
 
@@ -264,7 +264,7 @@ We run this experiment at two scales:
 
 **KV states carry an implicit information channel.** Memento KV representations propagate block information across masked boundaries—an architectural effect that complements the explicit memento text and explains why single-pass MEMENTO outperforms restart-based methods.
 
-<span id="page-13-0"></span>![](_page_13_Figure_6.jpeg)
+<span id="page-13-0"></span>![](.images/cx.260408.memento.p13-6.jpg)
 
 Figure 10: **Probing the implicit KV channel.** Both Qwen3-8B and Qwen3-32B recover the passcode well above 10% chance from *masked* memento positions (26.7% and 23.0%), while causal controls show exactly chance-level accuracy. The dotted line marks 10% chance (random guessing over 10 digits).
 
@@ -586,7 +586,7 @@ Our two-stage SFT recipe is a key design choice. What happens if we skip stages?
 - OT → OM/Full: first trained on OpenThoughts-v3, then fine-tuned on OPENMEMENTOS with full causal loss.
 - OT  $\rightarrow$  OM/Full  $\rightarrow$  OM/Mem (Ours): first train a reasoning model, then apply two-stage memento SFT.
 
-![](_page_24_Figure_12.jpeg)
+![](.images/cx.260408.memento.p24-12.jpg)
 
 Figure 12: **Multi-stage SFT ablation** on AIME 2024, AIME 2025, and GPQA-Diamond (Pass@1, n=8, Qwen2.5-7B). OT = OpenThoughts only; OM/Full = OPENMEMENTOS Full Attention; OM/Mem = OPENMEMENTOS Memento Attention; 2-Stg = OT  $\rightarrow$  OM/Full; 3-Stg = OT  $\rightarrow$  OM/Full  $\rightarrow$  OM/Mem (Ours). Training directly on OPENMEMENTOS from the base model (OM variants) substantially underperforms vanilla reasoning SFT (OT). Our three-stage pipeline enables block masking while retaining strong performance.
 
@@ -604,7 +604,7 @@ For models that already have reasoning skills (Qwen3-8B/32B), the OpenThoughts s
 
 **Results.** The toy model exhibits the same leakage patterns as the production models (Figure 13). The left panel shows how leakage varies with layer depth. The first layer carries almost no signal for any condition, but deeper layers progressively encode more—the last layer reaches 26.2% masked accuracy compared to 13.1% at the first layer. The right panel shows how masked accuracy decays with distance from the target block: a sharp drop from  $block_index=+1$  (26.2%) to  $block_index=+2$  (21.4%), followed by gradual attenuation, with signal still  $1.3\times$  chance at  $block_index=+7$ . The right panel confirms that the channel is architectural rather than learned: masked leakage stays roughly constant (17–19%) across training checkpoints even as task accuracy climbs from 77% to 95%.
 
-<span id="page-25-2"></span>![](_page_25_Figure_6.jpeg)
+<span id="page-25-2"></span>![](.images/cx.260408.memento.p25-6.jpg)
 
 Figure 13: **Toy transformer KV probing (keep0). Left:** Probe accuracy by layer depth—deeper layers carry more signal, especially for the masked condition. **Center:** Masked probe accuracy decays with distance from the target block but remains above chance even 7 hops away. **Right:** Leakage stays constant (17–19%) across training checkpoints even as task accuracy climbs from 77% to 95%, confirming the channel is architectural.
 
@@ -614,7 +614,7 @@ We present representative MEMENTO traces from AIME'26 (Appendix A.5.1), LiveCode
 
 #### <span id="page-26-0"></span>A.5.1 AIME'26
 
-![](_page_26_Picture_1.jpeg)
+![](.images/cx.260408.memento.p26-1.jpg)
 
 Find the sum of the 10th terms of all arithmetic sequences of integers that have first term equal to 4 and include both 24 and 34 as terms.
 
@@ -650,7 +650,7 @@ Thus, the sum of the 10th terms of all such arithmetic sequences is | 178 |
 
 #### <span id="page-26-1"></span>A.5.2 LiveCodeBench v6
 
-![](_page_26_Picture_22.jpeg)
+![](.images/cx.260408.memento.p26-22.jpg)
 
 There are N people labeled 1 to N, who have played several one-on-one games without draws. Initially, each person started with 0 points. In each game, the winner's score increased by 1 and the loser's score decreased by 1 (scores can become negative). Determine the final score of person N if the final score of person i ( $1 \le i \le N-1$ ) is  $A_i$ . It can be shown that the final score of person N is uniquely determined regardless of the sequence of games.
 
@@ -740,7 +740,7 @@ print(-total)
 
 # <span id="page-28-0"></span>**A.5.3 GPQA Diamond**
 
-![](_page_28_Figure_6.jpeg)
+![](.images/cx.260408.memento.p28-6.jpg)
 
 A eukaryotic cell evolved a mechanism to turn macromolecular building blocks into energy. The process occurs in mitochondria, which are cellular energy factories. In the series of redox reactions, the energy from food is stored between the phosphate groups and used as a universal cellular currency. The energy-laden molecules are shuttled out of the mitochondrion to serve in all cellular processes. You discovered a new anti-diabetes drug and want to investigate whether it has an effect on the mitochondria. You set up a range of experiments with your HEK293 cell line. Which of the experiments listed below will not help you discover the mitochondrial role of your drug:
 
