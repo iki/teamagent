@@ -2,9 +2,21 @@
 title: Code Mode with Skills
 id: code-mode-with-skills
 order: 3
+description: "Teach Code Mode to save and reuse working code as named skills backed by persistent storage — faster follow-up requests and composable agent memory."
+keywords:
+  - tanstack ai
+  - code mode
+  - skills
+  - skill library
+  - register_skill
+  - reusable snippets
+  - agent memory
+  - skill storage
 ---
 
 Skills extend [Code Mode](./code-mode.md) with a persistent library of reusable TypeScript snippets. When the LLM writes a useful piece of code — say, a function that fetches and ranks NPM packages — it can save that code as a _skill_. On future requests, relevant skills are loaded from storage and made available as first-class tools the LLM can call without re-writing the logic.
+
+> **Different from agent-authoring skills.** The skills on this page are _runtime_ snippets the chat LLM saves and reuses. If you're looking to teach your coding assistant (Claude Code, Cursor, etc.) how TanStack AI itself works, see [Agent Skills (TanStack Intent)](../getting-started/agent-skills).
 
 ## Overview
 
@@ -69,7 +81,9 @@ import { createNodeIsolateDriver } from '@tanstack/ai-isolate-node'
 import { codeModeWithSkills } from '@tanstack/ai-code-mode-skills'
 import { createFileSkillStorage } from '@tanstack/ai-code-mode-skills/storage'
 import { openaiText } from '@tanstack/ai-openai'
+import { myTool1, myTool2 } from './tools'
 
+const messages = [{ role: 'user' as const, content: 'Hello' }]
 const storage = createFileSkillStorage({ directory: './.skills' })
 const driver = createNodeIsolateDriver()
 
@@ -80,7 +94,7 @@ const { toolsRegistry, systemPrompt, selectedSkills } = await codeModeWithSkills
     timeout: 60_000,
     memoryLimit: 128,
   },
-  adapter: openaiText('gpt-4o-mini'),  // cheap model for skill selection
+  adapter: openaiText('gpt-5-mini'),  // cheap model for skill selection
   skills: {
     storage,
     maxSkillsInContext: 5,
@@ -89,8 +103,8 @@ const { toolsRegistry, systemPrompt, selectedSkills } = await codeModeWithSkills
 })
 
 const stream = chat({
-  adapter: openaiText('gpt-4o'),  // strong model for reasoning
-  toolRegistry: toolsRegistry,
+  adapter: openaiText('gpt-5.5'),  // strong model for reasoning
+  tools: toolsRegistry.getTools(),
   messages,
   systemPrompts: ['You are a helpful assistant.', systemPrompt],
   agentLoopStrategy: maxIterations(15),
@@ -101,7 +115,7 @@ const stream = chat({
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `toolsRegistry` | `ToolRegistry` | Mutable registry containing all tools. Pass to `chat()` via `toolRegistry`. |
+| `toolsRegistry` | `ToolRegistry` | Mutable registry containing all tools. Pass to `chat()` via `tools: toolsRegistry.getTools()`. |
 | `systemPrompt` | `string` | Combined Code Mode + skill library documentation. |
 | `selectedSkills` | `Array<Skill>` | Skills the selection model chose for this conversation. |
 
@@ -130,7 +144,10 @@ import {
   skillsToTools,
 } from '@tanstack/ai-code-mode-skills'
 import { createFileSkillStorage } from '@tanstack/ai-code-mode-skills/storage'
+import { openaiText } from '@tanstack/ai-openai'
+import { myTool1, myTool2, BASE_PROMPT } from './tools'
 
+const messages = [{ role: 'user' as const, content: 'Hello' }]
 const trustStrategy = createAlwaysTrustedStrategy()
 const storage = createFileSkillStorage({
   directory: './.skills',
@@ -177,7 +194,7 @@ const skillsPrompt = createSkillsSystemPrompt({
 
 // 5. Assemble and call chat()
 const stream = chat({
-  adapter: openaiText('gpt-4o'),
+  adapter: openaiText('gpt-5.5'),
   tools: [codeModeTool, ...managementTools, ...skillTools],
   messages,
   systemPrompts: [BASE_PROMPT, codeModePrompt, skillsPrompt],
@@ -193,9 +210,16 @@ Skills are persisted through the `SkillStorage` interface. Two implementations a
 
 ### File storage (production)
 
+`createFileSkillStorage` is Node-only — it imports `node:fs` / `node:path` — so
+it lives behind the `/storage` subpath rather than the package root. This keeps
+the root export safe to bundle for Cloudflare Workers and browser builds; only
+reach for the subpath in a Node runtime.
+
 ```typescript
 import { createFileSkillStorage } from '@tanstack/ai-code-mode-skills/storage'
+import { createDefaultTrustStrategy } from '@tanstack/ai-code-mode-skills'
 
+const trustStrategy = createDefaultTrustStrategy()
 const storage = createFileSkillStorage({
   directory: './.skills',
   trustStrategy,  // optional, defaults to createDefaultTrustStrategy()
@@ -215,15 +239,17 @@ Creates a directory structure:
     code.ts
 ```
 
-### Memory storage (testing)
+### Memory storage (testing & edge runtimes)
 
 ```typescript
-import { createMemorySkillStorage } from '@tanstack/ai-code-mode-skills/storage'
+import { createMemorySkillStorage } from '@tanstack/ai-code-mode-skills'
 
 const storage = createMemorySkillStorage()
 ```
 
-Keeps everything in memory. Useful for tests and demos.
+Keeps everything in memory — no `node:fs` dependency, so it is re-exported from
+the package root and is safe to use in Workers and browsers. Useful for tests,
+demos, and edge deployments. (It is also available from the `/storage` subpath.)
 
 ### Storage interface
 
@@ -243,7 +269,7 @@ Both implementations satisfy this interface:
 
 Skills start untrusted and earn trust through successful executions. The trust level is metadata only — it does not currently gate execution. Four built-in strategies are available:
 
-```typescript
+```typescript group=code-mode-with-skills
 import {
   createDefaultTrustStrategy,
   createAlwaysTrustedStrategy,
@@ -259,7 +285,7 @@ import {
 | **Always trusted** | `trusted` | — | — |
 | **Custom** | Configurable | Configurable | Configurable |
 
-```typescript
+```typescript group=code-mode-with-skills
 const strategy = createCustomTrustStrategy({
   initialLevel: 'untrusted',
   provisionalThreshold: { executions: 5, successRate: 0.85 },
