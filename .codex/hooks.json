@@ -1,0 +1,19 @@
+{
+  "description": "Archive public conversations and verify the codebase at completion.",
+  "hooks": {
+    "Stop": [{ "hooks": [{
+      "type": "command",
+      "command": "runtime=$(git config --local --get teamagent.bunPath || printf bun); exec \"$runtime\" \"$(git rev-parse --show-toplevel)/app/hooks/stop.ts\"",
+      "commandWindows": "$runtime = git config --local --get teamagent.bunPath; if (-not $runtime) { $runtime = 'bun' }; & $runtime (Join-Path (git rev-parse --show-toplevel) 'app/hooks/stop.ts')",
+      "timeout": 360,
+      "statusMessage": "Saving conversation and checking codebase"
+    }] }],
+    "SubagentStop": [{ "hooks": [{
+      "type": "command",
+      "command": "runtime=$(git config --local --get teamagent.bunPath || printf bun); exec \"$runtime\" \"$(git rev-parse --show-toplevel)/app/hooks/stop.ts\"",
+      "commandWindows": "$runtime = git config --local --get teamagent.bunPath; if (-not $runtime) { $runtime = 'bun' }; & $runtime (Join-Path (git rev-parse --show-toplevel) 'app/hooks/stop.ts')",
+      "timeout": 90,
+      "statusMessage": "Saving subagent conversation"
+    }] }]
+  }
+}

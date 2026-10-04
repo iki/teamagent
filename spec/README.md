@@ -6,6 +6,8 @@ The recommendation is a **local-first durable control plane with replaceable age
 
 ## Start here
 
+Implementation rules: [development stack and platform architecture](architecture/README.md), [verification and agent hooks](verification.md), and [conversation logging](conversation-logging.md). These complement the product design and evidence catalog below.
+
 1. [Architecture and component choices](architecture.md): system boundaries, deployment and failure semantics.
 2. [Requirements map](requirements.md): each requested capability and its acceptance evidence.
 3. [Contracts and data model](contracts.md): tasks, agents, models, knowledge, skills, decisions and generation jobs.

@@ -1,0 +1,30 @@
+import { defineConfig } from "oxlint";
+
+export default defineConfig({
+  plugins: ["typescript", "import", "unicorn"],
+  jsPlugins: ["./lib/lint/index.ts"],
+  ignorePatterns: [
+    "resources/**",
+    "spec/**",
+    ".agents/skills/**",
+    "data/**",
+    ".cache/**",
+    "node_modules/**",
+    "app/desktop/src-tauri/target/**",
+    "app/desktop/src-tauri/gen/**",
+  ],
+  rules: {
+    "typescript/no-explicit-any": "error",
+    "typescript/no-unsafe-assignment": "error",
+    "typescript/no-unsafe-argument": "error",
+    "typescript/no-unsafe-call": "error",
+    "typescript/no-unsafe-member-access": "error",
+    "typescript/no-unsafe-return": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/no-floating-promises": "error",
+    "teamagent/boundaries": "error",
+    "teamagent/no-unsafe-casts": "error",
+    "teamagent/no-executable-input": "error",
+    "teamagent/runtime-launchers": "error",
+  },
+});
