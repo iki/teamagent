@@ -1,0 +1,41 @@
+# ai-agents-skills
+
+[Analysis home](../README.md) · 15 projects catalogued; 7 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Skill interchange specifications, discovery, acquisition, translation, execution packaging, and candidate evolution.
+
+Maintain a canonical registry with immutable source packages and evaluated model/harness variants. Agent Skills supplies interoperability conventions; Vercel search offers acquisition reach; SkillKit offers translation patterns; Skillware distinguishes executable plugins from prose. Use Autoharness's proposer/writer separation while replacing unvalidated thresholds with measured outcomes.
+
+Discovery, installation, activation, compatible syntax, and reliable behavior are separate states. Optional hooks can disappear during translation, imported code needs isolation, and discovery RFCs require version negotiation. Screening alone is insufficient for automatic admission.
+
+Start with:
+
+- [docs.skills](https://github.com/agentskills/agentskills) — [individual report](../projects/ai-agents-skills--docs.skills.md).
+- [search.vercel](https://github.com/vercel-labs/skills) — [individual report](../projects/ai-agents-skills--search.vercel.md).
+- [search.skillkit](https://github.com/rohitg00/skillkit) — [individual report](../projects/ai-agents-skills--search.skillkit.md).
+- [manage.skillware](https://github.com/ARPAHLS/skillware) — [individual report](../projects/ai-agents-skills--manage.skillware.md).
+- [evolve-claude.autoharness](https://github.com/tigerless-labs/autoharness) — [individual report](../projects/ai-agents-skills--evolve-claude.autoharness.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli) | [Report](../projects/ai-agents-skills--admin.teamai-cli.tencent.md) | screened | Inventory / README only; implementation not independently established. |
+| [create.book-to-skill](https://github.com/virgiliojr94/book-to-skill) | [Report](../projects/ai-agents-skills--create.book-to-skill.md) | screened | Inventory / README only; implementation not independently established. |
+| [create.openapi-to-skills](https://github.com/neutree-ai/openapi-to-skills) | [Report](../projects/ai-agents-skills--create.openapi-to-skills.md) | screened | Inventory / README only; implementation not independently established. |
+| [create.skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | [Report](../projects/ai-agents-skills--create.skill-seekers.md) | source-reviewed | Use as a candidate importer worker and a source of adapter patterns, initially for a small verified subset such as repository, HTML, and PDF. Run extraction in a restricted process with byte/time limits. Compare resulting text and provenance against fixtures before expanding formats. Keep conflict preservation mandatory when AI-assisted merging proposes a convenient single answer, and never execute imported scripts during discovery. |
+| [docs.2603.skills-discovery-rfc.cloudflare](https://github.com/cloudflare/agent-skills-discovery-rfc) | [Report](../projects/ai-agents-skills--docs.2603.skills-discovery-rfc.cloudflare.md) | source-reviewed | Implement as an optional discovery provider behind a versioned schema adapter. Support only explicitly understood versions, display unsupported entries as unavailable, and keep a Git/manual import fallback. The first release should register metadata and download to quarantine; activation remains a separate lifecycle step. Test stale indexes, digest mismatches, cross-origin URLs, malicious paths, oversized archives, and interrupted downloads before enabling unattended refresh. |
+| [docs.skills](https://github.com/agentskills/agentskills) | [Report](../projects/ai-agents-skills--docs.skills.md) | source-reviewed | Adopt as the canonical interoperability format and baseline authoring protocol. Require positive and near-miss negative trigger fixtures plus paired outcome evaluation for tuned skills. Store evaluation artifacts beside a versioned skill manifest, with model, harness, tool set, seed where applicable, and costs. Extend metadata through namespaced fields and preserve original upstream files so a harness-specific variant remains traceable to its source. |
+| [evolve-claude.autoharness](https://github.com/tigerless-labs/autoharness) | [Report](../projects/ai-agents-skills--evolve-claude.autoharness.md) | source-reviewed | Adopt the lifecycle architecture selectively; do not enable automatic global self-modification as the default. Replace placeholder thresholds with workload measurements. Use a durable single-writer service or transactional store and idempotent proposal IDs. A candidate must pass independent evaluation before canary activation; subsequent regressions restore the previous digest. Retain infrequently used emergency procedures under an explicit protected policy. |
+| [manage.skillware](https://github.com/ARPAHLS/skillware) | [Report](../projects/ai-agents-skills--manage.skillware.md) | source-reviewed | Use individual bundles only after dependency, license, and behavior review, and borrow the inspect-only API for the internal registry. Do not directly import arbitrary discovered skills into the orchestrator process. Execute implementations in restricted workers with explicit tool scopes, isolated dependencies, and a typed result schema. Escalate manifest/path identity disagreement to a registration error for managed team libraries, while allowing explicit aliases recorded as metadata. |
+| [search.rosie](https://github.com/matthewp/rosie) | [Report](../projects/ai-agents-skills--search.rosie.md) | screened | Inventory / README only; implementation not independently established. |
+| [search.skillkit](https://github.com/rohitg00/skillkit) | [Report](../projects/ai-agents-skills--search.skillkit.md) | source-reviewed | Borrow the canonical intermediate representation and compatibility diagnostics, and evaluate SkillKit as an optional management UI/CLI integration. Do not make a large third-party skill-management platform the sole source of truth. Require trigger tests, forbidden-action tests, and representative output checks per supported model/harness tuple. Especially test that an apparently successful translation with incompatible hooks cannot silently pass the team's release gate. |
+| [search.smithery](https://github.com/smithery-ai/cli) | [Report](../projects/ai-agents-skills--search.smithery.md) | screened | Inventory / README only; implementation not independently established. |
+| [search.vercel](https://github.com/vercel-labs/skills) | [Report](../projects/ai-agents-skills--search.vercel.md) | source-reviewed | Adopt through a thin optional installer adapter, with explicit version pinning and an internal provenance record. Prefer its existing ecosystem reach over rebuilding every directory convention. Add compatibility probes and rollback around activation. Do not automatically install every search result or activate every installed skill. Evaluate source changes, dependencies, scripts, and trigger behavior before promoting an update. |
+| [xx-2603-search.m13v](https://github.com/m13v/skill-registry) | [Report](../projects/ai-agents-skills--xx-2603-search.m13v.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-create.skr](https://github.com/andrewhowdencom/skr) | [Report](../projects/ai-agents-skills--xx-2604-create.skr.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-search.pica](https://github.com/onmyway133/pica) | [Report](../projects/ai-agents-skills--xx-2604-search.pica.md) | screened | Inventory / README only; implementation not independently established. |

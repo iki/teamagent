@@ -1,0 +1,27 @@
+# graphrag
+
+Community-summary map/reduce retrieval for broad corpus synthesis with explicit token/call accounting.
+
+Source: [graphrag](https://github.com/microsoft/graphrag) · Snapshot: `769542fbf1d8e5b4c6a8677fefc34621c87894c5` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [packages/graphrag/graphrag/query/structured_search/global_search/search.py:142-212](https://github.com/microsoft/graphrag/blob/769542fbf1d8e5b4c6a8677fefc34621c87894c5/packages/graphrag/graphrag/query/structured_search/global_search/search.py#L142-L212)
+
+Global search asks its context builder for chunks and records context-building model calls and token usage. It launches map responses over those chunks, emits callback events, aggregates map costs, and passes the intermediate results to a reduce response. The returned result contains the answer, original context records, map responses, reduce context, elapsed time and per-category usage. This is directly implemented multi-stage synthesis, not merely a vector query wrapped in an answer prompt.
+
+## Harness implications
+
+Use this shape for questions such as recurring themes, disagreements across many documents or an overview of a large body of research. Precomputed community summaries can reduce the amount of raw material considered repeatedly, while map/reduce creates an inspectable chain of intermediate evidence. Retain source links through each stage and expose partial completion. Budget both preprocessing and query-time model calls; repeated broad synthesis may justify the investment whereas one exact lookup will not.
+
+## Limitations and tradeoffs
+
+The quality of the final answer is constrained by what community summaries retained. A minority detail can disappear before query time and cannot be recovered by a polished reduce answer. Parallel map calls can increase instantaneous quota use and latency variance. Counting calls and tokens improves observability but does not show whether the result is faithful. The source review covers global search mechanics, not a complete comparison of local, DRIFT or basic modes.
+
+## Adoption and validation
+
+Adopt as an optional broad-research strategy, not the default path for coding or precise fact retrieval. Route by task and expected corpus coverage. Validate theme coverage, minority/contradictory evidence, attribution fidelity, unanswerable queries and interrupted map batches. Compare source-grounded completeness with direct hybrid retrieval at a matched cost budget, and regenerate summaries when source permissions or content change.
+
+Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [models](../models.md).

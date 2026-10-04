@@ -1,0 +1,31 @@
+# crewai
+
+Source: [crewai](https://github.com/crewAIInc/crewAI) · Category: [ai-agents-swarm](../categories/ai-agents-swarm.md)
+
+Review depth: **focused source review**. Snapshot `738c8e19e35c2888d8e0663bc5cc45c5acf6ac2d` (2026-10-02T17:03:54-07:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Checkpoint-aware role workflows are useful, but checkpoint restoration must be separated from side-effect replay.
+
+## Source evidence inspected
+
+- [lib/crewai/src/crewai/crew.py, lines 400–510](https://github.com/crewAIInc/crewAI/blob/738c8e19e35c2888d8e0663bc5cc45c5acf6ac2d/lib/crewai/src/crewai/crew.py#L400-L510)
+
+## Observed design and algorithms
+
+Crew stores checkpoint configuration, execution context, usage and tracing state. from_checkpoint reconstructs RuntimeState and restores execution context; fork branches a restored state. Runtime reconstruction examines task-start events and selects the manager for hierarchical processing or the task agent otherwise, preserving resumed agent roles.
+
+## Harness decision
+
+Evaluate CrewAI for role-oriented workflows where its task abstractions fit the domain. Keep the team harness scheduler and artifact contracts independent so external CLI agents need not be converted into in-process CrewAI agents. Reuse explicit checkpoint/fork semantics in evaluation workflows.
+
+## Limits and tradeoffs
+
+The excerpt does not establish transactional external side effects or distributed checkpoint safety. Global event-bus runtime references deserve scrutiny for multiple concurrent teams. Role delegation can add context and coordination cost without improving task success.
+
+## Validation before adoption
+
+Compare single-agent and role-team baselines with equal budgets. Resume after tool success but before checkpoint commit, and test simultaneous crews for state leakage. No tests, live inference, installation, or production operation were performed for this review. License indicator: not classified; inspect source; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [memory](../memory.md) · [evolution](../evolution.md).

@@ -1,0 +1,25 @@
+# bundle.tech-leads-club
+
+Source: [bundle.tech-leads-club](https://github.com/tech-leads-club/agent-skills) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `120b67676388241b314699fa8fa9af25ada6d1d4`; commit timestamp `2026-09-20T09:37:16-03:00`; 1,157 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/tech-leads-club/agent-skills/blob/120b67676388241b314699fa8fa9af25ada6d1d4/README.md)):
+
+> The secure, validated skill registry for professional AI coding agents In an ecosystem where  over 13% of marketplace skills contain critical vulnerabilities ,
+
+Build/package evidence: [libs/core/package.json](https://github.com/tech-leads-club/agent-skills/blob/120b67676388241b314699fa8fa9af25ada6d1d4/libs/core/package.json); [package.json](https://github.com/tech-leads-club/agent-skills/blob/120b67676388241b314699fa8fa9af25ada6d1d4/package.json); [packages/cli/package.json](https://github.com/tech-leads-club/agent-skills/blob/120b67676388241b314699fa8fa9af25ada6d1d4/packages/cli/package.json); [packages/marketplace/package.json](https://github.com/tech-leads-club/agent-skills/blob/120b67676388241b314699fa8fa9af25ada6d1d4/packages/marketplace/package.json); [packages/mcp/package.json](https://github.com/tech-leads-club/agent-skills/blob/120b67676388241b314699fa8fa9af25ada6d1d4/packages/mcp/package.json)
+
+License evidence: [LICENSE](https://github.com/tech-leads-club/agent-skills/blob/120b67676388241b314699fa8fa9af25ada6d1d4/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -1,0 +1,460 @@
+[
+  {
+    "id": "ai-query--qmd",
+    "topics": [
+      "memory",
+      "decisions",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Local hybrid document retrieval with typed expansion, weighted rank fusion and bounded reranking.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "src/store.ts",
+        "start": 5544,
+        "end": 5726
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--graphiti",
+    "topics": [
+      "memory",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Episode-grounded temporal entity relationships with explicit invalidation and entity resolution.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "graphiti_core/edges.py",
+        "start": 263,
+        "end": 285
+      },
+      {
+        "path": "graphiti_core/graphiti.py",
+        "start": 1150,
+        "end": 1251
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--hindsight",
+    "topics": [
+      "memory",
+      "evolution",
+      "decisions"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Multi-arm recall and separate reflection with explicit failure handling for derived-memory refresh.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "hindsight-api-slim/hindsight_api/engine/search/fusion.py",
+        "start": 8,
+        "end": 176
+      },
+      {
+        "path": "hindsight-api-slim/hindsight_api/engine/reflect/agent.py",
+        "start": 170,
+        "end": 215
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--mem0",
+    "topics": [
+      "memory",
+      "agents",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Scoped personal/agent memory with additive extraction and explicit provider-failure propagation.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "mem0/memory/main.py",
+        "start": 881,
+        "end": 986
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--cognee",
+    "topics": [
+      "memory",
+      "import-generation",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Composable document-to-knowledge pipeline with optional provenance and contradiction stages.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "cognee/api/v1/cognify/cognify.py",
+        "start": 565,
+        "end": 643
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--open-viking",
+    "topics": [
+      "memory",
+      "skills",
+      "evolution",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Central context assembly with quotas, deduplication, tiered detail and bounded materialization.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "openviking/retrieve/context_assembler/pipeline.py",
+        "start": 54,
+        "end": 170
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--context-mode",
+    "topics": [
+      "memory",
+      "agents",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Tool-output indexing and adapter detection with explicit lessons about inherited environment leakage.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "src/store.ts",
+        "start": 475,
+        "end": 543
+      },
+      {
+        "path": "src/adapters/detect.ts",
+        "start": 1,
+        "end": 142
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--gitnexus",
+    "topics": [
+      "memory",
+      "import-generation",
+      "agents"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Structured code ingestion with optional graph phases and hybrid symbol/document retrieval.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "gitnexus/src/core/ingestion/pipeline.ts",
+        "start": 318,
+        "end": 370
+      },
+      {
+        "path": "gitnexus/src/core/search/hybrid-search.ts",
+        "start": 158,
+        "end": 192
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--mentisdb",
+    "topics": [
+      "memory",
+      "evolution",
+      "agents"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Typed append-only memory records with hash chaining, explicit relations and derived-index synchronization.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "src/lib.rs",
+        "start": 5071,
+        "end": 5149
+      },
+      {
+        "path": "src/lib.rs",
+        "start": 5180,
+        "end": 5244
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--llm-wiki-compiler",
+    "topics": [
+      "memory",
+      "evolution",
+      "skills",
+      "import-generation"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Incremental source-to-wiki compilation with contract-bound extraction snapshots and separate write authority.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "src/compiler/extraction-snapshot.ts",
+        "start": 1,
+        "end": 75
+      },
+      {
+        "path": "src/trust/trusted-write.ts",
+        "start": 1,
+        "end": 51
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--xx-2604-llm-wiki.karpathy",
+    "topics": [
+      "memory",
+      "evolution",
+      "import-generation"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Design-only pattern for immutable sources, an incrementally compiled wiki and an explicit maintenance schema.",
+    "evidence_kind": "design-source",
+    "inspected_files": [
+      {
+        "path": "llm-wiki.md",
+        "start": 25,
+        "end": 53
+      },
+      {
+        "path": "llm-wiki.md",
+        "start": 73,
+        "end": 75
+      }
+    ]
+  },
+  {
+    "id": "ai-query--docling",
+    "topics": [
+      "import-generation",
+      "memory",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Format-dispatched structured document conversion with bounded inputs and explicit conversion outcomes.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "docling/document_converter.py",
+        "start": 611,
+        "end": 697
+      },
+      {
+        "path": "docling/document_converter.py",
+        "start": 810,
+        "end": 846
+      }
+    ]
+  },
+  {
+    "id": "ai-query--markitdown",
+    "topics": [
+      "import-generation",
+      "memory"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Priority-based converter registry producing normalized Markdown with explicit fallback diagnostics.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "packages/markitdown/src/markitdown/_markitdown.py",
+        "start": 226,
+        "end": 251
+      },
+      {
+        "path": "packages/markitdown/src/markitdown/_markitdown.py",
+        "start": 602,
+        "end": 695
+      }
+    ]
+  },
+  {
+    "id": "ai-query--repomix",
+    "topics": [
+      "import-generation",
+      "memory",
+      "skills"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Repository packaging with deterministic discovery, safety hooks and explicit token/omission accounting.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "src/core/packager.ts",
+        "start": 1,
+        "end": 168
+      }
+    ]
+  },
+  {
+    "id": "ai-query--trafilatura",
+    "topics": [
+      "import-generation",
+      "memory",
+      "decisions"
+    ],
+    "depth": "source-reviewed",
+    "summary": "HTML extraction cascade that escalates from a primary pass to alternative and recall-oriented recovery.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "trafilatura/core.py",
+        "start": 165,
+        "end": 259
+      }
+    ]
+  },
+  {
+    "id": "ai-query--rag-anything",
+    "topics": [
+      "import-generation",
+      "memory",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Multimodal-derived chunks and graph entities with content/configuration-aware parse caching.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "raganything/processor.py",
+        "start": 54,
+        "end": 125
+      },
+      {
+        "path": "raganything/modalprocessors.py",
+        "start": 532,
+        "end": 612
+      }
+    ]
+  },
+  {
+    "id": "ai-query--jev-ultrafast",
+    "topics": [
+      "decisions",
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Finite browser-action classification with separate operation/target heads and independent text generation.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "jev_ultrafast/model.py",
+        "start": 30,
+        "end": 148
+      }
+    ]
+  },
+  {
+    "id": "ai-query--jevgrep",
+    "topics": [
+      "decisions",
+      "memory",
+      "agents",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Model-guided source traversal with bounded work, content-hash freshness and precise evidence spans.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "packages/core/src/retrieve.ts",
+        "start": 25,
+        "end": 133
+      },
+      {
+        "path": "packages/core/src/selection.ts",
+        "start": 14,
+        "end": 145
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--lightrag",
+    "topics": [
+      "memory",
+      "import-generation",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Entity/relation retrieval with separate low/high-level keywords and optional direct chunk retrieval.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "lightrag/operate.py",
+        "start": 5320,
+        "end": 5428
+      }
+    ]
+  },
+  {
+    "id": "ai-agents-mem--graphrag",
+    "topics": [
+      "memory",
+      "import-generation",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Community-summary map/reduce retrieval for broad corpus synthesis with explicit token/call accounting.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "packages/graphrag/graphrag/query/structured_search/global_search/search.py",
+        "start": 142,
+        "end": 212
+      }
+    ]
+  },
+  {
+    "id": "ai-query--leann",
+    "topics": [
+      "memory",
+      "models",
+      "import-generation"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Configurable local ANN search with embedding recomputation, warmup and daemon lifecycle controls.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "packages/leann-core/src/leann/api.py",
+        "start": 1213,
+        "end": 1315
+      }
+    ]
+  },
+  {
+    "id": "ai-query--magika",
+    "topics": [
+      "import-generation",
+      "decisions",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "summary": "Content-type classification using rule short-circuits and batched model inference with surfaced prediction metadata.",
+    "evidence_kind": "implementation",
+    "inspected_files": [
+      {
+        "path": "rust/lib/src/session.rs",
+        "start": 55,
+        "end": 99
+      },
+      {
+        "path": "python/src/magika/magika.py",
+        "start": 140,
+        "end": 242
+      }
+    ]
+  }
+]

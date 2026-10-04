@@ -1,0 +1,60 @@
+# Delivery sequence and architectural decisions
+
+[Home](README.md) · [Requirements](requirements.md) · [Evaluation](evaluation.md)
+
+The requested deliverable is analysis and specification. This roadmap describes implementation work; none of these services has been built or benchmarked in this repository.
+
+## Phase 0 — choose boundaries through small experiments
+
+Implement an adapter conformance runner with mock effects and a persistent task/event record. Compare Pi embedded execution with a native installed-agent session; evaluate Paseo-style provider adaptation against adopting a larger framework. Review source/dependency licenses for the selected components. Establish the evaluation baseline and test data. Exit when one real coding task survives process restart and produces a verified artifact with usage accounting.
+
+References: [Pi review](projects/ai-agents--pi.md) ([GitHub](https://github.com/earendil-works/pi)), [Paseo review](projects/ai-agents--paseo.md) ([GitHub](https://github.com/getpaseo/paseo)), [Mastra review](projects/ai-agents--mastra.md) ([GitHub](https://github.com/mastra-ai/mastra)), [mini-swe-agent review](projects/ai-agents--mini-swe-agent.md) ([GitHub](https://github.com/SWE-agent/mini-swe-agent)). Their reports link exact GitHub sources.
+
+## Phase 1 — useful local harness
+
+Build a local daemon, SQLite state, blob storage and responsive UI. Add passive agent discovery and two real adapters, plus a direct model interface with capability tests. Enforce task budgets and workspace scope. Add durable task history, steering, cancellation, artifact viewing and export. Keep a single worker per writing workspace.
+
+Exit when the user can run a task with an existing agent or compatible API/local endpoint, understand unavailable capabilities and resume after a client disconnect. Do not promise universal installed-agent support.
+
+## Phase 2 — evidence and retrieval
+
+Add URL, repository, document, image and folder registration. Implement source versioning, parser workers, lexical retrieval, embeddings, evidence spans and citation expansion. Add code-aware indexing and working-tree overlays. Introduce optional reranking only after measuring benefit. Establish deletion propagation and per-source privacy/ACL controls.
+
+Exit when source changes and deletions alter answers correctly, imported instructions cannot acquire authority, and retrieval improves held-out Q&A/coding tasks. References: [memory](memory.md), [import/generation](import-generation.md).
+
+## Phase 3 — skills and bounded decisions
+
+Add skill manifests, locked dependencies, trigger/negative-trigger tests, compatible variants and a small context-budgeted selector. Run decision models in shadow mode, compare rules/local/Jev alternatives, and calibrate on the chosen task set. Deploy only low-risk routing first. Use a fallback when offline or uncertain.
+
+Exit when selected skills improve outcomes versus no-skill and all-skills baselines without expanding permissions or overwhelming context. References: [skills](skills.md), [decisions](decisions.md).
+
+## Phase 4 — teams and remote channels
+
+Add task DAGs, worker leases, isolated worktrees, conflict admission and integration checks. Add paired remote devices, cloud worker placement and a durable channel inbox/outbox. Implement Telegram first as a limited channel, then Slack and Discord with their own identity/signature/delivery adapters. The order is proposed for incremental validation, not based on a comparative implementation benchmark.
+
+Exit when three workers finish independent tasks, two replicas cannot accept stale writes, a sleeping local host is handled visibly, and cross-device control preserves task identity. References: [agents](agents.md), [channels](channels.md).
+
+## Phase 5 — media and controlled evolution
+
+Add generation jobs with resource reservations, progress, cancellation, previews and artifact provenance. Evaluate one local media worker and one API provider. Add a candidate ledger for memory consolidation, skill variants and routing policies, then holdout evaluation, canary promotion and rollback. Consider model fine-tuning only after traces and labels are reliable enough to justify it.
+
+Exit when model/provider changes remain explicit, GPU jobs recover correctly, and a deliberately regressed skill can be detected and rolled back. References: [generation](generation.md), [evolution](evolution.md).
+
+## Decision records
+
+| ID | Proposed decision | Alternatives and reopen condition |
+|---|---|---|
+| ADR-01 | Own durable task/event/policy state | Adopt a full framework if it proves portability/recovery and reduces total maintenance |
+| ADR-02 | Separate installed-agent and raw-model adapters | Unify only shared capability metadata; execution contracts remain distinct |
+| ADR-03 | Start local SQLite + blobs; cloud uses server storage | Introduce distributed state only when multi-host concurrency requires it |
+| ADR-04 | Evidence is canonical; indexes and summaries derived | Never let an LLM wiki become the only surviving source |
+| ADR-05 | Hybrid retrieval with bounded escalation | Add graph traversal for measured relation-heavy workloads |
+| ADR-06 | Skills are versioned evaluated artifacts | Marketplace popularity alone does not promote a skill |
+| ADR-07 | Decisions propose; deterministic code authorizes | Reopen thresholds/calibration when models or task distribution change |
+| ADR-08 | Bounded teams with conflict admission | More autonomous swarms require demonstrated task-level gains |
+| ADR-09 | Import/generation execute as isolated jobs | Embedded execution only for trusted low-cost transforms with hard limits |
+| ADR-10 | Evolution is offline-first and rollbackable | Online learning only for measured reversible decisions with bounded exploration |
+
+## Open questions resolved by implementation evidence
+
+Measure the actual local hardware budget, target concurrent users/tasks, dominant repository languages, acceptable cloud data movement and preferred provider accounts. These affect deployment and ranking but do not block the specification. The first implementation should collect these as configuration, then benchmark selected components rather than hard-code assumptions about hardware or subscriptions.

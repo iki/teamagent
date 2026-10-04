@@ -1,0 +1,38 @@
+# ai-info
+
+[Analysis home](../README.md) · 15 projects catalogued; 2 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Research explanations, educational experiments, and conceptual approaches that inform later architectural hypotheses.
+
+Use Game Schema Harness to frame hypothesis, backtest, and planning experiments, and Rearchitecting LLMs to inform a later specialized-model research track. Translate concepts into small controlled studies with held-out tasks and complete compute accounting before changing production routing or memory behavior.
+
+This category includes web/design-only content and educational notebooks, not uniformly deployable harness implementations. Treat maturity as exploratory; reported game or model-transformation results do not establish transfer to team coding and do not justify a universal recommendation.
+
+Start with:
+
+- [game-schema-harness](https://github.com/schema-harness/schema-harness.github.io) — [individual report](../projects/ai-info--game-schema-harness.md).
+- [rearchitecting-llms](https://github.com/peremartra/Rearchitecting-LLMs) — [individual report](../projects/ai-info--rearchitecting-llms.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [ai-agent-tools](https://github.com/cporter202/ai-agent-tools) | [Report](../projects/ai-info--ai-agent-tools.md) | screened | Inventory / README only; implementation not independently established. |
+| [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | [Report](../projects/ai-info--ai-engineering-from-scratch.md) | screened | Inventory / README only; implementation not independently established. |
+| [ai-interaction-atlas](https://github.com/quietloudlab/ai-interaction-atlas) | [Report](../projects/ai-info--ai-interaction-atlas.md) | screened | Inventory / README only; implementation not independently established. |
+| [awesome-artificial-intelligence-regulation](https://github.com/EthicalML/awesome-artificial-intelligence-regulation) | [Report](../projects/ai-info--awesome-artificial-intelligence-regulation.md) | screened | Inventory / README only; implementation not independently established. |
+| [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | [Report](../projects/ai-info--awesome-design-md.md) | screened | Inventory / README only; implementation not independently established. |
+| [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | [Report](../projects/ai-info--awesome-llm-apps.md) | screened | Inventory / README only; implementation not independently established. |
+| [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | [Report](../projects/ai-info--awesome-mcp-servers.md) | screened | Inventory / README only; implementation not independently established. |
+| [awesome-openrouter](https://github.com/OpenRouterTeam/awesome-openrouter) | [Report](../projects/ai-info--awesome-openrouter.md) | screened | Inventory / README only; implementation not independently established. |
+| [awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning) | [Report](../projects/ai-info--awesome-production-machine-learning.md) | screened | Inventory / README only; implementation not independently established. |
+| [blog-dnhkng](https://github.com/dnhkng/dnhkng.github.io) | [Report](../projects/ai-info--blog-dnhkng.md) | screened | Inventory / README only; implementation not independently established. |
+| [game-schema-harness](https://github.com/schema-harness/schema-harness.github.io) | [Report](../projects/ai-info--game-schema-harness.md) | source-reviewed | Adopt as an experimental decision and memory pattern, not as a dependency or a general SOTA result. Build a small controlled study comparing direct tool use against hypothesis/backtest/planning on representative tasks. Include held-out transitions, explicit compute accounting, and adversarial counterexamples. Preserve simulator uncertainty and fall back to direct observation when predictions fail. Do not imply the website contains deployable harness source or that near-ceiling public-game performance transfers to team coding work. |
+| [hermes-agent-orange-book](https://github.com/alchaincyf/hermes-agent-orange-book) | [Report](../projects/ai-info--hermes-agent-orange-book.md) | screened | Inventory / README only; implementation not independently established. |
+| [rearchitecting-llms](https://github.com/peremartra/Rearchitecting-LLMs) | [Report](../projects/ai-info--rearchitecting-llms.md) | source-reviewed | Keep as a research reference for a later specialized-local-model program. Separate calibration, recovery, training, validation, and held-out task data. Record the original model, license, transformation recipe, hardware, precision, and model artifact hash. Require integration-level evaluation of the resulting model with its intended skills and tools before routing production tasks to it. Do not make pruning or fine-tuning a prerequisite for the initial local/cloud harness, and do not treat educational notebook outputs as independently validated benchmarks. |
+| [xx-2604-dspy-0to1-guide](https://github.com/evalops/dspy-0to1-guide) | [Report](../projects/ai-info--xx-2604-dspy-0to1-guide.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-seeaifirst](https://github.com/BARONFANTHE/seeaifirst) | [Report](../projects/ai-info--xx-2604-seeaifirst.md) | screened | Inventory / README only; implementation not independently established. |

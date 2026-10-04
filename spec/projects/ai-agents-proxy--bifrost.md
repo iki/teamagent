@@ -1,0 +1,30 @@
+# Bifrost: API gateway and provider execution fabric
+
+Source: [bifrost](https://github.com/maximhq/bifrost) · Category: `ai-agents-proxy`
+
+Review depth: **source-reviewed**. Snapshot `e8b579fd1a710753cfa97611b5cff6c3411b0825`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The core separates provider queues, worker lifecycle, LLM and MCP plugins, tracing, request-object pools, a model capability/pricing catalog, and credential resolution. Provider updates have explicit lifecycle synchronization. The queue design deliberately uses a separate shutdown channel rather than closing a channel with concurrent producers. Session affinity and a key-filter hook are visible state, making it possible to distinguish a stable conversation route from per-request load balancing.
+
+The Chat Completion streaming entry point normalizes a request and delegates to a common stream handler. That is useful evidence of a shared execution fabric; it does not establish lossless equivalence between every vendor's reasoning, tool-call, audio, and Responses semantics.
+
+## Harness adoption
+
+Shortlist Bifrost as the independently deployed gateway when a Go service, bounded queues, per-provider backpressure, and shared API governance are valuable. Keep durable tasks, approvals, worktrees, memory, and skill selection in the harness. The gateway should receive a capability-constrained model route and a credential reference, then report the actual provider/model, attempt count, usage, and stream outcome.
+
+Use queue occupancy and observed latency as inputs to the decision service. Preserve provider session affinity where caching or native session state benefits from it. A failed stream that already emitted a tool call must not transparently restart a side effect.
+
+## Limitations and decision
+
+Adopt behind an adapter after protocol conformance and cancellation tests. Upstream throughput and overhead claims were not reproduced; compare realistic mixed tool-call workloads on the target hardware. Shared credential resolution is a sensitive boundary, and plugin extensions remain privileged code. A gateway neither grants subscription entitlements nor provides a filesystem sandbox. See the alternative breadth-first gateway in [LiteLLM](ai-agents-proxy--litellm.md).
+
+## Evidence read
+
+- [Core provider lifecycle and request state](https://github.com/maximhq/bifrost/blob/e8b579fd1a710753cfa97611b5cff6c3411b0825/core/bifrost.go#L107-L172)
+- [Request API and streaming delegation](https://github.com/maximhq/bifrost/blob/e8b579fd1a710753cfa97611b5cff6c3411b0825/core/bifrost.go#L930-L962)
+
+## Related directions
+
+[Models](../models.md) · [Agents](../agents.md) · [Decisions](../decisions.md) · [Security](../security.md)

@@ -1,0 +1,25 @@
+# bundle-antigravity.guanyang
+
+Source: [bundle-antigravity.guanyang](https://github.com/guanyang/antigravity-skills) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65`; commit timestamp `2026-10-02T04:49:36Z`; 2,624 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/guanyang/antigravity-skills/blob/2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65/README.md)):
+
+> A lightweight, zero-dependency CLI tool to manage and activate capabilities for AI coding assistants (such as Claude Code, Cursor, Trae, etc.). With a single command, you can link **Skills** (modular prompting), **Agents** (expert workflow roles), and **Commands** (slash commands) to your project workspaces or global system configurations. (Note: `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md` contain project-level LLM coding behavioral guidelines, derived from andrej-karpathy-skills)
+
+Build/package evidence: [package.json](https://github.com/guanyang/antigravity-skills/blob/2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65/package.json); [skills/baoyu-danger-gemini-web/scripts/package.json](https://github.com/guanyang/antigravity-skills/blob/2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65/skills/baoyu-danger-gemini-web/scripts/package.json); [skills/baoyu-danger-x-to-markdown/scripts/package.json](https://github.com/guanyang/antigravity-skills/blob/2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65/skills/baoyu-danger-x-to-markdown/scripts/package.json); [skills/baoyu-format-markdown/scripts/package.json](https://github.com/guanyang/antigravity-skills/blob/2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65/skills/baoyu-format-markdown/scripts/package.json); [skills/baoyu-markdown-to-html/scripts/package.json](https://github.com/guanyang/antigravity-skills/blob/2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65/skills/baoyu-markdown-to-html/scripts/package.json)
+
+License evidence: [LICENSE](https://github.com/guanyang/antigravity-skills/blob/2e93d3a2acdf71a51eef31b9eb5cdb02ecd54d65/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -1,0 +1,31 @@
+# agents.cloudflare
+
+Source: [agents.cloudflare](https://github.com/cloudflare/agents) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `2f3176b9fa03c6429c805b560c8dc14371c15f64` (2026-10-02T22:15:08+01:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Lifecycle-owned queues and alarms provide a cloud deployment pattern with explicit platform coupling.
+
+## Source evidence inspected
+
+- [packages/agents/src/queue/queue.ts, lines 1–90](https://github.com/cloudflare/agents/blob/2f3176b9fa03c6429c805b560c8dc14371c15f64/packages/agents/src/queue/queue.ts#L1-L90)
+
+## Observed design and algorithms
+
+Queue validates work and resolves callback names while delegating persistence, retries and physical alarms to Lifecycle. Callback fallback preserves the historical named-method API inside the host boundary. Queue payloads carry an owner path and schema version. The file defines bounded retry defaults rather than an unbounded retry loop.
+
+## Harness decision
+
+Consider the Agents/Lifecycle architecture for a Cloudflare-hosted coordinator or channel ingress. Preserve a platform-neutral task/event contract and put provider-specific alarms and storage behind adapters if local-first operation is required.
+
+## Limits and tradeoffs
+
+An API-compatible class is not automatically portable outside its Durable Object host. Retrying jobs does not prove exactly-once external effects. This excerpt does not establish durable local execution or arbitrary GPU/CLI availability in the cloud host.
+
+## Validation before adoption
+
+Test worker eviction, code-update resets, callback schema migration, repeated queue delivery and late alarms. Run CLI/GPU jobs on separately supervised workers with explicit placement constraints. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [channels](../channels.md).

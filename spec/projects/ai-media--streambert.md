@@ -1,0 +1,25 @@
+# streambert
+
+Source: [streambert](https://github.com/truelockmc/streambert) · Category: [ai-media](../categories/ai-media.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4afe564e5ea2565c96d6f2e61679c00fad2d498c`; commit timestamp `2026-09-11T18:33:35+02:00`; 106 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/truelockmc/streambert/blob/4afe564e5ea2565c96d6f2e61679c00fad2d498c/README.md)):
+
+> [](https://github.com/truelockmc/streambert/issues?q=is%3Aissue+is%3Aclosed) A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking
+
+Build/package evidence: [package.json](https://github.com/truelockmc/streambert/blob/4afe564e5ea2565c96d6f2e61679c00fad2d498c/package.json)
+
+License evidence: [LICENSE](https://github.com/truelockmc/streambert/blob/4afe564e5ea2565c96d6f2e61679c00fad2d498c/LICENSE) Classification hint: GPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-media**. Its category places it in the candidate set for import-generation; those associations are navigational and have not been individually validated as implemented capabilities. See [import-generation](../import-generation.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

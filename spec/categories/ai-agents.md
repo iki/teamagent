@@ -1,0 +1,201 @@
+# ai-agents
+
+[Analysis home](../README.md) · 175 projects catalogued; 19 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Agent loops, installed-runtime adapters, task supervisors, application control planes, and cloud execution patterns.
+
+Prefer a small durable control plane with replaceable workers. Pi provides an embedded-loop candidate; Paseo and Agent Orchestrator provide explicit heterogeneous-agent boundaries. Mastra and cloud frameworks are alternatives to evaluate, rather than additional cores to stack together. A single-agent baseline must establish the benefit of extra machinery.
+
+The category mixes SDKs, full applications, research, and specialist tools. Source review supports selected patterns, not a universal agent ranking; screened siblings remain discovery leads with unverified operational maturity.
+
+Start with:
+
+- [pi](https://github.com/earendil-works/pi) — [individual report](../projects/ai-agents--pi.md).
+- [paseo](https://github.com/getpaseo/paseo) — [individual report](../projects/ai-agents--paseo.md).
+- [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) — [individual report](../projects/ai-agents--agent-orchestrator.md).
+- [mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) — [individual report](../projects/ai-agents--mini-swe-agent.md).
+- [mastra](https://github.com/mastra-ai/mastra) — [individual report](../projects/ai-agents--mastra.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [adk-go](https://github.com/google/adk-go) | [Report](../projects/ai-agents--adk-go.md) | screened | Inventory / README only; implementation not independently established. |
+| [adk-js](https://github.com/google/adk-js) | [Report](../projects/ai-agents--adk-js.md) | screened | Inventory / README only; implementation not independently established. |
+| [adk-python](https://github.com/google/adk-python) | [Report](../projects/ai-agents--adk-python.md) | screened | Inventory / README only; implementation not independently established. |
+| [agencycli](https://github.com/chenhg5/agencycli) | [Report](../projects/ai-agents--agencycli.md) | screened | Inventory / README only; implementation not independently established. |
+| [agent-framework.ms](https://github.com/microsoft/agent-framework) | [Report](../projects/ai-agents--agent-framework.ms.md) | screened | Inventory / README only; implementation not independently established. |
+| [agent-manager](https://github.com/YoanWai/agent-manager) | [Report](../projects/ai-agents--agent-manager.md) | screened | Inventory / README only; implementation not independently established. |
+| [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) | [Report](../projects/ai-agents--agent-orchestrator.md) | source-reviewed | An explicit adapter registry scales installed-agent support without pretending every executable follows one protocol. |
+| [agent-zero](https://github.com/agent0ai/agent-zero) | [Report](../projects/ai-agents--agent-zero.md) | screened | Inventory / README only; implementation not independently established. |
+| [agentbehavior](https://github.com/braintrustdata/agentbehavior) | [Report](../projects/ai-agents--agentbehavior.md) | screened | Inventory / README only; implementation not independently established. |
+| [agentfield](https://github.com/Agent-Field/agentfield) | [Report](../projects/ai-agents--agentfield.md) | screened | Inventory / README only; implementation not independently established. |
+| [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter) | [Report](../projects/ai-agents--agentic-bug-hunter.md) | screened | Inventory / README only; implementation not independently established. |
+| [agentic-stack](https://github.com/codejunkie99/agentic-stack) | [Report](../projects/ai-agents--agentic-stack.md) | screened | Inventory / README only; implementation not independently established. |
+| [agents-cli](https://github.com/google/agents-cli) | [Report](../projects/ai-agents--agents-cli.md) | screened | Inventory / README only; implementation not independently established. |
+| [agents-md.ijfw](https://github.com/FerroxLabs/agents-md) | [Report](../projects/ai-agents--agents-md.ijfw.md) | screened | Inventory / README only; implementation not independently established. |
+| [agents-starter.cloudflare](https://github.com/cloudflare/agents-starter) | [Report](../projects/ai-agents--agents-starter.cloudflare.md) | screened | Inventory / README only; implementation not independently established. |
+| [agents.cloudflare](https://github.com/cloudflare/agents) | [Report](../projects/ai-agents--agents.cloudflare.md) | source-reviewed | Lifecycle-owned queues and alarms provide a cloud deployment pattern with explicit platform coupling. |
+| [agentspan](https://github.com/agentspan-ai/agentspan) | [Report](../projects/ai-agents--agentspan.md) | screened | Inventory / README only; implementation not independently established. |
+| [ai-sdk.vercel](https://github.com/vercel/ai) | [Report](../projects/ai-agents--ai-sdk.vercel.md) | screened | Inventory / README only; implementation not independently established. |
+| [ai.cloudflare](https://github.com/cloudflare/ai) | [Report](../projects/ai-agents--ai.cloudflare.md) | screened | Inventory / README only; implementation not independently established. |
+| [ai.tanstack](https://github.com/tanstack/ai) | [Report](../projects/ai-agents--ai.tanstack.md) | source-reviewed | Code Mode demonstrates lazy tool documentation with typed bindings; discovery is not an authorization boundary. |
+| [aider](https://github.com/Aider-AI/aider) | [Report](../projects/ai-agents--aider.md) | screened | Inventory / README only; implementation not independently established. |
+| [antigravity-cli](https://github.com/google-antigravity/antigravity-cli) | [Report](../projects/ai-agents--antigravity-cli.md) | screened | Inventory / README only; implementation not independently established. |
+| [antigravity-sdk-python](https://github.com/google-antigravity/antigravity-sdk-python) | [Report](../projects/ai-agents--antigravity-sdk-python.md) | screened | Inventory / README only; implementation not independently established. |
+| [anton](https://github.com/mindsdb/anton) | [Report](../projects/ai-agents--anton.md) | screened | Inventory / README only; implementation not independently established. |
+| [anything-llm](https://github.com/Mintplex-Labs/anything-llm) | [Report](../projects/ai-agents--anything-llm.md) | screened | Inventory / README only; implementation not independently established. |
+| [apodex-frontier-agent](https://github.com/ApodexAI/FrontierAgent) | [Report](../projects/ai-agents--apodex-frontier-agent.md) | screened | Inventory / README only; implementation not independently established. |
+| [astron-agent](https://github.com/iflytek/astron-agent) | [Report](../projects/ai-agents--astron-agent.md) | screened | Inventory / README only; implementation not independently established. |
+| [atlas-os](https://github.com/lucapohl-angel/ATLAS_OS) | [Report](../projects/ai-agents--atlas-os.md) | screened | Inventory / README only; implementation not independently established. |
+| [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | [Report](../projects/ai-agents--awesome-llm-apps.md) | screened | Inventory / README only; implementation not independently established. |
+| [ax](https://github.com/google/ax) | [Report](../projects/ai-agents--ax.md) | screened | Inventory / README only; implementation not independently established. |
+| [bb](https://github.com/get-bb/bb) | [Report](../projects/ai-agents--bb.md) | screened | Inventory / README only; implementation not independently established. |
+| [berd](https://github.com/block/berd) | [Report](../projects/ai-agents--berd.md) | screened | Inventory / README only; implementation not independently established. |
+| [bleeding-ade](https://github.com/BleedingDev/bleeding-ade) | [Report](../projects/ai-agents--bleeding-ade.md) | screened | Inventory / README only; implementation not independently established. |
+| [buzz](https://github.com/block/buzz) | [Report](../projects/ai-agents--buzz.md) | screened | Inventory / README only; implementation not independently established. |
+| [camelai](https://github.com/qaml-ai/camelAI) | [Report](../projects/ai-agents--camelai.md) | screened | Inventory / README only; implementation not independently established. |
+| [cezar](https://github.com/open-mercato/cezar) | [Report](../projects/ai-agents--cezar.md) | screened | Inventory / README only; implementation not independently established. |
+| [claude.analysis.best.cn](https://github.com/claude-code-best/claude-code) | [Report](../projects/ai-agents--claude.analysis.best.cn.md) | screened | Inventory / README only; implementation not independently established. |
+| [claude.dive-into-claude-code](https://github.com/VILA-Lab/Dive-into-Claude-Code) | [Report](../projects/ai-agents--claude.dive-into-claude-code.md) | screened | Inventory / README only; implementation not independently established. |
+| [claude.fork.claurst](https://github.com/Kuberwastaken/claurst) | [Report](../projects/ai-agents--claude.fork.claurst.md) | screened | Inventory / README only; implementation not independently established. |
+| [claude.fork.openclaude](https://github.com/Gitlawb/openclaude) | [Report](../projects/ai-agents--claude.fork.openclaude.md) | screened | Inventory / README only; implementation not independently established. |
+| [claude.ruflo](https://github.com/ruvnet/ruflo) | [Report](../projects/ai-agents--claude.ruflo.md) | screened | Inventory / README only; implementation not independently established. |
+| [cline](https://github.com/cline/cline) | [Report](../projects/ai-agents--cline.md) | screened | Inventory / README only; implementation not independently established. |
+| [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai) | [Report](../projects/ai-agents--closedloop-ai.md) | screened | Inventory / README only; implementation not independently established. |
+| [cloudflare-os](https://github.com/cloudflare/cloudflare-os) | [Report](../projects/ai-agents--cloudflare-os.md) | screened | Inventory / README only; implementation not independently established. |
+| [codeaf](https://github.com/Agent-Field/CodeAF) | [Report](../projects/ai-agents--codeaf.md) | screened | Inventory / README only; implementation not independently established. |
+| [collab-public](https://github.com/collabs-inc/collab-public) | [Report](../projects/ai-agents--collab-public.md) | screened | Inventory / README only; implementation not independently established. |
+| [comfyui](https://github.com/comfy-org/comfyui) | [Report](../projects/ai-agents--comfyui.md) | source-reviewed | A dependency-aware media execution graph is a better generation abstraction than one synchronous chat tool. |
+| [continue](https://github.com/continuedev/continue) | [Report](../projects/ai-agents--continue.md) | screened | Inventory / README only; implementation not independently established. |
+| [copilot-engine-sdk](https://github.com/github/copilot-engine-sdk) | [Report](../projects/ai-agents--copilot-engine-sdk.md) | screened | Inventory / README only; implementation not independently established. |
+| [copilot-sdk](https://github.com/github/copilot-sdk) | [Report](../projects/ai-agents--copilot-sdk.md) | source-reviewed | A first-party runtime SDK offers session and authentication operations that are stronger than terminal-output scraping. |
+| [data-formulator](https://github.com/microsoft/data-formulator) | [Report](../projects/ai-agents--data-formulator.md) | screened | Inventory / README only; implementation not independently established. |
+| [deepcode](https://github.com/HKUDS/DeepCode) | [Report](../projects/ai-agents--deepcode.md) | screened | Inventory / README only; implementation not independently established. |
+| [deepscientist](https://github.com/ResearAI/DeepScientist) | [Report](../projects/ai-agents--deepscientist.md) | screened | Inventory / README only; implementation not independently established. |
+| [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | [Report](../projects/ai-agents--deepseek-harness.md) | screened | Inventory / README only; implementation not independently established. |
+| [deepseek-tui](https://github.com/Hmbown/DeepSeek-TUI) | [Report](../projects/ai-agents--deepseek-tui.md) | screened | Inventory / README only; implementation not independently established. |
+| [deeptutor](https://github.com/HKUDS/DeepTutor) | [Report](../projects/ai-agents--deeptutor.md) | screened | Inventory / README only; implementation not independently established. |
+| [deer-flow](https://github.com/bytedance/deer-flow) | [Report](../projects/ai-agents--deer-flow.md) | screened | Inventory / README only; implementation not independently established. |
+| [dify](https://github.com/langgenius/dify) | [Report](../projects/ai-agents--dify.md) | screened | Inventory / README only; implementation not independently established. |
+| [dspy](https://github.com/stanfordnlp/dspy) | [Report](../projects/ai-agents--dspy.md) | source-reviewed | GEPA provides trace-feedback-driven candidate evolution and a clear warning about training/validation reuse. |
+| [electric](https://github.com/electric-sql/electric) | [Report](../projects/ai-agents--electric.md) | screened | Inventory / README only; implementation not independently established. |
+| [enzo](https://github.com/theguysudo/ENZO) | [Report](../projects/ai-agents--enzo.md) | screened | Inventory / README only; implementation not independently established. |
+| [eve](https://github.com/vercel/eve) | [Report](../projects/ai-agents--eve.md) | screened | Inventory / README only; implementation not independently established. |
+| [ferrox-factory](https://github.com/FerroxLabs/ferrox-factory) | [Report](../projects/ai-agents--ferrox-factory.md) | screened | Inventory / README only; implementation not independently established. |
+| [feynman](https://github.com/getcompanion-ai/feynman) | [Report](../projects/ai-agents--feynman.md) | screened | Inventory / README only; implementation not independently established. |
+| [flue](https://github.com/withastro/flue) | [Report](../projects/ai-agents--flue.md) | screened | Inventory / README only; implementation not independently established. |
+| [foreman](https://github.com/thruwire/foreman) | [Report](../projects/ai-agents--foreman.md) | screened | Inventory / README only; implementation not independently established. |
+| [forgecode](https://github.com/antinomyhq/forgecode) | [Report](../projects/ai-agents--forgecode.md) | screened | Inventory / README only; implementation not independently established. |
+| [frankclaw](https://github.com/akitaonrails/FrankClaw) | [Report](../projects/ai-agents--frankclaw.md) | screened | Inventory / README only; implementation not independently established. |
+| [fuigo](https://github.com/FerroxLabs/fuigo) | [Report](../projects/ai-agents--fuigo.md) | screened | Inventory / README only; implementation not independently established. |
+| [future-agi](https://github.com/future-agi/future-agi) | [Report](../projects/ai-agents--future-agi.md) | screened | Inventory / README only; implementation not independently established. |
+| [fx](https://github.com/vercel-labs/fx) | [Report](../projects/ai-agents--fx.md) | screened | Inventory / README only; implementation not independently established. |
+| [gascity](https://github.com/gastownhall/gascity) | [Report](../projects/ai-agents--gascity.md) | source-reviewed | A progress-aware respawn circuit breaker addresses a failure mode of persistent agent supervisors. |
+| [gastown](https://github.com/gastownhall/gastown) | [Report](../projects/ai-agents--gastown.md) | screened | Inventory / README only; implementation not independently established. |
+| [gatebench](https://github.com/FerroxLabs/gatebench) | [Report](../projects/ai-agents--gatebench.md) | screened | Inventory / README only; implementation not independently established. |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | [Report](../projects/ai-agents--gemini-cli.md) | screened | Inventory / README only; implementation not independently established. |
+| [genaiscript](https://github.com/microsoft/genaiscript) | [Report](../projects/ai-agents--genaiscript.md) | screened | Inventory / README only; implementation not independently established. |
+| [gitagent](https://github.com/open-gitagent/gitagent) | [Report](../projects/ai-agents--gitagent.md) | screened | Inventory / README only; implementation not independently established. |
+| [glados](https://github.com/dnhkng/GLaDOS) | [Report](../projects/ai-agents--glados.md) | screened | Inventory / README only; implementation not independently established. |
+| [gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) | [Report](../projects/ai-agents--gods-eye-view.md) | screened | Inventory / README only; implementation not independently established. |
+| [grok-build](https://github.com/xai-org/grok-build) | [Report](../projects/ai-agents--grok-build.md) | screened | Inventory / README only; implementation not independently established. |
+| [gstack.claude.garrytan](https://github.com/garrytan/gstack) | [Report](../projects/ai-agents--gstack.claude.garrytan.md) | screened | Inventory / README only; implementation not independently established. |
+| [halo](https://github.com/context-labs/halo) | [Report](../projects/ai-agents--halo.md) | screened | Inventory / README only; implementation not independently established. |
+| [harnessrouter](https://github.com/HarnessRouter/harnessrouter) | [Report](../projects/ai-agents--harnessrouter.md) | screened | Inventory / README only; implementation not independently established. |
+| [hello-agents](https://github.com/datawhalechina/hello-agents) | [Report](../projects/ai-agents--hello-agents.md) | screened | Inventory / README only; implementation not independently established. |
+| [hermes-agent](https://github.com/NousResearch/hermes-agent) | [Report](../projects/ai-agents--hermes-agent.md) | source-reviewed | Memory-provider orchestration and passive platform discovery offer practical boundaries for an extensible personal harness. |
+| [hermes-desktop](https://github.com/fathah/hermes-desktop) | [Report](../projects/ai-agents--hermes-desktop.md) | screened | Inventory / README only; implementation not independently established. |
+| [holaos](https://github.com/holaboss-ai/holaOS) | [Report](../projects/ai-agents--holaos.md) | screened | Inventory / README only; implementation not independently established. |
+| [hydra](https://github.com/timtimeshock/Hydra) | [Report](../projects/ai-agents--hydra.md) | screened | Inventory / README only; implementation not independently established. |
+| [ijfw](https://github.com/FerroxLabs/ijfw) | [Report](../projects/ai-agents--ijfw.md) | screened | Inventory / README only; implementation not independently established. |
+| [jan](https://github.com/janhq/jan) | [Report](../projects/ai-agents--jan.md) | screened | Inventory / README only; implementation not independently established. |
+| [khoj](https://github.com/khoj-ai/khoj) | [Report](../projects/ai-agents--khoj.md) | screened | Inventory / README only; implementation not independently established. |
+| [kilocode](https://github.com/Kilo-Org/kilocode) | [Report](../projects/ai-agents--kilocode.md) | screened | Inventory / README only; implementation not independently established. |
+| [kimi-code](https://github.com/MoonshotAI/kimi-code) | [Report](../projects/ai-agents--kimi-code.md) | screened | Inventory / README only; implementation not independently established. |
+| [langsmith-sdk](https://github.com/langchain-ai/langsmith-sdk) | [Report](../projects/ai-agents--langsmith-sdk.md) | screened | Inventory / README only; implementation not independently established. |
+| [learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) | [Report](../projects/ai-agents--learn-harness-engineering.md) | screened | Inventory / README only; implementation not independently established. |
+| [loopx](https://github.com/huangruiteng/loopx) | [Report](../projects/ai-agents--loopx.md) | screened | Inventory / README only; implementation not independently established. |
+| [mastra](https://github.com/mastra-ai/mastra) | [Report](../projects/ai-agents--mastra.md) | source-reviewed | Durable-agent configuration exposes the difference between replayable streams and recoverable execution. |
+| [mateclaw](https://github.com/mateaix/mateclaw) | [Report](../projects/ai-agents--mateclaw.md) | screened | Inventory / README only; implementation not independently established. |
+| [meetily](https://github.com/Zackriya-Solutions/meetily) | [Report](../projects/ai-agents--meetily.md) | screened | Inventory / README only; implementation not independently established. |
+| [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent) | [Report](../projects/ai-agents--mercury-agent.md) | screened | Inventory / README only; implementation not independently established. |
+| [metaharness](https://github.com/SuperagenticAI/metaharness) | [Report](../projects/ai-agents--metaharness.md) | source-reviewed | Candidate workspaces and deterministic scope gates provide a concrete architecture for evolving the harness itself. |
+| [metaharness.tools](https://github.com/nrwl/metaharness.tools) | [Report](../projects/ai-agents--metaharness.tools.md) | screened | Inventory / README only; implementation not independently established. |
+| [mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) | [Report](../projects/ai-agents--mini-swe-agent.md) | source-reviewed | A small, auditable single-agent loop provides the baseline that a larger team harness must beat. |
+| [mission-control](https://github.com/builderz-labs/mission-control) | [Report](../projects/ai-agents--mission-control.md) | screened | Inventory / README only; implementation not independently established. |
+| [mlflow](https://github.com/mlflow/mlflow) | [Report](../projects/ai-agents--mlflow.md) | screened | Inventory / README only; implementation not independently established. |
+| [mmx-cli](https://github.com/MiniMax-AI/cli) | [Report](../projects/ai-agents--mmx-cli.md) | screened | Inventory / README only; implementation not independently established. |
+| [multica](https://github.com/multica-ai/multica) | [Report](../projects/ai-agents--multica.md) | source-reviewed | Token-checked channel leases are a useful cloud replication pattern, with limits beyond the lease store. |
+| [nanobot](https://github.com/HKUDS/nanobot) | [Report](../projects/ai-agents--nanobot.md) | source-reviewed | A typed channel-management contract distinguishes configuration, activation and runtime instances. |
+| [nanochat](https://github.com/karpathy/nanochat) | [Report](../projects/ai-agents--nanochat.md) | screened | Inventory / README only; implementation not independently established. |
+| [nvidia-nemo-labs-molt](https://github.com/NVIDIA-NeMo/labs-molt) | [Report](../projects/ai-agents--nvidia-nemo-labs-molt.md) | screened | Inventory / README only; implementation not independently established. |
+| [nvidia-oo-agents](https://github.com/nvidia-nemo/labs-OO-Agents) | [Report](../projects/ai-agents--nvidia-oo-agents.md) | screened | Inventory / README only; implementation not independently established. |
+| [odysseus](https://github.com/pewdiepie-archdaemon/odysseus) | [Report](../projects/ai-agents--odysseus.md) | screened | Inventory / README only; implementation not independently established. |
+| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | [Report](../projects/ai-agents--oh-my-openagent.md) | screened | Inventory / README only; implementation not independently established. |
+| [oh-my-pi](https://github.com/can1357/oh-my-pi) | [Report](../projects/ai-agents--oh-my-pi.md) | screened | Inventory / README only; implementation not independently established. |
+| [omnigent](https://github.com/omnigent-ai/omnigent) | [Report](../projects/ai-agents--omnigent.md) | screened | Inventory / README only; implementation not independently established. |
+| [onyx](https://github.com/onyx-dot-app/onyx) | [Report](../projects/ai-agents--onyx.md) | screened | Inventory / README only; implementation not independently established. |
+| [open-agents](https://github.com/vercel-labs/open-agents) | [Report](../projects/ai-agents--open-agents.md) | screened | Inventory / README only; implementation not independently established. |
+| [open-code-review.alibaba](https://github.com/alibaba/open-code-review) | [Report](../projects/ai-agents--open-code-review.alibaba.md) | screened | Inventory / README only; implementation not independently established. |
+| [open-code-review.spencermarx](https://github.com/spencermarx/open-code-review) | [Report](../projects/ai-agents--open-code-review.spencermarx.md) | screened | Inventory / README only; implementation not independently established. |
+| [open-codesign](https://github.com/OpenCoworkAI/open-codesign) | [Report](../projects/ai-agents--open-codesign.md) | screened | Inventory / README only; implementation not independently established. |
+| [open-multi-agent](https://github.com/JackChen-me/open-multi-agent) | [Report](../projects/ai-agents--open-multi-agent.md) | screened | Inventory / README only; implementation not independently established. |
+| [openai-agents-js](https://github.com/openai/openai-agents-js) | [Report](../projects/ai-agents--openai-agents-js.md) | screened | Inventory / README only; implementation not independently established. |
+| [openai-agents-python](https://github.com/openai/openai-agents-python) | [Report](../projects/ai-agents--openai-agents-python.md) | screened | Inventory / README only; implementation not independently established. |
+| [openbot](https://github.com/CopilotKit/openbot) | [Report](../projects/ai-agents--openbot.md) | screened | Inventory / README only; implementation not independently established. |
+| [openclaude](https://github.com/Gitlawb/openclaude) | [Report](../projects/ai-agents--openclaude.md) | screened | Inventory / README only; implementation not independently established. |
+| [opencode](https://github.com/anomalyco/opencode) | [Report](../projects/ai-agents--opencode.md) | source-reviewed | The reviewed session-runner boundary is a compact contract for continuing from recorded history. |
+| [openfang](https://github.com/RightNow-AI/openfang) | [Report](../projects/ai-agents--openfang.md) | screened | Inventory / README only; implementation not independently established. |
+| [openfugu](https://github.com/trotsky1997/OpenFugu) | [Report](../projects/ai-agents--openfugu.md) | screened | Inventory / README only; implementation not independently established. |
+| [openharness](https://github.com/HKUDS/OpenHarness) | [Report](../projects/ai-agents--openharness.md) | screened | Inventory / README only; implementation not independently established. |
+| [openhuman](https://github.com/tinyhumansai/openhuman) | [Report](../projects/ai-agents--openhuman.md) | screened | Inventory / README only; implementation not independently established. |
+| [openinterpreter](https://github.com/openinterpreter/openinterpreter) | [Report](../projects/ai-agents--openinterpreter.md) | screened | Inventory / README only; implementation not independently established. |
+| [openmausbot](https://github.com/milind-soni/OpenMausBot) | [Report](../projects/ai-agents--openmausbot.md) | screened | Inventory / README only; implementation not independently established. |
+| [openrouter-spawn](https://github.com/OpenRouterTeam/spawn) | [Report](../projects/ai-agents--openrouter-spawn.md) | screened | Inventory / README only; implementation not independently established. |
+| [opensage-adk](https://github.com/opensage-agent/opensage-adk) | [Report](../projects/ai-agents--opensage-adk.md) | screened | Inventory / README only; implementation not independently established. |
+| [orchard](https://github.com/microsoft/Orchard) | [Report](../projects/ai-agents--orchard.md) | screened | Inventory / README only; implementation not independently established. |
+| [paperclip](https://github.com/paperclipai/paperclip) | [Report](../projects/ai-agents--paperclip.md) | source-reviewed | Persistent scoped budgets are a stronger control-plane primitive than a prompt asking agents to spend less. |
+| [paseo](https://github.com/getpaseo/paseo) | [Report](../projects/ai-agents--paseo.md) | source-reviewed | Strong reference for a daemon that adapts heterogeneous installed agents and serves several client surfaces. |
+| [pentagi](https://github.com/vxcontrol/pentagi) | [Report](../projects/ai-agents--pentagi.md) | screened | Inventory / README only; implementation not independently established. |
+| [pi](https://github.com/earendil-works/pi) | [Report](../projects/ai-agents--pi.md) | source-reviewed | A composable event-driven agent loop and a concrete Jev model-routing example; useful as an embedded runtime candidate. |
+| [pi-desktop](https://github.com/vastsa/PI-Desktop) | [Report](../projects/ai-agents--pi-desktop.md) | screened | Inventory / README only; implementation not independently established. |
+| [picoclaw](https://github.com/sipeed/picoclaw) | [Report](../projects/ai-agents--picoclaw.md) | screened | Inventory / README only; implementation not independently established. |
+| [pipali](https://github.com/khoj-ai/pipali) | [Report](../projects/ai-agents--pipali.md) | screened | Inventory / README only; implementation not independently established. |
+| [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent) | [Report](../projects/ai-agents--prime-agent.md) | screened | Inventory / README only; implementation not independently established. |
+| [prometheus](https://github.com/EuniAI/Prometheus) | [Report](../projects/ai-agents--prometheus.md) | screened | Inventory / README only; implementation not independently established. |
+| [promptise-foundry](https://github.com/promptise-com/foundry) | [Report](../projects/ai-agents--promptise-foundry.md) | screened | Inventory / README only; implementation not independently established. |
+| [qm](https://github.com/yc-software/qm) | [Report](../projects/ai-agents--qm.md) | screened | Inventory / README only; implementation not independently established. |
+| [reframe](https://github.com/resultkitchen/reframe) | [Report](../projects/ai-agents--reframe.md) | screened | Inventory / README only; implementation not independently established. |
+| [rlm-code](https://github.com/SuperagenticAI/rlm-code) | [Report](../projects/ai-agents--rlm-code.md) | screened | Inventory / README only; implementation not independently established. |
+| [rsclaw](https://github.com/rsclaw-ai/rsclaw) | [Report](../projects/ai-agents--rsclaw.md) | screened | Inventory / README only; implementation not independently established. |
+| [sage](https://github.com/ZHangZHengEric/Sage) | [Report](../projects/ai-agents--sage.md) | screened | Inventory / README only; implementation not independently established. |
+| [skillsync-txcript](https://github.com/skillsynchq/txcript) | [Report](../projects/ai-agents--skillsync-txcript.md) | screened | Inventory / README only; implementation not independently established. |
+| [symphony](https://github.com/openai/symphony) | [Report](../projects/ai-agents--symphony.md) | source-reviewed | Issue-backed orchestration illustrates a compact supervisor state model for coding workers. |
+| [terminal-bench](https://github.com/harbor-framework/terminal-bench) | [Report](../projects/ai-agents--terminal-bench.md) | screened | Inventory / README only; implementation not independently established. |
+| [terminus-kira](https://github.com/krafton-ai/kira) | [Report](../projects/ai-agents--terminus-kira.md) | screened | Inventory / README only; implementation not independently established. |
+| [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | [Report](../projects/ai-agents--typesafe-sdk-js.md) | source-reviewed | Typed decision API client with guarded construction and retry policy; keep it behind a replaceable DecisionProvider. |
+| [voltagent](https://github.com/VoltAgent/voltagent) | [Report](../projects/ai-agents--voltagent.md) | screened | Inventory / README only; implementation not independently established. |
+| [warp](https://github.com/warpdotdev/warp) | [Report](../projects/ai-agents--warp.md) | screened | Inventory / README only; implementation not independently established. |
+| [wayland](https://github.com/FerroxLabs/wayland) | [Report](../projects/ai-agents--wayland.md) | screened | Inventory / README only; implementation not independently established. |
+| [wayland-core](https://github.com/FerroxLabs/wayland-core) | [Report](../projects/ai-agents--wayland-core.md) | screened | Inventory / README only; implementation not independently established. |
+| [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer) | [Report](../projects/ai-agents--world-model-optimizer.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2602-py-gpt](https://github.com/szczyglis-dev/py-gpt) | [Report](../projects/ai-agents--xx-2602-py-gpt.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2603-autoresearch.karpathy](https://github.com/karpathy/autoresearch) | [Report](../projects/ai-agents--xx-2603-autoresearch.karpathy.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2603-pepagi](https://github.com/Promptlab37/PEPAGI) | [Report](../projects/ai-agents--xx-2603-pepagi.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2603-sudocode](https://github.com/sudocode-ai/sudocode) | [Report](../projects/ai-agents--xx-2603-sudocode.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2603-superturtle](https://github.com/Rigos0/superturtle) | [Report](../projects/ai-agents--xx-2603-superturtle.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-claude.fork.claw-code](https://github.com/ultraworkers/claw-code-parity) | [Report](../projects/ai-agents--xx-2604-claude.fork.claw-code.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-claude.source.2-1-88.2026-03-31](https://github.com/chatgptprojects/claude-code) | [Report](../projects/ai-agents--xx-2604-claude.source.2-1-88.2026-03-31.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-frosty-snowflake](https://github.com/Gyrus-Dev/frosty) | [Report](../projects/ai-agents--xx-2604-frosty-snowflake.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2604-spawn-agent](https://github.com/millionco/spawn-agent) | [Report](../projects/ai-agents--xx-2604-spawn-agent.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2609-kimi-cli](https://github.com/MoonshotAI/kimi-cli) | [Report](../projects/ai-agents--xx-2609-kimi-cli.md) | screened | Inventory / README only; implementation not independently established. |
+| [xyops](https://github.com/pixlcore/xyops) | [Report](../projects/ai-agents--xyops.md) | screened | Inventory / README only; implementation not independently established. |
+| [zcode](https://github.com/zai-org/ZCode) | [Report](../projects/ai-agents--zcode.md) | screened | Inventory / README only; implementation not independently established. |
+| [zero](https://github.com/Gitlawb/zero) | [Report](../projects/ai-agents--zero.md) | screened | Inventory / README only; implementation not independently established. |
+| [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) | [Report](../projects/ai-agents--zeroclaw.md) | screened | Inventory / README only; implementation not independently established. |
+| [zz-2607-agentmark](https://github.com/iki/zz-2607-agentmark) | [Report](../projects/ai-agents--zz-2607-agentmark.md) | screened | Inventory / README only; implementation not independently established. |

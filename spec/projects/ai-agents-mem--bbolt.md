@@ -1,0 +1,25 @@
+# bbolt
+
+Source: [bbolt](https://github.com/etcd-io/bbolt) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6`; commit timestamp `2026-09-15T04:40:46+01:00`; 158 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/etcd-io/bbolt/blob/4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6/README.md)):
+
+> store. The purpose of this fork is to provide the Go community with an active maintenance and development target for Bolt; the goal is improved reliability
+
+Build/package evidence: [go.mod](https://github.com/etcd-io/bbolt/blob/4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6/go.mod)
+
+License evidence: [LICENSE](https://github.com/etcd-io/bbolt/blob/4dc08f7187c709d355a8bcf334fcbcf7d7cfedf6/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

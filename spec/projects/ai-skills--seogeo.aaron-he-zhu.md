@@ -1,0 +1,25 @@
+# seogeo.aaron-he-zhu
+
+Source: [seogeo.aaron-he-zhu](https://github.com/aaron-he-zhu/seo-geo-claude-skills) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `3a1578a63cdde8037ee16d32a3ea9f808eae6bd0`; commit timestamp `2026-09-04T04:50:53Z`; 22 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/3a1578a63cdde8037ee16d32a3ea9f808eae6bd0/README.md)):
+
+> This is now a signpost repo — the skills live in aaron-marketing-skills. The 16 SEO/GEO skills listed below are actively developed there, as one of 7 disciplines in a 120-skill bundle sharing one contract, eight benchmark-driven gates, and keyless data connectors. This repo's former standalone 20-skill line is preserved, unchanged, at tag `v9.9.12` and receives no updates — already-installed copies keep working; new installs come from the bundle.
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/3a1578a63cdde8037ee16d32a3ea9f808eae6bd0/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

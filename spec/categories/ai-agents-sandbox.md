@@ -1,0 +1,36 @@
+# ai-agents-sandbox
+
+[Analysis home](../README.md) · 11 projects catalogued; 4 focused source/content reviews.
+
+Screening entries provide identity and package evidence only. Source-reviewed entries explain the exact scope inspected; none is a runtime certification. See [methodology](../methodology.md).
+
+## Category assessment
+
+Execution lifecycle and filesystem, network, process, credential, and resource boundaries for agent work.
+
+Use execution classes rather than one sandbox flag. just-bash suits bounded interpreted transformations; sandbox-runtime supplies platform-specific host restrictions; OpenSandbox provides a self-hosted worker control plane; E2B offers a hosted execution adapter. Advertise verified capabilities per worker and reroute when a requested restriction is unsupported.
+
+Interpreter host hooks remain trusted, container strength depends on deployment, and SDK code does not prove hosted backend isolation. No penetration testing or platform enforcement test was run; screened alternatives have no established maturity advantage.
+
+Start with:
+
+- [just-bash](https://github.com/vercel-labs/just-bash) — [individual report](../projects/ai-agents-sandbox--just-bash.md).
+- [anthropic-sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) — [individual report](../projects/ai-agents-sandbox--anthropic-sandbox-runtime.md).
+- [opensandbox](https://github.com/alibaba/OpenSandbox) — [individual report](../projects/ai-agents-sandbox--opensandbox.md).
+- [e2b](https://github.com/e2b-dev/e2b) — [individual report](../projects/ai-agents-sandbox--e2b.md).
+
+## Project catalogue
+
+| Project source | Individual report | Depth | Harness relevance / finding |
+|---|---|---|---|
+| [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit) | [Report](../projects/ai-agents-sandbox--agent-governance-toolkit.md) | screened | Inventory / README only; implementation not independently established. |
+| [agentenv](https://github.com/kvcache-ai/AgentEnv) | [Report](../projects/ai-agents-sandbox--agentenv.md) | screened | Inventory / README only; implementation not independently established. |
+| [anthropic-sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) | [Report](../projects/ai-agents-sandbox--anthropic-sandbox-runtime.md) | source-reviewed | Cross-platform local policy reference, including a Windows helper; verify setup and fail-closed enforcement per host. |
+| [cloudflare-computer](https://github.com/cloudflare/computer) | [Report](../projects/ai-agents-sandbox--cloudflare-computer.md) | screened | Inventory / README only; implementation not independently established. |
+| [e2b](https://github.com/e2b-dev/e2b) | [Report](../projects/ai-agents-sandbox--e2b.md) | source-reviewed | Good hosted execution adapter reference; SDK behavior must not be confused with proof of backend isolation. |
+| [just-bash](https://github.com/vercel-labs/just-bash) | [Report](../projects/ai-agents-sandbox--just-bash.md) | source-reviewed | Fast controlled shell-like operations; trusted host hooks and Node runtime remain outside the protection boundary. |
+| [opensandbox](https://github.com/alibaba/OpenSandbox) | [Report](../projects/ai-agents-sandbox--opensandbox.md) | source-reviewed | Self-hosted sandbox control plane candidate with runtime-specific container and network handling. |
+| [sandbox](https://github.com/agent-infra/sandbox) | [Report](../projects/ai-agents-sandbox--sandbox.md) | screened | Inventory / README only; implementation not independently established. |
+| [tank-os](https://github.com/LobsterTrap/tank-os) | [Report](../projects/ai-agents-sandbox--tank-os.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2504-e2b-sdk](https://github.com/e2b-dev/sdk) | [Report](../projects/ai-agents-sandbox--xx-2504-e2b-sdk.md) | screened | Inventory / README only; implementation not independently established. |
+| [xx-2603-iii-sandbox](https://github.com/iii-hq/sandbox) | [Report](../projects/ai-agents-sandbox--xx-2603-iii-sandbox.md) | screened | Inventory / README only; implementation not independently established. |

@@ -1,0 +1,25 @@
+# mcp-sdk-typescript
+
+Source: [mcp-sdk-typescript](https://github.com/modelcontextprotocol/typescript-sdk) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `8aabbdcef6e016978a3132045281dfbd51c69792`; commit timestamp `2026-10-02T18:43:19Z`; 1,141 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/modelcontextprotocol/typescript-sdk/blob/8aabbdcef6e016978a3132045281dfbd51c69792/README.md)):
+
+> This is the `main` branch — v2 of the SDK** (`@modelcontextprotocol/server`, `@modelcontextprotocol/client`), implementing the 2026-07-28 MCP spec. Have feedback? Please open a v2 issue** — it is the most useful thing you can do for the SDK right now. The v2 documentation starts with a ten-minute server tutorial.
+
+Build/package evidence: [common/eslint-config/package.json](https://github.com/modelcontextprotocol/typescript-sdk/blob/8aabbdcef6e016978a3132045281dfbd51c69792/common/eslint-config/package.json); [common/tsconfig/package.json](https://github.com/modelcontextprotocol/typescript-sdk/blob/8aabbdcef6e016978a3132045281dfbd51c69792/common/tsconfig/package.json); [common/vitest-config/package.json](https://github.com/modelcontextprotocol/typescript-sdk/blob/8aabbdcef6e016978a3132045281dfbd51c69792/common/vitest-config/package.json); [examples/bearer-auth-web/package.json](https://github.com/modelcontextprotocol/typescript-sdk/blob/8aabbdcef6e016978a3132045281dfbd51c69792/examples/bearer-auth-web/package.json); [examples/bearer-auth/package.json](https://github.com/modelcontextprotocol/typescript-sdk/blob/8aabbdcef6e016978a3132045281dfbd51c69792/examples/bearer-auth/package.json)
+
+License evidence: [LICENSE](https://github.com/modelcontextprotocol/typescript-sdk/blob/8aabbdcef6e016978a3132045281dfbd51c69792/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

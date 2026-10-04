@@ -1,0 +1,25 @@
+# xx-2603-mirofish-offline
+
+Source: [xx-2603-mirofish-offline](https://github.com/nikmcfly/MiroFish-Offline) · Category: [ai-agents-swarm](../categories/ai-agents-swarm.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `313fe642853ff9fff05e3ecae2e439886c2d29f4`; commit timestamp `2026-03-24T23:52:36+05:00`; 102 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/nikmcfly/MiroFish-Offline/blob/313fe642853ff9fff05e3ecae2e439886c2d29f4/README.md)):
+
+> Fully local fork of MiroFish — no cloud APIs required. English UI. A multi-agent swarm intelligence engine that simulates public opinion, market sentiment, and social dynamics. Entirely on your hardware.
+
+Build/package evidence: [backend/pyproject.toml](https://github.com/nikmcfly/MiroFish-Offline/blob/313fe642853ff9fff05e3ecae2e439886c2d29f4/backend/pyproject.toml); [backend/requirements.txt](https://github.com/nikmcfly/MiroFish-Offline/blob/313fe642853ff9fff05e3ecae2e439886c2d29f4/backend/requirements.txt); [frontend/package.json](https://github.com/nikmcfly/MiroFish-Offline/blob/313fe642853ff9fff05e3ecae2e439886c2d29f4/frontend/package.json); [package.json](https://github.com/nikmcfly/MiroFish-Offline/blob/313fe642853ff9fff05e3ecae2e439886c2d29f4/package.json)
+
+License evidence: [LICENSE](https://github.com/nikmcfly/MiroFish-Offline/blob/313fe642853ff9fff05e3ecae2e439886c2d29f4/LICENSE) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-swarm**. Its category places it in the candidate set for agents, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

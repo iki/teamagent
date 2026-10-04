@@ -1,0 +1,25 @@
+# opencontext
+
+Source: [opencontext](https://github.com/0xranx/OpenContext) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `0649e7134346f6f5038a9b29cc5c824ae6a54f3f`; commit timestamp `2026-06-16T09:43:11+08:00`; 242 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/0xranx/OpenContext/blob/0649e7134346f6f5038a9b29cc5c824ae6a54f3f/README.md)):
+
+> Bring your own coding agent.  OpenContext reuses your existing CLI (Codex/Claude/OpenCode) and adds a GUI + built-in Skills/tools — no extra agent subscription. When you use an AI assistant to build things, **context gets lost** (across days, repos, chats). You end up re-explaining background, repeating decisions, and sometimes the assistant continues with the wrong assumptions. Most tools stop at storage and don't plug into the coding agent you already use.
+
+Build/package evidence: [crates/opencontext-core/Cargo.toml](https://github.com/0xranx/OpenContext/blob/0649e7134346f6f5038a9b29cc5c824ae6a54f3f/crates/opencontext-core/Cargo.toml); [crates/opencontext-node/Cargo.toml](https://github.com/0xranx/OpenContext/blob/0649e7134346f6f5038a9b29cc5c824ae6a54f3f/crates/opencontext-node/Cargo.toml); [crates/opencontext-node/package.json](https://github.com/0xranx/OpenContext/blob/0649e7134346f6f5038a9b29cc5c824ae6a54f3f/crates/opencontext-node/package.json); [package.json](https://github.com/0xranx/OpenContext/blob/0649e7134346f6f5038a9b29cc5c824ae6a54f3f/package.json); [src-ios/package.json](https://github.com/0xranx/OpenContext/blob/0649e7134346f6f5038a9b29cc5c824ae6a54f3f/src-ios/package.json)
+
+License evidence: [LICENSE](https://github.com/0xranx/OpenContext/blob/0649e7134346f6f5038a9b29cc5c824ae6a54f3f/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

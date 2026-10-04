@@ -1,0 +1,25 @@
+# stagehand
+
+Source: [stagehand](https://github.com/browserbase/stagehand) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `50f3ab81659365ab0fcb960205f41aa88bbfd028`; commit timestamp `2026-10-02T16:09:52-07:00`; 1,607 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/README.md)):
+
+> Sign in once, keep the session, and pull structured data out the other side. The Playwright-style methods you and your agents already know:  goto ,  click ,  locator ,  screenshot .
+
+Build/package evidence: [package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/package.json); [packages/cli/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/cli/package.json); [packages/docs/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/docs/package.json); [packages/evals/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/evals/package.json); [packages/examples/package.json](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/packages/examples/package.json)
+
+License evidence: [LICENSE](https://github.com/browserbase/stagehand/blob/50f3ab81659365ab0fcb960205f41aa88bbfd028/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

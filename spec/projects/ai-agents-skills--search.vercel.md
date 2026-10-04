@@ -1,0 +1,26 @@
+# Vercel Skills CLI
+
+Source: [vercel-labs/skills](https://github.com/vercel-labs/skills) · Reviewed revision: `18f96ea131dab3b0fcc9b27cf7c6f6cbb6174680` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [agents](../agents.md) · [evolution](../evolution.md).
+
+## Evidence inspected
+
+- [`src/agents.ts` lines 155–185](https://github.com/vercel-labs/skills/blob/18f96ea131dab3b0fcc9b27cf7c6f6cbb6174680/src/agents.ts#L155-L185)
+- [`src/skill-lock.ts` lines 1–59](https://github.com/vercel-labs/skills/blob/18f96ea131dab3b0fcc9b27cf7c6f6cbb6174680/src/skill-lock.ts#L1-L59)
+
+## Observed architecture and behavior
+
+The agent registry supplies per-agent project/global skill directories and installation detectors. The inspected Claude Code and Cline detectors test whether configuration directories exist. This is practical discovery evidence, but it does not establish executable availability, authentication, model access, or a successful structured invocation. The lock entry records provider, original source URL, optional ref and subpath, whole-folder hash, timestamps, and well-known discovery fields. Tracking the entire folder is materially better than hashing only SKILL.md because referenced scripts can change behavior.
+
+## Implications and tradeoffs for Teamagent
+
+Use this registry as an adapter seed and the lock format as an interoperability input. Teamagent still needs separate detected, executable, authenticated, and capability-tested states. Preserve the user's installation rather than replacing it. Import a pinned snapshot into a content-addressed store, then create a project-scoped activation view for selected skills. Treat source discovery and update detection as package-management functions; neither establishes quality or grants permission. A same-name skill from another publisher needs an independent identity. The local source's directory heuristics also mean stale configuration can produce false-positive installation detection.
+
+## Adoption decision
+
+Adopt through a thin optional installer adapter, with explicit version pinning and an internal provenance record. Prefer its existing ecosystem reach over rebuilding every directory convention. Add compatibility probes and rollback around activation. Do not automatically install every search result or activate every installed skill. Evaluate source changes, dependencies, scripts, and trigger behavior before promoting an update.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.

@@ -1,0 +1,30 @@
+# FreeToken: resource-aware local MoE serving
+
+Source: [freetoken](https://github.com/FlashML-org/FreeToken) · Category: `ai-model-run`
+
+Review depth: **source-reviewed**. Snapshot `d3512b43affe981465e03ee28cbd88f49c39b9aa`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+FreeToken advertises heterogeneous local MoE serving, expert caching, and context-cache reuse. The inspected memory policy is deliberately pure arithmetic over measured quantities. It computes a net budget after fixed weights/cache, reserves KV pages, fills expert slots within bounds, adjusts overlap feasibility, and rejects plans that exceed the budget before device allocation.
+
+This yields a useful engineering lesson: memory admission should be explicit and independently testable. The same policy is intended for startup sizing and runtime rebuilds, avoiding inconsistent equations across those paths. However, the policy file alone does not prove the allocator, kernels, and serving scheduler honor every invariant under concurrent load.
+
+## Harness adoption
+
+Evaluate as an optional local inference endpoint for hardware with a compatible backend. Feed actual free-memory measurements and required context into admission control. Record predicted and observed memory use, model load time, cold/warm prefill, and response latency. Reserve capacity before starting a task whose long context cannot fit.
+
+Separate engine KV or recurrent-state caching from the knowledge base. Engine caches speed repeated inference and may be evicted or invalidated by weight/configuration changes; durable memory needs provenance, access control, retrieval, and semantic updates independent of a particular GPU process.
+
+## Limitations and decision
+
+Prototype under workload measurements. Hardware support, quantization correctness, advertised interactive speed, and context-edit cache benefits were not reproduced. A fast warm-cache demo does not establish performance for many simultaneous agents with divergent contexts. Use conservative resource headroom, pin runtime and weight versions, and preserve cancellation/deadline propagation. Compare with [Colibri](ai-model-run--colibri.md) and other installed local servers using the same task traces instead of choosing by maximum parameter-count claims.
+
+## Evidence read
+
+- [Pure expert/KV memory budgeting](https://github.com/FlashML-org/FreeToken/blob/d3512b43affe981465e03ee28cbd88f49c39b9aa/python/freetoken/engine/cache_budget.py#L1-L128)
+- [Engine scope and advertised caching](https://github.com/FlashML-org/FreeToken/blob/d3512b43affe981465e03ee28cbd88f49c39b9aa/README.md#L15-L26)
+
+## Related directions
+
+[Models](../models.md) · [Decisions](../decisions.md) · [Memory](../memory.md)

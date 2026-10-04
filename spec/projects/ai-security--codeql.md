@@ -1,0 +1,29 @@
+# CodeQL: source-level dataflow evidence
+
+Source: [codeql](https://github.com/github/codeql) · Category: `ai-security`
+
+Review depth: **source-reviewed**. Snapshot `f7617abe602d4763cd08c6a57b6a6bc347e7e325`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The inspected Python SQL-injection query imports a language security dataflow library, asks whether a flow path connects a source and sink, and emits a path-problem result. Its metadata identifies a query ID, severity, precision label, and CWE category. This is structurally different from asking an LLM whether a file looks dangerous: the result is grounded in a modeled flow through an extracted code database.
+
+Only a representative query was read; this report does not claim full coverage of CodeQL languages, extractors, libraries, or licensing conditions. Precision labels in query metadata describe upstream classification, not measured precision on the user's repositories.
+
+## Harness adoption
+
+Integrate CodeQL as an optional source-analysis job on supported projects. Preserve database/extractor version, query-pack revision, build configuration, source commit, query identity, path evidence, and suppression decisions. Let the agent explain and propose a repair, then rerun the relevant query and functional checks against the change.
+
+Use results to evaluate coding agents: compare introduced/resolved findings alongside task success, tests, and review quality. Track baseline findings separately so an agent is not penalized for unrelated inherited debt, while ensuring baseline suppression cannot hide new paths.
+
+## Limitations and decision
+
+Adopt where supported language extraction and distribution terms fit the deployment. Query findings are evidence of modeled behaviors, not proof that every reported path is exploitable or that an unreported application is secure. Incomplete builds, unsupported frameworks, dynamic behavior, and missing models can reduce coverage. Keep it separate from dependency scans, secret scans, skill checks, and runtime enforcement. Use [OSV Scanner](ai-security--osv-scanner.md) and [Trivy](ai-security--trivy.md) for complementary supply-chain and artifact views, with one normalized finding ledger across tools.
+
+## Evidence read
+
+- [Python SQL-injection path query](https://github.com/github/codeql/blob/f7617abe602d4763cd08c6a57b6a6bc347e7e325/python/ql/src/Security/CWE-089/SqlInjection.ql#L1-L21)
+
+## Related directions
+
+[Security](../security.md) · [Agents](../agents.md) · [Evolution](../evolution.md)

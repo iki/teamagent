@@ -1,0 +1,25 @@
+# open-codesign
+
+Source: [open-codesign](https://github.com/OpenCoworkAI/open-codesign) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5bc24f04b6074a4189b603dcd6046983525b4618`; commit timestamp `2026-09-30T17:38:23+08:00`; 979 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/OpenCoworkAI/open-codesign/blob/5bc24f04b6074a4189b603dcd6046983525b4618/README.md)):
+
+> Turn prompts into polished artifacts — locally, openly, and with whichever model you already pay for. Website · Quickstart · What's new · Changelog · Discussions · Docs · Contributing · Security
+
+Build/package evidence: [apps/desktop/package.json](https://github.com/OpenCoworkAI/open-codesign/blob/5bc24f04b6074a4189b603dcd6046983525b4618/apps/desktop/package.json); [package.json](https://github.com/OpenCoworkAI/open-codesign/blob/5bc24f04b6074a4189b603dcd6046983525b4618/package.json); [packages/artifacts/package.json](https://github.com/OpenCoworkAI/open-codesign/blob/5bc24f04b6074a4189b603dcd6046983525b4618/packages/artifacts/package.json); [packages/core/package.json](https://github.com/OpenCoworkAI/open-codesign/blob/5bc24f04b6074a4189b603dcd6046983525b4618/packages/core/package.json); [packages/exporters/package.json](https://github.com/OpenCoworkAI/open-codesign/blob/5bc24f04b6074a4189b603dcd6046983525b4618/packages/exporters/package.json)
+
+License evidence: [LICENSE](https://github.com/OpenCoworkAI/open-codesign/blob/5bc24f04b6074a4189b603dcd6046983525b4618/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

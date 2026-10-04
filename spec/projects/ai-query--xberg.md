@@ -1,0 +1,25 @@
+# xberg
+
+Source: [xberg](https://github.com/xberg-io/xberg) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `536311f2f9eff39c3e8834b3a90ca8df715d33ba`; commit timestamp `2026-10-03T12:40:17+02:00`; 8,796 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/xberg-io/xberg/blob/536311f2f9eff39c3e8834b3a90ca8df715d33ba/README.md)):
+
+> The fast, precise document-intelligence engine — for every language. Point Xberg at anything — a PDF, a scanned image, a spreadsheet, an audio file, a URL, a whole archive, or a source tree — and get back clean text, tables, metadata, and structured data. One engine handles format detection, reading, OCR, and extraction, so you never stitch a pipeline together from a dozen libraries.
+
+Build/package evidence: [Cargo.toml](https://github.com/xberg-io/xberg/blob/536311f2f9eff39c3e8834b3a90ca8df715d33ba/Cargo.toml); [cli-proxy/npm/package.json](https://github.com/xberg-io/xberg/blob/536311f2f9eff39c3e8834b3a90ca8df715d33ba/cli-proxy/npm/package.json); [cli-proxy/pypi/pyproject.toml](https://github.com/xberg-io/xberg/blob/536311f2f9eff39c3e8834b3a90ca8df715d33ba/cli-proxy/pypi/pyproject.toml); [crates/xberg-candle-ocr/Cargo.toml](https://github.com/xberg-io/xberg/blob/536311f2f9eff39c3e8834b3a90ca8df715d33ba/crates/xberg-candle-ocr/Cargo.toml); [crates/xberg-cli/Cargo.toml](https://github.com/xberg-io/xberg/blob/536311f2f9eff39c3e8834b3a90ca8df715d33ba/crates/xberg-cli/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/xberg-io/xberg/blob/536311f2f9eff39c3e8834b3a90ca8df715d33ba/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

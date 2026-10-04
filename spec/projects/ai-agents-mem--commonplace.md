@@ -1,0 +1,25 @@
+# commonplace
+
+Source: [commonplace](https://github.com/zby/commonplace) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `b0b16933418997017eb0044375fe0a1424d52336`; commit timestamp `2026-10-03T13:04:43+02:00`; 3,275 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/zby/commonplace/blob/b0b16933418997017eb0044375fe0a1424d52336/README.md)):
+
+> Commonplace is a **living doctrine for agent-operated knowledge systems, developed and tested by running one**. It has two goals. The practical one is an **LLM wiki**, in the sense Andrej Karpathy sketched: a persistent, linked Markdown layer in which agents, directed by people, turn a person's or project's work into retained, connected notes. The theoretical one is a new learning paradigm, the **theory builder**: a system that states theories, acts on them, criticizes them, and keeps what criticism shows for the next round, following Karl Popp
+
+Build/package evidence: [kb/reports/retained/agentic-analysis-reliability-20260927/trial-bundle/pyproject.toml](https://github.com/zby/commonplace/blob/b0b16933418997017eb0044375fe0a1424d52336/kb/reports/retained/agentic-analysis-reliability-20260927/trial-bundle/pyproject.toml); [kb/work/framework-delivery/probe-package/pyproject.toml](https://github.com/zby/commonplace/blob/b0b16933418997017eb0044375fe0a1424d52336/kb/work/framework-delivery/probe-package/pyproject.toml); [pyproject.toml](https://github.com/zby/commonplace/blob/b0b16933418997017eb0044375fe0a1424d52336/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/zby/commonplace/blob/b0b16933418997017eb0044375fe0a1424d52336/LICENSE); [LICENSE-CODE](https://github.com/zby/commonplace/blob/b0b16933418997017eb0044375fe0a1424d52336/LICENSE-CODE) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

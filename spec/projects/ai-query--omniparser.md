@@ -1,0 +1,25 @@
+# omniparser
+
+Source: [omniparser](https://github.com/microsoft/OmniParser) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `354021201345a96178360b28733573e27269f2de`; commit timestamp `2026-07-19T18:09:31-07:00`; 78 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/microsoft/OmniParser/blob/354021201345a96178360b28733573e27269f2de/README.md)):
+
+> 📢 [Project Page] [V2 Blog Post] [Models V2] [Models V1.5] [HuggingFace Space Demo] OmniParser** is a comprehensive method for parsing user interface screenshots into structured and easy-to-understand elements, which significantly enhances the ability of GPT-4V to generate actions that can be accurately grounded in the corresponding regions of the interface.
+
+Build/package evidence: [omnitool/omnibox/vm/win11setup/setupscripts/server/requirements.txt](https://github.com/microsoft/OmniParser/blob/354021201345a96178360b28733573e27269f2de/omnitool/omnibox/vm/win11setup/setupscripts/server/requirements.txt); [requirements.txt](https://github.com/microsoft/OmniParser/blob/354021201345a96178360b28733573e27269f2de/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/microsoft/OmniParser/blob/354021201345a96178360b28733573e27269f2de/LICENSE) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -1,0 +1,31 @@
+# comfyui
+
+Source: [comfyui](https://github.com/comfy-org/comfyui) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `e9027f2b30f37bb3052714eb08fcf479542f4fc0` (2026-10-03T01:20:37-07:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+A dependency-aware media execution graph is a better generation abstraction than one synchronous chat tool.
+
+## Source evidence inspected
+
+- [comfy_execution/graph.py, lines 115–205](https://github.com/comfy-org/comfyui/blob/e9027f2b30f37bb3052714eb08fcf479542f4fc0/comfy_execution/graph.py#L115-L205)
+
+## Observed design and algorithms
+
+TopologicalSort tracks pending nodes, dependency counts and reverse blocking edges. add_node traverses linked inputs, treating lazy dependencies separately and consulting cache status before adding upstream work. External blocks can suspend a node and release it with a result, waking the event loop. Ready nodes are precisely those with zero blockers.
+
+## Harness decision
+
+Shortlist ComfyUI as an optional local media worker behind a GenerationAdapter. Submit pinned workflow graphs, reserve GPU resources, stream progress and store artifacts outside model context. Keep workflow/node/model versions and input hashes with every job.
+
+## Limits and tradeoffs
+
+The reviewed base is_cached method returns false; effective caching depends on subclasses/execution configuration, so this source does not prove universal cache reuse. Custom nodes are executable dependencies. GPU memory, output quality and reproducibility were not benchmarked.
+
+## Validation before adoption
+
+Test cancellation and worker loss between graph nodes, malformed graphs, missing models, duplicate submission and artifact recovery. Reproducibility records must include model weights, node packages, seed and runtime configuration. No tests, live inference, installation, or production operation were performed for this review. License indicator: GPL; inspect version; verify the exact files and dependencies before reuse.
+
+Related directions: [import-generation](../import-generation.md) · [agents](../agents.md).

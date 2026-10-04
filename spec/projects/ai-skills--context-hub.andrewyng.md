@@ -1,0 +1,26 @@
+# Context Hub
+
+Source: [andrewyng/context-hub](https://github.com/andrewyng/context-hub) · Reviewed revision: `67dcbeb2eb42c808549f08397920ad58be7c2206` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [memory](../memory.md) · [import-generation](../import-generation.md).
+
+## Evidence inspected
+
+- [`cli/src/lib/bm25.js` lines 1–115](https://github.com/andrewyng/context-hub/blob/67dcbeb2eb42c808549f08397920ad58be7c2206/cli/src/lib/bm25.js#L1-L115)
+- [`cli/src/lib/annotations.js` lines 1–57](https://github.com/andrewyng/context-hub/blob/67dcbeb2eb42c808549f08397920ad58be7c2206/cli/src/lib/annotations.js#L1-L57)
+
+## Observed architecture and behavior
+
+Context Hub implements local metadata search with BM25 and separate field weights for identifiers, names, tags, and descriptions. It includes identifier-specific tokenization to match joined and split package names. The annotation store writes a note and updated timestamp per entry ID, providing a simple persistent correction layer. This is a practical model for agent-oriented reference retrieval with local notes, rather than a complete episodic memory or multimodal knowledge graph.
+
+## Implications and tradeoffs for Teamagent
+
+Teamagent can use lexical retrieval as a strong first stage for exact libraries, symbols, and API names, then combine it with dense retrieval where conceptual matching helps. Keep annotations distinct from upstream content so updates do not silently erase learned caveats. The inspected annotation function replaces a per-entry note, so a team deployment needs version history, authorship, concurrency handling, scope, and conflict retention. The tokenizer shown is primarily ASCII-oriented; multilingual queries require a measured alternative. A note should carry the version it applies to and the trace or source that supports it.
+
+## Adoption decision
+
+Adopt the versioned reference-catalog pattern and BM25 baseline before adding costly semantic infrastructure. Use Context Hub as an optional source connector or local reference backend after evaluating its API against required sources. Upgrade annotations into append-only assertions with supersession and provenance, while presenting a concise current view. Evaluate retrieval on real coding queries, ambiguous package names, changed APIs, and false matches across language ecosystems.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.

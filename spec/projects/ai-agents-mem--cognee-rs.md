@@ -1,0 +1,25 @@
+# cognee-rs
+
+Source: [cognee-rs](https://github.com/topoteretes/cognee-rs) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `f4da3ba5d31a010a9886309f98acebc68e1b7589`; commit timestamp `2026-10-01T02:26:05+03:00`; 1,380 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/README.md)):
+
+> On-device AI memory in Rust.** Turn raw text, files, and URLs into a persistent, queryable memory. Cognee-RS built to boot up fast (350ms) and do fast searches (260ms) and
+
+Build/package evidence: [Cargo.toml](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/Cargo.toml); [bindings/Cargo.toml](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/bindings/Cargo.toml); [capi/Cargo.toml](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/capi/Cargo.toml); [capi/cognee-capi/Cargo.toml](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/capi/cognee-capi/Cargo.toml); [crates/bindings-common/Cargo.toml](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/crates/bindings-common/Cargo.toml)
+
+License evidence: [LICENSE-APACHE](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/LICENSE-APACHE); [LICENSE-MIT](https://github.com/topoteretes/cognee-rs/blob/f4da3ba5d31a010a9886309f98acebc68e1b7589/LICENSE-MIT) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

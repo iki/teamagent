@@ -1,0 +1,319 @@
+# Models and provider access
+
+The harness should support any **compatible, authorized endpoint or installed agent through an adapter**. It cannot promise every model capability through one lowest-common-denominator API. Separate inference providers, agent runtimes, credentials, subscriptions, and execution environments. Select routes from measured task quality and explicit constraints; preserve native features where they matter.
+
+This analysis combines focused source review at pinned local snapshots with selected official documentation checked on 2026-10-04. No inference benchmark, paid API call, model download, or credential probe was performed. Performance and quality rankings below are adoption hypotheses, not measured winners.
+
+## Recommended boundaries
+
+| Component | Owns | Does not own |
+|---|---|---|
+| Model registry | Stable model identity, revision, capabilities, provider routes, discovered availability | User authentication secrets or automatic trust |
+| Credential broker | Scoped secret references, approved OAuth renewal, revocation, redacted health | Prompt content or task planning |
+| Inference adapter | Request/stream translation, cancellation, usage, typed provider errors | Durable task state or policy overrides |
+| Agent adapter | Native session lifecycle, tool events, resume/cancel, agent-specific skills | Authority beyond the granted task |
+| Gateway | Deployment balancing, rate limits, retries, accounting | Semantic memory and team coordination |
+| Decision service | Eligible route choice and escalation from measured outcomes | Granting permissions or changing entitlements |
+
+The gateway separation is supported by [Bifrost's provider queues and plugin architecture](projects/ai-agents-proxy--bifrost.md) ([GitHub](https://github.com/maximhq/bifrost)) and [LiteLLM's routing/reliability composition](projects/ai-agents-proxy--litellm.md) ([GitHub](https://github.com/BerriAI/litellm)). Agent registry design is illustrated by [OpenDesign's shipped versus local definitions](projects/ai-gen--open-design.md) ([GitHub](https://github.com/nexu-io/open-design)).
+
+## Connection modes and subscription use
+
+| Mode | Registration and verification | Recommended handling |
+|---|---|---|
+| Local inference server | Explicit endpoint, protocol, engine/model revision, hardware, health and capabilities | Prefer loopback/private transport; add authentication before remote access |
+| Provider API | Documented endpoint and user/org credential | Separate budgets, retention settings, quotas, and regional constraints |
+| Official subscription integration | Provider-approved OAuth/session route and applicable account entitlement | Show quota state and route limitations independently from API billing |
+| Installed coding agent | Safe executable discovery and versioned adapter contract | Retain native sessions; translate events without flattening all behavior into chat completion |
+| Compatibility proxy | Explicitly selected adapter, authentication mode, upstream contract | Optional; require route-specific support/entitlement checks |
+
+**OpenAI route note, checked 2026-10-04.** Sign in with ChatGPT supports eligible ChatGPT-plan OAuth usage, including Codex app-server over stdio with Responses inference. `model/list` may return a bundled catalog; only a successfully completed inference turn verifies access for that request. The app owns token renewal, process restart, and saved-thread resume. [Official app-server integration](https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server).
+
+The current preview requires `store:false` and `stream:true`. Image generation, audio/video input, upload/transcription APIs, hosted MCP, and file search are unsupported on this route. Local shell and MCP execution through supported function/custom tools are separate capabilities. [Official preview limitations](https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations). Recheck these constraints when implementing the adapter.
+
+[CLIProxyAPI](projects/ai-agents-proxy--cli-proxy-api.md) ([GitHub](https://github.com/router-for-me/CLIProxyAPI)) defaults its inspected Codex executor to a ChatGPT backend URL. That source observation is not evidence that the proxy is equivalent to the official route above. [OpenDesign's media readiness code](projects/ai-gen--open-design.md) ([GitHub](https://github.com/nexu-io/open-design)) also illustrates why agent OAuth readiness and media API readiness must remain separate.
+
+For other providers, store a link and verification date for the supported subscription/authentication method. Never infer that a monthly chat subscription includes general API use, or that the absence of a known connector makes such use universally prohibited. Treat availability as unknown until documented or explicitly configured.
+
+## Adapter contract
+
+```text
+ProviderRoute
+  id, adapter_version, provider, endpoint_ref, transport
+  credential_ref, auth_mode, entitlement_evidence, checked_at
+  model_id, model_revision, tokenizer_id, context_limit
+  capabilities: text / image_input / audio / video / tools / structured_output
+  streaming_semantics, cancellation_semantics, session_semantics
+  locality, region, data_policy, quota_state, observed_health
+
+InferenceAttempt
+  task_id, attempt_id, idempotency_key, route_id
+  input_artifact_refs, skill_variant_ids, context_manifest
+  deadline, input_budget, output_budget, monetary_budget
+  emitted_items, tool_call_ids, usage_actual_or_estimated
+  terminal_status, provider_request_id, error_class
+```
+
+Keep a provider-extension bag for native features with validation. Unsupported fields must produce an explicit error or an approved downgrade recorded in the trace. The protocol label “OpenAI-compatible” does not establish identical tool-call serialization, reasoning semantics, vision support, stop behavior, or token counts. Native reasoning state should remain opaque where appropriate and should not become shared memory by default.
+
+## Discovery and health
+
+1. Inventory explicit configurations and well-known executables without reading or copying credential files into logs.
+2. Inspect version/help only through safe bounded probes; distinguish “present” from “authenticated.”
+3. Query documented model/capability listings where allowed. Mark listings as advertised until a relevant capability has been exercised.
+4. Run consent-compatible, low-cost conformance checks in a test workspace: streaming text, JSON schema, tool calls, cancellation, resume, context overflow, and recoverable errors.
+5. Cache capability results by adapter/model/account configuration version and expire them. Disable unhealthy routes without deleting user configuration.
+
+The known-adapter plus user-profile design in [OpenDesign](projects/ai-gen--open-design.md) ([GitHub](https://github.com/nexu-io/open-design)) is preferable to treating every discovered binary as a fully supported agent. Unknown installed tools can remain generic process tools with restricted permissions until an adapter is installed.
+
+## Routing algorithm
+
+First apply hard constraints: permission, entitlement, input sensitivity, modality, tool protocol, context fit, locality, deadline, and budget. Then rank eligible routes using task-conditioned success estimates and observed latency/cost. Keep equivalent-deployment load balancing separate from choosing a different model family.
+
+```text
+eligible = routes satisfying all hard constraints
+for each route r:
+    value(r) = P(acceptable_result | task_features, r, skill_variant) * task_value
+               - expected_cost(r) - latency_penalty(r) - failure_recovery_cost(r)
+choose an eligible route with calibrated uncertainty handling
+execute; record outcome; escalate only when expected improvement exceeds added cost
+```
+
+This is a proposed decision policy, not a benchmarked algorithm from a listed repository. See [decisions](decisions.md) for JEV-like decision models, calibration, abstention, and value of information. Deterministic rules should enforce hard constraints; learned models may rank only within them.
+
+Use [LiteLLM](projects/ai-agents-proxy--litellm.md) ([GitHub](https://github.com/BerriAI/litellm)) or [Bifrost](projects/ai-agents-proxy--bifrost.md) ([GitHub](https://github.com/maximhq/bifrost)) for infrastructure policies after application-level selection. A retry after emitted output or tool execution requires an explicit recovery state. Preserve attempt lineage and tool idempotency keys; do not silently repeat side effects on another provider.
+
+## Local inference choices
+
+| Candidate | Useful source evidence | Adoption decision |
+|---|---|---|
+| [Colibri report](projects/ai-model-run--colibri.md) · [GitHub](https://github.com/JustVugg/colibri) | Expert-store backend registry and context/output budget logic; described finite-choice scoring | Research adapter; measure actual storage/RAM/VRAM performance and semantic fidelity |
+| [FreeToken report](projects/ai-model-run--freetoken.md) · [GitHub](https://github.com/FlashML-org/FreeToken) | Explicit MoE expert/KV memory partitioning with pre-allocation checks | Pilot on supported hardware; compare cold/warm and concurrent workloads |
+| [RTK report](projects/ai-agents-proxy--rtk.md) · [GitHub](https://github.com/rtk-ai/rtk) | Recoverable command-output compression and custom-filter trust | Optional context-cost optimization, independent of inference engine |
+| [OBLITERATUS report](projects/ai-model-edit--obliteratus.md) · [GitHub](https://github.com/elder-plinius/OBLITERATUS) | Experimental strategy registry and reversible model mutation convention | Outside the core harness; evaluate prompts/tools/skills before model intervention |
+
+Also support already-installed compatible servers through the generic adapter. The local corpus is not an exhaustive inventory of all inference engines, and advertised large-model support does not demonstrate interactive latency on this user's hardware. Schedule GPU and CPU capacity explicitly; avoid simultaneous media generation and inference overcommitting the same device. Engine KV caches accelerate inference but are not the [memory system](memory.md).
+
+## Acceptance criteria
+
+The first release should demonstrate one local server, one provider API, and one supported installed-agent/subscription route end to end. A route passes only when cancellation, resumability where promised, tool-call integrity, redacted tracing, context-limit handling, budget enforcement, and unavailable-capability errors behave correctly. Measure task success, edit/test correctness, time to first useful output, p50/p95 total latency, cost per accepted task, fallback rate, and data egress. Use fixed task sets plus held-out tasks, report uncertainty, and compare against a simple single-model baseline.
+
+Execution boundaries belong in [security](security.md); asynchronous media providers in [generation](generation.md); adapter and skill promotion in [evolution](evolution.md).
+
+<!-- coverage:start -->
+## Project coverage
+
+Every associated project has its own report. Source-reviewed associations reflect the inspected scope; screened associations derive from the input category and are not capability claims.
+
+| Source | Report | Depth |
+|---|---|---|
+| [adk-go](https://github.com/google/adk-go) | [Report](projects/ai-agents--adk-go.md) | screened |
+| [adk-js](https://github.com/google/adk-js) | [Report](projects/ai-agents--adk-js.md) | screened |
+| [adk-python](https://github.com/google/adk-python) | [Report](projects/ai-agents--adk-python.md) | screened |
+| [agencycli](https://github.com/chenhg5/agencycli) | [Report](projects/ai-agents--agencycli.md) | screened |
+| [agent-framework.ms](https://github.com/microsoft/agent-framework) | [Report](projects/ai-agents--agent-framework.ms.md) | screened |
+| [agent-manager](https://github.com/YoanWai/agent-manager) | [Report](projects/ai-agents--agent-manager.md) | screened |
+| [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) | [Report](projects/ai-agents--agent-orchestrator.md) | source-reviewed |
+| [agent-zero](https://github.com/agent0ai/agent-zero) | [Report](projects/ai-agents--agent-zero.md) | screened |
+| [agentbehavior](https://github.com/braintrustdata/agentbehavior) | [Report](projects/ai-agents--agentbehavior.md) | screened |
+| [agentfield](https://github.com/Agent-Field/agentfield) | [Report](projects/ai-agents--agentfield.md) | screened |
+| [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter) | [Report](projects/ai-agents--agentic-bug-hunter.md) | screened |
+| [agentic-stack](https://github.com/codejunkie99/agentic-stack) | [Report](projects/ai-agents--agentic-stack.md) | screened |
+| [agents-cli](https://github.com/google/agents-cli) | [Report](projects/ai-agents--agents-cli.md) | screened |
+| [agents-md.ijfw](https://github.com/FerroxLabs/agents-md) | [Report](projects/ai-agents--agents-md.ijfw.md) | screened |
+| [agents-starter.cloudflare](https://github.com/cloudflare/agents-starter) | [Report](projects/ai-agents--agents-starter.cloudflare.md) | screened |
+| [agentspan](https://github.com/agentspan-ai/agentspan) | [Report](projects/ai-agents--agentspan.md) | screened |
+| [ai-sdk.vercel](https://github.com/vercel/ai) | [Report](projects/ai-agents--ai-sdk.vercel.md) | screened |
+| [ai.cloudflare](https://github.com/cloudflare/ai) | [Report](projects/ai-agents--ai.cloudflare.md) | screened |
+| [aider](https://github.com/Aider-AI/aider) | [Report](projects/ai-agents--aider.md) | screened |
+| [antigravity-cli](https://github.com/google-antigravity/antigravity-cli) | [Report](projects/ai-agents--antigravity-cli.md) | screened |
+| [antigravity-sdk-python](https://github.com/google-antigravity/antigravity-sdk-python) | [Report](projects/ai-agents--antigravity-sdk-python.md) | screened |
+| [anton](https://github.com/mindsdb/anton) | [Report](projects/ai-agents--anton.md) | screened |
+| [anything-llm](https://github.com/Mintplex-Labs/anything-llm) | [Report](projects/ai-agents--anything-llm.md) | screened |
+| [apodex-frontier-agent](https://github.com/ApodexAI/FrontierAgent) | [Report](projects/ai-agents--apodex-frontier-agent.md) | screened |
+| [astron-agent](https://github.com/iflytek/astron-agent) | [Report](projects/ai-agents--astron-agent.md) | screened |
+| [atlas-os](https://github.com/lucapohl-angel/ATLAS_OS) | [Report](projects/ai-agents--atlas-os.md) | screened |
+| [awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | [Report](projects/ai-agents--awesome-llm-apps.md) | screened |
+| [ax](https://github.com/google/ax) | [Report](projects/ai-agents--ax.md) | screened |
+| [bb](https://github.com/get-bb/bb) | [Report](projects/ai-agents--bb.md) | screened |
+| [berd](https://github.com/block/berd) | [Report](projects/ai-agents--berd.md) | screened |
+| [bleeding-ade](https://github.com/BleedingDev/bleeding-ade) | [Report](projects/ai-agents--bleeding-ade.md) | screened |
+| [buzz](https://github.com/block/buzz) | [Report](projects/ai-agents--buzz.md) | screened |
+| [camelai](https://github.com/qaml-ai/camelAI) | [Report](projects/ai-agents--camelai.md) | screened |
+| [cezar](https://github.com/open-mercato/cezar) | [Report](projects/ai-agents--cezar.md) | screened |
+| [claude.analysis.best.cn](https://github.com/claude-code-best/claude-code) | [Report](projects/ai-agents--claude.analysis.best.cn.md) | screened |
+| [claude.dive-into-claude-code](https://github.com/VILA-Lab/Dive-into-Claude-Code) | [Report](projects/ai-agents--claude.dive-into-claude-code.md) | screened |
+| [claude.fork.claurst](https://github.com/Kuberwastaken/claurst) | [Report](projects/ai-agents--claude.fork.claurst.md) | screened |
+| [claude.fork.openclaude](https://github.com/Gitlawb/openclaude) | [Report](projects/ai-agents--claude.fork.openclaude.md) | screened |
+| [claude.ruflo](https://github.com/ruvnet/ruflo) | [Report](projects/ai-agents--claude.ruflo.md) | screened |
+| [cline](https://github.com/cline/cline) | [Report](projects/ai-agents--cline.md) | screened |
+| [closedloop-ai](https://github.com/closedloop-ai/closedloop-ai) | [Report](projects/ai-agents--closedloop-ai.md) | screened |
+| [cloudflare-os](https://github.com/cloudflare/cloudflare-os) | [Report](projects/ai-agents--cloudflare-os.md) | screened |
+| [codeaf](https://github.com/Agent-Field/CodeAF) | [Report](projects/ai-agents--codeaf.md) | screened |
+| [collab-public](https://github.com/collabs-inc/collab-public) | [Report](projects/ai-agents--collab-public.md) | screened |
+| [continue](https://github.com/continuedev/continue) | [Report](projects/ai-agents--continue.md) | screened |
+| [copilot-engine-sdk](https://github.com/github/copilot-engine-sdk) | [Report](projects/ai-agents--copilot-engine-sdk.md) | screened |
+| [copilot-sdk](https://github.com/github/copilot-sdk) | [Report](projects/ai-agents--copilot-sdk.md) | source-reviewed |
+| [data-formulator](https://github.com/microsoft/data-formulator) | [Report](projects/ai-agents--data-formulator.md) | screened |
+| [deepcode](https://github.com/HKUDS/DeepCode) | [Report](projects/ai-agents--deepcode.md) | screened |
+| [deepscientist](https://github.com/ResearAI/DeepScientist) | [Report](projects/ai-agents--deepscientist.md) | screened |
+| [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | [Report](projects/ai-agents--deepseek-harness.md) | screened |
+| [deepseek-tui](https://github.com/Hmbown/DeepSeek-TUI) | [Report](projects/ai-agents--deepseek-tui.md) | screened |
+| [deeptutor](https://github.com/HKUDS/DeepTutor) | [Report](projects/ai-agents--deeptutor.md) | screened |
+| [deer-flow](https://github.com/bytedance/deer-flow) | [Report](projects/ai-agents--deer-flow.md) | screened |
+| [dify](https://github.com/langgenius/dify) | [Report](projects/ai-agents--dify.md) | screened |
+| [dspy](https://github.com/stanfordnlp/dspy) | [Report](projects/ai-agents--dspy.md) | source-reviewed |
+| [electric](https://github.com/electric-sql/electric) | [Report](projects/ai-agents--electric.md) | screened |
+| [enzo](https://github.com/theguysudo/ENZO) | [Report](projects/ai-agents--enzo.md) | screened |
+| [eve](https://github.com/vercel/eve) | [Report](projects/ai-agents--eve.md) | screened |
+| [ferrox-factory](https://github.com/FerroxLabs/ferrox-factory) | [Report](projects/ai-agents--ferrox-factory.md) | screened |
+| [feynman](https://github.com/getcompanion-ai/feynman) | [Report](projects/ai-agents--feynman.md) | screened |
+| [flue](https://github.com/withastro/flue) | [Report](projects/ai-agents--flue.md) | screened |
+| [foreman](https://github.com/thruwire/foreman) | [Report](projects/ai-agents--foreman.md) | screened |
+| [forgecode](https://github.com/antinomyhq/forgecode) | [Report](projects/ai-agents--forgecode.md) | screened |
+| [frankclaw](https://github.com/akitaonrails/FrankClaw) | [Report](projects/ai-agents--frankclaw.md) | screened |
+| [fuigo](https://github.com/FerroxLabs/fuigo) | [Report](projects/ai-agents--fuigo.md) | screened |
+| [future-agi](https://github.com/future-agi/future-agi) | [Report](projects/ai-agents--future-agi.md) | screened |
+| [fx](https://github.com/vercel-labs/fx) | [Report](projects/ai-agents--fx.md) | screened |
+| [gastown](https://github.com/gastownhall/gastown) | [Report](projects/ai-agents--gastown.md) | screened |
+| [gatebench](https://github.com/FerroxLabs/gatebench) | [Report](projects/ai-agents--gatebench.md) | screened |
+| [gemini-cli](https://github.com/google-gemini/gemini-cli) | [Report](projects/ai-agents--gemini-cli.md) | screened |
+| [genaiscript](https://github.com/microsoft/genaiscript) | [Report](projects/ai-agents--genaiscript.md) | screened |
+| [gitagent](https://github.com/open-gitagent/gitagent) | [Report](projects/ai-agents--gitagent.md) | screened |
+| [glados](https://github.com/dnhkng/GLaDOS) | [Report](projects/ai-agents--glados.md) | screened |
+| [gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) | [Report](projects/ai-agents--gods-eye-view.md) | screened |
+| [grok-build](https://github.com/xai-org/grok-build) | [Report](projects/ai-agents--grok-build.md) | screened |
+| [gstack.claude.garrytan](https://github.com/garrytan/gstack) | [Report](projects/ai-agents--gstack.claude.garrytan.md) | screened |
+| [halo](https://github.com/context-labs/halo) | [Report](projects/ai-agents--halo.md) | screened |
+| [harnessrouter](https://github.com/HarnessRouter/harnessrouter) | [Report](projects/ai-agents--harnessrouter.md) | screened |
+| [hello-agents](https://github.com/datawhalechina/hello-agents) | [Report](projects/ai-agents--hello-agents.md) | screened |
+| [hermes-desktop](https://github.com/fathah/hermes-desktop) | [Report](projects/ai-agents--hermes-desktop.md) | screened |
+| [holaos](https://github.com/holaboss-ai/holaOS) | [Report](projects/ai-agents--holaos.md) | screened |
+| [hydra](https://github.com/timtimeshock/Hydra) | [Report](projects/ai-agents--hydra.md) | screened |
+| [ijfw](https://github.com/FerroxLabs/ijfw) | [Report](projects/ai-agents--ijfw.md) | screened |
+| [jan](https://github.com/janhq/jan) | [Report](projects/ai-agents--jan.md) | screened |
+| [khoj](https://github.com/khoj-ai/khoj) | [Report](projects/ai-agents--khoj.md) | screened |
+| [kilocode](https://github.com/Kilo-Org/kilocode) | [Report](projects/ai-agents--kilocode.md) | screened |
+| [kimi-code](https://github.com/MoonshotAI/kimi-code) | [Report](projects/ai-agents--kimi-code.md) | screened |
+| [langsmith-sdk](https://github.com/langchain-ai/langsmith-sdk) | [Report](projects/ai-agents--langsmith-sdk.md) | screened |
+| [learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) | [Report](projects/ai-agents--learn-harness-engineering.md) | screened |
+| [loopx](https://github.com/huangruiteng/loopx) | [Report](projects/ai-agents--loopx.md) | screened |
+| [mateclaw](https://github.com/mateaix/mateclaw) | [Report](projects/ai-agents--mateclaw.md) | screened |
+| [meetily](https://github.com/Zackriya-Solutions/meetily) | [Report](projects/ai-agents--meetily.md) | screened |
+| [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent) | [Report](projects/ai-agents--mercury-agent.md) | screened |
+| [metaharness.tools](https://github.com/nrwl/metaharness.tools) | [Report](projects/ai-agents--metaharness.tools.md) | screened |
+| [mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) | [Report](projects/ai-agents--mini-swe-agent.md) | source-reviewed |
+| [mission-control](https://github.com/builderz-labs/mission-control) | [Report](projects/ai-agents--mission-control.md) | screened |
+| [mlflow](https://github.com/mlflow/mlflow) | [Report](projects/ai-agents--mlflow.md) | screened |
+| [mmx-cli](https://github.com/MiniMax-AI/cli) | [Report](projects/ai-agents--mmx-cli.md) | screened |
+| [nanochat](https://github.com/karpathy/nanochat) | [Report](projects/ai-agents--nanochat.md) | screened |
+| [nvidia-nemo-labs-molt](https://github.com/NVIDIA-NeMo/labs-molt) | [Report](projects/ai-agents--nvidia-nemo-labs-molt.md) | screened |
+| [nvidia-oo-agents](https://github.com/nvidia-nemo/labs-OO-Agents) | [Report](projects/ai-agents--nvidia-oo-agents.md) | screened |
+| [odysseus](https://github.com/pewdiepie-archdaemon/odysseus) | [Report](projects/ai-agents--odysseus.md) | screened |
+| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | [Report](projects/ai-agents--oh-my-openagent.md) | screened |
+| [oh-my-pi](https://github.com/can1357/oh-my-pi) | [Report](projects/ai-agents--oh-my-pi.md) | screened |
+| [omnigent](https://github.com/omnigent-ai/omnigent) | [Report](projects/ai-agents--omnigent.md) | screened |
+| [onyx](https://github.com/onyx-dot-app/onyx) | [Report](projects/ai-agents--onyx.md) | screened |
+| [open-agents](https://github.com/vercel-labs/open-agents) | [Report](projects/ai-agents--open-agents.md) | screened |
+| [open-code-review.alibaba](https://github.com/alibaba/open-code-review) | [Report](projects/ai-agents--open-code-review.alibaba.md) | screened |
+| [open-code-review.spencermarx](https://github.com/spencermarx/open-code-review) | [Report](projects/ai-agents--open-code-review.spencermarx.md) | screened |
+| [open-codesign](https://github.com/OpenCoworkAI/open-codesign) | [Report](projects/ai-agents--open-codesign.md) | screened |
+| [open-multi-agent](https://github.com/JackChen-me/open-multi-agent) | [Report](projects/ai-agents--open-multi-agent.md) | screened |
+| [openai-agents-js](https://github.com/openai/openai-agents-js) | [Report](projects/ai-agents--openai-agents-js.md) | screened |
+| [openai-agents-python](https://github.com/openai/openai-agents-python) | [Report](projects/ai-agents--openai-agents-python.md) | screened |
+| [openbot](https://github.com/CopilotKit/openbot) | [Report](projects/ai-agents--openbot.md) | screened |
+| [openclaude](https://github.com/Gitlawb/openclaude) | [Report](projects/ai-agents--openclaude.md) | screened |
+| [opencode](https://github.com/anomalyco/opencode) | [Report](projects/ai-agents--opencode.md) | source-reviewed |
+| [openfang](https://github.com/RightNow-AI/openfang) | [Report](projects/ai-agents--openfang.md) | screened |
+| [openfugu](https://github.com/trotsky1997/OpenFugu) | [Report](projects/ai-agents--openfugu.md) | screened |
+| [openharness](https://github.com/HKUDS/OpenHarness) | [Report](projects/ai-agents--openharness.md) | screened |
+| [openhuman](https://github.com/tinyhumansai/openhuman) | [Report](projects/ai-agents--openhuman.md) | screened |
+| [openinterpreter](https://github.com/openinterpreter/openinterpreter) | [Report](projects/ai-agents--openinterpreter.md) | screened |
+| [openmausbot](https://github.com/milind-soni/OpenMausBot) | [Report](projects/ai-agents--openmausbot.md) | screened |
+| [openrouter-spawn](https://github.com/OpenRouterTeam/spawn) | [Report](projects/ai-agents--openrouter-spawn.md) | screened |
+| [opensage-adk](https://github.com/opensage-agent/opensage-adk) | [Report](projects/ai-agents--opensage-adk.md) | screened |
+| [orchard](https://github.com/microsoft/Orchard) | [Report](projects/ai-agents--orchard.md) | screened |
+| [paperclip](https://github.com/paperclipai/paperclip) | [Report](projects/ai-agents--paperclip.md) | source-reviewed |
+| [paseo](https://github.com/getpaseo/paseo) | [Report](projects/ai-agents--paseo.md) | source-reviewed |
+| [pentagi](https://github.com/vxcontrol/pentagi) | [Report](projects/ai-agents--pentagi.md) | screened |
+| [pi](https://github.com/earendil-works/pi) | [Report](projects/ai-agents--pi.md) | source-reviewed |
+| [pi-desktop](https://github.com/vastsa/PI-Desktop) | [Report](projects/ai-agents--pi-desktop.md) | screened |
+| [picoclaw](https://github.com/sipeed/picoclaw) | [Report](projects/ai-agents--picoclaw.md) | screened |
+| [pipali](https://github.com/khoj-ai/pipali) | [Report](projects/ai-agents--pipali.md) | screened |
+| [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent) | [Report](projects/ai-agents--prime-agent.md) | screened |
+| [prometheus](https://github.com/EuniAI/Prometheus) | [Report](projects/ai-agents--prometheus.md) | screened |
+| [promptise-foundry](https://github.com/promptise-com/foundry) | [Report](projects/ai-agents--promptise-foundry.md) | screened |
+| [qm](https://github.com/yc-software/qm) | [Report](projects/ai-agents--qm.md) | screened |
+| [reframe](https://github.com/resultkitchen/reframe) | [Report](projects/ai-agents--reframe.md) | screened |
+| [rlm-code](https://github.com/SuperagenticAI/rlm-code) | [Report](projects/ai-agents--rlm-code.md) | screened |
+| [rsclaw](https://github.com/rsclaw-ai/rsclaw) | [Report](projects/ai-agents--rsclaw.md) | screened |
+| [sage](https://github.com/ZHangZHengEric/Sage) | [Report](projects/ai-agents--sage.md) | screened |
+| [skillsync-txcript](https://github.com/skillsynchq/txcript) | [Report](projects/ai-agents--skillsync-txcript.md) | screened |
+| [terminal-bench](https://github.com/harbor-framework/terminal-bench) | [Report](projects/ai-agents--terminal-bench.md) | screened |
+| [terminus-kira](https://github.com/krafton-ai/kira) | [Report](projects/ai-agents--terminus-kira.md) | screened |
+| [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | [Report](projects/ai-agents--typesafe-sdk-js.md) | source-reviewed |
+| [voltagent](https://github.com/VoltAgent/voltagent) | [Report](projects/ai-agents--voltagent.md) | screened |
+| [warp](https://github.com/warpdotdev/warp) | [Report](projects/ai-agents--warp.md) | screened |
+| [wayland](https://github.com/FerroxLabs/wayland) | [Report](projects/ai-agents--wayland.md) | screened |
+| [wayland-core](https://github.com/FerroxLabs/wayland-core) | [Report](projects/ai-agents--wayland-core.md) | screened |
+| [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer) | [Report](projects/ai-agents--world-model-optimizer.md) | screened |
+| [xx-2602-py-gpt](https://github.com/szczyglis-dev/py-gpt) | [Report](projects/ai-agents--xx-2602-py-gpt.md) | screened |
+| [xx-2603-autoresearch.karpathy](https://github.com/karpathy/autoresearch) | [Report](projects/ai-agents--xx-2603-autoresearch.karpathy.md) | screened |
+| [xx-2603-pepagi](https://github.com/Promptlab37/PEPAGI) | [Report](projects/ai-agents--xx-2603-pepagi.md) | screened |
+| [xx-2603-sudocode](https://github.com/sudocode-ai/sudocode) | [Report](projects/ai-agents--xx-2603-sudocode.md) | screened |
+| [xx-2603-superturtle](https://github.com/Rigos0/superturtle) | [Report](projects/ai-agents--xx-2603-superturtle.md) | screened |
+| [xx-2604-claude.fork.claw-code](https://github.com/ultraworkers/claw-code-parity) | [Report](projects/ai-agents--xx-2604-claude.fork.claw-code.md) | screened |
+| [xx-2604-claude.source.2-1-88.2026-03-31](https://github.com/chatgptprojects/claude-code) | [Report](projects/ai-agents--xx-2604-claude.source.2-1-88.2026-03-31.md) | screened |
+| [xx-2604-frosty-snowflake](https://github.com/Gyrus-Dev/frosty) | [Report](projects/ai-agents--xx-2604-frosty-snowflake.md) | screened |
+| [xx-2604-spawn-agent](https://github.com/millionco/spawn-agent) | [Report](projects/ai-agents--xx-2604-spawn-agent.md) | screened |
+| [xx-2609-kimi-cli](https://github.com/MoonshotAI/kimi-cli) | [Report](projects/ai-agents--xx-2609-kimi-cli.md) | screened |
+| [xyops](https://github.com/pixlcore/xyops) | [Report](projects/ai-agents--xyops.md) | screened |
+| [zcode](https://github.com/zai-org/ZCode) | [Report](projects/ai-agents--zcode.md) | screened |
+| [zero](https://github.com/Gitlawb/zero) | [Report](projects/ai-agents--zero.md) | screened |
+| [zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) | [Report](projects/ai-agents--zeroclaw.md) | screened |
+| [zz-2607-agentmark](https://github.com/iki/zz-2607-agentmark) | [Report](projects/ai-agents--zz-2607-agentmark.md) | screened |
+| [context-mode](https://github.com/mksglu/context-mode) | [Report](projects/ai-agents-mem--context-mode.md) | source-reviewed |
+| [graphrag](https://github.com/microsoft/graphrag) | [Report](projects/ai-agents-mem--graphrag.md) | source-reviewed |
+| [lightrag](https://github.com/HKUDS/LightRAG) | [Report](projects/ai-agents-mem--lightrag.md) | source-reviewed |
+| [open-viking](https://github.com/volcengine/OpenViking) | [Report](projects/ai-agents-mem--open-viking.md) | source-reviewed |
+| [anex](https://github.com/anex-sh/anex) | [Report](projects/ai-agents-proxy--anex.md) | screened |
+| [bifrost](https://github.com/maximhq/bifrost) | [Report](projects/ai-agents-proxy--bifrost.md) | source-reviewed |
+| [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI) | [Report](projects/ai-agents-proxy--cli-proxy-api.md) | source-reviewed |
+| [cockpit-tools](https://github.com/jlcodes99/cockpit-tools) | [Report](projects/ai-agents-proxy--cockpit-tools.md) | screened |
+| [codexsaver](https://github.com/fendouai/CodexSaver) | [Report](projects/ai-agents-proxy--codexsaver.md) | screened |
+| [litellm](https://github.com/BerriAI/litellm) | [Report](projects/ai-agents-proxy--litellm.md) | source-reviewed |
+| [llm-observer-proxy-go](https://github.com/xxyyue/llm-observer-proxy-go) | [Report](projects/ai-agents-proxy--llm-observer-proxy-go.md) | screened |
+| [openrouter-ai-sdk-provider](https://github.com/OpenRouterTeam/ai-sdk-provider) | [Report](projects/ai-agents-proxy--openrouter-ai-sdk-provider.md) | screened |
+| [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk) | [Report](projects/ai-agents-proxy--openrouter-go-sdk.md) | screened |
+| [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk) | [Report](projects/ai-agents-proxy--openrouter-python-sdk.md) | screened |
+| [openrouter-typescript-sdk](https://github.com/OpenRouterTeam/typescript-sdk) | [Report](projects/ai-agents-proxy--openrouter-typescript-sdk.md) | screened |
+| [proxypilot-win](https://github.com/Finesssee/ProxyPilot) | [Report](projects/ai-agents-proxy--proxypilot-win.md) | screened |
+| [rtk](https://github.com/rtk-ai/rtk) | [Report](projects/ai-agents-proxy--rtk.md) | source-reviewed |
+| [switchyard](https://github.com/NVIDIA-NeMo/Switchyard) | [Report](projects/ai-agents-proxy--switchyard.md) | screened |
+| [anthropic-sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) | [Report](projects/ai-agents-sandbox--anthropic-sandbox-runtime.md) | source-reviewed |
+| [opensandbox](https://github.com/alibaba/OpenSandbox) | [Report](projects/ai-agents-sandbox--opensandbox.md) | source-reviewed |
+| [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon) | [Report](projects/ai-agents-tokens--cc-aio-mon.md) | screened |
+| [ccusage](https://github.com/ryoppippi/ccusage) | [Report](projects/ai-agents-tokens--ccusage.md) | source-reviewed |
+| [claude-powerline](https://github.com/Owloops/claude-powerline) | [Report](projects/ai-agents-tokens--claude-powerline.md) | screened |
+| [codeburn](https://github.com/getagentseal/codeburn) | [Report](projects/ai-agents-tokens--codeburn.md) | source-reviewed |
+| [codexbar-win](https://github.com/nesszer/Win-CodexBar) | [Report](projects/ai-agents-tokens--codexbar-win.md) | screened |
+| [tokenu](https://github.com/lirantal/tokenu) | [Report](projects/ai-agents-tokens--tokenu.md) | screened |
+| [xx-2604-rimuru](https://github.com/rohitg00/rimuru) | [Report](projects/ai-agents-tokens--xx-2604-rimuru.md) | screened |
+| [xx-2604-tokuin](https://github.com/nooscraft/tokuin) | [Report](projects/ai-agents-tokens--xx-2604-tokuin.md) | screened |
+| [frontier-harness-eval](https://github.com/frontier-harness-eval/eval) | [Report](projects/ai-eval--frontier-harness-eval.md) | source-reviewed |
+| [open-design](https://github.com/nexu-io/open-design) | [Report](projects/ai-gen--open-design.md) | source-reviewed |
+| [rearchitecting-llms](https://github.com/peremartra/Rearchitecting-LLMs) | [Report](projects/ai-info--rearchitecting-llms.md) | source-reviewed |
+| [voicestudio](https://github.com/debpalash/VoiceStudio) | [Report](projects/ai-media--voicestudio.md) | source-reviewed |
+| [yue](https://github.com/multimodal-art-projection/YuE) | [Report](projects/ai-media--yue.md) | source-reviewed |
+| [obliteratus](https://github.com/elder-plinius/OBLITERATUS) | [Report](projects/ai-model-edit--obliteratus.md) | source-reviewed |
+| [colibri](https://github.com/JustVugg/colibri) | [Report](projects/ai-model-run--colibri.md) | source-reviewed |
+| [freetoken](https://github.com/FlashML-org/FreeToken) | [Report](projects/ai-model-run--freetoken.md) | source-reviewed |
+| [xx-2604-agent-opt](https://github.com/future-agi/agent-opt) | [Report](projects/ai-prompts--xx-2604-agent-opt.md) | source-reviewed |
+| [docling](https://github.com/docling-project/docling) | [Report](projects/ai-query--docling.md) | source-reviewed |
+| [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | [Report](projects/ai-query--jev-ultrafast.md) | source-reviewed |
+| [jevgrep](https://github.com/dzhng/jevgrep) | [Report](projects/ai-query--jevgrep.md) | source-reviewed |
+| [leann](https://github.com/yichuan-w/LEANN) | [Report](projects/ai-query--leann.md) | source-reviewed |
+| [magika](https://github.com/google/magika) | [Report](projects/ai-query--magika.md) | source-reviewed |
+| [qmd](https://github.com/tobi/qmd) | [Report](projects/ai-query--qmd.md) | source-reviewed |
+| [rag-anything](https://github.com/HKUDS/RAG-Anything) | [Report](projects/ai-query--rag-anything.md) | source-reviewed |
+<!-- coverage:end -->

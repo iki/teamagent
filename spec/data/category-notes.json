@@ -1,0 +1,116 @@
+{
+  "ai-agents": {
+    "role": "Agent loops, installed-runtime adapters, task supervisors, application control planes, and cloud execution patterns.",
+    "conclusion": "Prefer a small durable control plane with replaceable workers. Pi provides an embedded-loop candidate; Paseo and Agent Orchestrator provide explicit heterogeneous-agent boundaries. Mastra and cloud frameworks are alternatives to evaluate, rather than additional cores to stack together. A single-agent baseline must establish the benefit of extra machinery.",
+    "boundary": "The category mixes SDKs, full applications, research, and specialist tools. Source review supports selected patterns, not a universal agent ranking; screened siblings remain discovery leads with unverified operational maturity.",
+    "first_reports": ["ai-agents--pi", "ai-agents--paseo", "ai-agents--agent-orchestrator", "ai-agents--mini-swe-agent", "ai-agents--mastra"]
+  },
+  "ai-agents-mem": {
+    "role": "Persistent episodes, semantic claims, temporal graphs, code intelligence, compiled knowledge, and task-context assembly.",
+    "conclusion": "Own immutable evidence and rebuildable indexes independently of any memory vendor. Graphiti contributes temporal relation semantics; Hindsight separates recall from reflection; OpenViking illustrates bounded context assembly. GitNexus and MentisDB add code-aware navigation and attributed record patterns. Start with simpler retrieval before paying for graph construction or repeated reflection.",
+    "boundary": "Memory products solve different scopes. Hash chains do not establish truth, generated summaries remain derived claims, and design-only wiki material is not an implemented service. Permissions, freshness, deletion, and outcome evaluation remain harness responsibilities.",
+    "first_reports": ["ai-agents-mem--graphiti", "ai-agents-mem--hindsight", "ai-agents-mem--open-viking", "ai-agents-mem--gitnexus", "ai-agents-mem--mentisdb"]
+  },
+  "ai-agents-proxy": {
+    "role": "Provider normalization, deployment routing, authentication compatibility, and command-output reduction.",
+    "conclusion": "Shortlist Bifrost and LiteLLM as replaceable gateways after protocol and workload tests. Keep task-level quality routing outside deployment balancing. RTK contributes recoverable compression rather than inference routing. Treat CLIProxyAPI as a separately configured compatibility route whose upstream and entitlement semantics require explicit verification.",
+    "boundary": "An API-shaped interface does not guarantee identical tools, reasoning, media, or subscription rights. Performance claims were not reproduced; a working proxy is neither a durable agent runtime nor a sandbox.",
+    "first_reports": ["ai-agents-proxy--bifrost", "ai-agents-proxy--litellm", "ai-agents-proxy--cli-proxy-api", "ai-agents-proxy--rtk"]
+  },
+  "ai-agents-sandbox": {
+    "role": "Execution lifecycle and filesystem, network, process, credential, and resource boundaries for agent work.",
+    "conclusion": "Use execution classes rather than one sandbox flag. just-bash suits bounded interpreted transformations; sandbox-runtime supplies platform-specific host restrictions; OpenSandbox provides a self-hosted worker control plane; E2B offers a hosted execution adapter. Advertise verified capabilities per worker and reroute when a requested restriction is unsupported.",
+    "boundary": "Interpreter host hooks remain trusted, container strength depends on deployment, and SDK code does not prove hosted backend isolation. No penetration testing or platform enforcement test was run; screened alternatives have no established maturity advantage.",
+    "first_reports": ["ai-agents-sandbox--just-bash", "ai-agents-sandbox--anthropic-sandbox-runtime", "ai-agents-sandbox--opensandbox", "ai-agents-sandbox--e2b"]
+  },
+  "ai-agents-skills": {
+    "role": "Skill interchange specifications, discovery, acquisition, translation, execution packaging, and candidate evolution.",
+    "conclusion": "Maintain a canonical registry with immutable source packages and evaluated model/harness variants. Agent Skills supplies interoperability conventions; Vercel search offers acquisition reach; SkillKit offers translation patterns; Skillware distinguishes executable plugins from prose. Use Autoharness's proposer/writer separation while replacing unvalidated thresholds with measured outcomes.",
+    "boundary": "Discovery, installation, activation, compatible syntax, and reliable behavior are separate states. Optional hooks can disappear during translation, imported code needs isolation, and discovery RFCs require version negotiation. Screening alone is insufficient for automatic admission.",
+    "first_reports": ["ai-agents-skills--docs.skills", "ai-agents-skills--search.vercel", "ai-agents-skills--search.skillkit", "ai-agents-skills--manage.skillware", "ai-agents-skills--evolve-claude.autoharness"]
+  },
+  "ai-agents-swarm": {
+    "role": "Multi-worker coordination, task decomposition, concurrency scheduling, and role-based workflows.",
+    "conclusion": "Prefer a bounded task DAG with deterministic dependency and workspace-conflict admission. OpenSwarm's conflict-free waves and CrewAI's checkpoint-aware workflows provide concrete patterns. Introduce parallel workers only where independent work or independent verification improves accepted task outcomes enough to pay for coordination and duplicated context.",
+    "boundary": "Checkpoints and transcript replay do not guarantee safe side-effect replay. Most category entries received screening only, so there is no general recommendation or maturity ranking across swarm frameworks; reproduce benefits against a sequential baseline.",
+    "first_reports": ["ai-agents-swarm--openswarm", "ai-agents-swarm--crewai"]
+  },
+  "ai-agents-tokens": {
+    "role": "Usage-log ingestion, model-cost estimation, transcript accounting, and optimization dashboards.",
+    "conclusion": "Prefer structured first-party usage events and retain read-only log adapters as cross-checks. ccusage and CodeBurn offer useful parsing and mixed-agent reporting patterns. Keep actual usage, price-derived estimates, subscription quota, and inferred skill activity distinct so routing does not mistake missing data for free capacity.",
+    "boundary": "Forks, compaction, partial writes, unknown models, and provider schema changes can distort historical accounting. Activity is not productivity, inferred skill use is not direct evidence, and neither reviewed tool is a universal billing authority.",
+    "first_reports": ["ai-agents-tokens--ccusage", "ai-agents-tokens--codeburn"]
+  },
+  "ai-eval": {
+    "role": "Comparable task runs, trace retention, deterministic verifiers, model judges, and retrieval-quality metrics.",
+    "conclusion": "Build one evaluation contract that freezes the entire configuration and preserves raw evidence. FrontierHarness Eval contributes comparability gates; LangWatch provides an optional observability/evaluation integration; Ragas provides selected evidence-consistency metrics. Use task-specific scorecards and independently verified outcomes before relying on judge scores or public rankings.",
+    "boundary": "Faithfulness to retrieved text is not absolute truth. Unknown scores and failed evaluators remain incomplete, while unrecorded environment differences invalidate comparisons. No benchmark was reproduced here, and screened suites do not establish a universal winner.",
+    "first_reports": ["ai-eval--frontier-harness-eval", "ai-eval--langwatch", "ai-eval--xx-2602-ragas"]
+  },
+  "ai-gen": {
+    "role": "Generated component interfaces, creative agent workspaces, editable compositions, and deterministic rendering tools.",
+    "conclusion": "Separate generated artifact surfaces from the deterministic application shell. A2UI and json-render offer catalog-constrained UI approaches; choose one initially. OpenDesign provides agent/media readiness patterns. HyperFrames supplies an editable composition-to-video path that belongs behind asynchronous artifact jobs and isolated rendering workers.",
+    "boundary": "Schema-valid UI still needs authorized actions and safe URLs; A2UI's inspected validator requires explicit strict configuration. Renderers are not foundation media models, and cross-platform parity, accessibility, visual quality, and performance were not measured.",
+    "first_reports": ["ai-gen--a2ui", "ai-gen--json-render", "ai-gen--open-design", "ai-gen--hyperframes"]
+  },
+  "ai-info": {
+    "role": "Research explanations, educational experiments, and conceptual approaches that inform later architectural hypotheses.",
+    "conclusion": "Use Game Schema Harness to frame hypothesis, backtest, and planning experiments, and Rearchitecting LLMs to inform a later specialized-model research track. Translate concepts into small controlled studies with held-out tasks and complete compute accounting before changing production routing or memory behavior.",
+    "boundary": "This category includes web/design-only content and educational notebooks, not uniformly deployable harness implementations. Treat maturity as exploratory; reported game or model-transformation results do not establish transfer to team coding and do not justify a universal recommendation.",
+    "first_reports": ["ai-info--game-schema-harness", "ai-info--rearchitecting-llms"]
+  },
+  "ai-media": {
+    "role": "Specialized video, speech, music, and media-production workflows exposed as optional generation workers.",
+    "conclusion": "Borrow ViMax's staged story/character pipeline, VoiceStudio's speech/transcription tools and file output mode, and YuE2's symbolic-plan and artifact-integrity patterns. Integrate through capability manifests, budgets, resumable jobs, and common artifact storage. Prefer editable intermediate representations and content-aware checkpoint invalidation over opaque one-shot generation.",
+    "boundary": "The YuE checkout is YuE2, not the original branch. Engine licensing, weight requirements, language coverage, quality, latency, and hardware fitness need separate verification. No media benchmark was reproduced and screened tools remain unendorsed discovery candidates.",
+    "first_reports": ["ai-media--vimax", "ai-media--voicestudio", "ai-media--yue"]
+  },
+  "ai-model-edit": {
+    "role": "Experimental model intervention and management of modified-weight research artifacts.",
+    "conclusion": "OBLITERATUS contributes a named-strategy and reversible-experiment abstraction, but keep model intervention outside the initial harness. Address observed failures through retrieval, context, tool contracts, prompts, and evaluated skills first. Any later weight variant needs a distinct identity, reproducible lineage, held-out evaluation, and rollback.",
+    "boundary": "This single-project category does not establish a mature model-optimization stack. Refusal removal is not evidence of improved usefulness, coding success, or preserved capabilities; the intervention mathematics and advertised preservation claims were not independently validated.",
+    "first_reports": ["ai-model-edit--obliteratus"]
+  },
+  "ai-model-run": {
+    "role": "Local MoE serving, heterogeneous memory placement, context admission, and inference-cache resource policies.",
+    "conclusion": "Evaluate Colibri and FreeToken as optional engines behind the same capability-based adapter used for other installed servers. Colibri contributes expert-store extensibility and serving-budget logic; FreeToken contributes explicit expert/KV memory partitioning. Compare cold and warm latency, concurrency, context fidelity, and task success on actual target hardware.",
+    "boundary": "Research-oriented large-model support and consumer-hardware claims are not measured deployment guarantees. Engine caches are not durable knowledge memory. Neither candidate is recommended universally without compatibility and workload tests, and the corpus is not an exhaustive engine survey.",
+    "first_reports": ["ai-model-run--colibri", "ai-model-run--freetoken"]
+  },
+  "ai-operate": {
+    "role": "Agent-directed interaction with devices and applications through specialized operational tools.",
+    "conclusion": "Artemis offers a concrete Android worker pattern with exclusive device ownership, trace storage, daemon submission, and startup watchdogs. Integrate it only for authorized device testing or operation, with bounded tasks, state-aware recovery, and durable cancellation. Its resource-locking pattern also applies to browsers and GPUs.",
+    "boundary": "Controlling a phone does not supply the harness's mobile client. This one-project category provides no broad maturity comparison; benchmark badges do not establish arbitrary-app reliability, and UI actions may lack transactional acknowledgements or safe blind retries.",
+    "first_reports": ["ai-operate--artemis"]
+  },
+  "ai-prompts": {
+    "role": "Prompt discovery, reusable examples, and offline instruction-optimization experiments.",
+    "conclusion": "Use prompts.chat as a candidate source with preserved attribution, then convert selected prompts into bounded contracts and test cases. Evaluate agent-opt as one offline proposer alongside simpler search and DSPy-style optimization. Compare no-skill, upstream, and tuned variants before activation and keep the held-out evaluator independent.",
+    "boundary": "Popularity and optimizer score do not prove task benefit or safe trigger scope. Media recipes require compatible tools, and other screened prompt collections have no demonstrated maturity or quality advantage. Avoid importing a broad prompt catalog directly into every task.",
+    "first_reports": ["ai-prompts--prompts.chat", "ai-prompts--xx-2604-agent-opt"]
+  },
+  "ai-query": {
+    "role": "Document conversion, repository packaging, content detection, hybrid search, and bounded model-guided retrieval decisions.",
+    "conclusion": "Compose specialist importers with evidence-preserving retrieval. Docling and MarkItDown normalize documents; Repomix packages repositories; Trafilatura extracts pages; QMD supplies a hybrid-search baseline. Jevgrep and Jev Ultrafast illustrate bounded decisions that complement deterministic candidate filtering rather than replacing provenance and execution policy.",
+    "boundary": "Parser success does not imply complete extraction, graph/semantic retrieval is not always cost-effective, and ANN performance depends on workload. Keep omission accounting and source spans; evaluate lexical baselines before adding expensive reranking or model-guided traversal.",
+    "first_reports": ["ai-query--qmd", "ai-query--docling", "ai-query--markitdown", "ai-query--repomix", "ai-query--jevgrep", "ai-query--jev-ultrafast"]
+  },
+  "ai-security": {
+    "role": "Complementary source, dependency, artifact, skill, and installed-environment inspection evidence.",
+    "conclusion": "Normalize findings while preserving analyzer scope and coverage. CodeQL supplies modeled dataflow paths; OSV Scanner supplies dependency evidence; Trivy addresses deployment artifacts; SkillSpector and ClawSecCheck contribute instruction-specific checks and honest incomplete-work ledgers. Bind assessments to immutable digests and keep runtime enforcement independent.",
+    "boundary": "A clean scan is not proof of safety or prompt-injection immunity. Findings, reachability, and demonstrated exploitability differ. No penetration tests were run, and screened security projects have not earned a general maturity or efficacy recommendation.",
+    "first_reports": ["ai-security--codeql", "ai-security--osv-scanner", "ai-security--trivy", "ai-security--skillspector", "ai-security--clawseccheck"]
+  },
+  "ai-skills": {
+    "role": "Curated procedural bundles, reference catalogs, domain-specific workflows, and trace-derived learning recipes.",
+    "conclusion": "Curate narrowly useful bundles instead of enabling an entire library. Superpowers supplies planning/debugging procedures; Everything Claude Code contributes scoped atomic lessons; Trail of Bits supplies opt-in security workflows; Context Hub offers versioned references. Preserve originals and compile evaluated overlays for each target harness and model.",
+    "boundary": "Documentation instructions can exceed a host's real capabilities, hook reliability varies, and confidence in an extracted lesson is not validation. Screened bundles remain candidates; selection should depend on trigger negatives and measured marginal task benefit rather than reputation alone.",
+    "first_reports": ["ai-skills--plan.obra-superpowers", "ai-skills--bundle-claude.ecc.affaan-m", "ai-skills--security.trailofbits", "ai-skills--context-hub.andrewyng", "ai-skills--agent-codex"]
+  },
+  "ai-spec": {
+    "role": "Specification artifacts, requirement-to-task workflows, dependency graphs, and coding-stage coordination procedures.",
+    "conclusion": "Integrate Spec Kit and OpenSpec as optional project workflows rather than the harness's universal state model. Reuse versioned artifact graphs, prerequisite checks, and traceability. Get Shit Done contributes compact coordination and wave planning; deterministic runtime code should reconcile worker completion and enforce transitions.",
+    "boundary": "A specification workflow cannot guarantee implementation correctness or durable execution. Preserve existing repository conventions, allow lightweight tasks, and evaluate interruption, changed prerequisites, concurrency, and escaping. Remaining screened frameworks have no demonstrated general maturity advantage.",
+    "first_reports": ["ai-spec--spec-kit", "ai-spec--openspec", "ai-spec--get-shit-done"]
+  }
+}

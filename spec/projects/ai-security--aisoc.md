@@ -1,0 +1,25 @@
+# aisoc
+
+Source: [aisoc](https://github.com/beenuar/AiSOC) · Category: [ai-security](../categories/ai-security.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `98883d9229865df1d6d0a5e643778efe4d61b5ce`; commit timestamp `2026-10-03T11:40:41-07:00`; 12,994 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/README.md)):
+
+> An open-source, self-hostable AI Security Operations Center.** It ingests your security telemetry, detects and correlates threats, investigates them with AI agents whose reasoning is fully auditable, and proposes responses a human approves. [](https://opensource.org/licenses/MIT) [](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/CHANGELOG.md) [](https://github.com/beenuar/AiSOC/actions/workflows/ci.yml)
+
+Build/package evidence: [apps/docs/package.json](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/apps/docs/package.json); [apps/mobile/package.json](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/apps/mobile/package.json); [apps/web/package.json](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/apps/web/package.json); [package.json](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/package.json); [packages/aisoc-action/package.json](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/packages/aisoc-action/package.json)
+
+License evidence: [LICENSE](https://github.com/beenuar/AiSOC/blob/98883d9229865df1d6d0a5e643778efe4d61b5ce/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-security**. Its category places it in the candidate set for agents, skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

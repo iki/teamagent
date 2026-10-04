@@ -1,0 +1,28 @@
+# docling
+
+Format-dispatched structured document conversion with bounded inputs and explicit conversion outcomes.
+
+Source: [docling](https://github.com/docling-project/docling) · Snapshot: `51fe9ff4578e9f150ef3bc6246433e6092a8ebfb` · Category: `ai-query`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [docling/document_converter.py:611-697](https://github.com/docling-project/docling/blob/51fe9ff4578e9f150ef3bc6246433e6092a8ebfb/docling/document_converter.py#L611-L697)
+- [docling/document_converter.py:810-846](https://github.com/docling-project/docling/blob/51fe9ff4578e9f150ef3bc6246433e6092a8ebfb/docling/document_converter.py#L810-L846)
+
+The converter accepts file paths, URLs and document streams, including per-source HTTP headers. It constructs document limits for file size, page count and page range, then emits ConversionResult records. Success and partial success are distinguished from failure; failure may retain the underlying input-rejection exception. Pipelines are selected by format and cached under a composite key of pipeline class and option hash, protected by a lock. Unsupported or unrecognized input can produce an explicit conversion error rather than empty text.
+
+## Harness implications
+
+Use this as the rich-document adapter when layout, OCR, tables or page provenance matter. The harness should store a canonical document tree and original bytes, then derive Markdown and search chunks from that tree. Preserve partial-success status and per-page omissions so an agent cannot equate converted text with a complete document. Keep warm pipeline instances in a controlled worker pool to amortize model startup; cache output by input content plus parser/model/options versions.
+
+## Limitations and tradeoffs
+
+The inspected defaults allow extremely large page and byte limits; a harness must set practical quotas instead of inheriting them. URL support is not a complete network authorization or connector layer. Parsed layout and OCR still need corpus-level accuracy evaluation, particularly charts, handwriting and complex tables. Pipeline reuse improves startup behavior but does not by itself bound memory, GPU contention or malformed-input risk. The review did not run conversions or compare OCR quality.
+
+## Adoption and validation
+
+Make it the preferred optional rich parser behind the common import interface, with a lighter parser for simple text/Office inputs. Isolate workers and retain original file/page identifiers. Test scanned and digital PDFs, tables crossing pages, encrypted documents, oversized archives, partial conversion and interrupted jobs. Measure extraction coverage, citation coordinates and downstream answer correctness as well as throughput.
+
+Related directions: [import-generation](../import-generation.md) · [memory](../memory.md) · [models](../models.md).
