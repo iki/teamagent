@@ -13,14 +13,16 @@ The host CLI supplies execution and option parsing for those contracts.
 
 The product modules are:
 
-| Module       | Responsibility                                            | Allowed public module dependencies           |
-| ------------ | --------------------------------------------------------- | -------------------------------------------- |
-| `agents`     | Adapter identity, events and declared capabilities        | None                                         |
-| `artifacts`  | Artifact identity and provenance contracts                | None                                         |
-| `workspaces` | Workspace identity and access contracts                   | None                                         |
-| `tasks`      | Task lifecycle, attempts and execution contracts          | `agents`, `artifacts`, `workspaces`          |
-| `harness`    | Shared transport/configuration schemas and module catalog | `agents`, `artifacts`, `tasks`, `workspaces` |
-| `lint`       | Host-only development rules and module inspection         | None                                         |
+| Module         | Responsibility                                                      | Allowed public module dependencies           |
+| -------------- | ------------------------------------------------------------------- | -------------------------------------------- |
+| `agents`       | Adapter identity, events and declared capabilities                  | None                                         |
+| `artifacts`    | Artifact identity and provenance contracts                          | None                                         |
+| `workspaces`   | Workspace identity and access contracts                             | None                                         |
+| `memory`       | Source acquisition ports, immutable evidence versions and retrieval | None                                         |
+| `integrations` | Passive agent discovery and installation contracts                  | None                                         |
+| `tasks`        | Task lifecycle, attempts and execution contracts                    | `agents`, `artifacts`, `workspaces`          |
+| `harness`      | Shared transport/configuration schemas and module catalog           | `agents`, `artifacts`, `tasks`, `workspaces` |
+| `lint`         | Host-only development rules and module inspection                   | None                                         |
 
 The executable dependency declaration is
 [`moduleDefinitions`](../../lib/lint/modules.ts). Changes to a module's allowed
@@ -41,6 +43,14 @@ Provider adapters cannot depend on UI, daemon composition, CLI or storage
 implementations. Composition roots provide implementations through public
 contracts. Build-only tools belong outside a client application's runtime source
 when they need host tooling.
+
+Memory storage receives a `SourceCapture` port instead of importing acquisition
+code. `app/imports` owns bounded network, Git and document workers;
+`app/integrations` owns passive discovery and explicit installation. Neither
+imports storage, daemon, UI or CLI implementations. `app/runtime` composes these
+adapters. `app/mcp` consumes only public domain contracts, with host grants
+already bound. MCP SDK and Zod imports are confined to this protocol adapter
+(and protocol tests); client applications cannot import these host layers.
 
 ## Enforcement and its limits
 

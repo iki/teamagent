@@ -150,6 +150,16 @@ export const moduleContract = Rule.define({
 });
 
 function importProblem(file: string, source: string): string | undefined {
+  if ((file.includes("/lib/") || file.includes("/app/")) && source.startsWith("teamagent/"))
+    return "Repository code uses @/ public module entries and explicit relative host composition; package exports are for external consumers.";
+  if (
+    (source === "zod" ||
+      source.startsWith("zod/") ||
+      source.startsWith("@modelcontextprotocol/")) &&
+    !file.includes("/app/mcp/") &&
+    !file.includes("/test/")
+  )
+    return "Keep MCP SDK and Zod protocol schemas in app/mcp; inward contracts use Effect Schema.";
   const module = file.split("/lib/")[1]?.split("/")[0];
   const target = source.startsWith("@/") ? source.slice(2) : undefined;
   if (target !== undefined && !moduleDefinitions.some((item) => item.name === target))
@@ -167,12 +177,73 @@ function importProblem(file: string, source: string): string | undefined {
   const importedLayer = resolved.split("/app/")[1]?.split("/")[0];
   const forbidden =
     layer === "web" || layer === "desktop"
-      ? ["storage", "server", "cli", "adapters", "check", "hooks", "conversations"]
+      ? [
+          "storage",
+          "server",
+          "cli",
+          "adapters",
+          "check",
+          "hooks",
+          "conversations",
+          "memory",
+          "imports",
+          "integrations",
+          "mcp",
+          "runtime",
+        ]
       : layer === "storage"
         ? ["web", "desktop", "server", "cli", "adapters"]
         : layer === "adapters"
-          ? ["web", "desktop", "server", "cli", "storage"]
-          : [];
+          ? [
+              "web",
+              "desktop",
+              "server",
+              "cli",
+              "storage",
+              "imports",
+              "integrations",
+              "memory",
+              "mcp",
+              "runtime",
+            ]
+          : layer === "memory"
+            ? [
+                "web",
+                "desktop",
+                "server",
+                "cli",
+                "adapters",
+                "imports",
+                "integrations",
+                "mcp",
+                "runtime",
+              ]
+            : layer === "imports" || layer === "integrations"
+              ? [
+                  "web",
+                  "desktop",
+                  "server",
+                  "cli",
+                  "adapters",
+                  "storage",
+                  "memory",
+                  "mcp",
+                  "runtime",
+                ]
+              : layer === "mcp"
+                ? [
+                    "web",
+                    "desktop",
+                    "server",
+                    "cli",
+                    "adapters",
+                    "storage",
+                    "memory",
+                    "imports",
+                    "integrations",
+                    "runtime",
+                  ]
+                : [];
   if (importedLayer !== undefined && forbidden.includes(importedLayer))
     return `The ${layer} adapter cannot import the ${importedLayer} implementation; depend on a public library contract.`;
   if ((layer === "web" || layer === "desktop") && target === "lint")

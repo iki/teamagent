@@ -12,13 +12,20 @@ The root [agent rules](../AGENTS.md) govern implementation. The CLI/web/desktop 
 | Hook installation             | `aube run --no-install hooks:install`        | Install repository Git hook and record this checkout's Bun executable                        |
 | Conversation archive          | `aube run --no-install conversations:record` | Read validated JSON from stdin and preserve a public response record                         |
 
-Either Aube or Bun may dispatch package scripts; Aube alone installs dependencies. Complete a frozen install first, then use `aube run --no-install` or direct Bun for checks: ordinary Aube run/exec may install missing or stale dependencies, which is inappropriate inside a read-only verification gate. The check launcher invokes installed tool entries with the running Bun executable and resolves the platform-native `oxlint-tsgolint` backend directly. It does not depend on Node shebangs, shell interpolation, shortened PATH, or fallback to syntax-only lint.
+Either Aube or Bun may dispatch package scripts; Aube alone installs JavaScript dependencies. Complete a frozen install first, then use `aube run --no-install` or direct Bun for checks: ordinary Aube run/exec may install missing or stale dependencies, which is inappropriate inside a read-only verification gate. The check launcher invokes installed tool entries with the running Bun executable and resolves the platform-native `oxlint-tsgolint` backend directly. It does not depend on Node shebangs, shell interpolation, shortened PATH, or fallback to syntax-only lint.
 
 Any missing dependency, nonzero result, timeout or missing backend is a failure. Repair the cause before advancing. Do not turn off type-aware lint, relax strictness, add blanket suppressions or silently skip checks. Research documents in `spec/` and imported material in `resources/` remain source evidence; formatting covers owned implementation files and the new development specifications without wholesale research rewrites.
 
 Tool launches have a 120-second cap; the complete test subprocess has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 240 seconds. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
 
 ## Automated architecture checks
+
+Source-memory conversion tests require Git, Python 3.12 and the project-local
+converter installed with `aube run --no-install imports:setup`. The verification
+gate never installs it implicitly and fails when required conversion coverage
+is unavailable. Python worker dependencies have their own exact requirements
+lock; Aube remains the sole manager of JavaScript dependencies. The full import,
+CLI, MCP and library fixtures run without credentials or paid inference.
 
 TypeScript enforces strict mode, unchecked-index safety, exact optional fields, explicit returns, switch fallthrough and override checks. Oxlint rejects `any`, unsafe typed operations, non-null assertions and floating promises. Repository rules guard portable library boundaries, public import paths, hidden I/O/clock/logger setup and Effect execution, unsafe casts, executable input and runtime launchers. The lint implementation is explicitly host tooling, not a portable product library. Tests exercise valid and invalid rule fixtures.
 

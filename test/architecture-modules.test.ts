@@ -150,6 +150,48 @@ await test("parsed module dependencies and rendering boundaries accept interface
   const fixture = mkdtempSync(join(tmpdir(), "teamagent-module-imports-"));
   const fixtures = [
     {
+      path: "lib/memory/self-package.ts",
+      valid: 'export { Schema } from "effect";',
+      invalid: 'export { openMemoryHost } from "teamagent/memory/bun";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/memory/parse.ts",
+      valid: 'export { MemoryService } from "@/memory";',
+      invalid: 'export { capture } from "../imports/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/imports/parse.ts",
+      valid: 'export { MemoryError } from "@/memory";',
+      invalid: 'export { store } from "../memory/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/web/memory.ts",
+      valid: 'export { MemoryService } from "@/memory";',
+      invalid: 'export { runtime } from "../runtime/memory.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/runtime/protocol.ts",
+      valid: 'export { Schema } from "effect";',
+      invalid: 'export { z } from "zod";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/mcp/adapter.ts",
+      valid: 'export { McpServer } from "@modelcontextprotocol/server";',
+      invalid: 'export { store } from "../memory/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "lib/memory/protocol.ts",
+      valid: 'export { Schema } from "effect";',
+      invalid: 'export { McpServer } from "@modelcontextprotocol/server";',
+      rule: "module-dependencies",
+    },
+    {
       path: "lib/tasks/model.ts",
       valid: 'export { Agent } from "@/agents";',
       invalid: 'export { Api } from "@/harness";',
@@ -258,7 +300,7 @@ await test("parsed module dependencies and rendering boundaries accept interface
       );
     assert.equal(
       (rejected.stdout + rejected.stderr).match(/teamagent\(module-dependencies\)/g)?.length,
-      5,
+      12,
     );
     assert.equal(
       (rejected.stdout + rejected.stderr).match(/teamagent\(safe-rendering\)/g)?.length,

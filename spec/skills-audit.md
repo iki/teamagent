@@ -47,6 +47,20 @@ The React/Vite UI and Tauri desktop now apply the design/composition guidance: s
 
 ## Narrow or unrelated skills
 
+The source-memory increment applies the same Effect, Aube, Cleye and Oxc guidance.
+Its MCP adapter uses the official v2 SDK, with Zod confined to that adapter and
+Effect schemas validating domain input. Document conversion follows the analyzed
+MarkItDown worker design with pinned project-local Python dependencies. These
+are worker dependencies; Aube remains the only JavaScript package manager.
+
+The distributable `skills/teamagent-memory/SKILL.md` was authored using the
+installed system Skill Creator guidance and passed its validator. A separate
+implementation reviewer used the installed skill in a temporary workspace to
+import a note, sync a changed original, and retrieve the old version with its
+citation. Agent configuration formats were checked against current official
+documentation. Integration tests preserve user configuration, test idempotence,
+rollback and conflict handling, and never modify real user-level agent settings.
+
 - [entire-search](../.agents/skills/entire-search/SKILL.md) applies to historical checkpoint/session questions. A current-code audit does not need an Entire installation or checkpoint search.
 - [performance-lint-rules](../.agents/skills/performance-lint-rules/SKILL.md) targets Rust rules under Oxc's `crates/oxc_linter/src/rules/`. This repository has a TypeScript plugin, so those Rust-specific transformations do not apply.
 - [release](../.agents/skills/release/SKILL.md) is the upstream LogTape release process. Do not run its publishing, tagging or branch instructions for Team Agent.

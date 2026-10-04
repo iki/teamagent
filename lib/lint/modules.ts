@@ -13,6 +13,8 @@ export const moduleDefinitions: readonly ModuleDefinition[] = [
   { name: "agents", dependencies: [], portable: true },
   { name: "artifacts", dependencies: [], portable: true },
   { name: "workspaces", dependencies: [], portable: true },
+  { name: "memory", dependencies: [], portable: true },
+  { name: "integrations", dependencies: [], portable: true },
   { name: "tasks", dependencies: ["agents", "artifacts", "workspaces"], portable: true },
   {
     name: "harness",

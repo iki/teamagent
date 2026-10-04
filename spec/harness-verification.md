@@ -5,18 +5,37 @@ publication was performed. These are correctness checks, not performance claims.
 
 | Check               | Result and evidence                                                                                                                                                                                                                                                     |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Frozen Aube install | Passed; 142 packages matched the lockfile. Reviewed unnecessary transitive install hooks remain explicitly disabled.                                                                                                                                                    |
-| Repository gate     | 69 tests across 12 files passed. Formatting, module inventory/graph checks, four strict TS7 programs and type-aware Oxlint passed.                                                                                                                                      |
+| Frozen Aube install | Passed; 156 packages matched the lockfile. Reviewed unnecessary transitive install hooks remain explicitly disabled.                                                                                                                                                    |
+| Repository gate     | 111 tests across 16 files passed. Formatting, module inventory/graph checks, four strict TS7 programs and type-aware Oxlint passed.                                                                                                                                     |
 | Pi integration      | Actual pinned Pi loop with deterministic provider streams and real temporary files/SQLite. Covers read/write grants, lease revocation, cancellation, turn/tool limits, duplicate IDs, malformed public output/usage, hidden-reasoning exclusion and verified artifacts. |
 | CLI/config          | Real subprocess CLI against a loopback daemon: module catalog/model listing, help/version without config execution, strict flags, configuration precedence, disabled ambient layers, workspace/task commands and exclusive digest-checked export.                       |
 | Persistence/HTTP    | Restart/queued recovery, competing owners, stale leases, no replay, cancellation cleanup, terminal event reserve, idempotency, overlapping/private paths, corruption, request bounds, Host/Origin/token checks and static asset containment.                            |
 | Browser             | Production Vite build in Chromium 153.0.8010.12. Pairing failure/recovery, workspaces, task completion/cancellation, incremental progress, artifact verification, escaped input, narrow layout, disconnect/reload and reconnect.                                        |
 | Native              | Four Rust tests passed, including compiled Bun sidecar startup/authentication/shutdown. Actual Windows WebView2 154.0.4258.53 tested restricted IPC, automatic pairing, explicit trusted config with Pi availability, task completion, reconnect and sidecar shutdown.  |
 
-Reproduce with Bun 1.4.2 and Aube 2.5.1:
+The source-memory extension adds real PDF/DOCX/PPTX/XLSX and Markdown-image
+conversion, local and smart-HTTP Git fixtures, image-only changes, conditional
+HTTP retrieval, failed-refresh preservation and cancellation cleanup. Persistence
+fixtures cover immutable history, bounded pagination, scope isolation, corruption
+and verified exports. Public package entry points and scoped Effect cleanup,
+subprocess CLI workflows, all eight MCP tools with the official legacy client,
+and modern protocol discovery passed. Agent installation tests use isolated
+configuration directories and verify conflict handling and idempotence.
+
+The converter doctor reports the pinned packages available in an isolated Python
+3.12.15 environment. The distributable skill passed structural validation and an
+actual CLI import/sync/historical-read workflow. Its installed project copy binds
+this checkout; no account-wide agent configuration was changed. The rebuilt
+Windows release sidecar passed converter inspection and an actual HTML-to-Markdown
+import/read using an explicit Python path. Its default embedded runtime path does
+not locate the checkout's converter, so packaged imports require `--python` or
+`TEAMAGENT_IMPORT_PYTHON`.
+
+Reproduce with Bun 1.4.2, Aube 2.5.1, Git and Python 3.12:
 
 ```sh
 aube install --frozen-lockfile
+aube run --no-install imports:setup
 aube run --no-install review:check
 aube run --no-install test:web
 aube run --no-install test:desktop

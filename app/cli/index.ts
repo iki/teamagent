@@ -22,14 +22,27 @@ import {
   HealthSchema,
 } from "@/harness";
 import { cli as lintCli } from "@/lint";
+import { cli as memoryCli, MemoryError } from "@/memory";
+import { cli as integrationsCli, IntegrationError } from "@/integrations";
 import { version } from "../../package.json";
 import { readConfig } from "./config.ts";
 import { connectClient } from "./client.ts";
 import { startDaemon } from "../server/index.ts";
 import { readToken } from "../server/credentials.ts";
 import { catalogModels } from "../adapters/models.ts";
+import { runMemoryCommand } from "./memory.ts";
+import { runIntegrationCommand } from "./integrations.ts";
 
-const catalog = [harnessCli, workspacesCli, tasksCli, agentsCli, artifactsCli, lintCli] as const;
+const catalog = [
+  harnessCli,
+  workspacesCli,
+  tasksCli,
+  agentsCli,
+  artifactsCli,
+  memoryCli,
+  integrationsCli,
+  lintCli,
+] as const;
 type ModuleCommand<M extends (typeof catalog)[number] = (typeof catalog)[number]> =
   M extends (typeof catalog)[number] ? `${M["name"]}:${M["commands"][number]["name"]}` : never;
 const reporter = createConsola({
@@ -54,6 +67,28 @@ const flags = {
   key: { type: String, description: "Idempotency key for task submission" },
   output: { type: String, description: "Exclusive artifact export file path" },
   desktop: { type: Boolean, description: "Desktop sidecar mode (requires TEAMAGENT_TOKEN)" },
+  root: { type: String, description: "Memory workspace or integration project directory" },
+  kind: { type: String, description: "Source kind: auto, url, file, folder or git" },
+  convert: { type: Boolean, description: "Convert source to Markdown and images (default true)" },
+  sourceVersion: { type: String, description: "Immutable source version ID" },
+  path: { type: String, description: "Path within the imported version" },
+  limit: { type: Number, description: "Maximum search results or list/history page size" },
+  offset: { type: Number, description: "Page offset, or byte offset for memory read" },
+  length: { type: Number, description: "Maximum memory read bytes (1–262144)" },
+  scope: { type: String, description: "Integration installation scope: project or global" },
+  components: { type: String, description: "Install skill, mcp or both" },
+  python: {
+    type: String,
+    description: "Explicit Python interpreter with the pinned document converter",
+  },
+  allowRoot: {
+    type: [String] as const,
+    description: "Additional local source directory allowed for MCP (repeatable)",
+  },
+  allowPrivateNetwork: {
+    type: Boolean,
+    description: "Allow retrieval from private networks for this invocation",
+  },
 };
 const commands = catalog.flatMap((module) =>
   module.commands.map((command) => `  ${module.name} ${command.name} — ${command.description}`),
@@ -119,15 +154,71 @@ async function main() {
     "artifacts:show": ["config", "data", "url", "port"],
     "artifacts:export": ["config", "data", "url", "port", "output"],
     "lint:check": [],
+    "memory:get": [
+      "config",
+      "data",
+      "root",
+      "workspace",
+      "kind",
+      "convert",
+      "python",
+      "allowPrivateNetwork",
+    ],
+    "memory:sync": ["config", "data", "root", "workspace", "python", "allowPrivateNetwork"],
+    "memory:list": ["config", "data", "root", "workspace", "offset", "limit"],
+    "memory:show": ["config", "data", "root", "workspace", "offset", "limit"],
+    "memory:read": [
+      "config",
+      "data",
+      "root",
+      "workspace",
+      "sourceVersion",
+      "path",
+      "offset",
+      "length",
+    ],
+    "memory:search": ["config", "data", "root", "workspace", "limit"],
+    "memory:export": ["config", "data", "root", "workspace", "sourceVersion", "output"],
+    "memory:delete": ["config", "data", "root", "workspace"],
+    "memory:mcp": [
+      "config",
+      "data",
+      "root",
+      "workspace",
+      "python",
+      "allowRoot",
+      "allowPrivateNetwork",
+    ],
+    "memory:doctor": ["python"],
+    "memory:setup": [],
+    "integrations:list": ["config", "data", "root"],
+    "integrations:plan": ["config", "data", "root", "scope", "components", "python"],
+    "integrations:install": ["config", "data", "root", "scope", "components", "python"],
   } satisfies Record<ModuleCommand, readonly string[]>;
   const options: Readonly<Record<string, readonly string[]>> = allowed;
   const accepted = options[`${moduleName}:${action}`];
   if (!accepted) throw new Error("Module command is not wired to its host adapter");
   for (const [name, value] of Object.entries(parsed.flags))
-    if (value !== undefined && name !== "version" && name !== "help" && !accepted.includes(name))
+    if (
+      value !== undefined &&
+      !(Array.isArray(value) && value.length === 0) &&
+      name !== "version" &&
+      name !== "help" &&
+      !accepted.includes(name)
+    )
       throw new Error(`--${name} is not supported by this command`);
   const positionalCount =
-    ["add", "show", "cancel", "export"].includes(action) || moduleName === "artifacts" ? 1 : 0;
+    moduleName === "memory"
+      ? ["get", "sync", "show", "read", "search", "export", "delete"].includes(action)
+        ? 1
+        : 0
+      : moduleName === "integrations"
+        ? action === "list"
+          ? 0
+          : 1
+        : ["add", "show", "cancel", "export"].includes(action) || moduleName === "artifacts"
+          ? 1
+          : 0;
   if (args.length !== positionalCount || parsed._["--"].length > 0)
     throw new Error(`Expected ${positionalCount} positional argument(s); use --help`);
   if (moduleName === "harness" && action === "modules") {
@@ -150,6 +241,14 @@ async function main() {
   const config = await Effect.runPromise(
     readConfig({ config: parsed.flags.config, data: parsed.flags.data, port: parsed.flags.port }),
   );
+  if (moduleName === "memory") {
+    await runMemoryCommand(action, args[0], config, parsed.flags, print);
+    return;
+  }
+  if (moduleName === "integrations") {
+    await runIntegrationCommand(action, args[0], config, parsed.flags, print);
+    return;
+  }
   if (moduleName === "harness" && action === "token") {
     process.stdout.write(`${await readToken(config.data)}\n`);
     return;
@@ -335,7 +434,12 @@ async function main() {
   }
 }
 
-await main().catch(() => {
+await main().catch((error: unknown) => {
+  if (error instanceof MemoryError || error instanceof IntegrationError) {
+    reporter.error(`${error.code}: ${error.message}`);
+    process.exitCode = 1;
+    return;
+  }
   reporter.error(
     "Command failed. Check arguments, trusted configuration, service availability and local permissions. Use --help for the command contract.",
   );

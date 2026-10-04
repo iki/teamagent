@@ -36,3 +36,27 @@ The earlier Multica report's Apache-2.0 indicator was incomplete. Its source
 license has additional terms, including for hosted services and branding. That
 report is corrected; the safe reuse decision here is an independently implemented
 concurrency mechanism, with no copied implementation.
+
+## Source memory and integrations
+
+The import adapter uses the already analyzed [MarkItDown](../projects/ai-query--markitdown.md)
+package `0.1.8` (MIT) in an isolated Python environment with exact transitive pins.
+It uses explicit converters and pypdf `6.11.0` for PDF image extraction. Network
+retrieval, source identity, sync, resource limits, version storage and access
+scope remain host responsibilities. Docling remains a potential richer converter;
+it is not required for this implementation.
+
+Passive agent discovery reuses registry data from
+[Vercel Skills](https://github.com/vercel-labs/skills/blob/18f96ea131dab3b0fcc9b27cf7c6f6cbb6174680/src/agents.ts),
+MIT copyright Vercel, at `18f96ea131dab3b0fcc9b27cf7c6f6cbb6174680`. The package
+did not expose a suitable library API, so `app/integrations/registry.ts` contains
+the reviewed 79-entry snapshot and its license notice. Codex's global skill
+location is updated from current official documentation. No upstream CLI,
+installation scripts or agent executables run during discovery.
+
+Protocol implementation uses the official MCP SDK `2.3.0`, with Zod `4.6.5`
+restricted to its adapter. Agent configuration formats were checked against
+[Codex MCP](https://developers.openai.com/codex/mcp),
+[Claude Code MCP](https://code.claude.com/docs/en/mcp), and
+[Cursor MCP](https://cursor.com/docs/context/mcp). The installer preserves
+unrelated settings rather than replacing agent configurations.

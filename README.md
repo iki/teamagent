@@ -5,6 +5,10 @@ owns durable tasks/events; verified artifacts use content-addressed storage.
 The execution adapters are a built-in workspace inspection and the embedded Pi
 agent loop. Mobile remains deferred.
 
+Source memory imports URLs, documents, images, folders and Git repositories,
+retains versions, and exposes retrieval through the CLI, MCP and a library API.
+See [memory and import commands](spec/memory-imports.md) for conversion and agent installation.
+
 ```sh
 aube install --frozen-lockfile
 aube run --no-install build:web
@@ -48,6 +52,7 @@ Use Bun **1.4.2** and Aube **2.5.1**:
 
 ```sh
 aube install --frozen-lockfile
+aube run --no-install imports:setup
 aube run --no-install hooks:install
 aube run --no-install step:check
 aube run --no-install review:check
