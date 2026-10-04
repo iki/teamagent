@@ -26,5 +26,10 @@ export default defineConfig({
     "teamagent/no-unsafe-casts": "error",
     "teamagent/no-executable-input": "error",
     "teamagent/runtime-launchers": "error",
+    "teamagent/module-contract": "error",
+    "teamagent/module-dependencies": "error",
+    "teamagent/safe-rendering": "error",
+    "teamagent/client-state": "error",
+    "teamagent/adapter-authority": "error",
   },
 });

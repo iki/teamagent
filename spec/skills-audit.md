@@ -13,11 +13,11 @@ Reviewed 2026-10-04 against the 23 repository skills and their relevant referenc
 | [oxlint-rules](../.agents/skills/oxlint-rules/SKILL.md)   | Validate rules with accepted/rejected fixtures and real parsed-source Oxlint integration. Rules must distinguish same-library relative imports from cross-library private imports and recognize aliased/namespaced runtime calls. |
 | [oxfmt](../.agents/skills/oxfmt/SKILL.md)                 | Add configuration schema metadata and include repository hook JSON in formatting/check scope. Keep skills, source research and immutable conversation records excluded.                                                           |
 
-The root TypeScript program covers current host tooling. Browser/Worker types must be introduced through their own platform configuration when those applications exist, rather than granting all platform globals to every file.
+Host, portable-library, browser and build-tool programs now have separate TypeScript configurations. Browser globals are confined to the UI program; Worker types remain deferred until a hosted surface exists.
 
 The JSON conversation/hook adapters retain their small stream protocol instead of adding interactive CLI packages. They reject unsupported arguments, bound incoming bytes while reading, validate UTF-8 and Schema, emit JSON only on success, and keep diagnostics separate. Archive failures cannot skip verification. Regression coverage protects these contracts.
 
-## Selected tools for future CLI and runtime modules
+## Implemented CLI and runtime modules
 
 | Skill                                         | Applicable requirement                                                                                                                                                                                                                           |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -26,9 +26,9 @@ The JSON conversation/hook adapters retain their small stream protocol instead o
 | [consola](../.agents/skills/consola/SKILL.md) | Developer tools use scoped loggers and stderr reporters when stdout is data. Cancellation is not confirmation; global stream wrapping must not corrupt machine output. Tests restore mocks/wrappers.                                             |
 | [logtape](../.agents/skills/logtape/SKILL.md) | Runtime libraries use hierarchical categories and structured messages. Hosts configure once, redact fields/patterns, own context and sink disposal, and reset matching async/sync configuration during tests.                                    |
 
-These four runtime dependencies are not installed yet because no corresponding public CLI or production logging/configuration module exists. Their concrete requirements are in [CLI contracts](architecture/cli.md) and [stack rules](architecture/stack.md). A skill's code sample is not a reason to add unused dependencies or substitute a different CLI framework.
+These four dependencies are now installed at exact pins. Cleye drives the public module catalog; C12 loads only explicit trusted configuration with ambient discovery and remote layers disabled; Consola separates CLI diagnostics from JSON output; LogTape records structured runtime task identity and owns host lifecycle cleanup. Configuration tests cover null/array semantics, precedence, paths and disabled environment overlays. CLI tests cover help/version before config execution, strict flags, stream separation and real daemon commands. See [CLI contracts](architecture/cli.md) and [harness behavior](harness.md).
 
-## Future product integrations
+## Product integrations and remaining conditional guidance
 
 | Skill                                                                                                 | Applicable requirement and current scope                                                                                                                                                                                        |
 | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ These four runtime dependencies are not installed yet because no corresponding p
 | [web-design-guidelines](../.agents/skills/web-design-guidelines/SKILL.md)                             | Keyboard/focus/form/link/gesture/accessibility checks, responsive layouts and explicit privacy exceptions for deep links. Review actual UI against current guidelines when it exists.                                           |
 | [web-perf](../.agents/skills/web-perf/SKILL.md)                                                       | Use real browser traces/network evidence and separate frontend, worker and service timing. Declare unavailable measurement tooling and never invent performance scores.                                                         |
 
-The [application](architecture/applications.md), [mobile](architecture/mobile.md) and [rendering](architecture/rendering.md) specifications carry these requirements. There is no runnable UI, Worker or authentication implementation to inspect visually or benchmark in this pass. No framework, deployment or service connection was added by the audit.
+The React/Vite UI and Tauri desktop now apply the design/composition guidance: semantic controls, explicit forms, bounded concurrent reads, abort/stale-response handling, escaped content and recoverable connection states. Real Chromium and Windows WebView2 tests cover task flows, cancellation, artifact digests, responsive layout and reconnect. Screenshots/accessibility snapshots were inspected; no performance score is claimed. Cloudflare, Workers, Wrangler, Better Auth and mobile remain conditional future integrations. The local service instead uses loopback-only bearer pairing with explicit Host/Origin checks. [Application rules](architecture/applications.md) and [verification evidence](harness-verification.md) describe the boundary.
 
 ## Narrow or unrelated skills
 

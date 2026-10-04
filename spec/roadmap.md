@@ -2,7 +2,11 @@
 
 [Home](README.md) · [Requirements](requirements.md) · [Evaluation](evaluation.md)
 
-The requested deliverable is analysis and specification. This roadmap describes implementation work; none of these services has been built or benchmarked in this repository.
+The first local harness increment is implemented: modular APIs/CLI, SQLite tasks
+and artifacts, bounded Pi execution, React web UI and Tauri desktop sidecar.
+See the [implemented contract](harness.md) and [verification](harness-verification.md).
+Mobile is deferred. The phases below include future features; this increment does
+not establish their exit criteria or live-provider benchmarks.
 
 ## Phase 0 — choose boundaries through small experiments
 

@@ -23,7 +23,7 @@ await test("Oxlint loads the registered rules and checks parsed TypeScript", () 
   try {
     writeFileSync(
       file,
-      'import { Effect } from "effect";\nexport const value = { count: 1 } as const;\nexport const task = Effect.succeed(value);\n',
+      'import { Effect } from "effect";\nexport { cli } from "./cli.ts";\nexport const value = { count: 1 } as const;\nexport const task = Effect.succeed(value);\n',
     );
     const valid = spawnSync(process.execPath, args, {
       cwd: root,

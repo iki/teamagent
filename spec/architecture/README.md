@@ -6,14 +6,16 @@ refine the existing [system architecture](../architecture.md),
 [delivery plan](../roadmap.md). A selected technology is a design decision, not
 evidence that its application or platform integration has been implemented.
 
-| Area                                              | Rules                                |
-| ------------------------------------------------- | ------------------------------------ |
-| TypeScript, Effect, Oxc and module boundaries     | [Stack](stack.md)                    |
-| Bun, Aube, native launchers and measurement       | [Runtime](runtime.md)                |
-| Command interfaces and trusted configuration      | [CLI contracts](cli.md)              |
-| React, state, Workers, desktop and build graph    | [Applications](applications.md)      |
-| Android/iOS, previews, native builds and delivery | [Mobile](mobile.md)                  |
-| Portable scenes, themes, codecs and export        | [Rendering and assets](rendering.md) |
+| Area                                                 | Rules                                |
+| ---------------------------------------------------- | ------------------------------------ |
+| TypeScript, Effect, Oxc and module boundaries        | [Stack](stack.md)                    |
+| Public module APIs, CLI exports and dependency graph | [Modules](modules.md)                |
+| Prior project reuse and source license evidence      | [Reuse decisions](reuse.md)          |
+| Bun, Aube, native launchers and measurement          | [Runtime](runtime.md)                |
+| Command interfaces and trusted configuration         | [CLI contracts](cli.md)              |
+| React, state, Workers, desktop and build graph       | [Applications](applications.md)      |
+| Android/iOS, previews, native builds and delivery    | [Mobile](mobile.md)                  |
+| Portable scenes, themes, codecs and export           | [Rendering and assets](rendering.md) |
 
 The root package manifest and committed Aube lockfile own the exact versions of
 installed JavaScript dependencies. These specifications also select future

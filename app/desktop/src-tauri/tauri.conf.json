@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Team Agent",
+  "version": "0.1.0",
+  "identifier": "dev.teamagent.desktop",
+  "build": { "frontendDist": "../../../data/web" },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Team Agent",
+        "width": 1280,
+        "height": 860,
+        "minWidth": 720,
+        "minHeight": 520,
+        "visible": false
+      }
+    ],
+    "security": {
+      "capabilities": ["main"],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://ipc.localhost http://127.0.0.1:*; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-src 'none'; form-action 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "externalBin": ["binaries/teamagent-daemon"],
+    "resources": { "../../../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md" },
+    "icon": ["icons/icon.png", "icons/icon.ico", "icons/icon.icns"]
+  }
+}

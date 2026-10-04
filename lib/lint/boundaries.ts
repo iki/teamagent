@@ -60,9 +60,18 @@ export const boundaries = Rule.define({
             source === "@/lint" ||
             source === "consola" ||
             source === "c12" ||
+            source === "cleye" ||
+            source === "react" ||
+            source.startsWith("react/") ||
+            source === "react-dom" ||
+            source.startsWith("react-dom/") ||
+            source.startsWith("@tauri-apps/") ||
             source.startsWith("@effect/platform") ||
             source === "effect/BunRuntime" ||
-            source === "effect/NodeRuntime"))
+            source === "effect/NodeRuntime")) ||
+        (libraryRoot === undefined &&
+          source.startsWith(".") &&
+          posix.normalize(posix.join(posix.dirname(file), source)).includes("/lib/"))
       );
     }
 

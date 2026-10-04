@@ -1,6 +1,6 @@
 # Verification and agent hooks
 
-The root [agent rules](../AGENTS.md) govern implementation. These checks establish the development foundation; they do not certify unimplemented product applications or platforms.
+The root [agent rules](../AGENTS.md) govern implementation. The CLI/web/desktop harness adds [platform evidence](harness-verification.md); unimplemented platforms remain unverified.
 
 ## Commands and failures
 
