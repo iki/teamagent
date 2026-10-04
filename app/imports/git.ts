@@ -2,13 +2,68 @@ import { lookup } from "node:dns/promises";
 import { lstat, mkdir, mkdtemp, opendir, realpath, rm } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import type { CaptureRequest, CapturedFile } from "@/memory";
+import { MemoryError, type CaptureRequest, type CapturedFile } from "@/memory";
 import { authorizeLocal } from "./files.ts";
 import { contained, excludedName, importLimits, safeRelative, sourceMediaType } from "./limits.ts";
 import { networkUrl, publicAddress } from "./network.ts";
 import { processEnvironment, runProcess } from "./process.ts";
 
 const text = (bytes: Uint8Array) => new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+
+/** Validate the complete committed manifest before any eligible blob is opened. */
+export function preflightGitEntries(
+  tree: string,
+  location: string,
+  dataDirectory: string,
+  initialWarnings: readonly string[],
+  signal: AbortSignal,
+): {
+  entries: { path: string; object: string }[];
+  warnings: string[];
+} {
+  const records = tree.split("\0").filter(Boolean);
+  if (records.length > importLimits.entries)
+    throw new MemoryError({
+      code: "capacity",
+      message: `Repository exceeds the ${importLimits.entries}-entry manifest limit.`,
+    });
+  const entries: { path: string; object: string }[] = [];
+  const warnings = [...initialWarnings];
+  for (const record of records) {
+    signal.throwIfAborted();
+    const match = /^(\d{6}) (blob|commit) ([a-f0-9]{40,64})\t(.+)$/.exec(record);
+    const mode = match?.[1];
+    const type = match?.[2];
+    const object = match?.[3];
+    const path = match?.[4];
+    if (mode === undefined || type === undefined || object === undefined || path === undefined)
+      throw new Error("Malformed Git tree entry");
+    const privatePath =
+      !/^https?:/.test(location) && contained(dataDirectory, join(location, path));
+    if (
+      !safeRelative(path) ||
+      path.split("/").some(excludedName) ||
+      mode === "120000" ||
+      type !== "blob" ||
+      privatePath
+    ) {
+      if (warnings.length >= 255)
+        throw new MemoryError({
+          code: "capacity",
+          message: "Repository exclusion manifest limit exceeded.",
+        });
+      warnings.push(`Excluded Git entry: ${path.slice(0, 1000)}`);
+      continue;
+    }
+    if (entries.length >= importLimits.files)
+      throw new MemoryError({
+        code: "capacity",
+        message: `Repository contains more than ${importLimits.files} eligible files; split it into smaller explicit sources.`,
+      });
+    entries.push({ path, object });
+  }
+  return { entries, warnings };
+}
 
 async function diskBytes(root: string): Promise<number> {
   let size = 0;
@@ -172,33 +227,17 @@ export async function captureGit(
         bytes: 2_097_152,
       }),
     );
-    const records = tree.split("\0").filter(Boolean);
-    if (records.length > importLimits.entries) throw new Error("Repository entry limit exceeded");
+    const preflight = preflightGitEntries(
+      tree,
+      location,
+      request.dataDirectory,
+      warnings,
+      options.signal,
+    );
     const files: CapturedFile[] = [];
     let bytes = 0;
-    for (const record of records) {
+    for (const { path, object } of preflight.entries) {
       options.signal.throwIfAborted();
-      const match = /^(\d{6}) (blob|commit) ([a-f0-9]{40,64})\t(.+)$/.exec(record);
-      const mode = match?.[1];
-      const type = match?.[2];
-      const object = match?.[3];
-      const path = match?.[4];
-      if (mode === undefined || type === undefined || object === undefined || path === undefined)
-        throw new Error("Malformed Git tree entry");
-      const privatePath =
-        !/^https?:/.test(location) && contained(request.dataDirectory, join(location, path));
-      if (
-        !safeRelative(path) ||
-        path.split("/").some(excludedName) ||
-        mode === "120000" ||
-        type !== "blob" ||
-        privatePath
-      ) {
-        if (warnings.length >= 255) throw new Error("Repository exclusion manifest limit exceeded");
-        warnings.push(`Excluded Git entry: ${path.slice(0, 1000)}`);
-        continue;
-      }
-      if (files.length >= importLimits.files) throw new Error("Repository file limit exceeded");
       const length = Number(
         text(
           await runProcess("git", [...gitPrefix, "cat-file", "-s", object], {
@@ -230,7 +269,7 @@ export async function captureGit(
         origin: `${/^https?:/.test(location) ? location : pathToFileURL(resolve(location)).href}#${commit}/${encodeURI(path)}`,
       });
     }
-    return { locator: location, files, commit, warnings };
+    return { locator: location, files, commit, warnings: preflight.warnings };
   } finally {
     await rm(staging, { recursive: true, force: true });
   }

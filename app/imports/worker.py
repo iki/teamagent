@@ -14,7 +14,7 @@ from urllib.parse import urljoin, urlparse
 MAX_FILE = 16 * 1024 * 1024
 MAX_TOTAL = 64 * 1024 * 1024
 MAX_IMAGES = 128
-PARSER = "teamagent-import/1;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0"
+PARSER = "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0"
 
 
 def deny_external_effect(event, args):
@@ -47,7 +47,7 @@ def preflight_archive(data):
 
 def convert(path, media_type, base_url):
     from bs4 import BeautifulSoup
-    from markitdown.converters import HtmlConverter, DocxConverter, PdfConverter, PptxConverter, XlsxConverter
+    from markitdown.converters import HtmlConverter, DocxConverter, PptxConverter, XlsxConverter
     from markitdown import StreamInfo
     from importlib.metadata import version
     if version("markitdown") != "0.1.8" or version("pypdf") != "6.11.0":
@@ -128,15 +128,36 @@ def convert(path, media_type, base_url):
             raise ValueError("Encrypted PDF conversion is unsupported")
         if len(reader.pages) > 200:
             raise ValueError("PDF page limit exceeded")
-        markdown = PdfConverter().convert(stream, info).markdown
-        for number, page in enumerate(reader.pages):
+        # Inferring borderless tables from word positions can turn prose into cells
+        # and discard inter-word spaces. Keep the PDF text stream instead of
+        # synthesizing structure or repairing words from a language dictionary.
+        sections = []
+        text_bytes = 0
+        empty_pages = []
+
+        def decoded_pdf_images(page, page_number):
             try:
-                for item in page.images:
-                    reference = add_image(item.data, item.name)
-                    markdown += f"\n\n![Page {number + 1} image]({reference})"
+                yield from page.images
             except (ValueError, KeyError, NotImplementedError):
-                diagnostics.append(f"PDF page {number + 1} has an image that could not be decoded")
-        diagnostics.append("PDF layout, vector artwork and OCR are not reconstructed; original PDF retained")
+                diagnostics.append(f"PDF page {page_number} has an image that could not be decoded")
+
+        for number, page in enumerate(reader.pages):
+            page_number = number + 1
+            text = page.extract_text(extraction_mode="plain") or ""
+            section = f"## PDF page {page_number}\n\n{text.rstrip()}"
+            if not text.strip():
+                empty_pages.append(page_number)
+            for item in decoded_pdf_images(page, page_number):
+                reference = add_image(item.data, item.name)
+                section += f"\n\n![PDF page {page_number} image]({reference})"
+            text_bytes += len(section.encode("utf-8")) + 2
+            if text_bytes > MAX_FILE:
+                raise ValueError("Markdown output limit exceeded")
+            sections.append(section)
+        markdown = "\n\n".join(sections)
+        if empty_pages:
+            diagnostics.append("PDF pages without extractable text (OCR is not enabled): " + ", ".join(map(str, empty_pages)))
+        diagnostics.append("PDF text stream and physical page boundaries retained; reading order, table layout, equations, vector artwork and OCR are not reconstructed; original PDF retained")
     elif extension == ".pptx":
         markdown = PptxConverter().convert(stream, info).markdown
         diagnostics.append("Slide layout and speaker timing are not reconstructed; original presentation retained")

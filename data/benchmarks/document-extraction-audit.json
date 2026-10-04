@@ -1,0 +1,1971 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-04T10:08:20.417763+00:00",
+  "purpose": "Extraction audit only; no retrieval rankings or outcomes used.",
+  "documentManifestCanonicalSha256": "5a0c3aeb53f929c37b149fe8834461f61b18b8417c63d4ebda40c65de3cb405b",
+  "documentManifestFileSha256": "19a35c92a41e413a71086d0ca2159de2827f8ca2f061a7a58c74f7aff1831921",
+  "corpusFileSha256": "bc1e233237e9c94fe0f4e94e58a8e1129068ce0c9d771bb46d0f43f2b4717b7c",
+  "normalization": "Matches root metrics: NFKC, remove hyphen followed by optional whitespace/newline/whitespace, collapse whitespace, trim, lowercase. Markup-normalized and compact-character checks are diagnostics only, never scoring substitutions.",
+  "limitations": [
+    "Full-markdown matching is document-wide; page-specific original gold was validated separately with pypdf.",
+    "Compact-character presence diagnoses recoverable spacing/punctuation damage but does not prove correct table structure or semantic preservation.",
+    "Missing-or-reordered-text requires manual inspection; this label does not distinguish all glyph, ordering or extraction defects.",
+    "Single-passage oracle requirements can underestimate valid support assembled from multiple returned passages.",
+    "Negatives have no positive spans; this audit does not score abstention."
+  ],
+  "summary": {
+    "cases": 40,
+    "answerableCases": 34,
+    "negativeCases": 6,
+    "evidenceGroups": 39,
+    "anchors": 113,
+    "fullMarkdownExactAnchors": 66,
+    "markupNormalizedAnchors": 76,
+    "compactCharacterAnchors": 104,
+    "fullMarkdownExactGroups": 15,
+    "singlePassageAvailableGroups": 14,
+    "boundarySplitOnlyGroups": 1,
+    "fullySupportedCasesInFullMarkdown": 12,
+    "fullySupportedCasesInSinglePassageGroups": 11,
+    "anchorDiagnoses": {
+      "intact": 66,
+      "spacing-or-punctuation-damage": 28,
+      "markdown-serialization": 10,
+      "missing-or-reordered-text": 9
+    }
+  },
+  "sources": [
+    {
+      "id": "pdf-hermes-kanban",
+      "sourceSha256": "708469e633223b2e52478b008d6a5fbe75b8da305cabfdd8248c0d02913455f7",
+      "convertedFiles": [
+        {
+          "path": "converted/cd02d57bd5452b004081f3f2/document.md",
+          "sha256": "5b3a6ce88ad66afbdc9c6724c23d25793359e251502a0599a0784baf9899b9d0",
+          "bytes": 87817
+        }
+      ],
+      "passages": 77,
+      "parserVersion": "teamagent-import/1;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [
+        "original/hermes-kanban-v1-spec.pdf: PDF layout, vector artwork and OCR are not reconstructed; original PDF retained"
+      ]
+    },
+    {
+      "id": "pdf-memento",
+      "sourceSha256": "1aa388a660073e7a4bde0e0e1c4de421424e65c00d9e9935322c86b5d25485ff",
+      "convertedFiles": [
+        {
+          "path": "converted/ec4de546e2b1271bd3a80d70/document.md",
+          "sha256": "81b86a9a6ff12b263814c505c33cb914db8628f7201e801cbd60a4b5a7da2ea0",
+          "bytes": 110081
+        }
+      ],
+      "passages": 98,
+      "parserVersion": "teamagent-import/1;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [
+        "original/memento.pdf: PDF layout, vector artwork and OCR are not reconstructed; original PDF retained"
+      ]
+    },
+    {
+      "id": "pdf-ncm-czech",
+      "sourceSha256": "23acdb843213057ad4a653a78e7871a3e48dd1ae9e0e04847007e365c13f2ea1",
+      "convertedFiles": [
+        {
+          "path": "converted/e02129c68e43716171238c57/document.md",
+          "sha256": "d0237a1ee94d1a213e76aacafa4268332223d407f3986c01c33776e703fb327a",
+          "bytes": 10654
+        }
+      ],
+      "passages": 12,
+      "parserVersion": "teamagent-import/1;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [
+        "original/NCM-Texts-tests_CZ.pdf: PDF layout, vector artwork and OCR are not reconstructed; original PDF retained"
+      ]
+    },
+    {
+      "id": "pdf-dynamodb-transactions",
+      "sourceSha256": "a5c2d061c6570184cb38ee5c01b8a88991fd3c9742654d8974a71e369ae6762d",
+      "convertedFiles": [
+        {
+          "path": "converted/2d6c4fa0b598e3e5fa00220d/document.md",
+          "sha256": "add4c31235b0ac0176942ca7c58d39ba47b5db9fb085020d958afc28bd5c3219",
+          "bytes": 63709
+        }
+      ],
+      "passages": 56,
+      "parserVersion": "teamagent-import/1;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [
+        "original/atc23-idziorek-dynamodb-transactions.pdf: PDF layout, vector artwork and OCR are not reconstructed; original PDF retained"
+      ]
+    },
+    {
+      "id": "pdf-disney-q1-fy25",
+      "sourceSha256": "edb5d4c78cc2c403f2387a7b8aa7134c1a96018acb489722d13aa6a968ae93bb",
+      "convertedFiles": [
+        {
+          "path": "converted/2367e7ae3057755ff5e6d178/document.md",
+          "sha256": "379fbeaf77ada14c1361fdce0f9028bd966cf119d2a0ceb809dfb23df4944000",
+          "bytes": 56631
+        }
+      ],
+      "passages": 46,
+      "parserVersion": "teamagent-import/1;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [
+        "original/q1-fy25-earnings.pdf: PDF layout, vector artwork and OCR are not reconstructed; original PDF retained"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "doc-hermes-kanban-01",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 8,
+          "quotes": [
+            {
+              "quote": "The shared SQLite database at ~/.hermes/kanban.db is the single source of truth.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "cf305f375989ddc82b0d490dd6f2af73"
+              ]
+            },
+            {
+              "quote": "recompute the ready status",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "atomically claim ready tasks",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "cf305f375989ddc82b0d490dd6f2af73"
+              ]
+            },
+            {
+              "quote": "spawn the assigned profile",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-hermes-kanban-02",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 10,
+          "quotes": [
+            {
+              "quote": "Default is scratch",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "33e26a3fcabe8e296df18421ff913002"
+              ]
+            },
+            {
+              "quote": "Long-running journals",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "05390721d9ff17086db82ea12ad69674",
+                "33e26a3fcabe8e296df18421ff913002"
+              ]
+            },
+            {
+              "quote": "Coding tasks with isolated commits.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-hermes-kanban-03",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 24,
+          "quotes": [
+            {
+              "quote": "claim_lock IS NULL",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "be4890adcbdf77b79dba8f181671313a",
+                "1d6b6b0bb9dadbbb88f142f4e3552fd9",
+                "706bf67c768b6efea465ef1d507c68a8"
+              ]
+            },
+            {
+              "quote": "Losers simply observe zero affected rows and move on.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            },
+            {
+              "quote": "at most one claimer can win any given task.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "706bf67c768b6efea465ef1d507c68a8"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-hermes-kanban-04",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 8,
+          "quotes": [
+            {
+              "quote": "Every coordinating worker is an operating-system process",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "68ac7eaf297b3cdd88372e1cd15302fe"
+              ]
+            },
+            {
+              "quote": "its claim lock expires and the next dispatcher tick reclaims the task.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "68ac7eaf297b3cdd88372e1cd15302fe"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "68ac7eaf297b3cdd88372e1cd15302fe"
+          ],
+          "boundarySplitOnly": false
+        },
+        {
+          "page": 24,
+          "quotes": [
+            {
+              "quote": "Stale claim recovery",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "reset status=",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-hermes-kanban-05",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 13,
+          "quotes": [
+            {
+              "quote": "Disabled execution toolsets.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "bead13137e984722b31716bbe6719d6d"
+              ]
+            },
+            {
+              "quote": "Orchestrator skill with prescriptive system message.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "bead13137e984722b31716bbe6719d6d"
+              ]
+            },
+            {
+              "quote": "Standard specialist roster convention.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "bead13137e984722b31716bbe6719d6d",
+                "74f7d7f0e5ef5e25e8b84f2e4356f26a"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "bead13137e984722b31716bbe6719d6d"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-hermes-kanban-06",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 15,
+          "quotes": [
+            {
+              "quote": "A tenant is a namespace, not a new entity type.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            },
+            {
+              "quote": "One researcher profile exists",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "7b29de249a220e0981be995c8de08dbb"
+              ]
+            },
+            {
+              "quote": "v1 assumes all tenants are owned by the same user.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "7b29de249a220e0981be995c8de08dbb",
+                "d701bcbb8570bc6289df17e581bfaa1f"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        },
+        {
+          "page": 16,
+          "quotes": [
+            {
+              "quote": "Links cannot cross tenants in v1.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d701bcbb8570bc6289df17e581bfaa1f"
+              ]
+            },
+            {
+              "quote": "Tenants scope data, not profile definitions.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-hermes-kanban-07",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": false,
+      "groups": [],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-hermes-kanban-08",
+      "split": "dev",
+      "sourceId": "pdf-hermes-kanban",
+      "answerable": false,
+      "groups": [],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-ncm-czech-01",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 1,
+          "quotes": [
+            {
+              "quote": "Datová sada obsahuje 7650 Q/A párů v češtině",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "7c1d9488adfc3adbbdd32182ff295c89"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "7c1d9488adfc3adbbdd32182ff295c89"
+          ],
+          "boundarySplitOnly": false
+        },
+        {
+          "page": 2,
+          "quotes": [
+            {
+              "quote": "Fáze TESTU (76 náhodných Q)",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d4e9a3686393663557ddd36ff8fc60e6"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "d4e9a3686393663557ddd36ff8fc60e6"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-ncm-czech-02",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 2,
+          "quotes": [
+            {
+              "quote": "eliminovali vliv tematické sousednosti",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "6089f3d732ab4fe9d0d09448bc78d66a"
+              ]
+            },
+            {
+              "quote": "vysokou informační entropii",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "6089f3d732ab4fe9d0d09448bc78d66a"
+              ]
+            },
+            {
+              "quote": "předcházíme zkreslení topologického vkládání",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "6089f3d732ab4fe9d0d09448bc78d66a"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "6089f3d732ab4fe9d0d09448bc78d66a"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-ncm-czech-03",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 2,
+          "quotes": [
+            {
+              "quote": "Každých ~50 kroků: homeostáza",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "6089f3d732ab4fe9d0d09448bc78d66a",
+                "d4e9a3686393663557ddd36ff8fc60e6"
+              ]
+            },
+            {
+              "quote": "Každých ~100 kroků: konsolidace",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "6089f3d732ab4fe9d0d09448bc78d66a",
+                "d4e9a3686393663557ddd36ff8fc60e6"
+              ]
+            },
+            {
+              "quote": "Fáze SIMULACE (500 kroků)",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d4e9a3686393663557ddd36ff8fc60e6"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "d4e9a3686393663557ddd36ff8fc60e6"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-ncm-czech-04",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 2,
+          "quotes": [
+            {
+              "quote": "Na 76 (1% datasetu) náhodných otázek",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d4e9a3686393663557ddd36ff8fc60e6"
+              ]
+            },
+            {
+              "quote": "Eidetické vzpomínky 27",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            },
+            {
+              "quote": "Moudrá sémantická syntéza 2",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            },
+            {
+              "quote": "Sémantický drift 35",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            },
+            {
+              "quote": "11 ~15%",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-ncm-czech-05",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 4,
+          "quotes": [
+            {
+              "quote": "Dospělý člověk má v těle obvykle 206 kostí.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "b6ae85add56745e35f6daf611e5cad03"
+              ]
+            },
+            {
+              "quote": "Člověk má 46 chromozomů, tedy 23 párů.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "b6ae85add56745e35f6daf611e5cad03",
+                "535aee1bc802c73bcfbdcb1962573bd4"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "b6ae85add56745e35f6daf611e5cad03"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-ncm-czech-06",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 5,
+          "quotes": [
+            {
+              "quote": "Multi-Head Depth-Slices architekturu.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8582a6cea3a95e653ab0847d7883c8f"
+              ]
+            },
+            {
+              "quote": "faktické, konceptuální a diferenciální",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8582a6cea3a95e653ab0847d7883c8f"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "d8582a6cea3a95e653ab0847d7883c8f"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-ncm-czech-07",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 5,
+          "quotes": [
+            {
+              "quote": "https://zenodo.org/records/18198327",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8582a6cea3a95e653ab0847d7883c8f"
+              ]
+            },
+            {
+              "quote": "https://zenodo.org/records/18267378",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8582a6cea3a95e653ab0847d7883c8f"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "d8582a6cea3a95e653ab0847d7883c8f"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-ncm-czech-08",
+      "split": "dev",
+      "sourceId": "pdf-ncm-czech",
+      "answerable": false,
+      "groups": [],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-01",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 6,
+          "quotes": [
+            {
+              "quote": "228K samples: 54% math, 19% code, 27% science",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "average block contains ∼1,150 tokens",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "average memento ∼194 tokens",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-02",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 2,
+          "quotes": [
+            {
+              "quote": "explicit memento text",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "3d52030c9c8f7a81ae8c412517d04231"
+              ]
+            },
+            {
+              "quote": "implicit representational channel through the cached KV states",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "8f2a99ca72259cb2fa4c0ff7e212af00"
+              ]
+            },
+            {
+              "quote": "reduces accuracy by 15 pp",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-03",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 5,
+          "quotes": [
+            {
+              "quote": "block containing at least 200 tokens.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "λ = 0.5.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "1d1eddf10042d5001e4dfbf66583c292"
+              ]
+            },
+            {
+              "quote": "The coefficient of variation σ/µ is scale-invariant",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-04",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 5,
+          "quotes": [
+            {
+              "quote": "acceptance threshold τ = 8",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "114fe71c307195f6798a751adc6d44c9",
+                "f4320602c27a96e8e582ee009ab4add3"
+              ]
+            },
+            {
+              "quote": "We use max T = 2 iterations",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "114fe71c307195f6798a751adc6d44c9",
+                "f4320602c27a96e8e582ee009ab4add3"
+              ]
+            },
+            {
+              "quote": "only 28% pass rate",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "bring this to 92%.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "f4320602c27a96e8e582ee009ab4add3"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-05",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 6,
+          "quotes": [
+            {
+              "quote": "Stage 1: Full Attention",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "Stage 2: Memento Attention",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "format without any context management pressure.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "preceding thinking block is masked",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d323f8821281de8e1f48211857e3cd29"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-06",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 11,
+          "quotes": [
+            {
+              "quote": "KL penalty (β=0.001)",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "response-length collapse",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "1a8e98c825ad2632b5aeafb79985ebe4"
+              ]
+            },
+            {
+              "quote": "cap individual blocks at 7K tokens",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            },
+            {
+              "quote": "fewer and longer reasoning blocks",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "0298eab9a25cab733ae5b61ea9897583"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-07",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 5,
+          "quotes": [
+            {
+              "quote": "sentence 180 pivots to a new strategy",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "e1a3d9882b8473e96072484d01cb2cff",
+                "1d1eddf10042d5001e4dfbf66583c292"
+              ]
+            },
+            {
+              "quote": "scores 0.0—never split here",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "cuts at high-scoring transitions.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-memento-08",
+      "split": "holdout",
+      "sourceId": "pdf-memento",
+      "answerable": false,
+      "groups": [],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-01",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 4,
+          "quotes": [
+            {
+              "quote": "uses a client request token",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            },
+            {
+              "quote": "if any of the preconditions are not met.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-02",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 3,
+          "quotes": [
+            {
+              "quote": "does not support multiple versions of the same item",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            },
+            {
+              "quote": "version retention policies",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "Locking restricts concurrency and can lead to deadlocks.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            },
+            {
+              "quote": "optimistic concurrency control scheme",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-03",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 5,
+          "quotes": [
+            {
+              "quote": "serializability holds even if the transaction coordinators do not have synchronized clocks",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            },
+            {
+              "quote": "more successful transactions",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "within a few microseconds",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "6a61d7fe0ddf8933b0c7ccb5b2896275",
+                "a5f3a5b3bf7aad189647232714d6367c"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-04",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 6,
+          "quotes": [
+            {
+              "quote": "partition-level max delete timestamp",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        },
+        {
+          "page": 7,
+          "quotes": [
+            {
+              "quote": "transactions may be cancelled",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "tombstones were maintained for deleted items",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-05",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 7,
+          "quotes": [
+            {
+              "quote": "writeless protocol for executing read transactions.",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "current committed log sequence number (LSN)",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "LSNs have not changed",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "957af9644a4c82c4b93c034479f57073",
+                "e4e5a4ab0e7d56c38126f52b5e72baab"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-06",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 8,
+          "quotes": [
+            {
+              "quote": "transaction ledger is a DynamoDB table",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "c3618b2392c0b445f79ee50cb0d83393"
+              ]
+            },
+            {
+              "quote": "duplicate attempts to write an item are ignored",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "recovery managers regularly scan the ledger",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": false,
+              "diagnosis": "missing-or-reordered-text",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-07",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 11,
+          "quotes": [
+            {
+              "quote": "100 thousand requests per second",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d2fb194443819c877891c3a44e87a057"
+              ]
+            },
+            {
+              "quote": "900 byte item",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "less than 2x the latency",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            },
+            {
+              "quote": "4x the latency of non-transactional writes",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": false,
+              "compactCharactersPresent": true,
+              "diagnosis": "spacing-or-punctuation-damage",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-dynamodb-transactions-08",
+      "split": "holdout",
+      "sourceId": "pdf-dynamodb-transactions",
+      "answerable": false,
+      "groups": [],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-01",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 1,
+          "quotes": [
+            {
+              "quote": "February 5, 2025",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8b23d0ff5c3b4382bb2f7398abac67c",
+                "3ddf81cfce3fb45eaf734ccf049c7022"
+              ]
+            },
+            {
+              "quote": "ended December 28, 2024.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8b23d0ff5c3b4382bb2f7398abac67c"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "d8b23d0ff5c3b4382bb2f7398abac67c"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-02",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 3,
+          "quotes": [
+            {
+              "quote": "Revenues $ 24,690",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            },
+            {
+              "quote": "23,549",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "c899e1d7d95ba76cda18ec4814cc52b4",
+                "59180526597a7cd24b9384790e2f90f9",
+                "0552bdac72a75a6fb97ac339ed106714"
+              ]
+            },
+            {
+              "quote": "Diluted EPS $ 1.40",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            },
+            {
+              "quote": "1.04",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8b23d0ff5c3b4382bb2f7398abac67c",
+                "c899e1d7d95ba76cda18ec4814cc52b4",
+                "8ff68320d24cfa3e5c7e5f5c60d638f3",
+                "0552bdac72a75a6fb97ac339ed106714",
+                "c40ff2b29f3790f5114cb4d56a4257e9"
+              ]
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-03",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 19,
+          "quotes": [
+            {
+              "quote": "cash provided by operations less investments in parks, resorts and other property",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "e2f5421678679b287c05f0653a852a71"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "e2f5421678679b287c05f0653a852a71"
+          ],
+          "boundarySplitOnly": false
+        },
+        {
+          "page": 20,
+          "quotes": [
+            {
+              "quote": "3,205",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "8ff68320d24cfa3e5c7e5f5c60d638f3",
+                "e93f68c7c1a1065be30b785ee0543aab",
+                "eefcc20594147d8186ec115c736b7e89",
+                "7a331c7ace71e38974bf588bdc7cb20f",
+                "d9ab7acb482833eac79dbfb98ea02a76"
+              ]
+            },
+            {
+              "quote": "(2,466)",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "e93f68c7c1a1065be30b785ee0543aab",
+                "404298260e60d8d3817a28397a60b79f",
+                "eefcc20594147d8186ec115c736b7e89",
+                "7a331c7ace71e38974bf588bdc7cb20f",
+                "d9ab7acb482833eac79dbfb98ea02a76"
+              ]
+            },
+            {
+              "quote": "Free cash flow $ 739",
+              "fullMarkdownExact": false,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "markdown-serialization",
+              "passageIds": []
+            }
+          ],
+          "fullMarkdownExact": false,
+          "allAnchorsAvailableAcrossPassages": false,
+          "singlePassageIds": [],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-04",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 4,
+          "quotes": [
+            {
+              "quote": "November 14, 2024",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d062e58a0d30fe35167bab9d1202d36f",
+                "c899e1d7d95ba76cda18ec4814cc52b4",
+                "59180526597a7cd24b9384790e2f90f9",
+                "fb01bb083839f33937556fa6eadda8f0"
+              ]
+            },
+            {
+              "quote": "56% controlling interest",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "fb01bb083839f33937556fa6eadda8f0"
+              ]
+            },
+            {
+              "quote": "37% held by the Company",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "fb01bb083839f33937556fa6eadda8f0"
+              ]
+            },
+            {
+              "quote": "7% held by a third party",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "fb01bb083839f33937556fa6eadda8f0"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "fb01bb083839f33937556fa6eadda8f0"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-05",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 17,
+          "quotes": [
+            {
+              "quote": "are not financial measures defined by GAAP.",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "e73edf7bebcd8863d5caaf0d7314a76c"
+              ]
+            },
+            {
+              "quote": "should be reviewed in conjunction",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "e73edf7bebcd8863d5caaf0d7314a76c"
+              ]
+            },
+            {
+              "quote": "may not be comparable to similarly titled measures",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "e73edf7bebcd8863d5caaf0d7314a76c"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "e73edf7bebcd8863d5caaf0d7314a76c"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-06",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 18,
+          "quotes": [
+            {
+              "quote": "Restructuring and impairment charges",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "32d4239112239452fa1a88bb9bf0ceb8",
+                "0552bdac72a75a6fb97ac339ed106714",
+                "c40ff2b29f3790f5114cb4d56a4257e9",
+                "35c79de9cfc4e2404468186e61b69724",
+                "e2f5421678679b287c05f0653a852a71"
+              ]
+            },
+            {
+              "quote": "0.20",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "c40ff2b29f3790f5114cb4d56a4257e9"
+              ]
+            },
+            {
+              "quote": "Amortization of TFCF and Hulu intangible",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "28837f08011c096da784b41d38ae3ecf",
+                "63015397a88531f3b0467a64c1851758",
+                "c40ff2b29f3790f5114cb4d56a4257e9",
+                "35c79de9cfc4e2404468186e61b69724",
+                "e2f5421678679b287c05f0653a852a71"
+              ]
+            },
+            {
+              "quote": "0.16",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "c40ff2b29f3790f5114cb4d56a4257e9"
+              ]
+            },
+            {
+              "quote": "1.76",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8b23d0ff5c3b4382bb2f7398abac67c",
+                "8ff68320d24cfa3e5c7e5f5c60d638f3",
+                "c40ff2b29f3790f5114cb4d56a4257e9"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [
+            "c40ff2b29f3790f5114cb4d56a4257e9"
+          ],
+          "boundarySplitOnly": false
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": true
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-07",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": true,
+      "groups": [
+        {
+          "page": 1,
+          "quotes": [
+            {
+              "quote": "Direct-to-Consumer advertising revenue declined 2%",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8b23d0ff5c3b4382bb2f7398abac67c"
+              ]
+            },
+            {
+              "quote": "advertising revenue was up 16%",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "d8b23d0ff5c3b4382bb2f7398abac67c"
+              ]
+            },
+            {
+              "quote": "approximately $15 million",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "4c146e4e8a919610cb499b3e9b5073ae"
+              ]
+            },
+            {
+              "quote": "and $165 million",
+              "fullMarkdownExact": true,
+              "markdownMarkupNormalized": true,
+              "compactCharactersPresent": true,
+              "diagnosis": "intact",
+              "passageIds": [
+                "4c146e4e8a919610cb499b3e9b5073ae"
+              ]
+            }
+          ],
+          "fullMarkdownExact": true,
+          "allAnchorsAvailableAcrossPassages": true,
+          "singlePassageIds": [],
+          "boundarySplitOnly": true
+        }
+      ],
+      "allGroupsFullMarkdownExact": true,
+      "allGroupsSinglePassageAvailable": false
+    },
+    {
+      "caseId": "doc-disney-q1-fy25-08",
+      "split": "holdout",
+      "sourceId": "pdf-disney-q1-fy25",
+      "answerable": false,
+      "groups": [],
+      "allGroupsFullMarkdownExact": false,
+      "allGroupsSinglePassageAvailable": false
+    }
+  ]
+}

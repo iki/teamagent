@@ -9,7 +9,7 @@ import workerSource from "./worker.py" with { type: "text" };
 import { contained, importLimits } from "./limits.ts";
 import { runProcess } from "./process.ts";
 
-export const parserVersion = "teamagent-import/1;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0";
+export const parserVersion = "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0";
 const WorkerResultSchema = Schema.Struct({
   markdown: Schema.String.check(Schema.isMaxLength(importLimits.fileBytes)),
   images: Schema.Array(

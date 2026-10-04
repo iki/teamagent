@@ -1,0 +1,965 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "pdf-hermes-kanban",
+      "path": "../ai-agents/hermes-agent/docs/hermes-kanban-v1-spec.pdf",
+      "sha256": "708469e633223b2e52478b008d6a5fbe75b8da305cabfdd8248c0d02913455f7",
+      "bytes": 213669,
+      "pages": 33,
+      "origin": "https://github.com/NousResearch/hermes-agent/blob/3b9a963b8e5cdb804a422755bed9a60fcd778273/docs/hermes-kanban-v1-spec.pdf",
+      "license": "Repository MIT, Copyright 2025 Nous Research; first-party design document. Preserve notice if redistributing."
+    },
+    {
+      "id": "pdf-memento",
+      "path": "../ai-agents-mem/xx-2604-memento/docs/memento.pdf",
+      "sha256": "1aa388a660073e7a4bde0e0e1c4de421424e65c00d9e9935322c86b5d25485ff",
+      "bytes": 674225,
+      "pages": 30,
+      "origin": "https://github.com/microsoft/memento/blob/d8c10e66ff313844b4b5f063dd4c075d3ea56aab/docs/memento.pdf",
+      "license": "Repository MIT, Copyright 2026 Microsoft; first-party research paper. Preserve notice if redistributing."
+    },
+    {
+      "id": "pdf-ncm-czech",
+      "path": "../ai-agents-mem/xx-2601-cognitive-memory/NCM-Texts-tests_CZ.pdf",
+      "sha256": "23acdb843213057ad4a653a78e7871a3e48dd1ae9e0e04847007e365c13f2ea1",
+      "bytes": 126685,
+      "pages": 5,
+      "origin": "https://github.com/OpenTechLab/cognitive-memory/blob/9e1df515bf516561bc8e57301b67c50565a12e97/NCM-Texts-tests_CZ.pdf",
+      "license": "CC BY-NC 4.0, Copyright 2026 Michal Seidl, OpenTechLab Jablonec nad Nisou s.r.o.; noncommercial reference evaluation only."
+    },
+    {
+      "id": "pdf-dynamodb-transactions",
+      "path": "../ai-agents-mem/fokosdb/docs/research/atc23-idziorek-dynamodb-transactions.pdf",
+      "sha256": "a5c2d061c6570184cb38ee5c01b8a88991fd3c9742654d8974a71e369ae6762d",
+      "bytes": 378686,
+      "pages": 14,
+      "origin": "https://www.usenix.org/conference/atc23/presentation/idziorek ; local reference https://github.com/lambrospetrou/fokosdb/blob/01c82a26189c545a7ef75d07ebdf35f20d074a55/docs/research/atc23-idziorek-dynamodb-transactions.pdf",
+      "license": "Third-party USENIX ATC 2023 open-access proceedings paper; do not infer the containing code repository's license applies. Local evaluation; PDF is not redistributed."
+    },
+    {
+      "id": "pdf-disney-q1-fy25",
+      "path": "../ai-agents-mem/pageindex/examples/documents/q1-fy25-earnings.pdf",
+      "sha256": "edb5d4c78cc2c403f2387a7b8aa7134c1a96018acb489722d13aa6a968ae93bb",
+      "bytes": 101417,
+      "pages": 22,
+      "origin": "https://github.com/VectifyAI/PageIndex/blob/6d23caf416858f2ca136840305d1f479a86f6ef7/examples/documents/q1-fy25-earnings.pdf ; The Walt Disney Company earnings release dated February 5, 2025",
+      "license": "Third-party company earnings release; no document redistribution license identified. PageIndex MIT license is not assumed to cover this PDF. Local evaluation; PDF is not redistributed."
+    }
+  ],
+  "cases": [
+    {
+      "id": "doc-hermes-kanban-01",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-definition",
+      "query": "In the Hermes Kanban design, what is the durable source of truth and which three operations does its dispatcher perform?",
+      "evidence": [
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 8,
+          "contains": [
+            "The shared SQLite database at ~/.hermes/kanban.db is the single source of truth.",
+            "recompute the ready status",
+            "atomically claim ready tasks",
+            "spawn the assigned profile"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "The shared SQLite database ~/.hermes/kanban.db is the source of truth.",
+        "The dispatcher recomputes readiness from completed parents, atomically claims ready tasks with compare-and-swap, and spawns the assigned profile in the resolved workspace."
+      ],
+      "rationale": "Definition and ordered responsibility retrieval; answers describe the design, not implemented behavior.",
+      "answerable": true
+    },
+    {
+      "id": "doc-hermes-kanban-02",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-table",
+      "query": "According to Hermes Kanban Table 4, which workspace kind is the default, and which kind suits a persistent Obsidian journal versus isolated coding commits?",
+      "evidence": [
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 10,
+          "contains": [
+            "Default is scratch",
+            "Long-running journals",
+            "Coding tasks with isolated commits."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "scratch is the default.",
+        "dir:<p> binds an existing shared directory and suits persistent journals.",
+        "worktree suits coding tasks with isolated commits."
+      ],
+      "rationale": "Requires joining workspace rows to their uses in Table 4; page visually inspected.",
+      "answerable": true
+    },
+    {
+      "id": "doc-hermes-kanban-03",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-technical",
+      "query": "How does the Hermes Kanban dispatcher prevent two overlapping cron ticks from claiming the same ready task?",
+      "evidence": [
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 24,
+          "contains": [
+            "claim_lock IS NULL",
+            "Losers simply observe zero affected rows and move on.",
+            "at most one claimer can win any given task."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "BEGIN IMMEDIATE and SQLite WAL writer serialization enclose a compare-and-swap UPDATE.",
+        "The predicate checks ready status and null claim_lock.",
+        "One affected row wins; zero affected rows loses the race."
+      ],
+      "rationale": "Concrete concurrency mechanism with exact SQL concepts, not a generic claim that transactions are safe.",
+      "answerable": true
+    },
+    {
+      "id": "doc-hermes-kanban-04",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-synthesis",
+      "query": "Why does the Hermes Kanban proposal use full operating-system worker processes, and how is work recovered after a worker is killed?",
+      "evidence": [
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 8,
+          "contains": [
+            "Every coordinating worker is an operating-system process",
+            "its claim lock expires and the next dispatcher tick reclaims the task."
+          ]
+        },
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 24,
+          "contains": ["Stale claim recovery", "reset status="]
+        }
+      ],
+      "answerFacts": [
+        "Full processes avoid dependence on the Claude Agent SDK query lifecycle that can terminate in-process subagents.",
+        "Expired running claims are reset to ready and their claim_lock cleared by the dispatcher."
+      ],
+      "rationale": "Two sections must support the architectural reason and concrete recovery action. Exact lease duration is not requested.",
+      "answerable": true
+    },
+    {
+      "id": "doc-hermes-kanban-05",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-technical",
+      "query": "Which three profile-level properties stop the proposed Hermes orchestrator from doing specialists' implementation work itself?",
+      "evidence": [
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 13,
+          "contains": [
+            "Disabled execution toolsets.",
+            "Orchestrator skill with prescriptive system message.",
+            "Standard specialist roster convention."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Restrict tools to kanban, gateway and memory and disable execution toolsets.",
+        "Give it a prescriptive orchestration skill requiring task creation and delegation.",
+        "Document a standard specialist roster."
+      ],
+      "rationale": "Enumerated policy/design concepts; requires all three rather than merely finding the word orchestrator.",
+      "answerable": true
+    },
+    {
+      "id": "doc-hermes-kanban-06",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-synthesis",
+      "query": "Does a Hermes Kanban tenant create a distinct agent identity or an access-control boundary in v1, and what is actually shared?",
+      "evidence": [
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 15,
+          "contains": [
+            "A tenant is a namespace, not a new entity type.",
+            "One researcher profile exists",
+            "v1 assumes all tenants are owned by the same user."
+          ]
+        },
+        {
+          "path": "pdf-hermes-kanban",
+          "page": 16,
+          "contains": [
+            "Links cannot cross tenants in v1.",
+            "Tenants scope data, not profile definitions."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Tenants namespace data; profiles, dispatcher and orchestrator remain shared.",
+        "v1 assumes one owner and explicitly excludes per-tenant access control.",
+        "Cross-tenant task dependencies are not supported in v1."
+      ],
+      "rationale": "Tests qualification and cross-section synthesis; must not upgrade directory conventions into a security guarantee.",
+      "answerable": true
+    },
+    {
+      "id": "doc-hermes-kanban-07",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-unanswerable",
+      "query": "What measured p99 dispatch latency and sustained tasks-per-second throughput does the Hermes Kanban v1 specification report?",
+      "evidence": [],
+      "answerFacts": [
+        "The design-only specification reports no measured p99 dispatch latency or sustained throughput."
+      ],
+      "rationale": "Negative control: proposed 60-second cron cadence is not measured dispatch latency or throughput. Full document checked.",
+      "answerable": false
+    },
+    {
+      "id": "doc-hermes-kanban-08",
+      "split": "dev",
+      "repo": "pdf-hermes-kanban",
+      "category": "document-unanswerable",
+      "query": "Which exact OAuth token rotation interval and encryption cipher protect Hermes Kanban tenant credentials in v1?",
+      "evidence": [],
+      "answerFacts": [
+        "No tenant credential rotation interval or cipher is specified; per-tenant access control is outside v1."
+      ],
+      "rationale": "Negative control with plausible security terms; no unsupported credential design may be invented.",
+      "answerable": false
+    },
+    {
+      "id": "doc-ncm-czech-01",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-multilingual",
+      "query": "Kolik českých Q/A párů obsahovala datová sada ve zprávě NCM a kolik náhodných otázek se použilo v testovací fázi?",
+      "evidence": [
+        {
+          "path": "pdf-ncm-czech",
+          "page": 1,
+          "contains": ["Datová sada obsahuje 7650 Q/A párů v češtině"]
+        },
+        {
+          "path": "pdf-ncm-czech",
+          "page": 2,
+          "contains": ["Fáze TESTU (76 náhodných Q)"]
+        }
+      ],
+      "answerFacts": [
+        "The dataset contained 7,650 Czech question/answer pairs.",
+        "The test phase used 76 randomly selected questions."
+      ],
+      "rationale": "Czech query with inflection and diacritics; two pages are required.",
+      "answerable": true
+    },
+    {
+      "id": "doc-ncm-czech-02",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-multilingual",
+      "query": "Proč bylo pořadí Q&A párů v experimentu NCM náhodně promícháno?",
+      "evidence": [
+        {
+          "path": "pdf-ncm-czech",
+          "page": 2,
+          "contains": [
+            "eliminovali vliv tematické sousednosti",
+            "vysokou informační entropii",
+            "předcházíme zkreslení topologického vkládání"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Randomization removes thematic adjacency, increases information entropy, and prevents topical order from biasing the embedding."
+      ],
+      "rationale": "Czech causal paraphrase; document claims are attributed rather than validated as scientific conclusions.",
+      "answerable": true
+    },
+    {
+      "id": "doc-ncm-czech-03",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-multilingual",
+      "query": "Jak často při zápisu probíhala homeostáza a konsolidace do LTM a kolik kroků měla následná simulace NCM?",
+      "evidence": [
+        {
+          "path": "pdf-ncm-czech",
+          "page": 2,
+          "contains": [
+            "Každých ~50 kroků: homeostáza",
+            "Každých ~100 kroků: konsolidace",
+            "Fáze SIMULACE (500 kroků)"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Homeostasis ran approximately every 50 steps.",
+        "Consolidation into LTM ran approximately every 100 steps.",
+        "The simulation lasted 500 steps with only homeostasis/decay."
+      ],
+      "rationale": "Retrieves three distinct numeric experimental parameters from the Czech report.",
+      "answerable": true
+    },
+    {
+      "id": "doc-ncm-czech-04",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-table-critical",
+      "query": "Souhlasí v tabulce 2 zprávy NCM součet počtů čtyř kategorií vybavování s uvedenými 76 testovanými otázkami?",
+      "evidence": [
+        {
+          "path": "pdf-ncm-czech",
+          "page": 2,
+          "contains": [
+            "Na 76 (1% datasetu) náhodných otázek",
+            "Eidetické vzpomínky 27",
+            "Moudrá sémantická syntéza 2",
+            "Sémantický drift 35",
+            "11 ~15%"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "The displayed counts 27, 2, 35 and 11 sum to 75, not 76.",
+        "The document leaves a discrepancy of one case; do not silently correct the table or invent a missing category."
+      ],
+      "rationale": "Table 2 visually inspected. Arithmetic and source inconsistency handling are separate from evidence retrieval.",
+      "answerable": true
+    },
+    {
+      "id": "doc-ncm-czech-05",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-multilingual",
+      "query": "Co měla paměť ve Step 7600 odpovědět na počet kostí dospělého člověka a jakou chybnou informaci místo toho vrátila?",
+      "evidence": [
+        {
+          "path": "pdf-ncm-czech",
+          "page": 4,
+          "contains": [
+            "Dospělý člověk má v těle obvykle 206 kostí.",
+            "Člověk má 46 chromozomů, tedy 23 párů."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Expected answer: an adult usually has 206 bones.",
+        "Retrieved answer instead said humans have 46 chromosomes, 23 pairs.",
+        "The sample is marked Correct: False."
+      ],
+      "rationale": "Must distinguish expected from retrieved answer instead of repeating the wrong memory as truth; page visually inspected.",
+      "answerable": true
+    },
+    {
+      "id": "doc-ncm-czech-06",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-cross-language",
+      "query": "In the Czech NCM report, what architecture is proposed to reduce the approximately 15 percent attractor problem, and which three semantic layers are named?",
+      "evidence": [
+        {
+          "path": "pdf-ncm-czech",
+          "page": 5,
+          "contains": [
+            "Multi-Head Depth-Slices architekturu.",
+            "faktické, konceptuální a diferenciální"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "The proposed architecture is Multi-Head Depth-Slices.",
+        "It separates factual, conceptual and differential semantic layers."
+      ],
+      "rationale": "English query over Czech evidence; tests cross-language retrieval rather than translated duplicate indexing.",
+      "answerable": true
+    },
+    {
+      "id": "doc-ncm-czech-07",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-citation",
+      "query": "Které dvě číselné adresy záznamů Zenodo uvádí zpráva NCM jako teoretický základ?",
+      "evidence": [
+        {
+          "path": "pdf-ncm-czech",
+          "page": 5,
+          "contains": ["https://zenodo.org/records/18198327", "https://zenodo.org/records/18267378"]
+        }
+      ],
+      "answerFacts": ["Zenodo records 18198327 and 18267378 are cited."],
+      "rationale": "Exact citation identifiers from the references, preserving digits without following or trusting external links.",
+      "answerable": true
+    },
+    {
+      "id": "doc-ncm-czech-08",
+      "split": "dev",
+      "repo": "pdf-ncm-czech",
+      "category": "document-unanswerable",
+      "query": "Jaký přesný model procesoru a kolik joulů energie uvádí zpráva NCM pro provedený experiment?",
+      "evidence": [],
+      "answerFacts": [
+        "The report says a consumer CPU and negligible energy use, but gives neither an exact CPU model nor a joule measurement."
+      ],
+      "rationale": "Czech negative control: qualitative performance prose must not become invented hardware or energy measurements.",
+      "answerable": false
+    },
+    {
+      "id": "doc-memento-01",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-factual",
+      "query": "How large is OpenMementos, what is its math/code/science composition, and how many tokens are in an average block and memento?",
+      "evidence": [
+        {
+          "path": "pdf-memento",
+          "page": 6,
+          "contains": [
+            "228K samples: 54% math, 19% code, 27% science",
+            "average block contains ∼1,150 tokens",
+            "average memento ∼194 tokens"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "228,000 samples; 54% math, 19% code and 27% science.",
+        "Average block approximately 1,150 tokens; average memento approximately 194 tokens."
+      ],
+      "rationale": "Research dataset statistics with separate percentages and token counts; these are paper-reported results.",
+      "answerable": true
+    },
+    {
+      "id": "doc-memento-02",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-definition",
+      "query": "What are the two information channels in MEMENTO, and what accuracy change is reported when summary KV states are recomputed without the original block context?",
+      "evidence": [
+        {
+          "path": "pdf-memento",
+          "page": 2,
+          "contains": [
+            "explicit memento text",
+            "implicit representational channel through the cached KV states",
+            "reduces accuracy by 15 pp"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Explicit memento text and information implicitly preserved in memento KV states form the dual channel.",
+        "Recomputing those KV states without block context lowers AIME24 accuracy by 15 percentage points."
+      ],
+      "rationale": "Concept definition plus measured ablation; percentages must not be confused with relative percent change.",
+      "answerable": true
+    },
+    {
+      "id": "doc-memento-03",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-equation",
+      "query": "In MEMENTO Stage 3 segmentation, what block-size penalty is subtracted from average boundary score, what is lambda, and what minimum block length is imposed?",
+      "evidence": [
+        {
+          "path": "pdf-memento",
+          "page": 5,
+          "contains": [
+            "block containing at least 200 tokens.",
+            "λ = 0.5.",
+            "The coefficient of variation σ/µ is scale-invariant"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "The objective subtracts lambda times the coefficient of variation of block lengths, sigma(lengths)/mu(lengths), from the mean boundary-score term.",
+        "Lambda equals 0.5 and every block must contain at least 200 tokens."
+      ],
+      "rationale": "Equation visually inspected on PDF page 5. Plain text may retrieve prose support but exact mathematical layout fidelity is a separate extraction audit.",
+      "answerable": true
+    },
+    {
+      "id": "doc-memento-04",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-technical",
+      "query": "What judge acceptance threshold and maximum refinement iterations does MEMENTO use, and how does the reported pass rate change?",
+      "evidence": [
+        {
+          "path": "pdf-memento",
+          "page": 5,
+          "contains": [
+            "acceptance threshold τ = 8",
+            "We use max T = 2 iterations",
+            "only 28% pass rate",
+            "bring this to 92%."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Acceptance threshold is 8/10.",
+        "At most two compressor-judge iterations are used.",
+        "Reported summary pass rate rises from 28% for a single pass to 92% with two iterations."
+      ],
+      "rationale": "Precise parameter and before/after evidence rather than a vague iterative-improvement summary.",
+      "answerable": true
+    },
+    {
+      "id": "doc-memento-05",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-technical",
+      "query": "How do the two MEMENTO supervised fine-tuning stages differ in attention, and why is the format learned first?",
+      "evidence": [
+        {
+          "path": "pdf-memento",
+          "page": 6,
+          "contains": [
+            "Stage 1: Full Attention",
+            "Stage 2: Memento Attention",
+            "format without any context management pressure.",
+            "preceding thinking block is masked"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Stage 1 uses ordinary causal attention over all tokens and loss on all tokens to teach the block/memento format.",
+        "Stage 2 masks each completed thinking block after its memento, teaching self-contained summaries.",
+        "This separates easy format learning from the harder context-management constraint."
+      ],
+      "rationale": "Ordered-method comparison; requires retrieving both stages and rationale.",
+      "answerable": true
+    },
+    {
+      "id": "doc-memento-06",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-synthesis",
+      "query": "Why did MEMENTO add a KL penalty during CISPO training and also cap reasoning blocks, and what values were chosen?",
+      "evidence": [
+        {
+          "path": "pdf-memento",
+          "page": 11,
+          "contains": [
+            "KL penalty (β=0.001)",
+            "response-length collapse",
+            "cap individual blocks at 7K tokens",
+            "fewer and longer reasoning blocks"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "A KL penalty beta 0.001 prevents response-length collapse or excessive drift from the SFT model.",
+        "Accuracy-only rewards encouraged fewer longer blocks, undermining cache savings.",
+        "A 7K-token block cap forces a block-end token to maintain low peak KV occupancy."
+      ],
+      "rationale": "Links two different training failure modes and interventions from the same section; no model training is performed in this benchmark.",
+      "answerable": true
+    },
+    {
+      "id": "doc-memento-07",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-figure",
+      "query": "In MEMENTO Figure 2, how are the strategy pivot at sentence 180 and the mid-derivation sentences 185–186 scored, and what does that imply for splitting?",
+      "evidence": [
+        {
+          "path": "pdf-memento",
+          "page": 5,
+          "contains": [
+            "sentence 180 pivots to a new strategy",
+            "scores 0.0—never split here",
+            "cuts at high-scoring transitions."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Sentence 180 receives 3.0, the strongest boundary score.",
+        "Sentences 185 and 186 receive 0.0 and should not be split mid-derivation."
+      ],
+      "rationale": "Figure 2 and its caption visually inspected; assesses figure-related textual evidence, not image-only visual reasoning.",
+      "answerable": true
+    },
+    {
+      "id": "doc-memento-08",
+      "split": "holdout",
+      "repo": "pdf-memento",
+      "category": "document-unanswerable",
+      "query": "How many total kilowatt-hours of electricity did the complete MEMENTO two-stage SFT training consume?",
+      "evidence": [],
+      "answerFacts": ["No total electrical energy consumption in kilowatt-hours is reported."],
+      "rationale": "Negative control: GPU counts and training hyperparameters do not establish electrical energy consumption.",
+      "answerable": false
+    },
+    {
+      "id": "doc-dynamodb-transactions-01",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-technical",
+      "query": "Which DynamoDB write-transaction input makes retries idempotent, and what happens when a requested precondition is false?",
+      "evidence": [
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 4,
+          "contains": ["uses a client request token", "if any of the preconditions are not met."]
+        }
+      ],
+      "answerFacts": [
+        "TransactWriteItems uses a client request token for idempotency.",
+        "A request is rejected if any precondition is not met."
+      ],
+      "rationale": "Concrete API semantics from the 2023 paper, not an assertion about current service limits.",
+      "answerable": true
+    },
+    {
+      "id": "doc-dynamodb-transactions-02",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-synthesis",
+      "query": "Why did the DynamoDB transaction design avoid both MVCC and transaction locks?",
+      "evidence": [
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 3,
+          "contains": [
+            "does not support multiple versions of the same item",
+            "version retention policies",
+            "Locking restricts concurrency and can lead to deadlocks.",
+            "optimistic concurrency control scheme"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "MVCC would require major storage-server changes, retention policy and extra customer storage costs.",
+        "Locks reduce concurrency, can deadlock and need recovery to release abandoned locks.",
+        "The design keeps in-place single versions and optimistic concurrency control."
+      ],
+      "rationale": "Compares two architectural choices and their distinct rationale.",
+      "answerable": true
+    },
+    {
+      "id": "doc-dynamodb-transactions-03",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-technical",
+      "query": "Does DynamoDB timestamp-ordering correctness require synchronized coordinator clocks, and what benefit does better synchronization provide?",
+      "evidence": [
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 5,
+          "contains": [
+            "serializability holds even if the transaction coordinators do not have synchronized clocks",
+            "more successful transactions",
+            "within a few microseconds"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Serializability does not require synchronized coordinator clocks.",
+        "More accurate synchronization improves successful transaction rate and alignment of serialization order with real time.",
+        "The paper states AWS time-sync keeps the fleet within a few microseconds."
+      ],
+      "rationale": "Distinguishes correctness precondition from performance/real-time ordering improvement.",
+      "answerable": true
+    },
+    {
+      "id": "doc-dynamodb-transactions-04",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-synthesis",
+      "query": "How does DynamoDB retain ordering information for deleted items without tombstones, and what tradeoff can the replacement cause?",
+      "evidence": [
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 6,
+          "contains": ["partition-level max delete timestamp"]
+        },
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 7,
+          "contains": [
+            "transactions may be cancelled",
+            "tombstones were maintained for deleted items"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "It retains a maximum delete timestamp at partition level and checks writes to nonexistent items against it.",
+        "This is space/garbage-collection efficient but may reject transactions that per-item tombstones would have allowed."
+      ],
+      "rationale": "Mechanism and drawback span PDF pages 6–7; must retrieve both.",
+      "answerable": true
+    },
+    {
+      "id": "doc-dynamodb-transactions-05",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-technical",
+      "query": "Describe the DynamoDB writeless read-transaction protocol and the condition under which its second round succeeds.",
+      "evidence": [
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 7,
+          "contains": [
+            "writeless protocol for executing read transactions.",
+            "current committed log sequence number (LSN)",
+            "LSNs have not changed"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "First read all items and their committed LSNs; reject items under conflicting prepared writes.",
+        "Read again; success requires unchanged LSNs across rounds.",
+        "This avoids persisting a read timestamp, which would turn reads into replicated writes."
+      ],
+      "rationale": "Multi-step protocol with exact technical acronym, including why it is writeless.",
+      "answerable": true
+    },
+    {
+      "id": "doc-dynamodb-transactions-06",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-technical",
+      "query": "What durable store lets DynamoDB recover stalled coordinators, and why can multiple coordinators safely finish the same transaction?",
+      "evidence": [
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 8,
+          "contains": [
+            "transaction ledger is a DynamoDB table",
+            "duplicate attempts to write an item are ignored",
+            "recovery managers regularly scan the ledger"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "A DynamoDB table keyed by transaction identifiers is the transaction ledger.",
+        "Recovery managers scan for stalled work and resume it through new coordinators.",
+        "Storage nodes ignore duplicate write attempts, so duplicate recovery execution is safe."
+      ],
+      "rationale": "Failure-recovery evidence combines persistence, discovery and idempotent completion.",
+      "answerable": true
+    },
+    {
+      "id": "doc-dynamodb-transactions-07",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-figure",
+      "query": "Under what request rate and item size were DynamoDB singleton transactions compared with non-transactional requests, and what read/write latency ratios are reported?",
+      "evidence": [
+        {
+          "path": "pdf-dynamodb-transactions",
+          "page": 11,
+          "contains": [
+            "100 thousand requests per second",
+            "900 byte item",
+            "less than 2x the latency",
+            "4x the latency of non-transactional writes"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "The test submitted 100,000 requests per second per API with 900-byte items.",
+        "Read transactions were slightly less than twice singleton-read latency; write transactions about four times singleton-write latency."
+      ],
+      "rationale": "Figures 7–8 and nearby explanatory text visually inspected. Reported ratios are usable; exact absolute latency cannot be read from unnumbered axes.",
+      "answerable": true
+    },
+    {
+      "id": "doc-dynamodb-transactions-08",
+      "split": "holdout",
+      "repo": "pdf-dynamodb-transactions",
+      "category": "document-unanswerable",
+      "query": "What exact p99 latency in milliseconds is plotted for PutItem in Figure 8 of the DynamoDB transactions paper?",
+      "evidence": [],
+      "answerFacts": [
+        "The figure has no numerical latency axis, and the nearby text gives ratios rather than an exact PutItem p99 millisecond value."
+      ],
+      "rationale": "Visually verified hard negative: do not infer an absolute millisecond measurement from a relative bar chart.",
+      "answerable": false
+    },
+    {
+      "id": "doc-disney-q1-fy25-01",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-factual",
+      "query": "What are the earnings-release date and the fiscal-quarter end date in Disney's Q1 fiscal 2025 report?",
+      "evidence": [
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 1,
+          "contains": ["February 5, 2025", "ended December 28, 2024."]
+        }
+      ],
+      "answerFacts": ["Release date: February 5, 2025.", "Fiscal quarter ended December 28, 2024."],
+      "rationale": "Temporal disambiguation between publication date and reporting period.",
+      "answerable": true
+    },
+    {
+      "id": "doc-disney-q1-fy25-02",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-table",
+      "query": "From Disney's summarized financial results, what were Q1 FY2025 revenue and diluted EPS, and how did each change versus Q1 FY2024?",
+      "evidence": [
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 3,
+          "contains": ["Revenues $ 24,690", "23,549", "Diluted EPS $ 1.40", "1.04"]
+        }
+      ],
+      "answerFacts": [
+        "Revenue was $24,690 million versus $23,549 million, up 5%.",
+        "Diluted EPS was $1.40 versus $1.04, up 35%."
+      ],
+      "rationale": "Table visually checked for year-column and unit alignment; numbers alone without row labels are insufficient for answer correctness.",
+      "answerable": true
+    },
+    {
+      "id": "doc-disney-q1-fy25-03",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-synthesis",
+      "query": "How does Disney define free cash flow, and reconcile its Q1 FY2025 amount from operating cash and capital investment?",
+      "evidence": [
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 19,
+          "contains": [
+            "cash provided by operations less investments in parks, resorts and other property"
+          ]
+        },
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 20,
+          "contains": ["3,205", "(2,466)", "Free cash flow $ 739"]
+        }
+      ],
+      "answerFacts": [
+        "Free cash flow equals cash provided by operations less investments in parks, resorts and other property.",
+        "In millions, $3,205 minus $2,466 equals $739."
+      ],
+      "rationale": "Cross-page definition plus arithmetic from a visually checked reconciliation table; preserve the millions unit.",
+      "answerable": true
+    },
+    {
+      "id": "doc-disney-q1-fy25-04",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-factual",
+      "query": "After the Star India transaction, what ownership percentages did Reliance, Disney and the third-party investor hold, and when did Disney change its accounting?",
+      "evidence": [
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 4,
+          "contains": [
+            "November 14, 2024",
+            "56% controlling interest",
+            "37% held by the Company",
+            "7% held by a third party"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "RIL held 56%, Disney 37%, and a third-party investment company 7%.",
+        "After completion on November 14, 2024, Disney recognized its share under equity in income of investees rather than consolidating Star India."
+      ],
+      "rationale": "Entity-role matching plus date; an answer must not confuse controlling ownership with Disney's percentage.",
+      "answerable": true
+    },
+    {
+      "id": "doc-disney-q1-fy25-05",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-definition",
+      "query": "Why should Disney adjusted EPS, total segment operating income and free cash flow not be treated as interchangeable with GAAP measures or similarly named measures at other companies?",
+      "evidence": [
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 17,
+          "contains": [
+            "are not financial measures defined by GAAP.",
+            "should be reviewed in conjunction",
+            "may not be comparable to similarly titled measures"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "These are non-GAAP measures that should be reviewed alongside their most comparable GAAP measures.",
+        "They are not substitutes and the company's definitions may differ from similarly titled measures at other companies."
+      ],
+      "rationale": "Retrieves limitations and qualification, not only attractive financial performance numbers.",
+      "answerable": true
+    },
+    {
+      "id": "doc-disney-q1-fy25-06",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-table",
+      "query": "In Disney's Q1 FY2025 EPS reconciliation, which two adjustments take reported EPS from $1.40 to $1.76, and how much does each contribute?",
+      "evidence": [
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 18,
+          "contains": [
+            "Restructuring and impairment charges",
+            "0.20",
+            "Amortization of TFCF and Hulu intangible",
+            "0.16",
+            "1.76"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Restructuring and impairment charges contribute $0.20 per share.",
+        "Amortization of TFCF/Hulu intangible assets and fair-value step-up on film/TV costs contributes $0.16.",
+        "$1.40 + $0.20 + $0.16 = $1.76."
+      ],
+      "rationale": "Visually checked multi-column reconciliation; distinguish EPS from pretax/after-tax dollar amounts.",
+      "answerable": true
+    },
+    {
+      "id": "doc-disney-q1-fy25-07",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-citation",
+      "query": "Which footnote amounts explain why Disney's DTC advertising growth excluding Hotstar looks different from the reported decline?",
+      "evidence": [
+        {
+          "path": "pdf-disney-q1-fy25",
+          "page": 1,
+          "contains": [
+            "Direct-to-Consumer advertising revenue declined 2%",
+            "advertising revenue was up 16%",
+            "approximately $15 million",
+            "and $165 million"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Reported DTC advertising fell 2%, while excluding Disney+ Hotstar India it rose 16%.",
+        "Footnote 2 reports approximately $15 million of Hotstar India advertising in Q1 FY2025 versus $165 million in Q1 FY2024."
+      ],
+      "rationale": "Requires joining headline qualification to footnote 2 and preserving year assignments.",
+      "answerable": true
+    },
+    {
+      "id": "doc-disney-q1-fy25-08",
+      "split": "holdout",
+      "repo": "pdf-disney-q1-fy25",
+      "category": "document-unanswerable",
+      "query": "What exact full-year fiscal 2025 GAAP diluted EPS forecast and quantitative reconciliation does Disney give in this Q1 earnings release?",
+      "evidence": [],
+      "answerFacts": [
+        "The company explicitly does not provide the forward-looking GAAP diluted EPS measure or quantitative reconciliation because significant items cannot be estimated with reasonable certainty without unreasonable effort."
+      ],
+      "rationale": "Hard negative: adjusted-EPS growth guidance must not be substituted for an absent GAAP EPS forecast.",
+      "answerable": false
+    }
+  ]
+}

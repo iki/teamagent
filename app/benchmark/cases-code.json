@@ -1,0 +1,2383 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-10-04",
+  "kind": "coding-evidence-retrieval",
+  "labeling": "Source-inspected labels frozen before any retrieval benchmark; answerFacts are human-readable reference facts, not generated-answer scores. Every evidence entry is required; contains strings are exact source substrings.",
+  "repos": [
+    {
+      "id": "hermes-agent",
+      "root": "C:/_/ai-agents/hermes-agent",
+      "commit": "3b9a963b8e5cdb804a422755bed9a60fcd778273",
+      "workingTreeStatus": [" M contributors/emails/agent@agents-Mac-mini.local"],
+      "trackedCount": 9479,
+      "selectionPatterns": [
+        "agent/*memory*.py",
+        "agent/*context*.py",
+        "agent/deadline.py",
+        "agent/file_safety.py",
+        "agent/bounded_response.py",
+        "agent/async_utils.py",
+        "agent/error_classifier.py",
+        "tests/agent/*memory*.py",
+        "tests/agent/test_deadline.py",
+        "tests/agent/test_file_safety*.py",
+        "tools/daemon_pool.py",
+        "tools/file_tools.py",
+        "tools/memory_tool.py",
+        "hermes_constants.py",
+        "toolsets.py"
+      ],
+      "selectionMethod": "All tracked paths matching the listed case-sensitive fnmatch patterns; bytes read from the pinned Git commit, never working-tree edits. Python fnmatch star includes slash.",
+      "files": [
+        {
+          "path": "agent/async_utils.py",
+          "sha256": "cc0a73e600cf6da71174e6c9a2676c2b45d6e3bce74ba2790dfa70f2831d5379",
+          "bytes": 3194,
+          "lines": 84
+        },
+        {
+          "path": "agent/bounded_response.py",
+          "sha256": "d237945a88d611a78b37efb4c8a17b49fda192a4274a626c4f0b060fb82fc60b",
+          "bytes": 5766,
+          "lines": 148
+        },
+        {
+          "path": "agent/coding_context.py",
+          "sha256": "6bb11fb0e6cdcd36045cebed03f8c75f4b8ce7de1a4cda6e05a2bb93b6f89c8d",
+          "bytes": 39585,
+          "lines": 916
+        },
+        {
+          "path": "agent/context_breakdown.py",
+          "sha256": "5c75da9d25c41d53748acb8459abda81eda407aed2e9d693e707e56ec0dd9471",
+          "bytes": 13151,
+          "lines": 360
+        },
+        {
+          "path": "agent/context_compressor.py",
+          "sha256": "0075a14bd96e27061e558185d85e4a4cc67d64e7cad83d3d529456d8a8864684",
+          "bytes": 390184,
+          "lines": 7858
+        },
+        {
+          "path": "agent/context_engine.py",
+          "sha256": "5ee0a74e81b0bba0075c73df161c9b02a78659768241ff65c9488e46a3428b1d",
+          "bytes": 21501,
+          "lines": 489
+        },
+        {
+          "path": "agent/context_references.py",
+          "sha256": "128d1af67f03ff0884e932d7be0725d70647e36063dde13caf3b1cb657cd8c60",
+          "bytes": 26527,
+          "lines": 720
+        },
+        {
+          "path": "agent/deadline.py",
+          "sha256": "847e5be2a1ccb500b15a6b47e9b3df53bad9a1c34ec0d4678d249fd0d93e762f",
+          "bytes": 22429,
+          "lines": 544
+        },
+        {
+          "path": "agent/delegation_context.py",
+          "sha256": "d185d1746efa5516a2697dc7e58b1e049300239300475766e91decbfc0c2f754",
+          "bytes": 6426,
+          "lines": 161
+        },
+        {
+          "path": "agent/error_classifier.py",
+          "sha256": "cd0b099a464b730fb4670d414a9d829cad62b055eba9eac1bf7ad26b2b725819",
+          "bytes": 86409,
+          "lines": 1963
+        },
+        {
+          "path": "agent/file_safety.py",
+          "sha256": "9169fedfdcbfcb9632b51e672e8bfc3e2ac415d64f5623ad15017cdd1e287121",
+          "bytes": 31264,
+          "lines": 746
+        },
+        {
+          "path": "agent/memory_manager.py",
+          "sha256": "cb3769674fb7ca0215f6babb7980dda6010b48c5db18f5183ac9616339468b0c",
+          "bytes": 52296,
+          "lines": 1291
+        },
+        {
+          "path": "agent/memory_provider.py",
+          "sha256": "a6468b09388c5a8626f3cfbd34473db3d1551e0695394e6e2d069756e1dd9cd2",
+          "bytes": 17335,
+          "lines": 404
+        },
+        {
+          "path": "agent/turn_context.py",
+          "sha256": "4a65e543a0795c341fd7598ac42a40eb2d87da6637a3521ecc3a00096eb56896",
+          "bytes": 67900,
+          "lines": 1408
+        },
+        {
+          "path": "hermes_constants.py",
+          "sha256": "58b8d5f17bc6d23dc192990bb71cb92725ed37b6c99a4a5b4cc97ac807846d56",
+          "bytes": 66441,
+          "lines": 1694
+        },
+        {
+          "path": "tests/agent/test_deadline.py",
+          "sha256": "f586a2f19ef7351774871cd4c84578121d30d91406d1871ca5332ea0783b14a0",
+          "bytes": 20324,
+          "lines": 521
+        },
+        {
+          "path": "tests/agent/test_file_safety.py",
+          "sha256": "82a554d9b04ab16f681b8c6ecb7b3d690060e9095eaf2d1e0d512925ee568e3d",
+          "bytes": 4743,
+          "lines": 131
+        },
+        {
+          "path": "tests/agent/test_file_safety_container_mirror.py",
+          "sha256": "c3508b5196533b63ee98bd4024ed021092730007bc110a8a9747e2e3d4d79e3d",
+          "bytes": 3287,
+          "lines": 90
+        },
+        {
+          "path": "tests/agent/test_file_safety_credentials.py",
+          "sha256": "79080aa3b150cd50aabcfefd7cbd4a8d8fed0a39a6206cecf41abfdab9c133b1",
+          "bytes": 9442,
+          "lines": 283
+        },
+        {
+          "path": "tests/agent/test_file_safety_cross_profile.py",
+          "sha256": "8f063db1268e9d6f644b59c1af36f934a2d9517e935a2641935095f8ade8d733",
+          "bytes": 7608,
+          "lines": 184
+        },
+        {
+          "path": "tests/agent/test_file_safety_sandbox_mirror.py",
+          "sha256": "7828bf33b86df5adf3c1816ca0d9df8f27ba45d8a71a6988923659124cea41d0",
+          "bytes": 6369,
+          "lines": 163
+        },
+        {
+          "path": "tests/agent/test_file_safety_session_state.py",
+          "sha256": "28a759f0da707ad8d809f6b3d5dfb8cb731e20ba79e006c1667e5656c6e102bc",
+          "bytes": 2098,
+          "lines": 63
+        },
+        {
+          "path": "tests/agent/test_memory_async_sync.py",
+          "sha256": "d33008c0cbce923534b0ebc0c89a3a76f1755c217c678ac82b8507592a1aa28d",
+          "bytes": 5338,
+          "lines": 168
+        },
+        {
+          "path": "tests/agent/test_memory_boundary_commit.py",
+          "sha256": "a1c5d87f6abbf3fe9d59348c65902a1b03357a83d04031a602825b5efea1409e",
+          "bytes": 4356,
+          "lines": 116
+        },
+        {
+          "path": "tests/agent/test_memory_provider.py",
+          "sha256": "cad9a3d8055d3651a0261d5295015fd2e9d8ce27ff179ac9239bd44c569f7a2d",
+          "bytes": 54358,
+          "lines": 1384
+        },
+        {
+          "path": "tests/agent/test_memory_provider_unavailable_warning.py",
+          "sha256": "4e656934ce802884ccbbb589cf7991664fa72b9137b609822d1daac4a9763db0",
+          "bytes": 2571,
+          "lines": 59
+        },
+        {
+          "path": "tests/agent/test_memory_recall_indicator.py",
+          "sha256": "deec73e94dfdb810329504482be7e9fcdc9d51a6997488255a68d7d46351e49e",
+          "bytes": 3244,
+          "lines": 90
+        },
+        {
+          "path": "tests/agent/test_memory_session_switch.py",
+          "sha256": "1a2eff1aaf3c53bea8391abe0087f01558fc1311ffc0ab1e14ac9f6a4d02490f",
+          "bytes": 8524,
+          "lines": 249
+        },
+        {
+          "path": "tests/agent/test_memory_skill_scaffolding.py",
+          "sha256": "a75c1f43846cbe0221b4e133d5295b60ce5ab469f48f9784f139aa6591352653",
+          "bytes": 4210,
+          "lines": 127
+        },
+        {
+          "path": "tests/agent/test_memory_user_id.py",
+          "sha256": "bfd0d82044acf5d62a685124fb8e1bcdf4b56f410fa7adf9157508292b94b071",
+          "bytes": 9714,
+          "lines": 281
+        },
+        {
+          "path": "tests/agent/test_memory_write_bridge.py",
+          "sha256": "6de30534fea080d3fe3e7b0017ef567db1bbe9dfaa7eab7f255d4c286ff2c99d",
+          "bytes": 2792,
+          "lines": 104
+        },
+        {
+          "path": "tests/agent/test_pre_compress_memory_context.py",
+          "sha256": "57e7b174a748f59f849f81dda84e7c6adc059cadacca2ae78d44f9f5383c4ea5",
+          "bytes": 5881,
+          "lines": 169
+        },
+        {
+          "path": "tests/agent/test_skip_memory_store_65429.py",
+          "sha256": "8e8da6ed965d61bca24641be267b7c4669ce9bbf499aed44a33b33b6321e3aed",
+          "bytes": 3378,
+          "lines": 98
+        },
+        {
+          "path": "tools/daemon_pool.py",
+          "sha256": "148a18c801a28f4fb5a96eb20399052245599413a349d7df2fd0b4643ae910dc",
+          "bytes": 2469,
+          "lines": 64
+        },
+        {
+          "path": "tools/file_tools.py",
+          "sha256": "18b40343d3fd890692762e8a434fa7e2e96b953766108a797b4af2caef01dd19",
+          "bytes": 129755,
+          "lines": 2812
+        },
+        {
+          "path": "tools/memory_tool.py",
+          "sha256": "a92cf9227efdab5b5e6c0d5604c5adae4db830a20beddb624c8b2167c8054ac7",
+          "bytes": 56792,
+          "lines": 1267
+        },
+        {
+          "path": "toolsets.py",
+          "sha256": "86d5bb542744cb6a1db128df9f24780556ff348e6e34300e1dd201fca2b5a394",
+          "bytes": 40135,
+          "lines": 1083
+        }
+      ],
+      "manifestSha256": "2525655ce0a94ed7abf7419b22cfdaa3c9ce7e859befcf3947d6609ff031eeb1",
+      "selectedBytes": 1237796
+    },
+    {
+      "id": "pi",
+      "root": "C:/_/ai-agents/pi",
+      "commit": "200387122ca450d6387f033949423114a270b96c",
+      "workingTreeStatus": [],
+      "trackedCount": 1859,
+      "selectionPatterns": [
+        "packages/agent/src/*.ts",
+        "packages/agent/test/*.ts",
+        "packages/agent/test/utils/*.ts",
+        "packages/coding-agent/src/core/tools/*.ts",
+        "packages/coding-agent/src/core/compaction/*.ts",
+        "packages/coding-agent/src/core/session-manager.ts",
+        "packages/coding-agent/src/core/agent-session.ts",
+        "packages/coding-agent/src/core/agent-session-types.ts",
+        "packages/coding-agent/src/core/settings-manager.ts",
+        "packages/coding-agent/src/core/sdk.ts",
+        "packages/coding-agent/src/core/extensions/types.ts",
+        "packages/ai/src/types.ts"
+      ],
+      "selectionMethod": "All tracked paths matching the listed case-sensitive fnmatch patterns; bytes read from the pinned Git commit, never working-tree edits. Python fnmatch star includes slash.",
+      "files": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "sha256": "e773e822a2587caf314e6bb66ea6370fce3468b7eecd26d6a67afe673f81eabc",
+          "bytes": 29088,
+          "lines": 940
+        },
+        {
+          "path": "packages/agent/src/agent.ts",
+          "sha256": "7024a3145a6ebc951a0f030164adb1dfb12d33d6e0dbbac15ef0efda49c87457",
+          "bytes": 19748,
+          "lines": 613
+        },
+        {
+          "path": "packages/agent/src/index.ts",
+          "sha256": "8bec36d174aee7e4326b1bfa61b4d7c6ac19dd659439e70f91d2d448794cc892",
+          "bytes": 170,
+          "lines": 5
+        },
+        {
+          "path": "packages/agent/src/proxy.ts",
+          "sha256": "9c23fc8a625e79c6f8d180a65146288eaa8c10995d7c6fd91b75f57ff934fd40",
+          "bytes": 11699,
+          "lines": 406
+        },
+        {
+          "path": "packages/agent/src/stream-fn.ts",
+          "sha256": "1f9dee101a5ce1052558458d9ce47e53e05187224e879217899059a80d90bc45",
+          "bytes": 683,
+          "lines": 20
+        },
+        {
+          "path": "packages/agent/src/types.ts",
+          "sha256": "347efd535342c1d5fbd6b731168c57fcbb201a6652707f8e22e1b66fe3b69c2d",
+          "bytes": 20955,
+          "lines": 529
+        },
+        {
+          "path": "packages/agent/test/agent-loop.test.ts",
+          "sha256": "00e7841355c29ec7c673c6ca992302361db6e5fad248363c53210061e3f80c16",
+          "bytes": 65244,
+          "lines": 2193
+        },
+        {
+          "path": "packages/agent/test/agent.test.ts",
+          "sha256": "42bfc9e557d64266a168da8c25460fddfcc9fdfbe74822bcce90bcfef634b7bd",
+          "bytes": 37719,
+          "lines": 1216
+        },
+        {
+          "path": "packages/agent/test/e2e.test.ts",
+          "sha256": "186286d01bd377797e15452da264cb55902462199ee0d10bfa5ff191292810a9",
+          "bytes": 12875,
+          "lines": 416
+        },
+        {
+          "path": "packages/agent/test/proxy.test.ts",
+          "sha256": "d38ade78d744fa0dc22a6167a60a54ceb202ff0ba44be18bdf49b3a01388ca73",
+          "bytes": 3997,
+          "lines": 118
+        },
+        {
+          "path": "packages/agent/test/utils/calculate.ts",
+          "sha256": "93e332014f57e14d1131b66791bcd865a2db9647aa87ad2e0e86a79414591a8f",
+          "bytes": 1354,
+          "lines": 40
+        },
+        {
+          "path": "packages/agent/test/utils/get-current-time.ts",
+          "sha256": "0192fa9720f3713c7ca6be54968c49f681eef6d01ea944cf418863b9c56d027b",
+          "bytes": 1497,
+          "lines": 46
+        },
+        {
+          "path": "packages/agent/test/utils/wait-for-tick.ts",
+          "sha256": "d4f3cda1a6449f918d8ee569d310eb9d07af3c4a5931ce60b5b4111e2e689bb6",
+          "bytes": 107,
+          "lines": 3
+        },
+        {
+          "path": "packages/ai/src/types.ts",
+          "sha256": "071ac26f26b955c177c8f161e1864003ad24bc51fc887271f4abf71918a74c95",
+          "bytes": 48809,
+          "lines": 1172
+        },
+        {
+          "path": "packages/coding-agent/src/core/agent-session.ts",
+          "sha256": "fa1a4f2d84efd0aab8f4a74301d1106395130d3cc59bd665c558280f27dceb03",
+          "bytes": 158139,
+          "lines": 4349
+        },
+        {
+          "path": "packages/coding-agent/src/core/compaction/branch-summarization.ts",
+          "sha256": "0279195d2cddfe99d4e42a1327d18c7f55ff15a8807d2c5d6cd465b2ab163011",
+          "bytes": 12714,
+          "lines": 382
+        },
+        {
+          "path": "packages/coding-agent/src/core/compaction/compaction.ts",
+          "sha256": "d5aebd41333957b57fa3f1bee2a18b3c00b5d47bb1b4af6f913cf8cd791099c8",
+          "bytes": 35513,
+          "lines": 1119
+        },
+        {
+          "path": "packages/coding-agent/src/core/compaction/index.ts",
+          "sha256": "f82bde781410ae1a638989ff91bde9cc7045341a76bb9757de2ea6beea4c077d",
+          "bytes": 156,
+          "lines": 7
+        },
+        {
+          "path": "packages/coding-agent/src/core/compaction/utils.ts",
+          "sha256": "cc0baada8a2e31bcf1dbc18948c69ba2264fb2ad4d2c583ceb772fd3c3233674",
+          "bytes": 5809,
+          "lines": 163
+        },
+        {
+          "path": "packages/coding-agent/src/core/extensions/types.ts",
+          "sha256": "837425f97af6921ae2f4c151d3386419479df6e9a209740e197bb3c3162525e2",
+          "bytes": 82743,
+          "lines": 2260
+        },
+        {
+          "path": "packages/coding-agent/src/core/sdk.ts",
+          "sha256": "1fb8a84ab4dfab28344932b430c8d4abcd234a1c35ae9aebc3049269a813312d",
+          "bytes": 16984,
+          "lines": 462
+        },
+        {
+          "path": "packages/coding-agent/src/core/session-manager.ts",
+          "sha256": "450d82c529933214e088b8422f00061815e617f352f6c834689787a314064bff",
+          "bytes": 63809,
+          "lines": 2013
+        },
+        {
+          "path": "packages/coding-agent/src/core/settings-manager.ts",
+          "sha256": "535c679f41f769d9129ffec5521508241162c9dfe0a9c7782157b193eb0e5664",
+          "bytes": 51171,
+          "lines": 1533
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/bash.ts",
+          "sha256": "de2b54d4f4bfbb844ce6d8077f63d715f7d8e80079dd9689b561e45b6679c81b",
+          "bytes": 15678,
+          "lines": 442
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/edit-diff.ts",
+          "sha256": "f85a9809eb44b9828236050cf38a8e45933e5cfd583a186e9a0e55a664dd3e8d",
+          "bytes": 18079,
+          "lines": 556
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/edit.ts",
+          "sha256": "31a368c14cf5437ecac157765660001b16063302d9bd746303d6d1b1dcb5625d",
+          "bytes": 8564,
+          "lines": 220
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/file-mutation-queue.ts",
+          "sha256": "33cb06ac9bcdf32c8b84d9d12e33be44c503a7670f668e003a3262cd34294d11",
+          "bytes": 1697,
+          "lines": 61
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/find.ts",
+          "sha256": "b06bcae6821a0e9fda1b63be613a7ce28eb0e66e1d01d16564e59e83f9ce10ea",
+          "bytes": 11178,
+          "lines": 318
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/grep.ts",
+          "sha256": "88be3d00217d1a1caf8a9e7bb2b8d2e6d96edfa4b790c2cf76c746ab36b8841b",
+          "bytes": 11550,
+          "lines": 323
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/index.ts",
+          "sha256": "3c66ea1e03530fb85436ee639f35add8bf72718ac6e76b738a1f41be58a2b472",
+          "bytes": 6784,
+          "lines": 224
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/ls.ts",
+          "sha256": "3d0a5457e4f5b9e9967c44608b76b060374d047e80d6871ecec4459b612cb6a3",
+          "bytes": 5840,
+          "lines": 175
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/output-accumulator.ts",
+          "sha256": "0efe8d4855f1e1e0e3980e856950b53d90a36dc70faf9d8e1a9f8d6c7ac12892",
+          "bytes": 7763,
+          "lines": 263
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/path-utils.ts",
+          "sha256": "ab6f420d2388a41366113c17a25e356867820b87b02a169d044cfcf83e1997d3",
+          "bytes": 3626,
+          "lines": 118
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/powershell.ts",
+          "sha256": "56645690718f03e6c5a19b574a74e3f28f0d0df7563fb226eeee5c88576aefad",
+          "bytes": 2348,
+          "lines": 67
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/read.ts",
+          "sha256": "297d26092979651091f44de8862a6fd55aaf59e7252f8fb8dd3d7cb3f9771518",
+          "bytes": 9451,
+          "lines": 203
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/render-utils.ts",
+          "sha256": "6bd0f21d1c1cefcf6bb1de023de46ad1250e096d36327b4d42fbb71a06414956",
+          "bytes": 4117,
+          "lines": 112
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/bash.ts",
+          "sha256": "7c89296c9d5abb1f892beed50f283136a69e5b5ee737ced5da77a04f3a45a866",
+          "bytes": 5464,
+          "lines": 146
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/edit.ts",
+          "sha256": "0c1bafcf74ad2b703bf5ab193e72084a1da80231a77abddefc23c5bb20558731",
+          "bytes": 8081,
+          "lines": 238
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/find.ts",
+          "sha256": "a33591e8193eb2a5591596019676899587f783149434f857eaf331edb8fabe70",
+          "bytes": 3180,
+          "lines": 77
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/grep.ts",
+          "sha256": "8a990da5f4305b0976ad4c245188fbf1fd5e4a3bad69b86c2ffd85bdd1115927",
+          "bytes": 3416,
+          "lines": 82
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/index.ts",
+          "sha256": "27b2cff3b607f7d95392d91d9fc95fd975af2cdc4861f5e9f5646b06d41f84ae",
+          "bytes": 2024,
+          "lines": 63
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/ls.ts",
+          "sha256": "69ef43c9bcc3082b4c7880b0ad2edf4c0605c84fac326a2254e55397b9c81084",
+          "bytes": 2923,
+          "lines": 70
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/read.ts",
+          "sha256": "bfcf687d937d04f93fdc8c8fc8611ab9c9b7b5808224d362ebc38c23bf05566b",
+          "bytes": 7061,
+          "lines": 176
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/renderers/write.ts",
+          "sha256": "84d715671a72c77821ab81aef79b39f5022082c78568683ab643d38ee735d07f",
+          "bytes": 6967,
+          "lines": 181
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/tool-definition-wrapper.ts",
+          "sha256": "bae3cdd9f2aa21fb168ef42a47584f3b19536c0815ec14d94389af530eef9358",
+          "bytes": 2153,
+          "lines": 58
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/truncate.ts",
+          "sha256": "8e4507c3ed7ca7548cf7c2d7f77d07f2ae63a38b756789cbb44e9062db6c8762",
+          "bytes": 9255,
+          "lines": 314
+        },
+        {
+          "path": "packages/coding-agent/src/core/tools/write.ts",
+          "sha256": "2ee0a438c24cf83fefd733e349d55a21aa5b633c18934b2c80759fcf14b6f297",
+          "bytes": 3554,
+          "lines": 97
+        }
+      ],
+      "manifestSha256": "08ad59a02558b15ab7890bd31aefc2617ebc9791c15340f6869aecfa0d173f4c",
+      "selectedBytes": 841736
+    },
+    {
+      "id": "wayland",
+      "root": "C:/_/ai-agents/wayland",
+      "commit": "4c030c7b01c241df7b6e3535635a970f10d781af",
+      "workingTreeStatus": ["?? src/process/resources/.github/"],
+      "trackedCount": 9138,
+      "selectionPatterns": [
+        "src/common/adapter/*.ts",
+        "src/common/capabilities/*.ts",
+        "src/common/chat/approval/*.ts",
+        "src/common/api/*.ts",
+        "src/common/chat/activity/*.ts",
+        "src/common/chat/capability/*.ts",
+        "src/common/chat/navigation/*.ts",
+        "tests/unit/common/capabilities/*.ts",
+        "src/process/webserver/adapter.ts",
+        "tests/unit/security/remoteCredentialRedaction.test.ts"
+      ],
+      "selectionMethod": "All tracked paths matching the listed case-sensitive fnmatch patterns; bytes read from the pinned Git commit, never working-tree edits. Python fnmatch star includes slash.",
+      "files": [
+        {
+          "path": "src/common/adapter/bridgeAllowlist.budgets.bun.test.ts",
+          "sha256": "49a615ba7757f2e2f65ea11fc48832ee58e5ffed0ff43e248efb7fd0ce917977",
+          "bytes": 2192,
+          "lines": 61
+        },
+        {
+          "path": "src/common/adapter/bridgeAllowlist.ts",
+          "sha256": "bfbe21baf48064ad321b33e148bba2db3f333f97655902c813da87ca5252121d",
+          "bytes": 47845,
+          "lines": 917
+        },
+        {
+          "path": "src/common/adapter/browser.ts",
+          "sha256": "be2ee6cdf5d2bbf64df38f9a8e4434d7f7337e0a5d2199277515edc138334a30",
+          "bytes": 8731,
+          "lines": 266
+        },
+        {
+          "path": "src/common/adapter/constant.ts",
+          "sha256": "53be1700959422689924d93b3282788617e66eb959b0276b8419156b334e8c5f",
+          "bytes": 433,
+          "lines": 15
+        },
+        {
+          "path": "src/common/adapter/ipcBridge.ts",
+          "sha256": "d90f0d7a919253dca78a9cc8b31b49c7e7b37e782652a6286f0650712e074c0e",
+          "bytes": 166650,
+          "lines": 3643
+        },
+        {
+          "path": "src/common/adapter/main.ts",
+          "sha256": "fed0b2bf397c098e49d5a50027e4c9d7c29007019abd420a50327fa69018a213",
+          "bytes": 3931,
+          "lines": 108
+        },
+        {
+          "path": "src/common/adapter/registry.ts",
+          "sha256": "3249f7d19aed05a6a08e62e0954d23afec8fc53dfc947edec2ce25d91250831c",
+          "bytes": 1317,
+          "lines": 46
+        },
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "sha256": "eceea4f2f37bdf34d59035ea59cf597c951244f4e5fe3a09c71599b5001501da",
+          "bytes": 5467,
+          "lines": 121
+        },
+        {
+          "path": "src/common/adapter/standalone.ts",
+          "sha256": "1270ad5a4ea1f8a181f833ad0f9292f984f2c44c5168990e9d36fd2c128f6443",
+          "bytes": 1702,
+          "lines": 43
+        },
+        {
+          "path": "src/common/api/AnthropicRotatingClient.ts",
+          "sha256": "7e6297ccf4a60f9d49e9b4d9bda3da36c9b146e2b3b71b8d5ed0bc75176f782b",
+          "bytes": 8197,
+          "lines": 201
+        },
+        {
+          "path": "src/common/api/ApiKeyManager.ts",
+          "sha256": "c1076f6007a387538537ddf2ecbe27c7a8d0f8e7def6e2b9b1b818ecfb2ee451",
+          "bytes": 5100,
+          "lines": 175
+        },
+        {
+          "path": "src/common/api/ClientFactory.ts",
+          "sha256": "b96597572bbd634e3e3cac28ba56efa75e42ba2d9565af9a8de7dfdfc780e087",
+          "bytes": 5119,
+          "lines": 145
+        },
+        {
+          "path": "src/common/api/GeminiRotatingClient.ts",
+          "sha256": "55ca1e2eebd4692906e7ba0b727ad8b69a8512c236223dcd2107e8f46726e2aa",
+          "bytes": 7003,
+          "lines": 178
+        },
+        {
+          "path": "src/common/api/OpenAI2AnthropicConverter.ts",
+          "sha256": "fac9f9cb580f3dbc65dd565fed8fec62b92b95f1731615d37148ab103c93ada3",
+          "bytes": 10907,
+          "lines": 340
+        },
+        {
+          "path": "src/common/api/OpenAI2GeminiConverter.ts",
+          "sha256": "d5f16945b7400d6a77823718a3d3217694bb34695e03064e2bd7656795086982",
+          "bytes": 8038,
+          "lines": 284
+        },
+        {
+          "path": "src/common/api/OpenAIRotatingClient.ts",
+          "sha256": "3050b90015afe6d93cc4ca1a25c245b57a7dff79279f35617331e3b72d36a999",
+          "bytes": 4589,
+          "lines": 123
+        },
+        {
+          "path": "src/common/api/ProtocolConverter.ts",
+          "sha256": "eeb1f8c943cfddc6b1d2fec42506f2836d162eeefea9c4b7fa48a3602ef19cef",
+          "bytes": 1225,
+          "lines": 39
+        },
+        {
+          "path": "src/common/api/RotatingApiClient.ts",
+          "sha256": "57596441d82f4f8e17dc970a8a3f385e131cc493bc7ada016ff4e251cff86455",
+          "bytes": 4815,
+          "lines": 174
+        },
+        {
+          "path": "src/common/api/index.ts",
+          "sha256": "201d857c94063fa0cac0cefea929a5a86ffc2e75e5f7b863e67b54fc52ff62f9",
+          "bytes": 466,
+          "lines": 5
+        },
+        {
+          "path": "src/common/capabilities/index.ts",
+          "sha256": "d1185901e5182fa8e1e818b0330dc453699d4c414501018757a91c816d17a958",
+          "bytes": 82,
+          "lines": 3
+        },
+        {
+          "path": "src/common/capabilities/manifest.ts",
+          "sha256": "c90053a88559a04db1a139449694111c10661d1ff2b80799848523dca05ec535",
+          "bytes": 8168,
+          "lines": 198
+        },
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "sha256": "a3f1da90a8e9411c1875f04bc1e322cb7fef8ec0149ce3547d33b70f7a95948b",
+          "bytes": 11202,
+          "lines": 271
+        },
+        {
+          "path": "src/common/capabilities/types.ts",
+          "sha256": "3f1a361a405b092137d688d3e3cd2ce0fb15c4f4094271823957cff3fafe7b4b",
+          "bytes": 3550,
+          "lines": 94
+        },
+        {
+          "path": "src/common/chat/activity/activityLabels.ts",
+          "sha256": "e88b1b77caf3611d6c194f99bc77f20621d00d337ec7b9181c520ee1cd2fb518",
+          "bytes": 10449,
+          "lines": 237
+        },
+        {
+          "path": "src/common/chat/activity/activityStep.ts",
+          "sha256": "d3b28a141fd0ff31fe8540deb59cb90a2ee8f20b47fe9c89ab92f7c823522c82",
+          "bytes": 3954,
+          "lines": 97
+        },
+        {
+          "path": "src/common/chat/activity/conversationActivity.ts",
+          "sha256": "194516a3d671a1213b4aa8b97ba34843e5541a27ae1ec5d3318b31dfae1b1930",
+          "bytes": 5994,
+          "lines": 153
+        },
+        {
+          "path": "src/common/chat/activity/normalizers/acpNormalizer.ts",
+          "sha256": "bf67e5538707bf72cdf1607d39499515694ef41c12a75d99cb14a26de094ca00",
+          "bytes": 6884,
+          "lines": 156
+        },
+        {
+          "path": "src/common/chat/activity/projectMessages.ts",
+          "sha256": "2761774dcae9f2fe58e60daae6eca3cc6fb7dc3ee7efeff3051895ef479602da",
+          "bytes": 6824,
+          "lines": 171
+        },
+        {
+          "path": "src/common/chat/activity/runProjection.ts",
+          "sha256": "809f68fd21f0dcc75500c0c732e7e615d91979b6ecc591b65be0389d7326b5ca",
+          "bytes": 49269,
+          "lines": 1356
+        },
+        {
+          "path": "src/common/chat/activity/sources.ts",
+          "sha256": "bcd19eb2c550aed422ec216c9e47e0a91eda5647cd10c5471cd212360654254c",
+          "bytes": 4300,
+          "lines": 136
+        },
+        {
+          "path": "src/common/chat/approval/ApprovalStore.ts",
+          "sha256": "d99146d708ed71809acaee366204d446e6768d49406f2c1f3784e821953e1684",
+          "bytes": 2169,
+          "lines": 84
+        },
+        {
+          "path": "src/common/chat/approval/index.ts",
+          "sha256": "866cd7e82e3eeafe16d53bda99ec747adc5e447ed11d3297315fff41851bde38",
+          "bytes": 304,
+          "lines": 9
+        },
+        {
+          "path": "src/common/chat/capability/capabilityProjection.ts",
+          "sha256": "b0f8a6bfefde76ce29c722396c7ea5b3554e5e1c4bc825f9fa992bbca2e335b7",
+          "bytes": 53652,
+          "lines": 1361
+        },
+        {
+          "path": "src/common/chat/capability/modelRegistryCapabilityAdapter.ts",
+          "sha256": "5a8ea5df2fe9ee02c7a684f656462f8c689950abc0efa89825a21dba6d7c26fc",
+          "bytes": 9303,
+          "lines": 222
+        },
+        {
+          "path": "src/common/chat/navigation/NavigationInterceptor.ts",
+          "sha256": "f754ca71e451870716ed2ed060366f031f731f40b5d133a7bb0d5b43bf1683a8",
+          "bytes": 7185,
+          "lines": 256
+        },
+        {
+          "path": "src/common/chat/navigation/index.ts",
+          "sha256": "b6148d4a6f7eb4b010c1d862e754c6fbecbfcb618fbf52816c2702e42a790dbe",
+          "bytes": 451,
+          "lines": 18
+        },
+        {
+          "path": "src/process/webserver/adapter.ts",
+          "sha256": "6f3700ef75034daec5f05810abadc456dec2f2babf769db24f852ce93097093d",
+          "bytes": 5607,
+          "lines": 129
+        },
+        {
+          "path": "tests/unit/common/capabilities/manifest.test.ts",
+          "sha256": "219f1d7e3ace8e2730514c8026347a469740b0465829bd25017a87a9f4742b3a",
+          "bytes": 1141,
+          "lines": 25
+        },
+        {
+          "path": "tests/unit/common/capabilities/readiness.test.ts",
+          "sha256": "6502c13aa0689cf4f4e1bf9a805acea83a09c45d7c2a9cd90e603781468ece24",
+          "bytes": 4918,
+          "lines": 133
+        },
+        {
+          "path": "tests/unit/security/remoteCredentialRedaction.test.ts",
+          "sha256": "c27e7a153221266c719579cd36d88dd099e44550ce3170a85f09fbd45ebcd4d2",
+          "bytes": 4608,
+          "lines": 115
+        }
+      ],
+      "manifestSha256": "06e9c22f29ddd4dc646cccb44f3995e22bde1ff6d235491d545859084e5a0866",
+      "selectedBytes": 493741
+    },
+    {
+      "id": "deepseek-harness",
+      "root": "C:/_/ai-agents/deepseek-harness",
+      "commit": "5badb15009ae1756c3afe0ae0cef1faafc290ccc",
+      "workingTreeStatus": [],
+      "trackedCount": 14208,
+      "selectionPatterns": [
+        "packages/acp/acp/src/*.ts",
+        "packages/acp/acp/tests/*.ts",
+        "packages/core/agent/src/*.ts",
+        "packages/core/agent-loop/src/*.ts",
+        "packages/core/session/src/*.ts",
+        "packages/core/tools/src/*.ts",
+        "packages/core/agent-default-model/src/*.ts",
+        "packages/core/agent-tool-presentation/src/*.ts"
+      ],
+      "selectionMethod": "All tracked paths matching the listed case-sensitive fnmatch patterns; bytes read from the pinned Git commit, never working-tree edits. Python fnmatch star includes slash.",
+      "files": [
+        {
+          "path": "packages/acp/acp/src/codec.ts",
+          "sha256": "141f573b899b65e912f2db24deff80a1b3eed22d4b031acf67ae8984ebe3716f",
+          "bytes": 1209,
+          "lines": 35
+        },
+        {
+          "path": "packages/acp/acp/src/content.ts",
+          "sha256": "ff17c0e4736bba3894ff32c4e3c31a1be1d1843457e96cbe09880f46336e4bb6",
+          "bytes": 9701,
+          "lines": 237
+        },
+        {
+          "path": "packages/acp/acp/src/index.ts",
+          "sha256": "d6879493cdd7813f6756b41f1daded60cd24843ee7616915bd171b6d39a83625",
+          "bytes": 22688,
+          "lines": 536
+        },
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "sha256": "b5f29d192bba71d043c27d37989e36a51d907e2060b78e6dc990d55338aebc2e",
+          "bytes": 5595,
+          "lines": 143
+        },
+        {
+          "path": "packages/acp/acp/src/model-control.ts",
+          "sha256": "238ced89fce89ab3396830c1fa3d227d33893217bdf3c4ab12204d0923e5f113",
+          "bytes": 9545,
+          "lines": 237
+        },
+        {
+          "path": "packages/acp/acp/src/session.ts",
+          "sha256": "ed1188c9c4cd08674f31e0f8c3f3fe7eeeb6d92570674142bad2b3c714a20de8",
+          "bytes": 20435,
+          "lines": 524
+        },
+        {
+          "path": "packages/acp/acp/src/updates.ts",
+          "sha256": "b4c48504777ad309b3b461d92275a39add79914f9202f9d94ff1c29e9e561d0d",
+          "bytes": 3708,
+          "lines": 111
+        },
+        {
+          "path": "packages/acp/acp/tests/approval.spec.ts",
+          "sha256": "ec11efed8fb221918a7e0e2a024767b04a333cbc008dc2df73bec97a496b309d",
+          "bytes": 4165,
+          "lines": 93
+        },
+        {
+          "path": "packages/acp/acp/tests/bridge.spec.ts",
+          "sha256": "33f26f4099f48cbebc521611edced0448434a1c2f7b286b71cbb2ab310ab5131",
+          "bytes": 53386,
+          "lines": 1005
+        },
+        {
+          "path": "packages/acp/acp/tests/codec.spec.ts",
+          "sha256": "c1a4adbcb65401270be29643a6def19e85c88e8da1ec24f5eba875fd1ec73008",
+          "bytes": 672,
+          "lines": 16
+        },
+        {
+          "path": "packages/acp/acp/tests/content.spec.ts",
+          "sha256": "5daf8e745c1c1ef9dfb738aff65f0c0fa267fb106a2540aab7137f4294601043",
+          "bytes": 12381,
+          "lines": 232
+        },
+        {
+          "path": "packages/acp/acp/tests/dispose.spec.ts",
+          "sha256": "4a9d792980fbea7032863655ddfcc80ab297a852a2b60fd258142d7ca22034fd",
+          "bytes": 12767,
+          "lines": 277
+        },
+        {
+          "path": "packages/acp/acp/tests/edges.spec.ts",
+          "sha256": "ee914e5ed18ad68df6e0a3f4f6d4d53ccb7b69e813b680c234408d3cfd56977b",
+          "bytes": 7281,
+          "lines": 161
+        },
+        {
+          "path": "packages/acp/acp/tests/harness.ts",
+          "sha256": "04eded528db013d9b205cb72e723ed902c4d06d8c8e98cbbc35cfa2be24b1ef5",
+          "bytes": 12951,
+          "lines": 309
+        },
+        {
+          "path": "packages/acp/acp/tests/mcp.spec.ts",
+          "sha256": "0b38e2c49bee9c5770ccaafa4c4d55b981aa3f8b3112ae686be4a2c7550cca7c",
+          "bytes": 4384,
+          "lines": 116
+        },
+        {
+          "path": "packages/acp/acp/tests/model-control.spec.ts",
+          "sha256": "04fd097da394a03b033ecfa9a945eaf23739bbb875239cc012e6093e10aede18",
+          "bytes": 5627,
+          "lines": 131
+        },
+        {
+          "path": "packages/acp/acp/tests/multi-session.spec.ts",
+          "sha256": "ee671efac285d648775aa0dda2c669d1247a469073dd2a7f0d1eea7138650612",
+          "bytes": 5114,
+          "lines": 95
+        },
+        {
+          "path": "packages/acp/acp/tests/turns.spec.ts",
+          "sha256": "d932ac294f6a509da493fc2ca676c40421f6deac9386292d42340c3ce7ca0c14",
+          "bytes": 26059,
+          "lines": 570
+        },
+        {
+          "path": "packages/acp/acp/tests/updates.spec.ts",
+          "sha256": "454f4dda38b19751d3ccc50104fbe378575c76698a94b8a6d20aec3582c721e4",
+          "bytes": 3581,
+          "lines": 93
+        },
+        {
+          "path": "packages/core/agent-default-model/src/index.ts",
+          "sha256": "d841737984875b31c7972e0d3023c0f41b9d4b09090d2cce902bbbaf3db338dc",
+          "bytes": 3494,
+          "lines": 97
+        },
+        {
+          "path": "packages/core/agent-loop/src/agent.ts",
+          "sha256": "9c985dd5ce3612b0a6f1833cb592930e4e390d4249821accea53064d8e42015c",
+          "bytes": 28174,
+          "lines": 688
+        },
+        {
+          "path": "packages/core/agent-loop/src/assistant-stream.ts",
+          "sha256": "120d2bec5efeec2aa54bf0e4261a45282936272d610dbbab21eee36b902629de",
+          "bytes": 4263,
+          "lines": 140
+        },
+        {
+          "path": "packages/core/agent-loop/src/constants.ts",
+          "sha256": "435d31d3c8740f5ebaefa5c12f22d7cda8ea8c6d018e6fcda459161174ecc971",
+          "bytes": 202,
+          "lines": 6
+        },
+        {
+          "path": "packages/core/agent-loop/src/inbox.ts",
+          "sha256": "70c07ea75ebcf18df353bbccf7c2aa3ecf6cb0d687b96e3520b675680c29f662",
+          "bytes": 9327,
+          "lines": 244
+        },
+        {
+          "path": "packages/core/agent-loop/src/index.ts",
+          "sha256": "853e76aef2eecafe5526a5267c3d386780b5c59e3c79c2448532fada7285a605",
+          "bytes": 37946,
+          "lines": 893
+        },
+        {
+          "path": "packages/core/agent-loop/src/runtime-context.ts",
+          "sha256": "4944ee5cbbc24f21c27f1f0be54af7601da280b7fd2354e48fcc0ef6beeea839",
+          "bytes": 7184,
+          "lines": 164
+        },
+        {
+          "path": "packages/core/agent-loop/src/tool-calls.ts",
+          "sha256": "5c7e8d8ff0028b436efdd13e5dffa4801d2311c211c3af039e7dab705f87b303",
+          "bytes": 11591,
+          "lines": 290
+        },
+        {
+          "path": "packages/core/agent-tool-presentation/src/index.ts",
+          "sha256": "57955359ccdd012b9e39fd10c890ed2fb99af5ba01bcef9e9baf2268397c34bb",
+          "bytes": 3062,
+          "lines": 72
+        },
+        {
+          "path": "packages/core/agent/src/archive-admission.ts",
+          "sha256": "3a530fc561e309fec5493cfe509dd2acedfca16b648a8ca6f8da24efe33511e5",
+          "bytes": 1750,
+          "lines": 38
+        },
+        {
+          "path": "packages/core/agent/src/consumed-work.ts",
+          "sha256": "7c33ed30bd6bb5c4def5a406b2828e0930800c1cbe6cc03f5b189f1a0a7712d9",
+          "bytes": 4495,
+          "lines": 109
+        },
+        {
+          "path": "packages/core/agent/src/dispatch.ts",
+          "sha256": "6dc2702311305b9ecc8c8a932417bb7929f7313722fbb432a899e53d16efc6e0",
+          "bytes": 8579,
+          "lines": 176
+        },
+        {
+          "path": "packages/core/agent/src/index.ts",
+          "sha256": "9979fdae64fd0a342067981c39de9cde2da7066d28f8506a501fd51e8f9068b9",
+          "bytes": 31340,
+          "lines": 689
+        },
+        {
+          "path": "packages/core/agent/src/model-selection.ts",
+          "sha256": "8e54dfda2e4a110148f384e0866ce0c6b213096d314aa84c222fa14155498571",
+          "bytes": 5041,
+          "lines": 132
+        },
+        {
+          "path": "packages/core/agent/src/projection.ts",
+          "sha256": "2113e31ffcb4c98a1d4ddb15d36ee833f086ed5965520febaca65d6dbea6fe40",
+          "bytes": 360,
+          "lines": 11
+        },
+        {
+          "path": "packages/core/agent/src/runtime-types.ts",
+          "sha256": "1ae0003c6968dc4af86e596d3ea08f6e517da0808e08089af2ed1818ab0651fc",
+          "bytes": 19197,
+          "lines": 395
+        },
+        {
+          "path": "packages/core/agent/src/types.ts",
+          "sha256": "b237d5d00d9b549cc32c7d91e08aaf83004d14d2bfa0179eeebc3fbfe18fed62",
+          "bytes": 3887,
+          "lines": 104
+        },
+        {
+          "path": "packages/core/session/src/fork.ts",
+          "sha256": "de80ecbf0e6a7961c096a2d7f0304bc6f6c83f897268304e28352357da06bfb0",
+          "bytes": 1397,
+          "lines": 30
+        },
+        {
+          "path": "packages/core/session/src/index.ts",
+          "sha256": "0ae1db3a5153f9a50e7aaec547c0e0f50af17528ddc5c50aceb8a8bbc34af9f4",
+          "bytes": 60227,
+          "lines": 1324
+        },
+        {
+          "path": "packages/core/session/src/known-event-types.ts",
+          "sha256": "f70489f767e4996c482cc7624edbbc93bf71a7d84a1bce94b587016dfa8d073c",
+          "bytes": 2727,
+          "lines": 87
+        },
+        {
+          "path": "packages/core/session/src/preparation.ts",
+          "sha256": "51bcd61f505928fc1d98cc59ecfd5e0a34b3a5cbd3ecb7937caef0da87b7baa5",
+          "bytes": 1610,
+          "lines": 49
+        },
+        {
+          "path": "packages/core/session/src/repair.ts",
+          "sha256": "c2835c920aba203c709e44686e55f43bb4d357ea59cfef3561c371b8ff115540",
+          "bytes": 9428,
+          "lines": 211
+        },
+        {
+          "path": "packages/core/session/src/request-header.ts",
+          "sha256": "abd8ef57c34ad6ddbc21ba83398092f6aff64ac5c0f38efb353cebb04f654ad4",
+          "bytes": 2762,
+          "lines": 69
+        },
+        {
+          "path": "packages/core/session/src/seq-ranges.ts",
+          "sha256": "9f746691995926cb17d3dd19da04871f2355be40c798ed5a8256659e6bf14559",
+          "bytes": 2908,
+          "lines": 73
+        },
+        {
+          "path": "packages/core/session/src/surface.ts",
+          "sha256": "5b5394dc02584cb3549330b358fbe5919d05f8a6920d90f6819bb7e3b4783154",
+          "bytes": 30011,
+          "lines": 712
+        },
+        {
+          "path": "packages/core/session/src/tool-history.ts",
+          "sha256": "53ae6aebe5ebe9b1eb782f008315db33ff637611093e40fa3529ec3019b56683",
+          "bytes": 3762,
+          "lines": 75
+        },
+        {
+          "path": "packages/core/session/src/types.ts",
+          "sha256": "67ff2491ae8284ab61c2c1a57e346fd4d12effb1e82a42aa654bcc90f067215c",
+          "bytes": 23124,
+          "lines": 523
+        },
+        {
+          "path": "packages/core/tools/src/index.ts",
+          "sha256": "9107a2b6447b10c2ecb90429d7c1b80b956759e96d35230af16f5a88f5d3eccd",
+          "bytes": 90679,
+          "lines": 1985
+        },
+        {
+          "path": "packages/core/tools/src/json-schema.ts",
+          "sha256": "13deffdfd34539e23706b0fde235991da45b2f07c5c18dbbf3ca734c1da0c788",
+          "bytes": 26289,
+          "lines": 656
+        },
+        {
+          "path": "packages/core/tools/src/presentation.ts",
+          "sha256": "2e729538403ef924430187df13ec5e140de95e0ea41a8225093dba644c1f2b6a",
+          "bytes": 16880,
+          "lines": 389
+        },
+        {
+          "path": "packages/core/tools/src/ptc.ts",
+          "sha256": "227d0d5221432fa9caf5492058ca08f449f732f18a566e708c2aea1a9ee2d96a",
+          "bytes": 38759,
+          "lines": 771
+        },
+        {
+          "path": "packages/core/tools/src/py-types.ts",
+          "sha256": "ad83ba1a85d2993c8c15fbf0ea20e4bdc24e128735b82fa1c236d14b61fc59cb",
+          "bytes": 47521,
+          "lines": 818
+        },
+        {
+          "path": "packages/core/tools/src/schema.ts",
+          "sha256": "d54459d0ad535ff3375138d40f3b37b39c6994703f1ea6a331df9a97c7e3cd23",
+          "bytes": 26148,
+          "lines": 632
+        },
+        {
+          "path": "packages/core/tools/src/testing.ts",
+          "sha256": "8b7bf72750d885c1acb52e99ccac9e42542cc5efcb581098ad3507e83ca0a651",
+          "bytes": 1723,
+          "lines": 42
+        },
+        {
+          "path": "packages/core/tools/src/ts-types.ts",
+          "sha256": "85205a23ed99597b12579fb2ac4f88ffb3c67ce30a0bd731237a85ba0a8e70b4",
+          "bytes": 14998,
+          "lines": 317
+        },
+        {
+          "path": "packages/core/tools/src/types.ts",
+          "sha256": "2b2bfa5da56f7ebb67236a33329fff47064bcc8d2658ce24a4cdedc7668e6fe9",
+          "bytes": 2709,
+          "lines": 60
+        }
+      ],
+      "manifestSha256": "f4083d905e81e2a970a5c4cbdcdfc18a535618b0e8a83ea536789fa6e69f3e0a",
+      "selectedBytes": 804803
+    }
+  ],
+  "cases": [
+    {
+      "id": "code-hermes-01",
+      "split": "dev",
+      "repo": "hermes-agent",
+      "category": "exact-symbol",
+      "query": "How does normalize_tool_schema prevent a provider from creating a doubly wrapped OpenAI function tool with no name?",
+      "evidence": [
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 74,
+          "lineEnd": 74,
+          "contains": ["schema = schema[\"function\"]"]
+        },
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 78,
+          "lineEnd": 78,
+          "contains": ["if not name or not isinstance(name, str):"]
+        }
+      ],
+      "answerFacts": [
+        "Already-wrapped function entries are unwrapped to the bare function schema.",
+        "Non-dictionaries and missing or non-string names return None."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-02",
+      "split": "dev",
+      "repo": "hermes-agent",
+      "category": "multi-file",
+      "query": "A remote memory recall call hangs. Where is repeated thread creation prevented, and which regression confirms later turns keep only built-in context until the old call returns?",
+      "evidence": [
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 573,
+          "lineEnd": 573,
+          "contains": ["existing = self._external_prefetch_threads.get(provider.name)"]
+        },
+        {
+          "path": "tests/agent/test_memory_provider.py",
+          "lineStart": 271,
+          "lineEnd": 271,
+          "contains": ["def test_external_prefetch_timeout_skips_stuck_provider(self):"]
+        }
+      ],
+      "answerFacts": [
+        "An alive external prefetch thread for the same provider causes the next recall to skip it.",
+        "The timeout regression keeps built-in context, does not repeat the blocked query, and resumes recall after release."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-03",
+      "split": "dev",
+      "repo": "hermes-agent",
+      "category": "natural-language",
+      "query": "Where is the active profile context copied into background memory writes so worker threads do not accidentally use the default profile?",
+      "evidence": [
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 748,
+          "lineEnd": 748,
+          "contains": ["ctx = contextvars.copy_context()"]
+        },
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 749,
+          "lineEnd": 749,
+          "contains": ["fn = partial(ctx.run, fn)"]
+        }
+      ],
+      "answerFacts": [
+        "The background submitter captures contextvars.copy_context().",
+        "It wraps the operation with partial(ctx.run, fn) before executor submission."
+      ],
+      "rationale": "Locate the implementation from a behavior description without the owning symbol name.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-04",
+      "split": "dev",
+      "repo": "hermes-agent",
+      "category": "multi-file",
+      "query": "Find the memory shutdown implementation and regression that preserve queued writes in FIFO order before provider teardown.",
+      "evidence": [
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 1238,
+          "lineEnd": 1238,
+          "contains": ["executor.shutdown(wait=False, cancel_futures=False)"]
+        },
+        {
+          "path": "tests/agent/test_memory_async_sync.py",
+          "lineStart": 93,
+          "lineEnd": 93,
+          "contains": ["def test_shutdown_drains_queued_writes_and_boundary_in_fifo_order():"]
+        }
+      ],
+      "answerFacts": [
+        "shutdown_all drains the sync executor before shutting providers down in reverse order.",
+        "The drain leaves queued futures uncancelled while waiting up to the bounded timeout."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-05",
+      "split": "dev",
+      "repo": "hermes-agent",
+      "category": "configuration",
+      "query": "Can MemoryManager register two external memory providers at the same time, and what happens to provider tool names reserved by the core?",
+      "evidence": [
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 420,
+          "lineEnd": 420,
+          "contains": ["Only one external memory provider is "]
+        },
+        {
+          "path": "agent/memory_manager.py",
+          "lineStart": 447,
+          "lineEnd": 447,
+          "contains": ["if tool_name in _core_tool_names:"]
+        }
+      ],
+      "answerFacts": [
+        "Only one non-builtin provider is admitted; a second registration is rejected.",
+        "Provider tools that shadow reserved core names are ignored."
+      ],
+      "rationale": "Recover the precise configuration precedence or representation from executable source.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-06",
+      "split": "dev",
+      "repo": "hermes-agent",
+      "category": "abstention",
+      "query": "What parameters and return type does MemoryManager.exportEncryptedSnapshot expose for exporting all provider state?",
+      "evidence": [],
+      "answerFacts": [
+        "No such method is defined in the selected committed memory-provider corpus."
+      ],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    },
+    {
+      "id": "code-hermes-07",
+      "split": "holdout",
+      "repo": "hermes-agent",
+      "category": "configuration",
+      "query": "When config.yaml and a legacy timeout environment variable disagree, which takes precedence, and what happens if the YAML value is a boolean?",
+      "evidence": [
+        {
+          "path": "agent/deadline.py",
+          "lineStart": 229,
+          "lineEnd": 229,
+          "contains": ["if not isinstance(raw, bool):"]
+        },
+        {
+          "path": "agent/deadline.py",
+          "lineStart": 222,
+          "lineEnd": 222,
+          "contains": ["raw = _lookup_dotted(_timeouts_section(), key)"]
+        }
+      ],
+      "answerFacts": [
+        "The timeouts configuration takes precedence over the legacy environment variable, then the default.",
+        "Boolean config values are rejected and resolution falls through instead of treating true as one second."
+      ],
+      "rationale": "Recover the precise configuration precedence or representation from executable source.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-08",
+      "split": "holdout",
+      "repo": "hermes-agent",
+      "category": "exact-symbol",
+      "query": "What does clamp_timeout do with non-positive and oversized values to keep platform thread waits safe?",
+      "evidence": [
+        {
+          "path": "agent/deadline.py",
+          "lineStart": 97,
+          "lineEnd": 97,
+          "contains": ["MAX_SAFE_TIMEOUT_S = 31_536_000.0"]
+        },
+        {
+          "path": "agent/deadline.py",
+          "lineStart": 165,
+          "lineEnd": 165,
+          "contains": ["return min(value, MAX_SAFE_TIMEOUT_S)"]
+        }
+      ],
+      "answerFacts": [
+        "Non-positive values become None, meaning unbounded.",
+        "Positive values are capped at MAX_SAFE_TIMEOUT_S, defined as 31,536,000 seconds."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-09",
+      "split": "holdout",
+      "repo": "hermes-agent",
+      "category": "lifecycle",
+      "query": "A synchronous agent backend hangs despite asyncio timeouts. Which shared deadline primitive uses a separate timer thread, and does expiry wait for cancellation-shielded cleanup?",
+      "evidence": [
+        {
+          "path": "agent/deadline.py",
+          "lineStart": 339,
+          "lineEnd": 339,
+          "contains": ["timer = threading.Timer(timeout_s, _expire_from_thread)"]
+        },
+        {
+          "path": "agent/deadline.py",
+          "lineStart": 307,
+          "lineEnd": 307,
+          "contains": ["On timeout the underlying task is cancelled and **abandoned**"]
+        }
+      ],
+      "answerFacts": [
+        "run_bounded_async drives expiry using a daemon threading.Timer.",
+        "On expiry it cancels and abandons the underlying task instead of awaiting cancellation completion."
+      ],
+      "rationale": "Locate ordering and completion semantics that matter when implementing or debugging a caller.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-10",
+      "split": "holdout",
+      "repo": "hermes-agent",
+      "category": "security",
+      "query": "Why can interactive file tools edit SSH configuration only after approval while private SSH key files are hard denied?",
+      "evidence": [
+        {
+          "path": "agent/file_safety.py",
+          "lineStart": 111,
+          "lineEnd": 111,
+          "contains": ["def build_write_approval_paths(home: str) -> set[str]:"]
+        },
+        {
+          "path": "agent/file_safety.py",
+          "lineStart": 142,
+          "lineEnd": 142,
+          "contains": ["if resolved in build_write_approval_paths(home):"]
+        }
+      ],
+      "answerFacts": [
+        "SSH config can contain process-affecting ProxyCommand or Match exec directives and is approval-gated.",
+        "Approval paths are checked before the broad credential directory denial; non-interactive callers must fail closed."
+      ],
+      "rationale": "Locate the authority or data-handling boundary and explain its actual restrictions.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-11",
+      "split": "holdout",
+      "repo": "hermes-agent",
+      "category": "multi-file",
+      "query": "Locate the safeguard and regression preventing generic file tools from rewriting canonical conversation history or legacy session snapshots.",
+      "evidence": [
+        {
+          "path": "agent/file_safety.py",
+          "lineStart": 167,
+          "lineEnd": 167,
+          "contains": ["resolved == os.path.realpath(os.path.join(base_real, \"state.db\"))"]
+        },
+        {
+          "path": "tests/agent/test_file_safety_session_state.py",
+          "lineStart": 63,
+          "lineEnd": 63,
+          "contains": ["assert target.read_text(encoding=\"utf-8\") == \"original transcript\""]
+        }
+      ],
+      "answerFacts": [
+        "state.db and the sessions directory are denied for both active-profile and root Hermes homes.",
+        "The regression confirms write_file_tool leaves an existing session snapshot unchanged."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-hermes-12",
+      "split": "holdout",
+      "repo": "hermes-agent",
+      "category": "abstention",
+      "query": "What was the exact measured p95 production latency of the shared deadline watchdog across ten thousand customer sessions?",
+      "evidence": [],
+      "answerFacts": [
+        "The selected source and regression fixtures do not contain that production measurement."
+      ],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    },
+    {
+      "id": "code-pi-01",
+      "split": "dev",
+      "repo": "pi",
+      "category": "multi-file",
+      "query": "Find the guard and regression preventing tool execution when an assistant response was cut off by its token limit.",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "lineStart": 269,
+          "lineEnd": 269,
+          "contains": ["? await failToolCallsFromTruncatedMessage(toolCalls, emit)"]
+        },
+        {
+          "path": "packages/agent/test/agent-loop.test.ts",
+          "lineStart": 415,
+          "lineEnd": 415,
+          "contains": ["should not execute tool calls from a length-truncated assistant message"]
+        }
+      ],
+      "answerFacts": [
+        "A length stop routes all tool calls to failToolCallsFromTruncatedMessage instead of executing them.",
+        "The dedicated regression verifies truncated assistant tool calls are not executed."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-02",
+      "split": "dev",
+      "repo": "pi",
+      "category": "multi-file",
+      "query": "Parallel tools finish out of order. Where does the loop preserve source ordering in the conversation while emitting execution completion as each finishes?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "lineStart": 646,
+          "lineEnd": 646,
+          "contains": ["const orderedFinalizedCalls = await Promise.all("]
+        },
+        {
+          "path": "packages/agent/test/agent-loop.test.ts",
+          "lineStart": 627,
+          "lineEnd": 627,
+          "contains": [
+            "should emit tool_execution_end in completion order but persist tool results in source order"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "Parallel executions emit tool_execution_end within each completion.",
+        "Promise.all returns finalized results in original call order, then tool-result messages are emitted in that order."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-03",
+      "split": "dev",
+      "repo": "pi",
+      "category": "exact-symbol",
+      "query": "In prepareToolCall, do argument preparation and validation run before beforeToolCall, and can the hook block execution?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "lineStart": 726,
+          "lineEnd": 726,
+          "contains": ["const validatedArgs = validateToolArguments(tool, preparedToolCall);"]
+        },
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "lineStart": 744,
+          "lineEnd": 744,
+          "contains": ["if (beforeResult?.block) {"]
+        }
+      ],
+      "answerFacts": [
+        "prepareToolCallArguments runs before validateToolArguments.",
+        "beforeToolCall receives validatedArgs and can return block with an error reason and optional terminate."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-04",
+      "split": "dev",
+      "repo": "pi",
+      "category": "natural-language",
+      "query": "When a post-tool hook replaces visible content but supplies no new structured payload, how does the loop avoid returning stale structured data?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "lineStart": 880,
+          "lineEnd": 880,
+          "contains": [
+            "afterResult.structuredContent ?? (afterResult.content ? undefined : result.structuredContent);"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "The old structuredContent is discarded when replacement content exists without replacement structuredContent.",
+        "If neither is supplied, the previous structuredContent remains."
+      ],
+      "rationale": "Locate the implementation from a behavior description without the owning symbol name.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-05",
+      "split": "dev",
+      "repo": "pi",
+      "category": "exact-symbol",
+      "query": "What condition makes shouldTerminateToolBatch stop a batch, and can one sequential tool override the global parallel execution setting?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "lineStart": 690,
+          "lineEnd": 690,
+          "contains": [
+            "finalizedCalls.length > 0 && finalizedCalls.every((finalized) => finalized.result.terminate === true)"
+          ]
+        },
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "lineStart": 519,
+          "lineEnd": 519,
+          "contains": ["if (config.toolExecution === \"sequential\" || hasSequentialToolCall) {"]
+        }
+      ],
+      "answerFacts": [
+        "A nonempty batch terminates only if every finalized result has terminate true.",
+        "Any called tool marked sequential forces sequential execution even when the global setting is parallel."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-06",
+      "split": "dev",
+      "repo": "pi",
+      "category": "abstention",
+      "query": "Where is runToolCallSandboxedWasm implemented, and which WASI permissions does it grant by default?",
+      "evidence": [],
+      "answerFacts": [
+        "No such API or default WASI permission contract is defined in the selected tool-loop corpus."
+      ],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    },
+    {
+      "id": "code-pi-07",
+      "split": "holdout",
+      "repo": "pi",
+      "category": "natural-language",
+      "query": "How can a UI preview the next queued agent message without consuming it, and which pending queue wins?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent.ts",
+          "lineStart": 332,
+          "lineEnd": 332,
+          "contains": ["return steering.length > 0 ? steering : this.followUpQueue.peek();"]
+        },
+        {
+          "path": "packages/agent/src/agent.ts",
+          "lineStart": 160,
+          "lineEnd": 160,
+          "contains": ["if (this.mode === \"all\") return this.messages.slice();"]
+        }
+      ],
+      "answerFacts": [
+        "peekQueuedMessages previews steering first and only uses follow-ups if steering is empty.",
+        "PendingMessageQueue.peek returns a copy or the first message according to queue mode; drain consumes it."
+      ],
+      "rationale": "Locate the implementation from a behavior description without the owning symbol name.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-08",
+      "split": "holdout",
+      "repo": "pi",
+      "category": "multi-file",
+      "query": "After the transcript ends with an assistant message, how can continue process a queued follow-up instead of rejecting continuation?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent.ts",
+          "lineStart": 401,
+          "lineEnd": 401,
+          "contains": ["const queuedFollowUps = this.followUpQueue.drain();"]
+        },
+        {
+          "path": "packages/agent/test/agent.test.ts",
+          "lineStart": 800,
+          "lineEnd": 800,
+          "contains": [
+            "continue() should process queued follow-up messages after an assistant turn"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "continue drains steering first, then follow-ups, and starts a new prompt from the selected messages.",
+        "It rejects an assistant tail only when neither queue supplies a message."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-09",
+      "split": "holdout",
+      "repo": "pi",
+      "category": "multi-file",
+      "query": "A subscriber performs asynchronous persistence during agent_end. Which API should a caller await before declaring the run idle, and where is this tested?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent.ts",
+          "lineStart": 351,
+          "lineEnd": 351,
+          "contains": ["return this.activeRun?.promise ?? Promise.resolve();"]
+        },
+        {
+          "path": "packages/agent/test/agent.test.ts",
+          "lineStart": 414,
+          "lineEnd": 414,
+          "contains": ["waitForIdle should wait for async subscribers"]
+        }
+      ],
+      "answerFacts": [
+        "waitForIdle returns the active run promise.",
+        "The run remains active until awaited agent_end subscribers settle."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-10",
+      "split": "holdout",
+      "repo": "pi",
+      "category": "exact-symbol",
+      "query": "What conversation state does Agent.reset retain, and how does it protect an in-flight run?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent.ts",
+          "lineStart": 357,
+          "lineEnd": 357,
+          "contains": ["Agent is already processing. Wait for completion before resetting."]
+        },
+        {
+          "path": "packages/agent/src/agent.ts",
+          "lineStart": 361,
+          "lineEnd": 361,
+          "contains": ["this._state.messages = baseline ? [baseline] : [];"]
+        }
+      ],
+      "answerFacts": [
+        "reset rejects while activeRun exists.",
+        "It retains the current replayed system-message baseline and clears transcript runtime state and both queues."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-11",
+      "split": "holdout",
+      "repo": "pi",
+      "category": "lifecycle",
+      "query": "What happens if a caller submits another prompt while one is still running, and which APIs are offered for queued input?",
+      "evidence": [
+        {
+          "path": "packages/agent/src/agent.ts",
+          "lineStart": 376,
+          "lineEnd": 376,
+          "contains": [
+            "Agent is already processing a prompt. Use steer() or followUp() to queue messages, or wait for completion."
+          ]
+        }
+      ],
+      "answerFacts": [
+        "A concurrent prompt call throws instead of starting another run.",
+        "The diagnostic directs callers to steer or followUp, or to wait for completion."
+      ],
+      "rationale": "Locate ordering and completion semantics that matter when implementing or debugging a caller.",
+      "answerable": true
+    },
+    {
+      "id": "code-pi-12",
+      "split": "holdout",
+      "repo": "pi",
+      "category": "abstention",
+      "query": "What exact percentage of production Agent sessions lost queued follow-up messages in September 2026?",
+      "evidence": [],
+      "answerFacts": [
+        "The selected source and regression corpus contains no production telemetry for that percentage."
+      ],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    },
+    {
+      "id": "code-wayland-01",
+      "split": "dev",
+      "repo": "wayland",
+      "category": "multi-file",
+      "query": "Which validator makes an unknown capability evidence field fail closed instead of allowing a producer to assert readiness?",
+      "evidence": [
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 63,
+          "lineEnd": 63,
+          "contains": ["if (!isRecord(value) || !exactKeys(value, required, ['artifact']))"]
+        },
+        {
+          "path": "tests/unit/common/capabilities/readiness.test.ts",
+          "lineStart": 90,
+          "lineEnd": 90,
+          "contains": ["grantsReady: true"]
+        }
+      ],
+      "answerFacts": [
+        "validateCapabilityEvidence checks an exact required/optional key set.",
+        "A fixture adding grantsReady is rejected by selectCapabilityReadiness."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-02",
+      "split": "dev",
+      "repo": "wayland",
+      "category": "exact-symbol",
+      "query": "What freshness conditions does selectCapabilityReadiness enforce for observedAt and expiresAt?",
+      "evidence": [
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 13,
+          "lineEnd": 13,
+          "contains": ["const MAX_FUTURE_SKEW_MS = 30_000;"]
+        },
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 194,
+          "lineEnd": 194,
+          "contains": [
+            "entry.observedAt > context.now + MAX_FUTURE_SKEW_MS || entry.expiresAt <= context.now"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "An observation more than 30 seconds into the future is rejected.",
+        "Evidence expiring at or before the current time is stale."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-03",
+      "split": "dev",
+      "repo": "wayland",
+      "category": "multi-file",
+      "query": "Two capability producers disagree on supported operations and resource requirements. Where is their conservative intersection computed and tested?",
+      "evidence": [
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 138,
+          "lineEnd": 138,
+          "contains": [
+            "return expected.filter((item) => evidence.every((entry) => entry[key].includes(item)));"
+          ]
+        },
+        {
+          "path": "tests/unit/common/capabilities/readiness.test.ts",
+          "lineStart": 113,
+          "lineEnd": 113,
+          "contains": ["uses a conservative intersection across producers"]
+        }
+      ],
+      "answerFacts": [
+        "Operations and formats must be supported by every evidence entry.",
+        "Requirements combine stricter permission/network/cost values and the union of credentials; missing declared coverage prevents invocation."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-04",
+      "split": "dev",
+      "repo": "wayland",
+      "category": "security",
+      "query": "Can advisory or brokered capability evidence directly authorize invocation, and how do their readiness results differ?",
+      "evidence": [
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 239,
+          "lineEnd": 239,
+          "contains": [
+            "Advisory evidence may inform the user but cannot grant invocation authority."
+          ]
+        },
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 253,
+          "lineEnd": 253,
+          "contains": ["Capability requires an explicit broker decision before invocation."]
+        }
+      ],
+      "answerFacts": [
+        "Advisory evidence has canInvoke false and cannot grant authority.",
+        "Brokered evidence also has canInvoke false but requiresBroker true pending an explicit broker decision."
+      ],
+      "rationale": "Locate the authority or data-handling boundary and explain its actual restrictions.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-05",
+      "split": "dev",
+      "repo": "wayland",
+      "category": "configuration",
+      "query": "How is capability availability bound to the target binary and publisher proof rather than trusting an available status alone?",
+      "evidence": [
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 200,
+          "lineEnd": 200,
+          "contains": ["entry.artifact?.binarySha256 !== platform.binarySha256"]
+        },
+        {
+          "path": "src/common/capabilities/readiness.ts",
+          "lineStart": 202,
+          "lineEnd": 202,
+          "contains": ["entry.artifact.publisherProof !== platform.publisherProofSha256"]
+        }
+      ],
+      "answerFacts": [
+        "Non-unavailable evidence must carry the platform binary SHA256 and pinned publisher proof.",
+        "Missing or mismatched artifact identity causes an unavailable result."
+      ],
+      "rationale": "Recover the precise configuration precedence or representation from executable source.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-06",
+      "split": "dev",
+      "repo": "wayland",
+      "category": "abstention",
+      "query": "Where does grantCapabilityWithoutEvidence bypass the capability manifest and mark an operation ready?",
+      "evidence": [],
+      "answerFacts": ["No such bypass API exists in the selected capability corpus."],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    },
+    {
+      "id": "code-wayland-07",
+      "split": "holdout",
+      "repo": "wayland",
+      "category": "multi-file",
+      "query": "A paired remote browser can read MCP configuration snapshots. Where are connector credentials removed immediately before WebSocket broadcast?",
+      "evidence": [
+        {
+          "path": "src/process/webserver/adapter.ts",
+          "lineStart": 77,
+          "lineEnd": 77,
+          "contains": ["wsManager.broadcast(name, redactForRemote(name, data));"]
+        },
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "lineStart": 120,
+          "lineEnd": 120,
+          "contains": ["return redactSecretFields(data);"]
+        }
+      ],
+      "answerFacts": [
+        "The webserver adapter passes outbound data through redactForRemote.",
+        "The redactor selects secret-bearing callback names and masks nested secret fields."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-08",
+      "split": "holdout",
+      "repo": "wayland",
+      "category": "natural-language",
+      "query": "Why can a remote settings screen still count configured environment variables and headers after their secrets have been masked?",
+      "evidence": [
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "lineStart": 105,
+          "lineEnd": 105,
+          "contains": [
+            "for (const name of Object.keys(entry as Record<string, unknown>)) masked[name] = REDACTED;"
+          ]
+        },
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "lineStart": 37,
+          "lineEnd": 37,
+          "contains": ["export const REDACTED = '[redacted]';"]
+        }
+      ],
+      "answerFacts": [
+        "For object-valued secret fields, property names are preserved and every value becomes the fixed redacted marker.",
+        "Other scalar secret-bearing values are replaced entirely."
+      ],
+      "rationale": "Locate the implementation from a behavior description without the owning symbol name.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-09",
+      "split": "holdout",
+      "repo": "wayland",
+      "category": "exact-symbol",
+      "query": "How does redactSecretFields avoid infinite recursion on cyclic object graphs, and what marker is returned?",
+      "evidence": [
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "lineStart": 91,
+          "lineEnd": 91,
+          "contains": ["if (seen.has(value as object)) return '[cycle]';"]
+        },
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "lineStart": 92,
+          "lineEnd": 92,
+          "contains": ["seen.add(value as object);"]
+        }
+      ],
+      "answerFacts": [
+        "A WeakSet records visited object identities.",
+        "Repeated object references become the literal [cycle] marker."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-10",
+      "split": "holdout",
+      "repo": "wayland",
+      "category": "configuration",
+      "query": "Why are secret-bearing outbound callback names matched by prefix rather than by exact equality?",
+      "evidence": [
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "lineStart": 43,
+          "lineEnd": 43,
+          "contains": ["by PREFIX, because the platform appends an 8-hex invocation id."]
+        },
+        {
+          "path": "src/common/adapter/remoteRedaction.ts",
+          "lineStart": 58,
+          "lineEnd": 58,
+          "contains": [
+            "return SECRET_BEARING_CALLBACK_PREFIXES.some((prefix) => name.startsWith(prefix));"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "The transport appends an eight-hex invocation id to subscribe callback names.",
+        "isSecretBearingCallback checks whether the wire name starts with a registered secret-bearing prefix."
+      ],
+      "rationale": "Recover the precise configuration precedence or representation from executable source.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-11",
+      "split": "holdout",
+      "repo": "wayland",
+      "category": "security",
+      "query": "Does the shared approval cache consider an empty batch approved, and which key fields distinguish stored decisions?",
+      "evidence": [
+        {
+          "path": "src/common/chat/approval/ApprovalStore.ts",
+          "lineStart": 74,
+          "lineEnd": 74,
+          "contains": ["return keys.length > 0 && keys.every((k) => this.isApproved(k as K));"]
+        },
+        {
+          "path": "src/common/chat/approval/ApprovalStore.ts",
+          "lineStart": 49,
+          "lineEnd": 49,
+          "contains": ["identifier: key.identifier || '',"]
+        }
+      ],
+      "answerFacts": [
+        "allApproved requires a nonempty batch and approval of every key.",
+        "Keys serialize action plus identifier, with a missing identifier represented by an empty string."
+      ],
+      "rationale": "Locate the authority or data-handling boundary and explain its actual restrictions.",
+      "answerable": true
+    },
+    {
+      "id": "code-wayland-12",
+      "split": "holdout",
+      "repo": "wayland",
+      "category": "abstention",
+      "query": "What is the measured number of credential leaks prevented by remote callback redaction in production last month?",
+      "evidence": [],
+      "answerFacts": [
+        "The selected implementation and tests do not provide that production incident count."
+      ],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    },
+    {
+      "id": "code-deepseek-01",
+      "split": "dev",
+      "repo": "deepseek-harness",
+      "category": "security",
+      "query": "Which validation prevents ACP stdio MCP servers from resolving an arbitrary command through PATH, and which workspace is passed to the process?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 45,
+          "lineEnd": 45,
+          "contains": ["if (!isAbsolute(server.command)) {"]
+        },
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 55,
+          "lineEnd": 55,
+          "contains": ["cwd: sessionCwd,"]
+        }
+      ],
+      "answerFacts": [
+        "A stdio command must be an absolute path.",
+        "The translated client config binds cwd to the canonical session workspace and fails on startup error."
+      ],
+      "rationale": "Locate the authority or data-handling boundary and explain its actual restrictions.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-02",
+      "split": "dev",
+      "repo": "deepseek-harness",
+      "category": "exact-symbol",
+      "query": "How does normalizeServerName turn a human-readable MCP server name into a stable bounded tool namespace?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 120,
+          "lineEnd": 120,
+          "contains": ["const digest = createHash('sha256').update(name).digest('hex').slice(0, 8)"]
+        },
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 121,
+          "lineEnd": 121,
+          "contains": ["return `${slug}_${digest}`.slice(0, 32)"]
+        }
+      ],
+      "answerFacts": [
+        "Already-valid names pass through.",
+        "Other names use a normalized sanitized slug of at most 20 characters plus the first eight hex SHA256 characters, bounded to 32 characters."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-03",
+      "split": "dev",
+      "repo": "deepseek-harness",
+      "category": "multi-file",
+      "query": "Where are differently cased duplicate HTTP header names rejected when translating ACP MCP declarations, and which fixture covers it?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 102,
+          "lineEnd": 102,
+          "contains": ["const identity = kind === 'header' ? entry.name.toLowerCase() : entry.name"]
+        },
+        {
+          "path": "packages/acp/acp/tests/mcp.spec.ts",
+          "lineStart": 67,
+          "lineEnd": 67,
+          "contains": ["rejects case-insensitive duplicate headers and malformed URLs"]
+        }
+      ],
+      "answerFacts": [
+        "Header identities are lowercased before duplicate detection.",
+        "The regression passes X-Key and x-key and expects a duplicate-name error."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-04",
+      "split": "dev",
+      "repo": "deepseek-harness",
+      "category": "multi-file",
+      "query": "An MCP environment contains a legal __proto__ key. How is it preserved as data, and where is this regression checked?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 84,
+          "lineEnd": 84,
+          "contains": ["const result = Object.create(null) as Record<string, string>"]
+        },
+        {
+          "path": "packages/acp/acp/tests/mcp.spec.ts",
+          "lineStart": 80,
+          "lineEnd": 80,
+          "contains": ["preserves legal names that collide with Object prototype setters"]
+        }
+      ],
+      "answerFacts": [
+        "Entries are accumulated into an object with a null prototype.",
+        "The regression asserts the __proto__ environment and header entries remain own properties with their original values."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-05",
+      "split": "dev",
+      "repo": "deepseek-harness",
+      "category": "lifecycle",
+      "query": "Does mounting a session MCP server list validate every declaration before starting the first client, and how are duplicate normalized names handled?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 31,
+          "lineEnd": 31,
+          "contains": ["const configs = resolveMcpConfigs(servers, sessionCwd)"]
+        },
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 32,
+          "lineEnd": 32,
+          "contains": ["for (const config of configs) await agentCtx.plugin(McpClient, config)"]
+        },
+        {
+          "path": "packages/acp/acp/src/mcp.ts",
+          "lineStart": 41,
+          "lineEnd": 41,
+          "contains": ["mcpServers contains duplicate normalized name:"]
+        }
+      ],
+      "answerFacts": [
+        "resolveMcpConfigs maps and validates the complete declaration list before the mounting loop begins.",
+        "Duplicate normalized names throw AcpMcpConfigError instead of mounting both."
+      ],
+      "rationale": "Locate ordering and completion semantics that matter when implementing or debugging a caller.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-06",
+      "split": "dev",
+      "repo": "deepseek-harness",
+      "category": "abstention",
+      "query": "Which ACP option enables an encrypted UDP MCP transport, and how is its datagram key rotated?",
+      "evidence": [],
+      "answerFacts": [
+        "The selected MCP bridge supports stdio and HTTP declarations and contains no encrypted UDP transport option or rotation implementation."
+      ],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    },
+    {
+      "id": "code-deepseek-07",
+      "split": "holdout",
+      "repo": "deepseek-harness",
+      "category": "multi-file",
+      "query": "A client changes model configuration while an ACP prompt is in progress. How is the route selected at admission kept stable for the whole turn?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/session.ts",
+          "lineStart": 275,
+          "lineEnd": 275,
+          "contains": ["const promptSelection = this.modelControl.snapshot()"]
+        },
+        {
+          "path": "packages/acp/acp/src/session.ts",
+          "lineStart": 400,
+          "lineEnd": 400,
+          "contains": ["this.modelControl.pinTurn(turn, selection)"]
+        },
+        {
+          "path": "packages/acp/acp/src/model-control.ts",
+          "lineStart": 45,
+          "lineEnd": 45,
+          "contains": ["this.turnSelection?.selection ?? this.selected"]
+        }
+      ],
+      "answerFacts": [
+        "Session prompt snapshots the model control selection and associates it with the queued user message.",
+        "When the inbox claims that message, the selection is pinned to the turn; the model controller returns the pinned selection until release."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-08",
+      "split": "holdout",
+      "repo": "deepseek-harness",
+      "category": "multi-file",
+      "query": "Find the ACP teardown path and regression that ensure continuable descendants drain before the owning agent session is disposed.",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/session.ts",
+          "lineStart": 444,
+          "lineEnd": 444,
+          "contains": ["await subagents?.drainContinuableDescendants([this.agent])"]
+        },
+        {
+          "path": "packages/acp/acp/tests/dispose.spec.ts",
+          "lineStart": 65,
+          "lineEnd": 65,
+          "contains": ["drains continuable subagents before disposing its own sessions"]
+        }
+      ],
+      "answerFacts": [
+        "close waits for admission, agent idle and queued updates, then drains continuable descendants.",
+        "It flushes session persistence and disposes the agent even when earlier teardown stages report failures."
+      ],
+      "rationale": "Recover all required implementation and regression or cross-module evidence; one matching file is insufficient.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-09",
+      "split": "holdout",
+      "repo": "deepseek-harness",
+      "category": "lifecycle",
+      "query": "How does an ACP session prevent a second prompt from occupying the same admission slot while one is already in flight?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/session.ts",
+          "lineStart": 249,
+          "lineEnd": 249,
+          "contains": [
+            "if (this.inflight !== undefined) throw invalidParams('a prompt is already in flight for this session')"
+          ]
+        }
+      ],
+      "answerFacts": [
+        "prompt checks the inflight slot and throws invalid params before allocating another prompt.",
+        "The in-flight record owns its admission controller and completion state until settlement clears it."
+      ],
+      "rationale": "Locate ordering and completion semantics that matter when implementing or debugging a caller.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-10",
+      "split": "holdout",
+      "repo": "deepseek-harness",
+      "category": "exact-symbol",
+      "query": "How does AcpModelControl.serialize preserve configuration mutation order without permanently wedging after a rejected mutation?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/model-control.ts",
+          "lineStart": 138,
+          "lineEnd": 138,
+          "contains": ["const result = this.tail.then(operation)"]
+        },
+        {
+          "path": "packages/acp/acp/src/model-control.ts",
+          "lineStart": 139,
+          "lineEnd": 139,
+          "contains": ["this.tail = result.then(() => undefined, () => undefined)"]
+        }
+      ],
+      "answerFacts": [
+        "Each operation is chained from the previous tail.",
+        "The stored tail is converted to a fulfilled void promise on either success or failure while the original result is returned to its caller."
+      ],
+      "rationale": "Resolve an exact code symbol to the behavior-defining implementation span, not merely a mention.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-11",
+      "split": "holdout",
+      "repo": "deepseek-harness",
+      "category": "natural-language",
+      "query": "How is the provider-default reasoning effort represented in ACP select options when the model has no explicit default effort?",
+      "evidence": [
+        {
+          "path": "packages/acp/acp/src/model-control.ts",
+          "lineStart": 11,
+          "lineEnd": 11,
+          "contains": ["const PROVIDER_DEFAULT_REASONING_VALUE = ''"]
+        },
+        {
+          "path": "packages/acp/acp/src/model-control.ts",
+          "lineStart": 210,
+          "lineEnd": 210,
+          "contains": ["? [{ value: PROVIDER_DEFAULT_REASONING_VALUE, name: 'Provider default' }]"]
+        }
+      ],
+      "answerFacts": [
+        "The empty string is a disjoint opaque value for provider default.",
+        "That option is offered only when reasoning exists and defaultEffort is undefined."
+      ],
+      "rationale": "Locate the implementation from a behavior description without the owning symbol name.",
+      "answerable": true
+    },
+    {
+      "id": "code-deepseek-12",
+      "split": "holdout",
+      "repo": "deepseek-harness",
+      "category": "abstention",
+      "query": "What exact p99 teardown duration was measured for ACP continuable descendants on the production fleet?",
+      "evidence": [],
+      "answerFacts": [
+        "The selected source and deterministic regression corpus contains no production fleet p99 teardown measurement."
+      ],
+      "rationale": "The requested fact or API is absent from this selected committed corpus. Relevant-looking retrieval alone cannot establish an answer.",
+      "answerable": false
+    }
+  ]
+}

@@ -37,6 +37,9 @@ import {
   SourceVersionSchema,
   VersionPageInputSchema,
   memoryLimits,
+  identifierWords,
+  retrievalTerms,
+  rankLexicalCandidates,
   validateImportInput,
   type CaptureResult,
   type ImportResult,
@@ -264,7 +267,7 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
         Schema.Struct({ user_version: Schema.Int }),
         database.query("PRAGMA user_version").get(),
       ).user_version;
-      if (version > 1)
+      if (version > 2)
         fail("integrity", "This memory database requires a newer application version.");
       database
         .transaction(() => {
@@ -286,11 +289,47 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
           PRIMARY KEY(workspaceId,hash,versionId)
         );
         CREATE VIRTUAL TABLE IF NOT EXISTS source_text USING fts5(
-          workspaceId UNINDEXED,sourceId UNINDEXED,versionId UNINDEXED,path UNINDEXED,
-          lineStart UNINDEXED,lineEnd UNINDEXED,text, tokenize='unicode61'
+          workspaceId UNINDEXED,sourceId UNINDEXED,versionId UNINDEXED,path,
+          lineStart UNINDEXED,lineEnd UNINDEXED,text,terms, tokenize='porter unicode61'
         );
-        PRAGMA user_version=1;
+        PRAGMA user_version=2;
       `);
+          if (version === 1) {
+            database.exec(`ALTER TABLE source_text RENAME TO source_text_legacy;
+              CREATE VIRTUAL TABLE source_text USING fts5(
+                workspaceId UNINDEXED,sourceId UNINDEXED,versionId UNINDEXED,path,
+                lineStart UNINDEXED,lineEnd UNINDEXED,text,terms,tokenize='porter unicode61');`);
+            const rowSchema = Schema.Struct({
+              workspaceId: Schema.String,
+              sourceId: Schema.String,
+              versionId: Schema.String,
+              path: Schema.String,
+              lineStart: Schema.Int,
+              lineEnd: Schema.Int,
+              text: Schema.String,
+            });
+            const insert = database.query(
+              "INSERT INTO source_text(workspaceId,sourceId,versionId,path,lineStart,lineEnd,text,terms) VALUES(?,?,?,?,?,?,?,?)",
+            );
+            for (const value of database
+              .query(
+                "SELECT workspaceId,sourceId,versionId,path,lineStart,lineEnd,text FROM source_text_legacy",
+              )
+              .iterate()) {
+              const row = decode(rowSchema, value);
+              insert.run(
+                row.workspaceId,
+                row.sourceId,
+                row.versionId,
+                row.path,
+                row.lineStart,
+                row.lineEnd,
+                row.text,
+                identifierWords(`${row.path}\n${row.text}`),
+              );
+            }
+            database.exec("DROP TABLE source_text_legacy;");
+          }
           const existing: unknown = database
             .query("SELECT root AS value FROM scopes WHERE id=?")
             .get(workspaceId);
@@ -612,7 +651,7 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
         for (const chunk of indexed)
           database
             .query(
-              "INSERT INTO source_text(workspaceId,sourceId,versionId,path,lineStart,lineEnd,text) VALUES(?,?,?,?,?,?,?)",
+              "INSERT INTO source_text(workspaceId,sourceId,versionId,path,lineStart,lineEnd,text,terms) VALUES(?,?,?,?,?,?,?,?)",
             )
             .run(
               workspaceId,
@@ -622,6 +661,7 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
               chunk.lineStart,
               chunk.lineEnd,
               chunk.text,
+              identifierWords(`${chunk.path}\n${chunk.text}`),
             );
         return { status: current === undefined ? "created" : "updated", source: updated, version };
       });
@@ -744,10 +784,10 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
           ensureOpen();
           const input = decode(SearchInputSchema, value, "invalid");
           if (input.sourceId !== undefined) source(input.sourceId);
-          const terms = input.query.match(/[\p{L}\p{N}_]+/gu) ?? [];
+          const terms = retrievalTerms(input.query);
           if (terms.length === 0 || terms.length > 32)
             return fail("invalid", "Search requires between one and 32 searchable terms.");
-          const match = terms.map((term) => `"${term}"`).join(" AND ");
+          const match = terms.map((term) => `"${term}"`).join(" OR ");
           const rowSchema = Schema.Struct({
             sourceId: MemoryIdSchema,
             versionId: MemoryIdSchema,
@@ -755,18 +795,22 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
             lineStart: Schema.Int,
             lineEnd: Schema.Int,
             text: Schema.String,
+            rank: Schema.Number,
           });
           const rows = database
             .query(
-              `SELECT sourceId,versionId,path,lineStart,lineEnd,text FROM source_text WHERE source_text MATCH ? AND workspaceId=? ${input.sourceId === undefined ? "" : "AND sourceId=?"} ORDER BY bm25(source_text),sourceId,path,lineStart LIMIT ?`,
+              `SELECT sourceId,versionId,path,lineStart,lineEnd,text,bm25(source_text,0,0,0,2,0,0,1,0.5) AS rank FROM source_text WHERE source_text MATCH ? AND workspaceId=? ${input.sourceId === undefined ? "" : "AND sourceId=?"} ORDER BY rank,sourceId,path,lineStart LIMIT ?`,
             )
             .all(
               ...(input.sourceId === undefined
-                ? [match, workspaceId, input.limit ?? 10]
-                : [match, workspaceId, input.sourceId, input.limit ?? 10]),
+                ? [match, workspaceId, 200]
+                : [match, workspaceId, input.sourceId, 200]),
             );
-          return rows.map((raw) => {
-            const row = decode(rowSchema, raw);
+          const ranked = rankLexicalCandidates(
+            terms,
+            rows.map((raw) => decode(rowSchema, raw)),
+          );
+          return ranked.slice(0, input.limit ?? 10).map((row) => {
             const selected = source(row.sourceId);
             if (selected.currentVersionId !== row.versionId)
               return fail("integrity", "Search index points to a stale source version.");

@@ -1,6 +1,7 @@
 import { Context, Effect, Schema } from "effect";
 
 export { cli } from "./cli.ts";
+export { identifierWords, retrievalTerms, rankLexicalCandidates } from "./retrieval.ts";
 
 export const memoryLimits = {
   fileBytes: 16_777_216,

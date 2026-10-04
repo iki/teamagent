@@ -4,6 +4,12 @@
 
 No benchmark was executed for this analysis. The following is the proposed evaluation program needed to select components and demonstrate that the integrated harness is better for the user's workloads.
 
+That statement describes the original source-analysis milestone. The subsequent
+[memory benchmark](benchmarks/results.md) implements a frozen coding-evidence
+and document-query suite with executed reference comparisons. Its retrieval and
+extraction measurements do not establish the broader end-to-end task-success
+claims proposed below.
+
 ## Baselines and experimental design
 
 Start with a fixed single agent, fixed model and conventional tools, without shared memory or automatic skill selection. [mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) ([review](projects/ai-agents--mini-swe-agent.md)) provides an auditable loop reference. Compare incremental additions: retrieval, context compiler, selected skills, model routing, then teams. Also compare a manual deterministic route against Jev-like routing. Do not compare systems with different hidden tool access, egress, task data or budgets.

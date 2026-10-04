@@ -51,6 +51,35 @@ page[NameObject("/Contents")] = writer._add_object(stream)
 with (root / "sample.pdf").open("wb") as handle:
     writer.write(handle)
 
+# Positioned words are common in typeset PDFs: word boundaries may be encoded
+# as TJ spacing rather than literal space characters. Short aligned prose must
+# not be promoted into a guessed Markdown table. Two columns and a real table
+# exercise content-order preservation without claiming layout reconstruction.
+writer = PdfWriter()
+font = writer._add_object(DictionaryObject({NameObject("/Type"): NameObject("/Font"), NameObject("/Subtype"): NameObject("/Type1"), NameObject("/BaseFont"): NameObject("/Helvetica")}))
+page = writer.add_blank_page(width=612, height=792)
+page[NameObject("/Resources")] = DictionaryObject({NameObject("/Font"): DictionaryObject({NameObject("/F1"): font})})
+stream = DecodedStreamObject()
+stream.set_data(b"""BT /F1 12 Tf 36 740 Td [(Careful) -500 (reviews) -500 (reduce) -500 (regressions.)] TJ ET
+BT /F1 12 Tf 36 710 Td [(Reliable) -500 (tests) -500 (protect) -500 (behavior.)] TJ ET
+BT /F1 12 Tf 36 680 Td [(Readable) -500 (guides) -500 (explain) -500 (decisions.)] TJ ET
+BT /F1 10 Tf 36 610 Td (Left column first sentence.) Tj 0 -16 Td (Left column second sentence.) Tj ET
+BT /F1 10 Tf 330 610 Td (Right column first sentence.) Tj 0 -16 Td (Right column second sentence.) Tj ET
+""")
+page[NameObject("/Contents")] = writer._add_object(stream)
+page = writer.add_blank_page(width=612, height=792)
+page[NameObject("/Resources")] = DictionaryObject({NameObject("/Font"): DictionaryObject({NameObject("/F1"): font})})
+stream = DecodedStreamObject()
+stream.set_data(b"""BT /F1 12 Tf 36 740 Td (Recorded measurements) Tj ET
+BT /F1 10 Tf 36 700 Td (Metric) Tj 190 0 Td (Count) Tj 100 0 Td (Unit) Tj ET
+BT /F1 10 Tf 36 680 Td (Requests) Tj 190 0 Td (42) Tj 100 0 Td (operations) Tj ET
+BT /F1 10 Tf 36 660 Td (Duration) Tj 190 0 Td (17) Tj 100 0 Td (milliseconds) Tj ET
+""")
+page[NameObject("/Contents")] = writer._add_object(stream)
+writer.add_blank_page(width=612, height=792)
+with (root / "positioned.pdf").open("wb") as handle:
+    writer.write(handle)
+
 with zipfile.ZipFile(root / "unsafe.docx", "w") as archive:
     archive.writestr("../escape.txt", "untrusted")
     archive.writestr("word/document.xml", document)

@@ -8,6 +8,11 @@ agent loop. Mobile remains deferred.
 Source memory imports URLs, documents, images, folders and Git repositories,
 retains versions, and exposes retrieval through the CLI, MCP and a library API.
 See [memory and import commands](spec/memory-imports.md) for conversion and agent installation.
+The [memory benchmark protocol](spec/benchmarks/methodology.md) defines frozen coding
+and PDF tasks, real reference-system adapters, development/holdout separation and
+reproduction commands. The [measured results](spec/benchmarks/results.md) retain
+88 questions, before/after runs, reference comparisons and remaining limitations.
+`aube run --no-install benchmark:memory --help` lists the runner.
 
 ```sh
 aube install --frozen-lockfile

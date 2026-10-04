@@ -85,6 +85,23 @@ selected workspace. Deletion removes source metadata and search visibility.
 Unreferenced blob bytes remain on disk; automatic garbage collection is not yet
 implemented.
 
+Git checks eligible paths and file-count capacity against the pinned tree before
+reading blobs. Oversized repositories fail with typed `capacity` and leave no
+partially published source; exclusions still apply before counting eligible files.
+
+Search accepts natural questions as well as identifiers. It removes common
+question words, splits identifier components, uses English stemming and bounded
+OR candidate retrieval, then ranks informative term coverage. It remains lexical
+search: no embedding model or generation API runs inside the memory service.
+Opening a version-one store atomically rebuilds its search index; immutable
+source manifests and blobs remain unchanged. The search index schema is now
+version two. PDF parser version two preserves physical page text with explicit
+page headings and embedded raster images; reading order, table structure, vector
+artwork and OCR still need source inspection.
+
+The [memory benchmark](benchmarks/results.md) records retrieval, extraction,
+source lifecycle and competitor measurements, including remaining evidence gaps.
+
 ## MCP and installation
 
 ```sh

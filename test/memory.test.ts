@@ -87,6 +87,54 @@ async function fixture(
 }
 
 describe("source memory", () => {
+  test("natural questions and identifier words retrieve inflected evidence without requiring grammar words", async () => {
+    const { store } = await fixture(() =>
+      Effect.succeed(
+        captured(
+          "The connectionManager retries requests after transient failures.\nThe retry budget bounds attempts.",
+        ),
+      ),
+    );
+    await Effect.runPromise(store.get({ locator: "sample.txt" }));
+    expect(
+      await Effect.runPromise(
+        store.search({ query: "How does the connection manager retry a request?" }),
+      ),
+    ).toHaveLength(1);
+    expect(await Effect.runPromise(store.search({ query: "connectionManager" }))).toHaveLength(1);
+    expect(await Effect.runPromise(store.search({ query: "connection_manager" }))).toHaveLength(1);
+    expect(await Effect.runPromise(store.search({ query: "unfindablexyzabc" }))).toHaveLength(0);
+  });
+
+  test("upgrades a version-one search index atomically without changing immutable source evidence", async () => {
+    const { store, options } = await fixture(() =>
+      Effect.succeed(captured("The connectionManager retries requests.")),
+    );
+    const receipt = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+    await Effect.runPromise(store.close());
+    const database = new Database(join(options.dataDirectory, "memory", "memory.sqlite"));
+    database.exec(`BEGIN;
+      ALTER TABLE source_text RENAME TO newer_text;
+      CREATE VIRTUAL TABLE source_text USING fts5(workspaceId UNINDEXED,sourceId UNINDEXED,versionId UNINDEXED,path UNINDEXED,lineStart UNINDEXED,lineEnd UNINDEXED,text,tokenize='unicode61');
+      INSERT INTO source_text(workspaceId,sourceId,versionId,path,lineStart,lineEnd,text) SELECT workspaceId,sourceId,versionId,path,lineStart,lineEnd,text FROM newer_text;
+      DROP TABLE newer_text;
+      PRAGMA user_version=1;
+      COMMIT;`);
+    database.close();
+    const reopened = await Effect.runPromise(openMemory(options));
+    openStores.push(reopened);
+    const hits = await Effect.runPromise(
+      reopened.search({ query: "How are connection manager requests retried?" }),
+    );
+    expect(hits).toHaveLength(1);
+    expect(hits[0]?.versionId).toBe(receipt.version.id);
+    const original = await Effect.runPromise(reopened.read(receipt.source.id));
+    expect(original.version.contentHash).toBe(receipt.version.contentHash);
+    expect(new TextDecoder().decode(original.bytes)).toBe(
+      "The connectionManager retries requests.",
+    );
+  });
+
   test("retains original bytes, immutable versions and current search citations across reopen", async () => {
     let text = "Alpha evidence\nSecond line";
     const { store, options, tick } = await fixture(() => Effect.succeed(captured(text)));

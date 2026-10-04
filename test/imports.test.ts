@@ -6,7 +6,7 @@ import { join } from "node:path";
 import { Effect } from "effect";
 import { type CaptureRequest, type CaptureResult, type SourceVersion } from "@/memory";
 import { createSourceCapture } from "../app/imports/index.ts";
-import { defaultImportPython, importDoctor } from "../app/imports/documents.ts";
+import { defaultImportPython, importDoctor, parserVersion } from "../app/imports/documents.ts";
 import { digest, importLimits } from "../app/imports/limits.ts";
 import { networkUrl, publicAddress, retrieveHttp } from "../app/imports/network.ts";
 import { runProcess } from "../app/imports/process.ts";
@@ -103,6 +103,38 @@ describe("source acquisition and conversion", () => {
     expect(result.files[0]?.bytes).toEqual(
       new Uint8Array(await readFile(join(workspace, `sample.${extension}`))),
     );
+  });
+
+  test("PDF conversion preserves positioned words, column text and physical pages without guessed tables", async () => {
+    const result = captured(
+      await Effect.runPromise(createSourceCapture()(request("positioned.pdf"))),
+    );
+    const markdown = result.files.find((file) => file.role === "markdown");
+    expect(markdown).toBeDefined();
+    const text = markdown === undefined ? "" : decoded(markdown.bytes);
+    const normalized = text.replace(/\s+/g, " ");
+    expect(normalized).toContain("Careful reviews reduce regressions.");
+    expect(normalized).toContain("Reliable tests protect behavior.");
+    expect(normalized).toContain("Readable guides explain decisions.");
+    expect(normalized).toContain("Left column first sentence. Left column second sentence.");
+    expect(normalized).toContain("Right column first sentence. Right column second sentence.");
+    expect(normalized).toContain("Requests 42 operations");
+    expect(normalized).toContain("Duration 17 milliseconds");
+    expect(text).not.toContain("| ---");
+    expect(text.match(/^## PDF page \d+$/gm)).toEqual([
+      "## PDF page 1",
+      "## PDF page 2",
+      "## PDF page 3",
+    ]);
+    expect(text.indexOf("Left column second sentence.")).toBeLessThan(
+      text.indexOf("Right column first sentence."),
+    );
+    expect(text.indexOf("## PDF page 2")).toBeLessThan(text.indexOf("Recorded measurements"));
+    expect(result.provenance.warnings.join(" ")).toContain(
+      "PDF pages without extractable text (OCR is not enabled): 3",
+    );
+    expect(result.provenance.warnings.join(" ")).toContain("table layout, equations");
+    expect(result.provenance.parserVersion).toBe(parserVersion);
   });
 
   test("retains unsafe archive original without extracting traversal members", async () => {

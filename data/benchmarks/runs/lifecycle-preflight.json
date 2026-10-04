@@ -1,0 +1,410 @@
+{
+  "format": "teamagent-memory-lifecycle-benchmark-v1",
+  "startedAt": "2026-10-04T10:36:28.202Z",
+  "completedAt": "2026-10-04T10:36:41.473Z",
+  "runtime": {
+    "bun": "1.4.2",
+    "platform": "win32",
+    "arch": "x64",
+    "osRelease": "10.0.26300",
+    "cpu": "Intel(R) Core(TM) Ultra 9 285H",
+    "logicalCpus": 16,
+    "totalMemoryBytes": 68112752640
+  },
+  "manifestSha256": "0a8b3f09aff5bfe8d1b1775a51050bfa2d9bfc4d9962ca7b3db8749e49159cc9",
+  "converter": {
+    "available": true,
+    "python": "C:\\_\\teamagent\\.cache\\import-python\\Scripts\\python.exe",
+    "pythonVersion": "3.12.15",
+    "packages": {
+      "markitdown": "0.1.8",
+      "pypdf": "6.11.0",
+      "markdown-it-py": "4.0.0",
+      "mammoth": "1.11.0",
+      "pdfminer.six": "20260107",
+      "pdfplumber": "0.11.10",
+      "python-pptx": "1.0.2",
+      "openpyxl": "3.1.5"
+    },
+    "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+    "formats": [
+      "markdown",
+      "html",
+      "pdf",
+      "docx",
+      "xlsx",
+      "pptx"
+    ],
+    "message": "Pinned document converter is available."
+  },
+  "stateBytes": 21357815,
+  "limitations": [
+    "Serial single-machine lifecycle samples; no latency percentile or production SLA claim",
+    "Native source acquisition is distinct from the equal-passage retrieval comparison",
+    "Folder snapshots retain exact pinned commit bytes; folder source provenance is supplemented by the benchmark manifest",
+    "Whole-repository rejection is reported as a current capacity limitation, not complete ingestion"
+  ],
+  "selectedRepositories": [
+    {
+      "repository": "hermes-agent",
+      "commit": "3b9a963b8e5cdb804a422755bed9a60fcd778273",
+      "sourceId": "5284b36b-8c81-4396-b1d7-46fa8241d5c2",
+      "versionId": "206d4e58-73f0-45a3-b7dc-48a0b314d72f",
+      "contentHash": "3af92a4beefe1526f241b0cac13af0ec0a35f722d04494346ec647efc0745321",
+      "expectedFiles": 37,
+      "originals": 37,
+      "markdown": 37,
+      "bytes": 1237796,
+      "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [],
+      "evidenceSpans": 20,
+      "preservedEvidenceSpans": 20
+    },
+    {
+      "repository": "pi",
+      "commit": "200387122ca450d6387f033949423114a270b96c",
+      "sourceId": "0f23de8c-0015-4043-837a-0cc43049e83d",
+      "versionId": "0dfb4b57-aa94-49a1-b2a3-8b69a2e955ea",
+      "contentHash": "9ededbdecefe025b8e5eed2f5b4221f63e4ef306e44c5b1505d7e605d2cf4653",
+      "expectedFiles": 47,
+      "originals": 47,
+      "markdown": 47,
+      "bytes": 841736,
+      "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [],
+      "evidenceSpans": 18,
+      "preservedEvidenceSpans": 18
+    },
+    {
+      "repository": "wayland",
+      "commit": "4c030c7b01c241df7b6e3535635a970f10d781af",
+      "sourceId": "19807f4c-5ddf-4bfa-addc-00d981848b65",
+      "versionId": "62096cad-a2e7-409b-beb2-393037ec6398",
+      "contentHash": "3348d2041c94baa6c42e455128460cbbffa9e9dd60d8c3933b1814a151ac061f",
+      "expectedFiles": 40,
+      "originals": 40,
+      "markdown": 40,
+      "bytes": 493741,
+      "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [],
+      "evidenceSpans": 20,
+      "preservedEvidenceSpans": 20
+    },
+    {
+      "repository": "deepseek-harness",
+      "commit": "5badb15009ae1756c3afe0ae0cef1faafc290ccc",
+      "sourceId": "8aa67521-0ac3-40e5-bcdd-cb73c0cfdb95",
+      "versionId": "5a7f75c6-56b7-4eb4-a6df-2b434183a409",
+      "contentHash": "f2949a13c7b142521e31581db6f3cb14810808b506c21255f4e46a4dd070cced",
+      "expectedFiles": 55,
+      "originals": 55,
+      "markdown": 55,
+      "bytes": 804803,
+      "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "warnings": [],
+      "evidenceSpans": 21,
+      "preservedEvidenceSpans": 21
+    }
+  ],
+  "checks": [
+    {
+      "name": "converter-ready",
+      "passed": true,
+      "detail": "Explicit converter doctor; no dependency installation during measurement"
+    },
+    {
+      "name": "hermes-agent:exact-original-coverage",
+      "passed": true,
+      "detail": "37/37 original paths, byte lengths and hashes match the pinned commit"
+    },
+    {
+      "name": "hermes-agent:searchable-file-coverage",
+      "passed": true,
+      "detail": "37/37 files have readable Markdown derivatives"
+    },
+    {
+      "name": "hermes-agent:gold-extraction-coverage",
+      "passed": true,
+      "detail": "20/20 frozen evidence spans survive extraction; no retrieval results consulted"
+    },
+    {
+      "name": "hermes-agent:source-version-scope",
+      "passed": true,
+      "detail": "Created source and immutable version retain the same source and workspace identities"
+    },
+    {
+      "name": "hermes-agent:unchanged-version",
+      "passed": true,
+      "detail": "A repeat native folder retrieval does not publish a duplicate version"
+    },
+    {
+      "name": "pi:exact-original-coverage",
+      "passed": true,
+      "detail": "47/47 original paths, byte lengths and hashes match the pinned commit"
+    },
+    {
+      "name": "pi:searchable-file-coverage",
+      "passed": true,
+      "detail": "47/47 files have readable Markdown derivatives"
+    },
+    {
+      "name": "pi:gold-extraction-coverage",
+      "passed": true,
+      "detail": "18/18 frozen evidence spans survive extraction; no retrieval results consulted"
+    },
+    {
+      "name": "pi:source-version-scope",
+      "passed": true,
+      "detail": "Created source and immutable version retain the same source and workspace identities"
+    },
+    {
+      "name": "pi:unchanged-version",
+      "passed": true,
+      "detail": "A repeat native folder retrieval does not publish a duplicate version"
+    },
+    {
+      "name": "wayland:exact-original-coverage",
+      "passed": true,
+      "detail": "40/40 original paths, byte lengths and hashes match the pinned commit"
+    },
+    {
+      "name": "wayland:searchable-file-coverage",
+      "passed": true,
+      "detail": "40/40 files have readable Markdown derivatives"
+    },
+    {
+      "name": "wayland:gold-extraction-coverage",
+      "passed": true,
+      "detail": "20/20 frozen evidence spans survive extraction; no retrieval results consulted"
+    },
+    {
+      "name": "wayland:source-version-scope",
+      "passed": true,
+      "detail": "Created source and immutable version retain the same source and workspace identities"
+    },
+    {
+      "name": "wayland:unchanged-version",
+      "passed": true,
+      "detail": "A repeat native folder retrieval does not publish a duplicate version"
+    },
+    {
+      "name": "deepseek-harness:exact-original-coverage",
+      "passed": true,
+      "detail": "55/55 original paths, byte lengths and hashes match the pinned commit"
+    },
+    {
+      "name": "deepseek-harness:searchable-file-coverage",
+      "passed": true,
+      "detail": "55/55 files have readable Markdown derivatives"
+    },
+    {
+      "name": "deepseek-harness:gold-extraction-coverage",
+      "passed": true,
+      "detail": "21/21 frozen evidence spans survive extraction; no retrieval results consulted"
+    },
+    {
+      "name": "deepseek-harness:source-version-scope",
+      "passed": true,
+      "detail": "Created source and immutable version retain the same source and workspace identities"
+    },
+    {
+      "name": "deepseek-harness:unchanged-version",
+      "passed": true,
+      "detail": "A repeat native folder retrieval does not publish a duplicate version"
+    },
+    {
+      "name": "fixture:initial-search",
+      "passed": true,
+      "detail": "Planted initial marker is searchable before update"
+    },
+    {
+      "name": "fixture:changed-version",
+      "passed": true,
+      "detail": "A changed file advances exactly one immutable version under the same source id"
+    },
+    {
+      "name": "fixture:historical-integrity",
+      "passed": true,
+      "detail": "Old version bytes and hash remain available after a successful refresh"
+    },
+    {
+      "name": "fixture:search-freshness",
+      "passed": true,
+      "detail": "The current index removes the old marker and includes the replacement"
+    },
+    {
+      "name": "fixture:search-citation-scope",
+      "passed": true,
+      "detail": "Search hits and citations identify the current source, immutable version and workspace"
+    },
+    {
+      "name": "workspace:isolation",
+      "passed": true,
+      "detail": "A second workspace sharing the database sees neither records nor bytes from the first"
+    },
+    {
+      "name": "workspace:source-root-enforced",
+      "passed": true,
+      "detail": "MCP-bound acquisition rejects a file outside its explicit root"
+    },
+    {
+      "name": "fixture:deletion-visible",
+      "passed": true,
+      "detail": "Deletion removes current/history API visibility and search; physical orphan-blob garbage collection is not claimed"
+    },
+    {
+      "name": "fixture:cancellation-atomicity",
+      "passed": true,
+      "detail": "Cancellation leaves no published source and awaits private temporary-file cleanup"
+    },
+    {
+      "name": "pi:whole-repository-explicit-rejection",
+      "passed": true,
+      "detail": "Actual committed repository rejected atomically: capacity: Repository contains more than 256 eligible files; split it into smaller explicit sources."
+    },
+    {
+      "name": "cleanup:host-0",
+      "passed": true,
+      "detail": "Memory host closed after pending lifecycle work"
+    },
+    {
+      "name": "cleanup:host-1",
+      "passed": true,
+      "detail": "Memory host closed after pending lifecycle work"
+    },
+    {
+      "name": "cleanup:host-2",
+      "passed": true,
+      "detail": "Memory host closed after pending lifecycle work"
+    },
+    {
+      "name": "cleanup:temporary-fixtures",
+      "passed": true,
+      "detail": "Removed only the canonically contained benchmark temporary directory"
+    }
+  ],
+  "timings": [
+    {
+      "name": "hermes-agent:stage-committed-bytes",
+      "phase": "initial",
+      "elapsedMs": 2169.8765000000003,
+      "completed": true
+    },
+    {
+      "name": "hermes-agent:get-folder-converted",
+      "phase": "initial",
+      "elapsedMs": 427.0239999999999,
+      "completed": true
+    },
+    {
+      "name": "hermes-agent:unchanged-sync",
+      "phase": "warm",
+      "elapsedMs": 256.4141999999997,
+      "completed": true
+    },
+    {
+      "name": "pi:stage-committed-bytes",
+      "phase": "initial",
+      "elapsedMs": 2167.7799999999997,
+      "completed": true
+    },
+    {
+      "name": "pi:get-folder-converted",
+      "phase": "initial",
+      "elapsedMs": 460.1118999999999,
+      "completed": true
+    },
+    {
+      "name": "pi:unchanged-sync",
+      "phase": "warm",
+      "elapsedMs": 309.02319999999963,
+      "completed": true
+    },
+    {
+      "name": "wayland:stage-committed-bytes",
+      "phase": "initial",
+      "elapsedMs": 1952.8648999999996,
+      "completed": true
+    },
+    {
+      "name": "wayland:get-folder-converted",
+      "phase": "initial",
+      "elapsedMs": 436.29099999999926,
+      "completed": true
+    },
+    {
+      "name": "wayland:unchanged-sync",
+      "phase": "warm",
+      "elapsedMs": 253.01800000000003,
+      "completed": true
+    },
+    {
+      "name": "deepseek-harness:stage-committed-bytes",
+      "phase": "initial",
+      "elapsedMs": 2849.5448000000015,
+      "completed": true
+    },
+    {
+      "name": "deepseek-harness:get-folder-converted",
+      "phase": "initial",
+      "elapsedMs": 592.5625,
+      "completed": true
+    },
+    {
+      "name": "deepseek-harness:unchanged-sync",
+      "phase": "warm",
+      "elapsedMs": 268.3040000000001,
+      "completed": true
+    },
+    {
+      "name": "fixture:get",
+      "phase": "initial",
+      "elapsedMs": 23.66519999999946,
+      "completed": true
+    },
+    {
+      "name": "fixture:changed-sync",
+      "phase": "lifecycle",
+      "elapsedMs": 22.601300000000265,
+      "completed": true
+    },
+    {
+      "name": "fixture:historical-read",
+      "phase": "lifecycle",
+      "elapsedMs": 1.7097000000012486,
+      "completed": true
+    },
+    {
+      "name": "fixture:old-marker-search",
+      "phase": "warm",
+      "elapsedMs": 1.3587999999999738,
+      "completed": true
+    },
+    {
+      "name": "fixture:new-marker-search",
+      "phase": "warm",
+      "elapsedMs": 1.8744999999998981,
+      "completed": true
+    },
+    {
+      "name": "fixture:delete",
+      "phase": "lifecycle",
+      "elapsedMs": 10.58140000000094,
+      "completed": true
+    },
+    {
+      "name": "fixture:cancellation-cleanup",
+      "phase": "lifecycle",
+      "elapsedMs": 1.1169000000008964,
+      "completed": true
+    },
+    {
+      "name": "pi:whole-repository-capacity",
+      "phase": "lifecycle",
+      "elapsedMs": 98.1849000000002,
+      "completed": true
+    }
+  ],
+  "failure": null,
+  "success": true
+}

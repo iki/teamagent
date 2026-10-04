@@ -6,7 +6,7 @@ publication was performed. These are correctness checks, not performance claims.
 | Check               | Result and evidence                                                                                                                                                                                                                                                     |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Frozen Aube install | Passed; 156 packages matched the lockfile. Reviewed unnecessary transitive install hooks remain explicitly disabled.                                                                                                                                                    |
-| Repository gate     | 111 tests across 16 files passed. Formatting, module inventory/graph checks, four strict TS7 programs and type-aware Oxlint passed.                                                                                                                                     |
+| Repository gate     | 122 tests across 18 files passed, with 473 assertions. Formatting, module inventory/graph checks, four strict TS7 programs and type-aware Oxlint passed.                                                                                                                |
 | Pi integration      | Actual pinned Pi loop with deterministic provider streams and real temporary files/SQLite. Covers read/write grants, lease revocation, cancellation, turn/tool limits, duplicate IDs, malformed public output/usage, hidden-reasoning exclusion and verified artifacts. |
 | CLI/config          | Real subprocess CLI against a loopback daemon: module catalog/model listing, help/version without config execution, strict flags, configuration precedence, disabled ambient layers, workspace/task commands and exclusive digest-checked export.                       |
 | Persistence/HTTP    | Restart/queued recovery, competing owners, stale leases, no replay, cancellation cleanup, terminal event reserve, idempotency, overlapping/private paths, corruption, request bounds, Host/Origin/token checks and static asset containment.                            |
@@ -30,6 +30,18 @@ Windows release sidecar passed converter inspection and an actual HTML-to-Markdo
 import/read using an explicit Python path. Its default embedded runtime path does
 not locate the checkout's converter, so packaged imports require `--python` or
 `TEAMAGENT_IMPORT_PYTHON`.
+
+The memory benchmark increment adds query/migration, positioned PDF text,
+Git capacity preflight and evaluator identity/error-accounting regression tests.
+It retains 88 reference questions, sequential competitor measurements and 35
+native lifecycle checks in the [benchmark report](benchmarks/results.md).
+Windows acceptance was rerun: all four Rust tests, actual WebView2 workflow and
+managed shutdown passed, and the release application was rebuilt. Its compiled
+CLI imported the five-page Czech reference PDF, retained physical-page headings,
+returned evidence for a natural-language question and preserved the version on
+unchanged sync. The [compiled smoke record](../data/benchmarks/compiled-release-smoke.json)
+identifies the executable and PDF hashes. Existing browser acceptance evidence
+above remains from the prior harness run; the memory benchmark did not change UI code.
 
 Reproduce with Bun 1.4.2, Aube 2.5.1, Git and Python 3.12:
 

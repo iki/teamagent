@@ -26,6 +26,8 @@ const formatPaths = [
   "spec/harness.md",
   "spec/harness-verification.md",
   "spec/memory-imports.md",
+  "spec/benchmarks",
+  "spec/benchmark-competitors.md",
   "skills/teamagent-memory",
   "THIRD_PARTY_NOTICES.md",
   ".oxfmtrc.json",
