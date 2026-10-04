@@ -28,6 +28,11 @@ upgrades require reading their installed source and rerunning compatibility
 checks; do not translate examples from a different major version by assumption.
 Before writing Effect code, read all of the installed `node_modules/effect/AGENTS.md`
 and follow its linked guides as needed.
+The table includes adopted requirements for future applications. An installed
+skill does not imply that its package or application exists: consult the
+manifest and source before describing implementation. Add a selected dependency
+when the first relevant implementation needs it, and verify skill examples
+against that pinned version's types/source.
 
 ## TypeScript contract
 
@@ -77,11 +82,28 @@ Add a focused rule and regression case for a repeatable architectural review
 finding. A textual/AST guard complements semantic tests; it does not establish
 that runtime behavior is correct.
 
+## Structured application logging
+
+When LogTape is introduced, libraries obtain loggers with hierarchical category
+arrays and emit named placeholders with structured, approved properties.
+Use explicit child logger context for portable request/task correlation; runtime
+context storage belongs in a host adapter and cannot be assumed in a browser.
+Defer expensive diagnostic data with supported lazy evaluation and never include
+secrets, raw configuration, private queries or tool payloads.
+
+The composition root configures logging once before starting application work.
+Await asynchronous configuration and use the matching reset variant in tests.
+Own sink cleanup with the application lifecycle and await disposal before a
+short-lived host exits. Libraries never configure, reset or dispose shared
+logging. Test collected records, categories, properties, filtering and redaction
+when introducing logging behavior. Consola remains the developer CLI reporter;
+conversation archives retain their separate public-content protocol.
+
 ## Reliability gates
 
-After each implementation step, `aube run step:check` explicitly formats then runs
+After frozen installation, `aube run --no-install step:check` explicitly formats then runs
 strict type checking, type-aware/custom lint and Bun tests. Before review,
-`aube run review:check` verifies formatting without rewriting files and runs the
+`aube run --no-install review:check` verifies formatting without rewriting files and runs the
 same checks. Either Aube or Bun may dispatch these package scripts. Stop on the
 first failure and fix it before advancing.
 

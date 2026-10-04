@@ -26,6 +26,7 @@ if (!process.exitCode) {
     stdio: "inherit",
     shell: false,
     windowsHide: true,
+    timeout: 240_000,
   });
   if (result.error) throw result.error;
   process.exitCode = result.status ?? 1;

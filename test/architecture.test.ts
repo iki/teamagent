@@ -13,7 +13,7 @@ import {
   runRuleMulti,
   strLiteral,
 } from "effect-oxlint/testing";
-import { boundaries, noExecutableInput, noUnsafeCasts, runtimeLaunchers } from "@/lint";
+import { boundaries, noExecutableInput, noUnsafeCasts } from "@/lint";
 
 const domain = { filename: "/repo/lib/domain/index.ts" };
 
@@ -50,6 +50,24 @@ await test("library imports reject private paths and host dependencies", () => {
     }).length,
     1,
   );
+});
+
+await test("relative imports stay inside their own library on POSIX and Windows", () => {
+  for (const filename of [
+    "/repo/lib/domain/nested/model.ts",
+    "C:\\repo\\lib\\domain\\nested\\model.ts",
+  ]) {
+    for (const source of ["../schema.ts", "..", "./deep/../../schema.ts"])
+      expectNoDiagnostics(
+        runRule(boundaries, "ImportDeclaration", importDecl(source), { filename }),
+      );
+    for (const source of ["../../other/index.ts", "./../../other/index.ts", "../../../app/tool.ts"])
+      assert.equal(
+        runRule(boundaries, "ImportDeclaration", importDecl(source), { filename }).length,
+        1,
+        source,
+      );
+  }
 });
 
 await test("re-exports and dynamic imports preserve module boundaries", () => {
@@ -211,28 +229,19 @@ await test("dynamic executable input is rejected for calls and constructors", ()
   expectNoDiagnostics(runRule(noExecutableInput, "NewExpression", { callee: id("URL") }));
 });
 
-await test("tool launchers use the current runtime and allow native tools", () => {
-  for (const executable of [
-    "node",
-    "bun",
-    "npx",
-    "npm.cmd",
-    "tauri.cmd",
-    "oxlint",
-    "C:\\bin\\node.exe",
-  ])
-    assert.equal(
-      runRule(runtimeLaunchers, "CallExpression", callExpr("spawnSync", [strLiteral(executable)]))
-        .length,
-      1,
-      executable,
-    );
-  for (const executable of [
-    memberExpr("process", "execPath"),
-    strLiteral("git"),
-    strLiteral("ditto"),
-  ])
-    expectNoDiagnostics(
-      runRule(runtimeLaunchers, "CallExpression", callExpr("spawnSync", [executable])),
-    );
+await test("per-file Effect and logger alias state does not leak into another file", () => {
+  runRuleMulti(
+    boundaries,
+    [
+      [
+        "ImportDeclaration",
+        importDeclWithSpecifiers("effect", [importSpecifier("Effect", "Task")]),
+      ],
+      ["MemberExpression", memberExpr("Task", "runSync")],
+    ],
+    domain,
+  );
+  expectNoDiagnostics(
+    runRule(boundaries, "MemberExpression", memberExpr("Task", "runSync"), domain),
+  );
 });

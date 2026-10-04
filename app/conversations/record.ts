@@ -3,15 +3,13 @@ import { fileURLToPath } from "node:url";
 import { Schema } from "effect";
 import { archive, RecordInput } from "./archive.ts";
 import { fromTranscript, StopInput } from "./transcript.ts";
+import { readInput } from "./input.ts";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 try {
-  let text = "";
-  process.stdin.setEncoding("utf8");
-  for await (const chunk of process.stdin) {
-    text += Schema.decodeUnknownSync(Schema.String)(chunk);
-    if (Buffer.byteLength(text) > 8 * 1024 * 1024) throw new Error("Input limit exceeded");
-  }
+  if (!process.versions.bun) throw new Error("Conversation recording requires Bun");
+  if (process.argv.length > 2) throw new Error("This adapter accepts JSON stdin only");
+  const text = await readInput(process.stdin);
   const input = Schema.decodeUnknownSync(
     Schema.fromJsonString(Schema.Union([RecordInput, StopInput])),
   )(text);

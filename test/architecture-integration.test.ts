@@ -29,6 +29,7 @@ await test("Oxlint loads the registered rules and checks parsed TypeScript", () 
       cwd: root,
       encoding: "utf8",
       windowsHide: true,
+      timeout: 60_000,
     });
     assert.ifError(valid.error);
     assert.equal(valid.status, 0, valid.stdout + valid.stderr);
@@ -46,6 +47,7 @@ await test("Oxlint loads the registered rules and checks parsed TypeScript", () 
       cwd: root,
       encoding: "utf8",
       windowsHide: true,
+      timeout: 60_000,
     });
     assert.ifError(invalid.error);
     assert.equal(invalid.status, 1, invalid.stdout + invalid.stderr);
@@ -54,6 +56,78 @@ await test("Oxlint loads the registered rules and checks parsed TypeScript", () 
         (invalid.stdout + invalid.stderr).includes(rule),
         `Expected parsed diagnostic for ${rule}`,
       );
+  } finally {
+    rmSync(fixture, { recursive: true, force: true });
+  }
+});
+
+await test("parsed library paths and child-process aliases keep their boundaries", () => {
+  const root = fileURLToPath(new URL("../", import.meta.url));
+  const fixture = mkdtempSync(join(tmpdir(), "teamagent-boundaries-"));
+  const nested = join(fixture, "lib", "domain", "nested");
+  const host = join(fixture, "app");
+  mkdirSync(nested, { recursive: true });
+  mkdirSync(host);
+  const libraryFile = join(nested, "model.ts");
+  const hostFile = join(host, "launcher.ts");
+  const args = [
+    join(root, "node_modules", "oxlint", "bin", "oxlint"),
+    "--config",
+    join(root, "oxlint.config.ts"),
+    "--deny-warnings",
+    libraryFile,
+    hostFile,
+  ];
+  const run = () =>
+    spawnSync(process.execPath, args, {
+      cwd: root,
+      encoding: "utf8",
+      windowsHide: true,
+      timeout: 60_000,
+    });
+  try {
+    writeFileSync(libraryFile, 'export { value } from "../schema.ts";');
+    writeFileSync(
+      hostFile,
+      [
+        'import { spawnSync as launch } from "node:child_process";',
+        'import * as child from "node:child_process";',
+        'export const results = [launch(process.execPath, []), launch("git", []), launch("ditto", [])];',
+        'export function spawn(name: string) { return name; } export const local = spawn("node");',
+        'export function scoped(launch: (name: string) => string) { return launch("node"); }',
+        'export function scopedNamespace(child: { spawnSync(name: string): string }) { return child.spawnSync("node"); }',
+        'export const native = child.spawnSync("git", []);',
+      ].join("\n"),
+    );
+    const valid = run();
+    assert.ifError(valid.error);
+    assert.equal(valid.status, 0, valid.stdout + valid.stderr);
+
+    writeFileSync(libraryFile, 'export { value } from "./../../other/internal.ts";');
+    writeFileSync(
+      hostFile,
+      [
+        'export const first = launch("node", []);',
+        'import { spawnSync as launch } from "node:child_process";',
+        'import * as child from "node:child_process";',
+        'import childDefault from "child_process";',
+        'export const second = child["spawnSync"]("bun", []);',
+        'export const third = childDefault.spawnSync("npx", []);',
+        'export const shims = [launch("npm.cmd", []), launch("tauri.cmd", []), launch("oxlint", []), launch("C:/bin/node.exe", [])];',
+      ].join("\n"),
+    );
+    const invalid = run();
+    assert.ifError(invalid.error);
+    assert.equal(invalid.status, 1, invalid.stdout + invalid.stderr);
+    for (const rule of ["boundaries", "runtime-launchers"])
+      assert.ok(
+        (invalid.stdout + invalid.stderr).includes(rule),
+        `Expected parsed diagnostic for ${rule}`,
+      );
+    assert.equal(
+      (invalid.stdout + invalid.stderr).match(/teamagent\(runtime-launchers\)/g)?.length,
+      7,
+    );
   } finally {
     rmSync(fixture, { recursive: true, force: true });
   }

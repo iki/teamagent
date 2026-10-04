@@ -1,8 +1,8 @@
 import { spawnSync } from "node:child_process";
-import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { Schema } from "effect";
 import { completeHook } from "./completion.ts";
+import { readInput } from "../conversations/input.ts";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const HookEvent = Schema.Struct({
@@ -12,8 +12,8 @@ const HookEvent = Schema.Struct({
 
 try {
   if (!process.versions.bun) throw new Error("Hooks require Bun");
-  const input = readFileSync(0, "utf8");
-  if (Buffer.byteLength(input) > 2_000_000) throw new Error("Hook input exceeds limit");
+  if (process.argv.length > 2) throw new Error("This adapter accepts JSON stdin only");
+  const input = await readInput(process.stdin);
   const event = Schema.decodeUnknownSync(Schema.fromJsonString(HookEvent))(input);
   const result = completeHook(
     event.hook_event_name,

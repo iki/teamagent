@@ -15,6 +15,7 @@ function git(args: readonly string[]) {
 }
 
 if (!process.versions.bun) throw new Error("Hook installation requires Bun");
+if (process.argv.length > 2) throw new Error("Usage: bun app/hooks/install.ts");
 const existing = git(["config", "--get", "core.hooksPath"]);
 if (existing.status !== 0 && existing.status !== 1)
   throw new Error("Cannot read Git hook configuration");

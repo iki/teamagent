@@ -18,6 +18,24 @@ on every streamed token. Virtualize long lists, coalesce deltas and load heavy
 media/codecs lazily. Use semantic controls, keyboard navigation, accessible
 descriptions and responsive layouts with a clear reading order.
 
+Compose reusable controls with explicit variants and children instead of growing
+boolean mode flags. A provider may inject a typed state/actions/metadata contract;
+it must guard a missing context value and leave durable state ownership in the
+task service. Prefer React 19 ref props for new components. Define component
+types outside renders so streamed updates do not remount inputs or lose focus.
+Derive cheap values from current state during rendering; dispatch user actions
+from handlers rather than replaying mutations through React effects. Effects
+synchronize external subscriptions and clean them up on unmount.
+
+Start independent reads concurrently within a bounded Effect scope; preserve
+actual data dependencies and cancellation. Subscribe only to the view state a
+component needs, keep typing responsive and defer expensive secondary rendering.
+Profile before adding memoization. Lazy-load optional feature code through
+statically analyzable imports. Use documented, typed third-party subpaths when
+they reduce the measured bundle, while preserving repository `@/<library>`
+public entry points. Next.js/RSC, SWR and unbounded module caches in example
+guides do not override the selected Vite/Effect architecture.
+
 Schema-validated state is shared across client and server. React local state is
 for transient forms. Keep URL-owned view filters, validated device preferences
 and durable task state as separate schemas with separate owners. Persist domain
@@ -55,6 +73,26 @@ cache entries, not total heap usage.
 | Zustand / Redux Toolkit / TanStack Query | Do not add a parallel state/cache layer without a demonstrated gap in typed state, worker caches or the task service.                 |
 
 These are repository-specific choices, not framework benchmark claims.
+
+## Interface design and accessibility
+
+Before a new visual surface, define a compact palette, type scale, layout and
+content hierarchy grounded in the task workspace and the user's brief. Use real
+task, connection and failure states in design fixtures. Review screenshots at
+desktop and mobile sizes; decoration and motion must serve comprehension.
+Use consistent plain action labels and errors that give a concrete recovery step.
+
+Use native buttons, links, labels and headings before custom ARIA. Icon actions
+need accessible names; asynchronous status needs an appropriate live region.
+Preserve visible, unobscured keyboard focus and restore it after dialogs. Permit
+paste, password-manager completion and zoom. Validate forms with associated
+errors and focus the first invalid field. Provide tap/click and keyboard
+alternatives for gestures. Respect reduced motion and keep animations
+interruptible. Test empty, pending, failed and long-content states, contrast,
+keyboard-only navigation and a screen reader. Apply the current
+[Web Interface Guidelines](https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md)
+to implemented UI; their generic URL-state advice never permits private data in
+URLs or changes the state ownership rules above.
 
 ## Module and platform boundaries
 
@@ -121,6 +159,33 @@ service adapter. Durable authenticated task state and host-local credentials
 retain their existing service contracts. Offline clients may read cached views
 and queue drafts; they cannot manufacture authoritative task completion.
 
+When adding the Worker, use project-local pinned Wrangler through the Bun
+launcher and prefer `wrangler.jsonc`. Set the initial compatibility date to the
+implementation date; later changes review intervening runtime behavior and rerun
+workerd tests. Generate runtime and binding declarations with `wrangler types`
+after configuration changes, against that date and its flags; never hand-write
+a duplicate `Env` interface. Enable compatibility flags only for demonstrated
+dependencies. Follow the [generated types contract](https://developers.cloudflare.com/workers/languages/typescript/)
+and the installed Wrangler schema.
+
+Declare the account, Worker, environment and resource targets explicitly.
+Bindings are capabilities: grant only required resources and verify every
+environment's bindings and secrets independently. Local execution and Preview
+names do not establish isolation from production data. If using the Cloudflare
+Vite plugin, select its environment at build time and verify the resulting config.
+Keep local secrets ignored and deployed secrets outside source and CLI arguments;
+secret changes and rollbacks follow the same release authorization as deployment.
+Rollback of Worker code does not roll back connected resource data. See
+[environment configuration](https://developers.cloudflare.com/workers/wrangler/environments/).
+
+Use bindings for supported Cloudflare service calls. Keep authenticated request
+state and I/O out of mutable module globals. Await or return required work;
+attach only bounded, nonessential post-response work to `ctx.waitUntil(...)`.
+Durable task progress and required notifications remain in the durable service's
+event/outbox contract. Stream large payloads with bounds and cancellation instead
+of buffering them whole. Fail explicitly on handler errors; do not bypass
+authentication by falling through to an origin after an exception.
+
 Normal interaction should avoid sending local data or CPU work to a server
 unnecessarily. Explicit authorized report/export endpoints may provide HTML,
 Markdown, JSON and SVG/PNG without requiring browser execution. Publish a
@@ -154,6 +219,36 @@ redacted operational logging and a reviewed infrastructure/access-log policy.
 Do not log full request URLs or enable automatic invocation/trace capture that
 collects private values without a deliberate redaction policy.
 
+Production readiness includes an explicit sampled logs/traces configuration and
+privacy test. Route application logs through the LogTape host sink. Review
+automatic invocation logs and span attributes separately: application redaction
+does not sanitize provider-captured URLs. Enable Workers Logs and Traces only
+with an acceptable capture policy; record any disabled capture and replacement
+diagnostics. See [Workers Logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/)
+and [trace attributes](https://developers.cloudflare.com/workers/observability/traces/spans-and-attributes/).
+
+## Authentication adapter requirements
+
+Authentication identifies a principal; the task service still authorizes each
+operation under [security](../security.md) and [channel](../channels.md) rules.
+Better Auth is an available integration skill, not an adopted dependency. If
+selected, pin it with Aube, read matching-version documentation, keep its server
+and database adapter at a host boundary, and review generated migrations whenever
+plugins or schemas change. Record which store owns sessions and rate limits;
+adding secondary storage must not silently change revocation or durability.
+
+The implemented adapter must use strong managed secrets, explicit trusted origins
+and callback destinations, secure HTTP-only cookies over HTTPS, CSRF checks and
+persistent rate limits appropriate to its deployment. Trust forwarded identity,
+IP and host headers only from an enforced proxy boundary. Do not disable origin,
+OAuth state or CSRF checks to make native clients work. Encrypt retained OAuth
+tokens, audit security events without token or private profile payloads, and test
+expiry, logout, device revocation, recovery flows, forged origins and redirects.
+Cached sessions need an explicit revocation delay policy; sensitive operations
+must check current authority. Validate these requirements against the selected
+version's [security](https://better-auth.com/docs/reference/security) and
+[session](https://better-auth.com/docs/concepts/session-management) contracts.
+
 ## Acceptance
 
 Regression coverage includes state round trips, malformed/duplicate inputs,
@@ -167,3 +262,10 @@ Measure frontend first paint/usable state separately from daemon startup,
 worker calculations, model first token, backend latency and complete results.
 Keep raw measurements and screenshots in designated generated directories;
 do not import another application's measurements or call local samples an SLA.
+For implemented UI, collect browser traces, network requests and an accessibility
+snapshot on representative devices, including cold and warm loads. Record LCP,
+INP and CLS where measurable; distinguish lab observations from field data and
+consult the current [Web Vitals definitions](https://web.dev/articles/vitals).
+Prioritize measured bottlenecks and verify resource use before removing assets
+or adding preload hints. Missing browser/trace tools or a missing app are explicit
+measurement gaps, never passing performance evidence.

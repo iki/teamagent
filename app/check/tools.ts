@@ -21,11 +21,14 @@ const formatPaths = [
   "package.json",
   "tsconfig.json",
   ".oxfmtrc.json",
+  ".codex/hooks.json",
+  ".agents/hooks",
   "AGENTS.md",
   "README.md",
   "spec/architecture",
   "spec/conversation-logging.md",
   "spec/verification.md",
+  "spec/skills-audit.md",
 ];
 
 export function isTool(value: string | undefined): value is Tool {
@@ -53,7 +56,7 @@ export function runTool(tool: Tool, args: readonly string[]): number {
       ...args,
       ...paths.filter((path) => existsSync(resolve(root, path))),
     ],
-    { cwd: root, stdio: "inherit", shell: false, windowsHide: true, env },
+    { cwd: root, stdio: "inherit", shell: false, windowsHide: true, env, timeout: 120_000 },
   );
   if (result.error) throw result.error;
   return result.status ?? 1;

@@ -63,6 +63,12 @@ native IPC capabilities, then add only the features authorized by the product
 contract. Device backup controls are not a promise of encrypted storage; secrets
 belong in an explicit OS credential adapter, not ordinary local storage.
 
+Apply the shared [interface and authentication requirements](applications.md)
+to the WebView surface. Verify focus, text scaling, screen-reader navigation and
+gesture alternatives on devices. Native authentication must use a documented
+platform flow with validated redirects and preserved state/CSRF protection;
+cookie or origin differences are adapter work, not grounds for a global bypass.
+
 Native GPS, notifications, background sync, deep links, image saving/sharing and
 over-the-air updates are separate features with permission/lifecycle tests. Do
 not expose a browser download button as a supported native save/export feature

@@ -10,6 +10,6 @@ export function checkDecision(passed: boolean, alreadyContinued: boolean) {
   return {
     decision: "block",
     reason:
-      "Repository verification failed. Fix the reported failures and run aube run review:check before completing the response.",
+      "Repository verification failed. Fix the reported failures and run aube run --no-install review:check before completing the response.",
   };
 }

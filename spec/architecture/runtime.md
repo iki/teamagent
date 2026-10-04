@@ -6,9 +6,22 @@ Bun runs all repository JavaScript/TypeScript tasks, tests and native-tool
 launchers. Record the pinned Bun version in `.bun-version` and package engines.
 Aube remains the sole dependency manager, pinned in `packageManager`; commit its
 real lockfile and use `aube install --frozen-lockfile` for repeatable installation.
-Use either `aube run <task>` or `bun run <task>` to dispatch scripts. Do not mutate
+After that setup use `aube run --no-install <task>` or `bun run <task>` to dispatch
+verification scripts. Aube's `run`/`exec` can install missing or stale dependencies;
+`--no-install` prevents a check from quietly changing the dependency state. Put
+Aube options before the task name so they are not forwarded to the task.
+Do not mutate
 dependencies with npm, pnpm or Bun, create a second JS lockfile, or introduce
 Node/tsx solely to run repository tooling.
+
+Before an intentional dependency change, inspect the pinned Aube version,
+manifest, existing lockfile, workspace configuration and `.npmrc` when present.
+Review manifest and lockfile changes together. Preserve the existing lockfile
+and workspace choice; importing a new lockfile format is an explicit migration.
+Use the pinned local tool through its repository launcher, not a throwaway
+`aubx` installation. Missing native builds require inspecting diagnostics and
+the dependency's scripts; do not relax build trust or switch linkers merely to
+clear an install failure. Registry credentials stay in environment references.
 
 Configure Bun to disable implicit dotenv loading and runtime auto-install.
 Select Bun explicitly in launchers and package scripts rather than depending on

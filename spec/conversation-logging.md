@@ -30,6 +30,8 @@ The writer also accepts the native `Stop`/`SubagentStop` payload, with optional 
 
 ## Public content and privacy
 
+Both machine-facing adapters accept JSON stdin only and reject unsupported arguments before reading it. A shared reader counts UTF-8 bytes before retaining each chunk, stops at 8 MiB, preserves split characters, and rejects malformed UTF-8. It does not buffer an unbounded stream before enforcing the limit. Human diagnostics stay on stderr and successful stdout remains JSON.
+
 Each record has `## Prompt`, `## Response`, and `## Processing Log` sections. Native exports retain user messages and assistant commentary/final messages only. System/developer instructions, environment metadata, private analysis/reasoning, command scripts, tool inputs/outputs, patches, and raw event payloads are excluded. Do not reconstruct hidden reasoning or manufacture missing text. Manually supplied processing logs describe publicly visible activity only.
 
 Recognized credentials (including common token forms, bearer authorization, password/key assignments, private keys, and credential-bearing URLs) are redacted before writing. Optional literal redactions apply to content and filenames, and each record clearly declares sanitization. This import task anonymizes the named source repository as requested by the user. Redaction is defense in depth, not a guarantee that arbitrary secrets can be detected: never intentionally put secrets in a manual log.

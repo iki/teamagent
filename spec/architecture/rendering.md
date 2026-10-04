@@ -75,6 +75,13 @@ byte-size limits. Missing required icons or incompatible manifest versions fail
 explicitly. Preserve redistribution licenses with bundled fonts/icons; use text,
 shape and labels in addition to color.
 
+Reserve media dimensions to avoid layout shifts and lazy-load offscreen assets;
+preload only resources shown to be critical to usable state. Keep accessible
+descriptions and an equivalent navigable text/table view when a canvas or scene
+cannot expose its records directly. Gestures need keyboard and simple pointer
+alternatives. Honor reduced-motion preferences in the interactive renderer;
+animation must not alter the portable scene's complete result or export semantics.
+
 ## Data codecs and verified transport
 
 For compressed offline asset sets, use a shared pinned `zstddec` WASM adapter

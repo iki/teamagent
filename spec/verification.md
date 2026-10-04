@@ -4,17 +4,19 @@ The root [agent rules](../AGENTS.md) govern implementation. These checks establi
 
 ## Commands and failures
 
-| Task                          | Command                          | Contract                                                                                     |
-| ----------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------- |
-| Reproducible installation     | `aube install --frozen-lockfile` | Exact manifest/lockfile agreement; no secondary lockfile                                     |
-| Completed implementation step | `aube run step:check`            | Format owned sources, strict TS7, type-aware Oxlint, regression tests                        |
-| Review or delivery            | `aube run review:check`          | Check formatting, strict TS7, type-aware Oxlint, regression tests; no automatic source fixes |
-| Hook installation             | `aube run hooks:install`         | Install repository Git hook and record this checkout's Bun executable                        |
-| Conversation archive          | `aube run conversations:record`  | Read validated JSON from stdin and preserve a public response record                         |
+| Task                          | Command                                      | Contract                                                                                     |
+| ----------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Reproducible installation     | `aube install --frozen-lockfile`             | Exact manifest/lockfile agreement; no secondary lockfile                                     |
+| Completed implementation step | `aube run --no-install step:check`           | Format owned sources, strict TS7, type-aware Oxlint, regression tests                        |
+| Review or delivery            | `aube run --no-install review:check`         | Check formatting, strict TS7, type-aware Oxlint, regression tests; no automatic source fixes |
+| Hook installation             | `aube run --no-install hooks:install`        | Install repository Git hook and record this checkout's Bun executable                        |
+| Conversation archive          | `aube run --no-install conversations:record` | Read validated JSON from stdin and preserve a public response record                         |
 
-Either Aube or Bun may dispatch package scripts; Aube alone installs dependencies. The check launcher invokes installed tool entries with the running Bun executable and resolves the platform-native `oxlint-tsgolint` backend directly. It does not depend on Node shebangs, shell interpolation, shortened PATH, or fallback to syntax-only lint.
+Either Aube or Bun may dispatch package scripts; Aube alone installs dependencies. Complete a frozen install first, then use `aube run --no-install` or direct Bun for checks: ordinary Aube run/exec may install missing or stale dependencies, which is inappropriate inside a read-only verification gate. The check launcher invokes installed tool entries with the running Bun executable and resolves the platform-native `oxlint-tsgolint` backend directly. It does not depend on Node shebangs, shell interpolation, shortened PATH, or fallback to syntax-only lint.
 
 Any missing dependency, nonzero result, timeout or missing backend is a failure. Repair the cause before advancing. Do not turn off type-aware lint, relax strictness, add blanket suppressions or silently skip checks. Research documents in `spec/` and imported material in `resources/` remain source evidence; formatting covers owned implementation files and the new development specifications without wholesale research rewrites.
+
+Tool launches have a 120-second cap; the complete test subprocess has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 240 seconds. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
 
 ## Automated architecture checks
 

@@ -4,13 +4,17 @@
 
 [Development architecture](spec/architecture/README.md) defines our TypeScript, Effect, Oxc, CLI, web, desktop and mobile choices. [Agent rules](AGENTS.md), [verification](spec/verification.md) and [conversation logging](spec/conversation-logging.md) apply to every implementation task.
 
+The [installed skill audit](spec/skills-audit.md) records applicable guidance, compatibility caveats and future integration requirements.
+
+The [installed skill audit](spec/skills-audit.md) records applicable guidance, compatibility caveats and future integration requirements.
+
 Use Bun **1.4.2** and Aube **2.5.1**:
 
 ```sh
 aube install --frozen-lockfile
-aube run hooks:install
-aube run step:check
-aube run review:check
+aube run --no-install hooks:install
+aube run --no-install step:check
+aube run --no-install review:check
 ```
 
 Aube owns dependencies; Bun runs scripts and tests. The installer registers this checkout's Git pre-commit checks and records the current Bun path locally. Review/trust the repository lifecycle hooks in Codex for automatic logging and end-of-turn verification. Other agents use the same explicit commands and JSON conversation writer.

@@ -5,6 +5,10 @@
 Use Cleye for strict CLI flags, C12 for trusted local configuration, Effect Schema
 for validation and Consola for developer-facing diagnostics. These choices apply
 to user commands and maintenance tools as their interfaces are introduced.
+The current check, hook and conversation entry points are small internal
+protocol adapters. They may validate their finite argument sets directly and
+use process streams; add the shared CLI dependencies when a user-facing command
+or configuration interface actually needs them.
 
 All public commands share `-h/--help` and `-V/--version` and report the same root
 package version. Commands that load configuration share `-C/--config`; commands
@@ -17,6 +21,11 @@ Help and version must return before configuration execution, reads, downloads,
 generation, worker startup or validation. Reject unknown flags, conflicting
 options and deprecated aliases explicitly. Decode parsed input before application
 use; central domain parsers own shared time/range or other input notation.
+Enable Cleye's `strictFlags` explicitly and preserve it for subcommands. Do not
+use `ignoreArgv` to silently discard unsupported flags. Document and test repeated
+flags, boolean negation and the `--` terminator when a command supports them.
+Typed flag helpers improve parsing but do not replace Effect Schema validation
+of JSON or other dynamic values; a generic type argument is not runtime proof.
 
 ## Trusted configuration and paths
 
@@ -24,6 +33,18 @@ Use `teamagent.config.ts` when an executable local configuration file is needed.
 Loading TypeScript configuration is code execution: only trusted local config is
 eligible. Never execute remote/user-uploaded configuration or load it in a
 browser. C12 loading does not replace structural and semantic validation.
+Set discovery and environment behavior explicitly: disable RC/global RC,
+package metadata, dotenv and extended layers unless the command's documented
+contract requires them. Disable remote layer fetching and layer dependency
+installation; dependency changes remain Aube's responsibility. Validate trusted
+local layer paths before enabling inheritance. Select the environment explicitly
+and remove C12 control keys before decoding the final domain configuration.
+
+Use the selected version's installed types/source to check C12 options and
+defaults; skill examples are guidance, not a replacement for that API contract.
+Validate merged configuration as `unknown` with Effect Schema and semantic
+checks. Preserve source/layer provenance separately from validated values and
+never log raw configuration or diffs. Treat the resolved object as immutable.
 
 An explicit `--config` path resolves from the invocation working directory.
 Relative source/output/data/theme paths resolve from that selected file's
@@ -32,6 +53,17 @@ documented defaults. Explicit read-only data paths may permit a missing default
 config; generators must still require their needed source settings. Document
 exceptions such as executable lookup through PATH and report paths relative to
 the working directory.
+Tests must exercise this precedence, missing explicit files, environment
+selection, and array/null merging instead of assuming generic deep merging
+matches the command's contract. Dotenv and file-backed secrets require explicit
+host configuration, bounded reads and validation; they must not appear as an
+implicit consequence of loading config.
+
+If live configuration is introduced, acquire the watcher in an Effect scope,
+debounce updates and await `unwatch()` during shutdown/test teardown. Publish
+only successfully decoded and semantically valid snapshots; retain the previous
+snapshot and report a sanitized failure when reloading fails. Test the pinned
+version's `acceptHMR`/`onUpdate` lifecycle before depending on callback ordering.
 
 Path adapters enforce directory containment and validate sizes, hashes, versions
 and expected coverage before consuming assets. Generators write complete chunks
@@ -46,6 +78,13 @@ Keep machine-readable JSON/YAML output on stdout and progress/status on stderr.
 Use pinned `yaml` when YAML output is implemented. Maintain one canonical
 specification for input notation, option defaults, mutual exclusions, output
 formats and examples; derive help modules and README help from it.
+Configure an application-owned Consola instance/reporter to keep all diagnostics
+on stderr. Do not wrap stdout with `wrapStd`/`wrapAll` for commands with a machine
+output contract. Use scoped tags; reserve fatal/error output for real failures.
+Test stream separation with a captured reporter or Bun mocks, and restore any
+mock/global redirection after each test. Keep interactive prompts out of hooks
+and noninteractive commands. An interactive command must handle cancellation
+explicitly instead of accepting a default action on cancellation.
 
 Guard shared aliases, catalog coverage, option/help coverage and help/README
 mirrors. Changing parsing or input semantics requires explicit documentation
