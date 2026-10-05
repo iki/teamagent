@@ -65,21 +65,59 @@ export function preflightGitEntries(
   return { entries, warnings };
 }
 
-async function diskBytes(root: string): Promise<number> {
+interface GitStagingIO {
+  readonly inspect: (path: string) => Promise<{
+    readonly size: number;
+    isSymbolicLink(): boolean;
+    isDirectory(): boolean;
+    isFile(): boolean;
+  }>;
+  readonly entries: (
+    path: string,
+  ) => AsyncIterable<{ readonly name: string }> | Promise<AsyncIterable<{ readonly name: string }>>;
+}
+
+const missingEntry = (error: unknown) =>
+  error instanceof Error && "code" in error && error.code === "ENOENT";
+
+/** Git renames/removes its own temporary packs and locks while this monitor scans. */
+export async function gitStagingBytes(
+  root: string,
+  io: GitStagingIO = {
+    inspect: (path) => lstat(path),
+    entries: (path) => opendir(path),
+  },
+): Promise<number> {
   let size = 0;
   let entries = 0;
   const pending = [root];
   while (pending.length > 0) {
     const current = pending.pop();
     if (current === undefined) break;
-    for await (const entry of await opendir(current)) {
-      entries += 1;
-      if (entries > 4096) throw new Error("Git staging entry limit exceeded");
-      const path = join(current, entry.name);
-      if (entry.isSymbolicLink()) throw new Error("Unexpected Git staging link");
-      if (entry.isDirectory()) pending.push(path);
-      else size += (await lstat(path)).size;
-      if (size > importLimits.totalBytes) throw new Error("Git download byte limit exceeded");
+    try {
+      const directory = await io.inspect(current);
+      if (directory.isSymbolicLink() || !directory.isDirectory())
+        throw new Error("Unexpected Git staging directory type");
+      for await (const entry of await io.entries(current)) {
+        entries += 1;
+        if (entries > 4096) throw new Error("Git staging entry limit exceeded");
+        const path = join(current, entry.name);
+        let info: Awaited<ReturnType<GitStagingIO["inspect"]>>;
+        try {
+          info = await io.inspect(path);
+        } catch (error: unknown) {
+          if (missingEntry(error)) continue;
+          throw error;
+        }
+        if (info.isSymbolicLink()) throw new Error("Unexpected Git staging link");
+        if (info.isDirectory()) pending.push(path);
+        else if (info.isFile()) size += info.size;
+        else throw new Error("Unexpected Git staging entry type");
+        if (size > importLimits.totalBytes) throw new Error("Git download byte limit exceeded");
+      }
+    } catch (error: unknown) {
+      if (current !== root && missingEntry(error)) continue;
+      throw error;
     }
   }
   return size;
@@ -170,7 +208,7 @@ export async function captureGit(
       let monitoring: Promise<void> | undefined;
       const interval = setInterval(() => {
         if (monitoring !== undefined) return;
-        monitoring = diskBytes(staging)
+        monitoring = gitStagingBytes(staging)
           .then(
             () => {},
             () => limiter.abort(),
@@ -195,7 +233,7 @@ export async function captureGit(
           ],
           { signal: AbortSignal.any([options.signal, limiter.signal]), env, bytes: 1_048_576 },
         );
-        await diskBytes(staging);
+        await gitStagingBytes(staging);
       } finally {
         clearInterval(interval);
         if (monitoring !== undefined) await monitoring;

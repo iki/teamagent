@@ -1,15 +1,21 @@
 import { randomUUID } from "node:crypto";
 import { access, mkdir, mkdtemp, realpath, rm, unlink, writeFile } from "node:fs/promises";
 import { constants } from "node:fs";
-import { extname, isAbsolute, join, resolve } from "node:path";
+import { isAbsolute, join, resolve } from "node:path";
 import { tmpdir } from "node:os";
-import { Effect, Schema } from "effect";
-import { MemoryError } from "@/memory";
+import { Schema } from "effect";
+import { ExtractorProfileSchema, MemoryError, type ExtractorProfile } from "@/memory";
 import workerSource from "./worker.py" with { type: "text" };
-import { contained, importLimits } from "./limits.ts";
+import { contained, documentExtension, importLimits } from "./limits.ts";
 import { runProcess } from "./process.ts";
+import { scopedHostPromise } from "./lifecycle.ts";
+import {
+  builtinParserVersion,
+  convertExternalDocument,
+  ExtractorTimeoutError,
+} from "./extractors.ts";
 
-export const parserVersion = "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0";
+export const parserVersion = builtinParserVersion;
 const WorkerResultSchema = Schema.Struct({
   markdown: Schema.String.check(Schema.isMaxLength(importLimits.fileBytes)),
   images: Schema.Array(
@@ -31,7 +37,7 @@ const WorkerResultSchema = Schema.Struct({
   warnings: Schema.Array(Schema.String.check(Schema.isMaxLength(2000))).check(
     Schema.isMaxLength(256),
   ),
-  parserVersion: Schema.Literal(parserVersion),
+  parserVersion: Schema.String.check(Schema.isMinLength(1), Schema.isMaxLength(256)),
 });
 export type DocumentResult = typeof WorkerResultSchema.Type;
 
@@ -77,21 +83,44 @@ export async function convertDocument(options: {
   directory: string;
   signal: AbortSignal;
   python?: string;
+  extractor?: ExtractorProfile;
 }): Promise<DocumentResult> {
+  let extractor: ExtractorProfile | undefined;
+  try {
+    extractor =
+      options.extractor === undefined
+        ? undefined
+        : Schema.decodeUnknownSync(ExtractorProfileSchema)(options.extractor, {
+            onExcessProperty: "error",
+          });
+  } catch {
+    throw new MemoryError({ code: "invalid", message: "Invalid extractor profile." });
+  }
+  if (
+    extractor !== undefined &&
+    extractor.engine !== "builtin" &&
+    (extractor.mediaTypes ?? ["application/pdf"]).includes(options.mediaType)
+  ) {
+    try {
+      return await convertExternalDocument({ ...options, extractor });
+    } catch (error: unknown) {
+      throw new MemoryError({
+        code:
+          options.signal.aborted || error instanceof ExtractorTimeoutError
+            ? "cancelled"
+            : "unsupported",
+        message:
+          error instanceof ExtractorTimeoutError
+            ? "Selected external extractor timed out; no fallback was used."
+            : "Selected external extractor failed, produced unsafe output, or exceeded its limit; no fallback was used.",
+      });
+    }
+  }
   const python = options.python ?? defaultImportPython();
   if (!isAbsolute(python)) throw new Error("Converter Python path must be absolute");
   await access(python, constants.X_OK);
   await mkdir(options.directory, { recursive: true });
-  const extension = extname(options.name).toLowerCase();
-  const extensions: Readonly<Record<string, string>> = {
-    "text/html": ".html",
-    "application/pdf": ".pdf",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": ".docx",
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation": ".pptx",
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": ".xlsx",
-  };
-  const safeExtension =
-    extensions[options.mediaType] ?? (/^\.[a-z0-9]{1,8}$/.test(extension) ? extension : ".bin");
+  const safeExtension = documentExtension(options.name, options.mediaType);
   const file = join(options.directory, `${randomUUID()}${safeExtension}`);
   try {
     await writeFile(file, options.bytes, { flag: "wx", mode: 0o600 });
@@ -102,7 +131,12 @@ export async function convertDocument(options: {
       importLimits.totalBytes * 2,
     );
     const dynamic: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(output));
-    return Schema.decodeUnknownSync(WorkerResultSchema)(dynamic, { onExcessProperty: "error" });
+    const result = Schema.decodeUnknownSync(WorkerResultSchema)(dynamic, {
+      onExcessProperty: "error",
+    });
+    if (result.parserVersion !== parserVersion)
+      throw new Error("Unexpected builtin converter identity");
+    return result;
   } finally {
     await unlink(file).catch((error: unknown) => {
       if (!(error instanceof Error && "code" in error && error.code === "ENOENT")) throw error;
@@ -116,7 +150,7 @@ const DoctorVersionsSchema = Schema.Struct({
 });
 
 export const importDoctor = (options: { python?: string } = {}) =>
-  Effect.tryPromise({
+  scopedHostPromise({
     try: async (signal) => {
       const python = options.python ?? defaultImportPython();
       try {

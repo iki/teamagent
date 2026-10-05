@@ -1,14 +1,15 @@
 import { access, mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import { Effect, Schema } from "effect";
+import { Schema } from "effect";
 import { MemoryError } from "@/memory";
 import requirements from "./requirements.lock" with { type: "text" };
 import { contained } from "./limits.ts";
 import { runProcess } from "./process.ts";
+import { scopedHostPromise } from "./lifecycle.ts";
 
 export const setupImports = (options: { directory?: string; python?: string } = {}) =>
-  Effect.tryPromise({
+  scopedHostPromise({
     try: async (signal) => {
       const directory = resolve(
         options.directory ?? join(import.meta.dir, "../../.cache/import-python"),

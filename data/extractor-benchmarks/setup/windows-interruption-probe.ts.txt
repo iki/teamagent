@@ -1,0 +1,43 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { join, resolve } from "node:path";
+import { Schema } from "effect";
+import { defaultImportPython } from "../../app/imports/documents.ts";
+
+const root = resolve(import.meta.dir, "../..");
+const aube = Bun.which("aube");
+if (aube === null) throw new Error("Aube is unavailable");
+const worker = String.raw`
+import { spawn } from "node:child_process";
+import { writeFile } from "node:fs/promises";
+if (process.argv.includes("--child")) await Bun.sleep(60000);
+else {
+ const child = spawn(process.execPath, [process.argv[1], "--child"], { stdio: "ignore", windowsHide: true });
+ await writeFile(process.env.PROBE_READY, JSON.stringify({ pid: process.pid, childPid: child.pid, cliPid: process.ppid }));
+ await Bun.sleep(60000);
+}
+`;
+const Pids = Schema.Struct({ pid: Schema.Int, childPid: Schema.Int, cliPid: Schema.Int });
+const receipts = [];
+for (const event of [0, 1]) {
+ const directory = join(import.meta.dir, `${Date.now()}-${event}`);
+ await mkdir(directory);
+ const script = join(directory, "worker.mjs");
+ const ready = join(directory, "ready.json");
+ const config = join(directory, "extractors.json");
+ const hostPid = join(directory, "host.json");
+ const specification = join(directory, "console.json");
+ await writeFile(script, worker);
+ await writeFile(config, JSON.stringify({ version: 1, defaultProfile: "probe", profiles: [{ id: "probe", engine: "xberg", version: "1.0.0", command: process.execPath, args: [script, "{input}", "{outputDir}"], versionArgs: [script, "--version"], timeoutMs: 30000, env: { PROBE_READY: ready } }] }));
+ await writeFile(specification, JSON.stringify({ command: [aube, "run", "--no-install", "cli", "memory", "doctor", "--extractors-config", config], cwd: root, ready, hostPid, event }));
+ const helper = Bun.spawn([defaultImportPython(), "-I", "-B", join(root, "test/host-console-fixture.py"), specification], { stdout: "pipe", stderr: "pipe", stdin: "ignore" });
+ const [stdout, stderr, status] = await Promise.all([new Response(helper.stdout).text(), new Response(helper.stderr).text(), helper.exited]);
+ const dynamic: unknown = JSON.parse(await readFile(ready, "utf8"));
+ const pids = Schema.decodeUnknownSync(Pids)(dynamic);
+ const alive = (pid: number) => { try { process.kill(pid, 0); return true; } catch { return false; } };
+ const receipt = { event, helperStatus: status, stdout, stderr, aliveBeforeFixtureTeardown: { worker: alive(pids.pid), child: alive(pids.childPid), cli: alive(pids.cliPid) }, aube, bun: Bun.version, directory };
+ receipts.push(receipt);
+ await writeFile(join(directory, "result.json"), JSON.stringify(receipt, null, 2));
+ process.stdout.write(JSON.stringify({ event, helperStatus: status, stdout, stderr: stderr.slice(0, 200), aliveBeforeFixtureTeardown: receipt.aliveBeforeFixtureTeardown }) + "\n");
+ for (const pid of [pids.childPid, pids.pid, pids.cliPid]) { try { process.kill(pid, "SIGKILL"); } catch {} }
+}
+await writeFile(join(import.meta.dir, "results.json"), JSON.stringify(receipts, null, 2));

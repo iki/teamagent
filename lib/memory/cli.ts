@@ -21,6 +21,10 @@ export const cli = {
       description: "Inspect available source converters and their supported formats.",
     },
     { name: "setup", description: "Provision the project document converter." },
+    {
+      name: "extractors",
+      description: "List named extractor profiles from an explicit trusted configuration.",
+    },
     { name: "mcp", description: "Serve the memory API over the MCP stdio protocol." },
   ],
 } as const;

@@ -1,0 +1,49 @@
+{
+  "format": "teamagent-windows-interruption-probe/1",
+  "platform": "windows-x64",
+  "bunVersion": "1.4.2",
+  "launcher": {
+    "name": "aube",
+    "versionOutput": "2.5.1 windows-x64 (2026-09-27)",
+    "sha256": "3e516f15401f3873e26f1976715543bb206d1a02e46d663237e95baec26fffe9",
+    "arguments": ["run", "--no-install", "cli", "memory", "doctor", "--extractors-config", "<isolated-fixture-config>"]
+  },
+  "method": {
+    "console": "A new hidden Windows console, owned by test/host-console-fixture.py; the helper normalizes its own inherited Ctrl+C-ignore flag before spawning the launcher, then attaches only to that console and sends GenerateConsoleCtrlEvent(event, 0).",
+    "operation": "A fixture external extractor version probe spawns a child, records owned PIDs and waits. The CLI and extractor use the real application lifecycle. No document models or production memory are used.",
+    "deadlineSeconds": 20,
+    "observation": "Record CLI/extractor/child liveness after the helper returns, before explicit fixture PID teardown. On timeout, the Python helper first kills its own Aube Popen process; the subsequent liveness result concerns the Bun CLI and detached extractor tree.",
+    "teardown": "After recording liveness, terminate only the three PIDs written by the owned fixture (extractor child, extractor, Bun CLI).",
+    "reproduction": "Restore the archived probe to .cache/interruption-launcher-probe/run.ts in this checkout; install the pinned builtin Python worker and Aube/Bun; run bun .cache/interruption-launcher-probe/run.ts. The probe creates isolated fixtures and retains per-event receipts in that cache directory."
+  },
+  "code": [
+    { "path": "data/extractor-benchmarks/setup/windows-interruption-probe.ts.txt", "sha256": "f31fc45140079fdbe3c97c24acd54f61d0884b0b9b625b43a8d7a59c5adc4ede" },
+    { "path": "test/host-console-fixture.py", "sha256": "9ee464b0886ea09a54e185447ef2e2aa22d5d46f96efce7553bf98105193898a" },
+    { "path": "app/runtime/interruption.ts", "sha256": "df835a8ed625ab10ad4460ed8c9b0ca4962a2c9159422c9f7bfa0bdbe44796eb" },
+    { "path": "app/imports/lifecycle.ts", "sha256": "f8cbbdd9c3d0d2087791bc533c018409a15187d08e5e88cc35cc27154e58e908" }
+  ],
+  "events": [
+    {
+      "name": "CTRL_C_EVENT",
+      "event": 0,
+      "helperStatus": 1,
+      "outcome": "The helper reached its 20-second deadline; no graceful cancellation was observed.",
+      "aliveBeforeExplicitFixtureTeardown": { "cli": true, "extractor": true, "extractorChild": true },
+      "applicationCleanupObserved": false
+    },
+    {
+      "name": "CTRL_BREAK_EVENT",
+      "event": 1,
+      "helperStatus": 0,
+      "launcherExitStatus": 3221225786,
+      "cliDiagnostic": "error: cancelled: Memory operation was interrupted.",
+      "aliveBeforeExplicitFixtureTeardown": { "cli": false, "extractor": false, "extractorChild": false },
+      "applicationCleanupObserved": true
+    }
+  ],
+  "fixtureRegression": {
+    "beforeNormalization": "Aube-launched focused suite: 6 passed, 2 Ctrl+C tests timed out; 43.50 seconds. Ctrl+Break passed.",
+    "afterNormalization": "aube run --no-install test test/host-interruption.test.ts: 8 passed, 0 failed; 4.85 seconds. Genuine direct-Bun console interrupts and complete cleanup assertions remain enabled."
+  },
+  "scope": "Local observations for these pinned runtimes and fixture workload. Delivered signal handling cannot guarantee cleanup if a launcher suppresses the event, forcibly terminates the host, or the host crashes. Use Ctrl+Break through this Aube launcher; direct Bun Ctrl+C was verified in an enabled console."
+}

@@ -15,7 +15,7 @@ const entries = {
 export type Tool = keyof typeof entries;
 
 /** Scope checks to maintained code and configuration, leaving research imports intact. */
-const sourcePaths = ["app", "lib", "test", "oxlint.config.ts"];
+const sourcePaths = ["app", "lib", "test", "oxlint.config.ts", "extractors.config.ts"];
 const formatPaths = [
   ...sourcePaths,
   "package.json",

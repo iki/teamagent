@@ -2,6 +2,15 @@ import { Context, Effect, Schema } from "effect";
 
 export { cli } from "./cli.ts";
 export { identifierWords, retrievalTerms, rankLexicalCandidates } from "./retrieval.ts";
+export {
+  ExtractorConfigSchema,
+  ExtractorProfileSchema,
+  ExternalExtractorProfileSchema,
+  ExtractorProfileIdSchema,
+  type ExtractorConfig,
+  type ExtractorProfile,
+  type ExternalExtractorProfile,
+} from "./extractors.ts";
 
 export const memoryLimits = {
   fileBytes: 16_777_216,
@@ -37,11 +46,25 @@ export const ImportInputSchema = Schema.Struct({
   convert: Schema.optional(Schema.Boolean),
 });
 export type ImportInput = typeof ImportInputSchema.Type;
+const ParserIdentitySchema = Schema.String.check(Schema.isMinLength(1), Schema.isMaxLength(256));
+export const ExtractionProvenanceSchema = Schema.Struct({
+  policy: ParserIdentitySchema,
+  parsers: Schema.Array(ParserIdentitySchema).check(
+    Schema.isMaxLength(8),
+    Schema.makeFilter((parsers: readonly string[]) =>
+      parsers.every((parser, index) => index === 0 || parser > (parsers[index - 1] ?? ""))
+        ? undefined
+        : "Parser identities must be distinct and sorted",
+    ),
+  ),
+});
+export type ExtractionProvenance = typeof ExtractionProvenanceSchema.Type;
 export const ProvenanceSchema = Schema.Struct({
   etag: Schema.NullOr(Schema.String.check(Schema.isMaxLength(2_048))),
   lastModified: Schema.NullOr(Schema.String.check(Schema.isMaxLength(128))),
   repositoryCommit: Schema.NullOr(Schema.String.check(Schema.isPattern(/^[a-f0-9]{40,64}$/))),
-  parserVersion: Schema.String.check(Schema.isMinLength(1), Schema.isMaxLength(256)),
+  parserVersion: ParserIdentitySchema,
+  extraction: Schema.optional(ExtractionProvenanceSchema),
   warnings: Schema.Array(Schema.String.check(Schema.isMaxLength(2_000))).check(
     Schema.isMaxLength(256),
   ),

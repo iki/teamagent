@@ -9,8 +9,11 @@ import {
   type CapturedFile,
   type Provenance,
   type SourceCapture,
+  type ExtractorProfile,
+  type ExtractionProvenance,
 } from "@/memory";
 import { convertDocument, parserVersion } from "./documents.ts";
+import { extractorProfileIdentity } from "./extractors.ts";
 import { authorizeLocal, collectFolder, originalName, readLocalFile } from "./files.ts";
 import { captureGit } from "./git.ts";
 import { contained, digest, importLimits, safeRelative, sourceMediaType } from "./limits.ts";
@@ -20,6 +23,28 @@ export interface CaptureOptions {
   readonly allowPrivateNetwork?: boolean;
   readonly allowedRoots?: readonly string[];
   readonly python?: string;
+  readonly extractor?: ExtractorProfile;
+}
+
+const handlerVersions = {
+  text: "teamagent-import/text/1",
+  image: "teamagent-import/image/1",
+  raw: "teamagent-import/raw/1",
+} as const;
+
+/** This fingerprint is known before retrieval, including versions of fallback handlers. */
+function routingPolicy(convert: boolean, extractor: ExtractorProfile | undefined): string {
+  return `teamagent-routing/1;${digest(
+    JSON.stringify({
+      convert,
+      builtin: parserVersion,
+      handlers: handlerVersions,
+      external:
+        convert && extractor !== undefined && extractor.engine !== "builtin"
+          ? extractorProfileIdentity(extractor)
+          : null,
+    }),
+  )}`;
 }
 
 function assertBudget(files: readonly CapturedFile[]): void {
@@ -56,7 +81,12 @@ async function acquire(
     etag: null,
     lastModified: null,
     repositoryCommit: null,
-    parserVersion: request.convert ? parserVersion : "teamagent-import/raw/1",
+    parserVersion: request.convert
+      ? options.extractor === undefined
+        ? parserVersion
+        : extractorProfileIdentity(options.extractor)
+      : "teamagent-import/raw/1",
+    extraction: { policy: routingPolicy(request.convert, options.extractor), parsers: [] },
     warnings: [],
   };
   const http = /^https?:[/][/]/i.test(request.locator);
@@ -77,6 +107,7 @@ async function acquire(
     const conditional =
       !request.convert &&
       previous !== undefined &&
+      previous.provenance.extraction?.policy === provenance.extraction?.policy &&
       previous.files.length === 1 &&
       previous.files[0]?.mediaType !== "text/html";
     let response = await retrieveHttp(request.locator, {
@@ -213,11 +244,17 @@ async function representations(
 ): Promise<CaptureResult> {
   const files = [...capture.files];
   const warnings = [...capture.provenance.warnings];
+  const parsers = new Set<string>();
   for (const original of capture.files) {
     signal.throwIfAborted();
     const prefix = `converted/${digest(original.path).slice(0, 24)}`;
     const origin = original.origin ?? capture.locator;
-    if (original.mediaType.startsWith("image/")) {
+    const selectedExternal =
+      request.convert &&
+      options.extractor !== undefined &&
+      options.extractor.engine !== "builtin" &&
+      (options.extractor.mediaTypes ?? ["application/pdf"]).includes(original.mediaType);
+    if (original.mediaType.startsWith("image/") && !selectedExternal) {
       if (request.convert) {
         files.push({
           ...original,
@@ -233,8 +270,10 @@ async function representations(
             `![Imported image](assets/${encodeURI(basename(original.path))})\n\nImage preserved without OCR or generated description.\n`,
           ),
         });
+        parsers.add(handlerVersions.image);
       }
     } else if (
+      selectedExternal ||
       ["text/html", "text/markdown"].includes(original.mediaType) ||
       (request.convert &&
         [
@@ -257,7 +296,11 @@ async function representations(
           directory: request.temporaryDirectory,
           signal,
           ...(options.python === undefined ? {} : { python: options.python }),
+          ...(options.extractor === undefined || !request.convert
+            ? {}
+            : { extractor: options.extractor }),
         });
+        parsers.add(result.parserVersion);
         let markdown = result.markdown;
         for (const diagnostic of result.warnings) warnings.push(`${original.path}: ${diagnostic}`);
         for (const image of result.images) {
@@ -341,6 +384,7 @@ async function representations(
           bytes: original.bytes,
           origin,
         });
+        parsers.add(handlerVersions.text);
       } catch {
         warnings.push(`${original.path}: Text conversion requires valid UTF-8; original retained`);
       }
@@ -350,7 +394,19 @@ async function representations(
     if (warnings.length > 256) throw new Error("Import warning manifest limit exceeded");
   }
   for (const file of files) if (!safeRelative(file.path)) throw new Error("Invalid captured path");
-  return { ...capture, files, provenance: { ...capture.provenance, warnings } };
+  const extraction: ExtractionProvenance = {
+    policy: routingPolicy(request.convert, options.extractor),
+    parsers: [...parsers].sort(),
+  };
+  const identity =
+    request.convert && options.extractor !== undefined && options.extractor.engine !== "builtin"
+      ? `teamagent-capture/1;${digest(JSON.stringify(extraction))}`
+      : capture.provenance.parserVersion;
+  return {
+    ...capture,
+    files,
+    provenance: { ...capture.provenance, parserVersion: identity, extraction, warnings },
+  };
 }
 
 export function createSourceCapture(options: CaptureOptions = {}): SourceCapture {
@@ -358,7 +414,11 @@ export function createSourceCapture(options: CaptureOptions = {}): SourceCapture
     Effect.acquireUseRelease(
       Effect.sync(() => {
         const controller = new AbortController();
-        const signal = AbortSignal.any([controller.signal, AbortSignal.timeout(120_000)]);
+        const captureTimeout =
+          options.extractor === undefined || options.extractor.engine === "builtin"
+            ? 120_000
+            : Math.max(120_000, (options.extractor.timeoutMs ?? 60_000) + 30_000);
+        const signal = AbortSignal.any([controller.signal, AbortSignal.timeout(captureTimeout)]);
         const work = (async () => {
           const capture = await acquire(request, options, signal);
           if (capture.status === "unchanged") return capture;

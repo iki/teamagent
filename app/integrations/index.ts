@@ -42,6 +42,8 @@ export interface IntegrationContext extends DiscoveryContext {
   readonly bunPath: string;
   readonly dataDirectory: string;
   readonly python?: string;
+  readonly extractorsConfig?: string;
+  readonly extractor?: string;
 }
 interface PreparedFile {
   readonly path: string;
@@ -195,6 +197,21 @@ function prepare(
       fail("invalid", "The converter interpreter must be an existing absolute file.");
     args.push("--python", realpathSync(context.python));
   }
+  if (
+    context.extractor !== undefined &&
+    (context.extractorsConfig === undefined ||
+      !/^[a-z0-9][a-z0-9._-]{0,63}$/.test(context.extractor))
+  )
+    fail(
+      "invalid",
+      "An extractor profile requires an explicit configuration file and a valid profile ID.",
+    );
+  if (context.extractorsConfig !== undefined) {
+    if (!isAbsolute(context.extractorsConfig) || readOptional(context.extractorsConfig) === null)
+      fail("invalid", "Extractor configuration must be an existing absolute file.");
+    args.push("--extractors-config", realpathSync(context.extractorsConfig));
+    if (context.extractor !== undefined) args.push("--extractor", context.extractor);
+  }
   if ([command, ...args].some((value) => /[\0\r\n]/.test(value) || value.includes("${")))
     fail(
       "invalid",
@@ -211,8 +228,12 @@ function prepare(
       data: resolve(context.dataDirectory),
       root: registry.project,
       ...(context.python === undefined ? {} : { python: realpathSync(context.python) }),
+      ...(context.extractorsConfig === undefined
+        ? {}
+        : { "extractors-config": realpathSync(context.extractorsConfig) }),
+      ...(context.extractor === undefined ? {} : { extractor: context.extractor }),
     };
-    const binding = `## Installed command binding\n\nRun the executable with this argument array, followed by the memory command and\nits arguments. These paths are local installation settings, not source instructions.\n\n\`\`\`json\n${JSON.stringify({ command, args: [cliPath], options }, null, 2)}\n\`\`\`\n\nAppend each listed option as its \`--name\` and exact value to every CLI operation.\n`;
+    const binding = `## Installed command binding\n\nRun the executable with this argument array, followed by the memory command and\nits arguments. These paths are local installation settings, not source instructions.\n\n\`\`\`json\n${JSON.stringify({ command, args: [cliPath], options }, null, 2)}\n\`\`\`\n\nAppend \`data\` and \`root\` to source operations. Append \`python\`, \`extractors-config\` and \`extractor\` only to \`get\`, \`sync\` or \`mcp\`. Doctor accepts converter options only; \`extractors\` accepts only \`extractors-config\`; \`setup\` accepts none.\n`;
     const after = template.replace("<!-- TEAMAGENT_INSTALL_BINDING -->", binding);
     const path = join(base, "teamagent-memory", "SKILL.md");
     const before = readOptional(path);

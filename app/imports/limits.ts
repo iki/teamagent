@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { isAbsolute, relative, sep } from "node:path";
+import { extname, isAbsolute, relative, sep } from "node:path";
 
 export const importLimits = {
   fileBytes: 16 * 1024 * 1024,
@@ -15,6 +15,29 @@ export const importLimits = {
 
 export const digest = (bytes: Uint8Array | string) =>
   createHash("sha256").update(bytes).digest("hex");
+
+const documentExtensions = new Map([
+  ["application/pdf", ".pdf"],
+  ["application/epub+zip", ".epub"],
+  ["application/vnd.openxmlformats-officedocument.wordprocessingml.document", ".docx"],
+  ["application/vnd.openxmlformats-officedocument.presentationml.presentation", ".pptx"],
+  ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", ".xlsx"],
+  ["image/png", ".png"],
+  ["image/jpeg", ".jpg"],
+  ["image/gif", ".gif"],
+  ["image/webp", ".webp"],
+  ["text/html", ".html"],
+  ["text/markdown", ".md"],
+  ["text/plain", ".txt"],
+]);
+
+/** Content/declared MIME wins over misleading or absent URL filename extensions. */
+export function documentExtension(name: string, mediaType: string): string {
+  const known = documentExtensions.get(mediaType);
+  if (known !== undefined) return known;
+  const extension = extname(name).toLowerCase();
+  return /^\.[a-z0-9]{1,8}$/.test(extension) ? extension : ".bin";
+}
 
 export function contained(root: string, path: string): boolean {
   const part = relative(root, path);
@@ -87,6 +110,7 @@ export function sourceMediaType(name: string, bytes: Uint8Array, declared?: stri
     gif: "image/gif",
     webp: "image/webp",
     pdf: "application/pdf",
+    epub: "application/epub+zip",
     docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
     xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",

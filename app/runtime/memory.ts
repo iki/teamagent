@@ -6,16 +6,35 @@ import { MemoryError, MemoryService, type MemoryApi } from "@/memory";
 import { openStore } from "../storage/index.ts";
 import { openMemory } from "../memory/index.ts";
 import { createSourceCapture } from "../imports/index.ts";
+import { loadExtractorConfig, resolveExtractorProfile } from "../imports/extractors.ts";
 
 export interface MemoryHostOptions {
   readonly data: string;
   readonly root?: string | undefined;
   readonly workspace?: string | undefined;
   readonly python?: string | undefined;
+  readonly extractorsConfig?: string | undefined;
+  readonly extractor?: string | undefined;
   readonly allowRoot?: readonly string[] | undefined;
   readonly allowPrivateNetwork?: boolean | undefined;
   readonly mcp?: boolean | undefined;
 }
+
+/** Extractor commands come only from explicitly chosen trusted host configuration. */
+export const resolveMemoryExtractor = Effect.fnUntraced(function* (
+  options: Pick<MemoryHostOptions, "extractorsConfig" | "extractor">,
+) {
+  if (options.extractorsConfig === undefined) {
+    if (options.extractor !== undefined)
+      return yield* new MemoryError({
+        code: "invalid",
+        message: "Selecting an extractor requires an explicit extractors configuration file.",
+      });
+    return undefined;
+  }
+  const config = yield* loadExtractorConfig(resolve(options.extractorsConfig));
+  return yield* resolveExtractorProfile(config, options.extractor);
+});
 
 export async function resolveMemoryScope(options: MemoryHostOptions) {
   if (options.root !== undefined && options.workspace !== undefined)
@@ -64,6 +83,7 @@ function inside(root: string, target: string): boolean {
 
 async function createMemoryHost(options: MemoryHostOptions): Promise<MemoryApi> {
   const scope = await resolveMemoryScope(options);
+  const extractor = await Effect.runPromise(resolveMemoryExtractor(options));
   const allowedRoots = options.mcp
     ? await Promise.all(
         [scope.workspaceRoot, ...(options.allowRoot ?? [])].map((root) => realpath(resolve(root))),
@@ -76,6 +96,7 @@ async function createMemoryHost(options: MemoryHostOptions): Promise<MemoryApi> 
       capture: createSourceCapture({
         ...(allowedRoots === undefined ? {} : { allowedRoots }),
         ...(options.python === undefined ? {} : { python: options.python }),
+        ...(extractor === undefined ? {} : { extractor }),
         ...(options.allowPrivateNetwork === undefined
           ? {}
           : { allowPrivateNetwork: options.allowPrivateNetwork }),

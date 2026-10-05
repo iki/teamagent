@@ -43,6 +43,41 @@ unchanged sync. The [compiled smoke record](../data/benchmarks/compiled-release-
 identifies the executable and PDF hashes. Existing browser acceptance evidence
 above remains from the prior harness run; the memory benchmark did not change UI code.
 
+The external-extractor increment adds explicit named profiles across the library,
+CLI, MCP server and agent installation bindings. Regression coverage includes
+literal arguments, version/provenance changes, media routing, extensionless
+documents, contained output, failed refreshes, cancellation and bounded cleanup.
+Windows fixtures verify Marker helper termination on success, failure and abrupt
+cancellation, including delayed file-handle release. A Git staging-monitor race
+now tolerates temporary entries disappearing without suppressing permission,
+link or capacity failures. The completed implementation gate passed 163 tests
+across 24 files with 658 Bun expect calls, including contained file-URL rebasing,
+duplicate image names and one-pass reference rewriting. Real DOCX/HTML fallback,
+mixed PDF/DOCX provenance, legacy manifest hashes and metadata tampering are
+covered. Genuine isolated Windows Ctrl+C/Ctrl+Break fixtures verify joined
+process/staging cleanup, failed-sync preservation and interruption of benchmark
+work without fabricated measurements. The fixture explicitly resets inherited
+Ctrl+C-ignore state; launcher behavior remains a separate observation.
+A real Docling image conversion verified every returned asset reference,
+content hash and staging cleanup. The final full extractor matrix completed
+144 attempts: 142 successful conversions and two explicit Marker timeouts.
+Seventy of 71 successful pairs had identical Markdown; all 71 had identical
+annotated quality outcomes. This is calibrated extraction evidence, not a claim
+of complete factual or visual fidelity.
+Native acceptance was rerun after the lifecycle/provenance changes: all four Rust
+tests, actual WebView2 workflow and managed sidecar shutdown passed.
+The final release rebuild and its [compiled OCR smoke](../data/extractor-benchmarks/compiled-release-final-smoke.json)
+passed extractor version inspection, real scan import with two images, evidence
+read and unchanged-version sync. On this Windows host, the separate
+[Aube launcher probe](../data/extractor-benchmarks/setup/windows-interruption.json)
+requires Ctrl+Break for graceful cancellation; direct Bun processes handle
+Ctrl+C when their console enables it. An event suppressed by an outer launcher
+cannot activate application cleanup.
+The [extractor protocol](benchmarks/extractors-methodology.md),
+[runtime setup](benchmarks/extractor-runtimes.md) and
+[results](benchmarks/extractors-results.md) and [result audit](benchmarks/extractors-audit.md) retain the separate measurement
+and compatibility evidence.
+
 Reproduce with Bun 1.4.2, Aube 2.5.1, Git and Python 3.12:
 
 ```sh

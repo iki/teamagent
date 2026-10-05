@@ -8,6 +8,13 @@ agent loop. Mobile remains deferred.
 Source memory imports URLs, documents, images, folders and Git repositories,
 retains versions, and exposes retrieval through the CLI, MCP and a library API.
 See [memory and import commands](spec/memory-imports.md) for conversion and agent installation.
+Document conversion supports named option profiles for xberg, Marker, MinerU,
+Docling and OpenDataLoader PDF through an explicitly selected trusted
+[extractors configuration](extractors.config.ts). The
+[extractor benchmark](spec/benchmarks/extractors-methodology.md) measures recovered
+annotated information and speed for each option set. Its
+[results and recommendations](spec/benchmarks/extractors-results.md) retain separate
+digital-PDF and scanned-document results with an audit of apparent misses.
 The [memory benchmark protocol](spec/benchmarks/methodology.md) defines frozen coding
 and PDF tasks, real reference-system adapters, development/holdout separation and
 reproduction commands. The [measured results](spec/benchmarks/results.md) retain

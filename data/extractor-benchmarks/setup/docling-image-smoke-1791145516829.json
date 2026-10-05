@@ -1,0 +1,52 @@
+{
+  "kind": "real-docling-image-reference-smoke",
+  "startedAt": "2026-10-04T20:25:16.830Z",
+  "setupOnly": true,
+  "timingIncludes": "version probe, model startup, conversion, adapter staging cleanup; not a corpus benchmark",
+  "config": {
+    "path": "data/extractor-benchmarks/config-v2-2026-10-04.json",
+    "sha256": "8a86900cbaae755474ffb39e8d1090bc6b088ca4a89668aabc4209950ba9cf61"
+  },
+  "adapter": {
+    "path": "app/imports/extractors.ts",
+    "sha256": "fd40acfd781df9b0bdc6ec87bf4cf93c66bac16a61b560261dbbd6632d4d3867"
+  },
+  "fixture": {
+    "path": ".cache/extractors-setup/docling-image-smoke.pdf",
+    "sha256": "55892906569463a9742e0186d8d54d6c4bc562e3e368ecf5810f12eeb0fb4830",
+    "bytes": 134350,
+    "source": "../ai-agents-mem/xx-2604-memento/docs/memento.pdf",
+    "sourcePageOneBased": 1,
+    "sourceSha256": "1aa388a660073e7a4bde0e0e1c4de421424e65c00d9e9935322c86b5d25485ff"
+  },
+  "status": "passed",
+  "seconds": 35.7390585,
+  "markdownCharacters": 2560,
+  "markdownSha256": "5cf86b0b052607b9bb1e3b31c291b861673f98a6ec7df8ba41a4a2ee4ec6745e",
+  "references": [
+    "assets/9d505ee37d1c44f290d3c8ba42a024ed82966c5dab33fd82edb8abcc439016cb.png"
+  ],
+  "missing": [],
+  "assets": [
+    {
+      "name": "9d505ee37d1c44f290d3c8ba42a024ed82966c5dab33fd82edb8abcc439016cb.png",
+      "sha256": "9d505ee37d1c44f290d3c8ba42a024ed82966c5dab33fd82edb8abcc439016cb",
+      "bytes": 177445,
+      "mediaType": "image/png"
+    }
+  ],
+  "assertions": {
+    "exportedAtLeastOneImage": true,
+    "markdownContainsAtLeastOneImage": true,
+    "everyImageReferenceResolvesToReturnedAsset": true,
+    "everyAssetReferenceResolves": true,
+    "noTemporaryFileUrls": true,
+    "noTemporaryStagingPaths": true,
+    "noUnresolvedImageWarnings": true,
+    "stagingCleaned": true,
+    "everyPersistedAssetHashMatches": true
+  },
+  "warnings": [],
+  "parserVersion": "teamagent-extractor/1;docling;docling-fast-text;2.132.0;2afb21ebe117602dadb6def02f7da602673f9122133737e66bee6c0d55827119",
+  "outputDirectory": "C:/_/teamagent/.cache/extractors-smoke/docling-images-1791145516829"
+}

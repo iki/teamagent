@@ -57,6 +57,42 @@ async function failure(
   return result.failure;
 }
 
+test("installed MCP and skill bindings preserve explicitly selected extractor configuration and profile", async () => {
+  const context = fixture();
+  const config = join(context.projectRoot, "extractors.json");
+  writeFileSync(
+    config,
+    JSON.stringify({
+      version: 1,
+      defaultProfile: "quality",
+      profiles: [{ id: "quality", engine: "builtin" }],
+    }),
+  );
+  const service = createIntegrationService({
+    ...context,
+    extractorsConfig: config,
+    extractor: "quality",
+  });
+  const installed = await Effect.runPromise(service.install(input("cursor")));
+  expect(installed.plan.args.slice(-4)).toEqual([
+    "--extractors-config",
+    realpathSync(config),
+    "--extractor",
+    "quality",
+  ]);
+  const skill = installed.plan.files.find((file) => file.kind === "skill");
+  expect(skill).toBeDefined();
+  if (skill !== undefined)
+    expect(readFileSync(skill.path, "utf8")).toContain('"extractor": "quality"');
+  expect(
+    (
+      await failure(
+        createIntegrationService({ ...context, extractor: "missing-config" }).plan(input()),
+      )
+    ).code,
+  ).toBe("invalid");
+});
+
 test("discovery reuses the complete registry and separates directory, executable and readiness evidence", async () => {
   const context = fixture();
   mkdirSync(join(context.home, ".codex"));

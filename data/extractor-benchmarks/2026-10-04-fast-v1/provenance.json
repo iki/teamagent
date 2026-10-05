@@ -1,0 +1,241 @@
+{
+  "format": "teamagent-extractor-benchmark-v1",
+  "createdAt": "2026-10-04T19:41:26.510Z",
+  "config": {
+    "path": "C:\\_\\teamagent\\data\\extractor-benchmarks\\config-2026-10-04.json",
+    "sha256": "911be61a5abcc5c13f0e318d13e5b45e225ecb45bb46c4104b35f5781ece977b",
+    "resolvedSha256": "2dd1a77397b23a4046059971497644d6b18f2364abaa1585d5095d4b26b3c8bb"
+  },
+  "manifests": [
+    {
+      "lane": "reference-pdfs",
+      "path": "C:\\_\\teamagent\\app\\benchmark\\cases-documents.json",
+      "sha256": "19a35c92a41e413a71086d0ca2159de2827f8ca2f061a7a58c74f7aff1831921"
+    },
+    {
+      "lane": "synthetic-scanned",
+      "path": "C:\\_\\teamagent\\data\\extractor-benchmarks\\fixtures\\manifest.json",
+      "sha256": "46a00e94677f94eca7c5511ba60f41c1ec0a9545eb52ab2d34b48f41a9a0fc58"
+    }
+  ],
+  "setup": {
+    "path": "C:\\_\\teamagent\\data\\extractor-benchmarks\\setup\\runtime-inventory.json",
+    "sha256": "0bf03389a3234654077c48ca08f23169cded2fb1cae9a923241f3a4d7012299f"
+  },
+  "runtime": {
+    "bun": "1.4.2",
+    "platform": "win32",
+    "release": "10.0.26300",
+    "arch": "x64",
+    "cpu": "Intel(R) Core(TM) Ultra 9 285H",
+    "logicalCpuCount": 16,
+    "totalMemoryBytes": 68112752640
+  },
+  "codeHashes": {
+    "app/benchmark/extractors.ts": "5c411fbeb13660db407ba084be73ba948d4f66f1fe16f8faae71f8f94192d2b8",
+    "app/benchmark/extractors-metrics.ts": "2335dd51500e83f99b4f3625664ec76dcc76c334c977d8d7d0c7161035b0f826",
+    "app/imports/documents.ts": "8b0f08130a069551dbeb04edf5bc8a97416c7016889cbb93abed433e04ef07ba",
+    "app/imports/extractors.ts": "6d8f8b100c47214fbb38224146c4ba97ca27c5f26e37c3b780596e918928e9f2",
+    "app/imports/process.ts": "18d06ee444d6484468e11f536f86af43004f3d5bb831c27967bede9cc2d50572",
+    "app/imports/worker.py": "d231d7759e974ff9e9fe3ce59fe6559c72420874206001091e65ca189dbc14b4"
+  },
+  "profiles": [
+    {
+      "id": "builtin",
+      "engine": "builtin",
+      "expectedVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+      "profileSha256": "3617ae00f2cead9cc9b4f1f40ec75c7d1826bdc67784488e530f43c635c2e7d5",
+      "commandSha256": null,
+      "commandAvailable": true,
+      "environmentKeys": [],
+      "inspection": {
+        "available": true,
+        "profileId": "builtin",
+        "engine": "builtin",
+        "expectedVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+        "observedVersion": null,
+        "verified": false,
+        "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+        "message": "Builtin profile selected; memory doctor checks the pinned Python worker separately."
+      },
+      "builtinInspection": {
+        "available": true,
+        "python": "C:\\_\\teamagent\\.cache\\import-python\\Scripts\\python.exe",
+        "pythonVersion": "3.12.15",
+        "packages": {
+          "markitdown": "0.1.8",
+          "pypdf": "6.11.0",
+          "markdown-it-py": "4.0.0",
+          "mammoth": "1.11.0",
+          "pdfminer.six": "20260107",
+          "pdfplumber": "0.11.10",
+          "python-pptx": "1.0.2",
+          "openpyxl": "3.1.5"
+        },
+        "parserVersion": "teamagent-import/2;markitdown/0.1.8;pypdf/6.11.0;markdown-it/4.0.0",
+        "formats": [
+          "markdown",
+          "html",
+          "pdf",
+          "docx",
+          "xlsx",
+          "pptx"
+        ],
+        "message": "Pinned document converter is available."
+      }
+    },
+    {
+      "id": "xberg-native",
+      "engine": "xberg",
+      "expectedVersion": "1.3.3",
+      "profileSha256": "43c90552034c46cd64236458f25b9e16e75afcdc3e59a31fb345fa0ea5679ad8",
+      "commandSha256": "8206bb3117633639c23bc949cf45340233b469db3bafd0420807cd15503c0d0d",
+      "commandAvailable": true,
+      "environmentKeys": [
+        "HF_HOME",
+        "HF_HUB_DISABLE_TELEMETRY",
+        "PYTHONDONTWRITEBYTECODE",
+        "XBERG_CACHE_DIR"
+      ],
+      "inspection": {
+        "available": true,
+        "profileId": "xberg-native",
+        "engine": "xberg",
+        "expectedVersion": "1.3.3",
+        "observedVersion": "1.3.3",
+        "verified": true,
+        "parserVersion": "teamagent-extractor/1;xberg;xberg-native;1.3.3;026c3af1494eb07e0ce7d1cd359b8f5869a9c90282d9d975bd4c7d3e35259392",
+        "message": "Extractor executable and declared version verified."
+      },
+      "builtinInspection": null
+    },
+    {
+      "id": "xberg-auto",
+      "engine": "xberg",
+      "expectedVersion": "1.3.3",
+      "profileSha256": "0417ad36f3eea2ef581603ab3748e0d64e17febff4b801cdc061d81f83a8c4b7",
+      "commandSha256": "8206bb3117633639c23bc949cf45340233b469db3bafd0420807cd15503c0d0d",
+      "commandAvailable": true,
+      "environmentKeys": [
+        "HF_HOME",
+        "HF_HUB_DISABLE_TELEMETRY",
+        "PYTHONDONTWRITEBYTECODE",
+        "XBERG_CACHE_DIR"
+      ],
+      "inspection": {
+        "available": true,
+        "profileId": "xberg-auto",
+        "engine": "xberg",
+        "expectedVersion": "1.3.3",
+        "observedVersion": "1.3.3",
+        "verified": true,
+        "parserVersion": "teamagent-extractor/1;xberg;xberg-auto;1.3.3;3b65108e3095b65e88dedc4a589e5be73131a90aedbdeb09c3594a777c3ff93d",
+        "message": "Extractor executable and declared version verified."
+      },
+      "builtinInspection": null
+    },
+    {
+      "id": "opendataloader-xycut",
+      "engine": "opendataloader",
+      "expectedVersion": "2.5.12",
+      "profileSha256": "22eb5d287ca1990c275710d9a7cf5f0f8f941a318c10f9f3f45dfbed56419c02",
+      "commandSha256": "564ede5a18b51a6292ba71d1c2d33b276c767b5ba52f086b98c80ecb5cdfdf8e",
+      "commandAvailable": true,
+      "environmentKeys": [
+        "HF_HOME",
+        "HF_HUB_DISABLE_TELEMETRY",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE"
+      ],
+      "inspection": {
+        "available": true,
+        "profileId": "opendataloader-xycut",
+        "engine": "opendataloader",
+        "expectedVersion": "2.5.12",
+        "observedVersion": "2.5.12",
+        "verified": true,
+        "parserVersion": "teamagent-extractor/1;opendataloader;opendataloader-xycut;2.5.12;753e5268801608b2c2e5d3a58ad9fd30cf53f10ae8d2463f306f969a016e7081",
+        "message": "Extractor executable and declared version verified."
+      },
+      "builtinInspection": null
+    },
+    {
+      "id": "opendataloader-structured",
+      "engine": "opendataloader",
+      "expectedVersion": "2.5.12",
+      "profileSha256": "668f0e3f695c3056959a2d49318eb8014147d7195bc7450697f4c01dc648cdc3",
+      "commandSha256": "564ede5a18b51a6292ba71d1c2d33b276c767b5ba52f086b98c80ecb5cdfdf8e",
+      "commandAvailable": true,
+      "environmentKeys": [
+        "HF_HOME",
+        "HF_HUB_DISABLE_TELEMETRY",
+        "PATH",
+        "PYTHONDONTWRITEBYTECODE"
+      ],
+      "inspection": {
+        "available": true,
+        "profileId": "opendataloader-structured",
+        "engine": "opendataloader",
+        "expectedVersion": "2.5.12",
+        "observedVersion": "2.5.12",
+        "verified": true,
+        "parserVersion": "teamagent-extractor/1;opendataloader;opendataloader-structured;2.5.12;ed7a5e1f97fd8abe689f346e90b31b2e62493430c61d4b8608234a5d20c8d9cd",
+        "message": "Extractor executable and declared version verified."
+      },
+      "builtinInspection": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "pdf-hermes-kanban",
+      "path": "../ai-agents/hermes-agent/docs/hermes-kanban-v1-spec.pdf",
+      "sha256": "708469e633223b2e52478b008d6a5fbe75b8da305cabfdd8248c0d02913455f7",
+      "pages": 33,
+      "lane": "reference-pdfs",
+      "bytes": 213669
+    },
+    {
+      "id": "pdf-memento",
+      "path": "../ai-agents-mem/xx-2604-memento/docs/memento.pdf",
+      "sha256": "1aa388a660073e7a4bde0e0e1c4de421424e65c00d9e9935322c86b5d25485ff",
+      "pages": 30,
+      "lane": "reference-pdfs",
+      "bytes": 674225
+    },
+    {
+      "id": "pdf-ncm-czech",
+      "path": "../ai-agents-mem/xx-2601-cognitive-memory/NCM-Texts-tests_CZ.pdf",
+      "sha256": "23acdb843213057ad4a653a78e7871a3e48dd1ae9e0e04847007e365c13f2ea1",
+      "pages": 5,
+      "lane": "reference-pdfs",
+      "bytes": 126685
+    },
+    {
+      "id": "pdf-dynamodb-transactions",
+      "path": "../ai-agents-mem/fokosdb/docs/research/atc23-idziorek-dynamodb-transactions.pdf",
+      "sha256": "a5c2d061c6570184cb38ee5c01b8a88991fd3c9742654d8974a71e369ae6762d",
+      "pages": 14,
+      "lane": "reference-pdfs",
+      "bytes": 378686
+    },
+    {
+      "id": "pdf-disney-q1-fy25",
+      "path": "../ai-agents-mem/pageindex/examples/documents/q1-fy25-earnings.pdf",
+      "sha256": "edb5d4c78cc2c403f2387a7b8aa7134c1a96018acb489722d13aa6a968ae93bb",
+      "pages": 22,
+      "lane": "reference-pdfs",
+      "bytes": 101417
+    },
+    {
+      "id": "synthetic-scanned-en-cs",
+      "path": "data/extractor-benchmarks/fixtures/synthetic-scanned-en-cs.pdf",
+      "sha256": "e21a6ce2e8e24f77f5d72bb4f8d6c8a40b83e3224415ea94318da7fca08cdffe",
+      "pages": 2,
+      "lane": "synthetic-scanned",
+      "bytes": 668965
+    }
+  ],
+  "repeats": 1,
+  "timing": "Sequential fresh CLI processes and fresh output directories. Includes input staging, CLI startup/model loading, conversion and output validation. Excludes source hashing, scoring, benchmark artifact writes and prior runtime/model installation. OS file caches and model weight caches are not evicted; repeated processes do not reuse a live model. No converted document output is reused.",
+  "scoring": "Frozen annotated important-information anchor recall, not a percentage of all information or semantic answer accuracy. Failed/unavailable runs have null quality. Effective initial recall keeps every selected source's anchors in the denominator; conditional recall is labeled separately."
+}

@@ -5,12 +5,15 @@ import { Effect } from "effect";
 import type { HarnessConfig } from "@/harness";
 import { IntegrationError } from "@/integrations";
 import { createIntegrationService } from "../integrations/index.ts";
+import { resolveMemoryExtractor } from "../runtime/memory.ts";
 
 interface IntegrationFlags {
   readonly root?: string | undefined;
   readonly scope?: string | undefined;
   readonly components?: string | undefined;
   readonly python?: string | undefined;
+  readonly extractorsConfig?: string | undefined;
+  readonly extractor?: string | undefined;
 }
 
 export async function runIntegrationCommand(
@@ -20,6 +23,8 @@ export async function runIntegrationCommand(
   flags: IntegrationFlags,
   print: (value: unknown) => void,
 ) {
+  if (flags.extractorsConfig !== undefined || flags.extractor !== undefined)
+    await Effect.runPromise(resolveMemoryExtractor(flags));
   const integrations = createIntegrationService({
     home: homedir(),
     projectRoot: resolve(flags.root ?? process.cwd()),
@@ -29,6 +34,10 @@ export async function runIntegrationCommand(
     environment: process.env,
     searchPath: process.env.PATH ?? "",
     ...(flags.python === undefined ? {} : { python: resolve(flags.python) }),
+    ...(flags.extractorsConfig === undefined
+      ? {}
+      : { extractorsConfig: resolve(flags.extractorsConfig) }),
+    ...(flags.extractor === undefined ? {} : { extractor: flags.extractor }),
   });
   if (action === "list") {
     print(await Effect.runPromise(integrations.list()));

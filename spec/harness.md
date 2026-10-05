@@ -1,19 +1,23 @@
 # Local harness contract
 
 CLI, browser and Tauri desktop are implemented. Mobile, hosted deployment,
-installed-agent sessions, remote teams, retrieval and skill routing remain later
+installed-agent sessions, remote teams and skill routing remain later
 work in the [roadmap](roadmap.md).
+Source memory and lexical retrieval are available through their CLI, MCP and
+library interfaces; see the [memory/import contract](memory-imports.md).
 
 ## Public modules
 
-| API            | Responsibility                                                     | CLI commands                          |
-| -------------- | ------------------------------------------------------------------ | ------------------------------------- |
-| `@/workspaces` | Canonical workspace registration and schema                        | `list`, `add`, `show`                 |
-| `@/agents`     | Adapter identities and capability evidence                         | `list`, `models`                      |
-| `@/artifacts`  | Immutable artifact size/digest contracts                           | `list`, `show`, `export`              |
-| `@/tasks`      | Tasks, attempts, events, transitions and Effect repository service | `list`, `add`, `show`, `cancel`       |
-| `@/harness`    | Shared configuration and response schemas                          | `serve`, `status`, `modules`, `token` |
-| `@/lint`       | Host architecture rules and graph validation                       | `check`                               |
+| API              | Responsibility                                                                      | CLI commands                                                                                                |
+| ---------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `@/workspaces`   | Canonical workspace registration and schema                                         | `list`, `add`, `show`                                                                                       |
+| `@/agents`       | Adapter identities and capability evidence                                          | `list`, `models`                                                                                            |
+| `@/artifacts`    | Immutable artifact size/digest contracts                                            | `list`, `show`, `export`                                                                                    |
+| `@/tasks`        | Tasks, attempts, events, transitions and Effect repository service                  | `list`, `add`, `show`, `cancel`                                                                             |
+| `@/harness`      | Shared configuration and response schemas                                           | `serve`, `status`, `modules`, `token`                                                                       |
+| `@/lint`         | Host architecture rules and graph validation                                        | `check`                                                                                                     |
+| `@/memory`       | Versioned source acquisition, configured document extraction and evidence retrieval | `get`, `sync`, `list`, `show`, `read`, `search`, `export`, `delete`, `doctor`, `setup`, `extractors`, `mcp` |
+| `@/integrations` | Agent discovery and explicit skill/MCP installation                                 | `list`, `plan`, `install`                                                                                   |
 
 Every library's index explicitly exports its literal CLI descriptor. The CLI
 option map is exhaustive over the derived command union. Composition roots,
@@ -56,6 +60,15 @@ remote fetching are disabled. Unknown fields, nulls and arrays fail validation.
 CLI overrides beat file settings, which beat defaults. File-relative data paths
 resolve from the selected file's directory; CLI paths from the invocation
 directory. Credentials stay in environment variables, outside config/records.
+
+Memory accepts a separate explicit trusted `--extractors-config` file and named
+`--extractor` option profile for import, sync, doctor and MCP startup. Profiles
+cover xberg, Marker, MinerU, Docling and OpenDataLoader PDF; the builtin converter
+remains available. Configuration executes only at the host boundary, never from
+MCP document/tool content. Selected extractor failures do not fall back to another
+engine. Option hashes and checked versions identify the policy in source
+provenance. [Extractor configuration](memory-imports.md#external-document-extractors)
+documents MIME routing, limits, cleanup and agent installation.
 
 Desktop starts a fixed compiled sidecar with its OS application data directory
 and an ephemeral token through a narrow IPC bridge. Optional `TEAMAGENT_CONFIG`

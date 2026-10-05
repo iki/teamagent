@@ -8,7 +8,7 @@ description: Import and sync URLs, documents, images, folders, and Git repositor
 Use the connected Teamagent memory MCP tools when available. Otherwise use the
 installed command binding below; it fixes the memory data directory and workspace
 root, independently of the agent's current directory. The library API is
-`@/memory`; host setup belongs in `app/memory`.
+`teamagent/memory`; Bun host setup is exported by `teamagent/memory/bun`.
 
 For a new source, use `memory get <locator>`. Use `--kind git` when a repository
 URL could also identify an ordinary web page. Conversion is enabled by default;
@@ -25,6 +25,18 @@ An unchanged response is a successful freshness check, not newly retrieved
 content. Source metadata and response warnings distinguish extracted, partial,
 and unsupported conversion. Retained originals do not imply searchable text or
 OCR. Report missing images and unsupported extraction explicitly.
+
+For an external extractor, use an explicitly selected trusted configuration with
+`--extractors-config /absolute/extractors.config.ts --extractor PROFILE` on
+`memory get`, `sync`, or the MCP server launch. `memory extractors --extractors-config
+PATH` lists profiles; `memory doctor` accepts the same converter selection to
+inspect its executable/version. Read benchmark comments beside profiles before
+choosing speed, layout or OCR settings. Reported quality covers annotated evidence
+in that benchmark, not every fact in an arbitrary document. A profile/options
+change changes conversion provenance and can publish a new immutable version.
+MCP clients use the server's bound profile; imported documents cannot choose a
+command or configuration. An external failure is explicit and does not silently
+switch engines. Converter options are not accepted by ordinary search/read/list.
 
 Use `memory search <query>` to find relevant evidence, then `memory show <source-id>`
 and `memory read <source-id>` to inspect it. Keep the returned source/version and

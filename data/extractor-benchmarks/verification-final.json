@@ -1,0 +1,50 @@
+{
+  "format": "teamagent-extractor-verification-v1",
+  "verifiedAt": "2026-10-04T22:48:59.0132210Z",
+  "checks": {
+    "stepCheck": {
+      "status": "passed",
+      "tests": 163,
+      "failures": 0,
+      "files": 24,
+      "expectCalls": 658,
+      "testSeconds": 70.7
+    },
+    "reviewCheck": {
+      "status": "passed",
+      "tests": 163,
+      "failures": 0,
+      "files": 24,
+      "expectCalls": 658,
+      "testSeconds": 71.18
+    },
+    "desktop": {
+      "status": "passed",
+      "rustTests": 4,
+      "webview2": "154.0.4258.53",
+      "actualWorkflow": "passed",
+      "managedShutdown": "passed"
+    },
+    "releaseBuild": "passed",
+    "compiledOcrSmoke": "data/extractor-benchmarks/compiled-release-final-smoke.json",
+    "frozenProfileOptions": "All 12 final profile bodies match frozen config-v2-2026-10-04.json",
+    "gitDiffCheck": "passed"
+  },
+  "finalCodeHashes": {
+    "app/benchmark/extractors.ts": "6fddb28e6128086b0c3e3141c538f43226b455571e1ffe8baae6ea8eef4a5657",
+    "app/benchmark/extractors-metrics.ts": "71c56d5a9b1dd18501e0128e51dc671ff65ebd1d60a1d5846da975a4408c952c",
+    "app/imports/extractors.ts": "6d2205a8a1e9fe17eb28aba166b02543922ab880e34710849e54d0a367bcc626",
+    "app/imports/documents.ts": "745fbc7cdce8badcb404473e8b2943947207892648bb64382bfa1df251570652",
+    "app/imports/index.ts": "398977cedec3db00245b6561d82c67674120b7c7c71d04e50164718bca00bf6b",
+    "app/imports/lifecycle.ts": "f8cbbdd9c3d0d2087791bc533c018409a15187d08e5e88cc35cc27154e58e908",
+    "app/runtime/interruption.ts": "df835a8ed625ab10ad4460ed8c9b0ca4962a2c9159422c9f7bfa0bdbe44796eb",
+    "app/cli/memory.ts": "ced9b1dbd581aad99138767fc5acf7fe55b4a1addeb1f3b8c8b020c804bde200",
+    "app/memory/index.ts": "2d8bd227e34ba7cd9a52d2c72aa18570d7507751247c133c31b781353e31bc67",
+    "lib/memory/index.ts": "1c6e737bf95464f19c234a6db9b77b8ec62266690c69ca62b3645447471dcda0",
+    "lib/memory/extractors.ts": "718e8513eb79143b12527a577836bccae5d4c544e6b44c288193ae87d0e9f44e",
+    "extractors.config.ts": "e489923e47271cd602fbfb9255ddda0fe0aa8e43e29e92c36063eb666295f6b5"
+  },
+  "benchmark": "data/extractor-benchmarks/2026-10-04-full-v3/results.json",
+  "benchmarkResultsSha256": "c9fa2557ba831137aed6ca63605a93e65a8f17c4a5134b7a5a4614bc0209a92d",
+  "note": "This receipt verifies the later assembled lifecycle/provenance implementation. Exact measured code remains separately archived under the benchmark run."
+}
