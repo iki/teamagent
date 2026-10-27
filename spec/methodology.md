@@ -35,7 +35,7 @@ Some origins redirect after a project rename. The original origin is the reprodu
 
 License hints come from root file text and are not a full legal/dependency audit. Model weights, bundled assets, vendored code and individual packages may have separate terms. Do not select copied or unclear-provenance material for implementation reuse based on a catalog entry alone.
 
-The pre-existing generated notes in [resources](../resources/README.md) were discovered as background material. They were not treated as authoritative source evidence or copied into the new analysis as verified conclusions.
+The pre-existing generated notes in [legacy research archive](archive/legacy-research/README.md) were discovered as background material. They were not treated as authoritative source evidence or copied into the new analysis as verified conclusions.
 
 ## Current external documentation checks
 

@@ -4,7 +4,6 @@ export default defineConfig({
   plugins: ["typescript", "import", "unicorn"],
   jsPlugins: ["./lib/lint/index.ts"],
   ignorePatterns: [
-    "resources/**",
     "spec/**",
     ".agents/skills/**",
     "data/**",

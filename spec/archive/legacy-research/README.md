@@ -1,0 +1,20 @@
+# Archived legacy research
+
+This archive preserves the pre-existing research from `resources/` without treating it as newly verified evidence. The [migration manifest](migration-manifest.json) records every original relative path, destination, byte length and SHA-256. Source files were copied and checksum-verified before cleanup. Historical file content has not been rewritten.
+
+- [Generated project reports](reports/) contain 153 prior machine-generated analysis files. Their conclusions, project versions, quotations and citations are **unverified historical output**. Use the current [source analysis index](../../README.md) and inspect the cited upstream source before adopting a claim.
+- [Legacy tooling](tooling/) retains prompts, scripts and exclusion patterns as evidence. These scripts are retired; their external helpers and assumptions are not requirements for the new workflow.
+- Original downloaded Markdown, PDF and image evidence is preserved separately in [data/research/texts](../../../data/research/texts/). The root [web/social configuration](../../../.urls.md.conf) and [PDF configuration](../../../.urls.pdf.conf) retain the original names and source entries.
+
+## Tooling assessment
+
+| Original helper | Evidence retained | Replacement / decision |
+| --- | --- | --- |
+| `.prompt.md` | Questions about capabilities, source evidence, deployment, model support, architecture and reusable modules | Retain the questions as a checklist. Do not require fixed “top 20” quotas: the available evidence may support fewer conclusions. New analysis must distinguish implementation, documentation and inference. |
+| `.qg.cmd`, `.qgn.cmd`, `.qgp.cmd`, `.qgpn.cmd` | These four wrappers are byte-identical and choose an external `x` command from their own filename; they depend on a separate, unspecified toolchain and repository exports | Retired executors. They are not portable, self-contained or validated launchers. Preserve them here for provenance. |
+| `.q.sync.cmd` | Copies the `.qg.cmd` wrapper over the other three filenames | Retired duplication mechanism; no project workflow depends on it. |
+| `.rmx.cmd` | Category packing workflow using external `x`, `inside` and `rmxcs` helpers and `git.rmx` paths | Retired executor. Use the explicit project research tasks and their checked source configuration. |
+| `.rmxignore` and project-specific `.rmx.*.ignore` | Prior packing exclusions | Preserve as advisory evidence. Broad exclusions of tests, fixtures, data, assets and language variants can conceal relevant behavior; do not automatically carry these exclusions into analysis. |
+| `.gitignore`, `README.md` | Prior folder conventions and ignore behavior | Historical context only. The new cache, evidence and reports have explicit locations. |
+
+“Retired” means removed from the active workflow, not discarded evidence. No original research was deleted without a verified preserved destination. A new successful download is not a validation of old generated conclusions.
