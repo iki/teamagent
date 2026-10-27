@@ -1,75 +1,251 @@
-"""Check delivered links, census coverage and pinned local source anchors."""
+"""Validate active research links and exact Git blobs, without changing the original census."""
+from __future__ import annotations
+
+import argparse
+import collections
+import concurrent.futures
+import datetime
+import hashlib
+import json
 from pathlib import Path
-from urllib.parse import unquote,urlparse
-import json,re,subprocess,collections,concurrent.futures
+import re
+import subprocess
+from urllib.parse import unquote, urlparse
 
-ROOT=Path(__file__).resolve().parents[2]
-BASE=ROOT/'spec'
-P=json.loads((BASE/'data/inventory.json').read_text(encoding='utf-8'))
-by_id={p['id']:p for p in P}
-by_repo_rev={(urlparse(p['github']).path.strip('/').lower(),p['revision']):p for p in P}
-issues=[]; sources=collections.defaultdict(set); checked_links=0; checked_anchors=0; unknown_sources=set()
-for md in BASE.rglob('*.md'):
-    text=md.read_text(encoding='utf-8')
-    if re.search(r'(?:(?<![A-Za-z])[A-Za-z]:[\\/](?!/)|file://)',text):issues.append(f'{md.relative_to(ROOT)}: absolute local path')
-    targets=re.findall(r'\]\(([^)]+)\)',text)+re.findall(r'^\[[^\]]+\]:\s*(\S+)',text,re.M)
-    for target in targets:
-        target=target.strip('<>')
-        if target.startswith(('mailto:','#')):continue
-        if target.startswith(('https://','http://')):
-            m=re.match(r'https://github.com/([^/]+/[^/]+)/blob/([0-9a-f]{40})/([^#]+)(?:#L(\d+)(?:-L(\d+))?)?$',target,re.I)
-            if not m:
-                m=re.match(r'https://gitlab.com/([^/]+/[^/]+)/-/blob/([0-9a-f]{40})/([^#]+)(?:#L(\d+)(?:-L(\d+))?)?$',target,re.I)
-            gist=False
-            if not m:
-                m=re.match(r'https://gist.github.com/([^/]+/[^/]+)/([0-9a-f]{40})#file-(.*?)(?:-L(\d+)(?:-L(\d+))?)?$',target,re.I)
-                gist=bool(m)
-            if not m:continue
-            repo,rev,file,start,end=m.groups(); file=unquote(file)
-            p=by_repo_rev.get((repo.lower(),rev))
-            if not p:unknown_sources.add(target);continue
-            if gist:
-                root=ROOT.parent/p['category']/p['name']
-                candidate=next((f for f in root.iterdir() if f.is_file() and re.sub(r'[^a-z0-9-]','-',f.name.lower())==file),None)
-                if candidate:file=candidate.name
-                else:issues.append(f'{md.relative_to(ROOT)}: unresolved gist file anchor {target}');continue
-            local=ROOT.parent/p['category']/p['name']/file
-            if not local.is_file():issues.append(f'{md.relative_to(ROOT)}: missing source file {p["id"]}/{file}')
-            else:
-                sources[p['id']].add(file)
-                if start:
-                    count=len(local.read_bytes().splitlines())
-                    if not(1<=int(start)<=int(end or start)<=count):issues.append(f'{md.relative_to(ROOT)}: invalid lines {target} (file {count} lines)')
-                checked_anchors+=1
-            continue
-        path=(md.parent/unquote(target.split('#')[0])).resolve()
-        if not path.exists():issues.append(f'{md.relative_to(ROOT)}: broken link {target}')
-        checked_links+=1
+EXCLUDED = ("spec/archive/", "spec/analyses/history/", "spec/conversations/", "spec/conversation-archive/", "spec/.conversations/")
+FULL_SHA = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})", re.I)
+MAX_JSON = 32_000_000
+# Historical cited HTML blob 62dd126b:index.html is 6,271,350 bytes; retain an explicit 8 MiB ceiling.
+MAX_BLOB = 8_388_608
 
-for p in P:
-    if not (BASE/p['report']).is_file():issues.append('missing report '+p['id'])
-cats=set(p['category'] for p in P)
-for c in cats:
-    if not (BASE/'categories'/f'{c}.md').is_file():issues.append('missing category '+c)
 
-def check_git(item):
-    id,files=item;p=by_id[id];local=ROOT.parent/p['category']/p['name']
-    cmd=['git','-c','safe.directory='+local.as_posix(),'-C',str(local),'diff','--no-ext-diff','--name-only',p['revision'],'--',*sorted(files)]
-    r=subprocess.run(cmd,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=90)
-    if r.returncode:return id+': git verification failed '+r.stderr.strip()
-    if r.stdout.strip():return id+': cited source differs from pinned commit: '+r.stdout.strip().replace('\n',', ')
-    return None
-with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-    issues += [x for x in pool.map(check_git,sources.items()) if x]
+def read_json(path: Path):
+    if path.stat().st_size > MAX_JSON:
+        raise ValueError(f"JSON input exceeds limit: {path.name}")
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
-coverage=json.loads((BASE/'data/coverage.json').read_text(encoding='utf-8'))
-for p in coverage:
-    for topic in p['topics']:
-        path=BASE/f'{topic}.md'
-        if not path.exists():issues.append(f'{p["id"]}: missing topic {topic}')
-        elif p['report'] not in path.read_text(encoding='utf-8'):issues.append(f'{p["id"]}: not linked from {topic}')
 
-result={'review_date':'2026-10-04','projects':len(P),'categories':len(cats),'markdown_documents':len(list(BASE.rglob('*.md'))),'relative_links_checked':checked_links,'pinned_source_links_checked':checked_anchors,'repositories_with_cited_files_checked':len(sources),'unique_cited_files':sum(map(len,sources.values())),'unmapped_external_source_links':sorted(unknown_sources),'issues':issues,'limits':['No runtime/model benchmarks or repository tests executed.','GitHub reachability and public availability of every pinned commit were not checked.','Link/source consistency checks do not validate semantic correctness of every conclusion.']}
-(BASE/'data/validation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-print(json.dumps(result,ensure_ascii=False,indent=2))
-raise SystemExit(bool(issues))
+def identity(value: str) -> str:
+    parsed = urlparse(value)
+    path = parsed.path.rstrip("/")
+    if path.endswith(".git"):
+        path = path[:-4]
+    return parsed.hostname.lower() + path.lower() if parsed.hostname else value.lower()
+
+
+def git(repo: Path, *args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        ["git", "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
+         "-c", "core.hooksPath=/dev/null", "-C", str(repo), *args],
+        capture_output=True, timeout=30,
+    )
+
+
+def active_markdown(root: Path):
+    return sorted(path for path in (root / "spec").rglob("*.md")
+                  if not any(path.relative_to(root).as_posix().startswith(prefix) for prefix in EXCLUDED))
+
+
+def pin(target: str):
+    parsed = urlparse(target)
+    path = unquote(parsed.path).strip("/")
+    pattern = r"([^/]+/[^/]+)/blob/([0-9a-f]{40}|[0-9a-f]{64})/(.+)"
+    gist = parsed.hostname == "gist.github.com"
+    if parsed.hostname == "gitlab.com":
+        pattern = r"([^/]+/[^/]+)/-/blob/([0-9a-f]{40}|[0-9a-f]{64})/(.+)"
+    elif gist:
+        match = re.fullmatch(r"([^/]+/[^/]+)/([0-9a-f]{40}|[0-9a-f]{64})", path, re.I)
+        if not match or not parsed.fragment.startswith("file-"):
+            return None
+        fragment = re.fullmatch(r"file-(.*?)(?:-L(\d+)(?:-L(\d+))?)?", parsed.fragment)
+        if not fragment:
+            return None
+        file, start, end = fragment.groups()
+        repo, revision = match.groups()
+        return parsed.hostname + "/" + repo.lower(), revision, file, start, end, True
+    elif parsed.hostname != "github.com":
+        return None
+    match = re.fullmatch(pattern, path, re.I)
+    if not match:
+        return None
+    repo, revision, file = match.groups()
+    fragment = re.fullmatch(r"L(\d+)(?:-L(\d+))?", parsed.fragment)
+    start, end = fragment.groups() if fragment else (None, None)
+    return parsed.hostname + "/" + repo.lower(), revision, file, start, end, False
+
+
+def headings(text: str):
+    seen = collections.Counter()
+    values = set(re.findall(r'(?:id|name)=["\']([^"\']+)["\']', text))
+    for heading in re.findall(r"^#{1,6}\s+(.+?)\s*#*\s*$", text, re.M):
+        heading = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", heading)
+        slug = re.sub(r"[^\w\s-]", "", heading.lower()).replace(" ", "-")
+        number = seen[slug]
+        seen[slug] += 1
+        values.add(slug + (f"-{number}" if number else ""))
+    return values
+
+
+def validate(root: Path, links_only: bool = False):
+    base = root / "spec"
+    inventory = read_json(base / "data/inventory.json")
+    coverage = read_json(base / "data/coverage.json")
+    state_path = base / "analyses/state.json"
+    state = read_json(state_path) if state_path.exists() else {"records": []}
+    git_state_path = root / ".cache/research/git-state.json"
+    observed = read_json(git_state_path) if git_state_path.exists() else {"repositories": [], "config": {"gitCache": ".cache/git"}}
+    if len(inventory) > 10000 or len(observed["repositories"]) > 10000:
+        raise ValueError("Repository census exceeds limit")
+    cache = (root / observed.get("config", {}).get("gitCache", ".cache/git")).resolve()
+    by_id = {row["id"]: row for row in state["records"]}
+    candidates = collections.defaultdict(set)
+    rows_by_identity = collections.defaultdict(list)
+    rows_by_id = {row["id"]: row for row in observed["repositories"]}
+    for row in observed["repositories"]:
+        rows_by_identity[identity(row["url"])].append(row)
+        candidates[identity(row["url"])].add(row["path"])
+    for old in inventory:
+        record = by_id.get(old["id"])
+        identities = [old["github"]]
+        if record:
+            identities += [record["url"], *[value for value in record["aliases"] if value.startswith("https://")]]
+        matches = [rows_by_id[old["id"]]] if old["id"] in rows_by_id else []
+        for source in identities:
+            matches += rows_by_identity.get(identity(source), [])
+        if record:
+            matches += [rows_by_id[value] for value in record["aliases"] if value in rows_by_id]
+        for source in identities:
+            for row in matches:
+                candidates[identity(source)].add(row["path"])
+    issues, unknown, source_tasks = [], set(), collections.defaultdict(list)
+    checked_links = 0
+    documents = active_markdown(root)
+    for md in documents:
+        text = md.read_text(encoding="utf-8-sig")
+        searchable = re.sub(r"^```[^\n]*\n[\s\S]*?^```\s*$", "", text, flags=re.M)
+        targets = re.findall(r"\]\((<[^>]+>|[^)]+)\)", searchable) + re.findall(r"^\[[^\]]+\]:\s*(\S+)", searchable, re.M)
+        for raw_target in targets:
+            target = raw_target.strip("<>")
+            label = md.relative_to(root).as_posix()
+            if target.startswith("mailto:"):
+                continue
+            if target.startswith(("https://", "http://")):
+                anchor = pin(target)
+                if anchor:
+                    key, revision, file, start, end, gist = anchor
+                    if key not in candidates:
+                        unknown.add(target)
+                    elif not links_only:
+                        source_tasks[(key, revision, file, gist)].append((label, target, start, end))
+                continue
+            local, _, fragment = target.partition("#")
+            path = (md.parent / unquote(local)).resolve() if local else md
+            if not path.is_relative_to(root):
+                issues.append(f"{label}: link escapes project: {target}")
+            elif not path.exists():
+                issues.append(f"{label}: broken link {target}")
+            elif fragment and path.suffix == ".md" and unquote(fragment) not in headings(path.read_text(encoding="utf-8-sig")):
+                issues.append(f"{label}: missing heading anchor {target}")
+            checked_links += 1
+    for row in inventory:
+        if not (base / row["report"]).is_file():
+            issues.append("missing original report " + row["id"])
+    for category in {row["category"] for row in inventory}:
+        if not (base / "categories" / f"{category}.md").is_file():
+            issues.append("missing category " + category)
+    topic_records = state["records"] or [{**row, "report": "spec/" + row["report"]} for row in coverage]
+    for row in topic_records:
+        for topic in row["topics"]:
+            path = base / f"{topic}.md"
+            if not path.exists():
+                issues.append(f'{row["id"]}: missing topic {topic}')
+            elif row["report"].removeprefix("spec/") not in path.read_text(encoding="utf-8-sig"):
+                issues.append(f'{row["id"]}: not linked from {topic}')
+
+    def check_source(item):
+        (key, revision, requested, gist), references = item
+        errors = []
+        for location in sorted(candidates[key]):
+            repo = (root / location).resolve()
+            if not repo.is_relative_to(cache):
+                errors.append("observed cache path escapes configured root")
+                continue
+            try:
+                if git(repo, "cat-file", "-e", revision + "^{commit}").returncode:
+                    errors.append("pinned commit is unavailable; shallow or missing history requires explicit fetch")
+                    continue
+                file = requested
+                if gist:
+                    tree = git(repo, "ls-tree", "--name-only", revision)
+                    if tree.returncode or len(tree.stdout) > MAX_BLOB:
+                        errors.append("gist tree unavailable or exceeds limit")
+                        continue
+                    names = [name for name in tree.stdout.decode("utf-8").splitlines()
+                             if re.sub(r"[^a-z0-9-]", "-", name.lower()) == requested]
+                    if len(names) != 1:
+                        errors.append("gist file anchor missing or ambiguous")
+                        continue
+                    file = names[0]
+                if file.startswith("/") or ".." in file.split("/") or "\0" in file:
+                    errors.append("invalid source blob path")
+                    continue
+                object_name = revision + ":" + file
+                size = git(repo, "cat-file", "-s", object_name)
+                if size.returncode or not size.stdout.strip().isdigit() or int(size.stdout) > MAX_BLOB:
+                    errors.append(f"pinned blob unavailable or exceeds {MAX_BLOB} byte verification limit")
+                    continue
+                content = git(repo, "show", "--no-ext-diff", "--no-textconv", object_name)
+                if content.returncode or len(content.stdout) != int(size.stdout):
+                    errors.append("pinned blob read failed or size changed")
+                    continue
+                count = len(content.stdout.splitlines())
+                invalid = [f"{document}: invalid pinned lines {target} (blob {count} lines)"
+                           for document, target, start, end in references
+                           if start and not 1 <= int(start) <= int(end or start) <= count]
+                return {"source": key, "revision": revision, "path": file,
+                        "sha256": hashlib.sha256(content.stdout).hexdigest(), "lines": count,
+                        "references": len(references)}, invalid
+            except (OSError, UnicodeError, subprocess.TimeoutExpired):
+                errors.append("Git inspection failed or exceeded 30-second deadline")
+        return None, [f'{references[0][0]}: {key}@{revision}/{requested}: {"; ".join(sorted(set(errors)))}']
+
+    blobs = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+        for blob, errors in pool.map(check_source, source_tasks.items()):
+            issues.extend(errors)
+            if blob:
+                blobs.append(blob)
+    result = {
+        "validatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "mode": "links-only" if links_only else "active-links-and-pinned-git-blobs",
+        "originalProjects": len(inventory), "analysisRecords": len(topic_records),
+        "markdownDocuments": len(documents), "relativeLinksChecked": checked_links,
+        "pinnedSourceLinksChecked": sum(blob["references"] for blob in blobs),
+        "uniquePinnedBlobsChecked": len(blobs), "blobs": sorted(blobs, key=lambda row: (row["source"], row["revision"], row["path"])),
+        "unmappedExternalSourceLinks": sorted(unknown), "issues": sorted(set(issues)),
+        "excludedImmutablePrefixes": EXCLUDED,
+        "bounds": {"sourceBlobBytes": MAX_BLOB, "jsonBytes": MAX_JSON, "gitTimeoutSeconds": 30, "concurrency": 8},
+        "limits": ["Exact historical Git objects are checked; current working-tree equality is neither required nor inferred.",
+                   "Unmapped external source links are explicitly unverified; no network fallback or source substitution occurs.",
+                   "Link and line-count checks do not establish semantic correctness, task quality or upstream public reachability."],
+    }
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
+    parser.add_argument("--links-only", action="store_true")
+    args = parser.parse_args()
+    root = args.root.resolve()
+    result = validate(root, args.links_only)
+    output = root / "spec/analyses/validation.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({key: value for key, value in result.items() if key != "blobs"}, ensure_ascii=False, indent=2))
+    raise SystemExit(bool(result["issues"]))
+
+
+if __name__ == "__main__":
+    main()
+

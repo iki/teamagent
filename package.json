@@ -16,6 +16,7 @@
     "imports:setup": "bun app/cli/index.ts memory setup",
     "benchmark:memory": "bun app/benchmark/index.ts",
     "benchmark:extractors": "bun app/benchmark/extractors.ts",
+    "benchmark:repomix": "bun app/research/repomix-benchmark.ts",
     "build:web": "bun app/web/build.ts",
     "build:desktop": "bun app/desktop/build.ts build",
     "test:web": "bun app/check/integration.ts web",
@@ -28,7 +29,13 @@
     "step:check": "bun app/check/index.ts --format",
     "review:check": "bun app/check/index.ts",
     "conversations:record": "bun app/conversations/record.ts",
-    "hooks:install": "bun app/hooks/install.ts"
+    "hooks:install": "bun app/hooks/install.ts",
+    "sources:sync": "bun app/research/index.ts sources",
+    "repos:sync": "bun app/research/index.ts repos",
+    "repos:status": "bun app/research/index.ts status",
+    "analysis:sync": "bun app/research/index.ts analysis",
+    "resources:sync": "bun app/research/index.ts texts",
+    "research:sync": "bun app/research/index.ts sync"
   },
   "dependencies": {
     "@earendil-works/pi-agent-core": "1.0.1",
