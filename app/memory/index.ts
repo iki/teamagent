@@ -89,7 +89,7 @@ const decode = <A>(
 };
 const sha256 = (bytes: Uint8Array | string): string =>
   createHash("sha256").update(bytes).digest("hex");
-const manifestHash = (files: readonly MemoryFile[], provenance: Provenance): string =>
+export const memoryManifestHash = (files: readonly MemoryFile[], provenance: Provenance): string =>
   sha256(
     JSON.stringify({
       files: files.map((file) => ({
@@ -376,7 +376,7 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
       if (
         result.sourceId !== sourceId ||
         result.workspaceId !== workspaceId ||
-        result.contentHash !== manifestHash(result.files, result.provenance) ||
+        result.contentHash !== memoryManifestHash(result.files, result.provenance) ||
         result.files.reduce((sum, file) => sum + file.size, 0) > memoryLimits.captureBytes
       )
         return fail("integrity", "Stored source version failed manifest verification.");
@@ -493,7 +493,7 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
           if (current === undefined)
             return fail("integrity", "Capture reported unchanged without an existing source.");
           const version = sourceVersion(current);
-          if (manifestHash(version.files, result.provenance) !== version.contentHash)
+          if (memoryManifestHash(version.files, result.provenance) !== version.contentHash)
             return fail(
               "integrity",
               "An unchanged capture cannot alter parser, extraction policy or repository provenance.",
@@ -552,7 +552,7 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
           !(files.length === 0 && (result.kind === "folder" || result.kind === "git"))
         )
           return fail("integrity", "A capture must preserve original source bytes.");
-        const contentHash = manifestHash(files, result.provenance);
+        const contentHash = memoryManifestHash(files, result.provenance);
         const previous = current === undefined ? undefined : sourceVersion(current);
         if (
           previous !== undefined &&

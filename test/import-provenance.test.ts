@@ -348,7 +348,11 @@ describe("source extraction provenance", () => {
       },
     });
     try {
-      const capture = createSourceCapture({ allowPrivateNetwork: true, extractor: profile() });
+      const capture = createSourceCapture({
+        allowPrivateNetwork: true,
+        extractor: profile(),
+        readPreviousFile: async () => new TextEncoder().encode("Raw source evidence"),
+      });
       const input = request(new URL("file.txt", server.url).href, { kind: "url", convert: false });
       const first = captured(await Effect.runPromise(capture(input)));
       const prior = previous(first);

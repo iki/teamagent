@@ -59,7 +59,29 @@ export const ExtractionProvenanceSchema = Schema.Struct({
   ),
 });
 export type ExtractionProvenance = typeof ExtractionProvenanceSchema.Type;
+export const HttpAssetProvenanceSchema = Schema.Struct({
+  path: MemoryPathSchema,
+  locator: LocatorSchema,
+  origin: LocatorSchema,
+  etag: Schema.NullOr(Schema.String.check(Schema.isMaxLength(2_048))),
+  lastModified: Schema.NullOr(Schema.String.check(Schema.isMaxLength(128))),
+});
+export type HttpAssetProvenance = typeof HttpAssetProvenanceSchema.Type;
 export const ProvenanceSchema = Schema.Struct({
+  httpAssets: Schema.optional(
+    Schema.Array(HttpAssetProvenanceSchema).check(
+      Schema.isMaxLength(memoryLimits.captureFiles),
+      Schema.makeFilter((assets: readonly HttpAssetProvenance[]) => {
+        const identities = new Set<string>();
+        for (const asset of assets) {
+          const identity = JSON.stringify([asset.path, asset.locator]);
+          if (identities.has(identity)) return "HTTP asset identities must be distinct";
+          identities.add(identity);
+        }
+        return undefined;
+      }),
+    ),
+  ),
   etag: Schema.NullOr(Schema.String.check(Schema.isMaxLength(2_048))),
   lastModified: Schema.NullOr(Schema.String.check(Schema.isMaxLength(128))),
   repositoryCommit: Schema.NullOr(Schema.String.check(Schema.isPattern(/^[a-f0-9]{40,64}$/))),

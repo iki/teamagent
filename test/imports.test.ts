@@ -258,9 +258,11 @@ describe("source acquisition and conversion", () => {
         ),
       );
       const checked = await Effect.runPromise(
-        capture(
-          request(`${server.url.href}plain.txt`, { convert: false, previous: previous(initial) }),
-        ),
+        createSourceCapture({
+          allowPrivateNetwork: true,
+          readPreviousFile: async (_version, file) =>
+            initial.files.find((item) => item.path === file.path)?.bytes,
+        })(request(`${server.url.href}plain.txt`, { convert: false, previous: previous(initial) })),
       );
       expect(checked.status).toBe("unchanged");
       expect(conditionalRequests).toBe(1);

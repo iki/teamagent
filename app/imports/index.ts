@@ -11,7 +11,9 @@ import {
   type SourceCapture,
   type ExtractorProfile,
   type ExtractionProvenance,
+  type HttpAssetProvenance,
 } from "@/memory";
+import { readPreviousFile, type PreviousFileReader } from "./cache.ts";
 import { convertDocument, parserVersion } from "./documents.ts";
 import { extractorProfileIdentity } from "./extractors.ts";
 import { authorizeLocal, collectFolder, originalName, readLocalFile } from "./files.ts";
@@ -20,6 +22,7 @@ import { contained, digest, importLimits, safeRelative, sourceMediaType } from "
 import { networkUrl, retrieveHttp } from "./network.ts";
 
 export interface CaptureOptions {
+  readonly readPreviousFile?: PreviousFileReader;
   readonly allowPrivateNetwork?: boolean;
   readonly allowedRoots?: readonly string[];
   readonly python?: string;
@@ -104,29 +107,58 @@ async function acquire(
   }
   if (kind === "url") {
     const previous = request.previous;
+    const originals = previous?.files.filter((file) => file.role === "original") ?? [];
+    const original = originals.length === 1 ? originals[0] : undefined;
+    const rawUnchanged =
+      !request.convert && previous?.files.length === 1 && original?.mediaType !== "text/html";
     const conditional =
-      !request.convert &&
       previous !== undefined &&
+      original !== undefined &&
+      original.origin !== null &&
       previous.provenance.extraction?.policy === provenance.extraction?.policy &&
-      previous.files.length === 1 &&
-      previous.files[0]?.mediaType !== "text/html";
+      options.readPreviousFile !== undefined;
     let response = await retrieveHttp(request.locator, {
       ...options,
       signal,
       ...(conditional
-        ? { etag: previous.provenance.etag, lastModified: previous.provenance.lastModified }
+        ? {
+            etag: previous.provenance.etag,
+            lastModified: previous.provenance.lastModified,
+            validatorUrl: original.origin,
+          }
         : {}),
     });
     if (response.unchanged) {
-      if (conditional)
-        return {
-          status: "unchanged",
-          provenance: {
-            ...previous.provenance,
-            etag: response.etag ?? previous.provenance.etag,
-            lastModified: response.lastModified ?? previous.provenance.lastModified,
-          },
+      if (
+        conditional &&
+        response.conditional &&
+        response.url === networkUrl(original.origin).href
+      ) {
+        const refreshed = {
+          ...previous.provenance,
+          etag: response.etag ?? previous.provenance.etag,
+          lastModified: response.lastModified ?? previous.provenance.lastModified,
         };
+        if (options.readPreviousFile === undefined)
+          throw new Error("Retained content reader is unavailable");
+        const bytes = await readPreviousFile(previous, original, options.readPreviousFile, signal);
+        if (rawUnchanged) return { status: "unchanged", provenance: refreshed };
+        return {
+          status: "captured",
+          kind,
+          locator: networkUrl(request.locator).href,
+          files: [
+            {
+              path: original.path,
+              role: "original",
+              mediaType: original.mediaType,
+              bytes,
+              origin: original.origin,
+            },
+          ],
+          provenance: { ...provenance, etag: refreshed.etag, lastModified: refreshed.lastModified },
+        };
+      }
       response = await retrieveHttp(request.locator, { ...options, signal });
       if (response.unchanged) throw new Error("Server returned 304 without usable prior content");
     }
@@ -192,15 +224,23 @@ async function acquire(
 async function imageLink(
   url: string,
   parent: CapturedFile,
+  prefix: string,
   request: CaptureRequest,
   capture: Extract<CaptureResult, { status: "captured" }>,
   options: CaptureOptions,
   signal: AbortSignal,
-): Promise<{ bytes: Uint8Array; mediaType: string; origin: string; extension: string }> {
+): Promise<{
+  bytes: Uint8Array;
+  mediaType: string;
+  origin: string;
+  extension: string;
+  http?: Omit<HttpAssetProvenance, "path">;
+}> {
   let bytes: Uint8Array;
   let origin = url;
   let name: string;
   let declared: string | undefined;
+  let http: Omit<HttpAssetProvenance, "path"> | undefined;
   if (capture.kind === "git" && new URL(url).hostname === "snapshot.invalid") {
     const path = decodeURIComponent(new URL(url).pathname).replace(/^[/]/, "");
     if (!safeRelative(path)) throw new Error("Invalid snapshot image path");
@@ -218,12 +258,60 @@ async function imageLink(
     bytes = (await readLocalFile(path, signal)).bytes;
     name = path;
   } else {
-    const response = await retrieveHttp(url, { ...options, signal });
-    if (response.unchanged) throw new Error("Image response has no content");
-    bytes = response.bytes;
+    const locator = networkUrl(url).href;
+    const previous = request.previous;
+    const candidate =
+      previous?.provenance.extraction?.policy === routingPolicy(request.convert, options.extractor)
+        ? previous.provenance.httpAssets?.find(
+            (asset) => asset.locator === locator && asset.path.startsWith(`${prefix}/assets/`),
+          )
+        : undefined;
+    const prior =
+      candidate === undefined
+        ? undefined
+        : previous?.files.find(
+            (file) =>
+              file.path === candidate.path &&
+              file.role === "image" &&
+              file.origin === candidate.origin,
+          );
+    const conditional =
+      candidate !== undefined && prior !== undefined && options.readPreviousFile !== undefined;
+    const response = await retrieveHttp(locator, {
+      ...options,
+      signal,
+      ...(conditional
+        ? {
+            etag: candidate.etag,
+            lastModified: candidate.lastModified,
+            validatorUrl: candidate.origin,
+          }
+        : {}),
+    });
+    if (response.unchanged) {
+      if (
+        !conditional ||
+        !response.conditional ||
+        previous === undefined ||
+        options.readPreviousFile === undefined ||
+        response.url !== networkUrl(candidate.origin).href
+      )
+        throw new Error("Image returned 304 without matching retained content");
+      bytes = await readPreviousFile(previous, prior, options.readPreviousFile, signal);
+      declared = prior.mediaType;
+    } else {
+      bytes = response.bytes;
+      declared = response.mediaType;
+    }
     origin = response.url;
     name = new URL(response.url).pathname;
-    declared = response.mediaType;
+    http = {
+      locator,
+      origin,
+      etag: response.etag ?? (response.unchanged ? (candidate?.etag ?? null) : null),
+      lastModified:
+        response.lastModified ?? (response.unchanged ? (candidate?.lastModified ?? null) : null),
+    };
   }
   const mediaType = sourceMediaType(name, bytes, declared);
   if (!mediaType.startsWith("image/")) throw new Error("Page image response is not an image");
@@ -233,6 +321,7 @@ async function imageLink(
     origin,
     mediaType,
     extension: /^\.[a-z0-9]{1,8}$/.test(extension) ? extension : ".img",
+    ...(http === undefined ? {} : { http }),
   };
 }
 
@@ -245,6 +334,7 @@ async function representations(
   const files = [...capture.files];
   const warnings = [...capture.provenance.warnings];
   const parsers = new Set<string>();
+  const httpAssets: HttpAssetProvenance[] = [];
   for (const original of capture.files) {
     signal.throwIfAborted();
     const prefix = `converted/${digest(original.path).slice(0, 24)}`;
@@ -321,7 +411,15 @@ async function representations(
           if (seen.has(link.reference)) continue;
           seen.add(link.reference);
           try {
-            const image = await imageLink(link.url, original, request, capture, options, signal);
+            const image = await imageLink(
+              link.url,
+              original,
+              prefix,
+              request,
+              capture,
+              options,
+              signal,
+            );
             const reference = `assets/${digest(image.bytes)}${image.extension}`;
             const path = `${prefix}/${reference}`;
             if (!files.some((file) => file.path === path))
@@ -333,9 +431,20 @@ async function representations(
                 origin: image.origin,
               });
             assertBudget(files);
+            if (
+              image.http !== undefined &&
+              !httpAssets.some(
+                (asset) => asset.path === path && asset.locator === image.http?.locator,
+              )
+            ) {
+              if (httpAssets.length >= importLimits.files)
+                throw new Error("HTTP asset validator budget exceeded");
+              httpAssets.push({ ...image.http, path });
+            }
             markdown = markdown.replaceAll(link.reference, reference);
-          } catch {
+          } catch (error) {
             signal.throwIfAborted();
+            if (error instanceof MemoryError) throw error;
             if (request.previous?.files.some((file) => file.role === "image"))
               throw new MemoryError({
                 code: "network",
@@ -405,7 +514,13 @@ async function representations(
   return {
     ...capture,
     files,
-    provenance: { ...capture.provenance, parserVersion: identity, extraction, warnings },
+    provenance: {
+      ...capture.provenance,
+      parserVersion: identity,
+      extraction,
+      warnings,
+      httpAssets,
+    },
   };
 }
 

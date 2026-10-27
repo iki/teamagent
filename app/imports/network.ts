@@ -55,6 +55,7 @@ export interface HttpResult {
   readonly etag: string | null;
   readonly lastModified: string | null;
   readonly unchanged: boolean;
+  readonly conditional: boolean;
 }
 
 async function responseBytes(response: IncomingMessage, signal: AbortSignal): Promise<Uint8Array> {
@@ -91,10 +92,12 @@ export async function retrieveHttp(
     allowPrivateNetwork?: boolean;
     etag?: string | null;
     lastModified?: string | null;
+    validatorUrl?: string;
   },
 ): Promise<HttpResult> {
   const signal = AbortSignal.any([options.signal, AbortSignal.timeout(importLimits.networkMs)]);
   let url = networkUrl(locator);
+  const validatorUrl = networkUrl(options.validatorUrl ?? locator).href;
   for (let redirect = 0; redirect <= importLimits.redirects; redirect += 1) {
     signal.throwIfAborted();
     const hostname = url.hostname.replace(/^\[|\]$/g, "");
@@ -111,9 +114,11 @@ export async function retrieveHttp(
       "accept-encoding": "identity",
       "user-agent": "TeamAgent-Import/1",
     };
-    if (redirect === 0 && options.etag) headers["if-none-match"] = options.etag;
-    else if (redirect === 0 && options.lastModified)
+    if (url.href === validatorUrl && options.etag) headers["if-none-match"] = options.etag;
+    else if (url.href === validatorUrl && options.lastModified)
       headers["if-modified-since"] = options.lastModified;
+    const conditional =
+      headers["if-none-match"] !== undefined || headers["if-modified-since"] !== undefined;
     const response = await new Promise<IncomingMessage>((resolve, reject) => {
       const request = (url.protocol === "https:" ? requestHttps : requestHttp)(
         url,
@@ -155,6 +160,7 @@ export async function retrieveHttp(
         etag,
         lastModified,
         unchanged: true,
+        conditional,
       };
     }
     if (status < 200 || status >= 300) {
@@ -168,6 +174,7 @@ export async function retrieveHttp(
       etag,
       lastModified,
       unchanged: false,
+      conditional,
     };
   }
   throw new Error("URL redirect limit exceeded");

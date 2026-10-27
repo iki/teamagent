@@ -89,11 +89,19 @@ async function createMemoryHost(options: MemoryHostOptions): Promise<MemoryApi> 
         [scope.workspaceRoot, ...(options.allowRoot ?? [])].map((root) => realpath(resolve(root))),
       )
     : undefined;
-  const memory = await Effect.runPromise(
+  const memory: MemoryApi = await Effect.runPromise(
     openMemory({
       dataDirectory: options.data,
       ...scope,
       capture: createSourceCapture({
+        readPreviousFile: async (version, file, signal) => {
+          signal.throwIfAborted();
+          const retained = await Effect.runPromise(
+            memory.read(version.sourceId, file.path, version.id),
+            { signal },
+          );
+          return retained.bytes;
+        },
         ...(allowedRoots === undefined ? {} : { allowedRoots }),
         ...(options.python === undefined ? {} : { python: options.python }),
         ...(extractor === undefined ? {} : { extractor }),

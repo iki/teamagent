@@ -61,10 +61,23 @@ are checked independently; checked DNS addresses are pinned for network access.
 
 `get` reuses an existing source identity, and `sync` checks its current input.
 Content hashes detect changed bytes even when filesystem timestamps are
-unreliable. HTTP validators can avoid downloading unchanged raw files. Pages
-and their images are rechecked so a changed image can create a version even if
-the HTML stayed the same. Git records the captured commit. A successful unchanged
-check updates freshness metadata without rewriting immutable retrieval evidence.
+unreliable. HTTP refresh uses ETag, or Last-Modified when no ETag is available,
+for the page/file and each captured HTTP image independently. Validators are
+sent only to the exact retained final URL after the current network policy and
+redirect checks. A 304 reuses retained bytes only after manifest identity, size
+and SHA-256 verification; missing or damaged bytes fail the refresh. Hosts that
+have no trusted retained-file reader use bounded full retrieval instead.
+
+An unchanged HTML response is parsed again from verified original bytes so its
+images are still revalidated. Image-only changes create a content version; a
+changed validator with identical bytes updates freshness metadata without
+rewriting the immutable version, retrieval time or source creation time. Servers
+without validators use bounded GET plus hashing. Optional bounded
+`provenance.httpAssets` stores each image's retained path, requested/final URL,
+ETag and Last-Modified in private source/export provenance. Older manifests
+remain readable and acquire asset validators on a later refresh. These locators
+may contain private query values: public research reports must not copy the
+provenance object or disclose complete URLs. Git records the captured commit.
 Parser changes and content changes can create a new version.
 
 Unsupported first-time builtin conversions preserve originals with warnings. Inspect
