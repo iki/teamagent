@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-25T13:01:45.335513+00:00",
+  "scope": "HeyGen, Fish and OmniVoice file speech adapters, setup guides and capability selection",
+  "runtime": {
+    "platform": "Windows",
+    "bun": "1.4.2",
+    "bunRevision": "744846f84",
+    "aube": "2.5.1",
+    "python": "3.12.15"
+  },
+  "checks": [
+    {
+      "command": "aube run --no-install step:check",
+      "exitCode": 0,
+      "testsPassed": 256,
+      "testsFailed": 0,
+      "testFiles": 36,
+      "testDurationSeconds": 175.43
+    },
+    {
+      "command": "aube run --no-install review:check",
+      "exitCode": 0,
+      "testsPassed": 256,
+      "testsFailed": 0,
+      "testFiles": 36,
+      "testDurationSeconds": 222.8
+    }
+  ],
+  "fixtures": {
+    "hostedServiceTests": 10,
+    "omniVoiceTests": 6,
+    "realPythonWorker": true,
+    "realModelPackages": false,
+    "pythonOverride": "TEAMAGENT_TEST_PYTHON",
+    "testPythonPath": ".cache/import-python/Scripts/python.exe",
+    "apiCalls": 0,
+    "voiceUploads": 0,
+    "modelDownloads": 0
+  },
+  "verified": [
+    "Strict TypeScript, type-aware lint and formatting",
+    "HeyGen credential-free bounded CDN downloads and pending enrollment",
+    "Fish fixed binary MessagePack and JSON voice-ID requests; private enrollment",
+    "Known model overrides; no hidden provider fallback/retry",
+    "Reference-transcript capability filtering before execution",
+    "OmniVoice explicit local loading, disabled ASR/preprocessing, Python socket denial, input/output validation and joined cancellation",
+    "CLI setup/help URLs and configuration examples without configuration execution"
+  ],
+  "limitations": [
+    "No live provider inference, voice enrollment, model quality or hardware compatibility test.",
+    "OmniVoice uses fake packages in the real Python protocol fixture; no actual Torch/OmniVoice inference.",
+    "Fish raw PCM is unsupported because hosted byte order remains unspecified.",
+    "Selection policy is configurable, not a measured global model ranking.",
+    "Tests were executed on Windows; other platform execution is unverified."
+  ],
+  "sourceEvidence": "spec/data/voice-backends-review-2026-10-25.json",
+  "implementationSha256": {
+    "lib/media/contracts.ts": "6d2f1a4462573552c826c37e98e19465ab9eb3830beec2fe7a5b5d8efef5df69",
+    "lib/media/selection.ts": "7bf5b5dcda59edcdbfe7132519e4446cdea1a4ec8138add11df1319e0ca84504",
+    "lib/media/setup.ts": "8f9e3f3584aff93903844c528549c591fd9306a29ed9b8ad9e08f0e1ab589706",
+    "lib/media/index.ts": "e00f4ddc5abbcd721017b5417450d4f08222e4c03e91fa4d8c9d79a52b91ea40",
+    "lib/media/cli.ts": "29e8fb82c80a0aa0fb85b195e521fdde257ccb61a966ce0e4c7503b6af29f5bb",
+    "app/media/config.ts": "e524a0c6b82a8313f27932fd692437506c4c50267f09cb21d92d7db8841f574a",
+    "app/media/catalog.ts": "820eb658bdc4cece5941b4694ac46b5aabe7ae44aab3f69b1d375f9998620f92",
+    "app/media/index.ts": "cc41f4ad9f2c2fad5a68722e3b185b38c214035782cfeef8e3c4ee8c01433a30",
+    "app/media/providers.ts": "b808b5d0eeb4b079d2e373d7ad9ea80629175dc315f37330f86b0cca172702ee",
+    "app/media/transport.ts": "ecb67596ad535596ea710d2bd5b42326e392b58ddc25edb7244745dca91e0fc3",
+    "app/media/heygen.ts": "524b8decfd71c9a0ca3a8f2a85b78683613bf19bdd5a61f735243d03a4668387",
+    "app/media/fish.ts": "0e335e759d4e0bc9700b21ffbda33d6ec42fd560d7f23671476c44ef6e0c095c",
+    "app/media/omnivoice.ts": "78c8247181f32edd1dd1ff05302b859c833a6f5ad8176300eda46f94285595a5",
+    "app/media/omnivoice-worker.py": "507d60e4178e9e4d9a38a4c17cfffb59b05382d82e95b36bdc5271cf69af6544",
+    "app/cli/index.ts": "39e38fbf7dc90ea68c60c621ca195bcf2b40e87c0a9704fb91b298c59bfcc091",
+    "app/cli/media.ts": "a5d26f167996f01b55808e205e38d1513cccbbb018dc28d2f7e15b50c7cf3810",
+    "test/media-domain.test.ts": "7cdff9603a708b8630b5fc05cfc5ba5973a02aa612f515c77a67feac3dd8e741",
+    "test/media-host.test.ts": "b45c8f9ebd9418bdd86aa63ee66c7f178f11ff15870212169bf2d95979656922",
+    "test/media-cli.test.ts": "bdae693eec31b55436f533f524e2f433727a3633f3ca196c01e57e55826a6eff",
+    "test/media-services.test.ts": "725fd225616ef2e4b09de6f504b10503edf04e567636454d580fa28eb49ad2b8",
+    "test/media-omnivoice.test.ts": "579eb716ab5ad35bf2c31c5637de35f66174c108f3806a1fe7587cddde6c9934"
+  }
+}

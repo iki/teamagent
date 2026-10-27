@@ -5,6 +5,13 @@ owns durable tasks/events; verified artifacts use content-addressed storage.
 The execution adapters are a built-in workspace inspection and the embedded Pi
 agent loop. Mobile remains deferred.
 
+Speech and media have portable libraries and CLI commands for file STT, TTS,
+reference voice synthesis, voice enrollment, audio conversion and bounded
+microphone capture. Automatic selection filters capabilities and ranks configured
+backends; backend/model/locality overrides remain explicit. Channel input adds
+bound envelopes, attachment evidence, durable receipts and speech event state.
+See the [runtime guide](spec/media-runtime.md), [channel analysis](spec/channel-input.md)
+and [media analysis](spec/media-processing.md).
 Source memory imports URLs, documents, images, folders and Git repositories,
 retains versions, and exposes retrieval through the CLI, MCP and a library API.
 See [memory and import commands](spec/memory-imports.md) for conversion and agent installation.
@@ -75,3 +82,5 @@ Aube owns dependencies; Bun runs scripts and tests. The installer registers this
 Each module exports its public API and CLI descriptor. [Module rules](spec/architecture/modules.md)
 enforce those entry points and dependency boundaries. [Reuse decisions](spec/architecture/reuse.md)
 record provenance and licensing. Further product work follows the [delivery roadmap](spec/roadmap.md).
+
+Research maintenance: [project settings, repository sync, incremental analysis, and text resources](spec/research-sync.md). Run `aube run --no-install research:sync` to process all stages; incomplete sources remain explicit in their reports. Repository identities live in [git-sources.json](git-sources.json), and analyzed revisions stay in [the review ledger](spec/analyses/README.md). A fresh checkout uses its own `.cache/git`; optional `.env.local` settings select external export imports and a different local cache.

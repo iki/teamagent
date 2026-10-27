@@ -1,0 +1,11 @@
+# Qwen hosted speech review
+
+Reviewed: 2026-10-25. Scope: Alibaba Cloud Model Studio's current Qwen-Audio service documentation. Related: [media processing](../media-processing.md), [models](../models.md). This is a service review without a reviewed Git commit; it does not analyze the distinct downloadable Qwen3-TTS implementation.
+
+The official [Qwen-Audio-3.1-TTS-Plus page](https://help.aliyun.com/en/model-studio/qwen-audio-3-1-tts-plus) identifies Alibaba Cloud Model Studio as inference provider, with streaming synthesis, instruction controls and voice cloning. It lists CNY 1.4/10,000 characters for Beijing and CNY 2.19/10,000 for Singapore, both 180 RPM. Preserve native currency and region. The recovered Astra notes quote USD figures; this review did not independently establish those account-specific dollar prices or a conversion basis.
+
+The [connection guide](https://help.aliyun.com/en/model-studio/qwen-audio-tts-model-access) and [voice list](https://help.aliyun.com/en/model-studio/qwen-audio-tts-voice-list) are the correct starting points for a future adapter. A region is part of identity: account, endpoint, voice resource, model availability and data handling must agree. Never relocate private samples automatically to another region merely because a model is unavailable.
+
+Adoption: evaluate after the new directly requested backends, especially for the target languages actually documented and tested. Keep cloud Qwen-Audio 3.1 and local Qwen3-TTS as separate catalog entries with separate provisioning, license and cost records. A permissive license on a downloadable repository cannot establish hosted service terms, or vice versa.
+
+No API request was sent and the service's complete enrollment/streaming wire contract was not validated here. The unspecified input limits in a model summary are unknowns, not unlimited permission. A later adapter needs exact request/response schemas, bounded streaming, scoped voice deletion and credential-free failure fixtures before adoption.

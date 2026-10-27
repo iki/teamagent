@@ -20,6 +20,8 @@ The product modules are:
 | `workspaces`   | Workspace identity and access contracts                             | None                                         |
 | `memory`       | Source acquisition ports, immutable evidence versions and retrieval | None                                         |
 | `integrations` | Passive agent discovery and installation contracts                  | None                                         |
+| `media`        | Speech/media requests, capability selection and processing ports    | None                                         |
+| `channels`     | Canonical input envelopes and ordered speech event state            | None                                         |
 | `tasks`        | Task lifecycle, attempts and execution contracts                    | `agents`, `artifacts`, `workspaces`          |
 | `harness`      | Shared transport/configuration schemas and module catalog           | `agents`, `artifacts`, `tasks`, `workspaces` |
 | `lint`         | Host-only development rules and module inspection                   | None                                         |
@@ -51,6 +53,28 @@ imports storage, daemon, UI or CLI implementations. `app/runtime` composes these
 adapters. `app/mcp` consumes only public domain contracts, with host grants
 already bound. MCP SDK and Zod imports are confined to this protocol adapter
 (and protocol tests); client applications cannot import these host layers.
+
+Media and channel domain modules have no cross-library dependencies. Their host
+adapters consume public contracts: `app/media` owns codecs, devices, configured
+workers and provider transports; `app/channels` owns its receipt ledger and
+attachment handling. Neither host imports the other's implementation. Runtime
+composition supplies the media/memory ports to channel ingestion. The narrow
+cross-host helper exceptions permit `app/media` to import the existing
+`app/imports/lifecycle.ts`, `app/imports/extractors.ts` and
+`app/imports/process.ts` worker/staging/environment helpers,
+and `app/channels` to import only `app/imports/lifecycle.ts` for scoped reads.
+These paths must resolve within the same application root and do not grant
+access to the complete acquisition pipeline. Client surfaces,
+storage, provider adapters, memory, import/integration and MCP adapters cannot
+import either media or channel host implementations.
+
+External package consumers use `teamagent/media` and `teamagent/channels` for
+portable APIs, or `teamagent/media/bun` and `teamagent/channels/bun` for explicit
+host construction. Repository consumers retain `@/media` and `@/channels` plus
+relative imports only at approved host composition boundaries. Bot transports
+and full-duplex audio remain separate integrations; module registration alone
+does not implement them. See [channel input](../channel-input.md) and
+[media processing](../media-processing.md) for the research and capability limits.
 
 ## Enforcement and its limits
 

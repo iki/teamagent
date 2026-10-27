@@ -22,6 +22,8 @@ import {
   HealthSchema,
 } from "@/harness";
 import { cli as lintCli } from "@/lint";
+import { cli as mediaCli, MediaError, mediaSetupHelp } from "@/media";
+import { cli as channelsCli, ChannelError } from "@/channels";
 import { cli as memoryCli, MemoryError } from "@/memory";
 import { cli as integrationsCli, IntegrationError } from "@/integrations";
 import { version } from "../../package.json";
@@ -32,6 +34,8 @@ import { readToken } from "../server/credentials.ts";
 import { catalogModels } from "../adapters/models.ts";
 import { runMemoryCommand } from "./memory.ts";
 import { runIntegrationCommand } from "./integrations.ts";
+import { runMediaCommand } from "./media.ts";
+import { runChannelCommand } from "./channels.ts";
 
 const catalog = [
   harnessCli,
@@ -41,6 +45,8 @@ const catalog = [
   artifactsCli,
   memoryCli,
   integrationsCli,
+  mediaCli,
+  channelsCli,
   lintCli,
 ] as const;
 type ModuleCommand<M extends (typeof catalog)[number] = (typeof catalog)[number]> =
@@ -53,13 +59,60 @@ const reporter = createConsola({
   ],
 });
 const flags = {
+  backend: { type: String, description: "Media backend ID or auto (default)" },
+  model: { type: String, description: "Explicit advertised media model" },
+  allowTraining: {
+    type: Boolean,
+    description:
+      "Allow known provider training permission for this invocation only; default false; unknown policy remains blocked",
+  },
+  similarity: {
+    type: String,
+    description: "HeyGen clone similarity: medium, high, extra_high, max",
+  },
+  expressivenessBoost: { type: Number, description: "HeyGen synthesis expressiveness from 0 to 1" },
+  withTimestamps: { type: Boolean, description: "Request supported provider speech timestamps" },
+  idempotencyKey: { type: String, description: "Stable clone enrollment idempotency key" },
+  textFormat: {
+    type: String,
+    description: "Explicit subtitle text format: srt (requires --text-file for synthesis)",
+  },
+  cursor: { type: String, description: "Opaque provider voice list cursor" },
+  timeoutMs: { type: Number, description: "Voice readiness wait timeout in milliseconds" },
+  pollIntervalMs: { type: Number, description: "Voice readiness polling interval in milliseconds" },
+  locality: { type: String, description: "Media location: any, local, remote" },
+  preference: { type: String, description: "Selection policy: balanced, quality, latency, cost" },
+  format: { type: String, description: "Output audio format" },
+  language: { type: String, description: "Speech/transcription/enrollment language hint" },
+  timestamps: { type: String, description: "Transcription timestamps: none, segment, word" },
+  diarization: { type: Boolean, description: "Require speaker labels" },
+  voice: { type: String, description: "Configured or enrolled voice ID" },
+  reference: { type: String, description: "Local reference recording for speech synthesis" },
+  referenceText: { type: String, description: "Reference recording transcript" },
+  voiceAuthorization: { type: String, description: "Optional voice authorization provenance" },
+  textFile: { type: String, description: "Read synthesis text from a bounded UTF-8 file" },
+  sampleRate: { type: Number, description: "Output audio sample rate" },
+  channels: { type: Number, description: "Output audio channel count" },
+  startSeconds: { type: Number, description: "Audio extraction start in seconds" },
+  durationSeconds: { type: Number, description: "Audio extraction or recording duration" },
+  device: { type: String, description: "Explicit FFmpeg microphone device" },
+  inputFormat: { type: String, description: "Capture driver: dshow, avfoundation, alsa, pulse" },
+  channel: {
+    type: String,
+    description: "Source channel label; CLI imports remain locally authenticated",
+  },
+  account: { type: String, description: "Bound channel account" },
+  conversation: { type: String, description: "Bound conversation ID" },
+  sender: { type: String, description: "Bound sender principal" },
+  messageId: { type: String, description: "Stable channel message ID for duplicate detection" },
+  session: { type: String, description: "Speech event session ID" },
   version: { type: Boolean, alias: "V", description: "Show version" },
   config: { type: String, alias: "C", description: "Explicit trusted configuration file" },
   data: { type: String, alias: "D", description: "Local state directory" },
   port: { type: Number, description: "Service port (0 selects a free port when serving)" },
   url: { type: String, description: "Running loopback service origin" },
   workspace: { type: String, description: "Registered workspace ID" },
-  name: { type: String, description: "Workspace display name" },
+  name: { type: String, description: "Workspace display name or voice enrollment name" },
   adapter: { type: String, description: "inspect or configured pi" },
   duration: { type: Number, description: "Task time limit in milliseconds (default 120000)" },
   turns: { type: Number, description: "Maximum model turns (default 8)" },
@@ -68,7 +121,11 @@ const flags = {
   output: { type: String, description: "Exclusive artifact export file path" },
   desktop: { type: Boolean, description: "Desktop sidecar mode (requires TEAMAGENT_TOKEN)" },
   root: { type: String, description: "Memory workspace or integration project directory" },
-  kind: { type: String, description: "Source kind: auto, url, file, folder or git" },
+  kind: {
+    type: String,
+    description:
+      "Memory: auto/url/file/folder/git; channels: envelope/text/audio/video/image/document",
+  },
   convert: { type: Boolean, description: "Convert source to Markdown and images (default true)" },
   sourceVersion: { type: String, description: "Immutable source version ID" },
   path: { type: String, description: "Path within the imported version" },
@@ -106,9 +163,10 @@ const parsed = cli({
   parameters: ["[module]", "[action]", "[arguments...]"],
   flags,
   strictFlags: true,
+  booleanFlagNegation: true,
   help: {
     version,
-    description: `Local agent work, shared across CLI, web and desktop.\n\n${commands.join("\n")}`,
+    description: `Local agent work, shared across CLI, web and desktop.\n\n${commands.join("\n")}\n\n${mediaSetupHelp}`,
     examples: [
       "teamagent harness serve",
       "teamagent workspaces add C:/work/project --name Project",
@@ -162,6 +220,110 @@ async function main() {
     "artifacts:show": ["config", "data", "url", "port"],
     "artifacts:export": ["config", "data", "url", "port", "output"],
     "lint:check": [],
+    "media:setup": [],
+    "media:backends": ["config"],
+    "media:plan": ["config", "backend", "model", "locality", "preference", "allowTraining"],
+    "media:inspect": ["config", "backend", "model", "locality", "preference", "allowTraining"],
+    "media:convert": [
+      "config",
+      "backend",
+      "model",
+      "locality",
+      "preference",
+      "allowTraining",
+      "output",
+      "format",
+      "sampleRate",
+      "channels",
+      "startSeconds",
+      "durationSeconds",
+    ],
+    "media:transcribe": [
+      "config",
+      "backend",
+      "model",
+      "locality",
+      "preference",
+      "allowTraining",
+      "language",
+      "timestamps",
+      "diarization",
+    ],
+    "media:synthesize": [
+      "config",
+      "backend",
+      "model",
+      "locality",
+      "preference",
+      "allowTraining",
+      "output",
+      "format",
+      "voice",
+      "reference",
+      "referenceText",
+      "voiceAuthorization",
+      "textFile",
+      "textFormat",
+      "language",
+      "expressivenessBoost",
+      "withTimestamps",
+    ],
+    "media:clone": [
+      "config",
+      "backend",
+      "model",
+      "locality",
+      "preference",
+      "allowTraining",
+      "name",
+      "voiceAuthorization",
+      "language",
+      "similarity",
+      "idempotencyKey",
+    ],
+    "media:record": [
+      "config",
+      "backend",
+      "model",
+      "locality",
+      "preference",
+      "allowTraining",
+      "device",
+      "inputFormat",
+      "durationSeconds",
+      "output",
+    ],
+    "media:voice-get": ["config", "backend"],
+    "media:voice-list": ["config", "backend", "cursor", "limit"],
+    "media:voice-wait": ["config", "backend", "timeoutMs", "pollIntervalMs"],
+    "media:voice-delete": ["config", "backend"],
+    "media:diagnose": ["config", "backend", "voice"],
+    "media:receipts": ["config"],
+    "media:receipt": ["config"],
+    "media:resume": ["config", "output"],
+    "media:import-text": ["textFormat"],
+    "channels:inspect": ["kind", "channel", "account", "conversation", "sender", "messageId"],
+    "channels:ingest": [
+      "config",
+      "data",
+      "root",
+      "python",
+      "kind",
+      "channel",
+      "account",
+      "conversation",
+      "sender",
+      "messageId",
+      "backend",
+      "model",
+      "locality",
+      "preference",
+      "language",
+      "timestamps",
+      "diarization",
+    ],
+    "channels:status": ["data", "channel", "account", "conversation", "sender"],
+    "channels:speech": ["session"],
     "memory:get": [
       "config",
       "data",
@@ -248,18 +410,29 @@ async function main() {
     )
       throw new Error(`--${name} is not supported by this command`);
   const positionalCount =
-    moduleName === "memory"
-      ? ["get", "sync", "show", "read", "search", "export", "delete"].includes(action)
+    moduleName === "media"
+      ? ["backends", "record", "voice-list", "diagnose", "receipts"].includes(action) ||
+        (action === "synthesize" && parsed.flags.textFile !== undefined)
+        ? 0
+        : 1
+      : moduleName === "channels"
         ? 1
-        : 0
-      : moduleName === "integrations"
-        ? action === "list"
-          ? 0
-          : 1
-        : ["add", "show", "cancel", "export"].includes(action) || moduleName === "artifacts"
-          ? 1
-          : 0;
-  if (args.length !== positionalCount || parsed._["--"].length > 0)
+        : moduleName === "memory"
+          ? ["get", "sync", "show", "read", "search", "export", "delete"].includes(action)
+            ? 1
+            : 0
+          : moduleName === "integrations"
+            ? action === "list"
+              ? 0
+              : 1
+            : ["add", "show", "cancel", "export"].includes(action) || moduleName === "artifacts"
+              ? 1
+              : 0;
+  const validArgumentCount =
+    moduleName === "media" && action === "setup"
+      ? args.length <= 1
+      : args.length === positionalCount;
+  if (!validArgumentCount || parsed._["--"].length > 0)
     throw new Error(`Expected ${positionalCount} positional argument(s); use --help`);
   if (moduleName === "harness" && action === "modules") {
     print(catalog.map((entry) => ({ ...entry, api: `@/${entry.name}` })));
@@ -276,6 +449,14 @@ async function main() {
   }
   if (moduleName === "agents" && action === "models") {
     print(catalogModels());
+    return;
+  }
+  if (moduleName === "media") {
+    await runMediaCommand(action, args[0], parsed.flags, print);
+    return;
+  }
+  if (moduleName === "channels") {
+    await runChannelCommand(action, args[0], parsed.flags, print);
     return;
   }
   const config = await Effect.runPromise(
@@ -474,8 +655,31 @@ async function main() {
   }
 }
 
+const mediaFailureReporter = createConsola({
+  reporters: [{ log: (entry) => process.stderr.write(`${entry.args.map(String).join(" ")}\n`) }],
+});
+
 await main().catch((error: unknown) => {
-  if (error instanceof MemoryError || error instanceof IntegrationError) {
+  if (error instanceof MediaError) {
+    mediaFailureReporter.error(
+      JSON.stringify({
+        error: {
+          code: error.code,
+          message: error.message,
+          ...(error.receiptId === undefined ? {} : { receiptId: error.receiptId }),
+          ...(error.outcome === undefined ? {} : { outcome: error.outcome }),
+          ...(error.diagnostic === undefined ? {} : { diagnostic: error.diagnostic }),
+        },
+      }),
+    );
+    process.exitCode = 1;
+    return;
+  }
+  if (
+    error instanceof MemoryError ||
+    error instanceof IntegrationError ||
+    error instanceof ChannelError
+  ) {
     reporter.error(`${error.code}: ${error.message}`);
     process.exitCode = 1;
     return;

@@ -76,7 +76,18 @@ await test("CLI help/version avoid config execution; strict flags and catalog st
     )(json(modules.stdout));
     assert.deepEqual(
       catalog.map((module) => module.name),
-      ["harness", "workspaces", "tasks", "agents", "artifacts", "memory", "integrations", "lint"],
+      [
+        "harness",
+        "workspaces",
+        "tasks",
+        "agents",
+        "artifacts",
+        "memory",
+        "integrations",
+        "media",
+        "channels",
+        "lint",
+      ],
     );
     for (const module of catalog) {
       assert.equal(module.api, `@/${module.name}`);

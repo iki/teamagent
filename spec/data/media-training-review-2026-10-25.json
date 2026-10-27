@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "checkedDate": "2026-10-25",
+  "scope": "Scoped public training-policy review; no account authentication, credential access, content upload or provider setting mutation",
+  "pathsRelativeTo": "project root",
+  "sourceAnalysis": {
+    "path": "../x-trigon/.cache/demo/v2/temp/voice-clone/heygen/MEDIA-TRAINING-ANALYSIS.txt",
+    "sha256": "db00321a34bf93b5aed1144d402334c49c28d6793891aa8264d73514de706d22",
+    "access": "read-only",
+    "status": "user-supplied analysis independently checked against official policy sources"
+  },
+  "policyReview": {
+    "reviewedAt": 1792886400000,
+    "expiresAt": 1795478400000,
+    "refresh": "explicit source review required; startup does not renew validity",
+    "binding": "Live authenticated account identity with nonsecret provider key identifier; exact scoped documentary evidence remains separately required.",
+    "maximumBindingLifetimeMs": 300000
+  },
+  "sources": [
+    {
+      "provider": "openai",
+      "report": "spec/projects/service--openai-speech.md",
+      "urls": [
+        "https://developers.openai.com/api/docs/guides/your-data"
+      ],
+      "sourceSha": null,
+      "policyRevision": null,
+      "review": "API default excludes training unless opted in; current account sharing cannot be inferred from a key."
+    },
+    {
+      "provider": "heygen",
+      "report": "spec/projects/service--heygen-voice.md",
+      "urls": [
+        "https://www.heygen.com/privacy",
+        "https://www.heygen.com/security"
+      ],
+      "sourceSha": null,
+      "policyUpdated": "2026-10-15",
+      "review": "Non-enterprise default permits improvement; Enterprise/opt-out exclusion needs account evidence. No free-model exemption established."
+    },
+    {
+      "provider": "elevenlabs",
+      "report": "spec/projects/service--elevenlabs-speech.md",
+      "urls": [
+        "https://elevenlabs.io/docs/help-center/legal/is-my-data-used-to-improve-eleven-labs-ai-models",
+        "https://elevenlabs.io/docs/eleven-api/resources/zero-retention-mode"
+      ],
+      "sourceSha": null,
+      "policyRevision": null,
+      "review": "Standard data-use default may improve models; Enterprise/prospective opt-out and clone-retention eligibility are distinct."
+    },
+    {
+      "provider": "fish",
+      "report": "spec/projects/external--fish-speech.md",
+      "urls": [
+        "https://fish.audio/terms/",
+        "https://fish.audio/enterprise-terms/"
+      ],
+      "sourceSha": null,
+      "policyUpdated": "2026-08-10",
+      "review": "Standard improvement permission versus eligible ZDR and retained-feature exceptions; paid-account acceptance may trigger Customer Agreement."
+    }
+  ],
+  "implementation": {
+    "portable": "lib/media/training.ts",
+    "hostMetadata": "app/media/training.ts",
+    "tests": "test/media-training.test.ts",
+    "proof": "Synthetic fixtures and assembled runtime checks are recorded separately; policy review is not a live account test.",
+    "unimplementedIdentityProviders": [
+      "openai",
+      "elevenlabs",
+      "fish"
+    ]
+  },
+  "limitations": [
+    "No live provider request or inference was run by this research task.",
+    "Mutable service pages expose no reviewed source commit; existing code baselines remain unchanged.",
+    "Document hashes are provenance, not authentication or proof that an asserted opt-out occurred.",
+    "Live identity verification does not establish training settings; trusted document review is separately needed.",
+    "No general privacy or licensing conclusion is inferred from a training exclusion."
+  ]
+}

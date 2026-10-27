@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-25T10:28:19.214Z",
+  "bun": "1.4.2",
+  "host": "win32",
+  "result": "passed",
+  "operations": [
+    "inspect WAV",
+    "convert WAV to FLAC",
+    "inspect FLAC"
+  ],
+  "input": {
+    "path": ".cache/media-smoke-3PRrYh/tone.wav",
+    "sha256": "78112ce72576feab43cdb556c28d1df4fd1e32fc23936cf5d4d896a0d5b03b63",
+    "sampleRate": 16000,
+    "durationSeconds": 1
+  },
+  "output": {
+    "path": ".cache/media-smoke-3PRrYh/outputs/tone.flac",
+    "mimeType": "audio/flac",
+    "sha256": "730319df3d750090846e61cb5cb9bdb444b733ba876491cbae2cf5b8d70f0161",
+    "sizeBytes": 14409
+  },
+  "ffprobeVersion": "9.0.2-full_build-www.gyan.dev",
+  "excluded": [
+    "microphone capture",
+    "live STT inference",
+    "live TTS inference",
+    "live voice cloning",
+    "audio playback",
+    "comparative quality/latency benchmarking"
+  ],
+  "verification": {
+    "completedAt": "2026-10-25T10:37:25.412Z",
+    "bun": "1.4.2",
+    "stepCheck": "passed",
+    "reviewCheck": "passed",
+    "testsPassed": 236,
+    "testsFailed": 0,
+    "testFiles": 34,
+    "activeDocuments": 1187,
+    "relativeLinksChecked": 9864,
+    "linkIssues": 0,
+    "linkValidation": "media-links-validation.json",
+    "sourceValidation": "media-source-validation.json"
+  }
+}

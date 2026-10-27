@@ -6,6 +6,9 @@ work in the [roadmap](roadmap.md).
 Source memory and lexical retrieval are available through their CLI, MCP and
 library interfaces; see the [memory/import contract](memory-imports.md).
 
+Speech/media processing and channel input are available through their CLI and
+library interfaces; see the [media and channel contract](media-runtime.md).
+
 ## Public modules
 
 | API              | Responsibility                                                                      | CLI commands                                                                                                |
@@ -18,6 +21,9 @@ library interfaces; see the [memory/import contract](memory-imports.md).
 | `@/lint`         | Host architecture rules and graph validation                                        | `check`                                                                                                     |
 | `@/memory`       | Versioned source acquisition, configured document extraction and evidence retrieval | `get`, `sync`, `list`, `show`, `read`, `search`, `export`, `delete`, `doctor`, `setup`, `extractors`, `mcp` |
 | `@/integrations` | Agent discovery and explicit skill/MCP installation                                 | `list`, `plan`, `install`                                                                                   |
+
+| `@/media` | Capability-aware speech/media processing | `setup`, `backends`, `plan`, `inspect`, `convert`, `transcribe`, `synthesize`, `clone`, `record`, `import-text`, `voice-get`, `voice-list`, `voice-wait`, `voice-delete`, `diagnose`, `receipts`, `receipt`, `resume` |
+| `@/channels` | Bound inputs, durable delivery receipts and speech state | `inspect`, `ingest`, `status`, `speech` |
 
 Every library's index explicitly exports its literal CLI descriptor. The CLI
 option map is exhaustive over the derived command union. Composition roots,

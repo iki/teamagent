@@ -1,0 +1,15 @@
+# OpenAI speech API training-policy review
+
+Reviewed: 2026-10-25. Scope: official direct-API data-use documentation and the harness policy boundary; no account inspection, paid call or model execution. Source commit and API policy revision are unavailable because the service documentation is mutable. Related: [media processing](../media-processing.md), [training policy](../media-training.md), [review ledger](../analyses/media-training-reviews.md).
+
+The [API data guide](https://developers.openai.com/api/docs/guides/your-data) states that API content is not used for model training unless the organization explicitly opts in. It separately describes abuse-monitoring retention and approved retention controls. A training exclusion is therefore not a promise that no copy or operational log exists. Endpoint eligibility and the organization's actual sharing configuration remain relevant.
+
+Adoption: keep direct OpenAI speech policy conditional until current account-specific sharing evidence matches an authenticated account and credential binding. The portable evaluator must not infer the account setting from an API key, successful authorization, a provider default or a model name. A user assertion can be recorded without becoming verified evidence. Expired or changed policy/account/route evidence blocks the exclusion.
+
+The current host policy resolver supplies fixed reviewed metadata, not live account verification. No OpenAI authenticated identity/sharing inspector was implemented by this research increment. Consequently, a configured account description alone cannot make the route eligible under the default non-training rule. This is a conservative harness decision, not a claim that OpenAI trains on ordinary API traffic.
+
+Keep the [runtime speech contract](../media-runtime.md) responsible for model availability, supported audio operations and provider request details. Reusing these policy conclusions for ChatGPT subscriptions, another host or a compatible proxy would require a separate review: the direct API's data guide is not evidence of their terms. No provider sharing setting was changed.
+
+## Public-source refresh 2026-10-27
+
+Reopened the [official API data guide](https://developers.openai.com/api/docs/guides/your-data); the scoped training conclusion above remains supported. No organization settings were inspected. The [refresh ledger](../analyses/media-refresh-2026-10-27.md) preserves the runtime review revision/expiry and the absence of an implemented account inspector.

@@ -26,6 +26,7 @@ const formatPaths = [
   "spec/harness.md",
   "spec/harness-verification.md",
   "spec/memory-imports.md",
+  "spec/media-runtime.md",
   "spec/benchmarks",
   "spec/benchmark-competitors.md",
   "skills/teamagent-memory",

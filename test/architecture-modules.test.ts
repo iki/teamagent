@@ -150,6 +150,78 @@ await test("parsed module dependencies and rendering boundaries accept interface
   const fixture = mkdtempSync(join(tmpdir(), "teamagent-module-imports-"));
   const fixtures = [
     {
+      path: "app/media/process.ts",
+      valid: 'export { processEnvironment } from "../imports/process.ts";',
+      invalid: 'export { processEnvironment } from "../../elsewhere/app/imports/process.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "lib/media/domain.ts",
+      valid: 'export { Schema } from "effect";',
+      invalid: 'export { Channels } from "@/channels";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "lib/channels/domain.ts",
+      valid: 'export { Schema } from "effect";',
+      invalid: 'export { Media } from "@/media";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/web/media.ts",
+      valid: 'export { Media } from "@/media";',
+      invalid: 'export { createMediaHost } from "../media/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/desktop/channels.ts",
+      valid: 'export { Channels } from "@/channels";',
+      invalid: 'export const load = () => import("../channels/index.ts");',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/media/lifecycle.ts",
+      valid: 'export { scopedHostPromise } from "../imports/lifecycle.ts";',
+      invalid: 'export { capture } from "../imports/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/media/staging.ts",
+      valid: 'export { removeExtractorStaging } from "../imports/extractors.ts";',
+      invalid: 'export { removeExtractorStaging } from "../imports/nested/extractors.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/media/channels.ts",
+      valid: 'export { Channels } from "@/channels";',
+      invalid: 'export { openChannelsHost } from "../channels/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/channels/media.ts",
+      valid: 'export { Media } from "@/media";',
+      invalid: 'export { createMediaHost } from "../media/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/channels/lifecycle.ts",
+      valid: 'export { scopedHostPromise } from "../imports/lifecycle.ts";',
+      invalid: 'export { removeExtractorStaging } from "../imports/extractors.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/storage/media.ts",
+      valid: 'export { Media } from "@/media";',
+      invalid: 'export { createMediaHost } from "../media/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
+      path: "app/imports/channels.ts",
+      valid: 'export { Channels } from "@/channels";',
+      invalid: 'export { openChannelsHost } from "../channels/index.ts";',
+      rule: "module-dependencies",
+    },
+    {
       path: "lib/memory/self-package.ts",
       valid: 'export { Schema } from "effect";',
       invalid: 'export { openMemoryHost } from "teamagent/memory/bun";',
@@ -300,7 +372,7 @@ await test("parsed module dependencies and rendering boundaries accept interface
       );
     assert.equal(
       (rejected.stdout + rejected.stderr).match(/teamagent\(module-dependencies\)/g)?.length,
-      12,
+      fixtures.filter((fixtureCase) => fixtureCase.rule === "module-dependencies").length,
     );
     assert.equal(
       (rejected.stdout + rejected.stderr).match(/teamagent\(safe-rendering\)/g)?.length,

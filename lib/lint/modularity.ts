@@ -175,6 +175,45 @@ function importProblem(file: string, source: string): string | undefined {
     ? posix.normalize(posix.join(posix.dirname(file), source))
     : source;
   const importedLayer = resolved.split("/app/")[1]?.split("/")[0];
+  const mediaOrChannels = layer === "media" || layer === "channels";
+  const importsMediaOrChannels = importedLayer === "media" || importedLayer === "channels";
+  if (
+    importsMediaOrChannels &&
+    ["web", "desktop", "storage", "adapters", "memory", "imports", "integrations", "mcp"].includes(
+      layer,
+    )
+  )
+    return `The ${layer} adapter cannot import the ${importedLayer} implementation; depend on a public library contract.`;
+  if (mediaOrChannels && importedLayer !== undefined && importedLayer !== layer) {
+    // Reuse only the existing scoped worker/staging utilities, not the acquisition pipeline.
+    const applicationRoot = `${file.split("/app/")[0]}/app`;
+    const sharedHostHelper =
+      importedLayer === "imports" &&
+      ((layer === "media" &&
+        ["lifecycle.ts", "extractors.ts", "process.ts"].some(
+          (name) => resolved === `${applicationRoot}/imports/${name}`,
+        )) ||
+        (layer === "channels" && resolved === `${applicationRoot}/imports/lifecycle.ts`));
+    if (
+      !sharedHostHelper &&
+      [
+        "web",
+        "desktop",
+        "server",
+        "cli",
+        "storage",
+        "memory",
+        "adapters",
+        "imports",
+        "integrations",
+        "mcp",
+        "runtime",
+        "media",
+        "channels",
+      ].includes(importedLayer)
+    )
+      return `The ${layer} adapter cannot import the ${importedLayer} implementation; depend on a public library contract.`;
+  }
   const forbidden =
     layer === "web" || layer === "desktop"
       ? [

@@ -1,0 +1,25 @@
+# Voice backend supplemental review ledger
+
+[Analysis workflow](README.md) · [Media processing](../media-processing.md) · [Evidence ledger](../data/voice-backends-review-2026-10-25.json)
+
+Reviewed 2026-10-25. Each report has one single-line item. This scoped increment covers three source repositories and eight hosted service/route reports; it does not advance the original managed repository baselines or replace the earlier speech/media ledger. Service pages do not expose a reviewed source commit, so API revision is explicitly unavailable. Astra is user-confirmed secondary context with a truncated 20,000-character retrieval; no listening or inference benchmarks were run.
+
+- [HeyGen Voice](https://developers.heygen.com/docs/models/heygen-voice) · [report](../projects/service--heygen-voice.md) · reviewed 2026-10-25 · API revision unavailable; mutable primary documentation · scope TTS variants, voice readiness and conflicting published prices.
+- [Fish Speech / Fish Audio](https://github.com/fishaudio/fish-speech) · [report](../projects/external--fish-speech.md) · reviewed 2026-10-25 · analyzed `541566932abbaebcb0a40e562a1f846738383f38`; commit date 2026-10-14T06:14:37Z; hosted API revision unavailable · scope local schema versus hosted MessagePack contract, model/license variants.
+- [Fish Audio Python SDK](https://github.com/fishaudio/fish-audio-python) · [report](../projects/external--fish-audio-python.md) · reviewed 2026-10-25 · analyzed `448150989781e6f91c3ca9f6cc59711a87df8130`; commit date 2026-07-31T09:41:11Z · scope reference types, playback buffering, cleanup and unresolved hosted PCM byte order.
+- [OmniVoice](https://github.com/k2-fsa/OmniVoice) · [report](../projects/external--omnivoice.md) · reviewed 2026-10-25 · analyzed `08be0b4ccbac3e13e374e86fbfead4b4cac343e2`; commit date 2026-08-24T03:03:01Z; model snapshot `c5fdb5ccb189668d56333f77ba2629f4cd7535f4` · scope canonical identity, offline dependency loading and separate code/weight/codec licenses.
+- [ElevenLabs](https://elevenlabs.io/pricing/api) · [report](../projects/service--elevenlabs-speech.md) · reviewed 2026-10-25 · API revision unavailable; mutable primary documentation · scope API pricing, model/voice compatibility and enrollment verification.
+- [Cartesia](https://docs.cartesia.ai/api-reference/tts/bytes) · [report](../projects/service--cartesia-speech.md) · reviewed 2026-10-25 · API revision unavailable; mutable primary documentation · scope versioned synthesis, plan-capacity costs and transport distinctions.
+- [Inworld](https://docs.inworld.ai/tts/synthesize-speech) · [report](../projects/service--inworld-speech.md) · reviewed 2026-10-25 · API revision unavailable; mutable primary documentation · scope authentication, transport/input limits and plan-sensitive pricing.
+- [Qwen-Audio](https://help.aliyun.com/en/model-studio/qwen-audio-3-1-tts-plus) · [report](../projects/service--qwen-speech.md) · reviewed 2026-10-25 · API revision unavailable; mutable primary documentation · scope regional cloud model identity and native-currency prices.
+- [MiniMax](https://platform.minimax.io/docs/api-reference/voice-cloning-clone) · [report](../projects/service--minimax-speech.md) · reviewed 2026-10-25 · API revision unavailable; mutable primary documentation · scope cloning lifecycle, expiration and speech/voice-resource charges.
+- [Mistral](https://docs.mistral.ai/models/voxtral-mini-tts-3-0) · [report](../projects/service--mistral-speech.md) · reviewed 2026-10-25 · API revision unavailable; model page release 2026-10-20 · scope preview status, language-coverage discrepancy and hosted pricing.
+- [fal / LiveKit hosting](https://fal.ai/models/heygen/heygen-voice) · [report](../projects/service--fal-speech.md) · reviewed 2026-10-25 · API revision unavailable; mutable primary documentation · scope separate hosted route, billing, voice identity and artifact lifecycle.
+
+## 2026-10-25 training and interoperability follow-up
+
+The [training-policy ledger](media-training-reviews.md) adds operation/account/host-specific findings for the implemented routes and preserves unknown policy for other candidates. It links the [operational policy](../media-training.md), user-reported Czech-to-English evidence and updated provider reports. The [runtime contract](../media-runtime.md) now covers passive disclosures, invocation opt-in, pre-upload authorization, HeyGen lifecycle and encrypted completed-generation recovery. The earlier pricing/source review above remains historical evidence; this follow-up is not a new listening benchmark or authenticated verification of the reported opt-out.
+
+## 2026-10-27 public-source refresh
+
+The [follow-up review](media-refresh-2026-10-27.md) rechecks the four implemented hosted providers' training-policy sources, HeyGen's current contract/pricing and Fish pricing/migration notice. It records HeyGen speech-to-speech as an unimplemented candidate and does not renew policy expiry or source-code baselines. Other service/price rows above retain their original dates; they were not silently marked refreshed. No provider account, audio generation or perceptual evaluation was performed.

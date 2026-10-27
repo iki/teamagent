@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "checkedDate": "2026-10-27",
+  "checkedAt": "2026-10-27T17:24:03Z",
+  "pathsRelativeTo": "project root",
+  "scope": "Public documentation refresh of four hosted training policies, HeyGen contracts/pricing and Fish pricing/migration; no authenticated account access or inference",
+  "method": "Opened primary pages and compared scoped conclusions against dated repository reports; not a byte-identical source diff",
+  "baseline": "spec/data/media-training-review-2026-10-25.json",
+  "report": "spec/analyses/media-refresh-2026-10-27.md",
+  "implementation": {
+    "changed": false,
+    "policyRevision": "media-provider-review/2026-10-25",
+    "policyReviewedDate": "2026-10-25",
+    "policyExpiryDate": "2026-11-24",
+    "accountSettingsVerified": false,
+    "providerMutations": false,
+    "reportedHeygenOptOut": "user-assertion; unchanged",
+    "preparedCzechToEnglishWorkflow": "unchanged; no input/output or delivery-evidence access by this refresh"
+  },
+  "sources": [
+    {
+      "provider": "openai",
+      "scope": "training-policy",
+      "url": "https://developers.openai.com/api/docs/guides/your-data",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "training-policy",
+      "url": "https://www.heygen.com/privacy",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "training-policy",
+      "url": "https://www.heygen.com/security",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "elevenlabs",
+      "scope": "training-policy",
+      "url": "https://elevenlabs.io/docs/help-center/legal/is-my-data-used-to-improve-eleven-labs-ai-models",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "elevenlabs",
+      "scope": "training-policy",
+      "url": "https://elevenlabs.io/docs/eleven-api/resources/zero-retention-mode",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "fish",
+      "scope": "training-policy",
+      "url": "https://fish.audio/terms/",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "fish",
+      "scope": "training-policy",
+      "url": "https://fish.audio/enterprise-terms/",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "contract",
+      "url": "https://developers.heygen.com/docs/api-key-permissions",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "contract",
+      "url": "https://developers.heygen.com/docs/models/heygen-voice",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "contract",
+      "url": "https://developers.heygen.com/docs/voices/heygen-voice-instant-clone",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "contract",
+      "url": "https://developers.heygen.com/docs/voices/heygen-voice-speech",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "contract",
+      "url": "https://developers.heygen.com/docs/voices/speech-to-speech",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "published-pricing",
+      "url": "https://www.heygen.com/models/heygen-voice-1",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "heygen",
+      "scope": "published-pricing",
+      "url": "https://www.heygen.com/blog/heygen-voice-turbo",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    },
+    {
+      "provider": "fish",
+      "scope": "published-pricing-and-migration",
+      "url": "https://docs.fish.audio/developer-guide/models-pricing/pricing-and-rate-limits",
+      "retrieval": "opened-public-primary-page",
+      "sourceSha": null,
+      "rawSnapshotRetained": false
+    }
+  ],
+  "findings": [
+    {
+      "topic": "training",
+      "result": "No evidence to change existing conditional classifications; actual account exclusions remain unverified."
+    },
+    {
+      "topic": "heygen-pricing",
+      "result": "Marketing standard/Turbo USD30/USD15 versus blog USD15/USD4 per million characters remains unresolved."
+    },
+    {
+      "topic": "heygen-speech-to-speech",
+      "result": "Separate unimplemented route preserves input words/timing; not a Czech-to-English translation contract."
+    },
+    {
+      "topic": "heygen-wav-alias",
+      "result": "Current guide still documents audio/wav; no upload or evidence overturning the reported same-bytes audio/x-wav interoperability fix."
+    },
+    {
+      "topic": "fish-s1-retirement",
+      "result": "Published retirement 2026-12-31 followed by upstream s2.1-pro substitution; route review required before retirement."
+    }
+  ],
+  "limitations": [
+    "Mutable public pages expose no reviewed source commit; null hashes are not fabricated snapshot evidence.",
+    "No account entitlement, sharing setting, Enterprise agreement, opt-out completion or inference quality was verified.",
+    "Other hosted candidates and local processing/source baselines were not re-audited.",
+    "One initial HeyGen instant-clone retrieval failed; following its official model-page link succeeded without source substitution.",
+    "Historical fixture and user-reported delivery evidence were preserved, not rerun or relabeled.",
+    "Policy implementation expiry is not renewed by this research record."
+  ],
+  "documents": [
+    {
+      "path": "spec/analyses/media-refresh-2026-10-27.md",
+      "sha256": "95fb805ee0ffe734a7a72ac85dbcf2324c1065956689e92c3dda82b817ab50fb"
+    },
+    {
+      "path": "spec/media-training.md",
+      "sha256": "98fd0528f3a2e04405b472d9cf56e5044e82ed624b968a1d4533be62d39f0f70"
+    },
+    {
+      "path": "spec/media-processing.md",
+      "sha256": "32ee35ef908831f26d85a4376decf0a17258dfcf0eb2fbb59b2fad6541fa47c7"
+    },
+    {
+      "path": "spec/media-runtime.md",
+      "sha256": "e3c16ee6d17ce6de31fb8bed706a4df5335a0e609421401cc9c23d08cf3c7777"
+    },
+    {
+      "path": "spec/media-setup.md",
+      "sha256": "73d0c48347355ee05eaf0fa4f60d7affa6bc42b38bfa480d51245c57ced0ec2d"
+    },
+    {
+      "path": "spec/projects/service--openai-speech.md",
+      "sha256": "1f2e2a402cf2d782124565ad69efe72f4bb14163bdbd33875ec708c12d291d20"
+    },
+    {
+      "path": "spec/projects/service--heygen-voice.md",
+      "sha256": "83357172a3886bb82b2204a0fc311bff81f03617fc8fd5329f0ce9a8a0d5660d"
+    },
+    {
+      "path": "spec/projects/service--elevenlabs-speech.md",
+      "sha256": "8fca72191aa807c602af76b43e4118894b8e862a237a78069b27147b3c0bf46a"
+    },
+    {
+      "path": "spec/projects/external--fish-speech.md",
+      "sha256": "8e496a29de804f98529ce1b05fce99c48b02fa4db0b254fa8d267bc76b17d70a"
+    },
+    {
+      "path": "spec/analyses/media-training-reviews.md",
+      "sha256": "46bf7a27984dd21cfee193d0a7438f2c5c7ef2216486c0e1cf6530d229a084ec"
+    },
+    {
+      "path": "spec/analyses/voice-backends-reviews.md",
+      "sha256": "d81a777f59454d3b2dd38a5733769d02cf74c04c4276f5b3a5b08bfabd7cb83e"
+    }
+  ]
+}
