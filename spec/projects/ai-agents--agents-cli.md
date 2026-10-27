@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [agents-cli](https://github.com/google/agents-cli); analyzed commit `2c3945901e8e5cc933fa94fa44d1d4aaf644b596`; commit date 2026-09-30T11:14:13Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--agents-cli.md).
+<!-- teamagent-analysis:end -->

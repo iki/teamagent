@@ -28,3 +28,7 @@ Adopt behind an adapter after protocol conformance and cancellation tests. Upstr
 ## Related directions
 
 [Models](../models.md) · [Agents](../agents.md) · [Decisions](../decisions.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `e8b579fd1a710753cfa97611b5cff6c3411b0825`; commit date 2026-10-03T00:57:43-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
+<!-- teamagent-analysis:end -->

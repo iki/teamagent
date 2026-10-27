@@ -1,0 +1,25 @@
+# warp
+
+Source: [warp](https://github.com/warpdotdev/warp) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `6398d1e96d56e6e81c561cc3ebfc612c783f7dae`; commit timestamp `2026-10-03T04:42:12Z`; 6,327 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/README.md)):
+
+> OpenAI is the founding sponsor of the new, open-source Warp repository, and the new agentic management workflows are powered by GPT models. Warp is an agentic development environment, born out of the terminal. Use Warp's built-in coding agent, or bring your own CLI agent (Claude Code, Codex, Gemini CLI, and others).
+
+Build/package evidence: [Cargo.toml](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/Cargo.toml); [app/Cargo.toml](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/app/Cargo.toml); [crates/ai/Cargo.toml](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/crates/ai/Cargo.toml); [crates/ai_types/Cargo.toml](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/crates/ai_types/Cargo.toml); [crates/app-installation-detection/Cargo.toml](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/crates/app-installation-detection/Cargo.toml)
+
+License evidence: [LICENSE-AGPL](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/LICENSE-AGPL); [LICENSE-MIT](https://github.com/warpdotdev/warp/blob/6398d1e96d56e6e81c561cc3ebfc612c783f7dae/LICENSE-MIT) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

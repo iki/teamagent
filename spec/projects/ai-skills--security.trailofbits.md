@@ -23,3 +23,7 @@ Curate this as an opt-in security and architecture-analysis bundle, retaining na
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [security.trailofbits](https://github.com/trailofbits/skills); analyzed commit `82fe8226252622fa807643bdca1710901198553a`; commit date 2026-09-28T14:06:37-04:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--security.trailofbits.md).
+<!-- teamagent-analysis:end -->

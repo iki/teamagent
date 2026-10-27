@@ -23,3 +23,7 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [framework-astro.delineas](https://github.com/delineas/astro-framework-agents); analyzed commit `3e32c91cc433424e162472b81afaa5e9324669bb`; commit date 2026-04-01T21:41:23+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--xx-2604-framework-astro.delineas.md).
+<!-- teamagent-analysis:end -->

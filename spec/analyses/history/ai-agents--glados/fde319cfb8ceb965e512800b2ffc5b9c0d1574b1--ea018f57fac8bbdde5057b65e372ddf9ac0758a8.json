@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--glados",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/dnhkng/GLaDOS",
+  "report": "spec/projects/ai-agents--glados.md",
+  "analyzedSha": "fde319cfb8ceb965e512800b2ffc5b9c0d1574b1",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-17T16:39:32+02:00",
+  "observedSha": "ea018f57fac8bbdde5057b65e372ddf9ac0758a8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ea018f57fac8bbdde5057b65e372ddf9ac0758a8",
+      "date": "2026-10-10T15:11:19+02:00",
+      "subject": "Merge pull request #224 from dnhkng/feat/webui-themes"
+    },
+    {
+      "sha": "2dfb76d4c8f7df1fb667612ad215c3f78291ab6a",
+      "date": "2026-10-10T15:08:45+02:00",
+      "subject": "Finish timing cards when input has no turn identifier"
+    },
+    {
+      "sha": "8dc2ecb3135baf95137da7e849722c23864451e0",
+      "date": "2026-10-10T15:07:11+02:00",
+      "subject": "Merge pull request #225 from dnhkng/refactor/mind-scheduler"
+    },
+    {
+      "sha": "34c3fa487034c75819974d88623b3a99a9dcd5e7",
+      "date": "2026-10-10T15:02:52+02:00",
+      "subject": "Isolate resume policy failures and preserve vision telemetry"
+    },
+    {
+      "sha": "00327832e0ef01318346dbf67129724fc210da5a",
+      "date": "2026-10-10T14:07:18+02:00",
+      "subject": "Document mind interfaces and scheduling policies"
+    },
+    {
+      "sha": "e5687ed903190374fbd646322e30b2f8e555be54",
+      "date": "2026-10-10T14:07:18+02:00",
+      "subject": "Centralize background mind timing and execution"
+    },
+    {
+      "sha": "4de8f7dadc34b2fa9622f6f4b8f03e0a7fcb5ca0",
+      "date": "2026-10-07T16:51:35+02:00",
+      "subject": "Document Jev-style speech routing with a Mermaid diagram"
+    },
+    {
+      "sha": "acfc149f33534628f9926727ea7574cb15f83fe0",
+      "date": "2026-10-07T16:12:36+02:00",
+      "subject": "Restore Portal quotes in the README"
+    },
+    {
+      "sha": "f749b08b4708f4272aeddf6bd7b96840f5201d6e",
+      "date": "2026-10-07T15:39:17+02:00",
+      "subject": "Integrate themed web console and presence screen"
+    },
+    {
+      "sha": "32d519aac9d342280423aa4e7695024757b2a1c7",
+      "date": "2026-10-07T15:36:13+02:00",
+      "subject": "Add turn identities to response telemetry"
+    },
+    {
+      "sha": "892d78c9fb9d579107d6e68bd4fe57782ea67092",
+      "date": "2026-10-07T13:13:09+02:00",
+      "subject": "Merge pull request #223 from dnhkng/cleanup/remove-fastvlm"
+    },
+    {
+      "sha": "91af936b433b426950f324bd6a99f5c9d52bbd3e",
+      "date": "2026-10-07T13:06:49+02:00",
+      "subject": "Validate AMD wheel interpreter before replacing runtime packages"
+    },
+    {
+      "sha": "ea3cfd0b50728e516471b410cd55f32af5319132",
+      "date": "2026-10-07T12:26:21+02:00",
+      "subject": "Rewrite README for current console, profiles and installation"
+    },
+    {
+      "sha": "c0eaaeb710bdd7817cea2f4b803e69ed052843d9",
+      "date": "2026-10-07T12:15:41+02:00",
+      "subject": "Preserve existing environments and OpenVINO audio acceleration"
+    },
+    {
+      "sha": "857a1f5820d344b64ddd154c36345d8aa8ee9fa7",
+      "date": "2026-10-07T11:59:56+02:00",
+      "subject": "Remove stale FastVLM assets and unused phoneme dictionary backup"
+    },
+    {
+      "sha": "58f04cf0526070329870eed57b41e91961ecbc58",
+      "date": "2026-10-07T11:45:35+02:00",
+      "subject": "Install ROCm-matched MIGraphX wheels and verify AMD sessions"
+    },
+    {
+      "sha": "4547bbd1399cbb3d83b640d405d66152a2bb8bd8",
+      "date": "2026-10-07T11:45:35+02:00",
+      "subject": "Select AMD ONNX providers for local audio models"
+    },
+    {
+      "sha": "bae24ec54333e28f780da9d5ccaecc8caa0eb9e0",
+      "date": "2026-10-07T11:39:25+02:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into cleanup/remove-fastvlm"
+    },
+    {
+      "sha": "4a8d6ea2fd39f9c01b398e29d6b34491e833dbc7",
+      "date": "2026-10-07T11:37:53+02:00",
+      "subject": "Merge pull request #222 from dnhkng/feat/websocket-audio"
+    },
+    {
+      "sha": "6537599c1d490f551135cd9e3df74cc3b584ec6a",
+      "date": "2026-10-07T11:07:30+02:00",
+      "subject": "Remove unused FastVLM backend and smoke test"
+    },
+    {
+      "sha": "e66436a240059a03e0015eee7d3031867bfa3f07",
+      "date": "2026-10-07T11:05:09+02:00",
+      "subject": "Retain standalone FastVLM artifacts for separate cleanup PR"
+    },
+    {
+      "sha": "d6acb947a05c36ffe40e80bf7efa69338ba0aa56",
+      "date": "2026-10-07T11:02:11+02:00",
+      "subject": "Apply webapp host and port overrides independently of enable flag"
+    },
+    {
+      "sha": "83d014df211878be2a851c7f84f13861c4575dba",
+      "date": "2026-10-07T10:43:09+02:00",
+      "subject": "Validate console hosts and clean up failed webapp startup"
+    },
+    {
+      "sha": "a734272859fb62afc6629b9dbce4ad4233961fe9",
+      "date": "2026-10-07T10:42:37+02:00",
+      "subject": "Use the configured conversation backend when vision is disabled"
+    },
+    {
+      "sha": "7315beee458225b1325950dc50a9c9412b8666bc",
+      "date": "2026-10-07T10:42:36+02:00",
+      "subject": "Drain final speculative deltas when the producer finishes"
+    },
+    {
+      "sha": "50a2713657d261ece1c409903d5f5027dfb92547",
+      "date": "2026-10-07T10:42:36+02:00",
+      "subject": "Make memory record locking portable on Windows"
+    },
+    {
+      "sha": "9545add16a33744fba5b39a197d39493183946d1",
+      "date": "2026-10-07T10:42:36+02:00",
+      "subject": "Correct context-size documentation and review hygiene"
+    },
+    {
+      "sha": "8333fbeed7d307adc9b2a9383b8bc125cb77e1e9",
+      "date": "2026-10-07T09:49:16+02:00",
+      "subject": "Merge main and preserve phonemizer pronunciation fixes"
+    },
+    {
+      "sha": "d0d46558f341d19ecd41d3fa21031bd16be9ee5d",
+      "date": "2026-10-07T09:43:02+02:00",
+      "subject": "Ignore empty transcripts during wake-word detection"
+    },
+    {
+      "sha": "9d947e42efdb25c11ec0d71af9e430b75cfa5e95",
+      "date": "2026-10-07T09:37:41+02:00",
+      "subject": "Use neutral attribution in architecture review documentation"
+    },
+    {
+      "sha": "50ea229f50b893bde63e15ce0ac67111c4aad427",
+      "date": "2026-10-07T09:29:52+02:00",
+      "subject": "Document architecture review, validated findings and refactor roadmap"
+    },
+    {
+      "sha": "1faddb0e89b942010e9afef0ac769b7e0f757a95",
+      "date": "2026-10-07T09:29:52+02:00",
+      "subject": "Normalize spoken text and preserve contraction and acronym pronunciation"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "configs/glados_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "configs/glados_extended_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "configs/glados_gemma4_llamacpp.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "configs/glados_vision_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "configs/glados_webapp_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "configs/glados_websocket_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "configs/minimax_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/amd.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/autonomy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/audio-paths-cold-warm-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/autonomy-core-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/autonomy-handoff-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/autonomy-handoff-thinking-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/autonomy-live-review-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/cache-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/clock-conversation-routing-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/command-time-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/core-coordination-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/core-publication-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/deferred-transcripts-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-2026-10-04.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-context-capacity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-embedded-server-687e7789-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-four-slot-capacity.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-four-slot-capacity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-native-2026-10-04.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-parallel-logits-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-prompt-positions-2026-10-06.details.json.gz",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-prompt-positions-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-prompt-positions-2026-10-06.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/gemma4-prompt-positions-2026-10-06.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/interaction-hold-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/latency-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/llamacpp-embedding-assessment-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/llamacpp-functional-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/llamacpp-live-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/llamacpp-tuning-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/parakeet-2026-10-04.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/quiet-emotion-compaction-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/routing-assist-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/routing-assist-fallback-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/routing-concurrency-2026-10-04.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/routing-hierarchy-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/sonora-aec-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/sonora-aec-live-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/sonora-aec-live-first-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/spoken-text-converter-2026-10-07.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/streaming-latency-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/vision-face-e4b-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/vision-face-yunet-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/vision-gaze-stream-2026-10-05.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/voice-continuation-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/voice-latency-2026-10-06.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/gemma4.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/native-inference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/roadmap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/rust-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/vision.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/webapp.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_autonomy_handoff.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_core_coordination.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_gemma4.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_llamacpp.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_parallel_logits.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_prompt_positions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_sonora_aec.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/benchmark_spoken_text_converter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/plot_prompt_positions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/probe_embedded_server.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/probe_parallel_logits.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/probe_prompt_logits.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sonora_aec_probe/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sonora_aec_probe/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sonora_aec_probe/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sonora_aec_probe/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sonora_aec_probe/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/webapp/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "models/TTS/lang_phoneme_dict_old.pkl",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "models/Vision/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "models/Vision/preprocessor_config.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "models/Vision/tokenizer.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "models/Vision/tokenizer_config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/architecture-refactor-progress.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/architecture-simplification-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/architecture-simplification-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/fluttering-skipping-deer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/webapp-architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/install.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/run_llamacpp.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/run_with_logs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/ASR/ctc_asr.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/ASR/tdt_asr.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/TTS/phonemizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/TTS/tts_glados.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/TTS/tts_kokoro.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/audio_io/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/audio_io/sounddevice_io.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/audio_io/vad.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/audio_io/websocket_io.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/agents/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/agents/compaction_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/agents/emotion_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/agents/hacker_news.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/autonomy/agents/health_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/agents/observer_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/autonomy/agents/search_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/agents/weather.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/constitution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/autonomy/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/autonomy/decision.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/emotion_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/events.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/glados/autonomy/jobs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/llm_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/autonomy/mind_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/autonomy/mind_schedule.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/autonomy/mind_scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/slots.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/subagent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/subagent_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/subagent_memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/summarization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/task_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/autonomy/token_estimator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/core/audio_data.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/clock.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/core/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/context_budget.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/context_inspection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/core/conversation_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/decision_lists.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/core/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/inference.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/core/llm_decision.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/core/llm_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/glados/core/memory_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/memory_recall.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/memory_records.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/native_audio.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/news_pages.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/operator_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/option_scores.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/processor_turn.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/routing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/routing_tree.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/search_preferences.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/settings_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/glados/core/shutdown.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/speculative.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/glados/core/speech_animation.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

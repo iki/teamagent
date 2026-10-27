@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-skills**. Its category places it in 
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [search.m13v](https://github.com/m13v/skill-registry); analyzed commit `68f9dc544e0ab70eca09bcd64ce8c8d5f1ac9256`; commit date 2026-03-03T18:33:49-08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--xx-2603-search.m13v.md).
+<!-- teamagent-analysis:end -->

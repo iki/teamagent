@@ -30,3 +30,36 @@ The first successful edit is only a heuristic for completion of planning. Diffic
 Replay interrupted turns; test steering, failed tools, compaction and branch restoration. Compare fixed-model and routed runs at equal task success, total latency and total cost, including cache misses. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [models](../models.md) · [decisions](../decisions.md) · [skills](../skills.md).
+
+## Refresh: 2026-10-24
+
+Inspected revision [`136b87e8a7f5a3e5186de0289523ba327dc592fc`](https://github.com/earendil-works/pi/commit/136b87e8a7f5a3e5186de0289523ba327dc592fc). This refresh covers the agent loop and the existing Jev example; it is not a full audit of the new MCP, UI or other packages.
+
+The current [loop preparation boundary](https://github.com/earendil-works/pi/blob/136b87e8a7f5a3e5186de0289523ba327dc592fc/packages/agent/src/agent-loop.ts#L184-L251) permits context/model/thinking changes before the next request, then rechecks steering after potentially long preparation. It avoids consuming a second steering message when the first poll already returned work. Transfer this ordering to the harness context compiler: a compaction or retrieval operation must not hide a newly arrived user correction, and context/model selection needs a recorded request boundary.
+
+The [tool-batch branch](https://github.com/earendil-works/pi/blob/136b87e8a7f5a3e5186de0289523ba327dc592fc/packages/agent/src/agent-loop.ts#L254-L302) treats a length-limited assistant response as potentially truncated tool arguments and fails its calls instead of executing them. Preserve this completion-reason gate in addition to schema validation. Valid-looking JSON alone is insufficient evidence that a tool call was completely emitted. `finishTurn` and emitted completion events still represent loop lifecycle, not independent task correctness.
+
+The [Jev example](https://github.com/earendil-works/pi/blob/136b87e8a7f5a3e5186de0289523ba327dc592fc/packages/coding-agent/examples/extensions/jev-router.ts#L67-L113) retains the 0.5 complexity threshold, initial planning selection and first-successful-edit transition. Its earlier calibration and re-escalation limitations remain. No new accuracy, latency or subscription-entitlement claim follows from the refreshed source inspection. Upstream tests were read selectively as coverage leads, not executed in this checkout.
+
+
+## Refresh: 2026-10-27 — progress durability, handoff and restart evidence
+
+Inspected revision [`b3a29f1111114fac696e2cfcd65acdb382a6ed5e`](https://github.com/earendil-works/pi/commit/b3a29f1111114fac696e2cfcd65acdb382a6ed5e), committed 2026-10-27T16:57:59Z, against the prior reviewed revision `136b87e8a7f5a3e5186de0289523ba327dc592fc`. The previously inspected agent loop and Jev router have no changes in this interval. This refresh adds a focused reading of durable progress, tool handoff and interruption recovery. It does not review every changed package or claim the durable package is integrated into Teamagent.
+
+The [deferred persistence contract](https://github.com/earendil-works/pi/blob/b3a29f1111114fac696e2cfcd65acdb382a6ed5e/packages/durable/src/types.ts#L1098-L1112) separates immediately stored commits from loss-tolerant progress adopted in memory. Deferral is limited to existing conversation documents with latest history and initial fork behavior; creation, migration, retirement and other durable writes stay immediate. The default persistence deadline is 1,000 ms, while an explicit infinite deadline waits for another flush condition. A crash can lose held progress. The [transaction eligibility check](https://github.com/earendil-works/pi/blob/b3a29f1111114fac696e2cfcd65acdb382a6ed5e/packages/durable/src/session/transaction.ts#L757-L775) enforces those restrictions rather than relying on caller convention.
+
+The [dependency fixtures](https://github.com/earendil-works/pi/blob/b3a29f1111114fac696e2cfcd65acdb382a6ed5e/packages/durable/test/session-deferred-commits.test.ts#L282-L344) show held data being stored with a dependent entry, but a transaction that writes nothing leaves it held even when it reads the document. This qualification matters when translating the broad contract comment into an operational guarantee. Teamagent may coalesce ephemeral UI progress, but an authorization decision, provider receipt, published result or evidence-dependent checkpoint must cross a durable boundary explicitly. A displayed progress event must not imply crash-safe storage.
+
+The [tool-round boundary](https://github.com/earendil-works/pi/blob/b3a29f1111114fac696e2cfcd65acdb382a6ed5e/packages/durable/src/harness/generation.ts#L832-L899) applies the last handoff in call order and appends its reset before queued writes and steering. Termination requires every call in the round to request it. Otherwise generation continues in the handed-off context. Preserve a distinction between context replacement, accepted handoff and completed task; apply queued user corrections at the documented boundary.
+
+The newest [interrupted-generation logic](https://github.com/earendil-works/pi/blob/b3a29f1111114fac696e2cfcd65acdb382a6ed5e/packages/durable/src/harness/generation.ts#L417-L508) charges an interrupted request or poll against its retry policy, records visible failure when retry or restart limits are exhausted, and retains a known deferred response handle across a retry. The [crash-during-poll fixture](https://github.com/earendil-works/pi/blob/b3a29f1111114fac696e2cfcd65acdb382a6ed5e/packages/durable/test/harness-restart-failure.test.ts#L520-L570) explicitly expects one generation request and two polls, then cancellation if retry is disabled. This is a useful recovery pattern for an already identified provider job.
+
+That does not establish universal at-most-once external execution: ordinary requests may be sent again under the configured retry policy, and the same test file distinguishes a clean close from a crash. Teamagent's media contract still requires reconciliation before retrying an ambiguous clone or billable generation, and must never infer route idempotency from a generic task retry mechanism. Keep attempt accounting, provider job identity and artifact recovery separate.
+
+Validation: inspected pinned Git objects, implementation branches and the cited fixture bodies; did not execute upstream tests, install dependencies, run models or measure latency/storage savings. The new patterns are research recommendations. They do not change the adopted runtime or prove that existing Teamagent adapters implement them.
+
+Related: [agents](../agents.md), [models](../models.md), [decisions](../decisions.md), [channels](../channels.md), [evolution](../evolution.md), [media processing](../media-processing.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [pi](https://github.com/earendil-works/pi); analyzed commit `b3a29f1111114fac696e2cfcd65acdb382a6ed5e`; commit date 2026-10-27T16:57:59Z; review date 2026-10-27T18:19:07.717Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--pi.md).
+<!-- teamagent-analysis:end -->

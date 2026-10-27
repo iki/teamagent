@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--anything-llm",
+    "category": "ai-agents",
+    "name": "anything-llm",
+    "url": "https://github.com/Mintplex-Labs/anything-llm",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--anything-llm.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "09e68e357a90973fd2b143b318b31640bee50a0b",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T13:42:58-07:00",
+    "reportSha256": "b7d6eefa697a1dcee3c5a9165e3129c142b635594ae84a810eb7f6861caff3f5",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--anything-llm",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/Mintplex-Labs/anything-llm",
+    "report": "spec/projects/ai-agents--anything-llm.md",
+    "analyzedSha": "09e68e357a90973fd2b143b318b31640bee50a0b",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T13:42:58-07:00",
+    "observedSha": "9b1fcab141000eaba9f78ed131151de04904454b",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "9b1fcab141000eaba9f78ed131151de04904454b",
+        "date": "2026-10-25T11:20:42-07:00",
+        "subject": "cross-env compat prisma reset command"
+      },
+      {
+        "sha": "a5bb8b9c7b1262635ea58fc17d4899619cbf58e9",
+        "date": "2026-10-23T16:03:38-07:00",
+        "subject": "fix(mistral): support Mistral reasoning models, dedupe model list, add thinking toggle (#6821) (#6825)"
+      },
+      {
+        "sha": "b61293f8e0ffbf50fe046f7f972a2a29f391ae59",
+        "date": "2026-10-23T15:40:19-07:00",
+        "subject": "Merge pull request #6822 from Mintplex-Labs/v1.19.0-tags"
+      },
+      {
+        "sha": "0d39ca2708a484b734501e61c7768d1fb7abe641",
+        "date": "2026-10-23T15:37:50-07:00",
+        "subject": "chore: bump version to 1.19.0"
+      },
+      {
+        "sha": "ba63583c2257e976a4342acb0e2f4b58234a6d70",
+        "date": "2026-10-23T13:50:12-07:00",
+        "subject": "fix(collector): return a relative document location on Windows"
+      },
+      {
+        "sha": "8239cd85a22d847337215988c69a8d1c0fba3c94",
+        "date": "2026-10-22T17:33:46-07:00",
+        "subject": "feat: instance color palettes and tabbed branding settings (#6796)"
+      },
+      {
+        "sha": "be7333eb7a1a6d9b372d8af4a9fb96ff42b1654c",
+        "date": "2026-10-22T15:55:09-07:00",
+        "subject": "fix(ollama): keep context windows when one model show fails (#6816)"
+      },
+      {
+        "sha": "14fdff33b009e09f9b56cd5b8f2862db73eec8c3",
+        "date": "2026-10-22T15:52:45-07:00",
+        "subject": "fix: preserve daily message quota when deleting threads (#6814)"
+      },
+      {
+        "sha": "24c2934dc383a5439f7208a08a489a0b6e42dea9",
+        "date": "2026-10-22T15:47:29-07:00",
+        "subject": "fix: use the repository default branch in the GitLab and Gitea connectors (#6809)"
+      },
+      {
+        "sha": "eca96354eb54c8fa773671ceb29d0d7f819bb22c",
+        "date": "2026-10-22T15:46:09-07:00",
+        "subject": "fix: fall back to default chunk overlap when it is not smaller than the chunk size (#6811)"
+      },
+      {
+        "sha": "0acf0e896721d214df6a8c50282a6d118666a735",
+        "date": "2026-10-21T23:26:35-07:00",
+        "subject": "fix(mcp): treat unsupported ping as non-fatal so servers stay usable (#6805)"
+      },
+      {
+        "sha": "e573f792310e2b03a510082cd4fc27ffc7e911e4",
+        "date": "2026-10-21T23:10:40-07:00",
+        "subject": "fix: isolate watched document sync failures (#6804)"
+      },
+      {
+        "sha": "20d7d07a656fa2b6b8b1a97a01d090734b697ac1",
+        "date": "2026-10-21T18:59:42-07:00",
+        "subject": "comment for low-effort GHSA spam prevention"
+      },
+      {
+        "sha": "61298c1c88b1790b8d81d81237441126ec0ec9d0",
+        "date": "2026-10-21T18:56:23-07:00",
+        "subject": "fix: regenerate and edit should still count toward daily message limit (#6785)"
+      },
+      {
+        "sha": "0b3dee76f808991f4a6ae489e637301c85e5a420",
+        "date": "2026-10-21T17:20:28-07:00",
+        "subject": "Merge branch 'master' of github.com:Mintplex-Labs/anything-llm"
+      },
+      {
+        "sha": "b340e25a2a6cbba83328228890f04cf5a6325ce7",
+        "date": "2026-10-21T17:20:17-07:00",
+        "subject": "comment for low-effort GHSA spam prevention"
+      },
+      {
+        "sha": "c5936fbb06685d7d98524fc3533e999bb5872c0b",
+        "date": "2026-10-21T17:16:28-07:00",
+        "subject": "fix: report failed workspace embeds on API document uploads (#6793)"
+      },
+      {
+        "sha": "afd2da90e14002e764e2ccdb0e5eceb7c8fd0ae0",
+        "date": "2026-10-21T16:47:58-07:00",
+        "subject": "fix(confluence): keep code blocks as written instead of running them through htmlToText (#6794)"
+      },
+      {
+        "sha": "3d016f2ffc93b995627f8d43d09adb72b94ac68c",
+        "date": "2026-10-21T16:47:39-07:00",
+        "subject": "fix(paperless-ngx): keep plain-text document content as it is instead of reading it as HTML (#6795)"
+      },
+      {
+        "sha": "1aec023fa87e9b4f2a8bf9f42f68546af4398a14",
+        "date": "2026-10-21T16:41:16-07:00",
+        "subject": "fix: use the repository default branch in the GitHub connector (#6800)"
+      },
+      {
+        "sha": "feb0ebe8a0de61afd33bb491d5e8f12f0d901e32",
+        "date": "2026-10-19T17:34:27-07:00",
+        "subject": "fix(a11y): announce a reply once it has finished streaming (#6752)"
+      },
+      {
+        "sha": "b82ac9c495dbfae6bc42b1506467d9f78ad64a1e",
+        "date": "2026-10-19T17:33:37-07:00",
+        "subject": "Parse PDF and file links in the bulk link scraper (#6786)"
+      },
+      {
+        "sha": "a85f8b5e756154d9507683f0f58cce4635dbfafa",
+        "date": "2026-10-19T16:08:46-07:00",
+        "subject": "fix: keep a CRLF file's line endings in filesystem-edit-file (#6756)"
+      },
+      {
+        "sha": "93623daa776cfbcc5a72161e129295aae8c95860",
+        "date": "2026-10-19T13:58:19-07:00",
+        "subject": "Add Hungarian (hu) translation (#6757)"
+      },
+      {
+        "sha": "4a5a5ea4fffcef11692f6c241bffad6059516c06",
+        "date": "2026-10-19T13:56:09-07:00",
+        "subject": "fix(collector): read Excel's short date as an ISO date (#6758)"
+      },
+      {
+        "sha": "9ca6f6a3ef049a507d83820d84fcf3c93a67d107",
+        "date": "2026-10-19T13:52:00-07:00",
+        "subject": "docs: remove references to removed sqlite:migrate script (#6759)"
+      },
+      {
+        "sha": "4949328c452993fa7bc763d8f77d6176a4855013",
+        "date": "2026-10-19T13:49:46-07:00",
+        "subject": "fix: crash on workspace chat settings when saved LLM provider is not in the list yet (#6761)"
+      },
+      {
+        "sha": "f1c3f53c9a7d14ac8a7b52762affc6bead9d3431",
+        "date": "2026-10-19T13:41:06-07:00",
+        "subject": "chore: drop API key fragments from web search error messages (#6763)"
+      },
+      {
+        "sha": "2149cdd307f908d40b59015784aabcafb3cf171c",
+        "date": "2026-10-19T13:31:29-07:00",
+        "subject": "fix: connect to the document collector on 127.0.0.1 (#6766)"
+      },
+      {
+        "sha": "f03cddd8d826d80fd8c274207780633fcffc8c2f",
+        "date": "2026-10-19T13:31:06-07:00",
+        "subject": "fix(telegram): preserve complete agent answers across message chunks (#6767)"
+      },
+      {
+        "sha": "63bff456a293c0008d65d225154d37d8c63ff426",
+        "date": "2026-10-19T13:12:45-07:00",
+        "subject": "fix: report empty connector imports as failures (#6775)"
+      },
+      {
+        "sha": "a00fd3b363612897e6375086e201066478a0850e",
+        "date": "2026-10-19T13:12:39-07:00",
+        "subject": "fix: tell the user why a password reset was refused (#6771)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/workflows/build-and-push-image.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build-qa-tag.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cloud-deployments/helm/charts/anythingllm/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cloud-deployments/helm/charts/anythingllm/README.md.gotmpl",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cloud-deployments/helm/charts/anythingllm/values.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cloud-deployments/openshift/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/__tests__/processLink/convert/generic.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "collector/__tests__/processLink/options.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/__tests__/utils/extensions/RepoLoader/GiteaRepo.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/__tests__/utils/extensions/RepoLoader/GithubRepo.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/__tests__/utils/extensions/RepoLoader/GitlabRepo.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/__tests__/utils/extensions/WebsiteDepth/index.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/__tests__/utils/url/index.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/extensions/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/processLink/convert/generic.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/processLink/helpers/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/processLink/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/processSingleFile/convert/asXlsx.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/constants.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/Confluence/ConfluenceLoader/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/DrupalWiki/DrupalWiki/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/DrupalWiki/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/PaperlessNgx/PaperlessNgxLoader/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/RepoLoader/GiteaRepo/RepoLoader/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/RepoLoader/GithubRepo/RepoLoader/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/RepoLoader/GitlabRepo/RepoLoader/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/extensions/WebsiteDepth/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/files/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/files/mime.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/tokenizer/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "collector/utils/url/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/.env.example",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/HOW_TO_USE_DOCKER.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/ThemeContext.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/components/EmbeddingFileRow/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/components/LLMSelection/EmbeddedLemonadeOptions/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/components/LLMSelection/EmbeddedLemonadeOptions/utils.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/LLMSelection/MistralOptions/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/Modals/ManageWorkspace/Documents/Directory/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/Modals/ManageWorkspace/Documents/WorkspaceDirectory/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/Modals/ManageWorkspace/Documents/hooks/useDocumentPicker.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/ProviderPrivacy/constants.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/SettingsSidebar/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/Sidebar/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/UserMenu/AccountModal/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/VectorDBSelection/WeaviateDBOptions/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/Citation/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/ClarifyingQuestion/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/CompletedReplyAnnouncement/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/DnDWrapper/EmbeddingProgressModal/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/DnDWrapper/FileUploadWarningModal/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/DnDWrapper/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/AttachItem/ParsedFilesMenu/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/AttachItem/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/LLMSelector/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/LoadingChat/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/WorkspaceChat/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/contexts/TTSProvider.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/components/lib/ModelTable/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/hooks/usePromptInputStorage.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/hooks/useTheme.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/ar/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/bg/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/ca/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/cs/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/da/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/de/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/en/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/es/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/et/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/fa/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/fr/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/he/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/hi/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/hr/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/locales/hu/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/id/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/it/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/ja/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/ko/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/lo/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/lt/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/lv/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/nl/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/pl/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/pt_BR/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/resources.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/ro/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/ru/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/sv/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/tr/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/vn/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/zh/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/locales/zh_TW/common.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/models/workspace.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/Agents/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/DefaultSystemPrompt/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/ExperimentalFeatures/Features/LiveSync/manage/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/ExperimentalFeatures/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/Invitations/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/Logging/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/SystemPromptVariables/AddVariableModal/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/SystemPromptVariables/VariableRow/EditVariableModal/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/SystemPromptVariables/VariableRow/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/SystemPromptVariables/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/Users/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Admin/Workspaces/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ApiKeys/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/AudioPreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/BrowserExtensionApiKey/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ChatEmbedWidgets/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/Chats/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/CommunityHub/Authentication/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/CommunityHub/ImportItem/Steps/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/CommunityHub/Trending/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/EmbeddingPreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/EmbeddingTextSplitterPreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ImageGenerationPreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/LLMPreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/MobileConnections/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ModelRouters/LLMProviderModelPicker/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/PrivacyAndData/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ScheduledJobs/RunDetailPage.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ScheduledJobs/RunHistoryPage.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ScheduledJobs/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/ScheduledJobs/utils/cron.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/Security/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/Settings/Branding/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/Settings/Chat/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/Settings/Interface/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/Settings/components/CustomSiteSettings/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/Settings/components/ThemePreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/TranscriptionPreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/GeneralSettings/VectorDatabase/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Invite/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/Main/Home/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/OnboardingFlow/Steps/LLMPreference/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/WorkspaceSettings/AgentConfig/AgentLLMSelection/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/WorkspaceSettings/ChatSettings/WorkspaceLLMSelection/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/WorkspaceSettings/ChatSettings/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/src/pages/WorkspaceSettings/index.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/palettes/InstancePalettes.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/palettes/PalettePicker.jsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/palettes/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "frontend/src/palettes/palettes.css",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontend/tailwind.config.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "jest.config.cjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "locales/README.fa-IR.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "locales/README.ja-JP.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "locales/README.tr-TR.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "locales/README.zh-CN.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "open-computer/.gitignore",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

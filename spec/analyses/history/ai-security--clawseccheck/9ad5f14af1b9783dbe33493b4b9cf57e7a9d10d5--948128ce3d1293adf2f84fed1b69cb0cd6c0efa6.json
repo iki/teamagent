@@ -1,0 +1,984 @@
+{
+  "id": "ai-security--clawseccheck",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/gl0di/clawseccheck",
+  "report": "spec/projects/ai-security--clawseccheck.md",
+  "analyzedSha": "9ad5f14af1b9783dbe33493b4b9cf57e7a9d10d5",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-29T16:12:36+03:00",
+  "observedSha": "948128ce3d1293adf2f84fed1b69cb0cd6c0efa6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "948128ce3d1293adf2f84fed1b69cb0cd6c0efa6",
+      "date": "2026-10-24T15:28:49+03:00",
+      "subject": "Merge pull request #48 from gl0di/dev"
+    },
+    {
+      "sha": "975cfc3fa001c9ce613d0268838efc1243d35137",
+      "date": "2026-10-24T14:09:37+03:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into dev"
+    },
+    {
+      "sha": "1488f478e50e3a03f3ea235647911d4dbb1269fe",
+      "date": "2026-10-24T14:09:36+03:00",
+      "subject": "chore: v4.4.4 — fetch plan runs no package code, compromise advice checks persistence before rotating, OpenClaw 2026.10.6"
+    },
+    {
+      "sha": "1d321beb85bc2158659d833b19af691d9d9abb55",
+      "date": "2026-10-24T10:04:22+03:00",
+      "subject": "fix: name the --incident report without the bare console command, and keep SKILL.md in budget"
+    },
+    {
+      "sha": "dd6d2a86cbaac96f958253be10dc6043d1e5bff1",
+      "date": "2026-10-24T09:33:24+03:00",
+      "subject": "feat(iocdb): add the tensorlake exfiltration host and regenerate the check catalogue"
+    },
+    {
+      "sha": "64533dbcb7eca764fdc78236eaad57ee6695aa44",
+      "date": "2026-10-24T09:33:24+03:00",
+      "subject": "security: match pip's full archive suffix list and check the whole spec string"
+    },
+    {
+      "sha": "387948ae93573a6f85264640724d7e977bdac8a4",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-753-754-docs-runtime-disttags' into dev"
+    },
+    {
+      "sha": "f6e0c97db1128d85430d78bba85ea5c8fdb5e427",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-752-dependabot-fixtures' into dev"
+    },
+    {
+      "sha": "5dbddf83fd88f095a2dab576a1878c170fce9714",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-751-publish-verdict' into dev"
+    },
+    {
+      "sha": "a49097ee17c7da9f14eb0b1a5d0584d5b34d753e",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-750-iocdb-refresh' into dev"
+    },
+    {
+      "sha": "893b1d912900696a7effad1aa4a1d486904f6a33",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-749-macos-launchagents' into dev"
+    },
+    {
+      "sha": "a992e42aef3277a011f33930960abef2565b7eb9",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-748-agent-config-writes' into dev"
+    },
+    {
+      "sha": "e82b4a92930e157fd89743c673cedfd4346f8491",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-747-ir-advice-order' into dev"
+    },
+    {
+      "sha": "a3bbbd573f55a7dbd149b1b42f02f17db60a1f66",
+      "date": "2026-10-24T09:30:58+03:00",
+      "subject": "Merge branch 'task/c-745-pip-only-binary' into dev"
+    },
+    {
+      "sha": "fa7e42541f7eecc3d334f771518385027ddf4ebc",
+      "date": "2026-10-24T09:30:38+03:00",
+      "subject": "security: refuse an npm/pypi name that is an archive or wheel filename"
+    },
+    {
+      "sha": "0f59ff6e9830c4d640754f219afbe205741c047d",
+      "date": "2026-10-24T09:30:23+03:00",
+      "subject": "fix: advise persistence check before rotating secrets after a compromise"
+    },
+    {
+      "sha": "7f5e513c6469097abc27a70d6e105bbf54284862",
+      "date": "2026-10-24T09:28:00+03:00",
+      "subject": "security: build a fetch command only for a plain registry npm/pypi spec"
+    },
+    {
+      "sha": "a3ac9ae7b125ff71ecbd269ae8420c229459fcd7",
+      "date": "2026-10-24T09:26:26+03:00",
+      "subject": "feat: refresh IOC dataset with GitHub-advisory-confirmed npm malware (revision 2026-10-24)"
+    },
+    {
+      "sha": "8916ae61923683c2923096bda85dd4ddcad09ff4",
+      "date": "2026-10-24T09:21:16+03:00",
+      "subject": "ci: re-probe the registry at decide time and poll 60 min after a CLI publish failure"
+    },
+    {
+      "sha": "3b24a669ac6c8e932a1ef7f7d7156e04c9a68d5c",
+      "date": "2026-10-24T09:20:59+03:00",
+      "subject": "docs: record the Node runtime gap and the 2026-10-24 dist-tags reading"
+    },
+    {
+      "sha": "d2f980761ba6b9886694d5c8f7b6d81fb8eccbb9",
+      "date": "2026-10-24T09:20:50+03:00",
+      "subject": "test: pin measured coverage of agent-config persistence writes (tensorlake form)"
+    },
+    {
+      "sha": "651b1d773b857c36126ad0acacca3dd460c29bf0",
+      "date": "2026-10-24T09:20:47+03:00",
+      "subject": "fix(host): disclose unread macOS launchd locations instead of reporting no persistence"
+    },
+    {
+      "sha": "a16542fb32e1d920bd0a33d22bef61300b551fbe",
+      "date": "2026-10-24T09:20:39+03:00",
+      "subject": "ci: document that dependabot.yml scoping does not cover security updates"
+    },
+    {
+      "sha": "f77f269d98f0255cff77f381df5cd3326685a7f1",
+      "date": "2026-10-24T09:19:47+03:00",
+      "subject": "security: fetch plan uses wheels-only pip and --ignore-scripts npm so no package code runs before the scan"
+    },
+    {
+      "sha": "ed624e9e1d03f8068051224324b2f366071ee559",
+      "date": "2026-10-23T23:44:39+03:00",
+      "subject": "Merge branch 'task/c-746-openclaw-10-6' into dev"
+    },
+    {
+      "sha": "bc3aa3b83c234eb0f7f132462795ac7febe9683e",
+      "date": "2026-10-23T23:35:38+03:00",
+      "subject": "docs: re-ground on OpenClaw 2026.10.6, and follow the vendor on the worker image and an empty plugins.installs"
+    },
+    {
+      "sha": "c4386dfad50416fd1e93bdca853b85d044f9f8f0",
+      "date": "2026-10-23T13:33:48+03:00",
+      "subject": "Merge pull request #46 from gl0di/dev"
+    },
+    {
+      "sha": "faf434109d13f5346e2000d2b8e6b0b748a3104b",
+      "date": "2026-10-23T12:21:41+03:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into dev"
+    },
+    {
+      "sha": "f40c9aab12305d5cfec62876089ae41248d7c266",
+      "date": "2026-10-23T12:21:41+03:00",
+      "subject": "chore: v4.4.3 — re-ground on OpenClaw 2026.10.5, carrying the 4.4.2 fixes that never reached ClawHub"
+    },
+    {
+      "sha": "5af63e7b0793603a9c394c76a6f62498e24ee757",
+      "date": "2026-10-20T14:47:57+03:00",
+      "subject": "ci: stop quoting the flagged sentence in the gitleaks ignore comment"
+    },
+    {
+      "sha": "cabbf9db0d80eed392a000b94c05471b6237024d",
+      "date": "2026-10-19T18:15:50+03:00",
+      "subject": "ci: pin the vendor's retired-config sentence in the battery as a known gitleaks false positive"
+    },
+    {
+      "sha": "6c21d4555862000e04bd1865b85229663a66bf0d",
+      "date": "2026-10-19T18:09:48+03:00",
+      "subject": "Merge branch 'task/c-744-openclaw-10-5' into dev"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/tools/requirements-ci.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/clawhub-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaksignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY_MODEL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "audit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/adjudication/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/adjudication/_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/adjudication/_verdicts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/ansi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/attest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/baseline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/behavioral.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/canary.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_capability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_egress.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_host.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_shared.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/checks/_vet.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/collector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/configjournal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/configloader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/deptree.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/dossier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/dryrun.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/guide.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/harnessruntime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/hostpersist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/hostwatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/incident.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/incidentstore.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/integrity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/invocation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/iocdb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/layers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/livetestproof.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/locking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/logdiscovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/logsafe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/logscan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/mcpsurface.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/menu.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_execpolicy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_hostpersist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_plugins.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitordims/_skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/monitorstore.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/multiturn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/native.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/openclawdist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/palette.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clawseccheck/pathprobe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/pdf.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/prescan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/redteam.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clawseccheck/retiredformats.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/risk.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/runstore.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/safeio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/sarif.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/sbom.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/sbom_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/scoring.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/skillast.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/skilldiscovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/skillprovenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/toolgrant.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/toolpolicy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/trajaudit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/trajectory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/trajectorystore.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/update.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clawseccheck/watch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ATTESTATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CHECKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/FAQ.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/FLOW_CHOICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/IOC_DATA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ISOLATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/OUTPUT_SCHEMA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/THREAT_COVERAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/THREAT_INTAKE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/TROUBLESHOOTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/USAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/stats-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/stats-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design/watch-mechanism.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/CARD_ANATOMY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/DASHBOARD.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/JUDGE_PANEL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/LIVE_TEST_VERDICTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/MODES.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/QUICK_MAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/RUN_NOTES.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/SCOPE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/playbook/VET_JUDGE_PANEL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fixtures/bad_b350_terminal_default_on_stamped/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/clean_b4_peragent_sandbox/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/clean_b4_peragent_sandbox_shared_scope/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/clean_c014_egress_inventory/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/clean_c6_hook_policy_fixedver/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/reliability/bad_b297_wildcard_group_account_scoped/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/reliability/clean_b297_wildcard_group_account_allowfrom/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "fixtures/reliability/clean_b297_wildcard_group_base_allowfrom_account_groups/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "references/cli-flags.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fleet_fp_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/monitor_detection_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/monitor_fp_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/state_db_drift_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/_c692oracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/_distgrounding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/_harnessoracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/_retiredformatsoracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/_skillcorpus.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/_toolgrantoracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/c728_json5_oracle.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/c730_old_patterns.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/checks_public_api.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/harnessruntime_battery.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/data/retiredformats_battery.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dist_citation_baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dist_verified_paths.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/dm_policy_shape_manifest.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/finding_fingerprint_manifest.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/state_schema_snapshot.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_adjudication.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_attest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_attest_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_b101_run_all_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_b104_offboarding_hygiene.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_b136_b138_new_checks.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,25 @@
+# query-last30days
+
+Source: [query-last30days](https://github.com/mvanhorn/last30days-skill) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5103ba478b380552207a3754b74c7655d64208cd`; commit timestamp `2026-09-30T18:19:30-07:00`; 497 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/mvanhorn/last30days-skill/blob/5103ba478b380552207a3754b74c7655d64208cd/README.md)):
+
+> English | Français | Deutsch | Español | Português (Brasil) | 日本語 | 简体中文 An AI agent-led search engine scored by upvotes, likes, and real money - not editors.
+
+Build/package evidence: [mcp/go.mod](https://github.com/mvanhorn/last30days-skill/blob/5103ba478b380552207a3754b74c7655d64208cd/mcp/go.mod); [pyproject.toml](https://github.com/mvanhorn/last30days-skill/blob/5103ba478b380552207a3754b74c7655d64208cd/pyproject.toml); [skills/last30days/scripts/lib/vendor/bird-search/package.json](https://github.com/mvanhorn/last30days-skill/blob/5103ba478b380552207a3754b74c7655d64208cd/skills/last30days/scripts/lib/vendor/bird-search/package.json)
+
+License evidence: [LICENSE](https://github.com/mvanhorn/last30days-skill/blob/5103ba478b380552207a3754b74c7655d64208cd/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

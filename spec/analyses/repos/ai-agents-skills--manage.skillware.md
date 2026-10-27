@@ -1,0 +1,207 @@
+# manage.skillware: change evidence
+
+Source: [manage.skillware](https://github.com/ARPAHLS/skillware) · [Analysis](../../projects/ai-agents-skills--manage.skillware.md) · [skills](../../skills.md), [import-generation](../../import-generation.md), [agents](../../agents.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `2d59fadc583b67071c47a7e0870bfaf9f95431b8`; commit date: 2026-10-02T19:00:24+03:00; review date: 2026-10-04; observed SHA: `ad55a64ea41191e52fa9ee5d93d13ff414e3eec5`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ARPAHLS/skillware/compare/2d59fadc583b67071c47a7e0870bfaf9f95431b8...ad55a64ea41191e52fa9ee5d93d13ff414e3eec5). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [ad55a64ea411](https://github.com/ARPAHLS/skillware/commit/ad55a64ea41191e52fa9ee5d93d13ff414e3eec5) 2026-10-26T18:44:59+03:00: Merge pull request #458 from ect2000/feat/455-interactive-config-menu
+- [5322ff85cc6c](https://github.com/ARPAHLS/skillware/commit/5322ff85cc6c1478b6b8125f1232c75f7d17dd53) 2026-10-26T13:58:58+03:00: feat(core,cli): add SkillMatcher engine and skillware find command (#456)
+- [0edccfc23d4c](https://github.com/ARPAHLS/skillware/commit/0edccfc23d4c6b057a9dded5673db27152f160fa) 2026-10-26T13:14:54+03:00: feat(core,cli): add SkillMatcher engine and skillware find command
+- [d2a306cffcd8](https://github.com/ARPAHLS/skillware/commit/d2a306cffcd8c2f0a5a46174ae4a616c197cb19a) 2026-10-24T18:13:44+03:00: chore(release): cut v0.6.0 with bio category, sequence_ops foundational engine, wallet_screening v2, and 4.8s startup optimizations (#454)
+- [bac5e8c0cbd4](https://github.com/ARPAHLS/skillware/commit/bac5e8c0cbd42b42c57f68c3baacd1d52663b747) 2026-10-24T17:41:58+03:00: feat(bio): add sequence_ops foundational skill and bio category (#427) (#453)
+- [d48d59a06e5e](https://github.com/ARPAHLS/skillware/commit/d48d59a06e5e12f503ed9af3db2c697cfdf66189) 2026-10-23T18:34:11+03:00: chore(types): Phase 2 of #415, type config and mail_config (#452)
+- [e8bf3bf9404e](https://github.com/ARPAHLS/skillware/commit/e8bf3bf9404eaa492b9b460234e17bf838c90a81) 2026-10-22T13:15:06+03:00: perf(cli): resolve startup latency, scope distribution checks, and doctor env handling (#451)
+- [ec30a6444c7a](https://github.com/ARPAHLS/skillware/commit/ec30a6444c7a6a435e0461a77cd6527dcbe18339) 2026-10-20T15:37:36+03:00: feat(wallet_screening): schema v2 verdicts and hop-1 exposures (#439) (#447)
+- [f522b17c0da7](https://github.com/ARPAHLS/skillware/commit/f522b17c0da70f44e8c4d41b27252c334920f4a3) 2026-10-20T11:54:02+03:00: chore(release): cut v0.5.9 with Manifest v2 Universal Taxonomy, telemetry_normalizer, AcroForm engine, and SPDX licensing
+- [85e41c7d2d8c](https://github.com/ARPAHLS/skillware/commit/85e41c7d2d8c9f1240836062f17114c389da7a8d) 2026-10-20T11:29:45+03:00: Merge pull request #446 from ARPAHLS/docs/catalog-taxonomy-meta-and-shape-column
+- [c63e8839891c](https://github.com/ARPAHLS/skillware/commit/c63e8839891c68cd4695002b77aa877fc644221b) 2026-10-20T10:59:35+03:00: docs(catalog): backfill Manifest v2 taxonomy to skill pages and add shape column to library index
+- [d15cc0311d79](https://github.com/ARPAHLS/skillware/commit/d15cc0311d796e2d9326870349f28e90c933326d) 2026-10-20T10:14:17+03:00: Merge pull request #444 from rosspeili/feat/issue-440-manifest-v2
+- [15758e3357bf](https://github.com/ARPAHLS/skillware/commit/15758e3357bf780fe9a9c32f1f6145ae1c409cf4) 2026-10-19T21:47:38+03:00: test(context): update test_skill_context to reflect prompt_rewriter middleware shape (#440)
+- [6598bd8cc7e6](https://github.com/ARPAHLS/skillware/commit/6598bd8cc7e6d8fe799af3973fa4fa669ea27484) 2026-10-19T21:36:35+03:00: chore(git): ignore site/ catalog export artifacts (#440)
+- [831856d8c6bd](https://github.com/ARPAHLS/skillware/commit/831856d8c6bde7ff53516578aca5a456ebcb7af2) 2026-10-19T21:31:26+03:00: fix(catalog,cli): set optimization skills shape to middleware, restore CHANGELOG Added header, and expand cli usage examples (#440)
+- [6d175e6a80c3](https://github.com/ARPAHLS/skillware/commit/6d175e6a80c32b46f9d4c11b0acf2c4627f68088) 2026-10-19T21:23:17+03:00: feat(cli,docs): implement Manifest v2 discovery flags, info command, doctor schema checks, and catalog exporter (#440)
+- [e9f9fa2b8958](https://github.com/ARPAHLS/skillware/commit/e9f9fa2b895881841f8fb5dfebcfb636d882f646) 2026-10-19T20:48:33+03:00: feat(context): add taxonomy filtering and hardware safety guards to SkillContext (#440)
+- [05e3f04874cb](https://github.com/ARPAHLS/skillware/commit/05e3f04874cb8928afeea2844a8ad021667da3a0) 2026-10-19T20:41:44+03:00: feat(catalog): backfill Manifest v2 taxonomy and establish tag governance policy (#440)
+- [b2c6c5536baa](https://github.com/ARPAHLS/skillware/commit/b2c6c5536baa60edee224ee976d07ae30139abe1) 2026-10-19T19:50:25+03:00: feat(core): implement Manifest v2 core schema, BaseSkill primitives, and loader normalizer (#440)
+- [f3dde3540116](https://github.com/ARPAHLS/skillware/commit/f3dde35401164b1498f7e0cd9817a099f7d00b75) 2026-10-19T18:16:34+03:00: chore: update wallet_screening history commit and align prompt_injection_firewall org to ARPAHLS
+- [3204c822497c](https://github.com/ARPAHLS/skillware/commit/3204c822497c0932d8620e4a1b8d40e3ea30794e) 2026-10-19T18:08:54+03:00: Feat/issue 439 wallet screening slice1 tokentx (#442)
+- [b554888cad0e](https://github.com/ARPAHLS/skillware/commit/b554888cad0eca20eb6a1df4f6490cfb39c1310d) 2026-10-16T19:49:01+03:00: chore(office/pdf_form_filler): update skill history commit link for v0.1.2 and align docs
+- [f5942a89f01b](https://github.com/ARPAHLS/skillware/commit/f5942a89f01b95cbc240cdd73d7f8a6e452f2664) 2026-10-16T19:44:13+03:00: feat(office/pdf_form_filler): deterministic multi-action AcroForm engine (#403) (#441)
+- [54f3325ef609](https://github.com/ARPAHLS/skillware/commit/54f3325ef60960a57ed8c437268084061dac26d8) 2026-10-15T18:48:37+03:00: chore(finance/uk_companies_house_handler): update skill history for v1.4.0 and categorize in CHANGELOG under Changed
+- [1ba0675684a5](https://github.com/ARPAHLS/skillware/commit/1ba0675684a525230e7a59a94d667777526f9d0c) 2026-10-15T18:41:04+03:00: feat(finance/uk_companies_house_handler): Document API flow v2d (#421) (#434)
+- [cdd258ff636e](https://github.com/ARPAHLS/skillware/commit/cdd258ff636ecd57d8fd9c80bc587106bcc59480) 2026-10-14T14:48:18+03:00: docs(cli): sync interactive menu options and introduce CLI history ta… (#433)
+- [0c7bfa4a076e](https://github.com/ARPAHLS/skillware/commit/0c7bfa4a076e3081784a20768d596ac1cceab8f5) 2026-10-14T10:26:19+03:00: chore: update skill history commit link for token_security_scanner 0.2.0
+- [3861d283aef0](https://github.com/ARPAHLS/skillware/commit/3861d283aef02ff1aada82d64280e6c4a43de22f) 2026-10-14T10:25:00+03:00: docs(governance): batch skill history reconciliation into maintainer release chores
+- [d7f721f0bd75](https://github.com/ARPAHLS/skillware/commit/d7f721f0bd7519029902f65ac78b83cd64641015) 2026-10-14T10:19:35+03:00: feat(token_security_scanner): operator policy and policy_action (#393) (#425)
+- [77902882044c](https://github.com/ARPAHLS/skillware/commit/77902882044c87d408f3d620d3a80723a5b9f09f) 2026-10-14T10:06:13+03:00: chore: update skill history commit link for wallet_screening 1.0.2
+- [30b7b2e82cdb](https://github.com/ARPAHLS/skillware/commit/30b7b2e82cdb71c8932468df57679ac45e457b20) 2026-10-14T09:55:25+03:00: feat(wallet_screening): refresh OFAC SDN snapshot (#287) (#424)
+- [1fc76a6fecf4](https://github.com/ARPAHLS/skillware/commit/1fc76a6fecf462b5b280b40c8d1845a0ff995994) 2026-10-12T14:31:54+03:00: chore: update skill history commit links for telemetry_normalizer and issue_resolver
+
+## Changed paths (truncated)
+
+- M: `.github/ISSUE_RESOLVER.md`
+- M: `.github/ISSUE_TEMPLATE/01_skill_proposal.yml`
+- M: `.github/ISSUE_TEMPLATE/02_bug_report.yml`
+- M: `.github/ISSUE_TEMPLATE/06_cli.yml`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- M: `.github/labels.json`
+- A: `.github/workflows/security.yml`
+- M: `.gitignore`
+- M: `.skillware.yaml.example`
+- M: `CHANGELOG.md`
+- M: `CITATION.cff`
+- M: `CODE_OF_CONDUCT.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `docs/TESTING.md`
+- M: `docs/contributing/ai_native_workflow.md`
+- M: `docs/security/skill-trust-model.md`
+- M: `docs/sitemap.md`
+- M: `docs/skills/README.md`
+- A: `docs/skills/bio/README.md`
+- A: `docs/skills/bio/sequence_ops.md`
+- M: `docs/skills/compliance/README.md`
+- M: `docs/skills/compliance/mica_module.md`
+- M: `docs/skills/compliance/pii_masker.md`
+- M: `docs/skills/compliance/tos_evaluator.md`
+- M: `docs/skills/creative/bg_remover.md`
+- M: `docs/skills/creative/deck_builder.md`
+- M: `docs/skills/data_engineering/README.md`
+- M: `docs/skills/data_engineering/novelty_extractor.md`
+- M: `docs/skills/data_engineering/semantic_web_proxy.md`
+- M: `docs/skills/data_engineering/synthetic_generator.md`
+- A: `docs/skills/data_engineering/telemetry_normalizer.md`
+- M: `docs/skills/defi/README.md`
+- M: `docs/skills/defi/evm_reader.md`
+- M: `docs/skills/defi/evm_tx_handler.md`
+- M: `docs/skills/defi/token_security_scanner.md`
+- M: `docs/skills/dev_tools/issue_resolver.md`
+- M: `docs/skills/finance/README.md`
+- M: `docs/skills/finance/uk_companies_house_handler.md`
+- M: `docs/skills/finance/wallet_screening.md`
+- M: `docs/skills/linguistics/korean_slang.md`
+- M: `docs/skills/monitoring/kpi_gate.md`
+- M: `docs/skills/monitoring/token_limiter.md`
+- M: `docs/skills/office/README.md`
+- M: `docs/skills/office/gmail_handler.md`
+- M: `docs/skills/office/pdf_form_filler.md`
+- A: `docs/skills/office/web_form_mapper.md`
+- M: `docs/skills/optimization/context_optimizer.md`
+- M: `docs/skills/optimization/prompt_rewriter.md`
+- M: `docs/skills/security/README.md`
+- M: `docs/skills/security/deceptive_ui_guard.md`
+- A: `docs/skills/security/deepfake_guard.md`
+- M: `docs/skills/security/prompt_injection_firewall.md`
+- M: `docs/skills/wellness/mental_coach.md`
+- M: `docs/usage/README.md`
+- M: `docs/usage/agent_loops.md`
+- M: `docs/usage/api_keys.md`
+- M: `docs/usage/cli.md`
+- M: `docs/usage/evm_operator_config.md`
+- M: `docs/usage/install_extras.md`
+- M: `docs/usage/skill_chaining.md`
+- M: `docs/usage/skill_usage_template.md`
+- M: `docs/vision.md`
+- M: `examples/README.md`
+- A: `examples/bio_sequence_ops_demo.py`
+- M: `examples/claude_issue_resolver.py`
+- A: `examples/deepfake_guard_demo.py`
+- M: `examples/gemini_issue_resolver.py`
+- R100: `examples/issue_resolver_common.py` (from `examples/issue_resolver_github_context.py`)
+- A: `examples/kyc_authenticity_chain_demo.py`
+- M: `examples/ollama_issue_resolver.py`
+- A: `examples/telemetry_normalizer_demo.py`
+- A: `examples/token_security_scanner_demo.py`
+- A: `examples/uk_companies_house_document_flow_demo.py`
+- A: `examples/web_form_guard_chain_demo.py`
+- A: `examples/web_form_mapping_demo.py`
+- M: `pyproject.toml`
+- A: `scripts/export_site_catalog.py`
+- A: `scripts/telemetry_normalizer_stress_sim.py`
+- A: `skills/bio/__init__.py`
+- A: `skills/bio/sequence_ops/__init__.py`
+- A: `skills/bio/sequence_ops/card.json`
+- A: `skills/bio/sequence_ops/instructions.md`
+- A: `skills/bio/sequence_ops/kb/amino_acids.json`
+- A: `skills/bio/sequence_ops/kb/codon_table.json`
+- A: `skills/bio/sequence_ops/kb/genetic_codes.json`
+- A: `skills/bio/sequence_ops/kb/iupac_codes.json`
+- A: `skills/bio/sequence_ops/manifest.yaml`
+- A: `skills/bio/sequence_ops/ops.py`
+- A: `skills/bio/sequence_ops/skill.py`
+- A: `skills/bio/sequence_ops/test_skill.py`
+- M: `skills/compliance/mica_module/card.json`
+- M: `skills/compliance/mica_module/instructions.md`
+- M: `skills/compliance/mica_module/manifest.yaml`
+- M: `skills/compliance/mica_module/skill.py`
+- M: `skills/compliance/mica_module/test_skill.py`
+- M: `skills/compliance/pii_masker/manifest.yaml`
+- M: `skills/compliance/pii_masker/skill.py`
+- M: `skills/compliance/tos_evaluator/manifest.yaml`
+- M: `skills/creative/bg_remover/manifest.yaml`
+- M: `skills/creative/deck_builder/manifest.yaml`
+- M: `skills/data_engineering/novelty_extractor/manifest.yaml`
+- M: `skills/data_engineering/novelty_extractor/skill.py`
+- M: `skills/data_engineering/semantic_web_proxy/manifest.yaml`
+- M: `skills/data_engineering/synthetic_generator/manifest.yaml`
+- A: `skills/data_engineering/telemetry_normalizer/__init__.py`
+- A: `skills/data_engineering/telemetry_normalizer/card.json`
+- A: `skills/data_engineering/telemetry_normalizer/data/profiles/energy_battery_fleet.yaml`
+- A: `skills/data_engineering/telemetry_normalizer/data/profiles/environmental_air_quality.yaml`
+- A: `skills/data_engineering/telemetry_normalizer/data/profiles/robotics_kinematics_imu.yaml`
+- A: `skills/data_engineering/telemetry_normalizer/data/profiles/smart_building_hvac.yaml`
+- A: `skills/data_engineering/telemetry_normalizer/instructions.md`
+- A: `skills/data_engineering/telemetry_normalizer/manifest.yaml`
+- A: `skills/data_engineering/telemetry_normalizer/normalizer.py`
+- A: `skills/data_engineering/telemetry_normalizer/skill.py`
+- A: `skills/data_engineering/telemetry_normalizer/test_skill.py`
+- M: `skills/defi/evm_reader/manifest.yaml`
+- M: `skills/defi/evm_tx_handler/manifest.yaml`
+- M: `skills/defi/token_security_scanner/card.json`
+- A: `skills/defi/token_security_scanner/data/default_policy.yaml`
+- A: `skills/defi/token_security_scanner/data/goplus_chain_ids.yaml`
+- M: `skills/defi/token_security_scanner/instructions.md`
+- M: `skills/defi/token_security_scanner/manifest.yaml`
+- M: `skills/defi/token_security_scanner/skill.py`
+- M: `skills/defi/token_security_scanner/test_skill.py`
+- M: `skills/dev_tools/issue_resolver/manifest.yaml`
+- M: `skills/finance/uk_companies_house_handler/card.json`
+- M: `skills/finance/uk_companies_house_handler/data/api_index.json`
+- M: `skills/finance/uk_companies_house_handler/instructions.md`
+- M: `skills/finance/uk_companies_house_handler/manifest.yaml`
+- M: `skills/finance/uk_companies_house_handler/skill.py`
+- M: `skills/finance/uk_companies_house_handler/test_skill.py`
+- M: `skills/finance/wallet_screening/card.json`
+- M: `skills/finance/wallet_screening/data/malicious_scs_2025.json`
+- M: `skills/finance/wallet_screening/data/normalized_israel_nbctf_20250722_180019.json`
+- A: `skills/finance/wallet_screening/data/normalized_ofac_sdn.json`
+- A: `skills/finance/wallet_screening/data/ofac_sdn_manifest.json`
+- A: `skills/finance/wallet_screening/data/ofac_sdn_quarantine.json`
+- M: `skills/finance/wallet_screening/instructions.md`
+- A: `skills/finance/wallet_screening/maintenance/normalize_ofac_sdn.py`
+- M: `skills/finance/wallet_screening/manifest.yaml`
+- M: `skills/finance/wallet_screening/skill.py`
+- A: `skills/finance/wallet_screening/test_ofac_sdn.py`
+- M: `skills/finance/wallet_screening/test_skill.py`
+- M: `skills/linguistics/korean_slang/manifest.yaml`
+- M: `skills/monitoring/kpi_gate/manifest.yaml`
+- M: `skills/monitoring/token_limiter/manifest.yaml`
+- M: `skills/office/gmail_handler/manifest.yaml`
+- M: `skills/office/pdf_form_filler/card.json`
+- M: `skills/office/pdf_form_filler/instructions.md`
+- M: `skills/office/pdf_form_filler/manifest.yaml`
+- M: `skills/office/pdf_form_filler/skill.py`
+- M: `skills/office/pdf_form_filler/test_skill.py`
+- M: `skills/office/pdf_form_filler/utils.py`
+- A: `skills/office/web_form_mapper/__init__.py`
+- A: `skills/office/web_form_mapper/card.json`
+- A: `skills/office/web_form_mapper/dom_parser.py`
+- A: `skills/office/web_form_mapper/instructions.md`
+- A: `skills/office/web_form_mapper/kb/form_profiles/delaware_corp_filing.yaml`

@@ -25,3 +25,7 @@ The examined function demonstrates pipeline mechanics, not measured superiority 
 Adopt the algorithm and expose QMD as an optional retrieval adapter. Start with keyword retrieval and add vectors/reranking only when measured recall or paraphrase handling justifies them. Require stale-index detection, embedding-version compatibility and a separate permission filter. Validate against exact-name lookups, paraphrases, mixed Czech/English content, deleted documents, and unanswerable questions.
 
 Related directions: [memory](../memory.md) · [decisions](../decisions.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [qmd](https://github.com/tobi/qmd); analyzed commit `26b703c5daa8037df089a8104cbf7eeab4e51874`; commit date 2026-10-01T20:41:53-04:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--qmd.md).
+<!-- teamagent-analysis:end -->

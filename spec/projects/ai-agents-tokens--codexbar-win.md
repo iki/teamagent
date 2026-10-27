@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-tokens**. Its category places it in 
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [codexbar-win](https://github.com/nesszer/Win-CodexBar); analyzed commit `d5ef504d62d05b6660f1b78c65bcc679badef8e7`; commit date 2026-10-04T02:13:05+07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--codexbar-win.md).
+<!-- teamagent-analysis:end -->

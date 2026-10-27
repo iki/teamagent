@@ -25,3 +25,7 @@ The quality of the final answer is constrained by what community summaries retai
 Adopt as an optional broad-research strategy, not the default path for coding or precise fact retrieval. Route by task and expected corpus coverage. Validate theme coverage, minority/contradictory evidence, attribution fidelity, unanswerable queries and interrupted map batches. Compare source-grounded completeness with direct hybrid retrieval at a matched cost budget, and regenerate summaries when source permissions or content change.
 
 Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [graphrag](https://github.com/microsoft/graphrag); analyzed commit `769542fbf1d8e5b4c6a8677fefc34621c87894c5`; commit date 2026-09-23T16:13:34-06:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphrag.md).
+<!-- teamagent-analysis:end -->

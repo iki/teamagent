@@ -1,0 +1,207 @@
+# openrouter-go-sdk: change evidence
+
+Source: [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk) · [Analysis](../../projects/ai-agents-proxy--openrouter-go-sdk.md) · [models](../../models.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `b6813fe66149d84ea00758cb2f8b233ccbc76e29`; commit date: 2026-10-02T21:54:29Z; review date: unknown; observed SHA: `1817a54ddc2a43786412bf0fb7802868f19d35e1`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/OpenRouterTeam/go-sdk/compare/b6813fe66149d84ea00758cb2f8b233ccbc76e29...1817a54ddc2a43786412bf0fb7802868f19d35e1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [1817a54ddc2a](https://github.com/OpenRouterTeam/go-sdk/commit/1817a54ddc2a43786412bf0fb7802868f19d35e1) 2026-10-27T17:50:19Z: chore: bump examples to SDK v0.9.81
+- [6d972f84bf8d](https://github.com/OpenRouterTeam/go-sdk/commit/6d972f84bf8d4763fdc3d05e700199bfff30a4d7) 2026-10-27T17:47:28Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.81 (#1049)
+- [8a3e181eec49](https://github.com/OpenRouterTeam/go-sdk/commit/8a3e181eec49f73d2d7e58d02535fd8e8060665c) 2026-10-27T17:38:09Z: chore: update OpenAPI spec [sdk-bot] (#1048)
+- [3c78a6962995](https://github.com/OpenRouterTeam/go-sdk/commit/3c78a6962995d867b1f75601829010e834966f77) 2026-10-27T14:02:04Z: chore: bump examples to SDK v0.9.80
+- [0ce2e9069781](https://github.com/OpenRouterTeam/go-sdk/commit/0ce2e9069781cbf312be3fcc6e1ac083d4cd583e) 2026-10-27T13:59:23Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.80 (#1047)
+- [dbafea654a38](https://github.com/OpenRouterTeam/go-sdk/commit/dbafea654a381d42277c193da85b8322f7802810) 2026-10-27T13:49:47Z: chore: update OpenAPI spec [sdk-bot] (#1046)
+- [7249b4fe724d](https://github.com/OpenRouterTeam/go-sdk/commit/7249b4fe724d6b91f95d4b6d21bdbae2bf88a3ea) 2026-10-27T01:20:07Z: chore: bump examples to SDK v0.9.79
+- [5c7538813716](https://github.com/OpenRouterTeam/go-sdk/commit/5c7538813716ae38baee2ba603c19b015ff94d5f) 2026-10-27T01:17:37Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.79 (#1045)
+- [a230de87b3bd](https://github.com/OpenRouterTeam/go-sdk/commit/a230de87b3bd64a2c47695e56b44ddabc7b85b26) 2026-10-27T01:08:14Z: chore: update OpenAPI spec [sdk-bot] (#1044)
+- [0c03e59207fb](https://github.com/OpenRouterTeam/go-sdk/commit/0c03e59207fbee215674e57a6068b338bc0fc02e) 2026-10-27T00:23:36Z: chore: bump examples to SDK v0.9.78
+- [b6b6bb624bc6](https://github.com/OpenRouterTeam/go-sdk/commit/b6b6bb624bc66a0df449b7200c8f51f33d227b39) 2026-10-27T00:21:42Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.78 (#1042)
+- [8a8eb9a52746](https://github.com/OpenRouterTeam/go-sdk/commit/8a8eb9a527462263b4fad844f4d9a7ce352b2b5f) 2026-10-27T00:11:55Z: chore: update OpenAPI spec [sdk-bot] (#1041)
+- [3e3d32760732](https://github.com/OpenRouterTeam/go-sdk/commit/3e3d32760732401e69d60734abc15a4850bad9f6) 2026-10-26T21:12:59Z: chore: bump examples to SDK v0.9.77
+- [7a560cf2e64f](https://github.com/OpenRouterTeam/go-sdk/commit/7a560cf2e64fa53528cdc897ee68d018a5facb93) 2026-10-26T21:10:12Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.77 (#1040)
+- [5f439df2fa3f](https://github.com/OpenRouterTeam/go-sdk/commit/5f439df2fa3f6c5a1fafef2e5182a287d51d251a) 2026-10-26T21:01:09Z: chore: update OpenAPI spec [sdk-bot] (#1039)
+- [30a305c1a0c8](https://github.com/OpenRouterTeam/go-sdk/commit/30a305c1a0c8c259a891f519842a3ab3375c403c) 2026-10-26T19:51:03Z: chore: bump examples to SDK v0.9.76
+- [c300a9866d0f](https://github.com/OpenRouterTeam/go-sdk/commit/c300a9866d0f8a10faa53a2185d74c3831bfa04c) 2026-10-26T19:48:12Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.76 (#1038)
+- [a9b553271a99](https://github.com/OpenRouterTeam/go-sdk/commit/a9b553271a9995b6f719b4481aeb7edd4cba30ff) 2026-10-26T19:39:43Z: chore: update OpenAPI spec [sdk-bot] (#1037)
+- [c14d374058dc](https://github.com/OpenRouterTeam/go-sdk/commit/c14d374058dc5a283746906ae08865b6f2f55fb3) 2026-10-23T18:08:05Z: chore: bump examples to SDK v0.9.75
+- [5dbdc48834d0](https://github.com/OpenRouterTeam/go-sdk/commit/5dbdc48834d0953de4e6153e8b49152c9a2bbc35) 2026-10-23T18:05:25Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.75 (#1035)
+- [3e7cec1de3cd](https://github.com/OpenRouterTeam/go-sdk/commit/3e7cec1de3cd7c51a5cdab4db5e1feafad6fd122) 2026-10-23T17:56:16Z: chore: update OpenAPI spec [sdk-bot] (#1034)
+- [28323fc5b79e](https://github.com/OpenRouterTeam/go-sdk/commit/28323fc5b79eda726cb657e6e4a50e8433552367) 2026-10-23T02:33:49Z: chore: bump examples to SDK v0.9.74
+- [613e7e7c85af](https://github.com/OpenRouterTeam/go-sdk/commit/613e7e7c85afee7152bde0eb6f29efe922b735bc) 2026-10-23T02:31:05Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.74 (#1033)
+- [59aac2a2af1b](https://github.com/OpenRouterTeam/go-sdk/commit/59aac2a2af1bab686a28c86de8b664c21b7f6f07) 2026-10-23T02:23:44Z: chore: update OpenAPI spec [sdk-bot] (#1032)
+- [67db326eba4d](https://github.com/OpenRouterTeam/go-sdk/commit/67db326eba4d7ccc5c8692af659e6988f7e8949e) 2026-10-22T23:41:03Z: chore: bump examples to SDK v0.9.73
+- [ca997e2e5479](https://github.com/OpenRouterTeam/go-sdk/commit/ca997e2e54799f327b8c32ce37427524d4f0621c) 2026-10-22T23:38:20Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.73 (#1031)
+- [274fae6668f6](https://github.com/OpenRouterTeam/go-sdk/commit/274fae6668f635a9c9fe018bfaca074631e11c28) 2026-10-22T23:31:02Z: chore: update OpenAPI spec [sdk-bot] (#1030)
+- [67281f3bbc42](https://github.com/OpenRouterTeam/go-sdk/commit/67281f3bbc424ddca7589f41f7c5b6f11327e4fa) 2026-10-22T12:47:00-07:00: Merge pull request #1025 from OpenRouterTeam/chore/pin-action-shas
+- [50d9af145f38](https://github.com/OpenRouterTeam/go-sdk/commit/50d9af145f38f044de58dd636f0e80d331720b60) 2026-10-22T18:14:38Z: chore: bump examples to SDK v0.9.72
+- [fb13f596424e](https://github.com/OpenRouterTeam/go-sdk/commit/fb13f596424ec89908ad723affccdce738d3077f) 2026-10-22T18:11:45Z: chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.72 (#1027)
+- [c141c03aa891](https://github.com/OpenRouterTeam/go-sdk/commit/c141c03aa891fe0814660efcf7e5e833cf466a61) 2026-10-22T18:02:47Z: chore: update OpenAPI spec [sdk-bot] (#1026)
+- [f18269defd87](https://github.com/OpenRouterTeam/go-sdk/commit/f18269defd87f4e3f4a411218b370d9d414dfa83) 2026-10-22T17:50:13Z: ci: pin GitHub Actions to commit SHAs
+
+## Changed paths (truncated)
+
+- M: `.github/workflows/auto-merge-speakeasy-pr.yaml`
+- M: `.github/workflows/docs-nav.yaml`
+- M: `.github/workflows/examples.yaml`
+- M: `.github/workflows/sdk-generation-for-spec-change.yaml`
+- M: `.github/workflows/sdk-generation.yaml`
+- M: `.github/workflows/sdk-publish.yaml`
+- M: `.github/workflows/tagging.yaml`
+- M: `.speakeasy/gen.lock`
+- M: `.speakeasy/gen.yaml`
+- M: `.speakeasy/in.openapi.yaml`
+- M: `.speakeasy/out.openapi.yaml`
+- M: `.speakeasy/workflow.lock`
+- M: `OVERVIEW.md`
+- M: `README.md`
+- M: `RELEASES.md`
+- M: `apikeys.go`
+- M: `byok.go`
+- M: `containers.go`
+- M: `doc.go`
+- M: `docs/docs.json`
+- M: `docs/models/components/aabenchmarkentry.mdx`
+- M: `docs/models/components/activityitem.mdx`
+- M: `docs/models/components/activityresponse.mdx`
+- M: `docs/models/components/additionaltoolsitem.mdx`
+- A: `docs/models/components/additionaltoolsitemallowedcaller.mdx`
+- M: `docs/models/components/additionaltoolsitemtool.mdx`
+- M: `docs/models/components/additionaltoolsitemtoolfunction.mdx`
+- M: `docs/models/components/advisorreasoning.mdx`
+- M: `docs/models/components/advisorservertoolconfig.mdx`
+- M: `docs/models/components/advisorservertoolopenrouter.mdx`
+- M: `docs/models/components/agent.mdx`
+- M: `docs/models/components/agentmessageitem.mdx`
+- M: `docs/models/components/agentmessageitemcontentinputimage.mdx`
+- M: `docs/models/components/alignment.mdx`
+- M: `docs/models/components/alignmentallowedcallrecord.mdx`
+- M: `docs/models/components/alignmentblockedcallrecord.mdx`
+- M: `docs/models/components/alignmentchataudio.mdx`
+- M: `docs/models/components/alignmentchatimage.mdx`
+- M: `docs/models/components/alignmentchatimageimageurl.mdx`
+- M: `docs/models/components/alignmentchatrejected.mdx`
+- M: `docs/models/components/alignmentchattoolcall.mdx`
+- M: `docs/models/components/alignmentchattoolcallfunction.mdx`
+- M: `docs/models/components/alignmentplugin.mdx`
+- M: `docs/models/components/alignmentpluginmode.mdx`
+- R051: `docs/models/components/alignmentrule.mdx` (from `docs/models/operations/createinternchatcompletionrequest.mdx`)
+- M: `docs/models/components/alignmentrulerecord.mdx`
+- M: `docs/models/components/alignmentunavailablecallrecord.mdx`
+- A: `docs/models/components/allow.mdx`
+- D: `docs/models/components/allowedcaller.mdx`
+- M: `docs/models/components/allowedtools.mdx`
+- M: `docs/models/components/always.mdx`
+- M: `docs/models/components/annotationaddedevent.mdx`
+- M: `docs/models/components/annotationfile.mdx`
+- M: `docs/models/components/annotationurlcitation.mdx`
+- M: `docs/models/components/annotationwebsearchcitation.mdx`
+- M: `docs/models/components/answers.mdx`
+- M: `docs/models/components/anthropicadvisormessageusageiteration.mdx`
+- M: `docs/models/components/anthropicadvisortoolresult.mdx`
+- M: `docs/models/components/anthropicbase64imagesource.mdx`
+- M: `docs/models/components/anthropicbase64pdfsource.mdx`
+- M: `docs/models/components/anthropicbashcodeexecutionoutput.mdx`
+- M: `docs/models/components/anthropicbashcodeexecutionresult.mdx`
+- M: `docs/models/components/anthropicbashcodeexecutiontoolresult.mdx`
+- M: `docs/models/components/anthropicbashcodeexecutiontoolresulterror.mdx`
+- M: `docs/models/components/anthropiccachecontroldirective.mdx`
+- M: `docs/models/components/anthropiccachecreation.mdx`
+- M: `docs/models/components/anthropiccitationcharlocation.mdx`
+- M: `docs/models/components/anthropiccitationcharlocationparam.mdx`
+- M: `docs/models/components/anthropiccitationcontentblocklocation.mdx`
+- M: `docs/models/components/anthropiccitationcontentblocklocationparam.mdx`
+- M: `docs/models/components/anthropiccitationpagelocation.mdx`
+- M: `docs/models/components/anthropiccitationpagelocationparam.mdx`
+- M: `docs/models/components/anthropiccitationsconfig.mdx`
+- M: `docs/models/components/anthropiccitationsearchresultlocation.mdx`
+- M: `docs/models/components/anthropiccitationsearchresultlocationparam.mdx`
+- M: `docs/models/components/anthropiccitationwebsearchresultlocation.mdx`
+- M: `docs/models/components/anthropiccitationwebsearchresultlocationparam.mdx`
+- M: `docs/models/components/anthropiccodeexecution20250825caller.mdx`
+- M: `docs/models/components/anthropiccodeexecution20260120caller.mdx`
+- M: `docs/models/components/anthropiccodeexecutionoutput.mdx`
+- M: `docs/models/components/anthropiccodeexecutionresult.mdx`
+- M: `docs/models/components/anthropiccodeexecutiontoolresult.mdx`
+- M: `docs/models/components/anthropiccodeexecutiontoolresulterror.mdx`
+- M: `docs/models/components/anthropiccompactionblock.mdx`
+- M: `docs/models/components/anthropiccompactionusageiteration.mdx`
+- M: `docs/models/components/anthropiccontainer.mdx`
+- M: `docs/models/components/anthropiccontainerskill.mdx`
+- M: `docs/models/components/anthropiccontainerupload.mdx`
+- M: `docs/models/components/anthropicdirectcaller.mdx`
+- M: `docs/models/components/anthropicdocumentblock.mdx`
+- M: `docs/models/components/anthropicdocumentblockparam.mdx`
+- M: `docs/models/components/anthropicdocumentblockparamcitations.mdx`
+- M: `docs/models/components/anthropicencryptedcodeexecutionresult.mdx`
+- M: `docs/models/components/anthropicfile.mdx`
+- M: `docs/models/components/anthropicfiledeleted.mdx`
+- M: `docs/models/components/anthropicfiledocumentsource.mdx`
+- M: `docs/models/components/anthropicfilelist.mdx`
+- M: `docs/models/components/anthropicimageblockparam.mdx`
+- M: `docs/models/components/anthropicinputtokensclearatleast.mdx`
+- M: `docs/models/components/anthropicinputtokenstrigger.mdx`
+- M: `docs/models/components/anthropicinputtransformation.mdx`
+- M: `docs/models/components/anthropiciterationcachecreation.mdx`
+- M: `docs/models/components/anthropicmessageoutputconfig.mdx`
+- M: `docs/models/components/anthropicmessageusageiteration.mdx`
+- M: `docs/models/components/anthropicoutputtokensdetails.mdx`
+- M: `docs/models/components/anthropicplaintextsource.mdx`
+- M: `docs/models/components/anthropicredactedthinkingblock.mdx`
+- M: `docs/models/components/anthropicrefusalstopdetails.mdx`
+- M: `docs/models/components/anthropicsafeguard.mdx`
+- M: `docs/models/components/anthropicsearchresultblockparam.mdx`
+- M: `docs/models/components/anthropicsearchresultblockparamcitations.mdx`
+- M: `docs/models/components/anthropicservertoolusage.mdx`
+- M: `docs/models/components/anthropictextblock.mdx`
+- M: `docs/models/components/anthropictextblockparam.mdx`
+- M: `docs/models/components/anthropictexteditorcodeexecutioncreateresult.mdx`
+- M: `docs/models/components/anthropictexteditorcodeexecutionstrreplaceresult.mdx`
+- M: `docs/models/components/anthropictexteditorcodeexecutiontoolresult.mdx`
+- M: `docs/models/components/anthropictexteditorcodeexecutiontoolresulterror.mdx`
+- M: `docs/models/components/anthropictexteditorcodeexecutionviewresult.mdx`
+- M: `docs/models/components/anthropicthinkingblock.mdx`
+- M: `docs/models/components/anthropicthinkingblockbinding.mdx`
+- M: `docs/models/components/anthropicthinkingturns.mdx`
+- M: `docs/models/components/anthropictoolreference.mdx`
+- M: `docs/models/components/anthropictoolsearchresult.mdx`
+- M: `docs/models/components/anthropictoolsearchresulterror.mdx`
+- M: `docs/models/components/anthropictoolsearchtoolbm25.mdx`
+- M: `docs/models/components/anthropictoolsearchtoolregex.mdx`
+- M: `docs/models/components/anthropictoolsearchtoolresult.mdx`
+- A: `docs/models/components/anthropictoolunion.mdx`
+- R061: `docs/models/components/anthropictoolunionbash20250124.mdx` (from `docs/models/components/internchaterrormetadata.mdx`)
+- A: `docs/models/components/anthropictoolunioncustom.mdx`
+- A: `docs/models/components/anthropictoolunioninputschema.mdx`
+- A: `docs/models/components/anthropictoolunionnamebash.mdx`
+- A: `docs/models/components/anthropictoolunionnamestrreplaceeditor.mdx`
+- A: `docs/models/components/anthropictoolunionnamewebsearch1.mdx`
+- A: `docs/models/components/anthropictoolunionnamewebsearch2.mdx`
+- A: `docs/models/components/anthropictooluniontexteditor20250124.mdx`
+- A: `docs/models/components/anthropictooluniontypebash20250124.mdx`
+- A: `docs/models/components/anthropictooluniontypecustom.mdx`
+- A: `docs/models/components/anthropictooluniontypetexteditor20250124.mdx`
+- A: `docs/models/components/anthropictooluniontypewebsearch20250305.mdx`
+- A: `docs/models/components/anthropictooluniontypewebsearch20260209.mdx`
+- A: `docs/models/components/anthropictoolunionwebsearch20250305.mdx`
+- R063: `docs/models/components/anthropictoolunionwebsearch20260209.mdx` (from `docs/models/components/internchatcompletionrequest.mdx`)
+- M: `docs/models/components/anthropictooluseblock.mdx`
+- M: `docs/models/components/anthropictooluseskeep.mdx`
+- M: `docs/models/components/anthropictoolusestrigger.mdx`
+- M: `docs/models/components/anthropicunknownusageiteration.mdx`
+- M: `docs/models/components/anthropicurlimagesource.mdx`
+- M: `docs/models/components/anthropicurlpdfsource.mdx`
+- M: `docs/models/components/anthropicwebfetchblock.mdx`
+- M: `docs/models/components/anthropicwebfetchtoolresult.mdx`
+- M: `docs/models/components/anthropicwebfetchtoolresulterror.mdx`
+- M: `docs/models/components/anthropicwebsearchresult.mdx`
+- M: `docs/models/components/anthropicwebsearchresultblockparam.mdx`
+- M: `docs/models/components/anthropicwebsearchtoolresult.mdx`
+- M: `docs/models/components/anthropicwebsearchtoolresulterror.mdx`
+- M: `docs/models/components/anthropicwebsearchtooluserlocation.mdx`
+- M: `docs/models/components/applypatchcallitem.mdx`
+- M: `docs/models/components/applypatchcalloperationdiffdeltaevent.mdx`

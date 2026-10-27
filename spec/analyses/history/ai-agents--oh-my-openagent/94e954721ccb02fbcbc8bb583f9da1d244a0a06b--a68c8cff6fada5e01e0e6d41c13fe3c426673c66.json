@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--oh-my-openagent",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/code-yeongyu/oh-my-openagent",
+  "report": "spec/projects/ai-agents--oh-my-openagent.md",
+  "analyzedSha": "94e954721ccb02fbcbc8bb583f9da1d244a0a06b",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-08-17T06:41:22+09:00",
+  "observedSha": "a68c8cff6fada5e01e0e6d41c13fe3c426673c66",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a68c8cff6fada5e01e0e6d41c13fe3c426673c66",
+      "date": "2026-10-24T14:15:43+09:00",
+      "subject": "Merge pull request #10558 from code-yeongyu/fix/10378-plan-gate-replay"
+    },
+    {
+      "sha": "de74e117916ae14e7f9133cb2e9ef1cb1f62f6d2",
+      "date": "2026-10-24T14:07:45+09:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into fix/10378-plan-gate-replay"
+    },
+    {
+      "sha": "6f8a2553a50bf58974de4883ac2a984f1ba5324d",
+      "date": "2026-10-24T13:43:59+09:00",
+      "subject": "Merge pull request #11132 from code-yeongyu/test/10402-start-refusal-ordering"
+    },
+    {
+      "sha": "e9dd9ab8aa6bdb033cc63ceeaf8149932dec5302",
+      "date": "2026-10-24T13:24:23+09:00",
+      "subject": "Merge pull request #11126 from code-yeongyu/chore/adopt-senpi-2026.10.23-1"
+    },
+    {
+      "sha": "99b3b9bfd6ea84a5d9801a0941ade66acadbed53",
+      "date": "2026-10-24T12:54:01+09:00",
+      "subject": "test(senpi-task): harden start refusal regression"
+    },
+    {
+      "sha": "d2cbb62a52aa3c98234715103d44d262a47808d6",
+      "date": "2026-10-24T12:19:04+09:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into fix/10378-plan-gate-replay"
+    },
+    {
+      "sha": "23b2516d30720bb49517798672e5fc7ecb372d1c",
+      "date": "2026-10-24T12:06:08+09:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into chore/adopt-senpi-2026.10.23-1"
+    },
+    {
+      "sha": "5a46efe33451a9615345c667ead03c7e4d880a17",
+      "date": "2026-10-24T11:17:14+09:00",
+      "subject": "test(senpi-task): cover delayed start refusal"
+    },
+    {
+      "sha": "1a62c298d2556abf430db87c15c0c70d3348f2b9",
+      "date": "2026-10-24T11:16:52+09:00",
+      "subject": "Merge pull request #11024 from code-yeongyu/fix/11019-bun-bin-ownership"
+    },
+    {
+      "sha": "595eb05d233b2b19039552c38dfaf4d4788031a3",
+      "date": "2026-10-24T11:15:45+09:00",
+      "subject": "Merge branch 'dev' into fix/11019-bun-bin-ownership"
+    },
+    {
+      "sha": "b6a37a7f886f74f1d5915339506edeb8f46efa1b",
+      "date": "2026-10-24T11:05:51+09:00",
+      "subject": "chore(deps): regenerate the bundles on the merged dev"
+    },
+    {
+      "sha": "47f67b72b0bbdfcdd5b87612d75a13ee0c5e4216",
+      "date": "2026-10-24T11:04:55+09:00",
+      "subject": "Merge remote-tracking branch 'refs/remotes/origin/dev' into HEAD"
+    },
+    {
+      "sha": "3e3d8f2ca519ab19c11b365bcd62374d4d3d525e",
+      "date": "2026-10-24T10:56:38+09:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into chore/adopt-senpi-2026.10.23-1"
+    },
+    {
+      "sha": "0afffdcf0bf49f735331ec80ee513e465fb8cf5f",
+      "date": "2026-10-24T10:50:38+09:00",
+      "subject": "Merge pull request #11105 from code-yeongyu/batch/memsync-coord-7"
+    },
+    {
+      "sha": "cb673fc1a44ff52cafaef995080194e107288f4c",
+      "date": "2026-10-24T10:13:22+09:00",
+      "subject": "chore(deps): regenerate the bundles and note the senpi 2026.10.23-1 adoption"
+    },
+    {
+      "sha": "fde0dc8064666d518ca80b029c45755148c716af",
+      "date": "2026-10-24T10:10:16+09:00",
+      "subject": "batch7: merge dev ac8e749031"
+    },
+    {
+      "sha": "ac8e7490313b8f1a27ab591dc820f1510d02c3e4",
+      "date": "2026-10-24T10:05:54+09:00",
+      "subject": "Merge pull request #9666 from cynkai/fix/9583-web-terminal-waitfor-token"
+    },
+    {
+      "sha": "22cd988d695c5cb0f7cc009900638e1a59686b57",
+      "date": "2026-10-24T09:50:12+09:00",
+      "subject": "chore(deps): adopt senpi 2026.10.23-1"
+    },
+    {
+      "sha": "0003dc736fee25606ccfcde8be9a6f9851e11399",
+      "date": "2026-10-24T09:45:23+09:00",
+      "subject": "Merge pull request #11047 from code-yeongyu/feat/11009-t3"
+    },
+    {
+      "sha": "f0b11492468027ad8fa6144c3fa655605553cb98",
+      "date": "2026-10-24T09:37:11+09:00",
+      "subject": "batch7: merge #11038 @012e6e768e (test-only pollution fix)"
+    },
+    {
+      "sha": "012e6e768e073a445074afbf4961151c8def45d3",
+      "date": "2026-10-24T09:35:25+09:00",
+      "subject": "test(memory): count facts entry reads with a per-test spy, not a module mock"
+    },
+    {
+      "sha": "aa06aba1237bf3c2531240d19a88f2c2002f4494",
+      "date": "2026-10-24T09:14:25+09:00",
+      "subject": "chore(bundle): regenerate generated artifacts for batch #7 at 1a1b87275f"
+    },
+    {
+      "sha": "67ac7217423ee4a12f349ff5d6687d325b2bf9a8",
+      "date": "2026-10-24T09:11:50+09:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into feat/11009-t3"
+    },
+    {
+      "sha": "65f99f8300fd98fe7240d2a2f0f984ae63e719e4",
+      "date": "2026-10-24T09:09:22+09:00",
+      "subject": "Merge branch 'dev' into fix/11019-bun-bin-ownership"
+    },
+    {
+      "sha": "2027acce68967dea04665d3bec566f358eee6986",
+      "date": "2026-10-24T09:09:07+09:00",
+      "subject": "batch7: merge dev 9cc6b1dde4"
+    },
+    {
+      "sha": "0c3d01d3793e51d41fafd32448fd52ab61868a72",
+      "date": "2026-10-24T09:07:25+09:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into fix/9583-web-terminal-waitfor-token"
+    },
+    {
+      "sha": "9cc6b1dde4b51c6b86f695d917d5e014f424502b",
+      "date": "2026-10-24T09:06:51+09:00",
+      "subject": "Merge pull request #11120 from code-yeongyu/fix/11009-ratchet"
+    },
+    {
+      "sha": "1a1b87275f56c74cdef97271580ab8eb8a6e9d8f",
+      "date": "2026-10-24T08:45:53+09:00",
+      "subject": "batch7: merge dev 0e2ed1ac99"
+    },
+    {
+      "sha": "c8ee072a9b1ffed71236e1d8d586b8a55bf43764",
+      "date": "2026-10-24T08:36:39+09:00",
+      "subject": "docs(changelog): drop the duplicated OpenTelemetry paragraph, unfuse two paragraphs, link #10402 (batch #7 review fold)"
+    },
+    {
+      "sha": "83ae04e5d99d89a3925ba3b792193d409bab4e09",
+      "date": "2026-10-24T08:36:15+09:00",
+      "subject": "docs(changelog): add the #10538 entry (batch #7 integration)"
+    },
+    {
+      "sha": "78056649665b167e69f78a0902f2f7a8e1da1b79",
+      "date": "2026-10-24T08:36:15+09:00",
+      "subject": "batch7: merge #10538 @500007ad35"
+    },
+    {
+      "sha": "10b1d4540526b0bb394b6db2d5079514325cd373",
+      "date": "2026-10-24T08:36:14+09:00",
+      "subject": "docs(changelog): link #11101 in its paragraph (batch #7 integration)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/command/publish.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/command/remove-deadcode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/codex-qa/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/codex-qa/scripts/lsp-e2e.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/hyperplan/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/opencode-qa/scripts/lsp-e2e.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/pre-publish-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/publish/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/remove-deadcode/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/security-research/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/senpi-qa/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/senpi-qa/scripts/resolve-evidence-dir.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/senpi-qa/scripts/resolve-evidence-dir.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/tech-debt-audit/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/benchmark.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/benchmark.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/eval_metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/with_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/with_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/with_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/with_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/with_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/with_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/without_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/without_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/without_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/without_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/without_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-1/without_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/eval_metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/with_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/with_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/with_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/with_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/with_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/with_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/without_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/without_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/without_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/without_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/without_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-2/without_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/eval_metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/with_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/with_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/with_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/with_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/with_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/with_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/without_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/without_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/without_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/without_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/without_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-3/without_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/eval_metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/with_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/with_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/with_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/with_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/with_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/with_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/without_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/without_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/without_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/without_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/without_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-4/without_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/eval_metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/with_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/with_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/with_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/with_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/with_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/with_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/without_skill/grading.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/without_skill/outputs/code-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/without_skill/outputs/execution-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/without_skill/outputs/pr-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/without_skill/outputs/verification-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/eval-5/without_skill/timing.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/work-with-pr-workspace/iteration-1/review.html",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".codegraph/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/RELEASE-ANNOUNCEMENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/assets/omo-herdr-dag.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/assets/opengateway-logo.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-codex-platform-build.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-codex-platform-node.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-macos-status.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-root-shard-2.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ci-senpi-posix.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/cla-first-signature-replay.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/macos-sign-and-notarize.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/omo-bun-executable.entitlements",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/windows-ci-telemetry.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bot-merge.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/changelog-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-full-matrix-label.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cla.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/compiled-worker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cutover-target-deploy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-engine.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-linux-qa.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-windows-qa.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/get-worker-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/get-worker-deploy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/installer-mirror.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/isolation-linux-fs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint-workflows.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/macos-signing-canary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/memory-takeover-trace.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/npm-deprecate-version.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/npm-dist-tag-rollback.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/package-labels.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-automation-signal.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-platform.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/refresh-model-capabilities.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-announce.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/review-claims.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sisyphus-agent.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/stats.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web-deploy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-flake-soak.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitmodules",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".mcp.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/drafts/memory-v2-active-learning.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/driver-after-fix.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/driver-before-fix.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/driver.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/green.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/negative-control.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/qa-summary.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/real-opencode-dev-rendered.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/real-opencode-fix-rendered.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/real-opencode-qa.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/red.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/related-suites.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260709-fix-5978/typecheck.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/green.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/live-after-fix.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/live-before-fix.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/live-mcp-driver.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/negative-control.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/qa-summary.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/red.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/related-suites-dev-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/related-suites-head-rerun.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/related-suites-head.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".omo/evidence/20260716-fix-6131/typecheck.txt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

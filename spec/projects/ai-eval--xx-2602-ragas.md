@@ -23,3 +23,7 @@ Adopt selected metrics behind the evaluation protocol for knowledge-query tasks,
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [ragas](https://github.com/vibrantlabsai/ragas); analyzed commit `298b68274234c060deacab3cf5fb52aa3a20e885`; commit date 2026-02-24T13:17:18+05:30; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-eval--xx-2602-ragas.md).
+<!-- teamagent-analysis:end -->

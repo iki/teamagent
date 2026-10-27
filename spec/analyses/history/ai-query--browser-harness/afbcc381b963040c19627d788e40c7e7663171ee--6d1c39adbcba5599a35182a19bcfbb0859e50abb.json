@@ -1,0 +1,504 @@
+{
+  "id": "ai-query--browser-harness",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/browser-use/browser-harness",
+  "report": "spec/projects/ai-query--browser-harness.md",
+  "analyzedSha": "afbcc381b963040c19627d788e40c7e7663171ee",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-07T13:13:31-07:00",
+  "observedSha": "6d1c39adbcba5599a35182a19bcfbb0859e50abb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6d1c39adbcba5599a35182a19bcfbb0859e50abb",
+      "date": "2026-10-23T16:20:44-07:00",
+      "subject": "Merge pull request #940 from browser-use/skills/rt-pacing-prose"
+    },
+    {
+      "sha": "e258d054dcb3c6e46c1c4757f1fac24b7c3e7877",
+      "date": "2026-10-23T16:19:03-07:00",
+      "subject": "Domain skills (Rotten Tomatoes): pacing note matches the code (403 and exhausted 429 stop the run)"
+    },
+    {
+      "sha": "683a3b9c1f82648ae110626f3219dc659d2dacc8",
+      "date": "2026-10-23T16:13:55-07:00",
+      "subject": "Merge pull request #939 from browser-use/skills/review-fixes-614"
+    },
+    {
+      "sha": "ef6dde610a7c8c6d33563295ee725a1375979c95",
+      "date": "2026-10-23T16:12:30-07:00",
+      "subject": "Domain skills (Google Play): ignore empty or fragment JSON-LD urls, resolve against the origin"
+    },
+    {
+      "sha": "bb4f593d746b3f85919764d079e1361c03868f29",
+      "date": "2026-10-23T16:07:53-07:00",
+      "subject": "Domain skills: review fixes (Shopify 400 handling, Rotten Tomatoes pacing, Google Play id matching)"
+    },
+    {
+      "sha": "0c8557a068e629e2ee0a5f7bfced62cd6d623dc6",
+      "date": "2026-10-23T15:55:15-07:00",
+      "subject": "Merge pull request #937 from browser-use/skills/field-tested-batch-1"
+    },
+    {
+      "sha": "559a8d58e846407c176b9b721f371928679c807c",
+      "date": "2026-10-23T15:53:34-07:00",
+      "subject": "Domain skills (Target): back-off message only for a 435, plain error for other fulfillment statuses"
+    },
+    {
+      "sha": "26395b2ee6d29ee20834b5283338df6d030e7041",
+      "date": "2026-10-23T15:50:03-07:00",
+      "subject": "Domain skills: reject half-loaded Best Buy cards, safe Target tab cleanup, back-off message on fulfillment blocks"
+    },
+    {
+      "sha": "c74711b9ccb5c98d50bb5a4694af935b499a148b",
+      "date": "2026-10-23T14:59:35-07:00",
+      "subject": "Domain skills: confirm navigation before reading, one 120 s retry deadline, never report partial crawls as complete (Best Buy, Redfin, Target)"
+    },
+    {
+      "sha": "e7830b44900a713f991f4d0f3018724e99bef28e",
+      "date": "2026-10-23T14:27:06-07:00",
+      "subject": "Domain skills: no-evasion policy, robots.txt-allowed paths only, last review fixes"
+    },
+    {
+      "sha": "ea0d03e3cb0830fdfb7fa3b9ddb10f1d86f2f675",
+      "date": "2026-10-23T13:34:32-07:00",
+      "subject": "Merge pull request #938 from browser-use/skills/field-tested-batch-2"
+    },
+    {
+      "sha": "553051c4a125bab1401059d2f7e8fa4a7681d388",
+      "date": "2026-10-23T13:32:20-07:00",
+      "subject": "Domain skills (Rotten Tomatoes): stop the enrichment loop on a 403 or exhausted 429"
+    },
+    {
+      "sha": "e02752c40a5342ef695410f2ae2e6651564b0ec3",
+      "date": "2026-10-23T13:27:34-07:00",
+      "subject": "Domain skills: align retry prose with code, mark partial Upwork runs, cite Apple's Search API docs"
+    },
+    {
+      "sha": "12e6c6ddf770a5ea37629d05e220795c526fcc61",
+      "date": "2026-10-23T13:14:27-07:00",
+      "subject": "Domain skills: review fixes, no-evasion policy, robots.txt-allowed paths only"
+    },
+    {
+      "sha": "ca3ed91d3f28ee9d3dedde40120b3d34a59405ab",
+      "date": "2026-10-23T12:39:53-07:00",
+      "subject": "Domain skills: 13 field-tested sites (Realtor.com, Home Depot, Costco, Wayfair, AliExpress, Temu, Upwork, Google Play, App Store, Apartments.com, Rotten Tomatoes, Bing, Rightmove)"
+    },
+    {
+      "sha": "3685de8e68216d0b3a4a1c79a9ab82d3d6345d5e",
+      "date": "2026-10-23T12:23:54-07:00",
+      "subject": "Domain skills: fix review findings (retries instead of silent partial data, nav checks, truthful UAs, opt-in foreground)"
+    },
+    {
+      "sha": "b39c30643381d46011c18afe8e910981cfd3b5fd",
+      "date": "2026-10-23T12:00:59-07:00",
+      "subject": "Domain skills: Google Maps, Yelp, TripAdvisor, Shopify storefronts, Google Scholar, Redfin, Target, Best Buy"
+    },
+    {
+      "sha": "c6a941287424f32e2d20c7b7b892c8493f46808d",
+      "date": "2026-10-17T10:59:00-07:00",
+      "subject": "Merge pull request #919 from browser-use/docs/readme-compare-cursor"
+    },
+    {
+      "sha": "b4f04fb47ca141d40e8934dbd4ff0347027f72c4",
+      "date": "2026-10-17T10:52:35-07:00",
+      "subject": "README: tighten eval claims, fix competitor facts, add agent-browser and ChatGPT rows"
+    },
+    {
+      "sha": "d4bb96b422a4d80db6363a2da9ff6680a1773058",
+      "date": "2026-10-17T10:45:11-07:00",
+      "subject": "README: define browser harness, compare to Playwright MCP/CLI, DevTools MCP, Claude in Chrome, add Cursor config"
+    },
+    {
+      "sha": "a6426f846fc59d16f38cf66f79176bc7793c16b6",
+      "date": "2026-10-14T18:52:09-07:00",
+      "subject": "Merge pull request #914 from browser-use/readme-first-paragraph"
+    },
+    {
+      "sha": "5c60636efa3b806b85f1ed54d06d610d74441288",
+      "date": "2026-10-14T18:38:21-07:00",
+      "subject": "README: first paragraph names Claude Code, Codex and Cursor"
+    },
+    {
+      "sha": "dbf0e4f3a37ebc31aaeaf9d378ab1760b5776c15",
+      "date": "2026-10-08T23:16:16-07:00",
+      "subject": "Merge pull request #595 from bianjiefilm/feishu-docx-scraping"
+    },
+    {
+      "sha": "ba2ad05c119dec406355d2932a23d1233df7dd18",
+      "date": "2026-10-08T23:16:09-07:00",
+      "subject": "Merge pull request #388 from PinkClaw/enrich/expedia-domain-skill"
+    },
+    {
+      "sha": "a088c8296541bca145a0fb7f303034e9168a3cfc",
+      "date": "2026-10-08T23:16:02-07:00",
+      "subject": "Merge pull request #400 from MatheusGSD/domain-skills/mermaid-live-render"
+    },
+    {
+      "sha": "62579d1b24bd85fae8c71424864bff703fb29a04",
+      "date": "2026-10-08T23:14:09-07:00",
+      "subject": "Merge pull request #646 from taner-crypto/codex/youtube-transcript-panel"
+    },
+    {
+      "sha": "d7e523f8ec4a356d758b9883bfd088bf646314d2",
+      "date": "2026-10-08T23:14:03-07:00",
+      "subject": "Merge pull request #830 from ardasisbot/domain-skill/furnishedfinder-airbnb"
+    },
+    {
+      "sha": "f5d8cd76a10cb0780b76445acaaa54571440394a",
+      "date": "2026-10-09T06:12:56Z",
+      "subject": "docs: retain cleaned Feishu text and initial rendering wait"
+    },
+    {
+      "sha": "f5e4fd0699ecac77f2fa101e0737c76299403a94",
+      "date": "2026-10-08T23:12:02-07:00",
+      "subject": "Merge pull request #156 from bilaldaqqah/skill/jetblue-checkout"
+    },
+    {
+      "sha": "30ab3d1871d8c932f0a5c87566dbc66c7df905e0",
+      "date": "2026-10-08T23:11:55-07:00",
+      "subject": "Merge pull request #553 from Larkooo/slack-files-domain-skill"
+    },
+    {
+      "sha": "1a22620792d0c7bacc7587a00080f691914b600b",
+      "date": "2026-10-09T06:11:40Z",
+      "subject": "docs: remove ambiguous rendering and navigation checks"
+    },
+    {
+      "sha": "55456773b1a8cfe496464343bb2e5ab0febad658",
+      "date": "2026-10-09T06:11:40Z",
+      "subject": "docs: remove ambiguous rendering and navigation checks"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/admin/microsoft-365.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/airbnb/monthly-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/aliexpress/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/amazon/order-history.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/ap/namecheap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/apartments-com/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/apollo/search-and-lists.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/app/apollo.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/app/smartlead.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/apple-app-store/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/best-buy/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/bilbasen/search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/booking/frontier-checkout.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/claude/custom-connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/claude/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/costco/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/dashboard/stripe.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/docs/google-sheets.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/doordash/search-and-product-pages.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-workspace/domain-skills/ebay/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/expedia/api.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/expedia/flights-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/feishu/docx-scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/figma/comments.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/flighthub/flights-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/flyfrontier/checkout.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/frontier/checkout.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/furnishedfinder/search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/gemini/spark-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/google-maps/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/google-play/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/google-sheets/writing-cells.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/google/flights-multi-city.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/home-depot/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/iherb/product-labels.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/jetblue/checkout.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/loom/read-recording.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/lulu/account-currency.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/mermaid/render.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/microsoft-365/domain-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/namecheap/advanced-dns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/nordic/product-labels.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/ods/fact-sheets.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/outlook/webmail-compose.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/partsouq/vin-lookup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/realtor-com/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/redfin/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/rightmove/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/rotten-tomatoes/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/shopify-storefronts/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/slack/files.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/smartlead/mailbox-warmup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/stripe/account-sandboxes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/supabase/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/target/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/thorne/product-labels.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/tripadvisor/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/upwork/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/vercel/archive-and-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/vercel/observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-workspace/domain-skills/walmart/scraping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-workspace/domain-skills/youtube/playback.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-workspace/domain-skills/zillow/scraping.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

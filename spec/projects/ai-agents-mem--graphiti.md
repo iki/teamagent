@@ -1,28 +1,33 @@
 # graphiti
 
-Episode-grounded temporal entity relationships with explicit invalidation and entity resolution.
+Episode-grounded temporal relationships and bounded incremental saga summaries.
 
-Source: [graphiti](https://github.com/getzep/graphiti) · Snapshot: `3c427640abf909f12f71f963fce15eb514a3c493` · Category: `ai-agents-mem`.
+Source: [graphiti](https://github.com/getzep/graphiti) · Snapshot: `8ce6d633bdcd3d178b3a47bc25b105dce106a754` · Category: `ai-agents-mem`.
 
-Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+Evidence level: **Source-reviewed; the files below were read, not executed or benchmarked.** Review date: 2026-10-24. The inspected checkout was clean. This updates the 2026-10-04 review of `3c427640abf909f12f71f963fce15eb514a3c493`; the previous report is preserved in [review history](../analyses/history/ai-agents-mem--graphiti/). License and dependency compatibility still require a separate adoption review.
 
 ## Verified source evidence
 
-- [graphiti_core/edges.py:263-285](https://github.com/getzep/graphiti/blob/3c427640abf909f12f71f963fce15eb514a3c493/graphiti_core/edges.py#L263-L285)
-- [graphiti_core/graphiti.py:1150-1251](https://github.com/getzep/graphiti/blob/3c427640abf909f12f71f963fce15eb514a3c493/graphiti_core/graphiti.py#L1150-L1251)
+- [Relationship evidence and temporal fields](https://github.com/getzep/graphiti/blob/8ce6d633bdcd3d178b3a47bc25b105dce106a754/graphiti_core/edges.py#L263-L287).
+- [Incremental saga watermark semantics](https://github.com/getzep/graphiti/blob/8ce6d633bdcd3d178b3a47bc25b105dce106a754/graphiti_core/graphiti.py#L590-L608) and [prompt bounding, coverage counters and persistence](https://github.com/getzep/graphiti/blob/8ce6d633bdcd3d178b3a47bc25b105dce106a754/graphiti_core/graphiti.py#L727-L799).
+- [Bulk entity and relationship resolution](https://github.com/getzep/graphiti/blob/8ce6d633bdcd3d178b3a47bc25b105dce106a754/graphiti_core/graphiti.py#L1140-L1248) and [persistence of resolved plus invalidated relationships](https://github.com/getzep/graphiti/blob/8ce6d633bdcd3d178b3a47bc25b105dce106a754/graphiti_core/graphiti.py#L1747-L1783).
 
-EntityEdge stores the fact text, its embedding, supporting episode identifiers, a reference time, validity start/end, and a separate expiration timestamp. Episode ingestion creates a source-bearing episode, extracts entities, resolves their identities, extracts and resolves relationships, and includes invalidated relationships in the persistence path. Node attributes are hydrated using new edges so existing facts are not redundantly summarized. Community updates are an optional later step. These fields and calls are directly present in the inspected implementation.
+EntityEdge retains supporting episode IDs and distinct validity, invalidation, expiration and reference timestamps. The field descriptions distinguish future plans from their future occurrence date and exclude soft deadlines from automatic invalidation. These are model/schema instructions, not proof that extraction reliably follows them. The bulk path calls relationship resolution and persists `resolved_edges + invalidated_edges`, so temporal invalidation is not restricted to single-episode imports in this inspected implementation.
+
+Saga summarization uses separate ingestion-time and event-time watermarks. It measures rendered UTF-8 prompt bytes including schema overhead, removes later episodes that do not fit, records selected/skipped episode counts, and can truncate a single oversized episode. After generation it advances the ingestion watermark through selected episodes and advances the event watermark monotonically to the latest selected reference time. This is stronger bookkeeping than treating summary creation time as source recency.
 
 ## Harness implications
 
-Use this model where a team needs to distinguish when a fact held from when the system learned or invalidated it: ownership, architecture decisions, project status, changing user preferences. Retain the source episode separately from extracted assertions. Time-qualified answers should choose the appropriate relation version instead of overwriting history. Entity resolution must be scoped by tenant and workspace; two projects using the same short name must not silently collapse into one entity.
+Use temporal graph enrichment for changing relationships, not as a prerequisite for all document or code retrieval. Keep episode evidence and extracted assertions distinct. A derived summary should retain both ingestion progress and the event-time range of its sources, plus explicit source coverage. For Teamagent, use a deterministic continuation key including source identity and position; a timestamp alone cannot establish complete processing. Record truncation offsets or coverage intervals so a later run can recover the unprocessed suffix of a large episode.
 
-## Limitations and tradeoffs
+## Limitations and adoption
 
-Extraction, identity matching and contradiction resolution still depend on model judgments. Temporal fields alone do not guarantee correct temporal interpretation. A graph database, extraction model and embedding service increase operational and ingest cost; optional community construction adds more work. Reading the pipeline did not establish crash atomicity across every backend or prove that all deletion paths remove every derived object. Treat graph-derived relations as attributed assertions, not unquestionable facts.
+The inspected summary path truncates oversized content and advances a timestamp; this review does not establish lossless handling of an omitted suffix or equal-timestamp episodes. An existing summary in the prompt also does not guarantee facts survive repeated summarization. Extraction, identity resolution and contradiction judgments remain model-dependent. Graph databases, embeddings and optional community processing add ingest cost and operational state.
 
-## Adoption and validation
-
-Prototype as the temporal relationship adapter after the immutable source store and lexical baseline work. Do not require a graph for every document or code query. Acceptance tests should include corrected dates, duplicate entities across scopes, contradictory sources, out-of-order episode arrival, replayed imports and permission revocation. Evaluate benefit on relational questions separately from simple document retrieval.
+Prototype the temporal adapter after immutable source versions and lexical retrieval. Require tests for contradictory dates, future commitments, same-name entities across workspaces, out-of-order imports, identical ingestion timestamps, oversized UTF-8 episodes and interrupted persistence. Measure relational-answer benefit separately from basic lookup. Do not advertise automatic conflict correctness or lossless evolving memory based only on these fields and control-flow checks.
 
 Related directions: [memory](../memory.md) · [evolution](../evolution.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [graphiti](https://github.com/getzep/graphiti); analyzed commit `8ce6d633bdcd3d178b3a47bc25b105dce106a754`; commit date 2026-10-24T05:17:10Z; review date 2026-10-24T06:36:54.441Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphiti.md).
+<!-- teamagent-analysis:end -->

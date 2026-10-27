@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--bb",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/get-bb/bb",
+  "report": "spec/projects/ai-agents--bb.md",
+  "analyzedSha": "76a1ebcaf5fa038d8638daaad7aad3dafe2ae709",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T10:32:25-07:00",
+  "observedSha": "f15275b83134efcbb94623a0689c9b07a24e0a7d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f15275b83134efcbb94623a0689c9b07a24e0a7d",
+      "date": "2026-10-27T10:43:13-07:00",
+      "subject": "Forward additional workspace write roots to ACP agents as additionalDirectories (#6180)"
+    },
+    {
+      "sha": "6c4268ebcad0047a6ffb760322ed9712928f0bf9",
+      "date": "2026-10-27T10:26:01-07:00",
+      "subject": "Show storage action progress inline and aggregate completion toasts (#6384)"
+    },
+    {
+      "sha": "e8b4cfab6fb0ea4fc123d6e37656fe2ad6bc745f",
+      "date": "2026-10-27T10:15:35-07:00",
+      "subject": "Make artifact corruption test timestamps deterministic (#6363)"
+    },
+    {
+      "sha": "ccb996ee82fd1675dd5b69509a50dd21d0106d37",
+      "date": "2026-10-27T10:15:30-07:00",
+      "subject": "Reuse private Git fixtures in plugin update tests (#6362)"
+    },
+    {
+      "sha": "758026a6d9837cc9efa6188406d4f05e00693e08",
+      "date": "2026-10-27T10:11:23-07:00",
+      "subject": "Preserve successful message commands during timeline deferral (#6300)"
+    },
+    {
+      "sha": "a2c695ee935f9d16f59ceee014752f5d535a9209",
+      "date": "2026-10-27T10:05:30-07:00",
+      "subject": "Scope the image lightbox portal by plugin context like other host portals (#6290)"
+    },
+    {
+      "sha": "afc377a713ba80ea71ca631e4db561692d3ccea6",
+      "date": "2026-10-27T10:04:54-07:00",
+      "subject": "Compress realtime WebSocket pushes with permessage-deflate (#6209)"
+    },
+    {
+      "sha": "43ac3b7dd2120e74237f32a749439a0abfeebf84",
+      "date": "2026-10-27T17:00:39Z",
+      "subject": "Add @JackALaing to allow list"
+    },
+    {
+      "sha": "4f1fd309dbb805eb37ce19f28ee60a7dad629da2",
+      "date": "2026-10-27T16:58:26Z",
+      "subject": "Add @dpolishuk to allow list"
+    },
+    {
+      "sha": "2f61afc227573f6904d6eecb85edba2e8ce03674",
+      "date": "2026-10-27T09:50:19-07:00",
+      "subject": "Move the Diff tab, Info git rows and composer segment into the Git plugin (#6157)"
+    },
+    {
+      "sha": "2afc0171340924a61d73844f39ddb893fb704f57",
+      "date": "2026-10-27T09:49:46-07:00",
+      "subject": "Support app deep links in chat behind an experiment (#6337)"
+    },
+    {
+      "sha": "b6743a36bd9eae1408c35cfc2c7ab1d2419dc79d",
+      "date": "2026-10-26T22:20:47-07:00",
+      "subject": "Disable double-click rename on coarse-pointer devices (#6364)"
+    },
+    {
+      "sha": "e39c4352c65c1253defd81d0efe50b2673424228",
+      "date": "2026-10-26T21:59:07-07:00",
+      "subject": "Reduce repeated plugin setup in server lifecycle tests (#6361)"
+    },
+    {
+      "sha": "d094f2d071af9c2eb749836f02fddcc056583faf",
+      "date": "2026-10-26T21:46:36-07:00",
+      "subject": "Deduplicate canonical tab identifiers before synchronization (#6350)"
+    },
+    {
+      "sha": "f82c09569e53e9ee7ad4aa23cdd9c027e0c5dab9",
+      "date": "2026-10-26T21:25:21-07:00",
+      "subject": "Reduce launcher process startup and source-update test setup (#6360)"
+    },
+    {
+      "sha": "01162cbdf079b708a75563ed202c61af48840fbe",
+      "date": "2026-10-26T21:13:22-07:00",
+      "subject": "Fix diffs against remote-only default branches (#6359)"
+    },
+    {
+      "sha": "a7ae7d6b1c5f9d584a8f7f407e0887831afdb31c",
+      "date": "2026-10-26T21:04:34-07:00",
+      "subject": "Add experimental_useCanOpenFileExternally (#6357)"
+    },
+    {
+      "sha": "61b2fe770c696f86c748f3c409c148b60338106a",
+      "date": "2026-10-26T21:04:18-07:00",
+      "subject": "Fork Claude sessions from the session's config dir and keep fork intent across failed starts (#6358)"
+    },
+    {
+      "sha": "bc9395069b0bf57294a4e91c51c75ab030b13a04",
+      "date": "2026-10-26T20:56:28-07:00",
+      "subject": "Queue system notices during manual compaction (#6334)"
+    },
+    {
+      "sha": "a3af860e5e65e75e9cff93ab7da46e190aa30aea",
+      "date": "2026-10-26T20:56:24-07:00",
+      "subject": "Reduce app layout simulation and server test overhead (#6355)"
+    },
+    {
+      "sha": "298b04ee823efb8b775e6b0020212168ec96eef9",
+      "date": "2026-10-26T20:52:16-07:00",
+      "subject": "One panel controller for plugins and core (#6356)"
+    },
+    {
+      "sha": "e7c1e53dd617f8d5c00cdcf7d71690faef67ce06",
+      "date": "2026-10-26T20:51:37-07:00",
+      "subject": "Stream self-update and plugin host artifact downloads through verified file transfer (#6331)"
+    },
+    {
+      "sha": "4df597cfabd1c9ae7d287cf071326b3c9198d202",
+      "date": "2026-10-26T20:36:56-07:00",
+      "subject": "Offer Add to chat on plugin diff and source views inside threads (#6353)"
+    },
+    {
+      "sha": "12b6e21d8288e957027afebac60fb1523f5ad05d",
+      "date": "2026-10-26T20:14:27-07:00",
+      "subject": "Complete Pi assistant messages at their own message_end (#6352)"
+    },
+    {
+      "sha": "88048e6fb16b2267c972f275390c99a97431aad3",
+      "date": "2026-10-26T20:09:35-07:00",
+      "subject": "One host toolchain for executable discovery, child PATH, and proxy/CA defaults (#6194)"
+    },
+    {
+      "sha": "5b5b7f45d4c64e42463ce42542430ff5feea8ea1",
+      "date": "2026-10-26T20:05:26-07:00",
+      "subject": "Publish GitHub PR status changes to every open view (#6351)"
+    },
+    {
+      "sha": "748a96524eddedbf58d5eb5bd139f1b8b5c4f536",
+      "date": "2026-10-26T16:44:17-07:00",
+      "subject": "Preview a workspace file at a git revision (#6348)"
+    },
+    {
+      "sha": "cdcc2395a9e628a7777a15e737f5732d4f9e3bed",
+      "date": "2026-10-26T16:32:23-07:00",
+      "subject": "Load the open panel tab's plugin frontend first after a reload (#6347)"
+    },
+    {
+      "sha": "8ee7c91d8caeeaa0d836c32eae1875717b2f488d",
+      "date": "2026-10-26T16:28:17-07:00",
+      "subject": "Skip Keychain access when no desktop credential is saved (#6346)"
+    },
+    {
+      "sha": "215ae9b5df682b5d54f771398d46336380bc8311",
+      "date": "2026-10-26T16:13:04-07:00",
+      "subject": "Poll watched draft PRs like open PRs (#6344)"
+    },
+    {
+      "sha": "b0ead7c1b6f5ddbfd9724c5b3c431e0c99cc3494",
+      "date": "2026-10-26T16:12:24-07:00",
+      "subject": "Add Open in Browser to the desktop link context menu (#6345)"
+    },
+    {
+      "sha": "31716896f46c4b8b475968be2306f8be4190a6e5",
+      "date": "2026-10-26T15:35:21-07:00",
+      "subject": "Reduce Windows plugin dependency setup and Git test overhead (#6343)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bb/skills/test-audit/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/INVENTORY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/composer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/desktop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/plugin-inline-vis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/projects-environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/settings.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/inventory.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/scripts/inventory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/scripts/test_inventory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/APPROVED_CONTRIBUTORS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cache-npm-downloads/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cache-pnpm/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cache-react-compiler/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/cache-workspace/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/install-appimage-fuse/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/install-appimage-fuse/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bun/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bun/bun-1.3.14.sha256",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bun/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace-tools/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace/install-dependencies.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-workspace/install-electron-libraries.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace/install-pnpm.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/windows-dependency-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/windows-dependency-cache/disk.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/check-plugin-sdk-version.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-health.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/close-stale-prs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/deploy-connect-next.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-web.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile-android-eas.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-bb-app.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/version-lockstep.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/src/upstream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/test/gateway.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/test/worker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/components.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/composer-plugin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/composer-search-story.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/ladle.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/plugin-sdk-app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/settings-story-fixtures.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/story-fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/story-settings-chrome.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/tests/sidebar-actions.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/tests/timeline-scrollback.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R069",
+      "path": "apps/app/.ladle/workflows.stories.tsx",
+      "previousPath": "plugins/workflows/panel.stories.tsx"
+    },
+    {
+      "status": "M",
+      "path": "apps/app/bundle-budget.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/scripts/generate-pwa-icons.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/scripts/why-eager.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/App.hash-navigation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/App.route-preload.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/app.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/app.css.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/bundle-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/AppErrorBoundary.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/AppToaster.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/AppToaster.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/AppToasterView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/ApplicationUrlDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/ApplicationUrlDialogView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/AppUpdateHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/AppUpdateHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/app-update-presentation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/app-update-presentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/BbDiff.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/BbDiff.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/code/BbDiffSplit.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/BbSourceCode.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/code/BbSourceCodeSplit.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/CodeHosts.cold-load.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/DiffHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/DiffHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/SourceCodeHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/SourceCodeHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/code-loading-skeletons.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/code-rendering.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/codeRendererProvider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/code/useCodeRendererLoad.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/AppCommandProvider.availability.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/AppCommandShortcutHint.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/AppCommandShortcutHint.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/CommandPalette.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/CommandPalette.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/CommandPaletteBody.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/LazyCommandPaletteBody.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/commands/PaletteModeChip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/PaletteShell.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "R056",
+      "path": "apps/app/src/components/commands/PaletteThreadViewMenu.test.tsx",
+      "previousPath": "apps/app/src/components/thread/ThreadLifecycleFilter.test.tsx"
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/commands/PaletteThreadViewMenu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/ThreadSearchPaletteMode.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/commands/ThreadSearchPalettePlaceholder.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/create-via-prompt-examples.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/create-via-prompt-examples.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/AddMachineDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/dialogs/LazyRemotePathBrowser.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectDeleteDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectMachineSetupDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectMachineSetupDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectPathDialog.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectPathDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectPathDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectRenameDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectSourceDeleteDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/RemotePathBrowser.createFolder.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/RemotePathBrowser.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/RenameDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "R054",
+      "path": "apps/app/src/components/dialogs/RenameDialogContent.tsx",
+      "previousPath": "apps/app/src/components/dialogs/RenameDialog.tsx"
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadArchiveDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadArchiveDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadDeleteDialog.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadDeleteDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadGitActionDialog.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadGitActionDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadRenameDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/dialogs/useNameValidation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/dialogs/useRenameDialogAutoFocus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/git-diff/CoreGitDiffRendererProvider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/git-diff/GitDiffCard.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/git-diff/GitDiffCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/git-diff/PierreLineSelectionActions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppBreadcrumbs.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.plugin-panel-header.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.root-compose-project.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.tools-breadcrumbs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayoutSidebar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayoutSidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/AppPageHeader.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppPageHeader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/HistoryCommandHandlers.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/HistoryCommandHandlers.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/PageTitleHeader.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/PageTitleHeader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/WindowFindHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/core-page-title.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/page-title.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/page-title.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

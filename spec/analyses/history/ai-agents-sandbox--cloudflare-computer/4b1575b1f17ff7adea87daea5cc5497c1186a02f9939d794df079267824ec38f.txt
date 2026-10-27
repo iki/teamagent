@@ -1,0 +1,25 @@
+# cloudflare-computer
+
+Source: [cloudflare-computer](https://github.com/cloudflare/computer) · Category: [ai-agents-sandbox](../categories/ai-agents-sandbox.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1`; commit timestamp `2026-10-02T13:23:47+01:00`; 766 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/cloudflare/computer/blob/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1/README.md)):
+
+> Durable Object. The Durable Object holds the authoritative state in - **Container** projects the SQLite state into a sandbox container as
+
+Build/package evidence: [examples/artifacts/package.json](https://github.com/cloudflare/computer/blob/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1/examples/artifacts/package.json); [examples/assets/package.json](https://github.com/cloudflare/computer/blob/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1/examples/assets/package.json); [examples/celld/package.json](https://github.com/cloudflare/computer/blob/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1/examples/celld/package.json); [examples/container-legacy/package.json](https://github.com/cloudflare/computer/blob/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1/examples/container-legacy/package.json); [examples/container/package.json](https://github.com/cloudflare/computer/blob/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1/examples/container/package.json)
+
+License evidence: [LICENSE](https://github.com/cloudflare/computer/blob/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-sandbox**. Its category places it in the candidate set for agents, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

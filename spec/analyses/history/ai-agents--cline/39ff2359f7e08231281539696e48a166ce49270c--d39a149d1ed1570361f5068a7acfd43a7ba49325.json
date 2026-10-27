@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--cline",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/cline/cline",
+  "report": "spec/projects/ai-agents--cline.md",
+  "analyzedSha": "39ff2359f7e08231281539696e48a166ce49270c",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T00:33:13+02:00",
+  "observedSha": "d39a149d1ed1570361f5068a7acfd43a7ba49325",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d39a149d1ed1570361f5068a7acfd43a7ba49325",
+      "date": "2026-10-23T21:21:49-07:00",
+      "subject": "chore(sdk): publish @cline/ui with the SDK packages (#15311)"
+    },
+    {
+      "sha": "f837744a1c774bc57c442d8bf25ca70eae95ee4a",
+      "date": "2026-10-23T21:17:29-07:00",
+      "subject": "fix(core): connect SSH remotes behind a ProxyJump alias (#15314)"
+    },
+    {
+      "sha": "ef3264f3e75da383524f493a5b0f539de50047af",
+      "date": "2026-10-23T21:16:13-07:00",
+      "subject": "fix(desktop): pasted Cline API key replaces stale browser sign-in; stack config rows in narrow panel (#14522)"
+    },
+    {
+      "sha": "2fb8fcee21339013b5b2b9126dcf1d30a3f35cec",
+      "date": "2026-10-23T21:10:14-07:00",
+      "subject": "fix(desktop): persist sidebar sort mode across restarts (#15315)"
+    },
+    {
+      "sha": "b4c23d0a2464b8cf39d2fb5b42ce93b1167e6a21",
+      "date": "2026-10-23T20:19:35-07:00",
+      "subject": "feat(desktop): move PR status into a header button with a menu (#15303)"
+    },
+    {
+      "sha": "3728812c360ff7450e3b36f4ae3780c146fd4d20",
+      "date": "2026-10-23T19:45:47-07:00",
+      "subject": "feat(desktop): project files panel beside the conversation (#14956)"
+    },
+    {
+      "sha": "59f219fad961dfc0602d4d8fc59f08a029ef600f",
+      "date": "2026-10-23T19:09:25-07:00",
+      "subject": "fix(core): reframe ask_question answers (#14632)"
+    },
+    {
+      "sha": "5e854953783d791395c55929629b5a1d2418ef11",
+      "date": "2026-10-23T19:04:45-07:00",
+      "subject": "fix(agents): retry a turn whose connection drops after streaming only reasoning (#14795)"
+    },
+    {
+      "sha": "4069b85c0a10e42ba2d65da01ec4ed280d82b4ff",
+      "date": "2026-10-23T18:50:20-07:00",
+      "subject": "fix(desktop): quit on close on Linux desktops without a tray host (#14691)"
+    },
+    {
+      "sha": "1e39ae2f2d1b2fca242bf2aa1f06a0ae0cc765cc",
+      "date": "2026-10-23T18:46:43-07:00",
+      "subject": "feat(desktop): token chips for slash commands and file mentions in the composer (#15070)"
+    },
+    {
+      "sha": "d35ad45e4911e70fc45dedd1a9e032382a1fa143",
+      "date": "2026-10-23T18:43:58-07:00",
+      "subject": "fix(core): read checkpoint diff contents with one git process instead of one per file (#15301)"
+    },
+    {
+      "sha": "005ad4f6daf8eb333e418cd1778143b92b97b2ce",
+      "date": "2026-10-23T18:31:00-07:00",
+      "subject": "fix(core): avoid automatic compaction for unknown model limits (#14867)"
+    },
+    {
+      "sha": "70ab4f92d59cdf8bc9eb98c73dea1d7ccb3d3b5a",
+      "date": "2026-10-23T18:25:38-07:00",
+      "subject": "fix(desktop): send the resumed transcript to the hub once (#15306)"
+    },
+    {
+      "sha": "15d3d00a62269d77b300291b8621473da685395a",
+      "date": "2026-10-23T18:25:07-07:00",
+      "subject": "fix(cli): stop hub status and doctor hanging on a frozen Hub (#15131)"
+    },
+    {
+      "sha": "8208f61cb4cda818faebab887e31e6b16c3bdce3",
+      "date": "2026-10-23T18:19:16-07:00",
+      "subject": "Wire MCP Apps session runtime through the hub [No-op] (#15184)"
+    },
+    {
+      "sha": "d2947572b93cacb4dd91d5239b26e8806a094027",
+      "date": "2026-10-23T18:15:57-07:00",
+      "subject": "chore(llms): align the AI SDK on the release line with portable max reasoning (ai 7.0.136, provider-utils 5.0.58) (#15139)"
+    },
+    {
+      "sha": "c7db4bfbd2643425e3c185367cb8c8b4bc468c4f",
+      "date": "2026-10-23T15:52:08-07:00",
+      "subject": "fix(vscode): keep the first prompt when Plan/Act is toggled while a task starts (#15243)"
+    },
+    {
+      "sha": "2f582859c25f31c9fe6aa364869b210e73c6e303",
+      "date": "2026-10-23T15:40:56-07:00",
+      "subject": "feat(vscode): show cloud sandbox provisioning as a progress card (#15237)"
+    },
+    {
+      "sha": "da4de7c09e126e96d1cb75c3af247420c0027e25",
+      "date": "2026-10-23T15:09:15-07:00",
+      "subject": "build(desktop): upgrade the Tauri runtime to 2.12 to match CLI 2.12.3 (#15298)"
+    },
+    {
+      "sha": "b11ad3abc0c76f30c93dc19dc82f5352e4a0eb1c",
+      "date": "2026-10-23T13:55:43-07:00",
+      "subject": "feat(desktop): configurable keybindings setting (#15097)"
+    },
+    {
+      "sha": "5a5e5acb7dc6163d7f59b16d890e60c764e47318",
+      "date": "2026-10-23T13:41:53-07:00",
+      "subject": "refactor(core): move desktop cloud session orchestration into the hub (#15205)"
+    },
+    {
+      "sha": "16bade5c13bca13c58a25770ad6a0d40c4f1482d",
+      "date": "2026-10-23T12:18:50-07:00",
+      "subject": "fix(desktop): open triggered runs after overlapping refresh (#15293)"
+    },
+    {
+      "sha": "1619168bdeb570aa233d0f0a9af1d332d83a2816",
+      "date": "2026-10-22T16:55:24-07:00",
+      "subject": "fix(llms): keep tests green after the release catalog regen (#15240)"
+    },
+    {
+      "sha": "e897012dcf7d87d4b4af8f4a2c2a6c9ba3ed5cc3",
+      "date": "2026-10-22T16:49:08-07:00",
+      "subject": "fix(vscode): stop GitHub connection poll from flashing the loading indicator (#15235)"
+    },
+    {
+      "sha": "71a312eeee9f8c2c9f7fba6d3d9df8402723be15",
+      "date": "2026-10-22T16:48:18-07:00",
+      "subject": "feat(vscode): hide Plan/Act toggle and auto-approve bar for cloud sessions (#15233)"
+    },
+    {
+      "sha": "24d3a4f49e20fda84e311d12d261a08a4565bb38",
+      "date": "2026-10-22T16:46:04-07:00",
+      "subject": "fix(desktop): show a startup screen with Retry and Export diagnostics when the Hub fails (#15130)"
+    },
+    {
+      "sha": "96cb5c4c083d2fdaae1918099e887bfd544a602b",
+      "date": "2026-10-22T16:39:38-07:00",
+      "subject": "build(desktop): bump @tauri-apps/cli to 2.12.3 for fast RPM bundling (#15278)"
+    },
+    {
+      "sha": "52d7d0d0d546b3f52de928702ea01f44571e5503",
+      "date": "2026-10-22T16:32:44-07:00",
+      "subject": "chore: make @saoudrizwan sole code owner of .github/ and README.md (#15279)"
+    },
+    {
+      "sha": "590785eff565f167b16d5f750d682c4d9d2b7128",
+      "date": "2026-10-22T12:10:35-07:00",
+      "subject": "feat(telemetry): report per-run stall signals (#15228)"
+    },
+    {
+      "sha": "c441897f11f658f978a00678f045670c1ab2b60d",
+      "date": "2026-10-21T17:47:26-07:00",
+      "subject": "ci: require PublishNPM approval for every npm publish (#15258)"
+    },
+    {
+      "sha": "f7676802f483588a20a154967c7b803d4abeaa52",
+      "date": "2026-10-21T16:52:49-07:00",
+      "subject": "Fix punctuation in project description"
+    },
+    {
+      "sha": "c31347a09b75633eb0306b323655149767be2cce",
+      "date": "2026-10-21T14:55:38+02:00",
+      "subject": "fix(cli): correct ACP provider and account config categories (#15160)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cline/skills/publish-cli/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cline/skills/publish-desktop/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".cline/skills/publish-ui/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".cline/skills/publish-ui/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ext-vscode-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/ui-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/DISTRIBUTION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/bun.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/script/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/script/compile-binary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/script/dashboard-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/acp/acpAgent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/acp/config-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/acp/config-options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/acp/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/acp/organizations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/acp/organizations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/acp/reasoning.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/cli.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/commands/dashboard-command.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/dashboard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/dashboard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/doctor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/history-command.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/history-command.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/commands/hook.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/hub.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/hub.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/mcp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/program.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/program.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/schedule.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/schedule/common.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/commands/schedule/delivery-input.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/commands/schedule/delivery-input.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/schedule/handlers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/schedule/import-export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/skill.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/skill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/commands/update.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/adapters/discord.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/adapters/gchat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/adapters/linear.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/adapters/slack.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/adapters/telegram.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/adapters/whatsapp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/connector-host.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/connector-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/connectors/schedule-delivery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/connectors/schedule-delivery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/session-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/connectors/session-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/logging/adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/logging/log-path.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/main.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/runtime/defaults.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/runtime/interactive/session-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/runtime/interactive/session-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/runtime/run-agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/runtime/run-interactive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tests/cli/history.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tests/flags.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tests/help.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/commands/slash-command-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/components/chat-entry.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/tui/hooks/use-runtime-dialog-bridge.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/hooks/use-runtime-dialog-bridge.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/tui/hooks/use-slash-commands.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/hooks/use-slash-commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/interactive-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/root.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/tui/utils/provider-configured.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/tui/utils/provider-configured.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/chat-commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/utils/embedded-dashboard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/output.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/plugin-chat-commands.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/utils/plugin-chat-commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/src/utils/plugin-issues.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/src/wizards/mcp/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cline-hub/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cline-hub/src/server/marketplace.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cline-hub/src/server/marketplace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cline-hub/src/webview/src/components/ai-elements/streamdown.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/bun.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/scripts/build-desktop-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/examples/desktop-app/scripts/build-sidecar-bin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/scripts/desktop-startup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/scripts/fixtures/desktop-plugin-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/scripts/fixtures/embedded-plugin/desktop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/scripts/fixtures/embedded-plugin/smoke.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/scripts/package-desktop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/scripts/tauri-sign-windows.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/scripts/telemetry-define-args.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/scripts/telemetry-define-args.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/scripts/windows-installer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/chat-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/chat-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/cli-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/cli-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cline-connectors-api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cline-connectors-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/cloud-session-test-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-sessions-hub.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-sessions-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-sessions-state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-sessions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/cloud-sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/commands-account.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/commands-hub-startup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/commands-keybindings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/commands-settings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/composio.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/composio.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/connectors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/connectors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/examples/desktop-app/sidecar/desktop-settings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/examples/desktop-app/sidecar/desktop-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/diagnostics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/feature-flags.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/feature-flags.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/hub-admin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/hub-admin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/hub-startup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/hub-startup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/keybindings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/examples/desktop-app/sidecar/keybindings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/marketplace.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/marketplace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/oauth-login.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/examples/desktop-app/sidecar/oauth-login.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/examples/desktop-app/sidecar/plugin-commands.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,184 @@
+# pai-personal-ai-infrastructure: change evidence
+
+Source: [pai-personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) · [Analysis](../../projects/ai-agents-mem--pai-personal-ai-infrastructure.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `27c94f9342a404226d2411ac73d2b16acb1189fe`; commit date: 2026-08-05T18:02:24-07:00; review date: unknown; observed SHA: `5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/danielmiessler/Personal_AI_Infrastructure/compare/27c94f9342a404226d2411ac73d2b16acb1189fe...5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [5e2f2e8c0abd](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c) 2026-09-03T18:07:21-07:00: Merge pull request #1982 from xmasyx/feat/issue-template
+- [1ae76c870995](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/1ae76c870995970920b0b0c6db7875713ee84c49) 2026-09-03T16:57:39-07:00: docs: credit 29 community contributors from the 2026-09-03 triage (README grid)
+- [58f22f541e10](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/58f22f541e10cc0a7899aa275286c7a475fe8a5d) 2026-08-26T09:27:03+02:00: chore(github): add config.yml
+- [10dd54098611](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/10dd54098611b8c6ae38a0731b6c8ab0f9ef4084) 2026-08-26T09:27:02+02:00: chore(github): add bug_report.yml
+- [ce046f26495c](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/ce046f26495c73f007790971869c94d58e0f6a20) 2026-08-14T14:46:23-07:00: release 7.40.4: notes completeness pass (Hermes heartbeat, KEV, ComplexityRatchet)
+- [16624c286206](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/16624c2862068103b25019f993ffa065090398c8) 2026-08-14T14:44:47-07:00: release 7.40.4: release page with art and full notes
+- [345be4c2630f](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/345be4c2630ffb86b83c081ac8a27bd18fe1b9c6) 2026-08-14T14:29:05-07:00: docs: credit 7.40.4 community contributors (README grid + lists)
+- [be9e8ef889f0](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/be9e8ef889f00a29f4fd677dee4772fdf32e07ce) 2026-08-14T14:14:13-07:00: release 7.40.4: community triage batch, Algorithm v8.20.2, shipped Pulse dashboard export, hardened release gates
+- [58381b3df662](https://github.com/danielmiessler/Personal_AI_Infrastructure/commit/58381b3df66252d7cc0cddf8b0d4e735fac35109) 2026-08-07T09:06:43-07:00: docs: Core Components — single-tier grid; Voice, Learning, Security, Hermes promoted; built-in Agents dropped
+
+## Changed paths (truncated)
+
+- A: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- A: `.github/ISSUE_TEMPLATE/config.yml`
+- A: `.github/scripts/leak-scan.allowlist.txt`
+- M: `.gitignore`
+- M: `LifeOS/INSTALL.md`
+- M: `LifeOS/SKILL.md`
+- M: `LifeOS/Tools/ActivateImports.ts`
+- M: `LifeOS/Tools/DeployComponents.ts`
+- M: `LifeOS/Tools/DeployCore.ts`
+- M: `LifeOS/Tools/InstallEngine.ts`
+- M: `LifeOS/Tools/InstallHooks.ts`
+- M: `LifeOS/Tools/InstallSettings.ts`
+- M: `LifeOS/Tools/LinkUser.ts`
+- A: `LifeOS/Tools/OverlaySystem.ts`
+- M: `LifeOS/Tools/ScaffoldUser.ts`
+- M: `LifeOS/Tools/SeedPulse.ts`
+- M: `LifeOS/Workflows/Update.md`
+- M: `LifeOS/install/CLAUDE.template.md`
+- M: `LifeOS/install/LIFEOS/ALGORITHM/LATEST`
+- M: `LifeOS/install/LIFEOS/ALGORITHM/changelog.md`
+- M: `LifeOS/install/LIFEOS/ALGORITHM/eval-guide.md`
+- R079: `LifeOS/install/LIFEOS/ALGORITHM/v8.20.2.md` (from `LifeOS/install/LIFEOS/ALGORITHM/v8.17.3.md`)
+- M: `LifeOS/install/LIFEOS/ATLAS/Atlas.ts`
+- A: `LifeOS/install/LIFEOS/ATLAS/InstallAtlas.ts`
+- M: `LifeOS/install/LIFEOS/ATLAS/collectors/Cloudflare.ts`
+- M: `LifeOS/install/LIFEOS/ATLAS/collectors/Launchd.ts`
+- A: `LifeOS/install/LIFEOS/ATLAS/collectors/Systemd.ts`
+- A: `LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.plist.template`
+- A: `LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.service.template`
+- A: `LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.timer.template`
+- A: `LifeOS/install/LIFEOS/CORTEX_INDEX_POLICY.json`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/ARCHITECTURE_SUMMARY.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Algorithm/AlgorithmSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Algorithm/AscentStates.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Arbol/ArbolSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Atlas/AtlasSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/BrandAssets.md`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Bunker/BunkerSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Conduit/ConduitSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Config/ConfigSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/CoreComponents.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Freshness/FreshnessSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Hermes/HermesSidecar.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Hooks/HookSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISAFormat.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISAHierarchy.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISAHtmlMirror.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISASystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Ledger/LedgerSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/LifeOs/LifeOsSchema.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/LifeOs/LifeOsThesis.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/LifeOs/RenamePlan.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/LifeosSystemArchitecture.md`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Memory/CortexContract.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Memory/CurationCoverage.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Memory/MemorySystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Notifications/NotificationSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Observability/ObservabilitySystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/DaSubsystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/PulseMetadata.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/PulseSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/TerminalTabs.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Security/README.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Services/BackgroundServices.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Skills/SkillSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Synapse/SynapseSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/SystemUserBoundary.md`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/Helm.md`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/bin/helm`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/install.sh`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/TabBar.ts`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/cairn_clear_watcher.py`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/deck.conf`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/deck/DeckBar.ts`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/kitty.conf`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/sessions/example.kitty-session`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/tab_bar.py`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/tab_refit_watcher.py`
+- A: `LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/tokyo-night-storm.conf`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Testing/TestingDoctrine.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Tools/CliFirstArchitecture.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Tools/Containment.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Tools/Tools.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Upgrades/UpgradesSystem.md`
+- M: `LifeOS/install/LIFEOS/DOCUMENTATION/Work/WorkSystem.md`
+- A: `LifeOS/install/LIFEOS/HERMES/Heartbeat/ArtistScan.ts`
+- A: `LifeOS/install/LIFEOS/HERMES/Heartbeat/Tick.ts`
+- A: `LifeOS/install/LIFEOS/HERMES/LogAnalysis.ts`
+- M: `LifeOS/install/LIFEOS/HERMES/Mount.ts`
+- M: `LifeOS/install/LIFEOS/HERMES/Policy.ts`
+- M: `LifeOS/install/LIFEOS/HERMES/RenderSoul.ts`
+- M: `LifeOS/install/LIFEOS/HERMES/bunker.config.ts`
+- M: `LifeOS/install/LIFEOS/HERMES/plugin/guard.py`
+- M: `LifeOS/install/LIFEOS/HERMES/plugin/test_guard.py`
+- M: `LifeOS/install/LIFEOS/LIFEOS_SYSTEM_PROMPT.md`
+- M: `LifeOS/install/LIFEOS/LIFEOS_StatusLine.sh`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/BuildInsight.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/InstallConduit.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/InstallConduitInsight.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/adapters/appFocus.ts`
+- A: `LifeOS/install/LIFEOS/PULSE/Conduit/adapters/github.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/conduit.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/config.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/rollup.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/sources.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/store.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Conduit/types.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Observability/observability.ts`
+- M: `LifeOS/install/LIFEOS/PULSE/Observability/out/404.html`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1785625581824/_buildManifest.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1786741866628/_buildManifest.js`
+- R100: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1786741866628/_ssgManifest.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1785625581824/_ssgManifest.js`)
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1511.3988ec434daa7d5c.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1511.f1584f17d5c1ed94.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1876-17294df6b8dc0d38.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1876-c1dcbed098efd1a6.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/3090-71379c7cfe9f8fe1.js`
+- R091: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/3265-b729fd9d9454c4ef.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/8938-bb2c667515739d2a.js`)
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/3328-3825ee4a997297cf.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/6513-38aa68daa1d06adf.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/6513-3cbdf328f129803e.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/6929-81184b76985fb3ad.js`
+- R079: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/7871.aea3f8a59c958302.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/7871.8607fe8cc4fee6d8.js`)
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/9495-17294df6b8dc0d38.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/_not-found/page-57a10662637540bc.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/_not-found/page-867b9e6178c8375a.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/agents/page-2fdfe45df18365ff.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/agents/page-7ca8c88ce26e797b.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/air/page-32cbf89ac29d7756.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/air/page-e8a543c8c171e0e5.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/algorithm/page-1dcdfefdd3ebc5a1.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/algorithm/page-2c5978a363082df2.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/arbol/page-526a48954a2b9754.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/arbol/page-6e193ff1999f8732.js`
+- R080: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assets/page-c0d90cc660c3e091.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assets/page-d171b8c3edfe998f.js`)
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assistant/page-0ca8403207cbee44.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assistant/page-f9c9b5091b87ca6a.js`
+- R065: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/atlas/page-7f0ec1e91e7a58d9.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/atlas/page-dcbcbbd20754f8ca.js`)
+- R084: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/books/page-c8c497443c740c18.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/books/page-b5e8b8050fb4494f.js`)
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/bunker/page-41e6f41a0b96bb73.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/bunker/page-f439de28d66e9d62.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/business/page-5d556bed5badf897.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/business/page-833e8a9e87be73e9.js`
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/conduit/page-c3cf20bde6da1749.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/conduit/page-c9ba22704124eb00.js`
+- R099: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/content/page-796107b2331b079f.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/content/page-58da977ea42f3aeb.js`)
+- R093: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/layout-0953b1179b54012f.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/layout-bd518830a29862f7.js`)
+- R098: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/page-1af8d9f261865f3c.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/page-565cc9dc073f7f14.js`)
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/finances/page-f13113c0aabb367e.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/finances/page-f4664b3d3d9fa825.js`
+- R092: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/gear/page-42ad1a6cca68b764.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/gear/page-d7620243d36dcbd8.js`)
+- R099: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/growth/page-933278af53a8fc86.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/growth/page-313a04b2fcc870dc.js`)
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/health/page-3a3e27112596df5d.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/health/page-eb69084498b3eeec.js`
+- R098: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hooks/page-ce69e103b712171e.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hooks/page-9d6563eb62c65d3b.js`)
+- R084: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hypotheses/page-c4a53cd1fde54dd0.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hypotheses/page-03120e41bea44bda.js`)
+- D: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/graph/page-03cbbabe333ed75b.js`
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/graph/page-0a50ee294e2c817e.js`
+- R085: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/page-9b0e92387dc77d17.js` (from `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/page-b619c30a27a82776.js`)
+- A: `LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/layout-174543bbb7a8481b.js`

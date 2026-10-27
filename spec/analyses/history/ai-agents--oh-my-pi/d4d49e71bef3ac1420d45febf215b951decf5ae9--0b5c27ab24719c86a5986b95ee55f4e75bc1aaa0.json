@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--oh-my-pi",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/can1357/oh-my-pi",
+  "report": "spec/projects/ai-agents--oh-my-pi.md",
+  "analyzedSha": "d4d49e71bef3ac1420d45febf215b951decf5ae9",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T20:14:39+02:00",
+  "observedSha": "0b5c27ab24719c86a5986b95ee55f4e75bc1aaa0",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0b5c27ab24719c86a5986b95ee55f4e75bc1aaa0",
+      "date": "2026-10-22T12:22:25+02:00",
+      "subject": "test(coding-agent): expect spaceless Mermaid arrows to render as edges"
+    },
+    {
+      "sha": "fd440d9a6d6d387b444fcaa242f630fca34b2daa",
+      "date": "2026-10-22T11:44:45+02:00",
+      "subject": "Merge PR #16760: fix(coding-agent): cancel the outgoing session's background jobs on /resume (@will-bogusz)"
+    },
+    {
+      "sha": "638a3f3df93be2249ca4ff145768262ab9d288d5",
+      "date": "2026-10-22T02:33:35-07:00",
+      "subject": "fix(coding-agent): keep jobs a session_switch hook starts when resuming"
+    },
+    {
+      "sha": "1bced27d7e5d7473310c8ed71f982800754ec71b",
+      "date": "2026-10-22T02:33:35-07:00",
+      "subject": "docs(coding-agent): link the CHANGELOG entries to PR 16760"
+    },
+    {
+      "sha": "c9d65580bdc9fb63f1ccb707001377efbb86fbd8",
+      "date": "2026-10-22T02:33:34-07:00",
+      "subject": "fix(coding-agent): cancel the outgoing session's background jobs on /resume"
+    },
+    {
+      "sha": "5481cc260afff30f0277eb565b48bd6fc10c5b98",
+      "date": "2026-10-22T11:16:23+02:00",
+      "subject": "style(natives): rustfmt merged mermaid parser test"
+    },
+    {
+      "sha": "743d6b67ed15dc987d39d6de4997fe45d46812a1",
+      "date": "2026-10-22T11:13:08+02:00",
+      "subject": "Merge PR #16578: fix(coding-agent): tell Python-only eval sessions to await tool calls (@will-bogusz)"
+    },
+    {
+      "sha": "aee373e439107297666c993d4668c039bca0b275",
+      "date": "2026-10-22T11:13:05+02:00",
+      "subject": "Merge PR #16724: fix(mnemopi): shared unicode proper-noun extraction across gists and graph voice (@roboomp)"
+    },
+    {
+      "sha": "74a7662437978e9fc3fc171095e9b667079a0188",
+      "date": "2026-10-22T11:13:02+02:00",
+      "subject": "Merge PR #16645: fix(internal-urls): describe a running worker that has no transcript yet in history:// (@Komzpa)"
+    },
+    {
+      "sha": "9af60c5200fcdda0ef70ffc1569fd4822a0f89c7",
+      "date": "2026-10-22T11:12:58+02:00",
+      "subject": "Merge PR #16580: fix(coding-agent): name the write call when proc:// kill or mode is read (@will-bogusz)"
+    },
+    {
+      "sha": "b3eae31287f43038d4b1467b646f3506e3643494",
+      "date": "2026-10-22T11:12:55+02:00",
+      "subject": "Merge PR #16632: fix(browser): matched exact cdp target ids before page text (@roboomp)"
+    },
+    {
+      "sha": "08bbf189fc73e3841623029857195ede4d9bebb5",
+      "date": "2026-10-22T11:12:53+02:00",
+      "subject": "Merge PR #16636: fix(tui): wrapped search tool result headers instead of truncating (@roboomp)"
+    },
+    {
+      "sha": "f99213ec0413de47511b5e3628b51f04396c71fb",
+      "date": "2026-10-22T11:12:37+02:00",
+      "subject": "Merge PR #16658: fix(tui): honor GFM column alignment in markdown tables (@adi-IL)"
+    },
+    {
+      "sha": "b36ee01a01a3964e6930c79488225c794b6632ac",
+      "date": "2026-10-22T11:12:28+02:00",
+      "subject": "Merge PR #16750: fix(natives): backtrack trailing dashes before spaceless mermaid arrows (@berney)"
+    },
+    {
+      "sha": "3218f84caf4a06e701f684107d87d2125d83577e",
+      "date": "2026-10-22T11:12:12+02:00",
+      "subject": "Merge PR #16735: fix(natives): kept mermaid label widening off node border columns (@roboomp)"
+    },
+    {
+      "sha": "1aa1e0646fc62d90f6f8ff5898d3339267f2923e",
+      "date": "2026-10-22T11:11:45+02:00",
+      "subject": "Merge PR #16736: fix(natives): routed parallel mermaid edges apart (@roboomp)"
+    },
+    {
+      "sha": "fc4d54b342267d3e6f3d684d35994f6630e27b6c",
+      "date": "2026-10-22T11:11:39+02:00",
+      "subject": "Merge PR #16588: fix(pi-shell): keep diff hunk lines starting with -- or ++ inside their hunk (@will-bogusz)"
+    },
+    {
+      "sha": "c8109127fd5e278206539ce3af7272ecd093cd17",
+      "date": "2026-10-22T11:11:31+02:00",
+      "subject": "Merge PR #16677: fix(tui): kept the newest transcript images live under the image budget (@roboomp)"
+    },
+    {
+      "sha": "3ed7df78aed70e3cbc333bbf400fac572aa42754",
+      "date": "2026-10-22T11:11:22+02:00",
+      "subject": "Merge PR #16740: fix(tui): link every wrapped fragment of URLs in fenced code blocks (@OriginalByteMe)"
+    },
+    {
+      "sha": "163b313ea243c49e23217181263b6054d192a279",
+      "date": "2026-10-22T11:11:15+02:00",
+      "subject": "Merge PR #16744: fix(coding-agent): append idle extension notices instead of rebuilding the transcript (@OriginalByteMe)"
+    },
+    {
+      "sha": "4b35942b14cbc59b3f6cb37abd8d6751c034d625",
+      "date": "2026-10-22T11:10:51+02:00",
+      "subject": "Merge PR #16697: fix(marketplace): prevented orphaned startup clones (@roboomp)"
+    },
+    {
+      "sha": "19ca5ae47f862c77bb1e31382d2989ec4c660820",
+      "date": "2026-10-22T11:10:32+02:00",
+      "subject": "Merge PR #16668: fix(catalog): extend Devin model discovery timeout to 15s (@DusKing1)"
+    },
+    {
+      "sha": "c986047f7d4c9a0d77012dcae4550f30ebe8c8d5",
+      "date": "2026-10-22T11:10:29+02:00",
+      "subject": "Merge PR #16669: fix(catalog): correct OpenCode Step 5 reasoning efforts (@SheetHappiness)"
+    },
+    {
+      "sha": "817c3aa1efbba9a109d4dbc16972349987fb83e0",
+      "date": "2026-10-22T11:10:19+02:00",
+      "subject": "Merge PR #16737: fix(catalog): apply DeepSeek's 600-image vision limit (@Fun10165)"
+    },
+    {
+      "sha": "b074d07cf3d0633828c94942b15c4add27a9d9cc",
+      "date": "2026-10-22T11:10:11+02:00",
+      "subject": "Merge PR #16712: fix(catalog): priced long-context GPT-6 and MiniMax requests (@roboomp)"
+    },
+    {
+      "sha": "5ced83f761fca5406f284c7c804ec23425852adb",
+      "date": "2026-10-22T11:09:24+02:00",
+      "subject": "Merge PR #16745: fix(catalog): priced gpt-5.6 sol long-context turns at the $8/$30 card (@roboomp)"
+    },
+    {
+      "sha": "34a2487bd5ad86775d2aa2790931cbe3029afe96",
+      "date": "2026-10-22T11:09:11+02:00",
+      "subject": "Merge PR #16650: fix(coding-agent): treat /v1/models rows that advertise reasoning levels as reasoning-capable (@Komzpa)"
+    },
+    {
+      "sha": "1dde5292dd5cf2679e6dea03eac21d91a15919a7",
+      "date": "2026-10-22T11:09:03+02:00",
+      "subject": "Merge PR #16640: fix(task): try the remaining configured subagent models before the parent model (@Komzpa)"
+    },
+    {
+      "sha": "d9c028d8e27ef3c10a76b5bbf47a90f4d599c2eb",
+      "date": "2026-10-22T11:08:57+02:00",
+      "subject": "Merge PR #16717: test(tui): trust screen background fixture (@jwaldrip)"
+    },
+    {
+      "sha": "37a066fb8b5d8eca39cc076fb6efac6da24beba8",
+      "date": "2026-10-22T11:08:54+02:00",
+      "subject": "Merge PR #16709: test(ai): narrow image clamp fixtures (@jwaldrip)"
+    },
+    {
+      "sha": "8117120c5ba6b1e32b8b7de8a11d62298573443a",
+      "date": "2026-10-22T11:08:52+02:00",
+      "subject": "Merge PR #16708: test: control Cowork response body lifetime (@jwaldrip)"
+    },
+    {
+      "sha": "ac109e1423700592e275be7a9ca7e9150a2f5ab4",
+      "date": "2026-10-22T11:08:49+02:00",
+      "subject": "Merge PR #16722: test(coding-agent): seed npm global layout fixture (@jwaldrip)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bazelrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/bazel-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/actions/bazel-natives/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/bazel-cache-warm.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bun-cache-warm.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".omp/skills/tool-prompt-optimization/scripts/probe-builtin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".omp/tests/tui.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".omp/tools/tui.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.robomp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "about.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/patches/hermetic_cc_toolchain-drop-cortex-a53-link-arg.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/patches/rules_rust-dep-env-exec-root-paths.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bazel/platforms/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bazel/toolchains/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/toolchains/darwin/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/toolchains/darwin/cc.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/toolchains/darwin/extract_pkg.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/toolchains/darwin/sdk.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/toolchains/llvm.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bazel/toolchains/msvc/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bazel/toolchains/msvc/NOTES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bazel/toolchains/msvc/cc.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bazel/toolchains/msvc/llvm.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bazel/toolchains/swift/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bazel/toolchains/swift/applefm.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/toolchains/swift/defs.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bazel/toolchains/swift/linux.bzl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/src/block.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-ast/src/language/grammar.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/src/language/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/src/language/parsers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-ast/src/language/testdata/ini.wasm",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-ast/src/language/wasm_grammars.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/src/ops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/src/parse_cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-ast/src/summary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/base32.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/block_size.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/bre.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/chmod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/cksum.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/cmp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/combine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/cp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/date.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/dd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/dd/human.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/dd/tables.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/declare.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/df.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/diff.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/dirname.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/du.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/echo.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/env.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/exec.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/factory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/fd.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/find.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/fold.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/grep.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/id.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/jq-help.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/jq.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/kill.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/line_input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/ln.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/locale.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/ls.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/mapfile.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/mkdir.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/mv.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/nl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/od.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/paste.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/pidwait.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/printf.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/proc_match.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/proc_select.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/proc_snapshot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/ps.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/quoting_style.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/read.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/rg.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/rm.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/rmdir.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/sed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/sort.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/stat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/tac.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/tail.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/tee.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/time_zone.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/timeout.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/touch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/ts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/umask.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/uniq.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/uptime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/wc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/pi-builtins/src/withheld.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-builtins/src/xargs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-diff/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/prompts/replace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/diff_string.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/files.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/fuzzy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/apply_patch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/apply.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/block.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/clipboard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/format.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/messages.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/mismatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/parser.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/patcher.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/prefixes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/preview.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/recovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/syntax.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/hashline/tokenizer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/patch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/replace.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/sloppy/apply.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/sloppy/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/modes/sloppy/parse.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/path_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/src/stream_json.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/tests/apply_patch_parity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/tests/common/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/tests/fixtures/apply_patch/core.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/tests/fixtures/hashline/patcher.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/tests/hashline_apply.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pi-edit/tests/hashline_parity.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,984 @@
+{
+  "id": "ai-security--aisoc",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/beenuar/AiSOC",
+  "report": "spec/projects/ai-security--aisoc.md",
+  "analyzedSha": "98883d9229865df1d6d0a5e643778efe4d61b5ce",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T11:40:41-07:00",
+  "observedSha": "b079731462d968fa8b3ebe5e9dedaac51c4156d2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b079731462d968fa8b3ebe5e9dedaac51c4156d2",
+      "date": "2026-10-22T18:39:22+07:00",
+      "subject": "fix(release): the image stable-channel guard fails open when its registry read breaks (#1478)"
+    },
+    {
+      "sha": "f7c17e4844d32aafd5464b625c33fb78a1e03c7f",
+      "date": "2026-10-22T18:39:13+07:00",
+      "subject": "fix(install): a fresh Windows install can boot, and every on-ramp leads to the real stack (#1475)"
+    },
+    {
+      "sha": "b33f758b268cad7dc28f451476f86ff7c7a3707b",
+      "date": "2026-10-22T17:40:15+07:00",
+      "subject": "fix(ci): the reproducible-builds aggregator reads the lock-only matrix's designed skip as proof lost (#1477)"
+    },
+    {
+      "sha": "f2955c7c16771a321b024db02a9e52601ab6aae4",
+      "date": "2026-10-22T16:26:49+07:00",
+      "subject": "chore(release): v20.1.0 (#1476)"
+    },
+    {
+      "sha": "40d97bee70851094b152eb60a536ac9d6a048324",
+      "date": "2026-10-22T15:28:39+07:00",
+      "subject": "docs: catch the portal, changelog and counts up with what merged since v20.0.0 (#1474)"
+    },
+    {
+      "sha": "0da626548ae44019f44e23eda8de728d0dd5b21e",
+      "date": "2026-10-22T13:21:29+07:00",
+      "subject": "chore(deps): fastapi 0.146.0 repo-wide — every declaration site, every lock, one move (#1473)"
+    },
+    {
+      "sha": "a2d53aca076cc670323a618d074123df71a4279c",
+      "date": "2026-10-22T12:28:28+07:00",
+      "subject": "fix(ci): adoption snapshot lands on an unprotected data branch, needing no owner credential (#1445) (#1470)"
+    },
+    {
+      "sha": "5124acbb0c613e9199173f0245ce90a9c5bd52aa",
+      "date": "2026-10-22T12:28:23+07:00",
+      "subject": "Merge pull request #1441 from meshreyy/fix/checkpoint-partial-ingest"
+    },
+    {
+      "sha": "6cfef3227d5f339e2c5dda578ad5b065d79e142c",
+      "date": "2026-10-22T12:01:41+07:00",
+      "subject": "fix(eval): the live dispatch runs on one event loop and scores failures as 0, with the floor re-derived from fixed-harness runs (#1466) (#1472)"
+    },
+    {
+      "sha": "d27b19730bf1629ff761a2b92d353126e431f521",
+      "date": "2026-10-22T11:59:14+07:00",
+      "subject": "fix(ci): the eval matrix's non-floor leg uses the checker's own deliberate-comparison flag (#1465)"
+    },
+    {
+      "sha": "d63ec79cf43337e05212ab695a5c77e68fe80432",
+      "date": "2026-10-22T11:50:42+07:00",
+      "subject": "fix(release): the chart stable channel reads both version lines, and a dispatchable tool can repair it (#1440) (#1469)"
+    },
+    {
+      "sha": "412fc0f0b42b68e2c4af45a330eac71ca3155dfa",
+      "date": "2026-10-22T11:48:03+07:00",
+      "subject": "fix(chaos): store-outage legs grade real behaviour — readiness surfaces, refusal-reading probes, per-store contracts (#1446) (#1471)"
+    },
+    {
+      "sha": "f23b3929cf1a146600383d7cce45b2dc5519e107",
+      "date": "2026-10-22T11:47:58+07:00",
+      "subject": "chore(deps): fold the Oct-22 npm Dependabot wave and close the @vitest/mocker advisories in all three lockfiles (#1468)"
+    },
+    {
+      "sha": "010016d8d8eb9ab50451e9b2a808152b5233a93e",
+      "date": "2026-10-22T11:47:54+07:00",
+      "subject": "chore(deps): fold the Oct-22 python Dependabot wave across api, actions and agents (#1467)"
+    },
+    {
+      "sha": "a61aa3fa6f958681fa728daf6c3f268881095898",
+      "date": "2026-10-22T10:02:24+07:00",
+      "subject": "Merge main into fix/connector-checkpoint-withholding (pick up the pillow audit suppressions the branch predates)"
+    },
+    {
+      "sha": "ac0a7c9198948470a3fad4f3de58b6fc709dadaa",
+      "date": "2026-10-22T08:35:41+07:00",
+      "subject": "fix(perf): record the payload bytes the producer actually sent, closing 17 days of scheduled harness failures (#1444)"
+    },
+    {
+      "sha": "249611e822134dd2fc1bf6d45d6ec765167cd93f",
+      "date": "2026-10-22T07:34:55+07:00",
+      "subject": "fix(mobile): hold react-native-screens on Expo SDK 54's table and teach Dependabot the hold (#1443)"
+    },
+    {
+      "sha": "1411dc631b82ee51d2203a0f3c664afdc60386cf",
+      "date": "2026-10-22T05:53:53+07:00",
+      "subject": "fix(security): cover the complete 2026-10 pillow set (28 CVEs) against threatintel's fastembed-capped lock (#1442)"
+    },
+    {
+      "sha": "b40ae68cd0b593701f96ad93f5e574c8bd78aa91",
+      "date": "2026-10-22T04:52:41+07:00",
+      "subject": "fix(security): record the second 2026-10 pillow wave against threatintel's fastembed-capped lock (#1435)"
+    },
+    {
+      "sha": "168a1f13d9ca72672543d6c2853cdecdd491b691",
+      "date": "2026-10-22T03:22:04+05:30",
+      "subject": "fix(connectors): withhold checkpoints after partial ingest"
+    },
+    {
+      "sha": "a07a7814b3686c5f4d13b4972abc7cb59f7aeb99",
+      "date": "2026-10-22T03:55:00+07:00",
+      "subject": "fix(ci): fall back between PostgreSQL registries (#1434)"
+    },
+    {
+      "sha": "b6254370a4d5593695bcb77362a31d21ab4b851f",
+      "date": "2026-10-22T03:41:31+07:00",
+      "subject": "fix(ci): live suites seed the state the product requires (nightly env secrets, scheduler SSRF allowlist) (#1432)"
+    },
+    {
+      "sha": "e460dd9ce97de688b3379db63b4df58791b0f72c",
+      "date": "2026-10-22T02:17:34+07:00",
+      "subject": "fix(ci): make cosign image signing idempotent and transient-proof (#1433)"
+    },
+    {
+      "sha": "7bbcf6187a2398cff553ff3552596586db7806f9",
+      "date": "2026-10-22T01:15:04+07:00",
+      "subject": "docs: bring the SSRF guard, cases permissions and semgrep-pack procedure current with v20.0.0 (#1431)"
+    },
+    {
+      "sha": "a72e589b7f267c3f476f0a8ee1ce278b5f21520f",
+      "date": "2026-10-22T01:14:24+07:00",
+      "subject": "chore(release): v20.0.0 (#1429)"
+    },
+    {
+      "sha": "1a88d0435056f5b0d420dc54701d43c12dcf91b2",
+      "date": "2026-10-22T01:12:51+07:00",
+      "subject": "fix(deploy): deliver the SSRF relax knobs to the services that enforce the guard (#1430)"
+    },
+    {
+      "sha": "b6fcc11f209c8a81c37bcfc69260eaeda1d33daf",
+      "date": "2026-10-22T00:00:01+07:00",
+      "subject": "fix(deploy): pin LLM gateway image to litellm v1.102.1 (#1428)"
+    },
+    {
+      "sha": "a5664a5ef9714768a18667fe37bad0d004edf7c5",
+      "date": "2026-10-22T00:05:42+11:00",
+      "subject": "fix(connectors,api): adopt the SSRF guard on every connector egress path (GHSA-cq4g reproduction + fix) (#1422)"
+    },
+    {
+      "sha": "058389df6e842de402d3c297cff2f51ad2823109",
+      "date": "2026-10-21T23:22:54+11:00",
+      "subject": "fix(deps): pillow 13.0.0 in services/agents by dropping the unused fastembed extra (#1420)"
+    },
+    {
+      "sha": "4988201fc5279b5079d818e1a4a013a11436a6bf",
+      "date": "2026-10-21T22:12:02+11:00",
+      "subject": "Merge pull request #1424 from beenuar/chore/realtime-npm-bumps-oct21"
+    },
+    {
+      "sha": "a57ab3afdc3ef638273aa22f073467d853b48611",
+      "date": "2026-10-21T22:08:06+11:00",
+      "subject": "fix(api): cases read-scope, system-note spoofing, webhook RLS+SSRF, and two live RLS-session siblings (#1421)"
+    },
+    {
+      "sha": "34d1a581b89cb9742e1f177896ca8c8a9b3a767b",
+      "date": "2026-10-21T21:34:00+11:00",
+      "subject": "Merge pull request #1379 from beenuar/fix/1099-pin-semgrep-packs"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".devcontainer/devcontainer.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/installer-failure.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/LICENSES.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/start-postgres/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/access-governance-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/adoption-snapshot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/agent-auth-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ai-estate-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/aisoc-action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/aisoc-cli.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/alert-audit-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/audit-forgery-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/audit-retention-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-extensions.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/case-depth-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/chaos.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/chart-channel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/check-openapi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/comment-paths.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/compose-smoke-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/connector-scheduler-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/console-visuals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cross-tenant-rbac.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/demo-timing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/entitlements-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/governance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/helm.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/hunt-report-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/image-channel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/installer-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/integration.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/isolation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lake-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/lake-query-jobs-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/live-agent-eval.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/mfa-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/papers.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/perf.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/playbook-pause-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-cli.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-images.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/readme-gates.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/reproducible-builds.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/retro-hunt-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/scheduler-lease-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scim-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/screencast.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/security-pack.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/sso-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/taxii-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tenant-tuning-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ueba-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/upgrade-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/validate-detections.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/verification-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/visual-regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/wet-eval.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/white-label-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaksignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".security/allowlist.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".security/semgrep/MANIFEST.sha256",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".security/semgrep/owasp-top-ten.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".security/semgrep/python.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".security/semgrep/react.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".security/semgrep/security-audit.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".security/semgrep/typescript.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".trivyignore.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "DEPTH_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "FIX_PASS_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "GAP_CLOSURE_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PARITY_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/api/rest.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/architecture/graph-schema.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/architecture/itsm-as-source-of-truth.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/architecture/overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/benchmark-methodology.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/benchmark.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/compliance/evidence-pack.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/concepts/ai-estate-discovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/concepts/capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/concepts/cases.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/concepts/detections.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/concepts/live-actions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/concepts/playbooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/concepts/windowed-detections.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/api-coverage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/connectors/aws-cloudtrail-s3.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/connectors/azure-event-hubs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/datadog.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/endpoint-decision-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/connectors/gcp-pubsub.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/connectors/kafka-input.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/lacework.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/connectors/otlp-logs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/pagerduty.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/connectors/syslog-listener.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/tines.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/connectors/wazuh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/console/funnel-kpis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/console/rule-library.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/console/tenant-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/console/triage-context.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/console/users-administration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/deployment/docker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/deployment/env-vars.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/deployment/walkthrough.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/detections/coverage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/evaluation/replay.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/glossary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/intro.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/migration/from-splunk.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/alert-prioritisation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/backup-and-restore.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/case-orchestration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/cold-tier-queries.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/console-mfa.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/data-governance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/detection-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/enterprise-sso.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/ha-deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/llm-gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/mailbox-remediation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/mcp-client.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/release-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/scim.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/security.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/shadow-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/docs/operations/taxii-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/upgrades.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/operations/usage-metering.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

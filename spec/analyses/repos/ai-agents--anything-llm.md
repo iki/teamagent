@@ -1,0 +1,207 @@
+# anything-llm: change evidence
+
+Source: [anything-llm](https://github.com/Mintplex-Labs/anything-llm) · [Analysis](../../projects/ai-agents--anything-llm.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `09e68e357a90973fd2b143b318b31640bee50a0b`; commit date: 2026-10-03T13:42:58-07:00; review date: unknown; observed SHA: `9b1fcab141000eaba9f78ed131151de04904454b`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Mintplex-Labs/anything-llm/compare/09e68e357a90973fd2b143b318b31640bee50a0b...9b1fcab141000eaba9f78ed131151de04904454b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [9b1fcab14100](https://github.com/Mintplex-Labs/anything-llm/commit/9b1fcab141000eaba9f78ed131151de04904454b) 2026-10-25T11:20:42-07:00: cross-env compat prisma reset command
+- [a5bb8b9c7b12](https://github.com/Mintplex-Labs/anything-llm/commit/a5bb8b9c7b1262635ea58fc17d4899619cbf58e9) 2026-10-23T16:03:38-07:00: fix(mistral): support Mistral reasoning models, dedupe model list, add thinking toggle (#6821) (#6825)
+- [b61293f8e0ff](https://github.com/Mintplex-Labs/anything-llm/commit/b61293f8e0ffbf50fe046f7f972a2a29f391ae59) 2026-10-23T15:40:19-07:00: Merge pull request #6822 from Mintplex-Labs/v1.19.0-tags
+- [0d39ca2708a4](https://github.com/Mintplex-Labs/anything-llm/commit/0d39ca2708a484b734501e61c7768d1fb7abe641) 2026-10-23T15:37:50-07:00: chore: bump version to 1.19.0
+- [ba63583c2257](https://github.com/Mintplex-Labs/anything-llm/commit/ba63583c2257e976a4342acb0e2f4b58234a6d70) 2026-10-23T13:50:12-07:00: fix(collector): return a relative document location on Windows
+- [8239cd85a22d](https://github.com/Mintplex-Labs/anything-llm/commit/8239cd85a22d847337215988c69a8d1c0fba3c94) 2026-10-22T17:33:46-07:00: feat: instance color palettes and tabbed branding settings (#6796)
+- [be7333eb7a1a](https://github.com/Mintplex-Labs/anything-llm/commit/be7333eb7a1a6d9b372d8af4a9fb96ff42b1654c) 2026-10-22T15:55:09-07:00: fix(ollama): keep context windows when one model show fails (#6816)
+- [14fdff33b009](https://github.com/Mintplex-Labs/anything-llm/commit/14fdff33b009e09f9b56cd5b8f2862db73eec8c3) 2026-10-22T15:52:45-07:00: fix: preserve daily message quota when deleting threads (#6814)
+- [24c2934dc383](https://github.com/Mintplex-Labs/anything-llm/commit/24c2934dc383a5439f7208a08a489a0b6e42dea9) 2026-10-22T15:47:29-07:00: fix: use the repository default branch in the GitLab and Gitea connectors (#6809)
+- [eca96354eb54](https://github.com/Mintplex-Labs/anything-llm/commit/eca96354eb54c8fa773671ceb29d0d7f819bb22c) 2026-10-22T15:46:09-07:00: fix: fall back to default chunk overlap when it is not smaller than the chunk size (#6811)
+- [0acf0e896721](https://github.com/Mintplex-Labs/anything-llm/commit/0acf0e896721d214df6a8c50282a6d118666a735) 2026-10-21T23:26:35-07:00: fix(mcp): treat unsupported ping as non-fatal so servers stay usable (#6805)
+- [e573f792310e](https://github.com/Mintplex-Labs/anything-llm/commit/e573f792310e2b03a510082cd4fc27ffc7e911e4) 2026-10-21T23:10:40-07:00: fix: isolate watched document sync failures (#6804)
+- [20d7d07a656f](https://github.com/Mintplex-Labs/anything-llm/commit/20d7d07a656fa2b6b8b1a97a01d090734b697ac1) 2026-10-21T18:59:42-07:00: comment for low-effort GHSA spam prevention
+- [61298c1c88b1](https://github.com/Mintplex-Labs/anything-llm/commit/61298c1c88b1790b8d81d81237441126ec0ec9d0) 2026-10-21T18:56:23-07:00: fix: regenerate and edit should still count toward daily message limit (#6785)
+- [0b3dee76f808](https://github.com/Mintplex-Labs/anything-llm/commit/0b3dee76f808991f4a6ae489e637301c85e5a420) 2026-10-21T17:20:28-07:00: Merge branch 'master' of github.com:Mintplex-Labs/anything-llm
+- [b340e25a2a6c](https://github.com/Mintplex-Labs/anything-llm/commit/b340e25a2a6cbba83328228890f04cf5a6325ce7) 2026-10-21T17:20:17-07:00: comment for low-effort GHSA spam prevention
+- [c5936fbb0668](https://github.com/Mintplex-Labs/anything-llm/commit/c5936fbb06685d7d98524fc3533e999bb5872c0b) 2026-10-21T17:16:28-07:00: fix: report failed workspace embeds on API document uploads (#6793)
+- [afd2da90e140](https://github.com/Mintplex-Labs/anything-llm/commit/afd2da90e14002e764e2ccdb0e5eceb7c8fd0ae0) 2026-10-21T16:47:58-07:00: fix(confluence): keep code blocks as written instead of running them through htmlToText (#6794)
+- [3d016f2ffc93](https://github.com/Mintplex-Labs/anything-llm/commit/3d016f2ffc93b995627f8d43d09adb72b94ac68c) 2026-10-21T16:47:39-07:00: fix(paperless-ngx): keep plain-text document content as it is instead of reading it as HTML (#6795)
+- [1aec023fa87e](https://github.com/Mintplex-Labs/anything-llm/commit/1aec023fa87e9b4f2a8bf9f42f68546af4398a14) 2026-10-21T16:41:16-07:00: fix: use the repository default branch in the GitHub connector (#6800)
+- [feb0ebe8a0de](https://github.com/Mintplex-Labs/anything-llm/commit/feb0ebe8a0de61afd33bb491d5e8f12f0d901e32) 2026-10-19T17:34:27-07:00: fix(a11y): announce a reply once it has finished streaming (#6752)
+- [b82ac9c495db](https://github.com/Mintplex-Labs/anything-llm/commit/b82ac9c495dbfae6bc42b1506467d9f78ad64a1e) 2026-10-19T17:33:37-07:00: Parse PDF and file links in the bulk link scraper (#6786)
+- [a85f8b5e7561](https://github.com/Mintplex-Labs/anything-llm/commit/a85f8b5e756154d9507683f0f58cce4635dbfafa) 2026-10-19T16:08:46-07:00: fix: keep a CRLF file's line endings in filesystem-edit-file (#6756)
+- [93623daa776c](https://github.com/Mintplex-Labs/anything-llm/commit/93623daa776cfbcc5a72161e129295aae8c95860) 2026-10-19T13:58:19-07:00: Add Hungarian (hu) translation (#6757)
+- [4a5a5ea4fffc](https://github.com/Mintplex-Labs/anything-llm/commit/4a5a5ea4fffcef11692f6c241bffad6059516c06) 2026-10-19T13:56:09-07:00: fix(collector): read Excel's short date as an ISO date (#6758)
+- [9ca6f6a3ef04](https://github.com/Mintplex-Labs/anything-llm/commit/9ca6f6a3ef049a507d83820d84fcf3c93a67d107) 2026-10-19T13:52:00-07:00: docs: remove references to removed sqlite:migrate script (#6759)
+- [4949328c4529](https://github.com/Mintplex-Labs/anything-llm/commit/4949328c452993fa7bc763d8f77d6176a4855013) 2026-10-19T13:49:46-07:00: fix: crash on workspace chat settings when saved LLM provider is not in the list yet (#6761)
+- [f1c3f53c9a7d](https://github.com/Mintplex-Labs/anything-llm/commit/f1c3f53c9a7d14ac8a7b52762affc6bead9d3431) 2026-10-19T13:41:06-07:00: chore: drop API key fragments from web search error messages (#6763)
+- [2149cdd307f9](https://github.com/Mintplex-Labs/anything-llm/commit/2149cdd307f908d40b59015784aabcafb3cf171c) 2026-10-19T13:31:29-07:00: fix: connect to the document collector on 127.0.0.1 (#6766)
+- [f03cddd8d826](https://github.com/Mintplex-Labs/anything-llm/commit/f03cddd8d826d80fd8c274207780633fcffc8c2f) 2026-10-19T13:31:06-07:00: fix(telegram): preserve complete agent answers across message chunks (#6767)
+- [63bff456a293](https://github.com/Mintplex-Labs/anything-llm/commit/63bff456a293c0008d65d225154d37d8c63ff426) 2026-10-19T13:12:45-07:00: fix: report empty connector imports as failures (#6775)
+- [a00fd3b36361](https://github.com/Mintplex-Labs/anything-llm/commit/a00fd3b363612897e6375086e201066478a0850e) 2026-10-19T13:12:39-07:00: fix: tell the user why a password reset was refused (#6771)
+
+## Changed paths (truncated)
+
+- M: `.github/workflows/build-and-push-image.yaml`
+- M: `.github/workflows/build-qa-tag.yaml`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `cloud-deployments/helm/charts/anythingllm/README.md`
+- M: `cloud-deployments/helm/charts/anythingllm/README.md.gotmpl`
+- M: `cloud-deployments/helm/charts/anythingllm/values.yaml`
+- M: `cloud-deployments/openshift/Dockerfile`
+- M: `collector/__tests__/processLink/convert/generic.test.js`
+- A: `collector/__tests__/processLink/options.test.js`
+- M: `collector/__tests__/utils/extensions/Confluence/ConfluenceLoader.test.js`
+- M: `collector/__tests__/utils/extensions/RepoLoader/GiteaRepo.test.js`
+- M: `collector/__tests__/utils/extensions/RepoLoader/GithubRepo.test.js`
+- M: `collector/__tests__/utils/extensions/RepoLoader/GitlabRepo.test.js`
+- M: `collector/__tests__/utils/extensions/WebsiteDepth/index.test.js`
+- M: `collector/__tests__/utils/url/index.test.js`
+- M: `collector/extensions/index.js`
+- M: `collector/index.js`
+- M: `collector/package.json`
+- M: `collector/processLink/convert/generic.js`
+- M: `collector/processLink/helpers/index.js`
+- M: `collector/processLink/index.js`
+- M: `collector/processSingleFile/convert/asXlsx.js`
+- M: `collector/utils/constants.js`
+- M: `collector/utils/extensions/Confluence/ConfluenceLoader/index.js`
+- M: `collector/utils/extensions/DrupalWiki/DrupalWiki/index.js`
+- M: `collector/utils/extensions/DrupalWiki/index.js`
+- M: `collector/utils/extensions/PaperlessNgx/PaperlessNgxLoader/index.js`
+- M: `collector/utils/extensions/RepoLoader/GiteaRepo/RepoLoader/index.js`
+- M: `collector/utils/extensions/RepoLoader/GithubRepo/RepoLoader/index.js`
+- M: `collector/utils/extensions/RepoLoader/GitlabRepo/RepoLoader/index.js`
+- M: `collector/utils/extensions/WebsiteDepth/index.js`
+- M: `collector/utils/files/index.js`
+- M: `collector/utils/files/mime.js`
+- M: `collector/utils/tokenizer/index.js`
+- M: `collector/utils/url/index.js`
+- M: `docker/.env.example`
+- M: `docker/Dockerfile`
+- M: `docker/HOW_TO_USE_DOCKER.md`
+- M: `frontend/src/ThemeContext.jsx`
+- A: `frontend/src/components/EmbeddingFileRow/index.jsx`
+- A: `frontend/src/components/LLMSelection/EmbeddedLemonadeOptions/index.jsx`
+- A: `frontend/src/components/LLMSelection/EmbeddedLemonadeOptions/utils.js`
+- M: `frontend/src/components/LLMSelection/MistralOptions/index.jsx`
+- M: `frontend/src/components/Modals/ManageWorkspace/Documents/Directory/index.jsx`
+- M: `frontend/src/components/Modals/ManageWorkspace/Documents/WorkspaceDirectory/index.jsx`
+- M: `frontend/src/components/Modals/ManageWorkspace/Documents/hooks/useDocumentPicker.js`
+- M: `frontend/src/components/ProviderPrivacy/constants.js`
+- M: `frontend/src/components/SettingsSidebar/index.jsx`
+- M: `frontend/src/components/Sidebar/index.jsx`
+- M: `frontend/src/components/UserMenu/AccountModal/index.jsx`
+- M: `frontend/src/components/VectorDBSelection/WeaviateDBOptions/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/Citation/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/ClarifyingQuestion/index.jsx`
+- A: `frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/CompletedReplyAnnouncement/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/index.jsx`
+- A: `frontend/src/components/WorkspaceChat/ChatContainer/DnDWrapper/EmbeddingProgressModal/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/DnDWrapper/FileUploadWarningModal/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/DnDWrapper/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/AttachItem/ParsedFilesMenu/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/AttachItem/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/ChatContainer/PromptInput/LLMSelector/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/LoadingChat/index.jsx`
+- M: `frontend/src/components/WorkspaceChat/index.jsx`
+- M: `frontend/src/components/contexts/TTSProvider.jsx`
+- M: `frontend/src/components/lib/ModelTable/index.jsx`
+- M: `frontend/src/hooks/usePromptInputStorage.js`
+- M: `frontend/src/hooks/useTheme.js`
+- M: `frontend/src/locales/ar/common.js`
+- M: `frontend/src/locales/bg/common.js`
+- M: `frontend/src/locales/ca/common.js`
+- M: `frontend/src/locales/cs/common.js`
+- M: `frontend/src/locales/da/common.js`
+- M: `frontend/src/locales/de/common.js`
+- M: `frontend/src/locales/en/common.js`
+- M: `frontend/src/locales/es/common.js`
+- M: `frontend/src/locales/et/common.js`
+- M: `frontend/src/locales/fa/common.js`
+- M: `frontend/src/locales/fr/common.js`
+- M: `frontend/src/locales/he/common.js`
+- M: `frontend/src/locales/hi/common.js`
+- M: `frontend/src/locales/hr/common.js`
+- A: `frontend/src/locales/hu/common.js`
+- M: `frontend/src/locales/id/common.js`
+- M: `frontend/src/locales/it/common.js`
+- M: `frontend/src/locales/ja/common.js`
+- M: `frontend/src/locales/ko/common.js`
+- M: `frontend/src/locales/lo/common.js`
+- M: `frontend/src/locales/lt/common.js`
+- M: `frontend/src/locales/lv/common.js`
+- M: `frontend/src/locales/nl/common.js`
+- M: `frontend/src/locales/pl/common.js`
+- M: `frontend/src/locales/pt_BR/common.js`
+- M: `frontend/src/locales/resources.js`
+- M: `frontend/src/locales/ro/common.js`
+- M: `frontend/src/locales/ru/common.js`
+- M: `frontend/src/locales/sv/common.js`
+- M: `frontend/src/locales/tr/common.js`
+- M: `frontend/src/locales/vn/common.js`
+- M: `frontend/src/locales/zh/common.js`
+- M: `frontend/src/locales/zh_TW/common.js`
+- M: `frontend/src/models/workspace.js`
+- M: `frontend/src/pages/Admin/Agents/index.jsx`
+- M: `frontend/src/pages/Admin/DefaultSystemPrompt/index.jsx`
+- M: `frontend/src/pages/Admin/ExperimentalFeatures/Features/LiveSync/manage/index.jsx`
+- M: `frontend/src/pages/Admin/ExperimentalFeatures/index.jsx`
+- M: `frontend/src/pages/Admin/Invitations/index.jsx`
+- M: `frontend/src/pages/Admin/Logging/index.jsx`
+- M: `frontend/src/pages/Admin/SystemPromptVariables/AddVariableModal/index.jsx`
+- M: `frontend/src/pages/Admin/SystemPromptVariables/VariableRow/EditVariableModal/index.jsx`
+- M: `frontend/src/pages/Admin/SystemPromptVariables/VariableRow/index.jsx`
+- M: `frontend/src/pages/Admin/SystemPromptVariables/index.jsx`
+- M: `frontend/src/pages/Admin/Users/index.jsx`
+- M: `frontend/src/pages/Admin/Workspaces/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/ApiKeys/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/AudioPreference/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/BrowserExtensionApiKey/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/ChatEmbedWidgets/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/Chats/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/CommunityHub/Authentication/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/CommunityHub/ImportItem/Steps/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/CommunityHub/Trending/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/EmbeddingPreference/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/EmbeddingTextSplitterPreference/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/ImageGenerationPreference/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/LLMPreference/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/MobileConnections/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/ModelRouters/LLMProviderModelPicker/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/PrivacyAndData/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/ScheduledJobs/RunDetailPage.jsx`
+- M: `frontend/src/pages/GeneralSettings/ScheduledJobs/RunHistoryPage.jsx`
+- M: `frontend/src/pages/GeneralSettings/ScheduledJobs/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/ScheduledJobs/utils/cron.js`
+- M: `frontend/src/pages/GeneralSettings/Security/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/Settings/Branding/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/Settings/Chat/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/Settings/Interface/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/Settings/components/CustomSiteSettings/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/Settings/components/ThemePreference/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/TranscriptionPreference/index.jsx`
+- M: `frontend/src/pages/GeneralSettings/VectorDatabase/index.jsx`
+- M: `frontend/src/pages/Invite/index.jsx`
+- M: `frontend/src/pages/Main/Home/index.jsx`
+- M: `frontend/src/pages/OnboardingFlow/Steps/LLMPreference/index.jsx`
+- M: `frontend/src/pages/WorkspaceSettings/AgentConfig/AgentLLMSelection/index.jsx`
+- M: `frontend/src/pages/WorkspaceSettings/ChatSettings/WorkspaceLLMSelection/index.jsx`
+- M: `frontend/src/pages/WorkspaceSettings/ChatSettings/index.jsx`
+- M: `frontend/src/pages/WorkspaceSettings/index.jsx`
+- A: `frontend/src/palettes/InstancePalettes.jsx`
+- A: `frontend/src/palettes/PalettePicker.jsx`
+- A: `frontend/src/palettes/index.js`
+- A: `frontend/src/palettes/palettes.css`
+- M: `frontend/tailwind.config.js`
+- M: `jest.config.cjs`
+- M: `locales/README.fa-IR.md`
+- M: `locales/README.ja-JP.md`
+- M: `locales/README.tr-TR.md`
+- M: `locales/README.zh-CN.md`
+- D: `open-computer/.gitignore`

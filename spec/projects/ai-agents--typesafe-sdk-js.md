@@ -30,3 +30,7 @@ This SDK is a network client, not local Jev model weights or an inference engine
 Test malformed probability payloads, missing credentials, timeout/cancellation, rate limits and unsupported schema versions. Calibrate choices against labeled tasks before using confidence as an execution gate. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [decisions](../decisions.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js); analyzed commit `66880ccded6cb642dc1809620c2b108c33730214`; commit date 2026-09-15T18:16:33Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--typesafe-sdk-js.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--fx",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/vercel-labs/fx",
+  "report": "spec/projects/ai-agents--fx.md",
+  "analyzedSha": "6bdd49736abd4a85fb6dd60a824e4329784f34c0",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:52:26-04:00",
+  "observedSha": "2327e3cb8e6ce449836f22fdc6c32437fd8c5cbc",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "2327e3cb8e6ce449836f22fdc6c32437fd8c5cbc",
+      "date": "2026-10-23T22:26:36-04:00",
+      "subject": "Merge pull request #1445 from vercel-labs/fazxes/permissions-panel"
+    },
+    {
+      "sha": "5f9aed6634c3dbbd12e28eee8de3362ab1522b1d",
+      "date": "2026-10-23T22:26:05-04:00",
+      "subject": "Merge pull request #1441 from vercel-labs/fazxes/status-session-panel"
+    },
+    {
+      "sha": "45abf082aede63ba536d86b7a339423d3b70e94c",
+      "date": "2026-10-23T22:23:12-04:00",
+      "subject": "Merge pull request #1446 from vercel-labs/fazxes/ask-twenty-questions"
+    },
+    {
+      "sha": "28cf53b54864ff532bd53054ff93f0a46a3b4f97",
+      "date": "2026-10-23T20:16:15-04:00",
+      "subject": "Allow up to 20 questions in one ask_user_question call"
+    },
+    {
+      "sha": "915d439bd2063cbc612972c8c3855fc70d3f800b",
+      "date": "2026-10-23T19:29:02-04:00",
+      "subject": "Show /permissions in a footer panel"
+    },
+    {
+      "sha": "b31b5287609e3a2592a6419726eac192b864ba30",
+      "date": "2026-10-23T19:24:29-04:00",
+      "subject": "Check the transcript's last row under a short /status panel"
+    },
+    {
+      "sha": "20331680eb49245d700c0e1efee478d647bf200c",
+      "date": "2026-10-23T18:54:07-04:00",
+      "subject": "Keep the transcript in view under the /status panel"
+    },
+    {
+      "sha": "8a964aca1d64cbfd4149039b81784a8851779d8a",
+      "date": "2026-10-23T15:59:13-04:00",
+      "subject": "Show the session ID in a /status panel"
+    },
+    {
+      "sha": "314c01479c140e552a44e6c9a21c1796e03e4c1b",
+      "date": "2026-10-23T14:02:33-04:00",
+      "subject": "Merge pull request #1435 from vercel-labs/esteban/reanchor-variation-selector-glyphs"
+    },
+    {
+      "sha": "3f312edcd6a3fc67eb3b93b3adf71a2b3f9e7b00",
+      "date": "2026-10-23T14:02:03-04:00",
+      "subject": "Merge pull request #1417 from vercel-labs/esteban/mcp-status-line-startup"
+    },
+    {
+      "sha": "2f8503970dca587b9c865f82738fa9735c1941e7",
+      "date": "2026-10-23T14:01:21-04:00",
+      "subject": "Merge pull request #1416 from vercel-labs/esteban/mcp-menu-attention-group"
+    },
+    {
+      "sha": "6ba6b4762100c1aad6ddbe579f29ca43fca5fb5b",
+      "date": "2026-10-23T13:55:26-04:00",
+      "subject": "Merge pull request #1437 from vercel-labs/fazxes/mcp-oversized-replies"
+    },
+    {
+      "sha": "6d6a4e271f17eea051bed68aa23ba841a57dd574",
+      "date": "2026-10-23T13:55:19-04:00",
+      "subject": "Merge pull request #1436 from vercel-labs/fazxes/mcp-logout-everywhere"
+    },
+    {
+      "sha": "7a64a790c23bdf281e5ab584e7f2a9c226dbe72e",
+      "date": "2026-10-23T13:44:51-04:00",
+      "subject": "Merge pull request #1421 from vercel-labs/fazxes/withhold-earlier-images"
+    },
+    {
+      "sha": "e38fa77e8da95af97ab71909ad19fe44c6dab772",
+      "date": "2026-10-23T12:20:44-04:00",
+      "subject": "Describe the oversized call flag for HTTP answers too"
+    },
+    {
+      "sha": "80b2bbecfb00433c6c48cb3cf7488c9af86017b3",
+      "date": "2026-10-23T12:10:32-04:00",
+      "subject": "Explain oversized MCP replies and stop fetching them again"
+    },
+    {
+      "sha": "edb1505f8b97cdbf2eb2c28b106e6bbba855637c",
+      "date": "2026-10-23T12:06:10-04:00",
+      "subject": "Keep MCP logouts in effect across terminals"
+    },
+    {
+      "sha": "a1f264f3d65b17fa156962baa229055a705087e5",
+      "date": "2026-10-23T12:58:59-03:00",
+      "subject": "Merge branch 'esteban/mcp-status-line-startup' into esteban/reanchor-variation-selector-glyphs"
+    },
+    {
+      "sha": "17e24aa3470f3696da368f7cec63feaa6b54881c",
+      "date": "2026-10-23T12:58:56-03:00",
+      "subject": "Merge branch 'esteban/mcp-menu-attention-group' into esteban/mcp-status-line-startup"
+    },
+    {
+      "sha": "dc6498d4898b55943c1ec4b9a6c09674325ab4e6",
+      "date": "2026-10-23T12:58:45-03:00",
+      "subject": "Choose yes or no with the arrows on an in-place question"
+    },
+    {
+      "sha": "ae687a4879166088c15d30f2bd6ccc2e6a95e208",
+      "date": "2026-10-23T11:56:30-04:00",
+      "subject": "Merge pull request #1425 from vercel-labs/fazxes/encode-inline-fuzz-seeds"
+    },
+    {
+      "sha": "3009e80783cb16dda0767dc8893ba87be33be8eb",
+      "date": "2026-10-23T11:56:16-04:00",
+      "subject": "Merge pull request #1424 from vercel-labs/fazxes/skip-substitutions-in-command-labels"
+    },
+    {
+      "sha": "f8a7917ef13cb034d98b3a6e4f9f8dc1ff140809",
+      "date": "2026-10-23T11:56:04-04:00",
+      "subject": "Merge pull request #1430 from vercel-labs/fazxes/stop-processes-before-force-kill"
+    },
+    {
+      "sha": "683f84a0dfe49b994c357cec9ff3a496cba03fbb",
+      "date": "2026-10-23T11:55:53-04:00",
+      "subject": "Merge pull request #1428 from vercel-labs/fazxes/skip-next-version-check-in-sdk-tests"
+    },
+    {
+      "sha": "be3805bc792a408b137dae381e2add0a23bbe8ff",
+      "date": "2026-10-23T11:55:42-04:00",
+      "subject": "Merge pull request #1422 from vercel-labs/fazxes/show-mremap-to-thread-sanitizer"
+    },
+    {
+      "sha": "2fe8583744f643d691e94979edb9d526af2ab751",
+      "date": "2026-10-23T11:55:31-04:00",
+      "subject": "Merge pull request #1419 from vercel-labs/fazxes/review-git-remote-helpers"
+    },
+    {
+      "sha": "131b41e1bc58fd11473410e11278ba434526235f",
+      "date": "2026-10-23T11:55:20-04:00",
+      "subject": "Merge pull request #1418 from vercel-labs/fazxes/allow-slow-conversion-notice"
+    },
+    {
+      "sha": "5333e72340ccbdca8b136eb4525196d304156e68",
+      "date": "2026-10-23T12:49:20-03:00",
+      "subject": "Merge branch 'esteban/mcp-status-line-startup' into esteban/reanchor-variation-selector-glyphs"
+    },
+    {
+      "sha": "6edb47a6a7cefbfdf1167ba0b3bd79022b70fc8e",
+      "date": "2026-10-23T12:49:16-03:00",
+      "subject": "Merge branch 'esteban/mcp-menu-attention-group' into esteban/mcp-status-line-startup"
+    },
+    {
+      "sha": "9d444936da418e57f37a22e937595882d81fbc0c",
+      "date": "2026-10-23T12:49:11-03:00",
+      "subject": "Show yes and no beside an in-place question"
+    },
+    {
+      "sha": "51aa67948c4f05362307ecbfa5f0f802e6cbf6f3",
+      "date": "2026-10-23T12:47:21-03:00",
+      "subject": "Merge branch 'esteban/mcp-status-line-startup' into esteban/reanchor-variation-selector-glyphs"
+    },
+    {
+      "sha": "ba9dd8c9116b5ff337124be0c50af5e5df4195f4",
+      "date": "2026-10-23T12:47:18-03:00",
+      "subject": "Merge branch 'esteban/mcp-menu-attention-group' into esteban/mcp-status-line-startup"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/save-zig-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-pgso/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-zig/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bench.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/binary-size.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dev-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/full-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/fuzz.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/macos.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pgso-macos-arm64.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/prepare-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-libfx.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/tsan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/activity_progress.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/approval_review.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/file_index_bench.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/libfx/bench-bridge.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/libfx/bench-capacity.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/libfx/bench-competitive-target.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/libfx/bench-durable.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/libfx/bench-fx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/libfx/bench-parallel.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/libfx/bench-runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/libfx/crash-matrix.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/libfx/durable-host.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/libfx/durable.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/libfx/fake-inference-server.zig",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/long-turn-memory.md",
+      "previousPath": "docs/long-turn-memory.md"
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/long_turn_memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/pgso_artifacts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/signed_macos_memory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig.zon",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check-compactor-boundary.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-indexer-boundary.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/detect-macos-need.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/fuzz_nightly.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/corpus.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/distributed.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pgso/ir_size.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/qualify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_corpus.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_distributed.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pgso/tests/test_ir_size.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_qualify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/tests/test_toolchain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/pgso/toolchain.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/smoke-binary.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/tests/test_detect_macos_need.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/tests/test_fuzz_nightly.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/NAPI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/chatgpt-sign-in.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/chatgpt.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/custom-provider.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/durable.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/durable/local.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/durable/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/durable/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/durable/vercel.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/durable/world.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/fetch-cleanup.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/fx-harness.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/fx-sdk.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/grok-sign-in.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/grok.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/mcp.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/node/test-term-agents-md.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/test-term-features.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/test-term-headless.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/node/test-term-workspace.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/oauth.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/scripts/bundle-durable.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/scripts/package-libfx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/scripts/package-term-demo.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/semantic-observer-hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/subscription.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/app-world.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/fixtures/libfx-0.0.11-checkpoint.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/fixtures/libfx-0.0.13-term-session.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/fixtures/libfx-journal-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/hold-writes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/hooks-fixture.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/next/app/api/durable/route.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/next/app/api/fx/route.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/no-npm-registry.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/queue-world.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-bootstrap.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-agent-codex.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-agent-custom.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-effort.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-fast.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-agent-grok.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-images.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-provider-tools.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-request-context.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-reserved-tool-names.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-steering.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-step-limit.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-tool-start.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-transport-retry.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-agent-ultrafast-options.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-backend-info.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-chatgpt-sign-in.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-checkpoint.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-core-browser.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-core-cancel.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-core-home-unavailable.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-core-live.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-core-output-pressure.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-core-output.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-core.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-default-import.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-durable-core.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-durable-harness.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-durable-provider-crash.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-durable.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-grok-sign-in.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-hooks.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-host-tool-cancel.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-host-tools.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-instruction-limits.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-journal.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-libfx-loader.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-mcp-adapter.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-minimal-api.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-cancel-before-fetch.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-cancel.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-config-isolation.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-native-core-env-growth.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-fetch-failure.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/tests/test-native-core-http-cleanup.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-image-framing.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-misuse.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-stream.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core-worker-termination.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-core.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-host-tool-frame-limit.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-native-host-tool-late-settle.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/tests/test-next-package.mjs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

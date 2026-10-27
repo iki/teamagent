@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [claude.fork.claw-code](https://github.com/ultraworkers/claw-code-parity); analyzed commit `ebef748d3e8372ea874b50b13c87c34e6a75c39a`; commit date 2026-04-05T11:01:17Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--xx-2604-claude.fork.claw-code.md).
+<!-- teamagent-analysis:end -->

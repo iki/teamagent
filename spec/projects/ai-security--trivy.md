@@ -27,3 +27,7 @@ Adopt as a baseline supply-chain and deployment scanner after selecting relevant
 ## Related directions
 
 [Security](../security.md) · [Agents](../agents.md) · [Generation](../generation.md) · [Evolution](../evolution.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [trivy](https://github.com/aquasecurity/trivy); analyzed commit `8f815546c7b57dc11229b0098463dff0cfc9ed2c`; commit date 2026-10-02T03:26:05Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--trivy.md).
+<!-- teamagent-analysis:end -->

@@ -26,3 +26,7 @@ Markdown is a useful interchange representation but can lose table geometry, sli
 Adopt as a baseline conversion adapter and fallback, not the sole canonical data representation. Return parser identity, attempted converters, status and quality indicators alongside text. Route documents needing layout evidence to a structured parser. Test ambiguous MIME types, extensionless files, malformed streams, unsupported content, archive depth limits and preservation of non-ASCII text. Reprocessing should reuse original bytes rather than a previously lossy Markdown export.
 
 Related directions: [import-generation](../import-generation.md) · [memory](../memory.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [markitdown](https://github.com/microsoft/markitdown); analyzed commit `18d48cb287b91610fa131fa67f5c455d6a23f19c`; commit date 2026-10-03T11:38:13-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--markitdown.md).
+<!-- teamagent-analysis:end -->

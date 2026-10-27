@@ -1,0 +1,1004 @@
+{
+  "metadata": {
+    "id": "ai-agents-mem--flock",
+    "category": "ai-agents-mem",
+    "name": "flock",
+    "url": "https://github.com/whiteducksoftware/flock",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-mem--flock.md",
+    "topics": [
+      "memory",
+      "evolution"
+    ],
+    "depth": "screened",
+    "analyzedSha": "006923b101178ac93d1360042adfb0d119de4540",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-06T02:30:04+02:00",
+    "reportSha256": "d1124e119445e22a14f6e3597878c4e4278f14d6850e69717f0e3d04452a56c5",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-mem--flock",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/whiteducksoftware/flock",
+    "report": "spec/projects/ai-agents-mem--flock.md",
+    "analyzedSha": "006923b101178ac93d1360042adfb0d119de4540",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-06T02:30:04+02:00",
+    "observedSha": "32a4710010a88cc4fd765574e8c6c00200f5d754",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "32a4710010a88cc4fd765574e8c6c00200f5d754",
+        "date": "2026-10-26T00:07:13+01:00",
+        "subject": "Merge pull request #688 from whiteducksoftware/docs/682-tracing-backends"
+      },
+      {
+        "sha": "823beaebf17f9d6cba468405c1dfa4ed0ebdd076",
+        "date": "2026-10-26T00:02:04+01:00",
+        "subject": "docs: remove the README screenshot of #682"
+      },
+      {
+        "sha": "503bc10122107709d2d672511795d6a5c377b02b",
+        "date": "2026-10-26T00:02:04+01:00",
+        "subject": "docs: README screenshot for the PR of #682 (removed in the next commit)"
+      },
+      {
+        "sha": "4b9fa88f29173945455d4c1c133f226e891f4e6b",
+        "date": "2026-10-26T00:01:11+01:00",
+        "subject": "docs: the README's observability section names the export (#682)"
+      },
+      {
+        "sha": "5746ef1dd488e9a683870adb7aa99ebbc5c9e9f3",
+        "date": "2026-10-25T23:57:22+01:00",
+        "subject": "docs: portable base64 for the Langfuse header (#682, review round 2)"
+      },
+      {
+        "sha": "d89a55888de5779a7daef3838a49109e2b566851",
+        "date": "2026-10-25T23:55:50+01:00",
+        "subject": "docs: exported spans carry tokens, backends estimate the cost (#682, review round 1)"
+      },
+      {
+        "sha": "1c9aaacd46986447e9285a05a18158af4e3897b4",
+        "date": "2026-10-25T23:53:24+01:00",
+        "subject": "docs: remove the PR screenshots of #682"
+      },
+      {
+        "sha": "16813352a27739c6c7d7b247b4c2352850a76dc9",
+        "date": "2026-10-25T23:53:24+01:00",
+        "subject": "docs: screenshots for the PR of #682 (removed in the next commit)"
+      },
+      {
+        "sha": "869ba53991e24f16e9de768694286790aa8fd878",
+        "date": "2026-10-25T23:53:24+01:00",
+        "subject": "docs: a guide for tracing backends, comparisons without claims about other tools (#682)"
+      },
+      {
+        "sha": "196ca60de4f61536cea8c92228c2cac8c783ade0",
+        "date": "2026-10-25T23:45:29+01:00",
+        "subject": "Merge pull request #687 from whiteducksoftware/feat/681-session-id"
+      },
+      {
+        "sha": "1cf4577441dc5ad1987dc07b54974094c6096f9a",
+        "date": "2026-10-25T23:41:26+01:00",
+        "subject": "fix: the run comes from the bound ctx or a Context, never a payload (#681, review round 2)"
+      },
+      {
+        "sha": "b91b26ff94bd2a5ec4d4c0ca7511fb8395d05a69",
+        "date": "2026-10-25T23:35:14+01:00",
+        "subject": "fix: only a context names the run, a payload field does not (#681, review round 1)"
+      },
+      {
+        "sha": "e3b1ca41cd6e900ece0ae73596c941b4253516a4",
+        "date": "2026-10-25T23:28:45+01:00",
+        "subject": "docs: remove the PR screenshots of #681"
+      },
+      {
+        "sha": "dc07b344e58f74f7d5402567a5aa8501c7d14c2a",
+        "date": "2026-10-25T23:28:45+01:00",
+        "subject": "docs: screenshots for the PR of #681 (removed in the next commit)"
+      },
+      {
+        "sha": "d9a8336e58a18e93e7840583f5e4b27de7841743",
+        "date": "2026-10-25T23:28:45+01:00",
+        "subject": "feat: a run's traces group into one session or thread (#681)"
+      },
+      {
+        "sha": "8b74d7df5243a183134f99c4f4fcac96d1317bc9",
+        "date": "2026-10-25T23:20:50+01:00",
+        "subject": "Merge pull request #686 from whiteducksoftware/feat/680-genai-spans"
+      },
+      {
+        "sha": "9efdda4425d078d3512060d65802dab62378a55c",
+        "date": "2026-10-25T23:12:34+01:00",
+        "subject": "fix: one span per call for nested agents, Responses API tool calls (#680, review round 2)"
+      },
+      {
+        "sha": "c375665d83c0a6edd1168fa0f38f09cf472fac46",
+        "date": "2026-10-25T23:05:30+01:00",
+        "subject": "fix: Responses API usage and the conventions' message schema (#680, review round 1)"
+      },
+      {
+        "sha": "9096fd2c17d2911ee1e6ca769332b34d30f08518",
+        "date": "2026-10-25T23:00:05+01:00",
+        "subject": "docs: remove the PR screenshot of #680"
+      },
+      {
+        "sha": "594b89c9b6f4f41174e1eaf559ab86b4179ff5f4",
+        "date": "2026-10-25T23:00:05+01:00",
+        "subject": "docs: one more screenshot for the PR of #680 (removed in the next commit)"
+      },
+      {
+        "sha": "966eacad1c20de959c708db4f15ddcee579f8734",
+        "date": "2026-10-25T22:56:55+01:00",
+        "subject": "docs: remove the PR screenshots of #680"
+      },
+      {
+        "sha": "cd9d0bb118ce5d7fe4a203da39cb345ea0e28ee4",
+        "date": "2026-10-25T22:56:55+01:00",
+        "subject": "docs: screenshots for the PR of #680 (removed in the next commit)"
+      },
+      {
+        "sha": "97d8d84394f4ec47c07ef63d3c235cfe5f8cb649",
+        "date": "2026-10-25T22:56:52+01:00",
+        "subject": "feat: a span per model call in the OpenTelemetry GenAI conventions (#680)"
+      },
+      {
+        "sha": "e4d48b6e003ce55ee400234f2d09bbe46fe3ef28",
+        "date": "2026-10-25T22:35:33+01:00",
+        "subject": "Merge pull request #684 from whiteducksoftware/fix/679-otlp-http"
+      },
+      {
+        "sha": "6c321ea1cc94c1c63fd9444ac6b449c0d9d1d9e7",
+        "date": "2026-10-25T22:26:34+01:00",
+        "subject": "fix: export OTLP over HTTP when the OTel variables ask for it (#679)"
+      },
+      {
+        "sha": "ec482e7100e45d951a79b84df133f09d97f1e9cf",
+        "date": "2026-10-25T19:14:33+01:00",
+        "subject": "Merge pull request #677 from whiteducksoftware/fix/676-security-deps"
+      },
+      {
+        "sha": "a5175a9893562f3f3f130f6c25f2f49f80753a78",
+        "date": "2026-10-25T19:09:16+01:00",
+        "subject": "fix: close the 113 Dependabot alerts on main (#676)"
+      },
+      {
+        "sha": "7515e5181a3d477a67130bf64cc91ee3f702b942",
+        "date": "2026-10-15T15:22:17+02:00",
+        "subject": "Merge pull request #663 from whiteducksoftware/fix-jupyter"
+      },
+      {
+        "sha": "ee1e826e139e360a9e710c147974097cfe34b4a7",
+        "date": "2026-10-14T16:55:36+02:00",
+        "subject": "fix: update Jupyter Server to prevent Referer token leaks"
+      },
+      {
+        "sha": "11d83989f51e2704546313a3acce316ae3815ce9",
+        "date": "2026-10-12T12:44:26+02:00",
+        "subject": "Merge pull request #633 from whiteducksoftware/feat/618-rest-correlation"
+      },
+      {
+        "sha": "04cf95e7f5d24bd6221625a294c3c475a8223e4b",
+        "date": "2026-10-12T12:39:29+02:00",
+        "subject": "fix: a run's webhook numbers survive eviction, the limit holds on insert (#618)"
+      },
+      {
+        "sha": "d597d8e75265d0ab2d23f9a9f4f7cc322dc1f2bd",
+        "date": "2026-10-12T12:30:42+02:00",
+        "subject": "fix: named runs keep their webhook sequence and their status route (#618)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".envtemplate",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ROADMAP.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/about/changelog.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/about/contributing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/about/roadmap.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-blackboard.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-checklist-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-checklist-blackboard.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-checklist-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-checklist-decider.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-coverage-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-coverage-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-escalation-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-escalation-card-unsure.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-escalation-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-explain-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-explained-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-explanation-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-hover.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-item-thresholds.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-lanes.gif",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-network-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-network-blackboard.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-review-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-review-buttons.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-review-by-human.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-reviewed.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-sections-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-shadow-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-shadow-card-unsure.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-shadow-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-sorter.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-tournament-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-tournament-blackboard.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-tournament-bracket-trace.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-tournament-bracket.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-tournament-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-types-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-types-blackboard.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-types-decider.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-types-scale-unsure.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-voting-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-voting-card-unsure.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/decisions/decision-voting-card.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/image-inputs/image-detail-full.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/image-inputs/image-detail-thumbnail.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/image-inputs/image-inputs-agent-view.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/image-inputs/image-inputs-blackboard.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/image-inputs/image-inputs-wrong-caption.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/image-inputs/image-publish-panel.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/image-inputs/image-publish-result.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/images/run-status-usage.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/applications.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/components.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/context-providers.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/dashboard.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/decisions.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/dspy-engine.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/foundry.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/images.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/imports.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/local-models.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/persistent-blackboard.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/rest-api.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/scheduling.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/semantic-subscriptions.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/server_components/tracing-component.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/tracing/auto-tracing.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tracing/backends.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/tracing/how_to_use_tracing_effectively.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/tracing/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/tracing/tracing-production.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/configuration.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/tutorials/scheduled-agents.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/tutorials/semantic-routing.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/01-getting-started/19_image_agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/01-getting-started/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/03-hackathon/06_timer_scheduling.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "examples/04-misc/08_local_transformers.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/04-misc/10_dashboard_triage_demo.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/04-misc/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/08-semantic/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/10-scheduling/01_simple_health_monitor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/10-scheduling/02_error_log_analyzer.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/10-scheduling/03_daily_report_generator.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/10-scheduling/04_batch_data_processor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/10-scheduling/05_one_time_reminder.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/10-scheduling/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/13-applications/01_worker.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/13-applications/02_starlette_sse.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/13-applications/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/13-applications/incident_app.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/azure.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/.dockerignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/.env.example",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/.gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/main.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/requirements.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/01_ticket_triage.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/02_arxiv_race.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/03_color_sorter.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/04_question_types.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/05_compliance_checklist.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/06_control_mapping_tournament.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/07_escalation.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/08_voting.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/09_shadow.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/10_explain.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/11_coverage.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/12_long_documents.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/13_human_review.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/14_calibration.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/data/arxiv_abstracts.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/data/compliance_controls.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/data/compliance_documents.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/15-decisions/data/make_compliance_data.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/app-sketches/z-explorer/main.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mkdocs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "requirements.txt",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "scripts/build_dashboard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/flock/__main__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/agent/context_resolver.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/agent/output_processor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/api/base_service.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/api/collector.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/api/graph_builder.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/flock/api/image_uploads.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/api/models.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/api/service.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "src/flock/api/static_files/assets/index-4XohUlZm.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "src/flock/api/static_files/assets/index-EDoH04eq.css",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "src/flock/api/static_files/index.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/flock/api/thumbnails.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/api/webhooks.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/flock/application/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/flock/application/application.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/flock/application/errors.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/flock/application/types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/cli.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/agent/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/orchestrator/activation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/orchestrator/circuit_breaker.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/orchestrator/collection.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/orchestrator/deduplication.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/orchestrator/scheduling/timer.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/server/artifacts/artifacts_component.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/flock/components/server/artifacts/models.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

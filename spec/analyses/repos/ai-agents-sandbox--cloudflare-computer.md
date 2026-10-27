@@ -1,0 +1,207 @@
+# cloudflare-computer: change evidence
+
+Source: [cloudflare-computer](https://github.com/cloudflare/computer) · [Analysis](../../projects/ai-agents-sandbox--cloudflare-computer.md) · [agents](../../agents.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1`; commit date: 2026-10-02T13:23:47+01:00; review date: unknown; observed SHA: `d84f912b8c423138d8fea64ca1974eb296ddfc8d`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cloudflare/computer/compare/2f76387771c9e4a64dc08a7bbd82cbbcf9fadec1...d84f912b8c423138d8fea64ca1974eb296ddfc8d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [d84f912b8c42](https://github.com/cloudflare/computer/commit/d84f912b8c423138d8fea64ca1974eb296ddfc8d) 2026-10-27T16:30:53Z: gardener: Upgrade Gardener to v0.1.20 and write replies as finished work (#282)
+- [9e93e461ee62](https://github.com/cloudflare/computer/commit/9e93e461ee629dad829d3ba94061bd988332fd0b) 2026-10-27T15:24:14Z: gardener: triage owns every fix and judges agent-written reports by real impact; post every high-priority issue (#280)
+- [cc90f3eea30b](https://github.com/cloudflare/computer/commit/cc90f3eea30b28850d1e80f638cc63f519323ff9) 2026-10-27T10:16:13Z: gardener: triage every new issue; message only for high-priority issues that need a maintainer (#279)
+- [ac50f90fcb7d](https://github.com/cloudflare/computer/commit/ac50f90fcb7db35964e4ba7e05b44be861dc4662) 2026-10-26T13:46:32Z: build(deps): bump body-parser from 2.3.0 to 2.4.0 (#276)
+- [d12760cfc749](https://github.com/cloudflare/computer/commit/d12760cfc7495500b3df276edbfdbd278eaee415) 2026-10-26T13:46:26Z: build(deps): bump fast-uri from 3.1.8 to 3.1.9 (#275)
+- [9f0ade40196a](https://github.com/cloudflare/computer/commit/9f0ade40196a4ef95ddde4f2b75e1555d9dfeeb1) 2026-10-26T12:16:29Z: Version Packages (#278)
+- [30499be9e2b8](https://github.com/cloudflare/computer/commit/30499be9e2b8ecd5ed39a134611efc9b89ead4a5) 2026-10-26T11:06:13Z: Computerd passthrough & performance improvements (#197)
+- [dea53cee9e21](https://github.com/cloudflare/computer/commit/dea53cee9e21a717a5bcb6ed7d9f478ebb7e1b40) 2026-10-26T10:41:33Z: Version Packages (#271)
+- [56dd6ab6307a](https://github.com/cloudflare/computer/commit/56dd6ab6307a2761871f37626da2346840d5dd19) 2026-10-26T09:56:15Z: chore: Build with tsdown (#252)
+- [2b23503eac1f](https://github.com/cloudflare/computer/commit/2b23503eac1f4efa8403908e472c472f747b61f7) 2026-10-23T16:37:49+01:00: gardener: Upgrade Gardener to v0.1.19 (#273)
+- [1925d8b4d3d1](https://github.com/cloudflare/computer/commit/1925d8b4d3d12ff709997cd0fcbb3fe087e38148) 2026-10-23T14:53:09+01:00: gardener: answer to @ask-gardener and @gnome-bot (#272)
+- [07e392074650](https://github.com/cloudflare/computer/commit/07e39207465085ba7a98a6f8ed06b3ead4621cea) 2026-10-23T14:21:58+01:00: computerd: Report entry types and inodes from readdir (#249)
+- [6cbcc2dba2da](https://github.com/cloudflare/computer/commit/6cbcc2dba2dad9f602a828e5ea4324a835b53384) 2026-10-23T11:45:45+01:00: Release 0.7.0 (#264)
+- [c3d7433febb4](https://github.com/cloudflare/computer/commit/c3d7433febb4daf5560c81e76bfe7f7bcef8679f) 2026-10-23T10:47:56+01:00: computerd: Keep late command output from exiting the daemon (#260)
+- [a730798b4ab9](https://github.com/cloudflare/computer/commit/a730798b4ab93e7c4314225a76fb3f0bd1e3cb74) 2026-10-23T10:26:27+01:00: computer: Export WorkspaceFileStore and WORKSPACE_ROOT (#263)
+- [3186a0268437](https://github.com/cloudflare/computer/commit/3186a0268437c9f5406d8b743c262cbc5223884d) 2026-10-23T10:25:32+01:00: computerd: Build the binary on Node 22.23.4 (#269)
+- [de58e90d6983](https://github.com/cloudflare/computer/commit/de58e90d69831f18afbb6379ea7d95fb5c611d09) 2026-10-23T08:20:12Z: build(deps): bump ip-address from 10.7.2 to 10.7.4 (#270)
+- [d5ee842eab8e](https://github.com/cloudflare/computer/commit/d5ee842eab8e478b911adc913a2f6bbdd23bfd62) 2026-10-23T00:40:18Z: build(deps): bump @vitest/mocker and vitest (#266)
+- [220388bcbc0a](https://github.com/cloudflare/computer/commit/220388bcbc0a3a96132704aa1d7854dc44f9fc9c) 2026-10-22T16:43:17+01:00: Open fix pull requests on the new commit and read every cited file (#268)
+- [07d483c4c06d](https://github.com/cloudflare/computer/commit/07d483c4c06d2d401b8a97c45ab35f69b151d298) 2026-10-22T15:02:04+01:00: Make triage verify against current code and fix decisively (#267)
+- [11aae4cf2865](https://github.com/cloudflare/computer/commit/11aae4cf2865a94777af9a0120a3e15637d7dce2) 2026-10-22T14:17:16+01:00: Triage issues by impact and cost, and fix them on request (#265)
+- [5db8dd4897c0](https://github.com/cloudflare/computer/commit/5db8dd4897c08c4aaf5342bfde5e0aa735eb6122) 2026-10-21T16:40:47+01:00: computer: Let host module calls wait for an answer (#251)
+- [22368fcde297](https://github.com/cloudflare/computer/commit/22368fcde29759630561bf5cd439842f5b5f14ef) 2026-10-21T16:40:46+01:00: computer: Restart or replay interrupted isolate JavaScript runs (#238)
+- [5879ddcd404d](https://github.com/cloudflare/computer/commit/5879ddcd404d5dd70c76e42b622b12b625cf55b3) 2026-10-20T22:10:00+01:00: Version Packages (#242)
+- [1ee0bd45af42](https://github.com/cloudflare/computer/commit/1ee0bd45af4269c969cb97320437bcc4294cbdfc) 2026-10-20T21:56:31+01:00: docs: Describe when a getWorkspace client knows its backends (#259)
+- [777097a5d2ff](https://github.com/cloudflare/computer/commit/777097a5d2ffdc78d7570c92cea673a58c950e8a) 2026-10-20T21:47:39+01:00: computer: Accept a Durable Object stub in getWorkspace without a cast (#257)
+- [b3fe973dac49](https://github.com/cloudflare/computer/commit/b3fe973dac496bca4e31ebaa7ba12751dd11dc80) 2026-10-20T20:16:30Z: build(deps-dev): bump vite from 8.2.0 to 8.3.4 (#258)
+- [711ac39a8aa2](https://github.com/cloudflare/computer/commit/711ac39a8aa2c98fe06a52c4c7a43ea1d41cf24f) 2026-10-20T20:16:23Z: build(deps): bump hono from 4.13.7 to 4.13.13 (#256)
+- [9cc31197d826](https://github.com/cloudflare/computer/commit/9cc31197d82697bd036cc527292ab39d01d4ffdb) 2026-10-20T18:07:40+01:00: computer: Return a lazy client from getWorkspace (#255)
+- [b62911757231](https://github.com/cloudflare/computer/commit/b629117572315710b22a80c2da2d07d334121b8a) 2026-10-19T11:34:15+01:00: computer: Wake the workspace host by name, not only by id (#243) (#244)
+- [7415a446b394](https://github.com/cloudflare/computer/commit/7415a446b394a733b462917cc6660f2ebb2fd027) 2026-10-15T14:57:36+01:00: computer: Keep long-running isolate JavaScript alive (#237)
+- [5980264da104](https://github.com/cloudflare/computer/commit/5980264da104d310a2165b19b599804b589216ec) 2026-10-15T14:57:03+01:00: computer: Make just-bash an optional peer and stop installing acorn (#239)
+
+## Changed paths (truncated)
+
+- M: `.agents/skills/debugging-computerd-fuse/SKILL.md`
+- D: `.changeset/container-ignore-globs.md`
+- M: `.gardener/SKILL.md`
+- M: `.gardener/gardener.json`
+- M: `.gardener/gardener.lock.json`
+- A: `.gardener/tasks/dependabot-merge/TASK.md`
+- A: `.gardener/tasks/fix/TASK.md`
+- M: `.gardener/tasks/mention-reply/TASK.md`
+- M: `.gardener/tasks/pr-review-fix/TASK.md`
+- M: `.gardener/tasks/triage/TASK.md`
+- A: `.git-blame-ignore-revs`
+- M: `.github/SECURITY.md`
+- M: `.github/actions/install/action.yml`
+- M: `.github/workflows/ci.yml`
+- A: `.github/workflows/gardener-dependabot-merge.yml`
+- A: `.github/workflows/gardener-fix.yml`
+- M: `.github/workflows/gardener-mention-reply.yml`
+- M: `.github/workflows/gardener-pr-review-fix.yml`
+- M: `.github/workflows/gardener-sync.yml`
+- M: `.github/workflows/gardener-triage.yml`
+- M: `.github/workflows/next-computerd-image.yml`
+- M: `.github/workflows/release.yml`
+- M: `.gitignore`
+- A: `.oxfmtrc.json`
+- A: `.oxlintrc.json`
+- M: `AGENTS.md`
+- M: `COLLABORATORS.md`
+- M: `README.md`
+- D: `biome.jsonc`
+- M: `docs/01_vfs.md`
+- M: `docs/02_sync_protocol.md`
+- M: `docs/03_filesystem_schema.md`
+- M: `docs/04_filesystem_interface.md`
+- M: `docs/05_runtime_interface.md`
+- M: `docs/06_mount_interface.md`
+- M: `docs/07_injected_service.md`
+- M: `docs/08_capnweb_interface.md`
+- M: `docs/09_tool_interface.md`
+- M: `docs/10_project_layout.md`
+- M: `docs/12_worker_backend.md`
+- M: `docs/16_code_execution.md`
+- M: `docs/17_isolate_javascript.md`
+- M: `docs/19_performance.md`
+- M: `docs/README.md`
+- M: `examples/artifacts/package.json`
+- M: `examples/artifacts/src/index.ts`
+- M: `examples/assets/README.md`
+- M: `examples/assets/package.json`
+- M: `examples/assets/src/index.ts`
+- M: `examples/celld/README.md`
+- M: `examples/celld/package.json`
+- M: `examples/celld/script/local-s3-shim.mjs`
+- M: `examples/celld/src/index.ts`
+- M: `examples/container-legacy/Dockerfile`
+- M: `examples/container-legacy/README.md`
+- M: `examples/container-legacy/package.json`
+- M: `examples/container-legacy/src/index.ts`
+- M: `examples/container/Dockerfile`
+- M: `examples/container/README.md`
+- M: `examples/container/package.json`
+- M: `examples/container/src/index.ts`
+- A: `examples/container/src/skills/exec/SKILL.md`
+- M: `examples/container/wrangler.jsonc`
+- M: `examples/egress/Dockerfile`
+- M: `examples/egress/README.md`
+- M: `examples/egress/package.json`
+- M: `examples/egress/src/egress.test.ts`
+- M: `examples/egress/src/index.ts`
+- M: `examples/mcp/Dockerfile`
+- M: `examples/mcp/README.md`
+- M: `examples/mcp/package.json`
+- M: `examples/mcp/src/index.test.ts`
+- M: `examples/mcp/src/index.ts`
+- M: `examples/mcp/src/server.ts`
+- M: `examples/mcp/tsconfig.json`
+- M: `examples/mcp/wrangler.jsonc`
+- M: `examples/pi-ai/package.json`
+- M: `examples/pi-ai/src/index.ts`
+- M: `examples/rlm/README.md`
+- M: `examples/rlm/package.json`
+- M: `examples/rlm/src/App.tsx`
+- M: `examples/rlm/tsconfig.app.json`
+- M: `examples/rlm/tsconfig.node.json`
+- M: `examples/rlm/tsconfig.worker.json`
+- M: `examples/rlm/worker/agent-common.test.ts`
+- M: `examples/rlm/worker/benchmark.test.ts`
+- M: `examples/rlm/worker/benchmark.ts`
+- M: `examples/rlm/worker/capability.test.ts`
+- M: `examples/rlm/worker/capability.ts`
+- M: `examples/rlm/worker/executor-agent.ts`
+- M: `examples/rlm/worker/executor-tool.ts`
+- M: `examples/rlm/worker/model.test.ts`
+- M: `examples/rlm/worker/prompts.ts`
+- M: `examples/rlm/worker/rlm-agent.ts`
+- M: `examples/rlm/worker/rlm-interfaces.txt`
+- M: `examples/rlm/worker/step-settings.ts`
+- M: `examples/rlm/worker/structured-rlm.test.ts`
+- M: `examples/tanstack-ai/package.json`
+- M: `examples/tanstack-ai/src/index.ts`
+- M: `examples/think-compare-runtimes/Dockerfile.workspace`
+- M: `examples/think-compare-runtimes/package.json`
+- M: `examples/think-compare-runtimes/src/App.test.tsx`
+- M: `examples/think-compare-runtimes/src/App.tsx`
+- M: `examples/think-compare-runtimes/src/auto-scroll-list.test.tsx`
+- M: `examples/think-compare-runtimes/src/markdown-text.tsx`
+- M: `examples/think-compare-runtimes/src/runtime-wing.tsx`
+- M: `examples/think-compare-runtimes/tsconfig.app.json`
+- M: `examples/think-compare-runtimes/tsconfig.node.json`
+- M: `examples/think-compare-runtimes/tsconfig.worker.json`
+- M: `examples/think-compare-runtimes/worker/container-warm-pool.ts`
+- M: `examples/think-compare-runtimes/worker/index.ts`
+- M: `examples/think-compare-runtimes/worker/runtime-agent-handles.test.ts`
+- M: `examples/think-compare-runtimes/worker/think/agent-starter.test.ts`
+- M: `examples/think-compare-runtimes/worker/think/agents.test.ts`
+- M: `examples/think-compare-runtimes/worker/think/agents.ts`
+- M: `examples/think-compare-runtimes/worker/think/model.test.ts`
+- M: `examples/think/Dockerfile`
+- M: `examples/think/README.md`
+- M: `examples/think/package.json`
+- M: `examples/think/src/agent.ts`
+- M: `examples/think/src/index.ts`
+- M: `examples/think/wrangler.jsonc`
+- M: `examples/tutorial/Dockerfile`
+- M: `examples/tutorial/README.md`
+- M: `examples/tutorial/package.json`
+- M: `examples/tutorial/src/index.ts`
+- A: `examples/vite-bundle/.gitignore`
+- A: `examples/vite-bundle/README.md`
+- A: `examples/vite-bundle/package.json`
+- A: `examples/vite-bundle/src/index.ts`
+- A: `examples/vite-bundle/src/skills/hello/SKILL.md`
+- A: `examples/vite-bundle/src/skills/hello/scripts/hello.sh`
+- A: `examples/vite-bundle/tsconfig.json`
+- A: `examples/vite-bundle/vite.config.ts`
+- A: `examples/vite-bundle/wrangler.jsonc`
+- M: `examples/worker-javascript/README.md`
+- M: `examples/worker-javascript/package.json`
+- M: `examples/worker-javascript/src/index.ts`
+- A: `examples/worker-javascript/src/skills/exec/SKILL.md`
+- M: `examples/worker-javascript/wrangler.jsonc`
+- M: `examples/worker-shell/README.md`
+- M: `examples/worker-shell/package.json`
+- M: `examples/worker-shell/src/index.ts`
+- A: `examples/worker-shell/src/skills/exec/SKILL.md`
+- M: `examples/worker-shell/wrangler.jsonc`
+- M: `package-lock.json`
+- M: `package.json`
+- M: `packages/computer-computerd-linux-x64/README.md`
+- M: `packages/computer-computerd-linux-x64/package.json`
+- M: `packages/computer/CHANGELOG.md`
+- M: `packages/computer/README.md`
+- M: `packages/computer/package.json`
+- D: `packages/computer/rolldown.config.ts`
+- M: `packages/computer/src/artifacts/cli.test.ts`
+- M: `packages/computer/src/artifacts/cli.ts`
+- M: `packages/computer/src/artifacts/client.test.ts`
+- M: `packages/computer/src/artifacts/client.ts`
+- M: `packages/computer/src/artifacts/duration.test.ts`
+- M: `packages/computer/src/artifacts/index.ts`
+- M: `packages/computer/src/artifacts/scope.test.ts`

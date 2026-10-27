@@ -1,0 +1,207 @@
+# cezar: change evidence
+
+Source: [cezar](https://github.com/open-mercato/cezar) · [Analysis](../../projects/ai-agents--cezar.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `1b13522dd3642a4ea8331629b3680838164d2a2e`; commit date: 2026-10-02T13:47:58+02:00; review date: unknown; observed SHA: `a5e5bc74b9c55dc6817d164ddf3d0055c7cc220e`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/open-mercato/cezar/compare/1b13522dd3642a4ea8331629b3680838164d2a2e...a5e5bc74b9c55dc6817d164ddf3d0055c7cc220e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [a5e5bc74b9c5](https://github.com/open-mercato/cezar/commit/a5e5bc74b9c55dc6817d164ddf3d0055c7cc220e) 2026-10-27T11:46:04+01:00: fix(serve): open the project cezar was started in (#1712)
+- [626380c8edaa](https://github.com/open-mercato/cezar/commit/626380c8edaafe8099d6cdc8fbd0ca1c99861bd9) 2026-10-27T11:45:19+01:00: fix(dashboard): keep Delivered line counts from overflowing (#1715)
+- [c7fd2d18136f](https://github.com/open-mercato/cezar/commit/c7fd2d18136faed220f19afcd2f2ffe0771b79de) 2026-10-27T11:44:59+01:00: feat(webhooks): add project-scoped task notifications (#1604)
+- [7fce41cb53ec](https://github.com/open-mercato/cezar/commit/7fce41cb53ec71c4045336afab975d2f9902512f) 2026-10-27T11:34:55+01:00: feat(cockpit): autoformat JSON agent config on save (#1695)
+- [309889f835f8](https://github.com/open-mercato/cezar/commit/309889f835f89bb7dad0022c5c5def32e67ca2e8) 2026-10-27T11:33:51+01:00: fix(opencode): restore the build after #1576 met #1689 (#1714)
+- [34602f3b251b](https://github.com/open-mercato/cezar/commit/34602f3b251b629596201cf502350af2238cfb51) 2026-10-27T10:02:13Z: fix(runners): never crash cezar when an agent CLI dies before reading stdin (#1598)
+- [340085f825c5](https://github.com/open-mercato/cezar/commit/340085f825c5d320f6d0b4d271a52093c968721a) 2026-10-27T10:46:34+01:00: fix(dashboard): link a project name to its Tasks overview, not /tasks (#1496) (#1569)
+- [9020a6e08e96](https://github.com/open-mercato/cezar/commit/9020a6e08e96b7f383d0334b1f5c66757048ddd2) 2026-10-27T09:28:31Z: fix(opencode): clarify server errors (telemetry 919887a0 d75fcecc) (#1576)
+- [9a1eb5bff183](https://github.com/open-mercato/cezar/commit/9a1eb5bff18389389f0d143171f3601b822ebe7d) 2026-10-27T09:27:28Z: fix(web): follow the active project's forge, not the boot folder's (#1465)
+- [72ff7a602329](https://github.com/open-mercato/cezar/commit/72ff7a602329daa87af6b6a4585b2d90d0bd1134) 2026-10-27T09:26:08Z: fix(runs): give a parked monitor an exit that does not need a human (#1183)
+- [d9812ca241a2](https://github.com/open-mercato/cezar/commit/d9812ca241a2071c8e36143b70703105cfb6b6fa) 2026-10-27T09:21:27Z: feat(agents): retry transient agent failures, explain account/disk state instead of reporting crashes (#1690)
+- [8a6f4830e7e6](https://github.com/open-mercato/cezar/commit/8a6f4830e7e677f15d6ae6fd00c89702701fe13b) 2026-10-27T09:12:51Z: fix(runs): leave workflowDef out of GET /runs, configurable run retention (#1609)
+- [cf51fdd4053a](https://github.com/open-mercato/cezar/commit/cf51fdd4053a6a8595734aaeac7d825774d53418) 2026-10-27T09:09:44Z: fix(ci): skip nightly publish workflow on repository forks (#1628)
+- [d67536d8d390](https://github.com/open-mercato/cezar/commit/d67536d8d390922ac16f934080c78a253a130d35) 2026-10-27T09:09:32Z: fix(test): keep vitest's tmpdir outside every git work tree (#1630)
+- [7e412bd5f60d](https://github.com/open-mercato/cezar/commit/7e412bd5f60dd99aecca269f2adb0490b8daa0e4) 2026-10-27T09:08:07Z: feat(web): preview Mermaid diagrams in conversations (#1692)
+- [bcee47fca3c0](https://github.com/open-mercato/cezar/commit/bcee47fca3c00495837740a9764e6e01ad7a1d9a) 2026-10-27T10:07:23+01:00: ci(backport): backport from a scan of merged PRs, so fork PRs are automated too (#1699)
+- [7980ed15d9c2](https://github.com/open-mercato/cezar/commit/7980ed15d9c2a15f3dc9ef8a91a86e7f18264620) 2026-10-27T10:06:26+01:00: feat(github): swipe a row on mobile to start a run with a workflow or skill (#1683)
+- [25d4fc27e019](https://github.com/open-mercato/cezar/commit/25d4fc27e0195ef06f5430a40d68d0d1dceb12a9) 2026-10-27T09:03:56Z: fix: resolve 15 Cezar telemetry error groups (message delivery, cockpit, probes, runners) (#1689)
+- [9e808bc54c99](https://github.com/open-mercato/cezar/commit/9e808bc54c99761c71744298409f1e9be781a275) 2026-10-27T09:41:49+01:00: docs: add searchable feature reference and guides (#1648)
+- [7c52a4873c8a](https://github.com/open-mercato/cezar/commit/7c52a4873c8a85676bfee14f1c9abe9b2934dfa8) 2026-10-27T08:39:49Z: fix(build): read npm 12's object-keyed npm pack --json output (#1682)
+- [e005bff85b12](https://github.com/open-mercato/cezar/commit/e005bff85b12fee846a416004a928a47c5046802) 2026-10-27T08:24:39Z: docs(changelog): add the 0.16.3 entry (#1681)
+- [18c25d99f3f9](https://github.com/open-mercato/cezar/commit/18c25d99f3f9abb017a37f4dc4376adb9f26509f) 2026-10-26T15:49:05+01:00: fix(cockpit): virtualize the base-branch picker so it opens fast with thousands of branches (#1694)
+- [50a03c0a4464](https://github.com/open-mercato/cezar/commit/50a03c0a4464762adbd14f8d5c66bfe54f7d7635) 2026-10-26T14:03:13+01:00: feat(settings): global instructions merged into every task's system prompt (#1693)
+- [f6b910f30279](https://github.com/open-mercato/cezar/commit/f6b910f302793bb349282742ed9b7b8091a0190d) 2026-10-25T11:32:08Z: fix(workflows): resume remaining steps after a usage limit (#1315)
+- [3b9ce4cdfebe](https://github.com/open-mercato/cezar/commit/3b9ce4cdfebe8da468347f105f8b55354493ee48) 2026-10-25T10:53:07Z: fix(cockpit): use full task detail width by default (#976)
+- [c2cf7142f229](https://github.com/open-mercato/cezar/commit/c2cf7142f2294064b3a6b59ae0046cf46d5654b5) 2026-10-25T08:19:15Z: fix(workspace): never merge-write defaults over a config that could not be read (#1629)
+- [56b3f3164b64](https://github.com/open-mercato/cezar/commit/56b3f3164b64e188fb727e8f08e3b816ce74f9b6) 2026-10-25T08:56:18+01:00: feat(telemetry): measure who uses automations, workflows, skills and dispatch (#1676)
+- [d75e1712578d](https://github.com/open-mercato/cezar/commit/d75e1712578d478e7cd3d275ee745063959d90c5) 2026-10-24T20:19:46Z: fix(models): accept Copilot/Cursor vendor ids; automations drop a cross-runner model (#1666)
+- [9cb8269716f0](https://github.com/open-mercato/cezar/commit/9cb8269716f09a42c5a1a2c7719706a1bc75a637) 2026-10-24T22:17:04+02:00: fix(provider-auth): recognize configured Codex API keys (#1678)
+- [b131a581e665](https://github.com/open-mercato/cezar/commit/b131a581e6654902b703b8c3302ec502fd39435f) 2026-10-24T20:31:58+02:00: fix(desktop): boot the sidecar from home, take wry's drag-drop fix; guard child stdin EPIPE (#1663)
+- [8cfdf716770f](https://github.com/open-mercato/cezar/commit/8cfdf716770f0a165d5265c65811da21cfe7ca22) 2026-10-24T17:55:02+02:00: fix(engine): drop a foreign model pin when Continue switches runner (#1665)
+- [2819c6e1db86](https://github.com/open-mercato/cezar/commit/2819c6e1db865973deaa11ed87f54005f92394c5) 2026-10-24T17:30:08+02:00: fix(agents): latch real vendor auth failures, read JSON error envelopes (+ spec) (#1664)
+
+## Changed paths (truncated)
+
+- A: `.agents/skills/e2e/SKILL.md`
+- A: `.agents/skills/e2e/references/agent.md`
+- A: `.agents/skills/e2e/references/bug-bash.md`
+- A: `.agents/skills/e2e/references/debugging.md`
+- A: `.agents/skills/e2e/references/explore.md`
+- A: `.agents/skills/e2e/references/mcp.md`
+- A: `.agents/skills/e2e/references/running.md`
+- A: `.agents/skills/e2e/references/setup.md`
+- A: `.agents/skills/e2e/references/writing-tests.md`
+- M: `.ai/analysis/cockpit-ui-redesign/cezar-code-map.md`
+- M: `.ai/browsers/agent-browser.md`
+- A: `.ai/browsers/fixtures/agent-browser-rootless-fallback.test.sh`
+- A: `.ai/cezar/workflows/implement-and-e2e.yaml`
+- A: `.ai/runs/2026-09-16-issue-913-instance-port-allocation.md`
+- A: `.ai/runs/2026-09-28-fix-autosave-check-artifacts.md`
+- A: `.ai/runs/2026-09-28-fix-issue-1000-api-origin.md`
+- A: `.ai/runs/2026-09-28-issue-1077-event-replay.md`
+- A: `.ai/runs/2026-09-29-issue-1011-macos-redeploy.md`
+- A: `.ai/runs/2026-09-29-issue-997-trailing-task-markers.md`
+- A: `.ai/runs/2026-09-29-reject-directories-as-runnable-launchers.md`
+- A: `.ai/runs/2026-09-30-installer-nginx-parse-diagnostics.md`
+- A: `.ai/runs/2026-10-01-bookmark-unavailable-runner.md`
+- A: `.ai/runs/2026-10-01-fix-pi-markers-transcript.md`
+- A: `.ai/runs/2026-10-02-fix-skill-frontmatter-atomic-write.md`
+- A: `.ai/runs/2026-10-02-gate-cloud-credentials.md`
+- A: `.ai/runs/2026-10-02-keep-attachments-when-discarding-plan.md`
+- A: `.ai/runs/2026-10-02-quiesce-late-codex-teardown-events.md`
+- A: `.ai/runs/2026-10-03-fix-final-idle-ask-settlement.md`
+- A: `.ai/runs/2026-10-03-mobile-step-rail-touch-target.md`
+- A: `.ai/runs/2026-10-03-persist-idle-timeout-settings.md`
+- A: `.ai/runs/2026-10-03-queued-screenshot-attachments.md`
+- A: `.ai/runs/2026-10-04-automations-gate-timing.md`
+- A: `.ai/runs/2026-10-04-claude-headless-denial-guidance.md`
+- A: `.ai/runs/2026-10-04-dispatch-subtask-model-list.md`
+- A: `.ai/runs/2026-10-04-e2e-verification-steps.md`
+- A: `.ai/runs/2026-10-04-fix-issue-1095-draft-loss.md`
+- A: `.ai/runs/2026-10-04-issue-resolver-audit.md`
+- A: `.ai/runs/2026-10-04-pasted-attachment-grant.md`
+- A: `.ai/runs/2026-10-05-allow-longer-prompt-templates.md`
+- A: `.ai/runs/2026-10-05-ask-idle-keeps-needs-you.md`
+- A: `.ai/runs/2026-10-05-fix-opencode-auth-1270.md`
+- A: `.ai/runs/2026-10-05-fix-runner-help-1236.md`
+- A: `.ai/runs/2026-10-06-ask-question-limit.md`
+- A: `.ai/runs/2026-10-06-issue-804-auto-resume-template-races.md`
+- A: `.ai/runs/2026-10-06-issue-870-picker-description.md`
+- A: `.ai/runs/2026-10-06-issue-890-agent-browser-fallback.md`
+- A: `.ai/runs/2026-10-06-repo-file-browser.md`
+- A: `.ai/runs/2026-10-07-fix-git-worktree-config-lock-1301.md`
+- A: `.ai/runs/2026-10-07-github-numeric-issue-kind-949.md`
+- A: `.ai/runs/2026-10-07-urgent-issue-audit.md`
+- A: `.ai/runs/2026-10-08-automations-gate-warmup.md`
+- A: `.ai/runs/2026-10-08-bound-repeated-handoff-heartbeats.md`
+- A: `.ai/runs/2026-10-08-fix-premature-child-settlement.md`
+- A: `.ai/runs/2026-10-08-fix-stale-sha-task-diff.md`
+- A: `.ai/runs/2026-10-08-reuse-process-indexes.md`
+- A: `.ai/runs/2026-10-09-runner-model-catalog-cache.md`
+- A: `.ai/runs/2026-10-09-sse-subscription-hubs.md`
+- A: `.ai/runs/2026-10-10-automations-lease-stall.md`
+- A: `.ai/runs/2026-10-10-compact-subtask-header.md`
+- A: `.ai/runs/2026-10-10-github-tab-fast/HANDOFF.md`
+- A: `.ai/runs/2026-10-10-github-tab-fast/NOTIFY.md`
+- A: `.ai/runs/2026-10-10-github-tab-fast/PLAN.md`
+- A: `.ai/runs/2026-10-10-github-tab-fast/checkpoint-1-checks.md`
+- A: `.ai/runs/2026-10-10-github-tab-fast/checkpoint-2-checks.md`
+- A: `.ai/runs/2026-10-10-github-tab-fast/final-gate-checks.md`
+- A: `.ai/runs/2026-10-10-macos-host-usage.md`
+- A: `.ai/runs/2026-10-10-preserve-per-step-model-identity.md`
+- A: `.ai/runs/2026-10-10-worktree-lifecycle-events.md`
+- A: `.ai/runs/2026-10-11-github-list-infinite-scroll.md`
+- A: `.ai/runs/2026-10-11-ipv4-mapped-loopback.md`
+- A: `.ai/runs/2026-10-11-star-count-live-refresh.md`
+- A: `.ai/runs/2026-10-13-reap-task-leftover-processes.md`
+- A: `.ai/runs/2026-10-14-release-0-15-2.md`
+- A: `.ai/runs/2026-10-14-transcript-relative-file-links.md`
+- A: `.ai/runs/2026-10-21-dispatch-foreign-model.md`
+- A: `.ai/runs/2026-10-22-ask-custom-answer.md`
+- A: `.ai/runs/2026-10-23-guard-nightly-workflow-forks.md`
+- A: `.ai/runs/2026-10-23-resizable-changes-tree.md`
+- A: `.ai/runs/2026-10-27-delivered-lines-overflow.md`
+- M: `.ai/scripts/e2e.sh`
+- M: `.ai/scripts/test-env-up.sh`
+- A: `.ai/skills/cezar-docs/SKILL.md`
+- M: `.ai/skills/om-prepare-test-env/SKILL.md`
+- M: `.ai/specs/2026-07-14-cockpit-ui-redesign.md`
+- M: `.ai/specs/2026-07-16-agent-config-files.md`
+- M: `.ai/specs/2026-07-17-agent-config-by-agent.md`
+- M: `.ai/specs/2026-07-20-multi-project-workspace.md`
+- M: `.ai/specs/2026-07-22-provider-authentication.md`
+- M: `.ai/specs/2026-07-24-monitoring-session-auto-wake.md`
+- M: `.ai/specs/2026-07-27-publishable-react-components.md`
+- M: `.ai/specs/2026-07-29-agent-profiles.md`
+- M: `.ai/specs/2026-08-03-auto-resume-after-usage-limit.md`
+- M: `.ai/specs/2026-08-30-thread-composer-draft-persistence.md`
+- M: `.ai/specs/2026-09-14-automations-redesign.md`
+- M: `.ai/specs/2026-09-25-desktop-distribution.md`
+- A: `.ai/specs/2026-09-29-create-new-project.md`
+- A: `.ai/specs/2026-09-30-workflow-node-editor.md`
+- A: `.ai/specs/2026-10-05-repo-file-browser.md`
+- A: `.ai/specs/2026-10-06-agentic-e2e-checks.md`
+- A: `.ai/specs/2026-10-06-tool-card-full-command.md`
+- A: `.ai/specs/2026-10-07-deferred-task-start.md`
+- A: `.ai/specs/2026-10-07-private-project-mcp.md`
+- A: `.ai/specs/2026-10-07-task-workspace.md`
+- A: `.ai/specs/2026-10-09-design-mode.md`
+- A: `.ai/specs/2026-10-10-e2e-one-click-setup.md`
+- A: `.ai/specs/2026-10-10-project-secrets-vault-options.md`
+- A: `.ai/specs/2026-10-10-worktree-lifecycle-events.md`
+- A: `.ai/specs/2026-10-11-branch-naming-instructions.md`
+- A: `.ai/specs/2026-10-12-outbound-webhooks.md`
+- A: `.ai/specs/2026-10-13-unified-settings.md`
+- A: `.ai/specs/2026-10-17-task-palette.md`
+- A: `.ai/specs/2026-10-19-discord-webhook-receivers.md`
+- A: `.ai/specs/2026-10-19-repo-git-sync.md`
+- A: `.ai/specs/2026-10-19-slack-webhook-receivers.md`
+- A: `.ai/specs/2026-10-20-trunk-based-projects.md`
+- A: `.ai/specs/2026-10-24-agent-cli-error-cooperation.md`
+- A: `.ai/specs/assets/deferred-task-start/index.html`
+- A: `.ai/specs/assets/deferred-task-start/screenshots/01-after-reset.png`
+- A: `.ai/specs/assets/deferred-task-start/screenshots/02-date-and-time.png`
+- A: `.ai/specs/assets/deferred-task-start/screenshots/03-scheduled-task.png`
+- A: `.ai/specs/assets/deferred-task-start/screenshots/ux-review.md`
+- A: `.ai/specs/assets/task-workspace/01-chat-card.png`
+- A: `.ai/specs/assets/task-workspace/02-terminal-card.png`
+- A: `.ai/specs/assets/task-workspace/03-new-layout-picker.png`
+- A: `.ai/specs/assets/task-workspace/04-chat-plus-terminal-split.png`
+- A: `.ai/specs/assets/task-workspace/05-three-columns-chat-changes-terminal.png`
+- A: `.ai/specs/assets/task-workspace/06-full-view.png`
+- A: `.ai/specs/assets/task-workspace/07-changes-with-terminal-drawer.png`
+- A: `.ai/specs/assets/task-workspace/08-narrow-one-window-at-a-time.png`
+- A: `.ai/specs/assets/trunk-based-projects/composer-ask.png`
+- A: `.ai/specs/assets/trunk-based-projects/composer-write.png`
+- A: `.ai/specs/assets/trunk-based-projects/review-commit.png`
+- A: `.ai/specs/assets/trunk-based-projects/settings.png`
+- A: `.ai/specs/briefs/2026-10-07-deferred-task-start-ux-review.md`
+- A: `.ai/specs/briefs/2026-10-10-worktree-lifecycle-scripts.md`
+- A: `.ai/specs/briefs/2026-10-13-deferred-task-start-implementation.md`
+- A: `.ai/specs/issues/deferred-task-start.md`
+- A: `.claude/skills/e2e`
+- M: `.env.example`
+- A: `.github/pull_request_template.md`
+- A: `.github/release.yml`
+- A: `.github/workflows/backport.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/desktop-release.yml`
+- M: `.github/workflows/nightly.yml`
+- A: `.github/workflows/release-cut.yml`
+- A: `.github/workflows/release-publish.yml`
+- M: `.github/workflows/release.yml`
+- M: `.gitignore`
+- A: `.mcp.json`
+- M: `AGENTS.md`
+- M: `AGENT_PROTOCOL.md`
+- M: `BACKWARD_COMPATIBILITY.md`
+- M: `CHANGELOG.md`
+- M: `CODE_REVIEW.md`
+- M: `README.md`
+- M: `SDLC.md`
+- M: `SECURITY.md`
+- M: `alias-cezar-run/package.json`
+- M: `alias-cezar/package.json`

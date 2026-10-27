@@ -28,3 +28,7 @@ Use as a design reference rather than importing an entire application into the h
 ## Related directions
 
 [Agents](../agents.md) · [Models](../models.md) · [Skills](../skills.md) · [Generation](../generation.md) · [Channels](../channels.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [open-design](https://github.com/nexu-io/open-design); analyzed commit `53231d40b778d88eba23f35547bf99485d3ae9fc`; commit date 2026-09-30T15:31:47Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--open-design.md).
+<!-- teamagent-analysis:end -->

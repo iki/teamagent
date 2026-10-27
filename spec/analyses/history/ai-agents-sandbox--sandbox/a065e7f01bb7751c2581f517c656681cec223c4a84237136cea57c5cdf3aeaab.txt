@@ -1,0 +1,25 @@
+# sandbox
+
+Source: [sandbox](https://github.com/agent-infra/sandbox) · Category: [ai-agents-sandbox](../categories/ai-agents-sandbox.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c`; commit timestamp `2026-09-14T16:47:18+08:00`; 1,471 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/agent-infra/sandbox/blob/7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c/README.md)):
+
+> For reproducible deployments, pin a release tag. Replace `1.11.0` with the release you want: These examples intentionally bind the host side to `127.0.0.1` because the sandbox listens on `0.0.0.0` inside the container. For cloud deployment, keep port `8080` private and publish it through a reverse proxy or Ingress: Cloud Deployment Guide.
+
+Build/package evidence: [evaluation/pyproject.toml](https://github.com/agent-infra/sandbox/blob/7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c/evaluation/pyproject.toml); [examples/_template/pyproject.toml](https://github.com/agent-infra/sandbox/blob/7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c/examples/_template/pyproject.toml); [examples/ag2-integration/pyproject.toml](https://github.com/agent-infra/sandbox/blob/7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c/examples/ag2-integration/pyproject.toml); [examples/basic-file-operations/pyproject.toml](https://github.com/agent-infra/sandbox/blob/7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c/examples/basic-file-operations/pyproject.toml); [examples/browser-use-cua/pyproject.toml](https://github.com/agent-infra/sandbox/blob/7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c/examples/browser-use-cua/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/agent-infra/sandbox/blob/7f1afaf8d82bd30531a19caeb1a24dfebbc97d8c/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-sandbox**. Its category places it in the candidate set for agents, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

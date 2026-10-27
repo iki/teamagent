@@ -1,0 +1,204 @@
+{
+  "id": "ai-agents--gastown",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/gastownhall/gastown",
+  "report": "spec/projects/ai-agents--gastown.md",
+  "analyzedSha": "649b832b7672bc7a2dbef26f5983aba6198b819b",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-07-23T09:03:02-04:00",
+  "observedSha": "de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1",
+      "date": "2026-10-25T21:39:22Z",
+      "subject": "feat(deps): require Dolt 2.6.0"
+    },
+    {
+      "sha": "617f32a6cab7966d1b94ccdfc99a6d233f609704",
+      "date": "2026-10-25T03:56:35Z",
+      "subject": "build(deps): pin the dolt 2.6.0 CLI and test server in images and CI"
+    },
+    {
+      "sha": "b0a15184c9630e9d0cbdd5caaac140ea9d1d1597",
+      "date": "2026-10-24T18:50:10Z",
+      "subject": "fix(config): stop agent preset registry aliasing and parallel test mutation"
+    },
+    {
+      "sha": "c0b37bd5e071c16f9e285628da330b2a7dd588ab",
+      "date": "2026-10-24T06:26:17Z",
+      "subject": "fix(deps): bump promptfoo to 0.125.0 and refresh gt-model-eval lockfile"
+    },
+    {
+      "sha": "d62fb6a092186a9b3fa821cf397bb50aad7e4eb5",
+      "date": "2026-10-24T05:57:48Z",
+      "subject": "fix(deps): bump grpc, thrift, go-archive, x/net and OpenTelemetry for advisories"
+    },
+    {
+      "sha": "59784471291eb59c8255fa7326dcf58a34c6a084",
+      "date": "2026-10-24T04:56:51Z",
+      "subject": "fix(deps): bump klauspost/compress and moby/sys/user for recent advisories"
+    },
+    {
+      "sha": "ef70b0bf9e588dce00708e36564bfc06b51fac2c",
+      "date": "2026-10-20T18:12:00Z",
+      "subject": "fix: build with Go 1.26.10 to distrust compromised eMudhra CAs"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly-integration.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-nix-flake.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.e2e",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/INSTALLING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/SECURITY-DEPENDENCY-EXCEPTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/WASTELAND.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/mvgt-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gt-model-eval/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gt-model-eval/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/agents.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/agents_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/loader_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/registry_isolation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/deps/dolt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/deps/dolt_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/telemetry/recorder.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/testutil/doltserver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/testutil/doltserver_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/dolt-snapshots/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/test-gce-install.sh",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

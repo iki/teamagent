@@ -1,0 +1,164 @@
+# mentisdb: change evidence
+
+Source: [mentisdb](https://github.com/CloudLLM-ai/mentisdb) · [Analysis](../../projects/ai-agents-mem--mentisdb.md) · [memory](../../memory.md), [evolution](../../evolution.md), [agents](../../agents.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `4c9b95041da68c5a26dece9f8776ff54b05b910c`; commit date: 2026-09-16T13:13:49-06:00; review date: 2026-10-04; observed SHA: `a3f32e5d4514beea1b3f96a585c5cc5844606326`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/CloudLLM-ai/mentisdb/compare/4c9b95041da68c5a26dece9f8776ff54b05b910c...a3f32e5d4514beea1b3f96a585c5cc5844606326). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [a3f32e5d4514](https://github.com/CloudLLM-ai/mentisdb/commit/a3f32e5d4514beea1b3f96a585c5cc5844606326) 2026-10-22T10:54:01-06:00: docs(skills): index describes the full release pipeline including Docker
+- [6092cdf1ebc2](https://github.com/CloudLLM-ai/mentisdb/commit/6092cdf1ebc25167c36617936491c2550be57c2a) 2026-10-22T10:54:01-06:00: docs(skills): hotfix releases also verify release assets and the Docker image
+- [805c86f1749b](https://github.com/CloudLLM-ai/mentisdb/commit/805c86f1749b5e3ce90be24c1b86af166ecbb72e) 2026-10-22T10:54:01-06:00: docs(skills): engineering pipeline publishes and verifies the ghcr.io Docker image
+- [9a3b06d7685f](https://github.com/CloudLLM-ai/mentisdb/commit/9a3b06d7685f7a574cdc2512bee379e30e3efc07) 2026-10-22T07:29:15-06:00: docs(whitepaper): 0.10.10.55 version and date, rebuild PDF
+- [ad355d980136](https://github.com/CloudLLM-ai/mentisdb/commit/ad355d98013645af4b71515b06a34c6972d30915) 2026-10-22T07:29:05-06:00: docs(roadmap): record 0.10.10.55 deployment release
+- [fac9036f7cb2](https://github.com/CloudLLM-ai/mentisdb/commit/fac9036f7cb2b93500d9341a2127bbf55956270a) 2026-10-22T07:28:53-06:00: docs(blog): 0.10.10.55 post, release notes, and index entry
+- [71a2bcada494](https://github.com/CloudLLM-ai/mentisdb/commit/71a2bcada494554ff5f70f3e5d003a0063e1a828) 2026-10-22T07:28:35-06:00: docs(changelog): fold pre-release review fixes into 0.10.10.55
+- [306e0f0d621c](https://github.com/CloudLLM-ai/mentisdb/commit/306e0f0d621cfeb18c043acd01b50ab6cfbbd2d5) 2026-10-22T07:27:11-06:00: docs(readme): allowlist entries broader than /8 are refused; compat builds have no sound
+- [5d7613b5274f](https://github.com/CloudLLM-ai/mentisdb/commit/5d7613b5274f7fdddc4283b563935fdaa628cca7) 2026-10-22T07:26:17-06:00: ci(docker): refuse to publish when the tag does not match Cargo.toml
+- [e93d6d88109d](https://github.com/CloudLLM-ai/mentisdb/commit/e93d6d88109debc8c68623b736436d6e47747715) 2026-10-22T07:26:17-06:00: ci: build Linux compat binaries without startup-sound (no ALSA dependency)
+- [1df0808b5bc1](https://github.com/CloudLLM-ai/mentisdb/commit/1df0808b5bc1a8586adee3c5768511c28b31142a) 2026-10-22T07:26:17-06:00: fix(docker): keep .env files and keys out of the build context
+- [5cd3779e3988](https://github.com/CloudLLM-ai/mentisdb/commit/5cd3779e3988c016c04b0d36b4124b715b105e6c) 2026-10-22T07:26:11-06:00: fix(webhooks): reject allowlist ranges broader than /8; warn on loopback/metadata
+- [e565d2634fa9](https://github.com/CloudLLM-ai/mentisdb/commit/e565d2634fa9aee601d988919fc3aad309bc640f) 2026-10-22T07:26:11-06:00: fix(daemon): TUI mode also shuts down cleanly on SIGTERM
+- [66ac28131cc0](https://github.com/CloudLLM-ai/mentisdb/commit/66ac28131cc0fe149bf592fb9d7a94fdb99a689c) 2026-10-22T07:25:43-06:00: docs(changelog): 0.10.10.55 webhook CIDR allowlist, Docker image, Linux compat binaries
+- [3cdcff73fd24](https://github.com/CloudLLM-ai/mentisdb/commit/3cdcff73fd247d663259835c59aaaeac179a699c) 2026-10-22T07:24:25-06:00: chore(release): bump to 0.10.10
+- [565ad3ca32b2](https://github.com/CloudLLM-ai/mentisdb/commit/565ad3ca32b20308c4e2492bfe1d5176e803dc43) 2026-10-22T07:23:52-06:00: docs(readme): document full vs -compat Linux release binaries
+- [cef2f2b9ac25](https://github.com/CloudLLM-ai/mentisdb/commit/cef2f2b9ac251d6bc1b4c12f53d560faf7360e2d) 2026-10-22T07:07:00-06:00: Merge #24: Docker image + ghcr publish (takeover of #16 by @nycterent)
+- [d23353b553f6](https://github.com/CloudLLM-ai/mentisdb/commit/d23353b553f689e53c123270906a923c5759c7e2) 2026-10-22T06:56:15-06:00: fix(docker): build and run on Debian trixie for the ONNX Runtime glibc requirement
+- [5b90948beef9](https://github.com/CloudLLM-ai/mentisdb/commit/5b90948beef98eb73f803086eaeda7597b37f954) 2026-10-22T06:54:57-06:00: ci: ship glibc 2.35 Linux compat binaries alongside the full builds
+- [6dad809fee53](https://github.com/CloudLLM-ai/mentisdb/commit/6dad809fee53d42f1a99b74b03613c03ff72b525) 2026-10-22T06:49:06-06:00: docs(docker): README Docker install, compose example, security notes
+- [2f5ab5e349a8](https://github.com/CloudLLM-ai/mentisdb/commit/2f5ab5e349a8585163341edb547ae5357c0f34a1) 2026-10-22T06:49:06-06:00: ci(docker): publish multi-arch ghcr image on release tags, validate on PRs
+- [4f229f75af56](https://github.com/CloudLLM-ai/mentisdb/commit/4f229f75af56b6d03858e8229d3115a01a113e67) 2026-10-22T06:49:06-06:00: fix(docker): build the mentisdb binary, run headless, harden the image
+- [05ffb295b54e](https://github.com/CloudLLM-ai/mentisdb/commit/05ffb295b54ea9a3b3e2769413b4f8a517286ebe) 2026-10-22T06:48:58-06:00: ci: install libssl-dev in the ubuntu:22.04 Linux build container
+- [ae94e8629d1d](https://github.com/CloudLLM-ai/mentisdb/commit/ae94e8629d1d1faa5b65235186ecb5d9dc47843d) 2026-10-22T06:44:47-06:00: fix(daemon): drain servers and exit 0 on SIGTERM in headless mode
+- [0ff69d3a7972](https://github.com/CloudLLM-ai/mentisdb/commit/0ff69d3a7972a1776f92e908ed4715346b98bed9) 2026-10-22T06:44:02-06:00: ci: build Linux release binaries in ubuntu:22.04 with a glibc floor guard
+- [6dd574a24d55](https://github.com/CloudLLM-ai/mentisdb/commit/6dd574a24d557f99d3ff78c97ed6ca420718c770) 2026-10-22T06:38:05-06:00: docs(readme): document MENTISDB_WEBHOOK_ALLOWED_CIDRS for private webhook targets
+- [6ef5931b4538](https://github.com/CloudLLM-ai/mentisdb/commit/6ef5931b453864dd0093dcfbc2b38d591b894a51) 2026-10-22T06:37:02-06:00: test(webhooks): cover MENTISDB_WEBHOOK_ALLOWED_CIDRS parsing, policy and delivery
+- [da3c49feaf5b](https://github.com/CloudLLM-ai/mentisdb/commit/da3c49feaf5bc77908e213e767934eb24e5e36ee) 2026-10-22T06:37:01-06:00: feat(webhooks): MENTISDB_WEBHOOK_ALLOWED_CIDRS opens operator-listed private ranges
+- [7626759919b8](https://github.com/CloudLLM-ai/mentisdb/commit/7626759919b86fe6c6d3aa97c07533256a3b6a19) 2026-10-22T06:36:42-06:00: Merge PR #16 (nycterent) Dockerfile and ghcr workflow
+- [442503473ea5](https://github.com/CloudLLM-ai/mentisdb/commit/442503473ea549a5ed3c79502f58fd1ebcb53e87) 2026-10-21T20:13:58-06:00: docs(release): describe the /tools/execute fix by impact, not mechanism
+- [d3582520b0e3](https://github.com/CloudLLM-ai/mentisdb/commit/d3582520b0e3cb56169f7e2704075ca0192813cd) 2026-10-21T20:12:32-06:00: docs(readme): 0.10.9 thesaurus damping and benchmark results
+- [1557fe2c7fc1](https://github.com/CloudLLM-ai/mentisdb/commit/1557fe2c7fc17e43b50fa77c75beee5c59afda42) 2026-10-21T20:12:22-06:00: docs(release): clarify the sidecar rebuild queue bound in 0.10.9.54 notes
+
+## Changed paths
+
+- A: `.dockerignore`
+- M: `.github/workflows/build.yml`
+- M: `.github/workflows/clippy.yml`
+- A: `.github/workflows/docker-publish.yml`
+- M: `.github/workflows/publish.yml`
+- M: `.github/workflows/test.yml`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- A: `Dockerfile`
+- M: `MENTISDB_SKILL.md`
+- M: `Makefile`
+- M: `README.md`
+- M: `ROADMAP.md`
+- M: `WHITEPAPER.md`
+- M: `WHITEPAPER.pdf`
+- M: `WHITEPAPER.tex`
+- M: `benches/hnsw_comparison.rs`
+- M: `benches/hnsw_scale.rs`
+- M: `benches/search_baseline.rs`
+- M: `benches/search_ranked.rs`
+- M: `benches/skill_registry.rs`
+- M: `benches/thought_chain.rs`
+- M: `changelog.txt`
+- M: `docs/index.html`
+- A: `docs/mentisdb-0.10.10.55-release-notes.md`
+- A: `docs/mentisdb-0.10.10.55.html`
+- A: `docs/mentisdb-0.10.9.54-release-notes.md`
+- A: `docs/mentisdb-0.10.9.54.html`
+- M: `locomo-benches/locomo_bench.py`
+- M: `skills/README.md`
+- M: `skills/engineering-pipeline.md`
+- M: `skills/hotfix-release.md`
+- M: `src/auth.rs`
+- M: `src/backup.rs`
+- M: `src/bin/mentisdb.rs`
+- M: `src/cli/mod.rs`
+- M: `src/dashboard.rs`
+- M: `src/dashboard_static/index.html`
+- M: `src/integrations/apply.rs`
+- M: `src/lib.rs`
+- M: `src/llm.rs`
+- M: `src/paths.rs`
+- M: `src/search/expansion.rs`
+- M: `src/search/fastembed_provider.rs`
+- M: `src/search/hnsw_backend.rs`
+- M: `src/search/implicit_edges.rs`
+- M: `src/search/lexical.rs`
+- M: `src/search/mod.rs`
+- M: `src/search/ranked.rs`
+- M: `src/search/sidecar.rs`
+- M: `src/search/thesaurus.rs`
+- M: `src/search/vector.rs`
+- M: `src/server.rs`
+- M: `src/skills.rs`
+- M: `src/tui.rs`
+- M: `src/webhooks.rs`
+- A: `tests/auth_last_used_tests.rs`
+- A: `tests/backup_restore_hardening_tests.rs`
+- A: `tests/core_append_failure_tests.rs`
+- A: `tests/core_apply_atomic_tests.rs`
+- A: `tests/core_branch_tests.rs`
+- A: `tests/core_derived_state_tests.rs`
+- A: `tests/core_embeddings_tests.rs`
+- A: `tests/core_group_commit_tests.rs`
+- A: `tests/core_hnsw_upgrade_tests.rs`
+- A: `tests/core_invalidation_tests.rs`
+- A: `tests/core_registry_tests.rs`
+- A: `tests/core_rehash_tests.rs`
+- A: `tests/core_torn_tail_tests.rs`
+- A: `tests/dashboard_html_tests.rs`
+- A: `tests/dashboard_security_tests.rs`
+- M: `tests/dashboard_tests.rs`
+- A: `tests/deps_fastembed_cache_dir_tests.rs`
+- A: `tests/deps_fastembed_chunking_tests.rs`
+- A: `tests/deps_fastembed_compat_tests.rs`
+- A: `tests/deps_fastembed_pin_tests.rs`
+- A: `tests/deps_fastembed_shared_tests.rs`
+- A: `tests/deps_hash_signature_tests.rs`
+- A: `tests/headless_shutdown_tests.rs`
+- M: `tests/llm_extracted_memories_tests.rs`
+- A: `tests/paths_dotenv_tests.rs`
+- A: `tests/review_chain_key_tests.rs`
+- A: `tests/review_cli_backup_auth_tests.rs`
+- A: `tests/review_overlay_tests.rs`
+- A: `tests/review_ranked_filter_tests.rs`
+- A: `tests/review_server_repair_tests.rs`
+- A: `tests/search_expansion_classified_tests.rs`
+- A: `tests/search_federated_rrf_tests.rs`
+- A: `tests/search_hnsw_filter_tests.rs`
+- A: `tests/search_lexical_scan_tests.rs`
+- A: `tests/search_ranked_filter_limit_tests.rs`
+- A: `tests/search_ranked_semantic_filter_tests.rs`
+- A: `tests/search_ranked_topk_tests.rs`
+- A: `tests/search_rrf_primitives_tests.rs`
+- A: `tests/search_rrf_rerank_tests.rs`
+- A: `tests/search_session_cohesion_tests.rs`
+- A: `tests/search_thesaurus_stem_tests.rs`
+- A: `tests/search_thesaurus_weight_tests.rs`
+- A: `tests/search_vector_exact_topk_tests.rs`
+- A: `tests/sec_backup_restore_tests.rs`
+- A: `tests/sec_dashboard_hardening_tests.rs`
+- A: `tests/sec_dashboard_host_tests.rs`
+- A: `tests/sec_integration_apply_tests.rs`
+- A: `tests/sec_mcp_auth_shape_tests.rs`
+- A: `tests/sec_webhook_ipv6_tests.rs`
+- A: `tests/server_auth_middleware_tests.rs`
+- A: `tests/server_auth_scope_tests.rs`
+- A: `tests/server_blocking_io_tests.rs`
+- A: `tests/server_chain_open_tests.rs`
+- A: `tests/server_error_mapping_tests.rs`
+- A: `tests/server_federated_rrf_tests.rs`
+- M: `tests/server_tests.rs`
+- M: `tests/skill_registry_tests.rs`
+- A: `tests/tui_logger_tests.rs`
+- A: `tests/webhook_allowed_cidrs_env_tests.rs`
+- A: `tests/webhook_allowed_cidrs_tests.rs`
+- A: `tests/webhook_tests.rs`

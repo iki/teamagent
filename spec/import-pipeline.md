@@ -121,3 +121,10 @@ Build a fixture corpus containing digital/scanned PDFs, complex tables, diagrams
 Measure acquisition completeness, extraction coverage, table/numerical fidelity, citation accuracy, parser failure visibility, time to first searchable text, total completion time, memory/GPU use and cost. Test retries, cancellation, restart, source updates, permission revocation and deletion propagation. Separate cold-model startup from warm throughput. Require every candidate parser to pass the same contract tests before promotion.
 
 Ship text/URL/file/folder import and manifest search first. Add rich documents and code structure next. Add multimodal extraction and compiled wiki/graph enrichment when a task suite demonstrates benefit. The [memory architecture](memory.md) owns canonical evidence and derived-state semantics; [evolution](evolution.md) owns evaluation and promotion of better parser profiles. Generation should reuse this registry/job/artifact model while tracking prompts, seeds, provider/model versions and output rights in its own contracts.
+
+## October source refresh: parser status and options
+
+The refreshed [Docling report](projects/ai-query--docling.md) ([source](https://github.com/docling-project/docling)) distinguishes partial success from failure: `raises_on_error=True` does not make every returned result complete. Inspect result status and covered units before publication. Pipeline-cache identity must retain concrete nested backend/options types; use a separate cryptographic hash for source bytes and exported artifacts.
+
+[Text maintenance](research-sync.md) retains explicit selected-post grouping and versioned image exports. Optional official X API lookup requests post/article fields from the source service; an undocumented article object is retained as evidence with an unsupported-body result rather than guessed into a successful conversion. See the [official data dictionary](https://docs.x.com/x-api/fundamentals/data-dictionary) and [lookup contract](https://docs.x.com/x-api/posts/lookup/introduction).
+

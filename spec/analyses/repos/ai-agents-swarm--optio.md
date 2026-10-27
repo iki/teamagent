@@ -1,0 +1,207 @@
+# optio: change evidence
+
+Source: [optio](https://github.com/jonwiggins/optio) · [Analysis](../../projects/ai-agents-swarm--optio.md) · [agents](../../agents.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `d1bc561661257bd03a031a8c49561de5eb5963d7`; commit date: 2026-10-01T09:57:03-06:00; review date: unknown; observed SHA: `f2c557d476125429eb327019254fa5a2237902cf`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/jonwiggins/optio/compare/d1bc561661257bd03a031a8c49561de5eb5963d7...f2c557d476125429eb327019254fa5a2237902cf). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [f2c557d47612](https://github.com/jonwiggins/optio/commit/f2c557d476125429eb327019254fa5a2237902cf) 2026-10-26T20:58:35-06:00: Merge pull request #693 from jonwiggins/security/image-platform-matrix-2026-10-26
+- [b571f81fa8a9](https://github.com/jonwiggins/optio/commit/b571f81fa8a95bcb744796e6000294ce04e25910) 2026-10-26T20:19:12-06:00: fix(ci): build every agent preset for both architectures
+- [a65b522c492f](https://github.com/jonwiggins/optio/commit/a65b522c492fa75abb7eb81e6e18e4fe8aa721cc) 2026-10-26T20:02:01-06:00: Merge pull request #692 from jonwiggins/security/audit-followup-2026-10-26
+- [8b1234b6292e](https://github.com/jonwiggins/optio/commit/8b1234b6292e34aa30659e056a0fcb61ed0b32e6) 2026-10-26T19:26:40-06:00: fix(runtime): release attachment leases with the database clock
+- [ef57c5fd606d](https://github.com/jonwiggins/optio/commit/ef57c5fd606d07cdfc436270c083c878c5dfc34f) 2026-10-26T19:19:42-06:00: test(web): drain session sharing routes before teardown
+- [b3d4875becfe](https://github.com/jonwiggins/optio/commit/b3d4875becfef0dd9a17a285515ae56cffb3119a) 2026-10-26T18:41:52-06:00: test(security): enforce coverage across authorization and transport boundaries
+- [10c2cb7a12a9](https://github.com/jonwiggins/optio/commit/10c2cb7a12a9f6bfc2e7ddfec595a2959271689e) 2026-10-26T18:20:19-06:00: fix(ci): scope dependency regression coverage
+- [7f3378a56e77](https://github.com/jonwiggins/optio/commit/7f3378a56e77f516a1979f9b1f5c7a8a1d02770b) 2026-10-26T17:59:05-06:00: fix(security): close remaining isolation and credential boundaries
+- [8c58f679930d](https://github.com/jonwiggins/optio/commit/8c58f679930d1d60476005352f0d592a2d3714f3) 2026-10-26T14:36:45-06:00: Merge pull request #690 from jonwiggins/security/audit-2026-10
+- [8c236ba51561](https://github.com/jonwiggins/optio/commit/8c236ba5156192c385c518b9d9337c08586cd3b9) 2026-10-26T13:51:32-06:00: Merge remote-tracking branch 'origin/main' into security/audit-2026-10
+- [221b98869e69](https://github.com/jonwiggins/optio/commit/221b98869e69bdacdb0062b0b9e868a6b5d84270) 2026-10-26T12:46:56-06:00: test(e2e): seed deployment admins for global secrets; a self-made workspace's admin is refused
+- [46ce41b621ea](https://github.com/jonwiggins/optio/commit/46ce41b621eafd77130a0f6a8ec204d38809dcec) 2026-10-26T12:36:47-06:00: test(api): pass-through requireDeploymentAdmin in the input-validation route mock
+- [09e42d1d7697](https://github.com/jonwiggins/optio/commit/09e42d1d7697ba2306d98ff460ee7c36cd488395) 2026-10-26T12:34:35-06:00: docs(security): audit report for 2026-10-26 and an accurate SECURITY.md
+- [fd5bf5ae6c08](https://github.com/jonwiggins/optio/commit/fd5bf5ae6c0825aaa8f5b22b0b811359049099a6) 2026-10-26T12:32:42-06:00: fix(security): skill sources clone over https/ssh/git only
+- [545adb51ac70](https://github.com/jonwiggins/optio/commit/545adb51ac702a20590af8b6367c5e82e20ffe32) 2026-10-26T12:31:50-06:00: fix(security): deployment-wide state takes a deployment admin, not any workspace's admin
+- [3e1a6d8f9581](https://github.com/jonwiggins/optio/commit/3e1a6d8f958141d96068834a4fa074925baaf7ec) 2026-10-26T12:26:58-06:00: Merge branch 'worktree-agent-a2738224f306d323e' into security/audit-2026-10
+- [211a18f6a738](https://github.com/jonwiggins/optio/commit/211a18f6a7385759bdf7032c996b73486fc9717b) 2026-10-26T12:26:32-06:00: Merge branch 'worktree-agent-a2a54dba013bb143b' into security/audit-2026-10
+- [fb9d466485eb](https://github.com/jonwiggins/optio/commit/fb9d466485eb0ab6e2222584928d308b130b5e53) 2026-10-26T12:26:31-06:00: Merge branch 'worktree-agent-a51e9937917203fb4' into security/audit-2026-10
+- [fe5e725fa8f3](https://github.com/jonwiggins/optio/commit/fe5e725fa8f3034aebdd23813fff59204e4021d9) 2026-10-26T12:26:31-06:00: Merge branch 'worktree-agent-a17a8b30aa5e66860' into security/audit-2026-10
+- [c0b2c3e4735a](https://github.com/jonwiggins/optio/commit/c0b2c3e4735ad56d0f913e7090c673b4c8ccd9e7) 2026-10-26T12:26:31-06:00: Merge branch 'worktree-agent-ad389a035128ffd62' into security/audit-2026-10
+- [02ead184afce](https://github.com/jonwiggins/optio/commit/02ead184afce31c7f4c88a1f8afb483b60cac100) 2026-10-26T12:26:18-06:00: Merge branch 'worktree-agent-aac71cf19e9a33eab' into security/audit-2026-10
+- [9c8689745147](https://github.com/jonwiggins/optio/commit/9c8689745147b117f3d2435a59eeb4bbbe6ca0b6) 2026-10-26T12:25:05-06:00: fix(security): only a private task's owner adds subtasks to it
+- [c3171bbdb75b](https://github.com/jonwiggins/optio/commit/c3171bbdb75b34cb4c15942d71e2a615e6092b11) 2026-10-26T12:24:43-06:00: fix(security): limit pods' GitHub App installation tokens to their repo
+- [848645f158f9](https://github.com/jonwiggins/optio/commit/848645f158f9f1cb060b8b05c972381647b33871) 2026-10-26T12:20:54-06:00: fix(security): task dependencies come from the task's own workspace
+- [ee7081d46039](https://github.com/jonwiggins/optio/commit/ee7081d46039c0273b9943ee9aaf6b4071776891) 2026-10-26T12:19:50-06:00: fix(security): quote attacker-reachable strings on their way to a shell or a path
+- [e1d7c76090f8](https://github.com/jonwiggins/optio/commit/e1d7c76090f83b64f45b90613fb4532473c20494) 2026-10-26T12:19:47-06:00: fix(deps): patch vulnerable runtime and dev dependencies
+- [27a538595c14](https://github.com/jonwiggins/optio/commit/27a538595c14b46c8dc928227ad6d99550834ae0) 2026-10-26T12:18:39-06:00: fix(security): keep marketplace skill sync from running or reading anything in the API pod
+- [1ba51292e7f0](https://github.com/jonwiggins/optio/commit/1ba51292e7f012534bd1401d869bc647dc485342) 2026-10-26T12:17:33-06:00: fix(security): rolling the deployment's image needs a deployment admin
+- [daa8b10a0b65](https://github.com/jonwiggins/optio/commit/daa8b10a0b65baf5f801d48e4405a0f7d1885754) 2026-10-26T12:16:36-06:00: fix(security): keep git tokens on trusted hosts, bound webhook raw bodies, scope ticket triggers
+- [4cfe418cfc70](https://github.com/jonwiggins/optio/commit/4cfe418cfc7004f2feff83d93b4fffd9cb63e4d4) 2026-10-26T12:15:12-06:00: fix(security): ignore the session cookie on WebSocket upgrades from foreign origins
+- [4367e3b9b06d](https://github.com/jonwiggins/optio/commit/4367e3b9b06dbeb933d62774f3591ff8765fb940) 2026-10-26T12:14:58-06:00: fix(security): only a deployment admin claims another domain for auto-join
+- [3e4438c4ddf0](https://github.com/jonwiggins/optio/commit/3e4438c4ddf0bf79a6048a4bf4bab470a9eab000) 2026-10-26T12:10:28-06:00: fix(security): apply the agent NetworkPolicy to Job and persistent-agent pods
+
+## Changed paths (truncated)
+
+- M: `.dockerignore`
+- M: `.env.example`
+- M: `.github/workflows/build-images.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/deploy-site.yml`
+- M: `.github/workflows/release.yml`
+- M: `.gitignore`
+- M: `.husky/pre-push`
+- A: `.node-version`
+- M: `CHANGELOG.md`
+- M: `CLAUDE.md`
+- M: `Dockerfile.agent`
+- M: `Dockerfile.api`
+- M: `Dockerfile.optio`
+- M: `Dockerfile.web`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `apps/android/README.md`
+- M: `apps/android/app/src/main/kotlin/dev/optio/app/shell/HubScreen.kt`
+- M: `apps/android/app/src/main/kotlin/dev/optio/app/shell/MainShell.kt`
+- M: `apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_blueprint.webp`
+- M: `apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_chip.webp`
+- M: `apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_midnight.webp`
+- M: `apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_retro.webp`
+- M: `apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_sticker.webp`
+- M: `apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_sunrise.webp`
+- M: `apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_terminal.webp`
+- M: `apps/android/app/src/main/res/drawable/ic_launcher_foreground.xml`
+- M: `apps/android/app/src/test/kotlin/dev/optio/app/shell/MainShellTest.kt`
+- M: `apps/android/core/data/src/main/kotlin/dev/optio/core/data/SessionStore.kt`
+- M: `apps/android/core/data/src/test/kotlin/dev/optio/core/data/SessionStoreTest.kt`
+- M: `apps/android/core/glance/src/main/kotlin/dev/optio/core/glance/GlanceItem.kt`
+- M: `apps/android/core/model/src/main/kotlin/dev/optio/core/model/SharedTypes.kt`
+- M: `apps/android/core/model/src/test/kotlin/dev/optio/core/model/LocalDecodeTest.kt`
+- M: `apps/android/core/model/src/test/resources/fixtures/local-terminals.json`
+- M: `apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/AppRouter.kt`
+- M: `apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/Navigator.kt`
+- M: `apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/Tab.kt`
+- M: `apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/routes/AgentRoutes.kt`
+- M: `apps/android/core/navigation/src/test/kotlin/dev/optio/core/navigation/AppRouterTest.kt`
+- A: `apps/android/core/network/src/main/kotlin/dev/optio/core/network/AgentCredentials.kt`
+- M: `apps/android/core/network/src/main/kotlin/dev/optio/core/network/ModelProviders.kt`
+- A: `apps/android/core/network/src/test/kotlin/dev/optio/core/network/AgentCredentialsTest.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/agent/AgentModel.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Badges.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/BrandMarks.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Detail.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/OptioGlyph.kt`
+- A: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/OptioMarkPaths.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Pickers.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Rows.kt`
+- A: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/SessionIdentityHeader.kt`
+- A: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/SessionLinks.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Stats.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Surfaces.kt`
+- A: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/form/FormNotes.kt`
+- A: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/scope/Scope.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/OptioTheme.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/Palette.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/Tokens.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/Tone.kt`
+- A: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/triggers/TriggerEditor.kt`
+- A: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/triggers/TriggerModel.kt`
+- M: `apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/usage/ProviderLimits.kt`
+- M: `apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/components/BrandMarksTest.kt`
+- A: `apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/scope/ScopeTest.kt`
+- M: `apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/theme/ToneTest.kt`
+- A: `apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/triggers/TriggerModelTest.kt`
+- M: `apps/android/core/workfeed/build.gradle.kts`
+- M: `apps/android/core/workfeed/src/main/kotlin/dev/optio/core/workfeed/WorkFeed.kt`
+- A: `apps/android/core/workfeed/src/main/kotlin/dev/optio/core/workfeed/ui/WorkRowCard.kt`
+- M: `apps/android/core/workfeed/src/test/kotlin/dev/optio/core/workfeed/WorkFeedTest.kt`
+- M: `apps/android/e2e/launch-api.ts`
+- M: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentDetailViewModel.kt`
+- M: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentFormDraft.kt`
+- M: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTriggerSheet.kt`
+- D: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTriggers.kt`
+- M: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTriggersSection.kt`
+- M: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTurns.kt`
+- M: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentsApi.kt`
+- M: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentsEntries.kt`
+- A: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/OptioAssistantScreen.kt`
+- A: `apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/OptioAssistantViewModel.kt`
+- M: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentDetailUiTest.kt`
+- M: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentDetailViewModelTest.kt`
+- M: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentScreenshotsTest.kt`
+- D: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentTriggersTest.kt`
+- M: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentsDecodeTest.kt`
+- M: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentsLiveTest.kt`
+- A: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/OptioAssistantScreenshotsTest.kt`
+- A: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/OptioAssistantTest.kt`
+- A: `apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/OptioAssistantUiTest.kt`
+- M: `apps/android/feature/glance/src/main/kotlin/dev/optio/feature/glance/watch/WatchNotifier.kt`
+- M: `apps/android/feature/insights/src/main/kotlin/dev/optio/feature/insights/ActivitySection.kt`
+- M: `apps/android/feature/insights/src/main/kotlin/dev/optio/feature/insights/ClusterSection.kt`
+- M: `apps/android/feature/insights/src/main/kotlin/dev/optio/feature/insights/CostsSection.kt`
+- M: `apps/android/feature/insights/src/test/kotlin/dev/optio/feature/insights/InsightsDecodeTest.kt`
+- M: `apps/android/feature/insights/src/test/kotlin/dev/optio/feature/insights/InsightsWiringTest.kt`
+- M: `apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/LibraryApi.kt`
+- M: `apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/LibrarySupport.kt`
+- M: `apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/connections/ConnectionDetail.kt`
+- M: `apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/connections/ConnectionsList.kt`
+- M: `apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/connections/NewConnection.kt`
+- M: `apps/android/feature/library/src/test/kotlin/dev/optio/feature/library/ConnectionScreensTest.kt`
+- M: `apps/android/feature/library/src/test/kotlin/dev/optio/feature/library/LibrarySamples.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/MachinesSection.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/api/LocalApi.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/automations/AddTriggerSheet.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/automations/AutomationScreen.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/automations/AutomationViewModel.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/machines/LocalHostScreen.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/machines/MachineViews.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/model/LocalPresentation.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/model/Triggers.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/terminal/LocalTerminalScreen.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/terminal/LocalTerminalViewModel.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/terminal/TerminalFaces.kt`
+- M: `apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/ui/LocalComponents.kt`
+- M: `apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/api/LocalApiTest.kt`
+- M: `apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/live/LocalLiveTest.kt`
+- M: `apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/machines/HostTerminalsTest.kt`
+- M: `apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/machines/LocalHostViewModelTest.kt`
+- M: `apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/model/LocalPresentationTest.kt`
+- M: `apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/model/TriggersTest.kt`
+- M: `apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/terminal/LocalTerminalViewModelTest.kt`
+- M: `apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/MoreScreen.kt`
+- M: `apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/api/MoreApi.kt`
+- M: `apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/providers/ModelProvidersScreen.kt`
+- M: `apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/secrets/SecretsScreen.kt`
+- M: `apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/secrets/SecretsViewModel.kt`
+- M: `apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/settings/OptioAgentSettings.kt`
+- M: `apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/ui/MoreSupport.kt`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_blueprint.webp`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_chip.webp`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_default.webp`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_midnight.webp`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_retro.webp`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_sticker.webp`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_sunrise.webp`
+- M: `apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_terminal.webp`
+- M: `apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/MoreLogicTest.kt`
+- M: `apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/MoreSamples.kt`
+- M: `apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/MoreScreenshotsTest.kt`
+- M: `apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/RoleGatingTest.kt`
+- M: `apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/SecretsAndWebhooksViewModelTest.kt`
+- M: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/ClusterSummaryCard.kt`
+- M: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/Grouped.kt`
+- A: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/LocalPresentation.kt`
+- D: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/LocalTerminalRow.kt`
+- M: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/OverviewContent.kt`
+- M: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/OverviewViewModel.kt`
+- M: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/Servers.kt`
+- M: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/WorkBoard.kt`
+- D: `apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/WorkRowView.kt`
+- M: `apps/android/feature/reviews/src/main/kotlin/dev/optio/feature/reviews/ReviewFormat.kt`
+- M: `apps/android/feature/reviews/src/test/kotlin/dev/optio/feature/reviews/ReviewFormatTest.kt`
+- M: `apps/android/feature/sessions/src/main/kotlin/dev/optio/feature/sessions/SessionChatView.kt`
+- M: `apps/android/feature/sessions/src/main/kotlin/dev/optio/feature/sessions/SessionDetailScreen.kt`
+- M: `apps/android/feature/sessions/src/main/kotlin/dev/optio/feature/sessions/SessionTerminalView.kt`
+- M: `apps/android/feature/tasks/src/main/kotlin/dev/optio/feature/tasks/data/RunModels.kt`

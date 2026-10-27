@@ -1,0 +1,146 @@
+# magika: change evidence
+
+Source: [magika](https://github.com/google/magika) · [Analysis](../../projects/ai-query--magika.md) · [import-generation](../../import-generation.md), [decisions](../../decisions.md), [models](../../models.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `dbd9d853848ed5222b5ccfed9e2c957ac623d85e`; commit date: 2026-10-02T10:54:58+02:00; review date: 2026-10-04; observed SHA: `8d3d3b9b9452a65a6aa7752e061a67bf4a6b3c9b`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/magika/compare/dbd9d853848ed5222b5ccfed9e2c957ac623d85e...8d3d3b9b9452a65a6aa7752e061a67bf4a6b3c9b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [8d3d3b9b9452](https://github.com/google/magika/commit/8d3d3b9b9452a65a6aa7752e061a67bf4a6b3c9b) 2026-10-23T14:03:59Z: Control each component individually from the CLI (#1559)
+- [248d72745b3a](https://github.com/google/magika/commit/248d72745b3adb374778b29dc7af2237b0653cbc) 2026-10-23T13:34:20+02:00: Add stubs for resolvers (#1557)
+- [f5150e5fd036](https://github.com/google/magika/commit/f5150e5fd03629e87f498596c9df34a0c8181c22) 2026-10-22T13:23:36Z: Merge pull request #1558 from google/adhoc-uv-lock-check
+- [c963d386ba98](https://github.com/google/magika/commit/c963d386ba98a5780d1283d542e4c9c5de0cef71) 2026-10-22T11:58:12Z: gh: check uv.lock with uv lock --check before uv sync --locked
+- [0be014d88bf2](https://github.com/google/magika/commit/0be014d88bf2ac017f55f8f382c824b3484a159d) 2026-10-22T10:26:52Z: Merge pull request #1556 from google/adhoc-it-seems-we-don-t
+- [4f1e0a133f56](https://github.com/google/magika/commit/4f1e0a133f5658a2ac4fa7468b468585394902a4) 2026-10-22T10:25:57Z: gh: check that uv.lock is in sync after uv sync
+- [743892a1c3de](https://github.com/google/magika/commit/743892a1c3dee16b4f23410bcca6decffe337e6c) 2026-10-22T10:23:12Z: Merge pull request #1555 from google/adhoc-check-this-out
+- [bc4b7df3589e](https://github.com/google/magika/commit/bc4b7df3589e1c35bfea1af9194096c8be8fbac4) 2026-10-22T10:00:36Z: ci: use bash shell for uv pip install step on windows
+- [035f40b044ea](https://github.com/google/magika/commit/035f40b044ea694e1be64f76aaab4f16dd22a664) 2026-10-22T09:53:01Z: python, ci: upgrade and enforce uv, pip, and certifi for CA security advisory
+- [9da8b8faddcc](https://github.com/google/magika/commit/9da8b8faddccf12c9bf1681857633a325085f29f) 2026-10-22T10:03:00+02:00: Share the CLI's fast pipeline with Python and C through the library (#1531)
+- [7bf308bef6a1](https://github.com/google/magika/commit/7bf308bef6a1275d3d12abf77ad008eeb1f37ede) 2026-10-21T10:00:19Z: Merge pull request #1552 from ia0/features
+- [936ae353c90d](https://github.com/google/magika/commit/936ae353c90d9dcfe467cc348f4ffddf5abb21d0) 2026-10-21T09:58:56Z: Return more accurate type for identify_content
+- [4eab1a4d5919](https://github.com/google/magika/commit/4eab1a4d591917bd9589854971f28a3d807bf1e0) 2026-10-21T09:54:00Z: Merge pull request #1554 from ia0/owner
+- [e563c7739060](https://github.com/google/magika/commit/e563c7739060c60ef0204eabacae366b334703ee) 2026-10-21T09:31:01+02:00: Update code owners so I only own Rust code
+- [de55f89e745c](https://github.com/google/magika/commit/de55f89e745cf40324a6666ea82e3fb3278f67ca) 2026-10-15T12:36:05Z: Merge pull request #1545 from shivamtiwari3/kb-fix-metadata-followup
+- [7f1e201169f8](https://github.com/google/magika/commit/7f1e201169f830ec6af743c7ab4bbbe5d1276576) 2026-10-15T14:25:04+02:00: Add CachedInput to never read twice the same byte (#1550)
+- [63b22b3f36e6](https://github.com/google/magika/commit/63b22b3f36e6f3462d96bda7d5b530cd885c1189) 2026-10-15T09:23:41Z: kb: fix incorrect group and description metadata (avif, fortran, one, swf, tcl)
+- [98c2c708ffda](https://github.com/google/magika/commit/98c2c708ffda115a35eff9ece1953626c5405cc6) 2026-10-15T10:44:42+02:00: Add back OverwriteReason (#1549)
+- [b1909890d447](https://github.com/google/magika/commit/b1909890d4477d34381ce12b31882e9a197706d8) 2026-10-14T17:34:44+02:00: Identify files with custom rules before the built-in rules (#1530)
+- [e943cf86d5ac](https://github.com/google/magika/commit/e943cf86d5ac3c5990fc47e8b76d256620613f5b) 2026-10-14T13:53:54Z: Merge pull request #1547 from google/adhoc-website-looks-good-but-bullet
+- [a4a9b10a0532](https://github.com/google/magika/commit/a4a9b10a053211a2f9728afcee64691b13ee388e) 2026-10-14T13:50:12Z: website: exclude .not-content elements directly in list selector
+- [a5fad44c0ed6](https://github.com/google/magika/commit/a5fad44c0ed60b946d9e3b0ba343f974df885e62) 2026-10-14T13:46:09Z: website: fix Markdown list indentation
+- [d92b3c5f6c35](https://github.com/google/magika/commit/d92b3c5f6c35cc4dcaea3aaa51ec1a3350130405) 2026-10-14T11:10:45Z: Merge pull request #1546 from ia0/owner
+- [0bcdd38108da](https://github.com/google/magika/commit/0bcdd38108da38c83eefd5fd5ee7454bc799798f) 2026-10-14T12:22:20+02:00: Remove ia0 from owners of knowledge base
+- [1d1ead9a0ce8](https://github.com/google/magika/commit/1d1ead9a0ce87f190b1fabaeca0b1ed7bf4a323d) 2026-10-14T06:11:49Z: Merge pull request #1543 from shivamtiwari3/kb-fix-xlsb-asf-mime-dxf-typo
+- [03bf5b8b9856](https://github.com/google/magika/commit/03bf5b8b985652b461d08d6299445941de1bce8f) 2026-10-14T05:48:49Z: kb: fix incorrect MIME types for asf and xlsb, and a dxf description typo
+- [2cea592d6263](https://github.com/google/magika/commit/2cea592d6263fc48c37a5eb17f91785f8a99c791) 2026-10-13T19:02:37Z: Merge pull request #1542 from google/gh-1451-ai-policy
+- [54e108d99ee2](https://github.com/google/magika/commit/54e108d99ee23cf7b9d35c2a40eb1cc9f7eda931) 2026-10-12T13:49:25Z: docs: overhaul contribution policy and guides
+- [2136599b6943](https://github.com/google/magika/commit/2136599b6943fe32e3aef94e96620ea14cbc8e62) 2026-10-09T12:30:25Z: Merge pull request #1528 from bact/iana-tsv-name
+- [1eee55289658](https://github.com/google/magika/commit/1eee552896582ec36f02ecd1b066b59734d401f2) 2026-10-09T12:26:44Z: Update TSV in assets/content_types_kb.min.json
+- [fea62ae63f25](https://github.com/google/magika/commit/fea62ae63f25584617c3e32bf4d1d1b1f684da73) 2026-10-09T12:26:44Z: Use text/tab-separated-values for TSV
+- [a1192b9be226](https://github.com/google/magika/commit/a1192b9be2268a03735815e8a78112b1d1b0336c) 2026-10-09T12:19:41Z: Merge pull request #1536 from google/contributing-improve
+
+## Changed paths
+
+- M: `.github/CODEOWNERS`
+- A: `.github/ISSUE_TEMPLATE/config.yml`
+- M: `.github/ISSUE_TEMPLATE/misdetection.md`
+- M: `.github/ISSUE_TEMPLATE/new_content_type_request.md`
+- A: `.github/PULL_REQUEST_TEMPLATE.md`
+- M: `.github/workflows/docs-check.yml`
+- M: `.github/workflows/kb-check.yml`
+- M: `.github/workflows/python-build-test-and-release-package.yml`
+- M: `.github/workflows/python-coverage.yml`
+- M: `.github/workflows/python-test-published-package.yml`
+- M: `.github/workflows/python-test-published-rc-package.yml`
+- M: `.github/workflows/python-test-suite.yml`
+- A: `AGENTS.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- A: `SECURITY.md`
+- M: `assets/content_types.yaml`
+- M: `assets/content_types_kb.min.json`
+- A: `justfile`
+- M: `python/CHANGELOG.md`
+- M: `python/pyproject.toml`
+- R089: `python/scripts/build_and_stage_cli.sh` (from `python/scripts/stage_cli.sh`)
+- M: `python/scripts/build_wheel.sh`
+- M: `python/scripts/check_copyright.py`
+- M: `python/scripts/check_documentation.py`
+- M: `python/scripts/generate_reference.py`
+- M: `python/scripts/pre_release_check.py`
+- M: `python/scripts/run_phases_1_to_3.sh`
+- M: `python/scripts/run_quick_test_magika_cli.py`
+- M: `python/scripts/run_quick_test_magika_module.py`
+- M: `python/scripts/sync.py`
+- A: `python/scripts/sync_dev.sh`
+- M: `python/scripts/test_magika_model.py`
+- M: `python/src/magika/_magika.pyi`
+- D: `python/src/magika/config/content_types_kb.min.json`
+- D: `python/src/magika/config/model_config.min.json`
+- M: `python/src/magika/magika.py`
+- M: `python/src/magika/types/overwrite_reason.py`
+- M: `python/tests/test_magika_python_module.py`
+- M: `python/uv.lock`
+- M: `rust/cli/Cargo.lock`
+- M: `rust/cli/Cargo.toml`
+- D: `rust/cli/src/backends.rs`
+- M: `rust/cli/src/main.rs`
+- M: `rust/cli/test.sh`
+- M: `rust/ffi/Cargo.lock`
+- M: `rust/ffi/Cargo.toml`
+- M: `rust/ffi/example.c`
+- M: `rust/ffi/include/magika.h`
+- M: `rust/ffi/src/content.rs`
+- M: `rust/ffi/src/lib.rs`
+- M: `rust/ffi/test.c`
+- M: `rust/gen/src/main.rs`
+- M: `rust/lib/CHANGELOG.md`
+- M: `rust/lib/Cargo.lock`
+- M: `rust/lib/Cargo.toml`
+- M: `rust/lib/src/builder.rs`
+- A: `rust/lib/src/cached_input.rs`
+- M: `rust/lib/src/config.rs`
+- M: `rust/lib/src/content.rs`
+- M: `rust/lib/src/file.rs`
+- M: `rust/lib/src/input.rs`
+- M: `rust/lib/src/lib.rs`
+- M: `rust/lib/src/model.rs`
+- M: `rust/lib/src/options.rs`
+- A: `rust/lib/src/pipeline.rs`
+- A: `rust/lib/src/pipeline/engine.rs`
+- A: `rust/lib/src/pipeline/paths.rs`
+- A: `rust/lib/src/resolvers.rs`
+- M: `rust/lib/src/rules.rs`
+- M: `rust/lib/src/session.rs`
+- M: `rust/lib/src/tests/gpu.rs`
+- M: `rust/lib/test.sh`
+- M: `rust/pyo3/Cargo.lock`
+- M: `rust/pyo3/Cargo.toml`
+- M: `rust/pyo3/src/lib.rs`
+- M: `rust/rules/CHANGELOG.md`
+- M: `rust/rules/README.md`
+- M: `rust/rules/src/eval.rs`
+- M: `rust/rules/src/lib.rs`
+- M: `rust/rules/src/source.rs`
+- M: `rust/rules/tests/corpus.rs`
+- M: `rust/rules/tests/dataset.rs`
+- M: `rust/rules/tests/perf.rs`
+- M: `rust/rules/tests/regressions.rs`
+- M: `rust/rules/tests/scan.rs`
+- M: `rust/rules/tests/source.rs`
+- M: `rust/tract-runtime/CHANGELOG.md`
+- M: `rust/tract-runtime/src/lib.rs`
+- M: `scripts/sync_kb.py`
+- A: `tests_data/rules/custom.yar`
+- M: `website-ng/astro.config.mjs`
+- M: `website-ng/src/content/docs/cli-and-bindings/other-bindings.md`
+- D: `website-ng/src/content/docs/contributing/creating-new-bindings.md`
+- A: `website-ng/src/content/docs/contributing/developer-guide.md`
+- M: `website-ng/src/content/docs/contributing/how-to-contribute.md`
+- M: `website-ng/src/content/docs/contributing/known-limitations.md`
+- A: `website-ng/src/content/docs/contributing/reporting-issues.md`
+- M: `website-ng/src/styles/global.css`

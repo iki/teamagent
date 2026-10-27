@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-tokens**. Its category places it in 
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon); analyzed commit `4dab1d7f9bddabf6529ff5392c8d512907f49918`; commit date 2026-09-29T23:20:45+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--cc-aio-mon.md).
+<!-- teamagent-analysis:end -->

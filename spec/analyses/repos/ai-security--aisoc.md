@@ -1,0 +1,207 @@
+# aisoc: change evidence
+
+Source: [aisoc](https://github.com/beenuar/AiSOC) · [Analysis](../../projects/ai-security--aisoc.md) · [agents](../../agents.md), [skills](../../skills.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `98883d9229865df1d6d0a5e643778efe4d61b5ce`; commit date: 2026-10-03T11:40:41-07:00; review date: unknown; observed SHA: `3164fb54343f341de87eff4f42792690a3fb308d`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/beenuar/AiSOC/compare/98883d9229865df1d6d0a5e643778efe4d61b5ce...3164fb54343f341de87eff4f42792690a3fb308d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [3164fb54343f](https://github.com/beenuar/AiSOC/commit/3164fb54343f341de87eff4f42792690a3fb308d) 2026-10-27T10:09:11-07:00: fix(connectors): move Jira issue pull to /rest/api/3/search/jql (#1524)
+- [fb79501a7336](https://github.com/beenuar/AiSOC/commit/fb79501a7336435d29aa513017e5601dc6b5e8b0) 2026-10-27T10:08:02-07:00: fix(connectors): acknowledge a queue only after ingest confirms the batch (#1526)
+- [17fe377baf15](https://github.com/beenuar/AiSOC/commit/17fe377baf1550557e842baa092c08de21ff3dd8) 2026-10-27T08:32:52-07:00: fix(fusion): durable delivery, recoverable lake archival and replay-safe windowed detections (#1529)
+- [54deb0338003](https://github.com/beenuar/AiSOC/commit/54deb033800338976a03f368fcefd6b71a49eafc) 2026-10-27T08:17:08-07:00: fix(actions): an approved action reaches the vendor once, or visibly not at all (#1528)
+- [1c1f528f5096](https://github.com/beenuar/AiSOC/commit/1c1f528f50962cfab8cb652ab21ba6664777daab) 2026-10-27T06:19:58-07:00: chore(deps): move fastapi to 0.161.1 across every declaration site (#1523)
+- [8edbff9ec831](https://github.com/beenuar/AiSOC/commit/8edbff9ec8316e3fd801f7d678fe6bd2bce8d309) 2026-10-26T13:54:39-07:00: chore(deps): bump alembic, boto3, openai, langchain and langchain-core (#1521)
+- [2fcae80e46c5](https://github.com/beenuar/AiSOC/commit/2fcae80e46c586665fcd4eb940340f7ec392b939) 2026-10-26T13:54:25-07:00: chore(deps): move realtime onto the OpenTelemetry 3.x line (#1522)
+- [b562796c82bc](https://github.com/beenuar/AiSOC/commit/b562796c82bcfbb2bbf64723fe9160df0e2a4011) 2026-10-26T13:54:14-07:00: chore(deps): bump axe-core, zustand, cytoscape, jsdom and @types/node (#1520)
+- [b78f510eca5e](https://github.com/beenuar/AiSOC/commit/b78f510eca5ebdda09d082fc25c52f5ae72ef8ed) 2026-10-26T13:43:34-07:00: chore(deps): bump pinned actions and the neo4j Go driver (#1519)
+- [21f079955704](https://github.com/beenuar/AiSOC/commit/21f0799557042a1aad0b27e454c2be49feff3224) 2026-10-26T02:12:28-07:00: fix(ai-sdk): the emitter survives a span it cannot serialize (#1516)
+- [85ce5f59d5f5](https://github.com/beenuar/AiSOC/commit/85ce5f59d5f5b72270ed0eca4593657b1d69d1e3) 2026-10-25T22:03:44-07:00: fix(connectors): scope the resource-config route to the caller's own tenant (#1496)
+- [93030bfda588](https://github.com/beenuar/AiSOC/commit/93030bfda588fe3ee234fac229f4576fc886db06) 2026-10-25T07:37:20-07:00: fix(threatintel): embedding ran on the event loop, so the service answered nothing while a feed ingested (#1446) (#1495)
+- [c6cfc01bf6e3](https://github.com/beenuar/AiSOC/commit/c6cfc01bf6e360aea6ef4406173c3a74719c2ae7) 2026-10-25T07:20:26-07:00: fix(fusion): readiness must ask the broker, not ask the loop whether it is looping (#1446) (#1494)
+- [477b04aff8e1](https://github.com/beenuar/AiSOC/commit/477b04aff8e1e3e89b31e3ff7d04aa45e167ad9f) 2026-10-25T07:04:11-07:00: fix(chaos): grade readiness where the keys live, and make the fusion kill a crash (#1446) (#1493)
+- [9f815c796f5f](https://github.com/beenuar/AiSOC/commit/9f815c796f5f86f04b12d734737e77c51ebb5e2c) 2026-10-25T04:51:06-07:00: fix(fusion): make alert delivery durable and enforce tenant dedup uniqueness (#1491)
+- [f15279e5a10d](https://github.com/beenuar/AiSOC/commit/f15279e5a10d152d0c2ad085d4809ea06fc6cefd) 2026-10-25T04:18:00-07:00: docs(media): the published technical guide still showed the pre-v20.1.0 console (#1492)
+- [b9409f108084](https://github.com/beenuar/AiSOC/commit/b9409f108084d44bbaf54c739e0f4d0b7f9bc358) 2026-10-25T03:55:30-07:00: feat(health): report per-service dependency readiness (#1489)
+- [b620acad1d9e](https://github.com/beenuar/AiSOC/commit/b620acad1d9ee1b1eb6b191748073c85abd31fdf) 2026-10-25T02:53:04-07:00: fix(deps): raise the fast-uri, ip-address and serialize-javascript floors (#1487)
+- [fb79048cab63](https://github.com/beenuar/AiSOC/commit/fb79048cab636a715754c4d5bdbfbd53c95462e6) 2026-10-25T02:11:01-07:00: chore(deps-dev): bump black from 26.5.1 to 26.10.1 in /services/fusion (#1486)
+- [885502ba8d1c](https://github.com/beenuar/AiSOC/commit/885502ba8d1cc49dd9f3678dda72915f35e21dde) 2026-10-25T02:05:36-07:00: chore(deps): bump ip-address from 10.7.2 to 10.7.5 in /services/realtime (#1485)
+- [0291230efadc](https://github.com/beenuar/AiSOC/commit/0291230efadce06abdf9e197069d38ba68627a90) 2026-10-25T00:57:45-07:00: fix(deps): clear the 2026-10-24 advisory wave, and fix the pillow cap instead of renewing it (#1484)
+- [511a94854ed2](https://github.com/beenuar/AiSOC/commit/511a94854ed24d8c275261b2a4b46cc09cc34624) 2026-10-24T23:36:05-07:00: fix(ci): image-channel's target probe died silently before its first line of output (#1479)
+- [b079731462d9](https://github.com/beenuar/AiSOC/commit/b079731462d968fa8b3ebe5e9dedaac51c4156d2) 2026-10-22T18:39:22+07:00: fix(release): the image stable-channel guard fails open when its registry read breaks (#1478)
+- [f7c17e4844d3](https://github.com/beenuar/AiSOC/commit/f7c17e4844d32aafd5464b625c33fb78a1e03c7f) 2026-10-22T18:39:13+07:00: fix(install): a fresh Windows install can boot, and every on-ramp leads to the real stack (#1475)
+- [b33f758b268c](https://github.com/beenuar/AiSOC/commit/b33f758b268cad7dc28f451476f86ff7c7a3707b) 2026-10-22T17:40:15+07:00: fix(ci): the reproducible-builds aggregator reads the lock-only matrix's designed skip as proof lost (#1477)
+- [f2955c7c1677](https://github.com/beenuar/AiSOC/commit/f2955c7c16771a321b024db02a9e52601ab6aae4) 2026-10-22T16:26:49+07:00: chore(release): v20.1.0 (#1476)
+- [40d97bee7085](https://github.com/beenuar/AiSOC/commit/40d97bee70851094b152eb60a536ac9d6a048324) 2026-10-22T15:28:39+07:00: docs: catch the portal, changelog and counts up with what merged since v20.0.0 (#1474)
+- [0da626548ae4](https://github.com/beenuar/AiSOC/commit/0da626548ae44019f44e23eda8de728d0dd5b21e) 2026-10-22T13:21:29+07:00: chore(deps): fastapi 0.146.0 repo-wide — every declaration site, every lock, one move (#1473)
+- [a2d53aca076c](https://github.com/beenuar/AiSOC/commit/a2d53aca076cc670323a618d074123df71a4279c) 2026-10-22T12:28:28+07:00: fix(ci): adoption snapshot lands on an unprotected data branch, needing no owner credential (#1445) (#1470)
+- [5124acbb0c61](https://github.com/beenuar/AiSOC/commit/5124acbb0c613e9199173f0245ce90a9c5bd52aa) 2026-10-22T12:28:23+07:00: Merge pull request #1441 from meshreyy/fix/checkpoint-partial-ingest
+- [6cfef3227d5f](https://github.com/beenuar/AiSOC/commit/6cfef3227d5f339e2c5dda578ad5b065d79e142c) 2026-10-22T12:01:41+07:00: fix(eval): the live dispatch runs on one event loop and scores failures as 0, with the floor re-derived from fixed-harness runs (#1466) (#1472)
+- [d27b19730bf1](https://github.com/beenuar/AiSOC/commit/d27b19730bf1629ff761a2b92d353126e431f521) 2026-10-22T11:59:14+07:00: fix(ci): the eval matrix's non-floor leg uses the checker's own deliberate-comparison flag (#1465)
+
+## Changed paths (truncated)
+
+- M: `.devcontainer/devcontainer.json`
+- M: `.dockerignore`
+- M: `.env.example`
+- A: `.gitattributes`
+- A: `.github/ISSUE_TEMPLATE/installer-failure.yml`
+- M: `.github/LICENSES.md`
+- A: `.github/actions/start-postgres/action.yml`
+- M: `.github/dependabot.yml`
+- M: `.github/release-packages.yml`
+- A: `.github/workflows/access-governance-live.yml`
+- A: `.github/workflows/action-durability-live.yml`
+- M: `.github/workflows/adoption-snapshot.yml`
+- A: `.github/workflows/agent-auth-live.yml`
+- A: `.github/workflows/ai-estate-live.yml`
+- M: `.github/workflows/aisoc-action.yml`
+- M: `.github/workflows/aisoc-cli.yml`
+- A: `.github/workflows/alert-audit-live.yml`
+- A: `.github/workflows/audit-forgery-live.yml`
+- A: `.github/workflows/audit-retention-live.yml`
+- M: `.github/workflows/build-extensions.yml`
+- A: `.github/workflows/case-depth-live.yml`
+- A: `.github/workflows/chaos.yml`
+- A: `.github/workflows/chart-channel.yml`
+- M: `.github/workflows/check-openapi.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/codeql.yml`
+- M: `.github/workflows/comment-paths.yml`
+- M: `.github/workflows/compose-smoke-nightly.yml`
+- M: `.github/workflows/connector-scheduler-live.yml`
+- A: `.github/workflows/connector-tenant-scope-live.yml`
+- M: `.github/workflows/console-visuals.yml`
+- M: `.github/workflows/cross-tenant-rbac.yml`
+- M: `.github/workflows/demo-timing.yml`
+- M: `.github/workflows/deploy-docs.yml`
+- M: `.github/workflows/devcontainer-build.yml`
+- M: `.github/workflows/devcontainer-coldstart.yml`
+- M: `.github/workflows/e2e.yml`
+- A: `.github/workflows/entitlements-live.yml`
+- M: `.github/workflows/governance.yml`
+- M: `.github/workflows/helm.yml`
+- A: `.github/workflows/hunt-report-live.yml`
+- A: `.github/workflows/image-channel.yml`
+- M: `.github/workflows/installer-smoke.yml`
+- M: `.github/workflows/integration.yml`
+- M: `.github/workflows/isolation.yml`
+- M: `.github/workflows/lake-live.yml`
+- A: `.github/workflows/lake-query-jobs-live.yml`
+- M: `.github/workflows/live-agent-eval.yml`
+- A: `.github/workflows/mfa-live.yml`
+- M: `.github/workflows/mobile.yml`
+- M: `.github/workflows/papers.yml`
+- M: `.github/workflows/perf.yml`
+- M: `.github/workflows/playbook-pause-live.yml`
+- M: `.github/workflows/publish-cli.yml`
+- M: `.github/workflows/publish-images.yml`
+- M: `.github/workflows/readme-gates.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/reproducible-builds.yml`
+- M: `.github/workflows/retro-hunt-live.yml`
+- A: `.github/workflows/scheduler-lease-live.yml`
+- M: `.github/workflows/scim-live.yml`
+- M: `.github/workflows/scorecard.yml`
+- M: `.github/workflows/screencast.yml`
+- M: `.github/workflows/security-audit.yml`
+- A: `.github/workflows/security-pack.yml`
+- M: `.github/workflows/security.yml`
+- A: `.github/workflows/sso-live.yml`
+- A: `.github/workflows/taxii-live.yml`
+- M: `.github/workflows/tenant-tuning-live.yml`
+- M: `.github/workflows/ueba-live.yml`
+- M: `.github/workflows/upgrade-test.yml`
+- M: `.github/workflows/validate-detections.yml`
+- A: `.github/workflows/verification-live.yml`
+- M: `.github/workflows/visual-regression.yml`
+- M: `.github/workflows/wet-eval.yml`
+- A: `.github/workflows/white-label-live.yml`
+- M: `.gitignore`
+- M: `.gitleaksignore`
+- A: `.pr-body.md`
+- M: `.security/allowlist.yml`
+- A: `.security/semgrep/MANIFEST.sha256`
+- A: `.security/semgrep/owasp-top-ten.yaml`
+- A: `.security/semgrep/python.yaml`
+- A: `.security/semgrep/react.yaml`
+- A: `.security/semgrep/security-audit.yaml`
+- A: `.security/semgrep/typescript.yaml`
+- A: `.trivyignore.yaml`
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- A: `DEPTH_PROGRESS.md`
+- A: `FIX_PASS_PROGRESS.md`
+- M: `GAP_CLOSURE_PROGRESS.md`
+- M: `Makefile`
+- M: `PARITY_PROGRESS.md`
+- M: `README.md`
+- M: `RELEASES.md`
+- M: `ROADMAP.md`
+- M: `SECURITY.md`
+- M: `VERSION`
+- M: `apps/docs/docs/api/rest.md`
+- M: `apps/docs/docs/architecture.md`
+- M: `apps/docs/docs/architecture/graph-schema.md`
+- M: `apps/docs/docs/architecture/itsm-as-source-of-truth.md`
+- M: `apps/docs/docs/architecture/overview.md`
+- M: `apps/docs/docs/benchmark-methodology.md`
+- M: `apps/docs/docs/benchmark.md`
+- M: `apps/docs/docs/compliance/evidence-pack.md`
+- A: `apps/docs/docs/concepts/ai-estate-discovery.md`
+- M: `apps/docs/docs/concepts/capabilities.md`
+- M: `apps/docs/docs/concepts/cases.md`
+- M: `apps/docs/docs/concepts/detections.md`
+- M: `apps/docs/docs/concepts/live-actions.md`
+- M: `apps/docs/docs/concepts/playbooks.md`
+- M: `apps/docs/docs/concepts/windowed-detections.md`
+- M: `apps/docs/docs/connectors/api-coverage.md`
+- A: `apps/docs/docs/connectors/aws-cloudtrail-s3.md`
+- A: `apps/docs/docs/connectors/azure-event-hubs.md`
+- M: `apps/docs/docs/connectors/datadog.md`
+- M: `apps/docs/docs/connectors/endpoint-decision-matrix.md`
+- A: `apps/docs/docs/connectors/gcp-pubsub.md`
+- M: `apps/docs/docs/connectors/index.md`
+- A: `apps/docs/docs/connectors/kafka-input.md`
+- M: `apps/docs/docs/connectors/lacework.md`
+- A: `apps/docs/docs/connectors/otlp-logs.md`
+- M: `apps/docs/docs/connectors/pagerduty.md`
+- A: `apps/docs/docs/connectors/syslog-listener.md`
+- M: `apps/docs/docs/connectors/tines.md`
+- M: `apps/docs/docs/connectors/wazuh.md`
+- M: `apps/docs/docs/console/funnel-kpis.md`
+- A: `apps/docs/docs/console/rule-library.md`
+- M: `apps/docs/docs/console/tenant-skills.md`
+- M: `apps/docs/docs/console/triage-context.md`
+- A: `apps/docs/docs/console/users-administration.md`
+- M: `apps/docs/docs/deployment/docker.md`
+- M: `apps/docs/docs/deployment/env-vars.md`
+- M: `apps/docs/docs/deployment/walkthrough.mdx`
+- M: `apps/docs/docs/detections/coverage.md`
+- M: `apps/docs/docs/evaluation/replay.md`
+- M: `apps/docs/docs/glossary.md`
+- M: `apps/docs/docs/installation.md`
+- M: `apps/docs/docs/intro.md`
+- A: `apps/docs/docs/migration/from-splunk.md`
+- A: `apps/docs/docs/operations/alert-prioritisation.md`
+- A: `apps/docs/docs/operations/backup-and-restore.md`
+- A: `apps/docs/docs/operations/case-orchestration.md`
+- A: `apps/docs/docs/operations/cold-tier-queries.md`
+- A: `apps/docs/docs/operations/console-mfa.md`
+- A: `apps/docs/docs/operations/data-governance.md`
+- A: `apps/docs/docs/operations/detection-lifecycle.md`
+- A: `apps/docs/docs/operations/enterprise-sso.md`
+- M: `apps/docs/docs/operations/faq.md`
+- M: `apps/docs/docs/operations/ha-deployment.md`
+- M: `apps/docs/docs/operations/llm-gateway.md`
+- A: `apps/docs/docs/operations/mailbox-remediation.md`
+- M: `apps/docs/docs/operations/mcp-client.md`
+- M: `apps/docs/docs/operations/notifications.md`
+- M: `apps/docs/docs/operations/performance.md`
+- M: `apps/docs/docs/operations/release-policy.md`
+- M: `apps/docs/docs/operations/scim.md`

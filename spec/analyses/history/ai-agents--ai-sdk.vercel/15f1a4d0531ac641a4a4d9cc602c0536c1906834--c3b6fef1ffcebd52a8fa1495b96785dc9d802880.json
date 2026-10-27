@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--ai-sdk.vercel",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/vercel/ai",
+  "report": "spec/projects/ai-agents--ai-sdk.vercel.md",
+  "analyzedSha": "15f1a4d0531ac641a4a4d9cc602c0536c1906834",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T22:29:15+02:00",
+  "observedSha": "c3b6fef1ffcebd52a8fa1495b96785dc9d802880",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c3b6fef1ffcebd52a8fa1495b96785dc9d802880",
+      "date": "2026-10-27T09:26:11-07:00",
+      "subject": "fix(azure): treat Azure Speech protocol-error 502s as retryable again (#24076)"
+    },
+    {
+      "sha": "c6bbe485d7a857534791cb89dfdee2dba19b3a1a",
+      "date": "2026-10-27T15:26:16Z",
+      "subject": "feat(perplexity): expose web search queries in provider metadata (#24106)"
+    },
+    {
+      "sha": "57086ff13126aab13703acec42be6d8eefeb4100",
+      "date": "2026-10-27T09:38:00-05:00",
+      "subject": "chore(provider-utils): export types for `Experimental_SandboxSession`'s method inputs (#24097)"
+    },
+    {
+      "sha": "cb6eaad58775d82bff3ed66cad451cf9c3fa606d",
+      "date": "2026-10-27T10:11:22-04:00",
+      "subject": "chore(deps): bump hono from 4.13.7 to 4.13.11 (#23630)"
+    },
+    {
+      "sha": "269f4c0c323258f9d1a753b11d34fd38ebe13bf6",
+      "date": "2026-10-27T09:01:49-05:00",
+      "subject": "feat(sandbox-vercel): support `stdin` arg on `spawn()` by updating to latest SDK (#24093)"
+    },
+    {
+      "sha": "e59b6e017aece6cc45c4ee7d94af88829621ed8d",
+      "date": "2026-10-26T21:37:52-07:00",
+      "subject": "fix(docs): make dev server quicker (#24101)"
+    },
+    {
+      "sha": "95348b32c6ef9aec688db1021ff921dfe94f8f12",
+      "date": "2026-10-26T21:11:49-05:00",
+      "subject": "feat(provider-utils): change `Experimental_SandboxSession`'s `spawn()` method to support optional `stdin` arg for a process with writable input stream (#24092)"
+    },
+    {
+      "sha": "869b25b0d8dc92453057059f04529641d6228b55",
+      "date": "2026-10-26T19:16:47-04:00",
+      "subject": "chore(deps): bump @angular/router from 21.2.24 to 21.2.25 (#23623)"
+    },
+    {
+      "sha": "b6de62e95ad7d0012bd2aebe2a36656449b7c8fa",
+      "date": "2026-10-26T16:16:27-07:00",
+      "subject": "fix(bedrock): make document names unique within a request (#24098)"
+    },
+    {
+      "sha": "63bf860638bc1d5245947a10789fd2bf894f6ab1",
+      "date": "2026-10-26T19:15:13-04:00",
+      "subject": "feat(anthropic): support refreshable auth tokens (#24096)"
+    },
+    {
+      "sha": "b6b9dcaec7b0f68825fa7103a507f46cd8795e34",
+      "date": "2026-10-26T16:12:01-07:00",
+      "subject": "chore(ai): remove redundant runtime type validation (#24095)"
+    },
+    {
+      "sha": "57cb73a3b171455ac07ee3ab13aa1280f06c5083",
+      "date": "2026-10-26T15:55:21-04:00",
+      "subject": "chore(deps): bump follow-redirects from 1.16.0 to 1.16.1 (#23631)"
+    },
+    {
+      "sha": "6e3e99969dcd3e9817d1720865628b6613312201",
+      "date": "2026-10-26T19:34:37Z",
+      "subject": "feat(harness-claude-code): add questionTimeoutMs and excludeDynamicSections settings (#24086)"
+    },
+    {
+      "sha": "ade2a33f5566b31e75b54d905ee0fdcc6a6afdd2",
+      "date": "2026-10-26T15:15:46-04:00",
+      "subject": "fix(mcp): clarify unsupported-version discovery errors (#24069)"
+    },
+    {
+      "sha": "01d7a03b0552939c89b7966df70b9bb989f07f1c",
+      "date": "2026-10-26T19:09:32Z",
+      "subject": "feat(openai): add GPT-6.1 Terra model support (#24081)"
+    },
+    {
+      "sha": "22b44614a2b88b70eae83193ab391692e6573f04",
+      "date": "2026-10-26T19:09:00Z",
+      "subject": "fix(amazon-bedrock): honor disabled anthropic thinking (#24080)"
+    },
+    {
+      "sha": "09b3e1d166d123e3e9e5889ab89eacef3530ed1e",
+      "date": "2026-10-26T18:57:19Z",
+      "subject": "feat(harness-claude-code): add maxBudgetUsd and strictMcpConfig settings (#24078)"
+    },
+    {
+      "sha": "e197b50b5ddd21b121b704710bddd945970b4d34",
+      "date": "2026-10-26T11:45:54-07:00",
+      "subject": "Version Packages (#23955)"
+    },
+    {
+      "sha": "e64ed82f27867c54273752fdc84d04946a529c16",
+      "date": "2026-10-26T17:39:10Z",
+      "subject": "perf(provider-utils): use native Buffer base64 encoding when available (#24074)"
+    },
+    {
+      "sha": "a15b2a91de526431b00e6e2c5f3da7061232ba52",
+      "date": "2026-10-26T17:33:27Z",
+      "subject": "feat(harness-claude-code): add onDebug setting for bridge connection events (#24065)"
+    },
+    {
+      "sha": "27a53b478b453370bb4c244ed547b38b07609d14",
+      "date": "2026-10-26T10:07:28-07:00",
+      "subject": "fix(amazon-bedrock): interpolate unsupported provider tool warnings (#24073)"
+    },
+    {
+      "sha": "1cf95c61f7b31b858fa05ffafd3c46ae01effce8",
+      "date": "2026-10-26T17:05:41Z",
+      "subject": "feat(ai): add experimental steering to generateText, streamText and ToolLoopAgent (#23813)"
+    },
+    {
+      "sha": "47236ddfe06439deff6a8e9245a335879dc8d847",
+      "date": "2026-10-26T09:41:47-07:00",
+      "subject": "feat(ai): add onStepError callback to generateText, streamText and ToolLoopAgent (#23758)"
+    },
+    {
+      "sha": "02dbab1f606cdd2057eab8e17e1f4028dc3a0617",
+      "date": "2026-10-26T15:38:20Z",
+      "subject": "feat(provider/azure): add toolSearch tool and support azure provider options on function tools (#24066)"
+    },
+    {
+      "sha": "28e30cd106dd01feb05268d161484df8dbfe0e8e",
+      "date": "2026-10-26T14:24:57Z",
+      "subject": "fix(provider/mistral): support low and max reasoning effort for glm-5.3 models (#24062)"
+    },
+    {
+      "sha": "d41ce9ae55139326eca46a97842fcde108910df4",
+      "date": "2026-10-26T10:16:54-04:00",
+      "subject": "chore(deps): bump handlebars from 4.7.9 to 4.7.10 (#22349)"
+    },
+    {
+      "sha": "c8e8866c2701be591cade944b72e68422071cea2",
+      "date": "2026-10-26T10:07:07-04:00",
+      "subject": "feat(ai): add aiVersion to telemetry tracing channel events (#23958)"
+    },
+    {
+      "sha": "20c4031d1fc59aab54b67c16679e3981374690ab",
+      "date": "2026-10-25T12:34:15-07:00",
+      "subject": "docs: improve getting started guides and add Angular quickstart (#23954)"
+    },
+    {
+      "sha": "6147ecd94b16c0cd14580e9725517fabff4cbdf4",
+      "date": "2026-10-25T13:20:23Z",
+      "subject": "docs: add Chat SDK integration docs (#23864)"
+    },
+    {
+      "sha": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
+      "date": "2026-10-24T20:12:26-04:00",
+      "subject": "chore(deps): bump @modelcontextprotocol/sdk from 1.32.0 to 1.32.1 (#22261)"
+    },
+    {
+      "sha": "ca15c2b1930836db6f811b2afeda03ba92e10420",
+      "date": "2026-10-24T20:09:25-04:00",
+      "subject": "chore(deps): bump image-size from 2.0.2 to 2.0.4 (#22255)"
+    },
+    {
+      "sha": "058d83ab4235272dc7e49a57ec4d7a1112f72ef0",
+      "date": "2026-10-24T20:09:11-04:00",
+      "subject": "chore(deps): bump fastify from 5.12.5 to 5.12.6 (#23923)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/anthropic-refreshable-auth.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/azure-speech-remove-voice-reset-workaround.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/azure-speech-voice-reset-400.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/bedrock-unique-document-names.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/beige-peaches-fail.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/bsvpj-gcjbb-lhojy.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-codex-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-codex-threads.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/calm-otters-explain.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-tools-resume.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/chatty-badgers-invent.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/cohere-embedding-type.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/early-anthropic-stream-usage.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/export-mcp-client-error.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/forty-mangos-battle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fresh-terras-arrive.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/gemma-reasoning-delimiters.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/honest-beans-wait.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/openai-chat-reasoning-summary-warning.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/perplexity-search-queries.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/proud-beers-compare.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/quiet-beds-think.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/quiet-errors-finish.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/remove-type-redundant-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/silly-hounds-listen.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/tidy-audio-error-marker.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/tidy-claude-cumulative-cost.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/tidy-rivers-serve.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/konsistent.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/notify-released/index.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/notify-released/notify-snapshot.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/actions/verify-changesets/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/actions/verify-changesets/test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-notifications.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-model-settings.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/verify-changesets.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/docs/code-template.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/docs/interactive-code-preview.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/docs/marketing-cards.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/docs/properties-table.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/components/home/hero-interactive/decision-generation.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/components/home/hero-interactive/logo-icon-typesafe-ai.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/home/hero-interactive/preview-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/home/hero-interactive/provider-logo.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/code-template.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/code-templates.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/config.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/model-placeholders.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/home/code-examples.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/legacy-redirects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/provider-code-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/public/images/confident-trace-workflows.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/code-templates.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/home.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/scripts/provider-code-config.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/redirects.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/sync-content.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/source.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "architecture/provider-abstraction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/00-guides/03-slackbot.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/00-guides/04-natural-language-postgres.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/00-guides/07-custom-memory-tool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/00-guides/19-openai-responses.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/00-guides/20-sonnet-3-7.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/00-guides/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/01-next/40-stream-object.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/01-next/73-mcp-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/01-next/77-track-agent-token-usage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/cookbook/05-node/54-mcp-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/cookbook/05-node/58-mcp-events.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-foundations/01-overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-foundations/02-providers-and-models.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-foundations/03-prompts.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-foundations/04-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-foundations/06-provider-options.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/00-choosing-a-provider.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/02-nextjs-app-router.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/04-svelte.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/05-nuxt.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/06-nodejs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/07-expo.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/02-getting-started/08-angular.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/08-tanstack-start.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "R091",
+      "path": "content/docs/02-getting-started/10-nextjs-pages-router.mdx",
+      "previousPath": "content/docs/02-getting-started/03-nextjs-pages-router.mdx"
+    },
+    {
+      "status": "M",
+      "path": "content/docs/02-getting-started/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/01-overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/02-building-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/04-loop-control.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/06-memory.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/06-tool-approvals.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/07-workflow-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/03-agents/09-chat-platforms.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-agents/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/05-generating-text.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/10-generating-structured-data.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/15-tools-and-tool-calling.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/16-mcp-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/03-ai-sdk-core/17-mcp-events.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/17-runtime-and-tool-context.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/18-code-mode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/03-ai-sdk-core/18-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/25-settings.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/26-reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/30-embeddings.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "R051",
+      "path": "content/docs/03-ai-sdk-core/32-decisions.mdx",
+      "previousPath": "content/docs/03-ai-sdk-core/32-evaluation.mdx"
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/35-image-generation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/36-transcription.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/37-speech.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/41-skill-uploads.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/42-batch.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/45-provider-management.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/60-telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/65-lifecycle-callbacks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-core/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-harnesses/02-harness-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-harnesses/05-harness-adapters.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-harnesses/06-workflow-utilities.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-harnesses/07-ui.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/03-ai-sdk-harnesses/08-terminal-ui.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/04-ai-sdk-ui/03-chatbot-resume-streams.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/04-ai-sdk-ui/03-chatbot-tool-usage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/04-ai-sdk-ui/21-error-handling.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/04-ai-sdk-ui/21-transport.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/04-ai-sdk-ui/50-stream-protocol.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/05-ai-sdk-rsc/01-overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/05-ai-sdk-rsc/10-migrating-to-ui.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/06-advanced/01-prompt-engineering.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/06-advanced/03-backpressure.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/06-advanced/09-multistep-interfaces.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/06-advanced/10-vercel-deployment-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/06-advanced/11-secure-url-fetching.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/01-generate-text.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/07-reference/01-ai-sdk-core/02-stream-text-low-memory.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/02-stream-text.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/05-embed.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/06-embed-many.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/07-reference/01-ai-sdk-core/12-stream-speech.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/07-reference/01-ai-sdk-core/14-decide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "content/docs/07-reference/01-ai-sdk-core/14-evaluate.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/14-upload-skill.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/16-tool-loop-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/17-create-agent-ui-stream.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/18-create-agent-ui-stream-response.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/18-pipe-agent-ui-stream-to-response.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/22-dynamic-tool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/23-create-mcp-client.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "content/docs/07-reference/01-ai-sdk-core/24-mcp-events.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/40-provider-registry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/42-custom-provider.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/01-ai-sdk-core/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/02-ai-sdk-ui/01-use-chat.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/docs/07-reference/02-ai-sdk-ui/32-prune-messages.mdx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

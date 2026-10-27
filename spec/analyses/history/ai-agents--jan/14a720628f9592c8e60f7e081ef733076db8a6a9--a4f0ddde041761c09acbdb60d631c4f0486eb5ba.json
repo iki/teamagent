@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--jan",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/janhq/jan",
+  "report": "spec/projects/ai-agents--jan.md",
+  "analyzedSha": "14a720628f9592c8e60f7e081ef733076db8a6a9",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T14:37:31+08:00",
+  "observedSha": "a4f0ddde041761c09acbdb60d631c4f0486eb5ba",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a4f0ddde041761c09acbdb60d631c4f0486eb5ba",
+      "date": "2026-10-23T13:38:07+05:30",
+      "subject": "fix(agent-tools): resolve dangling symlinks and stop link swaps in write/edit (#9424)"
+    },
+    {
+      "sha": "ae1e73f4a127d668682117ef16fa77eb3b2b90b5",
+      "date": "2026-10-23T10:03:14+07:00",
+      "subject": "feat(llamacpp): upgrade the engine to 0.7.0 (b11669) (#9399)"
+    },
+    {
+      "sha": "ab7a7adf7c7964849dee655c4dfb70a857b6a81a",
+      "date": "2026-10-23T09:16:41+07:00",
+      "subject": "fix(chat): answer a shell call made while the shell is off instead of ending the turn (#9319) (#9392)"
+    },
+    {
+      "sha": "7a0f4a4e5755c0edf1eda09662c7bbf9af501a8d",
+      "date": "2026-10-23T09:16:36+07:00",
+      "subject": "fix(llamacpp): load router.preset.ini from a non-ASCII path on Windows (#9418)"
+    },
+    {
+      "sha": "dd7bd4f5f348ba424d91cee3069c39fabca3d708",
+      "date": "2026-10-22T15:40:19+05:30",
+      "subject": "feat(agent-cli): configure the web search provider from /settings and jan config (#9420)"
+    },
+    {
+      "sha": "44aee093ae5a974c31ec43d24ceca163c0e59c14",
+      "date": "2026-10-21T14:21:28+07:00",
+      "subject": "fix(chat): let a model without tool support take documents as prompt text (#9388)"
+    },
+    {
+      "sha": "e426db03fb3c0490493396b6bfd9db764447513a",
+      "date": "2026-10-21T13:20:53+07:00",
+      "subject": "fix(llamacpp): say local models are unsupported on an Intel Mac, not \"os error 86\" (#9387)"
+    },
+    {
+      "sha": "99f4ca28efa9fa514bb5eba5735b039929bdc6a3",
+      "date": "2026-10-21T09:11:35+07:00",
+      "subject": "ci: tell contributors when their commits aren't verified (#9359)"
+    },
+    {
+      "sha": "945c2ddd6843cca7dfc5c21ed6bb791fe7cb6749",
+      "date": "2026-10-21T09:11:26+07:00",
+      "subject": "fix(llamacpp): say the engine stopped instead of a raw connection error (#9181)"
+    },
+    {
+      "sha": "dfa2f3d757333549d60974438474b8b050fb75c7",
+      "date": "2026-10-21T09:11:09+07:00",
+      "subject": "ci: refresh the llama.cpp engine prebuilt from main so PR builds stop missing it (#9360)"
+    },
+    {
+      "sha": "8c0615520239ba668717c20dd3a1b0733549b8f3",
+      "date": "2026-10-20T17:45:32+07:00",
+      "subject": "fix(llamacpp): restart the engine when its GPU set changed, on Refresh and before a load (#9347, part 1) (#9348)"
+    },
+    {
+      "sha": "21e342a531b1782450588a898100abb6c6e469d4",
+      "date": "2026-10-20T10:03:00Z",
+      "subject": "fix(chat): inline an attachment once per request, not once per turn (#9022) (#9358)"
+    },
+    {
+      "sha": "e7cbcf6d232f331313fd646b9131793ab2c5dc5c",
+      "date": "2026-10-20T16:30:59+07:00",
+      "subject": "fix(chat): keep a tool-using turn running when the user opens another thread (#9311) (#9313)"
+    },
+    {
+      "sha": "ce8fcd25230d911e9d772156c882d88e0c428926",
+      "date": "2026-10-20T14:55:06+07:00",
+      "subject": "fix(web-app): show the unreachable-provider message in the model-fetch toast (#9351) (#9354)"
+    },
+    {
+      "sha": "498f3b000a0e4b970f76b0a92dd94b56f3d69d1b",
+      "date": "2026-10-20T13:30:42+07:00",
+      "subject": "fix(llamacpp): send engine requests direct, not through a proxy (#9352) (#9353)"
+    },
+    {
+      "sha": "a5de19bb9ad71b4bb0fdbc7c0df7827c41cf6cd1",
+      "date": "2026-10-20T13:29:46+07:00",
+      "subject": "fix(engine): stop mlx-server on SIGTERM and reap one left by a previous Jan (#9355)"
+    },
+    {
+      "sha": "b6e0d9cb322c704f76496282703a0b598cce39cf",
+      "date": "2026-10-20T12:14:21+07:00",
+      "subject": "docs(changelog): add the v0.8.7 entry (#9320)"
+    },
+    {
+      "sha": "648e8da55438150ccfab78808fa97a7a8e458c9f",
+      "date": "2026-10-19T16:54:42+07:00",
+      "subject": "fix(macos): explain why Jan asks for Local Network access (#9318)"
+    },
+    {
+      "sha": "0817df90d1468cdcd81d8800ea832664419cde8d",
+      "date": "2026-10-19T14:23:39+07:00",
+      "subject": "fix(agent-tools): prompt for a cmd command word that contains a caret (#9315) (#9316)"
+    },
+    {
+      "sha": "16ad13968930866a740124a778bbc95b8369b8ba",
+      "date": "2026-10-19T14:16:03+07:00",
+      "subject": "feat(chat): a switch to turn the shell tool off (#9222) (#9235)"
+    },
+    {
+      "sha": "f7926fede877fa0b6d161c6401e8bd972afd90f5",
+      "date": "2026-10-19T14:15:01+07:00",
+      "subject": "fix(cli): create the data folder when jan cli mcp add writes its first server (#9257) (#9280)"
+    },
+    {
+      "sha": "3f2db527a2b8c0301a084c119a4c753a51b65b40",
+      "date": "2026-10-19T13:56:55+07:00",
+      "subject": "fix(chat): keep a thread in its project after embedding attachments (#9197) (#9314)"
+    },
+    {
+      "sha": "1b06176d1ac4b658b9a98ca5878fac24a81abeba",
+      "date": "2026-10-19T13:56:31+07:00",
+      "subject": "feat(chat): add a separate, configurable image size limit (#9312)"
+    },
+    {
+      "sha": "ce7336a608ab63e63a80adfa8029750e72fb3f06",
+      "date": "2026-10-19T09:19:14+07:00",
+      "subject": "fix(chat): hold a built-in web page to the model's context window (#9283)"
+    },
+    {
+      "sha": "052da5503526f53b248b2b57cdac8ed83d445746",
+      "date": "2026-10-19T09:19:09+07:00",
+      "subject": "fix(downloads): say why a network error stopped a model download (#9294)"
+    },
+    {
+      "sha": "395d181fea4305e14695f95fb492fe7ef03c5321",
+      "date": "2026-10-19T09:18:22+07:00",
+      "subject": "fix(adk): keep host tools callable and contain listener failures (#9278)"
+    },
+    {
+      "sha": "f1dfc6c2a3f2c884c655c2abf7f368c75d72d19b",
+      "date": "2026-10-19T09:18:16+07:00",
+      "subject": "fix(app): remove the hosted Exa MCP default 0.8.3 wrote, as MCP schema 5 (#9010) (#9284)"
+    },
+    {
+      "sha": "9f313cfeaba360c22d1a23964afdda9bb264017e",
+      "date": "2026-10-19T09:18:10+07:00",
+      "subject": "fix(chat): leave an @token that is not a file in the prompt as typed (#9291) (#9296)"
+    },
+    {
+      "sha": "324e5669859fe4b625b2d1344c043c58b9348e15",
+      "date": "2026-10-19T09:17:52+07:00",
+      "subject": "fix(cli): give up on an MCP server that never answers initialize (#9281)"
+    },
+    {
+      "sha": "4045cf6eda7a8ea3d79ccbfd0db6a1ddf7a4ab0c",
+      "date": "2026-10-19T09:17:19+07:00",
+      "subject": "fix(providers): say why a model fetch failed instead of 'Unknown error' (#9292) (#9297)"
+    },
+    {
+      "sha": "d130acabca19f50451e0f7e39c7de7b3a9a09f2a",
+      "date": "2026-10-19T09:17:15+07:00",
+      "subject": "fix(agent-tui): copy through pbcopy on macOS so AppKit log lines stay off the terminal (#9300) (#9301)"
+    },
+    {
+      "sha": "a86d87ebcfb7eb542dbc548cd3a5936b4650c3c6",
+      "date": "2026-10-16T12:44:08+07:00",
+      "subject": "fix(ci): commit the rag plugin lockfile so a yanked zip 0.6 does not break resolution (#9298)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/setup-engine-toolchain/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/engine-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/jan-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/jan-linter-and-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/jan-tauri-build.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/signed-commits.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/template-tauri-build-windows-arm64.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adk/python/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adk/python/jan_adk/_generated.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adk/python/jan_adk/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adk/python/jan_adk/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adk/python/jan_adk/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adk/python/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "adk/python/tests/test_adk.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/_redirects",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/next-sitemap.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/DocSearch/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/Download/CardDownload.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/DropdownDownload/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/Navbar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/ui/dropdown-button.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/hooks/useDownloadLink.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/pages/changelog/2026-09-22-jan-v0.8.5.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/pages/changelog/2026-10-08-jan-v0.8.5.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/pages/changelog/2026-10-09-jan-v0.8.6.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/pages/changelog/2026-10-20-jan-v0.8.7.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/_meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/adk-nightly.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/console.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/context.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/files.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/pages/docs/agent/hide-secrets.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/keybindings.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/mcp.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/permissions.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/project-config.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/run-modes.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/slash-commands.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/subagents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/agent/telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/desktop/install/windows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/desktop/local-engine/llama-cpp.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/desktop/remote-models/custom-endpoint.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/desktop/troubleshooting.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/docs/desktop/web-search.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/research/jan-code-4b.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/pages/research/jan-v3-4b.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/utils/platform.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/helpers/mock-openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/specs/image-limit.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/wdio.conf.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/assistant-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/conversational-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/download-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/llamacpp-extension/src/loopback-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/src/preset.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/src/preset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/src/test/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/src/util.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/src/util.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/mlx-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/rag-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/vector-db-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flatpak/ai.jan.Jan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlx-server/Package.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adk/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adk/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adk/src/generated/rpc-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adk/src/index.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adk/src/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adk/tests/adk.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/rpc-schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "protocol/schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/install-jan-agent.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/otel-e2e/fake_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Info.plist",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/build-utils/buildAppImage.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/build-utils/engine-prebuilt.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/build-utils/shim-linuxdeploy.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/build-utils/stage-engine.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/jan-cli/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/jan-cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/jan-cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/jan-cli/tests/agent_rpc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/jan-cli/tests/stream_json_host_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/jan-cli/tests/tui_panic.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/jan-cli/tests/tui_suspend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/default_jan_skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/appcontainer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/cmdscan.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/gate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/handlers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/hooks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/jail.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/monitor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/nofollow.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/plugin_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/proc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/sandbox.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/schema.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/spill.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/web.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/tests/sandbox_spawn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-hardware/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-hardware/src/vendor/nvidia.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-hardware/src/vendor/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/guest-js/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/guest-js/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/jan-llama-worker.manifest",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/permissions/default.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/shim/jan_llama_shim.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/shim/jan_llama_shim.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/bin/jan-llama-worker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/driver.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/preset.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/slots.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/sys.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/watcher.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/engine/worker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/src/state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-mlx/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-mlx/src/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/plugins/tauri-plugin-rag/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-rag/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-rag/src/parser.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-vector-db/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-websearch/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-websearch/src/provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/agent/bg_shell.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/agent/builtin_subagents/debug.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/agent/builtin_subagents/explore.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/agent/builtin_subagents/general.toml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

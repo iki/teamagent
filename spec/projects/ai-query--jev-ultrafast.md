@@ -25,3 +25,7 @@ Probability syntax is not calibration. A response can be normalized and internal
 Borrow the finite-choice contract and build a provider-neutral adapter with deterministic fallback and abstention. Retain independent policy checks for permissions and side effects; a classifier never grants authority. Test stale observations, candidate changes, malformed distributions, near ties, unavailable providers and false completion. Calibrate confidence against task-specific held-out outcomes before using it to bypass a slower verifier.
 
 Related directions: [decisions](../decisions.md) · [agents](../agents.md) · [models](../models.md) · [channels](../channels.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [jev-ultrafast](https://github.com/browser-use/jev-ultrafast); analyzed commit `1231850a0bf1a0c0341fe408ef1668dbbfdfac46`; commit date 2026-09-18T09:28:35-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jev-ultrafast.md).
+<!-- teamagent-analysis:end -->

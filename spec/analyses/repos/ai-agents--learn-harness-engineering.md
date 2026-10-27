@@ -1,0 +1,177 @@
+# learn-harness-engineering: change evidence
+
+Source: [learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) · [Analysis](../../projects/ai-agents--learn-harness-engineering.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `38ddcd2bf8d65271f668b94e7c875ca1d629d622`; commit date: 2026-10-01T12:30:39+08:00; review date: unknown; observed SHA: `a9342ff471f2c0e60be0c08b9f4a7c502df4e442`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/walkinglabs/learn-harness-engineering/compare/38ddcd2bf8d65271f668b94e7c875ca1d629d622...a9342ff471f2c0e60be0c08b9f4a7c502df4e442). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [a9342ff471f2](https://github.com/walkinglabs/learn-harness-engineering/commit/a9342ff471f2c0e60be0c08b9f4a7c502df4e442) 2026-10-22T22:02:14+08:00: docs: correct cited course data across 15 locales (#92)
+- [95c42edf2563](https://github.com/walkinglabs/learn-harness-engineering/commit/95c42edf2563db22c400e36125270ba2059cc250) 2026-10-20T12:56:35+08:00: Revert course evidence audit across all 15 languages
+
+## Changed paths (truncated)
+
+- M: `docs/.vitepress/anchor-map.json`
+- M: `docs/ar/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/ar/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/ar/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/ar/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/ar/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/ar/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/ar/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/ar/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/ar/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/ar/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/ar/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/ar/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/ar/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/ar/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/ar/resources/reference/index.md`
+- M: `docs/de/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/de/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/de/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/de/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/de/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/de/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/de/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/de/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/de/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/de/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/de/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/de/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/de/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/de/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/de/resources/reference/index.md`
+- M: `docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/en/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/en/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/en/resources/reference/index.md`
+- M: `docs/es/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/es/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/es/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/es/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/es/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/es/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/es/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/es/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/es/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/es/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/es/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/es/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/es/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/es/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/es/resources/reference/index.md`
+- M: `docs/fr/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/fr/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/fr/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/fr/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/fr/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/fr/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/fr/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/fr/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/fr/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/fr/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/fr/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/fr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/fr/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/fr/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/fr/resources/reference/index.md`
+- M: `docs/ja/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/ja/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/ja/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/ja/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/ja/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/ja/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/ja/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/ja/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/ja/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/ja/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/ja/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/ja/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/ja/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/ja/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/ja/resources/reference/index.md`
+- M: `docs/ko/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/ko/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/ko/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/ko/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/ko/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/ko/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/ko/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/ko/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/ko/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/ko/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/ko/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/ko/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/ko/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/ko/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/ko/resources/reference/index.md`
+- M: `docs/pt-BR/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/pt-BR/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/pt-BR/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/pt-BR/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/pt-BR/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/pt-BR/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/pt-BR/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/pt-BR/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/pt-BR/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/pt-BR/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/pt-BR/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/pt-BR/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/pt-BR/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/pt-BR/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/pt-BR/resources/reference/index.md`
+- M: `docs/ru/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/ru/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/ru/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/ru/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/ru/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/ru/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/ru/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/ru/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/ru/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/ru/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/ru/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/ru/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/ru/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/ru/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/ru/resources/reference/index.md`
+- M: `docs/tr/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/tr/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/tr/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/tr/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/tr/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/tr/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/tr/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/tr/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/tr/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`
+- M: `docs/tr/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md`
+- M: `docs/tr/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md`
+- M: `docs/tr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md`
+- M: `docs/tr/lectures/lecture-13-loop-engineering/index.md`
+- M: `docs/tr/lectures/lecture-14-graph-engineering/index.md`
+- M: `docs/tr/resources/reference/index.md`
+- M: `docs/uk/lectures/lecture-01-why-capable-agents-still-fail/index.md`
+- M: `docs/uk/lectures/lecture-02-what-a-harness-actually-is/index.md`
+- M: `docs/uk/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md`
+- M: `docs/uk/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md`
+- M: `docs/uk/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md`
+- M: `docs/uk/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md`
+- M: `docs/uk/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md`
+- M: `docs/uk/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md`
+- M: `docs/uk/lectures/lecture-09-why-agents-declare-victory-too-early/index.md`

@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--ai.tanstack",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/tanstack/ai",
+  "report": "spec/projects/ai-agents--ai.tanstack.md",
+  "analyzedSha": "632fd806bb3e68e52a2a8eae937873c5defe6786",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T15:31:51Z",
+  "observedSha": "669fd31d995a7134e9f39f386181edc5085039b2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "669fd31d995a7134e9f39f386181edc5085039b2",
+      "date": "2026-10-27T11:25:47Z",
+      "subject": "test(ai-persistence): check persistence adapter skills (#1921)"
+    },
+    {
+      "sha": "60f1cfca6e28f58c2d2aabe76aa72cd93c9aaa66",
+      "date": "2026-10-27T12:20:58+01:00",
+      "subject": "ci: print failed coverage logs and cap vitest workers (#1920)"
+    },
+    {
+      "sha": "2f868416cc9d2fe0022f6c08417ed76ddcdadcbd",
+      "date": "2026-10-27T12:20:32+01:00",
+      "subject": "docs(ai-persistence): adapter skills always write all four chat tables (#1918)"
+    },
+    {
+      "sha": "97ea4045b21437b8885eac4ede886b600a1fd88e",
+      "date": "2026-10-27T11:23:02+01:00",
+      "subject": "docs(comparison): TanStack AI vs pi, single process and client/server (#1910)"
+    },
+    {
+      "sha": "ae976552710726b13b524c307c1b5bbe78478eb0",
+      "date": "2026-10-26T15:36:20Z",
+      "subject": "docs: video generation is no longer experimental (#1912)"
+    },
+    {
+      "sha": "f085015da1b77aee3cf95ca74a2e86ed9dbc1c29",
+      "date": "2026-10-26T15:35:25Z",
+      "subject": "fix(readme): correct npm badges and partner logo URLs (#1904)"
+    },
+    {
+      "sha": "8731d75d5fe969869824e17e2f4877bb89b8bdcb",
+      "date": "2026-10-26T14:35:13+11:00",
+      "subject": "fix(ai-gemini): run built-in tools beside function tools on Gemini 3 (#1897)"
+    },
+    {
+      "sha": "98055ca01af9e449d039f61e380b0d3c158acbb1",
+      "date": "2026-10-23T21:22:45+01:00",
+      "subject": "feat(maintainer): assign a PR to the assignee of the issue it closes (#1890)"
+    },
+    {
+      "sha": "5651e07e3181745984155ad88b65b86b8528844e",
+      "date": "2026-10-22T17:09:56+02:00",
+      "subject": "ci: Version Packages (#1861)"
+    },
+    {
+      "sha": "f7e7cce8f2d543a7480b626b7985417e054bfd8d",
+      "date": "2026-10-22T14:14:53Z",
+      "subject": "feat(ai-neon, openai-base): add the Neon AI Gateway adapter (#1851)"
+    },
+    {
+      "sha": "959f43e4b11112f2c097f642bdec34d8d0f83e27",
+      "date": "2026-10-22T13:36:07Z",
+      "subject": "feat(ai, ai-openai): EvaluateError keeps usage and answers when OpenAI refuses a question (#1743)"
+    },
+    {
+      "sha": "a5c2af3e93b8359209ea3c44856e4c06599387dc",
+      "date": "2026-10-22T15:15:58+02:00",
+      "subject": "fix(ai-harness): do not run a no-user input as the session owner (#1876)"
+    },
+    {
+      "sha": "39abb7ed172b4357bc04a39fc6cf7c3577f77cf3",
+      "date": "2026-10-22T14:56:13+02:00",
+      "subject": "chore: merge Tau changesets so the release changelog query fits (#1883)"
+    },
+    {
+      "sha": "9f1bdd61b4df1d16c23a6ce300fa0424ab824d6a",
+      "date": "2026-10-22T12:54:31Z",
+      "subject": "fix(ai-anthropic): keep the input usage when a stream fails after message_start (#1793)"
+    },
+    {
+      "sha": "56edf43c94a926566591e20c5739680eacb1515d",
+      "date": "2026-10-22T14:51:46+02:00",
+      "subject": "feat(ai-cloudflare): send defaultHeaders as extraHeaders on binding runs (#1568)"
+    },
+    {
+      "sha": "0e44e95a8dba1572295b505c398739147e111fa9",
+      "date": "2026-10-22T12:42:59Z",
+      "subject": "feat(adapters): set the HTTP status on a failed evaluate request (#1747)"
+    },
+    {
+      "sha": "39c1c79dc9b6c21329f659d9b4ba6968e9496983",
+      "date": "2026-10-22T13:59:17+02:00",
+      "subject": "feat(ai-harness): Tau (#1755)"
+    },
+    {
+      "sha": "456bdc4fa5dba2d01889d5073ffe2c418078ea07",
+      "date": "2026-10-22T12:46:00+02:00",
+      "subject": "chore: sync model metadata (#1882)"
+    },
+    {
+      "sha": "9f5a18a1837d54cc5dcb009837e23c16b4f55787",
+      "date": "2026-10-22T12:45:36+02:00",
+      "subject": "feat(ai-client): back off reconnects and retry temporary HTTP statuses (#1881)"
+    },
+    {
+      "sha": "781a3a82c870e246deff23c7aca32094e9aaaf2f",
+      "date": "2026-10-22T12:32:04+02:00",
+      "subject": "feat(ai): put the provider error type and request id on RUN_ERROR (#1880)"
+    },
+    {
+      "sha": "fa2a291f5526f6dec9a91fe5b71de15dfaf59ec7",
+      "date": "2026-10-22T11:11:07+02:00",
+      "subject": "fix(ai): allow text adapters under exactOptionalPropertyTypes (#1869)"
+    },
+    {
+      "sha": "85204eaf1a02ec4bbebc9f8390233221a81bc21c",
+      "date": "2026-10-22T11:10:55+02:00",
+      "subject": "fix(openai-base): replay assistant text before its function calls (#1870)"
+    },
+    {
+      "sha": "f6a27bc33198bff58415dfe8d107f1d5b9525e83",
+      "date": "2026-10-22T11:09:55+02:00",
+      "subject": "fix(ai-persistence): save activity rows when a run is stopped or fails (#1875)"
+    },
+    {
+      "sha": "49dbcf92e80f20b98707d800dcf30e90b2e20d32",
+      "date": "2026-10-22T11:09:44+02:00",
+      "subject": "feat(ai-vercel-gateway): put gateway cost on usage (#1873)"
+    },
+    {
+      "sha": "028f30f948181188f00fa33d3ed423b86e47774e",
+      "date": "2026-10-22T11:09:30+02:00",
+      "subject": "fix(openai-base): keep length when a tool call is cut off (#1874)"
+    },
+    {
+      "sha": "460e50689522848e918521a1ebf3dcc3cf79cd07",
+      "date": "2026-10-22T11:09:16+02:00",
+      "subject": "fix(ai-opencode): bound memory while buffering stream parts (#1862)"
+    },
+    {
+      "sha": "d980ce153371404d71b6d4ceac37b0c8293df1d8",
+      "date": "2026-10-22T10:23:04+02:00",
+      "subject": "fix(ai-mcp): send Mcp-Param headers on spec 2026 tool calls (#1871)"
+    },
+    {
+      "sha": "fe83aa05fe2346c50693664d4a4896d4fc1fea5a",
+      "date": "2026-10-22T10:21:23+02:00",
+      "subject": "fix(models): remove model ids that providers have retired (#1868)"
+    },
+    {
+      "sha": "3e84606afb2d0550520d3f2a4cb8ea88b0a9cdf8",
+      "date": "2026-10-22T17:39:09+11:00",
+      "subject": "feat(ai-mcp): experimental MCP Events (SEP-3415) webhook support (#1816)"
+    },
+    {
+      "sha": "ec9023e9be665fbd0ffea3e639280c2216edc16c",
+      "date": "2026-10-22T17:38:14+11:00",
+      "subject": "feat(ai-anthropic): server-side refusal fallback, and refusals finish with content_filter (#1835)"
+    },
+    {
+      "sha": "483f59ac202cf913c6737a379abfb0953afebe56",
+      "date": "2026-10-22T17:23:58+11:00",
+      "subject": "fix(ai-openai): drop sampling params on gpt-6 reasoning models unless effort is none (#1857)"
+    },
+    {
+      "sha": "893baeca30e3dad247292ac2733357e8cc558ae8",
+      "date": "2026-10-22T08:09:32+02:00",
+      "subject": "ci: group the oxc lint toolchain in Renovate (#1860)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agent/domain-map.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agent/self-learning/lessons/2026-06-23-authoring-kiira-doc-snippets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/add-example-tutorial/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/docs/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/code-mode-stubs-enum-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/gemini-server-tool-invocations.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/npm-readme-badges.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/persistence-skill-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/persistence-skills-four-tables.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/video-not-experimental.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/add-example-tutorial/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/docs/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/renovate.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ai-review-signal.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ai-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sync-models.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".grok/skills/add-example-tutorial/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".grok/skills/docs/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/comments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/comments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/event.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/event.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-scripts/ai-review/files.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-scripts/ai-review/files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/git.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/git.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/labels.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/labels.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/pr.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/pr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/run.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/secure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-scripts/ai-review/security.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-scripts/ai-review/tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-scripts/ai-review/tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "codemods/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "codemods/ag-ui-compliance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "codemods/ag-ui-compliance/transform.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/acp-compatible.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adapters/anthropic-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/anthropic.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/bedrock.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adapters/byteplus-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/byteplus.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/claude-code.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/cloudflare.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/codex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/cohere.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/elevenlabs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/fal.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adapters/gemini-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/gemini.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/grok-build.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/grok.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/groq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/llmgateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/lovable.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/mistral.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adapters/neon.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/ollama.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/ollaya.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adapters/openai-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adapters/openai-compatible-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/openai-compatible.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/openai.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/opencode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adapters/openrouter-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/openrouter.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/perplexity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/reactor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/typesafe.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/vercel-gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/vertex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adapters/worldlabs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/built-in-middleware.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/byok.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/advanced/compaction-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/compaction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/debug-logging.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/advanced/extend-adapter-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/extend-adapter.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/files-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/locks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/advanced/mid-conversation-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/advanced/middleware-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/middleware.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/multimodal-content.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/otel.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/per-model-type-safety.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/advanced/prompt-caching.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/runtime-adapter-switching.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/runtime-context.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/advanced/server-keys.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/advanced/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/tree-shaking.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/typed-options.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-angular.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-client.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-octane.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-preact.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-react.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-remix.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-solid.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-svelte.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai-vue.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/ai.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/approval-flow-processing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat/agentic-cycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/chat/connection-adapters.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat/queueing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/chat/reasoning.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat/stream-events.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat/streaming.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat/structured-outputs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/chat/subagents-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat/subagents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/chat/thinking-content.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/code-mode/client-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/code-mode/code-mode-isolates.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/code-mode/code-mode-with-snippets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/code-mode/code-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/code-mode/lazy-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/cencori.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/cloudflare.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/decart.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/mynth.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/soniox.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community-adapters/upstash.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/comparison/pi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/comparison/vercel-ai-sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/computer-use/computer-use.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/computer-use/custom-driver.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/computer-use/drivers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/computer-use/safety-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/embeddings.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/evaluate/evaluate.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/agent-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/devtools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/quick-start-react-native.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/quick-start-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/quick-start.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/harness/access.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/harness/acp.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/harness/agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/harness/auth.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/harness/cli.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

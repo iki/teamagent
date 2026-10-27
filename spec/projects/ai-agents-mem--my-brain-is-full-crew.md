@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [my-brain-is-full-crew](https://github.com/gnekt/my-brain-is-full-crew); analyzed commit `238ae8c45301cc1ad8ef338288720cee1f0ada93`; commit date 2026-06-27T11:38:17+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--my-brain-is-full-crew.md).
+<!-- teamagent-analysis:end -->

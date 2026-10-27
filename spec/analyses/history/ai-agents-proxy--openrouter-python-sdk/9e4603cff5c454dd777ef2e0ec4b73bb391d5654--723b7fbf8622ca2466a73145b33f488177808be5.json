@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-proxy--openrouter-python-sdk",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/OpenRouterTeam/python-sdk",
+  "report": "spec/projects/ai-agents-proxy--openrouter-python-sdk.md",
+  "analyzedSha": "9e4603cff5c454dd777ef2e0ec4b73bb391d5654",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T21:49:15Z",
+  "observedSha": "723b7fbf8622ca2466a73145b33f488177808be5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "723b7fbf8622ca2466a73145b33f488177808be5",
+      "date": "2026-10-23T18:01:51Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.80 (#1139)"
+    },
+    {
+      "sha": "6d6a8c3936b746bc623088089b79b58735e4adcf",
+      "date": "2026-10-23T17:56:18Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1138)"
+    },
+    {
+      "sha": "f2af2b8de9b03bdc1a4d449d9f8d6502631dcba9",
+      "date": "2026-10-23T02:29:50Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.79 (#1137)"
+    },
+    {
+      "sha": "56deda928944a0d3f6785431a5582800bc955c0d",
+      "date": "2026-10-23T02:23:44Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1136)"
+    },
+    {
+      "sha": "de073d0245d75ff40b710a33c979843559d63c44",
+      "date": "2026-10-22T23:38:04Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.78 (#1135)"
+    },
+    {
+      "sha": "202e127b03f8fd0c8e751d97dd13e91b14df2534",
+      "date": "2026-10-22T23:31:00Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1134)"
+    },
+    {
+      "sha": "67c04f1b1fbede84245a70d897ca2b1e8b87efbe",
+      "date": "2026-10-22T12:43:54-07:00",
+      "subject": "ci: pin GitHub Actions to commit SHAs (#1130)"
+    },
+    {
+      "sha": "4e3b3f15d7fb77e4a55392afbe126294edc316b5",
+      "date": "2026-10-22T18:26:49Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.77 (#1132)"
+    },
+    {
+      "sha": "fa27a7cecdca9e2240e21a2bee336981fb86eac3",
+      "date": "2026-10-22T18:20:27Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1131)"
+    },
+    {
+      "sha": "064849c401a191fa9ccc677dae89c602c7389db6",
+      "date": "2026-10-22T17:50:09Z",
+      "subject": "ci: pin GitHub Actions to commit SHAs"
+    },
+    {
+      "sha": "74ae282a01ff7bfdf9a020e97f8226424d612562",
+      "date": "2026-10-22T01:22:09Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.76 (#1128)"
+    },
+    {
+      "sha": "e8155f3c092e5e273ba66c96ed43fd6f1131d711",
+      "date": "2026-10-22T01:15:23Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1126)"
+    },
+    {
+      "sha": "abd46220b3d1ff69196c00879efe818262ee4ade",
+      "date": "2026-10-22T00:00:01Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.75 (#1125)"
+    },
+    {
+      "sha": "dbd196fdc7c2359eefd0a4daa5d3d6c7e977027f",
+      "date": "2026-10-21T23:53:11Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1124)"
+    },
+    {
+      "sha": "0823deac9c1a12a6b792ff3e002d7d4e1d3df183",
+      "date": "2026-10-21T21:51:29Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.74 (#1123)"
+    },
+    {
+      "sha": "c10da19fcb72b4d09963785a355d27ba714cbe07",
+      "date": "2026-10-21T21:46:02Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1122)"
+    },
+    {
+      "sha": "bd47ef4ef634959cb45d97dd2f4e0f136e94d4c2",
+      "date": "2026-10-21T18:25:05Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.73 (#1121)"
+    },
+    {
+      "sha": "fff3c6d794025c602d1020f1cbd3f2a503c718f7",
+      "date": "2026-10-21T18:18:09Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1120)"
+    },
+    {
+      "sha": "11378d93e8fb9f45a3c8bf00f6fb857e4f9289e5",
+      "date": "2026-10-21T12:09:58-05:00",
+      "subject": "fix: allow pydantic 2.13+, run pytest in PR validation, drop committed output.zip (#1014)"
+    },
+    {
+      "sha": "9e299f4399c7654ec1e39088756b6c0bd7663093",
+      "date": "2026-10-21T17:05:32Z",
+      "subject": "test: assert beta.responses still covers the GA responses surface"
+    },
+    {
+      "sha": "969de763bf5371a32ee7a3d11f3fab76b0827ae6",
+      "date": "2026-10-21T17:01:02Z",
+      "subject": "fix: allow pydantic 2.13+, run pytest in PR validation, drop committed output.zip"
+    },
+    {
+      "sha": "ba527866b3bb35fe280125c3ade2ca2e3e49719c",
+      "date": "2026-10-21T16:23:12Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.72 (#1114)"
+    },
+    {
+      "sha": "30dce21c6435a5aed587ad9f6e56c843ac4a013f",
+      "date": "2026-10-21T16:16:14Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1113)"
+    },
+    {
+      "sha": "35042ec7fbbd863a5807f8cac35e5b93c88576ec",
+      "date": "2026-10-21T04:31:14Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.71 (#1112)"
+    },
+    {
+      "sha": "7866bf68d26dbaa20fca3e27c6442f4a07de3ac9",
+      "date": "2026-10-21T04:24:31Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1111)"
+    },
+    {
+      "sha": "0fa9460b4428c07100b5ff2d24420152e74265d5",
+      "date": "2026-10-21T00:11:03Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.70 (#1110)"
+    },
+    {
+      "sha": "7b5b79e36f296fd408899b7b8eeaf397701e8234",
+      "date": "2026-10-21T00:04:18Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1109)"
+    },
+    {
+      "sha": "586c2b3d5373e220d91af4c9523955e157b8f7ab",
+      "date": "2026-10-20T19:53:18Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.69 (#1108)"
+    },
+    {
+      "sha": "6433edc4dcd09bfb99a26e7b733f0e1f32c47a4a",
+      "date": "2026-10-20T19:46:23Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1107)"
+    },
+    {
+      "sha": "0b3c9f6e38b027ba48b1d1876d4473bdb65c66f2",
+      "date": "2026-10-19T19:47:39Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.68 (#1106)"
+    },
+    {
+      "sha": "a7940fb9a757e4086ff7a24cf070ea3a69465aef",
+      "date": "2026-10-19T19:40:42Z",
+      "subject": "chore: update OpenAPI spec from monorepo (#1105)"
+    },
+    {
+      "sha": "a6d9d5aa3a0efe1a01fffa161b3bb9de9ec1e1b8",
+      "date": "2026-10-19T17:08:48Z",
+      "subject": "chore: 🐝 Update SDK - Generate (spec change merged) 1.3.67 (#1104)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-nav.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-validation.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk_generation.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk_generation_for_spec_change.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk_publish.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/gen.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/gen.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/in.openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/out.openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/workflow.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/aabenchmarkentry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/activityitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/activityresponse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/additionaltoolsitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/components/additionaltoolsitemallowedcaller.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/additionaltoolsitemtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/additionaltoolsitemtoolfunction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/advisorreasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/advisorservertoolconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/advisorservertoolopenrouter.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/agentmessageitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/agentmessageitemcontentinputimage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignment.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentallowedcallrecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentblockedcallrecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentchataudio.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentchatimage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentchatimageimageurl.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentchatrejected.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentchattoolcall.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentchattoolcallfunction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentpluginmode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/components/alignmentrule.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentrulerecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/alignmentunavailablecallrecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "R053",
+      "path": "docs/components/allow.mdx",
+      "previousPath": "docs/components/code.mdx"
+    },
+    {
+      "status": "M",
+      "path": "docs/components/allowedtools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/always.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/annotationaddedevent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/annotationfile.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/annotationurlcitation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/annotationwebsearchcitation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/answers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicadvisormessageusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicadvisortoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicbase64imagesource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicbase64pdfsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicbashcodeexecutionoutput.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicbashcodeexecutionresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicbashcodeexecutiontoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicbashcodeexecutiontoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccachecontroldirective.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccachecreation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationcharlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationcharlocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationcontentblocklocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationcontentblocklocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationpagelocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationpagelocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationsconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationsearchresultlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationsearchresultlocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationwebsearchresultlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccitationwebsearchresultlocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccodeexecution20250825caller.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccodeexecution20260120caller.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccodeexecutionoutput.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccodeexecutionresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccodeexecutiontoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccodeexecutiontoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccompactionblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccompactionusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccontainer.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccontainerskill.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiccontainerupload.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicdirectcaller.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicdocumentblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicdocumentblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicdocumentblockparamcitations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicencryptedcodeexecutionresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicfile.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicfiledeleted.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicfiledocumentsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicfilelist.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicimageblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicinputtokensclearatleast.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicinputtokenstrigger.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicinputtransformation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropiciterationcachecreation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicmessageoutputconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicmessageusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicoutputtokensdetails.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicplaintextsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicredactedthinkingblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicrefusalstopdetails.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicsafeguard.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicsearchresultblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicsearchresultblockparamcitations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicservertoolusage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictextblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictextblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictexteditorcodeexecutioncreateresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictexteditorcodeexecutionstrreplaceresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictexteditorcodeexecutiontoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictexteditorcodeexecutiontoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictexteditorcodeexecutionviewresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicthinkingblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicthinkingblockbinding.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicthinkingturns.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictoolreference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictoolsearchresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictoolsearchresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictoolsearchtoolbm25.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictoolsearchtoolregex.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictoolsearchtoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictooluseblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictooluseskeep.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropictoolusestrigger.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicunknownusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicurlimagesource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicurlpdfsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebfetchblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebfetchtoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebfetchtoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebsearchresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebsearchresultblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebsearchtoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebsearchtoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/anthropicwebsearchtooluserlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchcallitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchcalloperationdiffdeltaevent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchcalloperationdiffdoneevent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchcalloutputitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchcreatefileoperation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchdeletefileoperation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchservertool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchservertoolconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchservertoolopenrouter.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/applypatchupdatefileoperation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/apprankingsitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/apprankingsresponse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/architecture.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/components/armorautomode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "R064",
+      "path": "docs/components/armorcontext.mdx",
+      "previousPath": "docs/components/updateinternrequest.mdx"
+    },
+    {
+      "status": "R052",
+      "path": "docs/components/armorenvironmententry.mdx",
+      "previousPath": "docs/components/provisioninternresponse.mdx"
+    },
+    {
+      "status": "A",
+      "path": "docs/components/armorplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/components/armorpluginid.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/components/armorpluginmode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "R063",
+      "path": "docs/components/armorrule.mdx",
+      "previousPath": "docs/components/internchatchoice.mdx"
+    },
+    {
+      "status": "A",
+      "path": "docs/components/armorsafeguardresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/components/armorsafeguardresultoutcome.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/components/armorsafeguardresultstatus.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/audiourl.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/autobetarouterplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/autorouterplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/components/badgatewayresponseerrordata.mdx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

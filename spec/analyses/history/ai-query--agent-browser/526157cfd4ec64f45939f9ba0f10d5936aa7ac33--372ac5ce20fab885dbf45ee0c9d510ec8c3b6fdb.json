@@ -1,0 +1,974 @@
+{
+  "id": "ai-query--agent-browser",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/vercel-labs/agent-browser",
+  "report": "spec/projects/ai-query--agent-browser.md",
+  "analyzedSha": "526157cfd4ec64f45939f9ba0f10d5936aa7ac33",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T03:28:26-03:00",
+  "observedSha": "372ac5ce20fab885dbf45ee0c9d510ec8c3b6fdb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "372ac5ce20fab885dbf45ee0c9d510ec8c3b6fdb",
+      "date": "2026-10-23T11:25:50-07:00",
+      "subject": "feat(cdp): wait briefly for a CDP port that is not listening yet (#2159)"
+    },
+    {
+      "sha": "de385ad70cfd4f7234fad0e5a327c8d8f53a2a44",
+      "date": "2026-10-23T10:56:19-07:00",
+      "subject": "fix(windows): stop the detached daemon from holding the CLI's output pipes (#2160)"
+    },
+    {
+      "sha": "0049bfd11a71d61bfec277e79f0bc41d62c943cc",
+      "date": "2026-10-23T10:54:39-07:00",
+      "subject": "fix(dashboard): keep chat commands in the thread's own session (#2190)"
+    },
+    {
+      "sha": "5a22069c21e76decc9d633cc7f25948552a44cc7",
+      "date": "2026-10-23T10:54:17-07:00",
+      "subject": "fix(chrome): mark a copied profile as cleanly closed (#2189)"
+    },
+    {
+      "sha": "cda799431f25f2af8ffb886ac9623a3f07434f63",
+      "date": "2026-10-23T10:54:03-07:00",
+      "subject": "fix(daemon): only signal PIDs that belong to agent-browser (#2183)"
+    },
+    {
+      "sha": "5557fd7c886a152930c811348e68d6299ecac40f",
+      "date": "2026-10-23T10:53:50-07:00",
+      "subject": "fix(inspect): reject WebSocket clients from other origins (#2182)"
+    },
+    {
+      "sha": "df247a94d579710c85337a22765584bf7b9959ec",
+      "date": "2026-10-23T10:53:30-07:00",
+      "subject": "fix(mcp): stop extraArgs from overriding the operator's limits (#2181)"
+    },
+    {
+      "sha": "db57583f35cd73aecd7f310d53a012bf7ca557eb",
+      "date": "2026-10-23T10:53:14-07:00",
+      "subject": "fix(config): stop an auto-discovered project file from running programs (#2180)"
+    },
+    {
+      "sha": "6f3f2e2fb98d6b4dfd21adbe862d6c685890ef7f",
+      "date": "2026-10-23T10:52:57-07:00",
+      "subject": "fix(auth): keep the encryption key when the configured one is invalid (#2178)"
+    },
+    {
+      "sha": "50c34e78c98dbe8add0b3ff36b4bcd7a47f1022b",
+      "date": "2026-10-22T13:21:46-05:00",
+      "subject": "Prepare v0.39.2 release (#2196)"
+    },
+    {
+      "sha": "468c0526c884722afd9c10bcc0d5b09ed4c0c5d1",
+      "date": "2026-10-21T12:47:44-07:00",
+      "subject": "fix(policy): fail closed when the policy file cannot be loaded (#2179)"
+    },
+    {
+      "sha": "f587e26f6c4434a73baaa4cf1455d0c257636254",
+      "date": "2026-10-21T10:54:47-07:00",
+      "subject": "fix(native): drop targets and sessions invalidated in the same event batch (#2176)"
+    },
+    {
+      "sha": "fd93075e55a21a47fcb36d7433361daa867a0580",
+      "date": "2026-10-20T15:17:30-07:00",
+      "subject": "fix(refs): refuse ambiguous stale-ref recovery (#2145)"
+    },
+    {
+      "sha": "d94d900d49121bba9558cbfa254a02b51f2f5f49",
+      "date": "2026-10-20T15:13:36-07:00",
+      "subject": "fix(cdp): keep the attached browser across follow-up commands (#2155)"
+    },
+    {
+      "sha": "f2eb99f2253e67a54567f91a8a8a9f8825eb6a33",
+      "date": "2026-10-20T15:12:11-07:00",
+      "subject": "fix(click): fail on hidden, disabled, or off-viewport elements (#2173)"
+    },
+    {
+      "sha": "15085463e84d3ccab7bb0d1d3a67ccd189975807",
+      "date": "2026-10-20T15:11:57-07:00",
+      "subject": "fix(mcp): reject arguments the tool schema does not declare (#2175)"
+    },
+    {
+      "sha": "1e543043630bc57b1881b4b29e049fd73e6d1815",
+      "date": "2026-10-20T15:07:43-07:00",
+      "subject": "fix(cli): keep commas inside --args values (#2141)"
+    },
+    {
+      "sha": "5ee8691339a5a002e4d7454eec95250253bc7419",
+      "date": "2026-10-19T16:15:23-04:00",
+      "subject": "fix(eve): update to latest eve for tool contract compatibility (#2157)"
+    },
+    {
+      "sha": "dac13bb87468fe9d74a040d862720f6cc17a9565",
+      "date": "2026-10-15T02:24:15-03:00",
+      "subject": "fix: report an error when the domain filter blocks a redirect (#2114)"
+    },
+    {
+      "sha": "76704c07525e35ad30c53cea70c864b6e2c99cbb",
+      "date": "2026-10-15T02:23:51-03:00",
+      "subject": "test(e2e): make native E2E pass without live sites or a missing Obscura binary (#2113)"
+    },
+    {
+      "sha": "518f6e5d73f92a403acfd07d5e5cfec0f79dcb77",
+      "date": "2026-10-14T15:01:03-03:00",
+      "subject": "fix: never drop paused requests when the CDP broadcast lags (#2110)"
+    },
+    {
+      "sha": "1165952d74ceed98fdc2dd97190ad41f44dd0e24",
+      "date": "2026-10-13T13:04:48-05:00",
+      "subject": "Prepare v0.39.1 release (#2105)"
+    },
+    {
+      "sha": "d9570915f4dd6504dee4070379d2c4f79d81dbb2",
+      "date": "2026-10-10T22:44:10-03:00",
+      "subject": "fix(cli): don't re-send a command after it reached the daemon (#2085)"
+    },
+    {
+      "sha": "44af39842650f0bb9c1afb7354df9a82921d4f09",
+      "date": "2026-10-09T15:06:37-03:00",
+      "subject": "Prepare v0.39.0 release (#2058)"
+    },
+    {
+      "sha": "0207911f1bd4d0393eddaa90f2e50f96e0fb8974",
+      "date": "2026-10-07T22:44:20-03:00",
+      "subject": "feat(cli): trust private CAs in CLI HTTPS requests (#2006)"
+    },
+    {
+      "sha": "98e8c79e2a1a8a8e7a88f22e4dbe89bfac232eba",
+      "date": "2026-10-07T14:32:11-03:00",
+      "subject": "test(docs): drop migration-only content snapshot checks (#2057)"
+    },
+    {
+      "sha": "f7c8b071343dda29477a56cb336ea76144c05496",
+      "date": "2026-10-06T13:28:38-03:00",
+      "subject": "fix(daemon): keep accepting connections while a command holds the state lock (#2059)"
+    },
+    {
+      "sha": "6d3e22c673a44271d0c213c2fef722e0aeba627d",
+      "date": "2026-10-06T00:34:17-03:00",
+      "subject": "docs: migrate to Geistdocs (#1887)"
+    },
+    {
+      "sha": "efee3893d9080fcacb1aa6c9a21d13fbc6021f20",
+      "date": "2026-10-06T00:21:51-03:00",
+      "subject": "fix(cdp): give auto-connect time to approve the remote-debugging prompt (#2026)"
+    },
+    {
+      "sha": "1b1a683e3a1caad2dbecb3a93773d79294d12e60",
+      "date": "2026-10-06T00:21:46-03:00",
+      "subject": "feat(engine): add experimental Obscura support (#1876)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-browser.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/ca_bundle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/chat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/connection.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/doctor/chrome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/doctor/network.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/flags.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/install.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/mcp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/actions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/browser.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/cdp/chrome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/cdp/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/cdp/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/native/cdp/obscura.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/daemon.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/e2e_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/element.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/inspect_server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/interaction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/native/stream/chat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/native/test_fixtures/obscura_probe.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/output.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/plugins.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/read.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/tls.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/upgrade.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/ca-a.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/ca-b.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/expired.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/install.key",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/install.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/server-a.key",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/server-a.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/server-b.key",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/fixtures/tls/server-b.pem",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/obscura_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/tls_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "R089",
+      "path": "docs/content/docs/cdp-mode.mdx",
+      "previousPath": "docs/src/app/cdp-mode/page.mdx"
+    },
+    {
+      "status": "R095",
+      "path": "docs/content/docs/changelog.mdx",
+      "previousPath": "docs/src/app/changelog/page.mdx"
+    },
+    {
+      "status": "R097",
+      "path": "docs/content/docs/commands.mdx",
+      "previousPath": "docs/src/app/commands/page.mdx"
+    },
+    {
+      "status": "R089",
+      "path": "docs/content/docs/configuration.mdx",
+      "previousPath": "docs/src/app/configuration/page.mdx"
+    },
+    {
+      "status": "R095",
+      "path": "docs/content/docs/dashboard.mdx",
+      "previousPath": "docs/src/app/dashboard/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/debugging.mdx",
+      "previousPath": "docs/src/app/debugging/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/diffing.mdx",
+      "previousPath": "docs/src/app/diffing/page.mdx"
+    },
+    {
+      "status": "R091",
+      "path": "docs/content/docs/engines/chrome.mdx",
+      "previousPath": "docs/src/app/engines/chrome/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/engines/lightpanda.mdx",
+      "previousPath": "docs/src/app/engines/lightpanda/page.mdx"
+    },
+    {
+      "status": "A",
+      "path": "docs/content/docs/engines/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/content/docs/engines/obscura.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/eve.mdx",
+      "previousPath": "docs/src/app/eve/page.mdx"
+    },
+    {
+      "status": "R097",
+      "path": "docs/content/docs/files.mdx",
+      "previousPath": "docs/src/app/files/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/index.mdx",
+      "previousPath": "docs/src/app/page.mdx"
+    },
+    {
+      "status": "R097",
+      "path": "docs/content/docs/init-scripts.mdx",
+      "previousPath": "docs/src/app/init-scripts/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/installation.mdx",
+      "previousPath": "docs/src/app/installation/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/ios.mdx",
+      "previousPath": "docs/src/app/ios/page.mdx"
+    },
+    {
+      "status": "A",
+      "path": "docs/content/docs/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "R079",
+      "path": "docs/content/docs/native-mode.mdx",
+      "previousPath": "docs/src/app/native-mode/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/network.mdx",
+      "previousPath": "docs/src/app/network/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/next.mdx",
+      "previousPath": "docs/src/app/next/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/plugins.mdx",
+      "previousPath": "docs/src/app/plugins/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/profiler.mdx",
+      "previousPath": "docs/src/app/profiler/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/providers/agentcore.mdx",
+      "previousPath": "docs/src/app/providers/agentcore/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/providers/browser-use.mdx",
+      "previousPath": "docs/src/app/providers/browser-use/page.mdx"
+    },
+    {
+      "status": "R093",
+      "path": "docs/content/docs/providers/browserbase.mdx",
+      "previousPath": "docs/src/app/providers/browserbase/page.mdx"
+    },
+    {
+      "status": "R096",
+      "path": "docs/content/docs/providers/browserless.mdx",
+      "previousPath": "docs/src/app/providers/browserless/page.mdx"
+    },
+    {
+      "status": "R097",
+      "path": "docs/content/docs/providers/kernel.mdx",
+      "previousPath": "docs/src/app/providers/kernel/page.mdx"
+    },
+    {
+      "status": "A",
+      "path": "docs/content/docs/providers/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "R097",
+      "path": "docs/content/docs/providers/remote-agent-browser.mdx",
+      "previousPath": "docs/src/app/providers/remote-agent-browser/page.mdx"
+    },
+    {
+      "status": "R067",
+      "path": "docs/content/docs/proxy.mdx",
+      "previousPath": "docs/src/app/proxy/page.mdx"
+    },
+    {
+      "status": "R098",
+      "path": "docs/content/docs/quick-start.mdx",
+      "previousPath": "docs/src/app/quick-start/page.mdx"
+    },
+    {
+      "status": "R097",
+      "path": "docs/content/docs/react.mdx",
+      "previousPath": "docs/src/app/react/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/recording.mdx",
+      "previousPath": "docs/src/app/recording/page.mdx"
+    },
+    {
+      "status": "R097",
+      "path": "docs/content/docs/security.mdx",
+      "previousPath": "docs/src/app/security/page.mdx"
+    },
+    {
+      "status": "R096",
+      "path": "docs/content/docs/selectors.mdx",
+      "previousPath": "docs/src/app/selectors/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/sessions.mdx",
+      "previousPath": "docs/src/app/sessions/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/skills.mdx",
+      "previousPath": "docs/src/app/skills/page.mdx"
+    },
+    {
+      "status": "R092",
+      "path": "docs/content/docs/snapshots.mdx",
+      "previousPath": "docs/src/app/snapshots/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/streaming.mdx",
+      "previousPath": "docs/src/app/streaming/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/webgpu.mdx",
+      "previousPath": "docs/src/app/webgpu/page.mdx"
+    },
+    {
+      "status": "R099",
+      "path": "docs/content/docs/webmcp.mdx",
+      "previousPath": "docs/src/app/webmcp/page.mdx"
+    },
+    {
+      "status": "M",
+      "path": "docs/eslint.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mdx-components.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/next.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/public/schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scripts/capture-docs-baseline.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scripts/test-routes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/source.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/[lang]/(docs)/[[...slug]]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/[lang]/(docs)/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/app/api/docs-chat/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/app/api/docs-markdown/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/api/docs-md/[[...slug]]/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/api/mcp/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/app/api/search/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/cdp-mode/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/changelog/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/commands/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/configuration/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/dashboard/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/debugging/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/diffing/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/engines/chrome/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/engines/lightpanda/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/eve/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/files/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/app/globals.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/init-scripts/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/installation/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/ios/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/app/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/llms.txt/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/native-mode/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/network/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/next/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/plugins/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/profiler/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/providers/agentcore/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/providers/browser-use/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/providers/browserbase/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/providers/browserless/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/providers/kernel/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/providers/remote-agent-browser/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/proxy/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/quick-start/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/react/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/recording/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/robots.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/security/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/selectors/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/sessions/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/sitemap.md/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/app/sitemap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/skills/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/snapshots/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/streaming/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/webgpu/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/src/app/webmcp/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/docs-chat.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/components/geistdocs-provider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/theme-provider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/components/theme-toggle.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/lib/docs-navigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/lib/docs-response-headers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/lib/docs-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/lib/geistdocs/config.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/lib/geistdocs/source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/lib/page-metadata.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

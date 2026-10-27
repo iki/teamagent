@@ -1,0 +1,177 @@
+# bundle.mindrally: change evidence
+
+Source: [bundle.mindrally](https://github.com/Mindrally/skills) · [Analysis](../../projects/ai-skills--bundle.mindrally.md) · [skills](../../skills.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `97184105b5daa3a6860a2aeb8e7e7fd1c42da40a`; commit date: 2026-09-03T10:58:58-05:00; review date: unknown; observed SHA: `7682ca77710e0971eab4e0ae5dddfa281aea0ba5`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Mindrally/skills/compare/97184105b5daa3a6860a2aeb8e7e7fd1c42da40a...7682ca77710e0971eab4e0ae5dddfa281aea0ba5). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [7682ca77710e](https://github.com/Mindrally/skills/commit/7682ca77710e0971eab4e0ae5dddfa281aea0ba5) 2026-10-08T18:37:42-05:00: feat: promotion pass — badges, bundles, plugin marketplace, contributor files, maintainer metadata
+- [e1df6f859ea3](https://github.com/Mindrally/skills/commit/e1df6f859ea3e8d2c2aa660b9176ec19d8835a7a) 2026-10-08T18:26:33-05:00: docs: make npx skills the sole install method in README
+
+## Changed paths (truncated)
+
+- A: `.claude-plugin/marketplace.json`
+- A: `.claude-plugin/plugin.json`
+- A: `.github/ISSUE_TEMPLATE/config.yml`
+- A: `.github/ISSUE_TEMPLATE/skill_bug.yml`
+- A: `.github/ISSUE_TEMPLATE/skill_request.yml`
+- A: `.github/PULL_REQUEST_TEMPLATE.md`
+- A: `CHANGELOG.md`
+- A: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `accessibility-a11y/SKILL.md`
+- M: `alpine-js/SKILL.md`
+- M: `analytics-data-analysis/SKILL.md`
+- M: `android-development/SKILL.md`
+- M: `angular-development/SKILL.md`
+- M: `angular/SKILL.md`
+- M: `anime-js/SKILL.md`
+- M: `anthropic-claude-development/SKILL.md`
+- M: `api-development/SKILL.md`
+- M: `apollo-graphql/SKILL.md`
+- M: `aspnet-core/SKILL.md`
+- M: `astro/SKILL.md`
+- M: `auth0-authentication/SKILL.md`
+- M: `autogen-development/SKILL.md`
+- M: `automl-hyperparameter-optimization/SKILL.md`
+- M: `aws-development/SKILL.md`
+- M: `azure/SKILL.md`
+- M: `backend-development/SKILL.md`
+- M: `bash-scripting/SKILL.md`
+- M: `beautifulsoup-parsing/SKILL.md`
+- M: `bitbucket-workflow/SKILL.md`
+- M: `blazor/SKILL.md`
+- M: `blender-python-addon/SKILL.md`
+- M: `blockchain/SKILL.md`
+- M: `bootstrap/SKILL.md`
+- M: `business-central-development/SKILL.md`
+- M: `c-sharp/SKILL.md`
+- M: `cheerio-parsing/SKILL.md`
+- M: `chrome-extension-development/SKILL.md`
+- M: `ci-cd-best-practices/SKILL.md`
+- M: `clean-architecture/SKILL.md`
+- M: `clean-code/SKILL.md`
+- M: `clerk-authentication/SKILL.md`
+- M: `cloudflare-development/SKILL.md`
+- M: `computer-vision-opencv/SKILL.md`
+- M: `convex/SKILL.md`
+- M: `cpp/SKILL.md`
+- M: `css/SKILL.md`
+- M: `cypress/SKILL.md`
+- M: `data-analysis-jupyter/SKILL.md`
+- M: `data-analyst/SKILL.md`
+- M: `data-jupyter-python/SKILL.md`
+- M: `deep-learning-python/SKILL.md`
+- M: `deep-learning-pytorch/SKILL.md`
+- M: `deep-learning/SKILL.md`
+- M: `deno-typescript/SKILL.md`
+- M: `design-systems/SKILL.md`
+- M: `devops/SKILL.md`
+- M: `django-python/SKILL.md`
+- M: `django-rest-api-development/SKILL.md`
+- M: `docker/SKILL.md`
+- M: `dotnet/SKILL.md`
+- M: `drizzle-orm/SKILL.md`
+- M: `drupal-development/SKILL.md`
+- M: `elasticsearch-best-practices/SKILL.md`
+- M: `electron-development/SKILL.md`
+- M: `elixir/SKILL.md`
+- M: `embedded-stm32/SKILL.md`
+- M: `esbuild-bundler/SKILL.md`
+- M: `ethereum/SKILL.md`
+- M: `expo-react-native-javascript-best-practices/SKILL.md`
+- M: `expo-react-native-typescript/SKILL.md`
+- M: `express-typescript/SKILL.md`
+- M: `fastapi-microservices-serverless/SKILL.md`
+- M: `fastapi-python/SKILL.md`
+- M: `fastify-typescript/SKILL.md`
+- M: `figma-integration/SKILL.md`
+- M: `firebase-development/SKILL.md`
+- M: `flask-python/SKILL.md`
+- M: `flutter/SKILL.md`
+- M: `fortran/SKILL.md`
+- M: `fpga/SKILL.md`
+- M: `framer-motion/SKILL.md`
+- M: `front-end-developer/SKILL.md`
+- M: `game-development/SKILL.md`
+- M: `gamemaker-gml/SKILL.md`
+- M: `gcp-development/SKILL.md`
+- M: `general-best-practices/SKILL.md`
+- M: `ghost/SKILL.md`
+- M: `git-workflow/SKILL.md`
+- M: `gitflow/SKILL.md`
+- M: `github-workflow/SKILL.md`
+- M: `gitlab-workflow/SKILL.md`
+- M: `go-api-development/SKILL.md`
+- M: `go-backend-microservices/SKILL.md`
+- M: `go/SKILL.md`
+- M: `google-adk/SKILL.md`
+- M: `graalvm/SKILL.md`
+- M: `graphql-development/SKILL.md`
+- M: `graphql/SKILL.md`
+- M: `grpc-development/SKILL.md`
+- M: `gsap/SKILL.md`
+- M: `harmony-arkts/SKILL.md`
+- M: `hono-typescript/SKILL.md`
+- M: `html/SKILL.md`
+- M: `htmx/SKILL.md`
+- M: `internationalization-i18n/SKILL.md`
+- M: `ionic/SKILL.md`
+- M: `java-quarkus-development/SKILL.md`
+- M: `java-spring-development/SKILL.md`
+- M: `java/SKILL.md`
+- M: `jax-best-practices/SKILL.md`
+- M: `jest/SKILL.md`
+- M: `julia/SKILL.md`
+- M: `jwt-security/SKILL.md`
+- M: `kafka-development/SKILL.md`
+- M: `koa-typescript/SKILL.md`
+- M: `kotlin-development/SKILL.md`
+- M: `kubernetes/SKILL.md`
+- M: `kysely/SKILL.md`
+- M: `langchain-development/SKILL.md`
+- M: `laravel-development/SKILL.md`
+- M: `laravel/SKILL.md`
+- M: `lerna/SKILL.md`
+- M: `less-best-practices/SKILL.md`
+- M: `llamaindex-development/SKILL.md`
+- M: `llm/SKILL.md`
+- M: `localization-l10n/SKILL.md`
+- M: `logging-best-practices/SKILL.md`
+- M: `lottie/SKILL.md`
+- M: `lua/SKILL.md`
+- M: `machine-learning/SKILL.md`
+- M: `matplotlib-best-practices/SKILL.md`
+- M: `medusa-development/SKILL.md`
+- M: `meta-prompt/SKILL.md`
+- M: `micronaut/SKILL.md`
+- M: `microservices/SKILL.md`
+- M: `modern-web-development/SKILL.md`
+- M: `mongodb-development/SKILL.md`
+- M: `monitoring-guidelines/SKILL.md`
+- M: `monorepo-tamagui/SKILL.md`
+- M: `monorepo/SKILL.md`
+- M: `motion/SKILL.md`
+- M: `mqtt-development/SKILL.md`
+- M: `mysql-best-practices/SKILL.md`
+- M: `nestjs-clean-typescript/SKILL.md`
+- M: `netlify-development/SKILL.md`
+- M: `network-troubleshooting/SKILL.md`
+- M: `nextauth-authentication/SKILL.md`
+- M: `nextjs-react-redux-typescript-cursor-rules/SKILL.md`
+- M: `nextjs-react-typescript/SKILL.md`
+- M: `nextjs-typescript-tailwindcss-supabase/SKILL.md`
+- M: `nlp-natural-language-processing/SKILL.md`
+- M: `nodejs-development/SKILL.md`
+- M: `numpy-best-practices/SKILL.md`
+- M: `nuxtjs-vue-typescript/SKILL.md`
+- M: `nx/SKILL.md`
+- M: `oauth-implementation/SKILL.md`
+- M: `observability-guidelines/SKILL.md`
+- M: `odoo-development/SKILL.md`
+- M: `onchainkit/SKILL.md`

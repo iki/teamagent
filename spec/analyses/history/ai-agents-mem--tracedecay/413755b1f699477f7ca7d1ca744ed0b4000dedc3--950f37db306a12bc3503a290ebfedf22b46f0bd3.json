@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--tracedecay",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/ScriptedAlchemy/tracedecay",
+  "report": "spec/projects/ai-agents-mem--tracedecay.md",
+  "analyzedSha": "413755b1f699477f7ca7d1ca744ed0b4000dedc3",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T11:55:23-07:00",
+  "observedSha": "950f37db306a12bc3503a290ebfedf22b46f0bd3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "950f37db306a12bc3503a290ebfedf22b46f0bd3",
+      "date": "2026-10-27T10:31:27-07:00",
+      "subject": "simplify(diagnostics): publish compiler status through the project owner (#4545)"
+    },
+    {
+      "sha": "f993aac6609539930d2f07a00e803bd1a863f099",
+      "date": "2026-10-27T09:09:42-07:00",
+      "subject": "fix(lsp): refuse expired semantic work before analyzer admission (#4580)"
+    },
+    {
+      "sha": "e19b1695dcd4a5bddbcff3887f0444bff5e53340",
+      "date": "2026-10-27T09:01:33-07:00",
+      "subject": "fix(windows): restore native build and runtime validation (#4581)"
+    },
+    {
+      "sha": "251b87ea16d55c8e79d27b0f5fc65bd411bb69c8",
+      "date": "2026-10-27T08:59:26-07:00",
+      "subject": "chore(deps): update dependency @tanstack/react-virtual to v3.14.23 (#4565)"
+    },
+    {
+      "sha": "bd769d2b858015106a9dc1ef66744449755ab1b7",
+      "date": "2026-10-27T08:53:22-07:00",
+      "subject": "fix(sdk): separate delivered stream cursors from watermarks (#4489)"
+    },
+    {
+      "sha": "c696f28ee1a00b3224de1c42ce474b46a6f6b9f9",
+      "date": "2026-10-27T03:54:08-07:00",
+      "subject": "fix(graph-db): report and verify drifting corruption verdicts (#4578)"
+    },
+    {
+      "sha": "5f8892c5b0dcf62a3edc125d312504a36870a020",
+      "date": "2026-10-27T01:22:00-07:00",
+      "subject": "build(ci): pin Rust 1.99 and share Cargo acquisition policy (#4543)"
+    },
+    {
+      "sha": "93303be367d3c4cf91b5c933ccb2ace2aa38dc5b",
+      "date": "2026-10-27T07:03:13Z",
+      "subject": "chore(deps): update dependency @rsbuild/core to v2.2.14 (#4557)"
+    },
+    {
+      "sha": "436cf0f263da17d7df5dd7321b196c24b46661eb",
+      "date": "2026-10-27T07:03:05Z",
+      "subject": "chore(deps): update dependency python to v3.15.2 (#4566)"
+    },
+    {
+      "sha": "fea107e80d14031c435e33915bb3e0890cf781c0",
+      "date": "2026-10-26T22:04:08-07:00",
+      "subject": "chore(deps): update dependency @tanstack/react-query to v5.105.0 (#4568)"
+    },
+    {
+      "sha": "1e7e8aed987152b4e1336c2a02c27f3788e6898e",
+      "date": "2026-10-26T21:51:38-07:00",
+      "subject": "simplify(proximity): remove discarded risk metadata (#4549)"
+    },
+    {
+      "sha": "6658a900c2719419a11f0af1c4e7b6aa9b8e5d65",
+      "date": "2026-10-27T04:07:07Z",
+      "subject": "fix(lsp): retain admitted diagnostic snapshots for pull (#4524)"
+    },
+    {
+      "sha": "a35ef6224107895384a51e634a5e149a451f9167",
+      "date": "2026-10-27T03:21:14Z",
+      "subject": "docs(code-index): design a smaller decoded generation (#4560)"
+    },
+    {
+      "sha": "cbaedbad31fd2d0061d2338a6a84bec883877adf",
+      "date": "2026-10-26T19:45:10-07:00",
+      "subject": "fix(sessions): converge host ingest and hook redrive on hard failures (#4567)"
+    },
+    {
+      "sha": "96fe61bd57afb21d3f756b65fd463853cdd330bb",
+      "date": "2026-10-26T19:45:04-07:00",
+      "subject": "fix(sessions): back off history passes while retained ingest is Blocked (#4573)"
+    },
+    {
+      "sha": "0d7c88d0d32d8360c6a56b79b098d17baffa4111",
+      "date": "2026-10-26T19:44:57-07:00",
+      "subject": "fix(graph-db): log drifting corruption verdicts at error level (#4574)"
+    },
+    {
+      "sha": "f3d8946cd340b12cfbb6753a5eea42bb9e005283",
+      "date": "2026-10-26T19:04:32-07:00",
+      "subject": "fix(code-index): key panic quarantine on input, not pass progress (#4572)"
+    },
+    {
+      "sha": "22adbdb4ae999b2e714f68aeb29f9150b95c1196",
+      "date": "2026-10-26T18:03:16-07:00",
+      "subject": "Merge pull request #4556 from ScriptedAlchemy/renovate/rules_rust-0.x"
+    },
+    {
+      "sha": "89d72ecbb6fa123888b3c07d55a1ddcea8a38683",
+      "date": "2026-10-26T12:07:25-07:00",
+      "subject": "Merge pull request #4542 from ScriptedAlchemy/simplify/automation-task-lease"
+    },
+    {
+      "sha": "29f8e251f44b8d519070187aec00997d0c6fc3c6",
+      "date": "2026-10-26T12:00:49-07:00",
+      "subject": "Merge pull request #4562 from ScriptedAlchemy/fix/http-observation-drain"
+    },
+    {
+      "sha": "790eeba2bc4240f4f825172618a768a87f7082ad",
+      "date": "2026-10-26T02:45:10-07:00",
+      "subject": "fix(test): drain queued connections before HTTP observation stops"
+    },
+    {
+      "sha": "2f00b0ebd5565657d7309e0235f5989e270c6555",
+      "date": "2026-10-26T00:13:42-07:00",
+      "subject": "Merge origin/master into simplify/automation-task-lease"
+    },
+    {
+      "sha": "ccee1199513291f38a4a96e30d336896f22252b4",
+      "date": "2026-10-26T00:10:16-07:00",
+      "subject": "ci(windows): stop duplicating debug databases in build caches"
+    },
+    {
+      "sha": "bbfcad7c03a37c6ad0c92f9d0eba8cc93767ea69",
+      "date": "2026-10-25T23:49:24-07:00",
+      "subject": "ci(bazel): recover from brief remote coordinator outages"
+    },
+    {
+      "sha": "b10ce4e3cb5d83a7db55f913468b380585ce19a3",
+      "date": "2026-10-25T22:46:32-07:00",
+      "subject": "ci(cli): classify the full refresh memory workload as large"
+    },
+    {
+      "sha": "9a30479b6210c92f74eb82d9b0c4c7581e31250b",
+      "date": "2026-10-25T22:23:24-07:00",
+      "subject": "Merge pull request #4554 from ScriptedAlchemy/devin/1792965256-drop-rsbuild-patch"
+    },
+    {
+      "sha": "54e8b3f40e5bde6673071a8f663bc42f55047f6b",
+      "date": "2026-10-25T21:52:56-07:00",
+      "subject": "ci: start fleet validation alongside repository checks"
+    },
+    {
+      "sha": "47647d89cfa18c8bafc51b2a1e3bc1244d24e79d",
+      "date": "2026-10-26T04:40:28Z",
+      "subject": "fix(build): rebase rules_rust patches onto 0.75.0"
+    },
+    {
+      "sha": "23bca99639ba2121fc5d92799bb001247e3a2acb",
+      "date": "2026-10-26T04:33:53Z",
+      "subject": "chore(deps): update dependency rules_rust to v0.75.0"
+    },
+    {
+      "sha": "55b27f973e7aec40b4f75aef2f66656e12af7417",
+      "date": "2026-10-25T20:52:40-07:00",
+      "subject": "Merge pull request #4552 from ScriptedAlchemy/fix/s2-4481-pi-quarantine"
+    },
+    {
+      "sha": "430e4475095c52ad8b2b0c36821eef32819c9dc6",
+      "date": "2026-10-25T20:17:08-07:00",
+      "subject": "Merge pull request #4553 from ScriptedAlchemy/devin/1792964118-windows-test-portability"
+    },
+    {
+      "sha": "d639dade53f25a30127ba9f894ee0c4a62e8328d",
+      "date": "2026-10-26T03:00:46Z",
+      "subject": "ci: rerun Linux fleet after code-index warmup timeouts"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".bazelignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".bazelrc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".bazelversion",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".cargo/acquisition.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/bounded-daemon-maintenance-shutdown.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/consolidation-maintenance-telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/daemon-status-headline.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/exact-root-inventory-fast-path.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/prove-daemon-and-store-observation.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/session-correlation-presence-fast-path.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/v2-foundation-crates.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/evaluating-hook-hints/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/self-improving-from-usage-logs/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/tracedecay-dev-sweep/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/using-hotpath/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/using-hotpath/references/hotpath-0.24.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/skills/using-hotpath/references/instrumentation-facilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/writing-agent-managed-skills/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex/skills/evaluating-hook-hints/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex/skills/self-improving-from-usage-logs/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex/skills/tracedecay-dev-sweep/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".codex/skills/using-hotpath/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".codex/skills/using-hotpath/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".codex/skills/using-hotpath/references/hotpath-0.24.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".codex/skills/using-hotpath/references/instrumentation-facilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex/skills/writing-agent-managed-skills/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/build-cli/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/actions/install-ast-grep/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/package-release/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bazel/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bazel/configure_fleet.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/actions/setup-linux-mold/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-pnpm/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/tune-windows-runner/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/hauler-ci.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/hauler/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/linux-test-partitions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/blaze.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/distribution-acceptance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/hauler-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/hauler-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/hawk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/hermetic-evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/hotpath-comment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/hotpath-coverage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/hotpath-profile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/hotpath-runtime-core.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/plugin-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-beta.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-please.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/renovate-embedded-bundles.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk-conformance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/upstream-compat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".mcp.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".npmrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".signpath/artifact-configuration.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "MODULE.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark_data/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/claude-observation/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/claude-observation/workload-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/index-bench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/query-code-index/expected-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/query-code-index/workload-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/run_benchmarks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/runtime/fixtures.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark_data/runtime/fixtures/project/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark_data/runtime/fixtures/project/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/runtime/fixtures/project/src/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark_data/runtime/fixtures/project/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/runtime/fixtures/project/src/report.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark_data/runtime/fixtures/project/tests/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/runtime/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/runtime/tests/test_capture_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/session-temporal/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark_data/session-temporal/workload-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clippy.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "commitlint.config.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-agent-hosts/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/antigravity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/chatgpt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/claude.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/claude/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/cline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex/mcp_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex/plugin_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/codex/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/address_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/decision_engine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/evidence.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/intent_pass.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/owner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/session_window.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/context_scout/store_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/copilot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/copilot/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/cursor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/devin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/droid.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/gemini.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/gemini/extension.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/gemini/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/git_post_commit_hook.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/hermes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/hermes/dashboard_wrapper.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/hermes/lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/hermes/profile_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/hermes/templates/plugin_init.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/component_set.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/control.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/doctor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/planner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle/writer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_bundle_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_component_registration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_config_io.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_config_io/json_edit.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/host_config_io/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/kilo.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/kimi.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/kimi/web_refresh.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/kiro.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/kiro/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/mcp_registration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/opencode.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/opencode/plugin_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/plugin_bundle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/prompt_rules.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/roo_code.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/tracedecay-agent-hosts/src/agents/serve_args.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/text_file_transaction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/tracedecay-agent-hosts/src/agents/vibe.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

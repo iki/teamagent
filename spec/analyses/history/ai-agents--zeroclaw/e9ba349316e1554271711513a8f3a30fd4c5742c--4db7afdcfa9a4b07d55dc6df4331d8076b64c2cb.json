@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--zeroclaw",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/zeroclaw-labs/zeroclaw",
+  "report": "spec/projects/ai-agents--zeroclaw.md",
+  "analyzedSha": "e9ba349316e1554271711513a8f3a30fd4c5742c",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T17:54:08Z",
+  "observedSha": "4db7afdcfa9a4b07d55dc6df4331d8076b64c2cb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4db7afdcfa9a4b07d55dc6df4331d8076b64c2cb",
+      "date": "2026-10-24T03:30:21Z",
+      "subject": "fix(config): move the lifecycle lock into an owner-only data/.lifecycle directory (#11803)"
+    },
+    {
+      "sha": "2ae6857099d5452f2bbe003cd64df373bc421215",
+      "date": "2026-10-24T02:34:48Z",
+      "subject": "fix(tools): probe the saved provider alias after a model-routing update (#10034)"
+    },
+    {
+      "sha": "23950c9a1df0e1ab32bc3ff9879121d54012a0dc",
+      "date": "2026-10-24T02:34:39Z",
+      "subject": "fix(gateway): admit no new request after the gateway stops, and drain its connections (#11901)"
+    },
+    {
+      "sha": "850f1c7b4b39bb6df6d818b028c5d9ee949bb623",
+      "date": "2026-10-24T02:34:35Z",
+      "subject": "fix(sop): keep a stale run copy from reviving or overwriting a run (#11861)"
+    },
+    {
+      "sha": "028c50f5eb96856e3b97cee6256b1342e4ed1914",
+      "date": "2026-10-24T02:34:31Z",
+      "subject": "fix(containers): refresh runtime CA stores after emSign distrust (#11925)"
+    },
+    {
+      "sha": "df64213016834a0ab69d0c7fbde0e95dccee3ea4",
+      "date": "2026-10-24T02:32:19Z",
+      "subject": "fix(deps): bump ctutils and tokio for RUSTSEC-2026-0385 and RUSTSEC-2026-0386 (#12010)"
+    },
+    {
+      "sha": "0a6974d3e3f43a4066c7d646ecb69c65d003ac6f",
+      "date": "2026-10-24T02:32:15Z",
+      "subject": "fix(deps): bump ctutils to 0.4.5 for RUSTSEC-2026-0385 (#11998)"
+    },
+    {
+      "sha": "3c18211b9f104c7bb3184ddb7dccae56a97949ee",
+      "date": "2026-10-23T05:41:39Z",
+      "subject": "fix(plugins): report the runtime's config refusal in plugin info and list --verify (#11811)"
+    },
+    {
+      "sha": "6a99c3dee4440cf7d052e5bb61836adcf1085582",
+      "date": "2026-10-22T23:16:04Z",
+      "subject": "test(runtime): make the receipt-bound late_tool_search tests opt-in (#11863)"
+    },
+    {
+      "sha": "842c71e714dc76c65a374bd75ca050f8f749cc50",
+      "date": "2026-10-22T22:54:36Z",
+      "subject": "fix(plugins): name the sender in plugin_channel_sender_denied records (#11848)"
+    },
+    {
+      "sha": "40935ae506d9f300b949d9a3a156e992533524af",
+      "date": "2026-10-22T22:54:33Z",
+      "subject": "docs(changelog): match the v0.8.6 In brief wording on OIDC (#11841)"
+    },
+    {
+      "sha": "8858541298c0fd70c94179bb221db0cc43d2f76c",
+      "date": "2026-10-22T18:15:49Z",
+      "subject": "ci(plugins): raise the cranelift runtime leg timeout to 30 minutes (#11941)"
+    },
+    {
+      "sha": "7f2fe028a330c7a46683db6bb1b67ff78bafb1ce",
+      "date": "2026-10-22T18:15:45Z",
+      "subject": "ci(docker): bound arm64 build memory and add a dry-run dispatch to docker-publish (#11833)"
+    },
+    {
+      "sha": "448b9584cfd9363b9e369c17d5ea9426ad016e73",
+      "date": "2026-10-22T18:15:42Z",
+      "subject": "fix(ci): run the crates.io preflight only for a pull request's own version bump (#11967)"
+    },
+    {
+      "sha": "8f03c962dc45231db567fe67c168e7aae95f806d",
+      "date": "2026-10-22T06:24:34Z",
+      "subject": "ci(release): raise the macOS universal desktop job timeout to 240 minutes (#11854)"
+    },
+    {
+      "sha": "eea20ebf17ab4396d8d5b56e3f40b25eb8b636de",
+      "date": "2026-10-22T06:18:32Z",
+      "subject": "fix(security): share one JWKS fetch among concurrent token checks (#11903)"
+    },
+    {
+      "sha": "02bb0752602b089bb063fcfde057586c44b38cfd",
+      "date": "2026-10-22T06:18:29Z",
+      "subject": "fix(plugins): remove a loaded plugin from the directory it was loaded from (#11809)"
+    },
+    {
+      "sha": "b882455d7f853147dce0d32716eba92338193344",
+      "date": "2026-10-22T06:14:29Z",
+      "subject": "ci(security): audit the full lockfile in the daily scan (#11927)"
+    },
+    {
+      "sha": "65672a33a9d9a1b7d8cf6bb750b8046e670f1a0d",
+      "date": "2026-10-22T06:14:27Z",
+      "subject": "fix(plugins): reserve peripheral, skill and MCP capability tool names before plugin tools register (#11851)"
+    },
+    {
+      "sha": "f3c6682dac9824cc5ab2e9412ddc8c4b36d700da",
+      "date": "2026-10-22T06:09:07Z",
+      "subject": "test(daemon): retain the listener through bind classification (#11929)"
+    },
+    {
+      "sha": "7820b366ec14f6761f1fa01abb1deb5b7030cde3",
+      "date": "2026-10-22T04:46:43Z",
+      "subject": "fix(infra): make the session store open safe for concurrent first openers (#11900)"
+    },
+    {
+      "sha": "3037ae5e89de5ddbf43316ddcb29dec0d91cf918",
+      "date": "2026-10-22T04:46:40Z",
+      "subject": "fix(cli): take non-secret plugin settings as given in config set (#11812)"
+    },
+    {
+      "sha": "1fded6b06459a19f9ef28459d07a52f8905d300f",
+      "date": "2026-10-22T02:31:30Z",
+      "subject": "fix(plugins): create the package lock and transaction leases owner-only (#11807)"
+    },
+    {
+      "sha": "89bd18484bf4a262e43223d011306a8add031e29",
+      "date": "2026-10-22T00:23:01Z",
+      "subject": "feat(channels): conversation binding port and channel conversation owner (RFC #6954, 2a/3) (#11438)"
+    },
+    {
+      "sha": "c2f6b3f4cdd55f485d91bcca0a107c9c1989ea81",
+      "date": "2026-10-22T00:22:54Z",
+      "subject": "docs(review): preserve fetch command statuses (#11141)"
+    },
+    {
+      "sha": "2223b38c149dce2f3fc70cde9e34b2e85ae5e179",
+      "date": "2026-10-22T00:22:50Z",
+      "subject": "fix(quickstart): ask for the endpoint before the model, and take a typed model (#11852)"
+    },
+    {
+      "sha": "20edcf51f4e7f9ed658822dcebcf7443c6cafe3b",
+      "date": "2026-10-22T00:22:45Z",
+      "subject": "docs(config): say provider api_key is stored encrypted, not in the OS keyring (#11840)"
+    },
+    {
+      "sha": "f91b9f2c35bae94693185acbd8982c720759e590",
+      "date": "2026-10-22T00:22:42Z",
+      "subject": "fix(plugins): stagger pinned egress dials so a silent address cannot stall the connect (#11814)"
+    },
+    {
+      "sha": "ab836a854aba04fab168040c3866e1faeaddc382",
+      "date": "2026-10-22T00:22:38Z",
+      "subject": "fix(plugins): count WebSocket and socket transports for a tool package's egress declaration (#11808)"
+    },
+    {
+      "sha": "f66ba320afb7e48300cc6fba3e6bb3624a3e8bbc",
+      "date": "2026-10-22T00:22:35Z",
+      "subject": "ci(release): run the macOS plugin smoke on macos-15 (#11832)"
+    },
+    {
+      "sha": "ece3b744e65046a7a528b9e41d7154c04248c2ba",
+      "date": "2026-10-21T20:02:04Z",
+      "subject": "fix(deps): clear Wasmtime and TLS security advisories (#11924)"
+    },
+    {
+      "sha": "ee2f5f58f7d760456cf6a61f531784b7f7696a7c",
+      "date": "2026-10-20T09:08:58Z",
+      "subject": "docs(plugins): document the Discord plugin and its acceptance run (#11329)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cargo/audit.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/build-release-payloads/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cross-platform-build-manual.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cross-platform-clippy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/daily-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/discord-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-image-pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/master-branch-flow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/monthly-outdated.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/platform-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-stable-manual.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG-next.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Containerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.alpine",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.ci",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.debian",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/tauri/TESTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/tauri/splash/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/tauri/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/tauri/src/state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/tauri/src/tray/events.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/tauri/src/tray/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/tauri/src/window.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/tauri/tauri.conf.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/locales/en/zerocode.ftl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/locales/es/zerocode.ftl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/locales/fr/zerocode.ftl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/locales/ja/zerocode.ftl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/locales/zh-CN/zerocode.ftl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/acp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/agent_sidebar.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/app.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/chat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/zerocode/src/chat/context_menu.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/zerocode/src/chat/message_queue.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/chat/transcript_layout.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/config/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/zerocode/src/config_application.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/config_manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/dashboard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/generated_themes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/i18n.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/input_bar.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/jsonrpc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/keymap/actions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/keymap/chord.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/secure_file.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/theme.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/widgets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/wire.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerocode/src/zerocode_pane.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/zerocode/tests/fixtures/single-tool-rounds.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/zerocode/tests/terminal_disconnect.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/zerorelay/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clippy.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-api/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-api/src/agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-api/src/channel.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-api/src/conversation_binding.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-api/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-api/src/media.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-api/src/model_provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-api/src/tool.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-api/src/tool_carrier.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-api/src/turn_stop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/identity_persist.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/lark.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/line.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/matrix.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/model_picker_delivery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/orchestrator/acp_server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/orchestrator/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/orchestrator/mqtt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-channels/src/orchestrator/mqtt/security_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/slack.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/telegram.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/transcription.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/tts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/util.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/wechat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-channels/src/whatsapp_web.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/agent_bundle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-config/src/builtin_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/comment_writer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/cost/tracker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/cost/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/helpers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-config/src/live.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/migration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-config/src/opt_in_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/providers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/scattered_types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/schema.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/schema/v2.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/schema_markdown.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/secrets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-config/src/secrets/windows_key_file.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-config/src/setup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/traits.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/src/validation_warnings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-config/tests/legacy_plugin_recovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-config/tests/migration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-dist/tests/parity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/acp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api_oidc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api_pairing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api_quickstart.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api_sections.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api_sop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/api_sop_author.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/principal_gate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/static_files.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-gateway/src/ws.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-hardware/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-hardware/src/subprocess.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-infra/src/conversation_owners.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-infra/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-infra/src/session_sqlite.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-infra/src/session_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-log/src/event.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-log/src/layer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-log/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-log/src/writer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-macros/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-memory/src/hygiene.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-memory/src/qdrant.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-memory/src/sqlite_permissions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-memory/src/threat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-plugins/examples/sign_manifest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/src/component.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/src/component_websocket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/src/egress.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/src/host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-plugins/src/host/recovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/zeroclaw-plugins/src/host/recovery_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/zeroclaw-plugins/src/registry.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

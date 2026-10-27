@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--paperclip",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/paperclipai/paperclip",
+  "report": "spec/projects/ai-agents--paperclip.md",
+  "analyzedSha": "2a8a99e4a5f69aa803b3f10b982f583e75a87042",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T12:41:22-05:00",
+  "observedSha": "ee29e2850d0edc6cf11be9a8166a7829bce9c311",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ee29e2850d0edc6cf11be9a8166a7829bce9c311",
+      "date": "2026-10-23T20:06:16-07:00",
+      "subject": "fix: keep GitHub guest provenance from failing tool discovery (#17340)"
+    },
+    {
+      "sha": "1a79522a4e634aaa577e02e0c5bf03f35f9dc435",
+      "date": "2026-10-23T19:59:21-07:00",
+      "subject": "perf: narrow run-to-issue authorization reads (#17405)"
+    },
+    {
+      "sha": "70de7d49e952a147ee91ca57dffb74a73bc748a9",
+      "date": "2026-10-23T19:52:07-07:00",
+      "subject": "Migrate standalone nested clones onto the shared project clone (#17407)"
+    },
+    {
+      "sha": "aa0037a13782e8218ea0f5e1ae3ed39d68d82c40",
+      "date": "2026-10-23T19:14:14-07:00",
+      "subject": "Support Codex warm plugin task reuse and recovery (#17390)"
+    },
+    {
+      "sha": "9fb28d06ffebbb615f413765078aeeb7c4291311",
+      "date": "2026-10-23T18:35:05-07:00",
+      "subject": "docs(release): stable notes for the 2026.1023.0-beta.0 soak (v2026.1026.0, since v2026.1023.0) (#17388)"
+    },
+    {
+      "sha": "0c3b5ce273912958240702d5fba29011cf50bde1",
+      "date": "2026-10-23T18:31:36-07:00",
+      "subject": "perf: filter sandbox provider lookups in Postgres (#17395)"
+    },
+    {
+      "sha": "8549ecaf9ad7b1bd85ce4e8284574121f5d5b7d3",
+      "date": "2026-10-23T18:25:26-07:00",
+      "subject": "Re-home isolated repository workspaces onto the shared project clone (#17369)"
+    },
+    {
+      "sha": "724fa6144d9dce39d8656d02d910a1eb067dc8cc",
+      "date": "2026-10-23T17:49:00-07:00",
+      "subject": "fix(opencode-local): preserve the agent during sandbox tool OOMs (#17398)"
+    },
+    {
+      "sha": "a978ecadef3cb3bad0b8728ba8fe036ecf649632",
+      "date": "2026-10-23T17:38:50-07:00",
+      "subject": "Honor negated attachment requests in task completion (#17399)"
+    },
+    {
+      "sha": "72a5fecb58fc4936f892380da9b5cb3f5f883ebf",
+      "date": "2026-10-23T17:33:39-07:00",
+      "subject": "docs(release): canonicalize stable notes for v2026.1023.0 (#17400)"
+    },
+    {
+      "sha": "100477e8876f51add368554643e073a2d1c1becf",
+      "date": "2026-10-23T17:05:06-07:00",
+      "subject": "Avoid live workspace inspection in task context reads (#17396)"
+    },
+    {
+      "sha": "cc127f55168828a08b89dc8eee86d3ce39964bab",
+      "date": "2026-10-23T16:41:14-07:00",
+      "subject": "fix(runner): drop unusable musl builds and duplicate Copilot from provider packs (#17387)"
+    },
+    {
+      "sha": "5a7e740d820a5c53c0bb0d31b3193918ee63cd22",
+      "date": "2026-10-23T16:31:18-07:00",
+      "subject": "fix: validate managed AI accounts before verification allocation (#17384)"
+    },
+    {
+      "sha": "ec2e0d64079e6ba127401098eaadfd4ba6eb3074",
+      "date": "2026-10-23T16:05:13-07:00",
+      "subject": "Share one clone across nested project repository checkouts (#17382)"
+    },
+    {
+      "sha": "bf223596ab7854ad84101d042af17f9c54f3f105",
+      "date": "2026-10-23T15:35:24-07:00",
+      "subject": "fix(runner): bootstrap fresh sessions in replacement sandboxes (#17320)"
+    },
+    {
+      "sha": "e0d90339bfbde08ba804c1e527b781ac139075c7",
+      "date": "2026-10-23T15:21:09-07:00",
+      "subject": "fix(runner): make task-capable plugin environments Runner-only (#17380)"
+    },
+    {
+      "sha": "b5bf86ea09042a864b60910f80c8fdf7e64e9ef0",
+      "date": "2026-10-23T15:09:43-07:00",
+      "subject": "Clear process identity when settled native runs stop (#17374)"
+    },
+    {
+      "sha": "4660b22f6b2d95a8ef7208763d0446a7ebb22466",
+      "date": "2026-10-23T15:09:29-07:00",
+      "subject": "perf: narrow run bindings during event ingestion (#17378)"
+    },
+    {
+      "sha": "ff835a3fc62fb50dd1c3cc2ff2246029adeb0d39",
+      "date": "2026-10-23T14:57:47-07:00",
+      "subject": "docs(release): set the v2026.1023.0 header and contributor count before publish (#17373)"
+    },
+    {
+      "sha": "a3e8fa568a0592a3a72514548ccdaccb138a7e49",
+      "date": "2026-10-23T14:54:25-07:00",
+      "subject": "Reduce repeated work during plugin Runner admission (#17377)"
+    },
+    {
+      "sha": "3c4050e3ad03bd6b6a10b3a806a9237435844872",
+      "date": "2026-10-23T14:39:22-07:00",
+      "subject": "fix(connections): keep Cloud refresh reauthorization diagnostics (#17362)"
+    },
+    {
+      "sha": "eadc560712a899b211354e1204a0363c74deaf57",
+      "date": "2026-10-23T14:36:41-07:00",
+      "subject": "fix(evals): retain usage during bounded gateway shutdown (#17371)"
+    },
+    {
+      "sha": "2e38649341815fa7f58195e2fa60e2e89e72e4ce",
+      "date": "2026-10-23T14:30:06-07:00",
+      "subject": "perf(run-logs): skip durable log restore for a proven-new run (#17367)"
+    },
+    {
+      "sha": "a967d479bdc042d197990504594a851d6c5752f0",
+      "date": "2026-10-23T14:23:08-07:00",
+      "subject": "fix(e2e): retain verified onboarding artifact evidence (#17370)"
+    },
+    {
+      "sha": "75fcb0b3fca427774cff8f4f7ed43de9ab7f626b",
+      "date": "2026-10-23T14:07:19-07:00",
+      "subject": "fix(sentry): keep typed ACP provider access failures local (#17366)"
+    },
+    {
+      "sha": "f73ace9f1ae93a6d7975a0807640fa41f899df56",
+      "date": "2026-10-23T14:06:17-07:00",
+      "subject": "Clear stale native recovery state so closed work expires (#17359)"
+    },
+    {
+      "sha": "dfe7df00159d8f9f77102eeb04a29f6b225c80ef",
+      "date": "2026-10-23T14:05:55-07:00",
+      "subject": "fix(native): expire settled native workspace sync folders (#17358)"
+    },
+    {
+      "sha": "188bb14ba0fd8f8496897d4cea7ced1c30bba196",
+      "date": "2026-10-23T14:05:34-07:00",
+      "subject": "fix: evict stale workspace seed generations instead of freezing (#17357)"
+    },
+    {
+      "sha": "b6e690044a821faab52d5466db36c4330c754a2d",
+      "date": "2026-10-23T13:57:57-07:00",
+      "subject": "feat(evals): allow reviewed bounded provisional accounting (#17365)"
+    },
+    {
+      "sha": "9377f6dab70771b9b3ccbed2f6817a24ffc29c22",
+      "date": "2026-10-23T13:49:38-07:00",
+      "subject": "chore(lockfile): refresh pnpm-lock.yaml (#17363)"
+    },
+    {
+      "sha": "4d90634f747c75e8bc557c4c221dea267cea9ab2",
+      "date": "2026-10-23T13:27:33-07:00",
+      "subject": "feat(connections): add 1Password service-account connector (#17249)"
+    },
+    {
+      "sha": "17f1e386e816223a976d0e858ebf83cd17db025f",
+      "date": "2026-10-23T13:21:46-07:00",
+      "subject": "feat(evals): compare retained Anthropic billing exports (#17360)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/create-case/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/conformance-tests.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/dot-case-study.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/onboarding-and-prompts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/release-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/runner-architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/troubleshooting-and-deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/create-issue-interaction-ui/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-runner-adapter/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/references/feature-map-example/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/references/feature-map-example/create-note.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/references/feature-map-example/search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/diagnose-why-work-stopped/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-failed-paperclip-run/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-failed-paperclip-run/references/failure-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/references/cloud-discovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/references/local-proof.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/references/ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/references/runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/references/trace-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-storybook/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-storybook/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-verification-skill/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-verification-skill/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-verification-skill/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/review-storybook/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/review-storybook/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/references/paperclip-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/references/run-instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/CAMPAIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/references/audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/references/paperclip.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/references/validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/references/npm-install.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/references/verification-targets.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/doctor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/launch.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/onboarding-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/tests/test_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/launch.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.runner-e2e.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-ci-dependencies/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/docker-context-checks.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/infra/runner-e2e-private-history.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/ci-dependency-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/ci-profile.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/ci-routing.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/tests/release-runner-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-profile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-routing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-work-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cloud-migrator-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-runner-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-trusted.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-full-stack-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-live-evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/storybook-visual.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/files.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/agent-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/board-auth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/company-import-export-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/company.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/install-command.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/__tests__/mcp-auth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/onboard-service.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cli/src/__tests__/pipelines.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/runtime-info.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/__tests__/runtime-setup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/__tests__/runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/__tests__/service-install-command.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/test-drive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/__tests__/worktree.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cli/src/__tests__/zip-codec.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/client/board-auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/client/mcp-auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/client/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/client/issue.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/install.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/commands/mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cli/src/commands/pipelines.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/commands/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/test-drive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/worktree-lib.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/worktree.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/onboard-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/.paperclip-page/state.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/screenshots/current-properties-monitor.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/screenshots/current-thread-bottom.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/wireframes/01-issue-top-mobile.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/wireframes/01-issue-top.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/wireframes/02-composer-mobile.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/wireframes/02-composer.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/wireframes/03-properties-monitor.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/wireframes/04-states.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "design/pap-14557-monitor-visibility/wireframes/flow.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/AGENT-ARTIFACTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/AGENT-IDENTITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/AGENT-LIFECYCLE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/CLI.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/CUSTOMER-SUCCESS-INSPECTION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DATABASE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DEPLOYMENT-MODES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DEVELOPING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DOCKER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/HERMES_GATEWAY_ONBOARDING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/ISSUE-PRIVACY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/MCP-ACCESS-GOVERNANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/MCP-RUNTIME-OPERATIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/PRODUCT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/RELEASE-AUTOMATION-SETUP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/RUNNER-INTEGRATION-PLAYBOOK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/SPEC-implementation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/TOASTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/acp-run-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/adapter-model-audit-2026-10-02.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/agent-commentary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/agent-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/agent-observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/agent-permission-defaults.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/architecture/paperclip-runner-compatibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/architecture/paperclip-runner-daytona-networking.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,207 @@
+# design.hallmark: change evidence
+
+Source: [design.hallmark](https://github.com/nutlope/hallmark) · [Analysis](../../projects/ai-skills--design.hallmark.md) · [skills](../../skills.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `13ac0ec7e148655948100b6396439e481361d690`; commit date: 2026-08-06T09:19:18-07:00; review date: unknown; observed SHA: `6033bab2a8051b5454552d2e8e6cb8f27c483a42`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/nutlope/hallmark/compare/13ac0ec7e148655948100b6396439e481361d690...6033bab2a8051b5454552d2e8e6cb8f27c483a42). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [6033bab2a805](https://github.com/nutlope/hallmark/commit/6033bab2a8051b5454552d2e8e6cb8f27c483a42) 2026-10-27T16:05:53+01:00: Merge pull request #96 from Nutlope/fifty-themes
+- [fd9b1d1158f3](https://github.com/nutlope/hallmark/commit/fd9b1d1158f35ab79fb6abf405ba20aa28b53afe) 2026-10-27T11:19:32Z: Site and README: the Refract and Vantage pages, fifty themes everywhere
+- [2a1240fc1c67](https://github.com/nutlope/hallmark/commit/2a1240fc1c67d0116fcc9df02514888ddb0b55df) 2026-10-27T11:19:32Z: Refract and Vantage join the catalog, fifty themes
+- [87e0df91e407](https://github.com/nutlope/hallmark/commit/87e0df91e4079fbbd1eb3f58dae87ea24199f686) 2026-10-27T10:35:56Z: A schedule only for times the visitor picks or plans around, never a process or a workday told as clock times
+- [118a4714280c](https://github.com/nutlope/hallmark/commit/118a4714280c490e17a37afd3c7c165e1b054b3e) 2026-10-27T10:35:56Z: sloplint stops on a path it was given and cannot read, and the theme index carries no build date, so the index check passes on any day
+- [0857f9ca15a2](https://github.com/nutlope/hallmark/commit/0857f9ca15a27349f62657826d06492ad8f8c684) 2026-10-27T10:35:56Z: Bloom's clip takes lane one's colour by default, so the build hint names a defined colour and each lane can still set its own
+- [7ec868225c6c](https://github.com/nutlope/hallmark/commit/7ec868225c6caa040558c321ee0fefa0e73f83a8) 2026-10-22T17:20:30Z: Site: the social card's pages sit higher, with room under them
+- [05245a614a10](https://github.com/nutlope/hallmark/commit/05245a614a103e9a1a104912b7a3974f79a38d45) 2026-10-22T17:18:18Z: Site: a new social card, three theme pages with Fieldbook in the middle, versioned so shares fetch it fresh
+- [60c2e5cde53f](https://github.com/nutlope/hallmark/commit/60c2e5cde53f0b24ad35c8b5c800df44cfc47d97) 2026-10-22T17:18:18Z: Recipes leave the repo, the README and the site footer
+- [649a5c6cb578](https://github.com/nutlope/hallmark/commit/649a5c6cb57809a1995fdfc2a4fc9536a839cfe3) 2026-10-22T17:04:34Z: Site: the comparison shows a webhook API in place of sleep sounds, and the Ribbon page and pictures take the new heads
+- [498de2df1a26](https://github.com/nutlope/hallmark/commit/498de2df1a26df80bad261b44757e15f32110ab2) 2026-10-22T17:04:34Z: Ribbon sets its heads upright in Instrument Sans
+- [9e4810c83529](https://github.com/nutlope/hallmark/commit/9e4810c8352916396c8c87495808c53e8d248f78) 2026-10-22T17:04:34Z: Site: the Dusk theme page, and the comparison shows bank reconciliation and sleep sounds beside farm records
+- [1e33562c9f1c](https://github.com/nutlope/hallmark/commit/1e33562c9f1c783b412bda824b9c6135763d510f) 2026-10-22T17:04:34Z: Dusk replaces Ledger: a real dusk photograph behind the hero, slate below, the product in smoked glass
+- [2a5fc8bc3d4b](https://github.com/nutlope/hallmark/commit/2a5fc8bc3d4b917336d781c6c79647edc800fdea) 2026-10-22T09:32:55-07:00: Merge pull request #79 from Nutlope/v2
+- [411823ff252c](https://github.com/nutlope/hallmark/commit/411823ff252c7e02de9aa73120759a8f22f6660d) 2026-10-21T18:06:58Z: Plugin ships only the skill (7 MB, not the whole repo); Cursor named beside Claude Code, Codex and OpenCode
+- [45af70aabc68](https://github.com/nutlope/hallmark/commit/45af70aabc68fbccc6eb47ad22a27d647d8126d5) 2026-10-21T17:51:13Z: Say prompt, not brief: the skill, its scripts (--prompt, with --brief kept as an alias), the README, the recipes and the site
+- [477051736af8](https://github.com/nutlope/hallmark/commit/477051736af898fdd63b672695d405ebfb7e9cbe) 2026-10-21T17:47:23Z: The argument hint lists audit again
+- [ddf07646f48b](https://github.com/nutlope/hallmark/commit/ddf07646f48b395ada88cf9b0ee28c45ad45d7ad) 2026-10-21T17:42:04Z: A shorter skill description: what it is, when to use it, never on an existing design unless named
+- [a22fdb09bdd4](https://github.com/nutlope/hallmark/commit/a22fdb09bdd498055a347cfdbe9603f1e30d1451) 2026-10-21T17:36:50Z: Claude Code plugin and marketplace files at 2.0.0, from the idea in #75
+- [3ed89d1a382f](https://github.com/nutlope/hallmark/commit/3ed89d1a382f1812886020563828c5144c37092d) 2026-10-21T16:58:04Z: Site: the comparison keeps three briefs, a new social card and favicon in the page's own style, an apple touch icon and the image meta tags
+- [096f23860f69](https://github.com/nutlope/hallmark/commit/096f23860f69dfdc7166fa7303a346867852f8d6) 2026-10-21T16:45:15Z: Site: Cobalt leads the hero and Ledger leaves the hero, the comparison and the top ten; slimmer phone frames with their own status bar; Fieldbook joins the comparison; the wheel shows seventeen pages, most of them builds; every theme picture re-shot from the viewport so container-sized heroes and th
+- [00e774f51707](https://github.com/nutlope/hallmark/commit/00e774f51707fa6429a8a7c2dc90488c9fb8ebf3) 2026-10-21T16:37:50Z: Launch fixes: portable Chrome lookup and file URLs in the capture, picture and render scripts, install.mjs help and unknown-flag guard, the render prerequisites stated, the global install command in the README, OpenCode slash metadata, gate 85 lets a sign-up or order form close its own page, exempla
+- [3d760dd7bb55](https://github.com/nutlope/hallmark/commit/3d760dd7bb55fe95ce4ff002cd79bd889c35f701) 2026-10-21T16:02:18Z: Ten themes rebuilt around their own materials and components, and the site and README show them
+- [b5e2080f036a](https://github.com/nutlope/hallmark/commit/b5e2080f036a108b969a5341291000ed2871f228) 2026-10-21T15:15:40Z: Fix what the custom builds tripped on: theme.mjs check takes a hue alone and lists the axis values, missing facts read as blanks in a dashed outline, a booking form is not a mailing-list close, a nav band low in the hero counts as hero content, a gradient ground counts as a paper change, photo credi
+- [54a3c1e37249](https://github.com/nutlope/hallmark/commit/54a3c1e37249ee46a6fe3748e4e60cf3f3315251) 2026-10-21T13:39:35Z: Theme pages built from their jobs: 23 showcase pages reworked so the action sits where the category puts it, the category's own sections lead and the close is the job
+- [5c16b12e52e2](https://github.com/nutlope/hallmark/commit/5c16b12e52e2eb84b33e6f428e9aa6f200877ec6) 2026-10-21T12:49:41Z: Pages are built from the visitor's job, not one stock anatomy
+- [8f5f9c059024](https://github.com/nutlope/hallmark/commit/8f5f9c05902436683dc702d5fc5d3a05829f1baf) 2026-10-21T12:08:19Z: Site: Youssef's name in the footer links to his X profile
+- [e02004f5b3b3](https://github.com/nutlope/hallmark/commit/e02004f5b3b3f60568b185ef6f5a10a70018ddb9) 2026-10-21T11:58:55Z: Fix three things the custom builds tripped on: two missing-fact slots a page in both files, an explicit /hallmark or custom ask beats the archive branch, and the builder never opens the review briefs
+- [45d70b3fea5e](https://github.com/nutlope/hallmark/commit/45d70b3fea5ec56b3cf4d3559f718aa6fc108f2d) 2026-10-21T11:47:13Z: Hallmark 2.0.0: the release version, a security pass on the scripts, a line-break check and a cleaner landing page
+- [828b4b370fb3](https://github.com/nutlope/hallmark/commit/828b4b370fb377a4a341631a74ac7d728be419cd) 2026-10-20T16:02:52Z: Eval: briefs b18 to b32 (three low-effort comparisons, seven vague briefs, five real products to capture) and --add-dir for briefs that point at a product on the machine
+- [4b4775c7ccdb](https://github.com/nutlope/hallmark/commit/4b4775c7ccdb534a5cc9555fb58f53fba43dd072) 2026-10-20T16:00:03Z: Hallmark builds from the real product: capture.mjs screenshots a URL, a dev server or an app, imagery.md puts captures before a built mock, gate 84 flags a mock of a product that could have been captured; Grid rebuilt as a Swiss poster material, Sport keeps its poster hero, Solstice returns to its e
+- [f86c6501d3e2](https://github.com/nutlope/hallmark/commit/f86c6501d3e2047361b3a78e8a39750a6856ddfa) 2026-10-20T12:13:50Z: Site: the 48 reworked theme pages and their screenshots, a tighter mobile hero, wheel arrows that keep their size, social meta and a favicon; the v1 examples and test thumbnails are gone
+
+## Changed paths (truncated)
+
+- A: `.claude-plugin/marketplace.json`
+- A: `.claude-plugin/plugin.json`
+- A: `.github/workflows/verify.yml`
+- M: `.gitignore`
+- M: `README.md`
+- M: `ROADMAP.md`
+- D: `docs/recipes.md`
+- A: `docs/screenshots/atelier.jpg`
+- A: `docs/screenshots/cobalt.jpg`
+- A: `docs/screenshots/dose.jpg`
+- A: `docs/screenshots/dusk.jpg`
+- A: `docs/screenshots/furrow.jpg`
+- A: `docs/screenshots/hedgerow.jpg`
+- D: `docs/screenshots/hero-anya.jpg`
+- D: `docs/screenshots/hero-bananastudio.jpg`
+- D: `docs/screenshots/hero-carnival-01.jpg`
+- D: `docs/screenshots/hero-cobalt-01.jpg`
+- D: `docs/screenshots/hero-custom-02.jpg`
+- D: `docs/screenshots/hero-custom-03.jpg`
+- D: `docs/screenshots/hero-custom-04.jpg`
+- D: `docs/screenshots/hero-garden-01.jpg`
+- D: `docs/screenshots/hero-hum-07.jpg`
+- D: `docs/screenshots/hero-hyperlane.jpg`
+- D: `docs/screenshots/hero-lumen-01.jpg`
+- D: `docs/screenshots/hero-najm.jpg`
+- D: `docs/screenshots/hero-press-01.jpg`
+- D: `docs/screenshots/hero-riso-01.jpg`
+- D: `docs/screenshots/hero-slow-pour.jpg`
+- D: `docs/screenshots/hero-soroe.jpg`
+- D: `docs/screenshots/hero-tally.jpg`
+- D: `docs/screenshots/hero-wayfare.jpg`
+- A: `docs/screenshots/hum.jpg`
+- A: `docs/screenshots/refract.jpg`
+- A: `docs/screenshots/ribbon.jpg`
+- A: `docs/screenshots/studio.jpg`
+- A: `docs/screenshots/terminal.jpg`
+- A: `docs/screenshots/vantage.jpg`
+- D: `docs/study-examples.md`
+- D: `docs/talk-slides.md`
+- A: `eval/.gitignore`
+- A: `eval/README.md`
+- A: `eval/briefs.json`
+- A: `eval/gen-cli.mjs`
+- A: `eval/gen-direct.py`
+- A: `eval/index.html`
+- A: `eval/judge.py`
+- A: `eval/make-pack.mjs`
+- A: `eval/models.json`
+- A: `eval/report.mjs`
+- A: `eval/run-matrix.py`
+- A: `eval/score.mjs`
+- A: `eval/screenshot.mjs`
+- A: `eval/serve.py`
+- M: `package.json`
+- M: `site/OG-hallmark.png`
+- D: `site/_tests/01-tide-podcast/brief.md`
+- D: `site/_tests/01-tide-podcast/index.html`
+- D: `site/_tests/01-tide-podcast/style.css`
+- D: `site/_tests/02-streampipe-cli/brief.md`
+- D: `site/_tests/02-streampipe-cli/index.html`
+- D: `site/_tests/02-streampipe-cli/style.css`
+- D: `site/_tests/03-maple-bakery/brief.md`
+- D: `site/_tests/03-maple-bakery/index.html`
+- D: `site/_tests/03-maple-bakery/style.css`
+- D: `site/_tests/04-meridian-manifesto/brief.md`
+- D: `site/_tests/04-meridian-manifesto/index.html`
+- D: `site/_tests/04-meridian-manifesto/style.css`
+- D: `site/_tests/05-tracejam-saas/brief.md`
+- D: `site/_tests/05-tracejam-saas/index.html`
+- D: `site/_tests/05-tracejam-saas/style.css`
+- D: `site/_tests/06-anya-portfolio/brief.md`
+- D: `site/_tests/06-anya-portfolio/index.html`
+- D: `site/_tests/06-anya-portfolio/style.css`
+- D: `site/_tests/07-foundry-compliance/brief.md`
+- D: `site/_tests/07-foundry-compliance/index.html`
+- D: `site/_tests/07-foundry-compliance/style.css`
+- D: `site/_tests/08-cohort-courses/brief.md`
+- D: `site/_tests/08-cohort-courses/index.html`
+- D: `site/_tests/08-cohort-courses/style.css`
+- D: `site/_tests/09-slow-pour/index.html`
+- D: `site/_tests/10-owl-hours/index.html`
+- D: `site/_tests/11-soroe-ceramics/index.html`
+- D: `site/_tests/12-loafer/index.html`
+- D: `site/_tests/13-alma/index.html`
+- D: `site/_tests/README.md`
+- D: `site/_tests/_thumbs/Podcast-loop.mp4`
+- D: `site/_tests/_thumbs/after-quiet-hour.png`
+- D: `site/_tests/_thumbs/anya.jpg`
+- D: `site/_tests/_thumbs/audit-example.png`
+- D: `site/_tests/_thumbs/bananastudio.jpg`
+- D: `site/_tests/_thumbs/before-quiet-hour.png`
+- D: `site/_tests/_thumbs/carnival-01.jpg`
+- D: `site/_tests/_thumbs/cobalt-01.jpg`
+- D: `site/_tests/_thumbs/custom-04.jpg`
+- D: `site/_tests/_thumbs/example-redesign-uractivation.png`
+- D: `site/_tests/_thumbs/garden-01.jpg`
+- D: `site/_tests/_thumbs/grid-01.jpg`
+- D: `site/_tests/_thumbs/hum-07.jpg`
+- D: `site/_tests/_thumbs/hyperlane.jpg`
+- D: `site/_tests/_thumbs/lumen-01.jpg`
+- D: `site/_tests/_thumbs/najm.jpg`
+- D: `site/_tests/_thumbs/press-01.jpg`
+- D: `site/_tests/_thumbs/riso-01.jpg`
+- D: `site/_tests/_thumbs/study-example.png`
+- D: `site/_tests/_thumbs/tally.jpg`
+- D: `site/_tests/_thumbs/uractivation-after-loop.mp4`
+- D: `site/_tests/_thumbs/wayfare.jpg`
+- D: `site/_tests/all-themes.html`
+- D: `site/_tests/custom/01-coffeebox/index.html`
+- D: `site/_tests/custom/01-coffeebox/style.css`
+- D: `site/_tests/custom/02-loop/index.html`
+- D: `site/_tests/custom/02-loop/style.css`
+- D: `site/_tests/custom/03-mossroot/index.html`
+- D: `site/_tests/custom/03-mossroot/style.css`
+- D: `site/_tests/custom/README.md`
+- D: `site/_tests/verbs/README.md`
+- D: `site/_tests/verbs/audit/audit-report.md`
+- D: `site/_tests/verbs/audit/input.html`
+- D: `site/_tests/verbs/audit/notes.md`
+- D: `site/_tests/verbs/redesign/input.html`
+- D: `site/_tests/verbs/redesign/notes.md`
+- D: `site/_tests/verbs/redesign/output.html`
+- D: `site/_tests/verbs/study/diagnosis.md`
+- D: `site/_tests/verbs/study/input-description.md`
+- D: `site/_tests/verbs/study/notes.md`
+- D: `site/_tests/verbs/study/output.css`
+- D: `site/_tests/verbs/study/output.html`
+- A: `site/apple-touch-icon.png`
+- A: `site/assets/cmp/closewise-bare-full.webp`
+- A: `site/assets/cmp/closewise-hallmark-full.webp`
+- A: `site/assets/cmp/closewise-thumb.webp`
+- A: `site/assets/cmp/fieldbook-bare-full.webp`
+- A: `site/assets/cmp/fieldbook-hallmark-full.webp`
+- A: `site/assets/cmp/fieldbook-thumb.webp`
+- A: `site/assets/cmp/relay-bare-full.webp`
+- A: `site/assets/cmp/relay-hallmark-full.webp`
+- A: `site/assets/cmp/relay-thumb.webp`
+- A: `site/assets/desk/almanac.webp`
+- A: `site/assets/desk/arcade.webp`
+- A: `site/assets/desk/atelier.webp`
+- A: `site/assets/desk/bloom.webp`
+- A: `site/assets/desk/blueprint.webp`
+- A: `site/assets/desk/broadside.webp`
+- A: `site/assets/desk/brutal.webp`
+- A: `site/assets/desk/carnival.webp`
+- A: `site/assets/desk/cobalt.webp`
+- A: `site/assets/desk/console.webp`
+- A: `site/assets/desk/coral.webp`
+- A: `site/assets/desk/darkroom.webp`
+- A: `site/assets/desk/dose.webp`
+- A: `site/assets/desk/dusk.webp`
+- A: `site/assets/desk/editorial.webp`
+- A: `site/assets/desk/formwork.webp`
+- A: `site/assets/desk/furrow.webp`
+- A: `site/assets/desk/garden.webp`
+- A: `site/assets/desk/grid.webp`
+- A: `site/assets/desk/halftone.webp`
+- A: `site/assets/desk/hedgerow.webp`
+- A: `site/assets/desk/hum.webp`
+- A: `site/assets/desk/ink.webp`

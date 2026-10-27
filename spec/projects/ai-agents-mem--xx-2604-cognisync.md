@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [cognisync](https://github.com/shrijacked/cognisync); analyzed commit `ed2ccae2b4ec8f0208e3a614d7671fd8ee0232f9`; commit date 2026-04-23T03:24:57+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--xx-2604-cognisync.md).
+<!-- teamagent-analysis:end -->

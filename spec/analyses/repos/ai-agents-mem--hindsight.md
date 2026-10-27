@@ -1,0 +1,207 @@
+# hindsight: change evidence
+
+Source: [hindsight](https://github.com/vectorize-io/hindsight) · [Analysis](../../projects/ai-agents-mem--hindsight.md) · [memory](../../memory.md), [evolution](../../evolution.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `f7dd3f4fd7420f7beec60c32c965e5e5cf7be066`; commit date: 2026-10-02T18:52:39+02:00; review date: 2026-10-04; observed SHA: `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vectorize-io/hindsight/compare/f7dd3f4fd7420f7beec60c32c965e5e5cf7be066...1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [1e3a4841a7ee](https://github.com/vectorize-io/hindsight/commit/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf) 2026-10-27T13:37:18-04:00: blog: what's new in Hindsight Cloud, October 2026 (#6141)
+- [0df5398efe63](https://github.com/vectorize-io/hindsight/commit/0df5398efe63211bd21638f3c5378b9c241b0001) 2026-10-27T17:17:33+01:00: fix(recall): break BM25 score ties on id so repeated recalls return the same list (#6143)
+- [097fa84287c2](https://github.com/vectorize-io/hindsight/commit/097fa84287c278f69d53aab4dc9a073a600c3dd5) 2026-10-27T16:36:40+01:00: fix(audit): an MCP tool call writes one audit row, not two (#6071) (#6142)
+- [4e6d9b11a026](https://github.com/vectorize-io/hindsight/commit/4e6d9b11a0265bbd2615239d0926f027f37ab124) 2026-10-27T15:10:49+01:00: feat(recall): prune flag for the decision-model reranker (#6131)
+- [e68ff798a9c1](https://github.com/vectorize-io/hindsight/commit/e68ff798a9c1434e7c486c969d8226713661da05) 2026-10-27T10:57:15+01:00: fix(retain): store the 'where' dimension and fail instead of dropping an unsplittable chunk (#6133)
+- [84d464e7974e](https://github.com/vectorize-io/hindsight/commit/84d464e7974ee5f4755636cce4a9613f75bea7d3) 2026-10-27T10:45:19+01:00: system-evals: one file per operation, categorised cases, retain and recall capability suites (#6118)
+- [95efb9cca8e6](https://github.com/vectorize-io/hindsight/commit/95efb9cca8e6eaea41cb1972d511c2aee58cb66e) 2026-10-27T09:49:50+01:00: chore(reranker): deprecate the typesafe reranker provider in favour of the shared decision model (#6130)
+- [e96df60546e4](https://github.com/vectorize-io/hindsight/commit/e96df60546e4589c90736d953fe329cac5141129) 2026-10-27T09:19:06+01:00: feat(decision-model): one standalone file for recall's decision-rerank questions (#6128)
+- [5a672f0cdb89](https://github.com/vectorize-io/hindsight/commit/5a672f0cdb89f4a3b841770cce2036a5b28b799d) 2026-10-26T18:55:08+01:00: feat(decision-model): count the request ceiling and recall's caps in the model's own vocabulary (#6115)
+- [fe18896796b0](https://github.com/vectorize-io/hindsight/commit/fe18896796b059592de82ae73abc95a472934064) 2026-10-26T17:26:04+01:00: fix(reranker): bench a failed failover-chain member so an outage does not slow every recall (#6112)
+- [326ad524f599](https://github.com/vectorize-io/hindsight/commit/326ad524f5999d6b90520e358f17c657d1c429f5) 2026-10-26T12:07:55-04:00: chore(deps): bump fastmcp to 3.4.11 in root uv.lock (#6113)
+- [b8178ab27ea9](https://github.com/vectorize-io/hindsight/commit/b8178ab27ea945968da90f316402f5b3dd996ca9) 2026-10-26T10:10:06-04:00: chore(deps): bump setuptools in root uv.lock (#6091)
+- [5fc7af3ddb55](https://github.com/vectorize-io/hindsight/commit/5fc7af3ddb55d98882f19e856e7936572db5ba18) 2026-10-26T12:36:52+01:00: fix(llm): a logged-out LLM no longer crashes startup; failover skips it (#6108)
+- [c5242eb0c45a](https://github.com/vectorize-io/hindsight/commit/c5242eb0c45a9f94bfd05e6ef65c95eac587d214) 2026-10-26T11:57:36+01:00: fix(bank-template): export keeps entity_labels stored in the attributes envelope (#6106)
+- [85f7147fb084](https://github.com/vectorize-io/hindsight/commit/85f7147fb08410dfcf9b2f1220d623de6601b527) 2026-10-26T11:57:18+01:00: fix(models): ONNX loaders no longer crash-loop startup next to a local model build (#6105)
+- [35539b000b80](https://github.com/vectorize-io/hindsight/commit/35539b000b803b964019c0b69382857b3a753941) 2026-10-26T11:42:31+01:00: fix(control-plane): hide the next-server console window on Windows (#6104)
+- [f29ba70c8250](https://github.com/vectorize-io/hindsight/commit/f29ba70c825094c839daaf27b2b5a564de46fb4e) 2026-10-26T11:24:50+01:00: ci: swap retired gpt-4.1-nano for gpt-6-luna in LLM acceptance matrix (#6102)
+- [1da5f03241de](https://github.com/vectorize-io/hindsight/commit/1da5f03241de742aaf37f78399061636077d2aad) 2026-10-26T10:56:57+01:00: fix(retain): don't checkpoint documents a buffering retain session hasn't committed (#6099) (#6100)
+- [fa359876bcf5](https://github.com/vectorize-io/hindsight/commit/fa359876bcf5ed652c001dac5d40bfcc51d1d41d) 2026-10-25T10:41:07-04:00: chore(deps): bump strands-agents in strands lockfile (#6089)
+- [e7aa92f807de](https://github.com/vectorize-io/hindsight/commit/e7aa92f807de62a7d1aa885b4ed804615ea46a1f) 2026-10-25T10:41:03-04:00: chore(deps): bump setuptools in llamaindex lockfile (#6090)
+- [be1ec7d5362c](https://github.com/vectorize-io/hindsight/commit/be1ec7d5362c7359a9844f12dca23c7360aa4b5c) 2026-10-25T10:40:58-04:00: chore(deps): bump filelock in smolagents lockfile (#6088)
+- [6c4d0b189cd2](https://github.com/vectorize-io/hindsight/commit/6c4d0b189cd2b7c9041d7f8963dcfb3a547893ff) 2026-10-25T10:40:54-04:00: chore(deps): bump filelock in litellm lockfile (#6087)
+- [bbc946e09188](https://github.com/vectorize-io/hindsight/commit/bbc946e0918887cfadc93261b1fc4ca64736ea33) 2026-10-25T10:40:49-04:00: chore(deps): bump filelock in crewai lockfile (#6086)
+- [dd04e4cd1727](https://github.com/vectorize-io/hindsight/commit/dd04e4cd17272a374fd25b6159d9a73f1c68ea42) 2026-10-25T10:40:44-04:00: chore(deps): bump undici and serialize-javascript in zapier lockfile (#6085)
+- [a02e7d757e52](https://github.com/vectorize-io/hindsight/commit/a02e7d757e5204b7499a6af1db1711f43a8ea821) 2026-10-25T10:40:40-04:00: chore(deps): bump @paperclipai/plugin-sdk (zod v4) in paperclip lockfile (#6084)
+- [d13a8b4ed06d](https://github.com/vectorize-io/hindsight/commit/d13a8b4ed06dec417ddf178684f00a2b98bee31a) 2026-10-25T10:40:35-04:00: chore(deps): bump zod to v4 in flowise integration (#6083)
+- [54f5f7b94eef](https://github.com/vectorize-io/hindsight/commit/54f5f7b94eef8386c0baf7c42516adf46bcf1642) 2026-10-25T10:40:30-04:00: chore(deps): bump undici in eve lockfile (#6082)
+- [c228ceefe85f](https://github.com/vectorize-io/hindsight/commit/c228ceefe85fe3e3d4e78c1d5ba0b8385c2959a4) 2026-10-25T10:40:26-04:00: chore(deps): bump undici and fast-uri in coding-agents lockfile (#6081)
+- [a2724cf3aaa3](https://github.com/vectorize-io/hindsight/commit/a2724cf3aaa3cac1ac8d2c2e78a5db6ce0112dfd) 2026-10-25T10:40:22-04:00: chore(deps): bump undici in cloudflare-oauth-proxy lockfile (#6080)
+- [5bba66c59b64](https://github.com/vectorize-io/hindsight/commit/5bba66c59b641075a42d5566e6fcb09294cfd44b) 2026-10-25T10:40:17-04:00: chore(deps): bump zod, body-parser, undici, fast-uri, serialize-javascript in root lockfile (#6079)
+- [4822d66e093d](https://github.com/vectorize-io/hindsight/commit/4822d66e093dadfd6b2b80186fd0395ef80926ca) 2026-10-24T10:21:06-04:00: chore(deps): bump opentelemetry-api/-sdk in google-adk lockfile (#6066)
+- [b4a0da1e9fd2](https://github.com/vectorize-io/hindsight/commit/b4a0da1e9fd2dfd052843e4f95fcf368301f6a73) 2026-10-23T18:50:02+02:00: fix(coding-agents): launch the codebase survey on Windows and stop retrying forever (#6054)
+
+## Changed paths (truncated)
+
+- D: `.claude-plugin/marketplace.json`
+- M: `.claude/skills/code-review/SKILL.md`
+- M: `.claude/skills/figure/SKILL.md`
+- M: `.claude/skills/ship-it/SKILL.md`
+- A: `.claude/skills/triage/SKILL.md`
+- M: `.env.example`
+- M: `.github/workflows/perf-test.yml`
+- M: `.github/workflows/release-integration.yml`
+- D: `.github/workflows/release-tool.yml`
+- M: `.github/workflows/test.yml`
+- M: `.github/workflows/triage-labels.yml`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `docker/standalone/Dockerfile`
+- M: `helm/hindsight/Chart.yaml`
+- M: `helm/hindsight/README.md`
+- M: `helm/hindsight/templates/_helpers.tpl`
+- M: `helm/hindsight/templates/api-deployment.yaml`
+- M: `helm/hindsight/templates/controlplane-deployment.yaml`
+- A: `helm/hindsight/templates/extra-objects.yaml`
+- A: `helm/hindsight/templates/httproute.yaml`
+- M: `helm/hindsight/templates/postgresql-statefulset.yaml`
+- M: `helm/hindsight/templates/tei-embedding-deployment.yaml`
+- M: `helm/hindsight/templates/tei-reranker-deployment.yaml`
+- M: `helm/hindsight/templates/worker-statefulset.yaml`
+- M: `helm/hindsight/values.yaml`
+- M: `hindsight-all-npm/package.json`
+- M: `hindsight-all-npm/src/server.test.ts`
+- M: `hindsight-all-npm/src/server.ts`
+- M: `hindsight-all-slim/pyproject.toml`
+- M: `hindsight-all/pyproject.toml`
+- M: `hindsight-api-slim/hindsight_api/__init__.py`
+- M: `hindsight-api-slim/hindsight_api/_cross_loop.py`
+- M: `hindsight-api-slim/hindsight_api/_thread_limits.py`
+- M: `hindsight-api-slim/hindsight_api/_vector_index.py`
+- M: `hindsight-api-slim/hindsight_api/admin/cli.py`
+- A: `hindsight-api-slim/hindsight_api/alembic/_new_schema_indexes.py`
+- M: `hindsight-api-slim/hindsight_api/alembic/env.py`
+- M: `hindsight-api-slim/hindsight_api/alembic/versions/a7b8c9d0e1f2_split_history_into_own_tables.py`
+- M: `hindsight-api-slim/hindsight_api/alembic/versions/a9b8c7d6e5f4_add_knowledge_pages.py`
+- A: `hindsight-api-slim/hindsight_api/alembic/versions/b2429c65cc20_banks_needing_consolidation_hybrid_probe.py`
+- A: `hindsight-api-slim/hindsight_api/alembic/versions/c7e2f9a4d1b8_clear_placeholder_memory_dates.py`
+- A: `hindsight-api-slim/hindsight_api/alembic/versions/c8e2f4a6b1d3_oracle_mental_models_text_index.py`
+- A: `hindsight-api-slim/hindsight_api/alembic/versions/d4f7a2c9e1b5_scheduled_full_refresh.py`
+- A: `hindsight-api-slim/hindsight_api/alembic/versions/e8c1a4f7b2d9_drop_global_memory_units_vector_indexes.py`
+- A: `hindsight-api-slim/hindsight_api/alembic/versions/f2a9c4e7b1d3_widen_mental_model_id_refs.py`
+- M: `hindsight-api-slim/hindsight_api/api/disconnect.py`
+- M: `hindsight-api-slim/hindsight_api/api/http.py`
+- M: `hindsight-api-slim/hindsight_api/api/mcp.py`
+- M: `hindsight-api-slim/hindsight_api/api/observability.py`
+- M: `hindsight-api-slim/hindsight_api/api/unknown_params.py`
+- M: `hindsight-api-slim/hindsight_api/config.py`
+- M: `hindsight-api-slim/hindsight_api/config_resolver.py`
+- M: `hindsight-api-slim/hindsight_api/daemon.py`
+- M: `hindsight-api-slim/hindsight_api/engine/__init__.py`
+- M: `hindsight-api-slim/hindsight_api/engine/audit.py`
+- A: `hindsight-api-slim/hindsight_api/engine/background_writes.py`
+- M: `hindsight-api-slim/hindsight_api/engine/bank_aliases.py`
+- M: `hindsight-api-slim/hindsight_api/engine/bank_attribution.py`
+- M: `hindsight-api-slim/hindsight_api/engine/bank_info_cache.py`
+- M: `hindsight-api-slim/hindsight_api/engine/bank_stats_cache.py`
+- A: `hindsight-api-slim/hindsight_api/engine/bank_templates.py`
+- M: `hindsight-api-slim/hindsight_api/engine/consolidation/consolidator.py`
+- M: `hindsight-api-slim/hindsight_api/engine/consolidation/prompts.py`
+- A: `hindsight-api-slim/hindsight_api/engine/consolidation/triage.py`
+- M: `hindsight-api-slim/hindsight_api/engine/cross_encoder.py`
+- M: `hindsight-api-slim/hindsight_api/engine/db/ops.py`
+- M: `hindsight-api-slim/hindsight_api/engine/db/ops_oracle.py`
+- M: `hindsight-api-slim/hindsight_api/engine/db/ops_postgresql.py`
+- M: `hindsight-api-slim/hindsight_api/engine/db/oracle.py`
+- M: `hindsight-api-slim/hindsight_api/engine/db_utils.py`
+- A: `hindsight-api-slim/hindsight_api/engine/decision_model.py`
+- A: `hindsight-api-slim/hindsight_api/engine/decision_rerank_interface.py`
+- A: `hindsight-api-slim/hindsight_api/engine/document_history.py`
+- M: `hindsight-api-slim/hindsight_api/engine/embeddings.py`
+- M: `hindsight-api-slim/hindsight_api/engine/graph_maintenance.py`
+- M: `hindsight-api-slim/hindsight_api/engine/interface.py`
+- M: `hindsight-api-slim/hindsight_api/engine/llm_interface.py`
+- M: `hindsight-api-slim/hindsight_api/engine/llm_trace.py`
+- M: `hindsight-api-slim/hindsight_api/engine/llm_wrapper.py`
+- M: `hindsight-api-slim/hindsight_api/engine/local_device.py`
+- M: `hindsight-api-slim/hindsight_api/engine/maintenance.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/__init__.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/base.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/admin.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/consolidation.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/curation.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/documents.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/engine_curation.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/entity_resolver.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/graph.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/link_expansion.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/links.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/reads.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/recall.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/retain.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/transfer.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/pg/writes.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memories/postgres.py`
+- M: `hindsight-api-slim/hindsight_api/engine/memory_engine.py`
+- M: `hindsight-api-slim/hindsight_api/engine/multi_llm.py`
+- R100: `hindsight-api-slim/hindsight_api/engine/page_markdown.py` (from `hindsight-api-slim/hindsight_api/api/page_markdown.py`)
+- M: `hindsight-api-slim/hindsight_api/engine/parsers/llama_parse.py`
+- M: `hindsight-api-slim/hindsight_api/engine/parsers/markitdown.py`
+- M: `hindsight-api-slim/hindsight_api/engine/prompt_preview.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/__init__.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/anthropic_llm.py`
+- A: `hindsight-api-slim/hindsight_api/engine/providers/chatgpt_auth.py`
+- A: `hindsight-api-slim/hindsight_api/engine/providers/chatgpt_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/claude_code_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/codex_auth.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/codex_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/cursor_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/gemini_cache.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/gemini_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/github_copilot_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/litellm_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/litellm_router_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/llm_debug.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/mock_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/none_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/nous_auth.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/nous_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/openai_compatible_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/openai_responses_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/xai_oauth_auth.py`
+- M: `hindsight-api-slim/hindsight_api/engine/providers/xai_oauth_llm.py`
+- M: `hindsight-api-slim/hindsight_api/engine/query_analyzer.py`
+- M: `hindsight-api-slim/hindsight_api/engine/reflect/agent.py`
+- M: `hindsight-api-slim/hindsight_api/engine/reflect/delta_ops.py`
+- M: `hindsight-api-slim/hindsight_api/engine/reflect/presentation.py`
+- M: `hindsight-api-slim/hindsight_api/engine/reflect/prompts.py`
+- M: `hindsight-api-slim/hindsight_api/engine/reflect/structured_doc.py`
+- M: `hindsight-api-slim/hindsight_api/engine/reflect/tools.py`
+- M: `hindsight-api-slim/hindsight_api/engine/reflect/tools_schema.py`
+- M: `hindsight-api-slim/hindsight_api/engine/remote_retry.py`
+- M: `hindsight-api-slim/hindsight_api/engine/response_models.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/attachment_store.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/bank_utils.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/chunk_storage.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/embedding_utils.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/entity_labels.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/fact_extraction.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/fact_storage.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/memory_budget.py`
+- M: `hindsight-api-slim/hindsight_api/engine/retain/orchestrator.py`
+- M: `hindsight-api-slim/hindsight_api/engine/schema.py`
+- M: `hindsight-api-slim/hindsight_api/engine/search/bm25_term_selection.py`
+- A: `hindsight-api-slim/hindsight_api/engine/search/decision_reranker.py`
+- M: `hindsight-api-slim/hindsight_api/engine/search/recall_boost.py`
+- M: `hindsight-api-slim/hindsight_api/engine/search/reranking.py`
+- M: `hindsight-api-slim/hindsight_api/engine/search/retrieval.py`
+- M: `hindsight-api-slim/hindsight_api/engine/search/tags.py`
+- M: `hindsight-api-slim/hindsight_api/engine/search/tracer.py`
+- M: `hindsight-api-slim/hindsight_api/engine/source_scope.py`
+- M: `hindsight-api-slim/hindsight_api/engine/sql/oracle.py`
+- M: `hindsight-api-slim/hindsight_api/engine/sql/postgresql.py`
+- M: `hindsight-api-slim/hindsight_api/engine/storage/__init__.py`
+- M: `hindsight-api-slim/hindsight_api/engine/storage/gcs.py`
+- A: `hindsight-api-slim/hindsight_api/engine/stored_dates.py`

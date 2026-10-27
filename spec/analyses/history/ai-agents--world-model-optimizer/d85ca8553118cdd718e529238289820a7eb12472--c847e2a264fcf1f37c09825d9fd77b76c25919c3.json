@@ -1,0 +1,974 @@
+{
+  "id": "ai-agents--world-model-optimizer",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/experientiallabs/world-model-optimizer",
+  "report": "spec/projects/ai-agents--world-model-optimizer.md",
+  "analyzedSha": "d85ca8553118cdd718e529238289820a7eb12472",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T12:42:32-07:00",
+  "observedSha": "c847e2a264fcf1f37c09825d9fd77b76c25919c3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c847e2a264fcf1f37c09825d9fd77b76c25919c3",
+      "date": "2026-10-09T17:02:22-07:00",
+      "subject": "gateway: OpenRouter Responses rungs omit the web search sources selector; replayed reasoning drops its status (0.7.178) (#1262)"
+    },
+    {
+      "sha": "58a9e99289519f79fd5053cc2e44e2c409720f84",
+      "date": "2026-10-09T13:30:54-07:00",
+      "subject": "gateway: keep a reasoning carrier with its tool turn when Codex interleaves a developer reminder (0.7.177) (#1261)"
+    },
+    {
+      "sha": "ea2239999926be9a42c9c377b297a41c76fbd932",
+      "date": "2026-10-09T12:34:41-07:00",
+      "subject": "evaluation: replay authored scenarios beside or instead of mined ones (0.7.176) (#1250)"
+    },
+    {
+      "sha": "54f7d273d74054df70ed491d441b41fd0853c1ef",
+      "date": "2026-10-09T12:18:36-07:00",
+      "subject": "gateway: OpenRouter-style cached_tokens for Gemini writes read back, plus renewable automatic caches (0.7.173, native 0.3.141) (#1258)"
+    },
+    {
+      "sha": "b3206deb915b59cd56774d3c1bef4f57f4da6995",
+      "date": "2026-10-09T10:58:11-07:00",
+      "subject": "gateway: accept OpenAI custom (freeform) tools on Chat and Responses (0.7.174, native 0.3.142) (#1260)"
+    },
+    {
+      "sha": "0eeedbb050cf2403b3532d515a6574ce614ab415",
+      "date": "2026-10-09T10:04:05-07:00",
+      "subject": "gateway: keep fallbacks on a recovered start, pin the newest reasoning issuer, and end pre-first-byte chains under the edge timeout (0.7.173, native 0.3.141) (#1259)"
+    },
+    {
+      "sha": "8c800c28a06c3e5e270ebe81190ae4be97ec94de",
+      "date": "2026-10-08T20:02:06-07:00",
+      "subject": "Add bounded observation and typed coverage to shared guardrails (#1223)"
+    },
+    {
+      "sha": "eb8c59d264d203688f0b66ab8247de74c33c1027",
+      "date": "2026-10-08T18:15:50-07:00",
+      "subject": "Pin the Codex image-only function_call_output round trip. (#1189)"
+    },
+    {
+      "sha": "c715edb6f59ce10b9f9dc205ffa92ccdda3bbd39",
+      "date": "2026-10-08T16:38:36-07:00",
+      "subject": "gateway: forward Claude Code auto-mode safeguards to Anthropic and relay safeguard_results (0.7.170, native 0.3.140) (#1252)"
+    },
+    {
+      "sha": "9cd8425e84c90a022e48f25992b2eb9bb3fc1795",
+      "date": "2026-10-08T14:43:29-07:00",
+      "subject": "gateway: accept OpenAI allowed_tools and serve reasoning summaries best effort (0.7.169) (#1251)"
+    },
+    {
+      "sha": "ca176cdf34b3e1e1fca06c640c23432777dbb5f9",
+      "date": "2026-10-07T16:42:48-07:00",
+      "subject": "gateway: capture-only Chat logprobs on eligible rungs, off by default (0.7.168, native 0.3.139) (#1249)"
+    },
+    {
+      "sha": "0408b0a311a06849edd79773d0a72fa883b3cbbf",
+      "date": "2026-10-07T13:27:32-07:00",
+      "subject": "gateway: native /v1/audio/speech and /v1/audio/transcriptions on a typed billed-units ledger (0.7.167, native 0.3.138) (#1217)"
+    },
+    {
+      "sha": "b381d63ff58a23d0f67f8db960ec5432a9a04da6",
+      "date": "2026-10-06T23:09:14-07:00",
+      "subject": "gateway: omit absent tool descriptions and decode Mistral typed content parts (0.7.165, native 0.3.137) (#1227)"
+    },
+    {
+      "sha": "ca733616e6b4bfe3ad67e54d5f119f01789ad9e9",
+      "date": "2026-10-06T22:38:33-07:00",
+      "subject": "release: 0.7.164, native 0.3.136, carries #1212's one-hour cache-write subset (#1226)"
+    },
+    {
+      "sha": "c29b4095e8f6f513c8e32e2eac02cb229914a3bd",
+      "date": "2026-10-06T22:12:35-07:00",
+      "subject": "gateway: report the one-hour cache-write subset on Bedrock and keep Anthropic's across message_delta (native 0.3.135) (#1212)"
+    },
+    {
+      "sha": "47b1821be455a322047ff9634038937b6bfd2ead",
+      "date": "2026-10-06T22:11:31-07:00",
+      "subject": "gateway: Responses gateway web search returns a web_search_call item with sources (0.7.163, native 0.3.135) (#1225)"
+    },
+    {
+      "sha": "4b34ebef1bbbfacad1c13ac6d9cf9da3fe1d97bd",
+      "date": "2026-10-06T21:33:03-07:00",
+      "subject": "gateway: Responses web search sources selector and Codex web search replays (0.7.162) (#1224)"
+    },
+    {
+      "sha": "d30c4b560ea8ab8a414118a24bc3ef13ee997945",
+      "date": "2026-10-06T18:18:47-07:00",
+      "subject": "release: 0.7.161 carries the OpenAI Decisions API (#1216) (#1218)"
+    },
+    {
+      "sha": "d70eeddffaff3bb872b03f6717f8ab18a8e938ff",
+      "date": "2026-10-06T18:09:12-07:00",
+      "subject": "gateway: serve the OpenAI Decisions API at POST /v1/decisions (0.7.160, native 0.3.134) (#1216)"
+    },
+    {
+      "sha": "1aa1220a500ae408ed7d1869b07be12dc9d4f2ee",
+      "date": "2026-10-06T17:22:39-07:00",
+      "subject": "gateway: tier the capacity refusal upsell (free / paying / Pro) (0.7.160) (#1215)"
+    },
+    {
+      "sha": "f4ced4e0bb42e855c0849cc679eeb7bb287dcc6e",
+      "date": "2026-10-06T16:54:31-07:00",
+      "subject": "gateway: send vLLM request priority on opted-in self-hosted rungs (0.7.159) (#1214)"
+    },
+    {
+      "sha": "bf75987eac5e8c984d8f3868249f84e4095d1733",
+      "date": "2026-10-06T09:10:18-07:00",
+      "subject": "gateway: Claude Code on Opus 5.5: buffered tool args, display updates, thinking off (0.7.158, native 0.3.133) (#1213)"
+    },
+    {
+      "sha": "75668ddb6cbbbbfc3717d4753b4e728e326e49c6",
+      "date": "2026-10-05T21:08:26-07:00",
+      "subject": "Unify guardrail execution and overlap input checks with generation (#1194)"
+    },
+    {
+      "sha": "09edafd2a08b4b9efd3f0a4eaf282b8f5e221651",
+      "date": "2026-10-05T10:23:46-07:00",
+      "subject": "gateway: per-rung priority overflow multiples, admin-authored (0.7.156) (#1211)"
+    },
+    {
+      "sha": "ac3d534d73fe9c9b569daaa35e4e244fd3583256",
+      "date": "2026-10-05T08:46:49-07:00",
+      "subject": "gateway: cap priority overflow at 1.5x (Pro) / 1.25x (paying) on authored bounds (0.7.155) (#1210)"
+    },
+    {
+      "sha": "f616171ac97120b99b1cdfa7c13de65f4c884bef",
+      "date": "2026-10-04T17:42:14-07:00",
+      "subject": "gateway: attribute the calling app on decisions, images and embeddings (native 0.3.131, 0.7.154) (#1204)"
+    },
+    {
+      "sha": "238cd52ed111fa6b744703d7ab1eaeaff3d208a6",
+      "date": "2026-10-04T14:43:11-07:00",
+      "subject": "Add video-create skill: reference-driven video making with Claude Code (#1203)"
+    },
+    {
+      "sha": "70dd607a7b0519244e51acbe5179bd139d6643f3",
+      "date": "2026-10-04T14:33:45-07:00",
+      "subject": "gateway: keep a cache-placed session on its rung through policy sheds (0.7.153) (#1202)"
+    },
+    {
+      "sha": "14a99db1a4445069e2ff0ec1330c084b254d35a2",
+      "date": "2026-10-04T13:35:59-07:00",
+      "subject": "gateway: name more agents and report the rest by caller kind (0.7.152) (#1201)"
+    },
+    {
+      "sha": "5a88cae458a3310977de42a735dbb97ddc9f1892",
+      "date": "2026-10-04T00:15:36-07:00",
+      "subject": "gateway: Pro / paying callers overflow saturated rungs (2x / 1.5x) and fair share on by default (#1193)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/ready-for-merge/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/examples/remake-edge-of-the-world.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/examples/style-match-sigma-edit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/audio.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/build-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/context-sources.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/failure-modes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/film-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/interview.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/keys.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/remake-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/references/style-match-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/scripts/analyze_ref.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/scripts/fa_align.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/scripts/uniq_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/video-create/templates/BRIEF.template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/authored-scenarios.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-guardrails.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-lane-saturation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-latency.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reference/gateway-media-surfaces.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-web-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway_capture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/model-chains.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/release-scope.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/cli/gateway/guardrail_setup_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/cli/gateway/serve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/cli/gateway/serve_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/evaluations/planning.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/common/evaluations/planning_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/models/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/models/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/models/catalog_prices.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/models/catalog_prices_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/models/dispatch_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/models/dispatch_policy_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/project/hosted_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/common/project/hosted_state_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/tasks/task.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/common/tasks/task_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/export.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/judging_resume_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/planning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/prepare.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/runs_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/usage_estimate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/evaluation/usage_estimate_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/router/automatic/preflight.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/router/automatic/preflight_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/router/evaluation/build.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/optimize/router/judging/protocol.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/agents/lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/agents/lifecycle_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/anthropic_protocol/manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/anthropic_protocol/requests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/anthropic_protocol/requests_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/anthropic_protocol/testdata/claude_code_request_safeguards.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/attempt_costs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/attempt_costs_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/attempt_tokens.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/attempt_tokens_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/audio_billing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/audio_billing_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/audio_contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/audio_contracts_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/batch/line_wire.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/batch/line_wire_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/client_apps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/client_apps_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/contracts_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/disconnect_estimate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/embeddings_contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/execution_resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/execution_resolution_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/explicit_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/explicit_cache_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/group_commit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/group_commit_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/__init___test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/bounded.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/bounded_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/classifiers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/classifiers_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/config_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/contracts_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/deterministic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/deterministic_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/enforcement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/enforcement_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/http_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/http_json_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/native.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/native_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/observation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/observation_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/preset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/preset_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/recording.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/recording_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/redaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/redaction_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/regex.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/regex_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/session_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/store_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/streaming.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/subjects.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/subjects_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/text_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/guardrails/text_coverage_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/interfaces.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/lane_saturation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/lane_saturation_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger_requests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger_requests_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger_valuation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger_valuation_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/lifecycle_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/model_chain_authority_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/admission.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/audio_duration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/audio_upload.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/collector.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/capture/collector_logprobs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/capture/collector_logprobs_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/collector_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/delivery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/delivery_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/local_payload.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/local_payload_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/capture/logprobs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/capture/logprobs_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/reasoning.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/record.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/record_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/response_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/chat_stream.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

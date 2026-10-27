@@ -1,0 +1,207 @@
+# mempalace: change evidence
+
+Source: [mempalace](https://github.com/milla-jovovich/mempalace) · [Analysis](../../projects/ai-agents-mem--mempalace.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `43122aefb8ed58e9fa4e1953e15ce70026339ec2`; commit date: 2026-10-03T11:07:52-03:00; review date: unknown; observed SHA: `84582fb055a6429261f9c779da86c0561ec80adc`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/milla-jovovich/mempalace/compare/43122aefb8ed58e9fa4e1953e15ce70026339ec2...84582fb055a6429261f9c779da86c0561ec80adc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [84582fb055a6](https://github.com/milla-jovovich/mempalace/commit/84582fb055a6429261f9c779da86c0561ec80adc) 2026-10-25T01:41:28-03:00: Merge pull request #2895 from MemPalace/perf/hallways-sqlite-store
+- [b2781d454d00](https://github.com/milla-jovovich/mempalace/commit/b2781d454d007254d5a13513fd3aa80a30cde6fe) 2026-10-25T01:33:18-03:00: Merge pull request #2894 from MemPalace/fix/windows-exclusive-hub-port
+- [5ffa138ad283](https://github.com/milla-jovovich/mempalace/commit/5ffa138ad283c913c27711ea80bc03dc7de5b251) 2026-10-25T01:17:34-03:00: perf(hallways): store hallways in SQLite so a mine touches only its wing
+- [9a377de8dac1](https://github.com/milla-jovovich/mempalace/commit/9a377de8dac1884b22409327036eeb608fe77a75) 2026-10-25T00:39:30-03:00: fix(http): keep the hub's port exclusive on Windows
+- [f41e8e75ddaa](https://github.com/milla-jovovich/mempalace/commit/f41e8e75ddaadf5588d5127715fa531d79eadb45) 2026-10-20T20:16:07-03:00: Merge pull request #2866 from MemPalace/astra/pr2860-revision-import-fixes
+- [07f928eb8812](https://github.com/milla-jovovich/mempalace/commit/07f928eb8812b81bec1144e29d5bbfe25e503ad3) 2026-10-20T01:52:48-07:00: fix: preserve revisions and report graph imports accurately
+- [f884dd4c0824](https://github.com/milla-jovovich/mempalace/commit/f884dd4c08244278fc11bf9ccc154d6b6f63ad66) 2026-10-18T11:20:54-03:00: Merge pull request #2861 from MemPalace/fix/daemon-adapter-mine-palace-flag
+- [f74451af6d97](https://github.com/milla-jovovich/mempalace/commit/f74451af6d979ee3428ba28f16408460cff7317c) 2026-10-18T10:50:53-03:00: docs(changelog): list #2861 in 3.12.0
+- [779992a93339](https://github.com/milla-jovovich/mempalace/commit/779992a93339ad734da4c9b85fc12dcf6dce7147) 2026-10-18T10:50:25-03:00: fix(mine): keep --palace and media options on daemon-routed adapter mines
+- [4e7eab04d8e9](https://github.com/milla-jovovich/mempalace/commit/4e7eab04d8e9d90887eb62e51dd8a821463421dc) 2026-10-18T05:51:04-03:00: Merge pull request #2859 from MemPalace/chore/release-3.12.0
+- [534dd99b31ee](https://github.com/milla-jovovich/mempalace/commit/534dd99b31ee7bbc84d030b8c87222ef7d1a9dc4) 2026-10-18T05:25:35-03:00: docs(changelog): list the 3.12.0 release PR
+- [37b07e8b3412](https://github.com/milla-jovovich/mempalace/commit/37b07e8b34123c7b6e1a78714435b4247d7fbe2e) 2026-10-18T05:25:08-03:00: chore(release): 3.12.0
+- [2a96e4e026cc](https://github.com/milla-jovovich/mempalace/commit/2a96e4e026cc3ef4a468c2c393940735d9f308b2) 2026-10-18T05:23:12-03:00: Merge pull request #2858 from MemPalace/fix/redact-endpoint-credentials
+- [49baf5162ec6](https://github.com/milla-jovovich/mempalace/commit/49baf5162ec6e5ff5eab06e0e359d67aacad9461) 2026-10-18T04:46:48-03:00: Merge remote-tracking branch 'origin/develop' into fix/redact-endpoint-credentials
+- [38f7c78fd334](https://github.com/milla-jovovich/mempalace/commit/38f7c78fd334fdf58e71caaae957af6b139d75c2) 2026-10-18T04:46:22-03:00: Merge pull request #2857 from MemPalace/docs/changelog-3.12.0-coverage
+- [857fbec46978](https://github.com/milla-jovovich/mempalace/commit/857fbec4697838dfd8bd19958b7b5dfd2b44f4c4) 2026-10-18T04:41:03-03:00: fix(security): mask endpoint credentials in embedding and LLM errors
+- [f90cc8b2072f](https://github.com/milla-jovovich/mempalace/commit/f90cc8b2072f6c6fb2fa3e304ede502dafa5fe88) 2026-10-18T04:22:28-03:00: docs(changelog): drop in-cycle fixes and correct entry claims after review
+- [3b6061fd9510](https://github.com/milla-jovovich/mempalace/commit/3b6061fd9510e7ca340a3db2efbe9f5c33e16b00) 2026-10-18T04:15:36-03:00: Merge pull request #2855 from MemPalace/chore/require-python-3.10
+- [ee37474dacd7](https://github.com/milla-jovovich/mempalace/commit/ee37474dacd77bf8afdc6010a86fb35414b8c5ba) 2026-10-18T04:15:23-03:00: Merge pull request #2856 from MemPalace/chore/sync-main-into-develop-3.12.0
+- [ef4a22dfb1ee](https://github.com/milla-jovovich/mempalace/commit/ef4a22dfb1ee41a53cdfdb31a11e455483e1b5ed) 2026-10-18T04:07:58-03:00: docs(changelog): cover every user-visible change since 3.11.0
+- [03a0918d883d](https://github.com/milla-jovovich/mempalace/commit/03a0918d883dc5008a50c8c9adad2fa12b4407dd) 2026-10-18T03:49:33-03:00: Merge main into develop for 3.12.0
+- [ee8313db8aef](https://github.com/milla-jovovich/mempalace/commit/ee8313db8aef0cd622d8d7271bebb4fcf2945f36) 2026-10-18T03:49:12-03:00: chore: require Python 3.10 (D-20)
+- [3ec047e8fb36](https://github.com/milla-jovovich/mempalace/commit/3ec047e8fb3633f76a8967de6b7a96d0cb7658c7) 2026-10-18T01:47:34-03:00: Merge pull request #2853 from MemPalace/refactor/w3-logger-sweep
+- [3fe52ef1220e](https://github.com/milla-jovovich/mempalace/commit/3fe52ef1220eccc8be7dc633a96e4b4e489aa5b6) 2026-10-18T01:45:27-03:00: Merge pull request #2852 from MemPalace/perf/sqlite-exact-recency-index
+- [1cd72d266b7a](https://github.com/milla-jovovich/mempalace/commit/1cd72d266b7a24c4073a0be67f9f2de153edafa4) 2026-10-18T01:24:59-03:00: refactor(logging): name module loggers by __name__ and share one warn-once helper
+- [1f768ccf67f8](https://github.com/milla-jovovich/mempalace/commit/1f768ccf67f8af79f67c8b7f5a1ceafc3123bd41) 2026-10-18T01:19:34-03:00: perf(sqlite_exact): push $in/$eq filters and index filed_at for get_recent
+- [b5a13ce688e4](https://github.com/milla-jovovich/mempalace/commit/b5a13ce688e4933018b52c6b738e23dd63fbffe0) 2026-10-18T00:50:47-03:00: Merge pull request #2851 from MemPalace/refactor/w3-10-timeutil
+- [d24767230e5a](https://github.com/milla-jovovich/mempalace/commit/d24767230e5a1ed555d115c6c48d0dcf365bcac9) 2026-10-18T00:25:04-03:00: fix(dynamics): read naive created_at/last_activated as local time
+- [85498c06ce2f](https://github.com/milla-jovovich/mempalace/commit/85498c06ce2f00ed5fc1ef3ff4041c1a24d7881f) 2026-10-18T00:25:03-03:00: fix(recency): order newest-first reads by instant across naive-local and UTC values
+- [8693e7ce1704](https://github.com/milla-jovovich/mempalace/commit/8693e7ce17044b189475d933c4e3e1ef9c1d713c) 2026-10-17T23:48:12-03:00: refactor(timeutil): route persisted timestamp producers through timeutil
+- [25f6f37367b7](https://github.com/milla-jovovich/mempalace/commit/25f6f37367b79830455400d4bb3e6a68018a0a2c) 2026-10-17T23:47:57-03:00: fix(date_window): compare filed_at as instants across naive-local and UTC values
+- [8970bfe6a72d](https://github.com/milla-jovovich/mempalace/commit/8970bfe6a72d0da22ad5c685e8bfd959a93a27da) 2026-10-17T23:18:04-03:00: Merge pull request #2850 from MemPalace/refactor/w3-04-kg-path
+
+## Changed paths (truncated)
+
+- M: `.claude-plugin/README.md`
+- M: `.claude-plugin/hooks/mempal-precompact-hook.sh`
+- M: `.claude-plugin/hooks/mempal-session-end-hook.sh`
+- M: `.claude-plugin/hooks/mempal-stop-hook.sh`
+- A: `.claude-plugin/hooks/mempal_hook_run.sh`
+- M: `.claude-plugin/marketplace.json`
+- M: `.claude-plugin/plugin.json`
+- M: `.codex-plugin/README.md`
+- M: `.codex-plugin/hooks/mempal-hook.sh`
+- A: `.codex-plugin/hooks/mempal_hook_run.sh`
+- M: `.codex-plugin/plugin.json`
+- M: `.cursor-plugin/README.md`
+- M: `.cursor-plugin/marketplace.json`
+- M: `.cursor-plugin/plugin.json`
+- M: `.dsh-plugin/README.md`
+- M: `.dsh-plugin/cordis.patch.yml`
+- M: `.dsh-plugin/package.json`
+- A: `.gitattributes`
+- A: `.github/coverage-milvus.toml`
+- M: `.github/workflows/ci.yml`
+- M: `CHANGELOG.md`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `benchmarks/README.md`
+- M: `benchmarks/search_benchmark.py`
+- M: `crates/mempalace-cli/Cargo.toml`
+- M: `crates/mempalace-cli/src/main.rs`
+- M: `crates/mempalace-core/Cargo.toml`
+- M: `crates/mempalace-core/src/lib.rs`
+- M: `crates/mempalace-py/Cargo.toml`
+- M: `crates/mempalace-py/pyproject.toml`
+- M: `crates/mempalace-py/src/lib.rs`
+- M: `docs/CLOSETS.md`
+- M: `docs/cli-write-routing.md`
+- A: `docs/embeddinggemma2.md`
+- M: `docs/rfcs/002-source-adapter-plugin-spec.md`
+- M: `examples/cursor/README.md`
+- M: `examples/gemini_cli_setup.md`
+- M: `hooks/README.md`
+- M: `hooks/antigravity/STDIN_SHAPE.md`
+- M: `hooks/antigravity/lib/common.sh`
+- M: `hooks/cursor/lib/common.sh`
+- M: `hooks/cursor/mempal_precompact_hook_cursor.sh`
+- A: `hooks/mempal_hook_run.sh`
+- M: `hooks/mempal_precompact_hook.sh`
+- M: `hooks/mempal_save_hook.sh`
+- M: `hooks/mempal_session_end_hook.sh`
+- M: `integrations/openclaw/SKILL.md`
+- M: `mempalace/README.md`
+- M: `mempalace/__init__.py`
+- A: `mempalace/_env.py`
+- A: `mempalace/_once.py`
+- A: `mempalace/_proc.py`
+- M: `mempalace/backends/__init__.py`
+- A: `mempalace/backends/_filters.py`
+- M: `mempalace/backends/_magic.py`
+- A: `mempalace/backends/_remote_common.py`
+- M: `mempalace/backends/_sidecar.py`
+- M: `mempalace/backends/base.py`
+- M: `mempalace/backends/chroma.py`
+- A: `mempalace/backends/chroma_sqlite.py`
+- M: `mempalace/backends/embedding_wrapper.py`
+- M: `mempalace/backends/milvus.py`
+- M: `mempalace/backends/pgvector.py`
+- M: `mempalace/backends/qdrant.py`
+- M: `mempalace/backends/registry.py`
+- M: `mempalace/backends/rust_exact.py`
+- M: `mempalace/backends/sqlite_exact.py`
+- M: `mempalace/backups.py`
+- M: `mempalace/cli/__init__.py`
+- M: `mempalace/cli/_common.py`
+- M: `mempalace/cli/_hub.py`
+- M: `mempalace/cli/cmd_coord.py`
+- M: `mempalace/cli/cmd_init.py`
+- M: `mempalace/cli/cmd_kg.py`
+- M: `mempalace/cli/cmd_mine.py`
+- M: `mempalace/cli/cmd_query.py`
+- M: `mempalace/cli/cmd_repair.py`
+- M: `mempalace/cli/cmd_rooms.py`
+- M: `mempalace/cli/cmd_serve.py`
+- M: `mempalace/cli/cmd_sync.py`
+- M: `mempalace/cli/cmd_wings.py`
+- M: `mempalace/cli/parser.py`
+- M: `mempalace/cli_write_routing.py`
+- M: `mempalace/closet_llm.py`
+- M: `mempalace/collision_scan.py`
+- M: `mempalace/config.py`
+- M: `mempalace/convo_miner.py`
+- M: `mempalace/convo_scanner.py`
+- M: `mempalace/corpus_origin.py`
+- M: `mempalace/daemon.py`
+- M: `mempalace/date_window.py`
+- D: `mempalace/dedup.py`
+- M: `mempalace/dialect.py`
+- M: `mempalace/diary_ingest.py`
+- M: `mempalace/dynamics.py`
+- M: `mempalace/embedding.py`
+- A: `mempalace/embeddinggemma2.py`
+- M: `mempalace/encoding_repair.py`
+- M: `mempalace/entity_detector.py`
+- M: `mempalace/entity_registry.py`
+- M: `mempalace/exporter.py`
+- M: `mempalace/fact_checker.py`
+- M: `mempalace/format_miner.py`
+- A: `mempalace/fsio.py`
+- M: `mempalace/general_extractor.py`
+- M: `mempalace/hallways.py`
+- D: `mempalace/hook_shell.py`
+- M: `mempalace/hooks_cli.py`
+- M: `mempalace/hub_client.py`
+- M: `mempalace/instructions/init.md`
+- M: `mempalace/integrations/hermes/__init__.py`
+- M: `mempalace/kg_normalize.py`
+- M: `mempalace/knowledge_graph.py`
+- M: `mempalace/layers.py`
+- A: `mempalace/lexical.py`
+- M: `mempalace/llm_client.py`
+- M: `mempalace/llm_refine.py`
+- M: `mempalace/logstream.py`
+- M: `mempalace/logsync.py`
+- M: `mempalace/mcp_light_server.py`
+- M: `mempalace/mcp_proxy.py`
+- M: `mempalace/mcp_server/__init__.py`
+- M: `mempalace/mcp_server/_guards.py`
+- M: `mempalace/mcp_server/_logging.py`
+- M: `mempalace/mcp_server/_session.py`
+- M: `mempalace/mcp_server/http.py`
+- M: `mempalace/mcp_server/protocol.py`
+- M: `mempalace/mcp_server/runtime.py`
+- M: `mempalace/mcp_server/schemas.py`
+- M: `mempalace/mcp_server/tools_coord.py`
+- M: `mempalace/mcp_server/tools_diary.py`
+- M: `mempalace/mcp_server/tools_kg.py`
+- M: `mempalace/mcp_server/tools_read.py`
+- M: `mempalace/mcp_server/tools_write.py`
+- A: `mempalace/media.py`
+- A: `mempalace/metadata_types.py`
+- M: `mempalace/migrate.py`
+- M: `mempalace/miner.py`
+- M: `mempalace/normalize.py`
+- D: `mempalace/onboarding.py`
+- A: `mempalace/onnx_graph.py`
+- M: `mempalace/palace/__init__.py`
+- M: `mempalace/palace/backend.py`
+- M: `mempalace/palace/closets.py`
+- M: `mempalace/palace/collection.py`
+- M: `mempalace/palace/mine_lock.py`
+- M: `mempalace/palace/mined.py`
+- M: `mempalace/palace/palace_lock.py`
+- A: `mempalace/palace/writes.py`
+- M: `mempalace/palace_audit.py`
+- M: `mempalace/palace_graph.py`
+- A: `mempalace/paths.py`
+- A: `mempalace/project_config.py`
+- M: `mempalace/project_scanner.py`
+- M: `mempalace/query_parser.py`

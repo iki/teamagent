@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [gatebench](https://github.com/FerroxLabs/gatebench); analyzed commit `3874dc14aa1d1c57ee56708c89845230342ab138`; commit date 2026-07-22T00:57:40+07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--gatebench.md).
+<!-- teamagent-analysis:end -->

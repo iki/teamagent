@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--bb",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/get-bb/bb",
+  "report": "spec/projects/ai-agents--bb.md",
+  "analyzedSha": "76a1ebcaf5fa038d8638daaad7aad3dafe2ae709",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T10:32:25-07:00",
+  "observedSha": "5e1acd765039e874643f34c4d35409e58484e408",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5e1acd765039e874643f34c4d35409e58484e408",
+      "date": "2026-10-23T21:14:42-07:00",
+      "subject": "Prepare bb-app 0.47.1 (#6214)"
+    },
+    {
+      "sha": "b17bfc8fddaa99140e00317b2dd36fdc0e833d05",
+      "date": "2026-10-23T21:09:01-07:00",
+      "subject": "Keep Cmd/Ctrl-click opening a split with sidebar multi-select on (#6217)"
+    },
+    {
+      "sha": "22d41249ee7474add9013c84cc24a8dc91043819",
+      "date": "2026-10-23T20:02:20-07:00",
+      "subject": "Fit the storage worktrees table on phone-width screens (#6205)"
+    },
+    {
+      "sha": "ed5f0431d31a81353063df02f65f12ec798f1416",
+      "date": "2026-10-23T19:51:21-07:00",
+      "subject": "feat(codex): show a rocket icon for the Ultrafast service tier (#6198)"
+    },
+    {
+      "sha": "c22f4db79519213674d2fd6f13456894f9f6f0e1",
+      "date": "2026-10-23T17:01:35-07:00",
+      "subject": "Let maintainers exempt a pull request from the PR gate's linked-issue check (#6200)"
+    },
+    {
+      "sha": "038f78aa0cd51ce2550af2a4372c506e7725d385",
+      "date": "2026-10-23T16:39:24-07:00",
+      "subject": "Keep the timeline attached when a navigation, resize or restore lands at the end (#6195)"
+    },
+    {
+      "sha": "5f3ceb1649921f1bd2e167aee611561bcb751248",
+      "date": "2026-10-23T16:34:05-07:00",
+      "subject": "Skip the PR gate's linked-issue check for branches in this repository (#6197)"
+    },
+    {
+      "sha": "3a861f348059f9796668c9c63cf48565f274850c",
+      "date": "2026-10-23T16:23:11-07:00",
+      "subject": "Retry lost responses from experimental_retryable plugin host RPCs (#6184)"
+    },
+    {
+      "sha": "96e5c8d05d995804457780bb24a74ba3b137c450",
+      "date": "2026-10-23T16:19:52-07:00",
+      "subject": "Reconnect the SDK realtime client after a refused connection (#6183)"
+    },
+    {
+      "sha": "f1f26b3ba31dc932036c093091468800cd436384",
+      "date": "2026-10-23T16:06:40-07:00",
+      "subject": "Unify skill discovery and dedupe; pass picked skills to Codex (#6185)"
+    },
+    {
+      "sha": "21d5db72c649f76a27400bd9d65823e9eba00af4",
+      "date": "2026-10-23T15:59:24-07:00",
+      "subject": "Add experimental sidebar multi-selection, bulk actions, and multi-thread dragging (#6191)"
+    },
+    {
+      "sha": "d1bfe7a2e934f7890bbec7467d4cc22b82a56c24",
+      "date": "2026-10-23T15:53:03-07:00",
+      "subject": "Require outside pull requests to close an open issue (#6189)"
+    },
+    {
+      "sha": "de6cebafbaa6110fc821047b92be5703244231b1",
+      "date": "2026-10-23T15:46:15-07:00",
+      "subject": "Bump @get-bb/plugin-sdk to 0.6.76 (#6192)"
+    },
+    {
+      "sha": "59643efd6dda43b3381ae12fc0e041e72b37bf12",
+      "date": "2026-10-23T15:40:56-07:00",
+      "subject": "Show and remove worktrees created outside BB in Storage & retention (#6190)"
+    },
+    {
+      "sha": "aeeb6d0f8beaea5578286a7bb8e48544392f7076",
+      "date": "2026-10-23T15:25:55-07:00",
+      "subject": "Rebuild Docs on live reads so typing and remote changes coexist (#6146)"
+    },
+    {
+      "sha": "0782d2e07027bda6d5df616936f2b6f58da119e8",
+      "date": "2026-10-23T15:16:37-07:00",
+      "subject": "Label omp and opencode models with their route provider (#6186)"
+    },
+    {
+      "sha": "c8d586016cdcc46a75db1a3db3cd418353cf99f4",
+      "date": "2026-10-23T14:41:38-07:00",
+      "subject": "Prepare bb-app 0.47.0 (#6188)"
+    },
+    {
+      "sha": "2a7822782b55a385b517a51839b9238a6b8a148f",
+      "date": "2026-10-23T14:33:13-07:00",
+      "subject": "Stop dotenv-cli from expanding inherited env in dev scripts (#6187)"
+    },
+    {
+      "sha": "efe987702b87ca4bfe9df905b4b63ede478e12c7",
+      "date": "2026-10-23T12:08:03-07:00",
+      "subject": "Composer banner slot, with the PR segment and Info row in the GitHub PR Status plugin (#6023)"
+    },
+    {
+      "sha": "4785f2f166f4bb142bd562477ceef65effc08c51",
+      "date": "2026-10-23T11:49:00-07:00",
+      "subject": "Share and persist GitHub PR refreshes (#6143)"
+    },
+    {
+      "sha": "7ddb77686605f51b4423cbbbd6d0180846118961",
+      "date": "2026-10-23T09:26:28-07:00",
+      "subject": "Bump Electron to 44.9.3 (#6178)"
+    },
+    {
+      "sha": "1e80ca7b44bccd06c6da75ed9ca6ba497bd380f5",
+      "date": "2026-10-22T19:44:19-07:00",
+      "subject": "Unify plugin tabs across threads and navigation pages (#6013)"
+    },
+    {
+      "sha": "df248fc2c6fcc7fc91f2794e9050484bc306b5aa",
+      "date": "2026-10-22T18:39:29-07:00",
+      "subject": "Reduce repeated database test setup and CLI polling waits (#6142)"
+    },
+    {
+      "sha": "2884950f17e76f78b28c64ccf4a2e9a7c74188a8",
+      "date": "2026-10-22T16:32:55-07:00",
+      "subject": "Move GitHub PR status into a bundled GitHub PR Status plugin (#6125)"
+    },
+    {
+      "sha": "937cca40b740b76b75411f109273117039bf28c8",
+      "date": "2026-10-22T16:30:40-07:00",
+      "subject": "Reduce server test waits and repeated fixture work (#6139)"
+    },
+    {
+      "sha": "93d1fc0c86a8476cb91411880a5d21e44b465908",
+      "date": "2026-10-22T14:37:15-07:00",
+      "subject": "Reduce package test waits and D1 fixture setup overhead (#6138)"
+    },
+    {
+      "sha": "b850353e35ceadd9967b753a0a35244bbf15c996",
+      "date": "2026-10-22T14:28:22-07:00",
+      "subject": "Reduce workspace watch startup to four Git processes (#6135)"
+    },
+    {
+      "sha": "96de13ec5c3bac6445703fed2aaf44d92081c355",
+      "date": "2026-10-22T14:24:52-07:00",
+      "subject": "Ship bb's composer as the bundled Composer plugin (#6122)"
+    },
+    {
+      "sha": "c0013e2abaf0efc4482258ebb7b13606f23a8df2",
+      "date": "2026-10-22T14:07:38-07:00",
+      "subject": "Advance RPC test retry backoff without real-time waits (#6136)"
+    },
+    {
+      "sha": "f90978862583bcb10e0eaa6988237dde9cf114bb",
+      "date": "2026-10-22T13:34:12-07:00",
+      "subject": "Reuse compiler transforms and unblock CI matrix startup (#6133)"
+    },
+    {
+      "sha": "10b410f2f51038fd15581e59e5f2b3e72bf100ce",
+      "date": "2026-10-22T13:17:10-07:00",
+      "subject": "Report the environment branch from the daemon instead of on git status reads (#6018)"
+    },
+    {
+      "sha": "6e5fb6e74a1b2646d8920fefe75dd10edb9aa449",
+      "date": "2026-10-22T12:58:41-07:00",
+      "subject": "Resolve child execution defaults from parent history (#6120)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bb/skills/test-audit/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/composer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/desktop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/plugin-inline-vis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/projects-environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/features/settings.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/scripts/inventory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bb/skills/verify-bb/scripts/test_inventory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/APPROVED_CONTRIBUTORS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cache-pnpm/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/cache-react-compiler/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/cache-workspace/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/install-appimage-fuse/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/install-appimage-fuse/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bun/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bun/bun-1.3.14.sha256",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bun/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace-tools/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace/install-dependencies.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-workspace/install-electron-libraries.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-workspace/install-pnpm.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-health.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/close-stale-prs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/deploy-connect-next.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-web.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile-android-eas.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-bb-app.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/version-lockstep.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/src/upstream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/test/gateway.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/test/worker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ai-gateway/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/components.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/composer-plugin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/composer-search-story.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/ladle.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/plugin-sdk-app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/settings-story-fixtures.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/story-fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/story-settings-chrome.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/tests/sidebar-actions.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/.ladle/tests/timeline-scrollback.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/.ladle/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R069",
+      "path": "apps/app/.ladle/workflows.stories.tsx",
+      "previousPath": "plugins/workflows/panel.stories.tsx"
+    },
+    {
+      "status": "M",
+      "path": "apps/app/bundle-budget.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/scripts/generate-pwa-icons.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/scripts/why-eager.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/App.hash-navigation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/app.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/app.css.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/bundle-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/AppErrorBoundary.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/AppToaster.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/AppToaster.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/AppToasterView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/AppUpdateHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/AppUpdateHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/app-update-presentation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/app-update/app-update-presentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/code/BbDiffSplit.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/CodeHosts.cold-load.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/DiffHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/DiffHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/SourceCodeHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/SourceCodeHost.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/code/codeRendererProvider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/AppCommandShortcutHint.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/AppCommandShortcutHint.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/CommandPalette.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/CommandPalette.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/CommandPaletteBody.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/LazyCommandPaletteBody.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/commands/PaletteModeChip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/PaletteShell.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "R056",
+      "path": "apps/app/src/components/commands/PaletteThreadViewMenu.test.tsx",
+      "previousPath": "apps/app/src/components/thread/ThreadLifecycleFilter.test.tsx"
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/commands/PaletteThreadViewMenu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/commands/ThreadSearchPaletteMode.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/commands/ThreadSearchPalettePlaceholder.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/create-via-prompt-examples.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/create-via-prompt-examples.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/dialogs/ConfirmDeleteDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/dialogs/LazyRemotePathBrowser.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectDeleteDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectMachineSetupDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectMachineSetupDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectPathDialog.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectPathDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectPathDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectRenameDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ProjectSourceDeleteDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/RemotePathBrowser.createFolder.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/RemotePathBrowser.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/RenameDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "R054",
+      "path": "apps/app/src/components/dialogs/RenameDialogContent.tsx",
+      "previousPath": "apps/app/src/components/dialogs/RenameDialog.tsx"
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadArchiveDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadArchiveDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadDeleteDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadGitActionDialog.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadGitActionDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/dialogs/ThreadRenameDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/dialogs/useNameValidation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/dialogs/useRenameDialogAutoFocus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/git-diff/GitDiffCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/git-diff/GitDiffCardBody.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/git-diff/GitDiffCardHeader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/git-diff/git-diff-parsing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppBreadcrumbs.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.plugin-panel-header.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.root-compose-project.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.tools-breadcrumbs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayoutSidebar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppLayoutSidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/AppPageHeader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/HistoryCommandHandlers.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/HistoryCommandHandlers.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/PageTitleHeader.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/PageTitleHeader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/WindowFindHost.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/core-page-title.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/page-title.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/page-title.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/layout/resourceRouteLabelAtom.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/routeSidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/useMobileVisualViewportHeight.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/layout/useMobileVisualViewportHeight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/windowTopLeftReserve.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/layout/windowTopLeftReserve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/machines/MachineLabel.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/app/src/components/machines/MachineLabel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/machines/MachineLabel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/machines/MachineRemoveDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/machines/OldServerCopySection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/machines/ServerMoveOverlay.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/machines/ServerMoveOverlay.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/machines/ServerMoveOverlayView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/machines/machine-status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/app/src/components/notifications/NotificationCenter.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/onboarding/Onboarding.stories.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/onboarding/OnboardingFlow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/onboarding/OnboardingGate.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/onboarding/OnboardingGate.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/app/src/components/onboarding/OnboardingViews.test.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -28,3 +28,7 @@ Adopt as a tool interpreter, not as the sole multi-tenant security boundary. Int
 ## Related directions
 
 [Agents](../agents.md) · [Import Generation](../import-generation.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [just-bash](https://github.com/vercel-labs/just-bash); analyzed commit `7537a260e38648e8998db7a95504102ad80b0194`; commit date 2026-10-01T21:34:36+09:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--just-bash.md).
+<!-- teamagent-analysis:end -->

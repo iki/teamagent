@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [claude.source.2-1-88.2026-03-31](https://github.com/chatgptprojects/claude-code); analyzed commit `e188f077b61c9ab2fa55498e07a00189184748d9`; commit date 2026-04-03T14:50:47+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--xx-2604-claude.source.2-1-88.2026-03-31.md).
+<!-- teamagent-analysis:end -->

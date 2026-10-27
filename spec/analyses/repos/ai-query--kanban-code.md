@@ -1,0 +1,207 @@
+# kanban-code: change evidence
+
+Source: [kanban-code](https://github.com/langwatch/kanban-code) · [Analysis](../../projects/ai-query--kanban-code.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `41041f807791cb5402485fb49a7a2bfbdfb83aee`; commit date: 2026-10-03T22:56:41+02:00; review date: unknown; observed SHA: `1bfc15db18c3b899cf5e6cb67391318297775431`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/langwatch/kanban-code/compare/41041f807791cb5402485fb49a7a2bfbdfb83aee...1bfc15db18c3b899cf5e6cb67391318297775431). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [1bfc15db18c3](https://github.com/langwatch/kanban-code/commit/1bfc15db18c3b899cf5e6cb67391318297775431) 2026-10-26T14:25:59Z: fix(kv): kv run also sets a project secret under its bare key, so kv run laze/prod/QA_MAC_PASSWORD -- cmd gives cmd QA_MAC_PASSWORD
+- [a73895624e40](https://github.com/langwatch/kanban-code/commit/a73895624e4075bf1295eaff8d763d01e7837717) 2026-10-26T02:09:40Z: feat(vault): moved.json marks a name deleted with where it lives now, and kv says so instead of naming a Laze connection
+- [bc4e8b32ded4](https://github.com/langwatch/kanban-code/commit/bc4e8b32ded443d3307a2726494399a93b857157) 2026-10-25T22:14:59Z: feat(vault): kv refuses secrets that moved to the Laze vault, names their connection and logs each hit
+- [a7eebc368b81](https://github.com/langwatch/kanban-code/commit/a7eebc368b815520c9daecc830c4d657a5bfaec9) 2026-10-19T16:56:42Z: fix(slack): a codex rollout switch resumes each file where it left off and never replays an old backlog
+- [6a31c1ffbf85](https://github.com/langwatch/kanban-code/commit/6a31c1ffbf85f192c07d2cd3c6c1b57777a23092) 2026-10-17T19:39:46+02:00: fix(remote): a master that was answering shows offline only after 45 s of failed attempts, and the phone's events socket waits 60 s for a frame
+- [51308bd6d882](https://github.com/langwatch/kanban-code/commit/51308bd6d8822049b7f6ceaf914f7290a478956b) 2026-10-17T10:40:00+02:00: chore(deploy): print how long the remote API was down for the restart
+- [cbf5c55e7f54](https://github.com/langwatch/kanban-code/commit/cbf5c55e7f5420a9b1a57237bd38ee71816b12c2) 2026-10-17T10:40:00+02:00: fix(remote): an offline peer is retried every 5 s, remote events reconnect within 5 s, and the phone reconnects on foreground
+- [ae01c2ebbb4b](https://github.com/langwatch/kanban-code/commit/ae01c2ebbb4bce669604cb57f8aad8b961e14e47) 2026-10-17T10:40:00+02:00: fix(reconcile): automatic branch discovery reads only the last 8 MB of a session, and a refspec push names the branch it lands on
+- [9cd22573a89a](https://github.com/langwatch/kanban-code/commit/9cd22573a89a2fee0780051b461d558ff4bd31e4) 2026-10-17T10:40:00+02:00: fix(server): the remote API listens right after the cached links load, and the first reconcile runs behind it
+- [f87f40f6e6c5](https://github.com/langwatch/kanban-code/commit/f87f40f6e6c52e3399ba7552e861de9546c55d89) 2026-10-17T08:15:31Z: feat(vault): the Bash hook refuses commands that print a .env under /etc or a whole environment
+- [5bd340238ba7](https://github.com/langwatch/kanban-code/commit/5bd340238ba7199e39aea62d38b6d9c58111edb1) 2026-10-17T10:12:07+02:00: feat(hooks): a Claude Code PermissionRequest hook answers yes to every tool prompt but questions and plans, so a card never stalls on a check bypass mode still asks
+- [6c9bb0434f10](https://github.com/langwatch/kanban-code/commit/6c9bb0434f105795390955680edc836444f54523) 2026-10-17T10:12:07+02:00: fix(queue): send now on a message rush already sent from its queue is taken as sent instead of failing, and the board drops the stale copy
+- [b61d5b1f2f80](https://github.com/langwatch/kanban-code/commit/b61d5b1f2f807a381992ef632c853b566a1bbc6a) 2026-10-17T04:54:17Z: fix(reconciler): a duplicate-session merge is kept, and cards another master runs are not merged
+- [40f070055a3c](https://github.com/langwatch/kanban-code/commit/40f070055a3c91b105179b4629e692b8b7d2c11d) 2026-10-17T04:54:10Z: fix(vault): fold repeated open-tier hook releases, archive audit segments gzipped, ingest mirror pushes without rehashing
+- [cfcd3f9077d2](https://github.com/langwatch/kanban-code/commit/cfcd3f9077d2b19474bae73c671cf55776bdc712) 2026-10-17T03:54:45Z: fix(vault): an audit push reads only the lines after the peer's last one, not the whole log
+- [1c93f6d8f278](https://github.com/langwatch/kanban-code/commit/1c93f6d8f278a56f7b65db4611d73d7a2de2ef1c) 2026-10-17T03:19:08Z: fix(server): cap glibc malloc arenas and fix the mmap threshold, so freed JSON buffers stop holding gigabytes of RSS
+- [ef8667e4bf5b](https://github.com/langwatch/kanban-code/commit/ef8667e4bf5bb6076333276b7a8b1f970cbc8912) 2026-10-15T19:01:00+02:00: fix(chat): pasted images are kept under ~/.kanban-code/images/chat before a prompt leaves, and every banner and copy toast is written to the app log
+- [fa9d54347e40](https://github.com/langwatch/kanban-code/commit/fa9d54347e402ce058665940cc76be99aa4a893a) 2026-10-15T18:55:39+02:00: fix(chat): a prompt for a card another master owns is journalled before it leaves, takes up to 40 images, and comes back as a failed bubble with retry when the owner refuses it
+- [b73cfe1251ca](https://github.com/langwatch/kanban-code/commit/b73cfe1251ca7595af2e12744b44e809304dd5f6) 2026-10-15T17:24:06+02:00: test(vault): an approved replace is served at once, through a lease too
+- [29d24a357c0a](https://github.com/langwatch/kanban-code/commit/29d24a357c0ac8401a5f89c0b24719921e28530d) 2026-10-15T17:09:24+02:00: fix(kv): a value pasted at the terminal keeps its newlines instead of ending at the first line, and kv set takes the value from the io seam
+- [95b2ff228a4f](https://github.com/langwatch/kanban-code/commit/95b2ff228a4f23ca6efd8aa75babc95ee1eb7f1f) 2026-10-15T17:09:24+02:00: fix(vault): a card lease serves the current value of an owner-only secret after a replace, and drops a held value once a peer changes it
+- [b9723a83eebf](https://github.com/langwatch/kanban-code/commit/b9723a83eebf56de235e1bdd99060a3d0082eb29) 2026-10-15T10:07:34+02:00: fix(vault): the Bash hook runs the command as the body of an if on kv, so Claude Code still checks rm after cd and a glob instead of asking in bypass mode
+- [a1b11acec962](https://github.com/langwatch/kanban-code/commit/a1b11acec962799197851d4d494bef5e3d68b287) 2026-10-14T22:32:19+02:00: fix(vault): the Bash hook runs the command in a group after the env loads, so Claude Code can still check its rm calls instead of asking in bypass mode
+- [f58fd57ddd12](https://github.com/langwatch/kanban-code/commit/f58fd57ddd1201b63dfc16433ba492ecc47c2a3e) 2026-10-13T08:46:26+02:00: fix(env): the app drops an Anthropic API key from the shell it was launched in, so cards bill the signed-in account
+- [315c763ed943](https://github.com/langwatch/kanban-code/commit/315c763ed943754302e35ce7aa04545aee52ce27) 2026-10-12T23:41:03+02:00: feat(remote): fork a card from the phone, on the master that owns it
+- [0dc0724c0b19](https://github.com/langwatch/kanban-code/commit/0dc0724c0b19c121c3edf5de2fd5bfac6fe703b3) 2026-10-10T20:08:07+02:00: fix(handover): a card the other master cannot take comes back with the reason, instead of being retried without end
+- [ffbd9971512b](https://github.com/langwatch/kanban-code/commit/ffbd9971512b01012dee967781c7a849767d8169) 2026-10-10T19:57:34+02:00: fix(handover): a card of a new project with no git remote starts on the other master in a new repository there
+- [c8909d937168](https://github.com/langwatch/kanban-code/commit/c8909d937168b3065e916474ac38fa3875e767cd) 2026-10-09T19:39:19+02:00: feat(vault): a denied ask can carry a note from the owner that kv prints to the agent
+- [53cf853af53e](https://github.com/langwatch/kanban-code/commit/53cf853af53e8602d3999669ef673fd9c2d55f52) 2026-10-08T19:57:39+02:00: feat(cli): agents.yaml host: rush runs a Claude agent on a rush host that moves between signed-in accounts
+- [824b401a6e7f](https://github.com/langwatch/kanban-code/commit/824b401a6e7f569316dbe6fb4d15cb8234d711be) 2026-10-07T19:47:40+02:00: fix(vault): Jev allows a judged secret used as its rules allow without needing the exact command in the prompts
+- [e9be57580682](https://github.com/langwatch/kanban-code/commit/e9be57580682555bfb772138c5847d89de7d8bf5) 2026-10-07T13:43:05+02:00: fix(board): a card started on another master opens here right away, as a local start does
+- [1d9789f27f85](https://github.com/langwatch/kanban-code/commit/1d9789f27f859cb6d3081b628ad7f72688aaa076) 2026-10-07T09:39:50+02:00: fix(boxd): an account switch made on a machine is kept, the Mac's login no longer replaces it
+
+## Changed paths (truncated)
+
+- M: `Apps/iOS/KanbanCodeMobile/Model/BoardModel.swift`
+- A: `Apps/iOS/KanbanCodeMobile/Model/CardSearchModel.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Model/FleetModel.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Model/TranscriptModel.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Views/AttentionView.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Views/BoardScreen.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Views/CardActions.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Views/CardScreen.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Views/ChatPane.swift`
+- A: `Apps/iOS/KanbanCodeMobile/Views/MarkdownTableView.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Views/SideChatPanel.swift`
+- A: `Apps/iOS/KanbanCodeMobile/Views/SlashCommandList.swift`
+- M: `Apps/iOS/KanbanCodeMobile/Views/VaultSecretOfferView.swift`
+- M: `Apps/iOS/KanbanCodeMobileUITests/CardActionsTests.swift`
+- A: `Apps/iOS/KanbanCodeMobileUITests/CardSearchTests.swift`
+- M: `Apps/iOS/KanbanCodeMobileUITests/ChatAndTerminalTests.swift`
+- M: `Apps/iOS/KanbanCodeMobileUITests/SideChatTests.swift`
+- A: `Apps/iOS/KanbanCodeMobileUITests/SlashCommandTests.swift`
+- M: `Apps/iOS/README.md`
+- M: `Package.swift`
+- M: `Scripts/kanban-code-server/deploy.sh`
+- A: `Sources/CMalloc/module.modulemap`
+- A: `Sources/CMalloc/shim.h`
+- M: `Sources/KanbanCode/App.swift`
+- M: `Sources/KanbanCode/AppComposition.swift`
+- M: `Sources/KanbanCode/AppServices.swift`
+- M: `Sources/KanbanCode/AttentionDetailSheet.swift`
+- M: `Sources/KanbanCode/CardActionCatalog.swift`
+- M: `Sources/KanbanCode/CardDetailView.swift`
+- M: `Sources/KanbanCode/CardView.swift`
+- M: `Sources/KanbanCode/ChatContentCards.swift`
+- M: `Sources/KanbanCode/ChatMessageView.swift`
+- M: `Sources/KanbanCode/ChatView.swift`
+- M: `Sources/KanbanCode/ContentView+Launch.swift`
+- M: `Sources/KanbanCode/ContentView.swift`
+- M: `Sources/KanbanCode/ListBoardView.swift`
+- M: `Sources/KanbanCode/MacVaultDevice.swift`
+- M: `Sources/KanbanCode/PromptHistorySheet.swift`
+- M: `Sources/KanbanCode/QueuedPromptDialog.swift`
+- M: `Sources/KanbanCode/RemoteControlController.swift`
+- M: `Sources/KanbanCode/ScrubSettingsSection.swift`
+- M: `Sources/KanbanCode/SettingsView.swift`
+- M: `Sources/KanbanCode/SideChatPanel.swift`
+- A: `Sources/KanbanCode/SlashCommandList.swift`
+- M: `Sources/KanbanCode/SyncSettingsView.swift`
+- M: `Sources/KanbanCode/SystemTray.swift`
+- M: `Sources/KanbanCode/TerminalRepresentable.swift`
+- M: `Sources/KanbanCode/VaultOwnerSheet.swift`
+- M: `Sources/KanbanCode/VaultSecretOffer.swift`
+- M: `Sources/KanbanCode/VaultSettingsView.swift`
+- M: `Sources/KanbanCodeCore/Adapters/ClaudeCode/ClaudeCodeSessionDiscovery.swift`
+- M: `Sources/KanbanCodeCore/Adapters/ClaudeCode/JsonlParser.swift`
+- A: `Sources/KanbanCodeCore/Adapters/ClaudeCode/PermissionHook.swift`
+- M: `Sources/KanbanCodeCore/Adapters/ClaudeCode/VaultHook.swift`
+- M: `Sources/KanbanCodeCore/Adapters/Notifications/MacAttentionNotificationClient.swift`
+- A: `Sources/KanbanCodeCore/Adapters/Notifications/RemoteWakeHold.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/MasterRemoteControlHost.swift`
+- A: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteActivityPolicy.swift`
+- A: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteCardSearch.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlHost.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlServer.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteHTTP.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteOpenAPI.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemotePromptImages.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteScopePolicy.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteScrubRoutes.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteTranscriptMapper.swift`
+- M: `Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteVaultRoutes.swift`
+- M: `Sources/KanbanCodeCore/Adapters/Rush/RushCliAdapter.swift`
+- M: `Sources/KanbanCodeCore/Adapters/Vault/JevClient.swift`
+- A: `Sources/KanbanCodeCore/Adapters/Vault/ProcessEnvironment.swift`
+- M: `Sources/KanbanCodeCore/Adapters/Vault/VaultCallerResolver.swift`
+- M: `Sources/KanbanCodeCore/Domain/Entities/AgentSyncEntities.swift`
+- M: `Sources/KanbanCodeCore/Domain/Entities/AttentionRequest.swift`
+- A: `Sources/KanbanCodeCore/Domain/Entities/FailedPrompt.swift`
+- M: `Sources/KanbanCodeCore/Domain/Entities/VaultEntities.swift`
+- A: `Sources/KanbanCodeCore/Infrastructure/ChatImageStore.swift`
+- M: `Sources/KanbanCodeCore/Infrastructure/InheritedSessionEnvironment.swift`
+- A: `Sources/KanbanCodeCore/Infrastructure/ProcessMemory.swift`
+- M: `Sources/KanbanCodeCore/Infrastructure/QueuedPromptJournal.swift`
+- M: `Sources/KanbanCodeCore/UseCases/AgentSync/AgentSyncEngine.swift`
+- M: `Sources/KanbanCodeCore/UseCases/AgentSync/SyncFiles.swift`
+- A: `Sources/KanbanCodeCore/UseCases/AgentSync/SyncJSONKeys.swift`
+- M: `Sources/KanbanCodeCore/UseCases/AssignColumn.swift`
+- M: `Sources/KanbanCodeCore/UseCases/AssistantLoginSync.swift`
+- M: `Sources/KanbanCodeCore/UseCases/BoardState.swift`
+- M: `Sources/KanbanCodeCore/UseCases/BoardStore.swift`
+- M: `Sources/KanbanCodeCore/UseCases/BoxdMachineSupervisor.swift`
+- M: `Sources/KanbanCodeCore/UseCases/CardReconciler.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Attention.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Peers.swift`
+- A: `Sources/KanbanCodeCore/UseCases/Master/MasterEngine+RushTokens.swift`
+- A: `Sources/KanbanCodeCore/UseCases/Master/MasterEngine+SlashCommands.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Subagents.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Master/MasterEngine.swift`
+- M: `Sources/KanbanCodeCore/UseCases/PeerSync.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Scrub/ScrubScanner.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Scrub/SecretScrubber.swift`
+- A: `Sources/KanbanCodeCore/UseCases/SlashCommands/SlashCommandCatalog.swift`
+- A: `Sources/KanbanCodeCore/UseCases/TerminalImagePaste.swift`
+- A: `Sources/KanbanCodeCore/UseCases/Vault/RushTokenKeeper.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Vault/StoreVaultApprovals.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Vault/VaultAudit.swift`
+- A: `Sources/KanbanCodeCore/UseCases/Vault/VaultAuditSegments.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Vault/VaultBroker.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Vault/VaultCardTokens.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Vault/VaultPolicy.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Vault/VaultService.swift`
+- M: `Sources/KanbanCodeCore/UseCases/Vault/VaultStore.swift`
+- M: `Sources/KanbanCodeRemoteDemo/main.swift`
+- M: `Sources/KanbanCodeRemoteKit/AttentionAnswering.swift`
+- M: `Sources/KanbanCodeRemoteKit/AttentionRequest.swift`
+- A: `Sources/KanbanCodeRemoteKit/CardSearch.swift`
+- A: `Sources/KanbanCodeRemoteKit/HarnessNotes.swift`
+- A: `Sources/KanbanCodeRemoteKit/MarkdownTable.swift`
+- A: `Sources/KanbanCodeRemoteKit/RemoteActingFor.swift`
+- M: `Sources/KanbanCodeRemoteKit/RemoteClient.swift`
+- M: `Sources/KanbanCodeRemoteKit/RemoteHandover.swift`
+- M: `Sources/KanbanCodeRemoteKit/RemoteModels.swift`
+- A: `Sources/KanbanCodeRemoteKit/RemoteReachability.swift`
+- M: `Sources/KanbanCodeRemoteKit/SecretDetector.swift`
+- M: `Sources/KanbanCodeRemoteKit/SideChat.swift`
+- M: `Sources/KanbanCodeRemoteKit/SideChatController.swift`
+- A: `Sources/KanbanCodeRemoteKit/SlashCommands.swift`
+- M: `Sources/KanbanCodeRemoteKit/Vault/VaultOwner.swift`
+- M: `Sources/KanbanCodeRemoteKit/VaultApprovalDetails.swift`
+- M: `Sources/KanbanCodeServer/ServerMaster.swift`
+- M: `Sources/KanbanCodeServer/main.swift`
+- M: `Tests/KanbanCodeCoreTests/AgentSyncTests.swift`
+- M: `Tests/KanbanCodeCoreTests/AssignColumnTests.swift`
+- M: `Tests/KanbanCodeCoreTests/AttentionDeliveryTests.swift`
+- M: `Tests/KanbanCodeCoreTests/Boxd/AssistantLoginSyncTests.swift`
+- A: `Tests/KanbanCodeCoreTests/ChatSendSafetyTests.swift`
+- A: `Tests/KanbanCodeCoreTests/DuplicateSessionMergeTests.swift`
+- M: `Tests/KanbanCodeCoreTests/InheritedSessionEnvironmentTests.swift`
+- M: `Tests/KanbanCodeCoreTests/MasterHandoverTests.swift`
+- A: `Tests/KanbanCodeCoreTests/PeerQueuedPromptTests.swift`
+- M: `Tests/KanbanCodeCoreTests/PeerSyncTests.swift`
+- A: `Tests/KanbanCodeCoreTests/PermissionHookTests.swift`
+- A: `Tests/KanbanCodeCoreTests/ProcessMemoryTests.swift`
+- M: `Tests/KanbanCodeCoreTests/ReducerTests.swift`
+- A: `Tests/KanbanCodeCoreTests/RemoteCardSearchTests.swift`
+- M: `Tests/KanbanCodeCoreTests/RemoteControlHostTests.swift`
+- M: `Tests/KanbanCodeCoreTests/RemoteControlMapperTests.swift`
+- M: `Tests/KanbanCodeCoreTests/RemoteControlServerTests.swift`
+- M: `Tests/KanbanCodeCoreTests/RemoteControlTestSupport.swift`
+- M: `Tests/KanbanCodeCoreTests/RemotePeerScopeTests.swift`
+- M: `Tests/KanbanCodeCoreTests/RemoteTestWebSocket.swift`
+- A: `Tests/KanbanCodeCoreTests/RemoteWakeHoldTests.swift`
+- A: `Tests/KanbanCodeCoreTests/RushTokenTests.swift`
+- M: `Tests/KanbanCodeCoreTests/Scrub/SecretScrubberTests.swift`
+- M: `Tests/KanbanCodeCoreTests/SessionDiscoveryTests.swift`
+- M: `Tests/KanbanCodeCoreTests/SessionPRDiscoveryTests.swift`
+- A: `Tests/KanbanCodeCoreTests/SlashCommands/SlashCommandCatalogTests.swift`
+- A: `Tests/KanbanCodeCoreTests/TerminalImagePasteTests.swift`
+- M: `Tests/KanbanCodeCoreTests/Vault/PastedSecretRouteTests.swift`
+- M: `Tests/KanbanCodeCoreTests/Vault/VaultApprovalCopyTests.swift`
+- A: `Tests/KanbanCodeCoreTests/Vault/VaultAuditSegmentTests.swift`
+- A: `Tests/KanbanCodeCoreTests/Vault/VaultAuditTailTests.swift`
+- M: `Tests/KanbanCodeCoreTests/Vault/VaultBrokerTests.swift`

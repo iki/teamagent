@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--prime-agent",
+    "category": "ai-agents",
+    "name": "prime-agent",
+    "url": "https://github.com/PrimeIntellect-ai/prime-agent",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--prime-agent.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "cfe398105ed8753d0fbcfbeb186934285730a5a3",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T12:30:09-07:00",
+    "reportSha256": "788ba1a3363c92e27226345e6636ff07673bc7a3acafad68c88e0362a56509ad",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--prime-agent",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/PrimeIntellect-ai/prime-agent",
+    "report": "spec/projects/ai-agents--prime-agent.md",
+    "analyzedSha": "cfe398105ed8753d0fbcfbeb186934285730a5a3",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T12:30:09-07:00",
+    "observedSha": "c13415b44239c1333b2c8503070310182e0d4b2d",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "c13415b44239c1333b2c8503070310182e0d4b2d",
+        "date": "2026-10-27T12:20:00+01:00",
+        "subject": "remove dead built-in bash/edit tool implementations (#3823)"
+      },
+      {
+        "sha": "c4c238ca025e382d96fb5f37e6328ca77fb82ef3",
+        "date": "2026-10-25T15:07:13+01:00",
+        "subject": "restore opencode conversation routing (#3533)"
+      },
+      {
+        "sha": "e2bcc6add72e91d3a54aec86d160e702f305f269",
+        "date": "2026-10-25T14:25:48+01:00",
+        "subject": "session: cap the [python-state] notice and keep only the newest copy in context (#3753)"
+      },
+      {
+        "sha": "e3e21add5aacaaa42a5937505b3ed311ad9f1bfd",
+        "date": "2026-10-25T14:25:38+01:00",
+        "subject": "anthropic: stop replaying unsigned thinking as text (#3759)"
+      },
+      {
+        "sha": "0a0b4c6de01742d598e49e87774424c8e313a148",
+        "date": "2026-10-25T14:23:57+01:00",
+        "subject": "google: route Gemini thinking levels from the catalog thinkingLevelMap (#3767)"
+      },
+      {
+        "sha": "b800e2ef6de7a427b26593052e9824279bf66051",
+        "date": "2026-10-25T14:23:47+01:00",
+        "subject": "release: bundle the live catalog instead of the fixture snapshot (#3763)"
+      },
+      {
+        "sha": "100e7053374b2bac188387652397820564cf92df",
+        "date": "2026-10-25T14:23:35+01:00",
+        "subject": "bedrock: fix credential_process profiles, sigv4 signing, empty streams and claude 5 caching (#3750)"
+      },
+      {
+        "sha": "e2229869b719ce1698f67d21947eccab26d2ddaa",
+        "date": "2026-10-25T14:22:32+01:00",
+        "subject": "codex: send the session identity on every request; reused sockets honor each request's abort (#3751)"
+      },
+      {
+        "sha": "1cc6103a4caa8097a848a723433897fd6dbdf033",
+        "date": "2026-10-25T12:35:42+01:00",
+        "subject": "use adaptive thinking for haiku 5.x (#3756)"
+      },
+      {
+        "sha": "26b32c9c5d0b2e8b0718b76ac0b340e9e3db029c",
+        "date": "2026-10-25T12:30:07+01:00",
+        "subject": "report 128 + signal for a ! command killed by a signal (#3764)"
+      },
+      {
+        "sha": "c61a6acd2277e7f6e0fe0d94fd9478dd66e62944",
+        "date": "2026-10-25T12:29:57+01:00",
+        "subject": "mcp add: write bearerTokenEnvVar, the key the engine reads (#3760)"
+      },
+      {
+        "sha": "8e12740b1aacfcf3c981a2a172ea18c357ca1daf",
+        "date": "2026-10-25T12:29:46+01:00",
+        "subject": "honour a reported usage cost from any provider (#3758)"
+      },
+      {
+        "sha": "85755cb8ae111505f8511896ca91a7220f01e8bf",
+        "date": "2026-10-25T12:29:35+01:00",
+        "subject": "send one authorization header in openai-completions requests (#3757)"
+      },
+      {
+        "sha": "fe62c04bc1d78547dd09fbf786ce4ed43a854911",
+        "date": "2026-10-25T12:29:24+01:00",
+        "subject": "rlm: settle a child whose final model call failed as error, not done (#3754)"
+      },
+      {
+        "sha": "5e9505f1ced2355a80b4eb9c6a35268fc52f5a79",
+        "date": "2026-10-25T12:29:14+01:00",
+        "subject": "fix: name or drop tool calls streamed without a function name; strip them on replay (#3752)"
+      },
+      {
+        "sha": "63bdb5ad0366d5addc15662c2cf912d10ddf4590",
+        "date": "2026-10-25T12:29:04+01:00",
+        "subject": "never reopen pickled file handles on kernel snapshot restore (#3749)"
+      },
+      {
+        "sha": "ec81bfa2168f278974daa88301a8aad368903632",
+        "date": "2026-10-25T12:28:54+01:00",
+        "subject": "azure-openai-responses: post to <base>/responses on the v1 API (#3712) (#3748)"
+      },
+      {
+        "sha": "7e3117ba85718ff618d104dd828f92cfa6d20640",
+        "date": "2026-10-24T19:01:17+02:00",
+        "subject": "Stop rows showing twice after compaction; hold queued work during navigate and fork (#3643)"
+      },
+      {
+        "sha": "5c898d1b27b109bd2d383c68d60a30536e39cc22",
+        "date": "2026-10-24T01:48:07+02:00",
+        "subject": "session events: keep isError on tool_execution_end JSON (#3766)"
+      },
+      {
+        "sha": "65e97e8242069dc357afae785a3d29da79a5d1e0",
+        "date": "2026-10-24T01:47:56+02:00",
+        "subject": "mcp oauth: accept an issuer that differs only by a trailing slash (#3761)"
+      },
+      {
+        "sha": "fce76223036e20dd6ddb750f37a6952b7ee3a505",
+        "date": "2026-10-23T13:09:10-07:00",
+        "subject": "fix(google): send systemInstruction as a Content object (#3737)"
+      },
+      {
+        "sha": "623e8ff062938ec24ee86e5ef19c6e92eab6f992",
+        "date": "2026-10-23T21:19:41+02:00",
+        "subject": "tui: instant @-file completion (eager index, inline answers, same-frame menu) (#3725)"
+      },
+      {
+        "sha": "c971d48e3c0cd95b144c53db3e43c1514ecbe142",
+        "date": "2026-10-23T21:19:12+02:00",
+        "subject": "pa-perf: two-mark agents view, transcript paging/top, paint-gap gauge, idle cost (#3723)"
+      },
+      {
+        "sha": "bbe4f4cfdaa85733743a869c11f8c5c78e78c72c",
+        "date": "2026-10-23T21:18:43+02:00",
+        "subject": "TUI: complete a PageUp that hits the top while the older page loads (#3724)"
+      },
+      {
+        "sha": "80a0d9c239f4a45dba0b0f2cc7ba72d4137a8e03",
+        "date": "2026-10-23T21:18:13+02:00",
+        "subject": "agents view: the session you left keeps the focus on return (#3722)"
+      },
+      {
+        "sha": "d374e7197334344d7ea9c1eba9f4cce6c18f5860",
+        "date": "2026-10-23T14:35:34-04:00",
+        "subject": "Bump tokio to 1.54.1 for RUSTSEC-2026-0386 (#3747)"
+      },
+      {
+        "sha": "71beca9478f552dc6fc898bba9685f9ce00515cf",
+        "date": "2026-10-22T21:55:03+02:00",
+        "subject": "[RSI, feature] Record child cancellation as a parent->child semantic edge (#3680)"
+      },
+      {
+        "sha": "f07099812c4a025c68b35218d25df870bf0d67f3",
+        "date": "2026-10-22T21:12:59+02:00",
+        "subject": "[RSI, feature] python_repl per-cell watchdog teaches over-budget cells toward bash() (#3691)"
+      },
+      {
+        "sha": "75ec606135c9734feb1f72d04e5beca9c98bf37d",
+        "date": "2026-10-22T21:12:37+02:00",
+        "subject": "[RSI, bug] Fix: gate the bundled websearch skill on its Serper credential (#3677)"
+      },
+      {
+        "sha": "1d9daf73b9946d34b8ba9a9f91b0beb899479c33",
+        "date": "2026-10-22T21:12:14+02:00",
+        "subject": "prompt: drop the stale 'await commands before ending the turn' rule (#3511)"
+      },
+      {
+        "sha": "07ae06883e6c765bed08952811247565d589f018",
+        "date": "2026-10-22T20:24:15+02:00",
+        "subject": "[RSI, bug] ACP: classify transport failures in prompt error responses (#3679)"
+      },
+      {
+        "sha": "8aac8692456c00c01d4e53e60e6d3347a3506559",
+        "date": "2026-10-21T19:16:53-04:00",
+        "subject": "release: v0.10.1 (#3717)"
+      }
+    ],
+    "files": [
+      {
+        "status": "D",
+        "path": ".changes/agent-message-wakes-passivated-child.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changes/async-turn-contract.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changes/azure-responses-v1-route.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/csi-modifier-non-ascii-panic.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/feat-machine-library.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/feat-rust-semantic-edges.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-acp-turn-ownership.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-adopted-worker-exit-wait.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changes/fix-agents-view-return-focus.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-cancel-owned-prompt-admission.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-code-fence-wrap.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-daemon-client-partial-line.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-nosession-client-owned.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-rlm-child-failure-notice.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-rust-cost-followups.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-rust-cost-sidecar.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-start-id-in-process.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-supervisor-eviction-fence.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/fix-tools-flag.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/git-state-off-session-lock.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/installer-force-scope.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/ipython-bash-dominated-cells.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/ledger-skip-bad-lines.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/linux-dead-pid-skips-ps.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/nightly-update-direct.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/rlm-children-survive-daemon-restart.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/session-id-path-validation.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changes/tool-execution-end-iserror.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/unstash-on-send.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changes/update-installer-no-terminal.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changes/user-bash-signal-exit-code.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/VOUCHED.td",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/actions/dependency-audit/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/discussion-notifier/notify.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/discussion-notifier/test_notify.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/continuous.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/daily-stats.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/discussion-slack.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/nightly.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/perf.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-prepare.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/windows-runtime-triage.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Cargo.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Makefile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/abort.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent_loop/abort.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent_loop/entry.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent_loop/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent_loop/response.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent_loop/run.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent_loop/tool_call.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/agent_loop/tools.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/lib.rs",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "crates/pa-agent/src/proxy.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/scripted.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/types.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/src/validation.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-agent/tests/agent_loop_scripted.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/cache_pricing.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/env_api_keys.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/event_stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/lib.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/models.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/models_generated.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/anthropic.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/anthropic_callback.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/callback.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/github_copilot.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/openai_codex.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/pkce.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/provider_http.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/types.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/oauth/xai.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/prime_inference_differential_test.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/anthropic/convert.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/anthropic/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/anthropic/params.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/anthropic/stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/anthropic/stream_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/azure_openai_responses.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/bedrock/auth.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/bedrock/convert.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/src/providers/bedrock/credential_process.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/bedrock/events.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/bedrock/eventstream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/bedrock/goaway.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/bedrock/h2.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/bedrock/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/faux/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/faux/script.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/faux/tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/google.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/google_shared.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/google_stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/google_vertex.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/mistral/convert.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/mistral/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/mistral/stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/src/providers/mistral/wire_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_codex_responses/errors.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_codex_responses/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_codex_responses/request.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_codex_responses/session.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_codex_responses/websocket.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_completions/convert.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_completions/errors.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_completions/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_completions/params.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_completions/stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/src/providers/openai_completions/stream/tests/stream_max_tokens.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_completions/stream/tests/stream_pins.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/src/providers/openai_completions/stream/tests/stream_tool_call_name.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/src/providers/openai_completions/stream/tests/stream_wire.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_completions/stream_drop.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_responses.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_responses_hooks.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_responses_shared.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/openai_responses_stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/src/providers/opencode_headers.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/simple_options.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/providers/transform_messages.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/registry.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/stream.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/types.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/diagnostics.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/h2_classify.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/hash.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/headers.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/http.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/json_parse.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/log.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/overflow.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/sanitize_unicode.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/sse.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/stream_failure.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-ai/src/utils_inner/stream_failure/tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/src/utils_inner/tls.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/tests/codex_extra_ca.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/pa-ai/tests/opencode_session.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-cli/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-cli/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-cli/src/args.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-cli/src/client_settings.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-cli/src/client_traces.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/pa-cli/src/client_update.rs",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

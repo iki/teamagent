@@ -1,0 +1,207 @@
+# onyx: change evidence
+
+Source: [onyx](https://github.com/onyx-dot-app/onyx) · [Analysis](../../projects/ai-agents--onyx.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `f1fbc7a135eb844e21e13f29eaa8acfd83a608e9`; commit date: 2026-10-03T04:38:47Z; review date: unknown; observed SHA: `24aafd43aa31e56ebf9859cf50e2a8e3d61adebc`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/onyx-dot-app/onyx/compare/f1fbc7a135eb844e21e13f29eaa8acfd83a608e9...24aafd43aa31e56ebf9859cf50e2a8e3d61adebc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [24aafd43aa31](https://github.com/onyx-dot-app/onyx/commit/24aafd43aa31e56ebf9859cf50e2a8e3d61adebc) 2026-10-27T17:12:11Z: fix(deps): pin authlib to 1.9.0 (#16761)
+- [b8c2225f8eb0](https://github.com/onyx-dot-app/onyx/commit/b8c2225f8eb0bb302b363e54d6c6458f0ed796bd) 2026-10-27T01:08:23Z: chore(loadtest): bump locust base image and pin from 2.44 to 2.46.6 (#16752)
+- [dcc9d6c56ee8](https://github.com/onyx-dot-app/onyx/commit/dcc9d6c56ee8f65e84470869e10d4c6a877daa67) 2026-10-27T00:53:19Z: feat(agents): rebuild the Share Agent modal on Opal, add RowAction (#16740)
+- [14baaf07d8e8](https://github.com/onyx-dot-app/onyx/commit/14baaf07d8e845cb6c7b9425a972c4745d00dbea) 2026-10-26T23:19:32Z: fix(admin): drop success toasts for inline saves and copies (#16739)
+- [68813698d767](https://github.com/onyx-dot-app/onyx/commit/68813698d7672eed304b23f0b33078cfd84eaf2e) 2026-10-26T23:04:29Z: refactor(opal): SelectButton absorbs OpenButton and FilterButton (#16746)
+- [51fc305dfbed](https://github.com/onyx-dot-app/onyx/commit/51fc305dfbedf08cc52b871d1a5cc6228472aa6f) 2026-10-26T22:59:49Z: feat(permissions): separate Manage Connectors and Manage Document Sets toggles (#16606)
+- [f128b41d8435](https://github.com/onyx-dot-app/onyx/commit/f128b41d84355a2c61270ac719875fd72bba17ff) 2026-10-26T22:18:53Z: chore(deps): bump mcp from 1.28.1 to 1.30.0 (#16737)
+- [0742208b1212](https://github.com/onyx-dot-app/onyx/commit/0742208b121297036ac3188d39363dc834c887f1) 2026-10-26T22:11:11Z: chore(deps): bump rustls from 0.23.37 to 0.23.45 in desktop (#16741)
+- [e3c722a7f188](https://github.com/onyx-dot-app/onyx/commit/e3c722a7f188d101df70a656736dba9b841a93a4) 2026-10-26T22:07:03Z: fix(reindex): widen search_settings.reclaim_status to 64 and stop writing the short RECLAIMED value (#15443)
+- [78e3a12ce9f8](https://github.com/onyx-dot-app/onyx/commit/78e3a12ce9f8cf2d75de1d038a4c75d3eb1292c7) 2026-10-26T21:39:26Z: chore(deps): bump katex from 0.17.0 to 0.18.11 (#16738)
+- [7739589720fb](https://github.com/onyx-dot-app/onyx/commit/7739589720fb8ba63ecbe2ea984bd94d0d0b2bc6) 2026-10-26T21:39:20Z: chore(deps): bump opentelemetry-api from 1.42.1 to 1.45.1 (#16736)
+- [fae3ea626600](https://github.com/onyx-dot-app/onyx/commit/fae3ea626600f7109fa28f79c11a85597fd86c9c) 2026-10-26T21:39:17Z: chore(deps): bump fastmcp from 3.2.0 to 3.4.10 (#16735)
+- [dce7e3a31eb5](https://github.com/onyx-dot-app/onyx/commit/dce7e3a31eb5436d888d5d9b15811b05bc3ef6a7) 2026-10-26T21:39:14Z: chore(deps): bump setuptools from 83.0.0 to 84.1.0 (#16734)
+- [351712a20ca6](https://github.com/onyx-dot-app/onyx/commit/351712a20ca6fa172ecd882dac0c06b059098dc0) 2026-10-26T21:39:11Z: chore(deps): bump werkzeug from 3.1.6 to 3.1.9 (#16733)
+- [008a17925bff](https://github.com/onyx-dot-app/onyx/commit/008a17925bff4073a06837e8e6bdc36b84cbe35a) 2026-10-26T21:39:08Z: chore(deps): bump oauthlib from 3.2.2 to 4.0.0 (#16731)
+- [e1ae45731a3e](https://github.com/onyx-dot-app/onyx/commit/e1ae45731a3ee333e983d0efbce98a322a1043b5) 2026-10-26T21:39:05Z: chore(deps): bump pyjwt from 2.14.0 to 2.15.0 (#16730)
+- [ebf75adbbf9a](https://github.com/onyx-dot-app/onyx/commit/ebf75adbbf9afe15a91ebd5603ba1e2e230da429) 2026-10-26T21:39:02Z: chore(deps): bump multidict from 6.7.0 to 6.9.1 (#16729)
+- [aa6db5557255](https://github.com/onyx-dot-app/onyx/commit/aa6db5557255d8edd83591aae93f5519ef950836) 2026-10-26T21:38:58Z: chore(deps): bump virtualenv from 21.14.9 to 21.14.13 (#16728)
+- [e6656fc31bac](https://github.com/onyx-dot-app/onyx/commit/e6656fc31bacd8173cb7293c10e6d58567404390) 2026-10-26T20:49:08Z: fix(reindex): store RECLAIMED as a value that fits older reclaim_status columns (#16723)
+- [d2b2c161755d](https://github.com/onyx-dot-app/onyx/commit/d2b2c161755d801d8ffb264e1a2c6647e58e80f9) 2026-10-26T20:32:18Z: chore(deps): bump github.com/klauspost/compress from 1.18.6 to 1.18.7 in tools/ods (#16721)
+- [547b41ae16f8](https://github.com/onyx-dot-app/onyx/commit/547b41ae16f8d43af91787ed5a0e43c03f25d2db) 2026-10-26T20:32:16Z: chore(deps): bump virtualenv from 20.36.1 to 21.14.9 (#16720)
+- [9bdcec39dd8a](https://github.com/onyx-dot-app/onyx/commit/9bdcec39dd8aae848006915b00a3c46325b4edc9) 2026-10-26T20:32:13Z: chore(deps): bump fsspec from 2025.10.0 to 2026.6.0 (#16719)
+- [193df54ef10d](https://github.com/onyx-dot-app/onyx/commit/193df54ef10d794669c98e48ee4697f23d3c0c15) 2026-10-26T20:32:11Z: chore(deps): bump aiohttp from 3.14.3 to 3.14.4 (#16718)
+- [0f0e210add49](https://github.com/onyx-dot-app/onyx/commit/0f0e210add49a921b7fc43898f24e244d15ab635) 2026-10-26T20:32:09Z: chore(deps): bump pypdf from 6.19.0 to 6.21.2 (#16717)
+- [012cbf7280ef](https://github.com/onyx-dot-app/onyx/commit/012cbf7280efeeb2a7af9c7b04bad4df3e4fdda1) 2026-10-26T20:32:06Z: chore(deps): bump graphql-core from 3.2.8 to 3.2.12 (#16716)
+- [a328d71a4c32](https://github.com/onyx-dot-app/onyx/commit/a328d71a4c3274e726ec424e7012d48db33a33ce) 2026-10-26T20:26:12Z: fix(llms): give recommended-models repair the pytest failure and allow Gemini Argon default (#16710)
+- [ce0edc573f42](https://github.com/onyx-dot-app/onyx/commit/ce0edc573f42f8caced4443cb4b37c27f0252552) 2026-10-26T20:24:33Z: feat(opal): SettingsLayouts.Root error state, used by six pages (#16709)
+- [7f34d0d011ff](https://github.com/onyx-dot-app/onyx/commit/7f34d0d011ff108a3f2b9f5c6e5fb6c70e0aa2f8) 2026-10-26T20:13:21Z: chore(web): remove Storybook (#16715)
+- [d766d9291351](https://github.com/onyx-dot-app/onyx/commit/d766d9291351cdab566fb124f8b35d8a94c66ef1) 2026-10-26T20:00:29Z: chore(llms): update recommended models (#16694)
+- [d3405faaaeb5](https://github.com/onyx-dot-app/onyx/commit/d3405faaaeb524363532fc575711b2aafbd85f39) 2026-10-26T19:47:57Z: feat(chat): the full-width toggle animates the chat width (#16702)
+- [1bdd733f2d67](https://github.com/onyx-dot-app/onyx/commit/1bdd733f2d6727d7981107b392b9bb1d6fe84517) 2026-10-26T19:34:50Z: feat(admin): admin pages pass loading to SettingsLayouts.Root (#16707)
+- [1dc7c9115c33](https://github.com/onyx-dot-app/onyx/commit/1dc7c9115c3342b1d8621b5154984e66761462ae) 2026-10-26T18:59:16Z: feat(agents): add model-history replay and shared message roles (#16464)
+
+## Changed paths (truncated)
+
+- A: `.agents/feature-map/GLOSSARY.md`
+- A: `.agents/feature-map/INDEX.md`
+- A: `.agents/feature-map/PATHS.md`
+- A: `.agents/feature-map/README.md`
+- A: `.agents/feature-map/VERIFYING.md`
+- A: `.agents/feature-map/check_feature_map.py`
+- A: `.agents/feature-map/components/access-control.md`
+- A: `.agents/feature-map/components/agents-personas.md`
+- A: `.agents/feature-map/components/auth-and-identity.md`
+- A: `.agents/feature-map/components/background-jobs.md`
+- A: `.agents/feature-map/components/billing.md`
+- A: `.agents/feature-map/components/cc-pairs-and-credentials.md`
+- A: `.agents/feature-map/components/chat-frontend.md`
+- A: `.agents/feature-map/components/chat-persistence.md`
+- A: `.agents/feature-map/components/chat-preferences.md`
+- A: `.agents/feature-map/components/citations.md`
+- A: `.agents/feature-map/components/code-execution.md`
+- A: `.agents/feature-map/components/connectors.md`
+- A: `.agents/feature-map/components/context-assembly.md`
+- A: `.agents/feature-map/components/core-chat-loop.md`
+- A: `.agents/feature-map/components/craft-admin.md`
+- A: `.agents/feature-map/components/craft-external-apps.md`
+- A: `.agents/feature-map/components/craft-sandboxes.md`
+- A: `.agents/feature-map/components/craft-scheduled-tasks.md`
+- A: `.agents/feature-map/components/craft-sessions.md`
+- A: `.agents/feature-map/components/craft-streaming.md`
+- A: `.agents/feature-map/components/craft-webapp-proxy.md`
+- A: `.agents/feature-map/components/desktop-widget-extensions.md`
+- A: `.agents/feature-map/components/discord-bot.md`
+- A: `.agents/feature-map/components/document-index.md`
+- A: `.agents/feature-map/components/editions-and-gating.md`
+- A: `.agents/feature-map/components/federated-search.md`
+- A: `.agents/feature-map/components/file-store-and-user-files.md`
+- A: `.agents/feature-map/components/image-generation.md`
+- A: `.agents/feature-map/components/indexing-pipeline.md`
+- A: `.agents/feature-map/components/internal-search.md`
+- A: `.agents/feature-map/components/llm-gateway.md`
+- A: `.agents/feature-map/components/llm-providers.md`
+- A: `.agents/feature-map/components/mcp-and-custom-tools.md`
+- A: `.agents/feature-map/components/mcp-server.md`
+- A: `.agents/feature-map/components/mobile-app.md`
+- A: `.agents/feature-map/components/multi-tenancy.md`
+- A: `.agents/feature-map/components/notifications.md`
+- A: `.agents/feature-map/components/observability.md`
+- A: `.agents/feature-map/components/onyx-api.md`
+- A: `.agents/feature-map/components/permission-sync.md`
+- A: `.agents/feature-map/components/projects.md`
+- A: `.agents/feature-map/components/rate-and-usage-limits.md`
+- A: `.agents/feature-map/components/skills.md`
+- A: `.agents/feature-map/components/slack-bot.md`
+- A: `.agents/feature-map/components/standard-answers.md`
+- A: `.agents/feature-map/components/streaming-protocol.md`
+- A: `.agents/feature-map/components/tools-framework.md`
+- A: `.agents/feature-map/components/voice.md`
+- A: `.agents/feature-map/components/web-search.md`
+- A: `.agents/feature-map/components/whitelabelling-and-theme.md`
+- A: `.agents/feature-map/path-allowlist.txt`
+- A: `.agents/feature-map/stale_docs.py`
+- A: `.agents/hooks/agent_hook_io.py`
+- A: `.agents/hooks/ensure_latest_main.py`
+- A: `.agents/hooks/opal_migrate_on_edit.py`
+- A: `.agents/hooks/pre_commit_on_stop.py`
+- R100: `.agents/skills/check-pr` (from `.cursor/skills/check-pr`)
+- R100: `.agents/skills/cli-review` (from `.cursor/skills/cli-review`)
+- A: `.agents/skills/feature-map/SKILL.md`
+- R100: `.agents/skills/greploop` (from `.cursor/skills/greploop`)
+- R100: `.agents/skills/greptile/LICENSE` (from `.cursor/skills/greptile/LICENSE`)
+- R100: `.agents/skills/greptile/README.md` (from `.cursor/skills/greptile/README.md`)
+- R100: `.agents/skills/greptile/check-pr/SKILL.md` (from `.cursor/skills/greptile/check-pr/SKILL.md`)
+- R100: `.agents/skills/greptile/check-pr/references/gitlab-api.md` (from `.cursor/skills/greptile/check-pr/references/gitlab-api.md`)
+- R100: `.agents/skills/greptile/check-pr/references/graphql-queries.md` (from `.cursor/skills/greptile/check-pr/references/graphql-queries.md`)
+- R100: `.agents/skills/greptile/cli-review/SKILL.md` (from `.cursor/skills/greptile/cli-review/SKILL.md`)
+- R100: `.agents/skills/greptile/greploop/SKILL.md` (from `.cursor/skills/greptile/greploop/SKILL.md`)
+- R100: `.agents/skills/greptile/greploop/references/gitlab-api.md` (from `.cursor/skills/greptile/greploop/references/gitlab-api.md`)
+- R100: `.agents/skills/greptile/greploop/references/graphql-queries.md` (from `.cursor/skills/greptile/greploop/references/graphql-queries.md`)
+- R097: `.agents/skills/merge-dependabot-prs/SKILL.md` (from `.cursor/skills/merge-dependabot-prs/SKILL.md`)
+- R100: `.agents/skills/merge-dependabot-prs/references/graphql-queries.md` (from `.cursor/skills/merge-dependabot-prs/references/graphql-queries.md`)
+- R100: `.agents/skills/onyx-cli/SKILL.md` (from `.cursor/skills/onyx-cli/SKILL.md`)
+- A: `.agents/skills/onyx-craft-dev/SKILL.md`
+- A: `.agents/skills/onyx-dev-stack/SKILL.md`
+- A: `.agents/skills/onyx-dev-stack/agents/openai.yaml`
+- R100: `.agents/skills/playwright/SKILL.md` (from `.cursor/skills/playwright/SKILL.md`)
+- R093: `.agents/skills/sync-vendored-skills.sh` (from `.cursor/skills/sync-vendored-skills.sh`)
+- M: `.claude/settings.json`
+- M: `.claude/skills`
+- A: `.coderabbit.yaml`
+- A: `.codex/hooks.json`
+- A: `.codex/skills`
+- A: `.cursor/skills`
+- M: `.devcontainer/Dockerfile`
+- M: `.github/actions/build-backend-image/action.yml`
+- M: `.github/actions/build-devcontainer-image/action.yml`
+- M: `.github/actions/build-model-server-image/action.yml`
+- M: `.github/actions/check-tested-base/check-tested-base.sh`
+- M: `.github/actions/dhi-base-images/action.yml`
+- M: `.github/actions/install-python-deps/action.yml`
+- M: `.github/actions/run-nightly-provider-chat-test/action.yml`
+- A: `.github/actions/slack-post-message/action.yml`
+- M: `.github/prompts/cve-fix.md`
+- M: `.github/pull_request_template.md`
+- M: `.github/scripts/base-image-ref.sh`
+- A: `.github/scripts/check-mcp-compatibility.py`
+- M: `.github/scripts/cve-check-manifests.ts`
+- M: `.github/scripts/run-cve-alerts.sh`
+- M: `.github/workflows/audit.yml`
+- M: `.github/workflows/cve-alerts-nightly.yml`
+- M: `.github/workflows/cve-alerts.yml`
+- A: `.github/workflows/cve-tracking.yml`
+- M: `.github/workflows/deployment.yml`
+- A: `.github/workflows/mcp-compatibility.yml`
+- M: `.github/workflows/post-merge-beta-cherry-pick.yml`
+- M: `.github/workflows/pr-craft-compose-integration.yml`
+- M: `.github/workflows/pr-craft-compose-tests.yml`
+- M: `.github/workflows/pr-craft-k8s-tests.yml`
+- M: `.github/workflows/pr-desktop-build.yml`
+- M: `.github/workflows/pr-external-dependency-unit-tests.yml`
+- M: `.github/workflows/pr-golang-tests.yml`
+- M: `.github/workflows/pr-helm-chart-testing.yml`
+- M: `.github/workflows/pr-helm-chart-version.yml`
+- M: `.github/workflows/pr-integration-tests.yml`
+- D: `.github/workflows/pr-linear-check.yml`
+- M: `.github/workflows/pr-playwright-tests.yml`
+- M: `.github/workflows/pr-python-connector-tests.yml`
+- M: `.github/workflows/pr-python-tests.yml`
+- M: `.github/workflows/pr-quality-checks.yml`
+- D: `.github/workflows/pr-storybook-build.yml`
+- M: `.github/workflows/pr-terraform-provider-tests.yml`
+- M: `.github/workflows/preview.yml`
+- M: `.github/workflows/release-opal.yml`
+- A: `.github/workflows/reusable-agent-task-pr.yml`
+- D: `.github/workflows/storybook-deploy.yml`
+- M: `.github/workflows/update-base-image-digests.yml`
+- M: `.github/workflows/update-recommended-models.yml`
+- M: `.github/workflows/update-vendored-skills.yml`
+- M: `.github/workflows/weekly-models-dev-price-sync.yml`
+- M: `.gitignore`
+- M: `.greptile/config.json`
+- M: `.greptile/files.json`
+- M: `.greptile/rules.md`
+- M: `.pre-commit-config.yaml`
+- M: `.vscode/.env.k8s.template`
+- M: `.vscode/env.web_template.txt`
+- M: `.vscode/env_template.txt`
+- M: `.vscode/launch.json`
+- M: `.vscode/tasks.json`
+- M: `.zed/README.md`
+- A: `.zed/alembic_step.py`
+- M: `.zed/debug.json`
+- M: `.zed/process-compose.k8s.yaml`
+- M: `.zed/run-all-k8s.sh`
+- M: `.zed/tasks.json`
+- M: `AGENTS.md`
+- M: `Makefile`
+- M: `README.md`
+- M: `README.zh-CN.md`
+- M: `backend/AGENTS.md`
+- M: `backend/Dockerfile`
+- M: `backend/Dockerfile.model_server`
+- M: `backend/alembic/env.py`
+- A: `backend/alembic/versions/0140c82e8a7f_add_allow_connector_check_findings_to_.py`

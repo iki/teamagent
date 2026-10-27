@@ -1,0 +1,199 @@
+# wigolo: change evidence
+
+Source: [wigolo](https://github.com/KnockOutEZ/wigolo) · [Analysis](../../projects/ai-query--wigolo.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `da59eee72ee5e6c6a79a290e9c0f6d3720588711`; commit date: 2026-09-27T11:50:05+06:00; review date: unknown; observed SHA: `9180e934442255fac68377c5537dc9b4fbc75469`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/KnockOutEZ/wigolo/compare/da59eee72ee5e6c6a79a290e9c0f6d3720588711...9180e934442255fac68377c5537dc9b4fbc75469). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [9180e9344422](https://github.com/KnockOutEZ/wigolo/commit/9180e934442255fac68377c5537dc9b4fbc75469) 2026-10-25T01:55:22+06:00: Merge pull request #665: release v0.3.1
+- [a0411efb8828](https://github.com/KnockOutEZ/wigolo/commit/a0411efb88282d5e5ada54e4234b9119cf43cabf) 2026-10-24T19:47:33Z: chore(release): v0.3.1
+- [2d80298e2a6f](https://github.com/KnockOutEZ/wigolo/commit/2d80298e2a6fdbdd3a53ee0f04e9870ba3cd0553) 2026-10-25T01:47:26+06:00: Merge pull request #664 from KnockOutEZ/claude/binary-build-macos-intel-runner
+- [eb827e53a1a6](https://github.com/KnockOutEZ/wigolo/commit/eb827e53a1a65efa6b76b47f1ee5b89c3cbfe220) 2026-10-24T19:36:03Z: ci(binary): build macOS x64 on macos-15-intel
+- [3507bb8eeec5](https://github.com/KnockOutEZ/wigolo/commit/3507bb8eeec5ae99b1425af4c0fbe6cfb10e09b5) 2026-10-22T00:01:14+06:00: Merge pull request #660: release v0.3.0
+- [bf710ac5711e](https://github.com/KnockOutEZ/wigolo/commit/bf710ac5711e1eb0b112295fa74b94de04506fc3) 2026-10-21T23:55:10+06:00: Merge pull request #659 from KnockOutEZ/claude/pr-template-closing-keywords
+- [6e8ffe459819](https://github.com/KnockOutEZ/wigolo/commit/6e8ffe459819fc9815e14c0a3966978cd555a8d5) 2026-10-21T17:54:47Z: chore(release): v0.3.0
+- [424115d60211](https://github.com/KnockOutEZ/wigolo/commit/424115d6021198fd64adbd583df99566522ee986) 2026-10-21T23:49:13+06:00: Merge pull request #657 from KnockOutEZ/claude/node-runtime-doctor
+- [bf3b683bd2d9](https://github.com/KnockOutEZ/wigolo/commit/bf3b683bd2d981080efe12ef9cd48fd765f46c29) 2026-10-21T17:44:51Z: docs(github): use one closing keyword per issue in the PR template
+- [7f150246de37](https://github.com/KnockOutEZ/wigolo/commit/7f150246de3784047ced70eef5714a7e43619468) 2026-10-21T17:40:29Z: fix(doctor): name the sqlite ABI mismatch in the --json report
+- [105eff6b9fc7](https://github.com/KnockOutEZ/wigolo/commit/105eff6b9fc797086011e53bcb2c0222388eed88) 2026-10-21T17:33:51Z: Merge remote-tracking branch 'origin/main' into claude/node-runtime-doctor
+- [b04eb1885dc5](https://github.com/KnockOutEZ/wigolo/commit/b04eb1885dc5f489e43e9d71f10cbbc11964c09e) 2026-10-21T23:29:52+06:00: Merge pull request #658 from KnockOutEZ/claude/small-bug-fixes
+- [aea9d7ffd2fe](https://github.com/KnockOutEZ/wigolo/commit/aea9d7ffd2fe443b47cc8b4396339f554233d085) 2026-10-21T23:29:47+06:00: Merge pull request #656 from KnockOutEZ/claude/gallant-johnson-iey5az
+- [42998e483967](https://github.com/KnockOutEZ/wigolo/commit/42998e483967e41af6ef4fdb63cf634d5777469b) 2026-10-21T16:55:53Z: docs: call Node 26 supported but Current, not LTS
+- [702ffe4f7679](https://github.com/KnockOutEZ/wigolo/commit/702ffe4f767931d58c478d80146bc6d4bd45d207) 2026-10-21T16:48:19Z: build!: require Node 22+ and test Node 26 in CI
+- [2364f0b79182](https://github.com/KnockOutEZ/wigolo/commit/2364f0b7918248e51236041b71ea20c6b593b58e) 2026-10-21T16:39:55Z: fix(skills): only treat lock-dir mkdir errors as contention
+- [aa5ec6370e6e](https://github.com/KnockOutEZ/wigolo/commit/aa5ec6370e6ebfca157afb30f18e4f79f349385e) 2026-10-21T16:39:55Z: test(search): configure a GitHub token for the code-vertical pipeline test
+- [bec30171e4fa](https://github.com/KnockOutEZ/wigolo/commit/bec30171e4faee0141b85423f8870339a364d4ad) 2026-10-21T15:51:18Z: test(ssrf): correct why the mixed redirect test can't discriminate
+- [28c104cab2b2](https://github.com/KnockOutEZ/wigolo/commit/28c104cab2b270603a14b41ca63bb34649205b93) 2026-10-21T15:39:17Z: fix(rerank): report the remote reranker step in the TUI and sync its docs
+- [1bb7278d08f6](https://github.com/KnockOutEZ/wigolo/commit/1bb7278d08f6c17d3cd39e04dc1851c454b57ea0) 2026-10-21T15:37:42Z: fix(ssrf): fail fast on unresolvable hosts under the pin
+- [67f59bab29d7](https://github.com/KnockOutEZ/wigolo/commit/67f59bab29d7d6de8a22482d0af3f6b01e1f9fd3) 2026-10-21T15:27:01Z: fix(skills): treat EPERM from the receipts lock mkdir as contention on Windows
+- [8e8856660af5](https://github.com/KnockOutEZ/wigolo/commit/8e8856660af5636d93053706a973ca03c3e55901) 2026-10-21T15:18:56Z: fix(extract): pass the configured LLM model to the extraction fallback
+- [56ae5c4fecb8](https://github.com/KnockOutEZ/wigolo/commit/56ae5c4fecb82ce783cf2b180dfefbfd9d5a15bb) 2026-10-21T15:17:23Z: fix(skills): sync skill pack versions with package.json (fixes #632)
+- [0e20f2cac286](https://github.com/KnockOutEZ/wigolo/commit/0e20f2cac286e87492f67612c9c1017e98eb9f2d) 2026-10-21T15:16:30Z: fix(deps): declare sharp as a direct dependency (fixes #652)
+- [c7fb4e4d61ae](https://github.com/KnockOutEZ/wigolo/commit/c7fb4e4d61ae32a498c6615a00e18f8057e339d5) 2026-10-21T15:16:14Z: fix(doctor): surface better-sqlite3 Node ABI mismatches
+- [f2510c283be9](https://github.com/KnockOutEZ/wigolo/commit/f2510c283be98f794eb41a2340fdb1497c9a75ee) 2026-10-21T15:15:30Z: fix(search): fold wigolo notice into the JSON payload (fixes #651)
+- [001780a267ba](https://github.com/KnockOutEZ/wigolo/commit/001780a267ba3515c08b546cf81a465085c8c4fd) 2026-10-21T15:15:29Z: fix(doctor): tell "not installed" apart from "failed to launch"
+- [0e7ffb3d7051](https://github.com/KnockOutEZ/wigolo/commit/0e7ffb3d7051635335e3e2837b7b8ae4997342f3) 2026-10-21T15:13:47Z: fix(search): match tracking params case-insensitively in dedup (fixes #633)
+- [fa8e1edc69ed](https://github.com/KnockOutEZ/wigolo/commit/fa8e1edc69edde4774dff2d5dcbd47775d3d00f0) 2026-10-21T15:13:27Z: fix(search): gate github-code engine on WIGOLO_GITHUB_TOKEN (fixes #649)
+- [8d3b2554cc1e](https://github.com/KnockOutEZ/wigolo/commit/8d3b2554cc1ed2f0a7084f19f978be2852ef8722) 2026-10-21T15:11:45Z: fix(doctor): stop truncating error lines and give cold npx time
+- [d4617083ebf5](https://github.com/KnockOutEZ/wigolo/commit/d4617083ebf5b7cc6f77b90d4c28391da234d803) 2026-10-21T15:10:05Z: fix(cache): explain better-sqlite3 Node ABI mismatches
+- [714968c8ed77](https://github.com/KnockOutEZ/wigolo/commit/714968c8ed771f1d9e0ec7f147b8517376226f61) 2026-10-21T15:08:22Z: fix(deps): bump better-sqlite3 to ~12.11.1 for Node 26 installs
+
+## Changed paths
+
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- M: `.github/workflows/agent-benchmark.yml`
+- M: `.github/workflows/binary-build.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/extraction-benchmark.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/search-benchmark.yml`
+- M: `.github/workflows/site.yml`
+- M: `.github/workflows/star-chart.yml`
+- M: `CHANGELOG.md`
+- M: `README.md`
+- M: `SKILL.md`
+- M: `SPONSORS.md`
+- M: `assets/legacy-skill-hashes.json`
+- M: `docs/configuration.md`
+- M: `docs/getting-started.md`
+- M: `docs/installation.md`
+- M: `docs/self-hosting.md`
+- M: `docs/troubleshooting.md`
+- M: `llms.txt`
+- M: `package-lock.json`
+- M: `package.json`
+- M: `packages/wigolo-crewai/pyproject.toml`
+- M: `packages/wigolo-langchain/pyproject.toml`
+- M: `packages/wigolo-llamaindex/pyproject.toml`
+- M: `packages/wigolo-vercel-ai-sdk/package-lock.json`
+- M: `packages/wigolo-vercel-ai-sdk/package.json`
+- M: `sdks/python/pyproject.toml`
+- M: `sdks/typescript/package-lock.json`
+- M: `sdks/typescript/package.json`
+- M: `site/README.md`
+- M: `skills/wigolo-agent/SKILL.md`
+- M: `skills/wigolo-cache/SKILL.md`
+- M: `skills/wigolo-crawl/SKILL.md`
+- M: `skills/wigolo-diff/SKILL.md`
+- M: `skills/wigolo-extract/SKILL.md`
+- M: `skills/wigolo-fetch/SKILL.md`
+- M: `skills/wigolo-find-similar/SKILL.md`
+- M: `skills/wigolo-research/SKILL.md`
+- M: `skills/wigolo-search/SKILL.md`
+- M: `skills/wigolo-watch/SKILL.md`
+- M: `skills/wigolo/SKILL.md`
+- M: `src/agent/executor.ts`
+- M: `src/agent/pipeline.ts`
+- M: `src/cache/db.ts`
+- M: `src/cache/store.ts`
+- M: `src/cli/agents/skills/receipts.ts`
+- M: `src/cli/daemon.ts`
+- M: `src/cli/doctor.ts`
+- M: `src/cli/init.ts`
+- M: `src/cli/tui/actions/headless-set.ts`
+- M: `src/cli/tui/schema/llm.ts`
+- M: `src/cli/tui/schema/search.ts`
+- M: `src/cli/tui/schema/types.ts`
+- M: `src/cli/tui/state/required-fields.ts`
+- M: `src/cli/tui/system-check.ts`
+- M: `src/cli/tui/verify.ts`
+- M: `src/cli/warmup.ts`
+- M: `src/config.ts`
+- M: `src/crawl/crawler.ts`
+- M: `src/daemon/rest/errors.ts`
+- M: `src/embedding/background-queue.ts`
+- M: `src/extraction/brand-palette.ts`
+- M: `src/extraction/llm-fallback.ts`
+- M: `src/fetch/challenge-completion.ts`
+- M: `src/fetch/http-client.ts`
+- A: `src/fetch/pinned-dispatcher.ts`
+- M: `src/instructions.ts`
+- M: `src/persisted-config.ts`
+- M: `src/providers/rerank-provider.ts`
+- M: `src/research/citation-graph.ts`
+- M: `src/search/core/core-provider.ts`
+- M: `src/search/core/engine-health.ts`
+- M: `src/search/core/engine-quality.ts`
+- M: `src/search/core/lexical-alignment.ts`
+- M: `src/search/core/orchestrator.ts`
+- M: `src/search/core/rare-terms.ts`
+- M: `src/search/core/recent-cache-dedup.ts`
+- A: `src/search/core/text-tokenizer.ts`
+- M: `src/search/core/verticals/code.ts`
+- M: `src/search/core/verticals/papers.ts`
+- A: `src/search/engines/dblp.ts`
+- A: `src/search/engines/openalex.ts`
+- A: `src/search/engines/openreview.ts`
+- M: `src/search/highlights.ts`
+- M: `src/search/rerank.ts`
+- A: `src/search/reranker/remote-rerank-provider.ts`
+- M: `src/server.ts`
+- M: `src/server/search-response.ts`
+- M: `src/server/warmup-on-start.ts`
+- M: `src/tools/agent.ts`
+- A: `src/util/engine-list.ts`
+- A: `src/util/native-abi.ts`
+- M: `src/watch/ssrf.ts`
+- A: `tests/fetch/pinned-dispatcher.test.ts`
+- A: `tests/fetch/pinned-e2e.test.ts`
+- A: `tests/fetch/pinned-failclosed.test.ts`
+- A: `tests/fetch/pinned-rebind.test.ts`
+- A: `tests/fetch/pinned-redirect-body.test.ts`
+- A: `tests/fetch/pinned-redirect.test.ts`
+- M: `tests/integration/agent.test.ts`
+- A: `tests/integration/remote-rerank-pipeline.test.ts`
+- M: `tests/integration/search-rerank-fold.test.ts`
+- M: `tests/integration/search-rerank-pipeline.test.ts`
+- M: `tests/integration/search-v1-pipeline.test.ts`
+- M: `tests/unit/cache/store-search-key.test.ts`
+- M: `tests/unit/cli/agents/skills-content.test.ts`
+- M: `tests/unit/cli/agents/skills/receipts.test.ts`
+- M: `tests/unit/cli/daemon.test.ts`
+- M: `tests/unit/cli/doctor-lazy.test.ts`
+- M: `tests/unit/cli/doctor.test.ts`
+- M: `tests/unit/cli/init.test.ts`
+- M: `tests/unit/cli/tui/actions/headless-set.test.ts`
+- M: `tests/unit/cli/tui/actions/mcp-stdio-no-ink.test.ts`
+- M: `tests/unit/cli/tui/entry-required-fields.test.ts`
+- M: `tests/unit/cli/tui/schema/llm.test.ts`
+- M: `tests/unit/cli/tui/schema/search.test.ts`
+- M: `tests/unit/cli/tui/state/required-fields.test.ts`
+- M: `tests/unit/cli/tui/system-check.test.ts`
+- M: `tests/unit/cli/tui/verify.test.ts`
+- M: `tests/unit/cli/warmup-firefox.test.ts`
+- M: `tests/unit/cli/warmup.test.ts`
+- M: `tests/unit/config.test.ts`
+- M: `tests/unit/crawl/crawler.test.ts`
+- M: `tests/unit/daemon/rest-dispatch.test.ts`
+- M: `tests/unit/daemon/rest-errors.test.ts`
+- A: `tests/unit/documentation/docker-image-tags.test.ts`
+- M: `tests/unit/extraction/llm-fallback.test.ts`
+- M: `tests/unit/fetch/challenge-completion.test.ts`
+- M: `tests/unit/package-deps.test.ts`
+- M: `tests/unit/persisted-config.test.ts`
+- M: `tests/unit/providers/rerank-provider-factory.test.ts`
+- M: `tests/unit/research/citation-graph.test.ts`
+- M: `tests/unit/search/core/lexical-alignment.test.ts`
+- M: `tests/unit/search/core/rare-terms.test.ts`
+- A: `tests/unit/search/core/text-tokenizer.test.ts`
+- M: `tests/unit/search/engine-health.test.ts`
+- A: `tests/unit/search/engines/dblp.test.ts`
+- A: `tests/unit/search/engines/openalex.test.ts`
+- A: `tests/unit/search/engines/openreview.test.ts`
+- M: `tests/unit/search/highlights.test.ts`
+- A: `tests/unit/search/remote-rerank-provider.test.ts`
+- M: `tests/unit/search/rerank.test.ts`
+- M: `tests/unit/search/v1/orchestrator.test.ts`
+- M: `tests/unit/search/v1/recent-cache-dedup.test.ts`
+- M: `tests/unit/search/v1/verticals/code.test.ts`
+- M: `tests/unit/search/v1/verticals/papers.test.ts`
+- M: `tests/unit/server/schema-registration.test.ts`
+- M: `tests/unit/server/search-response.test.ts`
+- A: `tests/unit/server/tool-annotations.test.ts`
+- M: `tests/unit/server/warmup-on-start.test.ts`
+- A: `tests/unit/util/native-abi.test.ts`

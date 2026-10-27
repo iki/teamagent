@@ -23,3 +23,7 @@ Curate selected debugging, planning, and skill-authoring procedures as optional 
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [plan.obra-superpowers](https://github.com/obra/superpowers); analyzed commit `8ca22dba9a94f28898bbce59f2537ff4d87c747d`; commit date 2026-09-25T11:06:27-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--plan.obra-superpowers.md).
+<!-- teamagent-analysis:end -->

@@ -1,28 +1,35 @@
 # docling
 
-Format-dispatched structured document conversion with bounded inputs and explicit conversion outcomes.
+Structured document conversion with explicit partial outcomes, version-sensitive pipeline identity and resource cleanup.
 
-Source: [docling](https://github.com/docling-project/docling) · Snapshot: `51fe9ff4578e9f150ef3bc6246433e6092a8ebfb` · Category: `ai-query`.
+Source: [docling](https://github.com/docling-project/docling) · Snapshot: `53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4` · Category: `ai-query`.
 
-Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+Evidence level: **Source-reviewed; the files below were read, not executed or benchmarked.** Review date: 2026-10-24. The inspected checkout was clean. This updates the 2026-10-04 review of `51fe9ff4578e9f150ef3bc6246433e6092a8ebfb`; the previous report is preserved in [review history](../analyses/history/ai-query--docling/). License and dependency compatibility still require a separate adoption review.
 
 ## Verified source evidence
 
-- [docling/document_converter.py:611-697](https://github.com/docling-project/docling/blob/51fe9ff4578e9f150ef3bc6246433e6092a8ebfb/docling/document_converter.py#L611-L697)
-- [docling/document_converter.py:810-846](https://github.com/docling-project/docling/blob/51fe9ff4578e9f150ef3bc6246433e6092a8ebfb/docling/document_converter.py#L810-L846)
+- [Input types, HTTP-header precedence and explicit page/byte limits](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L630-L667).
+- [Conversion outcomes and chained input errors](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L752-L796).
+- [Batch concurrency and pipeline cache](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L878-L948).
+- [Input backend cleanup](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/document_converter.py#L1005-L1054).
+- [Concrete option serialization for pipeline identity](https://github.com/docling-project/docling/blob/53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4/docling/utils/pipeline_cache.py#L15-L60).
 
-The converter accepts file paths, URLs and document streams, including per-source HTTP headers. It constructs document limits for file size, page count and page range, then emits ConversionResult records. Success and partial success are distinguished from failure; failure may retain the underlying input-rejection exception. Pipelines are selected by format and cached under a composite key of pipeline class and option hash, protected by a lock. Unsupported or unrecognized input can produce an explicit conversion error rather than empty text.
+The converter accepts paths, streams, URLs and HttpSource objects. Per-source HTTP headers can override batch header keys. Explicit maximum file size, page count and page range become DocumentLimits, but the API defaults for size and page count remain `sys.maxsize`. `raises_on_error=True` accepts both success and partial-success outcomes; callers must inspect status and errors rather than treating absence of an exception as complete extraction. Invalid input and pipeline initialization failures explicitly unload the input backend where the pipeline did not take ownership.
+
+Pipeline reuse is keyed by pipeline class and an options hash under a lock. The hash serializes concrete runtime option fields, including distinguishing nested subclasses, and incorporates the option class name. A fallback handles serialization failures. The helper uses MD5 as a non-security cache discriminator; it is not an integrity checksum. Batch execution can use a bounded ThreadPoolExecutor based on configured batch size and concurrency, but the inspected loop is not evidence of a hard memory ceiling or safe termination for arbitrary native work.
 
 ## Harness implications
 
-Use this as the rich-document adapter when layout, OCR, tables or page provenance matter. The harness should store a canonical document tree and original bytes, then derive Markdown and search chunks from that tree. Preserve partial-success status and per-page omissions so an agent cannot equate converted text with a complete document. Keep warm pipeline instances in a controlled worker pool to amortize model startup; cache output by input content plus parser/model/options versions.
+Keep Docling as an optional rich parser behind the common importer, especially for layout, OCR and tables. Teamagent should retain original bytes and parser/model/options identity, then derive Markdown and retrieval chunks with explicit coverage. Include concrete backend type and relevant runtime options in cache keys; base-schema serialization can otherwise collapse different model backends. Continue using a separate cryptographic content hash for evidence integrity.
 
-## Limitations and tradeoffs
+The research text-sync validator is only a coarse text/PDF-type check. A future Docling adapter should add page-level coverage and carry partial results through reports and memory rather than flattening them into success. Credentials in source headers belong in trusted host configuration and must not appear in exported public metadata.
 
-The inspected defaults allow extremely large page and byte limits; a harness must set practical quotas instead of inheriting them. URL support is not a complete network authorization or connector layer. Parsed layout and OCR still need corpus-level accuracy evaluation, particularly charts, handwriting and complex tables. Pipeline reuse improves startup behavior but does not by itself bound memory, GPU contention or malformed-input risk. The review did not run conversions or compare OCR quality.
+## Limitations and adoption
 
-## Adoption and validation
+This source review does not validate OCR accuracy, image completeness, model weights, sandbox isolation or whole-document fidelity. Set practical page/byte/concurrency/time limits explicitly. Test encrypted documents, partial pages, changed concrete model options, initialization failure cleanup, large tables and cancellation. Measure citation fidelity and downstream answers alongside throughput. Cache reuse and fewer exceptions are not extraction-quality guarantees.
 
-Make it the preferred optional rich parser behind the common import interface, with a lighter parser for simple text/Office inputs. Isolate workers and retain original file/page identifiers. Test scanned and digital PDFs, tables crossing pages, encrypted documents, oversized archives, partial conversion and interrupted jobs. Measure extraction coverage, citation coordinates and downstream answer correctness as well as throughput.
+Related directions: [import-generation](../import-generation.md) · [import-pipeline](../import-pipeline.md) · [memory](../memory.md) · [models](../models.md).
 
-Related directions: [import-generation](../import-generation.md) · [memory](../memory.md) · [models](../models.md).
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [docling](https://github.com/docling-project/docling); analyzed commit `53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4`; commit date 2026-10-23T17:00:16+02:00; review date 2026-10-24T06:36:54.441Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--docling.md).
+<!-- teamagent-analysis:end -->

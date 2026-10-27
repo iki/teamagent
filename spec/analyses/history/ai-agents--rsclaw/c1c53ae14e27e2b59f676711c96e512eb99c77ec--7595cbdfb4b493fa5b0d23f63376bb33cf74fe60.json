@@ -1,0 +1,949 @@
+{
+  "id": "ai-agents--rsclaw",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/rsclaw-ai/rsclaw",
+  "report": "spec/projects/ai-agents--rsclaw.md",
+  "analyzedSha": "c1c53ae14e27e2b59f676711c96e512eb99c77ec",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-03T08:01:16+08:00",
+  "observedSha": "7595cbdfb4b493fa5b0d23f63376bb33cf74fe60",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7595cbdfb4b493fa5b0d23f63376bb33cf74fe60",
+      "date": "2026-10-07T01:28:53+08:00",
+      "subject": "fix(ci): grant audit action check permissions"
+    },
+    {
+      "sha": "e401a634bd34266e21c291ea389d45c889febb40",
+      "date": "2026-10-06T21:26:17+08:00",
+      "subject": "chore(release): prepare v2026.10.1"
+    },
+    {
+      "sha": "e892d1e1487babb1de6618c641d499c5deea2aab",
+      "date": "2026-10-06T20:38:43+08:00",
+      "subject": "fix(a2a): deny named access to ownerless tasks"
+    },
+    {
+      "sha": "c3de51d1f78eedbd0ead81a41a1dbecf6ed97248",
+      "date": "2026-10-06T18:13:17+08:00",
+      "subject": "fix(browser): adopt leftover Chrome on restart; keep one profile per session"
+    },
+    {
+      "sha": "d00e8891de4cc0bdc193fe5ea0771887688e46b3",
+      "date": "2026-10-06T18:07:37+08:00",
+      "subject": "fix(browser): stop idle restarts from dropping logged-in portal sessions"
+    },
+    {
+      "sha": "29b1f7e54aacbe092801ba1ad20bf13195522bac",
+      "date": "2026-10-06T08:03:54+08:00",
+      "subject": "feat(owner,docs): owner management in desktop UI and CLI; security docs"
+    },
+    {
+      "sha": "37922c748e8c48a622894e82ef03b53ab07500d3",
+      "date": "2026-10-06T08:03:52+08:00",
+      "subject": "fix(gateway,config): auto-apply channel reloads, sync live snapshot, cache config"
+    },
+    {
+      "sha": "8c9210e313a5ed666011b90aaf99c7f2e83fa67d",
+      "date": "2026-10-06T08:03:40+08:00",
+      "subject": "fix(plugin,skill,tools): restore plugin env namespace, tree hashes, verified downloads"
+    },
+    {
+      "sha": "8a702d919b9f03106a876e5d9479cd51730df6e6",
+      "date": "2026-10-06T08:03:38+08:00",
+      "subject": "fix(channel): exact-session resets, DingTalk v1.0 token, WhatsApp verify token"
+    },
+    {
+      "sha": "25cdccdc84d86ab8aab0e09389f224841fc7c8e6",
+      "date": "2026-10-06T08:03:36+08:00",
+      "subject": "feat(provider,agent): persist thinking signatures; atomic compaction writes"
+    },
+    {
+      "sha": "64df70d87b1a40b507898e6440fa18f0a81db1b1",
+      "date": "2026-10-04T13:13:07+08:00",
+      "subject": "fix(kb): Windows compactor deleted referenced markdown files"
+    },
+    {
+      "sha": "8c19e72dcb49f01bb63dfa9af8bbab53a2ab093a",
+      "date": "2026-10-04T12:52:30+08:00",
+      "subject": "fix: create workspace before preparse shell; hot-reload gateway.owners"
+    },
+    {
+      "sha": "05283ecd67563397fd2d23a0f8796f49e34e5076",
+      "date": "2026-09-30T13:57:44+08:00",
+      "subject": "chore: lockfile deps, defaults bump, review report, integration fixes"
+    },
+    {
+      "sha": "0191e546a380ccd3df18bb5d27fb8a2c97e017fa",
+      "date": "2026-09-30T13:57:30+08:00",
+      "subject": "fix(gateway,a2a,cmd,cron): dedupe external jobs, secure hooks/A2A, safe CLI ops"
+    },
+    {
+      "sha": "0702f8bfce33d2fb377fbe4c50f719eeecfe43da",
+      "date": "2026-09-30T13:57:21+08:00",
+      "subject": "fix(server,ws): CSRF/Origin/Host guards, cron source of truth, OAI compat"
+    },
+    {
+      "sha": "84417348f555c350eef875755f56de6787e4e70d",
+      "date": "2026-09-30T13:57:14+08:00",
+      "subject": "fix(channel): verify webhooks, fix chunker loop, group policy and media safety"
+    },
+    {
+      "sha": "ef3031e6cfba776bdaabc6c6cef031f58fc2004a",
+      "date": "2026-09-30T13:57:05+08:00",
+      "subject": "fix(agent-tools): confine paths, block SSRF, bound exec and reads"
+    },
+    {
+      "sha": "522a12e1025d329c8a52d676b54feb64f2701346",
+      "date": "2026-09-30T13:57:03+08:00",
+      "subject": "feat(security): sender trust model; fix agent loop correctness"
+    },
+    {
+      "sha": "d0a8345b5334523cff0cac4dd4ad4e98853cf259",
+      "date": "2026-09-30T13:21:19+08:00",
+      "subject": "fix(kb,memory,store,embed): stop indexing failed embeddings, fix retrieval and purge"
+    },
+    {
+      "sha": "062d7a7371f3e9fee814a14777b74485ffe329b2",
+      "date": "2026-09-30T13:15:43+08:00",
+      "subject": "fix(config,cron,heartbeat,desktop,misc): crash, data-loss and injection fixes"
+    },
+    {
+      "sha": "eac381de26ad0e986cdd66db3e6d5808e2ba0a5f",
+      "date": "2026-09-30T13:14:10+08:00",
+      "subject": "fix(provider): correct Anthropic URL, model compat, stream timeouts, error classes"
+    },
+    {
+      "sha": "6c663d1bdf57c2011a3540c6ec873d83480911a5",
+      "date": "2026-09-30T13:12:20+08:00",
+      "subject": "fix(plugin,browser,mcp,cap,skill): close sandbox escapes and protocol bugs"
+    },
+    {
+      "sha": "927fab6a95b17abda596708f98c313d2744333ac",
+      "date": "2026-09-30T13:12:20+08:00",
+      "subject": "feat(util): add SSRF-safe fetch and path confinement helpers"
+    },
+    {
+      "sha": "6a87152539ba11195cb90265c69b32df1364b816",
+      "date": "2026-09-30T13:12:04+08:00",
+      "subject": "fix(ui): harden desktop webview and IPC surface"
+    },
+    {
+      "sha": "e58cc93214abfba803e31f457521a1b0f4475c43",
+      "date": "2026-09-10T18:49:59+08:00",
+      "subject": "feat(rsclaw-plugins): add desktop vlm support."
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-cli.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-a2a-types/src/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/args_sanitizer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/collaboration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/compaction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/context_mgr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/exec_pool.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/goal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/loop_detection.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/query_planner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/runtime/agent_loop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/runtime/dispatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/runtime/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/runtime/run_turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/runtime/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/security.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/spawner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tool_call_repair.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_audio.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_computer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_cron.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_file.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_image.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_misc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_ocr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_plugin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_research.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_skill.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_video.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_voice.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-agent/src/tools_web.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rsclaw-agent/src/trust.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-artifact/src/store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-browser/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-browser/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-browser/src/pool.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cap/src/live.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cap/src/runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/auth/dingtalk_auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/auth/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/chunker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/custom.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/dingtalk.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/discord.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/feishu.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/line.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/matrix.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/qq.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/signal.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/slack.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/telegram.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/transcription.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/rsclaw-channel/src/tts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/wechat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/wecom.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/whatsapp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-channel/src/zalo.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cli/src/channels.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cli/src/gateway.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cli/src/ops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cli/src/qr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rsclaw-cli/src/secret_input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cli/src/security.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cli/src/setup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-computer/src/driver.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-computer/src/operator.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-computer/src/operators/adb.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-computer/src/operators/native.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-config/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-config/src/env_resolution.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-config/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-config/src/live_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-config/src/loader.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-config/src/schema.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/rsclaw-config/src/secrets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-config/src/validator.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cron/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-cron/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-desktop/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-desktop/src/native.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-doc/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-doc/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-embed/src/fleet.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-embed/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-events/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-heartbeat/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-heartbeat/src/state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-i18n/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-jobs/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/compactor/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/embedder/local.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/embedder/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/index/cjk.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/index/hnsw.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/index/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/index/tantivy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/ocr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/pipeline/ingest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/rerank.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/search/mmr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/search/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/service.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/store/entities.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/store/jobs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/sync/url.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-kb/src/worker/pool.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-mcp/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-memory/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-migrate/src/openclaw.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-platform/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/src/android_uiauto.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rsclaw-plugin/src/desktop_focus.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rsclaw-plugin/src/desktop_vlm.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/src/host_methods.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/src/js_runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/src/manifest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/src/wasm_runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-plugin/src/wit/world.wit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/anthropic.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/defaults.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/failover.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/gemini.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/health.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/openai.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/rsclaw.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-provider/src/rsclaw_http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/a2a/files.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/a2a/push.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/a2a/relay.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/a2a/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/a2a/store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/a2a/streaming.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/cmd/agent_turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/cmd/approvals.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/cmd/backup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/cmd/channels.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/cmd/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/cmd/cron.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rsclaw-runtime/src/cmd/directory.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

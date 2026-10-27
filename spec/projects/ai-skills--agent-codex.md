@@ -23,3 +23,7 @@ Use the upstream catalog as a curated candidate source and its installer as an o
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [agent-codex](https://github.com/openai/skills); analyzed commit `49f948faa9258a0c61caceaf225e179651397431`; commit date 2026-06-23T19:36:12-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--agent-codex.md).
+<!-- teamagent-analysis:end -->

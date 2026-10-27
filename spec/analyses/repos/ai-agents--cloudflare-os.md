@@ -1,0 +1,207 @@
+# cloudflare-os: change evidence
+
+Source: [cloudflare-os](https://github.com/cloudflare/cloudflare-os) · [Analysis](../../projects/ai-agents--cloudflare-os.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `5cae880e5e54563895a067e7f4dae67514e581be`; commit date: 2026-10-02T19:01:46-05:00; review date: unknown; observed SHA: `fbd0d33f5359bd5e05802edcb2dce3c26f200d1e`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cloudflare/cloudflare-os/compare/5cae880e5e54563895a067e7f4dae67514e581be...fbd0d33f5359bd5e05802edcb2dce3c26f200d1e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [fbd0d33f5359](https://github.com/cloudflare/cloudflare-os/commit/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e) 2026-10-27T10:46:48-05:00: Bump @modelcontextprotocol/client, zod and dompurify (#907)
+- [fd624bcdddbb](https://github.com/cloudflare/cloudflare-os/commit/fd624bcdddbb071b1244edea055cb1c033f8ba80) 2026-10-26T18:02:54-05:00: Draw the Drive picker's icons as Drive does (#898)
+- [05691f4bd1fd](https://github.com/cloudflare/cloudflare-os/commit/05691f4bd1fd2bc2a2d48936c796300898df0b93) 2026-10-26T12:25:56-05:00: Let Google Calendar connections check availability (#777)
+- [539fafa8e999](https://github.com/cloudflare/cloudflare-os/commit/539fafa8e99951e134f8c9a47fdb4ff9dd2e61e2) 2026-10-26T12:07:12-05:00: Name the AuthenticatedApi workspace methods after workspaces (#895)
+- [b712eb1f8933](https://github.com/cloudflare/cloudflare-os/commit/b712eb1f8933030107a30be0f0ed737b415a4646) 2026-10-26T12:05:10-05:00: Show invalid SKILL.md manifests in the skills navigator (#840)
+- [fa9e17aefdbe](https://github.com/cloudflare/cloudflare-os/commit/fa9e17aefdbe37c5ccf0ddb8b080f75a5aade485) 2026-10-26T11:22:19-05:00: Split root AGENTS.md into children (#891)
+- [cc90c2df60a8](https://github.com/cloudflare/cloudflare-os/commit/cc90c2df60a8cd8093efd8d59fa7313996a176cd) 2026-10-26T21:26:29+05:30: Teach the agent to write keyword search queries (#876)
+- [a8fab70fc738](https://github.com/cloudflare/cloudflare-os/commit/a8fab70fc73890378b7954058663310f63842265) 2026-10-26T06:47:32-05:00: Make conversation list rows keyboard-operable (#675)
+- [bd10b0ece684](https://github.com/cloudflare/cloudflare-os/commit/bd10b0ece6842b8f486b3467eab6cc3b9c920920) 2026-10-24T20:49:50-07:00: Slides: better editor, more faithful PowerPoint export, and natural zoom (#883)
+- [835de9e87764](https://github.com/cloudflare/cloudflare-os/commit/835de9e8776429fc16781edbe66367d879a64b87) 2026-10-23T17:45:14-05:00: Deny always withdraws a gatekeeper action (#857)
+- [03cf8766eceb](https://github.com/cloudflare/cloudflare-os/commit/03cf8766ecebd6e6b59b7bdd1902eeefc45643eb) 2026-10-23T13:44:42-05:00: Let desktop browsers show native notifications when in-app goes unacknowledged (#812)
+- [ec22b002661f](https://github.com/cloudflare/cloudflare-os/commit/ec22b002661fc53b6e2424bfec689452a7bdea47) 2026-10-22T19:20:05-07:00: Fix blank lines between list items in user messages and the composer caret drifting from its text in long messages. (#868)
+- [cb4e17f9007c](https://github.com/cloudflare/cloudflare-os/commit/cb4e17f9007cb450f91744c7d962a3e4b554864f) 2026-10-22T21:17:23-05:00: Reconnect open Workshop tabs after a deploy, and offer a reload (#818)
+- [ca9ff40c912c](https://github.com/cloudflare/cloudflare-os/commit/ca9ff40c912c6bbaa44029fd418493c3951c80af) 2026-10-23T06:38:42+05:30: Log how long a viewed chat waits for its next turn (#856)
+- [5ba9d4f9a893](https://github.com/cloudflare/cloudflare-os/commit/5ba9d4f9a893ea627f22dcc844ebbb2861360eee) 2026-10-23T06:36:39+05:30: Let the agent ask the user for an agent spawner (#808)
+- [3d284e812887](https://github.com/cloudflare/cloudflare-os/commit/3d284e8128870b2de6e9aea60b6430fb08fd0cd2) 2026-10-23T06:16:25+05:30: Keep an open chat's prompt cache warm between turns (#738)
+- [b0b4f507e6de](https://github.com/cloudflare/cloudflare-os/commit/b0b4f507e6de7ed90e8157191ec9d4f63e291fdc) 2026-10-22T14:39:42-07:00: allow gadgets to specify exported file names (#865)
+- [a67944212790](https://github.com/cloudflare/cloudflare-os/commit/a6794421279057cb8813d3e5d0710754f5d41618) 2026-10-20T10:26:46-05:00: Read PDF's from Google Drive (#843)
+- [a3343fa6021c](https://github.com/cloudflare/cloudflare-os/commit/a3343fa6021c1f105e466c690c354d3bd63d302f) 2026-10-20T09:06:58-05:00: Choose the whole of Google Drive, a folder or a file in one picker (#836)
+- [d1ff6d8d3db0](https://github.com/cloudflare/cloudflare-os/commit/d1ff6d8d3db0968673fceb6ba18546dc1d6f9b3e) 2026-10-19T16:42:23-07:00: add auto-approval support to github and gitlab (#844)
+- [3174aace2a4f](https://github.com/cloudflare/cloudflare-os/commit/3174aace2a4f39bca8018773ba269b75d5f84bba) 2026-10-19T18:13:06-05:00: Group a vendor's resource types under one connect card (#835)
+- [d2c5a99eb586](https://github.com/cloudflare/cloudflare-os/commit/d2c5a99eb586460c34e5b5e61c9f94e3c467c026) 2026-10-19T18:28:38-04:00: Let users steer a running agent (#809)
+- [c0ecb12623ea](https://github.com/cloudflare/cloudflare-os/commit/c0ecb12623ead7e3ab5e50583f08168dac2ebdc4) 2026-10-19T17:16:26-05:00: Add PWA manifest and icons for desktop installation (#814)
+- [9ee0564bb1ce](https://github.com/cloudflare/cloudflare-os/commit/9ee0564bb1ce556a477e4574a420b2e14521bc9b) 2026-10-19T16:57:01-05:00: Give configurator checkbox lists the full field width (#839)
+- [40eb50bf3f2b](https://github.com/cloudflare/cloudflare-os/commit/40eb50bf3f2bc2ebf47bc2de3f361394c457b7ba) 2026-10-19T12:37:47-07:00: add workshop UI for #741 and implement context collection sharing (#744)
+- [6b8a3410d6ab](https://github.com/cloudflare/cloudflare-os/commit/6b8a3410d6ab66957164f9dddcb77515e0da8aa6) 2026-10-19T14:23:55-05:00: Render gatekeeper configurators with Kumo on Preact (#775)
+- [5843c08b7d0b](https://github.com/cloudflare/cloudflare-os/commit/5843c08b7d0b7f72a9ce538ece41c1aec293ab6f) 2026-10-19T13:06:27-04:00: Have Anthropic write compaction summaries on models that support it (#806)
+- [6e3be2f9e195](https://github.com/cloudflare/cloudflare-os/commit/6e3be2f9e19513fab4608b88fc4a8467ac9463ac) 2026-10-19T13:06:19-04:00: Retain at most 20k tokens when a chat compacts (#805)
+- [b5b47d0bb5fc](https://github.com/cloudflare/cloudflare-os/commit/b5b47d0bb5fcfa9f242373c5d91afd2dbb38dfb4) 2026-10-19T12:45:24-04:00: Add a compaction eval to the Workshop eval suite (#804)
+- [308439865bee](https://github.com/cloudflare/cloudflare-os/commit/308439865bee1a22f3ac70cfe200f9707e3f8b1c) 2026-10-19T11:14:53-05:00: Tell admins when a newer Cloudflare OS release is available (#688)
+- [6e3c35a80202](https://github.com/cloudflare/cloudflare-os/commit/6e3c35a80202cf5704bdc596b32c9c440e233e55) 2026-10-19T10:52:34-04:00: Give eval checks the turn's chat messages (#807)
+- [67cd6b4554a6](https://github.com/cloudflare/cloudflare-os/commit/67cd6b4554a6c49175003ba19c51ac2e82706db6) 2026-10-19T10:49:34-04:00: Let eval runs set models and trials per task (#801)
+
+## Changed paths (truncated)
+
+- M: `.agents/skills/write-gatekeeper/SKILL.md`
+- M: `.github/workflows/bonk-pr.yml`
+- M: `.github/workflows/bonk.yml`
+- M: `.github/workflows/ci.yml`
+- A: `.github/workflows/github-contract.yml`
+- M: `.github/workflows/preview.yml`
+- M: `.github/workflows/workshop-evals-pr.yml`
+- M: `.github/workflows/workshop-evals.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `README.md`
+- M: `REVIEW.md`
+- M: `docs/ai-gateway-billing.md`
+- M: `docs/blueprints.md`
+- A: `docs/build-system.md`
+- A: `docs/chat-scratch-worktree.md`
+- M: `docs/connect-handoff.md`
+- M: `docs/google-chat-capabilities.md`
+- A: `docs/images/web-search-flow.svg`
+- A: `docs/images/web-search-providers.svg`
+- M: `docs/integration-testing.md`
+- A: `docs/notifications.md`
+- M: `docs/oauth-signin.md`
+- M: `docs/observers.md`
+- M: `docs/public-server.md`
+- M: `docs/sharing.md`
+- A: `docs/testing.md`
+- M: `packages/bundled-blueprints/README.md`
+- A: `packages/bundled-blueprints/__tests__/archives.ts`
+- M: `packages/bundled-blueprints/__tests__/files.test.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-docs/__tests__/markdown.server.test.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-docs/files/README.md`
+- M: `packages/bundled-blueprints/blueprints/workspace-docs/files/client.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-docs/files/lib/markdown.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-docs/files/lib/protocol.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-docs/files/server.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-sheets/__tests__/xlsx.server.test.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-sheets/files/README.md`
+- M: `packages/bundled-blueprints/blueprints/workspace-sheets/files/lib/xlsx.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/__tests__/client.test.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/__tests__/fixtures/workspace1-storage.json`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/__tests__/lib.test.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/__tests__/pptx.server.test.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-slides/__tests__/server.test.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/__tests__/svg.test.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-slides/blueprint.json`
+- M: `packages/bundled-blueprints/blueprints/workspace-slides/files/README.md`
+- M: `packages/bundled-blueprints/blueprints/workspace-slides/files/client.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/brand-rasters.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/branding.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/highlight.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/layouts.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/logo.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/pptx.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/protocol.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/svg.ts`
+- A: `packages/bundled-blueprints/blueprints/workspace-slides/files/lib/zoom.ts`
+- M: `packages/bundled-blueprints/blueprints/workspace-slides/files/server.ts`
+- M: `packages/bundled-blueprints/libraries/README.md`
+- A: `packages/bundled-blueprints/libraries/pptx/__tests__/pptx.server.test.ts`
+- A: `packages/bundled-blueprints/libraries/pptx/server.ts`
+- A: `packages/bundled-blueprints/libraries/pptx/src/pptx.ts`
+- M: `packages/bundled-blueprints/libraries/ui/README.md`
+- M: `packages/bundled-blueprints/libraries/ui/__tests__/toolbar.test.ts`
+- M: `packages/bundled-blueprints/libraries/ui/src/toolbar.ts`
+- A: `packages/bundled-blueprints/libraries/zip/server.ts`
+- R100: `packages/bundled-blueprints/libraries/zip/src/zip.ts` (from `packages/bundled-blueprints/blueprints/workspace-sheets/files/lib/zip.ts`)
+- M: `packages/bundled-blueprints/package.json`
+- M: `packages/bundled-blueprints/src/files.ts`
+- M: `packages/bundled-blueprints/src/generate.ts`
+- M: `packages/bundled-blueprints/src/index.ts`
+- M: `packages/bundled-blueprints/src/manifest.ts`
+- M: `packages/bundled-blueprints/tsconfig.client.json`
+- M: `packages/bundled-blueprints/tsconfig.server-tests.json`
+- M: `packages/bundled-blueprints/tsconfig.server.json`
+- M: `packages/bundled-blueprints/tsconfig.tests.json`
+- M: `packages/bundled-blueprints/vitest.config.ts`
+- A: `packages/configurator-ui/AGENTS.md`
+- A: `packages/configurator-ui/build/aliases.ts`
+- A: `packages/configurator-ui/build/frame.test.ts`
+- A: `packages/configurator-ui/build/html.test.ts`
+- A: `packages/configurator-ui/build/html.ts`
+- A: `packages/configurator-ui/build/module.test.ts`
+- A: `packages/configurator-ui/build/module.ts`
+- A: `packages/configurator-ui/build/runtime.test.ts`
+- A: `packages/configurator-ui/build/runtime.ts`
+- A: `packages/configurator-ui/build/sourceTrailer.ts`
+- M: `packages/configurator-ui/package.json`
+- M: `packages/configurator-ui/src/index.ts`
+- A: `packages/configurator-ui/src/runtime/Autocomplete.tsx`
+- A: `packages/configurator-ui/src/runtime/Button.tsx`
+- A: `packages/configurator-ui/src/runtime/CheckboxList.tsx`
+- A: `packages/configurator-ui/src/runtime/ConfiguratorRoot.browser.test.tsx`
+- A: `packages/configurator-ui/src/runtime/ConfiguratorRoot.tsx`
+- A: `packages/configurator-ui/src/runtime/Field.tsx`
+- A: `packages/configurator-ui/src/runtime/FilterInput.tsx`
+- A: `packages/configurator-ui/src/runtime/HierarchyPicker.browser.test.tsx`
+- A: `packages/configurator-ui/src/runtime/HierarchyPicker.tsx`
+- A: `packages/configurator-ui/src/runtime/Notice.tsx`
+- A: `packages/configurator-ui/src/runtime/RadioCards.tsx`
+- A: `packages/configurator-ui/src/runtime/Section.tsx`
+- A: `packages/configurator-ui/src/runtime/TextInput.tsx`
+- A: `packages/configurator-ui/src/runtime/frame.ts`
+- A: `packages/configurator-ui/src/runtime/main.tsx`
+- A: `packages/configurator-ui/src/runtime/moduleGlobal.ts`
+- A: `packages/configurator-ui/src/runtime/options.test.ts`
+- A: `packages/configurator-ui/src/runtime/options.ts`
+- A: `packages/configurator-ui/src/runtime/prefill.test.ts`
+- A: `packages/configurator-ui/src/runtime/prefill.ts`
+- A: `packages/configurator-ui/src/runtime/reporting.ts`
+- A: `packages/configurator-ui/src/runtime/scrollForwarding.browser.test.ts`
+- A: `packages/configurator-ui/src/runtime/scrollForwarding.ts`
+- A: `packages/configurator-ui/src/runtime/session.test.ts`
+- A: `packages/configurator-ui/src/runtime/session.ts`
+- A: `packages/configurator-ui/src/runtime/store.ts`
+- A: `packages/configurator-ui/src/runtime/storeContext.ts`
+- A: `packages/configurator-ui/src/runtime/styles.css`
+- A: `packages/configurator-ui/src/runtime/theme.ts`
+- A: `packages/configurator-ui/src/runtime/useKeepFocusInForm.ts`
+- A: `packages/configurator-ui/src/runtime/workers-types.d.ts`
+- M: `packages/configurator-ui/tsconfig.json`
+- A: `packages/configurator-ui/tsconfig.validate.json`
+- M: `packages/configurator-ui/vite.config.ts`
+- A: `packages/configurator-ui/vitest.browser.config.ts`
+- A: `packages/error-reporting/AGENTS.md`
+- A: `packages/gatekeeper-cloudflare/AGENTS.md`
+- M: `packages/gatekeeper-cloudflare/__tests__/configurator-fields.test.ts`
+- M: `packages/gatekeeper-cloudflare/__tests__/env.d.ts`
+- M: `packages/gatekeeper-cloudflare/package.json`
+- M: `packages/gatekeeper-cloudflare/src/cloudflare.ts`
+- M: `packages/gatekeeper-cloudflare/vitest.worker.config.ts`
+- M: `packages/gatekeeper-cloudflare/worker-configuration.d.ts`
+- M: `packages/gatekeeper-confluence/src/confluence.ts`
+- M: `packages/gatekeeper-confluence/worker-configuration.d.ts`
+- A: `packages/gatekeeper-context/AGENTS.md`
+- M: `packages/gatekeeper-context/__tests__/agent-skill.test.ts`
+- A: `packages/gatekeeper-context/__tests__/app-stub.txt`
+- A: `packages/gatekeeper-context/__tests__/collection-sharing.test.ts`
+- M: `packages/gatekeeper-context/__tests__/context-observers.test.ts`
+- A: `packages/gatekeeper-context/__tests__/library-read.test.ts`
+- A: `packages/gatekeeper-context/__tests__/skill-manifest-errors.test.ts`
+- A: `packages/gatekeeper-context/__tests__/worker.ts`
+- M: `packages/gatekeeper-context/app/ContextLibraryPage.tsx`
+- M: `packages/gatekeeper-context/app/bridge.ts`
+- A: `packages/gatekeeper-context/app/components/CollectionIconPicker.tsx`
+- M: `packages/gatekeeper-context/app/main.tsx`
+- A: `packages/gatekeeper-context/app/skills/AddSkillDialog.tsx`
+- A: `packages/gatekeeper-context/app/skills/CollectionDialogs.test.tsx`
+- A: `packages/gatekeeper-context/app/skills/CreateCollectionDialog.tsx`
+- A: `packages/gatekeeper-context/app/skills/DeleteNavigatorNodeDialog.tsx`
+- A: `packages/gatekeeper-context/app/skills/EditCollectionDialog.tsx`
+- A: `packages/gatekeeper-context/app/skills/GitTokenCredentials.tsx`
+- A: `packages/gatekeeper-context/app/skills/LeaveCollectionDialog.tsx`
+- A: `packages/gatekeeper-context/app/skills/README.md`
+- A: `packages/gatekeeper-context/app/skills/RenameInput.test.tsx`
+- A: `packages/gatekeeper-context/app/skills/RenameInput.tsx`
+- A: `packages/gatekeeper-context/app/skills/ShareCollectionDialog.test.tsx`
+- A: `packages/gatekeeper-context/app/skills/ShareCollectionDialog.tsx`
+- A: `packages/gatekeeper-context/app/skills/SkillsNavigatorPage.tsx`
+- A: `packages/gatekeeper-context/app/skills/SkillsNavigatorTree.test.tsx`

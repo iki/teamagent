@@ -1,0 +1,207 @@
+# skillspector: change evidence
+
+Source: [skillspector](https://github.com/NVIDIA/SkillSpector) · [Analysis](../../projects/ai-security--skillspector.md) · [skills](../../skills.md), [security](../../security.md), [import-generation](../../import-generation.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `35270064e42230dbc566e4134c55b5d581355db3`; commit date: 2026-10-02T11:39:38-07:00; review date: unknown; observed SHA: `e7172462caf367736645f66c1aa154ca5f9c64dc`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NVIDIA/SkillSpector/compare/35270064e42230dbc566e4134c55b5d581355db3...e7172462caf367736645f66c1aa154ca5f9c64dc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [e7172462caf3](https://github.com/NVIDIA/SkillSpector/commit/e7172462caf367736645f66c1aa154ca5f9c64dc) 2026-10-27T10:50:17-07:00: Merge pull request #890 from NVIDIA/feat/christopherk/oh1-bound-sql
+- [ea2e457d571d](https://github.com/NVIDIA/SkillSpector/commit/ea2e457d571d422ea274c4c12159c6e1efc3f8db) 2026-10-27T11:20:02Z: Merge branch 'main' into feat/christopherk/oh1-bound-sql
+- [a5425e594d59](https://github.com/NVIDIA/SkillSpector/commit/a5425e594d59a14c3d3eaa39e26847613ba08696) 2026-10-27T16:49:48+05:30: Merge pull request #921 from NVIDIA/yashraj/fix-javascript-template-completeness
+- [123ec27b4f7c](https://github.com/NVIDIA/SkillSpector/commit/123ec27b4f7cdb9164178403e0297049385a94f7) 2026-10-27T16:37:43+05:30: Keep ambiguous TypeScript syntax on the conservative parser path
+- [cb6c96e1e9ba](https://github.com/NVIDIA/SkillSpector/commit/cb6c96e1e9badcbcce772e60076008b11ce705b5) 2026-10-27T16:30:01+05:30: Fix Node assertion template message completeness
+- [d12fb956fa2c](https://github.com/NVIDIA/SkillSpector/commit/d12fb956fa2cba54cd9809d6011b650a46cbfbed) 2026-10-27T08:25:30Z: Merge branch 'main' into feat/christopherk/oh1-bound-sql
+- [d3f2e973e586](https://github.com/NVIDIA/SkillSpector/commit/d3f2e973e58640cb2ea5c196221ae42e7725bbd7) 2026-10-27T13:55:16+05:30: Merge pull request #917 from NVIDIA/yashraj/fix-parser-mcp-completeness
+- [d988f33d13b8](https://github.com/NVIDIA/SkillSpector/commit/d988f33d13b82fb41d696c2cc5a52b106e75e78b) 2026-10-27T12:32:12+05:30: fix: correct sudo parsing and TP4 batch limits
+- [2b9f4512367a](https://github.com/NVIDIA/SkillSpector/commit/2b9f4512367a96326d42f632876ada0a2304fc27) 2026-10-22T14:38:46Z: Merge branch 'main' into feat/christopherk/oh1-bound-sql
+- [d7338f58200a](https://github.com/NVIDIA/SkillSpector/commit/d7338f58200a9ae2a24810cee08911ab68b107a7) 2026-10-22T07:38:27-07:00: Merge pull request #841 from chrisknvidia/feat/christopherk/e1-command-boundaries
+- [ea2d39675f80](https://github.com/NVIDIA/SkillSpector/commit/ea2d39675f806822e67fd025360395a2f92ae9cf) 2026-10-22T07:31:46-07:00: Merge branch 'main' into feat/christopherk/e1-command-boundaries
+- [dd9f06a781c6](https://github.com/NVIDIA/SkillSpector/commit/dd9f06a781c6b9ce666303ffc79fde2680a029e4) 2026-10-22T14:31:27Z: Merge branch 'main' into feat/christopherk/oh1-bound-sql
+- [7ebf8ec141be](https://github.com/NVIDIA/SkillSpector/commit/7ebf8ec141bed7e1d3504fec17f928a1cd79dbfc) 2026-10-22T07:31:11-07:00: Merge pull request #862 from Yoseph-Zuskin/fix/binary-structure-flake
+- [225f7546e21a](https://github.com/NVIDIA/SkillSpector/commit/225f7546e21aba61813bc380326716d6fe76b563) 2026-10-22T14:30:27Z: Merge branch 'main' into feat/christopherk/oh1-bound-sql
+- [90906433c7a9](https://github.com/NVIDIA/SkillSpector/commit/90906433c7a94937d45fccd460cc346333b6d2be) 2026-10-22T07:30:08-07:00: Merge pull request #815 from NVIDIA/feat/christopherk/p6-identifier-boundaries
+- [d3b72b0ee22a](https://github.com/NVIDIA/SkillSpector/commit/d3b72b0ee22a9c113c88d394bd78400f0b7d6222) 2026-10-22T14:20:48Z: Merge branch 'main' into feat/christopherk/p6-identifier-boundaries
+- [b0e45e22a4fc](https://github.com/NVIDIA/SkillSpector/commit/b0e45e22a4fca2974d4de2557107a3d078776a58) 2026-10-22T14:20:43Z: Merge branch 'main' into feat/christopherk/oh1-bound-sql
+- [e29cbdef1ada](https://github.com/NVIDIA/SkillSpector/commit/e29cbdef1adaa7ecf42c42746f3c095c8deae5e4) 2026-10-22T07:20:25-07:00: Merge pull request #819 from NVIDIA/feat/christopherk/p2-reference-comment-boundary
+- [8400b6ce28e5](https://github.com/NVIDIA/SkillSpector/commit/8400b6ce28e57de194e999e89de6b00503e7258c) 2026-10-20T13:23:26-07:00: refactor(oh1): prove passive SQL setup once
+- [b3545b2a95c2](https://github.com/NVIDIA/SkillSpector/commit/b3545b2a95c2022f1555e3e65dd417dd3951121a) 2026-10-20T12:56:58-07:00: fix(oh1): recognize canonical DB-API parameter binding
+- [53a7ebf5861b](https://github.com/NVIDIA/SkillSpector/commit/53a7ebf5861bcddc06ebc773b2df60b1eaa67b83) 2026-10-20T12:39:46-07:00: test(oh1): cover bound SQL parameters and unsafe query controls
+- [38db453afdfa](https://github.com/NVIDIA/SkillSpector/commit/38db453afdfad121c23389c1544e024d30f19a13) 2026-10-20T11:17:28-07:00: fix: retain E1 matching for HTML in Markdown containers
+- [9f0b06ddd7fe](https://github.com/NVIDIA/SkillSpector/commit/9f0b06ddd7fe7ba2c106a4f1a3fbdbc4cee589c1) 2026-10-20T11:14:05-07:00: fix(p2): reject incomplete reference destinations
+- [d76b2afaaba8](https://github.com/NVIDIA/SkillSpector/commit/d76b2afaaba806b6d625f6c62dff21747b3162b4) 2026-10-20T11:12:50-07:00: fix: retain E1 evidence in uncertain Markdown ownership
+- [df2a71bb5682](https://github.com/NVIDIA/SkillSpector/commit/df2a71bb5682cf82b203feb5588825d171858771) 2026-10-20T11:10:03-07:00: fix(p2): retain keyword-bearing reference destinations
+- [4fa88464fcac](https://github.com/NVIDIA/SkillSpector/commit/4fa88464fcacfdb829ffcb9cb4abae51cf8e9eca) 2026-10-20T11:09:03-07:00: fix: keep E1 boundary proofs within shell-owned sources
+- [d6747b9e568b](https://github.com/NVIDIA/SkillSpector/commit/d6747b9e568bec4e9efb065daf2b4dc42efaba5f) 2026-10-20T11:09:03-07:00: Merge remote-tracking branch 'origin/main' into feat/christopherk/e1-command-boundaries
+- [dbcdf7440568](https://github.com/NVIDIA/SkillSpector/commit/dbcdf74405688506abbd1f7e4f5fbcab3b002abe) 2026-10-20T11:08:39-07:00: fix(p6): retain qualified source requests and complete marker payloads
+- [7e031d034467](https://github.com/NVIDIA/SkillSpector/commit/7e031d0344670b82397e980897d01512800aed6f) 2026-10-20T11:07:14-07:00: fix(p2): preserve shared keywords and reference destinations
+- [056ed9ba5542](https://github.com/NVIDIA/SkillSpector/commit/056ed9ba5542f61ef1b91c903c820ba2818bd6af) 2026-10-20T17:21:40Z: Merge branch 'main' into feat/christopherk/p6-identifier-boundaries
+- [11c8b48e3505](https://github.com/NVIDIA/SkillSpector/commit/11c8b48e35056602fad263438448e0ffb5be2776) 2026-10-20T10:21:31-07:00: Merge pull request #836 from chrisknvidia/feat/christopherk/recursive-risk-recommendation
+- [8270ea9a5c36](https://github.com/NVIDIA/SkillSpector/commit/8270ea9a5c36999498f92763571edc0b2d66c83d) 2026-10-20T10:21:22-07:00: Merge pull request #823 from chrisknvidia/feat/christopherk/recursive-shipped-baseline
+
+## Changed paths (truncated)
+
+- M: `.env.example`
+- M: `.github/workflows/release.yml`
+- M: `.opencode/tools/skillspector_scan_lib.ts`
+- M: `CHANGELOG.md`
+- M: `Makefile`
+- M: `README.md`
+- M: `THIRD_PARTY_NOTICES.md`
+- M: `contrib/batch_scan/CONTRIBUTING.md`
+- M: `contrib/batch_scan/__init__.py`
+- M: `contrib/batch_scan/api_pool.py`
+- M: `contrib/batch_scan/batch_scan.py`
+- M: `contrib/batch_scan/docs/DESIGN.md`
+- M: `contrib/batch_scan/docs/README.md`
+- M: `contrib/batch_scan/gap_fill.py`
+- M: `contrib/batch_scan/reports.py`
+- M: `contrib/batch_scan/runner.py`
+- M: `contrib/batch_scan/tests/docs/TEST_DESIGN.md`
+- M: `contrib/batch_scan/tests/docs/TEST_GUIDE.md`
+- M: `contrib/batch_scan/tests/test_inspection_reporting.py`
+- M: `contrib/batch_scan/tests/test_monkeypatch_fragility.py`
+- M: `contrib/batch_scan/tests/test_monkeypatch_invasiveness.py`
+- M: `contrib/batch_scan/tests/tests-pro/test_gap_fill.py`
+- M: `docs/ANALYSIS_RESOURCE_BOUNDS.md`
+- M: `docs/B.3.1-mcp-least-privilege.md`
+- M: `docs/DEVELOPMENT.md`
+- M: `docs/NESTED_ARTIFACT_INSPECTION.md`
+- M: `docs/OPENCODE_EXTENSION.md`
+- M: `docs/PI_EXTENSION.md`
+- M: `docs/SUPPRESSION.md`
+- M: `docs/scan-completeness.md`
+- M: `extensions/skillspector.ts`
+- M: `pyproject.toml`
+- M: `skills/skill-inspector/SKILL.md`
+- M: `src/skillspector/__init__.py`
+- A: `src/skillspector/allowed_tools.py`
+- M: `src/skillspector/artifacts.py`
+- M: `src/skillspector/cleanup.py`
+- M: `src/skillspector/cli.py`
+- M: `src/skillspector/dependency_sources.py`
+- A: `src/skillspector/file_output.py`
+- M: `src/skillspector/graph.py`
+- A: `src/skillspector/graph_proxy.py`
+- M: `src/skillspector/inference_usage.py`
+- M: `src/skillspector/input_handler.py`
+- M: `src/skillspector/inspection_ledger.py`
+- A: `src/skillspector/javascript_tokens.py`
+- M: `src/skillspector/llm_analyzer_base.py`
+- M: `src/skillspector/llm_utils.py`
+- M: `src/skillspector/mcp_registry.py`
+- M: `src/skillspector/mcp_server.py`
+- M: `src/skillspector/models.py`
+- M: `src/skillspector/nested_artifacts.py`
+- M: `src/skillspector/nodes/analyzers/artifact_integrity.py`
+- M: `src/skillspector/nodes/analyzers/behavioral_ast.py`
+- M: `src/skillspector/nodes/analyzers/behavioral_taint_tracking.py`
+- M: `src/skillspector/nodes/analyzers/bundled_execution_surface.py`
+- M: `src/skillspector/nodes/analyzers/common.py`
+- M: `src/skillspector/nodes/analyzers/mcp_least_privilege.py`
+- M: `src/skillspector/nodes/analyzers/mcp_tool_poisoning.py`
+- M: `src/skillspector/nodes/analyzers/pattern_defaults.py`
+- A: `src/skillspector/nodes/analyzers/prohibition_context.py`
+- M: `src/skillspector/nodes/analyzers/semantic_quality_policy.py`
+- A: `src/skillspector/nodes/analyzers/sql_parameter_binding.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_output_handling.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_supply_chain.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py`
+- M: `src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py`
+- A: `src/skillspector/nodes/analyzers/static_python_shell_truthiness.py`
+- M: `src/skillspector/nodes/analyzers/static_runner.py`
+- M: `src/skillspector/nodes/analyzers/static_yara.py`
+- M: `src/skillspector/nodes/analyzers/whitespace_padding.py`
+- M: `src/skillspector/nodes/build_context.py`
+- M: `src/skillspector/nodes/deduplicate.py`
+- M: `src/skillspector/nodes/finalize_inspection_ledger.py`
+- M: `src/skillspector/nodes/meta_analyzer.py`
+- M: `src/skillspector/nodes/report.py`
+- M: `src/skillspector/nodes/resolve_input.py`
+- A: `src/skillspector/oms.py`
+- M: `src/skillspector/providers/__init__.py`
+- M: `src/skillspector/providers/_agent_cli.py`
+- M: `src/skillspector/providers/_agent_cli_base.py`
+- M: `src/skillspector/providers/anthropic/model_registry.yaml`
+- M: `src/skillspector/providers/anthropic/provider.py`
+- M: `src/skillspector/providers/anthropic_proxy/model_registry.yaml`
+- M: `src/skillspector/providers/anthropic_proxy/provider.py`
+- M: `src/skillspector/providers/azure_openai/provider.py`
+- M: `src/skillspector/providers/bedrock/model_registry.yaml`
+- M: `src/skillspector/providers/bedrock/provider.py`
+- M: `src/skillspector/providers/chat_models.py`
+- M: `src/skillspector/providers/codex_cli/__init__.py`
+- M: `src/skillspector/providers/codex_cli/provider.py`
+- A: `src/skillspector/providers/gemini/__init__.py`
+- A: `src/skillspector/providers/gemini/model_registry.yaml`
+- A: `src/skillspector/providers/gemini/provider.py`
+- M: `src/skillspector/providers/nv_build/model_registry.yaml`
+- M: `src/skillspector/providers/nv_build/provider.py`
+- M: `src/skillspector/providers/openai/provider.py`
+- M: `src/skillspector/providers/openai_compatible/model_registry.yaml`
+- M: `src/skillspector/providers/openai_compatible/provider.py`
+- M: `src/skillspector/providers/registry.py`
+- M: `src/skillspector/providers/structured_output.py`
+- M: `src/skillspector/python_ast.py`
+- A: `src/skillspector/python_tokens.py`
+- M: `src/skillspector/sarif_models.py`
+- M: `src/skillspector/security_reconstruction.py`
+- M: `src/skillspector/semantic_runtime.py`
+- M: `src/skillspector/state.py`
+- M: `src/skillspector/suppression.py`
+- A: `src/skillspector/terminal_text.py`
+- M: `src/skillspector/transitive.py`
+- M: `src/skillspector/yara_rules/malware.yar.b64`
+- A: `tests/fixtures/sqp/sqp2_tool_catalog_clean/SKILL.md`
+- A: `tests/fixtures/sqp/sqp2_tool_descriptive_step/SKILL.md`
+- A: `tests/fixtures/sqp/sqp2_tool_instructed/SKILL.md`
+- A: `tests/fixtures/sqp/sqp3_forced_language/SKILL.md`
+- A: `tests/fixtures/sqp/sqp3_plain_english_clean/SKILL.md`
+- A: `tests/fixtures/sqp/sqp3_plain_english_override/SKILL.md`
+- M: `tests/integration/test_agent_cli_live.py`
+- M: `tests/integration/test_graph.py`
+- M: `tests/integration/test_opaque_reference_reporting.py`
+- A: `tests/integration/test_ransomware_rule.py`
+- M: `tests/nodes/analyzers/test_behavioral_taint_tracking.py`
+- M: `tests/nodes/analyzers/test_bundled_execution_surface.py`
+- A: `tests/nodes/analyzers/test_chmod_regex_backtracking.py`
+- A: `tests/nodes/analyzers/test_command_wrapper_without_command.py`
+- M: `tests/nodes/analyzers/test_common.py`
+- A: `tests/nodes/analyzers/test_dependency_source_budget_behavior.py`
+- A: `tests/nodes/analyzers/test_dependency_source_budget_configuration.py`
+- M: `tests/nodes/analyzers/test_dependency_sources.py`
+- M: `tests/nodes/analyzers/test_documentation_reconstruction.py`
+- A: `tests/nodes/analyzers/test_e1_command_boundaries.py`
+- A: `tests/nodes/analyzers/test_excessive_agency_prohibitions.py`
+- A: `tests/nodes/analyzers/test_host_language_shell_ownership.py`
+- A: `tests/nodes/analyzers/test_mp3_hardware_state.py`
+- A: `tests/nodes/analyzers/test_mp3_timestamp_context.py`
+- A: `tests/nodes/analyzers/test_p2_reference_comments.py`
+- A: `tests/nodes/analyzers/test_p6_identifier_boundaries.py`
+- A: `tests/nodes/analyzers/test_pe3_credential_type_label.py`
+- A: `tests/nodes/analyzers/test_pe3_ignore_file_entries.py`
+- A: `tests/nodes/analyzers/test_prohibition_review_regressions.py`
+- A: `tests/nodes/analyzers/test_prose_shell_context.py`
+- A: `tests/nodes/analyzers/test_python_ast_columns.py`
+- A: `tests/nodes/analyzers/test_python_shell_cached_imports.py`
+- A: `tests/nodes/analyzers/test_python_string_marker_ownership.py`
+- M: `tests/nodes/analyzers/test_runtime_reconstruction_workflow.py`
+- A: `tests/nodes/analyzers/test_sc2_command_boundaries.py`
+- A: `tests/nodes/analyzers/test_sc4_reporting.py`
+- M: `tests/nodes/analyzers/test_sc8_shipped_bytecode.py`
+- M: `tests/nodes/analyzers/test_security_reconstruction.py`
+- M: `tests/nodes/analyzers/test_semantic_security_discovery.py`
+- M: `tests/nodes/analyzers/test_shared_python_ast.py`
+- A: `tests/nodes/analyzers/test_skill_installation_patterns.py`

@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--graft",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/NanoNets/Graft",
+  "report": "spec/projects/ai-agents-mem--graft.md",
+  "analyzedSha": "fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-30T12:57:02+05:30",
+  "observedSha": "257672ae8bb404e55af16a6d0076741ee2d7a6f8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "257672ae8bb404e55af16a6d0076741ee2d7a6f8",
+      "date": "2026-10-23T18:41:10+05:30",
+      "subject": "Merge pull request #676 from trailhq/release/0.25.0"
+    },
+    {
+      "sha": "c6ff0424f3bb722ed3f68edbb451a539d9f9cc86",
+      "date": "2026-10-23T18:22:57+05:30",
+      "subject": "chore(release): 0.25.0"
+    },
+    {
+      "sha": "c62f0ee881cf271354ec8905d94a8caa3c9247a9",
+      "date": "2026-10-23T18:22:53+05:30",
+      "subject": "Merge pull request #674 from trailhq/fix/safe-learning-sync"
+    },
+    {
+      "sha": "a2499267efffa28c0d5b5f03b0b7aca32c1a87ee",
+      "date": "2026-10-23T18:03:22+05:30",
+      "subject": "Wait for a Windows lock that is being let go"
+    },
+    {
+      "sha": "42691931c46d8c57a8347531bfd42f7ad826d30a",
+      "date": "2026-10-23T17:05:30+05:30",
+      "subject": "Take down learnings deleted at HEAD, and sync each turn"
+    },
+    {
+      "sha": "3c947531019bbcefc8a0a0e7318e704dd84b7300",
+      "date": "2026-10-23T15:49:10+05:30",
+      "subject": "Merge pull request #680 from trailhq/feat/skill-runs-from-code"
+    },
+    {
+      "sha": "1a891c18518b99edcb25efbac621f9609e0de878",
+      "date": "2026-10-23T12:05:29+05:30",
+      "subject": "Report a coding agent's use of a repo skill to the workspace"
+    },
+    {
+      "sha": "ddbc44be782e73c9fa14aba7fde4c45253048fa3",
+      "date": "2026-10-23T11:53:28+05:30",
+      "subject": "Merge pull request #679 from trailhq/feat/skill-folders"
+    },
+    {
+      "sha": "befa0d5421ef023c5e3bd4fad1279ab58c47287d",
+      "date": "2026-10-23T11:36:49+05:30",
+      "subject": "test: the executable bit is POSIX-only"
+    },
+    {
+      "sha": "0fc3ba3f727a9e39c8b4b1951e2c8c55e1f879d9",
+      "date": "2026-10-23T11:19:00+05:30",
+      "subject": "feat: a repo's skill goes up with its whole folder"
+    },
+    {
+      "sha": "ae391588d5196d3dd237305e402aa186894eb273",
+      "date": "2026-10-23T11:15:03+05:30",
+      "subject": "Merge pull request #678 from trailhq/feat/pick-repos"
+    },
+    {
+      "sha": "e17f37611886bb42434da0fff0896add51c08670",
+      "date": "2026-10-23T10:54:18+05:30",
+      "subject": "feat: one install sets up the laptop's other repos"
+    },
+    {
+      "sha": "5da54417cf93f6713a23a70fb07e29d2a50d2508",
+      "date": "2026-10-23T10:31:35+05:30",
+      "subject": "Merge pull request #677 from trailhq/feat/last-pr-tokens"
+    },
+    {
+      "sha": "ae79acbcd8ba3fea2b4164f2bdd7186e89c1fb44",
+      "date": "2026-10-23T10:14:44+05:30",
+      "subject": "feat(pair): measure tokens on the last merged PR"
+    },
+    {
+      "sha": "0a36f3d6dad4e7415158fcfc672cca0c77e34903",
+      "date": "2026-10-23T09:34:39+05:30",
+      "subject": "Merge pull request #671 from trailhq/release/0.24.1"
+    },
+    {
+      "sha": "84d2f249418be4458291d8985a6def731e61cf17",
+      "date": "2026-10-23T09:11:53+05:30",
+      "subject": "Merge remote-tracking branch 'origin/main' into rel/0.24.1"
+    },
+    {
+      "sha": "49c0218dc9c648980be286e709c3f0302fcc4de6",
+      "date": "2026-10-23T09:11:44+05:30",
+      "subject": "fix(skills): Python test runs, ship to prod, one Stop ask per fix, whole preferences, Codex trust line (#675)"
+    },
+    {
+      "sha": "93f837777773909c57367bd671433bceaffd1cfb",
+      "date": "2026-10-23T09:10:13+05:30",
+      "subject": "test(windows): retry a probe that ran past its budget, and scale the 2 MB bar to the machine"
+    },
+    {
+      "sha": "5787f301b5124ac875e050672fa26da5fad7f52a",
+      "date": "2026-10-23T07:40:23+05:30",
+      "subject": "Merge origin/main (same tree as split/5, already merged) into release/0.24.1"
+    },
+    {
+      "sha": "bd8e9a563948752bbdb3adf9b2deba7bfe87c5b4",
+      "date": "2026-10-23T07:40:16+05:30",
+      "subject": "Merge remote-tracking branch 'origin/split/5-init-look-back' into rel/0.24.1"
+    },
+    {
+      "sha": "d205ac31932fa4bb25a0128d377ea4d7677dbde1",
+      "date": "2026-10-23T07:39:56+05:30",
+      "subject": "feat(skills): trail init look-back, hook wiring with skills on by default, and learnings without repeats (#658)"
+    },
+    {
+      "sha": "05d025501a9c58e0a3fca6873ade2cdf9e92a473",
+      "date": "2026-10-23T02:06:27+05:30",
+      "subject": "fix(windows): match worktree paths across slash styles and case; loosen two Windows test expectations"
+    },
+    {
+      "sha": "fdd4cb182709521ee40de93e816da0519e483182",
+      "date": "2026-10-23T01:48:26+05:30",
+      "subject": "test: escape regex and generated-code strings properly (CodeQL)"
+    },
+    {
+      "sha": "ac900918b237067e7e40ae703f83445be3ea9538",
+      "date": "2026-10-23T01:43:28+05:30",
+      "subject": "fix(pair): name the look-back's skills on Trail's page, kept on this machine"
+    },
+    {
+      "sha": "d3f4fb9b64fb5cd0564e405c20eabe40b68bfc1d",
+      "date": "2026-10-23T01:36:04+05:30",
+      "subject": "fix(security): build graft grep's regex from escaped literals, and refuse a nested repeat"
+    },
+    {
+      "sha": "7bfdf0dde7a7af588ccafae19374d29eeac28dd8",
+      "date": "2026-10-23T01:36:04+05:30",
+      "subject": "test(windows): make parts 5-7's hook and journey tests hold on Windows"
+    },
+    {
+      "sha": "031727dd45d28ae311ac46d3683cfd969d37d258",
+      "date": "2026-10-23T01:35:52+05:30",
+      "subject": "fix(windows): read paths the Windows way in hooks, check and skill anchors"
+    },
+    {
+      "sha": "1bb17dd5aa1cc0905b85b9219bfa9b0a50e6fdcc",
+      "date": "2026-10-23T01:31:02+05:30",
+      "subject": "Merge main's learned skills into release/0.24.1"
+    },
+    {
+      "sha": "616ee30988003fcd3286df240743e0a595a7c2f0",
+      "date": "2026-10-23T00:56:28+05:30",
+      "subject": "Merge pull request #659 from trailhq/split/6-wiring"
+    },
+    {
+      "sha": "60dd047d14845d439a1b01771ada14b42ee069e3",
+      "date": "2026-10-23T00:56:19+05:30",
+      "subject": "Merge pull request #665 from trailhq/split/7-learnings-skills"
+    },
+    {
+      "sha": "6e3a1b60e1137457aed28f2c611b6d6f557b2b8c",
+      "date": "2026-10-23T00:40:55+05:30",
+      "subject": "Merge remote-tracking branch 'origin/main' into win/5"
+    },
+    {
+      "sha": "13c6da5bf5dbc98af163ced651d4f5bfea045162",
+      "date": "2026-10-23T00:40:43+05:30",
+      "subject": "feat(skills): skill offers, the save, lesson and update gates, and skill updates (#657)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/helpers/graft-hooks.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/graft-statusline.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".npmrc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".trail/learnings/2026-10-19-interview-bug-fixes-and-npm-test-anirudhkumar.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".trail/learnings/2026-10-19-trail-check-flags-a-branch-against-anirudhkumar.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".trail/learnings/2026-10-21-save-ask-signals-shell-edits-count-anirudhkumar.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".trail/learnings/2026-10-22-learning-replaces-holds-ids-and-reading-anirudhkumar.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".trail/learnings/2026-10-22-npm-install-g-peer-warnings-tree-anirudhkumar.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".trail/learnings/2026-10-22-quieting-npm-install-audit-warnings-and-anirudhkumar.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CREDITS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TELEMETRY.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/graft-cold-vs-graft-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/graft-cold-vs-graft.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/graft-comparison-demo.gif",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/graft-hero.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/graft-hooks-demo.gif",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/graft-site-act-demo.gif",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/graft-terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/trail-code-banner-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/trail-code-banner.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/trail-code-how-it-works-dark.webp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/trail-code-how-it-works.webp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/github-app.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pack-trail.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/postinstall.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/run-tests.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/stamp-telemetry-key.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/vendor-grammars.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ai/crux.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ai/llm/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ai/llm/recover-tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ai/synthesize.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/app/brain-build-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/app/brain-build-worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/app/brain-build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/checkout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/app/history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/review-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/app/sources.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ask/ask.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/bin/graft.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/bin/trail.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/blast/blast-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/blast/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/attach.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/autopush.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/claude-md.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/connect.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/context-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/link.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/pull.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/push.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/signup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/upload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/watch-trail.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/watch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/brain/wire.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/brand.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/check/learning-edits.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/check/local-check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/check/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/format.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/hook-io.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/hook-layers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/note-signals.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/post-bash.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/pre-bash-skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/pre-bash.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/prompt-consent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/prompt-hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/prompt-skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/session-metrics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/settings-merge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/shim-template.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/skill-template.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/skill-use.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/skills-hook-util.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/skills-wiring.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/start-init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/start-skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/statusline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/stop-skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/stop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/sync-run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/claude/tally.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/claude/walls-hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli-epilogue.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli-meta.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli-picker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/diff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/head-learnings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/lookup-activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/nudge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/onboarding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/other-repos.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/pair.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/workspace-sync.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cloud/workspace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/context/batches.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/context/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/context/check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/context/map-dir.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/context/node-file.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/context/savings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/engine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/cards.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/container.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/enrich.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/extract-cache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/extract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/generic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/lsp/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/lsp/enrich.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/lsp/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/graph/native.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/graph/queries/gleam.scm",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/refresh.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/resolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/traverse-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/workspace-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/graph/workspace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/antigravity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/claude-global.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/codex-hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/hosts/codex-trust.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/config-write.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/cursor-hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/instructions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/mcp-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/retract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/hosts/sections.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init-guard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/candidates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/claude-call.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/discover-worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/handover.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/howtos.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/init-record.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/install-paths.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/init/install-record.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

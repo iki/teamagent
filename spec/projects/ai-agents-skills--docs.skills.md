@@ -25,3 +25,7 @@ Adopt as the canonical interoperability format and baseline authoring protocol. 
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [docs.skills](https://github.com/agentskills/agentskills); analyzed commit `69ef37e9424c0a7ea9dd2293b559e43ec8176379`; commit date 2026-08-09T13:36:04-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--docs.skills.md).
+<!-- teamagent-analysis:end -->

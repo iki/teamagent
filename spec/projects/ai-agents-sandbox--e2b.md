@@ -28,3 +28,7 @@ This repository review establishes SDK behavior, not the complete hosted infrast
 ## Related directions
 
 [Agents](../agents.md) · [Generation](../generation.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [e2b](https://github.com/e2b-dev/e2b); analyzed commit `a9e893bcb9b44cc53778a45975c58fdfa0f0da7e`; commit date 2026-10-02T14:22:20-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--e2b.md).
+<!-- teamagent-analysis:end -->

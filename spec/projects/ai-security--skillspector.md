@@ -28,3 +28,7 @@ Shortlist as a default scanner adapter and borrow its ledger schema. Static rule
 ## Related directions
 
 [Skills](../skills.md) · [Security](../security.md) · [Import Generation](../import-generation.md) · [Evolution](../evolution.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [skillspector](https://github.com/NVIDIA/SkillSpector); analyzed commit `35270064e42230dbc566e4134c55b5d581355db3`; commit date 2026-10-02T11:39:38-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--skillspector.md).
+<!-- teamagent-analysis:end -->

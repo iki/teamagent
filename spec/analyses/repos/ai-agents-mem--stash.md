@@ -1,0 +1,207 @@
+# stash: change evidence
+
+Source: [stash](https://github.com/fergana-labs/stash) · [Analysis](../../projects/ai-agents-mem--stash.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `cfb7051ded81e3cef9323250a98793ddef191031`; commit date: 2026-10-03T00:12:52Z; review date: unknown; observed SHA: `40c70217107472f6e6c5c15e9481ab9dd41096f1`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/fergana-labs/stash/compare/cfb7051ded81e3cef9323250a98793ddef191031...40c70217107472f6e6c5c15e9481ab9dd41096f1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [40c702171074](https://github.com/fergana-labs/stash/commit/40c70217107472f6e6c5c15e9481ab9dd41096f1) 2026-10-27T17:03:05Z: chore: bump stash release to 0.1.481 and plugin to 0.1.550
+- [4cfa414da80e](https://github.com/fergana-labs/stash/commit/4cfa414da80e27580fa3422c83c5d14da9e26387) 2026-10-27T10:02:50-07:00: Require privacy review before shared wiki publication (#1279)
+- [595229a2f159](https://github.com/fergana-labs/stash/commit/595229a2f1592dd5c110aaa3ecb52d47050ff224) 2026-10-26T21:19:03Z: chore: bump stash release to 0.1.480 and plugin to 0.1.549
+- [6e4b6038a5c8](https://github.com/fergana-labs/stash/commit/6e4b6038a5c85bcc72ec031569a088ff2dd5b6fe) 2026-10-26T14:18:51-07:00: Continue once when curator returns an empty completion (#1277)
+- [972a0d71a0e2](https://github.com/fergana-labs/stash/commit/972a0d71a0e25fe3f68a55852daf0a709f10a1fc) 2026-10-26T17:23:01Z: chore: bump stash release to 0.1.479 and plugin to 0.1.548
+- [60dbc9c12313](https://github.com/fergana-labs/stash/commit/60dbc9c12313782f538a12f37b4dac16d8a057d5) 2026-10-26T10:22:50-07:00: Let curator correct invalid tool arguments without aborting recovery (#1276)
+- [81c1ffe18252](https://github.com/fergana-labs/stash/commit/81c1ffe182524b2ebf5dc1d8e18388f6fbb47a58) 2026-10-26T02:20:55Z: chore: bump stash release to 0.1.478 and plugin to 0.1.547
+- [091a8637009f](https://github.com/fergana-labs/stash/commit/091a8637009f64ea0ee06b1cd8db0162b7d4fc73) 2026-10-25T19:20:45-07:00: Make wiki curation incremental, bounded, and resumable (#1274)
+- [db081e15a052](https://github.com/fergana-labs/stash/commit/db081e15a0529d95e698c9f52f0254eb226320ea) 2026-10-26T01:49:01Z: chore: bump stash release to 0.1.477 and plugin to 0.1.546
+- [afa278ef2e8a](https://github.com/fergana-labs/stash/commit/afa278ef2e8a2202aa587bbb173460368cedab52) 2026-10-25T18:48:50-07:00: Parallelize backend CI across four isolated test shards (#1273)
+- [d792b52005e9](https://github.com/fergana-labs/stash/commit/d792b52005e9f184a619e7721389c17c576e0cb3) 2026-10-26T00:27:47Z: chore: bump stash release to 0.1.476 and plugin to 0.1.545
+- [05ea26101edb](https://github.com/fergana-labs/stash/commit/05ea26101edb39d63629f7397c737f9091f3c6ef) 2026-10-25T17:27:35-07:00: Fix developer wiki curation failures and backlog catch-up (#1272)
+- [9658da30678b](https://github.com/fergana-labs/stash/commit/9658da30678bbe8b563ef799d759835fc35d160c) 2026-10-22T13:47:34Z: chore: bump stash release to 0.1.475 and plugin to 0.1.544
+- [2025f0d467aa](https://github.com/fergana-labs/stash/commit/2025f0d467aa5676acde2fe0e18dcce3c42cdada) 2026-10-22T06:47:22-07:00: Phones: the app rail becomes a drawer behind a menu button (#1266)
+- [8aff65e1f0fc](https://github.com/fergana-labs/stash/commit/8aff65e1f0fc53c966920e78651fb708ded8e214) 2026-10-22T13:44:21Z: chore: bump stash release to 0.1.474 and plugin to 0.1.543
+- [07600fd9869d](https://github.com/fergana-labs/stash/commit/07600fd9869db47f69c828f841c0f00c269aabb2) 2026-10-22T06:44:10-07:00: New eval upload box: thin border, upload icon, hover state, description (#1265)
+- [55831591fd26](https://github.com/fergana-labs/stash/commit/55831591fd26fed71da1a9defd4061800c11a757) 2026-10-22T12:54:27Z: chore: bump stash release to 0.1.473 and plugin to 0.1.542
+- [ce67bd08dca2](https://github.com/fergana-labs/stash/commit/ce67bd08dca217603a59b9ef75dd348c608116da) 2026-10-22T05:54:14-07:00: Eval build says it's building the API endpoint; no middle-dot separators anywhere (#1264)
+- [0acb7398d611](https://github.com/fergana-labs/stash/commit/0acb7398d6112b514b403d6301b291d5d737fba8) 2026-10-22T12:47:45Z: chore: bump stash release to 0.1.472 and plugin to 0.1.541
+- [4b79c03662fd](https://github.com/fergana-labs/stash/commit/4b79c03662fd1a8c7e786fb277346e0d5f42b4b0) 2026-10-22T05:47:34-07:00: No dashed borders anywhere; eval page: labels only, Agent calls last (#1263)
+- [de6e69b7c8df](https://github.com/fergana-labs/stash/commit/de6e69b7c8df5061b6ded19ca7357d8031280bbe) 2026-10-22T12:41:38Z: chore: bump stash release to 0.1.471 and plugin to 0.1.540
+- [517dfa9010ca](https://github.com/fergana-labs/stash/commit/517dfa9010ca384439eec0b02f2b62164b15edef) 2026-10-22T05:41:25-07:00: Faster example uploads; no Agent calls section until there are calls (#1262)
+- [8ff16d21e062](https://github.com/fergana-labs/stash/commit/8ff16d21e062e1ef43405d3c5c5a1d98acfadd0f) 2026-10-22T12:38:01Z: chore: bump stash release to 0.1.470 and plugin to 0.1.539
+- [d823148d7440](https://github.com/fergana-labs/stash/commit/d823148d744068e6eda3505d7c730d68ff954e51) 2026-10-22T05:37:50-07:00: Upload box: open dropped folders (#1261)
+- [685528586650](https://github.com/fergana-labs/stash/commit/68552858665034a920a1c7af27dbd1f6e8a6e1de) 2026-10-22T12:35:09Z: chore: bump stash release to 0.1.469 and plugin to 0.1.538
+- [671167c13152](https://github.com/fergana-labs/stash/commit/671167c131528dfa221a10e92caae6a123228b68) 2026-10-22T05:34:57-07:00: Evals list: no links to the eval-building chat (#1259)
+- [d9777854c049](https://github.com/fergana-labs/stash/commit/d9777854c049dd4cc7777ba81ceccbbaa8871a89) 2026-10-22T12:33:42Z: chore: bump stash release to 0.1.468 and plugin to 0.1.537
+- [ee6e6ab0c853](https://github.com/fergana-labs/stash/commit/ee6e6ab0c853d394bfaad082d1fa21863079f346) 2026-10-22T05:33:30-07:00: New eval page: labels only, tight corners, aligned with the title (#1260)
+- [c9983b388a0c](https://github.com/fergana-labs/stash/commit/c9983b388a0ce1c738f64401295c4e41adcf8048) 2026-10-22T12:25:01Z: chore: bump stash release to 0.1.467 and plugin to 0.1.536
+- [e6f83d408b72](https://github.com/fergana-labs/stash/commit/e6f83d408b72e076bfbce370a37feda798b71a23) 2026-10-22T05:24:49-07:00: Keep the browser's login token until it expires, and share one fetch of it (#1258)
+- [c7c5c3c15b6f](https://github.com/fergana-labs/stash/commit/c7c5c3c15b6f06c32e88f0ec522485c472e71d91) 2026-10-22T12:17:23Z: chore: bump stash release to 0.1.466 and plugin to 0.1.535
+- [f89b7b3fada5](https://github.com/fergana-labs/stash/commit/f89b7b3fada5f0ea8df0ee3bc8f09f628bb64a7a) 2026-10-22T05:17:13-07:00: Evals list: indent the loading and empty rows like the other rows (#1257)
+
+## Changed paths (truncated)
+
+- M: `.claude-plugin/marketplace.json`
+- M: `.env.example`
+- A: `.github/scripts/ci_scope.py`
+- A: `.github/scripts/test_ci_scope.py`
+- A: `.github/scripts/test_pytest_shard.py`
+- M: `.github/workflows/test.yml`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `backend/Dockerfile`
+- M: `backend/auth.py`
+- M: `backend/celery_app.py`
+- M: `backend/config.py`
+- M: `backend/integrations/__init__.py`
+- M: `backend/integrations/github/indexer.py`
+- M: `backend/integrations/google/indexer.py`
+- M: `backend/integrations/router.py`
+- D: `backend/integrations/social_saves/__init__.py`
+- D: `backend/integrations/social_saves/indexer.py`
+- D: `backend/integrations/x_saves/__init__.py`
+- D: `backend/integrations/x_saves/indexer.py`
+- D: `backend/integrations/x_saves/provider.py`
+- D: `backend/integrations/x_saves/tasks.py`
+- M: `backend/main.py`
+- A: `backend/migrations/versions/0214_rm_action_scores.py`
+- A: `backend/migrations/versions/0215_shared_evaluator.py`
+- A: `backend/migrations/versions/0216_personal_reward_context.py`
+- A: `backend/migrations/versions/0217_agent_workbench.py`
+- A: `backend/migrations/versions/0218_workbench_instruction_delivery.py`
+- A: `backend/migrations/versions/0219_workbench_feedback_capture.py`
+- A: `backend/migrations/versions/0220_workbench_review_labels.py`
+- A: `backend/migrations/versions/0221_automatic_jev_evaluation.py`
+- A: `backend/migrations/versions/0222_product_checkpoint.py`
+- A: `backend/migrations/versions/0223_retire_x_instagram_saves.py`
+- A: `backend/migrations/versions/0224_prompt_optimization.py`
+- A: `backend/migrations/versions/0225_trace_images.py`
+- A: `backend/migrations/versions/0226_trace_section_summaries.py`
+- A: `backend/migrations/versions/0227_step_labels.py`
+- A: `backend/migrations/versions/0228_drive_document_identity.py`
+- A: `backend/migrations/versions/0229_multi_step_comment_quotes.py`
+- A: `backend/migrations/versions/0230_trace_completion.py`
+- A: `backend/migrations/versions/0231_reward_model_progress.py`
+- A: `backend/migrations/versions/0232_trace_sources.py`
+- A: `backend/migrations/versions/0233_reward_model_playground.py`
+- A: `backend/migrations/versions/0234_intuition_models.py`
+- A: `backend/migrations/versions/0235_scoring_progress.py`
+- A: `backend/migrations/versions/0236_eager_scoring.py`
+- A: `backend/migrations/versions/0239_eval_feedback.py`
+- A: `backend/migrations/versions/0240_eval_learning.py`
+- A: `backend/migrations/versions/0241_eval_runs_and_reward.py`
+- A: `backend/migrations/versions/0242_model_wizard.py`
+- A: `backend/migrations/versions/0243_judge_curation.py`
+- A: `backend/migrations/versions/0244_behaviors.py`
+- A: `backend/migrations/versions/0245_behavior_releases_triage.py`
+- A: `backend/migrations/versions/0246_test_sets.py`
+- A: `backend/migrations/versions/0247_multi_issue_evals.py`
+- A: `backend/migrations/versions/0248_wizard_drafts.py`
+- A: `backend/migrations/versions/0249_taste_workspaces.py`
+- A: `backend/migrations/versions/0250_image_evals.py`
+- A: `backend/migrations/versions/0251_remove_website_and_image_evals.py`
+- A: `backend/migrations/versions/0252_judge_evals.py`
+- A: `backend/migrations/versions/0253_curator_progress_and_budget.py`
+- A: `backend/migrations/versions/0254_shared_wiki_reviews.py`
+- M: `backend/models.py`
+- A: `backend/product_checkpoints.py`
+- M: `backend/requirements.txt`
+- A: `backend/routers/agent_judge.py`
+- A: `backend/routers/behaviors.py`
+- A: `backend/routers/evals.py`
+- A: `backend/routers/intuition_mcp.py`
+- A: `backend/routers/intuitions.py`
+- A: `backend/routers/model_wizard.py`
+- A: `backend/routers/optimization.py`
+- M: `backend/routers/reward_models.py`
+- A: `backend/routers/rm_evaluators.py`
+- M: `backend/routers/skills.py`
+- M: `backend/routers/sources.py`
+- A: `backend/routers/test_sets.py`
+- M: `backend/routers/transcripts.py`
+- M: `backend/routers/vfs.py`
+- A: `backend/routers/workbench.py`
+- A: `backend/scripts/review_shared_wiki.py`
+- M: `backend/scripts/seed_dev.py`
+- A: `backend/services/agent_judge/__init__.py`
+- A: `backend/services/agent_judge/grading.py`
+- A: `backend/services/agent_judge/judge.py`
+- A: `backend/services/agent_judge/lookups.py`
+- A: `backend/services/agent_judge/trace_view.py`
+- A: `backend/services/agent_judge/verify.py`
+- A: `backend/services/agent_judge/windows.py`
+- A: `backend/services/agent_judge/worker.py`
+- M: `backend/services/agent_runtime.py`
+- M: `backend/services/agent_service.py`
+- A: `backend/services/behaviors/__init__.py`
+- A: `backend/services/behaviors/alerts.py`
+- A: `backend/services/behaviors/builtin.py`
+- A: `backend/services/behaviors/cohorts.py`
+- A: `backend/services/behaviors/detect.py`
+- A: `backend/services/behaviors/monitoring.py`
+- A: `backend/services/behaviors/releases.py`
+- A: `backend/services/behaviors/scan.py`
+- A: `backend/services/behaviors/search.py`
+- A: `backend/services/behaviors/segments.py`
+- A: `backend/services/behaviors/service.py`
+- A: `backend/services/behaviors/task_types.py`
+- A: `backend/services/behaviors/templates.py`
+- A: `backend/services/behaviors/triage.py`
+- M: `backend/services/billing_service.py`
+- M: `backend/services/clip_router.py`
+- M: `backend/services/curation_service.py`
+- M: `backend/services/end_user_service.py`
+- A: `backend/services/evals/__init__.py`
+- A: `backend/services/evals/build.py`
+- A: `backend/services/evals/items.py`
+- A: `backend/services/evals/judge.py`
+- A: `backend/services/evals/service.py`
+- M: `backend/services/files_tree_service.py`
+- A: `backend/services/intuition/__init__.py`
+- A: `backend/services/intuition/alerts.py`
+- A: `backend/services/intuition/builder.py`
+- A: `backend/services/intuition/composition.py`
+- A: `backend/services/intuition/curation.py`
+- A: `backend/services/intuition/demo.py`
+- A: `backend/services/intuition/demo_support_replies.answers.json`
+- A: `backend/services/intuition/demo_support_replies.json`
+- A: `backend/services/intuition/feedback.py`
+- A: `backend/services/intuition/fusion.py`
+- A: `backend/services/intuition/head.py`
+- A: `backend/services/intuition/history.py`
+- A: `backend/services/intuition/history_bridge.py`
+- A: `backend/services/intuition/improve.py`
+- A: `backend/services/intuition/mining.py`
+- A: `backend/services/intuition/monitoring.py`
+- A: `backend/services/intuition/probe.py`
+- A: `backend/services/intuition/providers.py`
+- A: `backend/services/intuition/rubric_builder.py`
+- A: `backend/services/intuition/runs.py`
+- A: `backend/services/intuition/selection.py`
+- A: `backend/services/intuition/service.py`
+- A: `backend/services/intuition/spec.py`
+- A: `backend/services/intuition/wizard.py`
+- M: `backend/services/llm.py`
+- M: `backend/services/rm/adapters.py`
+- M: `backend/services/rm/annotations.py`
+- A: `backend/services/rm/automatic_dataset.py`
+- M: `backend/services/rm/datasets.py`
+- A: `backend/services/rm/evaluator.py`
+- M: `backend/services/rm/feedback.py`
+- A: `backend/services/rm/image_content.py`
+- M: `backend/services/rm/jobs.py`
+- A: `backend/services/rm/monitoring.py`
+- A: `backend/services/rm/optimization.py`
+- A: `backend/services/rm/optimization_policy.py`
+- A: `backend/services/rm/optimization_worker.py`
+- M: `backend/services/rm/otel_ingest.py`
+- A: `backend/services/rm/playground.py`
+- A: `backend/services/rm/precompute.py`
+- M: `backend/services/rm/query.py`
+- A: `backend/services/rm/scoring_progress.py`
+- A: `backend/services/rm/session_ingest.py`

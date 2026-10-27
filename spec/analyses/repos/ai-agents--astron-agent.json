@@ -1,0 +1,955 @@
+{
+  "metadata": {
+    "id": "ai-agents--astron-agent",
+    "category": "ai-agents",
+    "name": "astron-agent",
+    "url": "https://github.com/iflytek/astron-agent",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--astron-agent.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "be42c25e45c760f2aa21ed5c6f652dfa33e4bdf1",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T17:21:34+08:00",
+    "reportSha256": "5787b6a21aac60bac9a9d59434b348f20a267a0d31c468630c0f3df24856e1a6",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--astron-agent",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/iflytek/astron-agent",
+    "report": "spec/projects/ai-agents--astron-agent.md",
+    "analyzedSha": "be42c25e45c760f2aa21ed5c6f652dfa33e4bdf1",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T17:21:34+08:00",
+    "observedSha": "468a676f2d8408a41d95ec0ee37cd4b8f028fef2",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "468a676f2d8408a41d95ec0ee37cd4b8f028fef2",
+        "date": "2026-10-21T11:06:13+08:00",
+        "subject": "fix(frontend): clarify E2B sandbox enabled switch (#1725)"
+      },
+      {
+        "sha": "5e27fc7afc598c3b8a30694288671584118b38dd",
+        "date": "2026-10-14T15:25:39+08:00",
+        "subject": "fix(docs): fix Makefile-readme link and use Chinese anchor in code-requirements-zh.md (#1721)"
+      },
+      {
+        "sha": "d6a0f9a33f859b885e2b9fb5fede469957a54475",
+        "date": "2026-10-14T15:25:28+08:00",
+        "subject": "fix(workflow): map Link client connection errors (#1688)"
+      },
+      {
+        "sha": "8a8225ed01212f77ee19d725e8bf9c00ed160367",
+        "date": "2026-10-14T15:24:52+08:00",
+        "subject": "fix(security): apply outbound policy to MCP tool URLs (#1676)"
+      },
+      {
+        "sha": "c00948a338f06c1988cc8aa7ae9b6e0f54c9b9d5",
+        "date": "2026-10-10T14:12:29+08:00",
+        "subject": "docs: add Japanese translations for FAQ and Quick Start (#1706)"
+      },
+      {
+        "sha": "4237795876ca02bf2145608a3cad7590f5222340",
+        "date": "2026-10-10T14:12:20+08:00",
+        "subject": "examples: add meeting-notes-organizer (#1705)"
+      },
+      {
+        "sha": "45293247f5c46eb81d8e84265dd4895973046ae9",
+        "date": "2026-10-10T14:12:10+08:00",
+        "subject": "fix(docs): fix Makefile-readme link in branch-commit-standards.md (#1704)"
+      },
+      {
+        "sha": "323016653c2d7c3260f46dec5d4db091e90a224e",
+        "date": "2026-10-10T14:12:00+08:00",
+        "subject": "fix(docs): fix Makefile-readme link in code-requirements.md (#1702)"
+      },
+      {
+        "sha": "5c3fa39deee28dbe1c6000d76ea36f10a8c10cec",
+        "date": "2026-10-10T14:11:51+08:00",
+        "subject": "fix(docs): fix console/frontend/CLAUDE.md link in docs/zh/PROJECT_MODULES.md (#1701)"
+      },
+      {
+        "sha": "22c5ddb587556c5cbeb8a73279cbadea86c3de98",
+        "date": "2026-10-10T14:11:44+08:00",
+        "subject": "fix(docs): fix relative links in docs/ja/README.md (#1700)"
+      },
+      {
+        "sha": "afb5fd6e4b71aeefd28a78635b493ae4b6454d6a",
+        "date": "2026-10-10T14:11:35+08:00",
+        "subject": "fix(docs): fix relative links in docs/zh/CONTRIBUTING.md (#1699)"
+      },
+      {
+        "sha": "7d17ece9c401a265a14d210e112a9d208c21ebb1",
+        "date": "2026-10-09T16:12:15+08:00",
+        "subject": "chore: remove autonomous release workflow from agent docs and ignore loop/ (#1715)"
+      },
+      {
+        "sha": "4012091f82f94f721904d21f89792bceab80c493",
+        "date": "2026-10-09T13:47:44+08:00",
+        "subject": "Merge pull request #1713 from FenjuFu/fix/frontend-typecheck-gate"
+      },
+      {
+        "sha": "cf81af9c36d8439ea7c6000ad9df40ed554ce6f5",
+        "date": "2026-10-09T13:47:07+08:00",
+        "subject": "Merge pull request #1710 from FenjuFu/fix/crypto-security-evidence"
+      },
+      {
+        "sha": "268fa42d008b6be358ec3ecb4952d4e5e6f76fb6",
+        "date": "2026-10-09T13:46:24+08:00",
+        "subject": "Merge pull request #1708 from FenjuFu/fix/casdoor-password-storage"
+      },
+      {
+        "sha": "ca5bd9b217d075bc262324e931c2a53357f5313b",
+        "date": "2026-10-09T12:02:17+08:00",
+        "subject": "ci(frontend): build production assets for pull requests"
+      },
+      {
+        "sha": "3e5ef81793e58d07c9763b4cf18ab30e0c2a7820",
+        "date": "2026-10-09T11:56:32+08:00",
+        "subject": "fix(frontend): enforce strict TypeScript checks for workflow editing"
+      },
+      {
+        "sha": "d0793f5e081c2ac665ce77fc4a5a56c4b975ef90",
+        "date": "2026-10-09T11:33:12+08:00",
+        "subject": "fix(security): prevent cross-space SQL injection in database DML exec… (#1712)"
+      },
+      {
+        "sha": "69bfa16d62a98c0dc27c2248794b3ad0eb8b1c15",
+        "date": "2026-10-09T10:12:22+08:00",
+        "subject": "fix(security): remove sample signing keys and harden random prefixes"
+      },
+      {
+        "sha": "d4c22a01a031a5f4df37a26f2a75405e94719067",
+        "date": "2026-10-08T21:12:49+08:00",
+        "subject": "test(auth): verify real login through the published gateway"
+      },
+      {
+        "sha": "48b91f1043b3b888a8dc27991b1476f66adc21f1",
+        "date": "2026-10-08T21:05:40+08:00",
+        "subject": "fix(auth): reject ambiguous organizations and preserve proxy behavior"
+      },
+      {
+        "sha": "2a77935e08c091de5126a507ba2feac525cbc9b5",
+        "date": "2026-10-08T21:01:06+08:00",
+        "subject": "fix(auth): gate Casdoor access on hashed password storage"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/quality-requirements/branch-commit-standards.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/quality-requirements/code-requirements-zh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/quality-requirements/code-requirements.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/casdoor-password-storage.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/crypto-config.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/backend/hub/src/main/java/com/iflytek/astron/console/hub/util/wechat/WXBizMsgCrypt.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/backend/hub/src/test/java/com/iflytek/astron/console/hub/util/wechat/WXBizMsgCryptTest.java",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "console/frontend/CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/_tests_/workflow-domain-regressions.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/_tests_/workflow-tool-update-regressions.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/button-group/permission-loading.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/button-group/space-button.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/create-key-modal/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/drawer/plugin/version-management/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/markdown-render/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/modal/plugin/array-default.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/modal/plugin/hooks/use-create-tool.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/modal/plugin/hooks/use-tool-debugger.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/modal/plugin/import-contracts.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/modal/plugin/import-contracts.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/modal/plugin/import/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/modal/plugin/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/sidebar/bottom-login/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/space/add-member-modal/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/space/add-member-modal/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/space/add-member-modal/user-item/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/space/space-tab/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/ui/global/retract-table-input/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/virtual-config-modal/component/iconModal.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/virtual-config-modal/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/vms-interaction-cmp/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/constant/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/advanced-config/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/advanced-config/opening-remarks.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/drawer/chat-debugger/chat-state.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/drawer/chat-debugger/chat-state.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/chat-debugger/components/chat-content.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/chat-debugger/components/chat-input.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/chat-debugger/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/chat-result/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/code-idea/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/debugger-check/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/node-detail/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/single-node-debugging/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/drawer/version-management/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/hooks/use-flow-common.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/hooks/use-flow-type-render.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/hooks/use-if-else-node-compare-operator.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/hooks/use-node-common.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/hooks/use-one-click-update.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/hooks/use-variable-memory-handlers.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/add-flow/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/add-knowledge/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/add-mcp/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/add-plugin/delete-plugin.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/add-plugin/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/clear-flow-canvas/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/modal/clear-flow-canvas/reset-nodes.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/feedback-dialog/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/flow-edit/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/flow-edit/more-icons/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/modal/iterative-amplification/graph-state.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/modal/iterative-amplification/graph-state.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/iterative-amplification/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/knowledge-detail/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/knowledge-parameter/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/knowledge-pro-parameter/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/modal/knowledge-selection.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/modal/knowledge-selection.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/node-detail/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/prompt-optimize/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/select-agent-prompt/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/modal/select-agent-prompt/prompt-model.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/modal/select-agent-prompt/prompt-model.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/modal/set-default-value/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/nodes/agent/components/add-tool/catalog.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/agent/components/add-tool/components/knowledge-list.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/agent/components/add-tool/components/mcp-detail.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/agent/components/add-tool/components/skill-list.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/agent/components/add-tool/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/agent/components/model-select/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/agent/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/code/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/chat-history/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/exception-handling/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/fixed-inputs/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/fixed-outputs/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/handle/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/inputs/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/model-params/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/model-select/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/node-debugger/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/node-operation/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/node-operation/node-debug-request.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/outputs/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/remark/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/components/single-input/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/database/components/AddDataInputs.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/database/components/CasesInputs.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/database/components/OutputDatabase.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/database/components/QueryField.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/database/components/QueryLimit.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/database/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/nodes/database/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/decision-making/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/end/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/extractor-parameterNode/components/OutputParams.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/extractor-parameterNode/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/flow/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/if-else/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/iterator/components/flow-container/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/iterator/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/knowledge-pro/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/knowledge/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/llm/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/loop/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/mcp/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/message/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/nodes/model-settings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/node-common/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/nodes/node-input-contracts.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/plugin/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/question-answer/components/answer-settings.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/question-answer/components/fixed-options.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/question-answer/components/output-params.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/question-answer/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/rpa/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/start/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/text-handle/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/nodes/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/variable-aggregation/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/variable-memory/components/inputs.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/nodes/variable-memory/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/panel/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/store/flow-chat-function.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/store/flow-function.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/store/flow-manager-function.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/store/use-chat-store.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/store/use-flow-store.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/store/use-flows-manager.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/store/use-iterator-flow-store.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/tips/select-node/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "console/frontend/src/components/workflow/types/domain.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/drawer/advanced-config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/drawer/chat-debugger.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/drawer/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/drawer/single-node-debugging.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/hooks/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/modal/add-knowledge.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "console/frontend/src/components/workflow/types/modal/knowledge-detail.tsx",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

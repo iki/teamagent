@@ -1,0 +1,984 @@
+{
+  "id": "ai-security--skillspector",
+  "generatedAt": "2026-10-24T06:36:54.441Z",
+  "observedAt": "2026-10-24T06:36:43.1574360+00:00",
+  "source": "https://github.com/NVIDIA/SkillSpector",
+  "report": "spec/projects/ai-security--skillspector.md",
+  "analyzedSha": "35270064e42230dbc566e4134c55b5d581355db3",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T11:39:38-07:00",
+  "observedSha": "d7338f58200a9ae2a24810cee08911ab68b107a7",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d7338f58200a9ae2a24810cee08911ab68b107a7",
+      "date": "2026-10-22T07:38:27-07:00",
+      "subject": "Merge pull request #841 from chrisknvidia/feat/christopherk/e1-command-boundaries"
+    },
+    {
+      "sha": "ea2d39675f806822e67fd025360395a2f92ae9cf",
+      "date": "2026-10-22T07:31:46-07:00",
+      "subject": "Merge branch 'main' into feat/christopherk/e1-command-boundaries"
+    },
+    {
+      "sha": "7ebf8ec141bed7e1d3504fec17f928a1cd79dbfc",
+      "date": "2026-10-22T07:31:11-07:00",
+      "subject": "Merge pull request #862 from Yoseph-Zuskin/fix/binary-structure-flake"
+    },
+    {
+      "sha": "90906433c7a94937d45fccd460cc346333b6d2be",
+      "date": "2026-10-22T07:30:08-07:00",
+      "subject": "Merge pull request #815 from NVIDIA/feat/christopherk/p6-identifier-boundaries"
+    },
+    {
+      "sha": "d3b72b0ee22a9c113c88d394bd78400f0b7d6222",
+      "date": "2026-10-22T14:20:48Z",
+      "subject": "Merge branch 'main' into feat/christopherk/p6-identifier-boundaries"
+    },
+    {
+      "sha": "e29cbdef1adaa7ecf42c42746f3c095c8deae5e4",
+      "date": "2026-10-22T07:20:25-07:00",
+      "subject": "Merge pull request #819 from NVIDIA/feat/christopherk/p2-reference-comment-boundary"
+    },
+    {
+      "sha": "38db453afdfad121c23389c1544e024d30f19a13",
+      "date": "2026-10-20T11:17:28-07:00",
+      "subject": "fix: retain E1 matching for HTML in Markdown containers"
+    },
+    {
+      "sha": "9f0b06ddd7fe7ba2c106a4f1a3fbdbc4cee589c1",
+      "date": "2026-10-20T11:14:05-07:00",
+      "subject": "fix(p2): reject incomplete reference destinations"
+    },
+    {
+      "sha": "d76b2afaaba806b6d625f6c62dff21747b3162b4",
+      "date": "2026-10-20T11:12:50-07:00",
+      "subject": "fix: retain E1 evidence in uncertain Markdown ownership"
+    },
+    {
+      "sha": "df2a71bb5682cf82b203feb5588825d171858771",
+      "date": "2026-10-20T11:10:03-07:00",
+      "subject": "fix(p2): retain keyword-bearing reference destinations"
+    },
+    {
+      "sha": "4fa88464fcacfdb829ffcb9cb4abae51cf8e9eca",
+      "date": "2026-10-20T11:09:03-07:00",
+      "subject": "fix: keep E1 boundary proofs within shell-owned sources"
+    },
+    {
+      "sha": "d6747b9e568bec4e9efb065daf2b4dc42efaba5f",
+      "date": "2026-10-20T11:09:03-07:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into feat/christopherk/e1-command-boundaries"
+    },
+    {
+      "sha": "dbcdf74405688506abbd1f7e4f5fbcab3b002abe",
+      "date": "2026-10-20T11:08:39-07:00",
+      "subject": "fix(p6): retain qualified source requests and complete marker payloads"
+    },
+    {
+      "sha": "7e031d0344670b82397e980897d01512800aed6f",
+      "date": "2026-10-20T11:07:14-07:00",
+      "subject": "fix(p2): preserve shared keywords and reference destinations"
+    },
+    {
+      "sha": "056ed9ba5542f61ef1b91c903c820ba2818bd6af",
+      "date": "2026-10-20T17:21:40Z",
+      "subject": "Merge branch 'main' into feat/christopherk/p6-identifier-boundaries"
+    },
+    {
+      "sha": "11c8b48e35056602fad263438448e0ffb5be2776",
+      "date": "2026-10-20T10:21:31-07:00",
+      "subject": "Merge pull request #836 from chrisknvidia/feat/christopherk/recursive-risk-recommendation"
+    },
+    {
+      "sha": "8270ea9a5c36999498f92763571edc0b2d66c83d",
+      "date": "2026-10-20T10:21:22-07:00",
+      "subject": "Merge pull request #823 from chrisknvidia/feat/christopherk/recursive-shipped-baseline"
+    },
+    {
+      "sha": "62cab16c45fb9a75d83dc1af8f377bc5c61bcc31",
+      "date": "2026-10-20T10:21:18-07:00",
+      "subject": "Merge pull request #820 from NVIDIA/feat/christopherk/tm1-assignment-final-state"
+    },
+    {
+      "sha": "d08dfe5e85ac751880fae19ba07f6290f3a4d52c",
+      "date": "2026-10-20T17:21:11Z",
+      "subject": "Merge branch 'main' into feat/christopherk/p6-identifier-boundaries"
+    },
+    {
+      "sha": "fadbd6172bcd381eca050339712b51431665254f",
+      "date": "2026-10-20T17:21:08Z",
+      "subject": "Merge branch 'main' into feat/christopherk/tm1-assignment-final-state"
+    },
+    {
+      "sha": "3f90f9ae290c661d67afd6c877105c5b684849b0",
+      "date": "2026-10-20T10:21:03-07:00",
+      "subject": "Merge pull request #837 from chrisknvidia/feat/christopherk/mp3-hardware-reset-state"
+    },
+    {
+      "sha": "ca3067ad09f8d2c92c12c2f31484a6b9044bf200",
+      "date": "2026-10-20T10:20:52-07:00",
+      "subject": "Merge pull request #840 from chrisknvidia/feat/christopherk/registry-option-validation"
+    },
+    {
+      "sha": "c45c2b96cdd7001dc320791f7cba6d5b49e5dba5",
+      "date": "2026-10-19T11:37:16Z",
+      "subject": "Merge branch 'main' into feat/christopherk/p6-identifier-boundaries"
+    },
+    {
+      "sha": "e9b4e2af00a1fcdfd223c2a957fcc1b2358138b5",
+      "date": "2026-10-19T11:37:14Z",
+      "subject": "Merge branch 'main' into feat/christopherk/tm1-assignment-final-state"
+    },
+    {
+      "sha": "95a52d89fa16f608f0b18ccee76b0918ea4b7eef",
+      "date": "2026-10-19T04:37:02-07:00",
+      "subject": "Merge pull request #452 from Patrick-Erichsen/codex/fix-p2-comment-boundaries"
+    },
+    {
+      "sha": "99c5b840b8c5057f1deedb002709aecbaefbdb7f",
+      "date": "2026-10-19T04:01:07-07:00",
+      "subject": "fix(p2): close abrupt empty comments and keep run-together directives"
+    },
+    {
+      "sha": "2af54fafb26a1d4ff0be25d843db6bddf5bbe003",
+      "date": "2026-10-19T03:53:03-07:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into codex/fix-p2-comment-boundaries"
+    },
+    {
+      "sha": "14089bc8812752340cfca05940debf782c1e3f07",
+      "date": "2026-10-19T10:31:00Z",
+      "subject": "Merge branch 'main' into feat/christopherk/p6-identifier-boundaries"
+    },
+    {
+      "sha": "9059d5dc9f8f9d0cd7051369958c9bd9a61306c4",
+      "date": "2026-10-19T10:30:58Z",
+      "subject": "Merge branch 'main' into feat/christopherk/p2-reference-comment-boundary"
+    },
+    {
+      "sha": "dc6720966cb7f44ea28f0f092ec77475449692c2",
+      "date": "2026-10-19T10:30:56Z",
+      "subject": "Merge branch 'main' into feat/christopherk/tm1-assignment-final-state"
+    },
+    {
+      "sha": "dcebfa6ffa0a5dfb9eb7b4ec3db9e7f8ff533615",
+      "date": "2026-10-19T03:30:46-07:00",
+      "subject": "Merge pull request #875 from NVIDIA/naren/sc8-bounds-doc"
+    },
+    {
+      "sha": "c21eaa74351517c7e3923347620c8801009384df",
+      "date": "2026-10-19T10:25:10Z",
+      "subject": "Merge branch 'main' into feat/christopherk/p6-identifier-boundaries"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".opencode/tools/skillspector_scan_lib.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/api_pool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/batch_scan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/docs/DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/gap_fill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/reports.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/tests/docs/TEST_DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/tests/docs/TEST_GUIDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/tests/test_inspection_reporting.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/tests/test_monkeypatch_fragility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/tests/test_monkeypatch_invasiveness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contrib/batch_scan/tests/tests-pro/test_gap_fill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ANALYSIS_RESOURCE_BOUNDS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/B.3.1-mcp-least-privilege.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/DEVELOPMENT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/NESTED_ARTIFACT_INSPECTION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/OPENCODE_EXTENSION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/PI_EXTENSION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/SUPPRESSION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scan-completeness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/skillspector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/skill-inspector/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/allowed_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/cleanup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/dependency_sources.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/file_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/graph_proxy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/inference_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/input_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/inspection_ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/llm_analyzer_base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/llm_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/mcp_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/mcp_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nested_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/artifact_integrity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/behavioral_ast.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/behavioral_taint_tracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/bundled_execution_surface.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/common.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/mcp_least_privilege.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/mcp_tool_poisoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/pattern_defaults.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/nodes/analyzers/prohibition_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/semantic_quality_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_supply_chain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/nodes/analyzers/static_python_shell_truthiness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/static_yara.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/analyzers/whitespace_padding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/build_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/deduplicate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/finalize_inspection_ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/meta_analyzer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/nodes/resolve_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/oms.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/_agent_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/_agent_cli_base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/anthropic/model_registry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/anthropic/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/anthropic_proxy/model_registry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/anthropic_proxy/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/azure_openai/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/bedrock/model_registry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/bedrock/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/chat_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/codex_cli/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/codex_cli/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/providers/gemini/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/providers/gemini/model_registry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/providers/gemini/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/nv_build/model_registry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/nv_build/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/openai/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/openai_compatible/model_registry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/openai_compatible/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/providers/structured_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/python_ast.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/python_tokens.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/sarif_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/security_reconstruction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/semantic_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/suppression.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/skillspector/terminal_text.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/transitive.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skillspector/yara_rules/malware.yar.b64",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sqp/sqp2_tool_catalog_clean/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sqp/sqp2_tool_descriptive_step/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sqp/sqp2_tool_instructed/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sqp/sqp3_forced_language/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sqp/sqp3_plain_english_clean/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/sqp/sqp3_plain_english_override/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/test_agent_cli_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/test_graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/test_opaque_reference_reporting.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/integration/test_ransomware_rule.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_behavioral_taint_tracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_bundled_execution_surface.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_chmod_regex_backtracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_command_wrapper_without_command.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_common.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_dependency_source_budget_behavior.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_dependency_source_budget_configuration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_dependency_sources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_documentation_reconstruction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_e1_command_boundaries.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_excessive_agency_prohibitions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_host_language_shell_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_mp3_hardware_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_mp3_timestamp_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_p2_reference_comments.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_p6_identifier_boundaries.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_pe3_credential_type_label.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_pe3_ignore_file_entries.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_prohibition_review_regressions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_prose_shell_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_python_ast_columns.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_python_shell_cached_imports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_python_string_marker_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_runtime_reconstruction_workflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_sc2_command_boundaries.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_sc4_reporting.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_sc8_shipped_bytecode.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_security_reconstruction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_semantic_security_discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_shared_python_ast.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_skill_installation_patterns.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_static_budget_configuration.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/nodes/analyzers/test_static_parse_limit_literals.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/nodes/analyzers/test_static_patterns.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

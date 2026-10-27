@@ -1,0 +1,207 @@
+# harnessrouter: change evidence
+
+Source: [harnessrouter](https://github.com/HarnessRouter/harnessrouter) · [Analysis](../../projects/ai-agents--harnessrouter.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `f3192445c82da533fe83b125917efb8c3947aef0`; commit date: 2026-10-02T03:22:26-07:00; review date: unknown; observed SHA: `20d73fe727c82d13eff8f49b938acbb4d7ca294f`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/HarnessRouter/harnessrouter/compare/f3192445c82da533fe83b125917efb8c3947aef0...20d73fe727c82d13eff8f49b938acbb4d7ca294f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [20d73fe727c8](https://github.com/HarnessRouter/harnessrouter/commit/20d73fe727c82d13eff8f49b938acbb4d7ca294f) 2026-10-27T01:40:56-07:00: dsh finds a setup's and a plugin package's skills, and offers no web search that calls DeepSeek's API with the relay's placeholder key (#605)
+- [9ab97dee3402](https://github.com/HarnessRouter/harnessrouter/commit/9ab97dee3402d080b4e597385d1845297959f5d8) 2026-10-27T01:37:12-07:00: nemotron-3-super is declared text only, and OpenRouter's 404 for an image is read as the refusal it is (#603)
+- [cd4c4e4e9350](https://github.com/HarnessRouter/harnessrouter/commit/cd4c4e4e935067602487ea0d93b8b1c62100af5b) 2026-10-27T01:30:09-07:00: A Gemini thought signature goes back only to the model that made it; another model's goes as Google's sentinel (#604)
+- [fca0987ca181](https://github.com/HarnessRouter/harnessrouter/commit/fca0987ca181fa660da3bff0bbe90a7064e7b383) 2026-10-26T23:29:10-07:00: fast-agent waits for its stream as long as the relay waits upstream (#602)
+- [d125bb1fe988](https://github.com/HarnessRouter/harnessrouter/commit/d125bb1fe988c36538d6515714bb23650e383ecf) 2026-10-26T22:58:45-07:00: A conversation's images are fitted to what the model takes: none for a text-only model, the most recent N for one that takes N (#601)
+- [1f39e3f335c6](https://github.com/HarnessRouter/harnessrouter/commit/1f39e3f335c61d220455d2c6929345202754b610) 2026-10-26T22:55:04-07:00: fast-agent is told what the turn's model reads, so Claude gets attach_media and sees images (#600)
+- [10fe99bb35ea](https://github.com/HarnessRouter/harnessrouter/commit/10fe99bb35ea2a0960716ea73fd746aa110e46ac) 2026-10-26T22:20:38-07:00: Deep Agents Code defaults to gpt-6.1-sol, as the Responses API bases do (#599)
+- [5865b89841b6](https://github.com/HarnessRouter/harnessrouter/commit/5865b89841b6d204acd12f8388e8a369dfabe1bb) 2026-10-26T22:16:22-07:00: The console's rail has the team's letter, How it works, as on the hosted console (#598)
+- [ef9e12e29b61](https://github.com/HarnessRouter/harnessrouter/commit/ef9e12e29b61c7bb913a767a7bf1bee96e851ef8) 2026-10-26T16:14:32-07:00: fast-agent reaches an MCP server at any path (the browser on servers at /v1/mcp/plugs) (#596)
+- [cd37f226ba3c](https://github.com/HarnessRouter/harnessrouter/commit/cd37f226ba3c3cb226dd8b4b2489936f9501b763) 2026-10-26T11:12:56-07:00: docs: 30 harness bases in the README and the guide's default HR_BACKENDS (#595)
+- [d64959932c27](https://github.com/HarnessRouter/harnessrouter/commit/d64959932c27b298cb9529c861ba7a705a3e5296) 2026-10-26T10:23:58-07:00: fast-agent and docker-agent no longer offer nemotron-3.5-lightning (deliverables outside what the console shows) (#593)
+- [da73b40141e1](https://github.com/HarnessRouter/harnessrouter/commit/da73b40141e1f0980fd67a36f200c26d13829ac5) 2026-10-26T10:02:44-07:00: Deep Agents Code no longer offers nemotron-3.5-lightning (it saves deliverables in tmp/) (#592)
+- [b4d53a10d088](https://github.com/HarnessRouter/harnessrouter/commit/b4d53a10d0882d6fe7edfce0d59a03ce2e61a2d6) 2026-10-26T03:44:18-07:00: fast-agent and Deep Agents Code show each step as it happens (#591)
+- [5abab5b002bc](https://github.com/HarnessRouter/harnessrouter/commit/5abab5b002bcac7b0fccd4bf83d47a8a7f2f146a) 2026-10-25T22:23:45-07:00: Four new bases: Mistral Vibe, Docker Agent, fast-agent and Deep Agents Code (#541)
+- [edca78bffa40](https://github.com/HarnessRouter/harnessrouter/commit/edca78bffa40418a00f3c7bc524b2ba9890caecc) 2026-10-24T19:33:02-07:00: console: a window narrowed to a phone's width keeps the task it had open (#586)
+- [9107bf62ef01](https://github.com/HarnessRouter/harnessrouter/commit/9107bf62ef01af7845ecf47380cc6d5ec35c4b7e) 2026-10-24T19:29:17-07:00: runner: codex's own warning in exec mode goes to the runner log, never into the task's tool calls (#584)
+- [db3bf72a1872](https://github.com/HarnessRouter/harnessrouter/commit/db3bf72a1872c389502666f97069d73f91107cd1) 2026-10-24T10:28:20-07:00: docs: keep the README logo readable in both GitHub themes (#585)
+- [91f12963cc2c](https://github.com/HarnessRouter/harnessrouter/commit/91f12963cc2c92be2f8ce89a384b4222417aadb1) 2026-10-23T23:50:04-07:00: tests: the unreadable-file test waits for the failure line, and the Cloud upload fixtures name no person (#583)
+- [e2e8ce41b64a](https://github.com/HarnessRouter/harnessrouter/commit/e2e8ce41b64a910a2b4616fa4744166470bd70c0) 2026-10-23T23:24:44-07:00: gateway: a deploy to Cloud creates its copy with POST and replaces it with PUT, and lands where Cloud names for the key (#581)
+- [1220e84b1b39](https://github.com/HarnessRouter/harnessrouter/commit/1220e84b1b39ea8479071cb95f0e652fa14c9a9a) 2026-10-23T23:21:05-07:00: share: a session read that fails after the token lookup answers 503, as the lookup does, never a 500 or a gone link (#577)
+- [c6ebaa79db25](https://github.com/HarnessRouter/harnessrouter/commit/c6ebaa79db252b4f02e53e2f0203007d06109748) 2026-10-23T22:24:12-07:00: runner: a codex command's stored output is what the model was given, never the item's output that drops the first chunk (#580)
+- [66eb6e55f956](https://github.com/HarnessRouter/harnessrouter/commit/66eb6e55f956c9d5fcfee55d504bf39954a0be57) 2026-10-23T14:27:02-07:00: console: the workspace menu fits the window, its workspaces scroll, New workspace stays in reach (#575)
+- [db36b7f4e806](https://github.com/HarnessRouter/harnessrouter/commit/db36b7f4e806bb0dd07f46aec40c26a50e3a4a50) 2026-10-23T14:23:23-07:00: share: a share link survives a transient index failure instead of 404ing for ten seconds (#573)
+- [268674149ae4](https://github.com/HarnessRouter/harnessrouter/commit/268674149ae4f72b06028b2dbd029e000198a4d4) 2026-10-23T14:20:10-07:00: dsh: the relay reads a tool-call delta on an SSE line with no space after the colon (#572)
+- [7fa821e09482](https://github.com/HarnessRouter/harnessrouter/commit/7fa821e0948283be801583ce41bd7630fce9f40b) 2026-10-23T12:45:31-07:00: console + gateway: Deploy to Cloud, one click from a setup's page bar (#574)
+- [08cc4ac3136f](https://github.com/HarnessRouter/harnessrouter/commit/08cc4ac3136fff8700f1bbd493ebee3ab84ab964) 2026-10-23T02:13:15-07:00: console: the redesigned console, where New setup builds a setup from one sentence (0.36.0)
+- [7f036edf545b](https://github.com/HarnessRouter/harnessrouter/commit/7f036edf545b5c55582c31f5750b70f24fa079c9) 2026-10-22T02:48:03-07:00: agentzero: a failed turn hands the trace its exception with the stack frames, as every other base does (#571)
+- [00054dcc9594](https://github.com/HarnessRouter/harnessrouter/commit/00054dcc95947c5ca5b3b9f0cad2e62f46ac7a38) 2026-10-22T00:50:15-07:00: workspaces: a list the store could not read is a 503, never an organization with none (#569)
+- [dcf6219d2e56](https://github.com/HarnessRouter/harnessrouter/commit/dcf6219d2e56337867788becfcdd7db7cfaad1e6) 2026-10-22T00:45:28-07:00: files: an archive that cannot be whole answers file_not_found, the protocol's code for it (#568)
+- [c1590a98559e](https://github.com/HarnessRouter/harnessrouter/commit/c1590a98559e3c5fb5df606ee8faba438feaaa3b) 2026-10-22T00:39:23-07:00: conformance: an unavailable validator stops at the share mint, so the R-series still measures Sessions §5 (#567)
+- [25f579b579c4](https://github.com/HarnessRouter/harnessrouter/commit/25f579b579c496cb9a9c81837c9f3dceb1c41b88) 2026-10-22T00:35:08-07:00: conformance: R-07 deletes at the path §6 names, so a published link outliving its session is reported (#566)
+- [09cd0bffa9b3](https://github.com/HarnessRouter/harnessrouter/commit/09cd0bffa9b35f7cafaac2ac054775ad68a79571) 2026-10-22T00:31:53-07:00: gateway: a published package's declared plugs are attached, as on every other install route (#565)
+
+## Changed paths (truncated)
+
+- M: `.dockerignore`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/tests.yml`
+- M: `.gitignore`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile`
+- M: `NOTICE`
+- M: `README.md`
+- M: `docker/entrypoint.sh`
+- A: `docker/hr-retention`
+- A: `docker/locks/dcode.in`
+- A: `docker/locks/dcode.lock.txt`
+- A: `docker/locks/fast-agent.in`
+- A: `docker/locks/fast-agent.lock.txt`
+- A: `docker/locks/vibe.in`
+- A: `docker/locks/vibe.lock.txt`
+- M: `docs/harness-verification.md`
+- M: `docs/images/01-login.png`
+- A: `docs/images/console-add-key.png`
+- A: `docs/images/console-example-run.png`
+- A: `docs/images/console-first-task.png`
+- A: `docs/images/console-new-setup.png`
+- A: `docs/images/console-setup-built.png`
+- A: `docs/images/console-shop.png`
+- M: `docs/self-hosting-guide.md`
+- M: `docs/support-matrix-notes.md`
+- M: `docs/support-matrix-results.json`
+- M: `docs/support-matrix.md`
+- M: `gateway/app.py`
+- M: `gateway/backing.py`
+- M: `gateway/browser_plane.py`
+- M: `gateway/media_plane.py`
+- M: `gateway/plugs_plane.py`
+- M: `gateway/requirements.txt`
+- A: `gateway/setup_builder.py`
+- A: `gateway/setup_compose.py`
+- M: `gateway/sql_plane.py`
+- A: `gateway/tests/test_agentzero_catalog.py`
+- A: `gateway/tests/test_batch4_custom_formats.py`
+- A: `gateway/tests/test_batch4_pins.py`
+- M: `gateway/tests/test_browser.py`
+- A: `gateway/tests/test_calibration_scope.py`
+- M: `gateway/tests/test_card_settle.py`
+- A: `gateway/tests/test_catalog_batch3_tools.py`
+- M: `gateway/tests/test_catalog_chat_only_backends.py`
+- A: `gateway/tests/test_catalog_grok_tools.py`
+- A: `gateway/tests/test_catalog_minimax_tools.py`
+- A: `gateway/tests/test_chain_connection_base_url.py`
+- A: `gateway/tests/test_channel_exclusions.py`
+- A: `gateway/tests/test_channel_refuses.py`
+- M: `gateway/tests/test_cloud_upload.py`
+- M: `gateway/tests/test_console_placeholders.py`
+- M: `gateway/tests/test_custom_model_map.py`
+- M: `gateway/tests/test_database_mcp.py`
+- A: `gateway/tests/test_dcode_tools.py`
+- A: `gateway/tests/test_default_models.py`
+- A: `gateway/tests/test_deploy_to_cloud.py`
+- A: `gateway/tests/test_docker_agent_tools.py`
+- A: `gateway/tests/test_entra_connection.py`
+- A: `gateway/tests/test_env_spec_parity.py`
+- M: `gateway/tests/test_environments.py`
+- A: `gateway/tests/test_failure_detail.py`
+- A: `gateway/tests/test_fast_agent_tools.py`
+- M: `gateway/tests/test_files_archive.py`
+- A: `gateway/tests/test_gemini_4_argon.py`
+- M: `gateway/tests/test_gemini_backend.py`
+- A: `gateway/tests/test_gemini_schema_parity.py`
+- M: `gateway/tests/test_google_provider.py`
+- M: `gateway/tests/test_gpt_6_1_sol.py`
+- A: `gateway/tests/test_haiku_5_5.py`
+- A: `gateway/tests/test_harness_fields.py`
+- A: `gateway/tests/test_harness_run_owner.py`
+- A: `gateway/tests/test_harness_source.py`
+- A: `gateway/tests/test_history_refusal.py`
+- A: `gateway/tests/test_identity_default.py`
+- M: `gateway/tests/test_ignored_fields.py`
+- A: `gateway/tests/test_image_skill_mount.py`
+- M: `gateway/tests/test_incomplete_reason.py`
+- A: `gateway/tests/test_input_history.py`
+- A: `gateway/tests/test_instruction_file_label.py`
+- A: `gateway/tests/test_integration_model_rows.py`
+- A: `gateway/tests/test_internal_only.py`
+- A: `gateway/tests/test_key_rename.py`
+- A: `gateway/tests/test_kilo_catalog.py`
+- M: `gateway/tests/test_kits_workspace.py`
+- A: `gateway/tests/test_late_tool_arguments.py`
+- A: `gateway/tests/test_matrix_disabled_tool.py`
+- A: `gateway/tests/test_measured_offer.py`
+- M: `gateway/tests/test_media_attack.py`
+- M: `gateway/tests/test_media_mcp.py`
+- M: `gateway/tests/test_model_refusal.py`
+- M: `gateway/tests/test_model_route_by_base.py`
+- A: `gateway/tests/test_muse_wonder.py`
+- A: `gateway/tests/test_nested_workspace_view.py`
+- M: `gateway/tests/test_opus_5_5.py`
+- A: `gateway/tests/test_pinned_address.py`
+- A: `gateway/tests/test_plug_guides.py`
+- M: `gateway/tests/test_plugins.py`
+- M: `gateway/tests/test_plugs.py`
+- A: `gateway/tests/test_produced_too_large.py`
+- M: `gateway/tests/test_produced_total.py`
+- M: `gateway/tests/test_public_artifacts.py`
+- A: `gateway/tests/test_public_response_status.py`
+- A: `gateway/tests/test_qoder_catalog.py`
+- A: `gateway/tests/test_reasoning_effort.py`
+- M: `gateway/tests/test_reconcile_newborn.py`
+- A: `gateway/tests/test_response_read_failure_is_not_not_found.py`
+- A: `gateway/tests/test_retention.py`
+- A: `gateway/tests/test_route_backend.py`
+- M: `gateway/tests/test_sandbox_broker_origin.py`
+- M: `gateway/tests/test_sandbox_retry.py`
+- M: `gateway/tests/test_servable_models.py`
+- A: `gateway/tests/test_session_file_changes.py`
+- M: `gateway/tests/test_session_file_fallback.py`
+- A: `gateway/tests/test_setup_builder.py`
+- A: `gateway/tests/test_setup_compose_language.py`
+- M: `gateway/tests/test_share_selfhost.py`
+- M: `gateway/tests/test_sql_plane.py`
+- A: `gateway/tests/test_storage_usage_total.py`
+- A: `gateway/tests/test_stream_partial.py`
+- A: `gateway/tests/test_stream_partial_gate.py`
+- A: `gateway/tests/test_sweep_newborn.py`
+- A: `gateway/tests/test_text_only_input.py`
+- A: `gateway/tests/test_tool_output_incomplete.py`
+- A: `gateway/tests/test_trace_all_never_silently_short.py`
+- A: `gateway/tests/test_trace_context.py`
+- A: `gateway/tests/test_turn_loop_clock.py`
+- A: `gateway/tests/test_turn_slot.py`
+- A: `gateway/tests/test_turn_times.py`
+- M: `gateway/tests/test_turns_feed_model.py`
+- A: `gateway/tests/test_turns_never_silently_empty.py`
+- A: `gateway/tests/test_vibe_tools.py`
+- A: `gateway/tests/test_workspace_scope.py`
+- A: `gateway/tests/test_workspaces_read_failure.py`
+- A: `gateway/tests/test_zeroclaw_catalog.py`
+- M: `protocol/CHANGELOG.md`
+- A: `protocol/ECOSYSTEM.md`
+- M: `protocol/IMPLEMENTATIONS.md`
+- M: `protocol/README.md`
+- M: `protocol/VERSIONING.md`
+- A: `protocol/assets/protocol-layers.svg`
+- M: `protocol/conformance/README.md`
+- M: `protocol/conformance/pyproject.toml`
+- M: `protocol/conformance/tests/share_defect_stub.py`
+- A: `protocol/conformance/tests/step_budget_stub.py`
+- A: `protocol/conformance/tests/test_failure_evidence.py`
+- A: `protocol/conformance/tests/test_harness_retirement.py`
+- M: `protocol/conformance/tests/test_schema_distribution.py`
+- M: `protocol/conformance/tests/test_session_sharing_checks.py`
+- A: `protocol/conformance/tests/test_step_budget.py`
+- M: `protocol/conformance/uhp_conformance/__init__.py`
+- M: `protocol/conformance/uhp_conformance/checks.py`
+- M: `protocol/conformance/uhp_conformance/client.py`
+- M: `protocol/conformance/uhp_conformance/context.py`
+- M: `protocol/conformance/uhp_conformance/fixture.py`
+- A: `protocol/conformance/uhp_conformance/uhp-2026-10-04.schema.json`
+- A: `protocol/conformance/uhp_conformance/uhp-2026-10-19.schema.json`
+- M: `protocol/conformance/uv.lock`
+- M: `protocol/schema/build.py`
+- A: `protocol/schema/uhp-2026-10-04.openapi.yaml`

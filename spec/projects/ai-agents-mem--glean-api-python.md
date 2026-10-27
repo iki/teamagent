@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [glean-api-python](https://github.com/gleanwork/api-client-python); analyzed commit `922fd9ba79a64a957f8e99cc3e9efaecf8f209c7`; commit date 2026-10-03T07:21:21-06:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--glean-api-python.md).
+<!-- teamagent-analysis:end -->

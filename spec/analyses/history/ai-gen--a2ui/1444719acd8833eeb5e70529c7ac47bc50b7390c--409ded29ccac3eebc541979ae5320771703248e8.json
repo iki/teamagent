@@ -1,0 +1,984 @@
+{
+  "id": "ai-gen--a2ui",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/google/A2UI",
+  "report": "spec/projects/ai-gen--a2ui.md",
+  "analyzedSha": "1444719acd8833eeb5e70529c7ac47bc50b7390c",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T21:54:49Z",
+  "observedSha": "409ded29ccac3eebc541979ae5320771703248e8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "409ded29ccac3eebc541979ae5320771703248e8",
+      "date": "2026-10-24T00:40:25Z",
+      "subject": "ci: Release/agent sdk 0.0.2 (#3590)"
+    },
+    {
+      "sha": "c177173ca12a9d4739e16e56d6eb87b1e0608d85",
+      "date": "2026-10-23T17:08:44-07:00",
+      "subject": "test(conformance): pin SkillSet export cleanup scope and align Python with TypeScript (#3539)"
+    },
+    {
+      "sha": "5f94564b0549876705f31090f0c1b99157155ac8",
+      "date": "2026-10-23T17:08:43-07:00",
+      "subject": "feat(agent): implement Skill, SkillSet, and SkillGenerator (#3397)"
+    },
+    {
+      "sha": "7b962c2650b61fac08e6be73807d8d3d27f6186f",
+      "date": "2026-10-23T16:53:49-07:00",
+      "subject": "fix(python/core): never fetch peer catalogs over HTTP (#3554)"
+    },
+    {
+      "sha": "a4ad97a399fb602b781eedb092b54a7d582def91",
+      "date": "2026-10-23T23:45:57Z",
+      "subject": "fix(express): keep map literals whose keys are named like AST nodes (#3525)"
+    },
+    {
+      "sha": "7270aea52ac81c198dd676b66458d9bae6e7f863",
+      "date": "2026-10-23T19:37:41Z",
+      "subject": "docs: tweak changelog writing skill (#3537)"
+    },
+    {
+      "sha": "b817d0296010075ce230fdd720f00e32cd07b775",
+      "date": "2026-10-23T19:16:51Z",
+      "subject": "fix(express): widen NUMBER to the JSON grammar and align number handling across SDKs (#3540)"
+    },
+    {
+      "sha": "30636b688bf82db6a8f54356f538dde809fd9af5",
+      "date": "2026-10-23T19:06:43Z",
+      "subject": "docs(python/agent): document per-request processors, RendererState and streaming (#3271)"
+    },
+    {
+      "sha": "6d95d6fc02718df5ae20a5ad2aa67fc78f2f8a4d",
+      "date": "2026-10-23T11:49:06-07:00",
+      "subject": "docs(skills): consolidate Python, Dart, and Swift guides under coding-principles (#3117)"
+    },
+    {
+      "sha": "4c369554a9981eae242469ce8c22460eb108235a",
+      "date": "2026-10-23T18:19:24Z",
+      "subject": "feat(python/agent)!: bind a RendererState to A2uiRequestProcessor (#3270)"
+    },
+    {
+      "sha": "803874bb3feeba1e7da8044189cbe2f1f94bfbf1",
+      "date": "2026-10-23T18:04:35Z",
+      "subject": "feat(python/agent)!: make the Parser stateless; always validate; add ResponseStream (#3269)"
+    },
+    {
+      "sha": "8440320ba0667a90ccd25b36b3d6cb8edfa1595b",
+      "date": "2026-10-23T17:12:13Z",
+      "subject": "feat(python/agent): add RendererState; build validate_payload on it (#3268)"
+    },
+    {
+      "sha": "ec08e677a778b6120ef796d4bcd11c47889e7f17",
+      "date": "2026-10-23T08:54:16-07:00",
+      "subject": "fix(swift): restrict component type UAX #31 identifier check to v1.0+ (#3542)"
+    },
+    {
+      "sha": "020a9d6f694761ad16b35bc38945e4ccd0ac14e8",
+      "date": "2026-10-23T13:25:25+10:30",
+      "subject": "docs(spec): state that v1.0 component ids must be UAX #31 identifiers (#3414)"
+    },
+    {
+      "sha": "840eaa24fb1139838d2fbb5eafdb6cd986411ed7",
+      "date": "2026-10-22T19:36:39-07:00",
+      "subject": "fix(web_core): require args in some function call schemas (#3389)"
+    },
+    {
+      "sha": "3bee548cc3b02ac9be381b80aee0e68c27e885f4",
+      "date": "2026-10-22T15:51:12-07:00",
+      "subject": "fix(web_core): use literal setAttribute names and dynamic Unicode RegExps (#3413)"
+    },
+    {
+      "sha": "9711b05a8fd3e0a347921bd728df72f9f187907a",
+      "date": "2026-10-22T15:12:33-07:00",
+      "subject": "docs(skills): add coding-principles, pr-hygiene, and update-changelog agent skills (#3113)"
+    },
+    {
+      "sha": "a8e0c8ee0369f835f57b627f3b74647364b7cca2",
+      "date": "2026-10-22T22:08:14Z",
+      "subject": "a11y(swiftui): expose checkbox, radio and tab state to VoiceOver (#3384)"
+    },
+    {
+      "sha": "230c748f77fb12cd8f2598159d276199075c69ec",
+      "date": "2026-10-22T21:33:10Z",
+      "subject": "fix(agent,eval): harden inference format parsers and clarify eval prompts (#3290)"
+    },
+    {
+      "sha": "8ee244a2419dafa796abb2926e625beab696c466",
+      "date": "2026-10-22T14:20:58-07:00",
+      "subject": "[MCP] build(catalog-mcp): wireit build and Karma browser tests (#3348)"
+    },
+    {
+      "sha": "3708192437b38ab2e21e582161e8779d16c6fbac",
+      "date": "2026-10-22T13:25:36-07:00",
+      "subject": "fix(express): UAX 31 identifiers and version-aware component ids (#3394)"
+    },
+    {
+      "sha": "e9dbcc372084470875252cf35e6257c0a41010e9",
+      "date": "2026-10-22T12:10:43-07:00",
+      "subject": "Improve/fix triage automation. (#3368)"
+    },
+    {
+      "sha": "87e0621a91e227d0e14f7fb1d44ce4b4261f4621",
+      "date": "2026-10-22T14:33:17-04:00",
+      "subject": "chore(swift): unify minimum supported iOS version to 17.0 (#3236)"
+    },
+    {
+      "sha": "974b758f1d920edefb8b3135753982f522eb3284",
+      "date": "2026-10-22T18:06:55Z",
+      "subject": "perf(python/core): check updateComponents incrementally under deferred graph checks (#3326)"
+    },
+    {
+      "sha": "06e37189001b92c9362423a5cc4b170ba29642f7",
+      "date": "2026-10-22T10:57:13-07:00",
+      "subject": "refactor(agent): modularize conformance.test.ts action handlers and extract skill-conformance.test.ts (#3396)"
+    },
+    {
+      "sha": "12a609333dc197c2cdc7d9e6352966827572c7c9",
+      "date": "2026-10-22T17:42:32Z",
+      "subject": "ci(swift): run on SwiftUI/sample changes and build for iOS Simulator (#3386)"
+    },
+    {
+      "sha": "31f1774d07a848bc77344b5778b0ecabbfcc9629",
+      "date": "2026-10-22T10:41:51-07:00",
+      "subject": "docs(mcp): fix sample paths in MCP Apps guide and note sample protocol versions (#3391)"
+    },
+    {
+      "sha": "6091c008d46922148d00fe37f54e5701933af04e",
+      "date": "2026-10-22T12:54:46-04:00",
+      "subject": "fix(swift): make invalid function response payloads unrepresentable (#3021) (#3317)"
+    },
+    {
+      "sha": "496313da9615896c5c4c572ad479bfd785021cf2",
+      "date": "2026-10-22T16:47:51Z",
+      "subject": "fix(swift): read v1.0 ValidationResult operands of and/or/not by their validity (#3150)"
+    },
+    {
+      "sha": "cc5f87affb67cc8084bcc7fa7f4533bd78cbc5dd",
+      "date": "2026-10-22T16:41:43Z",
+      "subject": "fix(swift): resolve `${...}` paths and calls in v1.0 formatString (#3173)"
+    },
+    {
+      "sha": "3a64be7990d257a64a2ae3c5ae68adb10cbe4d28",
+      "date": "2026-10-22T13:08:25Z",
+      "subject": "feat(catalogs): add VegaChart catalog and standalone sample (#3388)"
+    },
+    {
+      "sha": "eaac0d2bc5781a676d9d6ef13f86116b3f487b5d",
+      "date": "2026-10-22T04:23:34Z",
+      "subject": "fix(web_core): export z.union as anyOf in Catalog.toJson and validationSchema (#3366)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/scripts/catalog_generators.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/scripts/codegen_pydantic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-generate-pydantic-models/scripts/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/references/triage_criteria.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-issue-triage/scripts/suggest_triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/a2ui-python-development/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/a2ui-release-python/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/a2ui-swift-development/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/dart/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/dart/versioning-and-releases.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/public-api-and-cross-framework-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/python/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/python/architecture-and-facades.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/python/coding-standards-and-verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/swift/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/swift/coding-standards-and-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/typescript/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/typescript/accessibility-semantics.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/typescript/css-theming-styling.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/typescript/reactive-lifecycle-performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/typescript/references/inspecting-typescript-public-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/typescript/testing-isolation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/coding-principles/subskills/typescript/typescript-closure-compiler.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/natural-writing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/pr-hygiene/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/update-changelog/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/release_version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/tests/test_release_version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flutter_packages_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python_ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-pypi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/run_evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/swift_build_and_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web_ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".prettierignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Package.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blueprints/codebases/dart/a2ui_core/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/dart/a2ui_flutter/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/python/a2ui_agent/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "blueprints/codebases/typescript/a2ui_agent/design_doc.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blueprints/codebases/typescript/agents/a2ui_agent/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "R097",
+      "path": "blueprints/codebases/typescript/core/web_core/codebase.blueprint.md",
+      "previousPath": "blueprints/codebases/typescript/web_core/codebase.blueprint.md"
+    },
+    {
+      "status": "R095",
+      "path": "blueprints/codebases/typescript/renderers/angular/codebase.blueprint.md",
+      "previousPath": "blueprints/codebases/renderers/angular/codebase.blueprint.md"
+    },
+    {
+      "status": "R096",
+      "path": "blueprints/codebases/typescript/renderers/lit/codebase.blueprint.md",
+      "previousPath": "blueprints/codebases/renderers/lit/codebase.blueprint.md"
+    },
+    {
+      "status": "R096",
+      "path": "blueprints/codebases/typescript/renderers/react/codebase.blueprint.md",
+      "previousPath": "blueprints/codebases/renderers/react/codebase.blueprint.md"
+    },
+    {
+      "status": "M",
+      "path": "blueprints/features/node_resolution.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/features/skill_generator.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "blueprints/features/universal_custom_elements.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/modules/a2ui_agent.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/modules/a2ui_core.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/modules/a2ui_framework_adapter.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/validate_blueprints.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/basic/v1/examples/31_incremental-dashboard.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalogs/mcp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "catalogs/mcp/v1/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "R084",
+      "path": "catalogs/mcp/v1/mcp_app_specification.md",
+      "previousPath": "samples/community/client/angular/projects/mcp_calculator/src/a2ui-catalog/mcp-apps-component_spec.md"
+    },
+    {
+      "status": "A",
+      "path": "catalogs/vegachart/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "catalogs/vegachart/v0_9/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "catalogs/vegachart/v1/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/catalog_resolution.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/catalog_transformer.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/compiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/decompiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/prompt_generator.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/response_parser.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/response_streaming.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/agent/direct_json/scaling.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/compiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/decompiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/prompt_generator.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/response_parser.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/agent/express/scaling.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/legacy/inference_format.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/legacy/streaming_parser.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/agent/multi_catalog_formats.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/request_processor.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/skill.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/conformance_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/accessibility.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/catalog.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/data_model.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/expressions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/functions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/core/message_processor_scaling.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/message_processor_v0_9.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/message_processor_v1_0.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/reserved_keys.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/validator_v0_8.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/validator_v0_9.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/validator_v1_0.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/agent_functions_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/composition_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/cross_ref_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/catalogs/custom_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/catalogs/forms_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/function_metadata_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/literal_map_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/peer_matching/alpha/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/peer_matching/beta/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/peer_matching/mcp_catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/peer_matching/referencing_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/catalogs/simplified_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/streaming_catalog_v0_8.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/streaming_catalog_v0_9.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/catalogs/weighted_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/allowed_messages.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/cross_ref_catalogs_pruned.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/multi_catalog_examples.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/pruned_components.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/pruned_functions.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/simplified_catalog.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/single_example.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/two_catalogs.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/two_catalogs_pruned.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/prompts/direct_json/two_catalogs_single_example.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/skills/express_base_rules.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/skills/express_basic_catalog.skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/skills/express_basic_monolithic.skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/skills/express_catalog_instructions.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/test_data/skills/express_core.skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/validation_schema/test_v08_basic_validation_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/validation_schema/test_v09_basic_validation_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/validation_schema/test_v09_custom_validation_schema_flattening.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/validation_schema/test_v10_basic_validation_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conformance/test_data/validation_schema/test_v10_cross_catalog_validation_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "R068",
+      "path": "dart/a2ui_agent/analysis_options.yaml",
+      "previousPath": "python/a2ui_agent/src/a2ui/template/__init__.py"
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_agent/dart_test.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/e2e_test/test/direct_json_turn_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/e2e_test/test/express_turn_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_agent/e2e_test/test/test_infra/basic_catalog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/e2e_test/test/test_infra/login_form.dart",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dart/a2ui_agent/e2e_test/test/test_infra/renderer_catalog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/example/a2ui_agent_example.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/a2ui_agent.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/catalog_transformers/pruning.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_format.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/blocks.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/format.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/json_reader.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/message_reader.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/parser.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/prompt_generator.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/response_stream.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/server_to_client.g.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/express/ast.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/express/compiler.dart",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

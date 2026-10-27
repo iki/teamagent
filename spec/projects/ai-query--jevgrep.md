@@ -26,3 +26,7 @@ The constants for relevance, weak positives and source confidence are local heur
 Prototype as an optional high-recall code-retrieval stage behind exact search, lexical ranking and symbol navigation. The harness contract should expose selected spans, content hashes, issues, remaining leads and provider failure. Evaluate known-file discovery, cross-file behavior questions, giant/minified files, changes during search and adversarial source comments. Measure downstream patch success plus dollars, latency and missed relevant files.
 
 Related directions: [decisions](../decisions.md) · [memory](../memory.md) · [agents](../agents.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [jevgrep](https://github.com/dzhng/jevgrep); analyzed commit `703aba1a36a3b854be405244ea748f607cd630c0`; commit date 2026-10-02T12:02:25-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--jevgrep.md).
+<!-- teamagent-analysis:end -->

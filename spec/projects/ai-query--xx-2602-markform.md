@@ -23,3 +23,7 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [markform](https://github.com/jlevy/markform); analyzed commit `897ba99f0d070d51a3e722c23a4ca655746cc9fa`; commit date 2026-02-25T23:34:47-08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--xx-2602-markform.md).
+<!-- teamagent-analysis:end -->

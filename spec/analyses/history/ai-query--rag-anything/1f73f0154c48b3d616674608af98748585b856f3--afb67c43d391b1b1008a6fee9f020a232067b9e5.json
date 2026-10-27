@@ -1,0 +1,519 @@
+{
+  "id": "ai-query--rag-anything",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/HKUDS/RAG-Anything",
+  "report": "spec/projects/ai-query--rag-anything.md",
+  "analyzedSha": "1f73f0154c48b3d616674608af98748585b856f3",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-09-15T10:37:26+08:00",
+  "observedSha": "afb67c43d391b1b1008a6fee9f020a232067b9e5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "afb67c43d391b1b1008a6fee9f020a232067b9e5",
+      "date": "2026-10-21T13:53:54+08:00",
+      "subject": "fix: pin av<19 for faster-whisper; document Docling install, parser selection and VLM streaming (#420)"
+    },
+    {
+      "sha": "26526b26a353bf5c66153ed816407c47b98f5ab5",
+      "date": "2026-10-21T01:14:23+08:00",
+      "subject": "chore: bump version to 1.4.3 (#419)"
+    },
+    {
+      "sha": "77ac2bcdb03b79e24b8486eb10c529133386a851",
+      "date": "2026-10-21T01:13:26+08:00",
+      "subject": "fix(parser): require Docling for HTML instead of converting it with LibreOffice (#418)"
+    },
+    {
+      "sha": "1410756a3e84be982529da11da0def2adf538ac8",
+      "date": "2026-10-21T01:09:23+08:00",
+      "subject": "fix: Docling picture/empty/text-file handling, BatchParser worker limit, vision example media types (#417)"
+    },
+    {
+      "sha": "9a8133c7029060bef4c3a4c44097f7b75763e2e4",
+      "date": "2026-10-20T23:31:00+08:00",
+      "subject": "fix(batch): discover and parse HTML files with Docling (#405)"
+    },
+    {
+      "sha": "2282e01b225a7a3d8c64430ef71a6b59bea40001",
+      "date": "2026-10-20T23:03:05+08:00",
+      "subject": "Preserve streaming in VLM image queries (#400)"
+    },
+    {
+      "sha": "4efbc051a7a411fad62cf2176656f6672f1235a7",
+      "date": "2026-10-20T23:02:54+08:00",
+      "subject": "Keep RAG dry runs out of ingestion (#415)"
+    },
+    {
+      "sha": "c0fb9fb694a0859718f60a7aec0533617478cdfd",
+      "date": "2026-10-20T22:23:54+08:00",
+      "subject": "fix(video): preserve transcripts outside retained scenes (#395)"
+    },
+    {
+      "sha": "a04f288927fb28f48371fa4f38c132a038fc12f3",
+      "date": "2026-10-20T22:23:42+08:00",
+      "subject": "fix(modalprocessors): keep single-backslash LaTeX in parsed JSON (#396)"
+    },
+    {
+      "sha": "115a8e56b22a524aa1e66d155d9d7d340de5d52a",
+      "date": "2026-10-20T22:23:27+08:00",
+      "subject": "fix: isolate multimodal context during concurrent document ingestion (#391)"
+    },
+    {
+      "sha": "e3e1f664420014c1cb80448f91eb294b19e77da8",
+      "date": "2026-10-20T22:23:11+08:00",
+      "subject": "fix(parser): decode UTF-16 and Windows-1252 text files (#403)"
+    },
+    {
+      "sha": "6c3bd4277dd9a3309bb5c98ff6ecd5ce1e97a056",
+      "date": "2026-10-20T22:22:58+08:00",
+      "subject": "Preserve parser content in multimodal queries (#398)"
+    },
+    {
+      "sha": "c1bbc73643f5994a5d5f4e4daff04e1adfd43ae1",
+      "date": "2026-10-20T22:22:44+08:00",
+      "subject": "Delegate VLM bypass queries directly to LightRAG (#402)"
+    },
+    {
+      "sha": "f4fff17211117a4a810fc73578cb6d960da4eb3f",
+      "date": "2026-10-20T22:22:30+08:00",
+      "subject": "fix(batch): retry incomplete ingestion when incremental parsing skips files (#393)"
+    },
+    {
+      "sha": "edccd91b748fd9a432899c66c443dffdce373091",
+      "date": "2026-10-20T22:22:17+08:00",
+      "subject": "Reject invalid folder processing worker limits (#409)"
+    },
+    {
+      "sha": "af00754482d68032d014f62af66a3fb4338c701c",
+      "date": "2026-10-20T22:20:13+08:00",
+      "subject": "fix(omml): keep equation-array rows apart and drop empty delimiters (#404)"
+    },
+    {
+      "sha": "9e0f5004a2da4342462c71f3a792325841d07030",
+      "date": "2026-10-20T22:19:58+08:00",
+      "subject": "Parse alternate Markdown image title delimiters (#407)"
+    },
+    {
+      "sha": "1a7ec6355e094d843e7cd621c0691ee87ed3ef86",
+      "date": "2026-10-20T22:19:49+08:00",
+      "subject": "fix(query): preserve retrieved image media types in VLM messages (#389)"
+    },
+    {
+      "sha": "eee4dcf82ee07767bbd976266dbbec25b5652ac1",
+      "date": "2026-10-20T22:19:36+08:00",
+      "subject": "Keep batch RAG parsing off the event loop (#411)"
+    },
+    {
+      "sha": "c00e6bae9baeae3efbb8e35ac788a6d2cfc08b59",
+      "date": "2026-10-20T22:19:27+08:00",
+      "subject": "fix(batch): invalidate incremental state before full reparses (#388)"
+    },
+    {
+      "sha": "a079171e2bbb23e0e801faaeefbf72ae814bbb14",
+      "date": "2026-10-20T22:19:18+08:00",
+      "subject": "Ignore invalid UTF-8 in incremental manifests (#414)"
+    },
+    {
+      "sha": "da6e2d87a7d3f2746c4541f59953b8764213f6a2",
+      "date": "2026-10-12T09:53:59+08:00",
+      "subject": "Update README.md"
+    },
+    {
+      "sha": "8664e8b318a3ed651fe62dfcfddfb1f1d633d5be",
+      "date": "2026-10-06T19:51:14+08:00",
+      "subject": "fix(security): only send real image files to the vision model (#387)"
+    },
+    {
+      "sha": "dbb87bc026b616f82a0d1fe598d9e055084b3e4e",
+      "date": "2026-10-06T15:11:47+08:00",
+      "subject": "fix(parser): exclude PaddleOCR metadata from recognized text (#385)"
+    },
+    {
+      "sha": "06f1d6ad745b7c01200857053e92238b8bddc2f3",
+      "date": "2026-10-06T05:15:02+08:00",
+      "subject": "fix(processor): wait for LightRAG to index queued text instead of losing it (#386)"
+    },
+    {
+      "sha": "bfed0c6ecfbb98cb70d7e8f5aa8bc9afe5e02803",
+      "date": "2026-10-06T02:50:30+08:00",
+      "subject": "fix(processor): carry page_idx from content blocks through to text chunks (#361)"
+    },
+    {
+      "sha": "abb1f23d912c57e3283f0e313ad4a77313d2f360",
+      "date": "2026-10-06T01:04:00+08:00",
+      "subject": "docs: explain multimodal ingestion concurrency controls (#375)"
+    },
+    {
+      "sha": "2c662e9972a3d79d1c0e6b402c73abeee4eacbdd",
+      "date": "2026-10-05T23:25:48+08:00",
+      "subject": "fix(batch): invalidate incremental results when parser options change (#365)"
+    },
+    {
+      "sha": "720799d3951d916fd624ca9a947ce1154777bb9a",
+      "date": "2026-10-05T23:16:30+08:00",
+      "subject": "fix(scripts): cache o200k_base so the documented offline setup works (#384)"
+    },
+    {
+      "sha": "95c327e800a607cec06e7a61adab2475b0215f42",
+      "date": "2026-10-05T23:12:20+08:00",
+      "subject": "fix(modalprocessors): keep the 3-value contract on the fallback path (#367)"
+    },
+    {
+      "sha": "1b91d0e32d82fb3c8a55d259f5353b196b89cf7f",
+      "date": "2026-10-05T22:51:50+08:00",
+      "subject": "chore: bump version to 1.4.2 (unreleased) (#383)"
+    },
+    {
+      "sha": "8bc8235bdfd4a39cf2946da81d22848688a8afb6",
+      "date": "2026-10-05T22:47:40+08:00",
+      "subject": "fix(parser): keep literal Markdown images in text (#379)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/batch_processing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/enhanced_markdown.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/multimodal_rag_failure_modes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/insert_content_list_example.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/modalprocessors_example.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/raganything_example.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/batch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/batch_parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "raganything/document_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/enhanced_markdown.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "raganything/image_signature.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/modalprocessors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/modalprocessors_audio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/modalprocessors_video.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/omml_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "raganything/parse_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/query.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/raganything.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/resilience.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "raganything/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reproduce/index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reproduce/query.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/create_tiktoken_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_batch_parser_workers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_batch_rag_async.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_batch_rag_incremental.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_content_list_alias_handling.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_core_modules.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_docling_content_blocks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_docling_page_provenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_docling_text_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_document_context_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_html_routing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_image_caption_string_normalization.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_initialization_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_json_latex_escapes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_lightrag_api_doc_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_md_image_blocks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_media_file_routing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_modalprocessor_fallback_arity.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_multimodal_concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_omml_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_parse_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_plain_text_direct.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_query_content_aliases.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_queued_text_insert.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_resilience.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_text_chunk_page_idx.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_text_chunk_page_idx_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_video_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vision_example_media_type.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vlm_image_media_type.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vlm_query_flags.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/testbatch_incremental.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/testbatch_mixin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/testpaddleocr_parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/testquery_stream_cache.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

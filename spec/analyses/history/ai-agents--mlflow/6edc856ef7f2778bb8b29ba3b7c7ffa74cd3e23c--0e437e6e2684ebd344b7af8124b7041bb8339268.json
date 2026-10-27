@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--mlflow",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/mlflow/mlflow",
+  "report": "spec/projects/ai-agents--mlflow.md",
+  "analyzedSha": "6edc856ef7f2778bb8b29ba3b7c7ffa74cd3e23c",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-04T01:23:27+08:00",
+  "observedSha": "0e437e6e2684ebd344b7af8124b7041bb8339268",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0e437e6e2684ebd344b7af8124b7041bb8339268",
+      "date": "2026-10-24T04:12:58Z",
+      "subject": "Map Gemini safety blocks to `content_filter` in the gateway (#27018)"
+    },
+    {
+      "sha": "2a123c934f38724383625801400a0f211d84a5bb",
+      "date": "2026-10-24T04:11:24Z",
+      "subject": "Preserve existing JSON values when appending with `log_table` (#27061)"
+    },
+    {
+      "sha": "154f628530f13d972f9a236b531b6038197dccaa",
+      "date": "2026-10-24T03:28:37Z",
+      "subject": "Exclude `extra_headers` and `headers` from DSPy autolog LM params (#27067)"
+    },
+    {
+      "sha": "cd19153f5ed36f40724c22d7798e65ad1c4dd7bc",
+      "date": "2026-10-23T18:11:17Z",
+      "subject": "Speed up protobuf JSON serialization with one-pass int64 conversion (#26901)"
+    },
+    {
+      "sha": "4c9440a0ef6ce83127552c5d34e1498bcaa18bca",
+      "date": "2026-10-23T15:53:44Z",
+      "subject": "Add shared rate limiting to `gateway-proxy.mjs` (#27058)"
+    },
+    {
+      "sha": "fb390a5139f08b00999296e7a9059d255054969c",
+      "date": "2026-10-23T12:19:33Z",
+      "subject": "Fix `post_triage` validation order in `triage.yml` (#27050)"
+    },
+    {
+      "sha": "0beac35a8dccd9d6cfc644e04a6fde97fced4ee2",
+      "date": "2026-10-23T11:45:00Z",
+      "subject": "Skip recommended APT packages in triage workflow (#27047)"
+    },
+    {
+      "sha": "8edc54bf2946ec0f9e3f4fd1cd611d3ade21939a",
+      "date": "2026-10-23T11:04:44Z",
+      "subject": "Compare evaluation runs from the run details page (#26868)"
+    },
+    {
+      "sha": "733e8d5c47247b9d6080a14dc420fda2ab40905b",
+      "date": "2026-10-23T10:50:05Z",
+      "subject": "Enforce a clean triage checkout (#27045)"
+    },
+    {
+      "sha": "8e048456e9761d272f5829dd8126067acbd236d8",
+      "date": "2026-10-23T09:22:28Z",
+      "subject": "Add saved custom trace views to review queue focused review (#26913)"
+    },
+    {
+      "sha": "b28d4939b635e287bd319bfbf65de014b50f6dd9",
+      "date": "2026-10-23T08:50:26Z",
+      "subject": "Let custom trace views render in read-only hosts and open authoring from a URL intent (#26912)"
+    },
+    {
+      "sha": "ab5bfe944ebfdd10a3910a8150dcd5263e4f6aa6",
+      "date": "2026-10-23T08:39:24Z",
+      "subject": "Block client writes to the `mlflow.artifactLocation` trace tag (#27031)"
+    },
+    {
+      "sha": "ab759babf7ab6230e6df110c6a5dd9a815859fff",
+      "date": "2026-10-23T08:18:35Z",
+      "subject": "Ignore case when matching the reserved `workspaces/` artifact prefix (#27039)"
+    },
+    {
+      "sha": "953f54ae379099c95298f0cf12efb7de5ac24a81",
+      "date": "2026-10-23T08:14:28Z",
+      "subject": "Ignore case when classifying artifact proxy path tiers (#27037)"
+    },
+    {
+      "sha": "e407cfd5f164d158b4b20829fbb2568dd5e86591",
+      "date": "2026-10-23T07:53:38Z",
+      "subject": "Strip the static prefix before matching public routes in `is_unprotected_route` (#27036)"
+    },
+    {
+      "sha": "5a996bdd34a919b43f6183f4054ca26fdc29efa7",
+      "date": "2026-10-23T06:25:07Z",
+      "subject": "Cap `transformers` below 5.20 for torch 2.7 in cross-version tests (#27034)"
+    },
+    {
+      "sha": "89da1ee0d28728bbd9b1408ef0f7425c7112f514",
+      "date": "2026-10-23T06:03:23Z",
+      "subject": "Keep null values in boolean and string columns when parsing model serving input (#27026)"
+    },
+    {
+      "sha": "258771a8cc3c0fa02fda6e6b5cc071323f57a595",
+      "date": "2026-10-23T05:49:02Z",
+      "subject": "Let bug triage open PRs when reporters offer to contribute (#27033)"
+    },
+    {
+      "sha": "23d14114bdde047a464b502cd1594e2a2958064c",
+      "date": "2026-10-23T03:50:35Z",
+      "subject": "feat: add opt-in hpa to helm chart (#26888)"
+    },
+    {
+      "sha": "057d92334e5b76a1aa6ab053279688e3722d3aec",
+      "date": "2026-10-23T12:48:02+09:00",
+      "subject": "Clarify `ready`-label warning in issue templates (#27032)"
+    },
+    {
+      "sha": "1795b4d7cf870078174a90fe955fab8cf5317cd2",
+      "date": "2026-10-23T02:50:48Z",
+      "subject": "Require live endpoint calls for API bug reports (#27029)"
+    },
+    {
+      "sha": "4e46702d7d0e7f7d3848d77016472565a6c8321d",
+      "date": "2026-10-23T01:58:39Z",
+      "subject": "Pin the Assistant's `mlflow_gateway` self-call to the server's own address (#26981)"
+    },
+    {
+      "sha": "8116edef33f0002ca726651df609064d755e2d3b",
+      "date": "2026-10-22T22:04:31Z",
+      "subject": "Pin `core.autocrlf=false` in skill git test fixtures so import digests match on Windows (#27017)"
+    },
+    {
+      "sha": "2ebac867d36a742accd886742c73e05fd58328b0",
+      "date": "2026-10-22T21:22:59Z",
+      "subject": "Add `MLFLOW_DISABLE_PYFUNC_LOADER_MODULE` opt-in guard (#27027)"
+    },
+    {
+      "sha": "2f283ac1fbaf8fc99db807e5e735f935ffef4b0f",
+      "date": "2026-10-22T15:31:36Z",
+      "subject": "Keep traces for tools declared without parameter properties (#26974)"
+    },
+    {
+      "sha": "de9df83ddc4963a6dced2164d2cc79b0f2fae51c",
+      "date": "2026-10-22T15:22:16Z",
+      "subject": "Ignore `.github/workflows/triage.yml` in Protect checks (#27020)"
+    },
+    {
+      "sha": "7fca4d46a6ed3431ea26919216afc507a4f79a56",
+      "date": "2026-10-22T15:19:19Z",
+      "subject": "Enable read-only GitHub access for triage (#27024)"
+    },
+    {
+      "sha": "d81bcaa3713fdbf6e8bb0b9c549596a3318c403a",
+      "date": "2026-10-22T14:55:31Z",
+      "subject": "Clarify `Open questions` in initial feature triage (#27023)"
+    },
+    {
+      "sha": "48cbef59ee8a5f6f4c702887e932fb0852e639c9",
+      "date": "2026-10-22T14:00:43Z",
+      "subject": "Separate triage output instructions by issue type (#27021)"
+    },
+    {
+      "sha": "fbd96263c96aac5589e3a8459381ab4d8985bbe1",
+      "date": "2026-10-22T22:23:24+09:00",
+      "subject": "Use a shared `verdict` field for triage results (#27016)"
+    },
+    {
+      "sha": "54ab061c9820f59225e8bb9478a0d556c66935de",
+      "date": "2026-10-22T12:57:55Z",
+      "subject": "Keep traced string outputs that look like JSON as strings when logging spans to the SQL store (#26968)"
+    },
+    {
+      "sha": "79c5847414848eec1779334c439e210bc6fe207d",
+      "date": "2026-10-22T12:39:31Z",
+      "subject": "Support feature requests in automated triage (#27013)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".claude/sandbox/gateway-proxy.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/sandbox/otel-proxy.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/sandbox/srt.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-actions-style/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/bug/follow-up.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/bug/follow-up.schema.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/bug/init.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/bug/init.schema.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/bug/output.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/bug/reproduce.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/feature_request/follow-up.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/feature_request/follow-up.schema.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/feature_request/init.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/feature_request/init.schema.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/feature_request/output.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/output.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/scripts/init.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/scripts/sanitize.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/scripts/utils.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/triage/viz-aid.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report_template.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/doc_fix_template.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request_template.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/installation_issue_template.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/ui_bug_report_template.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-node/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-python/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/advice.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/approval.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/auto-close-pr.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/autoformat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-wheel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/copilot-agent.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/copilot-code-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/copilot-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cross-version-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/examples.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flaky-test-detector.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gateway-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/helm.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/labeling.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/master.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nailaopus.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/preview-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/protect.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/protobuf-json-cross-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/retry.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/slow-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-requirements.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tracing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ui-preview.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ui-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-model-catalog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/uv.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ISSUE_POLICY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/templates/deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "charts/templates/hpa.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/values.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/benchmarks/gateway/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/flavors/src/flavors/_matrix.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dev/flavors/tests/test_expand_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/generate-protos.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/run_dev_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose/docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api_reference/api_inventory.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api_reference/source/auth/rest-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api_reference/source/python_api/mlflow.genai.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api_reference/source/rest-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/automatic-evaluations/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/genai/eval-monitor/comparing-evaluation-runs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/running-evaluation/eval-examples.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/scorers/custom/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/scorers/llm-judge/custom-judges/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/scorers/llm-judge/custom-judges/supported-models.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/eval-monitor/scorers/llm-judge/custom-judges/typesafe.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/governance/ai-gateway/endpoints/model-providers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/governance/ai-gateway/endpoints/query-endpoints.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/mcp-registry/connect-to-servers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/genai/skill-registry/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/genai/skill-registry/manage-versions-and-aliases.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/genai/skill-registry/pull-skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/genai/skill-registry/register-and-import-skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/tracing/integrations/listing/openai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/tracing/lightweight-sdk.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/genai/tracing/observe-with-traces/custom-views.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/genai/tracing/observe-with-traces/ui.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/self-hosting/architecture/artifact-store.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/docs/self-hosting/job-containers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/self-hosting/security/basic-http-auth.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/self-hosting/security/role-based-access-control.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docusaurus.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sidebarsGenAI.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sidebarsSelfHosting.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/constants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/skill-registry/create-alias.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/skill-registry/edit-skill-tags.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/skill-registry/edit-version-tags.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/skill-registry/register-skill-ui.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/skill-registry/skill-registry-list.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/skill-registry/update-version-status.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/skill-registry/use-skill.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/tracing/custom-view-build.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/tracing/custom-view-example.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/static/images/llms/tracing/custom-view-selector.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/skinny/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/tracing/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/typescript/integrations/claude-code/src/_internal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/typescript/integrations/claude-code/src/anthropicPricing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/typescript/integrations/claude-code/tests/tracedClaudeAgent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/typescript/integrations/claude-code/tests/tracing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/typescript/integrations/openai/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "libs/typescript/integrations/openai/tests/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/R/mlflow/DESCRIPTION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/anthropic/genai_semconv_converter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/artifacts/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/gateway_connection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/_subprocess_stream.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/claude_code.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/codex.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/mlflow_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/openai_compatible.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/providers/tool_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/assistant/skills",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/bedrock/genai_semconv_converter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/claude_code/tracing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/cli/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/cli/demo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/cli/skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/data/evaluation_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/dspy/save.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/dspy/util.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/entities/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/entities/evaluation_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/entities/issue.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/entities/issue_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/entities/skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/entities/skill_source.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mlflow/entities/skill_version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/entities/span.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/environment_variables.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/constants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/guardrail_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/guardrails.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/providers/anthropic.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

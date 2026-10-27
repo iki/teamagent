@@ -25,3 +25,7 @@ The top-ten pre-retrieval limits what the extraction model can compare, so dista
 Adopt as a replaceable scoped-memory connector when its integration cost is lower than implementing the same API. Keep source events, permissions, retention rules and provenance under harness ownership. Validate cross-user isolation, actor attribution, repeated message import, malformed JSON, missing provider capability and contradictory preferences before relying on automatic personalized context.
 
 Related directions: [memory](../memory.md) · [agents](../agents.md) · [evolution](../evolution.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [mem0](https://github.com/mem0ai/mem0); analyzed commit `abb81c88e1f738a8117d8293530fbc31a5ef8fd9`; commit date 2026-10-01T21:46:18+05:30; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--mem0.md).
+<!-- teamagent-analysis:end -->

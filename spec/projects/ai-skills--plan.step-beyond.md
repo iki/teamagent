@@ -23,3 +23,7 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [plan.step-beyond](https://github.com/aievolutionpl/step-beyond); analyzed commit `a952f06cf1eb9448ca6203c426df0a93ac31469c`; commit date 2026-07-13T15:23:19+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.step-beyond.md).
+<!-- teamagent-analysis:end -->

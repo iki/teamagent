@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--openai-agents-js",
+    "category": "ai-agents",
+    "name": "openai-agents-js",
+    "url": "https://github.com/openai/openai-agents-js",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--openai-agents-js.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "96aa754b69282fef3bf8be2f15897985400ee0a6",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T11:29:53-07:00",
+    "reportSha256": "0daa7a2d8d0286d2ab085c25d6732ec5c099bbe4a002f888d148d8d7d0937f41",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--openai-agents-js",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/openai/openai-agents-js",
+    "report": "spec/projects/ai-agents--openai-agents-js.md",
+    "analyzedSha": "96aa754b69282fef3bf8be2f15897985400ee0a6",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T11:29:53-07:00",
+    "observedSha": "be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "be4f1f9aa4ad4f03cc5db5fdd57d0d0136923570",
+        "date": "2026-10-21T13:19:06-07:00",
+        "subject": "fix!: tolerate additive provider metadata and share OpenAI types (#2086)"
+      },
+      {
+        "sha": "304e436185ad5d7e54d240896efa728533147cf3",
+        "date": "2026-10-20T14:56:32-07:00",
+        "subject": "chore: update versions (#2061)"
+      },
+      {
+        "sha": "989513ad920b4dfe867b92d025a6012db69580c3",
+        "date": "2026-10-20T14:25:04-07:00",
+        "subject": "fix: preserve nested token usage details (#2083)"
+      },
+      {
+        "sha": "1163b0c3c7fdb755c34b73227511c8ae56096819",
+        "date": "2026-10-20T14:22:01-07:00",
+        "subject": "fix: preserve conversation user image detail (#2084)"
+      },
+      {
+        "sha": "9687b544c8c873080e6ff7e7d294c0b353cd9ab6",
+        "date": "2026-10-16T01:08:09Z",
+        "subject": "fix(realtime): reject WebRTC startup on server errors (#2076)"
+      },
+      {
+        "sha": "976579eb0785337b4d433afb944781f3901738a8",
+        "date": "2026-10-15T12:20:43-07:00",
+        "subject": "fix: recognize GPT-6 models in sandbox compaction thresholds (#2074)"
+      },
+      {
+        "sha": "980423f3d90d2b1bd8e4b875330e719061c9bfa2",
+        "date": "2026-10-15T10:34:45-07:00",
+        "subject": "fix: preserve Twilio session audio defaults (#2073)"
+      },
+      {
+        "sha": "ef6985ac38b70b5c2191feb9a28ecd954bb3aee9",
+        "date": "2026-10-15T10:26:13-07:00",
+        "subject": "docs(sandbox): remove Runloop provider guidance (#2069)"
+      },
+      {
+        "sha": "7b054701821ff71854d9f7fecaf39578d7e0a448",
+        "date": "2026-10-15T10:18:47-07:00",
+        "subject": "feat(sandbox): remove Runloop provider (#2070)"
+      },
+      {
+        "sha": "89a9ddf1e241e75f2e0ad4c15d89de9e215ebac6",
+        "date": "2026-10-09T16:59:42-07:00",
+        "subject": "fix: prevent Dependabot from adopting the parent pnpm workspace (#2060)"
+      },
+      {
+        "sha": "b4370e20d2c905dd9a581ad90dd0dd6d673c6fa8",
+        "date": "2026-10-09T16:34:20-07:00",
+        "subject": "ci: prefetch the Docker test image from ECR Public (#2062)"
+      },
+      {
+        "sha": "4521cf545ce9f66ac1dd92a1b61ad91be1ca7d08",
+        "date": "2026-10-09T15:41:08-07:00",
+        "subject": "fix(deps): refresh 13 compatible workspace dependencies (#2054)"
+      },
+      {
+        "sha": "283f6e78c249d35e8b49302ec747e7e9e65a57b3",
+        "date": "2026-10-09T15:31:21-07:00",
+        "subject": "fix(deps): bump the integration-minor-patch group across 8 directories with 14 updates (#2059)"
+      },
+      {
+        "sha": "0712e8e8ee40aa00a80f5ebf782e7cc85394d494",
+        "date": "2026-10-09T15:15:55-07:00",
+        "subject": "fix(deps): bump @ai-sdk/openai from 3.0.109 to 4.0.83 (#2057)"
+      },
+      {
+        "sha": "0dd1ef89470c5ec3a98275c5a1f154a332c24b72",
+        "date": "2026-10-09T15:15:51-07:00",
+        "subject": "fix(deps-dev): bump vite from 6.4.3 to 8.3.2 (#2055)"
+      },
+      {
+        "sha": "988f2b92421b3eeee2513dba9282b2380102e301",
+        "date": "2026-10-09T13:50:13-07:00",
+        "subject": "fix(deps): bump lucide-react from 0.515.0 to 1.50.0 (#2058)"
+      },
+      {
+        "sha": "9d63cf0bdf53e8795c2cbeaa40a0b0c1120eeed9",
+        "date": "2026-10-09T13:48:08-07:00",
+        "subject": "fix(deps): bump fastify-raw-body from 5.0.0 to 6.0.1 (#2056)"
+      },
+      {
+        "sha": "ffcba52172f6d28211f3440144815d09bf352d09",
+        "date": "2026-10-09T13:31:21-07:00",
+        "subject": "fix: keep Dependabot registry configuration credential-free (#2053)"
+      },
+      {
+        "sha": "12e251c6dbe6e1fce663d8086dc4f06764b5b9d2",
+        "date": "2026-10-09T12:12:35-07:00",
+        "subject": "ci: cover independent integration fixtures with Dependabot (#2052)"
+      },
+      {
+        "sha": "b3d09bf7666a45550fa13a7e79c4d6507b983fa3",
+        "date": "2026-10-09T11:57:02-07:00",
+        "subject": "ci: use the SDK app for Changesets release PRs (#2051)"
+      },
+      {
+        "sha": "e854978a77ba84e64e4c2a85dd857f7f7534c2f7",
+        "date": "2026-10-09T07:55:04-07:00",
+        "subject": "fix(deps): bump the npm_and_yarn group across 3 directories with 1 update (#2050)"
+      },
+      {
+        "sha": "33e2741be9bb52c1d96a8b4dac0c68e46297b607",
+        "date": "2026-10-08T22:54:04Z",
+        "subject": "chore: update versions (#2033)"
+      },
+      {
+        "sha": "05241c7aa3d5629acc7407dd8ee1105637fe0369",
+        "date": "2026-10-07T14:22:57-07:00",
+        "subject": "fix: separate hosted MCP discovery from user namespaces (#2046)"
+      },
+      {
+        "sha": "413768062fcee835becc2565ffa15323aab418e8",
+        "date": "2026-10-07T16:30:32Z",
+        "subject": "fix: recognize namespace-shaped hosted MCP discovery (#2045)"
+      },
+      {
+        "sha": "40f7de2f4b7455eff8504e9aef5b44ec1ef6e76f",
+        "date": "2026-10-07T08:22:24-07:00",
+        "subject": "fix: preserve redacted terminal checkpoints after cancellation (#2036)"
+      },
+      {
+        "sha": "d8fa6c35b51deb5b0b4761fd1c6dda45879d52df",
+        "date": "2026-10-06T15:58:25-07:00",
+        "subject": "fix: warn when pending computer safety checks have no handler (#2042)"
+      },
+      {
+        "sha": "8ee5055aa5e62fb224897c73d5dfd56346d28be7",
+        "date": "2026-10-06T11:52:29-07:00",
+        "subject": "fix: use consistent UnixLocal file operations (#2038)"
+      },
+      {
+        "sha": "6c00d749571a33e7043e0e646a8b4c713f8ceb1b",
+        "date": "2026-10-05T12:02:01-07:00",
+        "subject": "fix: bind AI SDK UI demo conversations to browser cookies (#2034)"
+      },
+      {
+        "sha": "df2052969173342443356f13dd866edb8e1e05d4",
+        "date": "2026-10-05T18:51:00Z",
+        "subject": "fix(realtime): preserve playback interruption after audio generation (#2027)"
+      },
+      {
+        "sha": "2f3591bb8c86d82188cfe65fab0fd845c970b5d9",
+        "date": "2026-10-05T11:42:49-07:00",
+        "subject": "fix: preserve sticky sandbox permissions (#2029)"
+      },
+      {
+        "sha": "836cb509db94971660582a8b4deab4f55a790c43",
+        "date": "2026-10-05T10:54:33-07:00",
+        "subject": "fix(mcp): default automatic tool discovery to 64 pages (#2028)"
+      },
+      {
+        "sha": "b89905c0f17078ae0a64380f48c7be1ca2eed640",
+        "date": "2026-10-05T10:54:17-07:00",
+        "subject": "fix: preserve computer tool initializers across runs (#2031)"
+      }
+    ],
+    "files": [
+      {
+        "status": "D",
+        "path": ".changeset/blank-codex-api-key.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/bounded-agent-tool-streams.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/bounded-compaction-rollback.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/bounded-mcp-tool-pages.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/calm-nested-approvals.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/codex-sensitive-tracing.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/daytona-patched-telemetry.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/fix-input-guardrail-resume.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/fix-realtime-large-audio.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/fresh-sandbox-application-tools.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/guarded-agent-tool-final-output.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/honor-static-mcp-discovery-filters.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/linear-local-workspace-paths.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/mcp-intra-server-tool-name-collisions.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/mcp-recipient-binding.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/native-node-metadata.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/native-node-pty-tests.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/normalized-approval-input.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/omit-generation-reasoning.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/preserve-agent-store-policy.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/preserve-skill-frontmatter-descriptions.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/quiet-guards-persist.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/quiet-mcp-search.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/quiet-model-transport.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/quiet-realtime-waiters.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/quiet-responses-tracing.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/quiet-strict-tool-output.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/quiet-tables-reflect.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/realtime-history-item-placement.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/redact-default-tool-failures.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/redact-tool-callback-traces.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/remove-sandbox-beta-label.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/routine-compatible-dependencies.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/safe-docker-host-grants.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/safe-handoff-history-ownership.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/stable-tool-enablement-candidates.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-ai-sdk-dependencies.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-archives-respect-options.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-blaxel-bucket-prefix.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-computer-checks.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-computer-traces.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-dependency-refresh.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-gcs-prefix.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-mcp-approval-state.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-mcp-cache-scope.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-mcp-discovery.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-mcp-filter-cache.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-memory-turns.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-path-parents.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-provider-trace-errors.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-realtime-tools.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-recursive-source-copies.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-sandbox-prompts.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-tar-string-trimming.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-trace-work.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-traces-retry.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/tidy-unused-dependencies.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/tolerant-provider-metadata.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".changeset/vitest-five-test-tooling.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/dependabot.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-tag.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/content/docs/guides/human-in-the-loop.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/content/docs/guides/sandbox-agents/clients.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/content/docs/guides/tools.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/content/docs/guides/voice-agents/transport.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/scripts/ai-sdk.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/src/app/api/chat/route.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/src/app/api/chat/text/route.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/ai-sdk-ui/src/app/api/session/route.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/src/app/lib/session.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/src/app/page.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk-ui/src/app/text/page.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/ai-sdk-ui/test/sessionOwnership.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/ai-sdk/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/docs/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/docs/tools/computerSafetyChecks.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/live/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/mcp/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/nextjs/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/realtime-demo/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/realtime-next/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/realtime-server-controlled/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/realtime-twilio-sip/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/realtime-twilio/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/sandbox/extensions/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "examples/sandbox/extensions/runloop-runner.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/sandbox/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/sandbox/unix-local-runner.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/tools/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integration-tests/_helpers/setup.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/_helpers/setup.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/bun/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/bun/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/cloudflare-workers/worker/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/cloudflare-workers/worker/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/deno/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/deno/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v2-ts/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v2-ts/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v2-ts/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v3-ts/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v3-ts/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v3-ts/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v4-ts/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v4-ts/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-ai-sdk-v4-ts/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-openai-client-types/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-openai-client-types/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-sdk-behavior/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-sdk-behavior/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-zod3/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-zod3/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-zod4-ts/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-zod4-ts/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-zod4/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node-zod4/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/node/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/vite-react/.npmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/vite-react/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/mcp.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/metadata.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/run.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runState.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/blockedOutputPersistence.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/conversation.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/modelOutputs.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/modelPreparation.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/runLoop.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/toolExecution.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/toolSearch.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/tracing.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/turnPreparation.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/runner/usageTracking.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/capabilities/compaction.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/mountSecurity.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/permissions.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/sandboxes/docker.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/sandboxes/shared/localSnapshots.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/sandboxes/shared/localWorkspace.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/sandboxes/shared/unixLocalFileWorker.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/sandboxes/shared/unixLocalFiles.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/sandbox/sandboxes/unixLocal.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/shims/mcp-server/node.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/tool.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/types/protocol.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/types/providerData.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/agents-core/src/usage.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/agents-core/test/approvalTurnBudget.test.ts",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

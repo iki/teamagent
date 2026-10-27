@@ -26,3 +26,7 @@ Lexical indexing reduces prompt volume but is not semantic long-term memory or p
 Adopt the buffer and adapter-registry patterns behind harness-owned session identities. Treat discovery as observation, then probe before use. Preserve raw output as an artifact, index scoped excerpts, and return source spans with every search result. Test nested agents, stale configuration directories, multiple installed clients, non-English logs, revocation after indexing and compaction/resume with missing context.
 
 Related directions: [memory](../memory.md) · [agents](../agents.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [context-mode](https://github.com/mksglu/context-mode); analyzed commit `dbfa57d50ccaacb37ade53dd226c5b0cf7bea335`; commit date 2026-10-03T13:35:57Z; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--context-mode.md).
+<!-- teamagent-analysis:end -->

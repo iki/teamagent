@@ -28,3 +28,7 @@ Container existence alone does not establish resistance to a hostile tenant; hos
 ## Related directions
 
 [Agents](../agents.md) · [Models](../models.md) · [Generation](../generation.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [opensandbox](https://github.com/alibaba/OpenSandbox); analyzed commit `c7dc78a4090e5de2b9119e9bd93952cae24f87bd`; commit date 2026-10-01T10:21:12+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--opensandbox.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,207 @@
+# agent-governance-toolkit: change evidence
+
+Source: [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit) · [Analysis](../../projects/ai-agents-sandbox--agent-governance-toolkit.md) · [agents](../../agents.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `c3e8229dfb19c697468cfb790495d7174ef8bc45`; commit date: 2026-10-02T18:50:53-07:00; review date: unknown; observed SHA: `9bfdd5f4ade7998ca3f0068e7b88764eab132911`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/microsoft/agent-governance-toolkit/compare/c3e8229dfb19c697468cfb790495d7174ef8bc45...9bfdd5f4ade7998ca3f0068e7b88764eab132911). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [9bfdd5f4ade7](https://github.com/microsoft/agent-governance-toolkit/commit/9bfdd5f4ade7998ca3f0068e7b88764eab132911) 2026-10-27T08:46:34-07:00: fix(agent-lightning): include the success bonus in GovernedEnvironment total_reward (#4419)
+- [11ce4d085ac6](https://github.com/microsoft/agent-governance-toolkit/commit/11ce4d085ac6639ccd3f7c1198a38608b916f3cb) 2026-10-27T08:31:31-07:00: chore(deps-dev): Bump setuptools (#4466)
+- [7977529a214d](https://github.com/microsoft/agent-governance-toolkit/commit/7977529a214da352ccc719df64f815eefc8e432f) 2026-10-27T08:31:16-07:00: chore(deps): Bump certifi in /agent-governance-python/agent-marketplace (#4465)
+- [20452bdc1378](https://github.com/microsoft/agent-governance-toolkit/commit/20452bdc13788b372006da8e7a1b0a03d1618b53) 2026-10-27T07:29:52-07:00: chore(deps): Bump zod (#4463)
+- [ae430c42163d](https://github.com/microsoft/agent-governance-toolkit/commit/ae430c42163dcbcee1fa03e26110fa5a07ac8825) 2026-10-27T07:29:37-07:00: chore(deps): Bump body-parser (#4462)
+- [e490800d4724](https://github.com/microsoft/agent-governance-toolkit/commit/e490800d47245894c85daea5e2717b2aaae5a521) 2026-10-27T06:52:46-07:00: fix(agent-sre): split experiment traffic by relative variant weights (#4460)
+- [639c31a45d76](https://github.com/microsoft/agent-governance-toolkit/commit/639c31a45d76ad4cb7e18bcaafbef899f474e706) 2026-10-27T06:30:18-07:00: chore(deps): Bump fast-uri (#4459)
+- [4e61e90388c8](https://github.com/microsoft/agent-governance-toolkit/commit/4e61e90388c8bc02c096a3bd2c509e410ec2a6e9) 2026-10-27T06:30:03-07:00: chore(deps): Bump body-parser (#4458)
+- [c26026047d07](https://github.com/microsoft/agent-governance-toolkit/commit/c26026047d070ee53f7b7f136942db89dab9705b) 2026-10-27T05:29:45-07:00: chore(deps): Bump body-parser (#4457)
+- [fadcde0910b3](https://github.com/microsoft/agent-governance-toolkit/commit/fadcde0910b30026d6bf3f79fc9cdbd03d4506d1) 2026-10-27T05:29:31-07:00: chore(deps): Bump zod (#4456)
+- [83e0e73ca028](https://github.com/microsoft/agent-governance-toolkit/commit/83e0e73ca028ac6782f966fc2aee88e1656405da) 2026-10-27T04:29:28-07:00: chore(deps): Bump fast-uri (#4455)
+- [c3f0555d4a3f](https://github.com/microsoft/agent-governance-toolkit/commit/c3f0555d4a3f0e429674dcb9d94da1c1919f47d6) 2026-10-27T03:51:55-07:00: fix(agent-lightning): charge dict violations by their severity in policy_penalty (#4422)
+- [cdf293046f16](https://github.com/microsoft/agent-governance-toolkit/commit/cdf293046f160cb113f5e46692a04254a25c27eb) 2026-10-27T03:31:35-07:00: chore(deps): Bump setuptools in /agent-governance-python/requirements (#4452)
+- [770bd1af5e6c](https://github.com/microsoft/agent-governance-toolkit/commit/770bd1af5e6c6f2398975d86374e9df9282436f8) 2026-10-27T03:30:28-07:00: chore(deps-dev): Bump fast-uri (#4454)
+- [76bdbe6b9bf7](https://github.com/microsoft/agent-governance-toolkit/commit/76bdbe6b9bf7d4494c368972dccbfb40dd1e7eaa) 2026-10-27T02:52:42-07:00: chore(deps-dev): Update setuptools requirement (#4448)
+- [01347c35eb44](https://github.com/microsoft/agent-governance-toolkit/commit/01347c35eb446e49a4a0dcd12c6495d648c8932c) 2026-10-27T02:52:30-07:00: chore(deps-dev): Update hypothesis requirement (#4442)
+- [18afdc35b01c](https://github.com/microsoft/agent-governance-toolkit/commit/18afdc35b01cddfa51cf62ee4c537c53ce1e4648) 2026-10-27T02:52:17-07:00: chore(deps-dev): Bump @typescript-eslint/parser (#4439)
+- [8491885794a2](https://github.com/microsoft/agent-governance-toolkit/commit/8491885794a22ef45f649f732df1bddd31d0e4a3) 2026-10-27T02:52:04-07:00: chore(deps): Bump Microsoft.NET.Test.Sdk from 18.10.1 to 18.11.0 (#4436)
+- [096444606750](https://github.com/microsoft/agent-governance-toolkit/commit/096444606750bddc1ef563d4329c92eb5f4d1a13) 2026-10-27T02:51:53-07:00: chore(deps): Bump regorus in /agent-governance-rust (#4429)
+- [aea426da0cf5](https://github.com/microsoft/agent-governance-toolkit/commit/aea426da0cf50a56128c154fdaf7852704d97ffe) 2026-10-27T02:36:55-07:00: chore(deps-dev): Update opentelemetry-sdk requirement (#4451)
+- [63a16d9eb1f8](https://github.com/microsoft/agent-governance-toolkit/commit/63a16d9eb1f8c658f9fa37f52555432c7c406656) 2026-10-27T02:36:40-07:00: chore(deps-dev): Update setuptools requirement (#4450)
+- [d152f4482f42](https://github.com/microsoft/agent-governance-toolkit/commit/d152f4482f42de782d846d455ea883777b2fd044) 2026-10-27T02:36:26-07:00: chore(deps-dev): Update fastapi requirement (#4449)
+- [71388656f725](https://github.com/microsoft/agent-governance-toolkit/commit/71388656f725e810daff326728dd667c4c4ab052) 2026-10-27T02:36:06-07:00: chore(deps-dev): Update fastapi requirement (#4447)
+- [8eae73c3abc6](https://github.com/microsoft/agent-governance-toolkit/commit/8eae73c3abc6f2c361aff9e75fc940dce2a44b6b) 2026-10-27T02:35:52-07:00: chore(deps-dev): Update fastapi requirement (#4446)
+- [5cdbc68190ec](https://github.com/microsoft/agent-governance-toolkit/commit/5cdbc68190ec7d10c3a01a79a077df235e061c44) 2026-10-27T02:35:25-07:00: chore(deps-dev): Update hypothesis requirement (#4445)
+- [b8f18a52626e](https://github.com/microsoft/agent-governance-toolkit/commit/b8f18a52626e80889699acf6eeefc16282f6d63d) 2026-10-27T02:34:58-07:00: chore(deps-dev): Update opentelemetry-sdk requirement (#4444)
+- [fcb775e59e05](https://github.com/microsoft/agent-governance-toolkit/commit/fcb775e59e05bdc07e5c161fd3a9e31c929d85bd) 2026-10-27T02:34:43-07:00: chore(deps-dev): Update setuptools requirement (#4443)
+- [00019e6ee754](https://github.com/microsoft/agent-governance-toolkit/commit/00019e6ee754c2cfa0881c57f63444ab2902c9e9) 2026-10-27T02:34:21-07:00: chore(deps-dev): Update fastapi requirement (#4441)
+- [c14bc44ffec8](https://github.com/microsoft/agent-governance-toolkit/commit/c14bc44ffec8e203ea823991984dd61c1bf27b5b) 2026-10-27T02:34:09-07:00: chore(deps-dev): Bump the python-dev-tooling group across 5 directories with 1 update (#4440)
+- [c82a98ba0ced](https://github.com/microsoft/agent-governance-toolkit/commit/c82a98ba0ced1df0a89a9dccc59b38db993e90ba) 2026-10-27T02:33:46-07:00: chore(deps-dev): Bump @typescript-eslint/eslint-plugin (#4438)
+- [c24dc99e9b5b](https://github.com/microsoft/agent-governance-toolkit/commit/c24dc99e9b5b25af576c4aa09d565f762664a8a2) 2026-10-27T02:33:34-07:00: chore(deps): Bump Microsoft.SourceLink.GitHub from 10.0.401 to 10.0.402 (#4437)
+- [09c4cf5b401a](https://github.com/microsoft/agent-governance-toolkit/commit/09c4cf5b401af7316b2c3eafbf97c02ab41a759b) 2026-10-27T02:33:13-07:00: chore(deps-dev): Bump the javascript-dev-tooling group across 3 directories with 1 update (#4435)
+
+## Changed paths (truncated)
+
+- M: `.cspell-repo-terms.txt`
+- M: `.cspell.json`
+- M: `.github/workflows/benchmarks.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/docs-quality.yml`
+- M: `.github/workflows/e2e-python.yml`
+- M: `.github/workflows/publish.yml`
+- M: `.github/workflows/sbom-diff-comment.yml`
+- M: `.github/workflows/sbom-diff.yml`
+- M: `.github/workflows/sbom.yml`
+- M: `.github/workflows/scorecard.yml`
+- M: `.github/workflows/supply-chain-check.yml`
+- M: `.github/workflows/weekly-security-audit.yml`
+- M: `BREAKING_CHANGES.md`
+- M: `CHANGELOG.md`
+- M: `MAINTAINERS.md`
+- M: `README.md`
+- M: `agent-governance-claude-code/lib/policy.mjs`
+- M: `agent-governance-claude-code/test/hooks.test.mjs`
+- M: `agent-governance-claude-code/test/mcp-server.test.mjs`
+- M: `agent-governance-claude-code/test/policy.test.mjs`
+- M: `agent-governance-dotnet/Directory.Build.props`
+- M: `agent-governance-dotnet/src/AgentGovernance.Extensions.Microsoft.Agents/AgentGovernance.Extensions.Microsoft.Agents.csproj`
+- M: `agent-governance-dotnet/src/AgentGovernance.Extensions.ModelContextProtocol/McpGovernanceRuntime.cs`
+- M: `agent-governance-dotnet/src/AgentGovernance.Extensions.ModelContextProtocol/README.md`
+- M: `agent-governance-dotnet/tests/AgentGovernance.Tests/AgentGovernance.Tests.csproj`
+- M: `agent-governance-dotnet/tests/AgentGovernance.Tests/McpGovernanceExtensionsTests.cs`
+- M: `agent-governance-opencode/README.md`
+- M: `agent-governance-opencode/lib/policy.mjs`
+- M: `agent-governance-opencode/test/duplicate-registration.test.mjs`
+- M: `agent-governance-opencode/test/mcp-server.test.mjs`
+- M: `agent-governance-opencode/test/plugin.test.mjs`
+- M: `agent-governance-opencode/test/policy.test.mjs`
+- M: `agent-governance-python/agent-compliance/src/agent_compliance/supply_chain.py`
+- M: `agent-governance-python/agent-compliance/tests/test_supply_chain.py`
+- M: `agent-governance-python/agent-discovery/src/agent_discovery/scanners/config.py`
+- M: `agent-governance-python/agent-discovery/src/agent_discovery/scanners/github.py`
+- A: `agent-governance-python/agent-discovery/tests/test_config_scanner.py`
+- A: `agent-governance-python/agent-discovery/tests/test_github_scanner.py`
+- M: `agent-governance-python/agent-hypervisor/pyproject.toml`
+- M: `agent-governance-python/agent-hypervisor/src/hypervisor/rings/enforcer.py`
+- M: `agent-governance-python/agent-hypervisor/src/hypervisor/session/vector_clock.py`
+- M: `agent-governance-python/agent-hypervisor/tests/test_session_isolation.py`
+- M: `agent-governance-python/agent-hypervisor/tests/unit/test_command_denylist.py`
+- M: `agent-governance-python/agent-hypervisor/uv.lock`
+- M: `agent-governance-python/agent-learning/pyproject.toml`
+- M: `agent-governance-python/agent-learning/src/agent_learning_gov/evaluation.py`
+- M: `agent-governance-python/agent-learning/tests/test_evaluation.py`
+- M: `agent-governance-python/agent-lightning/src/agent_lightning_gov/emitter.py`
+- M: `agent-governance-python/agent-lightning/src/agent_lightning_gov/environment.py`
+- M: `agent-governance-python/agent-lightning/src/agent_lightning_gov/reward.py`
+- M: `agent-governance-python/agent-lightning/tests/test_lightning_comprehensive.py`
+- M: `agent-governance-python/agent-marketplace/uv.lock`
+- M: `agent-governance-python/agent-mcp-governance/pyproject.toml`
+- M: `agent-governance-python/agent-mesh/CHANGELOG.md`
+- M: `agent-governance-python/agent-mesh/docs/api-reference.md`
+- M: `agent-governance-python/agent-mesh/packages/mcp-proxy/package-lock.json`
+- M: `agent-governance-python/agent-mesh/packages/mcp-proxy/package.json`
+- M: `agent-governance-python/agent-mesh/pyproject.toml`
+- M: `agent-governance-python/agent-mesh/services/api/package-lock.json`
+- M: `agent-governance-python/agent-mesh/src/agentmesh/governance/annex_iv.py`
+- M: `agent-governance-python/agent-mesh/src/agentmesh/governance/approval_protocol/digest.py`
+- M: `agent-governance-python/agent-mesh/src/agentmesh/governance/compliance.py`
+- M: `agent-governance-python/agent-mesh/src/agentmesh/marketplace/_marketplace_impl.py`
+- M: `agent-governance-python/agent-mesh/src/agentmesh/marketplace/installer.py`
+- M: `agent-governance-python/agent-mesh/src/agentmesh/reward/trust_decay.py`
+- M: `agent-governance-python/agent-mesh/src/agentmesh/storage/memory_provider.py`
+- M: `agent-governance-python/agent-mesh/tests/governance/test_annex_iv.py`
+- M: `agent-governance-python/agent-mesh/tests/test_approval_protocol.py`
+- M: `agent-governance-python/agent-mesh/tests/test_governance.py`
+- A: `agent-governance-python/agent-mesh/tests/test_marketplace_dependency_specifiers.py`
+- M: `agent-governance-python/agent-mesh/tests/test_storage.py`
+- M: `agent-governance-python/agent-mesh/tests/test_trust_decay.py`
+- M: `agent-governance-python/agent-os/CHANGELOG.md`
+- M: `agent-governance-python/agent-os/extensions/copilot/README.md`
+- A: `agent-governance-python/agent-os/extensions/copilot/eslint.config.js`
+- M: `agent-governance-python/agent-os/extensions/copilot/jest.config.cjs`
+- M: `agent-governance-python/agent-os/extensions/copilot/package-lock.json`
+- M: `agent-governance-python/agent-os/extensions/copilot/package.json`
+- M: `agent-governance-python/agent-os/extensions/copilot/tsconfig.json`
+- A: `agent-governance-python/agent-os/extensions/copilot/tsconfig.test.json`
+- M: `agent-governance-python/agent-os/extensions/mcp-server/README.md`
+- A: `agent-governance-python/agent-os/extensions/mcp-server/eslint.config.js`
+- M: `agent-governance-python/agent-os/extensions/mcp-server/package-lock.json`
+- M: `agent-governance-python/agent-os/extensions/mcp-server/package.json`
+- M: `agent-governance-python/agent-os/pyproject.toml`
+- M: `agent-governance-python/agent-os/services/cloud-board/requirements.txt`
+- M: `agent-governance-python/agent-os/src/agent_os/__init__.py`
+- M: `agent-governance-python/agent-os/src/agent_os/_circuit_breaker_impl.py`
+- M: `agent-governance-python/agent-os/src/agent_os/event_sink.py`
+- M: `agent-governance-python/agent-os/src/agent_os/integrations/conversation_guardian.py`
+- A: `agent-governance-python/agent-os/src/agent_os/ocsf.py`
+- M: `agent-governance-python/agent-os/tests/test_circuit_breaker.py`
+- A: `agent-governance-python/agent-os/tests/test_conversation_guardian_unicode.py`
+- A: `agent-governance-python/agent-os/tests/test_ocsf.py`
+- M: `agent-governance-python/agent-primitives/pyproject.toml`
+- M: `agent-governance-python/agent-runtime/src/agent_runtime/deploy.py`
+- M: `agent-governance-python/agent-runtime/tests/test_deploy.py`
+- M: `agent-governance-python/agent-sandbox/src/agent_sandbox/code_scanner.py`
+- M: `agent-governance-python/agent-sandbox/src/agent_sandbox/docker_provider/state.py`
+- M: `agent-governance-python/agent-sandbox/tests/test_code_scanner.py`
+- M: `agent-governance-python/agent-sandbox/tests/test_docker_sandbox.py`
+- M: `agent-governance-python/agent-sre/CHANGELOG.md`
+- M: `agent-governance-python/agent-sre/pyproject.toml`
+- M: `agent-governance-python/agent-sre/src/agent_sre/anomaly/detector.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/anomaly/rogue_detector.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/api/server.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/cascade/circuit_breaker.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/delivery/rollout.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/experiments/__init__.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/fleet/__init__.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/replay/capture.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/sbom.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/slo/objectives.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/slo/spec.py`
+- M: `agent-governance-python/agent-sre/src/agent_sre/tracing/__init__.py`
+- A: `agent-governance-python/agent-sre/tests/test_api_server.py`
+- M: `agent-governance-python/agent-sre/tests/test_cascade.py`
+- M: `agent-governance-python/agent-sre/tests/test_experiments.py`
+- M: `agent-governance-python/agent-sre/tests/test_fleet.py`
+- M: `agent-governance-python/agent-sre/tests/test_k8s.py`
+- M: `agent-governance-python/agent-sre/tests/test_protocol_tracing.py`
+- M: `agent-governance-python/agent-sre/tests/test_sbom.py`
+- M: `agent-governance-python/agent-sre/tests/test_slo_spec.py`
+- M: `agent-governance-python/agent-sre/tests/unit/test_anomaly_detection.py`
+- M: `agent-governance-python/agent-sre/tests/unit/test_capture.py`
+- M: `agent-governance-python/agent-sre/tests/unit/test_delivery.py`
+- M: `agent-governance-python/agent-sre/tests/unit/test_objectives.py`
+- M: `agent-governance-python/agent-sre/tests/unit/test_rogue_detector.py`
+- M: `agent-governance-python/agentmesh-integrations/a2a-protocol/a2a_agentmesh/task.py`
+- M: `agent-governance-python/agentmesh-integrations/a2a-protocol/tests/test_a2a.py`
+- M: `agent-governance-python/agentmesh-integrations/copilot-governance/package-lock.json`
+- M: `agent-governance-python/agentmesh-integrations/haystack-agentmesh/src/haystack_agentmesh/audit.py`
+- M: `agent-governance-python/agentmesh-integrations/haystack-agentmesh/src/haystack_agentmesh/trust_gate.py`
+- M: `agent-governance-python/agentmesh-integrations/haystack-agentmesh/tests/test_audit.py`
+- M: `agent-governance-python/agentmesh-integrations/haystack-agentmesh/tests/test_trust_gate.py`
+- M: `agent-governance-python/agentmesh-integrations/mastra-agentmesh/package-lock.json`
+- M: `agent-governance-python/agentmesh-integrations/mastra-agentmesh/package.json`
+- M: `agent-governance-python/requirements/ci-build.txt`
+- M: `agent-governance-rust/Cargo.lock`
+- M: `agent-governance-rust/Cargo.toml`
+- M: `agent-governance-rust/YAML-MIGRATION.md`
+- A: `agent-governance-rust/deny.toml`
+- M: `agent-governance-typescript/README.md`
+- M: `agent-governance-typescript/jest.config.js`
+- M: `agent-governance-typescript/package-lock.json`
+- M: `agent-governance-typescript/package.json`
+- M: `agent-governance-typescript/tests/encryption.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-auto-reconnect.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-event-hooks.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-knock-bootstrap.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-knock.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-malformed-frame.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-plaintext-downgrade.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-pre-knock-buffer.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-reconnect.test.ts`
+- M: `agent-governance-typescript/tests/mesh-client-session-desync.test.ts`
+- M: `agent-governance-typescript/tsconfig.json`
+- A: `agent-governance-typescript/tsconfig.test.json`
+- A: `docs/dependency-audits/2026-09-24-typescript-7-toolchain.md`

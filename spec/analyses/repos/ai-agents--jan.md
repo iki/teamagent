@@ -1,0 +1,207 @@
+# jan: change evidence
+
+Source: [jan](https://github.com/janhq/jan) · [Analysis](../../projects/ai-agents--jan.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `14a720628f9592c8e60f7e081ef733076db8a6a9`; commit date: 2026-10-02T14:37:31+08:00; review date: unknown; observed SHA: `d15915c7114aee6c23568f6e0b4d490b1b0d83a6`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/janhq/jan/compare/14a720628f9592c8e60f7e081ef733076db8a6a9...d15915c7114aee6c23568f6e0b4d490b1b0d83a6). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [d15915c7114a](https://github.com/janhq/jan/commit/d15915c7114aee6c23568f6e0b4d490b1b0d83a6) 2026-10-27T11:08:15+05:30: fix(llamacpp): link engine release notes to the versioned upstream release (#9466)
+- [9c20454e2eba](https://github.com/janhq/jan/commit/9c20454e2ebafe8e355b71898fca4c7b89752faa) 2026-10-26T16:26:25+07:00: fix(cli): give jan update a 15s manifest timeout (#9448)
+- [df5038bcb884](https://github.com/janhq/jan/commit/df5038bcb884e74f4e0ca9fef826106f2da47320) 2026-10-26T13:41:29+07:00: docs: add a security policy that routes reports through GitHub advisories (#9447)
+- [b590be5fd1ee](https://github.com/janhq/jan/commit/b590be5fd1ee618ddee6ed1f7999a39e521411d2) 2026-10-26T11:13:41+07:00: feat(web-app): hide the download button when nothing is downloading (#9427)
+- [b6e1fc76811c](https://github.com/janhq/jan/commit/b6e1fc76811c83a1edd12e06722e9919ca6d5074) 2026-10-26T10:55:10+07:00: fix(cowork): use a checklist icon for plan mode and mute the composer chips (#9426)
+- [65b0cb0f464d](https://github.com/janhq/jan/commit/65b0cb0f464d760bd9e30e2d9a2e7970628af3ee) 2026-10-26T08:47:55+07:00: feat(desktop): new app icon, with per-platform sources (#9441)
+- [d4836aec8fbb](https://github.com/janhq/jan/commit/d4836aec8fbb8b14afca9e5dbf572591cdd6d846) 2026-10-26T08:40:00+07:00: fix(adk): wait for listeners before asserting on them, and skip the ADKs job when nothing it builds from changed (#9428)
+- [a4f0ddde0417](https://github.com/janhq/jan/commit/a4f0ddde041761c09acbdb60d631c4f0486eb5ba) 2026-10-23T13:38:07+05:30: fix(agent-tools): resolve dangling symlinks and stop link swaps in write/edit (#9424)
+- [ae1e73f4a127](https://github.com/janhq/jan/commit/ae1e73f4a127d668682117ef16fa77eb3b2b90b5) 2026-10-23T10:03:14+07:00: feat(llamacpp): upgrade the engine to 0.7.0 (b11669) (#9399)
+- [ab7a7adf7c79](https://github.com/janhq/jan/commit/ab7a7adf7c7964849dee655c4dfb70a857b6a81a) 2026-10-23T09:16:41+07:00: fix(chat): answer a shell call made while the shell is off instead of ending the turn (#9319) (#9392)
+- [7a0f4a4e5755](https://github.com/janhq/jan/commit/7a0f4a4e5755c0edf1eda09662c7bbf9af501a8d) 2026-10-23T09:16:36+07:00: fix(llamacpp): load router.preset.ini from a non-ASCII path on Windows (#9418)
+- [dd7bd4f5f348](https://github.com/janhq/jan/commit/dd7bd4f5f348ba424d91cee3069c39fabca3d708) 2026-10-22T15:40:19+05:30: feat(agent-cli): configure the web search provider from /settings and jan config (#9420)
+- [44aee093ae5a](https://github.com/janhq/jan/commit/44aee093ae5a974c31ec43d24ceca163c0e59c14) 2026-10-21T14:21:28+07:00: fix(chat): let a model without tool support take documents as prompt text (#9388)
+- [e426db03fb3c](https://github.com/janhq/jan/commit/e426db03fb3c0490493396b6bfd9db764447513a) 2026-10-21T13:20:53+07:00: fix(llamacpp): say local models are unsupported on an Intel Mac, not "os error 86" (#9387)
+- [99f4ca28efa9](https://github.com/janhq/jan/commit/99f4ca28efa9fa514bb5eba5735b039929bdc6a3) 2026-10-21T09:11:35+07:00: ci: tell contributors when their commits aren't verified (#9359)
+- [945c2ddd6843](https://github.com/janhq/jan/commit/945c2ddd6843cca7dfc5c21ed6bb791fe7cb6749) 2026-10-21T09:11:26+07:00: fix(llamacpp): say the engine stopped instead of a raw connection error (#9181)
+- [dfa2f3d75733](https://github.com/janhq/jan/commit/dfa2f3d757333549d60974438474b8b050fb75c7) 2026-10-21T09:11:09+07:00: ci: refresh the llama.cpp engine prebuilt from main so PR builds stop missing it (#9360)
+- [8c0615520239](https://github.com/janhq/jan/commit/8c0615520239ba668717c20dd3a1b0733549b8f3) 2026-10-20T17:45:32+07:00: fix(llamacpp): restart the engine when its GPU set changed, on Refresh and before a load (#9347, part 1) (#9348)
+- [21e342a531b1](https://github.com/janhq/jan/commit/21e342a531b1782450588a898100abb6c6e469d4) 2026-10-20T10:03:00Z: fix(chat): inline an attachment once per request, not once per turn (#9022) (#9358)
+- [e7cbcf6d232f](https://github.com/janhq/jan/commit/e7cbcf6d232f331313fd646b9131793ab2c5dc5c) 2026-10-20T16:30:59+07:00: fix(chat): keep a tool-using turn running when the user opens another thread (#9311) (#9313)
+- [ce8fcd25230d](https://github.com/janhq/jan/commit/ce8fcd25230d911e9d772156c882d88e0c428926) 2026-10-20T14:55:06+07:00: fix(web-app): show the unreachable-provider message in the model-fetch toast (#9351) (#9354)
+- [498f3b000a0e](https://github.com/janhq/jan/commit/498f3b000a0e4b970f76b0a92dd94b56f3d69d1b) 2026-10-20T13:30:42+07:00: fix(llamacpp): send engine requests direct, not through a proxy (#9352) (#9353)
+- [a5de19bb9ad7](https://github.com/janhq/jan/commit/a5de19bb9ad71b4bb0fdbc7c0df7827c41cf6cd1) 2026-10-20T13:29:46+07:00: fix(engine): stop mlx-server on SIGTERM and reap one left by a previous Jan (#9355)
+- [b6e0d9cb322c](https://github.com/janhq/jan/commit/b6e0d9cb322c704f76496282703a0b598cce39cf) 2026-10-20T12:14:21+07:00: docs(changelog): add the v0.8.7 entry (#9320)
+- [648e8da55438](https://github.com/janhq/jan/commit/648e8da55438150ccfab78808fa97a7a8e458c9f) 2026-10-19T16:54:42+07:00: fix(macos): explain why Jan asks for Local Network access (#9318)
+- [0817df90d146](https://github.com/janhq/jan/commit/0817df90d1468cdcd81d8800ea832664419cde8d) 2026-10-19T14:23:39+07:00: fix(agent-tools): prompt for a cmd command word that contains a caret (#9315) (#9316)
+- [16ad13968930](https://github.com/janhq/jan/commit/16ad13968930866a740124a778bbc95b8369b8ba) 2026-10-19T14:16:03+07:00: feat(chat): a switch to turn the shell tool off (#9222) (#9235)
+- [f7926fede877](https://github.com/janhq/jan/commit/f7926fede877fa0b6d161c6401e8bd972afd90f5) 2026-10-19T14:15:01+07:00: fix(cli): create the data folder when jan cli mcp add writes its first server (#9257) (#9280)
+- [3f2db527a2b8](https://github.com/janhq/jan/commit/3f2db527a2b8c0301a084c119a4c753a51b65b40) 2026-10-19T13:56:55+07:00: fix(chat): keep a thread in its project after embedding attachments (#9197) (#9314)
+- [1b06176d1ac4](https://github.com/janhq/jan/commit/1b06176d1ac4b658b9a98ca5878fac24a81abeba) 2026-10-19T13:56:31+07:00: feat(chat): add a separate, configurable image size limit (#9312)
+- [ce7336a608ab](https://github.com/janhq/jan/commit/ce7336a608ab63e63a80adfa8029750e72fb3f06) 2026-10-19T09:19:14+07:00: fix(chat): hold a built-in web page to the model's context window (#9283)
+- [052da5503526](https://github.com/janhq/jan/commit/052da5503526f53b248b2b57cdac8ed83d445746) 2026-10-19T09:19:09+07:00: fix(downloads): say why a network error stopped a model download (#9294)
+
+## Changed paths (truncated)
+
+- M: `.github/actions/setup-engine-toolchain/action.yml`
+- A: `.github/scripts/icon-nightly-macos.png`
+- M: `.github/scripts/icon-nightly.png`
+- A: `.github/scripts/use-channel-icons.sh`
+- M: `.github/workflows/engine-build.yml`
+- M: `.github/workflows/jan-docs.yml`
+- M: `.github/workflows/jan-linter-and-test.yml`
+- M: `.github/workflows/jan-tauri-build.yaml`
+- M: `.github/workflows/rust-check.yml`
+- A: `.github/workflows/signed-commits.yml`
+- M: `.github/workflows/template-tauri-build-linux-x64-external.yml`
+- M: `.github/workflows/template-tauri-build-linux-x64.yml`
+- M: `.github/workflows/template-tauri-build-macos-external.yml`
+- M: `.github/workflows/template-tauri-build-macos.yml`
+- M: `.github/workflows/template-tauri-build-windows-arm64.yml`
+- M: `.github/workflows/template-tauri-build-windows-x64-external.yml`
+- M: `.github/workflows/template-tauri-build-windows-x64.yml`
+- M: `.gitignore`
+- M: `CONTRIBUTING.md`
+- M: `Makefile`
+- A: `SECURITY.md`
+- M: `adk/python/README.md`
+- M: `adk/python/jan_adk/_generated.py`
+- M: `adk/python/jan_adk/errors.py`
+- M: `adk/python/jan_adk/runtime.py`
+- M: `adk/python/jan_adk/session.py`
+- M: `adk/python/pyproject.toml`
+- M: `adk/python/tests/harness.py`
+- M: `adk/python/tests/test_adk.py`
+- M: `core/package.json`
+- M: `docs/_redirects`
+- M: `docs/next-sitemap.config.js`
+- M: `docs/src/components/DocSearch/index.tsx`
+- M: `docs/src/components/Download/CardDownload.tsx`
+- M: `docs/src/components/DropdownDownload/index.tsx`
+- M: `docs/src/components/Navbar.tsx`
+- M: `docs/src/components/ui/dropdown-button.tsx`
+- M: `docs/src/hooks/useDownloadLink.ts`
+- D: `docs/src/pages/changelog/2026-09-22-jan-v0.8.5.mdx`
+- A: `docs/src/pages/changelog/2026-10-08-jan-v0.8.5.mdx`
+- A: `docs/src/pages/changelog/2026-10-09-jan-v0.8.6.mdx`
+- A: `docs/src/pages/changelog/2026-10-20-jan-v0.8.7.mdx`
+- M: `docs/src/pages/docs/agent/_meta.json`
+- M: `docs/src/pages/docs/agent/adk-nightly.mdx`
+- M: `docs/src/pages/docs/agent/cli.mdx`
+- M: `docs/src/pages/docs/agent/console.mdx`
+- M: `docs/src/pages/docs/agent/context.mdx`
+- M: `docs/src/pages/docs/agent/files.mdx`
+- A: `docs/src/pages/docs/agent/hide-secrets.mdx`
+- M: `docs/src/pages/docs/agent/hooks.mdx`
+- M: `docs/src/pages/docs/agent/index.mdx`
+- M: `docs/src/pages/docs/agent/keybindings.mdx`
+- M: `docs/src/pages/docs/agent/mcp.mdx`
+- M: `docs/src/pages/docs/agent/permissions.mdx`
+- M: `docs/src/pages/docs/agent/project-config.mdx`
+- M: `docs/src/pages/docs/agent/quickstart.mdx`
+- M: `docs/src/pages/docs/agent/run-modes.mdx`
+- M: `docs/src/pages/docs/agent/slash-commands.mdx`
+- M: `docs/src/pages/docs/agent/subagents.mdx`
+- M: `docs/src/pages/docs/agent/telemetry.mdx`
+- M: `docs/src/pages/docs/desktop/install/windows.mdx`
+- M: `docs/src/pages/docs/desktop/local-engine/llama-cpp.mdx`
+- M: `docs/src/pages/docs/desktop/remote-models/custom-endpoint.mdx`
+- M: `docs/src/pages/docs/desktop/troubleshooting.mdx`
+- M: `docs/src/pages/docs/desktop/web-search.mdx`
+- M: `docs/src/pages/research/jan-code-4b.mdx`
+- M: `docs/src/pages/research/jan-v3-4b.mdx`
+- A: `docs/src/utils/platform.ts`
+- M: `e2e/README.md`
+- M: `e2e/helpers/mock-openai.ts`
+- A: `e2e/specs/image-limit.e2e.ts`
+- M: `e2e/wdio.conf.ts`
+- M: `extensions/assistant-extension/package.json`
+- M: `extensions/conversational-extension/package.json`
+- M: `extensions/download-extension/package.json`
+- M: `extensions/llamacpp-extension/package.json`
+- M: `extensions/llamacpp-extension/settings.json`
+- M: `extensions/llamacpp-extension/src/index.ts`
+- A: `extensions/llamacpp-extension/src/loopback-fetch.ts`
+- M: `extensions/llamacpp-extension/src/preset.test.ts`
+- M: `extensions/llamacpp-extension/src/preset.ts`
+- M: `extensions/llamacpp-extension/src/test/index.test.ts`
+- M: `extensions/llamacpp-extension/src/util.test.ts`
+- M: `extensions/llamacpp-extension/src/util.ts`
+- M: `extensions/mlx-extension/package.json`
+- M: `extensions/rag-extension/package.json`
+- M: `extensions/vector-db-extension/package.json`
+- M: `flatpak/ai.jan.Jan.yml`
+- M: `mlx-server/Package.swift`
+- M: `package.json`
+- M: `packages/adk/README.md`
+- M: `packages/adk/package.json`
+- M: `packages/adk/src/generated/rpc-types.d.ts`
+- M: `packages/adk/src/index.d.ts`
+- M: `packages/adk/src/index.js`
+- M: `packages/adk/tests/adk.test.mjs`
+- M: `protocol/rpc-schema.json`
+- M: `protocol/schema.json`
+- A: `scripts/build-windows-icon.mjs`
+- M: `scripts/install-jan-agent.ps1`
+- M: `scripts/otel-e2e/fake_model.py`
+- M: `scripts/stub-tauri-resources.mjs`
+- M: `src-tauri/.gitignore`
+- M: `src-tauri/CONTRIBUTING.md`
+- M: `src-tauri/Cargo.lock`
+- M: `src-tauri/Cargo.toml`
+- M: `src-tauri/Info.plist`
+- M: `src-tauri/build-utils/buildAppImage.sh`
+- M: `src-tauri/build-utils/engine-prebuilt.sh`
+- M: `src-tauri/build-utils/shim-linuxdeploy.sh`
+- M: `src-tauri/build-utils/stage-engine.sh`
+- A: `src-tauri/icons-macos/icon.png`
+- A: `src-tauri/icons-windows/icon.png`
+- M: `src-tauri/jan-cli/Cargo.lock`
+- M: `src-tauri/jan-cli/Cargo.toml`
+- M: `src-tauri/jan-cli/src/main.rs`
+- M: `src-tauri/jan-cli/tests/agent_rpc.rs`
+- M: `src-tauri/jan-cli/tests/stream_json_host_tools.rs`
+- A: `src-tauri/jan-cli/tests/tui_panic.rs`
+- A: `src-tauri/jan-cli/tests/tui_suspend.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/Cargo.toml`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/commands.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/default_jan_skill.md`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/appcontainer.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/cmdscan.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/gate.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/handlers.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/hooks.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/jail.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/mod.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/monitor.rs`
+- A: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/nofollow.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/plugin_tools.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/proc.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/sandbox.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/schema.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/spill.rs`
+- M: `src-tauri/plugins/tauri-plugin-agent-tools/src/tools/web.rs`
+- A: `src-tauri/plugins/tauri-plugin-agent-tools/tests/sandbox_spawn.rs`
+- M: `src-tauri/plugins/tauri-plugin-hardware/Cargo.toml`
+- M: `src-tauri/plugins/tauri-plugin-hardware/src/vendor/nvidia.rs`
+- M: `src-tauri/plugins/tauri-plugin-hardware/src/vendor/tests.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/Cargo.lock`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/Cargo.toml`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/build.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/guest-js/index.ts`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/guest-js/types.ts`
+- A: `src-tauri/plugins/tauri-plugin-llamacpp/jan-llama-worker.manifest`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/package.json`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/permissions/default.toml`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/shim/jan_llama_shim.cpp`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/shim/jan_llama_shim.h`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/src/bin/jan-llama-worker.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/src/commands.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/src/engine/commands.rs`
+- A: `src-tauri/plugins/tauri-plugin-llamacpp/src/engine/driver.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/src/engine/mod.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/src/engine/preset.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/src/engine/registry.rs`
+- M: `src-tauri/plugins/tauri-plugin-llamacpp/src/engine/slots.rs`

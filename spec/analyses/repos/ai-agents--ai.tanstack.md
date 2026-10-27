@@ -1,0 +1,207 @@
+# ai.tanstack: change evidence
+
+Source: [ai.tanstack](https://github.com/tanstack/ai) · [Analysis](../../projects/ai-agents--ai.tanstack.md) · [agents](../../agents.md), [skills](../../skills.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `632fd806bb3e68e52a2a8eae937873c5defe6786`; commit date: 2026-10-03T15:31:51Z; review date: unknown; observed SHA: `669fd31d995a7134e9f39f386181edc5085039b2`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/tanstack/ai/compare/632fd806bb3e68e52a2a8eae937873c5defe6786...669fd31d995a7134e9f39f386181edc5085039b2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [669fd31d995a](https://github.com/tanstack/ai/commit/669fd31d995a7134e9f39f386181edc5085039b2) 2026-10-27T11:25:47Z: test(ai-persistence): check persistence adapter skills (#1921)
+- [60f1cfca6e28](https://github.com/tanstack/ai/commit/60f1cfca6e28f58c2d2aabe76aa72cd93c9aaa66) 2026-10-27T12:20:58+01:00: ci: print failed coverage logs and cap vitest workers (#1920)
+- [2f868416cc9d](https://github.com/tanstack/ai/commit/2f868416cc9d2fe0022f6c08417ed76ddcdadcbd) 2026-10-27T12:20:32+01:00: docs(ai-persistence): adapter skills always write all four chat tables (#1918)
+- [97ea4045b214](https://github.com/tanstack/ai/commit/97ea4045b21437b8885eac4ede886b600a1fd88e) 2026-10-27T11:23:02+01:00: docs(comparison): TanStack AI vs pi, single process and client/server (#1910)
+- [ae9765527107](https://github.com/tanstack/ai/commit/ae976552710726b13b524c307c1b5bbe78478eb0) 2026-10-26T15:36:20Z: docs: video generation is no longer experimental (#1912)
+- [f085015da1b7](https://github.com/tanstack/ai/commit/f085015da1b77aee3cf95ca74a2e86ed9dbc1c29) 2026-10-26T15:35:25Z: fix(readme): correct npm badges and partner logo URLs (#1904)
+- [8731d75d5fe9](https://github.com/tanstack/ai/commit/8731d75d5fe969869824e17e2f4877bb89b8bdcb) 2026-10-26T14:35:13+11:00: fix(ai-gemini): run built-in tools beside function tools on Gemini 3 (#1897)
+- [98055ca01af9](https://github.com/tanstack/ai/commit/98055ca01af9e449d039f61e380b0d3c158acbb1) 2026-10-23T21:22:45+01:00: feat(maintainer): assign a PR to the assignee of the issue it closes (#1890)
+- [5651e07e3181](https://github.com/tanstack/ai/commit/5651e07e3181745984155ad88b65b86b8528844e) 2026-10-22T17:09:56+02:00: ci: Version Packages (#1861)
+- [f7e7cce8f2d5](https://github.com/tanstack/ai/commit/f7e7cce8f2d543a7480b626b7985417e054bfd8d) 2026-10-22T14:14:53Z: feat(ai-neon, openai-base): add the Neon AI Gateway adapter (#1851)
+- [959f43e4b111](https://github.com/tanstack/ai/commit/959f43e4b11112f2c097f642bdec34d8d0f83e27) 2026-10-22T13:36:07Z: feat(ai, ai-openai): EvaluateError keeps usage and answers when OpenAI refuses a question (#1743)
+- [a5c2af3e93b8](https://github.com/tanstack/ai/commit/a5c2af3e93b8359209ea3c44856e4c06599387dc) 2026-10-22T15:15:58+02:00: fix(ai-harness): do not run a no-user input as the session owner (#1876)
+- [39abb7ed172b](https://github.com/tanstack/ai/commit/39abb7ed172b4357bc04a39fc6cf7c3577f77cf3) 2026-10-22T14:56:13+02:00: chore: merge Tau changesets so the release changelog query fits (#1883)
+- [9f1bdd61b4df](https://github.com/tanstack/ai/commit/9f1bdd61b4df1d16c23a6ce300fa0424ab824d6a) 2026-10-22T12:54:31Z: fix(ai-anthropic): keep the input usage when a stream fails after message_start (#1793)
+- [56edf43c94a9](https://github.com/tanstack/ai/commit/56edf43c94a926566591e20c5739680eacb1515d) 2026-10-22T14:51:46+02:00: feat(ai-cloudflare): send defaultHeaders as extraHeaders on binding runs (#1568)
+- [0e44e95a8dba](https://github.com/tanstack/ai/commit/0e44e95a8dba1572295b505c398739147e111fa9) 2026-10-22T12:42:59Z: feat(adapters): set the HTTP status on a failed evaluate request (#1747)
+- [39c1c79dc9b6](https://github.com/tanstack/ai/commit/39c1c79dc9b6c21329f659d9b4ba6968e9496983) 2026-10-22T13:59:17+02:00: feat(ai-harness): Tau (#1755)
+- [456bdc4fa5db](https://github.com/tanstack/ai/commit/456bdc4fa5dba2d01889d5073ffe2c418078ea07) 2026-10-22T12:46:00+02:00: chore: sync model metadata (#1882)
+- [9f5a18a1837d](https://github.com/tanstack/ai/commit/9f5a18a1837d54cc5dcb009837e23c16b4f55787) 2026-10-22T12:45:36+02:00: feat(ai-client): back off reconnects and retry temporary HTTP statuses (#1881)
+- [781a3a82c870](https://github.com/tanstack/ai/commit/781a3a82c870e246deff23c7aca32094e9aaaf2f) 2026-10-22T12:32:04+02:00: feat(ai): put the provider error type and request id on RUN_ERROR (#1880)
+- [fa2a291f5526](https://github.com/tanstack/ai/commit/fa2a291f5526f6dec9a91fe5b71de15dfaf59ec7) 2026-10-22T11:11:07+02:00: fix(ai): allow text adapters under exactOptionalPropertyTypes (#1869)
+- [85204eaf1a02](https://github.com/tanstack/ai/commit/85204eaf1a02ec4bbebc9f8390233221a81bc21c) 2026-10-22T11:10:55+02:00: fix(openai-base): replay assistant text before its function calls (#1870)
+- [f6a27bc33198](https://github.com/tanstack/ai/commit/f6a27bc33198bff58415dfe8d107f1d5b9525e83) 2026-10-22T11:09:55+02:00: fix(ai-persistence): save activity rows when a run is stopped or fails (#1875)
+- [49dbcf92e80f](https://github.com/tanstack/ai/commit/49dbcf92e80f20b98707d800dcf30e90b2e20d32) 2026-10-22T11:09:44+02:00: feat(ai-vercel-gateway): put gateway cost on usage (#1873)
+- [028f30f94818](https://github.com/tanstack/ai/commit/028f30f948181188f00fa33d3ed423b86e47774e) 2026-10-22T11:09:30+02:00: fix(openai-base): keep length when a tool call is cut off (#1874)
+- [460e50689522](https://github.com/tanstack/ai/commit/460e50689522848e918521a1ebf3dcc3cf79cd07) 2026-10-22T11:09:16+02:00: fix(ai-opencode): bound memory while buffering stream parts (#1862)
+- [d980ce153371](https://github.com/tanstack/ai/commit/d980ce153371404d71b6d4ceac37b0c8293df1d8) 2026-10-22T10:23:04+02:00: fix(ai-mcp): send Mcp-Param headers on spec 2026 tool calls (#1871)
+- [fe83aa05fe23](https://github.com/tanstack/ai/commit/fe83aa05fe2346c50693664d4a4896d4fc1fea5a) 2026-10-22T10:21:23+02:00: fix(models): remove model ids that providers have retired (#1868)
+- [3e84606afb2d](https://github.com/tanstack/ai/commit/3e84606afb2d0550520d3f2a4cb8ea88b0a9cdf8) 2026-10-22T17:39:09+11:00: feat(ai-mcp): experimental MCP Events (SEP-3415) webhook support (#1816)
+- [ec9023e9be66](https://github.com/tanstack/ai/commit/ec9023e9be665fbd0ffea3e639280c2216edc16c) 2026-10-22T17:38:14+11:00: feat(ai-anthropic): server-side refusal fallback, and refusals finish with content_filter (#1835)
+- [483f59ac202c](https://github.com/tanstack/ai/commit/483f59ac202cf913c6737a379abfb0953afebe56) 2026-10-22T17:23:58+11:00: fix(ai-openai): drop sampling params on gpt-6 reasoning models unless effort is none (#1857)
+- [893baeca30e3](https://github.com/tanstack/ai/commit/893baeca30e3dad247292ac2733357e8cc558ae8) 2026-10-22T08:09:32+02:00: ci: group the oxc lint toolchain in Renovate (#1860)
+
+## Changed paths (truncated)
+
+- A: `.agent/domain-map.json`
+- M: `.agent/self-learning/lessons/2026-06-23-authoring-kiira-doc-snippets.md`
+- M: `.agents/skills/add-example-tutorial/SKILL.md`
+- M: `.agents/skills/docs/SKILL.md`
+- D: `.changeset/code-mode-stubs-enum-description.md`
+- A: `.changeset/gemini-server-tool-invocations.md`
+- A: `.changeset/npm-readme-badges.md`
+- A: `.changeset/persistence-skill-checks.md`
+- A: `.changeset/persistence-skills-four-tables.md`
+- A: `.changeset/video-not-experimental.md`
+- M: `.claude/skills/add-example-tutorial/SKILL.md`
+- M: `.claude/skills/docs/SKILL.md`
+- M: `.github/renovate.json`
+- A: `.github/workflows/ai-review-signal.yml`
+- M: `.github/workflows/ai-review.yml`
+- M: `.github/workflows/e2e.yml`
+- M: `.github/workflows/pr.yml`
+- M: `.github/workflows/sync-models.yml`
+- M: `.gitignore`
+- M: `.grok/skills/add-example-tutorial/SKILL.md`
+- M: `.grok/skills/docs/SKILL.md`
+- M: `.oxlintrc.json`
+- M: `AGENTS.md`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `agent-scripts/ai-review/README.md`
+- M: `agent-scripts/ai-review/comments.test.ts`
+- M: `agent-scripts/ai-review/comments.ts`
+- M: `agent-scripts/ai-review/event.test.ts`
+- M: `agent-scripts/ai-review/event.ts`
+- D: `agent-scripts/ai-review/files.test.ts`
+- D: `agent-scripts/ai-review/files.ts`
+- M: `agent-scripts/ai-review/git.test.ts`
+- M: `agent-scripts/ai-review/git.ts`
+- M: `agent-scripts/ai-review/labels.test.ts`
+- M: `agent-scripts/ai-review/labels.ts`
+- M: `agent-scripts/ai-review/pr.test.ts`
+- M: `agent-scripts/ai-review/pr.ts`
+- M: `agent-scripts/ai-review/run.test.ts`
+- M: `agent-scripts/ai-review/run.ts`
+- M: `agent-scripts/ai-review/secure.ts`
+- M: `agent-scripts/ai-review/security.test.ts`
+- M: `agent-scripts/ai-review/security.ts`
+- D: `agent-scripts/ai-review/tools.test.ts`
+- D: `agent-scripts/ai-review/tools.ts`
+- M: `codemods/README.md`
+- M: `codemods/ag-ui-compliance/README.md`
+- M: `codemods/ag-ui-compliance/transform.ts`
+- M: `docs/adapters/acp-compatible.md`
+- A: `docs/adapters/anthropic-advanced.md`
+- M: `docs/adapters/anthropic.md`
+- M: `docs/adapters/bedrock.md`
+- A: `docs/adapters/byteplus-advanced.md`
+- M: `docs/adapters/byteplus.md`
+- M: `docs/adapters/claude-code.md`
+- M: `docs/adapters/cloudflare.md`
+- M: `docs/adapters/codex.md`
+- M: `docs/adapters/cohere.md`
+- M: `docs/adapters/elevenlabs.md`
+- M: `docs/adapters/fal.md`
+- A: `docs/adapters/gemini-advanced.md`
+- M: `docs/adapters/gemini.md`
+- M: `docs/adapters/grok-build.md`
+- M: `docs/adapters/grok.md`
+- M: `docs/adapters/groq.md`
+- M: `docs/adapters/llmgateway.md`
+- M: `docs/adapters/lovable.md`
+- M: `docs/adapters/mistral.md`
+- A: `docs/adapters/neon.md`
+- M: `docs/adapters/ollama.md`
+- M: `docs/adapters/ollaya.md`
+- A: `docs/adapters/openai-advanced.md`
+- A: `docs/adapters/openai-compatible-advanced.md`
+- M: `docs/adapters/openai-compatible.md`
+- M: `docs/adapters/openai.md`
+- M: `docs/adapters/opencode.md`
+- A: `docs/adapters/openrouter-advanced.md`
+- M: `docs/adapters/openrouter.md`
+- M: `docs/adapters/perplexity.md`
+- M: `docs/adapters/reactor.md`
+- M: `docs/adapters/typesafe.md`
+- M: `docs/adapters/vercel-gateway.md`
+- M: `docs/adapters/vertex.md`
+- M: `docs/adapters/worldlabs.md`
+- M: `docs/advanced/built-in-middleware.md`
+- M: `docs/advanced/byok.md`
+- A: `docs/advanced/compaction-advanced.md`
+- M: `docs/advanced/compaction.md`
+- M: `docs/advanced/debug-logging.md`
+- A: `docs/advanced/extend-adapter-advanced.md`
+- M: `docs/advanced/extend-adapter.md`
+- M: `docs/advanced/files-api.md`
+- M: `docs/advanced/locks.md`
+- A: `docs/advanced/mid-conversation-changes.md`
+- A: `docs/advanced/middleware-advanced.md`
+- M: `docs/advanced/middleware.md`
+- M: `docs/advanced/multimodal-content.md`
+- M: `docs/advanced/otel.md`
+- M: `docs/advanced/per-model-type-safety.md`
+- A: `docs/advanced/prompt-caching.md`
+- M: `docs/advanced/runtime-adapter-switching.md`
+- M: `docs/advanced/runtime-context.md`
+- A: `docs/advanced/server-keys.md`
+- A: `docs/advanced/testing.md`
+- M: `docs/advanced/tree-shaking.md`
+- M: `docs/advanced/typed-options.md`
+- M: `docs/api/ai-angular.md`
+- M: `docs/api/ai-client.md`
+- M: `docs/api/ai-octane.md`
+- M: `docs/api/ai-preact.md`
+- M: `docs/api/ai-react.md`
+- M: `docs/api/ai-remix.md`
+- M: `docs/api/ai-solid.md`
+- M: `docs/api/ai-svelte.md`
+- M: `docs/api/ai-vue.md`
+- M: `docs/api/ai.md`
+- M: `docs/architecture/approval-flow-processing.md`
+- M: `docs/chat/agentic-cycle.md`
+- D: `docs/chat/connection-adapters.md`
+- M: `docs/chat/queueing.md`
+- A: `docs/chat/reasoning.md`
+- M: `docs/chat/stream-events.md`
+- M: `docs/chat/streaming.md`
+- M: `docs/chat/structured-outputs.md`
+- A: `docs/chat/subagents-advanced.md`
+- M: `docs/chat/subagents.md`
+- M: `docs/chat/thinking-content.md`
+- M: `docs/code-mode/client-integration.md`
+- M: `docs/code-mode/code-mode-isolates.md`
+- M: `docs/code-mode/code-mode-with-snippets.md`
+- M: `docs/code-mode/code-mode.md`
+- M: `docs/code-mode/lazy-tools.md`
+- M: `docs/community-adapters/cencori.md`
+- M: `docs/community-adapters/cloudflare.md`
+- M: `docs/community-adapters/decart.md`
+- M: `docs/community-adapters/guide.md`
+- M: `docs/community-adapters/mynth.md`
+- M: `docs/community-adapters/soniox.md`
+- M: `docs/community-adapters/upstash.md`
+- A: `docs/comparison/pi.md`
+- M: `docs/comparison/vercel-ai-sdk.md`
+- A: `docs/computer-use/computer-use.md`
+- A: `docs/computer-use/custom-driver.md`
+- A: `docs/computer-use/drivers.md`
+- A: `docs/computer-use/safety-checks.md`
+- M: `docs/config.json`
+- M: `docs/embeddings.md`
+- M: `docs/evaluate/evaluate.md`
+- M: `docs/getting-started/agent-skills.md`
+- M: `docs/getting-started/devtools.md`
+- M: `docs/getting-started/overview.md`
+- M: `docs/getting-started/quick-start-react-native.md`
+- M: `docs/getting-started/quick-start-server.md`
+- M: `docs/getting-started/quick-start.md`
+- A: `docs/harness/access.md`
+- A: `docs/harness/acp.md`
+- A: `docs/harness/agents.md`
+- A: `docs/harness/auth.md`
+- A: `docs/harness/cli.md`

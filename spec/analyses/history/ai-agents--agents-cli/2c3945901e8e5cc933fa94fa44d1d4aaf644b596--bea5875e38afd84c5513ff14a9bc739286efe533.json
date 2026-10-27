@@ -1,0 +1,839 @@
+{
+  "id": "ai-agents--agents-cli",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/google/agents-cli",
+  "report": "spec/projects/ai-agents--agents-cli.md",
+  "analyzedSha": "2c3945901e8e5cc933fa94fa44d1d4aaf644b596",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-30T11:14:13Z",
+  "observedSha": "bea5875e38afd84c5513ff14a9bc739286efe533",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "bea5875e38afd84c5513ff14a9bc739286efe533",
+      "date": "2026-10-20T12:57:14Z",
+      "subject": "release v1.11.0 at 2026-10-20 12:57:14 UTC"
+    },
+    {
+      "sha": "d445570c61fd446487ea6623c5635b23aded237f",
+      "date": "2026-10-12T19:37:41Z",
+      "subject": "release v1.10.0 at 2026-10-12 19:37:40 UTC"
+    },
+    {
+      "sha": "4b1189172dc8be0be53d52812e580148c9ad888e",
+      "date": "2026-10-06T14:00:40Z",
+      "subject": "release v1.9.0 at 2026-10-06 14:00:40 UTC"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASE_NOTES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/cli/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/authentication.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/cicd.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/development.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/evaluation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/extensions/authoring.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/extensions/first-party.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/extensions/using.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/hands-on-tutorial.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/quickstart-tutorial.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/use-cases.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/javascripts/lifecycle.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/reference/eval-dataset-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/reference/from-agent-starter-pack.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.agents/skills/agents-cli-langchain/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.agents/skills/agents-cli-langchain/references/langchain.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.agents/skills/agents-cli-langchain/references/samples.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.template/templateconfig.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/agents-cli-extension.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/app/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/app/app_utils/a2a.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/app/app_utils/telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/scripts/eval_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/scripts/publish.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/tests/eval/eval_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/tests/eval/response_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/tests/test_eval_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "schemas/agents-cli-extension-v1alpha1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/references/adk-go.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/references/adk-python-live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/references/adk-python.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/references/samples.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/agent-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/cloud-run.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/google-agents-cli-deploy/references/cmek.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/gke.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/testing-deployed-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/advanced-commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/dataset_schema.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/live-eval.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/metrics-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/user-simulation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-observability/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-observability/references/bigquery-agent-analytics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-observability/references/cloud-trace-and-logging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-publish/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-scaffold/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-scaffold/references/flags.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/extension.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/internals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/terminology.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_agent_platform.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_agent_platform_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_click.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_experiments.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_fs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_git.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_project.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_remote.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_sdk_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_skills_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_uv_index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/data/_recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/deploy/_build_logs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/deploy/_cloud_validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/deploy/_operation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/deploy/_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/deploy/agent_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/deploy/cloud_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/deploy/cmd_deploy.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/deploy/gke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/dev/cmd_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/dev/cmd_lint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/dev/cmd_playground.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/_synthesize_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_analyze.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_eval_group.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_grade.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_metric.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_optimize.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/cmd_submit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/eval_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/eval/optimize_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/_loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/_manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/_overrides.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/_refs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/_resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/extension/_skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/_sync.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/cmd_extension_add.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/cmd_extension_group.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/cmd_extension_remove.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/extension/cmd_extension_update.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/info/cmd_info.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/infra/_cicd_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/infra/cmd_cicd.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/publish/cmd_publish.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/publish/cmd_publish_group.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/run/_local_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/run/cmd_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/.template/templateconfig.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/app/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/app/app_utils/a2a.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/app/app_utils/reasoning_engine_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/app/app_utils/services.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/app/fast_api_app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/tests/eval/datasets/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/tests/eval/eval_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk/tests/eval/response_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/app/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/app/agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/appurl.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/e2e/integration/server_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/eval/datasets/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/eval/eval_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/eval/response_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/sessions/backends.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/sessions/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/scaffold/agents/adk_go/sessions/sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_java/Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_java/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_ts/.cloudbuild/pr_checks.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_ts/.github/workflows/pr_checks.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/scaffold/agents/adk_ts/Dockerfile",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

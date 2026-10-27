@@ -1,0 +1,619 @@
+{
+  "id": "ai-query--opendataloader-pdf",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/opendataloader-project/opendataloader-pdf",
+  "report": "spec/projects/ai-query--opendataloader-pdf.md",
+  "analyzedSha": "72e475c05b0f1c375af71a5b04a751ed22fcbf25",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-01T18:37:52+09:00",
+  "observedSha": "48cdd35c95399387cf348ab303d0cbe8e9e1018b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "48cdd35c95399387cf348ab303d0cbe8e9e1018b",
+      "date": "2026-10-23T10:50:35+09:00",
+      "subject": "test: assert that closeDocument(null) returns and leaves the current document open"
+    },
+    {
+      "sha": "c92e3c9e1482624b45bf5f00b492b5284f814aac",
+      "date": "2026-10-23T10:50:35+09:00",
+      "subject": "fix(api): give closeDocument one documented contract"
+    },
+    {
+      "sha": "21d780a5dc2852f214503b2611b1afede0418105",
+      "date": "2026-10-23T10:50:35+09:00",
+      "subject": "test: use distinct text in the two Issue #791 PDFs"
+    },
+    {
+      "sha": "9f7902acb5f778d2a8c0f0638427e3267c26aeae",
+      "date": "2026-10-23T10:50:35+09:00",
+      "subject": "fix(api): close TaggingResult without clearing a later extraction's thread state"
+    },
+    {
+      "sha": "007007dc05165f6112ef82d16b4649248abdbbe5",
+      "date": "2026-10-22T06:04:30Z",
+      "subject": "chore: begin 2.5.16-SNAPSHOT"
+    },
+    {
+      "sha": "b4a5ad5e18e26ebbe91118d77d17c0696e29f3ec",
+      "date": "2026-10-22T14:24:08+09:00",
+      "subject": "test(processors): pin that a page-processing failure is wrapped in IOException"
+    },
+    {
+      "sha": "b5fed0c541d5bf29b7707e61aec15b58dd731512",
+      "date": "2026-10-22T14:24:08+09:00",
+      "subject": "fix(processors): correct the LineChunk prune comments and the catch in processDocument"
+    },
+    {
+      "sha": "24d9ddb4e75684e82f17e9c1672c749cd2d5ba03",
+      "date": "2026-10-22T13:21:32+09:00",
+      "subject": "fix(tagged-pdf): write the tagged PDF when --sanitize replaces text under a link"
+    },
+    {
+      "sha": "16a376bb0583070f9064dbf48eecd868d7d301cf",
+      "date": "2026-10-22T13:18:50+09:00",
+      "subject": "Add regression test for hidden-text artifact pruning"
+    },
+    {
+      "sha": "39e28eef9185c40e695d39f7665625f7f47811bb",
+      "date": "2026-10-22T13:18:50+09:00",
+      "subject": "Fix artifact retention after hidden-text filtering"
+    },
+    {
+      "sha": "33246f9b29b0583f7797c8571612c0028fcfda36",
+      "date": "2026-10-22T13:18:50+09:00",
+      "subject": "Fix veraPDF artifact memory retention"
+    },
+    {
+      "sha": "d1d11efe704d31868a6ecdd973a28214578ac5f4",
+      "date": "2026-10-21T12:42:17+03:00",
+      "subject": "Update verapdf version"
+    },
+    {
+      "sha": "265b5266bffeebdad3e7ff6f05178d8fe04bc38f",
+      "date": "2026-10-21T09:24:19Z",
+      "subject": "chore: begin 2.5.15-SNAPSHOT"
+    },
+    {
+      "sha": "215e80f11b23ac55feb8a91a754244ad78dc3069",
+      "date": "2026-10-21T17:46:07+09:00",
+      "subject": "test(tagged-pdf): compare MCID values, not only counts"
+    },
+    {
+      "sha": "703db7bb594ba17e13d36a44b2226e9c16e25681",
+      "date": "2026-10-21T17:46:07+09:00",
+      "subject": "fix(tagged-pdf): give no MCID to spaces that veraPDF inserts"
+    },
+    {
+      "sha": "0680a04d08248a8e0b3729bb1737e88a7a650163",
+      "date": "2026-10-21T14:26:31+09:00",
+      "subject": "fix(tagged-pdf): skip inserted spaces when merging adjacent text shows"
+    },
+    {
+      "sha": "409b99e483d35428ca8d56e8682e3e2732395283",
+      "date": "2026-10-21T13:30:01+09:00",
+      "subject": "chore(deps): bump veraPDF 1.31.200 -> 1.31.206 in java/"
+    },
+    {
+      "sha": "a8d35e93675be2581ee0213b31727f023d8a5ea8",
+      "date": "2026-10-20T14:50:55+09:00",
+      "subject": "feat: add marker to indicate typing support for Python package"
+    },
+    {
+      "sha": "d57b3b743b13cdb67eb6d6e0e008a58d0d535fef",
+      "date": "2026-10-20T14:22:39+09:00",
+      "subject": "chore(deps): bump docling 2.127.0 -> 2.140.0 in python/opendataloader-pdf/"
+    },
+    {
+      "sha": "9702de08c784813b539afef402c325dd81540cb3",
+      "date": "2026-10-20T14:22:39+09:00",
+      "subject": "chore(deps): bump pyjwt 2.14.0 -> 2.15.1 in python/opendataloader-pdf-mcp/"
+    },
+    {
+      "sha": "a85a8a3153a2c41b59b8e3cd76581990cb221d0e",
+      "date": "2026-10-20T14:22:39+09:00",
+      "subject": "chore(deps): bump source-map-js 1.2.1 -> 1.2.2 in node/"
+    },
+    {
+      "sha": "54b0c1a9e90c1e97c14f96d8c9bd5201907fdc44",
+      "date": "2026-10-20T14:22:39+09:00",
+      "subject": "chore(deps): bump jackson 2.22.2 -> 2.22.3 in java/"
+    },
+    {
+      "sha": "08161b023651131140f43f6dfeb4cd610fd87055",
+      "date": "2026-10-20T13:01:58+09:00",
+      "subject": "feat(core): load sanitize rules from a JSON file with --sanitize-rules"
+    },
+    {
+      "sha": "5531d9c0b9a0ee53018be850c553e7f717c7fc1b",
+      "date": "2026-10-20T11:16:22+09:00",
+      "subject": "fix: mask IPv6 addresses next to labels, ports, and hyphens"
+    },
+    {
+      "sha": "c3aad24ad7ff5fe10996157b63add96590979bd1",
+      "date": "2026-10-20T11:16:22+09:00",
+      "subject": "fix: guard IPv6 token boundaries and skip empty sanitization matches"
+    },
+    {
+      "sha": "75e65d420c510a5344d3ec5e248a120fa6165b72",
+      "date": "2026-10-20T11:16:22+09:00",
+      "subject": "fix: preserve timestamps during IPv6 sanitization"
+    },
+    {
+      "sha": "3bf98d44b84e306407f50a3056c6348fde0a24f0",
+      "date": "2026-10-19T13:38:48+09:00",
+      "subject": "docs(skills): let the maintainer do small follow-ups in odl-review"
+    },
+    {
+      "sha": "14f0306b33ca7e0e5e8ef8db6cd08c64391663de",
+      "date": "2026-10-19T10:45:14+09:00",
+      "subject": "fix: omit null characters from JSON text output"
+    },
+    {
+      "sha": "7f5d574cefe5e92868af0a86851bd52d480eb7b7",
+      "date": "2026-10-16T19:17:35+09:00",
+      "subject": "docs(skills): add CI, before/after, merge, and feedback steps to odl-review"
+    },
+    {
+      "sha": "546143e2839d7b284de64b349d7ed135bc65670c",
+      "date": "2026-10-16T18:05:30+09:00",
+      "subject": "fix(tagged-pdf): skip the MCID merge when the page tokens cannot be read"
+    },
+    {
+      "sha": "9ddd85e2b0f469860e4f4ba3e0a259ee1f4aab38",
+      "date": "2026-10-16T18:05:30+09:00",
+      "subject": "fix(tagged-pdf): share one MCID between adjacent text-show operators"
+    },
+    {
+      "sha": "25e6f02b5f0fa1ceb9fc551120dcf90a3dc2646d",
+      "date": "2026-10-16T17:03:56+09:00",
+      "subject": "docs(skills): add odl-review skill for pull request reviews"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/odl-fix/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/odl-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-reminders.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/snapshot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/sanitize-rules/default-rules.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-cli/pom.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-cli/src/main/java/org/opendataloader/pdf/cli/CLIMain.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-cli/src/test/java/org/opendataloader/pdf/cli/CLIMainTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/pom.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/AutoTagger.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/FilterConfig.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/OutputWriter.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/TaggingResult.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/cli/CLIOptions.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/autotagging/ChunksWriter.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/exceptions/TempDirectoryNotWritableException.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/json/JsonWriter.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/AutoTaggingProcessor.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/DocumentProcessor.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/ExtractionResult.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/ContentSanitizer.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/SanitizationRule.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/SanitizationRuleException.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/SanitizationRulesLoader.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/IntegrationTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/Issue336IntegrationTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/Issue408IntegrationTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/Issue767IntegrationTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/api/AutoTaggerTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/api/FilterConfigTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/api/cli/CLIOptionsContentSafetyTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/entities/PictureDescriptionE2ETest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue336UndersegmentedTableTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue408FileLockTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue779ExtractionCloseTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue783FailedExtractionCloseTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue791TaggingResultCloseTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue813InsertedSpaceTaggedPdfTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue820SanitizedLinkTaggedPdfTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/AutoTaggingTemporaryFileTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/BackgroundFilterTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/CidFontDetectionTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/DocumentProcessorArtifactPruneTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/DocumentProcessorParallelFailureTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/DocumentProcessorTempDirTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/HybridReferenceTrailerTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/TaggedPdfMarkedContentTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/testsupport/TestSamples.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/utils/ContentSanitizerTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/utils/SanitizationRulesLoaderTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "java/opendataloader-pdf-core/src/test/resources/cid-font-no-tounicode.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "java/opendataloader-pdf-core/src/test/resources/generate-cid-test-pdf.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/resources/issue-767-repro.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/pom.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/pnpm-workspace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/src/cli-options.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/src/convert-options.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/test/convert-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "node/opendataloader-pdf/test/executeJar.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "options.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf-mcp/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf-mcp/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/src/opendataloader_pdf/cli_options_generated.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/src/opendataloader_pdf/convert_generated.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/src/opendataloader_pdf/hybrid_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/opendataloader-pdf/src/opendataloader_pdf/py.typed",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/src/opendataloader_pdf/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/tests/test_cli_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/opendataloader-pdf/tests/test_hybrid_server_failure_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/tests/test_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/opendataloader-pdf/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "samples/pdf/issue-336-conto-economico-bialetti.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate-options.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pin-maven.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/pr-reminders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/odl-pdf-maintenance/MAINTAINING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "verification/ci-verify.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

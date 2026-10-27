@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--agents.cloudflare",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/cloudflare/agents",
+  "report": "spec/projects/ai-agents--agents.cloudflare.md",
+  "analyzedSha": "2f3176b9fa03c6429c805b560c8dc14371c15f64",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T22:15:08+01:00",
+  "observedSha": "321814b6c13f72cff82161e7eb20312574ac9b7a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "321814b6c13f72cff82161e7eb20312574ac9b7a",
+      "date": "2026-10-23T16:44:48+01:00",
+      "subject": "Lead with the Pi harness for building AI agents (#2676)"
+    },
+    {
+      "sha": "5472da81c5fe81dc6d67ac51adf5440d33762501",
+      "date": "2026-10-23T16:37:55+01:00",
+      "subject": "gardener: Upgrade Gardener to v0.1.19 (#2696)"
+    },
+    {
+      "sha": "a40b8b4ad6a209d90a82f84031c7618a265879df",
+      "date": "2026-10-23T16:32:39+01:00",
+      "subject": "Version Packages (#2685)"
+    },
+    {
+      "sha": "15e9b625edeb83fa6b470f7b67a6643cd7d178f9",
+      "date": "2026-10-23T14:53:04+01:00",
+      "subject": "gardener: answer to @ask-gardener and @gnome-bot (#2693)"
+    },
+    {
+      "sha": "9d974373b3ec8b77eb657695c97985411ed1cc88",
+      "date": "2026-10-23T14:48:33+01:00",
+      "subject": "gardener: upgrade task titles say plainly that we move to the new version (#2694)"
+    },
+    {
+      "sha": "5b49ccc7a470c6eefbdcfefaa016b1e009cf06ea",
+      "date": "2026-10-23T13:34:51+01:00",
+      "subject": "chore: exclude @opentui from the release-age policy; upgrade tasks fall back to the newest installable release (#2691)"
+    },
+    {
+      "sha": "f4384d313600a468968ca54501ec96d465774f50",
+      "date": "2026-10-23T12:40:30+01:00",
+      "subject": "gardener: replace the upstream watch with tasks that upgrade pi and opencode (#2677)"
+    },
+    {
+      "sha": "9c79ba12778cbb53b6c50db79282d780466c9897",
+      "date": "2026-10-22T22:11:55+01:00",
+      "subject": "fix(agents): resume a due Pi sleep while other work keeps PiHarness active (#2684)"
+    },
+    {
+      "sha": "cbf047d020ba7470517e82822765e5f2057cca57",
+      "date": "2026-10-22T16:43:32+01:00",
+      "subject": "Open fix pull requests on the new commit and read every cited file (#2665)"
+    },
+    {
+      "sha": "3a45ff8dff080092fbab62e9616d6d29b077fbb2",
+      "date": "2026-10-22T16:38:13+01:00",
+      "subject": "fix(examples): wrap createMcpHandler for OAuthProvider in mcp-worker-authenticated (#2655)"
+    },
+    {
+      "sha": "e29d776b241788f2e356490b9baa28a7657f5172",
+      "date": "2026-10-22T16:37:01+01:00",
+      "subject": "docs(mcp): document servers with createMcpHandler only (#2654)"
+    },
+    {
+      "sha": "7201a8e2133a2518c755c280c43971ca79a5850a",
+      "date": "2026-10-22T15:12:57+01:00",
+      "subject": "Make triage verify against current code and fix decisively (#2664)"
+    },
+    {
+      "sha": "5637335a003f066aa46749ee544ad8de7d90605e",
+      "date": "2026-10-22T14:17:19+01:00",
+      "subject": "Triage issues by impact and cost, and fix them on request (#2659)"
+    },
+    {
+      "sha": "e18c094da1301499b2536e90f5208cd727fdbb10",
+      "date": "2026-10-22T12:24:16+01:00",
+      "subject": "Version Packages (#2652)"
+    },
+    {
+      "sha": "fc4cd249b962f481fa8d6c1692e9bf10db2878cf",
+      "date": "2026-10-22T11:11:37+01:00",
+      "subject": "fix(agents): stop Lifecycle's startup scope keeping evicted objects alive (#2653)"
+    },
+    {
+      "sha": "8af09a05ca560833863bf0939c632d4ff9ec19b5",
+      "date": "2026-10-22T10:31:20+01:00",
+      "subject": "docs(agents): document Pi's afterFailedRun setting for PiHarness (#2651)"
+    },
+    {
+      "sha": "85684cada6b6a7c4be5ca5d462b1f5d8c8823382",
+      "date": "2026-10-22T10:31:20+01:00",
+      "subject": "feat(examples): resend unanswered pi harness submits with operation ids (#2650)"
+    },
+    {
+      "sha": "91a8f611ac4cb205e6a8efd3481af851022a8958",
+      "date": "2026-10-22T10:31:19+01:00",
+      "subject": "fix(agents): keep the Pi harness wake job through failed steps (#2649)"
+    },
+    {
+      "sha": "000fcaf67670cfedfc0923726f7400cf2524ca76",
+      "date": "2026-10-22T10:31:19+01:00",
+      "subject": "fix(agents): reopen pi after a storage error fails its session (#2648)"
+    },
+    {
+      "sha": "3954859b3d2b56bcf8e0425bda39608de7744dfe",
+      "date": "2026-10-22T10:31:19+01:00",
+      "subject": "feat(agents): show and retry tasks parked by pi's restart limit in PiHarness (#2624)"
+    },
+    {
+      "sha": "4b535dc9f30f85a295261e545bc18cf58dfa012f",
+      "date": "2026-10-22T10:31:18+01:00",
+      "subject": "feat(agents): pass pi's onWake through the PiHarness factory (#2619)"
+    },
+    {
+      "sha": "3e91ded5295aef63bd40e34cb5f3396d0be11992",
+      "date": "2026-10-22T10:31:17+01:00",
+      "subject": "fix(agents): wake PiHarness from pi.wake(), one job per object (#2618)"
+    },
+    {
+      "sha": "cfe9d0f3d5de5e07fc77e5edc320d423e6634295",
+      "date": "2026-10-22T10:31:16+01:00",
+      "subject": "chore(agents): prepare for Pi 1.4 (#2617)"
+    },
+    {
+      "sha": "f404547453d412d04aafedff7d624d384c6e70d8",
+      "date": "2026-10-21T17:54:27+01:00",
+      "subject": "fix(agents): arm a Lifecycle fallback alarm before startup in an alarm (#2644)"
+    },
+    {
+      "sha": "e117121fff687a0320b96cb22da63cb089855a04",
+      "date": "2026-10-21T17:53:50+01:00",
+      "subject": "fix(agents): word cut-off pi-ai model streams so pi retries them (#2643)"
+    },
+    {
+      "sha": "4e891252c28b653eae9ac7e82ab903bf90997d66",
+      "date": "2026-10-21T14:50:41+01:00",
+      "subject": "fix(examples): use a SQLite-backed Durable Object in dynamic-workers-playground (#2642)"
+    },
+    {
+      "sha": "fc7f59fb00e7ae0045086b094b94a22abc760206",
+      "date": "2026-10-20T16:14:33+01:00",
+      "subject": "Version Packages (#2588)"
+    },
+    {
+      "sha": "05843e428be0d8b43a5bf1923d8e40adce6f213d",
+      "date": "2026-10-20T16:02:20+01:00",
+      "subject": "fix(chat-recovery): seal a turn after repeated interrupted attempts (#2615)"
+    },
+    {
+      "sha": "d6606fd549d70e8b8c4abe8ec47476c90b17e8c7",
+      "date": "2026-10-20T16:02:00+01:00",
+      "subject": "fix(codemode): release tool calls left pending when an execution settles (#2614)"
+    },
+    {
+      "sha": "2c68a718334cb7bac102afc16a067f8ff19973ee",
+      "date": "2026-10-20T15:56:30+01:00",
+      "subject": "feat(agents): createAI transcribes with Deepgram Nova-3 (#2622)"
+    },
+    {
+      "sha": "5d6f5d66c9095b4871e810b6f72dd0c3206c7087",
+      "date": "2026-10-20T15:56:29+01:00",
+      "subject": "feat(agents): createAI takes an account id and API token in place of the binding (#2604)"
+    },
+    {
+      "sha": "e80a2013af633d76439d7fd67b909dee5e80b62d",
+      "date": "2026-10-20T15:30:41+01:00",
+      "subject": "fix(agents): forward pi-durable's input entry through PiHarness.submit (#2621)"
+    }
+  ],
+  "files": [
+    {
+      "status": "D",
+      "path": ".changeset/channels-ai-sdk-connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/channels-core.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/channels-experimental.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/channels-gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/channels-tui.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/channels-web-ai-sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/channels-web.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/streams-held-batch-wakeup.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/tui-access-login.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/gardener.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/gardener.lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/bug-intake/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/docs-helper/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/fix/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/mention-reply/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/opencode-upgrade/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/pi-upgrade/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/pr-review-fix/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gardener/tasks/triage/TASK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-bug-intake.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-docs-helper.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-fix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-mention-reply.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-opencode-upgrade.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-pi-upgrade.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-pr-review-fix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gardener-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxfmtrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/src/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/src/model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-think/test/model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/alarm-coordination.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/browser-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/browser-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/chat-shared-layer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/durable-streams-comparison.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/lifecycle-work-queue.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "design/rfc-chat-recovery-interrupted-attempts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/think.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/workspace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/browse-the-web.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/chat-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agents/fetch-the-web.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/get-current-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/harnesses/pi.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agents/harnesses/think.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/human-in-the-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/mcp-client.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/mcp-servers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/mcp-transports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/models-pi-ai.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/models.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/queue.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/scheduling.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agents/search-the-web.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agents/securing-mcp-servers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/codemode/runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/shell/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/shell/migrating-to-computer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/multi-chat.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/sub-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/think/tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/a2a/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-skills/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agents-as-tools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-chat/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/agents/assistant/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/agents/assistant/agents/my-assistant/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/agents/assistant/shared-mcp-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/assistant/agents/assistant/shared-workspace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/src/client.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/src/tests/shared-workspace.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/src/tests/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/src/tests/workspace-broadcast.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/assistant/src/use-chats.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/auth-agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/browser-live-view/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/browser-quick-actions/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/chat-sdk-messenger/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codemode-browser/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codemode-connectors/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codemode-mcp-openapi/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codemode-mcp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codemode/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/context-overflow-recovery/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/cross-domain/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/deploy-churn/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/dynamic-tools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/dynamic-workers-playground/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/dynamic-workers-playground/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/dynamic-workers/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/elevenlabs-starter/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/email-agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/github-webhook/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-client/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-elicitation-mrtr/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-elicitation/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-rpc-transport/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-server/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-worker-authenticated/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-worker-authenticated/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-worker-authenticated/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp-worker/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/mcp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/multi-ai-chat/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/channels/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/channels/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/channels/src/pi/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/channels/src/pi/channels-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/channels/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/dynamic-agents/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/env.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/src/codex-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/src/stress/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/src/stress/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/next/harnesses/codex/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/env.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/container/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/env.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/public/favicon.ico",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/src/client.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/src/protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/src/sockets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/src/styles.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/src/use-opencode-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/src/workspace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/next/harnesses/opencode/vite.config.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

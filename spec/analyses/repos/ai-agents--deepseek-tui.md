@@ -1,0 +1,207 @@
+# codewhale: change evidence
+
+Source: [codewhale](https://github.com/codewhale-hq/codewhale) · [Analysis](../../projects/ai-agents--deepseek-tui.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `9e19f03e68bf0ffaf4ea3d609def6b582db49f33`; commit date: 2026-10-03T08:13:51-07:00; review date: unknown; observed SHA: `eaff21a8b8e62e4693c69e71faa03db866820b9c`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/codewhale-hq/codewhale/compare/9e19f03e68bf0ffaf4ea3d609def6b582db49f33...eaff21a8b8e62e4693c69e71faa03db866820b9c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [eaff21a8b8e6](https://github.com/codewhale-hq/codewhale/commit/eaff21a8b8e62e4693c69e71faa03db866820b9c) 2026-10-27T09:08:28-07:00: docs(changelog): composer history honors CODEWHALE_HOME (Refs #7069, CW-7525)
+- [f75bb12d6213](https://github.com/codewhale-hq/codewhale/commit/f75bb12d62138eae111c5ff99e7764d2095b4861) 2026-10-27T09:08:26-07:00: fix(dependencies): a version probe that outlives its deadline means installed, not missing (CW-7525)
+- [3f4c4f2c3424](https://github.com/codewhale-hq/codewhale/commit/3f4c4f2c3424baf436d4e554bdf40c46994c32df) 2026-10-27T09:08:24-07:00: fix(action): require an explicit provider and pin the review workflow to v0.10.2 (CW-7525)
+- [8084ead09c29](https://github.com/codewhale-hq/codewhale/commit/8084ead09c29ca2f9c95e0f4289fbe57a3364389) 2026-10-27T09:08:05-07:00: fix(review): drop fixed per-tier output caps; reviews use the route's output limit (Refs #7067, CW-7525)
+- [e66998bec3ef](https://github.com/codewhale-hq/codewhale/commit/e66998bec3efc79703e082c933a0e55545407aa8) 2026-10-27T07:18:03-07:00: feat(uninstall): Windows receipts, package-manager commands and --purge-data (Refs #7091, CW-7525)
+- [3824cdea0c3a](https://github.com/codewhale-hq/codewhale/commit/3824cdea0c3ad2c2ae5044261594d2a910d973d8) 2026-10-27T13:54:56Z: feat(runtime): deliver scheduled messages as turns in an existing thread
+- [e1acc381ab40](https://github.com/codewhale-hq/codewhale/commit/e1acc381ab40e0d50a71b9f176a5175cf24fe8d7) 2026-10-27T05:17:53-07:00: feat(mcp): authorization-scoped catalog freshness and the Skills extension (CW-7547, CW-7545)
+- [17ebeb5f61f8](https://github.com/codewhale-hq/codewhale/commit/17ebeb5f61f8feb945eaf5e4c096c2cf670ed9c8) 2026-10-27T04:48:01-07:00: feat(extension-host): DSH sessions.flush through an acknowledged Engine checkpoint (CW-7054)
+- [57adfdfea67a](https://github.com/codewhale-hq/codewhale/commit/57adfdfea67a15dace754df60d0422ce2ea8de41) 2026-10-27T04:35:20-07:00: test(tui): align pricing and picker-action tests with the 7d2308ac81 provider fix
+- [c5cd7c87f004](https://github.com/codewhale-hq/codewhale/commit/c5cd7c87f004af4918dd710adb9e3ed784b18c9d) 2026-10-27T10:04:53Z: refactor(split): provider pre-cuts into codewhale-models and runtime (S22, CW-6129) [skip ci]
+- [19616707f8ba](https://github.com/codewhale-hq/codewhale/commit/19616707f8ba6c22f7a30a28116f5dfc644b1729) 2026-10-27T10:04:53Z: refactor(split): move canonical_action and tool contract helpers out of tui (S29/S30, CW-6129) [skip ci]
+- [ff1709578306](https://github.com/codewhale-hq/codewhale/commit/ff1709578306769f5d6e8104838f2c7d888dbdfd) 2026-10-27T10:04:53Z: refactor(split): extract codewhale-util from codewhale-tui (S14, CW-6129) [skip ci]
+- [25225ef0514c](https://github.com/codewhale-hq/codewhale/commit/25225ef0514c592c95d011b105c2bb66d39ee095) 2026-10-27T02:20:55-07:00: fix(extension-host): offer reviewed plugin tools on the first turn (CW-7054)
+- [0cf390f01eb7](https://github.com/codewhale-hq/codewhale/commit/0cf390f01eb7195c9ab38c3a3076432b5d07211f) 2026-10-27T01:38:37-07:00: feat(tui): change mode and permissions mid-turn; record steering in Unreleased (CW-7552)
+- [9ff7099b90b5](https://github.com/codewhale-hq/codewhale/commit/9ff7099b90b5f181657fc626c194809ecf14325c) 2026-10-27T01:04:30-07:00: feat(web): 0.10.3 home highlights and Unreleased changelog entries
+- [7d2308ac8199](https://github.com/codewhale-hq/codewhale/commit/7d2308ac8199f3d75594b77d6fd7acd8ec0395c6) 2026-10-27T01:01:36-07:00: fix(provider): switching provider lands on its current model; /model lists the route's roster
+- [3400ebb5c93b](https://github.com/codewhale-hq/codewhale/commit/3400ebb5c93baa8e74e0609f9b49119e66bf8a31) 2026-10-26T23:35:02-07:00: docs(changelog): record that remote control attaches again [skip ci]
+- [4cf2d2cfffd4](https://github.com/codewhale-hq/codewhale/commit/4cf2d2cfffd41f7ac27b56dbf01214793055102a) 2026-10-26T23:28:43-07:00: feat: integrate the verified 0.10.3 combined Engine batch [skip ci]
+- [5c3d461d8ae9](https://github.com/codewhale-hq/codewhale/commit/5c3d461d8ae9ade1d90e6f0109e2e43cfc19661e) 2026-10-27T14:26:50+08:00: feat(context): per-scope instruction budgets with visible truncation (#7086)
+- [363f03a2bb10](https://github.com/codewhale-hq/codewhale/commit/363f03a2bb103923de0f9bb62eaba1f1e22768d8) 2026-10-26T23:05:29-07:00: Merge main into fix/instruction-budget-6526
+- [ef30199b5053](https://github.com/codewhale-hq/codewhale/commit/ef30199b50531c10f1204ee30f631fd279526f75) 2026-10-27T05:22:28Z: fix(tui): resolve the state root before opening session-side state (#7097)
+- [b1a6191e79c1](https://github.com/codewhale-hq/codewhale/commit/b1a6191e79c17d183c080ce702d400719d644119) 2026-10-26T22:02:21-07:00: chore(changelog): sync crates/tui/CHANGELOG.md with root Unreleased
+- [7fe0cc2b4f41](https://github.com/codewhale-hq/codewhale/commit/7fe0cc2b4f41e45a71e833ffa302d60c4dc52613) 2026-10-26T03:16:03-07:00: docs(web): prepare simpler Computer Use onboarding (CW-6732) [skip ci]
+- [88772172b677](https://github.com/codewhale-hq/codewhale/commit/88772172b67715f92356d251c577949b2f32ba4c) 2026-10-26T01:08:48-07:00: docs(actions): distinguish account configuration from optional BYOK [skip ci]
+- [6f92f0d5e2af](https://github.com/codewhale-hq/codewhale/commit/6f92f0d5e2af427a07bd96f0ecdd0e5c6fc4e843) 2026-10-26T00:46:11-07:00: fix(action): accept OrcaRouter keys and recommend the free route [skip ci]
+- [81558024ca01](https://github.com/codewhale-hq/codewhale/commit/81558024ca0156c6fc13eafee9c1915246fa5ddc) 2026-10-26T00:30:04-07:00: feat(integrations): reuse Engine reviews and durable chat admission [skip ci]
+- [fb10884b4fb7](https://github.com/codewhale-hq/codewhale/commit/fb10884b4fb7749f4329725857c943eae6eb3642) 2026-10-25T21:24:26-07:00: feat(engine): opt into bounded answerless output-limit recovery [skip ci]
+- [6378f3b6b954](https://github.com/codewhale-hq/codewhale/commit/6378f3b6b954309cebabddd19650a69add592386) 2026-10-25T20:28:59-07:00: fix(docs): keep the OrcaRouter registry summary within its limit [skip ci]
+- [eea9f1ea4505](https://github.com/codewhale-hq/codewhale/commit/eea9f1ea45059936740066e7773139f29da5060e) 2026-10-25T20:05:07-07:00: docs(changelog): credit the verified NoNewPrivs container fix [skip ci]
+- [579c8d92b3f6](https://github.com/codewhale-hq/codewhale/commit/579c8d92b3f64e5ff216c51ba1074eb5f2a1e3f8) 2026-10-25T20:02:34-07:00: feat(tui): recommend the OrcaRouter partner offer in route pickers [skip ci]
+- [a129eb544aa2](https://github.com/codewhale-hq/codewhale/commit/a129eb544aa2c11f534971b92c619ea390f122d0) 2026-10-25T19:05:01-07:00: fix(tui): localize question footers and portable command feedback [skip ci]
+- [8c2bf6b49ed4](https://github.com/codewhale-hq/codewhale/commit/8c2bf6b49ed4e8a380a7c5e9e328c0e417fe5208) 2026-10-25T19:04:59-07:00: fix(tui): localize the seeded plan handoff to-do reminder [skip ci]
+
+## Changed paths (truncated)
+
+- M: `.cnb.yml`
+- M: `.config/nextest.toml`
+- M: `.gitattributes`
+- M: `.github/AUTHOR_MAP`
+- M: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- M: `.github/ISSUE_TEMPLATE/config.yml`
+- M: `.github/ISSUE_TEMPLATE/feature_request.yml`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- M: `.github/SECURITY.md`
+- A: `.github/scripts/d8-executable.test.js`
+- M: `.github/scripts/release-workflows.test.js`
+- M: `.github/scripts/update-homebrew-tap.sh`
+- M: `.github/workflows/cargo-deny.yml`
+- M: `.github/workflows/ci.yml`
+- D: `.github/workflows/claude-review.yml`
+- D: `.github/workflows/claude.yml`
+- M: `.github/workflows/codeql.yml`
+- M: `.github/workflows/codewhale-review.yml`
+- M: `.github/workflows/marketplace-sync.yml`
+- M: `.github/workflows/nightly.yml`
+- M: `.github/workflows/ohos.yml`
+- M: `.github/workflows/pet.yml`
+- M: `.github/workflows/release-artifacts.yml`
+- M: `.github/workflows/release-candidate.yml`
+- M: `.github/workflows/release-parity.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/security-audit.yml`
+- M: `.github/workflows/sync-cnb.yml`
+- A: `.github/workflows/sync-gitcode.yml`
+- M: `.github/workflows/telemetry-ingest.yml`
+- M: `.github/workflows/web.yml`
+- A: `.github/workflows/windows-arm64-export-probe.yml`
+- M: `.gitignore`
+- R076: `.winget/HunterBown.CodeWhale.yaml` (from `packaging/winget/Hmbown.CodeWhale.yaml`)
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- A: `DEPENDENCY_SECURITY.md`
+- D: `README.ar.md`
+- D: `README.ca.md`
+- D: `README.de.md`
+- D: `README.es-419.md`
+- D: `README.fr.md`
+- D: `README.hi.md`
+- D: `README.id.md`
+- D: `README.it.md`
+- D: `README.ja-JP.md`
+- D: `README.ko-KR.md`
+- M: `README.md`
+- D: `README.pl.md`
+- D: `README.pt-BR.md`
+- D: `README.ru.md`
+- D: `README.tr.md`
+- D: `README.uk.md`
+- D: `README.vi.md`
+- D: `README.zh-CN.md`
+- D: `README.zh-TW.md`
+- M: `SECURITY.md`
+- M: `THIRD_PARTY_NOTICES.md`
+- M: `action.yml`
+- D: `computer/snapshots/cloud-agent/Dockerfile`
+- D: `computer/snapshots/cloud-agent/README.md`
+- M: `config.example.toml`
+- A: `crates/agent-contract/Cargo.toml`
+- A: `crates/agent-contract/src/lib.rs`
+- R090: `crates/agent-contract/src/role.rs` (from `crates/tui/src/fleet/role.rs`)
+- R097: `crates/agent-contract/src/worker_profile.rs` (from `crates/tui/src/worker_profile.rs`)
+- M: `crates/agent/Cargo.toml`
+- M: `crates/agent/src/lib.rs`
+- M: `crates/app-server/Cargo.toml`
+- M: `crates/app-server/src/chat_completions.rs`
+- A: `crates/app-server/src/daemon_client.rs`
+- M: `crates/app-server/src/daemon_socket.rs`
+- A: `crates/app-server/src/daemon_windows.rs`
+- M: `crates/app-server/src/lib.rs`
+- A: `crates/app-server/src/thread_control.rs`
+- A: `crates/app-server/src/thread_control/tests.rs`
+- M: `crates/app-server/tests/daemon_socket.rs`
+- M: `crates/build-support/tests/build_script_relocation.rs`
+- M: `crates/cli/Cargo.toml`
+- M: `crates/cli/src/cloud.rs`
+- A: `crates/cli/src/cloud/computer.rs`
+- M: `crates/cli/src/cloud/machine.rs`
+- M: `crates/cli/src/cloud/tests.rs`
+- M: `crates/cli/src/cloud/work.rs`
+- M: `crates/cli/src/config_bundles.rs`
+- M: `crates/cli/src/dispatch.rs`
+- A: `crates/cli/src/hashing.rs`
+- M: `crates/cli/src/lib.rs`
+- M: `crates/cli/src/main.rs`
+- M: `crates/cli/src/update.rs`
+- A: `crates/cli/src/update/compiled_host.rs`
+- A: `crates/cli/src/update/uninstall.rs`
+- M: `crates/cli/tests/help_dispatch.rs`
+- M: `crates/cli/tests/mcp_server_proxy.rs`
+- M: `crates/cli/tests/model_resolve_provenance.rs`
+- A: `crates/cli/tests/owner_crash_reentry.rs`
+- M: `crates/cloud-facts/Cargo.toml`
+- M: `crates/command-contract/Cargo.toml`
+- A: `crates/command-contract/src/config.rs`
+- A: `crates/command-contract/src/config_policy.rs`
+- R100: `crates/command-contract/src/elapsed.rs` (from `crates/runtime/src/elapsed.rs`)
+- M: `crates/command-contract/src/facets.rs`
+- M: `crates/command-contract/src/facets/debug_operations.rs`
+- M: `crates/command-contract/src/facets/diagnostics_tools.rs`
+- M: `crates/command-contract/src/handler.rs`
+- M: `crates/command-contract/src/lib.rs`
+- A: `crates/command-contract/src/metrics.rs`
+- R090: `crates/command-contract/src/money.rs` (from `crates/tui/src/diagnostics_reports/money.rs`)
+- A: `crates/command-contract/src/navigation.rs`
+- M: `crates/command-contract/src/outcome.rs`
+- M: `crates/command-contract/src/tests.rs`
+- A: `crates/command-contract/src/tool_outputs.rs`
+- M: `crates/command-contract/src/types.rs`
+- A: `crates/commands/Cargo.toml`
+- R097: `crates/commands/src/debug/balance.rs` (from `crates/tui/src/commands/groups/debug/balance.rs`)
+- R099: `crates/commands/src/debug/cache.rs` (from `crates/tui/src/commands/groups/debug/cache.rs`)
+- R099: `crates/commands/src/debug/cache_format.rs` (from `crates/tui/src/commands/groups/debug/cache_format.rs`)
+- R084: `crates/commands/src/debug/change.rs` (from `crates/tui/src/commands/groups/debug/change.rs`)
+- R077: `crates/commands/src/debug/mod.rs` (from `crates/tui/src/commands/groups/debug/mod.rs`)
+- R067: `crates/commands/src/debug/operations_tests.rs` (from `crates/tui/src/commands/groups/debug/operations_tests.rs`)
+- R100: `crates/commands/src/debug/portable_tests.rs` (from `crates/tui/src/commands/groups/debug/portable_tests.rs`)
+- R099: `crates/commands/src/debug/preview_request.rs` (from `crates/tui/src/commands/groups/debug/preview_request.rs`)
+- R098: `crates/commands/src/debug/receipts.rs` (from `crates/tui/src/commands/groups/debug/receipts.rs`)
+- R099: `crates/commands/src/debug/tokens.rs` (from `crates/tui/src/commands/groups/debug/tokens.rs`)
+- R098: `crates/commands/src/debug/tool_inspection.rs` (from `crates/tui/src/commands/groups/debug/tool_inspection.rs`)
+- R066: `crates/commands/src/debug/undo.rs` (from `crates/tui/src/commands/groups/debug/undo.rs`)
+- R100: `crates/commands/src/diagnostics_reports/context.rs` (from `crates/tui/src/diagnostics_reports/context.rs`)
+- R094: `crates/commands/src/diagnostics_reports/mod.rs` (from `crates/tui/src/diagnostics_reports/mod.rs`)
+- A: `crates/commands/src/diagnostics_reports/money.rs`
+- R098: `crates/commands/src/diagnostics_reports/receipts.rs` (from `crates/tui/src/diagnostics_reports/receipts.rs`)
+- R100: `crates/commands/src/diagnostics_reports/tool_snapshot.rs` (from `crates/tui/src/diagnostics_reports/tool_snapshot.rs`)
+- A: `crates/commands/src/lib.rs`
+- M: `crates/config/Cargo.toml`
+- M: `crates/config/assets/catalog_corrections.json`
+- M: `crates/config/assets/models_dev.bundled.json`
+- M: `crates/config/assets/provider_descriptors.json`
+- A: `crates/config/build.rs`
+- M: `crates/config/src/app_mode.rs`
+- M: `crates/config/src/auto_model.rs`
+- M: `crates/config/src/catalog.rs`
+- M: `crates/config/src/catalog/configured.rs`
+- M: `crates/config/src/catalog/corrections.rs`
+- A: `crates/config/src/catalog/reviewed.rs`
+- M: `crates/config/src/catalog/tests.rs`
+- M: `crates/config/src/cloud_facts/catalog_patch.rs`
+- M: `crates/config/src/cloud_facts/provenance.rs`
+- M: `crates/config/src/cloud_facts/tests.rs`
+- M: `crates/config/src/config_document.rs`
+- M: `crates/config/src/credentials.rs`
+- M: `crates/config/src/descriptors.rs`
+- A: `crates/config/src/extension_host.rs`
+- M: `crates/config/src/external_credentials.rs`
+- A: `crates/config/src/hooks.rs`
+- A: `crates/config/src/instruction_budget.rs`
+- M: `crates/config/src/legacy_root.rs`
+- M: `crates/config/src/lib.rs`
+- M: `crates/config/src/model_reference.rs`

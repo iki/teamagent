@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--anton",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/mindsdb/anton",
+  "report": "spec/projects/ai-agents--anton.md",
+  "analyzedSha": "6240f81afd3c113286dce8dc28e018ac65b0082c",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-28T10:40:18+13:00",
+  "observedSha": "e0b568bedb3a5fc99ac67ff1010452ec0507739e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e0b568bedb3a5fc99ac67ff1010452ec0507739e",
+      "date": "2026-10-21T12:59:14-07:00",
+      "subject": "Merge pull request #625 from mindsdb/fix/eng-3283-brief-language-main"
+    },
+    {
+      "sha": "7fd0836924f7fab99a74a818f20b16cc89a6121b",
+      "date": "2026-10-21T12:36:50-07:00",
+      "subject": "fix(generate_artifact): keep old checkpoints matching English calls; repeat the language when confirming (ENG-3283)"
+    },
+    {
+      "sha": "5a2f7554ad9d289246652ed4714919b9d5b4435a",
+      "date": "2026-10-21T11:54:24-07:00",
+      "subject": "fix(generate_artifact): page and backend language last in their prompts; review fixes (ENG-3283)"
+    },
+    {
+      "sha": "cb01cb3e8a16b140ea319ec3823c13c2be21dc80",
+      "date": "2026-10-21T11:54:24-07:00",
+      "subject": "fix(generate_artifact): name the language in every step and drop \"translate\" from the brief (ENG-3283)"
+    },
+    {
+      "sha": "1e3fcf00cfa907dfdec279d49325ef798c59f903",
+      "date": "2026-10-21T11:54:24-07:00",
+      "subject": "refactor(generate_artifact): state the language rule once in the step header (ENG-3283)"
+    },
+    {
+      "sha": "306e88f6deff227cc920beb2c5a3ac1bf3788012",
+      "date": "2026-10-21T11:54:23-07:00",
+      "subject": "fix(generate_artifact): require user_language and never fall back to the request's language (ENG-3283)"
+    },
+    {
+      "sha": "95b19d94148fb6683ce9ec4db0ea2ed5a6f87f87",
+      "date": "2026-10-21T11:54:03-07:00",
+      "subject": "fix(generate_artifact): write questions, brief, PRD and spec in the user's stated language (ENG-3283)"
+    },
+    {
+      "sha": "f937c6adaf62c51d1f4c2241ef4fdf04e9cdfee2",
+      "date": "2026-10-21T09:01:01-07:00",
+      "subject": "Merge pull request #623 from mindsdb/fix/eng-3539-claims-for-checked-views"
+    },
+    {
+      "sha": "ec6634ebcbdab6623bd6851cb0aa161f41c8d16a",
+      "date": "2026-10-21T01:23:40-07:00",
+      "subject": "fix(artifacts): claim a browser check only for the views it covered (ENG-3539)"
+    },
+    {
+      "sha": "1f586f9566e738dfea29d2715096cafcb2515633",
+      "date": "2026-10-20T20:30:30-07:00",
+      "subject": "Merge pull request #614 from mindsdb/fix/eng-3539-render-check"
+    },
+    {
+      "sha": "f181efcf497455a81b48fbb6469ce5c5080427c2",
+      "date": "2026-10-20T20:17:18-07:00",
+      "subject": "Merge pull request #615 from mindsdb/feat/eng-3543-memory-read-count"
+    },
+    {
+      "sha": "1b55efa5c68b71add75e3eabbf6b619647498e00",
+      "date": "2026-10-20T18:43:17-07:00",
+      "subject": "fix(artifacts): check only the pages a cell changed on desktop, cap embedded assets, separate the end line"
+    },
+    {
+      "sha": "ad6643611cdd3d429592848b8b5225aea160706a",
+      "date": "2026-10-20T15:51:16-07:00",
+      "subject": "fix(artifacts): keep the approval card whole and close the browser check's gaps"
+    },
+    {
+      "sha": "8aceae4a699390cee16249e11841c444bbf7b234",
+      "date": "2026-10-20T05:53:59-07:00",
+      "subject": "test(artifacts): compare the hosts a resource warning quotes, not substrings"
+    },
+    {
+      "sha": "9b953d64f78ac7c4506c8fbd95407e067df6b7bf",
+      "date": "2026-10-20T04:25:15-07:00",
+      "subject": "Merge commit '7e3828fe' into feat/eng-3543-memory-read-count"
+    },
+    {
+      "sha": "7e3828feca08536aafb66a264312a509d5e7b3d7",
+      "date": "2026-10-20T03:13:34-07:00",
+      "subject": "docs(artifacts): say the render-check service, not agent code, runs next to anton"
+    },
+    {
+      "sha": "c1d197b674d9f37464d547b2b63f0d07b8c1d4f7",
+      "date": "2026-10-20T02:33:30-07:00",
+      "subject": "test(artifacts): let the lint walk's page-check double take the screenshot flag"
+    },
+    {
+      "sha": "ece983215c10d7ea493f01e7f052c47f1e503937",
+      "date": "2026-10-20T02:26:03-07:00",
+      "subject": "fix(artifacts): keep the caught-error rule off expected failures and say what it buys"
+    },
+    {
+      "sha": "a4113ad445a42d4798cdca9b8d33fbb4336b8026",
+      "date": "2026-10-20T02:24:38-07:00",
+      "subject": "fix(artifacts): ask the render-check service for no screenshot once the model refused one"
+    },
+    {
+      "sha": "a2ec7e885fcc7a74551e566863b4d71e6f07c735",
+      "date": "2026-10-20T02:23:30-07:00",
+      "subject": "fix(session): turn render screenshots off only once a request goes through without them"
+    },
+    {
+      "sha": "52040c4e9b36187c7ae58b9ad4ca0b931232d4a3",
+      "date": "2026-10-20T02:16:32-07:00",
+      "subject": "docs(artifacts): describe where the render-check service runs without a repository name"
+    },
+    {
+      "sha": "e1faff14d6cfafe7e8c4eb1593103c6e7b5fa2ac",
+      "date": "2026-10-20T01:58:17-07:00",
+      "subject": "fix(memory): count only the rules and profile lines the prompt shows (ENG-3543)"
+    },
+    {
+      "sha": "184f6e6830ced44aca6732545b1d961dc23f65cc",
+      "date": "2026-10-19T23:58:02-07:00",
+      "subject": "fix(session): resend without render screenshots when the model refuses images"
+    },
+    {
+      "sha": "9fdc8c0a3976a3f9f45232886fcb3a0f552351bb",
+      "date": "2026-10-19T23:57:55-07:00",
+      "subject": "fix(artifacts): have a caught view error logged where the browser check sees it"
+    },
+    {
+      "sha": "2830e589e6dd453a8049958a3cb9eb65e4728988",
+      "date": "2026-10-19T22:52:21-07:00",
+      "subject": "fix(artifacts): harden the render-check reads and keep every page's result"
+    },
+    {
+      "sha": "93a60f83a6fcb48988b1f9e99a666282463782ef",
+      "date": "2026-10-19T22:52:21-07:00",
+      "subject": "fix(scratchpad): store `exec` on a call that left out `action`"
+    },
+    {
+      "sha": "42afe915e8f5433c34adeed501423741d892c008",
+      "date": "2026-10-19T22:52:16-07:00",
+      "subject": "fix(write-check): keep a written-out method inert on the approval card"
+    },
+    {
+      "sha": "223dd7363a1a1205c2cf93d78df6cc4f09d54f9d",
+      "date": "2026-10-19T22:02:47-07:00",
+      "subject": "feat(memory): count the learned memory each turn puts in front of the model (ENG-3543)"
+    },
+    {
+      "sha": "1b05d52811929a87e1b876381265d2c410e170d5",
+      "date": "2026-10-19T21:59:09-07:00",
+      "subject": "feat(artifacts): load pages through the render-check service so a sandboxed agent sees what it built"
+    },
+    {
+      "sha": "56df628fee7006e2c236403fc2d4183592659f04",
+      "date": "2026-10-19T21:58:54-07:00",
+      "subject": "fix(generate_artifact): check page resources against the preview's policy by host and pin the CDN versions"
+    },
+    {
+      "sha": "c4b007db5379272785795f0e3b8a71acf58eb9be",
+      "date": "2026-10-19T21:58:14-07:00",
+      "subject": "fix(write-check): say a run-time method or address in words on the approval card"
+    },
+    {
+      "sha": "6de14c6ac25ad5aa9ea2cc17b6f1a93025d1ca8a",
+      "date": "2026-10-19T21:57:51-07:00",
+      "subject": "fix(list_artifacts): accept `slug` in `fields` as a no-op"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/analytics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/chat_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/chat_ui.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/cloud_turn/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/cloud_turn/contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/cloud_turn/elicitor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/cloud_turn/launcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/cloud_turn/resident.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/cloud_turn/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/cloud_turn/stdin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/commands/datasource/verify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/commands/goal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/commands/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/commands/share.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/config/settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/artifacts/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/artifacts/backend_launcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/artifacts/html_lint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/artifacts/internal_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/artifacts/listing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/artifacts/office_open_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/artifacts/render_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/artifacts/report_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/artifacts/store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/artifacts/xlsx_office_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/backends/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/backends/landlock_launcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/backends/local.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/backends/manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/backends/remote.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/backends/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/backends/scratchpad_boot.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/backends/wire.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/datasources/data_vault.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/datasources/datasource_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/interaction/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/interaction/elicit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/anthropic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/llm/jev.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/llm/liveness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/openai.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/prompt_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/llm/tracing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/mcp/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/mcp/access.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/mcp/names.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/mcp/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/memory/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/memory/builtin_skills/build-fullstack-backend/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/memory/builtin_skills/build-html-dashboard/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/memory/builtin_skills/cowork-product/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/memory/builtin_skills/cowork-product/SOURCES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/memory/cerebellum.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/memory/cortex.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/memory/hippocampus.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/root_cause.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/tools/file_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/attachments.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/debug_trace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/discovery/brief.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/discovery/checkpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/discovery/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/discovery/orchestrator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/discovery/prd.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/discovery/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/orchestrator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/progress.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/sub_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/generate_artifact/verifiers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/progress.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/recall_skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/skill_format.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/tools/text_file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/tool_defs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/tool_handlers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/tools/web_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/turn_cost.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/core/utils/scratchpad.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/utils/write_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/core/utils/yaml_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/memory/history_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/memory/manage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/minds_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/publish_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/publisher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/utils/clipboard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/utils/datasources.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "anton/utils/nofollow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "anton/workspace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/image_smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/developer/brain-mapping.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/developer/cerebellum-and-acc.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/developer/llm-dispatch.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/developer/memory-systems.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/developer/scratchpad-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/developer/tool-system.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/start/pick-a-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/_turn_rows_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/cloud_turn/test_model_wait_tick.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cloud_turn_fake_entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/cloud_turn_resident_entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/core/mcp/test_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/core/mcp/test_names.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/core/mcp/test_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/scenarios/test_circuit_breaker_evasion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/scenarios/test_loop_safety.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/scenarios/test_model_call_deadline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/stub_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/test_stub_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_attachments.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_artifact_brief_result.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_artifact_content_walk.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_contract_lock.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_fsm_prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_fsm_runloop.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_artifact_listing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_orchestrator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_pipeline_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_prd_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_prefix_stability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_progress.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_spec_budget.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_spend_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_artifact_store_find.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_sub_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_turn_tracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_verify_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifact_verify_frontend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_ask_user.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_launcher_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_bad_request_reaches_the_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_build_chat_session_google_drive.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_builtin_skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_cancel_during_a_cell.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_cerebellum.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_cerebellum_e2e.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

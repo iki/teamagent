@@ -1,0 +1,207 @@
+# design.impeccable: change evidence
+
+Source: [design.impeccable](https://github.com/pbakaus/impeccable) · [Analysis](../../projects/ai-skills--design.impeccable.md) · [skills](../../skills.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `e103efe779e2dd01274dabae83531fef00bf2563`; commit date: 2026-10-03T00:25:32Z; review date: unknown; observed SHA: `d34c87e1a00989ae8dbdd7f6b30b70f23319e860`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/pbakaus/impeccable/compare/e103efe779e2dd01274dabae83531fef00bf2563...d34c87e1a00989ae8dbdd7f6b30b70f23319e860). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [d34c87e1a009](https://github.com/pbakaus/impeccable/commit/d34c87e1a00989ae8dbdd7f6b30b70f23319e860) 2026-10-27T00:31:56-07:00: Read the contrast ground a reader sees under parked faces, scrims, dot grids and parked underlines; report ghost words as advisory (#1201)
+- [0dd67516c638](https://github.com/pbakaus/impeccable/commit/0dd67516c6387706e7b7e7f47f1c715efe6947c6) 2026-10-26T23:25:35-07:00: Report a low-contrast colour pair and a nested-cards panel once, with a count (#1200)
+- [0468fc19467e](https://github.com/pbakaus/impeccable/commit/0468fc19467ef2407bb71c7f7dec6f2e47611a99) 2026-10-26T22:57:45-07:00: Page-level premises: the white canvas, script text, pseudo marquees, rings, blinks, flat fades and unloaded faces (#1199)
+- [2565cf8ebaed](https://github.com/pbakaus/impeccable/commit/2565cf8ebaed3548adeaf33218656b437101fd1d) 2026-10-26T22:26:07-07:00: Read spacers, page frames, running bands, list separators, card badges and hidden headings as a visitor sees them (#1198)
+- [3fd443d6828c](https://github.com/pbakaus/impeccable/commit/3fd443d6828c8b9fefed4021e2d10528f6d7ee93) 2026-10-26T21:33:58-07:00: Read more product mockups by their mechanical cues, and SVG text at its drawn size (#1197)
+- [bc9a11c96e01](https://github.com/pbakaus/impeccable/commit/bc9a11c96e015ce323f9c7de2b89a4e36e5a6326) 2026-10-26T21:33:41-07:00: Wait out unnamed intros, and note elements that move during the evidence screenshot (#1196)
+- [414603bf14c7](https://github.com/pbakaus/impeccable/commit/414603bf14c7a344edb466bb1f85690c77ce8b7d) 2026-10-26T16:38:02-07:00: Release 4.8.0 (#1192)
+- [f6a8ca9053d8](https://github.com/pbakaus/impeccable/commit/f6a8ca9053d8d35156f74b2d07523291ed6d192f) 2026-10-26T23:30:22Z: Sync generated provider output
+- [a08cb0a7dcd4](https://github.com/pbakaus/impeccable/commit/a08cb0a7dcd44fddb080b45a138a328ffed2c4cb) 2026-10-26T16:29:39-07:00: Engine 0.1.18 (#1191)
+- [ade37830fee3](https://github.com/pbakaus/impeccable/commit/ade37830fee364c1457f9ada479470296f80dbbb) 2026-10-26T13:17:31-07:00: Move the e2e steer marker out of the reserved data-impeccable-* namespace (#1163)
+- [989c484c091d](https://github.com/pbakaus/impeccable/commit/989c484c091d26f10fa102767eefc0da2e62ec67) 2026-10-26T10:17:18-07:00: Bump Anthropic SDK and migrate live sampling requests (#1188)
+- [7d9be7a52139](https://github.com/pbakaus/impeccable/commit/7d9be7a52139aad722c20d3f08852487828a879e) 2026-10-26T10:11:12-07:00: Bump grouped Bun development dependencies (#1187)
+- [bce6e0fbfa83](https://github.com/pbakaus/impeccable/commit/bce6e0fbfa836a13902a9632d6e1f042747e0bf7) 2026-10-26T10:03:31-07:00: Bump Swatinem/rust-cache to 2.9.3 (#1189)
+- [f75ee2a201ce](https://github.com/pbakaus/impeccable/commit/f75ee2a201cefd39c3bd54cf0ac1f141d82119e2) 2026-10-27T00:08:00+08:00: Fix: detect Replit Agent and label its .agents install (#1019) (#1186)
+- [6743a347db62](https://github.com/pbakaus/impeccable/commit/6743a347db6229848348024388033e830ae4af42) 2026-10-26T10:40:11Z: Sync generated provider output
+- [7ddc958a40ec](https://github.com/pbakaus/impeccable/commit/7ddc958a40ecd58a622eecc1302c69a14a83ec72) 2026-10-26T18:39:32+08:00: Add Devin provider support (#638) (#1183)
+- [5c2d1be3fac9](https://github.com/pbakaus/impeccable/commit/5c2d1be3fac95bd1de722cc9db027a0b0efeefe7) 2026-10-26T18:13:39+08:00: Fix: straggler sees a text-wrap: pretty the browser dropped (#1136) (#1181)
+- [43cb7c6c06e8](https://github.com/pbakaus/impeccable/commit/43cb7c6c06e8c0f565b30dcc780a34f1ef419023) 2026-10-26T18:13:08+08:00: Refuse a skill or CLI release when the engine source moved past its tag (#813) (#1179)
+- [63d672f178b7](https://github.com/pbakaus/impeccable/commit/63d672f178b70e96b93d81ec43be4448fd3c345a) 2026-10-26T10:05:41Z: Sync generated provider output
+- [67d47d4dd27f](https://github.com/pbakaus/impeccable/commit/67d47d4dd27f46a85cee93df8baa38dd6dc652ea) 2026-10-26T18:04:37+08:00: Fix: verify engine downloads against a committed checksum manifest (#813) (#1180)
+- [e38dfd464bea](https://github.com/pbakaus/impeccable/commit/e38dfd464bea8cd8ce565f8661fcc43a3bb1b2c5) 2026-10-26T09:46:43Z: Sync generated provider output
+- [c0adebe115e1](https://github.com/pbakaus/impeccable/commit/c0adebe115e18f0b1bd2db4f15f50d37f1ed9c26) 2026-10-26T17:46:02+08:00: Fix: size the direction hand by the verdicts, never a requested count (#818) (#1182)
+- [3671d50f0ac9](https://github.com/pbakaus/impeccable/commit/3671d50f0ac9a662ce0615e85a256110c9cd720b) 2026-10-26T02:04:24+08:00: Fix: resolve project tokens from the file's own package first (#1164) (#1173)
+- [658b4ce29421](https://github.com/pbakaus/impeccable/commit/658b4ce2942171ed5b3b3bec7e9d99456ba86e5e) 2026-10-26T00:19:54+08:00: Fix: row-stripe side-tab misses important resets and border stripes in URL scans (#1164) (#1172)
+- [4fc2f83e1c87](https://github.com/pbakaus/impeccable/commit/4fc2f83e1c8710dba772bfd4523d0efab57737b6) 2026-10-25T22:28:14+08:00: Fix: judge only plain radius lengths, not math-function operands (#1168) (#1171)
+- [9fa16a06d895](https://github.com/pbakaus/impeccable/commit/9fa16a06d8957fde5687984629fd028c9f2abf10) 2026-10-25T21:40:40+08:00: Fix: publish engine releases draft-first with no upload fallback (#813) (#1170)
+- [936867543ac2](https://github.com/pbakaus/impeccable/commit/936867543ac2576920d663cc9803597f6044f3ac) 2026-10-23T18:46:19-07:00: Release 4.7.1 (#1159)
+- [bdeeeec72342](https://github.com/pbakaus/impeccable/commit/bdeeeec723426d4dc2945e420e849e98abe6cda2) 2026-10-24T00:44:25Z: Sync generated provider output
+- [8d8960c749b8](https://github.com/pbakaus/impeccable/commit/8d8960c749b89a97303bc7c6eaf53aeb6e65f4d2) 2026-10-23T17:43:30-07:00: Engine 0.1.17 (#1158)
+- [6e1072d107ff](https://github.com/pbakaus/impeccable/commit/6e1072d107ffda0df296f22c7c0829c25a788063) 2026-10-23T17:38:17-07:00: Row stripes: follow-ups from #1133's review (#1156)
+- [2e3cdf0269cf](https://github.com/pbakaus/impeccable/commit/2e3cdf0269cf51141c3083e93997208ef7505110) 2026-10-23T17:06:47-07:00: Report a side stripe on a status row or cell as a side tab (#1133)
+- [2bb6563e570f](https://github.com/pbakaus/impeccable/commit/2bb6563e570ffc266d1fccec24a778745c143e52) 2026-10-23T15:33:25-07:00: low-contrast: a stepper's resting state is advisory, a parked reveal is not at rest (#1148)
+
+## Changed paths (truncated)
+
+- M: `.agent/skills/impeccable/SKILL.md`
+- M: `.agent/skills/impeccable/reference/adapt.md`
+- M: `.agent/skills/impeccable/reference/adapt.native.md`
+- M: `.agent/skills/impeccable/reference/android.md`
+- M: `.agent/skills/impeccable/reference/audit.md`
+- M: `.agent/skills/impeccable/reference/audit.native.md`
+- M: `.agent/skills/impeccable/reference/component-review.md`
+- M: `.agent/skills/impeccable/reference/craft-floor.md`
+- M: `.agent/skills/impeccable/reference/critique.md`
+- M: `.agent/skills/impeccable/reference/degraded/asset-producer.md`
+- M: `.agent/skills/impeccable/reference/degraded/finish-reviewer.md`
+- M: `.agent/skills/impeccable/reference/distill.md`
+- M: `.agent/skills/impeccable/reference/doctor.md`
+- M: `.agent/skills/impeccable/reference/document.md`
+- M: `.agent/skills/impeccable/reference/extract.md`
+- M: `.agent/skills/impeccable/reference/harden.md`
+- M: `.agent/skills/impeccable/reference/hooks.md`
+- M: `.agent/skills/impeccable/reference/init.md`
+- M: `.agent/skills/impeccable/reference/live.md`
+- M: `.agent/skills/impeccable/reference/mode-operate.md`
+- M: `.agent/skills/impeccable/reference/new-work.md`
+- M: `.agent/skills/impeccable/reference/onboard.md`
+- M: `.agent/skills/impeccable/reference/optimize.md`
+- M: `.agent/skills/impeccable/reference/overdrive.md`
+- M: `.agent/skills/impeccable/reference/quieter.md`
+- M: `.agent/skills/impeccable/reference/typeset.md`
+- M: `.agent/skills/impeccable/reference/visualize.md`
+- M: `.agent/skills/impeccable/scripts/VERSION`
+- M: `.agent/skills/impeccable/scripts/command-metadata.json`
+- A: `.agent/skills/impeccable/scripts/engine-checksums.txt`
+- M: `.agent/skills/impeccable/scripts/impeccable`
+- M: `.agent/skills/impeccable/scripts/impeccable.cmd`
+- M: `.agent/skills/impeccable/scripts/live-browser-dom.js`
+- M: `.agent/skills/impeccable/scripts/live-browser-ignores.js`
+- M: `.agent/skills/impeccable/scripts/live-browser-session.js`
+- M: `.agent/skills/impeccable/scripts/live-browser.js`
+- M: `.agents/skills/impeccable/SKILL.md`
+- M: `.agents/skills/impeccable/agents/impeccable_asset_producer.toml`
+- M: `.agents/skills/impeccable/agents/impeccable_finish_reviewer.toml`
+- M: `.agents/skills/impeccable/agents/openai.yaml`
+- M: `.agents/skills/impeccable/reference/adapt.md`
+- M: `.agents/skills/impeccable/reference/adapt.native.md`
+- M: `.agents/skills/impeccable/reference/android.md`
+- M: `.agents/skills/impeccable/reference/audit.md`
+- M: `.agents/skills/impeccable/reference/audit.native.md`
+- M: `.agents/skills/impeccable/reference/bolder.md`
+- M: `.agents/skills/impeccable/reference/component-review.md`
+- M: `.agents/skills/impeccable/reference/craft-floor.md`
+- M: `.agents/skills/impeccable/reference/critique.md`
+- M: `.agents/skills/impeccable/reference/degraded/asset-producer.md`
+- M: `.agents/skills/impeccable/reference/degraded/finish-reviewer.md`
+- M: `.agents/skills/impeccable/reference/distill.md`
+- M: `.agents/skills/impeccable/reference/doctor.md`
+- M: `.agents/skills/impeccable/reference/document.md`
+- M: `.agents/skills/impeccable/reference/extract.md`
+- M: `.agents/skills/impeccable/reference/generate.md`
+- M: `.agents/skills/impeccable/reference/harden.md`
+- M: `.agents/skills/impeccable/reference/hooks.md`
+- M: `.agents/skills/impeccable/reference/init.md`
+- M: `.agents/skills/impeccable/reference/live.md`
+- M: `.agents/skills/impeccable/reference/mode-operate.md`
+- M: `.agents/skills/impeccable/reference/new-work.md`
+- M: `.agents/skills/impeccable/reference/onboard.md`
+- M: `.agents/skills/impeccable/reference/optimize.md`
+- M: `.agents/skills/impeccable/reference/overdrive.md`
+- M: `.agents/skills/impeccable/reference/quieter.md`
+- M: `.agents/skills/impeccable/reference/typeset.md`
+- M: `.agents/skills/impeccable/reference/visualize.md`
+- M: `.agents/skills/impeccable/scripts/VERSION`
+- M: `.agents/skills/impeccable/scripts/command-metadata.json`
+- A: `.agents/skills/impeccable/scripts/engine-checksums.txt`
+- M: `.agents/skills/impeccable/scripts/impeccable`
+- M: `.agents/skills/impeccable/scripts/impeccable.cmd`
+- M: `.agents/skills/impeccable/scripts/live-browser-dom.js`
+- M: `.agents/skills/impeccable/scripts/live-browser-ignores.js`
+- M: `.agents/skills/impeccable/scripts/live-browser-session.js`
+- M: `.agents/skills/impeccable/scripts/live-browser.js`
+- M: `.claude-plugin/marketplace.json`
+- M: `.claude-plugin/plugin.json`
+- M: `.claude/agents/impeccable-asset-producer.md`
+- M: `.claude/agents/impeccable-finish-reviewer.md`
+- M: `.claude/skills/impeccable/SKILL.md`
+- M: `.claude/skills/impeccable/reference/adapt.md`
+- M: `.claude/skills/impeccable/reference/adapt.native.md`
+- M: `.claude/skills/impeccable/reference/android.md`
+- M: `.claude/skills/impeccable/reference/audit.md`
+- M: `.claude/skills/impeccable/reference/audit.native.md`
+- M: `.claude/skills/impeccable/reference/bolder.md`
+- M: `.claude/skills/impeccable/reference/component-review.md`
+- M: `.claude/skills/impeccable/reference/craft-floor.md`
+- M: `.claude/skills/impeccable/reference/critique.md`
+- M: `.claude/skills/impeccable/reference/degraded/asset-producer.md`
+- M: `.claude/skills/impeccable/reference/degraded/finish-reviewer.md`
+- M: `.claude/skills/impeccable/reference/distill.md`
+- M: `.claude/skills/impeccable/reference/doctor.md`
+- M: `.claude/skills/impeccable/reference/document.md`
+- M: `.claude/skills/impeccable/reference/extract.md`
+- M: `.claude/skills/impeccable/reference/generate.md`
+- M: `.claude/skills/impeccable/reference/harden.md`
+- M: `.claude/skills/impeccable/reference/hooks.md`
+- M: `.claude/skills/impeccable/reference/init.md`
+- M: `.claude/skills/impeccable/reference/live.md`
+- M: `.claude/skills/impeccable/reference/mode-operate.md`
+- M: `.claude/skills/impeccable/reference/new-work.md`
+- M: `.claude/skills/impeccable/reference/onboard.md`
+- M: `.claude/skills/impeccable/reference/optimize.md`
+- M: `.claude/skills/impeccable/reference/overdrive.md`
+- M: `.claude/skills/impeccable/reference/quieter.md`
+- M: `.claude/skills/impeccable/reference/typeset.md`
+- M: `.claude/skills/impeccable/reference/visualize.md`
+- M: `.claude/skills/impeccable/scripts/VERSION`
+- M: `.claude/skills/impeccable/scripts/command-metadata.json`
+- A: `.claude/skills/impeccable/scripts/engine-checksums.txt`
+- M: `.claude/skills/impeccable/scripts/impeccable`
+- M: `.claude/skills/impeccable/scripts/impeccable.cmd`
+- M: `.claude/skills/impeccable/scripts/live-browser-dom.js`
+- M: `.claude/skills/impeccable/scripts/live-browser-ignores.js`
+- M: `.claude/skills/impeccable/scripts/live-browser-session.js`
+- M: `.claude/skills/impeccable/scripts/live-browser.js`
+- M: `.codex/hooks.json`
+- M: `.cursor/agents/impeccable-asset-producer.md`
+- M: `.cursor/agents/impeccable-finish-reviewer.md`
+- M: `.cursor/hooks.json`
+- M: `.cursor/skills/impeccable/SKILL.md`
+- M: `.cursor/skills/impeccable/reference/adapt.md`
+- M: `.cursor/skills/impeccable/reference/adapt.native.md`
+- M: `.cursor/skills/impeccable/reference/android.md`
+- M: `.cursor/skills/impeccable/reference/audit.md`
+- M: `.cursor/skills/impeccable/reference/audit.native.md`
+- M: `.cursor/skills/impeccable/reference/component-review.md`
+- M: `.cursor/skills/impeccable/reference/craft-floor.md`
+- M: `.cursor/skills/impeccable/reference/critique.md`
+- M: `.cursor/skills/impeccable/reference/degraded/asset-producer.md`
+- M: `.cursor/skills/impeccable/reference/degraded/finish-reviewer.md`
+- M: `.cursor/skills/impeccable/reference/distill.md`
+- M: `.cursor/skills/impeccable/reference/doctor.md`
+- M: `.cursor/skills/impeccable/reference/document.md`
+- M: `.cursor/skills/impeccable/reference/extract.md`
+- M: `.cursor/skills/impeccable/reference/harden.md`
+- M: `.cursor/skills/impeccable/reference/hooks.md`
+- M: `.cursor/skills/impeccable/reference/init.md`
+- M: `.cursor/skills/impeccable/reference/live.md`
+- M: `.cursor/skills/impeccable/reference/mode-operate.md`
+- M: `.cursor/skills/impeccable/reference/new-work.md`
+- M: `.cursor/skills/impeccable/reference/onboard.md`
+- M: `.cursor/skills/impeccable/reference/optimize.md`
+- M: `.cursor/skills/impeccable/reference/overdrive.md`
+- M: `.cursor/skills/impeccable/reference/quieter.md`
+- M: `.cursor/skills/impeccable/reference/typeset.md`
+- M: `.cursor/skills/impeccable/reference/visualize.md`
+- M: `.cursor/skills/impeccable/scripts/VERSION`
+- M: `.cursor/skills/impeccable/scripts/command-metadata.json`
+- A: `.cursor/skills/impeccable/scripts/engine-checksums.txt`
+- M: `.cursor/skills/impeccable/scripts/impeccable`
+- M: `.cursor/skills/impeccable/scripts/impeccable.cmd`
+- M: `.cursor/skills/impeccable/scripts/live-browser-dom.js`
+- M: `.cursor/skills/impeccable/scripts/live-browser-ignores.js`
+- M: `.cursor/skills/impeccable/scripts/live-browser-session.js`
+- M: `.cursor/skills/impeccable/scripts/live-browser.js`
+- A: `.devin/skills/impeccable/SKILL.md`

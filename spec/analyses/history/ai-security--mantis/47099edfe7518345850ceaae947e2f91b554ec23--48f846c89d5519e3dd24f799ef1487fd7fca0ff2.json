@@ -1,0 +1,984 @@
+{
+  "id": "ai-security--mantis",
+  "generatedAt": "2026-10-24T06:36:54.441Z",
+  "observedAt": "2026-10-24T06:36:43.1574360+00:00",
+  "source": "https://github.com/google/mantis",
+  "report": "spec/projects/ai-security--mantis.md",
+  "analyzedSha": "47099edfe7518345850ceaae947e2f91b554ec23",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-28T04:47:59-07:00",
+  "observedSha": "48f846c89d5519e3dd24f799ef1487fd7fca0ff2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "48f846c89d5519e3dd24f799ef1487fd7fca0ff2",
+      "date": "2026-10-24T03:44:06Z",
+      "subject": "feat(graph): max_node_continuations is workflow config"
+    },
+    {
+      "sha": "8bdecfbe4b660cdc57b484bbe6a099c9d4f28442",
+      "date": "2026-10-24T03:28:56Z",
+      "subject": "feat(graph): continue a stage past its window with a handoff"
+    },
+    {
+      "sha": "91a80f5cfb04335d874abbfc91ae7ee8efe7a845",
+      "date": "2026-10-24T02:15:56Z",
+      "subject": "fix(resume): recognise the pre-dispatch refusal as an overflow"
+    },
+    {
+      "sha": "01b9bce9bfa94a63bccde967aa48097c5ba81dbe",
+      "date": "2026-10-24T01:24:43Z",
+      "subject": "feat(llm): Anthropic context editing for Claude models"
+    },
+    {
+      "sha": "38ffc28b6eebccb75791a70447f519e730fc4aa1",
+      "date": "2026-10-24T01:05:41Z",
+      "subject": "fix(graph): headroom-sized tool results; restart at the ceiling"
+    },
+    {
+      "sha": "65a4eb37082b8a9fdf84d28b402275e906ba260d",
+      "date": "2026-10-23T23:43:23Z",
+      "subject": "fix(graph): compaction off by default; node context ceiling"
+    },
+    {
+      "sha": "c6cbc1b9f3fe14525a6db7565f6a584a9f05eeb4",
+      "date": "2026-10-23T22:28:51Z",
+      "subject": "fix(resume): a resume that no longer fits starts the campaign over"
+    },
+    {
+      "sha": "e51481df2aafed1e8dae0470b98c1e2ef9e25d23",
+      "date": "2026-10-23T22:18:59Z",
+      "subject": "fix(tools): bound get_findings for run-wide stages"
+    },
+    {
+      "sha": "3b34f0267ae3f407c704e07d96d64d23da2caf39",
+      "date": "2026-10-23T18:27:16Z",
+      "subject": "fix(scan): ramped worker start; patient session store"
+    },
+    {
+      "sha": "6585b691e0380dd391be21aea304a02cc9dff817",
+      "date": "2026-10-23T16:51:52Z",
+      "subject": "fix(scan): one-file campaigns read one file; guards fail one campaign"
+    },
+    {
+      "sha": "c4da06de901da43b6ce8288bb699e26c5165fa18",
+      "date": "2026-10-23T08:34:02Z",
+      "subject": "feat(scan): settle earlier findings; per-stage context; parallel isolation"
+    },
+    {
+      "sha": "c6ae8803923dcb6c2832c822c4ec90066ef6d5dc",
+      "date": "2026-10-23T06:34:04Z",
+      "subject": "feat(scan): coverage knows what content it covered; --scan-mode changed"
+    },
+    {
+      "sha": "1644340fec0c63c8f6c12f8ff8c69c1c8e429a2e",
+      "date": "2026-10-23T04:55:36Z",
+      "subject": "fix(prompts): keep the reproducer prompt inside the synthesizer margin"
+    },
+    {
+      "sha": "665bb59c45308100e9e3005d0e03dd2a319c60b2",
+      "date": "2026-10-22T15:00:29Z",
+      "subject": "feat(reproduce): a harness observes the sink; it never alters it"
+    },
+    {
+      "sha": "147ee46666daa6685d21c0edcb0f3cb4ae4a6a65",
+      "date": "2026-10-22T14:50:13Z",
+      "subject": "fix(reference): earn dynamic_confirmed one finding at a time"
+    },
+    {
+      "sha": "7d8fab8cbb6f9f757eec138f461b7d8bce595c7a",
+      "date": "2026-10-21T14:15:04Z",
+      "subject": "fix(reference): run ledger, networkless-guest pin, answer-key jail"
+    },
+    {
+      "sha": "cda36356e3199982950e5822c88eddd87fdf0b93",
+      "date": "2026-10-21T12:50:44Z",
+      "subject": "fix(reference): clear only a stale sentinel; say when a proposal was salvaged"
+    },
+    {
+      "sha": "a5af6abef4a4695e128fa8eed754b77c3168d4e8",
+      "date": "2026-10-21T02:48:34Z",
+      "subject": "fix(reference): resolve findings from static review of cf4c2b4..04d291a"
+    },
+    {
+      "sha": "04d291a20d0a46da44546a9e182f4d35b2b3f103",
+      "date": "2026-10-21T00:36:41Z",
+      "subject": "feat(reference): port the tiered reproduction ladder into the live reproducer"
+    },
+    {
+      "sha": "98550302bc175ba6efdad5e52374bf8ffd209ee0",
+      "date": "2026-10-20T22:17:58Z",
+      "subject": "fix(evolve): the digest says which tool calls came back empty; the surface names tool dependencies"
+    },
+    {
+      "sha": "0ea87957d25ae549fd13d34fa1a116944562b391",
+      "date": "2026-10-20T20:44:49Z",
+      "subject": "fix(evolve): a proposer writes one file per turn and gives up on empty turns fast"
+    },
+    {
+      "sha": "674f3315c3af8209c0b7ebbca805132d694f4489",
+      "date": "2026-10-20T19:13:48Z",
+      "subject": "fix(core): node prompts are literal text, not ADK state templates"
+    },
+    {
+      "sha": "2586217bb4f7cbf70fdae40d4f5d0371a66822d4",
+      "date": "2026-10-20T17:42:19Z",
+      "subject": "fix(evolve): one process per proposer session; trajectory digest; read budget; session trace"
+    },
+    {
+      "sha": "d864ced1991891cdc93177865fb9ab873591fc39",
+      "date": "2026-10-20T15:49:20Z",
+      "subject": "fix(evolve): a proposer session is always wall-clock bounded"
+    },
+    {
+      "sha": "4146b7d39708c55ea7ef9a6a94cf2cff2af9598d",
+      "date": "2026-10-20T15:16:51Z",
+      "subject": "fix(sandbox): apply patches with the guest's python3 when the image has no patch(1)"
+    },
+    {
+      "sha": "14601ff03327dc343f8e8f518af003507ef78b54",
+      "date": "2026-10-20T15:16:51Z",
+      "subject": "fix(core): bound every tool response to the node's model window; warn on stale pins"
+    },
+    {
+      "sha": "d1f863330d03d4544014b86ab08d5c9eb3f694f1",
+      "date": "2026-10-20T15:06:55Z",
+      "subject": "fix(core): structured one-shot requests actually carry their tool; cap empty-turn retries"
+    },
+    {
+      "sha": "be39434dc70bc28c9a173e75d9afb370317a0966",
+      "date": "2026-10-20T15:06:28Z",
+      "subject": "chore(deps): security floors for aiohttp, multidict and werkzeug"
+    },
+    {
+      "sha": "6f9e185f542baaf63d5b3256ec9555b5617fd5be",
+      "date": "2026-10-20T15:06:28Z",
+      "subject": "fix(evolve): structured transcripts, stage add/remove, static-only floor, read-only selector"
+    },
+    {
+      "sha": "51cbff8883418e35b34b16f3a4dd3b17b8936f4a",
+      "date": "2026-10-20T15:06:28Z",
+      "subject": "feat(coverage): harness fingerprint per ledger row"
+    },
+    {
+      "sha": "1ed5f961ba983e8387985872bc26279629a96d1a",
+      "date": "2026-10-20T15:06:28Z",
+      "subject": "feat(reference): evolve harnesses with Harness2 over the Mantis pipeline"
+    },
+    {
+      "sha": "07b085e085c1ad9bfb0868d7d91cfcb37e5d980b",
+      "date": "2026-10-20T15:06:28Z",
+      "subject": "feat(reference): vendor the Harness2 core under third_party"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/mantis-knowledge-refresh.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/mantis-pr-scan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "action/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/budget.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/chains.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/compactor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/correlator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/cost.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/custom_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/database.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/diversity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/environments/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/environments/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/environments/gce_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/environments/gvisor_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/environments/microsandbox_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/core/environments/patch_fallback.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/environments/staging.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/environments/static_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/core/exclusions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/graph_loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/core/harness_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/core/knowledge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/llm_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/planner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/sarif.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/core/structural_index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/surveyor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/core/synthesizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/core/transcript.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/core/truncation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/docs/github-action.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/docs/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/compare.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/evals/deduplicator_agent/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/evals/deduplicator_agent/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/_vendor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/proposer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/selection.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/surface.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/evolve/surface_text.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/ground_truth/juice_shop.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/admintools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/dal/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/dal/cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/dal/repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/database.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/fetcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/ground_truth.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/integrations/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/integrations/archives.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/integrations/mailer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/integrations/webhooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/services/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/services/accounts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/services/imports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/services/notify.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/services/orders.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/services/reports.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/utils/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/utils/tokens.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/utils/urls.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/web/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/web/account_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/web/hooks_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/web/orders_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_target/web/reports_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_targets/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/research_targets/gen.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/evals/run_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/evals/stage_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/surveyor_benchmark.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/sweep.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/evals/synthetic_repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/requirements.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/run.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/sandbox/requirements.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/sandbox/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/scripts/advise.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/scripts/check_license_headers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/scripts/check_skill_anchoring.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/scripts/configure.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/scripts/gen_skills_index.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/scripts/knowledge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/scripts/launch.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/scripts/mcp_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/scripts/neuter_matrix.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/scripts/pr_scan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/scripts/setup_gce_sandbox.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/scripts/setup_github_action.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/scripts/vendor_harness2.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/skills/mantis-configure/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/skills/mantis-launch/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/test_suite.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/tests/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/tests/test_adk_invariants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/tests/test_budget_planner.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_campaign_scoping.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/tests/test_chains_groups.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_changed_scan.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_cli_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_cognitive_complexity.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_context_editing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_db_concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_empty_response_retry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_eval_scoring.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_evolve.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_exclusions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_finding_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_harness_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_harness_fingerprint.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_knowledge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_license_headers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_literal_instruction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_mcp_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_multi_model_knowledge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_okf_concept_scoping.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_parallel_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_patch_fallback.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_pr_scan.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_prefix_reuse.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_provider_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_regression_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_repo_hygiene.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_research_eval_scoring.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "reference/tests/test_research_graph_synthesis.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_research_targets.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_resilient_streaming.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_resume.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_retry_classification.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "reference/tests/test_sandbox_isolation.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--openclaude",
+    "category": "ai-agents",
+    "name": "openclaude",
+    "url": "https://github.com/Gitlawb/openclaude",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--openclaude.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "9a2910da236395d259c72c3b4ddf92278625a6c1",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-29T12:59:42+08:00",
+    "reportSha256": "afceca16d19e64bcf5171d939724322bdca5d2c1998f69f0bbb0a0d81e1ac7fd",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--openclaude",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/Gitlawb/openclaude",
+    "report": "spec/projects/ai-agents--openclaude.md",
+    "analyzedSha": "9a2910da236395d259c72c3b4ddf92278625a6c1",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-29T12:59:42+08:00",
+    "observedSha": "20a50493c775f151b61e1fabd5fa678ad1fbdaae",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "20a50493c775f151b61e1fabd5fa678ad1fbdaae",
+        "date": "2026-10-27T10:47:34-07:00",
+        "subject": "fix: resolve 46 unused local findings in batch 6 (#2458)"
+      },
+      {
+        "sha": "1ce3c30dee8df0c2c94cc8fe044c768e84f55007",
+        "date": "2026-10-27T10:24:37-07:00",
+        "subject": "fix: remove next 40 unused local findings (batch 5) (#2457)"
+      },
+      {
+        "sha": "1cead2c9067e428bdc496e9327fb3a26f8fb3ca5",
+        "date": "2026-10-27T10:06:54-07:00",
+        "subject": "fix: remove next 40 unused local findings (batch 4) (#2456)"
+      },
+      {
+        "sha": "31274c145a6278c553e0f5fd451823dbe0990349",
+        "date": "2026-10-27T10:06:01-07:00",
+        "subject": "fix: remove next 40 unused local findings (#2454)"
+      },
+      {
+        "sha": "ec6bc3fd5d75dae8c5657d16125a2f7ffd9c9ac1",
+        "date": "2026-10-27T09:56:02-07:00",
+        "subject": "fix: encode JSX apostrophes for CodeQL tokenization (#2455)"
+      },
+      {
+        "sha": "f55f4dfdf058bd1c182a42d2a7551a3d1e83bfc8",
+        "date": "2026-10-27T09:38:33-07:00",
+        "subject": "chore: resolve next 40 unused-local-variable findings (#2453)"
+      },
+      {
+        "sha": "d4d1b2bfa70dbe83e35577a3633eb87a02836535",
+        "date": "2026-10-27T09:18:01-07:00",
+        "subject": "fix: remove permanently disabled conditional paths (#2450)"
+      },
+      {
+        "sha": "099cd505fe18585180c51e32f8b1c789e8b83b25",
+        "date": "2026-10-27T08:51:53-07:00",
+        "subject": "fix: add missing statement terminators flagged by CodeQL (#2448)"
+      },
+      {
+        "sha": "9876d04b3a680d74940633c14b7e52424be3ecdd",
+        "date": "2026-10-27T08:50:43-07:00",
+        "subject": "fix: simplify redundant UI conditions (#2449)"
+      },
+      {
+        "sha": "24a90a563946e0c89e31d49cdce8353bd4e9f875",
+        "date": "2026-10-27T08:49:10-07:00",
+        "subject": "fix: simplify redundant utility and tool conditions (#2452)"
+      },
+      {
+        "sha": "a8843cf24120e5c81fd1639f98e7219f365f5a1a",
+        "date": "2026-10-27T07:56:16-07:00",
+        "subject": "chore: resolve bottom 40 unused-import quality findings (#2451)"
+      },
+      {
+        "sha": "a9387e4cc39e53773d261742032624882f8f903f",
+        "date": "2026-10-27T07:55:27-07:00",
+        "subject": "chore: remove unused spinner layout assignments (#2444)"
+      },
+      {
+        "sha": "51085b98361169b9bcb413eb3e289c7877f93e1b",
+        "date": "2026-10-27T07:54:41-07:00",
+        "subject": "chore: remove unused UI and text-input assignments (#2445)"
+      },
+      {
+        "sha": "e097dc88648152181552cf2762fddf1fb5b5f49e",
+        "date": "2026-10-27T07:53:33-07:00",
+        "subject": "chore: remove unused plugin cache assignments (#2446)"
+      },
+      {
+        "sha": "443dbea52aac95c7e7fbe362dada668af013aa2c",
+        "date": "2026-10-27T07:53:01-07:00",
+        "subject": "chore: remove unused core utility assignments (#2447)"
+      },
+      {
+        "sha": "94ebcff640a611f7c248a0441fd7523d7da8050e",
+        "date": "2026-10-27T06:52:17-07:00",
+        "subject": "fix: remove unreachable internal-only branches (#2440)"
+      },
+      {
+        "sha": "51f50e99b0c3910d94f84fbabbc5e02cc0b870bd",
+        "date": "2026-10-27T06:51:49-07:00",
+        "subject": "fix: clarify declarations and redundant comparisons (#2441)"
+      },
+      {
+        "sha": "a883d57f8245d98d713445a54e3b8675fb62f037",
+        "date": "2026-10-27T06:51:14-07:00",
+        "subject": "fix: remove duplicate regex members and bound SGR parsing (#2442)"
+      },
+      {
+        "sha": "391c660db6577bf49254f6b0700e8a7e220fa1f0",
+        "date": "2026-10-27T06:50:41-07:00",
+        "subject": "fix(ide): propagate VSIX download stream errors (#2443)"
+      },
+      {
+        "sha": "0470c16c288fa3d1cfd9b2be862076dfca92717b",
+        "date": "2026-10-27T06:24:41-07:00",
+        "subject": "chore: remove useless MCP import and updater expressions (#2438)"
+      },
+      {
+        "sha": "85cfaa7345724f7437e1482a40c2dfa5392cb625",
+        "date": "2026-10-27T06:24:14-07:00",
+        "subject": "chore: remove useless expressions from plugin validation (#2436)"
+      },
+      {
+        "sha": "87f65c5955f66c6087a1d78f191145d2ab0e5c30",
+        "date": "2026-10-27T06:16:44-07:00",
+        "subject": "chore: remove discarded agent prompt default expression (#2439)"
+      },
+      {
+        "sha": "3202a153ce091951d7bd0fa398ae95dffa67062b",
+        "date": "2026-10-27T06:16:03-07:00",
+        "subject": "chore: remove useless search and markdown expressions (#2437)"
+      },
+      {
+        "sha": "a91f736ef1c257d00dd4ced04f86e21401289f40",
+        "date": "2026-10-26T22:28:45-07:00",
+        "subject": "chore: remove ten reported unused bindings (#2433)"
+      },
+      {
+        "sha": "24901c610af5489fb0d1055f813c6fd114737c13",
+        "date": "2026-10-26T22:19:55-07:00",
+        "subject": "chore: remove unused imports from GitHub setup and insights (#2432)"
+      },
+      {
+        "sha": "ddacba95c7afdd591c3813c335f63cf5c9787e7d",
+        "date": "2026-10-26T22:13:38-07:00",
+        "subject": "chore: remove unused React import from session chooser (#2431)"
+      },
+      {
+        "sha": "3adc887e85c585687615598f7c46356468777a80",
+        "date": "2026-10-26T21:41:55-07:00",
+        "subject": "fix: clean up existing ESLint warnings (#2429)"
+      },
+      {
+        "sha": "ec39d807c0acc747eb22121ca087313f3fd45fee",
+        "date": "2026-10-26T20:24:01-07:00",
+        "subject": "fix(smart-routing): stop overriding sub-agent models chosen by agentRouting (#2310)"
+      },
+      {
+        "sha": "4e746935f8dd25515c9e1f93b30f0be8414eadd3",
+        "date": "2026-10-26T11:20:04-07:00",
+        "subject": "ci: enforce lint and prepare applicable merge checks (#2428)"
+      },
+      {
+        "sha": "77739e2ce5738318d1d53481d19c44dd71bbe099",
+        "date": "2026-10-26T08:28:04-07:00",
+        "subject": "fix(web): reject empty sitemap in build verification (#2427)"
+      },
+      {
+        "sha": "2dddbb379a29619be320e399cc74d3a38019a392",
+        "date": "2026-10-26T08:27:04-07:00",
+        "subject": "fix(plugins): suppress hooks throughout sparse clones (#2426)"
+      },
+      {
+        "sha": "ae7eb82187a7c2c57088e156a081e550aeb7217a",
+        "date": "2026-10-26T08:26:19-07:00",
+        "subject": "fix(test): verify isolated child and release suite completion (#2425)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".bun-version",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".env.example",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/ISSUE_TEMPLATE/config.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/codeql/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/pull_request_template.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/codeql.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/install-hygiene.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/pr-checks.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/vscode-launcher.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".node-version",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".nvmrc",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".release-please-manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ANDROID_INSTALL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "bin/openclaude",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "bun.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/advanced-setup.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/gmi-cloud-logo-dark.svg",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/assets/gmi-cloud-logo.svg",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/integrations/how-to/add-gateway.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/integrations/overview.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/integrations/reasoning-effort.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/litellm-setup.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/merge-gateway-setup.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/non-technical-setup.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/quick-start-mac-linux.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/quick-start-windows.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/schema-validation.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/skills.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/smart-routing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/windows-aliases-and-launchers.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "release-please-config.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/any-usage-report.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/benchmark-openclaude-startup.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/build.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/check-node-options-parity.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/ci-required-checks.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/externals.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/externalsValidation.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/externalsValidation.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/missing-module-stub.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/npm-publish-report.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/npm-publish-report.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/openclaude-bin-compile-cache.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/openclaude-bin-heap.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/openclaude-bin-missing-helpers.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/pr-intent-scan.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/pr-intent-scan.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/provider-launch.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/provider-launch.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/provider-recommend.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/provider-recommend.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/run-tests.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/run-tests.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/start-grpc.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/subprocess.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/subprocess.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/system-check.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/system-check.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/typecheck-fast.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/verify-clean-install.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/verify-clean-install.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/windows/openclaude-aliases.ps1",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/QueryEngine.interruptionTrace.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/Tool.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/Tool.types.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/__tests__/bugfixes.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/__tests__/security-hardening.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/__tests__/statusNoticeLocalModel.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/assistant/AssistantSessionChooser.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/assistant/sessionHistory.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/bootstrap/state.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/buddy/actionEffects.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/bgFinalizer.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/bgRegistry.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/skills.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/skills.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/skillsCli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/skillsInstall.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/skillsListFormat.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/skillsRemoveMessage.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/skillsVerify.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/handlers/xaiAuth.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/print.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/printMaxTurns.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/structuredIO.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/transports/HybridTransport.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/update.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli/update.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/btw/btw.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/cache-probe/cache-probe.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/clear/conversation.goal.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/clear/conversation.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/copy/copy.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/effort/effort.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/effort/effort.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/goal/goal.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/insights.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/install-github-app/ApiKeyStep.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/install-github-app/CheckExistingSecretStep.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/install-github-app/ChooseRepoStep.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/install-github-app/InstallAppStep.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/install-github-app/repoSlug.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/install-github-app/setupGitHubActions.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/knowledge/knowledge.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/mobile/mobile.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/model/model.fastModeSwitch.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/model/model.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/model/model.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/onboard-github/onboard-github.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/onboard-github/onboard-github.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/plugin/BrowseMarketplace.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/plugin/DiscoverPlugins.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/plugin/PluginOptionsDialog.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/plugin/PluginSettings.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/plugin/ValidatePlugin.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/provider/provider.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/provider/provider.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/rate-limit-options/rate-limit-options.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/replay/replay.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/replay/replay.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/resume/resume.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review/UltrareviewOverageDialog.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/search/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/search/search.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/search/search.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/search/searchSettings.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/search/searchSettings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/sessions/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/sessions/sessions.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/sessions/sessions.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/set-context-window/set-context-window.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/skills/skills.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/thinkback/thinkback.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/update/update.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/ChannelDowngradeDialog.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/ClaudeMdExternalIncludesDialog.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/CoordinatorAgentStatus.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/components/CustomSelect/use-select-navigation.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/CustomSelect/use-select-navigation.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/EffortCallout.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/ExportDialog.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/Feedback.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/FeedbackSurvey/TranscriptSharePrompt.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/FeedbackSurvey/useMemorySurvey.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/FeedbackSurvey/usePostCompactSurvey.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/FullscreenLayout.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/GlobalSearchDialog.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/HelpV2/Commands.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/HelpV2/HelpV2.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/components/HighlightedCode.tsx",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

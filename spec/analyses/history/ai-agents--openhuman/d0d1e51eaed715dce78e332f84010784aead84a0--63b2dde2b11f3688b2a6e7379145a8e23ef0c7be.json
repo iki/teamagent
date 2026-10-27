@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--openhuman",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/tinyhumansai/openhuman",
+  "report": "spec/projects/ai-agents--openhuman.md",
+  "analyzedSha": "d0d1e51eaed715dce78e332f84010784aead84a0",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T21:36:31+05:30",
+  "observedSha": "63b2dde2b11f3688b2a6e7379145a8e23ef0c7be",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "63b2dde2b11f3688b2a6e7379145a8e23ef0c7be",
+      "date": "2026-10-24T10:49:55+05:30",
+      "subject": "Merge pull request #8367 from M3gA-Mind/fix/tinyhumans-tests-sqlite-driver"
+    },
+    {
+      "sha": "0ad65eddde3247cab89ad69fcca95b9b6c6920a9",
+      "date": "2026-10-24T10:20:28+05:30",
+      "subject": "test(tinyhumans): give the lib tests the sqlite driver the default store opens with"
+    },
+    {
+      "sha": "23c0a37340872a3c23765cc74135d745185467e0",
+      "date": "2026-10-24T09:10:05+05:30",
+      "subject": "Merge pull request #8361 from M3gA-Mind/fix/raw-coverage-build-on-main"
+    },
+    {
+      "sha": "b473fad9598fa200ccb1e458302bc7220fdfcb28",
+      "date": "2026-10-24T09:09:36+05:30",
+      "subject": "Merge pull request #8357 from M3gA-Mind/fix/doctor-source-fallback-test-modules-gate"
+    },
+    {
+      "sha": "76f47809c274e078a1c05fc3d57d093798ae5c0b",
+      "date": "2026-10-24T09:09:08+05:30",
+      "subject": "Merge pull request #8356 from M3gA-Mind/fix/tool-catalog-feature-list"
+    },
+    {
+      "sha": "198c6ac1d69211723f665d19f446b8390080ce0f",
+      "date": "2026-10-24T09:08:37+05:30",
+      "subject": "Merge pull request #8358 from M3gA-Mind/fix/layout-migration-tests-need-sqlite"
+    },
+    {
+      "sha": "2bb4c5fe3208ab8138e1932de808cd35af711963",
+      "date": "2026-10-24T09:07:23+05:30",
+      "subject": "Merge pull request #8336 from M3gA-Mind/fix/tests-session-testkit-dev-dep"
+    },
+    {
+      "sha": "58e22f18d0bc6af623471194cbe5c592852a0ff1",
+      "date": "2026-10-24T09:06:51+05:30",
+      "subject": "Merge pull request #8335 from M3gA-Mind/fix/embed-tests-workspace-stores-gone"
+    },
+    {
+      "sha": "a15ff72dd130c9a6e5d804ca32054c0d36ae9384",
+      "date": "2026-10-24T09:06:21+05:30",
+      "subject": "Merge pull request #8351 from M3gA-Mind/fix/embed-fleet-example-storage-driver"
+    },
+    {
+      "sha": "e7fe3372e63a21ff26ba7334145c71c25abc8a68",
+      "date": "2026-10-24T09:05:47+05:30",
+      "subject": "Merge pull request #8350 from M3gA-Mind/fix/embed-auto-migrate-legacy-import-gate"
+    },
+    {
+      "sha": "49d9c9a0efd8abb78c03e5333413094cd047c107",
+      "date": "2026-10-24T09:05:10+05:30",
+      "subject": "Merge pull request #8349 from M3gA-Mind/fix/shell-live-without-modules"
+    },
+    {
+      "sha": "eddfd1805c8bd62ffa5f2c4b4e8a28358f6048cc",
+      "date": "2026-10-24T09:04:36+05:30",
+      "subject": "Merge pull request #8347 from M3gA-Mind/fix/gate-contract-no-default-features"
+    },
+    {
+      "sha": "8f65d318eee5279d7abf0a9615371dd730e78d29",
+      "date": "2026-10-24T09:03:58+05:30",
+      "subject": "Merge pull request #8333 from M3gA-Mind/fix/key-source-without-secret-file"
+    },
+    {
+      "sha": "8e062a7ce6a73f6995c76763cb10ab59161d468d",
+      "date": "2026-10-24T08:36:00+05:30",
+      "subject": "Merge pull request #8340 from M3gA-Mind/fix/main-boundaries-g3"
+    },
+    {
+      "sha": "872dcd6c424a89b65c11ac29fc275a65b0e03416",
+      "date": "2026-10-24T08:34:38+05:30",
+      "subject": "Merge pull request #8339 from M3gA-Mind/fix/main-statics-g3"
+    },
+    {
+      "sha": "ade18e0b9691ee03072b7e05510b0780a914595d",
+      "date": "2026-10-24T07:36:12+05:30",
+      "subject": "style(tests): wrap the agent-chat matches! as rustfmt does"
+    },
+    {
+      "sha": "b92d8451bf34224c1306b4366ae4438b16eea9e1",
+      "date": "2026-10-24T07:24:31+05:30",
+      "subject": "Merge pull request #8332 from M3gA-Mind/fix/rpc-drift-guard-agent-chat-controllers"
+    },
+    {
+      "sha": "03ebe1710247d78e4e9d72459476ff47175a2c27",
+      "date": "2026-10-24T07:02:22+05:30",
+      "subject": "fix(tests): build the integration suites against main's storage and controller registry"
+    },
+    {
+      "sha": "26fd9f8273eb9d3115c5b5bfd4704aad83bbe2ef",
+      "date": "2026-10-24T06:15:55+05:30",
+      "subject": "Merge pull request #8338 from M3gA-Mind/fix/e2e-flows-drop-deleted-ai-skills-spec"
+    },
+    {
+      "sha": "00b9fd7ed2a22fe9e5a396bc32f23480257b4ded",
+      "date": "2026-10-24T06:09:46+05:30",
+      "subject": "test(e2e): drop the three other deleted native settings specs from the runner"
+    },
+    {
+      "sha": "9c78b1e6ee87a09cc60036567dff857180070107",
+      "date": "2026-10-24T05:27:54+05:30",
+      "subject": "style: rustfmt the testkit session-store imports and builder call"
+    },
+    {
+      "sha": "18e6681a5ae8dd9f59c672d78d78ff7ea0ddbb9d",
+      "date": "2026-10-24T05:26:40+05:30",
+      "subject": "Merge pull request #8344 from M3gA-Mind/fix/mock-api-stateful-test-drop-cron"
+    },
+    {
+      "sha": "bcaad4a642a7b933c882c9a682ed82b8ee1dc90b",
+      "date": "2026-10-24T05:21:55+05:30",
+      "subject": "style(embed): rustfmt the storage example's MongoDB driver assertion"
+    },
+    {
+      "sha": "88cceb30a012b5f61815bb15848dd9903706368c",
+      "date": "2026-10-24T05:12:30+05:30",
+      "subject": "Merge pull request #8360 from M3gA-Mind/fix/pin-tinyagents-sqlite-append"
+    },
+    {
+      "sha": "a33a4fd750237130499e299895eefee60ad75ba6",
+      "date": "2026-10-24T05:01:29+05:30",
+      "subject": "test(threads): hold the storage slot in the SQLite append test"
+    },
+    {
+      "sha": "3ca4dc84f2f5f0c969fc54e4e66414755478973a",
+      "date": "2026-10-24T04:49:14+05:30",
+      "subject": "fix(threads): pin tinyagents with the SQLite conversation append fix"
+    },
+    {
+      "sha": "339f2afd3a875ecefd5d0661ed630832fca60ce3",
+      "date": "2026-10-24T04:22:19+05:30",
+      "subject": "test(embed): channel_agents needs the SQLite storage driver"
+    },
+    {
+      "sha": "a98c17c5073e4507d86c5ab1e8fed5362e7bbc32",
+      "date": "2026-10-24T04:22:11+05:30",
+      "subject": "Merge pull request #8316 from M3gA-Mind/fix/expected-error-log-scrubbed"
+    },
+    {
+      "sha": "93c51631dc43e3910c5655745d42fb16062e83a9",
+      "date": "2026-10-24T04:21:54+05:30",
+      "subject": "Merge remote-tracking branch 'upstream/main' into fix/embed-fleet-example-storage-driver"
+    },
+    {
+      "sha": "d931725d1d59250aacddfeb4636cf6b5582c1930",
+      "date": "2026-10-24T04:20:39+05:30",
+      "subject": "Merge pull request #8334 from M3gA-Mind/fix/storage-owner-self-test"
+    },
+    {
+      "sha": "5d4240d9599918fb302cfb3b5d93841edf65043b",
+      "date": "2026-10-24T04:20:12+05:30",
+      "subject": "Merge pull request #8353 from M3gA-Mind/fix/main-docs-drift-g3"
+    },
+    {
+      "sha": "fe73a257bc15b39467244cfa438a3ddebe193bf3",
+      "date": "2026-10-24T04:19:29+05:30",
+      "subject": "Merge pull request #8354 from M3gA-Mind/fix/tinymcp-fence-test-takeover"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/agents/deploy-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/rules/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/migrate-to-submodule/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".config/nextest.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".do/app.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".fly/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ci-paths-filter.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/android-compile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-ci-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-fast-hosted.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-fast.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-full.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-lanes.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-agent-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-playwright.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-reusable.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ios-appstore.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ios-compile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-production.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-reusable.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitmodules",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".husky/pre-push",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/Dockerfile.dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/threat_model.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".sdd-progress.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "EMBED.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "INSTALL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/patches/@assistant-ui__react-lexical@0.2.10.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/patches/mdast-util-gfm-autolink-literal@2.0.1.patch",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/public/live-voice/pcm-capture-processor.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-agent-review.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-crypto-payment.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-gmail.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-merge-affected.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-payment.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-run-all-flows.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-run-session.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-run-shards.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/scripts/e2e-telegram.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-web-build.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/scripts/e2e-web-selection-contract.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/scripts/e2e-web-selection.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/scripts/e2e-web-session.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/scripts/e2e-web-shards.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src-tauri-mobile/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src-tauri-mobile/icons/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src-tauri-web/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/AppRoutes.auth.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/AppRoutes.connections-flows.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/AppRoutes.guards.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/AppRoutes.redirects.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/AppRoutes.skills.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/AppRoutes.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/AppRoutes.webhooks.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/__tests__/App.boot.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/assets/audio/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/assets/audio/ptt-close.wav",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/assets/audio/ptt-error.wav",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/assets/audio/ptt-open.wav",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/cognee.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/cortexdb.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/letta.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/mem0.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/sarvam.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/supermemory.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/tinyhumans.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/assets/provider-icons/zep.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/BootCheckGate/BootCheckGate.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/BootCheckGate/__tests__/BootCheckGate.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/components/DictationHotkeyManager.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/components/InitProgressScreen/HarnessInitOverlay.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/components/InitProgressScreen/HarnessInitOverlay.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/components/InitProgressScreen/InitProgressScreen.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/components/InitProgressScreen/InitProgressScreen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/LanguageSelect.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/LanguageSelect.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "app/src/components/PttHotkeyManager.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/TimezoneSelect.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/TimezoneSelect.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/__tests__/SecurityBanner.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/__tests__/UserActionBar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/assistant-ui/__tests__/markdown-text.lookbehind.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/__tests__/markdown-text.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/activity-group.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/attachment.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/directive-text.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/agent-plan.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/agent-status.aui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/agent-status.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/approval-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/artifact-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/background-inbox.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/code-diff.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/composer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/connection-state.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/context-breakdown.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/context-display.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/conversation-map.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/conversation-search.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/data-table.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/edit-message.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/elicitation-form.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/error-state.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/guardrail-notice.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/image-generation.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/job-progress.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/loading-state.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/memory-chips.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/message-queue.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/permission-grant.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/reasoning-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/schedule-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/assistant-ui/elements/scroll-anchor.aui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/settings-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/stopped-run.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/subagent-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/task-card.aui.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/assistant-ui/elements/task-card.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/task-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/terminal-block.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/timeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/assistant-ui/elements/todo-list.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/todo-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/tool-call.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/tool-error.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/tool-fallback.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/tool-group.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/tool-timeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/web-preview.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/elements/web-search.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/assistant-ui/lib/task-card-dock.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/src/components/assistant-ui/lib/useComposerFocusOnThreadOpen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/markdown-text.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/model-selector.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/assistant-ui/thread-list.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

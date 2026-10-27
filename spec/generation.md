@@ -1,5 +1,7 @@
 # Generation tools and artifact production
 
+The detailed [media processing analysis](media-processing.md) covers STT, TTS, reference-conditioned synthesis, voice enrollment, codec provenance and backend selection. [Channel input](channel-input.md) separates recorded media from live conversational turn handling.
+
 Generation should be an asynchronous tool ecosystem with a common artifact contract. Separate model inference, editable composition, native rendering, and delivery. Images, audio, video, documents, interfaces, and 3D outputs need different validation and resource policies; a single text-provider login does not imply access to all of them.
 
 This direction complements [import and generation](import-generation.md), [models](models.md), [skills](skills.md), and [channels](channels.md). The source reviews are static; no media job or advertised quality benchmark was executed.
@@ -107,3 +109,15 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [yue](https://github.com/multimodal-art-projection/YuE) | [Report](projects/ai-media--yue.md) | source-reviewed |
 | [trivy](https://github.com/aquasecurity/trivy) | [Report](projects/ai-security--trivy.md) | source-reviewed |
 <!-- coverage:end -->
+
+## Hosted and local voice comparisons
+
+The [voice backend expansion](media-processing.md#voice-backend-expansion-and-astra-provenance) compares direct services, managed hosts and local checkpoints, with individual reports, dated pricing, license distinctions and the confirmed Astra analysis's partial-retrieval provenance. The [comparative evaluation](media-processing.md#comparative-voice-evaluation) defines speaker-fidelity, pronunciation, latency and cost checks; [runtime documentation](media-runtime.md) records what is actually implemented.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [jantt](analyses/unreviewed/ai-gen--jantt.md) ([source](https://github.com/ahmadhassan-bted/jantt)).
+<!-- analysis-additions:end -->

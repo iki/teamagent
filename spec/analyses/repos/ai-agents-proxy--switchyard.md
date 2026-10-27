@@ -1,0 +1,207 @@
+# switchyard: change evidence
+
+Source: [switchyard](https://github.com/NVIDIA-NeMo/Switchyard) · [Analysis](../../projects/ai-agents-proxy--switchyard.md) · [models](../../models.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `c8848511a7e2e1d605070c7a68905bdc24c6481a`; commit date: 2026-10-02T14:59:36-07:00; review date: unknown; observed SHA: `b57c5927f6d9e186df23697247a38a7b7fc7eb14`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NVIDIA-NeMo/Switchyard/compare/c8848511a7e2e1d605070c7a68905bdc24c6481a...b57c5927f6d9e186df23697247a38a7b7fc7eb14). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [b57c5927f6d9](https://github.com/NVIDIA-NeMo/Switchyard/commit/b57c5927f6d9e186df23697247a38a7b7fc7eb14) 2026-10-27T10:03:30-07:00: feat(desktop): add model share tables and the Models page to the terminal app (#1089)
+- [324f01164d81](https://github.com/NVIDIA-NeMo/Switchyard/commit/324f01164d81178d57aaa5ef90742db74994018d) 2026-10-27T16:47:19Z: feat(desktop): add Overview usage cards, the hourly chart, and the help window (#1088)
+- [be225b4f79f3](https://github.com/NVIDIA-NeMo/Switchyard/commit/be225b4f79f384f0291cf59e77511c0fe206cb13) 2026-10-27T09:35:11-07:00: feat(desktop): add the terminal app shell and Overview server status (#1087)
+- [c2c18d8c3f02](https://github.com/NVIDIA-NeMo/Switchyard/commit/c2c18d8c3f02592a1e55644dc3b5cc7df92caf86) 2026-10-27T08:12:30-07:00: fix: Add examples/claude to Dockerfile (#1161)
+- [5f5a44f004bc](https://github.com/NVIDIA-NeMo/Switchyard/commit/5f5a44f004bc7bdb4e3a842a0bd97bb874abcedf) 2026-10-26T22:08:53-07:00: feat(stage): add efficient holds and pinned tier routing (#1160)
+- [ea5f01b8f81d](https://github.com/NVIDIA-NeMo/Switchyard/commit/ea5f01b8f81d5fba7c523516da56f4e482cda4d7) 2026-10-26T19:34:13-04:00: docs: align site colors with NVIDIA documentation (#1159)
+- [6ce4c29b14ff](https://github.com/NVIDIA-NeMo/Switchyard/commit/6ce4c29b14ffd26fceb9313dd38aedb7058fdd82) 2026-10-26T18:29:09-04:00: docs: document API, model, and integration compatibility (#1153)
+- [59351b04128d](https://github.com/NVIDIA-NeMo/Switchyard/commit/59351b04128d0372aaa239b59b8584423fb13f34) 2026-10-26T15:17:36-07:00: feat(routing): add queue-aware task routing to Dynamo PreProc (#1073)
+- [a6366ac3cf35](https://github.com/NVIDIA-NeMo/Switchyard/commit/a6366ac3cf3547674bad0be341bed63133acf4c8) 2026-10-26T15:06:43-07:00: docs: guide libsy integration into gateways and harnesses (#1151)
+- [2623f997f23b](https://github.com/NVIDIA-NeMo/Switchyard/commit/2623f997f23bd1f0b1be7b970b1bfd1233148673) 2026-10-26T21:49:59Z: docs: streamline navigation and link Rust crate documentation (#1150)
+- [e4259e388210](https://github.com/NVIDIA-NeMo/Switchyard/commit/e4259e388210115ec6bc296d3cae1ffe9123c4ee) 2026-10-26T14:27:42-07:00: feat(desktop): add switchyard-desktop --print for recorded costs and savings (#1086)
+- [6c6e2fec53e1](https://github.com/NVIDIA-NeMo/Switchyard/commit/6c6e2fec53e18d3e3981d9327f61cc3a2bfcfef2) 2026-10-26T13:25:33-07:00: feat(desktop): open a basic window for server status and usage (#1137)
+- [29d113adff04](https://github.com/NVIDIA-NeMo/Switchyard/commit/29d113adff040be4d7388e0270427bb9864744d7) 2026-10-26T13:06:50-04:00: docs: explain Switchyard LLM and decision protocols (#1143)
+- [2ca856c4af02](https://github.com/NVIDIA-NeMo/Switchyard/commit/2ca856c4af02142c3b60d2adaa626dd7133332b5) 2026-10-26T09:05:08-07:00: refactor(vgr): rename tiers to efficient and capable (#1066)
+- [4c4fc9d04516](https://github.com/NVIDIA-NeMo/Switchyard/commit/4c4fc9d04516d4fd5cbff97fded962c31577610b) 2026-10-26T08:57:27-07:00: docs: group routing pages under Algorithms (#1145)
+- [9ddd4879dd08](https://github.com/NVIDIA-NeMo/Switchyard/commit/9ddd4879dd089e49ffeba3844e8c96d048340019) 2026-10-24T11:50:46-07:00: feat(desktop): aggregate routing logs into daily and weekly token rollups (#1085)
+- [62efb7758eea](https://github.com/NVIDIA-NeMo/Switchyard/commit/62efb7758eeafdb0f7d1c9ba5937c48ce71ea720) 2026-10-23T14:32:33-07:00: docs: cleanup related to duplicate info and Libsy explanations (#1135)
+- [13a4e8063caf](https://github.com/NVIDIA-NeMo/Switchyard/commit/13a4e8063caf7c2b0da1e0909baf30a870317ddf) 2026-10-23T14:05:35-07:00: feat(vgr): restore optional handoff context compaction (#1043)
+- [50dfa7e28042](https://github.com/NVIDIA-NeMo/Switchyard/commit/50dfa7e28042f6d8df809b935b458ea3e1b80448) 2026-10-23T16:55:46-04:00: chore: dev-server change decisions model (#1136)
+- [340805c3bce4](https://github.com/NVIDIA-NeMo/Switchyard/commit/340805c3bce4649511b880cfe133e7c6ad511333) 2026-10-23T12:45:47-07:00: feat(desktop): load desktop.toml settings and probe server health (#1084)
+- [6bf9ca79ef5f](https://github.com/NVIDIA-NeMo/Switchyard/commit/6bf9ca79ef5f92d9decfacb71968ed9cf2e3df14) 2026-10-23T12:45:11-07:00: docs: explain the mechanics of libsy (#1123)
+- [3a48a933de0c](https://github.com/NVIDIA-NeMo/Switchyard/commit/3a48a933de0cb5f79d15d007aae2e54f920802c5) 2026-10-23T12:30:00-07:00: fix(vgr): restore QA verification and cloud outage fallback (#1042)
+- [ae36dad5aab7](https://github.com/NVIDIA-NeMo/Switchyard/commit/ae36dad5aab78e7d8819cd43b18028d600dac128) 2026-10-23T12:29:34-07:00: chore: remove docs (#1134)
+- [e1c1b03172a7](https://github.com/NVIDIA-NeMo/Switchyard/commit/e1c1b03172a7de1553b12950a6ea3b539d295f3e) 2026-10-23T11:13:31-07:00: feat(costs): add OpenRouter model prices (#1083)
+- [a526c5be110c](https://github.com/NVIDIA-NeMo/Switchyard/commit/a526c5be110cb992590f5d221479d1e42d35ce8f) 2026-10-22T22:44:37-07:00: feat(costs): add direct provider prices for Claude, Gemini, and DeepSeek (#1082)
+- [5b986f818055](https://github.com/NVIDIA-NeMo/Switchyard/commit/5b986f818055540612dafa0f54f359a679876077) 2026-10-22T18:36:25-04:00: docs: make the README and quickstart library-first (#1058)
+- [f5b973c8b2bd](https://github.com/NVIDIA-NeMo/Switchyard/commit/f5b973c8b2bdada08376ba76ac8c3c572d7c4b86) 2026-10-22T13:51:09-07:00: fix(relay): preserve per-call usage and session identity (#1062)
+- [230be4eb14a8](https://github.com/NVIDIA-NeMo/Switchyard/commit/230be4eb14a80319975faec971ca77016062936a) 2026-10-22T16:14:28-04:00: feat(server): record agent identity in the routing log (#1002)
+- [e06530206423](https://github.com/NVIDIA-NeMo/Switchyard/commit/e06530206423043445e1827225ef2ffb253ea6c9) 2026-10-22T12:24:42-07:00: fix(vgr): repair user-turn holds and session handoffs (#1041)
+- [fae5be0a3333](https://github.com/NVIDIA-NeMo/Switchyard/commit/fae5be0a333385df0aea7ff85007a58a7b89e033) 2026-10-22T11:50:05-07:00: fix(stage-router): reject knobs that have no effect on a standalone route (#1036)
+- [7558a1d8a5f2](https://github.com/NVIDIA-NeMo/Switchyard/commit/7558a1d8a5f21824c6fd81ddbf73a041e1a317c9) 2026-10-22T08:55:28-04:00: feat(runner): support OpenAI Decisions (#1070)
+- [34ca48efb9ab](https://github.com/NVIDIA-NeMo/Switchyard/commit/34ca48efb9ab8b3be9a26deb378466c125390022) 2026-10-21T20:15:17-04:00: docs(translation): publish Rust API documentation (#1072)
+
+## Changed paths (truncated)
+
+- M: `.cargo/config.toml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/docs.yml`
+- M: `.github/workflows/getting-started.yml`
+- M: `.github/workflows/package-portability.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `DEVELOPMENT.md`
+- M: `Dockerfile`
+- M: `INSTALLATION.md`
+- M: `README.md`
+- D: `assets/switchyard-cost-accuracy.png`
+- M: `benchmark/README.md`
+- M: `benchmark/routing-profiles/tb21-escalation-opus-glm-deepseek.toml`
+- A: `benchmark/routing-profiles/tb21-jev-opus-glm.toml`
+- M: `benchmark/switchyard-server.Dockerfile`
+- A: `bindings/typescript/README.md`
+- A: `bindings/typescript/package-lock.json`
+- A: `bindings/typescript/package.json`
+- A: `bindings/typescript/scripts/build.mjs`
+- A: `bindings/typescript/src/index.ts`
+- A: `bindings/typescript/test/composite.test.mjs`
+- A: `bindings/typescript/tsconfig.json`
+- M: `crates/libsy-llm-client/Cargo.toml`
+- M: `crates/libsy-llm-client/README.md`
+- M: `crates/libsy-llm-client/src/backend.rs`
+- M: `crates/libsy-llm-client/src/client.rs`
+- M: `crates/libsy-llm-client/src/lib.rs`
+- M: `crates/libsy-llm-client/src/metrics.rs`
+- M: `crates/libsy-llm-client/src/observability.rs`
+- M: `crates/libsy-llm-client/src/observation.rs`
+- A: `crates/libsy-llm-client/src/observed_translation.rs`
+- A: `crates/libsy-llm-client/src/openai_decisions.rs`
+- M: `crates/libsy-llm-client/src/run.rs`
+- A: `crates/libsy-llm-client/src/system_one.rs`
+- M: `crates/libsy-llm-client/tests/observability.rs`
+- M: `crates/libsy/Cargo.toml`
+- M: `crates/libsy/README.md`
+- M: `crates/libsy/src/algorithms.rs`
+- M: `crates/libsy/src/algorithms/advisor_gate.rs`
+- M: `crates/libsy/src/algorithms/advisor_gate/signals.rs`
+- M: `crates/libsy/src/algorithms/advisor_gate/tests.rs`
+- M: `crates/libsy/src/algorithms/composite.rs`
+- M: `crates/libsy/src/algorithms/escalation.rs`
+- M: `crates/libsy/src/algorithms/fall_through.rs`
+- A: `crates/libsy/src/algorithms/infra.rs`
+- M: `crates/libsy/src/algorithms/llm_class.rs`
+- M: `crates/libsy/src/algorithms/llm_class/decision.rs`
+- M: `crates/libsy/src/algorithms/plan_execute.rs`
+- M: `crates/libsy/src/algorithms/rand.rs`
+- M: `crates/libsy/src/algorithms/stage.rs`
+- M: `crates/libsy/src/algorithms/subagent.rs`
+- M: `crates/libsy/src/algorithms/subagent_affinity_tests.rs`
+- M: `crates/libsy/src/algorithms/util.rs`
+- M: `crates/libsy/src/algorithms/util/affinity.rs`
+- M: `crates/libsy/src/algorithms/util/escalation.rs`
+- M: `crates/libsy/src/algorithms/util/llm_judge.rs`
+- M: `crates/libsy/src/algorithms/util/robustness.rs`
+- M: `crates/libsy/src/algorithms/util/stage.rs`
+- M: `crates/libsy/src/algorithms/util/subagent.rs`
+- M: `crates/libsy/src/algorithms/util/tool_signals.rs`
+- A: `crates/libsy/src/algorithms/util/transcript.rs`
+- A: `crates/libsy/src/algorithms/vgr.rs`
+- A: `crates/libsy/src/algorithms/vgr/compaction.rs`
+- A: `crates/libsy/src/algorithms/vgr/config.rs`
+- A: `crates/libsy/src/algorithms/vgr/decide.rs`
+- A: `crates/libsy/src/algorithms/vgr/readout.rs`
+- A: `crates/libsy/src/algorithms/vgr/render.rs`
+- A: `crates/libsy/src/algorithms/vgr/rungs.rs`
+- A: `crates/libsy/src/algorithms/vgr/runtime.rs`
+- A: `crates/libsy/src/algorithms/vgr/runtime/tests.rs`
+- A: `crates/libsy/src/algorithms/vgr/safety.rs`
+- A: `crates/libsy/src/algorithms/vgr/tests.rs`
+- A: `crates/libsy/src/algorithms/vgr/text.rs`
+- M: `crates/libsy/src/core/algorithm.rs`
+- M: `crates/libsy/src/core/classifier.rs`
+- M: `crates/libsy/src/core/processor.rs`
+- M: `crates/libsy/src/core/state.rs`
+- M: `crates/libsy/src/core/testing.rs`
+- M: `crates/libsy/src/lib.rs`
+- M: `crates/libsy/src/observability.rs`
+- A: `crates/libsy/src/prompts/vgr/answer-verifier.md`
+- A: `crates/libsy/src/prompts/vgr/evidence-verifier-task.md`
+- A: `crates/libsy/src/prompts/vgr/turn-judge-system.md`
+- A: `crates/libsy/src/prompts/vgr/typing-system.md`
+- A: `crates/libsy/tests/cancellation.rs`
+- M: `crates/prefill-router/src/algorithm.rs`
+- M: `crates/prefill-router/tests/unit/algorithm.rs`
+- M: `crates/protocol/Cargo.toml`
+- M: `crates/protocol/README.md`
+- M: `crates/protocol/src/client.rs`
+- A: `crates/protocol/src/infra.rs`
+- M: `crates/protocol/src/lib.rs`
+- M: `crates/protocol/src/llm.rs`
+- M: `crates/protocol/src/stream.rs`
+- A: `crates/switchyard-costs/Cargo.toml`
+- A: `crates/switchyard-costs/prices.toml`
+- A: `crates/switchyard-costs/src/anthropic.rs`
+- A: `crates/switchyard-costs/src/lib.rs`
+- A: `crates/switchyard-costs/src/main.rs`
+- A: `crates/switchyard-costs/tests/pricing.rs`
+- A: `crates/switchyard-desktop/.gitignore`
+- A: `crates/switchyard-desktop/Cargo.toml`
+- A: `crates/switchyard-desktop/build.rs`
+- A: `crates/switchyard-desktop/examples/desktop-icons/export.rs`
+- A: `crates/switchyard-desktop/examples/desktop-icons/main.rs`
+- A: `crates/switchyard-desktop/icons/README.md`
+- A: `crates/switchyard-desktop/icons/icon.icns`
+- A: `crates/switchyard-desktop/icons/icon.ico`
+- A: `crates/switchyard-desktop/icons/icon.png`
+- A: `crates/switchyard-desktop/icons/tray-source.png`
+- A: `crates/switchyard-desktop/icons/tray.png`
+- A: `crates/switchyard-desktop/icons/tray.rgba`
+- A: `crates/switchyard-desktop/src/bin/switchyard-desktop-install.rs`
+- A: `crates/switchyard-desktop/src/config.rs`
+- A: `crates/switchyard-desktop/src/controller.rs`
+- A: `crates/switchyard-desktop/src/gui.rs`
+- A: `crates/switchyard-desktop/src/health.rs`
+- A: `crates/switchyard-desktop/src/history.rs`
+- A: `crates/switchyard-desktop/src/install.rs`
+- A: `crates/switchyard-desktop/src/install/credentials.rs`
+- A: `crates/switchyard-desktop/src/install/linux.rs`
+- A: `crates/switchyard-desktop/src/install/macos.rs`
+- A: `crates/switchyard-desktop/src/install/windows.rs`
+- A: `crates/switchyard-desktop/src/lib.rs`
+- A: `crates/switchyard-desktop/src/main.rs`
+- A: `crates/switchyard-desktop/src/pricing.rs`
+- A: `crates/switchyard-desktop/src/rollup.rs`
+- A: `crates/switchyard-desktop/src/summary.rs`
+- A: `crates/switchyard-desktop/src/tui.rs`
+- A: `crates/switchyard-desktop/src/windows.rs`
+- A: `crates/switchyard-desktop/tauri.conf.json`
+- A: `crates/switchyard-desktop/tests/desktop.rs`
+- A: `crates/switchyard-desktop/ui/basic.css`
+- A: `crates/switchyard-desktop/ui/basic.js`
+- A: `crates/switchyard-desktop/ui/index.html`
+- M: `crates/switchyard-nemo-relay-plugin/Cargo.toml`
+- M: `crates/switchyard-nemo-relay-plugin/README.md`
+- M: `crates/switchyard-nemo-relay-plugin/relay-plugin.toml`
+- M: `crates/switchyard-nemo-relay-plugin/src/lib.rs`
+- M: `crates/switchyard-nemo-relay-plugin/src/redaction_tests.rs`
+- M: `crates/switchyard-nemo-relay-plugin/src/runtime.rs`
+- A: `crates/switchyard-nemo-relay-plugin/src/span_capture.rs`
+- A: `crates/switchyard-node/Cargo.toml`
+- A: `crates/switchyard-node/build.rs`
+- A: `crates/switchyard-node/src/lib.rs`
+- A: `crates/switchyard-py/pypi.md`
+- M: `crates/switchyard-py/src/libsy_bindings.rs`
+- M: `crates/switchyard-runner/Cargo.toml`
+- M: `crates/switchyard-runner/src/algorithm.rs`
+- M: `crates/switchyard-runner/src/config.rs`
+- M: `crates/switchyard-runner/src/lib.rs`
+- M: `crates/switchyard-runner/src/route.rs`
+- M: `crates/switchyard-runner/src/runner.rs`
+- A: `crates/switchyard-runner/tests/classifier_modes.rs`
+- A: `crates/switchyard-runner/tests/openai_decisions.rs`

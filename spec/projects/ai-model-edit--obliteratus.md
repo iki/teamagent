@@ -29,3 +29,7 @@ Keep outside the production harness roadmap. Removing refusal behavior is not ev
 ## Related directions
 
 [Models](../models.md) · [Evolution](../evolution.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [obliteratus](https://github.com/elder-plinius/OBLITERATUS); analyzed commit `b847511776a2afa7ed076f676184a4abfef2b162`; commit date 2026-09-20T21:04:56-04:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-edit--obliteratus.md).
+<!-- teamagent-analysis:end -->

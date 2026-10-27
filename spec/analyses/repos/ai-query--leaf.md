@@ -1,0 +1,180 @@
+# leaf: change evidence
+
+Source: [leaf](https://github.com/RivoLink/leaf) · [Analysis](../../projects/ai-query--leaf.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `e4d08754c2d7f1e4fffa7650488f97f5d2513e4f`; commit date: 2026-09-28T10:22:48Z; review date: unknown; observed SHA: `29f6ad480d95a4240c63f63d390e9909afdad9e8`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/RivoLink/leaf/compare/e4d08754c2d7f1e4fffa7650488f97f5d2513e4f...29f6ad480d95a4240c63f63d390e9909afdad9e8). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [29f6ad480d95](https://github.com/RivoLink/leaf/commit/29f6ad480d95a4240c63f63d390e9909afdad9e8) 2026-10-25T19:46:31Z: 1.29.2
+- [332a98c6f4e5](https://github.com/RivoLink/leaf/commit/332a98c6f4e5c0a45756ce5b4138544bb4e94a3c) 2026-10-25T22:35:19+03:00: Merge pull request #350 from RivoLink/fix/cargo-audit-tokio-warning
+- [6ba2e2cd2115](https://github.com/RivoLink/leaf/commit/6ba2e2cd2115608fafea28e1b99de0b4096ca568) 2026-10-25T22:03:16+03:00: fix: cargo audit tokio warning
+- [38e7cff1451a](https://github.com/RivoLink/leaf/commit/38e7cff1451a012fc8142f9b2a55c994a6403b78) 2026-10-23T21:19:40+03:00: Merge pull request #349 from RivoLink/chore/highlight-search-matches
+- [63e0e66a0cf3](https://github.com/RivoLink/leaf/commit/63e0e66a0cf38a545b5b6539fc325525b49fc082) 2026-10-23T21:10:18+03:00: chore: highlight search matches
+- [dd52cac4e3de](https://github.com/RivoLink/leaf/commit/dd52cac4e3dee37eaf34a14363c5ec768e19d4ab) 2026-10-23T19:27:58+03:00: Merge pull request #348 from RivoLink/chore/double-click-text-copy
+- [c0c5793dfbed](https://github.com/RivoLink/leaf/commit/c0c5793dfbed5cd0838fa5b918bdf886910b7916) 2026-10-23T19:18:13+03:00: chore: double-click text copy
+- [568d45131c9b](https://github.com/RivoLink/leaf/commit/568d45131c9b08fdac2759202bfc1a1218a77b96) 2026-10-21T21:19:37+03:00: Merge pull request #347 from RivoLink/fix/clipboard-without-display
+- [7fd97b801527](https://github.com/RivoLink/leaf/commit/7fd97b801527153d4b3894a51e483466b13a77e9) 2026-10-21T21:13:50+03:00: fix: clipboard without display
+- [f2a75581f0a8](https://github.com/RivoLink/leaf/commit/f2a75581f0a8742da6f0cfa06d3e61638301e2d8) 2026-10-21T21:10:54+03:00: Merge pull request #346 from RivoLink/fix/cargo-audit-webpki-error
+- [6be6bb406249](https://github.com/RivoLink/leaf/commit/6be6bb4062490280b94b11af098bcf62a06c3944) 2026-10-21T21:06:16+03:00: fix: cargo audit webpki error
+- [aa94c8f373fa](https://github.com/RivoLink/leaf/commit/aa94c8f373fa617c2533bb720b27e27252b3b23d) 2026-10-21T20:30:14+03:00: Merge pull request #340 from DS-argus/chore/keyboard-link-selection
+- [73e74c656293](https://github.com/RivoLink/leaf/commit/73e74c656293f2a4ced419b50c10825c43c14ea3) 2026-10-17T12:24:53+03:00: chore: keyboard link selection
+- [07653b83749b](https://github.com/RivoLink/leaf/commit/07653b83749b74aafbad926374b0e86967201221) 2026-10-16T19:42:12+03:00: Merge pull request #338 from DS-argus/fix/clicks-on-drawn-rows
+- [5ae245a929fd](https://github.com/RivoLink/leaf/commit/5ae245a929fd2fdf5d8f003ffec50418a8bb81e6) 2026-10-16T19:35:05+03:00: fix: clicks on drawn rows
+- [56a47cd56a78](https://github.com/RivoLink/leaf/commit/56a47cd56a784dc9c71b5103a6a0ca1093d0d770) 2026-10-16T18:20:49+03:00: Merge pull request #339 from RivoLink/chore/improve-git-diff-viewer
+- [fb5ad1ca6e32](https://github.com/RivoLink/leaf/commit/fb5ad1ca6e32dc0ae33c96f6186ca6e079fb4b0c) 2026-10-16T18:12:44+03:00: chore: improve git diff viewer
+- [b6d076bd97c2](https://github.com/RivoLink/leaf/commit/b6d076bd97c24c1bea1198c2eb952276ec0073b1) 2026-10-14T21:18:07Z: 1.29.1
+- [5eb89425a067](https://github.com/RivoLink/leaf/commit/5eb89425a06742aa0e007e4e2c405fc415b2f5ef) 2026-10-15T00:15:16+03:00: Merge pull request #336 from RivoLink/docs/sync-readme-architecture
+- [57b2b8853f57](https://github.com/RivoLink/leaf/commit/57b2b8853f571cd5a16315f8075008720606ada3) 2026-10-15T00:07:39+03:00: docs: sync readme architecture
+- [1b819ad4aae8](https://github.com/RivoLink/leaf/commit/1b819ad4aae818f2fe7ff7f543e0480ddcf54973) 2026-10-14T23:15:56+03:00: Merge pull request #318 from FelixZhang/chore/page-jumps-in-pickers
+- [2be29214b884](https://github.com/RivoLink/leaf/commit/2be29214b88490fb389a7e5756899f83ba8c5bc7) 2026-10-14T23:11:17+03:00: chore: page jumps in pickers
+- [39075bdd43d5](https://github.com/RivoLink/leaf/commit/39075bdd43d5e17eba716ede792517c30ed98228) 2026-10-14T21:24:27+03:00: Merge pull request #335 from simono/chore/themes-from-config-dir
+- [e0da57c5b448](https://github.com/RivoLink/leaf/commit/e0da57c5b4484b23e94d7636a7c92f9c18427217) 2026-10-14T20:16:46+02:00: chore: themes from config dir
+- [c437076ef812](https://github.com/RivoLink/leaf/commit/c437076ef812e8e448d1dee0c3319dd46b25923b) 2026-10-14T20:51:05+03:00: Merge pull request #330 from certik/chore/space-key-page-down
+- [729fd8c9706f](https://github.com/RivoLink/leaf/commit/729fd8c9706f09fa52451319f83c9257a88df1f6) 2026-10-14T20:34:10+03:00: chore: space key page down
+- [4de5b6800b37](https://github.com/RivoLink/leaf/commit/4de5b6800b37ee078ca9beeb59d071ecfa137612) 2026-10-14T19:38:29+03:00: Merge pull request #313 from simono/feat/mermaid-width-feedback
+- [12fddecdd21f](https://github.com/RivoLink/leaf/commit/12fddecdd21f6962ec3f589965a882d00dbae417) 2026-10-14T19:34:23+03:00: Merge pull request #312 from simono/docs/mention-community-themes
+- [87fe7007cfdb](https://github.com/RivoLink/leaf/commit/87fe7007cfdb84820ba9ae4f296b11be7f0fbe3f) 2026-10-14T18:28:46+02:00: docs: mention community themes
+- [0b265d75e27a](https://github.com/RivoLink/leaf/commit/0b265d75e27a394006eab1355673bd85e2c83dd2) 2026-10-14T18:20:15+02:00: fix: mermaid width feedback
+- [bf3832a3bd78](https://github.com/RivoLink/leaf/commit/bf3832a3bd783f4a2de1b2490800047f5ac36a09) 2026-10-14T17:59:08+03:00: Merge pull request #334 from RivoLink/fix/cargo-audit-rustls-error
+- [1ddba715a779](https://github.com/RivoLink/leaf/commit/1ddba715a779ec84a2bef7478ea5865dcfeb74c0) 2026-10-14T17:53:15+03:00: fix: cargo audit rustls error
+
+## Changed paths
+
+- M: `ARCHITECTURE.md`
+- M: `CHANGELOG.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `README.md`
+- M: `completions/leaf.bash`
+- M: `completions/leaf.fish`
+- M: `completions/leaf.nu`
+- M: `completions/leaf.ps1`
+- M: `completions/leaf.zsh`
+- M: `config.toml`
+- M: `gruvbox.toml`
+- M: `src/app/code_blocks.rs`
+- M: `src/app/content.rs`
+- A: `src/app/diff_nav.rs`
+- A: `src/app/diff_preview.rs`
+- A: `src/app/diff_toggles.rs`
+- M: `src/app/file_picker.rs`
+- M: `src/app/flash.rs`
+- M: `src/app/history_picker.rs`
+- M: `src/app/links.rs`
+- M: `src/app/mod.rs`
+- A: `src/app/mode.rs`
+- M: `src/app/navigation.rs`
+- M: `src/app/search.rs`
+- A: `src/app/text_copy.rs`
+- M: `src/app/theme_picker.rs`
+- M: `src/cli.rs`
+- M: `src/clipboard.rs`
+- M: `src/config.rs`
+- A: `src/diff/layout.rs`
+- A: `src/diff/mod.rs`
+- A: `src/diff/parser.rs`
+- M: `src/editor.rs`
+- M: `src/main.rs`
+- M: `src/markdown/blocks.rs`
+- M: `src/markdown/footnotes.rs`
+- M: `src/markdown/highlight.rs`
+- M: `src/markdown/links.rs`
+- M: `src/markdown/lists.rs`
+- M: `src/markdown/markers.rs`
+- M: `src/markdown/mermaid.rs`
+- M: `src/markdown/mod.rs`
+- M: `src/markdown/spans.rs`
+- M: `src/markdown/table_layout.rs`
+- M: `src/markdown/tables.rs`
+- M: `src/markdown/width.rs`
+- M: `src/markdown/wrapping.rs`
+- M: `src/picker_width.rs`
+- M: `src/render/content.rs`
+- A: `src/render/diff/body.rs`
+- A: `src/render/diff/builder_common.rs`
+- A: `src/render/diff/builder_split.rs`
+- A: `src/render/diff/builder_split_body.rs`
+- A: `src/render/diff/builder_unified.rs`
+- A: `src/render/diff/frame.rs`
+- A: `src/render/diff/frame_close.rs`
+- A: `src/render/diff/gutter.rs`
+- A: `src/render/diff/layout.rs`
+- A: `src/render/diff/mod.rs`
+- A: `src/render/diff/preview.rs`
+- A: `src/render/diff/truncate.rs`
+- A: `src/render/diff_tree.rs`
+- M: `src/render/mod.rs`
+- M: `src/render/popup.rs`
+- A: `src/render/screen_geometry.rs`
+- M: `src/render/status.rs`
+- M: `src/render/toc.rs`
+- A: `src/runtime/code_select_keys.rs`
+- A: `src/runtime/diff_keys.rs`
+- M: `src/runtime/keyboard.rs`
+- A: `src/runtime/link_select_keys.rs`
+- M: `src/runtime/mod.rs`
+- M: `src/runtime/mouse.rs`
+- M: `src/tests/app.rs`
+- A: `src/tests/app_link_selection.rs`
+- A: `src/tests/app_mode.rs`
+- A: `src/tests/app_mode_diff_integration.rs`
+- A: `src/tests/app_text_copy.rs`
+- A: `src/tests/common/app_helpers.rs`
+- A: `src/tests/common/git_scratch.rs`
+- A: `src/tests/common/mod.rs`
+- A: `src/tests/common/render_helpers.rs`
+- M: `src/tests/config.rs`
+- A: `src/tests/diff_mode_detection.rs`
+- A: `src/tests/diff_parser.rs`
+- A: `src/tests/diff_render_fidelity.rs`
+- A: `src/tests/diff_search_preview.rs`
+- A: `src/tests/diff_view_rebuild.rs`
+- M: `src/tests/editor.rs`
+- M: `src/tests/file_picker.rs`
+- A: `src/tests/history_picker.rs`
+- A: `src/tests/link_mapping.rs`
+- M: `src/tests/markdown_embedded.rs`
+- M: `src/tests/markdown_footnotes.rs`
+- M: `src/tests/markdown_links.rs`
+- A: `src/tests/markdown_rendering.rs`
+- M: `src/tests/markdown_tables.rs`
+- M: `src/tests/mod.rs`
+- A: `src/tests/page_scroll.rs`
+- A: `src/tests/path_rendering.rs`
+- M: `src/tests/picker_width.rs`
+- M: `src/tests/render.rs`
+- A: `src/tests/render_file_frame.rs`
+- A: `src/tests/render_frame.rs`
+- A: `src/tests/render_gutter.rs`
+- A: `src/tests/render_hunk_header.rs`
+- A: `src/tests/render_intra_line.rs`
+- A: `src/tests/render_preview.rs`
+- A: `src/tests/render_split_body.rs`
+- A: `src/tests/render_split_frame.rs`
+- A: `src/tests/render_sticky.rs`
+- A: `src/tests/render_unified_truncate.rs`
+- M: `src/tests/theme.rs`
+- M: `src/theme/mod.rs`
+- M: `src/theme/presets.rs`
+- M: `src/theme/resolution.rs`
+- M: `src/theme/serde.rs`
+- A: `tests/fixtures/diff/basic.diff`
+- A: `tests/fixtures/diff/binary.diff`
+- A: `tests/fixtures/diff/binary_patch.diff`
+- A: `tests/fixtures/diff/combined.diff`
+- A: `tests/fixtures/diff/create.diff`
+- A: `tests/fixtures/diff/delete.diff`
+- A: `tests/fixtures/diff/mode_change.diff`
+- A: `tests/fixtures/diff/multi_file.diff`
+- A: `tests/fixtures/diff/no_newline.diff`
+- A: `tests/fixtures/diff/no_prefix.diff`
+- A: `tests/fixtures/diff/rename.diff`
+- A: `tests/fixtures/diff/rename_only.diff`
+- A: `tests/fixtures/diff/submodule.diff`
+- A: `tests/fixtures/diff/submodule_recursive.diff`
+- A: `tests/fixtures/diff/word_diff.diff`

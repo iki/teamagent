@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--future-agi",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/future-agi/future-agi",
+  "report": "spec/projects/ai-agents--future-agi.md",
+  "analyzedSha": "d794a49b0310e226815f503c7bf3f8426bb56d3f",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-01T18:26:33+05:30",
+  "observedSha": "018f24a8f3c4b9b71dc0d5443eefe1d7b89ced28",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "018f24a8f3c4b9b71dc0d5443eefe1d7b89ced28",
+      "date": "2026-10-22T16:12:32+05:30",
+      "subject": "Merge pull request #3594 from future-agi/release-please--branches--main"
+    },
+    {
+      "sha": "bad56882a292bd0da3ee5fd428363eb9cd65319a",
+      "date": "2026-10-22T10:40:22Z",
+      "subject": "chore(main): release 1.54.0"
+    },
+    {
+      "sha": "45ca858668927d30c6a0ac92ebbf2e1ff70d56af",
+      "date": "2026-10-22T16:09:41+05:30",
+      "subject": "Merge pull request #3582 from future-agi/dev"
+    },
+    {
+      "sha": "6e45382f7c6f6ceb631c6b285bd31a6548cd4997",
+      "date": "2026-10-22T16:08:30+05:30",
+      "subject": "Merge pull request #3593 from future-agi/chore/merge-main-into-dev-2026-10-22"
+    },
+    {
+      "sha": "b85d7f006bd74f0520f4228c274c164792f113db",
+      "date": "2026-10-22T16:06:20+05:30",
+      "subject": "chore: merge main into dev"
+    },
+    {
+      "sha": "44285494beb2797506c7394f52e7383300019ace",
+      "date": "2026-10-22T12:56:51+05:30",
+      "subject": "Merge pull request #3566 from future-agi/fix/th-8684-env-detail-sample-data"
+    },
+    {
+      "sha": "9847c48007bfc598d3e777a75284fb52011cde83",
+      "date": "2026-10-22T11:44:48+05:30",
+      "subject": "Merge pull request #3591 from future-agi/chore/disposable-domains-0.0.284"
+    },
+    {
+      "sha": "be6f2f3329cfef991d6dea4e6b2c877191d63946",
+      "date": "2026-10-22T10:41:01+05:30",
+      "subject": "Merge pull request #3558 from future-agi/feat/TH-7957-agent-layer-voice-observability"
+    },
+    {
+      "sha": "873b3c65ffa2396cbf68a84d8cc0b8cb8fbd7aa8",
+      "date": "2026-10-22T03:39:53Z",
+      "subject": "chore(accounts): refresh disposable email domain list (0.0.284)"
+    },
+    {
+      "sha": "b3737c4cc3adda2b2dd6c2808e6f4d50794c972e",
+      "date": "2026-10-21T23:03:17+05:30",
+      "subject": "Merge pull request #3585 from future-agi/release-please--branches--main"
+    },
+    {
+      "sha": "2b5618b8f4ffdfbceef6c00839ef0654f421dd4a",
+      "date": "2026-10-21T17:22:37Z",
+      "subject": "chore(main): release 1.53.0"
+    },
+    {
+      "sha": "ffa6fd21cd11b98cce7f30610197c02709854940",
+      "date": "2026-10-21T22:51:42+05:30",
+      "subject": "Merge pull request #3583 from future-agi/feat/TH-7957-agent-layer-voice-observability-main"
+    },
+    {
+      "sha": "e9e0d3a137600950c1791edeb3496b67f9cf8e48",
+      "date": "2026-10-21T21:34:26+05:30",
+      "subject": "Merge pull request #3584 from future-agi/hotfix/gateway-timeouts-credentials-limits"
+    },
+    {
+      "sha": "d727ba018a865888bd72a6c17ed40df67620d6e9",
+      "date": "2026-10-21T21:26:21+05:30",
+      "subject": "fix(gateway): stop dropping caller tools and provider response fields"
+    },
+    {
+      "sha": "06554b1e7e23cbddfdf227c0b51d624ad1ab330f",
+      "date": "2026-10-21T21:26:21+05:30",
+      "subject": "fix(gateway): judge every redirect hop against the configured origin"
+    },
+    {
+      "sha": "e9190c5b24a446d94a22d2d2d845883f21cf152a",
+      "date": "2026-10-21T21:26:20+05:30",
+      "subject": "fix(gateway): send a routing alias's model_override upstream; warn on unread config keys"
+    },
+    {
+      "sha": "f904189b52d5a51e22c2afb616aa9e3e380174b5",
+      "date": "2026-10-21T21:26:20+05:30",
+      "subject": "fix(gateway): answer 504 on a provider timeout, and keep the error writable"
+    },
+    {
+      "sha": "d872f7bd2d0c2e79c568937a4833262fc8acd04d",
+      "date": "2026-10-21T21:26:20+05:30",
+      "subject": "fix(gateway): enforce the token rate limit instead of only accepting it"
+    },
+    {
+      "sha": "635f0ad51e3c4c6ee69235c286a467017f31f25e",
+      "date": "2026-10-21T21:26:20+05:30",
+      "subject": "fix(gateway): keep the Gemini API key out of URLs and error messages"
+    },
+    {
+      "sha": "674f2f35eff90948d62663db673f6081ad14e195",
+      "date": "2026-10-21T20:54:11+05:30",
+      "subject": "Merge pull request #3569 from future-agi/fix/TH-8722-stop-dropping-tools-and-fields"
+    },
+    {
+      "sha": "b8159e32c1b0dad738db73e60050f744aced6f95",
+      "date": "2026-10-21T20:54:06+05:30",
+      "subject": "Merge pull request #3580 from future-agi/fix/gateway-redirect-origin-every-hop"
+    },
+    {
+      "sha": "e1cc3102a5dc0c4e3ff46ef51f489c2c4f17a4af",
+      "date": "2026-10-21T20:49:05+05:30",
+      "subject": "Merge feat/TH-7957-agent-layer-voice-observability into a branch from main (TH-7957)"
+    },
+    {
+      "sha": "d2618fac85fa5aede48795a03ed5e567707dbaa4",
+      "date": "2026-10-21T20:27:16+05:30",
+      "subject": "Merge pull request #3571 from future-agi/fix/TH-8724-gateway-cost-header-and-model-override"
+    },
+    {
+      "sha": "55bcaf9d53f86a9dfc506a712697add2b2eb0f37",
+      "date": "2026-10-21T20:27:09+05:30",
+      "subject": "Merge pull request #3568 from future-agi/fix/TH-8721-timeout-status-and-write-deadline"
+    },
+    {
+      "sha": "d0cb2d77224704a7b98a11b18f6a25c3b780fc1d",
+      "date": "2026-10-21T20:12:46+05:30",
+      "subject": "Merge pull request #3581 from future-agi/fix/TH-8683-config-form-keeps-observability"
+    },
+    {
+      "sha": "728a06878c8ac19b767aabe14ed56fe2359b8929",
+      "date": "2026-10-21T20:10:54+05:30",
+      "subject": "fix(simulate): the observability toggle also updates the version copies the config form reads (TH-8683)"
+    },
+    {
+      "sha": "9ed238d1dc836037baaccf3a65027697ea3f9d33",
+      "date": "2026-10-21T20:05:26+05:30",
+      "subject": "fix(gateway): apply alias equivalence to built-in tools only"
+    },
+    {
+      "sha": "db3d9e64a60f6a81ca0ab410910cf613fa24e07a",
+      "date": "2026-10-21T19:59:25+05:30",
+      "subject": "fix(gateway): judge every redirect hop against the configured origin"
+    },
+    {
+      "sha": "5b9f2cfc059c452bbb1e0792e724f1a5fb88ca68",
+      "date": "2026-10-21T19:37:56+05:30",
+      "subject": "Merge pull request #3530 from future-agi/feat/audio-metrics-code-eval"
+    },
+    {
+      "sha": "cab035a14453c749e0640c501a561fe4e0e938b5",
+      "date": "2026-10-21T19:31:46+05:30",
+      "subject": "fix(e2e): drop a node_modules symlink that broke the harness install"
+    },
+    {
+      "sha": "a85f85d6fc14d032ac78151d20d0bee9bc3c9f3d",
+      "date": "2026-10-21T19:29:57+05:30",
+      "subject": "test(gateway): prove a delayed response and a timeout reach a real client"
+    },
+    {
+      "sha": "164e8b3228e40455fd65424c189959b1d96fa65f",
+      "date": "2026-10-21T19:27:34+05:30",
+      "subject": "fix(gateway): one canonical capability identity, enforced on both policy paths"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/backend-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fi-collector-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/standalone-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".prettierignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/config.example.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/alerting/alerting.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/alerting/alerting_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/anthropicfmt/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/config/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/genaifmt/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/guardrails/external/external_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/guardrails/external/llamaguard.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/guardrails/toolperm/capability_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/guardrails/toolperm/toolperm.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/middleware/license_auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/middleware/license_auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/middleware/middleware_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/middleware/recovery.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/middleware/timeout.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/middleware/write_deadline_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/modeldb/litellm.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/modeldb/modeldb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/modeldb/pricing.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/audio.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/models/passthrough.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/models/passthrough_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/models/redact.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/models/redact_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/models/response.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/budget/budget.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/budget/budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/cost/cost.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/cost/cost_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/logging/logging_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/logging/record.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/ratelimit/limiter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/ratelimit/ratelimit.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/plugins/ratelimit/token_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/plugins/toolpolicy/capability_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/toolpolicy/toolpolicy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/plugins/toolpolicy/toolpolicy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/anthropic/anthropic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/anthropic/anthropic_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/anthropic/translate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/anthropic/translate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/azure/azure.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/azure/azure_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/bedrock/bedrock.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/bedrock/converse.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/cohere/cohere.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/cohere/cohere_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/common/timeout.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/common/timeout_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/credential_leak_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gauth/gauth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/gauth/gauth_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/gemini/credential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/embedding.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/embedding_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/gemini.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/gemini_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/image.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/image_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/gemini/server_tools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/speech.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/gemini/translate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/openai/openai.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/openai/timeout_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/providers/registry.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/providers/speech/speech.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/realtime/relay.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/realtime/relay_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/redisstate/ratelimit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/redisstate/ratelimit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/routing/circuitbreaker.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/routing/router.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/routing/routing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_anthropic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_assistants.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_audio.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_completion.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_embedding.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_genai.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_image.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_ocr.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_rerank.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_responses.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_search.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/handlers_speech.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/handlers_speech_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/handlers_vector_stores.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/org_provider_url_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/org_timeout_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/server/server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agentcc-gateway/internal/server/timeout_ceiling_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/tenant/store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/tenant/sync.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/tenant/sync_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/translation/anthropic/to_openai.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/translation/anthropic/to_openai_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/translation/gemini/to_openai.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentcc-gateway/internal/translation/gemini/to_openai_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api_contracts/harness/scoring-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api_contracts/openapi/management-api-contract-debt.generated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api_contracts/openapi/runtime-management-api-contract-debt.generated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api_contracts/openapi/swagger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/e2e",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/env-reference.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/futureagi/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/tests/test_observed_catalog_compose.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.distributed.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/.quarantine.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/FLOWS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/agents/call-log-eval-columns.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/alerts/scoring-eval-alert.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/flows/alerts/view-trace-scoping.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/auth/saml-tenant-isolation.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/dashboards/widget-y-axis.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/error-feed/retired-issue-redirect.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/error-feed/slack-alert.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/error-feed/slack-integration-management.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/error-feed/trigger-matrix.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/flows/evals/dataset-catalog-results.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/gateway/request-log-columns.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/flows/gateway/request-log-tags.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/flows/observe/catalog-user-parity.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/observe/eval-count-tiles.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/observe/list-pagination.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/observe/saved-view-preset-dates.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/flows/observe/voice-recording-error.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/flows/prompts/catalog-definition-lifecycle.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/harness/managed-mock.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/lib/env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/lib/flow-meta.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/lib/managed-mock-standalone.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/lib/managed-mock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/lib/saml-idp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/lib/saml_idp_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/lib/simulate-seed.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/playwright.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/scripts/flow-catalog.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/scripts/flow-catalog.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/stack/backend/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/stack/backend/e2e_feed_issue.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/stack/backend/settings_e2e.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

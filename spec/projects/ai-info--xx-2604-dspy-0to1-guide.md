@@ -23,3 +23,7 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [dspy-0to1-guide](https://github.com/evalops/dspy-0to1-guide); analyzed commit `0e519a78218cf9d3e75d219f5999ba3949e2c919`; commit date 2026-04-14T09:36:27-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--xx-2604-dspy-0to1-guide.md).
+<!-- teamagent-analysis:end -->

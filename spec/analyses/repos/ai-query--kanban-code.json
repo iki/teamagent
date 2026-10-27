@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-query--kanban-code",
+    "category": "ai-query",
+    "name": "kanban-code",
+    "url": "https://github.com/langwatch/kanban-code",
+    "aliases": [],
+    "report": "spec/projects/ai-query--kanban-code.md",
+    "topics": [
+      "memory",
+      "import-generation",
+      "decisions"
+    ],
+    "depth": "screened",
+    "analyzedSha": "41041f807791cb5402485fb49a7a2bfbdfb83aee",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T22:56:41+02:00",
+    "reportSha256": "53ee811c50d6f35dbadc80169fe88ae9a7e2e09e99134abae73651aa7c9786cc",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-query--kanban-code",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/langwatch/kanban-code",
+    "report": "spec/projects/ai-query--kanban-code.md",
+    "analyzedSha": "41041f807791cb5402485fb49a7a2bfbdfb83aee",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T22:56:41+02:00",
+    "observedSha": "1bfc15db18c3b899cf5e6cb67391318297775431",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "1bfc15db18c3b899cf5e6cb67391318297775431",
+        "date": "2026-10-26T14:25:59Z",
+        "subject": "fix(kv): kv run also sets a project secret under its bare key, so kv run laze/prod/QA_MAC_PASSWORD -- cmd gives cmd QA_MAC_PASSWORD"
+      },
+      {
+        "sha": "a73895624e4075bf1295eaff8d763d01e7837717",
+        "date": "2026-10-26T02:09:40Z",
+        "subject": "feat(vault): moved.json marks a name deleted with where it lives now, and kv says so instead of naming a Laze connection"
+      },
+      {
+        "sha": "bc4e8b32ded443d3307a2726494399a93b857157",
+        "date": "2026-10-25T22:14:59Z",
+        "subject": "feat(vault): kv refuses secrets that moved to the Laze vault, names their connection and logs each hit"
+      },
+      {
+        "sha": "a7eebc368b815520c9daecc830c4d657a5bfaec9",
+        "date": "2026-10-19T16:56:42Z",
+        "subject": "fix(slack): a codex rollout switch resumes each file where it left off and never replays an old backlog"
+      },
+      {
+        "sha": "6a31c1ffbf85f192c07d2cd3c6c1b57777a23092",
+        "date": "2026-10-17T19:39:46+02:00",
+        "subject": "fix(remote): a master that was answering shows offline only after 45 s of failed attempts, and the phone's events socket waits 60 s for a frame"
+      },
+      {
+        "sha": "51308bd6d8822049b7f6ceaf914f7290a478956b",
+        "date": "2026-10-17T10:40:00+02:00",
+        "subject": "chore(deploy): print how long the remote API was down for the restart"
+      },
+      {
+        "sha": "cbf5c55e7f5420a9b1a57237bd38ee71816b12c2",
+        "date": "2026-10-17T10:40:00+02:00",
+        "subject": "fix(remote): an offline peer is retried every 5 s, remote events reconnect within 5 s, and the phone reconnects on foreground"
+      },
+      {
+        "sha": "ae01c2ebbb4bce669604cb57f8aad8b961e14e47",
+        "date": "2026-10-17T10:40:00+02:00",
+        "subject": "fix(reconcile): automatic branch discovery reads only the last 8 MB of a session, and a refspec push names the branch it lands on"
+      },
+      {
+        "sha": "9cd22573a89a2fee0780051b461d558ff4bd31e4",
+        "date": "2026-10-17T10:40:00+02:00",
+        "subject": "fix(server): the remote API listens right after the cached links load, and the first reconcile runs behind it"
+      },
+      {
+        "sha": "f87f40f6e6c52e3399ba7552e861de9546c55d89",
+        "date": "2026-10-17T08:15:31Z",
+        "subject": "feat(vault): the Bash hook refuses commands that print a .env under /etc or a whole environment"
+      },
+      {
+        "sha": "5bd340238ba7199e39aea62d38b6d9c58111edb1",
+        "date": "2026-10-17T10:12:07+02:00",
+        "subject": "feat(hooks): a Claude Code PermissionRequest hook answers yes to every tool prompt but questions and plans, so a card never stalls on a check bypass mode still asks"
+      },
+      {
+        "sha": "6c9bb0434f105795390955680edc836444f54523",
+        "date": "2026-10-17T10:12:07+02:00",
+        "subject": "fix(queue): send now on a message rush already sent from its queue is taken as sent instead of failing, and the board drops the stale copy"
+      },
+      {
+        "sha": "b61d5b1f2f807a381992ef632c853b566a1bbc6a",
+        "date": "2026-10-17T04:54:17Z",
+        "subject": "fix(reconciler): a duplicate-session merge is kept, and cards another master runs are not merged"
+      },
+      {
+        "sha": "40f070055a3c91b105179b4629e692b8b7d2c11d",
+        "date": "2026-10-17T04:54:10Z",
+        "subject": "fix(vault): fold repeated open-tier hook releases, archive audit segments gzipped, ingest mirror pushes without rehashing"
+      },
+      {
+        "sha": "cfcd3f9077d2b19474bae73c671cf55776bdc712",
+        "date": "2026-10-17T03:54:45Z",
+        "subject": "fix(vault): an audit push reads only the lines after the peer's last one, not the whole log"
+      },
+      {
+        "sha": "1c93f6d8f278a56f7b65db4611d73d7a2de2ef1c",
+        "date": "2026-10-17T03:19:08Z",
+        "subject": "fix(server): cap glibc malloc arenas and fix the mmap threshold, so freed JSON buffers stop holding gigabytes of RSS"
+      },
+      {
+        "sha": "ef8667e4bf5bb6076333276b7a8b1f970cbc8912",
+        "date": "2026-10-15T19:01:00+02:00",
+        "subject": "fix(chat): pasted images are kept under ~/.kanban-code/images/chat before a prompt leaves, and every banner and copy toast is written to the app log"
+      },
+      {
+        "sha": "fa9d54347e402ce058665940cc76be99aa4a893a",
+        "date": "2026-10-15T18:55:39+02:00",
+        "subject": "fix(chat): a prompt for a card another master owns is journalled before it leaves, takes up to 40 images, and comes back as a failed bubble with retry when the owner refuses it"
+      },
+      {
+        "sha": "b73cfe1251ca7595af2e12744b44e809304dd5f6",
+        "date": "2026-10-15T17:24:06+02:00",
+        "subject": "test(vault): an approved replace is served at once, through a lease too"
+      },
+      {
+        "sha": "29d24a357c0ac8401a5f89c0b24719921e28530d",
+        "date": "2026-10-15T17:09:24+02:00",
+        "subject": "fix(kv): a value pasted at the terminal keeps its newlines instead of ending at the first line, and kv set takes the value from the io seam"
+      },
+      {
+        "sha": "95b2ff228a4f23ca6efd8aa75babc95ee1eb7f1f",
+        "date": "2026-10-15T17:09:24+02:00",
+        "subject": "fix(vault): a card lease serves the current value of an owner-only secret after a replace, and drops a held value once a peer changes it"
+      },
+      {
+        "sha": "b9723a83eebf56de235e1bdd99060a3d0082eb29",
+        "date": "2026-10-15T10:07:34+02:00",
+        "subject": "fix(vault): the Bash hook runs the command as the body of an if on kv, so Claude Code still checks rm after cd and a glob instead of asking in bypass mode"
+      },
+      {
+        "sha": "a1b11acec962799197851d4d494bef5e3d68b287",
+        "date": "2026-10-14T22:32:19+02:00",
+        "subject": "fix(vault): the Bash hook runs the command in a group after the env loads, so Claude Code can still check its rm calls instead of asking in bypass mode"
+      },
+      {
+        "sha": "f58fd57ddd1201b63dfc16433ba492ecc47c2a3e",
+        "date": "2026-10-13T08:46:26+02:00",
+        "subject": "fix(env): the app drops an Anthropic API key from the shell it was launched in, so cards bill the signed-in account"
+      },
+      {
+        "sha": "315c763ed943754302e35ce7aa04545aee52ce27",
+        "date": "2026-10-12T23:41:03+02:00",
+        "subject": "feat(remote): fork a card from the phone, on the master that owns it"
+      },
+      {
+        "sha": "0dc0724c0b19c121c3edf5de2fd5bfac6fe703b3",
+        "date": "2026-10-10T20:08:07+02:00",
+        "subject": "fix(handover): a card the other master cannot take comes back with the reason, instead of being retried without end"
+      },
+      {
+        "sha": "ffbd9971512b01012dee967781c7a849767d8169",
+        "date": "2026-10-10T19:57:34+02:00",
+        "subject": "fix(handover): a card of a new project with no git remote starts on the other master in a new repository there"
+      },
+      {
+        "sha": "c8909d937168b3065e916474ac38fa3875e767cd",
+        "date": "2026-10-09T19:39:19+02:00",
+        "subject": "feat(vault): a denied ask can carry a note from the owner that kv prints to the agent"
+      },
+      {
+        "sha": "53cf853af53e8602d3999669ef673fd9c2d55f52",
+        "date": "2026-10-08T19:57:39+02:00",
+        "subject": "feat(cli): agents.yaml host: rush runs a Claude agent on a rush host that moves between signed-in accounts"
+      },
+      {
+        "sha": "824b401a6e7f569316dbe6fb4d15cb8234d711be",
+        "date": "2026-10-07T19:47:40+02:00",
+        "subject": "fix(vault): Jev allows a judged secret used as its rules allow without needing the exact command in the prompts"
+      },
+      {
+        "sha": "e9be57580682555bfb772138c5847d89de7d8bf5",
+        "date": "2026-10-07T13:43:05+02:00",
+        "subject": "fix(board): a card started on another master opens here right away, as a local start does"
+      },
+      {
+        "sha": "1d9789f27f859cb6d3081b628ad7f72688aaa076",
+        "date": "2026-10-07T09:39:50+02:00",
+        "subject": "fix(boxd): an account switch made on a machine is kept, the Mac's login no longer replaces it"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Model/BoardModel.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Apps/iOS/KanbanCodeMobile/Model/CardSearchModel.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Model/FleetModel.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Model/TranscriptModel.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/AttentionView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/BoardScreen.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/CardActions.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/CardScreen.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/ChatPane.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/MarkdownTableView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/SideChatPanel.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/SlashCommandList.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobile/Views/VaultSecretOfferView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobileUITests/CardActionsTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Apps/iOS/KanbanCodeMobileUITests/CardSearchTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobileUITests/ChatAndTerminalTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/KanbanCodeMobileUITests/SideChatTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Apps/iOS/KanbanCodeMobileUITests/SlashCommandTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Apps/iOS/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Package.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Scripts/kanban-code-server/deploy.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/CMalloc/module.modulemap",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/CMalloc/shim.h",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/App.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/AppComposition.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/AppServices.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/AttentionDetailSheet.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/CardActionCatalog.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/CardDetailView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/CardView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/ChatContentCards.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/ChatMessageView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/ChatView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/ContentView+Launch.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/ContentView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/ListBoardView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/MacVaultDevice.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/PromptHistorySheet.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/QueuedPromptDialog.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/RemoteControlController.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/ScrubSettingsSection.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/SettingsView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/SideChatPanel.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCode/SlashCommandList.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/SyncSettingsView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/SystemTray.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/TerminalRepresentable.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/VaultOwnerSheet.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/VaultSecretOffer.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCode/VaultSettingsView.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/ClaudeCode/ClaudeCodeSessionDiscovery.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/ClaudeCode/JsonlParser.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Adapters/ClaudeCode/PermissionHook.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/ClaudeCode/VaultHook.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/Notifications/MacAttentionNotificationClient.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Adapters/Notifications/RemoteWakeHold.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/MasterRemoteControlHost.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteActivityPolicy.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteCardSearch.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlHost.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlServer.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteHTTP.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteOpenAPI.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemotePromptImages.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteScopePolicy.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteScrubRoutes.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteTranscriptMapper.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteVaultRoutes.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/Rush/RushCliAdapter.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/Vault/JevClient.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Adapters/Vault/ProcessEnvironment.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Adapters/Vault/VaultCallerResolver.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Domain/Entities/AgentSyncEntities.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Domain/Entities/AttentionRequest.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Domain/Entities/FailedPrompt.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Domain/Entities/VaultEntities.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Infrastructure/ChatImageStore.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Infrastructure/InheritedSessionEnvironment.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/Infrastructure/ProcessMemory.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/Infrastructure/QueuedPromptJournal.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/AgentSync/AgentSyncEngine.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/AgentSync/SyncFiles.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/UseCases/AgentSync/SyncJSONKeys.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/AssignColumn.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/AssistantLoginSync.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/BoardState.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/BoardStore.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/BoxdMachineSupervisor.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/CardReconciler.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Attention.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Peers.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+RushTokens.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+SlashCommands.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Subagents.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/PeerSync.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Scrub/ScrubScanner.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Scrub/SecretScrubber.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/UseCases/SlashCommands/SlashCommandCatalog.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/UseCases/TerminalImagePaste.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/RushTokenKeeper.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/StoreVaultApprovals.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/VaultAudit.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/VaultAuditSegments.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/VaultBroker.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/VaultCardTokens.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/VaultPolicy.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/VaultService.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeCore/UseCases/Vault/VaultStore.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteDemo/main.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/AttentionAnswering.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/AttentionRequest.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeRemoteKit/CardSearch.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeRemoteKit/HarnessNotes.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeRemoteKit/MarkdownTable.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeRemoteKit/RemoteActingFor.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/RemoteClient.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/RemoteHandover.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/RemoteModels.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeRemoteKit/RemoteReachability.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/SecretDetector.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/SideChat.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/SideChatController.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Sources/KanbanCodeRemoteKit/SlashCommands.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/Vault/VaultOwner.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeRemoteKit/VaultApprovalDetails.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeServer/ServerMaster.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Sources/KanbanCodeServer/main.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/AgentSyncTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/AssignColumnTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/AttentionDeliveryTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/Boxd/AssistantLoginSyncTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/ChatSendSafetyTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/DuplicateSessionMergeTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/InheritedSessionEnvironmentTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/MasterHandoverTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/PeerQueuedPromptTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/PeerSyncTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/PermissionHookTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/ProcessMemoryTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/ReducerTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/RemoteCardSearchTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/RemoteControlHostTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/RemoteControlMapperTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/RemoteControlServerTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/RemoteControlTestSupport.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/RemotePeerScopeTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/RemoteTestWebSocket.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/RemoteWakeHoldTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/RushTokenTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/Scrub/SecretScrubberTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/SessionDiscoveryTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/SessionPRDiscoveryTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/SlashCommands/SlashCommandCatalogTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/TerminalImagePasteTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/Vault/PastedSecretRouteTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/Vault/VaultApprovalCopyTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/Vault/VaultAuditSegmentTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Tests/KanbanCodeCoreTests/Vault/VaultAuditTailTests.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Tests/KanbanCodeCoreTests/Vault/VaultBrokerTests.swift",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

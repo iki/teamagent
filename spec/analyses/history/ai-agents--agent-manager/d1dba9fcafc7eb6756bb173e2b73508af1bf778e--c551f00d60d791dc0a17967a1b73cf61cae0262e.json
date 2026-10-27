@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--agent-manager",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/YoanWai/agent-manager",
+  "report": "spec/projects/ai-agents--agent-manager.md",
+  "analyzedSha": "d1dba9fcafc7eb6756bb173e2b73508af1bf778e",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T22:57:02+03:00",
+  "observedSha": "c551f00d60d791dc0a17967a1b73cf61cae0262e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c551f00d60d791dc0a17967a1b73cf61cae0262e",
+      "date": "2026-10-24T01:08:26+03:00",
+      "subject": "fix(e2e): close the messages panel like a user (#869)"
+    },
+    {
+      "sha": "6196b7df903b5273ef58e371937c0e213cefa516",
+      "date": "2026-10-23T20:40:18+03:00",
+      "subject": "docs: announce the Discord in the message feed and README (#867)"
+    },
+    {
+      "sha": "f0b3a9a8238f4ba8a0a6d2a284c592c94fbba910",
+      "date": "2026-10-23T20:07:32+03:00",
+      "subject": "docs: add the Discord community invite (#866)"
+    },
+    {
+      "sha": "0a57e8955309d10c2965ecff9d3b3319dbc5c006",
+      "date": "2026-10-23T17:30:19+03:00",
+      "subject": "feat(ui): highlight press u on a new release message (#864)"
+    },
+    {
+      "sha": "043378f54cdca2d1fc2f6370a1d724dd1f1dbc44",
+      "date": "2026-10-23T16:22:23+03:00",
+      "subject": "fix(tmux): paste a buffer's own linefeeds, not carriage returns (#860)"
+    },
+    {
+      "sha": "c5a962c71fa22913e124c7c9f91b27ad5b1f6145",
+      "date": "2026-10-23T15:41:36+03:00",
+      "subject": "fix(install): publish scripts you can read before they run (#852)"
+    },
+    {
+      "sha": "6782ab2793318f2efbb845cc3bc1c7203b5e07f1",
+      "date": "2026-10-23T15:38:17+03:00",
+      "subject": "feat(notify): say on the banner what the session row says (#751)"
+    },
+    {
+      "sha": "a740f9034fcba204285653c817d0fdbfeac844a9",
+      "date": "2026-10-23T15:32:48+03:00",
+      "subject": "fix(ui): send ctrl+c to a focused session (#856)"
+    },
+    {
+      "sha": "ec0f612a4c49d946e09823ae1b1a6888aa17ebb5",
+      "date": "2026-10-23T12:03:17+03:00",
+      "subject": "test(cli): cover non-interactive help failures (#854)"
+    },
+    {
+      "sha": "dc024ea84bd366b1d9c39f342ffd837327cbbeb7",
+      "date": "2026-10-23T11:51:19+03:00",
+      "subject": "feat(ci): publish releases to Scoop (#782)"
+    },
+    {
+      "sha": "61f42e25264a6cafec7e4b06f53c24786b8e8a40",
+      "date": "2026-10-23T11:13:41+03:00",
+      "subject": "fix(cli): exit 0 from a non-interactive start (#853)"
+    },
+    {
+      "sha": "c95349ff63e1a4bd865e9f7ad3708db1f0485481",
+      "date": "2026-10-22T22:43:48+03:00",
+      "subject": "docs(readme): reword the tagline (#851)"
+    },
+    {
+      "sha": "047de0656f2d81ac0029e1dc3b47587c18bc4950",
+      "date": "2026-10-22T20:31:12+03:00",
+      "subject": "docs(feed): announce sessions on other machines in v0.43.0 (#848)"
+    },
+    {
+      "sha": "38c61b28aa3ce53536f82359d3bdbc3e910f5bf1",
+      "date": "2026-10-22T12:10:53+03:00",
+      "subject": "feat(config): tell users when their agent CLI is older than we support (#841)"
+    },
+    {
+      "sha": "83bc8f791ac2c7210a0366ce764c52c17cc87b86",
+      "date": "2026-10-22T09:36:04+03:00",
+      "subject": "fix(install): install dependencies and agent CLIs on a fresh machine (#845)"
+    },
+    {
+      "sha": "6c302b222402ea73b138c6fe96599410719772bd",
+      "date": "2026-10-22T08:54:09+03:00",
+      "subject": "feat(cli): add Cursor CLI as a built-in tool (#843)"
+    },
+    {
+      "sha": "fad6b02ef66a100f491b6539225af406e2f7b84d",
+      "date": "2026-10-22T01:41:18+03:00",
+      "subject": "fix(opencode): launch, pick a model, fork and read status on OpenCode 2 (#846)"
+    },
+    {
+      "sha": "8206b53fd6c43d8103a36d63ef00652c9acd7425",
+      "date": "2026-10-21T23:50:19+03:00",
+      "subject": "Merge pull request #813 from ribeirojose/feat/ssh-connections"
+    },
+    {
+      "sha": "0545db9a9eca56ce3061450b46b22b3c8760fb36",
+      "date": "2026-10-21T23:29:56+03:00",
+      "subject": "fix(ui): draw the host default worktree label in the chosen glyph set"
+    },
+    {
+      "sha": "afd3a1f96ac299f8fbfc420360e30779d7fb5069",
+      "date": "2026-10-21T22:37:26+03:00",
+      "subject": "build(go): move to Go 1.27.3 for the crypto/x509 fix (#840)"
+    },
+    {
+      "sha": "523c68306a8be7a3e55c8dcefc422d54fd0c1692",
+      "date": "2026-10-21T15:16:04-03:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into feat/ssh-connections"
+    },
+    {
+      "sha": "b57a7e7cdd4d512dabe621f98499d91d63c813f3",
+      "date": "2026-10-21T14:34:24-03:00",
+      "subject": "fix(ssh): the kill question on a dead remote agent no longer says it frees RAM"
+    },
+    {
+      "sha": "b9f83fd83410e458d99c3e743de71c411791ede7",
+      "date": "2026-10-21T14:33:06-03:00",
+      "subject": "fix(ssh): refuse what a host cannot take on remote rows, and the preview follows the cursor between refreshes"
+    },
+    {
+      "sha": "1ceff0b1f69e6dd7357873b76b7ad7ccad478ec7",
+      "date": "2026-10-21T01:28:49+03:00",
+      "subject": "ci: speed up the Windows test job and fix its restore flake (#833)"
+    },
+    {
+      "sha": "99907b91cd6b279390ced69f758cb20bcd43e35d",
+      "date": "2026-10-21T01:21:57+03:00",
+      "subject": "feat(ui): extend compatible glyphs to content and actions"
+    },
+    {
+      "sha": "b6edf76b83f9a52485e6ce3acd9728cfc484bdf6",
+      "date": "2026-10-20T18:41:52-03:00",
+      "subject": "fix(ssh): remote previews keep their colors, the host's review key no longer leaves a request behind, and host key failures say what to do"
+    },
+    {
+      "sha": "6437c59197342255657898339da0fe75fd40452f",
+      "date": "2026-10-20T23:42:51+03:00",
+      "subject": "docs(readme): note it's the local tmux one"
+    },
+    {
+      "sha": "bbd29f53181d97169f3cc79e6514683640ce11e7",
+      "date": "2026-10-20T17:42:22-03:00",
+      "subject": "fix(ssh): drop a remote quick bar prompt that may have reached the agent, and say who a saved connection lets in"
+    },
+    {
+      "sha": "eefc8b31ae4ceb0e819ec8258e5e4cf0bd578cc7",
+      "date": "2026-10-20T23:00:55+03:00",
+      "subject": "fix(codex): match the turn label 0.159 joins with a bullet"
+    },
+    {
+      "sha": "caea23678cfd450e270fda905ff9d7c1d6dded8e",
+      "date": "2026-10-20T22:05:05+03:00",
+      "subject": "fix(report): file issues without labels (#827)"
+    },
+    {
+      "sha": "99ca330c36c73306dd06fe2e8c1cad7fcc53658e",
+      "date": "2026-10-20T21:19:33+03:00",
+      "subject": "fix(opencode): capture the session id from the list both majors print (#791)"
+    },
+    {
+      "sha": "568aa628c8f6a8623cdc270f3e3b24cd97b7e0cd",
+      "date": "2026-10-20T16:08:30+03:00",
+      "subject": "test(ui): build the repo before the worktree answer is cached (#825)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".coderabbit.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitleaksignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".goreleaser.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PRODUCT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "REVIEW.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo-diff.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo-fullscreen-comfortable.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo-fullscreen.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo-groups.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo-mouse.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo-revive.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo-space.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/demo.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/messages.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/screenshot-review.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/screenshot-sessions.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/screenshot-settings.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ssh-connections.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/extensions/extensions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/extensions/extensions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/headless/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/headless/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "install.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/antigravity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/antigravity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/antigravity_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/antigravity_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/antigravity_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/antigravity_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/capture.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/capture_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/claude.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/claude_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/cursor.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/cursor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/fork.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/fork_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/gemini.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/hermes_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/hermes_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentsession/muse_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/agentsession/sessionid_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/testdata/omp/2026-10-11T13-29-12-022Z_01a12b27-3455-75b7-80ac-db738fedb8b6.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/testdata/pi/2026-10-11T13-29-11-397Z_019a1b2c-3d4e-7f60-8a9b-0c1d2e3f4a5b.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/transcript.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentsession/transcript_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/local.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_lock_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_lock_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_lock_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_lock_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/app/serve_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/atomicfile/atomicfile.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/atomicfile/atomicfile_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/atomicfile/json.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/atomicfile/json_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/acp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/cache.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/catalog.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/catalog_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "R068",
+      "path": "internal/catalog/fake_helpers_test.go",
+      "previousPath": "internal/catalog/fake_test.go"
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/opencode.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/pi.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/process_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/process_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/process_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/process_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/catalog/rpc.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/testdata/opencode_models.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/testdata/opencode_models_unavailable.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/catalog/testdata/opencode_serve.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/catalog/value/value.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/cli.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/cli_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/files.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/parity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cli/prompts.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cli/prompts_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/report_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/review.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/review_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cli/settings.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/cli/settings_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/task.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/terminal.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/terminal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/update_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/clipboard/clipboard.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/clipboard/clipboard_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "R055",
+      "path": "internal/clipboard/native.go",
+      "previousPath": "internal/clipboard/native_linux.go"
+    },
+    {
+      "status": "D",
+      "path": "internal/clipboard/native_darwin.go",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "internal/clipboard/native_live_darwin_test.go",
+      "previousPath": "internal/clipboard/live_darwin_test.go"
+    },
+    {
+      "status": "A",
+      "path": "internal/config/builtin.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/install.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/install_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/install_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/install_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/install_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/config/keys.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/config/keys_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/legacy.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/legacy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/spawntools.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/spawntools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/version.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/version_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/agent_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/gemini.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/gemini_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/gemini_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/grok.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/grok_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/hermes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/hermes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/identity_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/identity_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/identity_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/openfiles_darwin.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/openfiles_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/process_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/process_windows.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/reader.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/reader_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/conversation/reader_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/deps/deps.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/deps/deps_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/deps/npm.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/deps/npm_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/diff/diff_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

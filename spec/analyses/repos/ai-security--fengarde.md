@@ -1,0 +1,207 @@
+# fengarde: change evidence
+
+Source: [fengarde](https://github.com/supermhel/fengarde) · [Analysis](../../projects/ai-security--fengarde.md) · [agents](../../agents.md), [skills](../../skills.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `285ca7244032aed3e3402da437a07d97b9792ade`; commit date: 2026-09-10T02:35:39+02:00; review date: unknown; observed SHA: `33e340ffb237b173ba85d0294248bc72ae3a03e6`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/supermhel/fengarde/compare/285ca7244032aed3e3402da437a07d97b9792ade...33e340ffb237b173ba85d0294248bc72ae3a03e6). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [33e340ffb237](https://github.com/supermhel/fengarde/commit/33e340ffb237b173ba85d0294248bc72ae3a03e6) 2026-10-23T21:04:50+02:00: Merge pull request #119 from supermhel/claude/evasion-f2-f4-c47e66
+- [07f3f8d9fd99](https://github.com/supermhel/fengarde/commit/07f3f8d9fd99f43ff3f2d564b00c50e41c6e0778) 2026-10-23T20:43:37+02:00: Merge origin/main into claude/evasion-f2-f4-c47e66
+- [07f799f408bf](https://github.com/supermhel/fengarde/commit/07f799f408bfce1ac75b3f75d2e00db948fcb24b) 2026-10-23T20:37:46+02:00: Merge pull request #124 from supermhel/claude/ws8-sentinel-window-state-06083c
+- [0c8f34c42bea](https://github.com/supermhel/fengarde/commit/0c8f34c42bea559d4dfd82ecdeb3673e384be803) 2026-10-23T20:37:11+02:00: Merge pull request #126 from supermhel/docs/close-opens-2026-10-22
+- [e2afde2947bc](https://github.com/supermhel/fengarde/commit/e2afde2947bc5889471a9217c34d2838d1e6befe) 2026-10-23T18:10:27+02:00: fix(f2): alias map fails closed when its file vanishes; map and rules swap together; address the delta review
+- [20bf492fee4d](https://github.com/supermhel/fengarde/commit/20bf492fee4d6d95345864c66ceac9dfaf061830) 2026-10-23T18:07:25+02:00: fix(ws2,ws5,docs): address the independent review of #126
+- [20bd99a9345a](https://github.com/supermhel/fengarde/commit/20bd99a9345ab1f5f326bbfc0b78d82c37ab8359) 2026-10-23T17:58:19+02:00: feat(ws6): log when a tenant's new-device baseline window opens; document the silent first hour
+- [e308456715c5](https://github.com/supermhel/fengarde/commit/e308456715c5cb9d1f6f3dffe645cea2342a8581) 2026-10-23T17:53:59+02:00: docs: live HA proof (ws8 service under Sentinel, 5-failover soak, replicas, WS-6, OpenSearch 3-node, Ollama, alias cut-over)
+- [f6994e8505ed](https://github.com/supermhel/fengarde/commit/f6994e8505ed688437c39af99cbb491e2a5c0518) 2026-10-23T17:53:35+02:00: docs(f2): cut-over note: switching the alias map on splits live incidents once (measured)
+- [a272e7beadcd](https://github.com/supermhel/fengarde/commit/a272e7beadcd0aae0c1f68f5531174eba31f3aff) 2026-10-23T17:53:08+02:00: docs(infra): HA compose is one project per host; one ws8 replica (both measured in the live HA proof)
+- [914162b86f84](https://github.com/supermhel/fengarde/commit/914162b86f841a2b9ba1cc372f441a66d3e0886c) 2026-10-23T17:52:27+02:00: fix(ws5): OLLAMA_TIMEOUT_SECONDS replaces the hardcoded 8 s Ollama timeout
+- [99a88d2a69f6](https://github.com/supermhel/fengarde/commit/99a88d2a69f66f981d948f9271ab8e41967c49a2) 2026-10-23T17:51:05+02:00: fix(ws8,runner): log the window counter at startup; skip pel_evicted on buses without a PEL cap; document one-replica limit
+- [96d6e8c5b047](https://github.com/supermhel/fengarde/commit/96d6e8c5b047f5eaf0d7d138aae994d4eefe5913) 2026-10-23T17:49:00+02:00: style(tools): ruff fix in rule_evidence_table
+- [0a2ebef8aee7](https://github.com/supermhel/fengarde/commit/0a2ebef8aee7f48ca2370769e5a344cd5a302eff) 2026-10-23T17:48:48+02:00: docs(benchmark): per-rule evidence map; the corpus numbers grade 6 of 46 rules, say so and give the plan
+- [4ad89652610f](https://github.com/supermhel/fengarde/commit/4ad89652610fe9a1ab589052ffd92a02cf8b693b) 2026-10-23T17:47:20+02:00: style(ws2): drop unused import in the extreme-value sweep
+- [a1152916af33](https://github.com/supermhel/fengarde/commit/a1152916af33c303949e1e2489274c0ddf51cbb6) 2026-10-23T17:47:01+02:00: fix(ws2): numeric source ids no longer make schema-invalid events; add an extreme-value sweep over every parser
+- [55fec456bdf9](https://github.com/supermhel/fengarde/commit/55fec456bdf9ea30400ebf88f1a0f7d0c9b9eea1) 2026-10-23T17:35:00+02:00: docs(benchmark): full corpus measured on the 46-rule build (identical corpus, same pin): graded results unchanged
+- [9e368b85a5d5](https://github.com/supermhel/fengarde/commit/9e368b85a5d58bfbc63300eacf51be3f5df0fb5c) 2026-10-23T16:42:22+02:00: docs(site): regenerate og.png from the current page; restore hero side padding
+- [a84ec02cf9f7](https://github.com/supermhel/fengarde/commit/a84ec02cf9f7153dfdf8c8562724ec3e865e2be8) 2026-10-23T16:39:00+02:00: test(ws8): failed window write during failover is left unacked, redelivered once, not double-counted
+- [aad9d1660aab](https://github.com/supermhel/fengarde/commit/aad9d1660aab6a9c234bdc2e2c2edde3f574f548) 2026-10-23T16:31:57+02:00: fix(ws4,ws7): alert carries trigger_event_id so WS-5 verdicts attach to distinct-count alerts
+- [33e5551e0689](https://github.com/supermhel/fengarde/commit/33e5551e06898cb1d11f0dc9480a541b5ed26a0c) 2026-10-23T15:38:02+02:00: docs,test: live proof part 3 (Sentinel failover, WS-5, dashboard, bucket-boundary re-run); pin the re-run residual
+- [bae36778d320](https://github.com/supermhel/fengarde/commit/bae36778d3208c5c38c0d041f79923f9a947d1e2) 2026-10-23T15:06:44+02:00: docs(benchmark): add indicative local 46-rule near-full-corpus run, labelled incomplete
+- [e343f09693a0](https://github.com/supermhel/fengarde/commit/e343f09693a0f685eeff2bcea365a0583d3a2ae5) 2026-10-23T14:51:31+02:00: docs(ws8): state exactly what survives in Redis; test: pin Sentinel kwargs to ws4's
+- [2a99765dc714](https://github.com/supermhel/fengarde/commit/2a99765dc7147d5336200d7cb9873fa4d38cd067) 2026-10-23T14:49:07+02:00: fix(ws4): alias map fails closed on empty/truncated files; document clamp residuals; pass WINDOW env through compose
+- [b03be888ae46](https://github.com/supermhel/fengarde/commit/b03be888ae46130dbc3430a498f9d400eb5be8bf) 2026-10-23T13:53:46+02:00: docs(benchmark): publish both snapshots, full-corpus 36-rule run kept and labelled
+- [57455bc45dcb](https://github.com/supermhel/fengarde/commit/57455bc45dcbb8b10f852acd41e5bc9a0ffb0137) 2026-10-23T12:54:56+02:00: docs: re-measure benchmark on 46 rules, re-record demo fixtures and console screenshots
+- [e96a2f6bc235](https://github.com/supermhel/fengarde/commit/e96a2f6bc235a11f66d4c395be23f49cfb4c7a5a) 2026-10-23T12:52:56+02:00: fix(ws2): to_epoch_ms rejects ints past float range instead of raising
+- [80786d01c568](https://github.com/supermhel/fengarde/commit/80786d01c56870d54c213ee5371e55c124b1401d) 2026-10-22T19:39:36+02:00: docs: all ten v0.11.3 image signatures verified; entity.updates is consumed by WS-3
+- [e2b6ae2bf2ab](https://github.com/supermhel/fengarde/commit/e2b6ae2bf2abffd3fc705c7714a7e4124cf63356) 2026-10-22T19:33:57+02:00: docs(ws4): INTERFACE.md documents the clamp default, skew cap and alias-map env
+- [c617e1a7f7c0](https://github.com/supermhel/fengarde/commit/c617e1a7f7c07f72101f311e31bfe70a896f0cc6) 2026-10-22T19:33:26+02:00: fix(ws4,ws8,ws9,tools): window-aware clamp closes F4; per-tenant alias map folded in WS-4/8/9 closes F2 under a map
+- [e174f34e8486](https://github.com/supermhel/fengarde/commit/e174f34e8486f660f99d2b2bf79f4314c3c787f2) 2026-10-22T19:33:08+02:00: test(ws8): fake redis-py in test_window_backend so the CI quality job (no redis installed) passes
+- [9fedd880de0a](https://github.com/supermhel/fengarde/commit/9fedd880de0a9e75ff053f8f69f4f4608490ad1f) 2026-10-22T19:33:08+02:00: fix(ws8): use the Sentinel-aware Redis window counter under BUS_BACKEND=redis-sentinel
+
+## Changed paths (truncated)
+
+- M: `.gitattributes`
+- A: `.github/CODEOWNERS`
+- M: `.github/ISSUE_TEMPLATE/parser_request.md`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- A: `.github/ci-requirements/atheris.in`
+- A: `.github/ci-requirements/atheris.txt`
+- A: `.github/ci-requirements/cyclonedx.in`
+- A: `.github/ci-requirements/cyclonedx.txt`
+- A: `.github/ci-requirements/mutmut.in`
+- A: `.github/ci-requirements/mutmut.txt`
+- A: `.github/ci-requirements/pip-audit.in`
+- A: `.github/ci-requirements/pip-audit.txt`
+- A: `.github/ci-requirements/quality.in`
+- A: `.github/ci-requirements/quality.txt`
+- A: `.github/ci-requirements/yaml-hypothesis-redis.in`
+- A: `.github/ci-requirements/yaml-hypothesis-redis.txt`
+- A: `.github/ci-requirements/yaml-redis.in`
+- A: `.github/ci-requirements/yaml-redis.txt`
+- A: `.github/ci-requirements/yaml.in`
+- A: `.github/ci-requirements/yaml.txt`
+- M: `.github/dependabot.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/codeql.yml`
+- A: `.github/workflows/dco.yml`
+- M: `.github/workflows/fuzz.yml`
+- M: `.github/workflows/nightly-adversary.yml`
+- M: `.github/workflows/nightly-eval.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/scorecard.yml`
+- M: `.gitignore`
+- A: `.gitleaksignore`
+- M: `CHANGELOG.md`
+- M: `CLAUDE.md`
+- A: `CODE_OF_CONDUCT.md`
+- M: `CONTRIBUTING.md`
+- M: `Makefile`
+- M: `README.md`
+- A: `SECURITY-INSIGHTS.yml`
+- M: `SECURITY.md`
+- M: `SSOT.md`
+- A: `benchmark/README.md`
+- A: `benchmark/methodology.md`
+- A: `benchmark/reproduction.md`
+- A: `benchmark/results.json`
+- A: `benchmark/rule-evidence.md`
+- A: `contracts/allowlists/dns_high_cardinality_parents.yml`
+- A: `contracts/allowlists/non_geographic_country_codes.yml`
+- A: `contracts/allowlists/opcua_authorized_nodes.yml`
+- M: `contracts/bus-topics.md`
+- M: `contracts/detection-coverage.md`
+- A: `contracts/identity-aliases.md`
+- A: `contracts/identity_aliases.yaml`
+- M: `contracts/inventory-api.yaml`
+- M: `contracts/ocsf-classes.md`
+- M: `contracts/ocsf-event.schema.json`
+- M: `contracts/opensearch-mappings/events-bank.json`
+- M: `contracts/opensearch-mappings/events-common.json`
+- M: `contracts/opensearch-mappings/events-dc.json`
+- M: `contracts/rules/common_beaconing.yml`
+- A: `contracts/rules/common_bruteforce_by_account.yml`
+- A: `contracts/rules/common_credential_stuffing_sustained.yml`
+- A: `contracts/rules/common_dns_tunnel_by_domain.yml`
+- M: `contracts/rules/common_impossible_travel.yml`
+- M: `contracts/rules/common_lateral_movement.yml`
+- A: `contracts/rules/common_lateral_movement_by_source.yml`
+- A: `contracts/rules/common_password_spray_by_source.yml`
+- A: `contracts/rules/common_port_scan_by_target.yml`
+- A: `contracts/rules/common_port_sweep.yml`
+- A: `contracts/rules/dc_mass_vm_delete_by_source.yml`
+- A: `contracts/rules/email_macro_attachment_delivered.yml`
+- A: `contracts/rules/m365_inbox_rule_external_forward.yml`
+- A: `contracts/rules/ot_opcua_write_unauthorized_node.yml`
+- A: `contracts/rules/win_ad_sensitive_attribute_modified.yml`
+- A: `contracts/rules/win_audit_log_cleared.yml`
+- A: `contracts/rules/win_lsass_access_suspicious.yml`
+- A: `contracts/rules/win_office_spawns_shell.yml`
+- A: `contracts/rules/win_powershell_suspicious_script.yml`
+- A: `contracts/rules/win_service_installed_suspicious_path.yml`
+- M: `contracts/sigma-convention.md`
+- M: `contracts/tenants/README.md`
+- M: `contracts/triage-api.yaml`
+- M: `docs/adding-a-parser.md`
+- M: `docs/adr/001-redis-streams-as-the-bus.md`
+- M: `docs/adr/003-opensearch-not-elasticsearch.md`
+- M: `docs/adr/004-microservice-split-bus-only-coupling.md`
+- M: `docs/adr/006-local-first-llm-triage.md`
+- M: `docs/adr/007-cross-alert-correlation-separate-service.md`
+- M: `docs/adr/009-entity-plane-bus-topics.md`
+- M: `docs/adr/README.md`
+- M: `docs/agent-monitoring.md`
+- R099: `docs/archive/2026-06-28-T3-loop-ownership-decision.md` (from `docs/superpowers/specs/2026-06-28-T3-loop-ownership-decision.md`)
+- R100: `docs/archive/PHASE0_README.md` (from `docs/PHASE0_README.md`)
+- R100: `docs/archive/audit-2026-08-13.md` (from `docs/audit-2026-08-13.md`)
+- R100: `docs/archive/reality-map-2026-08-07.md` (from `docs/reality-map-2026-08-07.md`)
+- R100: `docs/archive/reviews/fixes_summary.md` (from `docs/reviews/fixes_summary.md`)
+- R100: `docs/archive/reviews/fixes_summary_round2.md` (from `docs/reviews/fixes_summary_round2.md`)
+- R100: `docs/archive/reviews/gap_hunt_full_report_2026-08-26.md` (from `docs/reviews/gap_hunt_full_report_2026-08-26.md`)
+- R100: `docs/archive/reviews/github_actions_audit_2026-08-06.md` (from `docs/reviews/github_actions_audit_2026-08-06.md`)
+- R100: `docs/archive/reviews/implementation_report_2026-08-06.md` (from `docs/reviews/implementation_report_2026-08-06.md`)
+- R100: `docs/archive/reviews/independent_review_of_fixes.md` (from `docs/reviews/independent_review_of_fixes.md`)
+- R100: `docs/archive/reviews/independent_review_of_fixes_round2.md` (from `docs/reviews/independent_review_of_fixes_round2.md`)
+- R100: `docs/archive/reviews/independent_review_of_m4_final.md` (from `docs/reviews/independent_review_of_m4_final.md`)
+- R100: `docs/archive/reviews/independent_security_audit_2026-08-06.md` (from `docs/reviews/independent_security_audit_2026-08-06.md`)
+- R100: `docs/archive/reviews/report_comparison_and_enhancements_2026-08-06.md` (from `docs/reviews/report_comparison_and_enhancements_2026-08-06.md`)
+- R100: `docs/archive/reviews/review_adversarial_security.md` (from `docs/reviews/review_adversarial_security.md`)
+- R100: `docs/archive/reviews/review_architecture.md` (from `docs/reviews/review_architecture.md`)
+- R100: `docs/archive/reviews/review_architecture_ha_audit.md` (from `docs/reviews/review_architecture_ha_audit.md`)
+- R100: `docs/archive/reviews/review_bugs.md` (from `docs/reviews/review_bugs.md`)
+- R100: `docs/archive/reviews/review_code_quality.md` (from `docs/reviews/review_code_quality.md`)
+- R100: `docs/archive/reviews/review_design_decisions.md` (from `docs/reviews/review_design_decisions.md`)
+- R100: `docs/archive/reviews/review_performance.md` (from `docs/reviews/review_performance.md`)
+- R100: `docs/archive/reviews/swarm_review_report.md` (from `docs/reviews/swarm_review_report.md`)
+- R100: `docs/archive/reviews/unified_fix_plan_2026-08-06.md` (from `docs/reviews/unified_fix_plan_2026-08-06.md`)
+- A: `docs/console-demo.md`
+- A: `docs/console-feature-matrix.md`
+- M: `docs/degradation-matrix.md`
+- A: `docs/demo/assets/DemoBar-CiLruwyP.js`
+- A: `docs/demo/assets/adapter-CwtyNRCY.js`
+- A: `docs/demo/assets/archivo-latin-ext-wdth-normal-7khWdh9v.woff2`
+- A: `docs/demo/assets/archivo-latin-wdth-normal-DY7AcnAa.woff2`
+- A: `docs/demo/assets/archivo-vietnamese-wdth-normal-rJmnGBSt.woff2`
+- A: `docs/demo/assets/index-BVlWOtxG.js`
+- A: `docs/demo/assets/index-GS4hR2Qa.css`
+- A: `docs/demo/assets/jetbrains-mono-cyrillic-ext-wght-normal-EocZY2iu.woff2`
+- A: `docs/demo/assets/jetbrains-mono-cyrillic-wght-normal-D73BlboJ.woff2`
+- A: `docs/demo/assets/jetbrains-mono-greek-wght-normal-Bw9x6K1M.woff2`
+- A: `docs/demo/assets/jetbrains-mono-latin-ext-wght-normal-DBQx-q_a.woff2`
+- A: `docs/demo/assets/jetbrains-mono-latin-wght-normal-B9CIFXIH.woff2`
+- A: `docs/demo/assets/jetbrains-mono-vietnamese-wght-normal-Bt-aOZkq.woff2`
+- A: `docs/demo/index.html`
+- M: `docs/deployment.md`
+- A: `docs/fonts/OFL.txt`
+- A: `docs/fonts/archivo-latin-wdth.woff2`
+- A: `docs/fonts/jetbrains-mono-latin.woff2`
+- A: `docs/gap-hunt-status.md`
+- A: `docs/handoff/2026-10-08-eval-harness-handoff.md`
+- A: `docs/handoff/2026-10-14-open-items-plan.md`
+- A: `docs/handoff/2026-10-14-p1-coverage-map.md`
+- A: `docs/handoff/2026-10-14-p2-blind-recall-funnel.md`
+- A: `docs/handoff/2026-10-14-p4-blind-oracle-triangulation.md`
+- A: `docs/handoff/2026-10-14-p4-disagreement-register.md`
+- A: `docs/handoff/2026-10-14-q15-q16-measurements.md`
+- A: `docs/handoff/2026-10-22-session-log.md`
+- A: `docs/handoff/blind-oracles/2026-10-14-phishing-bec-blind.yaml`
+- A: `docs/handoff/blind-oracles/owner_decisions.yaml`
+- A: `docs/handoff/design-specs/plan.json`
+- A: `docs/handoff/design-specs/step1_external-corpus.json`
+- A: `docs/handoff/design-specs/step2_storyline-coverage.json`
+- A: `docs/handoff/design-specs/step3_causal-order.json`
+- A: `docs/handoff/design-specs/step4_oracle-cross-check.json`
+- A: `docs/handoff/design-specs/step5_adaptive-evasion.json`
+- A: `docs/handoff/design-specs/step6_ratchet-ci.json`
+- A: `docs/handoff/design-specs/step7_scorecard.json`
+- A: `docs/handoff/live-proof-ha-2026-10-23.md`
+- A: `docs/handoff/live/live_props.py`
+- A: `docs/handoff/live/run_live.sh`
+- A: `docs/handoff/review-areas.js`
+- D: `docs/img/audit.png`
+- A: `docs/img/console-alarms.png`
+- A: `docs/img/console-audit.png`

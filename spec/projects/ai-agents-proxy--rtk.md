@@ -28,3 +28,7 @@ Shortlist for optional terminal adapters after regression checks on Windows and 
 ## Related directions
 
 [Models](../models.md) · [Memory](../memory.md) · [Agents](../agents.md) · [Decisions](../decisions.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [rtk](https://github.com/rtk-ai/rtk); analyzed commit `c356374fc1c9cff132c02484d2b9195c796b8e8f`; commit date 2026-10-03T18:03:05+02:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--rtk.md).
+<!-- teamagent-analysis:end -->

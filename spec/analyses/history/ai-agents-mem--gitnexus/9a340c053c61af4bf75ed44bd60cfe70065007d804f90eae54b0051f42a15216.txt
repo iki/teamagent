@@ -1,0 +1,28 @@
+# gitnexus
+
+Structured code ingestion with optional graph phases and hybrid symbol/document retrieval.
+
+Source: [gitnexus](https://github.com/abhigyanpatwari/GitNexus) · Snapshot: `5f9f95f22454b1f878ca549bc38b4c2ef5066b9a` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [gitnexus/src/core/ingestion/pipeline.ts:318-370](https://github.com/abhigyanpatwari/GitNexus/blob/5f9f95f22454b1f878ca549bc38b4c2ef5066b9a/gitnexus/src/core/ingestion/pipeline.ts#L318-L370)
+- [gitnexus/src/core/search/hybrid-search.ts:158-192](https://github.com/abhigyanpatwari/GitNexus/blob/5f9f95f22454b1f878ca549bc38b4c2ef5066b9a/gitnexus/src/core/search/hybrid-search.ts#L158-L192)
+
+The ingestion registry orders scan, structure, configuration, Markdown, parsing, routes, tools, ORM, cross-file and scope-resolution phases, followed by additional language/framework phases. Taint and call summaries are explicitly gated by a PDG option; communities and process derivation can be skipped independently. The hybrid search function runs LadybugDB full-text retrieval and an injected semantic retriever concurrently, then merges through reciprocal-rank fusion. Both branches catch errors and return empty lists, allowing degraded operation.
+
+## Harness implications
+
+Represent code with several complementary views: literal text for exact symbols, syntax declarations for navigation, dependency/call relations for impact, and embeddings for conceptual discovery. The phase registry is preferable to a monolithic parser because language support and expensive analyses can be selected per repository. Preserve commit identity and symbol ranges with every graph record. Retrieval should identify whether a result came from lexical, semantic or structural evidence.
+
+## Limitations and tradeoffs
+
+A code graph is an approximation of actual execution: reflection, dynamic imports, generated code, macros and incomplete language support can hide dependencies. Optional PDG phases do not mean every graph contains precise dataflow. In the inspected hybrid path, failures are swallowed into empty arms; the harness must surface degradation rather than interpreting empty results as authoritative absence. The source review does not prove the correctness of all framework-specific phases or end-to-end index freshness.
+
+## Adoption and validation
+
+Pilot as an optional code-intelligence adapter, with plain file search and language-server references as controls. Use it to suggest impact neighborhoods, then read authoritative source before editing. Acceptance tasks should include renamed symbols, stale commits, multi-language workspaces, generated files, dynamic calls and unavailable FTS. Measure patch success and missed affected tests, not just search relevance.
+
+Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [agents](../agents.md).

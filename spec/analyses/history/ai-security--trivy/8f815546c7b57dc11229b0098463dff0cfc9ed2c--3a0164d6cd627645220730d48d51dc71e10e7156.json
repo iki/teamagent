@@ -1,0 +1,879 @@
+{
+  "id": "ai-security--trivy",
+  "generatedAt": "2026-10-24T06:36:54.441Z",
+  "observedAt": "2026-10-24T06:36:43.1574360+00:00",
+  "source": "https://github.com/aquasecurity/trivy",
+  "report": "spec/projects/ai-security--trivy.md",
+  "analyzedSha": "8f815546c7b57dc11229b0098463dff0cfc9ed2c",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T03:26:05Z",
+  "observedSha": "3a0164d6cd627645220730d48d51dc71e10e7156",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3a0164d6cd627645220730d48d51dc71e10e7156",
+      "date": "2026-10-23T10:26:17Z",
+      "subject": "chore(deps): bump the common group across 1 directory with 14 updates (#11463)"
+    },
+    {
+      "sha": "759e624634e38a515832cda3d0a2cf179a02962b",
+      "date": "2026-10-23T09:33:59Z",
+      "subject": "chore(deps): bump github.com/aws/aws-sdk-go-v2/service/ec2 from 1.338.4 to 1.339.0 in the aws group (#11461)"
+    },
+    {
+      "sha": "6b2fe6f37f0f1f4f48bfe14253ad2d9c8166ff47",
+      "date": "2026-10-23T09:20:18Z",
+      "subject": "chore(deps): bump the docker group with 3 updates (#11462)"
+    },
+    {
+      "sha": "0231990f702f626e6981afaafcb0c97d43be28c7",
+      "date": "2026-10-22T12:42:59Z",
+      "subject": "fix(terraform): convert primitives to string in list attributes (#11223)"
+    },
+    {
+      "sha": "2f4aaf7e7caa9eb91fb6abefc05a78a899698b5b",
+      "date": "2026-10-21T13:41:32Z",
+      "subject": "feat(crypto): read unencrypted certificates from PKCS#12 keystores (#11399)"
+    },
+    {
+      "sha": "f61f400f60a108751e5886b896b2fc63c31bd865",
+      "date": "2026-10-21T12:09:37Z",
+      "subject": "ci(helm): bump Trivy version to 0.76.1 for Trivy Helm Chart 0.28.1 (#11450)"
+    },
+    {
+      "sha": "1f93b251d810bd7690a9415e3d90ccd7d0e1066d",
+      "date": "2026-10-21T08:49:37Z",
+      "subject": "chore(deps): bump the aws group across 1 directory with 6 updates (#11441)"
+    },
+    {
+      "sha": "738839c0e991b5485cbdc07419ebbb0546ea9fc2",
+      "date": "2026-10-21T07:15:43Z",
+      "subject": "chore(deps): bump the docker group with 3 updates (#11416)"
+    },
+    {
+      "sha": "a8291657ec9215d6befa29bcb79aea2920e500eb",
+      "date": "2026-10-21T07:15:39Z",
+      "subject": "chore(deps): bump the common group with 3 updates (#11417)"
+    },
+    {
+      "sha": "78479c92dd00b4a80bbcf1e2a27752aab09526fd",
+      "date": "2026-10-20T14:54:39Z",
+      "subject": "feat(crypto): add built-in checks of cryptographic assets (#11394)"
+    },
+    {
+      "sha": "a2a80d42401106b9d16de2e7f89c1df7a9824c90",
+      "date": "2026-10-20T09:07:55Z",
+      "subject": "fix(cloudformation): set the file context on condition map entries (#11429)"
+    },
+    {
+      "sha": "b65f323088c50dee7ecead5418fda4fa74c6693a",
+      "date": "2026-10-19T09:14:15Z",
+      "subject": "refactor(flag): write newline separately in flag usages (#11433)"
+    },
+    {
+      "sha": "914b658c88d6413bea4a6233082a0abd6f4a9c8c",
+      "date": "2026-10-19T08:49:01Z",
+      "subject": "fix(k8s): accept tolerations without a value (#11425)"
+    },
+    {
+      "sha": "9dd3e28d275544dd16463162e99471ac761eb9f0",
+      "date": "2026-10-16T12:31:00Z",
+      "subject": "refactor(terraform): return a struct from module resolvers (#11049)"
+    },
+    {
+      "sha": "53d77b9ee282913284dcfa6621f0a5cc9ce4e6c7",
+      "date": "2026-10-16T10:21:56Z",
+      "subject": "feat(crypto): describe keys that crypto/x509 cannot parse (#11404)"
+    },
+    {
+      "sha": "d3ade8ec0be3081cb3a76d28dda2387dd9098584",
+      "date": "2026-10-16T09:11:36Z",
+      "subject": "ci: add scopes for Helm, Ansible and ARM scanners (#11419)"
+    },
+    {
+      "sha": "25c07ab70ce6a73244a70af0c7bf2762e318a830",
+      "date": "2026-10-16T07:27:42Z",
+      "subject": "fix: fail on read errors in .trivyignore (#11414)"
+    },
+    {
+      "sha": "032ac48ccfa5c06d96e6ed1add07456231b5ed9a",
+      "date": "2026-10-15T11:41:57Z",
+      "subject": "docs(misconf): fix flags in custom schema examples (#11347)"
+    },
+    {
+      "sha": "cf325209ac016fc7a150231f0ef2452f9d5a160d",
+      "date": "2026-10-15T11:34:30Z",
+      "subject": "refactor(misconf): use json/v2 methods for metadata and range (#11257)"
+    },
+    {
+      "sha": "bc5869e397cfdf9d365bd794646bc59c48090b8e",
+      "date": "2026-10-15T09:07:27Z",
+      "subject": "docs: use canonical misconfiguration flags (#11160)"
+    },
+    {
+      "sha": "2bba95485a8b913dff193a4617fd28e6ecc8bbb6",
+      "date": "2026-10-15T06:15:45Z",
+      "subject": "chore: add misconfiguration tutorials to CODEOWNERS (#11412)"
+    },
+    {
+      "sha": "088b9706d7e3af33ef1a8d2dee305370df714293",
+      "date": "2026-10-14T12:07:54Z",
+      "subject": "ci(helm): bump Trivy version to 0.76.0 for Trivy Helm Chart 0.28.0 (#11410)"
+    },
+    {
+      "sha": "531360e5d2a88e732373f1614ba99a38738538b8",
+      "date": "2026-10-14T10:49:01Z",
+      "subject": "release: v0.76.0 [main] (#11379)"
+    },
+    {
+      "sha": "6c7a8a6bedd237e508dff1cab870e50b9d22085d",
+      "date": "2026-10-14T10:29:10Z",
+      "subject": "chore(deps): pin zlib >= 1.3.2-r1 in container images to fix CVE-2026-85091 (#11407)"
+    },
+    {
+      "sha": "0900c7eb5a29f1169a3fdabd6ce4b45da2271400",
+      "date": "2026-10-14T09:59:53Z",
+      "subject": "fix(php): keep dependency edges to packages named like PHP extensions (#11051)"
+    },
+    {
+      "sha": "84595446b761c9e0b001421f15245261e333b315",
+      "date": "2026-10-14T08:18:43Z",
+      "subject": "ci: add scan/crypto label (#11405)"
+    },
+    {
+      "sha": "08d7294725b45b6550d268d2a062556b2d725227",
+      "date": "2026-10-13T11:33:26Z",
+      "subject": "ci: add component/vex label (#11397)"
+    },
+    {
+      "sha": "431288f897ff543f19c49274dcc1df1a3bef8664",
+      "date": "2026-10-13T08:32:20Z",
+      "subject": "fix(vex): avoid panic on CSAF advisory without a CVE (#10990)"
+    },
+    {
+      "sha": "8c0b1f0fe00f1227c8cd7c23fe906523da849d5a",
+      "date": "2026-10-12T11:53:39Z",
+      "subject": "chore(deps): bump the common group across 1 directory with 12 updates (#11386)"
+    },
+    {
+      "sha": "23914eeb41f43c62fd071703692065e89b25d23f",
+      "date": "2026-10-12T11:29:16Z",
+      "subject": "chore(deps): bump the github-actions group across 1 directory with 6 updates (#11338)"
+    },
+    {
+      "sha": "8b4b1cf4e776dcf9af6546f22912fb2e7661f9a8",
+      "date": "2026-10-12T11:12:37Z",
+      "subject": "chore(deps): bump the aws group across 1 directory with 6 updates (#11375)"
+    },
+    {
+      "sha": "b747cd257dda931301579235199bfcec4eee0046",
+      "date": "2026-10-12T11:10:20Z",
+      "subject": "chore(deps): bump the docker group across 1 directory with 2 updates (#11373)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/VULNERABILITY_REPORT.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cache-test-assets.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/reusable-release.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/semantic-pr.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.canary",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community/contribute/pr.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/configuration/filtering.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/coverage/os/echo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/coverage/others/rapidfort.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scanner/crypto.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scanner/misconfiguration/config/config.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scanner/misconfiguration/custom/data.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scanner/misconfiguration/custom/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scanner/misconfiguration/custom/schema.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/target/container_image.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tutorials/misconfiguration/custom-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/trivy/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration/client_server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration/convert_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration/integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration/standalone_tar_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integration/testdata/crypto.cdx.json.golden",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integration/testdata/crypto.json.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "magefiles/helm.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "magefiles/magefile.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "misc/triage/labels.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/commands/convert/run.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/algorithm.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/algorithm_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/catalog.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/check/check.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/check/check_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/check/rules.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/id.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/id_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/key.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/key_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/parser/pkcs12/export_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/parser/pkcs12/parser.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/parser/pkcs12/parser_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/parser/pkcs12/testdata/keytool-password.p12",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/parser/pkcs12/testdata/keytool-truststore.p12",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/parser/pkcs12/testdata/openssl-no-password.p12",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/asset.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/asset_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/parser.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/parser/x509/parser_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/crypto/parser/x509/parser_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/strength.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/crypto/strength_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/dependency/parser/php/composer/parse.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/dependency/parser/php/composer/parse_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/dependency/parser/php/composer/testdata/composer_ext_prefix.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/compare/npm/compare.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/compare/npm/compare_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/driver_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/echo/echo.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/echo/echo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/supplier_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/testdata/fixtures/data-source.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/library/testdata/fixtures/echo.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/ospkg/rapidfort/export_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/ospkg/rapidfort/rapidfort.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/ospkg/rapidfort/rapidfort_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/ospkg/rapidfort/supplier.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/ospkg/rapidfort/testdata/fixtures/data-source.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/detector/ospkg/rapidfort/testdata/fixtures/rapidfort.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/analyzer/crypto/crypto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/analyzer/crypto/crypto_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/fanal/analyzer/crypto/testdata/cacerts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/applier/docker.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/applier/docker_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/types/crypto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/types/crypto_algorithm.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/types/crypto_descriptor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/types/crypto_descriptor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/fanal/types/crypto_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/flag/kubernetes_flags.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/flag/kubernetes_flags_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/flag/options.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/flag/options_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/adapters/terraform/google/compute/networks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/azure/arm/parser/parser_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/azure/arm/parser/template.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/cloudformation/parser/file_context.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/cloudformation/parser/fn_condition.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/cloudformation/parser/fn_if.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/cloudformation/parser/parser.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/cloudformation/parser/parser_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/terraform/parser/load_module.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "pkg/iac/scanners/terraform/parser/module_retrieval.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/terraform/parser/resolvers/cache.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/terraform/parser/resolvers/cache_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/terraform/parser/resolvers/local.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/terraform/parser/resolvers/registry.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/terraform/parser/resolvers/registry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/scanners/terraform/parser/resolvers/remote.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/iac/scanners/terraform/parser/resolvers/resolver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/terraform/attribute.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/terraform/attribute_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/types/metadata.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/types/metadata_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/types/range.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/iac/types/range_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/types/time.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/iac/types/time_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/report/writer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/result/filter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/result/filter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/result/ignore.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/result/ignore_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/rpc/client/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/rpc/convert.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/rpc/convert_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/rpc/server/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/sbom/cyclonedx/crypto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/sbom/cyclonedx/crypto_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/scan/local/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/scan/local/service_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/types/crypto.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/types/report.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/types/report_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/types/scan.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/vex/csaf.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/vex/testdata/csaf.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rpc/common/service.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rpc/common/service.proto",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rpc/scanner/service.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rpc/scanner/service.proto",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rpc/scanner/service.twirp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "zizmor.yml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

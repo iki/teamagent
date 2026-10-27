@@ -1,0 +1,961 @@
+{
+  "metadata": {
+    "id": "ai-skills--security.trailofbits",
+    "category": "ai-skills",
+    "name": "security.trailofbits",
+    "url": "https://github.com/trailofbits/skills",
+    "aliases": [],
+    "report": "spec/projects/ai-skills--security.trailofbits.md",
+    "topics": [
+      "skills",
+      "agents",
+      "memory",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "82fe8226252622fa807643bdca1710901198553a",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-09-28T14:06:37-04:00",
+    "reportSha256": "0890e2efad43dbd9e72d7fa8f277ebd241fdad2f2d554c6ad00aa945da869d9b",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-skills--security.trailofbits",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/trailofbits/skills",
+    "report": "spec/projects/ai-skills--security.trailofbits.md",
+    "analyzedSha": "82fe8226252622fa807643bdca1710901198553a",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-09-28T14:06:37-04:00",
+    "observedSha": "196a9073ab10d35bacf111f945e02c00b2c6883a",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "196a9073ab10d35bacf111f945e02c00b2c6883a",
+        "date": "2026-10-23T11:26:17+02:00",
+        "subject": "Add CodeQL + Semgrep exclusion warnings (#475)"
+      },
+      {
+        "sha": "1e0cb77d071a8b9453391d111f17d34d2114e057",
+        "date": "2026-10-22T11:19:47-04:00",
+        "subject": "deps: bump the python-minor-patch group across 3 directories with 3 updates (#473)"
+      },
+      {
+        "sha": "22d756ad7cebb8e4a8333c4c936bdc4868dd86da",
+        "date": "2026-10-22T11:00:39-04:00",
+        "subject": "docs: update README description and related links (#474)"
+      },
+      {
+        "sha": "db5393caf5ddc0e158849199930be78ad9539ebb",
+        "date": "2026-10-22T09:35:52-04:00",
+        "subject": "Add Calcifier recipe for github-triage (#402)"
+      },
+      {
+        "sha": "f0dd11d2b1da17a1ff8c403741fbe1f6bca0f871",
+        "date": "2026-10-21T11:01:26-07:00",
+        "subject": "Add Calcifier recipe for dimensional-analysis (#432)"
+      },
+      {
+        "sha": "a3131740a39291e42fd15b9eac07e0b393ad71b1",
+        "date": "2026-10-20T16:16:47-04:00",
+        "subject": "Add regression-hunt and patching-bugs plugins (#471)"
+      },
+      {
+        "sha": "5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0",
+        "date": "2026-10-15T14:16:40-04:00",
+        "subject": "fix(devcontainer-setup): pin fnm instead of installing its latest release (#346)"
+      },
+      {
+        "sha": "1f68e03536f7980d4c0e6869596f708043a19443",
+        "date": "2026-10-15T10:34:14-04:00",
+        "subject": "fix(gh-cli): stop SessionStart hooks piling duplicate exports into the env (#347)"
+      },
+      {
+        "sha": "41604b5e728e24e3d246b8fe9307d410a78bdee0",
+        "date": "2026-10-15T09:20:15-04:00",
+        "subject": "Add Codex support to entry-point-analyzer and correct caller classification (#359)"
+      },
+      {
+        "sha": "4fc769be63559c8b108f225e1ea1ed60821c85ea",
+        "date": "2026-10-15T08:15:41-04:00",
+        "subject": "deps: bump ruff (#380)"
+      },
+      {
+        "sha": "e1f86a390d4caf28bf1c377a7d86707b2898669c",
+        "date": "2026-10-14T17:06:29-04:00",
+        "subject": "ci: bump the actions-minor-patch group with 2 updates (#379)"
+      },
+      {
+        "sha": "4b43b5bcfdb2385e7cb5bffc9a3f69eb9bcb467f",
+        "date": "2026-10-14T17:01:41-04:00",
+        "subject": "Maker Week: make firebase-apk-scanner report what the scan actually found (#374)"
+      },
+      {
+        "sha": "29424a451e2b9c8adc44f6d5251310df8f044ae7",
+        "date": "2026-10-14T16:03:08-04:00",
+        "subject": "fix(diagramming-code): drop the unused pre-analysis step and name a language in examples (#365)"
+      },
+      {
+        "sha": "bbbc59c5f4a3a382b4b7d939f9bf72da48e59a68",
+        "date": "2026-10-14T15:46:04-04:00",
+        "subject": "fix(mermaid-to-proverif): read ProVerif results correctly and test forward secrecy properly (#367)"
+      },
+      {
+        "sha": "d1ee58bdb055f6bd1ba93e22f4ee2773cc4be671",
+        "date": "2026-10-14T15:37:21-04:00",
+        "subject": "Make `zeroize-audit` agent-agnostic (#377)"
+      },
+      {
+        "sha": "3e0c3b1c3b65810a59b5a094d4f9bf64ffc10275",
+        "date": "2026-10-14T15:22:35-04:00",
+        "subject": "Fix YARA skill resource paths (#378)"
+      },
+      {
+        "sha": "4a48f7fa49c991be70cf2cbcecd9bad20cb2c544",
+        "date": "2026-10-14T14:24:05-04:00",
+        "subject": "Maker Week: fix yara-rule-authoring's examples and add a one-call review helper (#372)"
+      },
+      {
+        "sha": "a12ea6a1afd751664540a48f83ba1c5654e9a238",
+        "date": "2026-10-14T13:50:02-04:00",
+        "subject": "Maker Week: fix trailmark-finding-triage's broken query recipe (+ one-call evidence packet) (#360)"
+      },
+      {
+        "sha": "0f44fe01dcb00bd6929b4ba82a257d305de04554",
+        "date": "2026-10-14T08:10:11-04:00",
+        "subject": "Update `demensional-analysis` plugin (#371)"
+      },
+      {
+        "sha": "8e54050ae63c2f62224c35b1616efe71865b4777",
+        "date": "2026-10-13T11:24:26-04:00",
+        "subject": "Fix let-fate-decide resource paths (#357)"
+      },
+      {
+        "sha": "442fc9d6c89b1e937e6f7a477e7071ea75fcbea4",
+        "date": "2026-10-09T17:55:03-04:00",
+        "subject": "Use Codex for PR reviews (#356)"
+      },
+      {
+        "sha": "fdfe4f41b65d4c75162b902d1458211b90e91113",
+        "date": "2026-10-09T15:20:05-04:00",
+        "subject": "deps: bump the python-minor-patch group across 2 directories with 2 updates (#354)"
+      },
+      {
+        "sha": "b9b88148c653c2829ab21102c02d7fbf81b4e12f",
+        "date": "2026-10-09T14:26:06-04:00",
+        "subject": "Rename Chrome MCP troubleshooting plugin to avoid reserved name (#355)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".claude-plugin/marketplace.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/codex/review-schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/codex/review.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/dependabot.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/scripts/claude_review.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/codex_review.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/claude-review.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/codex-review.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/lint.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CODEOWNERS",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "R066",
+        "path": "plugins/chrome-mcp-troubleshooting/.claude-plugin/plugin.json",
+        "previousPath": "plugins/claude-in-chrome-troubleshooting/.claude-plugin/plugin.json"
+      },
+      {
+        "status": "R076",
+        "path": "plugins/chrome-mcp-troubleshooting/README.md",
+        "previousPath": "plugins/claude-in-chrome-troubleshooting/README.md"
+      },
+      {
+        "status": "R100",
+        "path": "plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting/SKILL.md",
+        "previousPath": "plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting/SKILL.md"
+      },
+      {
+        "status": "R100",
+        "path": "plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting/agents/openai.yaml",
+        "previousPath": "plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting/agents/openai.yaml"
+      },
+      {
+        "status": "R100",
+        "path": "plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting/assets/trail-of-bits-mark.svg",
+        "previousPath": "plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting/assets/trail-of-bits-mark.svg"
+      },
+      {
+        "status": "M",
+        "path": "plugins/devcontainer-setup/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/devcontainer-setup/skills/devcontainer-setup/resources/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/agents/arithmetic-scanner.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/agents/dimension-annotator.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/agents/dimension-discoverer.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/agents/dimension-propagator.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/agents/dimension-validator.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/planted-bugs/graders/criteria.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/planted-bugs/prompt.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-annotate/graders/criteria.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-annotate/prompt.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-audit/graders/criteria.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-audit/prompt.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-explicit/graders/criteria.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-explicit/prompt.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-oblique/graders/criteria.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/evals/trigger-oblique/prompt.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/skills/dimensional-analysis/.calcifier/recipe.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/dimensional-analysis/skills/dimensional-analysis/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/skills/dimensional-analysis/references/step1.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/skills/dimensional-analysis/references/step2.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/skills/dimensional-analysis/references/step3.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/skills/dimensional-analysis/references/step4.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/ANSWER-KEY.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/selftest/findings-complete.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/src/AssetRegistry.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/src/InterestIndex.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/src/MarginVault.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/src/StakingRewards.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/src/UniV3Oracle.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/src/libraries/FixedPointMath.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/src/libraries/PriceLib.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/fixtures/trigger/src/Vault.sol",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/smoke-test.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/summarize_arms.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/trigger-test.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/validate_eval_result.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/dimensional-analysis/tests/validate_findings.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/entry-point-analyzer/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/entry-point-analyzer/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/entry-point-analyzer/skills/entry-point-analyzer/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/entry-point-analyzer/skills/entry-point-analyzer/references/move-aptos.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/entry-point-analyzer/skills/entry-point-analyzer/references/move-sui.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/entry-point-analyzer/skills/entry-point-analyzer/references/solidity.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/entry-point-analyzer/skills/entry-point-analyzer/references/vyper.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/entry-point-analyzer/tests/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/entry-point-analyzer/tests/scenario.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/firebase-apk-scanner/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/firebase-apk-scanner/skills/firebase-apk-scanner/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/firebase-apk-scanner/skills/firebase-apk-scanner/references/manual-fallback.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/firebase-apk-scanner/skills/firebase-apk-scanner/scanner.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/firebase-apk-scanner/tests/test_scanner_reports.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/gh-cli/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/gh-cli/hooks/persist-session-id.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/gh-cli/hooks/session-hooks.bats",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/gh-cli/hooks/setup-shims.bats",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/gh-cli/hooks/setup-shims.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/github-triage/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/github-triage/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/github-triage/skills/github-triage/.calcifier/recipe.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/let-fate-decide/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/let-fate-decide/agents/draw.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/let-fate-decide/skills/let-fate-decide/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/.claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/assets/maintainer-report.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/assets/report.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/assets/report.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/references/records.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/finding.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/patch.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/prove.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/regression.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/report-input.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/reproduce.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/run.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/schemas/validate.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/arms.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/native_proof.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/records.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/render.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/repair_scope.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/report_sections.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/report_views.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/terminal.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/scripts/verdict.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/skills/implement-patch/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/skills/patching-bugs/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/skills/prove-patch/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/skills/reproduce-bug/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/skills/validate-bug/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/cold-run.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/planted-bug/app.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/planted-bug/build.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/planted-bug/poc.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/finding.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/fix.patch",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/patch.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/tests.patch",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/prove.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/arms/poc.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-baseline.stderr",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-baseline.stdout",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-patched.stderr",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-patched.stdout",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-baseline.stderr",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-baseline.stdout",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-patched.stderr",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-patched.stdout",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/project-patched.stderr",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/project-patched.stdout",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/proof-case.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-baseline.stderr",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-baseline.stdout",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-patched.stderr",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-patched.stdout",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/source.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/regression/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/regression/receipts/decision.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/regression/regression.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/report-input.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/reproduce/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/reproduce/poc/poc.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/reproduce/receipts/build.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/reproduce/receipts/poc.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/reproduce/reproduce.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/run.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/validate/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/validate/receipts/poc.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/fixtures/run-ready/validate/validate.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_arms.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_native_proof.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_proof_types.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_records.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_render.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_repair_scope.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_report_outputs.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_s0_report.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/patching-bugs/tests/test_skill_examples.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

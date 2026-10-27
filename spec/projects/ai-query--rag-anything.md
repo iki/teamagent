@@ -26,3 +26,7 @@ Generated descriptions can hallucinate visible details or lose table relationshi
 Pilot for image/table-heavy knowledge collections after text ingestion is stable. Keep modality-specific schemas and an optional direct-vision retrieval path for evidence verification. Test duplicate captions in different documents, moved files, parser-version changes, failed graph writes, figure captions that contradict images and exact numerical table questions. Compare derived-text-only answers with answers that reopen the native asset.
 
 Related directions: [import-generation](../import-generation.md) · [memory](../memory.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [rag-anything](https://github.com/HKUDS/RAG-Anything); analyzed commit `1f73f0154c48b3d616674608af98748585b856f3`; commit date 2026-09-15T10:37:26+08:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--rag-anything.md).
+<!-- teamagent-analysis:end -->

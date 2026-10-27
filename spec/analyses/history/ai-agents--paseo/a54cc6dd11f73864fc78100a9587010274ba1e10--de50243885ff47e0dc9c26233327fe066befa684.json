@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--paseo",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/getpaseo/paseo",
+  "report": "spec/projects/ai-agents--paseo.md",
+  "analyzedSha": "a54cc6dd11f73864fc78100a9587010274ba1e10",
+  "analyzedAt": "2026-10-24T06:36:54.441Z",
+  "analyzedCommitDate": "2026-10-24T12:36:10+07:00",
+  "observedSha": "de50243885ff47e0dc9c26233327fe066befa684",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "de50243885ff47e0dc9c26233327fe066befa684",
+      "date": "2026-10-27T15:59:03Z",
+      "subject": "Keep model-discovery errors away from picker edges (#8039)"
+    },
+    {
+      "sha": "5b7b8d6e8168f0b860376c6c53003b5003f5ac0a",
+      "date": "2026-10-27T22:44:49+07:00",
+      "subject": "fix(app): regenerate iOS Markdown inline code props (#8038)"
+    },
+    {
+      "sha": "25721c784798d12dbfde035efe8896b184b240ea",
+      "date": "2026-10-27T22:34:13+07:00",
+      "subject": "fix(app): keep grouped reasoning closed when Expand thinking is off (#8042)"
+    },
+    {
+      "sha": "78f580f9e8d28c1cc9da2945d833e283fe61f374",
+      "date": "2026-10-27T22:00:23+07:00",
+      "subject": "perf(plugins): reuse verified bundles and fix repeated timeline preparation (#8040)"
+    },
+    {
+      "sha": "8419c212274d60792934e53145d6abdcbadc0d91",
+      "date": "2026-10-27T14:43:03+01:00",
+      "subject": "docs(changelog): explain Claude subscription-limit workaround"
+    },
+    {
+      "sha": "5f014498c7446e000db4cd756e4d36496d0fd199",
+      "date": "2026-10-27T13:32:06Z",
+      "subject": "fix: update lockfile signatures and Nix hash [skip ci]"
+    },
+    {
+      "sha": "4495bda146c8fa0e84f50b56b26048fa9e3fdf3b",
+      "date": "2026-10-27T14:21:19+01:00",
+      "subject": "chore(release): cut 0.14.0-beta.1"
+    },
+    {
+      "sha": "484c5ba224a8ebef130aa2c01418b2d6d45af342",
+      "date": "2026-10-27T14:15:48+01:00",
+      "subject": "docs(release): prepare 0.14.0-beta.1 notes"
+    },
+    {
+      "sha": "1b8dbc38ab8a53b72663b337fcdbd3724313ac57",
+      "date": "2026-10-27T19:25:13+07:00",
+      "subject": "fix(app): preserve chat reading position across older pages (#8026)"
+    },
+    {
+      "sha": "694696e82c35f57c21f4d5116f836673d0edeed3",
+      "date": "2026-10-27T12:00:55Z",
+      "subject": "fix(server): keep background Git fetches from opening login prompts (#8019)"
+    },
+    {
+      "sha": "a8032a1502897c0495610082cabb7718b4bb9ec5",
+      "date": "2026-10-27T10:57:58Z",
+      "subject": "fix(app): open outside folder links without breaking Files (#7726)"
+    },
+    {
+      "sha": "dc07efe937c3160e8fe83d02dc972c8a0b014957",
+      "date": "2026-10-27T09:53:42Z",
+      "subject": "Keep plugin ACP reasoning separate from assistant replies (#7272)"
+    },
+    {
+      "sha": "36892d5be772c8364a52a0756e3d450cb83db3dd",
+      "date": "2026-10-27T09:31:18Z",
+      "subject": "fix: update lockfile signatures and Nix hash [skip ci]"
+    },
+    {
+      "sha": "b9f624f72e601b050de54bb5e8544e74883d2c0c",
+      "date": "2026-10-27T09:22:15Z",
+      "subject": "fix(app): update xterm to prevent shared-atlas glyph corruption (#8013)"
+    },
+    {
+      "sha": "50623965b4bb689dfe5dc47aaf36843a754c2a11",
+      "date": "2026-10-27T16:09:53+07:00",
+      "subject": "Make line wrapping responsive in large diffs (#8006)"
+    },
+    {
+      "sha": "ef58ace424089c220b6d42bd618234a2159e3db3",
+      "date": "2026-10-27T15:49:42+07:00",
+      "subject": "Fix history compatibility and turn presentation regressions (#8010)"
+    },
+    {
+      "sha": "8a542048b653f946288cd9b01d6a6e91838648fc",
+      "date": "2026-10-27T15:20:06+07:00",
+      "subject": "Let plugins contribute MCP servers on every agent session open (#7983)"
+    },
+    {
+      "sha": "6b7d49f0d8d21d01565f9517a8c2a30e2a587e2a",
+      "date": "2026-10-27T07:35:44Z",
+      "subject": "test(server): keep responsiveness gates independent of runner scheduling (#8002)"
+    },
+    {
+      "sha": "07007a485def915c496d109e602c5de9b2fe1fd2",
+      "date": "2026-10-27T07:20:13Z",
+      "subject": "fix: update lockfile signatures and Nix hash [skip ci]"
+    },
+    {
+      "sha": "26ee20b371d9e360f03fd9ca2cce8d1a3f9e2635",
+      "date": "2026-10-27T07:10:54Z",
+      "subject": "fix(ci): hoist expo-module-scripts so root overrides reach its Expo peers (#7998)"
+    },
+    {
+      "sha": "b12eefb28ff99fd8a26eb826fced87f5d62dd808",
+      "date": "2026-10-27T13:57:17+07:00",
+      "subject": "Keep conversation turns distinct and history stable (#7990)"
+    },
+    {
+      "sha": "3a1b1466904a42d286f99641d1242d42e85f4f32",
+      "date": "2026-10-27T13:41:54+07:00",
+      "subject": "Guard daemon modules against synchronous Node IO (#7991)"
+    },
+    {
+      "sha": "2ce6681d6e4de6d6400ba095741014f1bbfa4221",
+      "date": "2026-10-27T13:15:38+07:00",
+      "subject": "Keep image attachments responsive during prompts and replay (#7954)"
+    },
+    {
+      "sha": "63ed15e9333aee63629228f0771f312a4ce60b52",
+      "date": "2026-10-27T05:51:49Z",
+      "subject": "test(server): make the reconciliation responsiveness probe independent of idle waits (#7988)"
+    },
+    {
+      "sha": "9e4aab16cc74f945f9bb676fcab3d8a9a8b686ca",
+      "date": "2026-10-27T10:30:41+07:00",
+      "subject": "fix(server): keep the daemon responsive during plugin builds (#7967)"
+    },
+    {
+      "sha": "173fca3c0bea981501bb1e7c9f81645e28b7f728",
+      "date": "2026-10-27T10:23:59+07:00",
+      "subject": "Keep the daemon responsive during Claude history replay (#7940)"
+    },
+    {
+      "sha": "7f6a805e0e011c44b0596054bc9bbf600a1ca30c",
+      "date": "2026-10-27T10:05:16+07:00",
+      "subject": "feat(app): choose the composer send shortcut (#5503)"
+    },
+    {
+      "sha": "9bc998fa38e91b76df469f142fbdcdfd5dbaaa59",
+      "date": "2026-10-27T09:57:35+07:00",
+      "subject": "fix(server): keep Git observation and worktree IO off the event loop (#7943)"
+    },
+    {
+      "sha": "67a2459254cfde9d9b186215b7268de12aaa6537",
+      "date": "2026-10-27T09:56:51+07:00",
+      "subject": "fix(server): keep project config work off the daemon hot path (#7944)"
+    },
+    {
+      "sha": "f14a4cc112583f317c44114f7ad5fa7e28e101f8",
+      "date": "2026-10-27T09:56:47+07:00",
+      "subject": "fix(server): keep password-protected config reload responsive (#7959)"
+    },
+    {
+      "sha": "a25f4f506541ebadcb3175be5ee013fcf1ca4dbc",
+      "date": "2026-10-27T09:56:42+07:00",
+      "subject": "perf(server): serve timeline pages from retained projection (#7958)"
+    },
+    {
+      "sha": "6077bc6219c0e25003ec84a331c5f75e6cea42af",
+      "date": "2026-10-27T09:56:36+07:00",
+      "subject": "Keep daemon diff highlighting responsive and bounded (#7945)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/data-model.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/development.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mobile-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/plugins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol-compatibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/qa-evidence/foreign-agent-tabs/after.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/qa-evidence/foreign-agent-tabs/before.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/timeline-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130001.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130002.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130003.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130004.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130011.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130012.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130013.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130014.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130021.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130022.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130023.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/130024.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/npm-deps.hash",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-message-submission.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-timeline-pagination.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/assistant-file-link-tooltip.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/changes-pane.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/compact-workspace-sheet.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/composer-recall.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/context-window-meter.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/diff-performance.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/import-session-flow.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/owned-subscriptions-old-daemon.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-timeline.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/provider-settings-refresh.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/provider-subagents.real.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/question-prompt-pagination.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-host-page.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-host-selection.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-navigation.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-toggle-tab-regression.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/subagent-origin-pane.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/tool-call-overview-sheet.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/tool-call-shimmer.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/turn-collapse.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/voice-settings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/workspace-navigation-regression.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/fixtures/fake-pi-rpc.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/mobile/composer-keyboard/autocomplete-placement.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/mobile/composer-keyboard/ios.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/markdown-formatting/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/markdown-formatting/native.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/agent-timeline-gate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/composer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/custom-models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/import-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/plugin-timeline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/seed-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/sidebar-nav-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/subagents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/timeline-pagination.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/support/helpers/voice-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/workspace-layout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/chat-find/viewport.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/chat-outline/use-chat-outline.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/footer-spacing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/history-window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/layout.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/layout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/presentation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/presentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/reading-anchor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/reading-anchor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/render-strategy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/strategy-native.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/strategy-web.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/strategy-web.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/strategy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/stream-tick.bench.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/agent-stream/turn-collapse/model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/agent-stream/turn-collapse/model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/agent-stream/turn-collapse/summary-line.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/turn-footer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/turn-membership.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/turn-membership.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/agent-stream/use-agent-stream-tail.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/use-scroll-to-message.web.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/use-stream-history-window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/web-virtualization.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/app/_layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/app/h/[serverId]/agent/[agentId].tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/app/h/[serverId]/workspace/[workspaceId]/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/assistant-file-links/path-open.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/assistant-file-links/path-open.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/context-window-meter.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/file-explorer-pane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/import-session-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/import-session-list.types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/import-session-list.web.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/import-session-sheet.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/indent-rail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/renderer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/renderer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/markdown/styles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/message.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/model-browser.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/question-form-card.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/question-form-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/rewind/use-rewind-agent-mutation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/settings/collapsible-row.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/settings/detail-row.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/settings/headings/settings-info-tip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/settings/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/settings/row-density.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/settings/row-density.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/settings/row-header.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar-workspace-list.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar-workspace-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar/sidebar-group-visibility.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/sidebar/sidebar-workspace-menu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/autocomplete-popover.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/autocomplete.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/button.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/combobox.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/control-geometry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/control-geometry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/ui/control-size.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/dropdown-trigger.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/edge-fade.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/form-field.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/icon-color.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/isolated-bottom-sheet-modal/index.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/segmented-control.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/tooltip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/user-message/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/input/input.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/input/labels.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/input/labels.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/input/state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/input/state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/composer/recall.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/composer/recall.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/tracks-panel.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/tracks.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/desktop/host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/git/diff-document/benchmark-corpus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/git/diff-document/model.bench.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

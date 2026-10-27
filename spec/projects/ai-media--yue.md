@@ -29,3 +29,7 @@ Prototype only until hardware memory, latency, weight licensing, and task-level 
 ## Related directions
 
 [Generation](../generation.md) · [Models](../models.md) · [Memory](../memory.md) · [Decisions](../decisions.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [yue](https://github.com/multimodal-art-projection/YuE); analyzed commit `1dc1c50ef9a98597e2e82fe6bac232a05b160acf`; commit date 2026-10-03T00:29:34+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--yue.md).
+<!-- teamagent-analysis:end -->

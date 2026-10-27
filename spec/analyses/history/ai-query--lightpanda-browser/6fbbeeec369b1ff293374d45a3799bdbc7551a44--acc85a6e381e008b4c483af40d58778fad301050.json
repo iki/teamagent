@@ -1,0 +1,984 @@
+{
+  "id": "ai-query--lightpanda-browser",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/lightpanda-io/browser",
+  "report": "spec/projects/ai-query--lightpanda-browser.md",
+  "analyzedSha": "6fbbeeec369b1ff293374d45a3799bdbc7551a44",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T16:02:42+08:00",
+  "observedSha": "acc85a6e381e008b4c483af40d58778fad301050",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "acc85a6e381e008b4c483af40d58778fad301050",
+      "date": "2026-10-23T20:01:59-07:00",
+      "subject": "Merge pull request #3970 from lucoffe/http/transfer-sizes"
+    },
+    {
+      "sha": "d8fa225b8e43871a5001a7af1fe1b80f27fc4984",
+      "date": "2026-10-23T19:19:10-07:00",
+      "subject": "cdp: Network.loadingFinished reports the bytes received for the response"
+    },
+    {
+      "sha": "92fa0f1fa7d243312e48ac834b0ae875295cfd17",
+      "date": "2026-10-24T09:10:36+08:00",
+      "subject": "Merge pull request #4168 from orezraey/text-decoder-stream"
+    },
+    {
+      "sha": "2a6a0be132e251033c1ef30606b5855750199970",
+      "date": "2026-10-24T09:10:26+08:00",
+      "subject": "Merge pull request #4177 from lightpanda-io/orderfile-regen"
+    },
+    {
+      "sha": "099b7d9ec2162f37464164e72864ccc551809ab8",
+      "date": "2026-10-24T01:03:38Z",
+      "subject": "orderfile: regenerate the hot-code profile"
+    },
+    {
+      "sha": "5f2a05d4166fb30a1c56a7075c80348bda6595a2",
+      "date": "2026-10-24T06:55:36+08:00",
+      "subject": "Merge pull request #4170 from lightpanda-io/fix-premature-call-arena-reset"
+    },
+    {
+      "sha": "92e2d27108d366197417d8b0046c2e4d5411ab86",
+      "date": "2026-10-24T06:54:15+08:00",
+      "subject": "Merge pull request #4169 from lightpanda-io/tag-chrome-passing-tests"
+    },
+    {
+      "sha": "53e410a80f802b97193cc85c6461648b518882d6",
+      "date": "2026-10-24T06:54:03+08:00",
+      "subject": "Merge pull request #4167 from lightpanda-io/optimize-js-bridge"
+    },
+    {
+      "sha": "3e6f6a4a1f6eee5b250030b03be8edfb86e4b85b",
+      "date": "2026-10-24T06:53:50+08:00",
+      "subject": "Merge pull request #4166 from lightpanda-io/http-client-abort-double-free"
+    },
+    {
+      "sha": "6034d2e0640c66466f4f6d194d58594abb4e0f5c",
+      "date": "2026-10-24T06:52:57+08:00",
+      "subject": "Merge pull request #4164 from lightpanda-io/dialog"
+    },
+    {
+      "sha": "92d4f6c1e495805c6f884217942d21f988552be1",
+      "date": "2026-10-24T06:52:41+08:00",
+      "subject": "Merge pull request #4163 from lightpanda-io/test-cross-validate-diverge"
+    },
+    {
+      "sha": "b4852cfe7815120cc6b82f7e85e5944d5c148cee",
+      "date": "2026-10-24T06:52:26+08:00",
+      "subject": "Merge pull request #4162 from lightpanda-io/input-selection-range"
+    },
+    {
+      "sha": "2288321f5962c42b27e59e0e1b534971415fdca8",
+      "date": "2026-10-24T06:52:09+08:00",
+      "subject": "Merge pull request #4161 from lightpanda-io/single-threaded-arena-allocator"
+    },
+    {
+      "sha": "e8e407bd7c7b4dfab7c960abbf8633fe5bcf279a",
+      "date": "2026-10-24T06:51:53+08:00",
+      "subject": "Merge pull request #4160 from lightpanda-io/event-cleanup"
+    },
+    {
+      "sha": "6e2dc83119c9a1f570237ddb2d1d1e95c04c028e",
+      "date": "2026-10-24T06:51:36+08:00",
+      "subject": "Merge pull request #4159 from lightpanda-io/cookie-ip-site"
+    },
+    {
+      "sha": "80ceb3c9e4bf9e7dd7e8b23127780e43be31a44d",
+      "date": "2026-10-24T06:51:20+08:00",
+      "subject": "Merge pull request #4158 from lightpanda-io/cookie-jar-by-site"
+    },
+    {
+      "sha": "48804c7855bb190e3fc85dd5227ff314735b1b9c",
+      "date": "2026-10-24T06:51:07+08:00",
+      "subject": "Merge pull request #4156 from lightpanda-io/url-port-handling"
+    },
+    {
+      "sha": "6394e9daa85a4546e8a21a35b00bd4ce5a573cbe",
+      "date": "2026-10-23T21:18:39+08:00",
+      "subject": "crash: only clear call_arena when all call_depths are 0."
+    },
+    {
+      "sha": "f184fbc07ed39f999d19c1f5a2427efff1f1d961",
+      "date": "2026-10-23T19:48:54+08:00",
+      "subject": "Merge pull request #4157 from jayhemnani9910/fix/input-step-mismatch"
+    },
+    {
+      "sha": "e514a90b6983a9fa3c273aee1a8cdb2f4b937364",
+      "date": "2026-10-23T16:05:01+05:30",
+      "subject": "webapi: scale the step tolerance with the value in stepMismatch and stepBy"
+    },
+    {
+      "sha": "a49180ce48fbdf95ac1b58bd18b4f2d957005513",
+      "date": "2026-10-23T18:34:03+08:00",
+      "subject": "dev: tag all chrome passing tests"
+    },
+    {
+      "sha": "620b2206299176a3db877f73824d3e82052184f0",
+      "date": "2026-10-23T18:13:40+08:00",
+      "subject": "add another known divergence"
+    },
+    {
+      "sha": "f506c65efdc31108bc28771218210d7f163b3afa",
+      "date": "2026-10-23T07:02:05-03:00",
+      "subject": "TextDecoderStream: decode any encoding, with state across chunks"
+    },
+    {
+      "sha": "e241265a347f5bb0c417309bc8288b3a72e4aab3",
+      "date": "2026-10-23T17:15:59+08:00",
+      "subject": "perf: optimize v8 -> zig and zig -> v8"
+    },
+    {
+      "sha": "04acafe17133ef0f76c7dcc71219287cacae5333",
+      "date": "2026-10-23T17:02:50+08:00",
+      "subject": "fix: Fix double-abort (and double free)"
+    },
+    {
+      "sha": "fbb2b52b3098c777356a27a7d9da5d72c38b28f4",
+      "date": "2026-10-23T16:23:17+08:00",
+      "subject": "webapi: improve dialog conformance"
+    },
+    {
+      "sha": "f5ba302bde4e5d0b2beac0c5613f49f238de6b53",
+      "date": "2026-10-23T16:10:34+08:00",
+      "subject": "dev: explicit capture expected browser divergences"
+    },
+    {
+      "sha": "a15644955dcebca3ce9b0823f38401eb856fa62b",
+      "date": "2026-10-23T15:44:53+08:00",
+      "subject": "webapi: Fix inconsistent input range"
+    },
+    {
+      "sha": "a8ba0c03cee345965438558abd1119c68a5c5294",
+      "date": "2026-10-23T09:36:15+02:00",
+      "subject": "Merge pull request #4143 from lightpanda-io/interactive-overlay"
+    },
+    {
+      "sha": "786ee388e5e16d7da7124e0113752db57dd62d69",
+      "date": "2026-10-23T15:32:59+08:00",
+      "subject": "perf: Add a single threaded ArenaAllocator"
+    },
+    {
+      "sha": "cd1eadbd39dde19be59d90f721d074e3d7467916",
+      "date": "2026-10-23T09:19:11+02:00",
+      "subject": "browser: report whether an interactive element sits in an overlay"
+    },
+    {
+      "sha": "e0660e0055e5544021b2d0ac27c57b6817fa38f7",
+      "date": "2026-10-23T15:00:14+08:00",
+      "subject": "mem: improve event memory cleanup"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/install/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/v8-snapshot/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/agent-regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-integration-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/orderfile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/wpt.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/zig-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig.zon",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/lightpanda.ld",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/mark_hot_sections.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/tools/regen.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/v8.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/App.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Arena.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/ArenaAllocator.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ArenaPool.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Config.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Metrics.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Notification.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/RecyclingAllocator.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Regex.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/SemanticTree.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Sighandler.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/TestHTTPServer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/TestWSServer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Agent.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Conversation.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agent/ModelCall.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Spinner.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Terminal.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agent/Trace.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/auth/auth.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/auth/codex.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/auth/models_dev.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/js_highlight.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/md_term.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/picker.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/prompt_assist.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/save.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/settings.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/welcome.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/CustomElementReactions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/EventManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/EventManagerBase.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Factory.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Frame.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/IdMap.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ImportMap.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Mime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Page.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/PageStatus.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/RenderTree.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Runner.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ScriptManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ScriptManagerBase.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/SelectorPath.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Session.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/StyleManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/URL.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/actions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/clutter.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/MediaQuery.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/Parser.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/Tokenizer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/css/charset.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/units.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/data_url.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/dump.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/forms.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/framing.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/frame/keyboard.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/node_factory.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/observers.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/preload.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/resource_load.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/user_input.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/global_scope.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/image_dimensions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/interactive.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Caller.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Context.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Env.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Execution.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Function.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Identity.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Inspector.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Isolate.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Local.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Module.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Object.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Origin.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Promise.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/PromiseResolver.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/RegExp.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Scheduler.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Snapshot.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/String.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/TaggedOpaque.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/TryCatch.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Value.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/WasmStreaming.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/bridge.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/js.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/markdown.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/parser/Parser.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/parser/html5ever.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/pdf.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/referrer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/screenshot.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/structured_data.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/animation/animation.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/beacon.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/blob.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/broadcast_channel.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cache/teardown.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/canvas/canvas_serialization.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/cdata_section.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/character_data.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/comment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/data.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/raw_text_chunked.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/text.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdp/accname.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/ax_aria_states.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/ax_depth.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdp/ax_tree.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdp/isolated_world_redirect.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/log_canceled.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/log_subresources.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/page_status.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/slotted_hidden.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_budget.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_budget_dialog.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_budget_nav.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_heading_links.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_multiline.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/visibility_hidden.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/collections/html_all_collection.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/collections/live_collections.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/collections/radio_node_list.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/compression/compression_stream.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/compression/decompression_stream.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/console/console.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cookie_store.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/crypto-worker.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/crypto.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/css.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/css/computed_transform.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/css/deferred_script_then_stylesheet.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/css/external_stylesheet.html",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

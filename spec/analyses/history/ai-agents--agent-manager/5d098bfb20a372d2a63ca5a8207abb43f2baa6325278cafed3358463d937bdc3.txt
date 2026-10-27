@@ -1,0 +1,25 @@
+# agent-manager
+
+Source: [agent-manager](https://github.com/YoanWai/agent-manager) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `d1dba9fcafc7eb6756bb173e2b73508af1bf778e`; commit timestamp `2026-10-03T22:57:02+03:00`; 365 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/YoanWai/agent-manager/blob/d1dba9fcafc7eb6756bb173e2b73508af1bf778e/README.md)):
+
+> Claude Code, Codex, OpenCode, Grok, Gemini CLI, Antigravity CLI, Pi, Command Code, Hermes Agent, Muse Code, and Oh My Pi run side by side. Each tool runs in its own persistent tmux session. agent-manager is a thin layer over the CLIs you already have. Each session launches your own installed tool as-is: your login, your subscription, your config files, your MCP servers, and every feature the tool ships all carry over, exactly as they behave in a plain terminal.
+
+Build/package evidence: [go.mod](https://github.com/YoanWai/agent-manager/blob/d1dba9fcafc7eb6756bb173e2b73508af1bf778e/go.mod)
+
+License evidence: [LICENSE](https://github.com/YoanWai/agent-manager/blob/d1dba9fcafc7eb6756bb173e2b73508af1bf778e/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -1,0 +1,25 @@
+# mirrorcode
+
+Source: [mirrorcode](https://github.com/epoch-research/MirrorCode) · Category: [ai-eval](../categories/ai-eval.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5c9d7b00b0c6d7609003e33896cd41d28f092fcb`; commit timestamp `2026-07-18T22:03:59+01:00`; 8,318 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/README.md)):
+
+> MirrorCode is built on Inspect. This repository is intended to be sufficient to run the benchmark. Both the harness and the public task definitions are included. The private tasks are not included. If you're interested in replicating the paper or doing runs of specific size buckets, see `scripts/run_mirrorcode.py` for an example of how to set this up.
+
+Build/package evidence: [data/correct_code/dirname_go/go.mod](https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/data/correct_code/dirname_go/go.mod); [data/correct_code/dirname_rust/Cargo.toml](https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/data/correct_code/dirname_rust/Cargo.toml); [data/correct_code/gron_rust/Cargo.toml](https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/data/correct_code/gron_rust/Cargo.toml); [data/correct_code/rev_go/go.mod](https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/data/correct_code/rev_go/go.mod); [data/correct_code/rev_rust/Cargo.toml](https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/data/correct_code/rev_rust/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/epoch-research/MirrorCode/blob/5c9d7b00b0c6d7609003e33896cd41d28f092fcb/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-eval**. Its category places it in the candidate set for evolution, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [evolution](../evolution.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

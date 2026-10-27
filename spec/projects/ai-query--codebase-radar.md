@@ -23,3 +23,7 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [codebase-radar](https://github.com/BleedingDev/codebase-radar); analyzed commit `82381c8adfb701e3b2ea6bb113634abd7d82db68`; commit date 2026-08-31T14:47:17+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--codebase-radar.md).
+<!-- teamagent-analysis:end -->

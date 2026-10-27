@@ -1,0 +1,31 @@
+# agent-orchestrator
+
+Source: [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `a2a8917c22e2246bf63b98e06a97c417f3b3fb76` (2026-10-03T20:20:43+05:30). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+An explicit adapter registry scales installed-agent support without pretending every executable follows one protocol.
+
+## Source evidence inspected
+
+- [backend/internal/adapters/agent/registry/registry.go, lines 47–128](https://github.com/ComposioHQ/agent-orchestrator/blob/a2a8917c22e2246bf63b98e06a97c417f3b3fb76/backend/internal/adapters/agent/registry/registry.go#L47-L128)
+
+## Observed design and algorithms
+
+Constructors returns a stable list of concrete adapter factories, including Codex, Claude Code, Gemini, Copilot, Pi and many others. Build registers them by manifest ID and reports empty/duplicate registration failures through the registry. Harnessed retains only adapters implementing the Agent port and associates each with its domain harness and manifest. Adapter identity, capabilities and implementation remain separate objects.
+
+## Harness decision
+
+Adopt a manifest-plus-port contract and a central registry with deterministic registration. Add a generic protocol adapter for conforming unknown agents, then explicit adapters where semantics differ. The README describes isolated worker worktrees; treat the reviewed registry as the source evidence for extensibility, not proof of all workspace safety behavior.
+
+## Limits and tradeoffs
+
+Adding an agent still requires concrete implementation or an existing shared protocol. The literal goal of automatically operating any installed binary is impossible without a negotiated contract. Repository origin and current README branding differ; the recorded GitHub remote may redirect.
+
+## Validation before adoption
+
+Validate duplicate IDs, missing binaries, unsupported versions and environment-specific executable resolution. Exercise each adapter against contract tests without relying on terminal text heuristics for success. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [channels](../channels.md) · [models](../models.md).

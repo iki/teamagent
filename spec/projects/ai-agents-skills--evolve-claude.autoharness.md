@@ -25,3 +25,7 @@ Adopt the lifecycle architecture selectively; do not enable automatic global sel
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [evolve-claude.autoharness](https://github.com/tigerless-labs/autoharness); analyzed commit `6bf36182dcdb95a55bc8fd8b522ce845f855cbc6`; commit date 2026-10-02T17:43:38+08:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--evolve-claude.autoharness.md).
+<!-- teamagent-analysis:end -->

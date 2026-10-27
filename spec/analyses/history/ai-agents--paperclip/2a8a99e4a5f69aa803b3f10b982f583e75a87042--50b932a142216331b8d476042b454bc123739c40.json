@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--paperclip",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/paperclipai/paperclip",
+  "report": "spec/projects/ai-agents--paperclip.md",
+  "analyzedSha": "2a8a99e4a5f69aa803b3f10b982f583e75a87042",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T12:41:22-05:00",
+  "observedSha": "50b932a142216331b8d476042b454bc123739c40",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "50b932a142216331b8d476042b454bc123739c40",
+      "date": "2026-10-27T12:30:50-05:00",
+      "subject": "fix(server): require approval before onboarding task creation (#17914)"
+    },
+    {
+      "sha": "6e781e0ab20cdaeb6570cebdb5f14dbb8557ba04",
+      "date": "2026-10-27T12:25:01-05:00",
+      "subject": "fix(connections): preserve removed grants when saving installs (#17906)"
+    },
+    {
+      "sha": "f6ba9afab04b17c765a4c7130600fe1c5c7707a6",
+      "date": "2026-10-27T12:05:51-05:00",
+      "subject": "perf(server): narrow explicit continuation run reads (#17896)"
+    },
+    {
+      "sha": "6e5b9794d622486fb865176312c4ce50cb3f95a9",
+      "date": "2026-10-27T12:05:30-05:00",
+      "subject": "perf(github): avoid duplicate webhook body reads (#17894)"
+    },
+    {
+      "sha": "7a0c9c23cf9651dbcace966b2493385c211327a0",
+      "date": "2026-10-27T12:05:01-05:00",
+      "subject": "perf(github): reduce inherited review-wait transfer (#17893)"
+    },
+    {
+      "sha": "8548173fc9efdc0fa07644fb92dcc0b6851a95e5",
+      "date": "2026-10-27T11:38:16-05:00",
+      "subject": "feat(evals): connect hosted Runner costs and traces (#17889)"
+    },
+    {
+      "sha": "585b4e6af87a7b93f9b5003e24cf4838e28845d7",
+      "date": "2026-10-27T11:34:18-05:00",
+      "subject": "fix(chat): preserve deferred Retry source batches (#17883)"
+    },
+    {
+      "sha": "3be54534c24fc279533ff421e62a77ad15b72954",
+      "date": "2026-10-27T11:23:09-05:00",
+      "subject": "perf(server): decode workspace run context keys once (#17898)"
+    },
+    {
+      "sha": "475f7df2e75d4912b997767fc1b04194b917dd89",
+      "date": "2026-10-27T11:22:25-05:00",
+      "subject": "perf(server): prefilter chat milestone run candidates (#17892)"
+    },
+    {
+      "sha": "a26d217e94679ce48e625c0680470a5e27ee876f",
+      "date": "2026-10-27T11:21:44-05:00",
+      "subject": "fix(server): coalesce Cloud membership synchronization writes (#17890)"
+    },
+    {
+      "sha": "2f3516f6fdb83b931fe13a62e4e3ad8617a5bee4",
+      "date": "2026-10-27T11:19:14-05:00",
+      "subject": "fix(github): authenticate external contributor lookups (#17902)"
+    },
+    {
+      "sha": "ac22b1b1f9ce7d40feb540188ed4d799521c4e76",
+      "date": "2026-10-27T16:02:43Z",
+      "subject": "fix: preserve recovered input and task directory continuity (#17878)"
+    },
+    {
+      "sha": "eda2a03bfe5213ffef2fbbdefdf572be775f1e14",
+      "date": "2026-10-27T10:25:56-05:00",
+      "subject": "fix(ui): keep responder avatars visible through comment acknowledgement (#17885)"
+    },
+    {
+      "sha": "e71a23c01c8af0e0b4cc5ac983d86886ba324239",
+      "date": "2026-10-27T10:10:45-05:00",
+      "subject": "fix(ui): animate late task sidebar loading (#17880)"
+    },
+    {
+      "sha": "663fe667d66d3863d0919a8724f1d99500feef0b",
+      "date": "2026-10-27T09:50:50-05:00",
+      "subject": "fix(recovery): reconstruct missing native workspace obligations (#17877)"
+    },
+    {
+      "sha": "b8f6d9b23f9073979941aff075db558290e99bb2",
+      "date": "2026-10-27T09:40:41-05:00",
+      "subject": "docs: clarify delegated connection feature and access maps (#17882)"
+    },
+    {
+      "sha": "db70c5acd92f50fa37fb4f0dea3da0e7685089a2",
+      "date": "2026-10-27T08:45:00-05:00",
+      "subject": "fix(runner): retain startup Stop and exhaust reconnect recovery (#17812)"
+    },
+    {
+      "sha": "bd382eee536f4ada680072b1cc19100163c3d04a",
+      "date": "2026-10-27T08:21:28-05:00",
+      "subject": "fix(recovery): explain retained source verification failures (#17773)"
+    },
+    {
+      "sha": "0c9d10d695f772a311d596bb43837864be366387",
+      "date": "2026-10-27T08:21:02-05:00",
+      "subject": "feat(connections): complete saved setup guidance and coverage maps (#17739)"
+    },
+    {
+      "sha": "13709b4c7af89cadd5f5516ae453778e66af8f10",
+      "date": "2026-10-27T08:20:24-05:00",
+      "subject": "feat(connections): let agents configure connections within delegated authority (#17737)"
+    },
+    {
+      "sha": "0cb3fc7db591ba23e21fbbc70042bc44ec7d6f20",
+      "date": "2026-10-26T21:34:29-07:00",
+      "subject": "fix(runner): retain ACPX transport failure details (#17837)"
+    },
+    {
+      "sha": "94819b6ded75e2d5a1db942ffd99319ea2702c80",
+      "date": "2026-10-26T21:34:15-07:00",
+      "subject": "fix(recovery): preserve live heartbeat preparation ownership (#17838)"
+    },
+    {
+      "sha": "3edba115764d7cdb178302c691808c6d5ec8a70a",
+      "date": "2026-10-26T21:16:40-07:00",
+      "subject": "fix(github): stop counting suspended installations as repository access (#17343)"
+    },
+    {
+      "sha": "3e7c3ee9a97538215454054bcaf3891ecefbd44f",
+      "date": "2026-10-26T21:08:49-07:00",
+      "subject": "fix(ui): fall back to the icon face when an Artifacts V1 preview fails to load (#17260)"
+    },
+    {
+      "sha": "4da876ab0b07ac8c1a00f7a911586cce4e0fa705",
+      "date": "2026-10-26T21:08:00-07:00",
+      "subject": "fix(native): always advertise run-scoped readers to provider threads (#16995)"
+    },
+    {
+      "sha": "2d72f2c4c0b2f119db3b94ea75bd8ee8b70ed959",
+      "date": "2026-10-26T20:55:37-07:00",
+      "subject": "fix: Serialize ACPX session record saves per record to stop overlapping renames (EPERM on Windows) (#16925)"
+    },
+    {
+      "sha": "585d37d4f25e26689c60cbb191fdfc5cfd1c60b4",
+      "date": "2026-10-26T20:54:18-07:00",
+      "subject": "[codex] Preserve AWS secret provider error classification (#10946)"
+    },
+    {
+      "sha": "05218571c314b172fd221f78fde89296eb46bf90",
+      "date": "2026-10-26T20:53:47-07:00",
+      "subject": "fix(watchdogs): reject incomplete subtree scans (#15063)"
+    },
+    {
+      "sha": "61ecc93033d2dc37ac22ef6b36d5080c0b5978f9",
+      "date": "2026-10-26T20:52:47-07:00",
+      "subject": "fix: count a recovered shutdown interrupt as recovered (#15031)"
+    },
+    {
+      "sha": "b46d1ab77bbd2628c13c69e0d67f2602bb90dc87",
+      "date": "2026-10-26T20:52:20-07:00",
+      "subject": "feat(ui): request a standalone window so the app can be installed (#13461)"
+    },
+    {
+      "sha": "8153061d71f75b66a531aa393f6c3a6e49493819",
+      "date": "2026-10-26T20:49:07-07:00",
+      "subject": "fix(pi-local): strip inherited server PAPERCLIP_* env from pi_local processes (#14503)"
+    },
+    {
+      "sha": "a02be1efc393b4d18245df0c1b7603fcc899b8fe",
+      "date": "2026-10-26T20:48:14-07:00",
+      "subject": "fix(continuation): degrade a stale interruptedRunId hint instead of failing the wake (#14807)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/create-case/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/conformance-tests.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/dot-case-study.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/onboarding-and-prompts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/release-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/runner-architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-external-bot-integration/references/troubleshooting-and-deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/create-issue-interaction-ui/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-runner-adapter/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/references/feature-map-example/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/references/feature-map-example/create-note.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/create-verification-skill/references/feature-map-example/search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/diagnose-why-work-stopped/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/PRECEDENT",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/motion/v1-mvp-motion.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/api-routes.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/api-stub.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/build-info.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/define-lab.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/direction/MotionSpecimen.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/direction/SlotBody.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/direction/index.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/direction/tokens.css.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/entry.html.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/fixtures.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/frames/AppShell.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/frames/Board.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/frames/LabToolbar.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/frames/Slot.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/frames/SurfaceFrame.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/frames/SurfaceView.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/kit.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/lab-state.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/lab.css.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/launch-entries.json.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/main.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/providers.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/registry.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/shot.cjs.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/stories/compare.stories.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/tests/api-stub.test.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/tests/lab-state.test.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/tests/motion-contract.test.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/tests/registry.test.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/tests/today.test.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/today/SlotBody.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/today/adapters.ts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/today/index.tsx.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/assets/templates/vite.config.mjs.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/asks-how-many-directions/case.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/asks-how-many-directions/graders/01-expected-output.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/asks-how-many-directions/prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/multi-surface-three-directions/case.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/multi-surface-three-directions/graders/01-expected-output.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/multi-surface-three-directions/prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/single-surface-two-directions/case.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/single-surface-two-directions/graders/01-expected-output.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/evals/single-surface-two-directions/prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/canonical-directory.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/design-proposals-storybook.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/drawing-phases.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/generator.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/lab-anatomy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/motion-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/questions-and-defaults.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/repo-gates.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/references/today-fixtures-and-build.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/args.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/capabilities.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/check.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/context.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/modes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/ports.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/registry-edit.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/render.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/shared-files.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/verify.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/lib/write.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/scaffold.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/directions-lab/scripts/scaffold.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-failed-paperclip-run/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-failed-paperclip-run/references/failure-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/references/cloud-discovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/fix-slow-queries/references/local-proof.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/references/ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/references/runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/honeycomb-tracing/references/trace-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-storybook/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-storybook/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-verification-skill/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-verification-skill/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/maintain-verification-skill/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/review-storybook/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/review-storybook/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/references/paperclip-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/setup-code-maintenance-bot/references/run-instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/CAMPAIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/references/audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/references/paperclip.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/test-audit/references/validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/references/hosted-qa-accounts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/references/npm-install.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/references/verification-targets.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/doctor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/launch.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/onboarding-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/scripts/stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/verify-paperclip/tests/test_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/launch.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/directions-lab",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.runner-e2e.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-ci-dependencies/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/docker-context-checks.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/infra/runner-e2e-private-history.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/ci-dependency-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/ci-profile.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/tests/ci-routing.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/tests/release-runner-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-profile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-routing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-work-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cloud-migrator-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-runner-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-trusted.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-full-stack-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-live-evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-protocol-live-evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/storybook-visual.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/files.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".greptile/rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

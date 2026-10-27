@@ -1,0 +1,207 @@
+# bifrost: change evidence
+
+Source: [bifrost](https://github.com/maximhq/bifrost) · [Analysis](../../projects/ai-agents-proxy--bifrost.md) · [models](../../models.md), [agents](../../agents.md), [decisions](../../decisions.md), [security](../../security.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `e8b579fd1a710753cfa97611b5cff6c3411b0825`; commit date: 2026-10-03T00:57:43-07:00; review date: unknown; observed SHA: `659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/maximhq/bifrost/compare/e8b579fd1a710753cfa97611b5cff6c3411b0825...659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [659f4ce1e720](https://github.com/maximhq/bifrost/commit/659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975) 2026-10-27T23:17:14+05:30: docs: add sagemaker provider key config to openapi schema and e2e tests (#9004)
+- [e5928cc64885](https://github.com/maximhq/bifrost/commit/e5928cc648852249507fcc49c7890294d322f136) 2026-10-27T23:10:36+05:30: chore: add sagemaker provider config to helm chart and config schemas (#9003)
+- [daaf0ec049a9](https://github.com/maximhq/bifrost/commit/daaf0ec049a954462b31d2cf4ad2dcf44221796a) 2026-10-27T23:03:28+05:30: feat: add sagemaker passthrough for InvokeEndpoint and response streaming (#9037)
+- [836dfb48f8cb](https://github.com/maximhq/bifrost/commit/836dfb48f8cbc200998224afa25a5b0a9f8f965b) 2026-10-27T22:42:35+05:30: feat: add aws sagemaker provider (#9002)
+- [ea8dd595a5a3](https://github.com/maximhq/bifrost/commit/ea8dd595a5a393b6d7d5f40b812928724505aefd) 2026-10-27T22:37:33+05:30: feat: add terraform module for SageMaker on AWS (#8952)
+- [5499afc347e4](https://github.com/maximhq/bifrost/commit/5499afc347e4a2702bc2794284f22d87ae9678e1) 2026-10-27T22:23:04+05:30: fix(passthrough): record served service tier in logs (#9187)
+- [d4a247904ac8](https://github.com/maximhq/bifrost/commit/d4a247904ac8e3068f469a988197c86c67a391e9) 2026-10-27T20:00:10+05:30: docs(codex): document enterprise gateway OAuth sign-in through the identity provider (#9136)
+- [688f99e8c0ce](https://github.com/maximhq/bifrost/commit/688f99e8c0ce784fea332327b481fc77e7dfdfdd) 2026-10-27T19:57:01+05:30: feat(chatgpt-passthrough): support Codex ChatGPT sign-in model list and skip stored OpenAI key (#9074)
+- [2e515e5a5cfb](https://github.com/maximhq/bifrost/commit/2e515e5a5cfb328fb25f5953da46e00c237805fd) 2026-10-27T17:37:53+05:30: fix: align bedrock nova sonic realtime handling with live api behavior (#9175)
+- [a34b03343536](https://github.com/maximhq/bifrost/commit/a34b03343536db3f1aa3519b1ceb8e4f0b2f7df7) 2026-10-27T13:19:07+05:30: feat: gpt live api for azure (#9054)
+- [7f355066418b](https://github.com/maximhq/bifrost/commit/7f355066418bb19c8ddfcee9dadb74c6500cff09) 2026-10-27T13:15:12+05:30: feat: azure integration routes (#9034)
+- [c524ca66d821](https://github.com/maximhq/bifrost/commit/c524ca66d821c2b21b3285ff40a05e5df84afa38) 2026-10-27T13:11:15+05:30: feat: azure voice live api (#9033)
+- [b93cb63a17ba](https://github.com/maximhq/bifrost/commit/b93cb63a17ba4bbdc4584da65307a9e42b9f0b33) 2026-10-27T13:07:14+05:30: fix: use speech endpoints field in azure key (#9032)
+- [fc9bff7c74cf](https://github.com/maximhq/bifrost/commit/fc9bff7c74cfbdff6c1e4906e62cc9e6ed93df4f) 2026-10-27T13:03:51+05:30: feat(decisions): support conversation items, JSON parts, and prompt caching in OpenAI decisions (#9155)
+- [b9249fbfd58a](https://github.com/maximhq/bifrost/commit/b9249fbfd58a92f484607e867a623e0c3607a8c4) 2026-10-27T13:01:14+05:30: fix: whisper models cost in json forma (#8917)
+- [792cb3b3242e](https://github.com/maximhq/bifrost/commit/792cb3b3242ea8efce410be51aedf538cec38da7) 2026-10-27T12:57:13+05:30: feat: azure native stt and tts (#8916)
+- [0e2bfd482425](https://github.com/maximhq/bifrost/commit/0e2bfd4824259c60c80d3e04526e1f6dcb2b5b51) 2026-10-27T12:48:10+05:30: test(warp): skip internal filter fields and stub vector-delete retry in upkeep test (#9138)
+- [40ddf8451aee](https://github.com/maximhq/bifrost/commit/40ddf8451aee2c9e2afbbf4104ff8452a9ef80b6) 2026-10-27T12:44:12+05:30: refactor(warp topics): run upkeep as a job in the topics partition (#9137)
+- [bda945e77a0f](https://github.com/maximhq/bifrost/commit/bda945e77a0f6dd280b0ccf8ff57dae79fe9e311) 2026-10-27T12:40:11+05:30: fix(warp topics): labels and merges (#9077)
+- [14811c0730e3](https://github.com/maximhq/bifrost/commit/14811c0730e393858924ab35ae7ab33857d4306d) 2026-10-26T19:19:07-07:00: fix(npx): verify downloaded gateway binary checksum (#9010)
+- [4e47ea3c85e1](https://github.com/maximhq/bifrost/commit/4e47ea3c85e1d4619d8b8604f779fd17e3d847f8) 2026-10-26T19:15:12-07:00: fix(anthropic): bill advisor iterations (#9009)
+- [4494d7885f07](https://github.com/maximhq/bifrost/commit/4494d7885f07fb38255d6612c438d2d2d9c78b74) 2026-10-26T19:11:16-07:00: fix(governance): check models named in server tools (#9008)
+- [ff18adc092db](https://github.com/maximhq/bifrost/commit/ff18adc092db17b92ab7e4f69b5c6082a12ec803) 2026-10-26T19:07:54-07:00: fix(oauth2): match protected resource metadata to the server url (#9007)
+- [12df9cb26753](https://github.com/maximhq/bifrost/commit/12df9cb267531327ab06fe6d6bfd5d1d128ce9f3) 2026-10-26T18:44:46-07:00: dependabot fixes
+- [a23ace1ef50a](https://github.com/maximhq/bifrost/commit/a23ace1ef50a76011aca8aa942f0e5cb8c804138) 2026-10-26T17:32:05-07:00: [feat]: Add Azure Blob Storage support (#9053)
+- [c6d88d20f6ed](https://github.com/maximhq/bifrost/commit/c6d88d20f6ed9b630f5171574ad179174ee49ac3) 2026-10-26T17:14:07-07:00: go mod updates
+- [06d568c3450d](https://github.com/maximhq/bifrost/commit/06d568c3450d3bcda6bc9c5a17f1cd518e6cd03d) 2026-10-27T00:39:50+05:30: chore: add harness cases for developer role and mid-conversation system message handling (#9028)
+- [c8c6dfbc20c6](https://github.com/maximhq/bifrost/commit/c8c6dfbc20c6077d03f8254916d3ba04f50e48ba) 2026-10-26T11:49:22-07:00: chore: add bedrock nova sonic realtime documentation (#8589)
+- [c1eb9da3393d](https://github.com/maximhq/bifrost/commit/c1eb9da3393d1fc6b117a807133b730b73184218) 2026-10-26T11:45:17-07:00: test: add realtime api e2e suite for openai, azure, and bedrock nova sonic (#8632)
+- [96fe7479347c](https://github.com/maximhq/bifrost/commit/96fe7479347c6dcb15e3abb841512b605fd1c277) 2026-10-27T00:11:15+05:30: feat: support disable_store for fireworks responses requests (#8883)
+- [7051afb962d5](https://github.com/maximhq/bifrost/commit/7051afb962d58bad1df8b3aa1aa87b578b4233ae) 2026-10-26T11:38:13-07:00: feat: add nova sonic realtime support to bedrock provider (#8588)
+- [4d766c9046ae](https://github.com/maximhq/bifrost/commit/4d766c9046ae3341fe274da1ff58bebd90e3a42d) 2026-10-27T00:04:17+05:30: fix: send developer messages as system and fold mid conversation system messages (#8884)
+
+## Changed paths (truncated)
+
+- M: `.claude/skills/add-pricing-field/SKILL.md`
+- M: `.claude/skills/changelog-writer/SKILL.md`
+- M: `.claude/skills/helm-update/SKILL.md`
+- M: `.claude/skills/investigate-issue/SKILL.md`
+- M: `.claude/skills/split-commit-into-stack/SKILL.md`
+- M: `.coderabbit.yaml`
+- M: `.github/CODEOWNERS`
+- M: `.github/dependabot.yml`
+- A: `.github/labeler.yml`
+- A: `.github/labels.yml`
+- M: `.github/workflows/codspeed.yml`
+- M: `.github/workflows/dependency-review.yml`
+- M: `.github/workflows/docs-validation.yml`
+- M: `.github/workflows/e2e-tests.yml`
+- M: `.github/workflows/helm-release.yml`
+- A: `.github/workflows/labeler.yml`
+- A: `.github/workflows/labels.yml`
+- A: `.github/workflows/live-tests.yml`
+- M: `.github/workflows/npx-publish.yml`
+- M: `.github/workflows/pr-tests.yml`
+- M: `.github/workflows/release-bifrost-migration-cli.yml`
+- M: `.github/workflows/release-cli.yml`
+- M: `.github/workflows/release-pipeline.yml`
+- M: `.github/workflows/run-core-tests.yml`
+- M: `.github/workflows/scorecards.yml`
+- M: `.github/workflows/scripts/build-executables.sh`
+- M: `.github/workflows/scripts/check-egress-allowlist.sh`
+- M: `.github/workflows/scripts/cost-accuracy-test.sh`
+- M: `.github/workflows/scripts/extract-npx-version.sh`
+- A: `.github/workflows/scripts/install-docker-compose.sh`
+- A: `.github/workflows/scripts/install-docker-compose.test.sh`
+- A: `.github/workflows/scripts/module-major.test.sh`
+- A: `.github/workflows/scripts/read-version-file.sh`
+- M: `.github/workflows/scripts/release-bifrost-http-prep.sh`
+- A: `.github/workflows/scripts/resolve-test-ref.sh`
+- A: `.github/workflows/scripts/resolve-test-ref.test.sh`
+- M: `.github/workflows/scripts/run-migration-tests.sh`
+- M: `.github/workflows/scripts/schemasync/go.mod`
+- M: `.github/workflows/scripts/schemasync/main.go`
+- A: `.github/workflows/scripts/semver.sh`
+- M: `.github/workflows/scripts/setup-go-workspace.sh`
+- A: `.github/workflows/scripts/test-agentgateway-e2e.sh`
+- M: `.github/workflows/scripts/test-api-integrations.sh`
+- M: `.github/workflows/scripts/test-cli-harness.sh`
+- M: `.github/workflows/scripts/test-e2e-ui.sh`
+- M: `.github/workflows/scripts/test-framework.sh`
+- A: `.github/workflows/scripts/test-live.sh`
+- M: `.github/workflows/scripts/validate-helm-config-fields.sh`
+- M: `.github/workflows/scripts/validate-helm-schema.sh`
+- M: `.github/workflows/scripts/validate-helm-templates.sh`
+- M: `.github/workflows/scripts/version-format.test.sh`
+- M: `.github/workflows/snyk.yml`
+- M: `.github/workflows/tools/csv-parse.test.js`
+- A: `.github/workflows/tools/micromatch-compat/index.js`
+- A: `.github/workflows/tools/micromatch-compat/package.json`
+- A: `.github/workflows/tools/node-forge-compat/index.js`
+- A: `.github/workflows/tools/node-forge-compat/package.json`
+- M: `.github/workflows/tools/package-lock.json`
+- M: `.github/workflows/tools/package.json`
+- M: `.github/workflows/workflow-lint.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `Makefile`
+- M: `cli/README.md`
+- M: `cli/changelog.md`
+- M: `cli/go.mod`
+- M: `cli/go.sum`
+- M: `cli/internal/browserauth/browserauth.go`
+- M: `cli/internal/browserauth/browserauth_test.go`
+- M: `cli/internal/client/client_test.go`
+- M: `cli/internal/command/auth.go`
+- M: `cli/internal/command/root_test.go`
+- M: `cli/internal/command/usage.go`
+- M: `cli/internal/secrets/secrets.go`
+- M: `cli/internal/sessionauth/refresh_test.go`
+- M: `cli/internal/sessionauth/session.go`
+- M: `cli/version`
+- M: `cmd/e2eseed/go.mod`
+- M: `community/mcp-library/servers.json`
+- M: `core/abandonedstream_test.go`
+- A: `core/agent/extendedcard_test.go`
+- A: `core/agent/manager.go`
+- A: `core/agent/manager_test.go`
+- A: `core/agent/networkpolicy.go`
+- A: `core/agent/networkpolicy_test.go`
+- A: `core/agent/oauthcache_test.go`
+- A: `core/agent/oauthsecurity_test.go`
+- A: `core/agent/observationbench_test.go`
+- A: `core/agent/pluginpipeline.go`
+- A: `core/agent/pluginpipeline_test.go`
+- A: `core/agent/push.go`
+- A: `core/agent/push_test.go`
+- A: `core/agent/rawcapture.go`
+- A: `core/agent/rawcapture_test.go`
+- A: `core/agent/stream_test.go`
+- A: `core/agent/tracing.go`
+- A: `core/agent/tracing_test.go`
+- M: `core/bifrost.go`
+- M: `core/bifrost_test.go`
+- M: `core/changelog.md`
+- M: `core/decisionemulation.go`
+- M: `core/decisionemulation_test.go`
+- M: `core/encryptedreasoning.go`
+- M: `core/encryptedreasoning_test.go`
+- M: `core/failureclass.go`
+- M: `core/failureclass_test.go`
+- M: `core/failureclassrotation_test.go`
+- A: `core/genaipassthrough_test.go`
+- M: `core/go.mod`
+- M: `core/go.sum`
+- A: `core/injectedauth.go`
+- A: `core/injectedtools.go`
+- A: `core/injectedtools_test.go`
+- A: `core/injectedtoolstream.go`
+- A: `core/injectedtoolstream_test.go`
+- A: `core/internal/injectedauth/injectedauth.go`
+- M: `core/internal/llmtests/account.go`
+- M: `core/internal/llmtests/complete_end_to_end.go`
+- M: `core/internal/llmtests/decision.go`
+- M: `core/internal/llmtests/realtime.go`
+- M: `core/internal/llmtests/response_validation.go`
+- M: `core/internal/llmtests/tests.go`
+- M: `core/internal/llmtests/tool_calls.go`
+- M: `core/internal/llmtests/tool_calls_streaming.go`
+- M: `core/internal/llmtests/utils.go`
+- M: `core/internal/llmtests/validation_presets.go`
+- A: `core/internal/llmtests/web_search_chat.go`
+- M: `core/internal/mcptests/agent_basic_test.go`
+- M: `core/internal/mcptests/client_management_test.go`
+- M: `core/internal/mcptests/codemode_agent_test.go`
+- M: `core/internal/mcptests/codemode_basic_test.go`
+- M: `core/internal/mcptests/codemode_security_test.go`
+- M: `core/internal/mcptests/codemode_stdio_test.go`
+- M: `core/internal/mcptests/codemode_tools_test.go`
+- M: `core/internal/mcptests/connect_ping_listtools_test.go`
+- M: `core/internal/mcptests/connection_test.go`
+- M: `core/internal/mcptests/tool_execution_test.go`
+- M: `core/internal/memtest/coverage_test.go`
+- M: `core/keyselectors/weightedrandom.go`
+- M: `core/keyselectors/weightedrandom_bench_test.go`
+- A: `core/listallmodels_test.go`
+- M: `core/mcp/agent.go`
+- M: `core/mcp/agent_test.go`
+- M: `core/mcp/agentadaptors.go`
+- M: `core/mcp/auth_retry_test.go`
+- M: `core/mcp/clientmanager.go`
+- M: `core/mcp/clientmanager_test.go`
+- M: `core/mcp/codemode.go`
+- M: `core/mcp/codemode/starlark/executecode.go`
+- M: `core/mcp/codemode/starlark/getdocs.go`
+- M: `core/mcp/codemode/starlark/listfiles.go`
+- M: `core/mcp/codemode/starlark/readfile.go`
+- A: `core/mcp/codemode/starlark/sandbox.go`
+- M: `core/mcp/codemode/starlark/starlark.go`
+- M: `core/mcp/codemode/starlark/starlark_test.go`
+- M: `core/mcp/codemode/starlark/toolerrormarker_test.go`
+- M: `core/mcp/codemode/starlark/utils.go`
+- A: `core/mcp/codemode/starlark/values.go`
+- M: `core/mcp/credstore/credstore.go`
+- A: `core/mcp/credstore/credstore_test.go`

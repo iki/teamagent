@@ -23,3 +23,7 @@ Integrate as an optional search/import source, not as a trusted skill registry o
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `7d3f248962d1dca209d59e033524bcb86c2b26b8`; commit date 2026-10-01T12:56:12+03:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
+<!-- teamagent-analysis:end -->

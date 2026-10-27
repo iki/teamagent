@@ -1,0 +1,207 @@
+# claude.fork.openclaude: change evidence
+
+Source: [claude.fork.openclaude](https://github.com/Gitlawb/openclaude) · [Analysis](../../projects/ai-agents--claude.fork.openclaude.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `9a2910da236395d259c72c3b4ddf92278625a6c1`; commit date: 2026-09-29T12:59:42+08:00; review date: unknown; observed SHA: `20a50493c775f151b61e1fabd5fa678ad1fbdaae`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Gitlawb/openclaude/compare/9a2910da236395d259c72c3b4ddf92278625a6c1...20a50493c775f151b61e1fabd5fa678ad1fbdaae). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [20a50493c775](https://github.com/Gitlawb/openclaude/commit/20a50493c775f151b61e1fabd5fa678ad1fbdaae) 2026-10-27T10:47:34-07:00: fix: resolve 46 unused local findings in batch 6 (#2458)
+- [1ce3c30dee8d](https://github.com/Gitlawb/openclaude/commit/1ce3c30dee8df0c2c94cc8fe044c768e84f55007) 2026-10-27T10:24:37-07:00: fix: remove next 40 unused local findings (batch 5) (#2457)
+- [1cead2c9067e](https://github.com/Gitlawb/openclaude/commit/1cead2c9067e428bdc496e9327fb3a26f8fb3ca5) 2026-10-27T10:06:54-07:00: fix: remove next 40 unused local findings (batch 4) (#2456)
+- [31274c145a62](https://github.com/Gitlawb/openclaude/commit/31274c145a6278c553e0f5fd451823dbe0990349) 2026-10-27T10:06:01-07:00: fix: remove next 40 unused local findings (#2454)
+- [ec6bc3fd5d75](https://github.com/Gitlawb/openclaude/commit/ec6bc3fd5d75dae8c5657d16125a2f7ffd9c9ac1) 2026-10-27T09:56:02-07:00: fix: encode JSX apostrophes for CodeQL tokenization (#2455)
+- [f55f4dfdf058](https://github.com/Gitlawb/openclaude/commit/f55f4dfdf058bd1c182a42d2a7551a3d1e83bfc8) 2026-10-27T09:38:33-07:00: chore: resolve next 40 unused-local-variable findings (#2453)
+- [d4d1b2bfa70d](https://github.com/Gitlawb/openclaude/commit/d4d1b2bfa70dbe83e35577a3633eb87a02836535) 2026-10-27T09:18:01-07:00: fix: remove permanently disabled conditional paths (#2450)
+- [099cd505fe18](https://github.com/Gitlawb/openclaude/commit/099cd505fe18585180c51e32f8b1c789e8b83b25) 2026-10-27T08:51:53-07:00: fix: add missing statement terminators flagged by CodeQL (#2448)
+- [9876d04b3a68](https://github.com/Gitlawb/openclaude/commit/9876d04b3a680d74940633c14b7e52424be3ecdd) 2026-10-27T08:50:43-07:00: fix: simplify redundant UI conditions (#2449)
+- [24a90a563946](https://github.com/Gitlawb/openclaude/commit/24a90a563946e0c89e31d49cdce8353bd4e9f875) 2026-10-27T08:49:10-07:00: fix: simplify redundant utility and tool conditions (#2452)
+- [a8843cf24120](https://github.com/Gitlawb/openclaude/commit/a8843cf24120e5c81fd1639f98e7219f365f5a1a) 2026-10-27T07:56:16-07:00: chore: resolve bottom 40 unused-import quality findings (#2451)
+- [a9387e4cc39e](https://github.com/Gitlawb/openclaude/commit/a9387e4cc39e53773d261742032624882f8f903f) 2026-10-27T07:55:27-07:00: chore: remove unused spinner layout assignments (#2444)
+- [51085b983611](https://github.com/Gitlawb/openclaude/commit/51085b98361169b9bcb413eb3e289c7877f93e1b) 2026-10-27T07:54:41-07:00: chore: remove unused UI and text-input assignments (#2445)
+- [e097dc886481](https://github.com/Gitlawb/openclaude/commit/e097dc88648152181552cf2762fddf1fb5b5f49e) 2026-10-27T07:53:33-07:00: chore: remove unused plugin cache assignments (#2446)
+- [443dbea52aac](https://github.com/Gitlawb/openclaude/commit/443dbea52aac95c7e7fbe362dada668af013aa2c) 2026-10-27T07:53:01-07:00: chore: remove unused core utility assignments (#2447)
+- [94ebcff640a6](https://github.com/Gitlawb/openclaude/commit/94ebcff640a611f7c248a0441fd7523d7da8050e) 2026-10-27T06:52:17-07:00: fix: remove unreachable internal-only branches (#2440)
+- [51f50e99b0c3](https://github.com/Gitlawb/openclaude/commit/51f50e99b0c3910d94f84fbabbc5e02cc0b870bd) 2026-10-27T06:51:49-07:00: fix: clarify declarations and redundant comparisons (#2441)
+- [a883d57f8245](https://github.com/Gitlawb/openclaude/commit/a883d57f8245d98d713445a54e3b8675fb62f037) 2026-10-27T06:51:14-07:00: fix: remove duplicate regex members and bound SGR parsing (#2442)
+- [391c660db657](https://github.com/Gitlawb/openclaude/commit/391c660db6577bf49254f6b0700e8a7e220fa1f0) 2026-10-27T06:50:41-07:00: fix(ide): propagate VSIX download stream errors (#2443)
+- [0470c16c288f](https://github.com/Gitlawb/openclaude/commit/0470c16c288fa3d1cfd9b2be862076dfca92717b) 2026-10-27T06:24:41-07:00: chore: remove useless MCP import and updater expressions (#2438)
+- [85cfaa734572](https://github.com/Gitlawb/openclaude/commit/85cfaa7345724f7437e1482a40c2dfa5392cb625) 2026-10-27T06:24:14-07:00: chore: remove useless expressions from plugin validation (#2436)
+- [87f65c5955f6](https://github.com/Gitlawb/openclaude/commit/87f65c5955f66c6087a1d78f191145d2ab0e5c30) 2026-10-27T06:16:44-07:00: chore: remove discarded agent prompt default expression (#2439)
+- [3202a153ce09](https://github.com/Gitlawb/openclaude/commit/3202a153ce091951d7bd0fa398ae95dffa67062b) 2026-10-27T06:16:03-07:00: chore: remove useless search and markdown expressions (#2437)
+- [a91f736ef1c2](https://github.com/Gitlawb/openclaude/commit/a91f736ef1c257d00dd4ced04f86e21401289f40) 2026-10-26T22:28:45-07:00: chore: remove ten reported unused bindings (#2433)
+- [24901c610af5](https://github.com/Gitlawb/openclaude/commit/24901c610af5489fb0d1055f813c6fd114737c13) 2026-10-26T22:19:55-07:00: chore: remove unused imports from GitHub setup and insights (#2432)
+- [ddacba95c7af](https://github.com/Gitlawb/openclaude/commit/ddacba95c7afdd591c3813c335f63cf5c9787e7d) 2026-10-26T22:13:38-07:00: chore: remove unused React import from session chooser (#2431)
+- [3adc887e85c5](https://github.com/Gitlawb/openclaude/commit/3adc887e85c585687615598f7c46356468777a80) 2026-10-26T21:41:55-07:00: fix: clean up existing ESLint warnings (#2429)
+- [ec39d807c0ac](https://github.com/Gitlawb/openclaude/commit/ec39d807c0acc747eb22121ca087313f3fd45fee) 2026-10-26T20:24:01-07:00: fix(smart-routing): stop overriding sub-agent models chosen by agentRouting (#2310)
+- [4e746935f8dd](https://github.com/Gitlawb/openclaude/commit/4e746935f8dd25515c9e1f93b30f0be8414eadd3) 2026-10-26T11:20:04-07:00: ci: enforce lint and prepare applicable merge checks (#2428)
+- [77739e2ce573](https://github.com/Gitlawb/openclaude/commit/77739e2ce5738318d1d53481d19c44dd71bbe099) 2026-10-26T08:28:04-07:00: fix(web): reject empty sitemap in build verification (#2427)
+- [2dddbb379a29](https://github.com/Gitlawb/openclaude/commit/2dddbb379a29619be320e399cc74d3a38019a392) 2026-10-26T08:27:04-07:00: fix(plugins): suppress hooks throughout sparse clones (#2426)
+- [ae7eb82187a7](https://github.com/Gitlawb/openclaude/commit/ae7eb82187a7c2c57088e156a081e550aeb7217a) 2026-10-26T08:26:19-07:00: fix(test): verify isolated child and release suite completion (#2425)
+
+## Changed paths (truncated)
+
+- M: `.bun-version`
+- M: `.env.example`
+- M: `.github/ISSUE_TEMPLATE/config.yml`
+- A: `.github/codeql/README.md`
+- M: `.github/pull_request_template.md`
+- A: `.github/workflows/codeql.yml`
+- M: `.github/workflows/install-hygiene.yml`
+- M: `.github/workflows/pr-checks.yml`
+- M: `.github/workflows/release.yml`
+- A: `.github/workflows/vscode-launcher.yml`
+- M: `.node-version`
+- M: `.nvmrc`
+- M: `.release-please-manifest.json`
+- M: `AGENTS.md`
+- M: `ANDROID_INSTALL.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `bin/openclaude`
+- M: `bun.lock`
+- M: `docs/advanced-setup.md`
+- A: `docs/assets/gmi-cloud-logo-dark.svg`
+- A: `docs/assets/gmi-cloud-logo.svg`
+- M: `docs/integrations/how-to/add-gateway.md`
+- M: `docs/integrations/overview.md`
+- M: `docs/integrations/reasoning-effort.md`
+- M: `docs/litellm-setup.md`
+- A: `docs/merge-gateway-setup.md`
+- M: `docs/non-technical-setup.md`
+- M: `docs/quick-start-mac-linux.md`
+- M: `docs/quick-start-windows.md`
+- A: `docs/schema-validation.md`
+- M: `docs/skills.md`
+- M: `docs/smart-routing.md`
+- M: `docs/windows-aliases-and-launchers.md`
+- M: `package.json`
+- M: `release-please-config.json`
+- M: `scripts/any-usage-report.ts`
+- M: `scripts/benchmark-openclaude-startup.mjs`
+- M: `scripts/build.ts`
+- A: `scripts/check-node-options-parity.ts`
+- A: `scripts/ci-required-checks.test.ts`
+- M: `scripts/externals.ts`
+- M: `scripts/externalsValidation.test.ts`
+- M: `scripts/externalsValidation.ts`
+- M: `scripts/missing-module-stub.test.ts`
+- A: `scripts/npm-publish-report.test.ts`
+- A: `scripts/npm-publish-report.ts`
+- M: `scripts/openclaude-bin-compile-cache.test.ts`
+- M: `scripts/openclaude-bin-heap.test.ts`
+- A: `scripts/openclaude-bin-missing-helpers.test.ts`
+- M: `scripts/pr-intent-scan.test.ts`
+- M: `scripts/pr-intent-scan.ts`
+- M: `scripts/provider-launch.test.ts`
+- M: `scripts/provider-launch.ts`
+- M: `scripts/provider-recommend.test.ts`
+- M: `scripts/provider-recommend.ts`
+- A: `scripts/run-tests.test.ts`
+- A: `scripts/run-tests.ts`
+- M: `scripts/start-grpc.ts`
+- A: `scripts/subprocess.test.ts`
+- A: `scripts/subprocess.ts`
+- M: `scripts/system-check.test.ts`
+- M: `scripts/system-check.ts`
+- A: `scripts/typecheck-fast.ts`
+- M: `scripts/verify-clean-install.test.ts`
+- M: `scripts/verify-clean-install.ts`
+- M: `scripts/windows/openclaude-aliases.ps1`
+- M: `src/QueryEngine.interruptionTrace.test.ts`
+- M: `src/Tool.ts`
+- A: `src/Tool.types.test.ts`
+- M: `src/__tests__/bugfixes.test.ts`
+- M: `src/__tests__/security-hardening.test.ts`
+- M: `src/__tests__/statusNoticeLocalModel.test.ts`
+- M: `src/assistant/AssistantSessionChooser.tsx`
+- M: `src/assistant/sessionHistory.ts`
+- M: `src/bootstrap/state.ts`
+- M: `src/buddy/actionEffects.ts`
+- M: `src/cli/bgFinalizer.test.ts`
+- M: `src/cli/bgRegistry.test.ts`
+- M: `src/cli/handlers/skills.test.ts`
+- M: `src/cli/handlers/skills.ts`
+- M: `src/cli/handlers/skillsCli.ts`
+- M: `src/cli/handlers/skillsInstall.ts`
+- M: `src/cli/handlers/skillsListFormat.ts`
+- M: `src/cli/handlers/skillsRemoveMessage.ts`
+- M: `src/cli/handlers/skillsVerify.test.ts`
+- M: `src/cli/handlers/xaiAuth.test.ts`
+- M: `src/cli/print.ts`
+- M: `src/cli/printMaxTurns.test.ts`
+- M: `src/cli/structuredIO.ts`
+- M: `src/cli/transports/HybridTransport.test.ts`
+- M: `src/cli/update.test.ts`
+- M: `src/cli/update.ts`
+- M: `src/commands.test.ts`
+- M: `src/commands.ts`
+- M: `src/commands/btw/btw.tsx`
+- M: `src/commands/cache-probe/cache-probe.test.ts`
+- M: `src/commands/clear/conversation.goal.test.ts`
+- M: `src/commands/clear/conversation.ts`
+- M: `src/commands/copy/copy.tsx`
+- M: `src/commands/effort/effort.test.tsx`
+- M: `src/commands/effort/effort.tsx`
+- M: `src/commands/goal/goal.test.ts`
+- M: `src/commands/insights.ts`
+- M: `src/commands/install-github-app/ApiKeyStep.tsx`
+- M: `src/commands/install-github-app/CheckExistingSecretStep.tsx`
+- M: `src/commands/install-github-app/ChooseRepoStep.tsx`
+- M: `src/commands/install-github-app/InstallAppStep.tsx`
+- M: `src/commands/install-github-app/repoSlug.test.ts`
+- M: `src/commands/install-github-app/setupGitHubActions.test.ts`
+- M: `src/commands/knowledge/knowledge.test.ts`
+- M: `src/commands/mobile/mobile.tsx`
+- M: `src/commands/model/model.fastModeSwitch.test.ts`
+- M: `src/commands/model/model.test.tsx`
+- M: `src/commands/model/model.tsx`
+- M: `src/commands/onboard-github/onboard-github.test.ts`
+- M: `src/commands/onboard-github/onboard-github.tsx`
+- M: `src/commands/plugin/BrowseMarketplace.tsx`
+- M: `src/commands/plugin/DiscoverPlugins.tsx`
+- M: `src/commands/plugin/PluginOptionsDialog.tsx`
+- M: `src/commands/plugin/PluginSettings.tsx`
+- M: `src/commands/plugin/ValidatePlugin.tsx`
+- M: `src/commands/provider/provider.test.tsx`
+- M: `src/commands/provider/provider.tsx`
+- M: `src/commands/rate-limit-options/rate-limit-options.tsx`
+- M: `src/commands/replay/replay.test.tsx`
+- M: `src/commands/replay/replay.tsx`
+- M: `src/commands/resume/resume.test.tsx`
+- M: `src/commands/review/UltrareviewOverageDialog.tsx`
+- A: `src/commands/search/index.ts`
+- A: `src/commands/search/search.test.tsx`
+- A: `src/commands/search/search.tsx`
+- A: `src/commands/search/searchSettings.test.ts`
+- A: `src/commands/search/searchSettings.ts`
+- A: `src/commands/sessions/index.ts`
+- A: `src/commands/sessions/sessions.test.tsx`
+- A: `src/commands/sessions/sessions.tsx`
+- A: `src/commands/set-context-window/set-context-window.test.ts`
+- M: `src/commands/skills/skills.tsx`
+- M: `src/commands/thinkback/thinkback.tsx`
+- M: `src/commands/update/update.test.ts`
+- M: `src/components/ChannelDowngradeDialog.tsx`
+- M: `src/components/ClaudeMdExternalIncludesDialog.tsx`
+- M: `src/components/CoordinatorAgentStatus.tsx`
+- A: `src/components/CustomSelect/use-select-navigation.test.ts`
+- M: `src/components/CustomSelect/use-select-navigation.ts`
+- M: `src/components/EffortCallout.tsx`
+- M: `src/components/ExportDialog.test.tsx`
+- M: `src/components/Feedback.tsx`
+- M: `src/components/FeedbackSurvey/TranscriptSharePrompt.tsx`
+- M: `src/components/FeedbackSurvey/useMemorySurvey.tsx`
+- M: `src/components/FeedbackSurvey/usePostCompactSurvey.tsx`
+- M: `src/components/FullscreenLayout.tsx`
+- M: `src/components/GlobalSearchDialog.tsx`
+- M: `src/components/HelpV2/Commands.tsx`
+- M: `src/components/HelpV2/HelpV2.tsx`
+- M: `src/components/HighlightedCode.tsx`

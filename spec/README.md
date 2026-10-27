@@ -1,6 +1,6 @@
 # Team-agent harness: architecture and source analysis
 
-Analysis date: **2026-10-04**. Scope: **507 project checkouts across 19 categories**, representing **503 distinct upstream origins**. Every checkout has an individual report. **91 received focused source/content reviews; 416 have explicitly labeled inventory/README screening records.** One of the focused reviews is a design-only wiki reference. This is not an exhaustive implementation audit of all 507 projects, and no runtime or model benchmarks were run.
+Initial survey date: **2026-10-04**. Scope: **507 project checkouts across 19 categories**, representing **503 distinct upstream origins**. Every checkout has an individual report. **91 received focused source/content reviews; 416 have explicitly labeled inventory/README screening records.** One of the focused reviews is a design-only wiki reference. This is not an exhaustive implementation audit of all 507 projects, and no runtime or model benchmarks were run for that survey. Subsequent maintenance, scoped source reviews and packaging measurements are tracked separately in [incremental analysis](analyses/README.md) and [the architecture changelog](CHANGELOG.md).
 
 The recommendation is a **local-first durable control plane with replaceable agent/model/tool workers**, evidence-backed memory, selectively loaded skills, bounded typed decisions and evaluation-gated evolution. Keep tasks, permissions, artifacts and provenance independent of any agent vendor. Add teams and learned routing only when they improve measured task outcomes.
 
@@ -67,6 +67,10 @@ These are design conclusions supported by the detailed documents, not a claim th
 <!-- categories:end -->
 
 ## Evidence and maintenance artifacts
+
+- [Latest maintenance run](analyses/latest-run.md): measured sync results, recovery and remaining review work.
+- [Research synchronization](research-sync.md): project settings, safe Git maintenance, text import and incremental review.
+- [Incremental analyses](analyses/README.md), [revision index](analyses/repositories.md), and [architecture changelog](CHANGELOG.md).
 
 - [Machine-readable inventory](data/inventory.json): origin, revision, manifests, license hints and screening description.
 - [Coverage and topic mapping](data/coverage.json): review depth, report path and associated directions.

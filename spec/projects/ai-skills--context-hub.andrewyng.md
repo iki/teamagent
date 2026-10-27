@@ -24,3 +24,7 @@ Adopt the versioned reference-catalog pattern and BM25 baseline before adding co
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [context-hub.andrewyng](https://github.com/andrewyng/context-hub); analyzed commit `67dcbeb2eb42c808549f08397920ad58be7c2206`; commit date 2026-05-31T14:39:40-04:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-skills--context-hub.andrewyng.md).
+<!-- teamagent-analysis:end -->

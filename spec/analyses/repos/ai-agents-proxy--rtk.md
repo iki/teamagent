@@ -1,0 +1,207 @@
+# rtk: change evidence
+
+Source: [rtk](https://github.com/rtk-ai/rtk) · [Analysis](../../projects/ai-agents-proxy--rtk.md) · [models](../../models.md), [memory](../../memory.md), [agents](../../agents.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `c356374fc1c9cff132c02484d2b9195c796b8e8f`; commit date: 2026-10-03T18:03:05+02:00; review date: unknown; observed SHA: `e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/rtk-ai/rtk/compare/c356374fc1c9cff132c02484d2b9195c796b8e8f...e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [e05c7bdfacfc](https://github.com/rtk-ai/rtk/commit/e05c7bdfacfcfe1f845d11f47339e4eae63eb3f5) 2026-10-25T13:57:20+01:00: Merge pull request #4714 from rtk-ai/fix/pytest-collection-error-lines
+- [32b2ec4386d9](https://github.com/rtk-ai/rtk/commit/32b2ec4386d90f27255ec984ea7b45ba42bf4694) 2026-10-23T18:13:38+02:00: Merge pull request #4127 from pashifika/feat/fish-script-wrapping
+- [5f6111b90931](https://github.com/rtk-ai/rtk/commit/5f6111b90931c0e63e38a3af129cf3aeba10cefa) 2026-10-23T17:59:25+02:00: Merge pull request #4409 from yeahjack/fix/analytics-weekly-monday-join-3418
+- [5c1bf7056ac8](https://github.com/rtk-ai/rtk/commit/5c1bf7056ac8bc434f7ea3254c3691d9b4045f8d) 2026-10-23T17:57:22+02:00: fix(hooks): ask for a wrap only when RTK built it, and attest only where one can be
+- [205a7d44e6b5](https://github.com/rtk-ai/rtk/commit/205a7d44e6b5ac610501c188bf4d825946095732) 2026-10-23T16:28:07+02:00: test(hooks): run the wrapped-script case, and isolate both fish tests
+- [0ac602b4d24f](https://github.com/rtk-ai/rtk/commit/0ac602b4d24fd017640211781b8d068742c37e4d) 2026-10-23T15:48:24+02:00: Merge pull request #4343 from Aayushyaash/fix/multi-agent-hook-detection
+- [c375c3c0c9ae](https://github.com/rtk-ai/rtk/commit/c375c3c0c9ae0f213fc96199152b76c3c5210415) 2026-10-23T15:23:20+02:00: Merge pull request #4410 from yeahjack/feat/ng-build-compact
+- [02ffb598d3d7](https://github.com/rtk-ai/rtk/commit/02ffb598d3d7ff55664b370e7c6fea27f2e6c3c9) 2026-10-23T15:13:38+02:00: test(hooks): pin foreign hooks and the leftover Claude script
+- [8554743d9f7e](https://github.com/rtk-ai/rtk/commit/8554743d9f7e5159b69b39a0bb334c42382f4215) 2026-10-23T15:04:40+02:00: Merge pull request #4335 from Aayushyaash/fix/antigravity-legacy-rules-cleanup
+- [2dabd83b2d2e](https://github.com/rtk-ai/rtk/commit/2dabd83b2d2e92c75c9a2920f917bdcf32f0992e) 2026-10-23T14:46:23+02:00: Merge pull request #4727 from Yathiskumar/fix/ruff-restore-double-dash
+- [9d8004e777f1](https://github.com/rtk-ai/rtk/commit/9d8004e777f178de733c119d900db58a4dbaba16) 2026-10-23T14:00:57+02:00: test(init): pin the Antigravity legacy-path guard and rtk-prefix check
+- [a9ccceb75f8c](https://github.com/rtk-ai/rtk/commit/a9ccceb75f8c6c3601a7a0bec25ffa18c4e59e16) 2026-10-23T09:35:32+02:00: test(pytest): pin that a `=====` diff line stays an E line
+- [9e188b4954cf](https://github.com/rtk-ai/rtk/commit/9e188b4954cf729b4e629098f2b489e7d6d196c7) 2026-10-22T11:22:22+02:00: fix(pytest): match pytest's block separator exactly, never take locals as frames
+- [8b8fbe197758](https://github.com/rtk-ai/rtk/commit/8b8fbe19775863d88c0ae214b0a2425f5fcd87c2) 2026-10-22T10:47:01+02:00: fix(pytest): read shortened block headers, never take source or locals lines as frames
+- [cdfd453bc5a7](https://github.com/rtk-ai/rtk/commit/cdfd453bc5a7dfbe5431a592114e204f5de01bab) 2026-10-22T09:01:58+02:00: fix(pytest): keep the test frame, read clustered flags with the tokenizer
+- [63e2c53debf1](https://github.com/rtk-ai/rtk/commit/63e2c53debf168a1e03e29d07ff2cab084781b80) 2026-10-21T21:02:23+02:00: fix(pytest): end the failure section at the warnings summary
+- [b1701fb53ae7](https://github.com/rtk-ai/rtk/commit/b1701fb53ae7c9efc3d10b485bbc9336f4c13659) 2026-10-21T23:38:16+05:30: fix(ruff): restore a leading -- before routing
+- [2b761515e387](https://github.com/rtk-ai/rtk/commit/2b761515e3878c33cb00ba8d84089479375f7961) 2026-10-21T12:53:02+02:00: fix(pytest): mark the E lines cut from a block
+- [160e0d932e35](https://github.com/rtk-ai/rtk/commit/160e0d932e356020409d3cd225a21be662463571) 2026-10-21T12:35:50+02:00: fix(pytest): keep the failure location and xfail lines, close blocks at section banners
+- [f3b6865cf281](https://github.com/rtk-ai/rtk/commit/f3b6865cf28109eca3c4c1a61e180c2950b3c50e) 2026-10-21T10:27:28+02:00: fix(pytest): keep pytest's default report with --tb=no
+- [2f1a6ffb17f0](https://github.com/rtk-ai/rtk/commit/2f1a6ffb17f0ce6b63f7bf9fe31ddf5af485a8e4) 2026-10-21T10:01:37+02:00: fix(pytest): keep the E lines of error and failure blocks
+- [62cf6ba79567](https://github.com/rtk-ai/rtk/commit/62cf6ba79567318eec0051bd3a13979c21e8ef1c) 2026-10-21T09:29:52+09:00: fix(hooks): make the fish wrap opt-in, and ask for it explicitly
+- [9a683870b7cc](https://github.com/rtk-ai/rtk/commit/9a683870b7cc197c0cf8f871f89466ac9c55816a) 2026-10-21T09:12:51+09:00: fix(hooks): keep the fish wrap off wherever a deny rule could match
+- [03a57826c8b0](https://github.com/rtk-ai/rtk/commit/03a57826c8b0f5fafa1277aec2d86875868b0aab) 2026-10-21T09:12:51+09:00: fix(hooks): refuse where the shells disagree about a comment
+- [1f4d1107ddf6](https://github.com/rtk-ai/rtk/commit/1f4d1107ddf6ed88cea40627f6b1c0b7cb2db4f4) 2026-10-21T09:12:51+09:00: fix(hooks): gate on the stripped code, and end a comment at an operator
+- [269f11f359be](https://github.com/rtk-ai/rtk/commit/269f11f359bee841e0aa69c01ee61a5e851e6969) 2026-10-21T09:12:51+09:00: fix(hooks): classify only code, keep the rewrite, refuse what the gate refuses
+- [b0f9f8c583db](https://github.com/rtk-ai/rtk/commit/b0f9f8c583db7d17cdcc69eb52ce117c347fc76d) 2026-10-21T09:12:51+09:00: docs: document automatic fish script wrapping
+- [eb8bd761df24](https://github.com/rtk-ai/rtk/commit/eb8bd761df2492c218c6e75befb288865c33b697) 2026-10-21T09:12:51+09:00: feat(hooks): wrap unambiguously-fish scripts as rtk run --shell fish
+- [5ab6291365e9](https://github.com/rtk-ai/rtk/commit/5ab6291365e9d14f486a89d04af6b7da6710105c) 2026-10-21T01:43:49+02:00: Merge pull request #4645 from ZXLyyds100/fix/python-lint-rule-details
+- [d12a284103cd](https://github.com/rtk-ai/rtk/commit/d12a284103cdc9373ab993fa9f9dbe247911dd59) 2026-10-21T01:28:03+02:00: test(python): pin tie order and truncation of shared lint descriptions
+- [5687d0d847ea](https://github.com/rtk-ai/rtk/commit/5687d0d847ea011ed0d639de643c9d50dbc01c88) 2026-10-21T01:05:28+02:00: Merge pull request #2142 from maxmilian/fix/discover-dotnet-rewrite-subcommands
+- [57fc55c197cf](https://github.com/rtk-ai/rtk/commit/57fc55c197cfdfecc6f0b3ad43bb4d62bcb5b4f0) 2026-10-21T01:00:36+02:00: Merge pull request #4467 from Cedric921/fix/nextest-slow-summary
+
+## Changed paths (truncated)
+
+- A: `.cargo/config.toml`
+- M: `.claude/agents/code-reviewer.md`
+- M: `.claude/agents/debugger.md`
+- M: `.claude/agents/rtk-testing-specialist.md`
+- M: `.claude/agents/rust-rtk.md`
+- M: `.claude/agents/system-architect.md`
+- M: `.claude/agents/technical-writer.md`
+- M: `.claude/commands/tech/codereview.md`
+- M: `.claude/commands/test-routing.md`
+- M: `.claude/hooks/rtk-suggest.sh`
+- M: `.claude/rules/cli-testing.md`
+- M: `.claude/rules/rust-patterns.md`
+- M: `.claude/skills/issue-triage/templates/issue-comment.md`
+- M: `.claude/skills/performance/SKILL.md`
+- M: `.claude/skills/pr-triage/SKILL.md`
+- M: `.claude/skills/pr-triage/templates/review-comment.md`
+- M: `.claude/skills/tdd-rust/SKILL.md`
+- M: `.gitattributes`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- M: `.github/copilot-instructions.md`
+- M: `.github/docs-pipeline-contract.md`
+- M: `.github/workflows/cd.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/release.yml`
+- M: `.gitignore`
+- M: `.semgrep.yml`
+- D: `AWARENESS_CONFIG.md`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `DISCLAIMER.md`
+- D: `FIX_PERF.md`
+- M: `Formula/rtk.rb`
+- M: `INSTALL.md`
+- M: `LICENSE`
+- M: `README.md`
+- M: `README_es.md`
+- M: `README_fr.md`
+- M: `README_ja.md`
+- M: `README_ko.md`
+- M: `README_pt.md`
+- M: `README_zh.md`
+- M: `SECURITY.md`
+- M: `build.rs`
+- M: `docs/contributing/ARCHITECTURE.md`
+- M: `docs/contributing/CODING_PRACTICES.md`
+- M: `docs/contributing/TECHNICAL.md`
+- M: `docs/guide/analytics/discover.md`
+- M: `docs/guide/analytics/gain.md`
+- M: `docs/guide/getting-started/configuration.md`
+- M: `docs/guide/getting-started/installation.md`
+- M: `docs/guide/getting-started/quick-start.md`
+- M: `docs/guide/getting-started/supported-agents.md`
+- M: `docs/guide/index.md`
+- A: `docs/guide/pipelines/commands.md`
+- A: `docs/guide/pipelines/conditions.md`
+- A: `docs/guide/pipelines/directives.md`
+- A: `docs/guide/pipelines/errors.md`
+- A: `docs/guide/pipelines/methods.md`
+- A: `docs/guide/pipelines/overview.md`
+- A: `docs/guide/pipelines/plugins.md`
+- A: `docs/guide/pipelines/reference-pipelines.md`
+- A: `docs/guide/pipelines/tasks.md`
+- A: `docs/guide/pipelines/writing-pipelines.md`
+- A: `docs/guide/proxy/compression.md`
+- A: `docs/guide/proxy/configuration.md`
+- A: `docs/guide/proxy/overview.md`
+- A: `docs/guide/resources/agent-coverage.md`
+- A: `docs/guide/resources/editions.md`
+- M: `docs/guide/resources/savings-explained.md`
+- M: `docs/guide/resources/telemetry.md`
+- M: `docs/guide/resources/troubleshooting.md`
+- M: `docs/guide/resources/what-rtk-covers.md`
+- M: `docs/usage/AUDIT_GUIDE.md`
+- M: `docs/usage/FEATURES.md`
+- M: `docs/usage/TRACKING.md`
+- A: `engine/CONTRIBUTING.md`
+- A: `engine/Cargo.toml`
+- A: `engine/LICENSE`
+- A: `engine/README.md`
+- A: `engine/builtin/default.toml`
+- A: `engine/builtin/delegate-reads.toml`
+- A: `engine/builtin/posthook.toml`
+- A: `engine/builtin/proxy.toml`
+- A: `engine/builtin/terse.toml`
+- A: `engine/builtin/verbatim-diffs.toml`
+- A: `engine/src/block.rs`
+- A: `engine/src/chain.rs`
+- A: `engine/src/directive.rs`
+- A: `engine/src/harness.rs`
+- A: `engine/src/lib.rs`
+- A: `engine/src/marker.rs`
+- A: `engine/src/method.rs`
+- A: `engine/src/methods/ansi.rs`
+- A: `engine/src/methods/base64_elide.rs`
+- A: `engine/src/methods/cap.rs`
+- A: `engine/src/methods/dedup.rs`
+- A: `engine/src/methods/grep_group.rs`
+- A: `engine/src/methods/lockfile.rs`
+- A: `engine/src/methods/md_slim.rs`
+- A: `engine/src/methods/minify_json.rs`
+- A: `engine/src/methods/mod.rs`
+- A: `engine/src/methods/progress.rs`
+- A: `engine/src/methods/rle.rs`
+- A: `engine/src/methods/shape.rs`
+- A: `engine/src/methods/strip_line_numbers.rs`
+- A: `engine/src/methods/toon.rs`
+- A: `engine/src/methods/truncate.rs`
+- A: `engine/src/methods/web_md.rs`
+- A: `engine/src/pipeline/builtins.rs`
+- A: `engine/src/pipeline/conditions.rs`
+- A: `engine/src/pipeline/diag.rs`
+- A: `engine/src/pipeline/eval.rs`
+- A: `engine/src/pipeline/mod.rs`
+- A: `engine/src/pipeline/position.rs`
+- A: `engine/src/pipeline/resolve.rs`
+- A: `engine/src/pipeline/schema.rs`
+- A: `engine/src/pipeline/validate.rs`
+- A: `engine/src/process.rs`
+- A: `engine/src/registry.rs`
+- A: `engine/src/shape.rs`
+- A: `engine/src/strategy.rs`
+- A: `engine/src/task.rs`
+- A: `engine/src/testutil.rs`
+- A: `engine/src/text.rs`
+- A: `engine/src/tokens.rs`
+- A: `engine/tests/fixtures/lockfile/Cargo.lock.snap`
+- A: `engine/tests/fixtures/posthook/bash_ansi_output.json`
+- A: `engine/tests/fixtures/posthook/bash_progress_cr.json`
+- A: `engine/tests/fixtures/posthook/bash_repetitive_lines.json`
+- A: `engine/tests/fixtures/posthook/glob_json.json`
+- A: `engine/tests/fixtures/posthook/grep_content_large_truncated.json`
+- A: `engine/tests/fixtures/posthook/grep_content_small.json`
+- A: `engine/tests/fixtures/posthook/grep_count.json`
+- A: `engine/tests/fixtures/posthook/grep_files_with_matches.json`
+- A: `engine/tests/fixtures/posthook/read_json_flat.json`
+- A: `engine/tests/fixtures/posthook/read_json_nested.json`
+- A: `engine/tests/fixtures/posthook/readme_serde_raw.md`
+- A: `engine/tests/fixtures/posthook/webfetch_html_page.json`
+- A: `engine/tests/fixtures/posthook/webfetch_markdown_url.json`
+- A: `engine/tests/fixtures/posthook/webpage_example_raw.html`
+- A: `engine/tests/fixtures/posthook/websearch_results.json`
+- A: `engine/tests/guide_examples.rs`
+- A: `examples/pipelines/README.md`
+- A: `examples/pipelines/classify-routing.toml`
+- A: `examples/pipelines/complex-session.toml`
+- A: `examples/pipelines/delegate-reads-adoption.toml`
+- A: `examples/pipelines/judge-before-tool.toml`
+- A: `examples/pipelines/laya-route.toml`
+- A: `examples/pipelines/opt-in.toml`
+- A: `examples/pipelines/tune-one-thing.toml`
+- M: `hooks/README.md`
+- M: `hooks/antigravity/README.md`
+- M: `hooks/claude/README.md`
+- M: `hooks/cline/README.md`
+- M: `hooks/codex/README.md`
+- M: `hooks/copilot/README.md`
+- M: `hooks/copilot/rtk-awareness.md`
+- M: `hooks/cursor/README.md`

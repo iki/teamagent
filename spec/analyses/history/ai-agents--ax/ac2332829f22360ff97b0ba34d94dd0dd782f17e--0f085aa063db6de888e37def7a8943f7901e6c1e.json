@@ -1,0 +1,439 @@
+{
+  "id": "ai-agents--ax",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/google/ax",
+  "report": "spec/projects/ai-agents--ax.md",
+  "analyzedSha": "ac2332829f22360ff97b0ba34d94dd0dd782f17e",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-27T16:54:08-07:00",
+  "observedSha": "0f085aa063db6de888e37def7a8943f7901e6c1e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0f085aa063db6de888e37def7a8943f7901e6c1e",
+      "date": "2026-10-21T14:57:29-07:00",
+      "subject": "runner: ignore unknown fields in specs from the control plane (#506)"
+    },
+    {
+      "sha": "43439b411f019fa975c1df12b85c7b141f0cda47",
+      "date": "2026-10-21T10:29:22-07:00",
+      "subject": "test: add Kind-based E2E test suite and CI workflow (#474)"
+    },
+    {
+      "sha": "7b3347f5a8af37676f711e750f354014a1705e24",
+      "date": "2026-10-20T11:08:31-07:00",
+      "subject": "fix(controller): fail task when ActorTemplate creation fails (#472)"
+    },
+    {
+      "sha": "d5ff120d168ba6cf8376a223075c3133b12dec72",
+      "date": "2026-10-20T10:54:25-07:00",
+      "subject": "chore(substrate): bump github.com/agent-substrate/substrate to v0.5.0 (#484)"
+    },
+    {
+      "sha": "6a1d6ea8e7e65d9beecc086c21e97ee6a1ffa01f",
+      "date": "2026-10-20T10:16:57-07:00",
+      "subject": "api,runner: bind at most one workspace per task (#496)"
+    },
+    {
+      "sha": "b2c59ae698af4452deccef0606317dede1142fa2",
+      "date": "2026-10-19T17:24:28Z",
+      "subject": "feat(controller): apply Task resource limits to the ActorTemplate (#405)"
+    },
+    {
+      "sha": "256b58a67df994cdc0d384953a4020da882a7cfd",
+      "date": "2026-10-19T17:23:29Z",
+      "subject": "fix(cli): honor the atespace flag when applying resources (#415)"
+    },
+    {
+      "sha": "8888435d7e275f1e7ad1c127af9048b2d97ebc13",
+      "date": "2026-10-18T14:47:13-07:00",
+      "subject": "docs: replace the axolotl logo with axel.svg (#497)"
+    },
+    {
+      "sha": "8d2ccf36f194f6f58c57b90753bd3986639b562f",
+      "date": "2026-10-16T15:29:44-05:00",
+      "subject": "lock,cli: renew Redis lock leases and lengthen suspend/resume timeout (#490)"
+    },
+    {
+      "sha": "f0f16fffbec70cc423c299ef9257f483c49aceaf",
+      "date": "2026-10-16T10:39:34-07:00",
+      "subject": "Clean up v1alpha1 field names and drop unused fields (#485)"
+    },
+    {
+      "sha": "92d297e97c43ff381f82d83315736c270ea1bc69",
+      "date": "2026-10-15T21:13:56Z",
+      "subject": "feat(cli): forward stdin and Ctrl-C in ax ssh (#413)"
+    },
+    {
+      "sha": "397f7f27fedbaec9a97da646761f943be1db0930",
+      "date": "2026-10-15T12:39:13-04:00",
+      "subject": "controller,substrate: handle transient Substrate unavailability without permanent Task failure (#463)"
+    },
+    {
+      "sha": "0126b7261d17fcbd285f6f7ba569857729568008",
+      "date": "2026-10-15T16:18:32Z",
+      "subject": "fix(cli): honour ax ssh --help and stop global flag parsing at -- (#411)"
+    },
+    {
+      "sha": "22954f64bb299632d7ef78214c716fd039e6c1cf",
+      "date": "2026-10-14T21:33:41-07:00",
+      "subject": "feat(runner): serve metadata endpoints on loopback only (#479)"
+    },
+    {
+      "sha": "0c0583cf4bf7d2db7af70dae24a9ef2a50e2eb5f",
+      "date": "2026-10-14T20:29:36-07:00",
+      "subject": "Name the mascot (#481)"
+    },
+    {
+      "sha": "e5fbde792c04ca35354d29b96bc5149d3cdc03c2",
+      "date": "2026-10-15T01:48:26Z",
+      "subject": "docs: add SECURITY.md with reporting process and current trust boundary (#480)"
+    },
+    {
+      "sha": "0cbfc3dcb3f64d0f77adac728094ebc3ba0f7bd1",
+      "date": "2026-10-14T21:22:40Z",
+      "subject": "docs: describe review, assignment and merge conventions (#469)"
+    },
+    {
+      "sha": "82e9551c3a0b322b7ac20cacc9205a2451301ed6",
+      "date": "2026-10-14T13:10:08-07:00",
+      "subject": "fix(controller): propagate SuspendActor error during task reconciliation. (#464)"
+    },
+    {
+      "sha": "2e06707c0024bbf25a898cf304aae065639a65f6",
+      "date": "2026-10-14T14:12:45-05:00",
+      "subject": "fix(substrate): adapt to Substrate v0.4 API and harden actor RPCs (#457)"
+    },
+    {
+      "sha": "c2b2b3a1cfb5a54daac04a2be86fa889bf297d27",
+      "date": "2026-10-14T10:36:54-07:00",
+      "subject": "Clarify Model resource concept description (#401)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.task-runner",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/axel.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/axolotl-mono.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/axolotl.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/ax-server/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/ax-task-runner/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/ax-task-runner/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/ax/apply_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/ax/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/ax/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/ax/ssh_interrupt_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/ax-server.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/logo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/manifests.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/networking.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/runner.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sandbox.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/task.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hack/cleanup-e2e-kind.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hack/run-e2e-kind.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hack/run-e2e.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hack/setup-e2e-kind.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/controller/reconciler.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/controller/reconciler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/guest/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/guest/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/lock/lock.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/lock/lock_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/metadata/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/metadata/server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/server/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/server/server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/substrate/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/substrate/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/tunnel/tunnel.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/workspace/setup.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/apis/v1alpha1/ax.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/apis/v1alpha1/ax.proto",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/apis/v1alpha1/resources.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "pkg/apis/v1alpha1/resources_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/apis/v1alpha1/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/apis/v1alpha1/types_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/runner.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "runner/runner_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/Dockerfile.server",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/Dockerfile.task-runner.e2e",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/harness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/manifests/ax-server.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/manifests/namespace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/manifests/redis.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/manifests/workerpool.yaml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

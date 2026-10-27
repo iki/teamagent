@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-sandbox--opensandbox",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/alibaba/OpenSandbox",
+  "report": "spec/projects/ai-agents-sandbox--opensandbox.md",
+  "analyzedSha": "c7dc78a4090e5de2b9119e9bd93952cae24f87bd",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-01T10:21:12+08:00",
+  "observedSha": "f5fe25a6693c382ba875814795eb17572d418163",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f5fe25a6693c382ba875814795eb17572d418163",
+      "date": "2026-10-24T12:29:12+08:00",
+      "subject": "Merge pull request #2367 from acodercat/fix/server-services-import-cycle"
+    },
+    {
+      "sha": "1674bd044d5b83ef469d5bea4ac9d5ee609067e7",
+      "date": "2026-10-23T17:10:14+08:00",
+      "subject": "fix(server): break the import cycle between fsb service and idle_pause"
+    },
+    {
+      "sha": "f3f4a7f419e526de4c3deb250d72fc034986fc28",
+      "date": "2026-10-23T17:04:25+08:00",
+      "subject": "Merge pull request #2360 from opensandbox-group/codex/python-sdk-ssl-context-reuse"
+    },
+    {
+      "sha": "494a9ba859fc60236254a9b3048b003adb1e11cc",
+      "date": "2026-10-23T16:54:17+08:00",
+      "subject": "Merge pull request #2356 from mengdehong/fix/server-image-release-version"
+    },
+    {
+      "sha": "8e3264893ae8dde75da462654d13bd2f681ab098",
+      "date": "2026-10-23T16:49:19+08:00",
+      "subject": "Merge pull request #2349 from Claire-ovo/fix/js-endpoint-cache-isolation"
+    },
+    {
+      "sha": "1cd6928e027ba76b5903bec52492052fdbee6a38",
+      "date": "2026-10-23T16:39:09+08:00",
+      "subject": "perf(sdk-python): reuse SSL contexts across owned transports"
+    },
+    {
+      "sha": "8c3b0b2fe09221fbd39d881e7e9803d7ef468ed9",
+      "date": "2026-10-23T16:25:20+08:00",
+      "subject": "fix(release): inject server image package version"
+    },
+    {
+      "sha": "e1eb32ef93db878e08e07a397f211870aa14566a",
+      "date": "2026-10-23T12:46:28+08:00",
+      "subject": "Merge pull request #2347 from MaxFreedomPollard/fix/python-sdk-base-url-normalization"
+    },
+    {
+      "sha": "c1a70e8cd49ec675c3cc2e9517712e51a9e79980",
+      "date": "2026-10-23T11:20:15+08:00",
+      "subject": "fix(sdk-js): scope in-flight cache invalidation to each sandbox"
+    },
+    {
+      "sha": "1a6d8f044b04f7aea30864dbb7d5000f82872ebe",
+      "date": "2026-10-22T19:50:58-07:00",
+      "subject": "fix(sdk-python): ignore a trailing slash or /v1 in the connection domain"
+    },
+    {
+      "sha": "50fd4c8d9784121ff60f39fb2191dc848d006dd2",
+      "date": "2026-10-23T10:36:46+08:00",
+      "subject": "Merge pull request #2345 from opensandbox-group/codex/redesign-homepage"
+    },
+    {
+      "sha": "d0efa3ebc3555cc0bd1298c35c49c559ce8e236d",
+      "date": "2026-10-23T10:10:04+08:00",
+      "subject": "docs: remove AAIF project badge from README"
+    },
+    {
+      "sha": "dc8d5ee39902beccbed50248e8704dc98fceef5b",
+      "date": "2026-10-23T10:08:51+08:00",
+      "subject": "docs: replace CNCF landscape badge with AAIF project badge"
+    },
+    {
+      "sha": "47c35114ec713cc5999c026ca19d8537b7590a12",
+      "date": "2026-10-23T10:01:31+08:00",
+      "subject": "docs: combine project affiliation and license under About"
+    },
+    {
+      "sha": "ffa0102f8a19737e68848f9df47dba2f63a62b10",
+      "date": "2026-10-23T09:49:22+08:00",
+      "subject": "docs: rename project affiliation section to About Project"
+    },
+    {
+      "sha": "5948410fd9b86eca3f9d16bdd22a09417880ae35",
+      "date": "2026-10-23T09:46:34+08:00",
+      "subject": "docs: add Linux Foundation project affiliation to README"
+    },
+    {
+      "sha": "ea5f724ad034ed0b1eb26fee41290169559e1cb2",
+      "date": "2026-10-23T09:45:43+08:00",
+      "subject": "feat(docs): redesign homepage with animated dark theme"
+    },
+    {
+      "sha": "88014e185cb545bdf363671e7eb6e50a01997e48",
+      "date": "2026-10-22T23:45:00+08:00",
+      "subject": "chore(manifests): bump fast-sandbox pin to 0163332 (master) (#2338)"
+    },
+    {
+      "sha": "d9cace92d9ac76b70750ca85f754053e6dc1bd53",
+      "date": "2026-10-22T23:16:10+08:00",
+      "subject": "Merge pull request #2343 from hittyt/feature/aaif-legal-footer"
+    },
+    {
+      "sha": "108906a89ec69e8238dbe6d06d5b534bc9b72593",
+      "date": "2026-10-22T23:15:06+08:00",
+      "subject": "Merge pull request #2339 from Claire-ovo/docs/fix-python-e2e-guide"
+    },
+    {
+      "sha": "39a951291f8f8c8c65fa91533ee26d6309cda3b9",
+      "date": "2026-10-22T22:32:06+08:00",
+      "subject": "docs(site): update AAIF legal footer"
+    },
+    {
+      "sha": "fd57e52ac7aa3c8dfb4d971a7ae8585c09f29724",
+      "date": "2026-10-22T21:09:55+08:00",
+      "subject": "Merge pull request #2335 from Pangjiping/ci/fsb-pr-integration-dispatch"
+    },
+    {
+      "sha": "288d532875689cd33d80ece8cd63e3b61715e8c3",
+      "date": "2026-10-22T21:08:28+08:00",
+      "subject": "ci(fast-sandbox): trim comments"
+    },
+    {
+      "sha": "779db5c5236d10ac1fe8a637fc6984c8c5636c8d",
+      "date": "2026-10-22T21:04:16+08:00",
+      "subject": "docs: correct contribution guide test paths"
+    },
+    {
+      "sha": "6ea313134953e7e9a2f43e4b15b32bfbb3367045",
+      "date": "2026-10-22T21:01:17+08:00",
+      "subject": "ci(fast-sandbox): give dispatch runs unique concurrency groups"
+    },
+    {
+      "sha": "6ce89068ea70fe2d052f3013d7a0b280626dbe6a",
+      "date": "2026-10-22T20:30:09+08:00",
+      "subject": "Merge pull request #2334 from ninan-nn/feat/execd-browser-pty-auth"
+    },
+    {
+      "sha": "16cf7dfe5b9bf77c59c5a49e5863d77d8857533c",
+      "date": "2026-10-22T19:23:24+08:00",
+      "subject": "ci(fast-sandbox): trigger KVM integration tests from fast-sandbox PRs"
+    },
+    {
+      "sha": "5feb5be3d502e4620360bec84bd13b0954de2432",
+      "date": "2026-10-22T16:46:13+08:00",
+      "subject": "perf(egress,verify): create-latency evidence pipeline + zero-fsync policy bootstrap (#2323) (#2327)"
+    },
+    {
+      "sha": "295eb48fdb116fd6bf4d7e22d3060f1a7b90adce",
+      "date": "2026-10-22T16:14:25+08:00",
+      "subject": "refactor(execd): keep request token selection with auth middleware"
+    },
+    {
+      "sha": "9092183970d26deab396d8c4ae0517ebe26cda44",
+      "date": "2026-10-22T15:54:47+08:00",
+      "subject": "refactor(execd): simplify PTY credential parsing for lint"
+    },
+    {
+      "sha": "8559ab2931241995c00e9ea7df9a12bf04bada1c",
+      "date": "2026-10-22T15:34:42+08:00",
+      "subject": "feat(execd): support browser PTY WebSocket token authentication"
+    },
+    {
+      "sha": "74d22ab46eba89b4d8366d171b489ce8326b16a8",
+      "date": "2026-10-22T11:20:29+08:00",
+      "subject": "Merge pull request #2322 from Pangjiping/fix/session-files-out-of-scope-paths"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/opensandbox-release-notes/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/console-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dependency-stability.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/detect-changes.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/egress-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/execd-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fast-sandbox-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ingress-test.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/kubernetes-nightly-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/kubernetes-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nodeagent-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-umbrella.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "GOVERNANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/commands/command.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/commands/config_cmd.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/commands/diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/commands/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/commands/skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/opensandbox_cli/commands/terminal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/skills/opensandbox-command-execution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/skills/opensandbox-credential-vault.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/skills/opensandbox-file-operations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/skills/opensandbox-network-egress.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/skills/opensandbox-sandbox-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/skills/opensandbox-sandbox-troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/opensandbox_cli/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_cli_help.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/test_duration_overflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/test_output_encoding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/docs/fast-sandbox-docs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/docs/live-vault-acceptance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/docs/mitmproxy-transparent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/docs/opentelemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/docs/policy-traffic-vault-flow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_actions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_mitm.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_policy_persist.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_policy_persist_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_policy_relay_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_policy_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_policy_snapshot_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault_persist.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault_persist_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault_persist_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault_snapshot_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmproxy_transparent.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/mitmscripts/credential_bound.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/mitmscripts/credential_bound_h2.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/decision_snapshot.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/revision_ipc.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/mitmscripts/revision_publication.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/revision_receiver.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/mitmscripts/static_passthrough.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/mitmscripts/subject_revision.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/mitmscripts/subject_revision_ipc.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/system.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/tls_decision.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/mitmscripts/tls_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/nft.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/actionhandler/actionhandler.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/actionhandler/actionhandler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/constants/configuration.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/candidate.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/persist_tx_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/policy_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/policy_snapshot_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/static_passthrough_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/testdata/vaultfile/invalid-future-version.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/testdata/vaultfile/v1-empty-vault.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/testdata/vaultfile/v1-simple.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/vault.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/vault_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/vaultfile.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/credentialvault/vaultfile_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/fastsandboxnft/fastsandboxnft.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/fastsandboxnft/fastsandboxnft_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/iptables/gateway_mitm_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/iptables/redirect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/mitmpassthrough/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/mitmpassthrough/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/mitmproxy/cacert_export.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/mitmproxy/cacert_export_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/mitmproxy/cacert_seed.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/mitmproxy/cacert_seed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/mitmproxy/health_gate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/mitmproxy/health_gate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/mitmproxy/launch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/mitmproxy/launch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/mitmproxy/tls_admission_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/nftables/apply_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/nftables/apply_effect_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/nftables/apply_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/nftables/connection_tracker.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/nftables/dynamic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/nftables/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/nftables/manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/nftables/quiescence.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/nftables/quiescence_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/nftables/quiescence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/nftables/runner_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/nftables/upstream.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/policy/always_rules.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/policy/always_rules_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_mount_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_store_linux.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_store_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_store_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_store_other_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_store_raw_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/atomic_store_raw_nondurable_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/coverage.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/coverage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/policy/evaluate_benchmark_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/policy/persist.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/policy/policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/policy/policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/policyfile.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/policy/policyfile_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/policy/rules_loader.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/quarantine/fence.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/quarantine/fence_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/quarantine/fence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/quarantine/namespace_linux.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/quarantine/namespace_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/quarantine/namespace_other.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/revision/subject_lifecycle_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/revision/subject_lifecycle_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/revision/subject_transport_unix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/pkg/revision/subject_transport_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/revisionruntime/process_session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/revisionruntime/process_session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/revisionruntime/update.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/subject/registry.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

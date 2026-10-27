@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--graphify",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/safishamsi/graphify",
+  "report": "spec/projects/ai-agents-mem--graphify.md",
+  "analyzedSha": "0b60d47e6cd9338c51143f39f35b6c45c8453385",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T23:12:01+01:00",
+  "observedSha": "92741d162b2094ffc2fed58cfbd8ee823e9da62c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "92741d162b2094ffc2fed58cfbd8ee823e9da62c",
+      "date": "2026-10-23T18:20:06+01:00",
+      "subject": "docs(security): refresh the threat-surface table (#4643-#4645, #4657, #4566, #4329)"
+    },
+    {
+      "sha": "85567c95af88c1f106e7e088a24c16727a89a1e0",
+      "date": "2026-10-23T18:20:06+01:00",
+      "subject": "docs(readme): list the antigravity-windows platform (#4655)"
+    },
+    {
+      "sha": "aa8ca7370bdc7dc71f4513db69ff64c8e3894a49",
+      "date": "2026-10-23T18:20:05+01:00",
+      "subject": "docs: document GRAPHIFY_CLAUDE_CLI_MODEL (#2861)"
+    },
+    {
+      "sha": "e8b1bb571f523339c79efcd4085f92d172a624d6",
+      "date": "2026-10-23T18:20:04+01:00",
+      "subject": "docs(readme): list the optional [watch] extra (#1203)"
+    },
+    {
+      "sha": "7174d3b9724071ba9b35631e4ed5b3deb7e174ec",
+      "date": "2026-10-23T18:20:02+01:00",
+      "subject": "docs(readme): document labeling batch limits, --missing-only, and html node limit (#3859)"
+    },
+    {
+      "sha": "b111c5cea917a6ec0b65d20a27b293f2f5437a93",
+      "date": "2026-10-23T18:20:00+01:00",
+      "subject": "docs(changelog): fold the batch into the still-unreleased 0.9.95 (now 21 PRs)"
+    },
+    {
+      "sha": "2a0cacb60cf01df097efe5ccf3e9d937b29f388f",
+      "date": "2026-10-23T18:16:39+01:00",
+      "subject": "docs(changelog): open 0.9.96 with the install-security, type-alias, csharp-overload, tree, and other fixes"
+    },
+    {
+      "sha": "18e52c4bb8d2ff6e901ff7f00b57a4badd313716",
+      "date": "2026-10-23T18:15:41+01:00",
+      "subject": "build(cache): bump schema to 25 for the type-alias, C# overload, and package.json-link extraction changes"
+    },
+    {
+      "sha": "e76019466d797c4a9e62f3cc715b1a2b96454009",
+      "date": "2026-10-23T18:15:25+01:00",
+      "subject": "fix(json_config): link a package.json dependency's manifest entry to its ref node (#4569, #4572)"
+    },
+    {
+      "sha": "87151e40ac7a4113e8bf8889c4c95c9e5d2866e7",
+      "date": "2026-10-23T18:15:24+01:00",
+      "subject": "fix(csharp): give each method overload its own node and bind calls by argument count (#4584, #4591)"
+    },
+    {
+      "sha": "14514b37f640ad5dfe06b95176d3b2efba598493",
+      "date": "2026-10-23T18:15:22+01:00",
+      "subject": "fix(rust): extract `type` aliases and `union` items as type nodes (Refs #4285, #4581)"
+    },
+    {
+      "sha": "3bab26798ee71d466d51ed906f3294d627777784",
+      "date": "2026-10-23T18:15:21+01:00",
+      "subject": "fix(cpp): extract namespace-scope `using`/`typedef` aliases as type nodes (#4580)"
+    },
+    {
+      "sha": "8cfda7f1ce4eeda957e068ccfb757bd5b853903e",
+      "date": "2026-10-23T18:15:20+01:00",
+      "subject": "fix(go): extract `type A = B` aliases as type nodes (#4579)"
+    },
+    {
+      "sha": "291248ef49577205026effd144cc2b1eafc42e2b",
+      "date": "2026-10-23T18:15:06+01:00",
+      "subject": "fix(python): extract explicit type aliases as type nodes (#4578)"
+    },
+    {
+      "sha": "44079cbd9ba6fc0f534e40a59f062850d9a76e07",
+      "date": "2026-10-23T18:12:48+01:00",
+      "subject": "fix(detect): skip binary media word counting"
+    },
+    {
+      "sha": "73876cbdc74365b26034d2a85ee65dc674c380f1",
+      "date": "2026-10-23T18:12:47+01:00",
+      "subject": "fix(cache): read and write AST cache entries via extended-length paths on Windows"
+    },
+    {
+      "sha": "cbcd8dd601637807b4b4cb4648f5e410a5daddce",
+      "date": "2026-10-23T18:12:46+01:00",
+      "subject": "fix(tree): don't count untagged nodes as a repo when choosing merged layout"
+    },
+    {
+      "sha": "97f18cb7b02dab521c9f85a7684d6faf67e33993",
+      "date": "2026-10-23T18:12:46+01:00",
+      "subject": "fix(tree): group merged graphs by repo tag so repos get their own roots"
+    },
+    {
+      "sha": "8a19705383c43b05605e3cfc389df729ff0d4510",
+      "date": "2026-10-23T18:12:46+01:00",
+      "subject": "fix(install): use unique temp paths to prevent symlink attacks during skill install"
+    },
+    {
+      "sha": "53d3d80346226f6ad56058ebd430cd433b2db7d1",
+      "date": "2026-10-23T16:16:07+01:00",
+      "subject": "fix(deps): declare pyyaml as a base dependency"
+    },
+    {
+      "sha": "ae2b453b7dd07cb6518db9104e5a00eb5f2031ec",
+      "date": "2026-10-23T16:14:52+01:00",
+      "subject": "chore: bump version to 0.9.95"
+    },
+    {
+      "sha": "4f99094579e1af49caeafcc22eb92f611b9fe513",
+      "date": "2026-10-23T16:13:31+01:00",
+      "subject": "docs(changelog): 0.9.95 — add the security, affected, build, cross-repo, hooks, objc, and sql fixes"
+    },
+    {
+      "sha": "3b213769f01f783d956c2ccc008c02c6debdca33",
+      "date": "2026-10-23T16:12:55+01:00",
+      "subject": "fix: bump cache schema to 24 (#4705, #4677), clean recovered SQL labels, add security tests"
+    },
+    {
+      "sha": "e69cc9d89eef376cca9732d2b4b615fe83c2293e",
+      "date": "2026-10-23T16:11:21+01:00",
+      "subject": "Recover CREATE TABLE statements dropped into ERROR nodes by unsupported column defaults (fixes #4613)"
+    },
+    {
+      "sha": "8a29ab62cbe11e687e2ce3f1cfb8e87b35530ccc",
+      "date": "2026-10-23T16:11:20+01:00",
+      "subject": "feat(objc): extract NS_CLOSED_ENUM declarations as enums (#4401)"
+    },
+    {
+      "sha": "fedc4e82ed20e84108fdc68935c9e19e9563b8c2",
+      "date": "2026-10-23T16:11:11+01:00",
+      "subject": "google_workspace: use full YAML scalar escaping for shortcut frontmatter"
+    },
+    {
+      "sha": "bf48d2b83e0a21effcbfeb3ba01df96ce04e99ca",
+      "date": "2026-10-23T16:11:10+01:00",
+      "subject": "export: sanitize obsidian frontmatter tag values"
+    },
+    {
+      "sha": "02f62e769d754a77a6d078b6581e63da724cedd6",
+      "date": "2026-10-23T16:11:09+01:00",
+      "subject": "security: block multicast and unspecified IPs in _ip_is_blocked"
+    },
+    {
+      "sha": "5c3c47ebea1b978e946fd772b62510a2ec116801",
+      "date": "2026-10-23T16:11:08+01:00",
+      "subject": "fix(hooks): run the rebuild from the checkout's top level (#3258)"
+    },
+    {
+      "sha": "d709f6794176f4583f52e2416c9010391ac57e04",
+      "date": "2026-10-23T16:11:07+01:00",
+      "subject": "fix(cross-repo): bind ObjC split decl/impl across repos to its definition"
+    },
+    {
+      "sha": "7598c5dcee9f6afc9a27957a4fa605a388caabfb",
+      "date": "2026-10-23T16:11:06+01:00",
+      "subject": "fix(build): resolve a raw graph's import endpoints through the alias index (#4670)"
+    },
+    {
+      "sha": "fb90065380d5277797a5c1e817c5f452e3d862fd",
+      "date": "2026-10-23T16:11:06+01:00",
+      "subject": "test: affected <path> on a shared basename with a second L1 node (#4698)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/DISCUSSION_TEMPLATE/q-a.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/TEAM_MEMBERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-management.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/welcome.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BENCHMARKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CODE_OF_CONDUCT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SUPPORT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/community/graphguild-banner.jpg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.ar-SA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.cs-CZ.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.da-DK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.de-DE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.el-GR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.es-ES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.fa-IR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.fi-FI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.fil-PH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.fr-FR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.he-IL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.hi-IN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.hu-HU.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.id-ID.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.it-IT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.ja-JP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.ko-KR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.nl-NL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.no-NO.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.pl-PL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.pt-BR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.ro-RO.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.ru-RU.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.sv-SE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.th-TH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.tr-TR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.uk-UA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.uz-UZ.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.vi-VN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/translations/README.zh-TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/affected.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/always_on/agents-md.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/always_on/claude-md.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/always_on/gemini-md.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/analyze.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/benchmark.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/build.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cluster.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cross_repo_calls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/cross_repo_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/csharp_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/dedup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/detect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/export.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/exporters/graphdb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/exporters/html.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/apex.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/bash.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/blade.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/cobol.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/commonlisp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/csharp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/dart.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/dm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/elixir.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/erlang.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/fortran.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/go.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/json_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/julia.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/markdown.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/objc.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/ocaml.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/pascal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/pascal_forms.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/powershell.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/r.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/razor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/robot.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/rust.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/sln.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/solidity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/sql.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/terraform.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/vbnet.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/verilog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "graphify/extractors/yaml_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/extractors/zig.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/file_slice.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/global_graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/google_workspace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/ingest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/install.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "graphify/interface_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/manifest_ingest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/markdown_resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "graphify/pi/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "graphify/pi/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/prs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "graphify/rcfile.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/resolver_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/security.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/serve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-aider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-amp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-claw.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-codex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-copilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-devin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-droid.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-kilo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-kiro.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-opencode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-pi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-trae.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-vscode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill-windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/agents/references/exports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/agents/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/agents/references/query.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/agents/references/update.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/amp/references/exports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/amp/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/amp/references/query.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/amp/references/update.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claude/references/exports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claude/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claude/references/query.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claude/references/update.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claw/references/exports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claw/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claw/references/query.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/claw/references/update.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/codex/references/exports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/codex/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/codex/references/query.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/codex/references/update.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/copilot/references/exports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/copilot/references/extraction-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "graphify/skills/copilot/references/query.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

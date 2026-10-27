@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--omnigent",
+    "category": "ai-agents",
+    "name": "omnigent",
+    "url": "https://github.com/omnigent-ai/omnigent",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--omnigent.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "f37a484a9238d21dac71b62dd79b87e016947c19",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T12:04:00-07:00",
+    "reportSha256": "6571708bcbff53d866737b02db3e2364707c6ddf1275d6df21a2d0410a04d8ac",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--omnigent",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/omnigent-ai/omnigent",
+    "report": "spec/projects/ai-agents--omnigent.md",
+    "analyzedSha": "f37a484a9238d21dac71b62dd79b87e016947c19",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T12:04:00-07:00",
+    "observedSha": "fd7b58b267e40ce900598222b625bf88f5d1d688",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "fd7b58b267e40ce900598222b625bf88f5d1d688",
+        "date": "2026-10-27T10:48:40-07:00",
+        "subject": "fix: preserve native Codex work after delivery transport failures (#11825)"
+      },
+      {
+        "sha": "73f65b574583b17e6304b9c1de6c7b296bee5b3f",
+        "date": "2026-10-27T10:47:24-07:00",
+        "subject": "docs(changelog): record v0.20.0 (#11864)"
+      },
+      {
+        "sha": "e8a5dd107665f93cf8c480405f4beb2ee8f7ea3a",
+        "date": "2026-10-27T10:19:57-07:00",
+        "subject": "fix(web): refresh open files when other sessions or processes edit them (#11728)"
+      },
+      {
+        "sha": "0d8a480b457ae614851eda8b2abd5f5469efd38b",
+        "date": "2026-10-27T10:17:51-07:00",
+        "subject": "test(web): wait for composer scroll geometry to settle (#11827)"
+      },
+      {
+        "sha": "91c8e5c2c38269a14e5881a1a854b8e35aa7e751",
+        "date": "2026-10-27T15:14:25Z",
+        "subject": "docs: refresh seed feature maps (#10839)"
+      },
+      {
+        "sha": "2a3ee2f55d5a9e4b8165ea6213c950d528a660af",
+        "date": "2026-10-27T14:53:12Z",
+        "subject": "fix(acp): display the harness-reported active model, not the agent-spec pin (#5823)"
+      },
+      {
+        "sha": "b9f3ce4a881216c222432aef8174f4c8e17ee327",
+        "date": "2026-10-27T14:40:08Z",
+        "subject": "fix(web): keep the picker's harness list populated on a trimmed deployment (#8498)"
+      },
+      {
+        "sha": "43f7459dc7d2f0793d4e02ebc023921a19bd18d7",
+        "date": "2026-10-27T14:25:14Z",
+        "subject": "fix(pi): preserve user resources across session directory relocation (#11406)"
+      },
+      {
+        "sha": "83f3ab1ecef7a56d055cc80bace79648b0fd45fd",
+        "date": "2026-10-27T14:16:04Z",
+        "subject": "chore(deps): bump tokio in /tests/codex_parity/sidecar (#11614)"
+      },
+      {
+        "sha": "6068af1d6e820b8811aae8384290042491ee79b9",
+        "date": "2026-10-27T14:07:00Z",
+        "subject": "chore(deps): bump @streamdown/cjk from 1.0.3 to 1.0.4 (#11625)"
+      },
+      {
+        "sha": "da9dd873d6189563713723c73b8cbe25311e9a08",
+        "date": "2026-10-27T21:00:05+07:00",
+        "subject": "test(e2e-ui): drive the sidebar peek-click test with the page clock (#11766)"
+      },
+      {
+        "sha": "54b5723489dfc2e43636075690139c6241c5b39c",
+        "date": "2026-10-27T13:47:58Z",
+        "subject": "feat(web): refresh palette-aware theme surfaces (#11759)"
+      },
+      {
+        "sha": "d642fa455efb0de8d78451915592079558e20e86",
+        "date": "2026-10-27T12:58:10Z",
+        "subject": "fix(host): keep a session usable after its workspace directory is deleted (#9710)"
+      },
+      {
+        "sha": "ff5b0aa67f3220892763dc40ce2e5c4b77df6904",
+        "date": "2026-10-27T20:57:07+09:00",
+        "subject": "fix(sessions): clear sticky native failure on a confirmed turn completion (#11811)"
+      },
+      {
+        "sha": "26eb9aac01d8dd807f500f87f11769bbfc7a7d78",
+        "date": "2026-10-27T19:02:12+08:00",
+        "subject": "fix(claude-native): hide Claude Code's \"No response requested.\" placeholder (#11835)"
+      },
+      {
+        "sha": "bac4565a8ab167746a088d93f7b005130fc6afeb",
+        "date": "2026-10-27T10:22:29Z",
+        "subject": "fix(claude-native): honor configured launcher during model discovery (#11718)"
+      },
+      {
+        "sha": "739f3b91bef435b45d4200f1ec7447c1ce4d5361",
+        "date": "2026-10-27T10:03:49Z",
+        "subject": "fix(claude-native): keep side chats from inheriting running sub-agents (#9602)"
+      },
+      {
+        "sha": "afb637fed42f5634ad8547d23bcaded92294b72c",
+        "date": "2026-10-27T17:32:08+08:00",
+        "subject": "fix(web): stretch hidden-page reconnects to a 45-60 s cadence (#9693)"
+      },
+      {
+        "sha": "9d87faf2c926e5b14a1fb8bf2d07fbc9446916c4",
+        "date": "2026-10-27T18:13:38+09:00",
+        "subject": "fix(automations): wait out the shutdown drain before failing an unbound sandbox run (#11805)"
+      },
+      {
+        "sha": "eab8b8b71dbff192def4336cfaf0067bb7337b1a",
+        "date": "2026-10-27T17:02:33+08:00",
+        "subject": "Ask about host ownership once per page in the persistent scheduler (#11603)"
+      },
+      {
+        "sha": "74af4f7eedfc67b79623f00c1b1b15f49d06355e",
+        "date": "2026-10-27T01:42:22-07:00",
+        "subject": "Let config wrap the native Codex session app-server, and pass its -c before the subcommand (#11717)"
+      },
+      {
+        "sha": "2492ede79c6dd0ac911a09ac6480ddf3d72c9579",
+        "date": "2026-10-27T16:42:03+08:00",
+        "subject": "feat(web): show MCP server display names on tool rows and the harness catalog (#11792)"
+      },
+      {
+        "sha": "49d436f777d842588fd946f3b103688dab9e252b",
+        "date": "2026-10-27T16:39:23+08:00",
+        "subject": "feat(server): own each session's pull requests on the server (#11574)"
+      },
+      {
+        "sha": "84372f99cc8897b2cb6fe1469486abd7dd602f16",
+        "date": "2026-10-27T08:15:24Z",
+        "subject": "fix(host): preserve host lifecycle when console output closes (#11684)"
+      },
+      {
+        "sha": "2e91869a3bc278d145a9fa398e0cf24390236307",
+        "date": "2026-10-27T08:01:11Z",
+        "subject": "fix(claude-native): don't report a pane Omnigent closed after a delivery timeout as a terminal exit (#11465)"
+      },
+      {
+        "sha": "9681b0d5730fec8316fe48aee3f37c16ef6227fb",
+        "date": "2026-10-27T14:51:03+07:00",
+        "subject": "fix(pi): keep user MCP servers and auth in managed Pi sessions (#11188)"
+      },
+      {
+        "sha": "a407cc79bb4d22dd5c5f643b923683cd0742717e",
+        "date": "2026-10-27T15:41:09+08:00",
+        "subject": "feat(runner): report session PRs to the server and serve the PRs it vouches for (#11573)"
+      },
+      {
+        "sha": "b17b731b389dab6b1aaced9f9fa8053a88612310",
+        "date": "2026-10-27T07:37:27Z",
+        "subject": "fix(codex-native): avoid rewriting an unchanged active turn (#11783)"
+      },
+      {
+        "sha": "4be2a59fd08d30f00baf75d0876dde81e98cae4a",
+        "date": "2026-10-27T07:34:55Z",
+        "subject": "chore(claude-native): explain input guards and rejected submits (#11702)"
+      },
+      {
+        "sha": "30a5d163bcbf986b27bc10891db17ff1f039c28a",
+        "date": "2026-10-27T07:34:17Z",
+        "subject": "feat: show which manager created an independent worker (#11755)"
+      },
+      {
+        "sha": "92f5437c499cbee0ee017445f5ff3a12f4938418",
+        "date": "2026-10-27T16:32:35+09:00",
+        "subject": "feat(automations): start and recover claimed runs, and route Run now through claims (#11762)"
+      },
+      {
+        "sha": "eb6ff0e896a2d64df93e8720c6de7fd2cf1682b6",
+        "date": "2026-10-27T07:28:31Z",
+        "subject": "fix(claude-native): stop telling sandbox sessions to run omni setup (#10584)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".claude/skills/antigravity-native-e2e-dev/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude/skills/antigravity-sdk-e2e-dev/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude/skills/copilot-sdk-e2e-dev/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude/skills/cursor-sdk-e2e-dev/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/draft-release-notes/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/compat-smoke-run/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/compat-smoke-ui-run/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/actions/dependency-ci-scope/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/e2e-run/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/integration-run/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/run-omnigent-agent/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-agy/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/locks/claude/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/locks/claude/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/locks/codex/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/locks/codex/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/locks/pi/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/locks/pi/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-harness-cli/setup-harness-cli.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-pnpm/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-uv/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-uv/verify-cache.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-uv/verify-cache.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/agents/doc-classifier/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/agents/doc-drafter/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/agents/feature-blog-drafter/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/agents/feature-blog-scout/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/agents/release-notes-drafter/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/agents/release-post-formatter/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/ci-deps/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/copilot-instructions.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/dependabot-automerge.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/dependabot-automerge.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/dependabot.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/changelog/compose_notes.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/changelog/generate.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/ci/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/ci/check_npm_peers.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/ci/dependency_scope.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/ci/e2e-shard-matrix.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/ci/integration-matrix.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/ci/python-matrix.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/ci/require_results.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/dependabot_automerge.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/dependabot_policy.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/dependency_floor_approval.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/homebrew/generate_formula.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/maintainer_approval.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/merge-ready/compute-gate.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/merge-ready/evaluate-checks.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/merge-ready/required.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/polly-review-summary.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/rotation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/rotation_maintain.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/security-scan/dependabot-ci-access.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/security-scan/sensitive-paths.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/security-scan/should-scan.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/triage/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/triage/security/config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/android-bundle.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/auto-assign-reviewer-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/auto-assign-reviewer.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/autoformat-pr.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/benchmark-host.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/benchmark-pr.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/benchmark-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/benchmark-ui.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/benchmark.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/bump-version.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/close-superseded-pr.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/code-coverage.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/demo-check-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/demo-check.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/dependabot-automerge.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/discord-watch-rotation-maintain.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/discord-watch-rotation.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/doc-sync.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/docker-build.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/draft-release-notes.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/duplicate-prs-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/duplicate-prs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/e2e-ui.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/e2e.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/feature-blog.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/finalize-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/fixtures/reopen-notice/closed.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/flake-stress-e2e.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/flake-stress-ui.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/flake-stress.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/github-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/homebrew-tap-pr.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/integration.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/issue-prioritization-v2.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/issue-triage.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/kustomize-validate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/lint.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/maintainer-approval-rerun-run.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/maintainer-approval-rerun.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/maintainer-approval.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/merge-ready.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/needs-info-expiry.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/nightly-failure-monitor.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/nightly-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/open-code-review.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/oss-publish-images.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/oss-regen-on-comment.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/oss-regenerate-and-smoke.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/oss-scorecard.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/polly-review-approval-dispatch.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/polly-review-on-approval.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/polly-review.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/pr-hygiene-live.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/pr-issue-link-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/pr-size.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/publish-changelog.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ready-for-review-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-omnigent.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/reopen-notice-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/reopen-notice.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/reopen-notice.process.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/reopen-notice.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/reopen-notice.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/reopen-pr-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/reopen-pr.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/rerun-ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/rerun-security-gate-run.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/rerun-security-gate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/review-sla-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/review-sla.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/security-gate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/security-scan.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/security-triage.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/server-compat.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/setup-harness-cli-pin-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/setup-harness-cli-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/setup-uv-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/stale.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/sync-openapi-to-site.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/sync-pr-priority.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/trivy.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ui-preview.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ui-snapshot-fail-comment.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ui-snapshot-update.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ui-snapshot.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/vscode-extension-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/vscode-release-pr.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/waiting-on-author-review-run.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/waiting-on-author-review.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/waiting-on-author-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/waiting-on-author.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/web-tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/windows.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".oss-scanner/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".oss-scanner/Dockerfile.dockerignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".oss-scanner/threat_model.md",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

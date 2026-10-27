@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [graft](https://github.com/NanoNets/Graft); analyzed commit `fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad`; commit date 2026-09-30T12:57:02+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graft.md).
+<!-- teamagent-analysis:end -->

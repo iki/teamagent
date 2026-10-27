@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [voltagent](https://github.com/VoltAgent/voltagent); analyzed commit `72a46c76b4507e1f98b41d5050a92bd30587eb70`; commit date 2026-09-27T18:57:26-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--voltagent.md).
+<!-- teamagent-analysis:end -->

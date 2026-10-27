@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--codegraph",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/colbymchenry/codegraph",
+  "report": "spec/projects/ai-agents-mem--codegraph.md",
+  "analyzedSha": "6560052a6f856855d3f71eee838fd66ccfa4285d",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T06:38:45Z",
+  "observedSha": "f93e89a82d415408f46f5ee5887506df66478b02",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f93e89a82d415408f46f5ee5887506df66478b02",
+      "date": "2026-10-27T17:47:28Z",
+      "subject": "fix(paths): a project at a Windows drive root indexes its files (#2931)"
+    },
+    {
+      "sha": "0187366697c29065d4576ea2c1314125066dedb6",
+      "date": "2026-10-27T17:36:28Z",
+      "subject": "fix(cli): codegraph status opens the index read-only, and says when a rebuild is running"
+    },
+    {
+      "sha": "5e0c42cb63c9e5d6c6ddb1786b7dc7279f7db36d",
+      "date": "2026-10-27T17:20:10Z",
+      "subject": "fix(security): the sensitive-folder guard refuses links, case variants and \\?\\ paths (#2929)"
+    },
+    {
+      "sha": "7ff2841e37882b085d6dd35d32db210b67349011",
+      "date": "2026-10-27T17:05:28Z",
+      "subject": "fix(resolution): ties that decide a link break by code unit, not the host's locale"
+    },
+    {
+      "sha": "4eb8c2a5f2668a0bbdaf9100b7a87c450296c65c",
+      "date": "2026-10-27T16:45:47Z",
+      "subject": "perf(synthesis): line numbers from a newline index, not a split per match"
+    },
+    {
+      "sha": "0b194448dc8694702ca8121d25c714447376bb82",
+      "date": "2026-10-27T16:45:04Z",
+      "subject": "fix(resolution): a call a method hands on to another object no longer links back to it"
+    },
+    {
+      "sha": "b6379e6d5ee7edf75f41cff521bf77777f1694ed",
+      "date": "2026-10-27T15:59:08Z",
+      "subject": "fix(scala): an Outer.Inner(...) call reaches the Scala case class or object it builds"
+    },
+    {
+      "sha": "81559dcc37f58bc4db4f280a6dd941119f47e0d3",
+      "date": "2026-10-27T15:26:51Z",
+      "subject": "fix(resolution): a call reaches the caller's own copy of a duplicated module"
+    },
+    {
+      "sha": "69af19ace270f2e940444d514de6dde971df12df",
+      "date": "2026-10-24T02:16:17Z",
+      "subject": "fix(build): building from source with bun finishes instead of starting itself over"
+    },
+    {
+      "sha": "4c572e07b690d5299d513080b631188593746d3e",
+      "date": "2026-10-24T01:52:27Z",
+      "subject": "fix(play): a Class.method reference reaches a member of the class it names"
+    },
+    {
+      "sha": "cde4cd74ebab4bd7541a2e70fa8dc0a70edd3159",
+      "date": "2026-10-24T01:23:32Z",
+      "subject": "fix(resolution): a lone same-file definition scores as a strong match"
+    },
+    {
+      "sha": "0b238452a3c5be685a2b10fc49f6bcc66bc9312d",
+      "date": "2026-10-24T00:55:56Z",
+      "subject": "fix(mcp): explore's maxFiles text gives the real default, not 12"
+    },
+    {
+      "sha": "de2b80e9212abddbf1c9604e94212b2a17f0642e",
+      "date": "2026-10-24T00:37:33Z",
+      "subject": "fix(mcp): a project opened for projectPath is released on its own idle deadline"
+    },
+    {
+      "sha": "3a93f57ae1796b47cf6f27e8685e58de957392c3",
+      "date": "2026-10-23T22:14:17Z",
+      "subject": "fix(java): a record is indexed as a class, with its components' fields and accessors"
+    },
+    {
+      "sha": "a565f215f15c92328ae080e2937beff7ce26700f",
+      "date": "2026-10-23T21:49:37Z",
+      "subject": "fix(viewer): saved trails stay inside the project when a folder or trail file is a link"
+    },
+    {
+      "sha": "37509214868bbc8cfa7671455f9f5a46901e30e9",
+      "date": "2026-10-23T21:06:53Z",
+      "subject": "test(resolution): calls on nested receivers keep their evidence and guess no target"
+    },
+    {
+      "sha": "d02a88d052c3a5fd5a38a71cff8759df13d380c7",
+      "date": "2026-10-23T20:40:56Z",
+      "subject": "fix(java,csharp): a call on a new object reaches the class the file imports, not a namesake (#2864)"
+    },
+    {
+      "sha": "43a4f5b9f90516b37881bd0826ba0cbf973463e8",
+      "date": "2026-10-23T20:28:22Z",
+      "subject": "fix(graph): the type hierarchy returns a type's subtypes, not only its ancestors"
+    },
+    {
+      "sha": "a278c2ee12a852c15f2efb41a868e99ec480bc12",
+      "date": "2026-10-23T20:06:41Z",
+      "subject": "fix(scope): a folder git ignores matches only itself, not every folder with its name (#2858)"
+    },
+    {
+      "sha": "44adef821bb8c3d7723cd6469ec4d79d276805f2",
+      "date": "2026-10-23T19:53:00Z",
+      "subject": "fix(erlang): a comment in an argument list no longer counts as an argument"
+    },
+    {
+      "sha": "90c5dc6fc964e22b3ec1fb69b97406d948e3220f",
+      "date": "2026-10-23T19:38:20Z",
+      "subject": "fix(extraction): a Go method carries the exportedness of its name"
+    },
+    {
+      "sha": "8f8f04b7fc14e1d2a01db5d0a51a6c8c9a1ef6c7",
+      "date": "2026-10-23T19:21:32Z",
+      "subject": "fix(java,ts): a parameterized supertype links its type, like implements Store<String>"
+    },
+    {
+      "sha": "428b3c487d9ddf326af359aafc1947bc7f1985a7",
+      "date": "2026-10-23T18:58:14Z",
+      "subject": "fix(js,ts): a nested function takes calls to a name the file imports from a package"
+    },
+    {
+      "sha": "0d46dba08f870164cbfdad978cdcad146f889f9a",
+      "date": "2026-10-23T18:34:25Z",
+      "subject": "fix(js,ts): a call on a new C() receiver resolves through C"
+    },
+    {
+      "sha": "16f2d357bc49f4e54702d0c26df38c4a7c02da87",
+      "date": "2026-10-23T18:11:55Z",
+      "subject": "fix(go): a project package named like a standard-library package is not the standard library"
+    },
+    {
+      "sha": "449eefa7da8bea0c147129785e2904739ab27bcb",
+      "date": "2026-10-23T17:50:28Z",
+      "subject": "fix(js,ts): a call on an element of a class field reaches the element's type"
+    },
+    {
+      "sha": "5c5bfd4051a7571657798d3046ddfd64f5a19eaa",
+      "date": "2026-10-23T17:39:09Z",
+      "subject": "fix(php): a namespace alias matches whatever case it is written in"
+    },
+    {
+      "sha": "33dc2ae72b5abd8443a7ca0376c75b32c84f0ab4",
+      "date": "2026-10-23T16:56:54Z",
+      "subject": "fix(viewer): the routes list's limit counts routes, not one route's calls"
+    },
+    {
+      "sha": "2def0a6d6df2c532e47c8b5a571b6641044723b0",
+      "date": "2026-10-23T16:43:22Z",
+      "subject": "test(kernel): skip the kernel-only suites when CODEGRAPH_KERNEL=0"
+    },
+    {
+      "sha": "679c4e095a5395a30f501122dd906240fa791346",
+      "date": "2026-10-23T16:38:59Z",
+      "subject": "test(windows): the windowsHide guard reads quoted and computed keys, and named options"
+    },
+    {
+      "sha": "9c4794d694c62d343e43f29f2a76f576ed8b0e99",
+      "date": "2026-10-23T14:07:45Z",
+      "subject": "fix(rust): a call keeps its whole receiver chain, and links through method calls in it (#2846)"
+    },
+    {
+      "sha": "865ddf4ada35036c1d1084c02d5ac81a7c4227ca",
+      "date": "2026-10-23T13:30:13Z",
+      "subject": "fix(library): indexFiles keeps other writers out until its files are stored (#2845)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/add-lang/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BUNDLING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/absent-member-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/add-lang-check-grammar.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/ambient-module-imports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/angular-router.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/bundle-launcher.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-cpp-declaration-types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-cpp-member-supertypes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-feature-macro-variants.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-include-lone-macros.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-macro-return-types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/c-static-call-rescue.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/call-receiver-no-fabrication.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/call-value-targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/catch-all-path-alias.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/celery-dispatch-synthesizer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cfml-create-object.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cfml-embedded-parse-warning.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cfml-include.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/cfml-inheritance-resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/child-process-windows-hide.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/cli-affected-test-conventions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/cli-ui-command.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/cli-unlock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-absl-holder-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-alias-inherited-member.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-anonymous-union-members.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-attribute-macros.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-auto-iterator-arrow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-auto-local-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-auto-range-for-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-base-class-lookup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-binding-and-wrapper-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-block-comment-lines.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-brace-scopes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-class-name-receiver-members.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-comparisons-and-template-declarators.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-container-accessor-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-declarator-clause-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-declared-type-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-dereferenced-iterator-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-element-access-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-free-function-overloads.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-global-alias-target.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-global-scope-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-gtest-fixture-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-implicit-this-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-included-test-suite.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-iterator-arrow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-library-type-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-listed-declarator-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-local-callable-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-macro-defined-methods.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-map-iterator-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-member-chain-base-members.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-member-chain-outside-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-member-chain-project-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-member-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-member-template-returns.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-namespace-qualifier.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-nested-template-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-nullptr-deleted-overloads.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-operator-arrow-targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-outside-type-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-overload-argument-types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-overload-constness.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-pimpl-member-chains.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-qualified-declarator-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-range-for-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-receiver-global-far-library.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-smart-pointer-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-specialization-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-specialization-qualifiers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-string-literal-declarations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-template-member-types.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-test-fixture-call.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-test-translation-unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-translation-unit-visibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-translation-unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-two-line-receivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-type-alias-receiver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-undeclared-qualifier.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/cpp-written-scope-class-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/csharp-member-initializers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/csharp-property-accessors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/csharp-type-position-refs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/daemon-candidates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/daemon-install-check.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/daemon-lock-holder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/daemon-older-version.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/daemon-registry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/daemon-silent-holder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-annotated-member-docs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-annotation-comments.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-annotation-targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-bodiless-member-docs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-chain-links.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-comment-split-chains.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-const-constructors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-generic-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-generic-factory-chain.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-getter-reads.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-import-prefix-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-import-uris.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-initializer-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-library-visibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-local-call-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-part-directives.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-part-privacy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-type-positions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dart-typedef-refs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/dead-code.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/default-export-declaration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dominant-file-plan.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dominant-file-window.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/dynamic-import-binding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/erlang-arity-resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/explore-cobol-copybook.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/explore-cross-call-dedup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/explore-long-query.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/explore-low-value-tests.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/explore-output-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/explore-queried-oversize-symbol.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/explore-synth-link-endpoints.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/explore-unindexed-names.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/expo-router.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/expression-receiver-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/extraction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/Torture.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureAnnotatedComments.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureAnnotatedDocs.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureCommentChains.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureConstCtors.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureDeclarationDocs.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureDirectives.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureGenericCalls.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureInitializers.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TorturePartOfName.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureReadsTypes.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureRecord.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureTry.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureTypedefs.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/kernel-parity/TortureWrappedCalls.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.kt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/kernel-parity/torture.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/fixtures/older-daemon.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "__tests__/fixtures/record-detached-spawns.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "__tests__/flow-named-implementation.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

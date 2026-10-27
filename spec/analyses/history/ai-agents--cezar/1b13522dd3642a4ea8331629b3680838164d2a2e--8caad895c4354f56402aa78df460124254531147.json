@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--cezar",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/open-mercato/cezar",
+  "report": "spec/projects/ai-agents--cezar.md",
+  "analyzedSha": "1b13522dd3642a4ea8331629b3680838164d2a2e",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T13:47:58+02:00",
+  "observedSha": "8caad895c4354f56402aa78df460124254531147",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8caad895c4354f56402aa78df460124254531147",
+      "date": "2026-10-23T23:46:13+02:00",
+      "subject": "fix(cli): preserve the cockpit API origin for dispatch (#1124)"
+    },
+    {
+      "sha": "51117e694668ecbfdb967c509cef2bca1f1704b2",
+      "date": "2026-10-23T23:42:18+02:00",
+      "subject": "feat(web): resizable file tree on the Changes views (#1650)"
+    },
+    {
+      "sha": "3c42fe9bce415288cfd17afe54c1e0b3751c3f86",
+      "date": "2026-10-23T23:41:43+02:00",
+      "subject": "perf(tasks): render only changed task rows and drop idle cockpit polls (#1191)"
+    },
+    {
+      "sha": "048d9c79774a887524a8d06e072484c40b5a3c42",
+      "date": "2026-10-23T23:28:23+02:00",
+      "subject": "feat(skills): organisation skills repos in Global settings, grouped by repository (#1479)"
+    },
+    {
+      "sha": "383e4c278230d202fdf18e10587d265f221376d0",
+      "date": "2026-10-23T23:14:40+02:00",
+      "subject": "perf(events): slim the workspace run frame and serialize each frame once (#1190)"
+    },
+    {
+      "sha": "cfe50635057f03d23a48de56ac8425b7bb9f13af",
+      "date": "2026-10-23T23:12:14+02:00",
+      "subject": "fix(auto-resume): resume now when a clock-only usage-limit reset just passed (telemetry 4bf9686a) (#1645)"
+    },
+    {
+      "sha": "dd8bf99957f0d8def3993b8ecee5b33669028ea2",
+      "date": "2026-10-23T23:05:36+02:00",
+      "subject": "docs(spec): full command in expanded tool cards (#1306) (#1309)"
+    },
+    {
+      "sha": "9b7476d775185364c1bd65a61065d79151f90271",
+      "date": "2026-10-23T22:59:29+02:00",
+      "subject": "fix(models): know `fable` as a Claude tier alias so a runner switch clears it (#1572)"
+    },
+    {
+      "sha": "2c6ddddbc10e2c146bc1ada2301a418a56caf83b",
+      "date": "2026-10-23T22:58:36+02:00",
+      "subject": "fix(runs): carry pasted attachments into a fresh-session continuation (#1442)"
+    },
+    {
+      "sha": "6f5daaadacdeb85edb9c2c81ac496410a6f393c5",
+      "date": "2026-10-23T22:57:58+02:00",
+      "subject": "fix(ui): preserve Windows roots in folder browser back navigation (#1335)"
+    },
+    {
+      "sha": "db16815dc421d719c710f35daef6561522e1ce1b",
+      "date": "2026-10-23T22:56:38+02:00",
+      "subject": "feat(changes): preview the old side of deleted and modified images (#1568)"
+    },
+    {
+      "sha": "6e48f778f30579e1bceb8182c3247ef4e351e003",
+      "date": "2026-10-23T22:45:05+02:00",
+      "subject": "docs(release): runbook for a conflicted backport (#1644)"
+    },
+    {
+      "sha": "ce0f4b6e8763deca134726cf082ad5948ea3eab6",
+      "date": "2026-10-23T22:36:53+02:00",
+      "subject": "ci(release): GitHub App token, tag-triggered publish, resume-safe release lines (#1640)"
+    },
+    {
+      "sha": "bc2ec068dfb61607f5ca1ed3c4c7a6d92b9185d6",
+      "date": "2026-10-23T21:28:37+02:00",
+      "subject": "docs(changelog): add the 0.16.2 entry (#1639)"
+    },
+    {
+      "sha": "4a3a7614568f1d0d7f8ebdd22d612b588716c276",
+      "date": "2026-10-23T20:46:45+02:00",
+      "subject": "chore(desktop): bump shell to 0.1.11 (#1638)"
+    },
+    {
+      "sha": "39e6686bcda542342ff66bcf14f4af5a74132e0e",
+      "date": "2026-10-23T20:39:27+02:00",
+      "subject": "fix(preview): follow in-page URL changes in the address bar and Reload (#1634)"
+    },
+    {
+      "sha": "2e16d70356585c58fffdd418fce880c9466880cd",
+      "date": "2026-10-23T16:31:30+02:00",
+      "subject": "feat(tasks): schedule task starts by date or usage reset (#1340) (#1434)"
+    },
+    {
+      "sha": "0355f9c9e46373c342dcb8a4d466df48e3f90d3e",
+      "date": "2026-10-23T15:40:03+02:00",
+      "subject": "feat(ask): answer an agent's question with your own text or ask for more context (#1605)"
+    },
+    {
+      "sha": "6d5ca45b5a1d3a8657c7c40dc6f420ce66203320",
+      "date": "2026-10-23T15:38:59+02:00",
+      "subject": "fix(gh): run gh without a session bus it would have to start, so no dbus-daemon is left behind per call (#1469)"
+    },
+    {
+      "sha": "81902adb94ae700574995a6616edcf9c96522d89",
+      "date": "2026-10-23T15:38:12+02:00",
+      "subject": "fix(runs): stop processes a task leaves running when it settles (#1419)"
+    },
+    {
+      "sha": "033299fc96428caa865bde216ce785565b9a8a3a",
+      "date": "2026-10-23T15:36:29+02:00",
+      "subject": "feat(accounts): manage agent accounts on an authenticated self-hosted cockpit (#1631)"
+    },
+    {
+      "sha": "2404f25d7e4add8535c17cf99c01062a05b731c8",
+      "date": "2026-10-23T15:35:21+02:00",
+      "subject": "fix(web): keep the GitHub tab for a recognized remote while the forge probe is cold or failing (#1427)"
+    },
+    {
+      "sha": "3c406eebbf5a54a513baa375e8d9ea07b3ee2dca",
+      "date": "2026-10-23T15:23:35+02:00",
+      "subject": "fix(web): preserve relative file links in transcripts (#1425)"
+    },
+    {
+      "sha": "aec24b063d62e4cc350dbe23c448110462fd886b",
+      "date": "2026-10-23T14:06:05+02:00",
+      "subject": "fix(security): accept mapped IPv6 loopback authorities (#1371)"
+    },
+    {
+      "sha": "7820e1eaf9273108636ac7de8ac75f578c930a1b",
+      "date": "2026-10-22T13:51:27+02:00",
+      "subject": "fix(composer): keep the thread still while the composer autosizes (#1606)"
+    },
+    {
+      "sha": "08dc84289ba9508153302af2b3da66700a6b2fe9",
+      "date": "2026-10-21T19:49:11+02:00",
+      "subject": "feat(projects): trunk-based development model — work in the checkout, review, Commit to the base branch (#1597)"
+    },
+    {
+      "sha": "a4bf5bdcad41e527a70cbcfeaa00d17e82e192e1",
+      "date": "2026-10-21T15:34:31+02:00",
+      "subject": "fix(codex): surface a turn/completed whose status is failed as a turn error (#1571)"
+    },
+    {
+      "sha": "219b036cf7189a042f68b5362381e492d109f821",
+      "date": "2026-10-21T15:22:43+02:00",
+      "subject": "fix(opencode): respawn on a fresh port when the random one is taken (#1585)"
+    },
+    {
+      "sha": "f626f8b3910a47f2e1c9619c8b273ceac1e9ffa4",
+      "date": "2026-10-21T14:51:30+02:00",
+      "subject": "fix(server-install): forward Host with its port in the nginx vhost (#1570)"
+    },
+    {
+      "sha": "abecdf52373fcd9e5b3b8c0e46253c5f6fbda368",
+      "date": "2026-10-21T14:32:01+02:00",
+      "subject": "fix(dispatch): don't hand a child another runner's model (telemetry 43bdda11) (#1592)"
+    },
+    {
+      "sha": "4ec4dc81d07d0d89a798b3dc96f2d98ebce676dd",
+      "date": "2026-10-21T12:12:14+02:00",
+      "subject": "fix(web): retry transient query fetch failures (telemetry 4678fce9) (#1575)"
+    },
+    {
+      "sha": "4e117afed93e732fd85ec125e34127385c44a030",
+      "date": "2026-10-21T12:11:58+02:00",
+      "subject": "fix(provider-auth): silence OpenCode CLI startup failures (telemetry 107e44a9) (#1574)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/bug-bash.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/debugging.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/explore.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/running.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/e2e/references/writing-tests.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/analysis/cockpit-ui-redesign/cezar-code-map.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/browsers/agent-browser.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/browsers/fixtures/agent-browser-rootless-fallback.test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/cezar/workflows/implement-and-e2e.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-16-issue-913-instance-port-allocation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-28-fix-autosave-check-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-28-fix-issue-1000-api-origin.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-28-issue-1077-event-replay.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-29-issue-1011-macos-redeploy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-29-issue-997-trailing-task-markers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-29-reject-directories-as-runnable-launchers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-09-30-installer-nginx-parse-diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-01-bookmark-unavailable-runner.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-01-fix-pi-markers-transcript.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-02-fix-skill-frontmatter-atomic-write.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-02-gate-cloud-credentials.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-02-keep-attachments-when-discarding-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-02-quiesce-late-codex-teardown-events.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-03-fix-final-idle-ask-settlement.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-03-mobile-step-rail-touch-target.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-03-persist-idle-timeout-settings.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-03-queued-screenshot-attachments.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-automations-gate-timing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-claude-headless-denial-guidance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-dispatch-subtask-model-list.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-e2e-verification-steps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-fix-issue-1095-draft-loss.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-issue-resolver-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-04-pasted-attachment-grant.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-05-allow-longer-prompt-templates.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-05-ask-idle-keeps-needs-you.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-05-fix-opencode-auth-1270.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-05-fix-runner-help-1236.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-06-ask-question-limit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-06-issue-804-auto-resume-template-races.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-06-issue-870-picker-description.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-06-issue-890-agent-browser-fallback.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-06-repo-file-browser.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-07-fix-git-worktree-config-lock-1301.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-07-github-numeric-issue-kind-949.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-07-urgent-issue-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-08-automations-gate-warmup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-08-bound-repeated-handoff-heartbeats.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-08-fix-premature-child-settlement.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-08-fix-stale-sha-task-diff.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-08-reuse-process-indexes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-09-runner-model-catalog-cache.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-09-sse-subscription-hubs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-automations-lease-stall.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-compact-subtask-header.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-github-tab-fast/HANDOFF.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-github-tab-fast/NOTIFY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-github-tab-fast/PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-github-tab-fast/checkpoint-1-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-github-tab-fast/checkpoint-2-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-github-tab-fast/final-gate-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-macos-host-usage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-preserve-per-step-model-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-10-worktree-lifecycle-events.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-11-github-list-infinite-scroll.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-11-ipv4-mapped-loopback.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-11-star-count-live-refresh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-13-reap-task-leftover-processes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-14-release-0-15-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-14-transcript-relative-file-links.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-21-dispatch-foreign-model.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-22-ask-custom-answer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/runs/2026-10-23-resizable-changes-tree.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/scripts/e2e.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/scripts/test-env-up.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/skills/om-prepare-test-env/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-07-14-cockpit-ui-redesign.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-07-20-multi-project-workspace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-07-22-provider-authentication.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-07-29-agent-profiles.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-08-30-thread-composer-draft-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-09-14-automations-redesign.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai/specs/2026-09-25-desktop-distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-09-29-create-new-project.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-09-30-workflow-node-editor.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-05-repo-file-browser.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-06-agentic-e2e-checks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-06-tool-card-full-command.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-07-deferred-task-start.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-07-private-project-mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-07-task-workspace.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-09-design-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-10-e2e-one-click-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-10-project-secrets-vault-options.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-10-worktree-lifecycle-events.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-11-branch-naming-instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-12-outbound-webhooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-13-unified-settings.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-17-task-palette.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-19-repo-git-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/2026-10-20-trunk-based-projects.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/deferred-task-start/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/deferred-task-start/screenshots/01-after-reset.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/deferred-task-start/screenshots/02-date-and-time.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/deferred-task-start/screenshots/03-scheduled-task.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/deferred-task-start/screenshots/ux-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/current-01-notifications.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-01-receiver-list.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-01-receiver-list.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-02-empty-state.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-02-empty-state.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-03-add-receiver.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-03-add-receiver.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-04-local-receivers.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-04-local-receivers.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-05-test-activate.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-05-test-activate.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-06-confirmations.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-06-confirmations.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-07-deliveries.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-07-deliveries.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-08-activity.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-08-activity.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-09-project-summary.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-09-project-summary.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-10-exceptional-states.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-10-exceptional-states.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-11-relay.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockup-11-relay.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/outbound-webhooks/mockups.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/01-chat-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/02-terminal-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/03-new-layout-picker.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/04-chat-plus-terminal-split.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/05-three-columns-chat-changes-terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/06-full-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/07-changes-with-terminal-drawer.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/task-workspace/08-narrow-one-window-at-a-time.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/trunk-based-projects/composer-ask.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/trunk-based-projects/composer-write.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/trunk-based-projects/review-commit.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/assets/trunk-based-projects/settings.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/briefs/2026-10-07-deferred-task-start-ux-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/briefs/2026-10-10-worktree-lifecycle-scripts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/briefs/2026-10-13-deferred-task-start-implementation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai/specs/issues/deferred-task-start.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/e2e",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/backport.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-cut.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-publish.yml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

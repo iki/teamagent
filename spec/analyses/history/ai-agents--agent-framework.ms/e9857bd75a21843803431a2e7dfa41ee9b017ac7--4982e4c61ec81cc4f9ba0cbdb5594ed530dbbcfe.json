@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--agent-framework.ms",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/microsoft/agent-framework",
+  "report": "spec/projects/ai-agents--agent-framework.ms.md",
+  "analyzedSha": "e9857bd75a21843803431a2e7dfa41ee9b017ac7",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T14:12:01Z",
+  "observedSha": "4982e4c61ec81cc4f9ba0cbdb5594ed530dbbcfe",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4982e4c61ec81cc4f9ba0cbdb5594ed530dbbcfe",
+      "date": "2026-10-23T15:06:22Z",
+      "subject": "Add .NET consumer skill for building with Agent Framework (#9651)"
+    },
+    {
+      "sha": "edc2427539b3e00493c2fc876a313bae9a794d0d",
+      "date": "2026-10-23T14:53:49Z",
+      "subject": "Python: Fix A2A dependency bounds test environment (#9619)"
+    },
+    {
+      "sha": "9c8a3514a15a702f81bfda456d80c7ccaa4d2712",
+      "date": "2026-10-23T13:38:34Z",
+      "subject": "Update package versions for release (#9650)"
+    },
+    {
+      "sha": "c3b9f22d64fd86e8133395555a1fa4aa22f745e0",
+      "date": "2026-10-23T13:23:15Z",
+      "subject": "Add ACGS to the Python community projects (#9618)"
+    },
+    {
+      "sha": "71cf48cb4019bc503c7ceb61420cc3d836250790",
+      "date": "2026-10-23T13:19:51Z",
+      "subject": "Python: Honor allow_multiple_tool_calls in AnthropicClient when tool_choice is unset (#8980)"
+    },
+    {
+      "sha": "ea32b6db9e9b4b434a86496bacd9cc6dd0422a69",
+      "date": "2026-10-23T13:17:13Z",
+      "subject": "Python: compose Copilot session hooks correctly (#9649)"
+    },
+    {
+      "sha": "678c6616aa4c73ecfc28cc6fc119a3928ba04024",
+      "date": "2026-10-23T12:10:01Z",
+      "subject": ".NET: Fix AG-UI sample prerequisites and troubleshooting paths (#9620)"
+    },
+    {
+      "sha": "8730cb1974857e2264f874a258623db1303cc2ac",
+      "date": "2026-10-23T12:08:23Z",
+      "subject": ".NET: Log a warning when an unsupported declarative action is skipped (#8056)"
+    },
+    {
+      "sha": "9581926deec6a0473a68797153e98d44da74d09a",
+      "date": "2026-10-23T11:28:13Z",
+      "subject": ".NET: Correct endpoint override instructions in Responses samples (#9639)"
+    },
+    {
+      "sha": "9c53b5f44658cc7839d0f1aefe580152edaba970",
+      "date": "2026-10-23T11:15:53Z",
+      "subject": "Python: Refresh coding standards and Copilot review guidance (#9637)"
+    },
+    {
+      "sha": "3b725b3b0ffe09ff00d57b31cc179d20d12a1e49",
+      "date": "2026-10-23T10:22:44Z",
+      "subject": "Python: fix(core): define EdgeGroup's builtins.type alias at module scope (#9614)"
+    },
+    {
+      "sha": "a8e284ca8ce7c2a6b4a4641ef35e131d75a5cda3",
+      "date": "2026-10-22T16:52:20Z",
+      "subject": "Python: Add #9472 to 1.23.0 changelog (#9610)"
+    },
+    {
+      "sha": "d33c44583992c4f638f50714bbbbfc4d1070356b",
+      "date": "2026-10-22T15:59:55Z",
+      "subject": "Python: Bump package versions for 1.23.0 release (#9602)"
+    },
+    {
+      "sha": "07a83a7c369b7d51247630a60e48bebf85429943",
+      "date": "2026-10-22T15:01:24Z",
+      "subject": "Python: Recommend include_detailed_errors only when it is disabled (#9472)"
+    },
+    {
+      "sha": "ce214c0b3f69b6d735e90afbdadad8d0a6268067",
+      "date": "2026-10-22T13:59:48Z",
+      "subject": "fix(dotnet): preserve toolbox OAuth consent (#9565)"
+    },
+    {
+      "sha": "c3ce250695f71e56c9c3f9bff85fef78934520aa",
+      "date": "2026-10-22T13:26:13Z",
+      "subject": "Python: Set the assistant role on streamed Gemini updates (#9491)"
+    },
+    {
+      "sha": "fb57ceb6bb0d75520297d93f6cebfbe6eede370e",
+      "date": "2026-10-22T13:26:11Z",
+      "subject": "Add Tracekit to the Python community projects (#9497)"
+    },
+    {
+      "sha": "33439bf8bcf3e3a76d7094e8f4cbb584abfc8f42",
+      "date": "2026-10-22T13:25:30Z",
+      "subject": "Python: Pass stream errors to nested streams when closing them (#9476)"
+    },
+    {
+      "sha": "d0c3e6acfe4e3fb08887d13b4a1f9ddea0d6509c",
+      "date": "2026-10-22T13:17:06Z",
+      "subject": "Python: Add installable Agent Framework builder skill (#9374)"
+    },
+    {
+      "sha": "1263843977f687f24f153d1f9597317e21d55966",
+      "date": "2026-10-22T13:09:09Z",
+      "subject": "Python: Sanitize unexpected streaming response failures (#9460)"
+    },
+    {
+      "sha": "074bc0b17e605e28b5235ed15ad52b977b65db88",
+      "date": "2026-10-22T13:06:42Z",
+      "subject": "test(dotnet): remove legacy persistent tests (#9588)"
+    },
+    {
+      "sha": "bba95967e36f8b45f1cb0fcfa67333134f29e7dd",
+      "date": "2026-10-22T12:37:05Z",
+      "subject": "Python: Clarify MCP client ownership and add workflow sample (#9532)"
+    },
+    {
+      "sha": "8ff2ec937fe438c4330f9e0b0b5e01b32df079e3",
+      "date": "2026-10-22T12:36:56Z",
+      "subject": "Python: close the RedisContextProvider index connection when the provider owns it (#9510)"
+    },
+    {
+      "sha": "89457c5bcdd7c7b3423f4063f32c604d2fec0a74",
+      "date": "2026-10-22T12:34:58Z",
+      "subject": "docs: fix ChatResponse async aggregation example (#9518)"
+    },
+    {
+      "sha": "74f3447d030c83d747efab617d92573f86c01f52",
+      "date": "2026-10-22T12:34:41Z",
+      "subject": "Python: Make Content base64 documentation examples runnable (#9467)"
+    },
+    {
+      "sha": "b7f8ad686b07a5f6b13dd1f471ee1328b24c8a3a",
+      "date": "2026-10-22T12:26:36Z",
+      "subject": "Python: Remove span-only tool attributes from invocation metrics (#9592)"
+    },
+    {
+      "sha": "5da17697d62d8c80c899c977e004ea6b8c09e56f",
+      "date": "2026-10-22T12:24:53Z",
+      "subject": "docs: update A2A hosting example for SDK v1 (#9521)"
+    },
+    {
+      "sha": "8be57da33007b478ea8dd924bf8ccfa36a8444a6",
+      "date": "2026-10-22T12:22:23Z",
+      "subject": "Python: fix(bedrock): report the requested model on non-streaming responses (#9399)"
+    },
+    {
+      "sha": "06050253e90e235203d65e323cdb096145d37c26",
+      "date": "2026-10-22T12:22:06Z",
+      "subject": "docs: fix ChatKit streaming helper usage (#9523)"
+    },
+    {
+      "sha": "b7ce0d616fd027f850178e7a11255dc67070fe7a",
+      "date": "2026-10-22T12:17:54Z",
+      "subject": "fix(workflows): support keyword-only RunContext in functional workflows (#9397)"
+    },
+    {
+      "sha": "1ba7425571fdc2c92ac18b6b537ad1c8a6d02b04",
+      "date": "2026-10-22T12:13:13Z",
+      "subject": "Python: Fix stateless shell tools inheriting host stdin (#9469)"
+    },
+    {
+      "sha": "a9eff53bdcca76b5b2d60b5ea3c7e9f973667e55",
+      "date": "2026-10-22T12:11:29Z",
+      "subject": "Python: Handle missing reasoning text in DevUI (#9543)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/dotnet-issue.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature-request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/general-issue.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/python-issue.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/python-setup/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/aw/actions-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/copilot-instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/instructions/dotnet.instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/instructions/python.instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check_python_api_compatibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/validate_agent_skill_links.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/skills/community-projects/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/skills/pull-requests/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/tests/test_issue_plan_workflow.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/tests/test_python_api_compatibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/tests/test_validate_agent_skill_links.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/agent-skills.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql-analysis.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/devflow-fix-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/devflow-pr-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dotnet-build-and-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dotnet-format.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dotnet-verify-samples.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/github-automation-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/issue-plan.lock.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/issue-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/issue-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-api-compatibility.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-code-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-dependency-maintenance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/python-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-integration-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-lab-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-merge-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-openai-dependency-bounds.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-sample-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-test-coverage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "AI_CONTRIBUTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/decisions/0029-mcp-skill-templates-and-direct-references.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/decisions/0039-shared-agent-session-store.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/decisions/0044-python-content-identity-and-protocol-metadata.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/decisions/0045-dotnet-unanswered-tool-approvals.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/decisions/0045-python-mcp-v2-client-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/003-dotnet-hosting-protocol-helpers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/004-python-function-calling-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/005-python-content-identity-and-protocol-metadata.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/.github/skills/pull-requests/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/.github/skills/verify-samples-tool/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/Directory.Packages.props",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/agent-framework-dotnet.slnx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/agent-framework-release.slnf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/eng/MSBuild/Shared.props",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/eng/verify-samples/AgentsSamples.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/nuget/nuget-package.props",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/A2A/A2AAgent_ProtocolSelection/A2AAgent_ProtocolSelection.csproj",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/A2A/A2AAgent_ProtocolSelection/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/A2A/A2AAgent_ProtocolSelection/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/A2A/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/AGUI/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/AgentProviders/anthropic/Agent_Anthropic_Step04_UsingSkills/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/AgentProviders/foundry/Agent_Step12_Middleware/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/AgentWithMemory/AgentWithMemory_Step06_MemoryUsingAgentMemory/AgentWithMemory_Step06_MemoryUsingAgentMemory.csproj",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/AgentWithMemory/AgentWithMemory_Step06_MemoryUsingAgentMemory/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/Agents/Agent_Step01_UsingFunctionToolsWithApprovals/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/Agents/Agent_Step11_Middleware/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/Agents/Agent_Step15_DeepResearch/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/DevUI/DevUI_Step01_BasicUsage/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/DevUI/DevUI_Step01_BasicUsage/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/DevUI/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/Harness/Harness_Step05_Loop/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/02-agents/Harness/Harness_Step05_Loop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/03-workflows/Declarative/AotCheckpointing/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-AgentSkills/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-AgentSkills/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-AgentSkills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-AzureSearchRag/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-AzureSearchRag/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-AzureSearchRag/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ChatClientAgent-Dockerfile/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ChatClientAgent-Dockerfile/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ChatClientAgent-Dockerfile/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ChatClientAgent/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ChatClientAgent/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ChatClientAgent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Files/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Files/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Files/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-LocalCodeAct/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-LocalCodeAct/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-LocalCodeAct/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-LocalTools/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-LocalTools/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-LocalTools/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-McpTools/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-McpTools/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-McpTools/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-MemoryAgent/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-MemoryAgent/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-MemoryAgent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Observability/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Observability/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Observability/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Steering/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Steering/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-TextRag/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-TextRag/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-TextRag/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Toolbox-AuthPaths/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Toolbox-AuthPaths/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Toolbox-AuthPaths/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Toolbox/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Toolbox/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Toolbox/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ToolboxMcpSkills/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ToolboxMcpSkills/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-ToolboxMcpSkills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Workflow-Resilient/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Workflow-Resilient/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Workflow-Simple/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Workflow-Simple/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Hosted-Workflow-Simple/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Using-Samples/Hosted-Toolbox-AuthPaths-Client/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/FoundryHostedAgents/responses/Using-Samples/Hosted-Toolbox-AuthPaths-Client/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/af-hosting/local_responses/Server/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/af-hosting/local_responses/Server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/af-hosting/local_responses_workflow/Server/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/04-hosting/af-hosting/local_responses_workflow/Server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/05-end-to-end/A2AClientServer/A2AServer/Program.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/05-end-to-end/A2AClientServer/A2AServer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/samples/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/samples/community-projects.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Aspire.Hosting.AgentFramework.DevUI/DevUIAggregatorHostedService.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Aspire.Hosting.AgentFramework.DevUI/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.A2A/A2AAgent.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.A2A/Extensions/A2AAgentCardExtensions.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.A2A/Extensions/A2AAgentTaskExtensions.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.A2A/Extensions/A2ACardResolverExtensions.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.A2A/Extensions/AgentTaskStatusExtensions.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/AIAgent.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/AgentSessionStateBagValueJsonConverter.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/AgentSessionStore.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/PublicAPI/net10.0/PublicAPI.Unshipped.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/PublicAPI/net472/PublicAPI.Unshipped.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/PublicAPI/net8.0/PublicAPI.Unshipped.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/PublicAPI/net9.0/PublicAPI.Unshipped.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Abstractions/PublicAPI/netstandard2.0/PublicAPI.Unshipped.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Anthropic/AnthropicBetaServiceExtensions.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dotnet/src/Microsoft.Agents.AI.Anthropic/Microsoft.Agents.AI.Anthropic.csproj",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/src/Microsoft.Agents.AI.Anthropic/PublicAPI/net10.0/PublicAPI.Shipped.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/src/Microsoft.Agents.AI.Anthropic/PublicAPI/net10.0/PublicAPI.Unshipped.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dotnet/src/Microsoft.Agents.AI.Anthropic/PublicAPI/net472/PublicAPI.Shipped.txt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

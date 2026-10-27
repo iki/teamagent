@@ -1,0 +1,519 @@
+{
+  "id": "ai-query--mcp-sdk-go",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/modelcontextprotocol/go-sdk",
+  "report": "spec/projects/ai-query--mcp-sdk-go.md",
+  "analyzedSha": "25a53e3f27df62cef7066d81a8704b3df695800a",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T17:24:41+02:00",
+  "observedSha": "2e00768cde3f1ba31d898ea1f179e206d1ad27ef",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "2e00768cde3f1ba31d898ea1f179e206d1ad27ef",
+      "date": "2026-10-23T17:48:12+02:00",
+      "subject": "mcp: restrict HTTP client redirects to same origin to prevent cross-origin redirect (#1440)"
+    },
+    {
+      "sha": "78997927c319e93b92c313a37c1fdc61c7877390",
+      "date": "2026-10-23T10:57:12+02:00",
+      "subject": "mcp: include insufficient_scope error in WWW-Authenticate header for StatusForbidden (#1421)"
+    },
+    {
+      "sha": "f77a5d7ee762bbd65d9ef4df0a5ebb4905ea3186",
+      "date": "2026-10-23T10:43:52+02:00",
+      "subject": "mcp: skip non-message events in SSEClientTransport (#1439)"
+    },
+    {
+      "sha": "12e768b461fd06ea80b0d87e14ac7fa0d24c606a",
+      "date": "2026-10-22T10:53:57+02:00",
+      "subject": "oauthex: encode and decode client metadata \"jwks\" as a JSON object (#1435)"
+    },
+    {
+      "sha": "b874fadc3b4fb4e505e9823e5736f01988c0f118",
+      "date": "2026-10-21T17:09:55+02:00",
+      "subject": "conformance: run the client credentials scenario (#1433)"
+    },
+    {
+      "sha": "67a946a0d1f3a12b0786c3c579d97b39641685f6",
+      "date": "2026-10-21T17:05:21+02:00",
+      "subject": "auth/extauth: fix token source lifetime and concurrent access in the handlers (#1432)"
+    },
+    {
+      "sha": "6544ab325ac7db0817a7ee8e37cdb0f958bcb03b",
+      "date": "2026-10-21T14:55:36+02:00",
+      "subject": "mcp: marshal ResourceNotFoundError data as JSON (#1427)"
+    },
+    {
+      "sha": "2afd3b618489acf49f191ed2bc1fcf3accd0d0d6",
+      "date": "2026-10-21T12:49:25+02:00",
+      "subject": "mcp: export cs.Discover for server/discover (#1428)"
+    },
+    {
+      "sha": "3ebc6d1eb7206d50590341f409e1499676db7345",
+      "date": "2026-10-20T12:31:16+02:00",
+      "subject": "mcp: send no response for a cancelled request on 2026-07-28 stdio sessions (#1267)"
+    },
+    {
+      "sha": "25f488030dbf45fb6faaed055f9ad5fe73902d27",
+      "date": "2026-10-20T11:59:04+02:00",
+      "subject": "mcp: detach SSE client event stream from the Connect context (#1403)"
+    },
+    {
+      "sha": "ed357b7ea275acedd3aa86ec0acd997471902ab5",
+      "date": "2026-10-20T11:28:27+02:00",
+      "subject": "auth: reuse the dynamically registered client across authorizations (#1419)"
+    },
+    {
+      "sha": "75b83b6c256b4709c5286b5e2d570460a071fbc1",
+      "date": "2026-10-20T10:45:02+02:00",
+      "subject": "mcp: reuse server selection for new streamable requests (#1414)"
+    },
+    {
+      "sha": "7c501d7e6a5cd65004da55e5a2f7b46888dc3a79",
+      "date": "2026-10-20T10:41:25+02:00",
+      "subject": "auth: re-authorize when the access token expires without a refresh token (#1418)"
+    },
+    {
+      "sha": "ac7c4213f4dbe2d8c9331a3241f8af5aa631ac9b",
+      "date": "2026-10-19T19:26:33+02:00",
+      "subject": "oauthex: accept empty list elements in WWW-Authenticate (#1351)"
+    },
+    {
+      "sha": "e844b98ccb9d9febfa32253ac6d0e756491c4b76",
+      "date": "2026-10-19T17:13:04+02:00",
+      "subject": "scripts: restore server conformance executable bit (#1415)"
+    },
+    {
+      "sha": "88006afd1bcce13facd5712e34abfdbc3151eb87",
+      "date": "2026-10-19T16:29:47+02:00",
+      "subject": "fix(scripts): make --result_dir absolute in server-conformance.sh (#1409)"
+    },
+    {
+      "sha": "d4093b6b70d449c7f152c9c791120ad452fb7df7",
+      "date": "2026-10-19T15:32:26+02:00",
+      "subject": "mcp: parse SSE field values per the SSE spec (#1412)"
+    },
+    {
+      "sha": "3e9d812b181433e7ad88b629ba40a12fdaad94a9",
+      "date": "2026-10-16T18:14:59+02:00",
+      "subject": "mcp: send handler errors that carry no code as Internal error (#1407)"
+    },
+    {
+      "sha": "f286395aed42026bfa6c08ac49cc52486b6f8b5d",
+      "date": "2026-10-16T11:46:38+02:00",
+      "subject": "mcp: report an error when a sampling or elicitation handler returns nil (#1304)"
+    },
+    {
+      "sha": "9012a210e90c5d351092ba638f9ef40451ccc03e",
+      "date": "2026-10-16T10:56:33+02:00",
+      "subject": "mcp: check out testdata fixtures with LF line endings (#1342)"
+    },
+    {
+      "sha": "5dc802fa5c3a4ed1669f62273fd556154201996b",
+      "date": "2026-10-16T09:22:53+02:00",
+      "subject": "internal/jsonrpc2: send error response when result fails to marshal (#1400)"
+    },
+    {
+      "sha": "95591a7676778ac3dbc27b2611653f0b9e66b3c3",
+      "date": "2026-10-15T17:48:23+02:00",
+      "subject": "fix: support exact JSON number decoding for large request IDs above 2^53 (#1401)"
+    },
+    {
+      "sha": "593f38fde15fe193b9957a36ff9196aed9f67df4",
+      "date": "2026-10-15T15:39:35+02:00",
+      "subject": "mcp: prevent a failed request from breaking a stateless streamable client (#1353)"
+    },
+    {
+      "sha": "37ebae31ff1e639e73e85f9d679d63067964bc6e",
+      "date": "2026-10-15T09:53:59+02:00",
+      "subject": "mcp: fail Ping fast on 2026-07-28 sessions (#1378)"
+    },
+    {
+      "sha": "7c486efa8223d5f66af8cf7b2ac9bb04a1ee6b91",
+      "date": "2026-10-14T15:26:52+02:00",
+      "subject": "mcp: reject legacy-format requests on 2026-only servers (#1345)"
+    },
+    {
+      "sha": "d6a448149e734144612064b4885903df08d0baca",
+      "date": "2026-10-14T10:28:57+02:00",
+      "subject": "mcp: reject null entries in InputRequests during unmarshaling (#1398)"
+    },
+    {
+      "sha": "4f8ab9c6a3ff1461d645203babc7e15cfb6496b7",
+      "date": "2026-10-14T09:55:21+02:00",
+      "subject": "scripts: fix client-conformance.sh on Windows and with a relative --result_dir (#1366)"
+    },
+    {
+      "sha": "2dee148642a271e01d4404cda3d86c61cf62741e",
+      "date": "2026-10-14T09:23:04+02:00",
+      "subject": "auth: use Bearer challenges for resource metadata (#1396)"
+    },
+    {
+      "sha": "f5fe54f9ffd9514fedc4523056fb6dbc7a45c0a1",
+      "date": "2026-10-13T13:56:15+02:00",
+      "subject": "mcp: omit structured output from error results (#1397)"
+    },
+    {
+      "sha": "7cdd99f7478f0bb2d2319c63f45707da936a7ef4",
+      "date": "2026-10-13T09:58:48+02:00",
+      "subject": "mcp: bind peer cancellation before request ID reuse (#1390)"
+    },
+    {
+      "sha": "b04b49ede402cc192499ce189d9086099ab9e0ba",
+      "date": "2026-10-13T09:27:49+02:00",
+      "subject": "mcp: keep a delivered response when the caller's context is cancelled (#1370)"
+    },
+    {
+      "sha": "b5d319b00902d5d74911708fda466160bd2665fe",
+      "date": "2026-10-12T19:36:01+02:00",
+      "subject": "mcp: answer a request sent before initialize with Invalid Request (#1393)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/authorization_code.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/authorization_code_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/client_credentials.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/client_credentials_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/enterprise_handler.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/enterprise_handler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/extauth/oidc_login.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/baseline.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/everything-client/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "design/mrtr.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcpgodebug.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/auth/server/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/server/auth-middleware/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/docs/mcpgodebug.src.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/docs/protocol.src.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/docs/server.src.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/jsonrpc2/conn.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/jsonrpc2/conn_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/jsonrpc2/messages.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/jsonrpc2/wire_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/oauthtest/fake_authorization_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/util/redirect.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/util/redirect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "jsonrpc/jsonrpc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/cmd_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/error_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/event.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/event_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/logging.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/mcp_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/mrtr.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/mrtr_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/protocol.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/protocol_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/resource.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/resource_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/shared.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/shared_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/sse.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/sse_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/streamable.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/streamable_client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/streamable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/testdata/conformance/server/lifecycle.txtar",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/tool.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/tool_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/transport.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/transport_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/audience.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/auth_meta.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/dcr.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/dcr_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/resource_meta.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/resource_meta_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/token_exchange.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "oauthex/token_exchange_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/client-conformance.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/server-conformance.sh",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

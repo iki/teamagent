@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--claude.ruflo",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/ruvnet/ruflo",
+  "report": "spec/projects/ai-agents--claude.ruflo.md",
+  "analyzedSha": "d46358a3bc0678e01b2b102c1af4f1017b487a36",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T11:53:50-07:00",
+  "observedSha": "b49078cc40945d2a81ab1dd9d0faeccd04f827f5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b49078cc40945d2a81ab1dd9d0faeccd04f827f5",
+      "date": "2026-10-27T10:39:12-04:00",
+      "subject": "fix(cli): match status aliases in the task_list status filter (#4536)"
+    },
+    {
+      "sha": "7cd18ca4e4f1dfc5942d5afcb45759ddddd5a7f0",
+      "date": "2026-10-27T09:29:32-04:00",
+      "subject": "fix(cli): validate every http_fetch redirect target (#4534)"
+    },
+    {
+      "sha": "551428e39aee444a090a6db6fb4cc94505bb41b1",
+      "date": "2026-10-27T05:49:18-04:00",
+      "subject": "chore(marketplace): pin agentic-qe-fleet to v3.15.15 (#4533)"
+    },
+    {
+      "sha": "754d7724620425ed76bea8613547d77d210bc093",
+      "date": "2026-10-27T02:50:05-04:00",
+      "subject": "fix(workflow): let condition steps read a step's output (step-N.output) (#4530)"
+    },
+    {
+      "sha": "62ca16bcf3b3fcc45bd87c21829587e1d5374688",
+      "date": "2026-10-27T06:45:56Z",
+      "subject": "chore(data): clone snapshot #17 — 0 clones (14d)"
+    },
+    {
+      "sha": "e30d81b845815dbfaed2c4085790b23ed7654f91",
+      "date": "2026-10-27T01:21:35-04:00",
+      "subject": "fix(doctor): recognize matching npm launchers on Windows (#4473)"
+    },
+    {
+      "sha": "84638632fe85e3dbbf46db77c498404704c32806",
+      "date": "2026-10-27T01:21:02-04:00",
+      "subject": "fix(swarm): release a recovered agent from its domain pool (#4486)"
+    },
+    {
+      "sha": "99d5410b49c12dd2b6581e7dec439082bdcd14a2",
+      "date": "2026-10-27T01:20:43-04:00",
+      "subject": "fix(cli): count cancelled tasks in task_summary so the counts add up to total (#4489)"
+    },
+    {
+      "sha": "d6816a4d6fa0d487d7e653cf6de24733eb0bb4a6",
+      "date": "2026-10-27T01:20:37-04:00",
+      "subject": "chore: ignore Rust target/ build output (#4500)"
+    },
+    {
+      "sha": "bf76869089351242300dbbf5c9233006d0028ccf",
+      "date": "2026-10-26T20:39:20-04:00",
+      "subject": "fix(hooks): count pending workers in hooks_worker-status summary (#4529)"
+    },
+    {
+      "sha": "dafd38a4fe3767e3dcc6e5d353e352760c0634b8",
+      "date": "2026-10-26T17:37:25-04:00",
+      "subject": "feat(ai-team): semantic memory via Cognitum embeddings, ordered listing, funnel logging, anon rate limit (0.4.0) (#4527)"
+    },
+    {
+      "sha": "60e951415bf3b0dfce0153e4c63a30b97117115b",
+      "date": "2026-10-26T16:08:34-04:00",
+      "subject": "fix(ruflo-console): keep a project copy of the mission ledger (0.49.5) (#4524)"
+    },
+    {
+      "sha": "022535eafcc4c685e25715cde1efd248cdb50fd4",
+      "date": "2026-10-26T15:44:12-04:00",
+      "subject": "release: 3.63.4 (#4525)"
+    },
+    {
+      "sha": "16d9b7fd58f0a9870406409f4c2440539b92ef2c",
+      "date": "2026-10-26T15:25:50-04:00",
+      "subject": "fix(federation): the WebSocket fallback listener defaults to loopback; an empty host counts as unset (#4520)"
+    },
+    {
+      "sha": "4d6fc66b86cb6b7bb6b13483ad576628303c0730",
+      "date": "2026-10-26T15:20:30-04:00",
+      "subject": "fix(mcp): an unset token entry does not crash the WebSocket upgrade (#4522)"
+    },
+    {
+      "sha": "d3cd2e2871b31f43afd94b496f7efee95fd784a7",
+      "date": "2026-10-26T15:10:20-04:00",
+      "subject": "fix(shared): MCP transports refuse web pages, rebound hosts and open non-loopback binds (#4517)"
+    },
+    {
+      "sha": "0219fc5d025d463944dacf6b0ec077710a36b917",
+      "date": "2026-10-26T14:43:43-04:00",
+      "subject": "fix(daemon): daemon-queue entries no longer count as a manual trigger (#4515)"
+    },
+    {
+      "sha": "3671915b8de14c8efba5ef3716aa2c4535e92e28",
+      "date": "2026-10-26T14:06:02-04:00",
+      "subject": "fix(agentbbs): a .. in a room label can no longer move the room log outside basePath (#4518)"
+    },
+    {
+      "sha": "fc323f5108df0a5196c648f0cdaa6946e35d9856",
+      "date": "2026-10-26T14:05:50-04:00",
+      "subject": "fix(mcp): network transports start with a per-user token by default; WebSocket tokens work (#4516)"
+    },
+    {
+      "sha": "de8168b952470b3ff3c6455b65900aac941afa56",
+      "date": "2026-10-26T14:05:34-04:00",
+      "subject": "fix(federation): peer identity comes from operator-pinned keys; loopback listener default (#4514)"
+    },
+    {
+      "sha": "29b9894d4e02f862691f48c7fde099afae97ee20",
+      "date": "2026-10-26T12:16:51-04:00",
+      "subject": "release: 3.63.3 (#4513)"
+    },
+    {
+      "sha": "1505a24033e9a95e49bd8b0e0880089a00ee26fa",
+      "date": "2026-10-26T12:10:53-04:00",
+      "subject": "Replace the models api.anthropic.com retired (#4512)"
+    },
+    {
+      "sha": "cb9d030fc168ab07120b3159eff774860d648bb5",
+      "date": "2026-10-26T11:52:24-04:00",
+      "subject": "fix(federation): a policy denial of a consequential inbound message is final in legacy and observe mode (#4511)"
+    },
+    {
+      "sha": "c0f205629bce59f2054dd3ecc96c5d0ae78aabd1",
+      "date": "2026-10-26T11:33:00-04:00",
+      "subject": "fix(mcp): token-less HTTP/WebSocket transports refuse web pages, rebound hosts and open non-loopback binds (#4510)"
+    },
+    {
+      "sha": "5b3bcc78cd1b4c05fc1c81f56bcfb630bc770ea7",
+      "date": "2026-10-26T11:32:57-04:00",
+      "subject": "fix(daemon): a cloned project's config can no longer enable AI workers (#4509)"
+    },
+    {
+      "sha": "a52ae16e42378299372d6e4f51586bc20369cafe",
+      "date": "2026-10-26T10:14:47-04:00",
+      "subject": "release: 3.63.2 (#4508)"
+    },
+    {
+      "sha": "9d854ddb9c69dfbbf74f039a56886d80235c5708",
+      "date": "2026-10-26T09:58:56-04:00",
+      "subject": "dream(security): #4503 http_fetch SSRF bypass via IPv4-mapped IPv6 literals (evaluated, ACCEPT) (#4504)"
+    },
+    {
+      "sha": "2be0b69d6853169847e12ede534693dfa6326106",
+      "date": "2026-10-26T09:56:35-04:00",
+      "subject": "fix(ci): gate helper sync on import and manifest checks (#4507)"
+    },
+    {
+      "sha": "64b4fb9768d1df49c01caa7d528ef766ffb8d29a",
+      "date": "2026-10-26T09:13:16-04:00",
+      "subject": "fix(ruflo-console): submit the mission plan from a file (Windows \"command line is too long\") (#4506)"
+    },
+    {
+      "sha": "310d78c32f28cf2c02ff9e54ffd83198485c6535",
+      "date": "2026-10-26T05:39:39-04:00",
+      "subject": "chore(deps): bump agent-browser in /v3/@claude-flow/browser (#4505)"
+    },
+    {
+      "sha": "631c1557b5f325163c4f9f029a397bb30a61c730",
+      "date": "2026-10-25T23:10:13-04:00",
+      "subject": "release: 3.63.1 (#4501)"
+    },
+    {
+      "sha": "ed2dd638bd6f01b45cef8540069e2e0f20ffff8f",
+      "date": "2026-10-25T22:51:04-04:00",
+      "subject": "fix(ruflo-console): entryFor no longer returns another project's install record (#4496) (#4497)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/pair-programming/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/scripts/ruflo-hook.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/auto-memory-hook.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/hook-handler.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/intelligence.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/learning-service.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/session.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/helpers/statusline.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/pair-programming/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/verification-quality/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/supply-chain/accepted-findings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/all-plugins-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/codex-activity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/e2e-host-matrix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/helpers-manifest-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/managed-dynamic-workflows.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/metaharness-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/mod-guidance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/no-metaharness-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/plugin-version-bump.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/v3-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/validate-marketplace.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/CHECKSUMS.sha256",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/application/application-runbook.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/application/chatgpt-app-submission.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/application/preflight-report-2026-09-12.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/application/release-notes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/application/reviewer-credentials.example.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/application/submission-listing.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/application/test-cases.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/assets/ruflo-federation-demo.mp4",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/assets/ruflo-water-icon-128.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/assets/ruflo-water-icon-256.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/assets/ruflo-water-icon-512.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/assets/ruflo-water-icon-master.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/scripts/build_demo.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/SKILL-MANIFEST.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/coordinate-ruflo-swarm/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/coordinate-ruflo-swarm/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/federation-audit/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/federation-audit/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/federation-init/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/federation-init/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/federation-status/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/federation-status/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/publish-ruflo-update/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/publish-ruflo-update/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/starter-prompts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/triage-ruflo-work/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/skills/triage-ruflo-work/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "chatgpt-plugin/upload/ruflo-federation-all-skills-upload.zip",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "data/clone-data.ledger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "data/clone-data.proof.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "data/clone-data.rvf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "data/npm-downloads.latest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/TEAM-GATEWAY-CHECKLIST.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/USERGUIDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/architecture-flow.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/chatgpt.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/claude.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/clones.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/codex.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/downloads.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/first-commit.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/badges/ruvector.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/capabilities.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/card-learning.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/card-memory.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/card-plugins.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/card-routing.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/card-security.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/card-swarm.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/cognitum-banner-v2.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/console-icon-control.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/console-icon-inspect.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/console-icon-workflows.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/console.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/documentation.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/federation-flow.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/federation.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/generate-learning-cosmos.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/generate-learning-slideshow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/harness-explained.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/harness-origins.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/agents.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/audit.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/federation.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/learning.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/memory.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/network.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/plugins.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/routing.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/security.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/swarm.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/terminal.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/icons/workers.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-architecture-slideshow.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-cinematic-compact.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-cinematic.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-flow.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-hyperdimensions.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-trajectories-cosmos.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-vector-geometries.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/learning-vector-perspectives.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/make-ruvector-promo-v2.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/make-ruvector-promo.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/quick-start.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-capabilities-explorer.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-explorer-trailer.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-promo-card-v3.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-promo-card.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-promo-depth.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-promo-explorer-card.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-promo-v2.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/ruvector-promo.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/signal-divider.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/readme/support.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/ruflo-console-claude-control.gif",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/ruflo-console-theme-compact.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/ruflo-console-walkthrough-wide.gif",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/ruflo-console-workflows.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/ruflo-tui-compact.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/ruflo-tui-walkthrough.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/managed-cycle-admission.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/managed-dynamic-workflows.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/managed-learning-console.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/doctor-json.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dream-cycle/LEDGER.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-09-16.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-09-28.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-09-29.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-09.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-10.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-11.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-13.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-14.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-15.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-16.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-18.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-19.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-20.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-26.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/e2e-host-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/harness-origins.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/helpers-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/integrations/sgit-memory-checkpoints.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/memory/conditional-append.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/metaharness-user-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/validation/managed-dynamic-workflows.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

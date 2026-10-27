@@ -23,3 +23,7 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [get-md](https://github.com/Nano-Collective/get-md); analyzed commit `fdd24fd8d010557ad14de224c15da0f16f4e78c8`; commit date 2026-10-02T03:06:40Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--get-md.md).
+<!-- teamagent-analysis:end -->

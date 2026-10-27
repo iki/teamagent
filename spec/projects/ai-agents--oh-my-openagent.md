@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent); analyzed commit `94e954721ccb02fbcbc8bb583f9da1d244a0a06b`; commit date 2026-08-17T06:41:22+09:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-openagent.md).
+<!-- teamagent-analysis:end -->

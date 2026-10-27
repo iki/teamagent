@@ -1,0 +1,179 @@
+# agents-cli: change evidence
+
+Source: [agents-cli](https://github.com/google/agents-cli) · [Analysis](../../projects/ai-agents--agents-cli.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `2c3945901e8e5cc933fa94fa44d1d4aaf644b596`; commit date: 2026-09-30T11:14:13Z; review date: unknown; observed SHA: `f4e994044164ff6617f0799900dba0fc091ef0e3`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/agents-cli/compare/2c3945901e8e5cc933fa94fa44d1d4aaf644b596...f4e994044164ff6617f0799900dba0fc091ef0e3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [f4e994044164](https://github.com/google/agents-cli/commit/f4e994044164ff6617f0799900dba0fc091ef0e3) 2026-10-27T11:23:25+01:00: release v1.12.0 at 2026-10-27 10:23:25 UTC
+- [bea5875e38af](https://github.com/google/agents-cli/commit/bea5875e38afd84c5513ff14a9bc739286efe533) 2026-10-20T12:57:14Z: release v1.11.0 at 2026-10-20 12:57:14 UTC
+- [d445570c61fd](https://github.com/google/agents-cli/commit/d445570c61fd446487ea6623c5635b23aded237f) 2026-10-12T19:37:41Z: release v1.10.0 at 2026-10-12 19:37:40 UTC
+- [4b1189172dc8](https://github.com/google/agents-cli/commit/4b1189172dc8be0be53d52812e580148c9ad888e) 2026-10-06T14:00:40Z: release v1.9.0 at 2026-10-06 14:00:40 UTC
+
+## Changed paths (truncated)
+
+- M: `.claude-plugin/plugin.json`
+- M: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- M: `README.md`
+- M: `RELEASE_NOTES.md`
+- M: `docs/src/cli/index.md`
+- M: `docs/src/guide/authentication.md`
+- M: `docs/src/guide/cicd.md`
+- M: `docs/src/guide/deployment.md`
+- M: `docs/src/guide/development.md`
+- M: `docs/src/guide/evaluation.md`
+- M: `docs/src/guide/extensions/authoring.md`
+- M: `docs/src/guide/extensions/first-party.md`
+- M: `docs/src/guide/extensions/using.md`
+- M: `docs/src/guide/getting-started.md`
+- M: `docs/src/guide/hands-on-tutorial.md`
+- M: `docs/src/guide/lifecycle.md`
+- M: `docs/src/guide/observability/bq-agent-analytics.md`
+- M: `docs/src/guide/quickstart-tutorial.md`
+- M: `docs/src/guide/use-cases.md`
+- M: `docs/src/index.md`
+- M: `docs/src/javascripts/lifecycle.js`
+- M: `docs/src/reference/eval-dataset-migration.md`
+- M: `docs/src/reference/from-agent-starter-pack.md`
+- A: `extensions/claude/template/.agents/skills/agents-cli-claude/SKILL.md`
+- A: `extensions/claude/template/.agents/skills/agents-cli-claude/references/claude.md`
+- A: `extensions/claude/template/.agents/skills/agents-cli-claude/references/migrate-claude-agent.md`
+- A: `extensions/claude/template/.agents/skills/agents-cli-claude/references/migrate-from-aws.md`
+- A: `extensions/claude/template/.dockerignore`
+- A: `extensions/claude/template/.env`
+- A: `extensions/claude/template/.env.example`
+- A: `extensions/claude/template/.template/templateconfig.yaml`
+- A: `extensions/claude/template/AGENTS.md`
+- A: `extensions/claude/template/Dockerfile`
+- A: `extensions/claude/template/agent_config/README.md`
+- A: `extensions/claude/template/agents-cli-extension.yaml`
+- A: `extensions/claude/template/app/__init__.py`
+- A: `extensions/claude/template/app/agent.py`
+- A: `extensions/claude/template/app/app_utils/a2a.py`
+- A: `extensions/claude/template/app/app_utils/bq_analytics/__init__.py`
+- A: `extensions/claude/template/app/app_utils/bq_analytics/recorder.py`
+- A: `extensions/claude/template/app/app_utils/bq_analytics/redaction.py`
+- A: `extensions/claude/template/app/app_utils/bq_analytics/schema.py`
+- A: `extensions/claude/template/app/app_utils/bq_analytics/tables.py`
+- A: `extensions/claude/template/app/app_utils/bq_analytics/uploader.py`
+- A: `extensions/claude/template/app/app_utils/claude.py`
+- A: `extensions/claude/template/app/app_utils/completions.py`
+- A: `extensions/claude/template/app/app_utils/conversation.py`
+- A: `extensions/claude/template/app/app_utils/project_settings.py`
+- A: `extensions/claude/template/app/app_utils/reasoning_engine.py`
+- A: `extensions/claude/template/app/app_utils/remote_agents.py`
+- A: `extensions/claude/template/app/app_utils/remote_auth.py`
+- A: `extensions/claude/template/app/app_utils/replies.py`
+- A: `extensions/claude/template/app/app_utils/session_store.py`
+- A: `extensions/claude/template/app/app_utils/settings.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/__init__.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/call_counts.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/cli_relay.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/config.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/logs.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/metrics.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/request_flush.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/subagent_spans.py`
+- A: `extensions/claude/template/app/app_utils/telemetry/traces.py`
+- A: `extensions/claude/template/app/app_utils/turn_events.py`
+- A: `extensions/claude/template/app/app_utils/turn_options.py`
+- A: `extensions/claude/template/app/app_utils/workspaces.py`
+- A: `extensions/claude/template/app/fast_api_app.py`
+- A: `extensions/claude/template/pyproject.toml`
+- A: `extensions/claude/template/scripts/eval_generate.py`
+- A: `extensions/claude/template/scripts/publish.py`
+- A: `extensions/claude/template/scripts/run.py`
+- A: `extensions/claude/template/scripts/unsupported.py`
+- A: `extensions/claude/template/tests/eval/datasets/basic-dataset.json`
+- A: `extensions/claude/template/tests/eval/eval_config.yaml`
+- A: `extensions/claude/template/tests/eval/response_quality.py`
+- A: `extensions/claude/template/tests/integration/test_server_e2e.py`
+- A: `extensions/claude/template/tests/load_test/.results/.placeholder`
+- A: `extensions/claude/template/tests/load_test/README.md`
+- A: `extensions/claude/template/tests/load_test/load_test.py`
+- A: `extensions/claude/template/tests/unit/test_a2a.py`
+- A: `extensions/claude/template/tests/unit/test_bq_analytics.py`
+- A: `extensions/claude/template/tests/unit/test_bq_redaction.py`
+- A: `extensions/claude/template/tests/unit/test_claude.py`
+- A: `extensions/claude/template/tests/unit/test_completions.py`
+- A: `extensions/claude/template/tests/unit/test_reasoning_engine.py`
+- A: `extensions/claude/template/tests/unit/test_remote_agents.py`
+- A: `extensions/claude/template/tests/unit/test_telemetry.py`
+- A: `extensions/claude/template/tests/unit/test_turn_events.py`
+- R057: `extensions/claude/template/uv.lock` (from `src/google/agents/cli/scaffold/resources/locks/uv-adk-agent_runtime.lock`)
+- A: `extensions/claude/tests/test_claude_bq_analytics_schema.py`
+- A: `extensions/claude/tests/test_claude_eval_generate.py`
+- A: `extensions/claude/tests/test_claude_extension.py`
+- A: `extensions/claude/tests/test_claude_publish.py`
+- A: `extensions/claude/tests/test_claude_run.py`
+- M: `extensions/langchain/template/.agents/skills/agents-cli-langchain/SKILL.md`
+- M: `extensions/langchain/template/.agents/skills/agents-cli-langchain/references/langchain.md`
+- M: `extensions/langchain/template/.agents/skills/agents-cli-langchain/references/samples.md`
+- M: `extensions/langchain/template/.template/templateconfig.yaml`
+- M: `extensions/langchain/template/AGENTS.md`
+- M: `extensions/langchain/template/agents-cli-extension.yaml`
+- M: `extensions/langchain/template/app/__init__.py`
+- M: `extensions/langchain/template/app/agent.py`
+- M: `extensions/langchain/template/app/app_utils/a2a.py`
+- M: `extensions/langchain/template/app/app_utils/telemetry.py`
+- M: `extensions/langchain/template/pyproject.toml`
+- M: `extensions/langchain/template/scripts/eval_generate.py`
+- M: `extensions/langchain/template/scripts/publish.py`
+- M: `extensions/langchain/template/tests/eval/eval_config.yaml`
+- M: `extensions/langchain/template/tests/eval/response_quality.py`
+- M: `extensions/langchain/template/uv.lock`
+- M: `extensions/langchain/tests/test_eval_generate.py`
+- M: `gemini-extension.json`
+- M: `plugin.json`
+- M: `schemas/agents-cli-extension-v1alpha1.schema.json`
+- M: `skills/README.md`
+- M: `skills/google-agents-cli-adk-code/SKILL.md`
+- M: `skills/google-agents-cli-adk-code/references/adk-go.md`
+- M: `skills/google-agents-cli-adk-code/references/adk-python-live.md`
+- M: `skills/google-agents-cli-adk-code/references/adk-python.md`
+- R077: `skills/google-agents-cli-adk-code/references/recipes.md` (from `skills/google-agents-cli-adk-code/references/samples.md`)
+- M: `skills/google-agents-cli-deploy/SKILL.md`
+- M: `skills/google-agents-cli-deploy/references/agent-runtime.md`
+- M: `skills/google-agents-cli-deploy/references/cloud-run.md`
+- A: `skills/google-agents-cli-deploy/references/cmek.md`
+- M: `skills/google-agents-cli-deploy/references/gke.md`
+- M: `skills/google-agents-cli-deploy/references/testing-deployed-agents.md`
+- M: `skills/google-agents-cli-eval/SKILL.md`
+- M: `skills/google-agents-cli-eval/references/advanced-commands.md`
+- M: `skills/google-agents-cli-eval/references/dataset_schema.md`
+- M: `skills/google-agents-cli-eval/references/live-eval.md`
+- M: `skills/google-agents-cli-eval/references/metrics-guide.md`
+- M: `skills/google-agents-cli-eval/references/user-simulation.md`
+- M: `skills/google-agents-cli-observability/SKILL.md`
+- M: `skills/google-agents-cli-observability/references/bigquery-agent-analytics.md`
+- M: `skills/google-agents-cli-observability/references/cloud-trace-and-logging.md`
+- M: `skills/google-agents-cli-publish/SKILL.md`
+- M: `skills/google-agents-cli-scaffold/SKILL.md`
+- M: `skills/google-agents-cli-scaffold/references/flags.md`
+- M: `skills/google-agents-cli-workflow/SKILL.md`
+- M: `skills/google-agents-cli-workflow/references/brainstorming.md`
+- M: `skills/google-agents-cli-workflow/references/commands.md`
+- M: `skills/google-agents-cli-workflow/references/extension.md`
+- M: `skills/google-agents-cli-workflow/references/internals.md`
+- M: `skills/google-agents-cli-workflow/references/spec-template.md`
+- M: `skills/google-agents-cli-workflow/references/terminology.md`
+- M: `src/google/agents/cli/_agent_platform.py`
+- A: `src/google/agents/cli/_agent_platform_types.py`
+- M: `src/google/agents/cli/_click.py`
+- M: `src/google/agents/cli/_experiments.py`
+- A: `src/google/agents/cli/_fs.py`
+- A: `src/google/agents/cli/_git.py`
+- M: `src/google/agents/cli/_output.py`
+- M: `src/google/agents/cli/_project.py`
+- M: `src/google/agents/cli/_remote.py`
+- M: `src/google/agents/cli/_runner.py`
+- A: `src/google/agents/cli/_sdk_compat.py`
+- M: `src/google/agents/cli/_skills_check.py`
+- M: `src/google/agents/cli/_telemetry.py`
+- M: `src/google/agents/cli/_tools.py`
+- A: `src/google/agents/cli/_uv_index.py`

@@ -1,0 +1,207 @@
+# deeptutor: change evidence
+
+Source: [deeptutor](https://github.com/HKUDS/DeepTutor) · [Analysis](../../projects/ai-agents--deeptutor.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `ef2d9e5c3c99fd073742c5aadc2bb9584b1e503b`; commit date: 2026-09-27T13:34:05+08:00; review date: unknown; observed SHA: `a31d82624c27d75f4e771d4fcb78dce16470b383`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/HKUDS/DeepTutor/compare/ef2d9e5c3c99fd073742c5aadc2bb9584b1e503b...a31d82624c27d75f4e771d4fcb78dce16470b383). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [a31d82624c27](https://github.com/HKUDS/DeepTutor/commit/a31d82624c27d75f4e771d4fcb78dce16470b383) 2026-10-19T04:12:56+08:00: release: v1.6.15
+- [0aa12fdfb6ba](https://github.com/HKUDS/DeepTutor/commit/0aa12fdfb6babe6fd541e61fdeff84f31a0d5bd2) 2026-10-19T03:44:57+08:00: fix(mastery): explain failed source repair in the session language (#1902)
+- [4fe1b5b24a5f](https://github.com/HKUDS/DeepTutor/commit/4fe1b5b24a5f7b479f43f44f24f33b2709fa0500) 2026-10-19T03:44:51+08:00: fix(mastery): finish bounded memory and count preparation usage (#1920, #1926)
+- [c49d130d5c26](https://github.com/HKUDS/DeepTutor/commit/c49d130d5c267aaaa3333fdf377cc2fe28dee7e8) 2026-10-19T03:29:21+08:00: fix(mastery): stream localized lesson preparation progress (#1902)
+- [df7621d3acda](https://github.com/HKUDS/DeepTutor/commit/df7621d3acdad839cb8435d87bf1d3f034a09180) 2026-10-19T03:29:21+08:00: fix(settings): preserve actionable apply and usage errors (#1984, #1907)
+- [54b2ee8e8387](https://github.com/HKUDS/DeepTutor/commit/54b2ee8e83878f588c50aea5de898d3bfb525b7c) 2026-10-19T03:29:21+08:00: fix(web): keep indexing cancellation scoped to its run (#1972)
+- [c812cbffd5e1](https://github.com/HKUDS/DeepTutor/commit/c812cbffd5e1901031d5f31b91124af146ad650e) 2026-10-19T03:29:21+08:00: test(parsing): verify MinerU process cleanup on Windows (#1903)
+- [e98e3d75587b](https://github.com/HKUDS/DeepTutor/commit/e98e3d75587b203d4966482029109e2f7e501653) 2026-10-19T03:29:21+08:00: fix(rag): isolate unreadable PDF evidence during KB indexing (#1982)
+- [e28c8036361c](https://github.com/HKUDS/DeepTutor/commit/e28c8036361c2fe139a0bbf3aa50b895a814396e) 2026-10-19T03:29:21+08:00: fix(runtime): persist live prefixes and reclaim completed streams (#1971)
+- [8a228e40f795](https://github.com/HKUDS/DeepTutor/commit/8a228e40f7951ae545674ee6310f9e3e6e94df9a) 2026-10-19T02:57:26+08:00: fix(settings): serialize catalog migration reads with updates (#1984)
+- [e63bb09e6c40](https://github.com/HKUDS/DeepTutor/commit/e63bb09e6c401dac225759891fec8c957c94766e) 2026-10-19T02:57:26+08:00: fix(mastery): budget distinct pixels in grouped assessments (#1901)
+- [148bb1ec26e0](https://github.com/HKUDS/DeepTutor/commit/148bb1ec26e052ec3cd8fd518113df85ed56f900) 2026-10-19T02:57:26+08:00: fix(mastery): refresh lesson intent and preserve source diagnostics (#1902)
+- [a509ec2362c6](https://github.com/HKUDS/DeepTutor/commit/a509ec2362c689958b8702c569967edf6b1c2e52) 2026-10-19T02:10:06+08:00: fix(settings): explain denied catalog writes without losing drafts (#1984)
+- [35cea5618731](https://github.com/HKUDS/DeepTutor/commit/35cea5618731e2086f5341a3fe056e381ae729dc) 2026-10-19T02:10:06+08:00: fix(parsing): isolate native MinerU failures during KB indexing (#1982)
+- [c3b98baf346a](https://github.com/HKUDS/DeepTutor/commit/c3b98baf346ab9a7f32be2ce7680a932d106adf3) 2026-10-19T01:52:28+08:00: fix(parsing): align MinerU deadlines and retain terminal errors (#1982)
+- [ce48fc2d4c2f](https://github.com/HKUDS/DeepTutor/commit/ce48fc2d4c2f89e8d0500ee95854893f0ee4e541) 2026-10-19T01:52:28+08:00: fix(math-animator): stop truncation retries at the output ceiling (#1914)
+- [ab34b71d42c9](https://github.com/HKUDS/DeepTutor/commit/ab34b71d42c913381b510776b4889230b59444c0) 2026-10-19T01:52:23+08:00: fix(auth): respect learner grants in learning navigation (#1987)
+- [784de5fa6d6b](https://github.com/HKUDS/DeepTutor/commit/784de5fa6d6b04d62d720662695e04fbf8314996) 2026-10-19T01:17:50+08:00: fix: align integrated mastery catalog and regression fixtures
+- [4b9b73a73f5c](https://github.com/HKUDS/DeepTutor/commit/4b9b73a73f5c870d906fe02e21536c281fd5f654) 2026-10-19T01:11:31+08:00: perf(chat): load specialized teaching and handoff cards only when present
+- [261206460f4e](https://github.com/HKUDS/DeepTutor/commit/261206460f4ee603504eb720d1766eaa4e88133d) 2026-10-19T01:07:32+08:00: test(chat): align recovery integration checks with account-scoped causal retries
+- [583bdfc714e2](https://github.com/HKUDS/DeepTutor/commit/583bdfc714e2118495e57771dd4a8920126f373e) 2026-10-19T01:03:40+08:00: Merge PR #1945: fence edited submissions and isolate recovery by account and backend support
+- [8b73efbaeb87](https://github.com/HKUDS/DeepTutor/commit/8b73efbaeb8761d0c15037a47f46ab572a8c4316) 2026-10-19T00:59:30+08:00: Merge PR #1958: stabilize cached prefixes with bounded sources and complete summary accounting
+- [1497994c9f9b](https://github.com/HKUDS/DeepTutor/commit/1497994c9f9b2b887fb254244db0ed4e0de86789) 2026-10-19T00:57:48+08:00: Merge PR #1938: bound tutoring history and retain exact recall when condensation fails
+- [9aae961412b0](https://github.com/HKUDS/DeepTutor/commit/9aae961412b0fc6dd7bc9c8986ee23642b0d3278) 2026-10-19T00:53:44+08:00: Merge PR #1957: separate private source evidence from explicit public presentation
+- [3196b6d792cb](https://github.com/HKUDS/DeepTutor/commit/3196b6d792cb21116029745c9b0b0e26014c45f7) 2026-10-19T00:48:43+08:00: Merge PR #1954: prepare source evidence through a generic capability prerequisite contract
+- [0fd8dc838417](https://github.com/HKUDS/DeepTutor/commit/0fd8dc838417b00f3579a958e8dfe767926e88be) 2026-10-19T00:43:33+08:00: Merge PR #1953: source-bound assessment with portable lexical page lookup
+- [59cdd811705e](https://github.com/HKUDS/DeepTutor/commit/59cdd811705e858225c60b27b935db820a5c16c1) 2026-10-19T00:40:44+08:00: Merge PR #1943: preserve grouped questions through reviewed outline revisions
+- [ba899ffc68e9](https://github.com/HKUDS/DeepTutor/commit/ba899ffc68e98ae1878cc8b67b43fb4e49351ea2) 2026-10-19T00:38:00+08:00: Merge PR #1939: review outline changes before atomic commit
+- [61719b18de30](https://github.com/HKUDS/DeepTutor/commit/61719b18de30b4758046d0de63c918fd63beca8f) 2026-10-19T00:36:32+08:00: Merge PR #1952: verify teaching delivery alongside durable feedback
+- [9ca096b45610](https://github.com/HKUDS/DeepTutor/commit/9ca096b4561005929d93dad1c604afaf16022af1) 2026-10-19T00:35:33+08:00: fix(mastery): localize learner profile persistence notices
+- [f976208e2c25](https://github.com/HKUDS/DeepTutor/commit/f976208e2c25865567daa5dba192fa13ae86b243) 2026-10-19T00:35:25+08:00: Merge pull request #1936 from yepyhun/contrib/mastery-teaching-guide
+- [ef3cb3e36124](https://github.com/HKUDS/DeepTutor/commit/ef3cb3e36124171c5008a0b56f011fe4433ff8c2) 2026-10-19T00:34:38+08:00: fix(chat): retain unsent messages when durable dismissal fails
+
+## Changed paths (truncated)
+
+- A: `.github/tdd/mastery-group-delivery-resume.md`
+- A: `.github/tdd/mastery-memory-route.md`
+- A: `.github/tdd/mastery-teaching-delivery.md`
+- M: `.github/workflows/tests.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `README.md`
+- M: `SKILL.md`
+- M: `assets/README/README_AR.md`
+- M: `assets/README/README_CN.md`
+- M: `assets/README/README_ES.md`
+- M: `assets/README/README_FR.md`
+- M: `assets/README/README_HI.md`
+- M: `assets/README/README_JA.md`
+- M: `assets/README/README_PL.md`
+- M: `assets/README/README_PT.md`
+- M: `assets/README/README_RU.md`
+- M: `assets/README/README_TH.md`
+- M: `assets/README/README_TW.md`
+- A: `assets/figs/web-1.6.12/settings/00-general-overview.png`
+- A: `assets/figs/web-1.6.12/settings/01-runtime-status-readiness.png`
+- A: `assets/figs/web-1.6.12/settings/02-workspace-create.png`
+- A: `assets/figs/web-1.6.12/settings/03-provider-connection-api-format.png`
+- A: `assets/figs/web-1.6.12/settings/04-model-list-picker.png`
+- A: `assets/figs/web-1.6.12/settings/05-model-capabilities.png`
+- M: `assets/releases/past_releases/ver1-5-16.md`
+- M: `assets/releases/past_releases/ver1-6-1.md`
+- R100: `assets/releases/past_releases/ver1-6-10.md` (from `assets/releases/ver1-6-10.md`)
+- R100: `assets/releases/past_releases/ver1-6-11.md` (from `assets/releases/ver1-6-11.md`)
+- R100: `assets/releases/past_releases/ver1-6-12.md` (from `assets/releases/ver1-6-12.md`)
+- A: `assets/releases/past_releases/ver1-6-13.md`
+- A: `assets/releases/past_releases/ver1-6-14.md`
+- R093: `assets/releases/past_releases/ver1-6-9.md` (from `assets/releases/ver1-6-9.md`)
+- A: `assets/releases/ver1-6-15.md`
+- M: `deeptutor/__version__.py`
+- M: `deeptutor/agents/_shared/tool_composition.py`
+- M: `deeptutor/agents/chat/prompts/en/agentic_chat.yaml`
+- M: `deeptutor/agents/chat/prompts/zh/agentic_chat.yaml`
+- M: `deeptutor/agents/loop/agent_loop.py`
+- M: `deeptutor/agents/loop/context_budget.py`
+- M: `deeptutor/agents/loop/pipeline.py`
+- M: `deeptutor/agents/loop/prompt_blocks.py`
+- M: `deeptutor/agents/math_animator/agents/code_generator_agent.py`
+- M: `deeptutor/agents/research/capability.py`
+- M: `deeptutor/agents/research/pipeline.py`
+- M: `deeptutor/agents/research/prompts/en/pipeline.yaml`
+- M: `deeptutor/agents/research/prompts/zh/pipeline.yaml`
+- M: `deeptutor/agents/visualize/agents/analysis_agent.py`
+- M: `deeptutor/agents/visualize/agents/code_generator_agent.py`
+- M: `deeptutor/agents/visualize/models.py`
+- M: `deeptutor/agents/visualize/prompts/en/code_generator_agent.yaml`
+- M: `deeptutor/agents/visualize/prompts/zh/code_generator_agent.yaml`
+- M: `deeptutor/agents/visualize/utils.py`
+- M: `deeptutor/api/main.py`
+- M: `deeptutor/api/routers/auth.py`
+- M: `deeptutor/api/routers/co_writer.py`
+- M: `deeptutor/api/routers/dashboard.py`
+- M: `deeptutor/api/routers/knowledge.py`
+- A: `deeptutor/api/routers/learning_journal.py`
+- M: `deeptutor/api/routers/mastery_path.py`
+- A: `deeptutor/api/routers/plugins.py`
+- M: `deeptutor/api/routers/question.py`
+- M: `deeptutor/api/routers/quiz_judge.py`
+- M: `deeptutor/api/routers/reading.py`
+- M: `deeptutor/api/routers/reading_extensions.py`
+- M: `deeptutor/api/routers/sessions.py`
+- M: `deeptutor/api/routers/settings.py`
+- M: `deeptutor/api/routers/subagents.py`
+- M: `deeptutor/api/routers/task_board.py`
+- M: `deeptutor/api/routers/video_learning.py`
+- M: `deeptutor/api/routers/voice.py`
+- M: `deeptutor/api/routers/workspace.py`
+- A: `deeptutor/api/security_guard.py`
+- M: `deeptutor/api/utils/tool_options.py`
+- M: `deeptutor/app/facade.py`
+- M: `deeptutor/app/service.py`
+- M: `deeptutor/book/kb_health.py`
+- M: `deeptutor/capabilities/explore_context/explorer.py`
+- M: `deeptutor/capabilities/explore_context/prompts/en/explore_context.yaml`
+- M: `deeptutor/capabilities/explore_context/prompts/zh/explore_context.yaml`
+- A: `deeptutor/capabilities/mastery/history.py`
+- M: `deeptutor/capabilities/mastery/loop.py`
+- A: `deeptutor/capabilities/mastery/memory.py`
+- M: `deeptutor/capabilities/mastery/mode.py`
+- M: `deeptutor/capabilities/mastery/pipeline.py`
+- M: `deeptutor/capabilities/mastery/prompts/en/mastery_loop.yaml`
+- M: `deeptutor/capabilities/mastery/prompts/zh/mastery_loop.yaml`
+- M: `deeptutor/capabilities/mastery/tools.py`
+- M: `deeptutor/capabilities/obsidian/vault.py`
+- A: `deeptutor/capabilities/prompts/en/turn_status.yaml`
+- A: `deeptutor/capabilities/prompts/zh/turn_status.yaml`
+- M: `deeptutor/capabilities/protocol.py`
+- M: `deeptutor/capabilities/reading/prompts/en/reading.yaml`
+- M: `deeptutor/capabilities/reading/prompts/zh/reading.yaml`
+- M: `deeptutor/capabilities/registry.py`
+- M: `deeptutor/capabilities/solve/session.py`
+- M: `deeptutor/capabilities/solve/tools.py`
+- D: `deeptutor/capabilities/watching/__init__.py`
+- D: `deeptutor/capabilities/watching/capability.py`
+- D: `deeptutor/capabilities/watching/mode.py`
+- M: `deeptutor/co_writer/docx_converter.py`
+- M: `deeptutor/core/capability_protocol.py`
+- M: `deeptutor/core/context.py`
+- M: `deeptutor/core/tool_protocol.py`
+- M: `deeptutor/core/turn_request.py`
+- A: `deeptutor/knowledge/indexing_run.py`
+- M: `deeptutor/knowledge/initializer.py`
+- M: `deeptutor/knowledge/manager.py`
+- M: `deeptutor/learning/assessment.py`
+- A: `deeptutor/learning/lesson_evidence.py`
+- M: `deeptutor/learning/mastery.py`
+- M: `deeptutor/learning/models.py`
+- A: `deeptutor/learning/outline_revision.py`
+- M: `deeptutor/learning/pending.py`
+- M: `deeptutor/learning/policy.py`
+- M: `deeptutor/learning/question_card.py`
+- M: `deeptutor/learning/scheduler.py`
+- A: `deeptutor/learning/semantic_assessment.py`
+- M: `deeptutor/learning/service.py`
+- M: `deeptutor/learning/storage.py`
+- A: `deeptutor/learning/teaching.py`
+- M: `deeptutor/learning/tests/test_api_endpoints.py`
+- M: `deeptutor/learning/tests/test_guided_mastery_updates.py`
+- M: `deeptutor/learning/tests/test_mastery_mode.py`
+- A: `deeptutor/learning/tests/test_mastery_revise_batch.py`
+- M: `deeptutor/learning/tests/test_mastery_state_integrity.py`
+- M: `deeptutor/learning/tests/test_mastery_tools.py`
+- A: `deeptutor/learning/tests/test_read_snapshots.py`
+- M: `deeptutor/learning/tests/test_scheduler.py`
+- M: `deeptutor/learning/tests/test_topic_generation.py`
+- A: `deeptutor/learning/tests/test_visual_learning_workflow.py`
+- M: `deeptutor/learning/topic_generation.py`
+- A: `deeptutor/learning/visual_practice.py`
+- M: `deeptutor/logging/configure.py`
+- M: `deeptutor/multi_user/grants.py`
+- M: `deeptutor/multi_user/knowledge_access.py`
+- M: `deeptutor/multi_user/learning_access.py`
+- M: `deeptutor/multi_user/model_access.py`
+- M: `deeptutor/multi_user/paths.py`
+- M: `deeptutor/multi_user/session_handoff.py`
+- M: `deeptutor/partners/bus/queue.py`
+- M: `deeptutor/partners/channels/dingtalk.py`
+- M: `deeptutor/partners/channels/feishu.py`
+- A: `deeptutor/partners/channels/lark_http.py`
+- M: `deeptutor/partners/channels/manager.py`
+- M: `deeptutor/partners/channels/matrix.py`
+- M: `deeptutor/partners/channels/mochat.py`
+- M: `deeptutor/partners/channels/telegram.py`
+- A: `deeptutor/plugins/catalog.json`
+- A: `deeptutor/plugins/catalog.py`
+- A: `deeptutor/plugins/distribution.py`
+- R082: `deeptutor/plugins/entry_points.py` (from `deeptutor/core/entry_points.py`)
+- A: `deeptutor/plugins/frontend.py`
+- A: `deeptutor/plugins/lifecycle.py`
+- M: `deeptutor/plugins/loader.py`
+- A: `deeptutor/plugins/manifest.py`
+- A: `deeptutor/plugins/registry.py`
+- A: `deeptutor/plugins/runtime.py`
+- A: `deeptutor/plugins/transactions.py`
+- M: `deeptutor/reading/captions.py`

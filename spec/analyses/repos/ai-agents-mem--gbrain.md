@@ -1,0 +1,207 @@
+# gbrain: change evidence
+
+Source: [gbrain](https://github.com/garrytan/gbrain) · [Analysis](../../projects/ai-agents-mem--gbrain.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `109b992172e1f49107f9de9841758c1d043a2668`; commit date: 2026-10-03T19:41:11Z; review date: unknown; observed SHA: `75c64150d725c0aeceb70446131ff036746959e2`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/garrytan/gbrain/compare/109b992172e1f49107f9de9841758c1d043a2668...75c64150d725c0aeceb70446131ff036746959e2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [75c64150d725](https://github.com/garrytan/gbrain/commit/75c64150d725c0aeceb70446131ff036746959e2) 2026-10-27T16:34:53Z: Merge pull request #7746 from garrytan/capy/gbra176-door-index-lock
+- [adebc976873b](https://github.com/garrytan/gbrain/commit/adebc976873b48ee365a7fb3b8a80e0ef93724c8) 2026-10-27T13:59:05Z: chore: bump version and changelog (v0.60.473.0)
+- [85460f0008c1](https://github.com/garrytan/gbrain/commit/85460f0008c13a31081297c1f761a330408fef8a) 2026-10-27T13:59:05Z: docs: key-files entry for the door's index refresh names the abandoned-lock reclaim (#7742)
+- [478f5be4ce36](https://github.com/garrytan/gbrain/commit/478f5be4ce3654a87f8d98b3e699bd4773b78270) 2026-10-27T13:50:15Z: fix(door): build the effect session's Git env in the call so the env guard sees it is scrubbed (#7742)
+- [3688d30ee836](https://github.com/garrytan/gbrain/commit/3688d30ee8369a8bbc2cf49edd4efbf388ab90c3) 2026-10-27T12:35:12Z: fix: pre-landing review fixes for the door's locked index refresh (#7742)
+- [dba58bfa68ab](https://github.com/garrytan/gbrain/commit/dba58bfa68ab406a2feb1328abbd7343d9384447) 2026-10-27T06:38:27Z: test(door): run the index-lock test's Postgres arm in a Postgres lane, and cover a linked worktree's own index lock (#7742)
+- [f09fbe25918f](https://github.com/garrytan/gbrain/commit/f09fbe25918f747d0898d478cc94bf9bd1c76c07) 2026-10-27T06:19:15Z: fix(door): refresh the index under Git's index lock, so a stage can't land between the compare and the write (#7742)
+- [beb49f3278f7](https://github.com/garrytan/gbrain/commit/beb49f3278f70e3a1b88f24077c6e25353acd42e) 2026-10-27T05:00:17Z: Merge pull request #7681 from garrytan/capy/gbra210-orphaned-refresh
+- [d78dd7786882](https://github.com/garrytan/gbrain/commit/d78dd778688219d5127bf6059f00cf3f06a0a3e7) 2026-10-27T04:23:44Z: test(stress): pin the shape of scripts/stress/iteration-weights.json (sorted test paths, positive whole milliseconds), so the weights file has a test lane
+- [6361d4832569](https://github.com/garrytan/gbrain/commit/6361d4832569ae223d338b4f6a1f962950fdca32) 2026-10-27T04:03:18Z: ci(stress): measured stress iteration weights for the worktree-refresh files (persistence-worktree-refresh 149.7 s median of 10 and e2e worktree-refresh-postgres 102 s median of 5 in run 40443629790, job 121990358810; orphan-7679 31.1 s and gbra130 6.4 s medians of 3 local --postgres iterations), so
+- [c33361223e84](https://github.com/garrytan/gbrain/commit/c33361223e848b8ea6ad144d3560012c6391c2ce) 2026-10-27T03:13:16Z: v0.60.472.0 chore(release): restamp onto master v0.60.471.0
+- [3a6181ca260a](https://github.com/garrytan/gbrain/commit/3a6181ca260a1108e375b8103e878d18e002e19a) 2026-10-27T03:13:04Z: chore: bump version and changelog (v0.60.472.0)
+- [a95b81073d1f](https://github.com/garrytan/gbrain/commit/a95b81073d1fc7d73b13971aa232452bb9c0aec9) 2026-10-27T03:11:48Z: Merge remote-tracking branch 'origin/master' into capy/gbra210-orphaned-refresh
+- [f56b5e7947e7](https://github.com/garrytan/gbrain/commit/f56b5e7947e73550d3b969ffe50cd5f8a74874c9) 2026-10-27T03:06:20Z: Merge pull request #7684 from garrytan/capy/gbra176-full-episode-skip-current
+- [fa0ece015e04](https://github.com/garrytan/gbrain/commit/fa0ece015e0454fa06f7a859be1ded4fc46bcf8b) 2026-10-27T01:51:06Z: docs: an orphaned worktree refresh recovers on the next refresh; another host's holder is never adopted (#7679)
+- [376147f72139](https://github.com/garrytan/gbrain/commit/376147f72139eceed94b368fbef8a4d851dc1e3b) 2026-10-27T01:42:54Z: v0.60.471.0 chore(release): restamp onto master v0.60.470.0
+- [6e30dae3ea0a](https://github.com/garrytan/gbrain/commit/6e30dae3ea0ae12916b668cea4461161a53c7725) 2026-10-27T01:42:41Z: chore: bump version and changelog (v0.60.471.0)
+- [2ed6e3c9ba9d](https://github.com/garrytan/gbrain/commit/2ed6e3c9ba9d3899096435152d7b204b09e7ef27) 2026-10-27T01:38:48Z: fix: owner scan re-checks a cached lagging orphan after a minute, so a git failure is never a permanent verdict (#7679)
+- [26be70f71b2b](https://github.com/garrytan/gbrain/commit/26be70f71b2b27543a5e63545ac4cd53d47ed1e1) 2026-10-27T01:18:59Z: test: state-matrix cell for an orphaned syncing refresh at a descendant HEAD (#7679)
+- [1230522b15d3](https://github.com/garrytan/gbrain/commit/1230522b15d34d3f2e8f7bcc8c36c3bd1919cb7c) 2026-10-27T01:16:09Z: chore: bump version and changelog (v0.60.471.0)
+- [be1372204d18](https://github.com/garrytan/gbrain/commit/be1372204d18c91c030b6a68117c6391ecaaba85) 2026-10-27T01:16:09Z: docs: conditional git_target_changed hold; reparse under an open episode only for pages not already current
+- [57bbfdc8277b](https://github.com/garrytan/gbrain/commit/57bbfdc8277bc24c596003b25da43db75a584832) 2026-10-27T01:09:51Z: fix: pre-landing review fixes (#7679): state-matrix tests for every orphan kind, holder bookkeeping, unattended owner scan, status fix/next agreement
+- [3f391955d0eb](https://github.com/garrytan/gbrain/commit/3f391955d0eb0e456d278cdf53db73e8d40f0ddb) 2026-10-27T00:58:17Z: fix(git-door): compare HEAD's entry in index mode; conditional git_target_changed advice
+- [9a411df4d286](https://github.com/garrytan/gbrain/commit/9a411df4d28686172fead6d1a9eb965b9df58116) 2026-10-27T00:58:17Z: test: waiver suites reach the waiver through an owed reparse; --full admits current pages in place (GBRA-176)
+- [eea24a7e5ced](https://github.com/garrytan/gbrain/commit/eea24a7e5ced1f1c087ffd23299763337df5be16) 2026-10-27T00:58:16Z: test: excludesFile and include edges of the ignore filter; a code or segmented page reparses under a full episode
+- [602c269f3cc2](https://github.com/garrytan/gbrain/commit/602c269f3cc22194531132184887ca6af95a074c) 2026-10-27T00:02:36Z: Merge remote-tracking branch 'origin/master' into capy/gbra176-full-episode-skip-current
+- [eca6b9c5c31b](https://github.com/garrytan/gbrain/commit/eca6b9c5c31ba8c4f09807e1c0ac71f848d6d1de) 2026-10-27T00:01:49Z: docs(changelog): Unreleased entry for the planned-state door, the ignore filter and full-episode skips; behavior row since TBD until the slot stamp
+- [b354430e3118](https://github.com/garrytan/gbrain/commit/b354430e31186ba2a59185857a323fe4031718af) 2026-10-27T00:01:49Z: chore: regenerate the CLI flag registry
+- [ba7dc1f0dc0d](https://github.com/garrytan/gbrain/commit/ba7dc1f0dc0de1256784d2b38a43f135d4d632a8) 2026-10-27T00:01:49Z: docs: the door commits the planned state; key-files entries for git-door and ignore-rules
+- [84b96abc481c](https://github.com/garrytan/gbrain/commit/84b96abc481cd8de9a535e743e79812b0290244f) 2026-10-27T00:00:14Z: Merge remote-tracking branch 'origin/master' into capy/gbra210-orphaned-refresh
+- [0f2d85c4f2cc](https://github.com/garrytan/gbrain/commit/0f2d85c4f2cc8dbc891f9434ac0d0da7ce9aff26) 2026-10-26T23:59:23Z: Merge pull request #7642 from garrytan/capy/gbra95-guard-definer
+- [c7440036c1fc](https://github.com/garrytan/gbrain/commit/c7440036c1fc23800aef452bfcc1f4ec366ecdc0) 2026-10-26T23:45:54Z: fix: pre-landing review fixes (pass 2)
+
+## Changed paths (truncated)
+
+- M: `.claude-plugin/plugin.json`
+- M: `.codex-plugin/mcp.json`
+- M: `.codex-plugin/plugin.json`
+- M: `.gitattributes`
+- A: `.github/nightly-known-red.tsv`
+- A: `.github/workflows/ci-health.yml`
+- A: `.github/workflows/convergence-nightly.yml`
+- M: `.github/workflows/e2e.yml`
+- A: `.github/workflows/fix-wave-closeout.yml`
+- A: `.github/workflows/fix-wave-gate.yml`
+- A: `.github/workflows/full-ci.yml`
+- M: `.github/workflows/heavy-tests.yml`
+- M: `.github/workflows/macos-validation.yml`
+- M: `.github/workflows/native-locks.yml`
+- A: `.github/workflows/nightly-watch.yml`
+- M: `.github/workflows/osv-scanner.yml`
+- M: `.github/workflows/persistence-validation.yml`
+- A: `.github/workflows/production-soak.yml`
+- A: `.github/workflows/promote-stable.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/scale-tier.yml`
+- M: `.github/workflows/semgrep.yml`
+- A: `.github/workflows/stress.yml`
+- A: `.github/workflows/sync-freshness-gate.yml`
+- M: `.github/workflows/test.yml`
+- A: `.github/workflows/tla-spec.yml`
+- M: `.gitignore`
+- M: `.gitleaks.toml`
+- M: `.gitleaksignore`
+- A: `.gstack/pregate.json`
+- A: `.gstack/ship-policy.json`
+- M: `AGENTS.md`
+- M: `BOOTSTRAP_FOR_AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `INSTALL_FOR_AGENTS.md`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `TODOS.md`
+- M: `VERSION`
+- M: `admin/bun.lock`
+- A: `admin/dist/assets/index-B9c8JuNx.js`
+- D: `admin/dist/assets/index-BIUmQPmn.js`
+- A: `admin/dist/assets/index-CaaGFcPc.js`
+- M: `admin/dist/index.html`
+- M: `admin/e2e/admin.pw.ts`
+- M: `admin/e2e/server.ts`
+- M: `admin/package.json`
+- M: `admin/src/api.ts`
+- M: `admin/src/lib/scope-constants.ts`
+- A: `admin/src/lib/visibility-poll.ts`
+- M: `admin/src/pages/Agents.tsx`
+- M: `admin/src/pages/Dashboard.tsx`
+- M: `admin/src/pages/OAuthConsent.tsx`
+- M: `bun.lock`
+- M: `bunfig.toml`
+- A: `dbg-tmp.ts`
+- M: `docker-compose.ci.yml`
+- M: `docs/ENGINES.md`
+- M: `docs/GBRAIN_RECOMMENDED_SCHEMA.md`
+- M: `docs/GBRAIN_SKILLPACK.md`
+- M: `docs/GBRAIN_VERIFY.md`
+- M: `docs/INSTALL.md`
+- M: `docs/RELEASING.md`
+- M: `docs/TESTING.md`
+- M: `docs/TOOL_CATALOG.md`
+- M: `docs/UPGRADING_DOWNSTREAM_AGENTS.md`
+- M: `docs/ai-providers/claude-cli.md`
+- A: `docs/ai-providers/google.md`
+- M: `docs/ai-providers/llama-server-reranker.md`
+- M: `docs/ai-providers/typesafe.md`
+- M: `docs/architecture/KEY_FILES.md`
+- M: `docs/architecture/RETRIEVAL.md`
+- M: `docs/architecture/brains-and-sources.md`
+- M: `docs/architecture/canonical-writers.md`
+- M: `docs/architecture/canonical-writers.tsv`
+- M: `docs/architecture/conversation-parser-patterns.md`
+- A: `docs/architecture/coordinated-writes.tsv`
+- A: `docs/architecture/derived-census.tsv`
+- A: `docs/architecture/generations.md`
+- M: `docs/architecture/key-files/agent-bootstrap-continued.md`
+- M: `docs/architecture/key-files/agent-bootstrap.md`
+- A: `docs/architecture/key-files/agent-contract.md`
+- A: `docs/architecture/key-files/ambient-capture.md`
+- A: `docs/architecture/key-files/belief-ledger.md`
+- M: `docs/architecture/key-files/canonical-reconciliation.md`
+- A: `docs/architecture/key-files/ci-health-and-test-guards.md`
+- M: `docs/architecture/key-files/commands-1.md`
+- M: `docs/architecture/key-files/commands-2-continued.md`
+- M: `docs/architecture/key-files/commands-2.md`
+- A: `docs/architecture/key-files/commands-3-continued.md`
+- M: `docs/architecture/key-files/commands-3.md`
+- A: `docs/architecture/key-files/commands-4-continued.md`
+- M: `docs/architecture/key-files/commands-4.md`
+- M: `docs/architecture/key-files/commands-5.md`
+- M: `docs/architecture/key-files/commands-6.md`
+- A: `docs/architecture/key-files/commit-notifier.md`
+- M: `docs/architecture/key-files/company-brain.md`
+- A: `docs/architecture/key-files/core-ai-continued.md`
+- M: `docs/architecture/key-files/core-ai.md`
+- M: `docs/architecture/key-files/core-cycle-continued.md`
+- A: `docs/architecture/key-files/core-cycle-patterns.md`
+- A: `docs/architecture/key-files/core-cycle-primitive.md`
+- M: `docs/architecture/key-files/core-cycle.md`
+- M: `docs/architecture/key-files/core-decide.md`
+- A: `docs/architecture/key-files/core-fence-repair.md`
+- A: `docs/architecture/key-files/core-memory.md`
+- M: `docs/architecture/key-files/core-minions-1.md`
+- M: `docs/architecture/key-files/core-minions-2.md`
+- A: `docs/architecture/key-files/core-persistence-capacity.md`
+- M: `docs/architecture/key-files/core-persistence-continued.md`
+- A: `docs/architecture/key-files/core-persistence-facts.md`
+- A: `docs/architecture/key-files/core-persistence-graduation.md`
+- A: `docs/architecture/key-files/core-persistence-request-indexes.md`
+- M: `docs/architecture/key-files/core-persistence.md`
+- A: `docs/architecture/key-files/core-questions.md`
+- M: `docs/architecture/key-files/core-search-1.md`
+- M: `docs/architecture/key-files/core-search-2.md`
+- A: `docs/architecture/key-files/core-search-cjk.md`
+- A: `docs/architecture/key-files/core-search-evidence.md`
+- A: `docs/architecture/key-files/core-services-1-continued.md`
+- M: `docs/architecture/key-files/core-services-1.md`
+- A: `docs/architecture/key-files/core-services-2-continued.md`
+- M: `docs/architecture/key-files/core-services-2.md`
+- M: `docs/architecture/key-files/core-services-3.md`
+- M: `docs/architecture/key-files/core-utilities-1.md`
+- M: `docs/architecture/key-files/core-utilities-2.md`
+- M: `docs/architecture/key-files/engines-1.md`
+- M: `docs/architecture/key-files/engines-2.md`
+- A: `docs/architecture/key-files/entity-recall.md`
+- M: `docs/architecture/key-files/entrypoints-and-docs.md`
+- M: `docs/architecture/key-files/evaluation.md`
+- M: `docs/architecture/key-files/files-and-sync-1.md`
+- M: `docs/architecture/key-files/files-and-sync-2.md`
+- A: `docs/architecture/key-files/generations.md`
+- M: `docs/architecture/key-files/google-and-loops-continued.md`
+- M: `docs/architecture/key-files/google-and-loops.md`
+- A: `docs/architecture/key-files/google-api-access.md`
+- M: `docs/architecture/key-files/graph-and-facts.md`
+- M: `docs/architecture/key-files/hindsight.md`
+- A: `docs/architecture/key-files/managed-sync-bookkeeping.md`
+- M: `docs/architecture/key-files/mcp.md`
+- A: `docs/architecture/key-files/memory-purge.md`
+- A: `docs/architecture/key-files/open-loops-engine.md`
+- M: `docs/architecture/key-files/page-identity-and-administration.md`
+- A: `docs/architecture/key-files/persistence-stalls.md`
+- M: `docs/architecture/key-files/providers.md`
+- A: `docs/architecture/key-files/quarantine.md`
+- M: `docs/architecture/key-files/runtime.md`
+- M: `docs/architecture/key-files/schema-mutation.md`
+- A: `docs/architecture/key-files/secret-scan.md`
+- M: `docs/architecture/key-files/security.md`
+- M: `docs/architecture/key-files/shared-skills.md`
+- M: `docs/architecture/key-files/skills.md`
+- M: `docs/architecture/key-files/tooling-and-tests.md`
+- A: `docs/architecture/key-files/workspace-push-and-backup.md`
+- M: `docs/architecture/managed-mutating-writers.tsv`
+- M: `docs/architecture/pack-upgrade-mechanism.md`
+- M: `docs/architecture/postgres-cancellation.md`

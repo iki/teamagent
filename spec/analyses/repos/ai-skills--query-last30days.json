@@ -1,0 +1,1003 @@
+{
+  "metadata": {
+    "id": "ai-skills--query-last30days",
+    "category": "ai-skills",
+    "name": "query-last30days",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "aliases": [],
+    "report": "spec/projects/ai-skills--query-last30days.md",
+    "topics": [
+      "skills"
+    ],
+    "depth": "screened",
+    "analyzedSha": "5103ba478b380552207a3754b74c7655d64208cd",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-30T18:19:30-07:00",
+    "reportSha256": "9772110703ef6186d041e66cbb8243e34cd4b8c955b21a8e2c1d244239bfe8c5",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-skills--query-last30days",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/mvanhorn/last30days-skill",
+    "report": "spec/projects/ai-skills--query-last30days.md",
+    "analyzedSha": "5103ba478b380552207a3754b74c7655d64208cd",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-30T18:19:30-07:00",
+    "observedSha": "e06af25a9a78487b75e8509e0e1687fec137176e",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "e06af25a9a78487b75e8509e0e1687fec137176e",
+        "date": "2026-10-27T02:23:07-07:00",
+        "subject": "fix(amazon): make Amazon search work again on Bright Data CLI 0.4+ (#1345)"
+      },
+      {
+        "sha": "930a71391ada9dbb8f865c2bd5dc9282dc185484",
+        "date": "2026-10-26T22:01:12-07:00",
+        "subject": "fix(tests): make network guard and preflight tests pass on macOS (#1343)"
+      },
+      {
+        "sha": "445245d7263eccbcd74a62c1d662fd8acc2e97ca",
+        "date": "2026-10-26T21:53:46-07:00",
+        "subject": "ci: parallelize tests and stop real-time Reddit limiter sleeps (#1342)"
+      },
+      {
+        "sha": "828634ffdfe80b13aefd0187d3a950a32f34b01a",
+        "date": "2026-10-26T19:43:58-07:00",
+        "subject": "chore(release): bump version to 3.31.0 (#1341)"
+      },
+      {
+        "sha": "c2b3ff7d7960a4e06487040ed513b1e01a6b5ea3",
+        "date": "2026-10-27T01:32:32Z",
+        "subject": "fix(reddit): stop the arctic comment fallback at the enrichment budget (#1340)"
+      },
+      {
+        "sha": "0bc527a43e0abae330af930046fadc002fe80935",
+        "date": "2026-10-26T18:14:03-07:00",
+        "subject": "feat(reddit): arctic-shift fallback for shreddit comment enrichment (#961)"
+      },
+      {
+        "sha": "cf34a7f19aea38ff42ed4668a7f27748e9892177",
+        "date": "2026-10-27T01:03:16Z",
+        "subject": "refactor(github): replace legacy footer classifier with static fields (#1339)"
+      },
+      {
+        "sha": "d3a7a78215e36c1e4569c175f438b776ae8ac3cc",
+        "date": "2026-10-27T00:50:02Z",
+        "subject": "fix(instagram): classify ScrapeCreators no-reels 404 as no results (#1338)"
+      },
+      {
+        "sha": "61175ff52539c50ed1a33c159e77f0227c0ca045",
+        "date": "2026-10-27T00:20:11Z",
+        "subject": "fix(youtube): return YouTube results for every entity in comparisons (#1336)"
+      },
+      {
+        "sha": "a27c4be946d4159f2db3a026ce7def3717fe8274",
+        "date": "2026-10-26T17:05:41-07:00",
+        "subject": "feat: add Dia to macOS Chromium-family cookie extraction (#929)"
+      },
+      {
+        "sha": "cce767eb53a8eebba7e931820fe0a674d70ee98d",
+        "date": "2026-10-26T14:31:45-04:00",
+        "subject": "fix(youtube): preserve partial results through lane deadlines (#1328)"
+      },
+      {
+        "sha": "c8419ceb6f06483ca39191e56652d0ca5fe24752",
+        "date": "2026-10-26T13:46:52-04:00",
+        "subject": "fix(grok): audit each grok build locally instead of pinning 1.0.46 (#1337)"
+      },
+      {
+        "sha": "a92979bc64d47933a78f90bf40a0a078c3ff9bec",
+        "date": "2026-10-26T13:46:46-04:00",
+        "subject": "fix(tiktok): preserve collected videos at the stream deadline (#1318)"
+      },
+      {
+        "sha": "ffdde96897a4f82f0bd724b2ac74b91969806f83",
+        "date": "2026-10-26T13:46:39-04:00",
+        "subject": "fix(grounding): keep undated keyless web results instead of dropping the whole web lane (#1312)"
+      },
+      {
+        "sha": "abf5525862d67728603c476cfc296e2131fa4f75",
+        "date": "2026-10-26T13:46:33-04:00",
+        "subject": "fix(github): distinguish repository metrics from comments (#1329)"
+      },
+      {
+        "sha": "f9f2870706c3f2f90fed9dc5aa49bc0b1737ebba",
+        "date": "2026-10-26T13:45:48-04:00",
+        "subject": "fix: enforce person identity before expansion and ranking (#1325)"
+      },
+      {
+        "sha": "6f9052cca8fcafad9055c438b7b3f9112f2ee20f",
+        "date": "2026-10-25T22:43:20Z",
+        "subject": "fix: don't prescribe a yt-dlp upgrade for a YouTube timeout (#1327)"
+      },
+      {
+        "sha": "38b9b3e10560fcf915c1f51ab4a2854c6b1933d5",
+        "date": "2026-10-25T15:38:10-07:00",
+        "subject": "fix(youtube): cap paid transcript rescues at the target and request every -orig track first (#1321)"
+      },
+      {
+        "sha": "ab92904558a38ce2bd99f52d08ba54fff85fc1ef",
+        "date": "2026-10-25T15:27:36-07:00",
+        "subject": "chore(deps): bump github/codeql-action/upload-sarif from 4.38.3 to 4.39.0 (#1334)"
+      },
+      {
+        "sha": "04afff5dca7fcd492f6cf16ec2f4bf535ce548af",
+        "date": "2026-10-25T15:27:25-07:00",
+        "subject": "chore(deps): bump actions/upload-artifact from 7.0.1 to 7.0.2 (#1333)"
+      },
+      {
+        "sha": "e204cd31d5711ee3476a2942f5483ba719e30162",
+        "date": "2026-10-25T15:27:17-07:00",
+        "subject": "chore(deps): bump google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml from 2.6.0 to 2.7.0 (#1332)"
+      },
+      {
+        "sha": "847cdecc1bfaf9a2557d5a43e846c220a1d24049",
+        "date": "2026-10-25T15:27:06-07:00",
+        "subject": "chore(deps): bump zizmorcore/zizmor-action from 0.6.4 to 0.7.1 (#1331)"
+      },
+      {
+        "sha": "1b200f0477c36fad5937236b0a18187d4c501903",
+        "date": "2026-10-25T15:26:45-07:00",
+        "subject": "chore(deps): bump github.com/mark3labs/mcp-go from 1.2.1 to 1.3.0 in /mcp (#1330)"
+      },
+      {
+        "sha": "f3cd06a620e385ce15109ed6d3b70fc20c89eccc",
+        "date": "2026-10-22T21:28:07-04:00",
+        "subject": "fix: resolve 20 repository review findings (#1326)"
+      },
+      {
+        "sha": "7fac0fc31ba5212b5ddaa29252d9f7148cec8423",
+        "date": "2026-10-22T09:05:56-07:00",
+        "subject": "chore(release): bump version to 3.30.0 (#1324)"
+      },
+      {
+        "sha": "6bcc127aff67a9b891a6bcdcea0a3aba7d58bb35",
+        "date": "2026-10-22T08:59:53-07:00",
+        "subject": "fix(engine): search installed lanes on host plans and require an X handle decision (#1323)"
+      },
+      {
+        "sha": "3938c93538d252065174766053b85cf0d5faf411",
+        "date": "2026-10-22T07:55:07-07:00",
+        "subject": "chore(release): bump version to 3.29.0 (#1322)"
+      },
+      {
+        "sha": "a96086d227b643cfefa8a7ea180bf2d5968e86e2",
+        "date": "2026-10-22T07:26:48-07:00",
+        "subject": "fix(digg): search AI and Tech sections and surface a stale Digg copy (#1320)"
+      },
+      {
+        "sha": "0819ea59718d5075477ac4355f5ab431414ed847",
+        "date": "2026-10-22T00:21:55-07:00",
+        "subject": "fix(youtube): stop paying ScrapeCreators for transcripts yt-dlp can fetch (#1319)"
+      },
+      {
+        "sha": "0f524f122b4cb3f90015e8043a9d7667d5c2ed5c",
+        "date": "2026-10-21T18:30:20-04:00",
+        "subject": "docs: refresh release links and document all registered sources (#1317)"
+      },
+      {
+        "sha": "67bf96ef6792cfb456a697cfbc6a08c656466b05",
+        "date": "2026-10-21T18:20:51-04:00",
+        "subject": "docs: clarify research data handling and safe store deletion (#1275)"
+      },
+      {
+        "sha": "ee1ccfe4ee0110c30155be19bf65c73521b2a1ff",
+        "date": "2026-10-21T18:13:21-04:00",
+        "subject": "fix: recover Instagram reels within shared request deadlines (#1253)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".claude-plugin/marketplace.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".codex-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/ISSUE_TEMPLATE/config.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/changelog-guard.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/osv-scanner.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/prepare-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/scorecard.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/security.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/validate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/zizmor.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".grok-plugin/marketplace.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".grok-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONCEPTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONFIGURATION.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.de.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.es.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.fr.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.ja.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.pt-BR.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.zh-CN.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "changelog.d/+brightdata-cli-0-4.fixed.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/how-search-works.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/json-export.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/solutions/architecture-patterns/discovery-topic-queue-design-conventions.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/solutions/design-patterns/websearch-sources-contract-trailing-list.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/solutions/integration-issues/claude-code-reattach-preview-flattens-links.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/solutions/integration-issues/grok-cli-exact-build-pin-replaced-by-offline-tool-boundary-audit.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/solutions/logic-errors/comparison-subruns-multiply-shared-ytdlp-budget.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "gemini-extension.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/go.mod",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/go.sum",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/cache_lock.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/cache_lock_other.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/cache_lock_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/cache_lock_unix.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/cache_lock_windows.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/cache_staging.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/engine/extract.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/engine/extract_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/proc_group_unix.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/proc_group_unix_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/proc_group_windows.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/python.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/python_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/engine/run.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/engine/run_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mcp/internal/engine/sync_contract_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/manifest/manifest_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/tools/preflight.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/tools/preflight_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/tools/research.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/internal/tools/research_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mcp/scripts/sync-engine.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/agent-mode.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/category-peers.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/comparison.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/competitors.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/discovery.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/followups.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/grok-bot-x.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/hiring-signals.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/library-queue.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/recommendations.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/research-runbook.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/runtime.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/references/save-html-brief.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/setup-wizard.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/references/synthesis.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/briefing.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/evaluate_search_quality.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/last30days.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/amazon.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/arxiv.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/backends.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/bird_x.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/bluesky.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/bounded_get.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/brightdata.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/chrome_cdp.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/chrome_cookies.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/cookie_extract.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/cookie_paths.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/dates.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/devto.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/digg.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/discovery_handoff.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/doctor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/entity_extract.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/env.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/fetch_memo.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/freshness.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/fusion.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/github.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/grok_audit.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/grok_x.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/grounding.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/hackernews.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/health.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/hosted.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/html_render.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/http.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/instagram.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/library.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/normalize.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/parallel_mcp.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/permission_preflight.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/perplexity.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/pipeline.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/planner.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/prescriptions.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/private_files.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/providers.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/quality_nudge.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/query.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/reddit.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/reddit_arctic.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/reddit_keyless.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/reddit_listing.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/reddit_shreddit.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/registers.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/render.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/rerank.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/resolve.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/safari_cookies.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/schema.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/setup_wizard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/signals.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/sqlite_snapshot.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/subproc.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/tiktok.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/transcribe.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/trustpilot.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/ui.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/usage.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/web_search_keyless.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/lib/windows_job.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/x_api.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/x_envelope.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/xai_x.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/xquik.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/xurl_x.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/lib/youtube_yt.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/setup-pass.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/store.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/verify_v3.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/last30days/scripts/watchlist.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/last30days/scripts/x_lane_parity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/competitor_cli_audit_helpers.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/conftest.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

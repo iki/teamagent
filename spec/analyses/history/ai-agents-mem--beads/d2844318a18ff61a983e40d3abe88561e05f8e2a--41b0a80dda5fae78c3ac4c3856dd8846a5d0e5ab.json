@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--beads",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/gastownhall/beads",
+  "report": "spec/projects/ai-agents-mem--beads.md",
+  "analyzedSha": "d2844318a18ff61a983e40d3abe88561e05f8e2a",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:33:54-07:00",
+  "observedSha": "41b0a80dda5fae78c3ac4c3856dd8846a5d0e5ab",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "41b0a80dda5fae78c3ac4c3856dd8846a5d0e5ab",
+      "date": "2026-10-24T05:02:35Z",
+      "subject": "fix(deps): bump kin-openapi to 0.149.0 (#7812)"
+    },
+    {
+      "sha": "cfeba5f5c9721134f9fb4854a0d63df032991b35",
+      "date": "2026-10-24T04:57:36Z",
+      "subject": "fix(deps): bump opentelemetry-api to 1.45.1 in beads-mcp (#7813)"
+    },
+    {
+      "sha": "ce8554ffb1bb7e70e2c04c739b11e72780cb9901",
+      "date": "2026-10-23T21:37:37Z",
+      "subject": "fix(dolt): dial an IPv6 Dolt host in both bare and bracketed spellings (#7803)"
+    },
+    {
+      "sha": "5912d28c48c09918b34937ead9c8deb046eeace2",
+      "date": "2026-10-23T21:15:54Z",
+      "subject": "docs(dolt): correct the pre-2.3.3 symptom and scope descending-index wording (#7646 follow-ups) (#7807)"
+    },
+    {
+      "sha": "ab1e051006f85d21219df6430dee45d49252ab40",
+      "date": "2026-10-23T17:40:51Z",
+      "subject": "fix(bootstrap): clone through the Dolt port later commands dial (#7804)"
+    },
+    {
+      "sha": "e88d9c025818a48c219d11ebf685807f09ddaec1",
+      "date": "2026-10-23T16:24:52Z",
+      "subject": "fix(create,migrate-personal): print a remedy value only when every shell passes it on (#7799)"
+    },
+    {
+      "sha": "df3330cb05e7a3f8d0922efd8c5c3f4fdcbe886a",
+      "date": "2026-10-23T14:57:04Z",
+      "subject": "fix(doctor,tips): resolve the beads plugin as bd setup claude --check does (#7802)"
+    },
+    {
+      "sha": "d335e4e94052798af7949e258a8d09dcb6144319",
+      "date": "2026-10-23T14:52:54Z",
+      "subject": "fix(setup): never unlink a symlinked integration dir on --remove (#7806)"
+    },
+    {
+      "sha": "b08c341cd3b804315a43f365d014b7fa8e2b41b4",
+      "date": "2026-10-23T14:52:08Z",
+      "subject": "fix(beads,storage): refuse an unsupported legacy config.json before writing (#7798)"
+    },
+    {
+      "sha": "133660654aeae4cf5456fbc857e8b79bfee021b8",
+      "date": "2026-10-23T14:51:08Z",
+      "subject": "fix(doctor): limit the Classic Artifacts SQLite cleanup to what the scan reports (#7797)"
+    },
+    {
+      "sha": "aec138e88566fd4bc96140c250fa5bcdd10c921c",
+      "date": "2026-10-23T14:32:38Z",
+      "subject": "fix(ci): never re-add the review label to an open worker-env sync PR (#7805)"
+    },
+    {
+      "sha": "adf6a9858aadbd27f6af29a76b52988a5faed876",
+      "date": "2026-10-23T13:48:24Z",
+      "subject": "fix(events): end a --follow --json stream with one compact failure line (#7800)"
+    },
+    {
+      "sha": "3f90ef6a233e0176b4df4494e723ab4a6fdca320",
+      "date": "2026-10-23T13:47:21Z",
+      "subject": "fix(migrate-personal): truthful, non-looping refusal of a shared root's database from a rig (#7801)"
+    },
+    {
+      "sha": "6fee099f422887b1fb4f4ad3fddd644b73412879",
+      "date": "2026-10-23T13:46:57Z",
+      "subject": "fix(setup): refuse an unreadable settings.json instead of replacing it (#7796)"
+    },
+    {
+      "sha": "bc0cc87fd9fda412e2eaca669fa6ae3ec2c713fb",
+      "date": "2026-10-23T02:44:36Z",
+      "subject": "build(deps): Dolt 2.5.1 engine and pins + go-deps group, with compatibility fixes (#7646)"
+    },
+    {
+      "sha": "3b4906684948224d7ca4db49ac6f1e693d56a47c",
+      "date": "2026-10-23T00:12:55Z",
+      "subject": "fix(deps): raise x/net and x/crypto past every fixable advisory that reaches the built binary (#6355)"
+    },
+    {
+      "sha": "9d6fff760b7a314b476539198504d77ce0959656",
+      "date": "2026-10-22T05:14:24Z",
+      "subject": "fix(setup): resolve the beads plugin by Claude Code's settings precedence (#7774)"
+    },
+    {
+      "sha": "cadad184cefce7da159ea4b18c9bd44865e72f6b",
+      "date": "2026-10-22T04:26:22Z",
+      "subject": "fix(create): keep what a metadata-less routed target already holds (#7771)"
+    },
+    {
+      "sha": "d14aa04512c852f39029ec0db5e70d52a6ffd085",
+      "date": "2026-10-22T04:06:06Z",
+      "subject": "fix(versioned-history): pre-enable scan checks legacy proto issues (#7775)"
+    },
+    {
+      "sha": "a7de564d29a58131e63e49c6c6e0c6b48b7fd68a",
+      "date": "2026-10-22T04:00:38Z",
+      "subject": "fix(doltserver): port resolution and unreachable-server advice follow-ups to #7752 (#7767)"
+    },
+    {
+      "sha": "66a47bb847c624e1eb0a98b6a4fa627bb0659640",
+      "date": "2026-10-22T03:53:08Z",
+      "subject": "fix(doctor): skip nested graph workspaces in the Classic Artifacts walk without migrating (#7766)"
+    },
+    {
+      "sha": "2b89e3fbe480439b807e8d26ee2aceee477fa84a",
+      "date": "2026-10-22T03:18:42Z",
+      "subject": "fix(http): finish the graph fence on the bd connect / bdhttp path (#7768)"
+    },
+    {
+      "sha": "707ac9061663769c437c72b87c0b37c1fda93302",
+      "date": "2026-10-22T02:45:40Z",
+      "subject": "fix(events): report a truncation that lands on a follower's stop (#7769)"
+    },
+    {
+      "sha": "cbc502536c2851cbede392061bf69db2e010d032",
+      "date": "2026-10-22T02:42:37Z",
+      "subject": "fix(migrate-personal): accurate, cleanly printed refusals and a server-mode test leg (#7770)"
+    },
+    {
+      "sha": "cef9745b3919cfb00382c0f55371045d9d8501b1",
+      "date": "2026-10-22T02:34:07Z",
+      "subject": "test(dolt): pin the failed switch read in RemoveDependency and journal-off transactions (#7773)"
+    },
+    {
+      "sha": "c2085d023f339f2312d790069631dfe89d71b036",
+      "date": "2026-10-22T02:21:55Z",
+      "subject": "test(httpapi): pin no-store on the middleware and assert each row's probe refusal (#7764)"
+    },
+    {
+      "sha": "f9ec277fb2ba1a854442a4fa72ef3cccb3e032cd",
+      "date": "2026-10-22T02:21:03Z",
+      "subject": "fix(doctor): close repos.additional type-discovery residuals from #7738 (#7765)"
+    },
+    {
+      "sha": "acc705b7c1cd7fbe406d1cdc267c4297184860da",
+      "date": "2026-10-22T02:19:29Z",
+      "subject": "test: pin corrupt-metadata warnings and refusals on their own lines (#7744 follow-ups) (#7772)"
+    },
+    {
+      "sha": "bf4ac0eee79d3ac10e01263271df9bfab98187b5",
+      "date": "2026-10-22T02:19:04Z",
+      "subject": "fix(setup): keep a symlinked .mux on bd setup mux --remove, and name ~/.mux/.mux leftovers (#7762)"
+    },
+    {
+      "sha": "026fc959f42ce988af297bedc6f976eafd365d3c",
+      "date": "2026-10-22T02:18:40Z",
+      "subject": "fix(setup): keep an existing file's mode when bd setup rewrites it (#7763)"
+    },
+    {
+      "sha": "34cd9262d62e657e0281d058841dfffe88fefb61",
+      "date": "2026-10-22T02:15:54Z",
+      "subject": "ci(rbe): land the worker-env sync PR via review, not an auto-merge it can't arm (#7761)"
+    },
+    {
+      "sha": "ae4d7e90dff886758e9ed87eee014961980c10ad",
+      "date": "2026-10-21T20:05:26Z",
+      "subject": "fix(ids): report a hash two prefixes share as ambiguous (mc-ke8mg) (#7618)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bazelignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bazelrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bazelversion",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/beads-docs/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/beads-docs/references/simplification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/beads-docs/references/terminology.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/beads-docs/references/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".claude/test-strategy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/devcontainer.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/pre-commit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/pre-push",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-bazel/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bazel/cache-rrc-probe.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bazel/cache-zstd-probe.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-bazel/write-bazelrc.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/allowed-actions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/copilot-instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/bazel-gate.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/ci-capability-selector.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/ci-embedded-tier.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/embedded-cmd-test-shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/embedded-storage-test-shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/embedded-test-shard.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/proxied-cmd-test-shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/rrc-lane-commands.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/rrc-run-lanes.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/rrc-writer-credential.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bazel-autofix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bazel-farm.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bazel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/ci-measurements.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/conformance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/cross-version-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-autofix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-mintlify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/main.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/migration-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nix-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-risk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/proxied-local-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-vendor-hash.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/worker-env-autosync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".golangci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENT_INSTRUCTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "T",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSIONED-BEADS-WRITE-PATHS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/backend.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/batch_apply_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/batch_apply_gate_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/batch_closer_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/batch_creator_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/batch_getter_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/blocked_lister_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/blocking_annotator_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/counter_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/dependency_editor_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/dualwrite_history_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/dualwrite_participation_generation_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/heartbeater_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/lease_reclaimer_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/lifecycle_close_reopen_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/lifecycle_create_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/lifecycle_create_gate_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/lifecycle_update_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/lifecycle_update_gate_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/memories_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/molecule_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/portable.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/reader_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/retention_epoch_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/role_bundle_cases.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/sweeper_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/versioned_history_wiring_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/versioned_read_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/attach.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/attach_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/corpus_parts_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/corpus_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/gate_check_served_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/harness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/reference_proxy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/required_corpus_tier_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/served_pinned_shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/testdata/allowlist.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/testdata/corpus.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/corpus/testdata/reference_server.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/credential.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_blocked_flags_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_blocked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_cli_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_export_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_gates_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_heartbeat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_link_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_list_filters_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_list_page_edges_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_mol_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_promote_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_read_your_own_write_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_recompute_blocked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_remote_roles_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_request_budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_search_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_show_current_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/e2e_show_single_fetch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/http.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/open_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/per_open_credential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/register_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/served_pinned_shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/http/target.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beads_cgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beads_nocgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beadserrors/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beadserrors/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "checks.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/actor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/ado.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/ado_roundtrip_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/agent_artifacts_embedded_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/assign.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/assign_fence_embedded_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/audit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/autocommit_embedded_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/backend_registry_contract_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/backend_support.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/backup_cap_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/backup_dolt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/backup_embedded_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

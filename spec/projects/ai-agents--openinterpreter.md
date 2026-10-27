@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [openinterpreter](https://github.com/openinterpreter/openinterpreter); analyzed commit `2767e5f20d6927500b8f1938c773c61afb823245`; commit date 2026-10-02T08:44:16+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--openinterpreter.md).
+<!-- teamagent-analysis:end -->

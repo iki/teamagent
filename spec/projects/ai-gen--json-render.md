@@ -28,3 +28,7 @@ Shortlist for a TypeScript/React product. Structural validity does not prove sem
 ## Related directions
 
 [Generation](../generation.md) · [Channels](../channels.md) · [Skills](../skills.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [json-render](https://github.com/vercel-labs/json-render); analyzed commit `fc2a696a50a30cb30c878ab1eb65e102487eea0f`; commit date 2026-10-01T14:18:31-03:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--json-render.md).
+<!-- teamagent-analysis:end -->

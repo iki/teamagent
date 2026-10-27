@@ -23,3 +23,7 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [bundle-antigravity.vudovn](https://github.com/vudovn/antigravity-kit); analyzed commit `549ba3dc2eb1d40fccb5b6d792eba4101c80cd69`; commit date 2026-08-31T08:48:18+07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-antigravity.vudovn.md).
+<!-- teamagent-analysis:end -->

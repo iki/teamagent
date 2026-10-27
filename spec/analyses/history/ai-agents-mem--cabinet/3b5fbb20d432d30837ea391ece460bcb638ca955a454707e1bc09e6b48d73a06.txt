@@ -1,0 +1,25 @@
+# cabinet
+
+Source: [cabinet](https://github.com/hilash/cabinet) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `92ed8a666a3241fcd23678cdf4eb384afda513e2`; commit timestamp `2026-08-25T11:54:32+03:00`; 1,307 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/hilash/cabinet/blob/92ed8a666a3241fcd23678cdf4eb384afda513e2/README.md)):
+
+> 🗂️ Files on disk &nbsp;•&nbsp; 📁 AI workspaces &nbsp;•&nbsp; 🧠 Agents with memory The AI-first startup OS where everything lives as markdown files on disk. No database. No vendor lock-in. Self-hosted. Your data never leaves your machine.
+
+Build/package evidence: [cabinetai/package.json](https://github.com/hilash/cabinet/blob/92ed8a666a3241fcd23678cdf4eb384afda513e2/cabinetai/package.json); [cli/package.json](https://github.com/hilash/cabinet/blob/92ed8a666a3241fcd23678cdf4eb384afda513e2/cli/package.json); [mcps/mcp-discord/package.json](https://github.com/hilash/cabinet/blob/92ed8a666a3241fcd23678cdf4eb384afda513e2/mcps/mcp-discord/package.json); [mcps/mcp-stackadapt/package.json](https://github.com/hilash/cabinet/blob/92ed8a666a3241fcd23678cdf4eb384afda513e2/mcps/mcp-stackadapt/package.json); [mcps/mcp-telegram/package.json](https://github.com/hilash/cabinet/blob/92ed8a666a3241fcd23678cdf4eb384afda513e2/mcps/mcp-telegram/package.json)
+
+License evidence: [LICENSE](https://github.com/hilash/cabinet/blob/92ed8a666a3241fcd23678cdf4eb384afda513e2/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

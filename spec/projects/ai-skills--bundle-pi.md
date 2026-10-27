@@ -23,3 +23,7 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [bundle-pi](https://github.com/badlogic/pi-skills); analyzed commit `90bb51cae36515a648515b633a81c0c6efc8c74d`; commit date 2026-06-06T22:27:56+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle-pi.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,1004 @@
+{
+  "metadata": {
+    "id": "ai-agents-mem--ragflow",
+    "category": "ai-agents-mem",
+    "name": "ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-mem--ragflow.md",
+    "topics": [
+      "memory",
+      "evolution"
+    ],
+    "depth": "screened",
+    "analyzedSha": "2400ca8eb51432b1d304266d0de9ca232d9b53fa",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T23:52:13+08:00",
+    "reportSha256": "6b4ca8216bc3b603e362786becb8e49547764333f46f7904487ab4bfa33568da",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-mem--ragflow",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/infiniflow/ragflow",
+    "report": "spec/projects/ai-agents-mem--ragflow.md",
+    "analyzedSha": "2400ca8eb51432b1d304266d0de9ca232d9b53fa",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T23:52:13+08:00",
+    "observedSha": "5966db46ab4abc849a2ad668795ee9cb2e5417ef",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "5966db46ab4abc849a2ad668795ee9cb2e5417ef",
+        "date": "2026-10-27T19:49:36+08:00",
+        "subject": "fix(agent): prefill block test inputs from settings (#21566)"
+      },
+      {
+        "sha": "88321d6aad99d234b6effc14f82f9d014b4bfc6b",
+        "date": "2026-10-27T19:33:49+08:00",
+        "subject": "test(nlp): cover OB/VB local rerank scoring (#21541)"
+      },
+      {
+        "sha": "256edaf959b9369feb7b09c593848ecad094aac7",
+        "date": "2026-10-27T19:13:00+08:00",
+        "subject": "fix: guard Notion downloads and REST auth redirects (#21545)"
+      },
+      {
+        "sha": "f0ff22abb44588329375468169c5d5e19ade46c4",
+        "date": "2026-10-27T19:10:46+08:00",
+        "subject": "fix(admin): return pagination totals for user lists (#21540)"
+      },
+      {
+        "sha": "e4070b48baea2880bd021071fe4227812bc6cf8b",
+        "date": "2026-10-27T19:09:31+08:00",
+        "subject": "fix: prevent command and path injection (#21539)"
+      },
+      {
+        "sha": "1e6c3e12a37d368707005319c134aa6f73ded905",
+        "date": "2026-10-27T19:08:07+08:00",
+        "subject": "test(nlp): add pagination guard coverage for RetrievalService.Retrieval (#21557)"
+      },
+      {
+        "sha": "cb7cc48ea5b5834d7a578fc36546706ede707774",
+        "date": "2026-10-27T19:03:53+08:00",
+        "subject": "fix(agent): route failure branches only after errors (#21559)"
+      },
+      {
+        "sha": "dbda628a850ca0d85338ae87d80a25cb686c3b01",
+        "date": "2026-10-27T17:59:24+08:00",
+        "subject": "fix: handle malformed provider and CLI responses (#21546)"
+      },
+      {
+        "sha": "e7bf77e1da229ac5c70c4d3c3e4c84da37d8d232",
+        "date": "2026-10-27T17:59:11+08:00",
+        "subject": "fix: honor STORAGE_IMPL and enforce chat dataset access (#21548)"
+      },
+      {
+        "sha": "5c8fd4d1b630585978a849616d0d4046f1a548cf",
+        "date": "2026-10-27T17:55:25+08:00",
+        "subject": "Fix: &gt; Cannot be displayed in the message (#21560)"
+      },
+      {
+        "sha": "85dfc1baa24ee8a1119b5ed296d62a8869ab3fe7",
+        "date": "2026-10-27T17:51:29+08:00",
+        "subject": "Feat: Create a compilation template using a dialog on the pipeline canvas page. (#21550)"
+      },
+      {
+        "sha": "39e6f0340094ad4f83e1c753e9d093794049619b",
+        "date": "2026-10-27T17:27:18+08:00",
+        "subject": "test(ingestion): pin that the image parser handoff never downgrades to text (#21500)"
+      },
+      {
+        "sha": "580b844bff63a1ace1b826d89a63120db21f8e72",
+        "date": "2026-10-27T17:21:09+08:00",
+        "subject": "fix: add tenant context to shared permission tests (#21556)"
+      },
+      {
+        "sha": "69a3e764e304926a40ba8be36f32b96c06453489",
+        "date": "2026-10-27T17:07:39+08:00",
+        "subject": "Fix: agent version apply bad (#21555)"
+      },
+      {
+        "sha": "6e2214aaa8cde4d5128b101201545ef0b7eb6143",
+        "date": "2026-10-27T16:54:40+08:00",
+        "subject": "fix(parser): preserve table structure across document formats (#21504)"
+      },
+      {
+        "sha": "66d4d4f2fb0991f1e220bb3cd952fd7b0da98cd1",
+        "date": "2026-10-27T16:37:23+08:00",
+        "subject": "fix(agent): prevent disconnected Message nodes from executing (#21549)"
+      },
+      {
+        "sha": "076d428396ea5e3f088bc89547942e93c3b0bcc8",
+        "date": "2026-10-27T16:36:57+08:00",
+        "subject": "feat(mcp): expose configurable listener transport settings (#21547)"
+      },
+      {
+        "sha": "0cfa864cc69cf0588054cc97fa266ca4fb42b381",
+        "date": "2026-10-27T16:07:26+08:00",
+        "subject": "feat: add CloudGPU as a model provider (#21543)"
+      },
+      {
+        "sha": "71bf40b2ae52a46edab6639ec1424f13eef84c59",
+        "date": "2026-10-27T15:56:27+08:00",
+        "subject": "Feat: Split the agent list page into three separate tabs. (#21529)"
+      },
+      {
+        "sha": "68492cd6db18f780b8a3cd49162f5f045978114a",
+        "date": "2026-10-27T15:30:49+08:00",
+        "subject": "Feature: add apply and delete version for agent (#21538)"
+      },
+      {
+        "sha": "2be16144212b038e465d3ba0936823c35a8b94d3",
+        "date": "2026-10-27T14:33:42+08:00",
+        "subject": "fix(agent): preserve tool errors and redact logs (#21533)"
+      },
+      {
+        "sha": "292db08b91d5b2ed80ebb8730d604c2ea2fb44f6",
+        "date": "2026-10-27T14:22:02+08:00",
+        "subject": "fix(preview): highlight all spreadsheet chunk ranges (#21511)"
+      },
+      {
+        "sha": "a43cac2615f6e525a70027a752883551e5344f88",
+        "date": "2026-10-27T14:05:25+08:00",
+        "subject": "docs: updates docs word with latest UI (#21521)"
+      },
+      {
+        "sha": "03de1bb04c0e0393070188b0f970ae90f4cd2976",
+        "date": "2026-10-27T14:01:58+08:00",
+        "subject": "fix(web): number citations per message, not per text node (#21531)"
+      },
+      {
+        "sha": "b5500ff7d3e8bb56f7795c9d007e61cce4876c87",
+        "date": "2026-10-27T14:01:24+08:00",
+        "subject": "Fix: make the provider response-header timeout configurable (#21434)"
+      },
+      {
+        "sha": "20273da939db520f1611462a5f3742f1ff241c1a",
+        "date": "2026-10-27T14:00:28+08:00",
+        "subject": "fix: secure Azure DevOps connector requests (#21509)"
+      },
+      {
+        "sha": "18ddc7f87fafcfdc48fb4ce4c79c6d7f72a4e13b",
+        "date": "2026-10-27T13:59:44+08:00",
+        "subject": "feat: configure dataset document upload size (#21517)"
+      },
+      {
+        "sha": "a50c91d640a2c1679eb82e0d37d7479925c0063c",
+        "date": "2026-10-27T13:54:18+08:00",
+        "subject": "fix(web): gate DaoXE/RadeonCloud/DemonRoute model listing on api key (#21520)"
+      },
+      {
+        "sha": "33c4fa50001b1637a600e6422020d0cd91e05dda",
+        "date": "2026-10-27T13:50:02+08:00",
+        "subject": "Docs: canvas -> agent, and delete not used keys (#21530)"
+      },
+      {
+        "sha": "caa635d82f5f0cc77f032b8b807a1699d34f2c01",
+        "date": "2026-10-27T13:44:02+08:00",
+        "subject": "Docs: canvas -> agent, and delete not used keys (#21528)"
+      },
+      {
+        "sha": "bf21ddfd9b617f581ad190643a224102d094b961",
+        "date": "2026-10-27T13:34:23+08:00",
+        "subject": "fix(agent-logs): capture sub-tool invocations (#21518)"
+      },
+      {
+        "sha": "737983aa16c60139ec305ffadac6679009f0e53a",
+        "date": "2026-10-27T13:28:33+08:00",
+        "subject": "fix(agent): show meaningful ExecuteSQL connection test feedback (#21524)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".dockerignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/codeql/codeql-config.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/release-python.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/sep-tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "Dockerfile.scratch.oc9",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile_base",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile_ci",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_ar.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_fr.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_id.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_ja.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_ko.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_pt_br.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_ru.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_tr.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_tzh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_zh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "build.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "cmd/args_flag_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cmd/deepdoc_server_ee.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cmd/ragflow_server.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cmd/ragflow_server_deepdoc_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "cmd/ragflow_server_earlyboot_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "cmd/ragflow_server_pprof_integration_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "cmd/ragflow_server_pprof_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "cmd/ragflow_server_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/agentic_rag.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/infinity_mapping.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/llm_factories.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/model.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/aistupidlevel.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/aliyun.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/bedrock.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/cloudgpu.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/cohere.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/demonroute.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/empiriolabs.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/gpustack.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/minimax.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/mistral.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/monkeyocr.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/mws.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/new-api.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/novita.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/openai-api-compatible.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/openai.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/opper.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/radeon_cloud.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/runcrate.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/siliconflow.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/systemone.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "conf/models/trustedrouter.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/models/xunfei.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/service_conf.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conf/system_settings.json",
+        "previousPath": null
+      },
+      {
+        "status": "R064",
+        "path": "deps/Dockerfile",
+        "previousPath": "ragflow_deps/Dockerfile"
+      },
+      {
+        "status": "A",
+        "path": "deps/download_deps.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/.env",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docker/docker-compose-CN-oc9.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/docker-compose-base.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/docker-compose.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/entrypoint.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/infinity_conf.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/launch_backend_service.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/service_conf.yaml.template",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docker/vastbase/init/01_init.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docker/vastbase/init/02_bcompat.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docker/vastbase/license/.gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docker/vastbase/license/.gitkeep",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docker/vastbase/license/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docs/administrator/admin/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docs/administrator/admin/admin_ui/configure_code_execution_sandbox.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docs/administrator/configurations/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docs/administrator/configurations/sandbox_quickstart.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/management/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "R065",
+        "path": "docs/administrator/management/admin_ui/_category_.json",
+        "previousPath": "docs/administrator/admin/admin_ui/_category_.json"
+      },
+      {
+        "status": "R080",
+        "path": "docs/administrator/management/admin_ui/before_you_begin.md",
+        "previousPath": "docs/administrator/admin/admin_ui/before_you_begin.md"
+      },
+      {
+        "status": "R096",
+        "path": "docs/administrator/management/admin_ui/check_system_status.md",
+        "previousPath": "docs/administrator/admin/admin_ui/check_system_status.md"
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/management/admin_ui/configure_code_execution_sandbox.md",
+        "previousPath": null
+      },
+      {
+        "status": "R099",
+        "path": "docs/administrator/management/admin_ui/manage_user_accounts.md",
+        "previousPath": "docs/administrator/admin/admin_ui/manage_user_accounts.md"
+      },
+      {
+        "status": "R091",
+        "path": "docs/administrator/management/ragflow_cli.md",
+        "previousPath": "docs/administrator/admin/ragflow_cli.md"
+      },
+      {
+        "status": "D",
+        "path": "docs/administrator/migration/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docs/administrator/migration/backup_and_migration.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docs/administrator/migration/database_schema_and_migration.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/monitoring/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "R099",
+        "path": "docs/administrator/monitoring/tracing.mdx",
+        "previousPath": "docs/administrator/tracing.mdx"
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/sandbox/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/sandbox/configure_ssh_and_cloud_providers.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/sandbox/faq.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/sandbox/manage_self_managed_sandbox.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/sandbox/overview.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/sandbox/quickstart_with_self_managed.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/setup/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "R099",
+        "path": "docs/administrator/setup/admin_service.md",
+        "previousPath": "docs/administrator/admin/admin_service.md"
+      },
+      {
+        "status": "R094",
+        "path": "docs/administrator/setup/configuration.md",
+        "previousPath": "docs/administrator/configurations/configurations.md"
+      },
+      {
+        "status": "R100",
+        "path": "docs/administrator/setup/configure_ssl_certificates.md",
+        "previousPath": "docs/administrator/configurations/config_ssl_cert.md"
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/upgrade_and_migration/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/upgrade_and_migration/backup_and_restore_v0.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/upgrade_and_migration/backup_and_restore_v1.md",
+        "previousPath": null
+      },
+      {
+        "status": "R053",
+        "path": "docs/administrator/upgrade_and_migration/database_change_log.md",
+        "previousPath": "docs/administrator/migration/database_change_log.md"
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/upgrade_and_migration/start_here.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/upgrade_and_migration/upgrade_from_v0_to_v1.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/administrator/upgrade_and_migration/upgrade_from_v1_to_later_releases.md",
+        "previousPath": null
+      },
+      {
+        "status": "R092",
+        "path": "docs/administrator/upgrade_and_migration/upgrading.mdx",
+        "previousPath": "docs/administrator/upgrade_ragflow.mdx"
+      },
+      {
+        "status": "M",
+        "path": "docs/develop/build_docker_image.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/develop/launch_ragflow_from_source.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/develop/mcp/connect_an_external_mcp_to_ragflow.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/develop/mcp/mcp_tools.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/develop/mcp/use_ragflow_as_mcp_server.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/dsl-multi-version.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/faq.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/_category_.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/agent_overview.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/agent_workflow/basic_component.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/agent_workflow/data_manipulation_components.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/agent_workflow/dialogue_component.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/agent_workflow/flow_components.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/agent_workflow/tool_components.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/agent/best_practices/accelerate_agent_question_answering.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/creation_and_management.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/embed_into_web_pages.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/import_and_export_agents.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/ingestion_pipeline/configure_chunker_component.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/ingestion_pipeline/configure_indexer_component.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/ingestion_pipeline/configure_parser_component.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/ingestion_pipeline/configure_transformer_component.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/ingestion_pipeline/create_ingestion_pipeline.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/ingestion_pipeline/test_run.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/ingestion_pipeline/understand_core_ingestion_pipeline_components.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/agent/quickstarts/build_customer_support_agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agent/understand_the_canvas.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/chat/chat_configuration.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/chat/using_chat_sessions.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/dataset/artifacts_knowledge_artifact_generation_and_management.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/dataset/configuration.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/dataset/dataset_overview.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/file/file.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/file/link_dataset.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/knowledge_compilation/apply_knowledge_compilation_template.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/models/deploy_local_llm.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/models/llm_api_key_setup.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "docs/guides/models/supported_models.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/quickstart.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/references/glossary.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/references/http_api_reference.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/references/python_api_reference.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/release_notes.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "example/http/chunk_example.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "go.mod",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "go.sum",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "internal/admin/default_admin_password_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "internal/admin/handler.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "internal/admin/handler_ee.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "internal/admin/license_ee.go",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

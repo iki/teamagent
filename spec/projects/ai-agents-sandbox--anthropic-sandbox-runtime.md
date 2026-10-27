@@ -28,3 +28,7 @@ Source comments and wrappers establish intended mechanisms, not verified resista
 ## Related directions
 
 [Agents](../agents.md) · [Models](../models.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [anthropic-sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime); analyzed commit `9e93406ab2e0b6e9794624896f729560dc9445db`; commit date 2026-10-03T13:33:01+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--anthropic-sandbox-runtime.md).
+<!-- teamagent-analysis:end -->

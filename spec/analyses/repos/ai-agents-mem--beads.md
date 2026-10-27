@@ -1,0 +1,207 @@
+# beads: change evidence
+
+Source: [beads](https://github.com/gastownhall/beads) · [Analysis](../../projects/ai-agents-mem--beads.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `d2844318a18ff61a983e40d3abe88561e05f8e2a`; commit date: 2026-10-03T13:33:54-07:00; review date: unknown; observed SHA: `43f41374a34d82ecf40903451eea277fbb4f1e75`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/beads/compare/d2844318a18ff61a983e40d3abe88561e05f8e2a...43f41374a34d82ecf40903451eea277fbb4f1e75). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [43f41374a34d](https://github.com/gastownhall/beads/commit/43f41374a34d82ecf40903451eea277fbb4f1e75) 2026-10-27T09:51:28Z: fix(cli,remedy): quote store-read IDs in the remaining pasted hints and drop backtick-wrapped remedies, with census guards (#7903)
+- [37f9475cc5e2](https://github.com/gastownhall/beads/commit/37f9475cc5e2e90092cf6b2bddfdad9aadb3556b) 2026-10-27T09:02:56Z: fix(doctor): import issues.jsonl only into a database the repair created or found with no issues (#7899)
+- [b31136e7e49d](https://github.com/gastownhall/beads/commit/b31136e7e49d644c726b2d383e1a1f6da270130b) 2026-10-27T08:26:12Z: fix(init,bootstrap): put init --remote clones and bootstrap writes on the workspace's server (#7900)
+- [5a6da89ca8fc](https://github.com/gastownhall/beads/commit/5a6da89ca8fc5bf40e39b5c3ab5a2dfb2647cf90) 2026-10-27T07:34:57Z: fix(setup): confine recipes.toml recipe paths to bd setup's directory (#7901)
+- [3a18393cedc5](https://github.com/gastownhall/beads/commit/3a18393cedc5d34d3c04211cd2df1252139444f7) 2026-10-27T07:25:11Z: fix(gitlab): match pulled issues and links by project, not IID alone (#7866)
+- [b587154a483d](https://github.com/gastownhall/beads/commit/b587154a483dab8f09a6dd91bbd080ac297befea) 2026-10-27T06:38:19Z: fix(hooks): supervise bd from Perl so BEADS_HOOK_TIMEOUT stops it (#7753) (#7858)
+- [a6b175eb631e](https://github.com/gastownhall/beads/commit/a6b175eb631e2d431a0fa68fc53215bee13bcfbd) 2026-10-27T06:23:43Z: test(cook): pin gh:* gate fields on a type = "gate" step's companion (GH#3316) (#7760)
+- [c1eadaeba2e4](https://github.com/gastownhall/beads/commit/c1eadaeba2e42aacb720b8f80f8e77e7783209fd) 2026-10-27T06:20:29Z: fix(doltserver): count EPERM from kill(pid, 0) as a live process (#7864)
+- [d74c191d0551](https://github.com/gastownhall/beads/commit/d74c191d0551ee597ff148aac28de1a1d999fed7) 2026-10-27T06:17:17Z: fix(export): fail bd export and keep the auto-export JSONL when a relation load fails (GH#6870) (#7855)
+- [14da8ca0c21f](https://github.com/gastownhall/beads/commit/14da8ca0c21fdd3a03dcd69ce2be11421099a309) 2026-10-27T06:16:23Z: fix(git): drop git location env from internal/git fixture commands (#7857)
+- [824d8969e053](https://github.com/gastownhall/beads/commit/824d8969e0530263ba218ba536e013a1259e2164) 2026-10-27T06:15:10Z: fix(reset): scan every hook bd installs, including prepare-commit-msg (#5566) (#7850)
+- [f495639cfffd](https://github.com/gastownhall/beads/commit/f495639cfffd4e856ce82052c5baed91b6c31ea3) 2026-10-27T06:01:52Z: fix(install): stage the release binary in the install dir and rename it over bd (#7860)
+- [2ef4df339a44](https://github.com/gastownhall/beads/commit/2ef4df339a44124479a4ce9ca4c00c152d266f73) 2026-10-26T20:48:38Z: perf(issueops): settle just-closed rows without the blocked-state union statements (#7897)
+- [e6424ada5d7c](https://github.com/gastownhall/beads/commit/e6424ada5d7c9a5b02c9e3924d90fcaf6d9e4226) 2026-10-26T20:39:37Z: fix(dolt): resolve status, show, context, doctor and fix endpoints through ResolveEndpoint (#7874)
+- [249d7cde74db](https://github.com/gastownhall/beads/commit/249d7cde74dbda36a0cd90296e0e4c61c8806c23) 2026-10-26T15:44:08Z: fix(init,create): resolve nested init ports, clone through local servers, name target host in create remedy (#7892)
+- [002e33aee117](https://github.com/gastownhall/beads/commit/002e33aee117dd5d4cebbf5252a80bb4cca5f7be) 2026-10-26T13:47:16Z: fix(dolt): stop push, pull and sync at a remote only the leftover copy records (#7893)
+- [26f0e8d6ef4b](https://github.com/gastownhall/beads/commit/26f0e8d6ef4b3051f6eed9c8a879f4f150a532d2) 2026-10-26T12:51:51Z: fix(dolt): never push or pull a leftover .beads/dolt for a server bd does not run (#7870)
+- [4acde6b4e675](https://github.com/gastownhall/beads/commit/4acde6b4e6759d3e02ad48cb52b19b32edd52d30) 2026-10-26T11:35:08Z: fix(cli,dolt): quote store-read IDs and recipe values in pasted remedies; print the cold-start re-add statement runnably (#7868)
+- [7acdc0efe5c3](https://github.com/gastownhall/beads/commit/7acdc0efe5c32a04244a3086da8b32f0538aaa6c) 2026-10-26T10:57:09Z: build(rbe): sync worker-env pin with gascity main (#7875)
+- [3438ae2fde1f](https://github.com/gastownhall/beads/commit/3438ae2fde1f85e8d060ace8a236f7e664132303) 2026-10-26T08:48:18Z: feat(dolt): require Dolt 2.6.0 outside embedded mode (#7836)
+- [1dfdc96de785](https://github.com/gastownhall/beads/commit/1dfdc96de785f43223e3748027ec3b13181f0ad6) 2026-10-26T08:00:29Z: fix(doctor): stub cleanup removes only bd runtime leftovers; --clean --json prints only JSON (#7869)
+- [596531419be9](https://github.com/gastownhall/beads/commit/596531419be96e98d5a0b2baa42f2519ed7cbade) 2026-10-26T07:05:52Z: fix(cli): refuse to initialize an issues.jsonl-only clone of a pre-config.json project (#7871)
+- [fd54802bc877](https://github.com/gastownhall/beads/commit/fd54802bc8772128171e95c676cb0bcafa509024) 2026-10-25T15:28:08Z: fix(dolt): decide Dolt server ownership with one host predicate (#7840)
+- [4f90c5d94f97](https://github.com/gastownhall/beads/commit/4f90c5d94f97c3adc7ddadbc19442915630597e3) 2026-10-25T12:59:37Z: fix(dolt): resolve every Dolt endpoint and its credentials through one resolver (#7841)
+- [8e2fc78339ea](https://github.com/gastownhall/beads/commit/8e2fc78339eac631b459a88c8dfb8a57a3af9d11) 2026-10-25T09:29:22Z: fix(cli,configfile,dolt): refuse foreign legacy workspaces before rewriting or opening them (#7838)
+- [e866614a6486](https://github.com/gastownhall/beads/commit/e866614a648689ff3db1cb5beb7eb80d6759b4d2) 2026-10-25T07:34:21Z: fix(remedy): print every config-, filesystem- and data-supplied remedy value through one shell- and terminal-safe printer (#7837)
+- [a239f63341ae](https://github.com/gastownhall/beads/commit/a239f63341ae2837bae9098c5c666e4c52bfe57a) 2026-10-25T04:21:53Z: ci(pr): run the scripts package on the PR's macOS leg (#7833)
+- [eaad88119e0b](https://github.com/gastownhall/beads/commit/eaad88119e0b8ba09c3ab36963fdf5fc3452ad02) 2026-10-25T04:15:42Z: test(topology): front-door capability matrix across storage topologies (proxied-parity S0) (#6576)
+- [013834d43235](https://github.com/gastownhall/beads/commit/013834d432351ca08438d4e7772e3cd2317d5ea5) 2026-10-25T04:11:58Z: fix(ci): keep ci-scope.sh and main-ci-alert.sh bash 3.2 clean (#7832)
+- [73f64fdfce97](https://github.com/gastownhall/beads/commit/73f64fdfce978a39608f9a3c7340d28354f5c05e) 2026-10-25T00:15:50Z: ci(bazel): no run reads rbe-cache from a GitHub-hosted runner (mc-endp5) (#7830)
+- [a623d813830b](https://github.com/gastownhall/beads/commit/a623d813830b537f7286bdf69db98e22fa3c13fd) 2026-10-25T00:12:08Z: fix(doctor): delete only what one positive-ownership plan marks safe, never a database (#7828)
+- [adfa73a2edd3](https://github.com/gastownhall/beads/commit/adfa73a2edd33531970e548e3f1e071124f0e346) 2026-10-25T00:00:26Z: build(deps): Dolt 2.6.0 engine and pins, Go 1.27.3 (#7829)
+
+## Changed paths (truncated)
+
+- M: `.bazelignore`
+- M: `.bazelrc`
+- M: `.bazelversion`
+- M: `.claude-plugin/marketplace.json`
+- M: `.claude/skills/beads-docs/SKILL.md`
+- M: `.claude/skills/beads-docs/references/simplification.md`
+- M: `.claude/skills/beads-docs/references/terminology.md`
+- M: `.claude/skills/beads-docs/references/verification.md`
+- D: `.claude/test-strategy.md`
+- M: `.devcontainer/README.md`
+- M: `.devcontainer/devcontainer.json`
+- M: `.githooks/post-checkout`
+- M: `.githooks/post-merge`
+- M: `.githooks/pre-commit`
+- M: `.githooks/pre-push`
+- M: `.githooks/prepare-commit-msg`
+- A: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- A: `.github/ISSUE_TEMPLATE/config.yml`
+- A: `.github/ISSUE_TEMPLATE/feature_request.yml`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- M: `.github/actions/setup-bazel/action.yml`
+- A: `.github/actions/setup-bazel/cache-rrc-probe.sh`
+- A: `.github/actions/setup-bazel/cache-zstd-probe.sh`
+- M: `.github/actions/setup-bazel/write-bazelrc.sh`
+- A: `.github/allowed-actions.json`
+- M: `.github/copilot-instructions.md`
+- M: `.github/scripts/bazel-gate.sh`
+- D: `.github/scripts/ci-capability-selector.sh`
+- D: `.github/scripts/ci-embedded-tier.sh`
+- A: `.github/scripts/ci-scope.sh`
+- M: `.github/scripts/embedded-cmd-test-shards.txt`
+- M: `.github/scripts/embedded-storage-test-shards.txt`
+- M: `.github/scripts/embedded-test-shard.sh`
+- A: `.github/scripts/main-ci-alert.sh`
+- M: `.github/scripts/proxied-cmd-test-shards.txt`
+- A: `.github/scripts/rrc-lane-commands.txt`
+- A: `.github/scripts/rrc-run-lanes.sh`
+- A: `.github/scripts/rrc-writer-credential.sh`
+- M: `.github/workflows/bazel-autofix.yml`
+- M: `.github/workflows/bazel-farm.yml`
+- M: `.github/workflows/bazel.yml`
+- D: `.github/workflows/ci-measurements.yml`
+- D: `.github/workflows/conformance.yml`
+- D: `.github/workflows/cross-version-smoke.yml`
+- M: `.github/workflows/docs-autofix.yml`
+- M: `.github/workflows/docs-mintlify.yml`
+- A: `.github/workflows/main-ci-alert.yml`
+- M: `.github/workflows/main.yml`
+- D: `.github/workflows/migration-test.yml`
+- M: `.github/workflows/nightly.yml`
+- M: `.github/workflows/nix-build.yml`
+- M: `.github/workflows/pr-risk.yml`
+- M: `.github/workflows/pr.yml`
+- D: `.github/workflows/proxied-local-smoke.yml`
+- D: `.github/workflows/regression.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/update-vendor-hash.yml`
+- A: `.github/workflows/worker-env-autosync.yml`
+- A: `.github/workflows/worker-env-sync-automerge.yml`
+- M: `.golangci.yml`
+- M: `.pre-commit-config.yaml`
+- M: `AGENTS.md`
+- M: `AGENT_INSTRUCTIONS.md`
+- M: `BUILD.bazel`
+- M: `CHANGELOG.md`
+- T: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `MODULE.bazel`
+- M: `MODULE.bazel.lock`
+- M: `Makefile`
+- M: `README.md`
+- M: `RELEASING.md`
+- A: `ROADMAP.md`
+- M: `VERSIONED-BEADS-WRITE-PATHS.md`
+- M: `backend/BUILD.bazel`
+- M: `backend/backend.go`
+- M: `backend/conformance/BUILD.bazel`
+- M: `backend/conformance/batch_apply_contract.go`
+- A: `backend/conformance/batch_apply_gate_contract.go`
+- M: `backend/conformance/batch_closer_contract.go`
+- M: `backend/conformance/batch_creator_contract.go`
+- A: `backend/conformance/batch_getter_contract.go`
+- A: `backend/conformance/blocked_lister_contract.go`
+- M: `backend/conformance/blocking_annotator_contract.go`
+- M: `backend/conformance/counter_contract.go`
+- M: `backend/conformance/dependency_editor_contract.go`
+- M: `backend/conformance/dualwrite_history_contract.go`
+- A: `backend/conformance/dualwrite_participation_generation_contract.go`
+- A: `backend/conformance/heartbeater_contract.go`
+- A: `backend/conformance/lease_reclaimer_contract.go`
+- M: `backend/conformance/lifecycle_close_reopen_contract.go`
+- M: `backend/conformance/lifecycle_create_contract.go`
+- A: `backend/conformance/lifecycle_create_gate_contract.go`
+- M: `backend/conformance/lifecycle_update_contract.go`
+- A: `backend/conformance/lifecycle_update_gate_contract.go`
+- M: `backend/conformance/memories_contract.go`
+- A: `backend/conformance/molecule_contract.go`
+- M: `backend/conformance/portable.go`
+- M: `backend/conformance/reader_contract.go`
+- M: `backend/conformance/retention_epoch_contract.go`
+- M: `backend/conformance/role_bundle_cases.go`
+- M: `backend/conformance/sweeper_contract.go`
+- M: `backend/conformance/versioned_history_wiring_test.go`
+- A: `backend/conformance/versioned_read_contract.go`
+- A: `backend/http/BUILD.bazel`
+- A: `backend/http/attach.go`
+- A: `backend/http/attach_test.go`
+- A: `backend/http/corpus/BUILD.bazel`
+- A: `backend/http/corpus/README.md`
+- A: `backend/http/corpus/corpus_parts_test.go`
+- A: `backend/http/corpus/corpus_test.go`
+- A: `backend/http/corpus/gate_check_served_test.go`
+- A: `backend/http/corpus/harness_test.go`
+- A: `backend/http/corpus/reference_proxy_test.go`
+- A: `backend/http/corpus/required_corpus_tier_test.go`
+- A: `backend/http/corpus/served_pinned_shards.txt`
+- A: `backend/http/corpus/testdata/allowlist.yaml`
+- A: `backend/http/corpus/testdata/corpus.yaml`
+- A: `backend/http/corpus/testdata/reference_server.json`
+- A: `backend/http/credential.go`
+- A: `backend/http/e2e_blocked_flags_test.go`
+- A: `backend/http/e2e_blocked_test.go`
+- A: `backend/http/e2e_cli_test.go`
+- A: `backend/http/e2e_export_test.go`
+- A: `backend/http/e2e_gates_test.go`
+- A: `backend/http/e2e_heartbeat_test.go`
+- A: `backend/http/e2e_link_test.go`
+- A: `backend/http/e2e_list_filters_test.go`
+- A: `backend/http/e2e_list_page_edges_test.go`
+- A: `backend/http/e2e_mol_test.go`
+- A: `backend/http/e2e_promote_test.go`
+- A: `backend/http/e2e_read_your_own_write_test.go`
+- A: `backend/http/e2e_recompute_blocked_test.go`
+- A: `backend/http/e2e_remote_roles_test.go`
+- A: `backend/http/e2e_request_budget_test.go`
+- A: `backend/http/e2e_search_test.go`
+- A: `backend/http/e2e_show_current_test.go`
+- A: `backend/http/e2e_show_single_fetch_test.go`
+- A: `backend/http/errors.go`
+- A: `backend/http/http.go`
+- A: `backend/http/open_test.go`
+- A: `backend/http/per_open_credential_test.go`
+- A: `backend/http/register_test.go`
+- A: `backend/http/served_pinned_shards.txt`
+- A: `backend/http/target.go`
+- M: `backend/types.go`
+- M: `beads.go`
+- M: `beads_cgo.go`
+- M: `beads_nocgo.go`
+- M: `beadserrors/BUILD.bazel`
+- M: `beadserrors/errors.go`
+- D: `checks.nix`
+- M: `cmd/bd/AGENTS.md`
+- M: `cmd/bd/BUILD.bazel`
+- A: `cmd/bd/CLAUDE.md`
+- M: `cmd/bd/actor_test.go`
+- M: `cmd/bd/ado.go`
+- M: `cmd/bd/ado_roundtrip_test.go`
+- A: `cmd/bd/agent_artifacts_embedded_test.go`
+- M: `cmd/bd/assign.go`

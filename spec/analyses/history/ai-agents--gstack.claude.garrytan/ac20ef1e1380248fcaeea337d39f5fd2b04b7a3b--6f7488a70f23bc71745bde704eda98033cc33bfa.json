@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--gstack.claude.garrytan",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/garrytan/gstack",
+  "report": "spec/projects/ai-agents--gstack.claude.garrytan.md",
+  "analyzedSha": "ac20ef1e1380248fcaeea337d39f5fd2b04b7a3b",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T07:54:09-07:00",
+  "observedSha": "6f7488a70f23bc71745bde704eda98033cc33bfa",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6f7488a70f23bc71745bde704eda98033cc33bfa",
+      "date": "2026-10-23T18:35:59Z",
+      "subject": "v1.91.185.0 fix(evals): plan-design focus rating in plain words, docsync own-call rule where --help is named, floor Create crop and 0D menu (GSTA-65) (#3358)"
+    },
+    {
+      "sha": "8f37284a0bfb095d750f73d0313f6de19a8489a8",
+      "date": "2026-10-23T18:22:20Z",
+      "subject": "v1.91.184.0 test(office-hours): attempt lifecycle fixture runs on fake timers, not wall-clock sleeps (GSTA-65) (#3356)"
+    },
+    {
+      "sha": "9c7b4c81ca2accfe6ea1781a1c873c4551f2fa51",
+      "date": "2026-10-23T18:05:39Z",
+      "subject": "v1.91.183.0 fix(evals): a rejected API key is INFRA, never 131 assertion reds and reruns (#3361)"
+    },
+    {
+      "sha": "b04cc35832183a89ed71eed628de15a6f315a1a8",
+      "date": "2026-10-23T05:47:18Z",
+      "subject": "v1.91.182.0 fix(capy-install): verify Bun 1.4.4 archives so a 1.4.4 project pin installs instead of RUNTIME_PIN_CONFLICT (#3345)"
+    },
+    {
+      "sha": "4a98e407e60e6581748b3835e387a870cff55265",
+      "date": "2026-10-23T00:26:19Z",
+      "subject": "v1.91.181.0 Promote qualified CSO runtime catalog (#3343)"
+    },
+    {
+      "sha": "2350c2a5fc7eda2223fa345dc000d3c4fad3dc7d",
+      "date": "2026-10-23T00:04:25Z",
+      "subject": "v1.91.180.0 docs(cso): name the qualified runtime and scanner catalogs instead of 'static assessment only' (#3337)"
+    },
+    {
+      "sha": "a59b5e4097ef8459c97d60bd3bcf7a20687de885",
+      "date": "2026-10-22T20:10:23Z",
+      "subject": "v1.91.179.0 test(docsync): cut per-case spawn cost in the fault interface and split its outer run (flaky pass 2026-10-22) (#3342)"
+    },
+    {
+      "sha": "df017c50b8c4fb2b17bed3dae484c9d3660292ae",
+      "date": "2026-10-22T19:57:52Z",
+      "subject": "v1.91.178.0 fix(qa): materialize names the next write instead of qualifying the verdict by report root (flaky pass 2026-10-22) (#3341)"
+    },
+    {
+      "sha": "d21a0ec216bf58e3232bac774e1aceb5cae01a7d",
+      "date": "2026-10-22T19:35:30Z",
+      "subject": "v1.91.177.0 ci(cso): give the promote candidate step GH_TOKEN; fail any workflow step that runs gh without a token (#3336)"
+    },
+    {
+      "sha": "514fbfdc9799376edfd2536f60659501a48ead64",
+      "date": "2026-10-21T19:22:49Z",
+      "subject": "v1.91.176.0 cso: ignore the compiled helpers' leading #! line in the release contract's preparationSha256 (both sides) (#3333)"
+    },
+    {
+      "sha": "4065e340e9a3556a0aa193f45e77dea2d5b3fbf6",
+      "date": "2026-10-21T18:26:03Z",
+      "subject": "v1.91.175.0 fix(test-free): a flaky pass keeps the failing assertion in the epilogue and the flake ledger (#3331)"
+    },
+    {
+      "sha": "6b2b5f350de0c5c044aa2ecb64e426cbeb45e1a6",
+      "date": "2026-10-21T18:11:21Z",
+      "subject": "v1.91.174.0 fix(evals): local-hook detector credits \"set it up by hand\"; read-only grammar steers globbed options to the quoted form (#3332)"
+    },
+    {
+      "sha": "b616d6c53dd8fc0d8db210444b44a131b553b83e",
+      "date": "2026-10-21T00:10:39Z",
+      "subject": "v1.91.173.0 fix(ship-queue): train verify accepts a slot head with main merged in (GSTA-49) (#3327)"
+    },
+    {
+      "sha": "e7a1df9e18c8eba7300c9631b3d75306b2d483a8",
+      "date": "2026-10-20T23:55:41Z",
+      "subject": "v1.91.172.0 feat(capy): approvals per thread, Captain plan briefs and before/after PR images (#3328)"
+    },
+    {
+      "sha": "d8753130710de2647f7ea3bdd19ffa793f3d5c6d",
+      "date": "2026-10-20T20:23:27Z",
+      "subject": "v1.91.171.0 fix(ios-qa): a restarted daemon resumes the device session instead of relaunching the app (#3132)"
+    },
+    {
+      "sha": "5de607f26ccb5a485a7f0fbc08a085ab66647704",
+      "date": "2026-10-20T19:02:57Z",
+      "subject": "v1.91.170.0 fix(autoplan): guard waits for an unflushed journal; plan floor harness reads cropped menus; office-hours reviewer recovers with Write (GSTA-57) (#3326)"
+    },
+    {
+      "sha": "3dda9d810da07fc7efe0e88a845bf16b6e5535f9",
+      "date": "2026-10-20T18:45:38Z",
+      "subject": "v1.91.169.0 fix(evals): docs-sync fixture accepts joined Git reads, literal loops and tr pipes; late-result says what its repair fixes (GSTA-57) (#3325)"
+    },
+    {
+      "sha": "fc046b5c832d3e4ecaae79d2747ac1f435f643b7",
+      "date": "2026-10-20T18:23:57Z",
+      "subject": "v1.91.168.0 fix(evals): QA deadline joins, QA-callers handoff order and plan-check probes (GSTA-57) (#3321)"
+    },
+    {
+      "sha": "6a1b3be141ffe78cf8acb3a382652475fdded54f",
+      "date": "2026-10-20T18:05:16Z",
+      "subject": "v1.91.167.0 fix(evals): plan-design focus and tpa pitch detectors accept the rewordings Opus 5.5 uses (GSTA-57) (#3320)"
+    },
+    {
+      "sha": "a3ed43c9b31183c49339f8a7f997168430e5eeb2",
+      "date": "2026-10-20T17:06:15Z",
+      "subject": "v1.91.166.0 test: warm PowerShell 5.1 outside the setup-ps1 legacy cases; xvfb round trip on a private display range (GSTA-57) (#3324)"
+    },
+    {
+      "sha": "43d6ed28f2bf55acae23a13be3d1e053f8958d3b",
+      "date": "2026-10-20T15:01:46Z",
+      "subject": "v1.91.165.0 fix(version-gate): accept an unstamped READY head under merge trains (GSTA-49 S1) (#3323)"
+    },
+    {
+      "sha": "c580561e8a5ac08e6cbdd52c7a0ce521ab6310a5",
+      "date": "2026-10-20T06:40:13Z",
+      "subject": "v1.91.164.0 feat(ship-policy): turn merge trains on for gstack (GSTA-49 go-live) (#3317)"
+    },
+    {
+      "sha": "95152e3c4c04c61d320e1f6602a8af3ef7b6f769",
+      "date": "2026-10-20T04:47:11Z",
+      "subject": "v1.91.163.0 feat(evals): the gate reruns failed cases once and reports a flaky green (GSTA-49 F1) (#3315)"
+    },
+    {
+      "sha": "85b0f531f5a260e6bbbae5f3c9240318f70e5808",
+      "date": "2026-10-20T02:13:39Z",
+      "subject": "v1.91.162.0 feat(evals): merge-train workflow side, inert behind the train policy block (GSTA-49 T1b) (#3279)"
+    },
+    {
+      "sha": "5ebda5999f466b81bf51b40db956b70df6cb5636",
+      "date": "2026-10-20T01:38:26Z",
+      "subject": "v1.91.161.0 fix(pregate): Django, Dart, asset and tool-config lanes; init drafts from the repo (#3266-#3269) (#3306)"
+    },
+    {
+      "sha": "71b007ae7cc11413cee6852ca1a761942b041ab5",
+      "date": "2026-10-20T01:06:17Z",
+      "subject": "v1.91.160.0 fix(scope,review,ship): recognise Dart and Flutter in diff scope and test detection (#3284) (#3300)"
+    },
+    {
+      "sha": "4c6fa89cdce663f7ee027e2b47dad60ae7b3265f",
+      "date": "2026-10-20T00:24:28Z",
+      "subject": "v1.91.159.0 security: gstack's Bun entry points ignore the audited repo's .env and bunfig.toml (S1) (#3312)"
+    },
+    {
+      "sha": "cb9ccf2e8044f2650a47f976e878ee567d8fb114",
+      "date": "2026-10-19T23:31:59Z",
+      "subject": "v1.91.158.0 feat(config): plan_mode_preamble=off drops the plan-mode preamble from installed skills (port of #3213) (#3308)"
+    },
+    {
+      "sha": "6237994016ffed000ca38744182d5aec37696c99",
+      "date": "2026-10-19T22:55:42Z",
+      "subject": "v1.91.157.0 perf(gen-skill-docs): drop the \"When to invoke\" body section from Claude SKILL.md files (port of #3129) (#3305)"
+    },
+    {
+      "sha": "69a6d7fc3b98a67d0688b1c9e7561a96fd127a6a",
+      "date": "2026-10-19T21:55:24Z",
+      "subject": "v1.91.156.0 fix(evals): office-hours marathon fixture loads the formatter's imports; validator checks the observed cap fixes (#3246) (#3309)"
+    },
+    {
+      "sha": "0c87a553c75c42c3c112eb66f203d6785ef2b8a6",
+      "date": "2026-10-19T21:30:33Z",
+      "subject": "v1.91.155.0 fix(browse): a busy tab no longer blocks every command with \"Daemon busy\" (port of #3250) (#3301)"
+    },
+    {
+      "sha": "133cb360842d0a7cf88fc1d10dcb624f2b7b841f",
+      "date": "2026-10-19T21:11:16Z",
+      "subject": "v1.91.154.0 fix(cso): safe-status sets, withheld credential history, ASSERTION_FAILED, Rails read-only verify (#3302)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/docker/Dockerfile.ci",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/dia-launch-driver.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/qualify-dia-macos.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/run-dia-native-qualification.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/actionlint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/arm-setup-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/ci-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cso-runtime-images.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cso-runtime-promote.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cso-runtime-qualification.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cso-scanner-images.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dependency-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/eval-sweep.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/evals-main-backstop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/evals-marathon.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/evals-periodic.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/free-durations-record.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/free-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/make-pdf-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/measure-journal-read.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/model-policy-freshness.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/native-qualification.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/osv-scanner.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/platform-qualification.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-title-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/quality-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skill-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/test-health.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/version-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-free-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-pregate-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-setup-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitlab-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/generated.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/pregate.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/ship-policy.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/ship-policy.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".osv-scanner.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BROWSER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ETHOS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TODOS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "USING_GBRAIN_WITH_GSTACK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents-digest/gstack-AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/DRIVER.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/DRIVER.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/bin/guard-journal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/bin/guard-log.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/bin/guard-reasons.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/bin/owned-read.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/bin/phase-publication-hook",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/bin/phase-publication-hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/ceo-phase.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/ceo-phase.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/design-phase.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/design-phase.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/dx-phase.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/dx-phase.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/eng-phase.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/eng-phase.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/phase-close.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/phase-close.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "autoplan/sections/tasks-aggregator.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/sections/unattended.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "autoplan/sections/unattended.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark-models/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark-models/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/SKILL.md.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/dev-setup",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-analytics",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-approval-classes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-approvals",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-artifact",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-artifacts-init",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-autoplan",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-autoplan-snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-autoplan-timing",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-banned-terms",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-brain-cache",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-brain-context-load.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-brain-enqueue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-brain-lock.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-brain-restore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-brain-sync",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-brain-sync-index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-brain-uninstall",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-browser-ensure",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-bun-version.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-capy-install",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-capy-session",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-ceo-mode-handoff",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-ceo-plan-find",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-ci-gate",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-claude-code",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-claude-root.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-code-intelligence",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-codex-login",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-codex-probe",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-codex-session-import",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-codex-status.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-community-dashboard",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-config",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-context-bill",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-contributor-mode",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-decision-log",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-decision-search",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-design-approved",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-design-claim",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-design-detect.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-design-doc-find",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-design-md.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-developer-profile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-diff-scope",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-distill-apply",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-distill-free-text",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-docs-candidate",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-doctor",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-doctor-check.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-doctor-components.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-egress",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-egress-lib.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-egress-receipt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-error-capture",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-eval-plan",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-evidence",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-ff-update",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-gate",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-gate-diff",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-gbrain-detect",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-gbrain-install",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-gbrain-mcp-verify",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-gbrain-read-capability.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-gbrain-source-wireup",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-gbrain-supabase-provision",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-gbrain-sync.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-global-discover.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-greptile-early",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-harness-pid.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-hook-check",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bin/gstack-host-renders.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bin/gstack-install-registry.sh",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

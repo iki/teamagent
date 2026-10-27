@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--lean-ctx",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/yvgude/lean-ctx",
+  "report": "spec/projects/ai-agents-mem--lean-ctx.md",
+  "analyzedSha": "9594b1cc244f8747112bb5fd730f2951a4d94090",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T21:27:08+02:00",
+  "observedSha": "d2af42331723d1aeb1cf67280504ec16b6b7832b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d2af42331723d1aeb1cf67280504ec16b6b7832b",
+      "date": "2026-10-23T20:14:33+02:00",
+      "subject": "fix(pathjail): let Cursor agents read their own tool output (#2129)"
+    },
+    {
+      "sha": "1d21b94a14297e42629d8b5a4401e71524d9d8c1",
+      "date": "2026-10-23T20:08:31+02:00",
+      "subject": "feat(setup): choose which AI tools setup/update configure, add --dry-run (#2133)"
+    },
+    {
+      "sha": "0081f245cbb7996f2d29ac211c40c0eea8b39a3f",
+      "date": "2026-10-23T17:58:46+02:00",
+      "subject": "chore(deps): hono 4.13.13 (replaces #2122) + tokio 1.53.3 (RUSTSEC-2026-0386) (#2130)"
+    },
+    {
+      "sha": "669329187c20f3d72f653ce5abc39a80a2ff5693",
+      "date": "2026-10-23T16:35:46+02:00",
+      "subject": "chore(deps-dev): bump vite from 8.0.16 to 8.3.5 in /cookbook (#2125)"
+    },
+    {
+      "sha": "b80391586aa8ce8f28c5d00ce0378537aeef6b4a",
+      "date": "2026-10-23T16:35:41+02:00",
+      "subject": "chore(deps-dev): bump follow-redirects in /_archive/vscode-extension (#2126)"
+    },
+    {
+      "sha": "20df2b6e53654e2012b9def2ff090b1df93ae537",
+      "date": "2026-10-23T16:35:35+02:00",
+      "subject": "chore(deps): bump markdown-it in /_archive/vscode-extension (#2127)"
+    },
+    {
+      "sha": "4210b9027dd4c30d033d6824f3a04def56740433",
+      "date": "2026-10-23T16:35:30+02:00",
+      "subject": "docs: update Discord invite link (#2123)"
+    },
+    {
+      "sha": "ef3b3bdf7d868c0f12241d2f717d6e6b4f77ae66",
+      "date": "2026-10-23T14:56:38+02:00",
+      "subject": "test(proxy): pin Claude Code tool-search pass-through; correct subscription guard reason (#2128)"
+    },
+    {
+      "sha": "1fba4a0eb7243c1f160f12e531b8cd8c74d91da7",
+      "date": "2026-10-19T19:34:01+02:00",
+      "subject": "Align public messaging with Context Gateway (#2121)"
+    },
+    {
+      "sha": "2ef6632fa924e7f78a0ba5056c376202312be1f0",
+      "date": "2026-10-18T23:58:40+02:00",
+      "subject": "fix(windows): give each artifact capability probe its own name (#2118)"
+    },
+    {
+      "sha": "edcf9da9eb4c97e327c6bcd340cd21d5ed45969e",
+      "date": "2026-10-18T22:03:49+02:00",
+      "subject": "fix(deps): patch rustls and katex advisories in clients and cookbook (#2117)"
+    },
+    {
+      "sha": "38bea537f85ef95f8c86fc658fb6bcabcc6429a0",
+      "date": "2026-10-18T20:48:46+02:00",
+      "subject": "fix(solution): merge tracker counts across concurrent MCP servers (#2116)"
+    },
+    {
+      "sha": "dc41bb19982e5bd93a2c0862702bfd3a0bcea169",
+      "date": "2026-10-18T12:39:18+02:00",
+      "subject": "Merge pull request #2114 from yvgude/test/capacity-test-admission"
+    },
+    {
+      "sha": "41d4ea8ca51e327f0e23c8fb3aa03058847d81cf",
+      "date": "2026-10-18T11:56:45+02:00",
+      "subject": "test(knowledge): fill the capacity regression store through remember()"
+    },
+    {
+      "sha": "a3742791cf180ff060c7fadee35c3a7ee4d222ad",
+      "date": "2026-10-18T11:01:54+02:00",
+      "subject": "Merge pull request #2113 from yvgude/fix/ledger-model-attribution"
+    },
+    {
+      "sha": "385a6cad6d099259788ec311eccd53ec02d4e25e",
+      "date": "2026-10-18T10:28:05+02:00",
+      "subject": "feat(notices): keep received team notices for the cockpit Inbox"
+    },
+    {
+      "sha": "c9c3b8fb001ae0001b9f664f1ef62ebb318ccf58",
+      "date": "2026-10-18T09:40:04+02:00",
+      "subject": "fix(ledger,memory): record the model in use; keep activity out of memory"
+    },
+    {
+      "sha": "6be373ca97c3fd60f1dc36cf3161c9df34baccbc",
+      "date": "2026-10-17T23:32:40+02:00",
+      "subject": "test: give the two-server relay test room on slow hosts (#2112)"
+    },
+    {
+      "sha": "bc5ba30125d759668adb730f306bd5ce922a54fc",
+      "date": "2026-10-17T21:20:10+02:00",
+      "subject": "test: tolerate host load in two background-timing tests (#2111)"
+    },
+    {
+      "sha": "0b414d658eb17dff578a894a27128b87b3c492c7",
+      "date": "2026-10-17T21:01:29+02:00",
+      "subject": "Merge pull request #2110 from yvgude/chore/untrack-pycache"
+    },
+    {
+      "sha": "20a3cf8670cdb713cd61c8d17b7f7f13034298d2",
+      "date": "2026-10-17T20:38:44+02:00",
+      "subject": "perf: drop quadratic truncation and redundant tee fsyncs (#2108)"
+    },
+    {
+      "sha": "687052e444295ae18d6656f53c7b73121bbb1346",
+      "date": "2026-10-17T20:15:35+02:00",
+      "subject": "chore: untrack two Python bytecode files"
+    },
+    {
+      "sha": "23739ed5512df813427f14c181ce8745dfa8c0e0",
+      "date": "2026-10-17T20:15:01+02:00",
+      "subject": "Merge pull request #2107 from yvgude/fix/history-gate-precision"
+    },
+    {
+      "sha": "3f6416f013fe7551f9e43354b90cfd437035a09d",
+      "date": "2026-10-17T20:00:12+02:00",
+      "subject": "test: retain durable replay denial under contention (#2109)"
+    },
+    {
+      "sha": "fcd7ac9243960387f43aa16bbea87852370949ac",
+      "date": "2026-10-17T18:40:52+02:00",
+      "subject": "fix: stabilize source installs and retain CI build caches (#2104)"
+    },
+    {
+      "sha": "c43445f153ea79af8d15e96ac31d17e5a3120937",
+      "date": "2026-10-17T17:35:34+02:00",
+      "subject": "fix(security): precise SEC001 rule and a fresh full-history baseline"
+    },
+    {
+      "sha": "a3d9c6b04706d34af08f5f94c236bd030944b4e8",
+      "date": "2026-10-17T17:30:19+02:00",
+      "subject": "Merge pull request #2105 from yvgude/fix/opencode-unbound-guidance"
+    },
+    {
+      "sha": "a94f0b80e47620d343aca22562abf069ac101dd1",
+      "date": "2026-10-17T16:15:36+02:00",
+      "subject": "test(path_resolve): use the home directory as the broad start dir"
+    },
+    {
+      "sha": "01d06654a954b9bb5767cc4129f32e4e5e507362",
+      "date": "2026-10-17T16:15:36+02:00",
+      "subject": "fix(opencode): explain an unbound session; rules name only offered tools"
+    },
+    {
+      "sha": "b37ee3be11f2525cd785348d3e43ccdbb590fe94",
+      "date": "2026-10-17T16:15:13+02:00",
+      "subject": "ci: cut queue time and duplicate work from every PR and merge (#2106)"
+    },
+    {
+      "sha": "980380bfa040183e9eb2dcb806dba87346067ed6",
+      "date": "2026-10-17T15:35:23+02:00",
+      "subject": "Merge pull request #2102 from yvgude/fix/bounce-shell-edits"
+    },
+    {
+      "sha": "d371b6cb6d5e70205b4a3c1ec1fc22db80664086",
+      "date": "2026-10-17T13:44:26+02:00",
+      "subject": "chore(bounce): move shell file effects into their own pipeline module; SPDX headers"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".cargo/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/pre-commit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/pre-push",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github-ignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/DISCUSSION_WELCOME.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/windows-signing/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/hooks/pre-push-proprietary-guard.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/control-plane-regressions.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/grammar-addons.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-clients.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/publish-sdk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/vscode-extension.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-signing-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".kiro/steering/lean-ctx.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CODE_OF_CONDUCT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRACTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LEAN-CTX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LEANCTX_FEATURE_CATALOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LICENSE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LICENSES/Apache-2.0.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LICENSES/MIT.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LICENSE_MATRIX.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SBOM.cdx.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "THIRD_PARTY_NOTICES",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VISION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "_archive/marketing/submissions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "_archive/vscode-extension/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "aur/lean-ctx-bin",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ci/gitlab-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/rust/lean-ctx-client/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/rust/lean-ctx-client/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/rust/lean-ctx-client/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/rust/lean-ctx-client/tests/dependency_boundary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/rust/lean-ctx-client/tests/external-consumer/Cargo.lock.fixture",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "clients/rust/lean-ctx-client/tests/http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/examples/external-capability/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/examples/knowledge-graph-explorer/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/examples/ocla_consumer/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cookbook/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "discord-faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/IMPLEMENTATION_PROTOCOL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/POLICY-REFRESH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/POSITIONING_CANONICAL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/PROTECTED-DIAGNOSTICS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/PROTECTED-HOOKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/PROTECTED-KNOWLEDGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adrs/ADR-013-control-plane-contract-ownership.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/ADR-v4-decision-spine-consolidation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/ADR-v4-ocp-ocla-relationship.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/ADR-v4-public-private-runtime-boundary.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/ADR-v4-via-resolution.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/a2a-transport.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/agent-bus.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/agent-connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/agent-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/autopilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/context-checkpoint.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/cross-agent-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/decision-spine.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/enterprise-governance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/entitlements.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/execution-autopilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/intelligence-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/ocla-capability-fabric.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/outcome-evaluation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/public-private-boundary.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/stigmergic-coordination.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/subagent-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/team-context.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/team-workspace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/v4-overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/work-graph.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cognition-lab/plan-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/DEPRECATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/accepted-outcome-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/billing-plane-v2-catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/capabilities-contract-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/capability-manifest-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/context-gateway-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/context-plan-projection-digest-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/context-plan-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/context-policy-packs-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/decision-record-signature-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/decision-record-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/contracts/degradation-policy-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/delivery-evidence-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/engine-context-plan-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/engine-context-sources-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/engine-context-store-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/engine-outcome-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/engine-provider-execution-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/engine-source-execution-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/execution-plan-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/execution-receipt-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/gateway-proof-v1/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/gateway-proof-v1/registry.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/graph-reproducibility-contract-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/http-mcp-contract-v2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/intelligence-runtime-install-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/ocla-bus-event-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/ocla-cache-validator-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/ocla-contract-pack-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/ocla/ocla-capability-manifest-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/ocp/event.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/ocp/evidence-entry.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/oss-plane-separation-v2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/provider-framework-contract-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/public-product-claims-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/quality-loop-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/reference-scheduler-estimates-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/release-integrity-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/support-lifecycle-v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contracts/task-envelope-v1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1.SOURCE-v1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/authority-decision.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/checkpoint.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/common.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/conflict.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/context-object.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/fixtures/canonicalization.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/fixtures/cross-record-cases.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/fixtures/pseudonyms.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/frozen-hashes.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/invite.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/lease.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/member.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/membership.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/organization.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/policy.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/promotion.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/provenance.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/signature-envelope.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/team-receipt.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/workspace-role.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-context-v1/workspace.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-seat-value-v1/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-seat-value-v1/common.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-seat-value-v1/fixtures/cross-record/histories.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-seat-value-v1/fixtures/invalid/negative.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/contracts/team-seat-value-v1/fixtures/valid/positive.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,207 @@
+# oh-my-pi: change evidence
+
+Source: [oh-my-pi](https://github.com/can1357/oh-my-pi) · [Analysis](../../projects/ai-agents--oh-my-pi.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `d4d49e71bef3ac1420d45febf215b951decf5ae9`; commit date: 2026-10-03T20:14:39+02:00; review date: unknown; observed SHA: `e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/can1357/oh-my-pi/compare/d4d49e71bef3ac1420d45febf215b951decf5ae9...e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [e996e1c7ac47](https://github.com/can1357/oh-my-pi/commit/e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e) 2026-10-27T18:12:27+01:00: chore: bump version to 18.13.2
+- [0b380bfc7433](https://github.com/can1357/oh-my-pi/commit/0b380bfc743314fcae2aa502cfded2e2d6d9b6f7) 2026-10-27T18:11:11+01:00: fix(vfs): allow Windows-only clippy lints on cfg(unix)-split helpers
+- [6163dff1f7d2](https://github.com/can1357/oh-my-pi/commit/6163dff1f7d25e61b20f39492f264bb7b41cb082) 2026-10-27T18:06:47+01:00: test(builtins): expect find's '/' separator in the deep-chain test on Windows
+- [fb68502650b7](https://github.com/can1357/oh-my-pi/commit/fb68502650b7f75016e2e36c211b0d9e27a59bad) 2026-10-27T17:53:51+01:00: chore(bazel): refresh MODULE.bazel.lock for Cargo.toml changes
+- [93a5e2e06eb0](https://github.com/can1357/oh-my-pi/commit/93a5e2e06eb0d8313a53e649afe0d0359e08a09f) 2026-10-27T17:42:42+01:00: Merge pull request #17215 from H4vC/fix/ux-uplifts
+- [bceb4199c41a](https://github.com/can1357/oh-my-pi/commit/bceb4199c41aea0a5c2fb3385710b04da8cabb3f) 2026-10-27T17:20:48+01:00: fix(tui): keep ask draft guard for actions ignored while hidden; test idle HUD agents segment
+- [d94ea97cb492](https://github.com/can1357/oh-my-pi/commit/d94ea97cb492de52e2a49a0401eb48a6beaa60f2) 2026-10-27T17:10:45+01:00: docs: changelog attribution for #17215
+- [60fc46de34d4](https://github.com/can1357/oh-my-pi/commit/60fc46de34d41c5d821f6aabbef5752b16bd24f3) 2026-10-27T17:10:11+01:00: fix(tui): close stale autocomplete, answerable ask with draft, reachable agent hub
+- [9b4488d3b520](https://github.com/can1357/oh-my-pi/commit/9b4488d3b520dcf9cca7778d8072f16c3c183167) 2026-10-27T16:13:00+01:00: test(coding-agent): close the legacy extension parse cache before removing builtin-tools temp HOME
+- [67ca7f27cb0a](https://github.com/can1357/oh-my-pi/commit/67ca7f27cb0a9922280cc19f960d70c51fb9dd33) 2026-10-27T15:53:17+01:00: test(coding-agent): close history/agent DB singletons before removing the idle-mode temp dir
+- [38510c1cfef3](https://github.com/can1357/oh-my-pi/commit/38510c1cfef3a0f583e72d0c4d5022a90d361acd) 2026-10-27T15:43:49+01:00: test(coding-agent): give the resume-preflight picker real settings
+- [b75109117909](https://github.com/can1357/oh-my-pi/commit/b7510911790953e5f33ccd606518a8213a24ab87) 2026-10-27T15:37:09+01:00: test(ai): decode uncompressed Devin frames and tolerate a reserved OpenRouter callback port
+- [fbc3ac6a148d](https://github.com/can1357/oh-my-pi/commit/fbc3ac6a148d24d50f573e9b531999e32bae42eb) 2026-10-27T14:52:40+01:00: Merge PR #15753: feat(extensions): direct control of built-in session modes (@Shadorain)
+- [f9a7af1ca6ab](https://github.com/can1357/oh-my-pi/commit/f9a7af1ca6aba80c454a03b31a25672221ba8a1d) 2026-10-27T14:52:17+01:00: fix(coding-agent): settle extension mode control across session switches and add extensionHandlers.modeControl
+- [7650d285a0b0](https://github.com/can1357/oh-my-pi/commit/7650d285a0b0eefb20b5eac1b5bdb4dee454ac89) 2026-10-27T14:44:30+01:00: Merge remote-tracking branch 'origin/main' into Shadorain/extension-mode-lifecycle
+- [0cc43441f1e9](https://github.com/can1357/oh-my-pi/commit/0cc43441f1e95d3b42fb16044882763db1a0cc9a) 2026-10-27T14:15:29+01:00: fix(coding-agent): repair regressions from today's PR merges
+- [a36a1f252e23](https://github.com/can1357/oh-my-pi/commit/a36a1f252e23031accb25bacf2b9894605ba524f) 2026-10-27T14:06:48+01:00: docs(changelog): move #17128 and #17125 entries out of the released 18.13.1 section
+- [af765d348830](https://github.com/can1357/oh-my-pi/commit/af765d348830871f41b771814fa2a32590dd85e6) 2026-10-27T14:05:44+01:00: Merge PR #17015: perf(diff): replace Rc<Component> linked list with flat arena in myers_diff (@GTanger)
+- [ed19e0bcbca6](https://github.com/can1357/oh-my-pi/commit/ed19e0bcbca6d66b6ee0be80bdfeb58c0ed552ec) 2026-10-27T14:05:28+01:00: style(pi-diff): rustfmt and clippy for the component arena
+- [13669004f7c4](https://github.com/can1357/oh-my-pi/commit/13669004f7c40d08cd5cb007f78cda9f04f3adf8) 2026-10-27T14:04:30+01:00: Merge remote-tracking branch 'origin/main' into perf/diff-myers-component-arena
+- [950adc23eefa](https://github.com/can1357/oh-my-pi/commit/950adc23eefa1a8b7cde968fe973f61416ee1996) 2026-10-27T14:03:52+01:00: Merge PR #17151: feat(coding-agent): expose lsp and ast_grep on bundled scout agent (@sinhduc01)
+- [c8afe628b945](https://github.com/can1357/oh-my-pi/commit/c8afe628b94501daa32480382e13a1ef1b67c061) 2026-10-27T14:03:26+01:00: docs(changelog): credit #17151 and drop duplicated entries
+- [ff700fa65e4c](https://github.com/can1357/oh-my-pi/commit/ff700fa65e4cf97a97944adc5c4d43aba7bb4714) 2026-10-27T14:03:20+01:00: Merge remote-tracking branch 'origin/main' into feat/scout-lsp-ast-grep
+- [1b0494c03e5f](https://github.com/can1357/oh-my-pi/commit/1b0494c03e5fc67b14458c102e9845af3b85f50e) 2026-10-27T14:03:02+01:00: Merge PR #17158: feat(rpc): expose native dictation to RPC hosts (@felipe-santos-aya)
+- [fcb667387ece](https://github.com/can1357/oh-my-pi/commit/fcb667387eced8a2d67772a8841b2cbd89eeee7a) 2026-10-27T14:02:14+01:00: docs(changelog): move #17158 entry to Unreleased
+- [49e5fead6bdb](https://github.com/can1357/oh-my-pi/commit/49e5fead6bdbfd7623dbc3123cc17b2cadb40016) 2026-10-27T14:02:13+01:00: Merge remote-tracking branch 'origin/main' into feat/draft-only-dictation-rpc
+- [6af88c6314d1](https://github.com/can1357/oh-my-pi/commit/6af88c6314d1630c1c73b4462bd5834e4292c23a) 2026-10-27T14:02:04+01:00: Merge PR #17152: fix(coding-agent): render the workflowz notice for the session's eval runtimes and workpool mode (@bigHippoZz)
+- [46986a663df4](https://github.com/can1357/oh-my-pi/commit/46986a663df486be8860f77e333078bbcbcd07a4) 2026-10-27T14:01:35+01:00: docs(changelog): move #17152 entry to Unreleased
+- [b962ab0ba1d1](https://github.com/can1357/oh-my-pi/commit/b962ab0ba1d1144ae4aa0d64eeea7194b4775185) 2026-10-27T14:01:34+01:00: Merge remote-tracking branch 'origin/main' into fix/workflowz-notice-js-awaits
+- [5e3e953b50e0](https://github.com/can1357/oh-my-pi/commit/5e3e953b50e088a91c82a7619951caa81f49daeb) 2026-10-27T14:01:28+01:00: Merge PR #17136: feat(session): move idle maintenance to a session-owned scheduler (@andrebrait)
+- [8a6cf3ebff87](https://github.com/can1357/oh-my-pi/commit/8a6cf3ebff876b19bfe062e935e8a007d792acc0) 2026-10-27T14:00:05+01:00: docs(changelog): drop duplicated entries from the branch merge
+- [c29f3a11ca79](https://github.com/can1357/oh-my-pi/commit/c29f3a11ca7977fc93d8e776cd141ddbbdbdf1a3) 2026-10-27T14:00:02+01:00: docs(changelog): move #17136 entry to Unreleased
+
+## Changed paths (truncated)
+
+- M: `.bazelrc`
+- M: `.config/nextest.toml`
+- M: `.gitattributes`
+- M: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- M: `.github/actions/bazel-cache/action.yml`
+- D: `.github/actions/bazel-natives/action.yml`
+- M: `.github/actions/bun-install/action.yml`
+- D: `.github/workflows/bazel-cache-warm.yml`
+- A: `.github/workflows/bun-cache-warm.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/nix.yml`
+- M: `.omp/skills/tool-prompt-optimization/scripts/probe-builtin.ts`
+- A: `.omp/tests/tui.test.ts`
+- M: `.omp/tools/tui.ts`
+- M: `AGENTS.md`
+- M: `BUILD.bazel`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `Dockerfile`
+- M: `Dockerfile.robomp`
+- M: `MODULE.bazel`
+- M: `MODULE.bazel.lock`
+- M: `README.md`
+- M: `THIRD-PARTY-NOTICES.txt`
+- M: `about.toml`
+- A: `bazel/patches/hermetic_cc_toolchain-drop-cortex-a53-link-arg.patch`
+- A: `bazel/patches/rules_rust-dep-env-exec-root-paths.patch`
+- M: `bazel/platforms/BUILD.bazel`
+- M: `bazel/toolchains/BUILD.bazel`
+- A: `bazel/toolchains/darwin/BUILD.bazel`
+- A: `bazel/toolchains/darwin/cc.bzl`
+- A: `bazel/toolchains/darwin/extract_pkg.py`
+- A: `bazel/toolchains/darwin/sdk.bzl`
+- A: `bazel/toolchains/llvm.bzl`
+- M: `bazel/toolchains/msvc/BUILD.bazel`
+- M: `bazel/toolchains/msvc/NOTES.md`
+- M: `bazel/toolchains/msvc/cc.bzl`
+- D: `bazel/toolchains/msvc/llvm.bzl`
+- M: `bazel/toolchains/swift/BUILD.bazel`
+- M: `bazel/toolchains/swift/applefm.bzl`
+- A: `bazel/toolchains/swift/defs.bzl`
+- A: `bazel/toolchains/swift/linux.bzl`
+- M: `bun.lock`
+- M: `crates/pi-ast/BUILD.bazel`
+- M: `crates/pi-ast/Cargo.toml`
+- M: `crates/pi-ast/src/block.rs`
+- A: `crates/pi-ast/src/language/grammar.rs`
+- M: `crates/pi-ast/src/language/mod.rs`
+- M: `crates/pi-ast/src/language/parsers.rs`
+- A: `crates/pi-ast/src/language/testdata/ini.wasm`
+- A: `crates/pi-ast/src/language/wasm_grammars.rs`
+- M: `crates/pi-ast/src/ops.rs`
+- M: `crates/pi-ast/src/parse_cache.rs`
+- M: `crates/pi-ast/src/summary.rs`
+- M: `crates/pi-builtins/BUILD.bazel`
+- M: `crates/pi-builtins/Cargo.toml`
+- M: `crates/pi-builtins/LICENSE`
+- M: `crates/pi-builtins/src/base32.rs`
+- A: `crates/pi-builtins/src/block_size.rs`
+- M: `crates/pi-builtins/src/bre.rs`
+- A: `crates/pi-builtins/src/chmod.rs`
+- M: `crates/pi-builtins/src/cksum.rs`
+- M: `crates/pi-builtins/src/cmp.rs`
+- M: `crates/pi-builtins/src/combine.rs`
+- M: `crates/pi-builtins/src/complete.rs`
+- M: `crates/pi-builtins/src/cp.rs`
+- M: `crates/pi-builtins/src/date.rs`
+- A: `crates/pi-builtins/src/dd.rs`
+- A: `crates/pi-builtins/src/dd/human.rs`
+- A: `crates/pi-builtins/src/dd/tables.rs`
+- M: `crates/pi-builtins/src/declare.rs`
+- A: `crates/pi-builtins/src/df.rs`
+- M: `crates/pi-builtins/src/diff.rs`
+- M: `crates/pi-builtins/src/dirname.rs`
+- A: `crates/pi-builtins/src/du.rs`
+- M: `crates/pi-builtins/src/echo.rs`
+- A: `crates/pi-builtins/src/env.rs`
+- M: `crates/pi-builtins/src/exec.rs`
+- M: `crates/pi-builtins/src/factory.rs`
+- M: `crates/pi-builtins/src/fd.rs`
+- M: `crates/pi-builtins/src/find.rs`
+- A: `crates/pi-builtins/src/fold.rs`
+- M: `crates/pi-builtins/src/grep.rs`
+- M: `crates/pi-builtins/src/host.rs`
+- A: `crates/pi-builtins/src/id.rs`
+- M: `crates/pi-builtins/src/jq-help.txt`
+- M: `crates/pi-builtins/src/jq.rs`
+- M: `crates/pi-builtins/src/kill.rs`
+- M: `crates/pi-builtins/src/lib.rs`
+- A: `crates/pi-builtins/src/line_input.rs`
+- M: `crates/pi-builtins/src/ln.rs`
+- A: `crates/pi-builtins/src/locale.rs`
+- M: `crates/pi-builtins/src/ls.rs`
+- M: `crates/pi-builtins/src/mapfile.rs`
+- M: `crates/pi-builtins/src/mkdir.rs`
+- M: `crates/pi-builtins/src/mv.rs`
+- A: `crates/pi-builtins/src/nl.rs`
+- A: `crates/pi-builtins/src/od.rs`
+- M: `crates/pi-builtins/src/paste.rs`
+- M: `crates/pi-builtins/src/pidwait.rs`
+- M: `crates/pi-builtins/src/printf.rs`
+- M: `crates/pi-builtins/src/proc_match.rs`
+- A: `crates/pi-builtins/src/proc_select.rs`
+- M: `crates/pi-builtins/src/proc_snapshot.rs`
+- M: `crates/pi-builtins/src/ps.rs`
+- A: `crates/pi-builtins/src/quoting_style.rs`
+- M: `crates/pi-builtins/src/read.rs`
+- M: `crates/pi-builtins/src/rg.rs`
+- M: `crates/pi-builtins/src/rm.rs`
+- A: `crates/pi-builtins/src/rmdir.rs`
+- M: `crates/pi-builtins/src/sed.rs`
+- M: `crates/pi-builtins/src/sort.rs`
+- M: `crates/pi-builtins/src/stat.rs`
+- M: `crates/pi-builtins/src/tac.rs`
+- M: `crates/pi-builtins/src/tail.rs`
+- M: `crates/pi-builtins/src/tee.rs`
+- A: `crates/pi-builtins/src/time_zone.rs`
+- M: `crates/pi-builtins/src/timeout.rs`
+- M: `crates/pi-builtins/src/touch.rs`
+- M: `crates/pi-builtins/src/ts.rs`
+- M: `crates/pi-builtins/src/umask.rs`
+- M: `crates/pi-builtins/src/uniq.rs`
+- A: `crates/pi-builtins/src/uptime.rs`
+- M: `crates/pi-builtins/src/wc.rs`
+- A: `crates/pi-builtins/src/withheld.rs`
+- M: `crates/pi-builtins/src/xargs.rs`
+- M: `crates/pi-diff/src/lib.rs`
+- M: `crates/pi-edit/Cargo.toml`
+- M: `crates/pi-edit/prompts/apply_patch.md`
+- M: `crates/pi-edit/prompts/replace.md`
+- M: `crates/pi-edit/src/diff_string.rs`
+- M: `crates/pi-edit/src/error.rs`
+- M: `crates/pi-edit/src/files.rs`
+- M: `crates/pi-edit/src/fuzzy.rs`
+- M: `crates/pi-edit/src/lib.rs`
+- M: `crates/pi-edit/src/modes/apply_patch.rs`
+- M: `crates/pi-edit/src/modes/hashline/apply.rs`
+- M: `crates/pi-edit/src/modes/hashline/block.rs`
+- M: `crates/pi-edit/src/modes/hashline/clipboard.rs`
+- M: `crates/pi-edit/src/modes/hashline/format.rs`
+- M: `crates/pi-edit/src/modes/hashline/input.rs`
+- M: `crates/pi-edit/src/modes/hashline/messages.rs`
+- M: `crates/pi-edit/src/modes/hashline/mismatch.rs`
+- M: `crates/pi-edit/src/modes/hashline/mod.rs`
+- M: `crates/pi-edit/src/modes/hashline/parser.rs`
+- M: `crates/pi-edit/src/modes/hashline/patcher.rs`
+- M: `crates/pi-edit/src/modes/hashline/prefixes.rs`
+- M: `crates/pi-edit/src/modes/hashline/preview.rs`
+- M: `crates/pi-edit/src/modes/hashline/recovery.rs`
+- M: `crates/pi-edit/src/modes/hashline/syntax.rs`
+- M: `crates/pi-edit/src/modes/hashline/tokenizer.rs`
+- M: `crates/pi-edit/src/modes/mod.rs`
+- M: `crates/pi-edit/src/modes/patch.rs`
+- M: `crates/pi-edit/src/modes/replace.rs`
+- M: `crates/pi-edit/src/modes/sloppy/apply.rs`
+- M: `crates/pi-edit/src/modes/sloppy/mod.rs`
+- M: `crates/pi-edit/src/modes/sloppy/parse.rs`
+- M: `crates/pi-edit/src/path_policy.rs`
+- M: `crates/pi-edit/src/session.rs`
+- M: `crates/pi-edit/src/store.rs`

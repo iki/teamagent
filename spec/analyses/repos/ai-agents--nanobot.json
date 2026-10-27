@@ -1,0 +1,1004 @@
+{
+  "metadata": {
+    "id": "ai-agents--nanobot",
+    "category": "ai-agents",
+    "name": "nanobot",
+    "url": "https://github.com/HKUDS/nanobot",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--nanobot.md",
+    "topics": [
+      "agents",
+      "channels"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "96ad7b4dbf617b11e0991e92c7d295dbd828a956",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T21:08:47+08:00",
+    "reportSha256": "b1beb7b7c5abc0524aeca3395292323a137b5f62cfe08568cd81366edc786636",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--nanobot",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/HKUDS/nanobot",
+    "report": "spec/projects/ai-agents--nanobot.md",
+    "analyzedSha": "96ad7b4dbf617b11e0991e92c7d295dbd828a956",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T21:08:47+08:00",
+    "observedSha": "b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2",
+        "date": "2026-10-27T21:05:32+08:00",
+        "subject": "fix(webui): retain history touch gestures across message replacement"
+      },
+      {
+        "sha": "927eba89ea65d5a71beb9c5d462a802cc9e045cc",
+        "date": "2026-10-27T20:46:47+08:00",
+        "subject": "fix(websocket): abort disconnected HTTP handshakes before sending (#6348)"
+      },
+      {
+        "sha": "aacc7800847d30a96e52e74331c8938618606a01",
+        "date": "2026-10-27T20:38:16+08:00",
+        "subject": "docs: clarify contribution policy and issue author credit"
+      },
+      {
+        "sha": "02c364428ad16f0b166adf8410c5a701d0bdc931",
+        "date": "2026-10-27T20:31:21+08:00",
+        "subject": "fix(webui): keep Dock taps working after touch drags"
+      },
+      {
+        "sha": "e981e97f10e7f171ac50c73137f504fe186baf0f",
+        "date": "2026-10-27T18:11:57+08:00",
+        "subject": "fix(webui): keep numbered code tokens in one wrapping flow"
+      },
+      {
+        "sha": "219c8bb2bcaaf8b491361cb1386be866f01e1637",
+        "date": "2026-10-27T16:22:33+08:00",
+        "subject": "fix(agent): preserve streamed replies after model failures (#6494)"
+      },
+      {
+        "sha": "b6536bfc5e3d988a6a335b5a62396c1c006f0079",
+        "date": "2026-10-27T15:59:53+08:00",
+        "subject": "fix(webui): remove ellipses from sending labels"
+      },
+      {
+        "sha": "8aa0deaca354950385b2bc272039aeabb41ba735",
+        "date": "2026-10-27T15:46:32+08:00",
+        "subject": "fix(webui): stabilize interaction tests and tooltip dismissal"
+      },
+      {
+        "sha": "c4dac649da9981712a02e23bf65a13bb1b73f591",
+        "date": "2026-10-27T13:38:17+08:00",
+        "subject": "fix(utils): preserve exact newlines in atomic text writes (#6475)"
+      },
+      {
+        "sha": "0978ccd50f33f4d1bec535a9cbc32a94ecc489a9",
+        "date": "2026-10-27T13:22:34+08:00",
+        "subject": "fix(webui): open subtask details from task content"
+      },
+      {
+        "sha": "40ee25f885ec80be48d7325e37644afae20b926a",
+        "date": "2026-10-27T13:19:14+08:00",
+        "subject": "fix(webui): show context and reasoning for all presets"
+      },
+      {
+        "sha": "4cd277f65d009471ccd3ceb929e598e46b3f8b2d",
+        "date": "2026-10-27T13:17:42+08:00",
+        "subject": "fix(webui): simplify retry status copy"
+      },
+      {
+        "sha": "164ddadd8ebe02043d74e6dcbf938f8ccac05ab9",
+        "date": "2026-10-27T13:05:32+08:00",
+        "subject": "fix(webui): align chat links with edit filename colors (#6484)"
+      },
+      {
+        "sha": "960bfa9a83bef8551a66f27522c20906cd53ae39",
+        "date": "2026-10-27T13:03:37+08:00",
+        "subject": "test(webui): trim redundant browser coverage"
+      },
+      {
+        "sha": "8857d4f9c8fc7c3ec853f28cf38838d8e9459638",
+        "date": "2026-10-27T11:53:49+08:00",
+        "subject": "feat(webui): unify mention candidate display"
+      },
+      {
+        "sha": "69d2fd87b0d1dcbc524ed14351045caf59299d3c",
+        "date": "2026-10-27T09:40:44+08:00",
+        "subject": "fix(webui): check explicit file links before enabling previews (#6483)"
+      },
+      {
+        "sha": "d1451e30e9d5fd167a9e2df297645531f5917678",
+        "date": "2026-10-27T09:36:22+08:00",
+        "subject": "feat(webui): add compact batch archive actions"
+      },
+      {
+        "sha": "23c4acc21609c006aea77e694e0e4c63fa97f3ea",
+        "date": "2026-10-26T23:40:42+08:00",
+        "subject": "fix(webui): keep subtask details reachable in long results"
+      },
+      {
+        "sha": "7e5dcb79e0671066f30c73a91656005de058dad9",
+        "date": "2026-10-26T23:35:26+08:00",
+        "subject": "feat(webui): complete bang commands and literal output (NAN-291) (#6173)"
+      },
+      {
+        "sha": "f23a6d1485572e1485a7892abe17fc8d6a3b46bf",
+        "date": "2026-10-26T21:45:36+08:00",
+        "subject": "refactor: remove verified unused internals (#6460)"
+      },
+      {
+        "sha": "3230013963a81189b0f7a2951994f7638a174232",
+        "date": "2026-10-26T17:33:27+08:00",
+        "subject": "fix(webui): match slash command highlighting to skills"
+      },
+      {
+        "sha": "dfb3843b4d4a09254739d369e5c33a5fb2469f22",
+        "date": "2026-10-26T15:48:49+08:00",
+        "subject": "docs: align runtime references with current behavior"
+      },
+      {
+        "sha": "0c7dbc6aaca1e6610873389bbaffde5d2fd327f4",
+        "date": "2026-10-26T15:47:42+08:00",
+        "subject": "fix(webui): simplify selected theme indicator"
+      },
+      {
+        "sha": "0bd8456076d872bebebd5ec63b1c6deb53026772",
+        "date": "2026-10-26T15:23:50+08:00",
+        "subject": "fix(webui): keep permission hints outside locked-thread drafts"
+      },
+      {
+        "sha": "2b7d68611702588a0d6fbaa5d202fba1a8eda064",
+        "date": "2026-10-26T15:02:02+08:00",
+        "subject": "chore(webui): remove subtask message status"
+      },
+      {
+        "sha": "acae3e6a65eea8633854bfe9c141839651fc5f1c",
+        "date": "2026-10-26T13:19:41+08:00",
+        "subject": "fix(media): accept data URLs that capitalize the base64 token (#6464)"
+      },
+      {
+        "sha": "9b3af7b66cfe4d752ef488a9b0d3d6be0cf7ca35",
+        "date": "2026-10-26T13:16:44+08:00",
+        "subject": "feat(webui): keep delegated work within reach (#6443)"
+      },
+      {
+        "sha": "9270137d655da5de9000da11b7717cb353be4264",
+        "date": "2026-10-26T13:06:42+08:00",
+        "subject": "fix(webui): move appearance help to hints and smooth theme preview"
+      },
+      {
+        "sha": "01a1ef5370bbe86236e04a4a4b83097a06c11a47",
+        "date": "2026-10-26T10:53:00+08:00",
+        "subject": "chore(webui): remove live preview badge from reading settings"
+      },
+      {
+        "sha": "83b611284362b240eaa4d0e180693be445c91500",
+        "date": "2026-10-25T23:54:06+08:00",
+        "subject": "fix(webui): crossfade theme changes as one page (#6459)"
+      },
+      {
+        "sha": "4701218719eb8a9206f0447006d7914f15590876",
+        "date": "2026-10-25T22:47:05+08:00",
+        "subject": "fix(webui): place permission hover hint below its control (NAN-359) (#6458)"
+      },
+      {
+        "sha": "eed7b47753a82e11398dfb58225bdf4f38e9e13f",
+        "date": "2026-10-25T22:39:44+08:00",
+        "subject": "feat(webui): refine attachment galleries and file cards (#6457)"
+      }
+    ],
+    "files": [
+      {
+        "status": "A",
+        "path": ".agent/copywriting.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agent/design.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agent/gotchas.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agent/review-guide.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agent/security.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release-signing-requirements.in",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release-signing-requirements.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/native-acceptance.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/release-approve.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/release-candidate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/tui-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "THIRD_PARTY_NOTICES.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "conftest.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker-compose.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/agent-social-network.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/architecture.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/automations.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/channel-package-guide.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/chat-apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/chat-commands.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/ci.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli-reference.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/concepts.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/configuration.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/deployment.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/development.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/ai-agent-memory.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/ai-agent-webui.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/build-a-personal-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/chat-app-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/configure-langfuse-observability.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/configure-mcp-tools.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/configure-model-fallback.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/configure-ollama-prompt-cache.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/configure-openai-compatible-provider.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/configure-web-search.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/deploy-nanobot-gateway.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/discord-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/email-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/feishu-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/ios-pwa-status-bar.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/linear-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/long-running-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/mattermost-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/mcp-tools-for-ai-agents.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/openai-compatible-agent-api.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/python-ai-agent-sdk.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/qq-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/remote-instances.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/secure-local-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/self-hosted-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/slack-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/telegram-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/wechat-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/whatsapp-agent-platform.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/whatsapp-ai-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/image-generation.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/mcp-presets.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/memory.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/multiple-instances.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/my-tool.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/openai-api.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/provider-cookbook.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/python-sdk.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/quick-start.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/releasing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/start-without-technical-background.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/troubleshooting.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/update-protocol.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/updating.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/websocket.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/webui.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "entrypoint.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hatch_build.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/autocompact.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/automation_turns.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/context.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/context_governance.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/cron_turns.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/hook.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/hooks/file_edit_activity.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/loop.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/memory.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/model_runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/plugins.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/progress_hook.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/runner.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/session_activity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/skill_metadata.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/subagent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/subagent_sessions.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/subagent_status.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/_search_content.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/apply_patch.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/cli_apps.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/cli_apps_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/context.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/cron.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/exec_session.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/execution.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/filesystem.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/filesystem_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/image_generation.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/image_generation_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/loader.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/long_task.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/mcp.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/message.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/runtime_control.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/sandbox.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/self.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/self_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/session_messages.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/sessions.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/shell.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/shell_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/shell_output.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "nanobot/agent/tools/spawn.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/subagent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/tools/web.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/agent/tools/web_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/agent/turn_delivery.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/api/server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/apps/cli/service.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/build_info.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/bun.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "nanobot/bus/delivery.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/bus/events.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/bus/queue.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/bus/runtime_events.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/connect.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/contracts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/webui/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/webui/locales/en.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/webui/locales/es.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/webui/locales/fr.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/webui/locales/id.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/webui/locales/ja.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "nanobot/channels/dingtalk/webui/locales/ko.json",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

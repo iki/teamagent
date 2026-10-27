@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--multica",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/multica-ai/multica",
+  "report": "spec/projects/ai-agents--multica.md",
+  "analyzedSha": "b2561aad61055dd9937fc08f6497846b1458d018",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T07:25:26-07:00",
+  "observedSha": "3de79cbeaf181283765f850327e9d82a3b2af6b0",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3de79cbeaf181283765f850327e9d82a3b2af6b0",
+      "date": "2026-10-24T11:32:48+08:00",
+      "subject": "MUL-8216: docs(changelog): add workflow GA to 0.7.0 title (#9490)"
+    },
+    {
+      "sha": "dbdbb299164347586e2650bb67684a490726a798",
+      "date": "2026-10-23T17:46:12+08:00",
+      "subject": "MUL-8198: chore(release): prepare 0.7.0 changelog (#9468)"
+    },
+    {
+      "sha": "4dc39434ef1b065659936cf476b11b152d04ad82",
+      "date": "2026-10-23T16:47:53+08:00",
+      "subject": "MUL-8198: fix(daemon): keep pre-588 Remote MCP tokens working for their issuing owner (#9469)"
+    },
+    {
+      "sha": "ad382b86ca9c69f569c181d65f82c4079aa258df",
+      "date": "2026-10-23T14:51:39+08:00",
+      "subject": "MUL-8177: fix(daemon): label worktree finalize failures as local error (#9465)"
+    },
+    {
+      "sha": "76dfd4a58b7bbd4bd82b61fc5e049a796471d0c3",
+      "date": "2026-10-23T14:45:50+08:00",
+      "subject": "MUL-8186: treat process exit as terminal signal on OpenCode 2.x (#9463)"
+    },
+    {
+      "sha": "04931df1624e944157c728007f717d11700c44f2",
+      "date": "2026-10-23T14:41:13+08:00",
+      "subject": "MUL-8174: fix OpenCode resume after host clock rollback (#9460)"
+    },
+    {
+      "sha": "76b274e898c217ec5c078a6248f0b37587caf200",
+      "date": "2026-10-23T14:26:53+08:00",
+      "subject": "MUL-8117: fix(wecom): preserve streaming media on Windows (#9395)"
+    },
+    {
+      "sha": "ba1a7958821e3a34f94dd4ee03dee26f99c5cd96",
+      "date": "2026-10-23T13:42:47+08:00",
+      "subject": "MUL-8114: fix(agent): preserve runtime config boundaries after formatting (#9382)"
+    },
+    {
+      "sha": "79d801f45c1f4c5fb7b2be3afeb6761e7b4c88fd",
+      "date": "2026-10-23T12:03:19+08:00",
+      "subject": "MUL-8188: fail fast on Kiro panic and stop resuming undrivable sessions (#9458)"
+    },
+    {
+      "sha": "ebc7c4696b77cdae66960f0880bae1dda050e26b",
+      "date": "2026-10-23T11:53:49+08:00",
+      "subject": "fix(taskfailure): exclude letters in HTTP status code boundaries (#9150)"
+    },
+    {
+      "sha": "d6517309870a3af4bb691d59e6428d3eef6950c7",
+      "date": "2026-10-23T11:31:31+08:00",
+      "subject": "fix(web): normalize whitespace before setting document titles (#9441)"
+    },
+    {
+      "sha": "482ec69c113586a41d3cb1215d4d5c1e23388572",
+      "date": "2026-10-23T11:20:12+08:00",
+      "subject": "MUL-7969: feat(server): record structured claim decision outcomes (#9184)"
+    },
+    {
+      "sha": "b294ce404753987ae9878aa2618aa52c08f2b04d",
+      "date": "2026-10-23T10:58:06+08:00",
+      "subject": "fix(server): skip CloudFront cookie signing for CLI and daemon requests (MUL-8190) (#9459)"
+    },
+    {
+      "sha": "c0b46688f2aec2a0ff83509e48b6a5b005c641ef",
+      "date": "2026-10-23T10:35:28+08:00",
+      "subject": "fix(daemon): self-repair worktree deliveries moved off their branch (MUL-8139) (#9454)"
+    },
+    {
+      "sha": "ff674c4e1df2d63185a45d724a6a5cc0cdb4da05",
+      "date": "2026-10-23T09:28:22+08:00",
+      "subject": "MUL-8185: Support sharing runtimes with specific members (#9455)"
+    },
+    {
+      "sha": "f9036be46a0392b5c37e00414769f55c432d11bc",
+      "date": "2026-10-23T07:54:42+08:00",
+      "subject": "MUL-8184 Fix Hermes reasoning options for non-default models (#9452)"
+    },
+    {
+      "sha": "6b0f8315f6774949cd367a3ae414b10a6239ee54",
+      "date": "2026-10-23T07:53:45+08:00",
+      "subject": "MUL-7960 fix(mobile): align lint and TypeScript with Expo SDK 57 (#9174)"
+    },
+    {
+      "sha": "dff37867b7c15876c2db1a6f0e7eff69cec6f7db",
+      "date": "2026-10-23T07:48:10+08:00",
+      "subject": "feat(editor): reload embedded HTML previews (#9436)"
+    },
+    {
+      "sha": "72d9058cc60057fcd8e330da12e0088e9bd18197",
+      "date": "2026-10-23T07:40:05+08:00",
+      "subject": "feat(telemetry): add visiting and delegating member counts (MUL-8161) (#9435)"
+    },
+    {
+      "sha": "8c3ceb36104778f2ca38a2a3240b8742b52d5f57",
+      "date": "2026-10-23T04:48:44+08:00",
+      "subject": "feat(issues): jump from the header agent chip to the run's block (MUL-8180) (#9451)"
+    },
+    {
+      "sha": "b7d92dd5145e9c9e8caef51990ef3f5bdae4647e",
+      "date": "2026-10-23T03:56:30+08:00",
+      "subject": "feat(views): promote Create sub-issue to the top level of the issue actions menu (MUL-8181) (#9450)"
+    },
+    {
+      "sha": "c57aa87a6fa825bc788b3a713e787fce75fc50ef",
+      "date": "2026-10-23T03:56:11+08:00",
+      "subject": "MUL-8179 fix(issues): clear sub-issue selection after a batch action applies (#9449)"
+    },
+    {
+      "sha": "fd6fc2c6003ab19fcd8b9e14674437bbdb813f4f",
+      "date": "2026-10-23T01:33:42+08:00",
+      "subject": "MUL-8175: fix(issues): sub-issue batch toolbar ignores row selection in the side peek (#9445)"
+    },
+    {
+      "sha": "4dd6d571278dadf8b997b2f0438e1e32b6e085c8",
+      "date": "2026-10-23T00:15:57+08:00",
+      "subject": "fix(issues): keep the sticky comment header fade off the first body line (MUL-8172) (#9442)"
+    },
+    {
+      "sha": "88de9d371359d028a54dd839f843a86c75b24df1",
+      "date": "2026-10-22T18:59:58+08:00",
+      "subject": "feat(agent): surface Hermes dependency reinstall at launch (MUL-8124) (#9434)"
+    },
+    {
+      "sha": "b05646a4527012e44394704bbd77f3625f77743a",
+      "date": "2026-10-22T17:24:24+08:00",
+      "subject": "fix(views): bind pills to the xs control height (MUL-8166) (#9433)"
+    },
+    {
+      "sha": "5f6cd749ae77f8d9546fc5a18ab3494348b2eb4f",
+      "date": "2026-10-22T17:18:01+08:00",
+      "subject": "feat(issues): move hidden columns into Display, keep boards to their workflow (MUL-8160) (#9429)"
+    },
+    {
+      "sha": "23c8fc4dba3e6a1b8f9679de0cdb1bb871343115",
+      "date": "2026-10-22T17:10:47+08:00",
+      "subject": "refactor(ui): remove copy that restates titles, labels and buttons (MUL-8162) (#9432)"
+    },
+    {
+      "sha": "13eb4bda93496a4114085b50332ee21a0f72eb29",
+      "date": "2026-10-22T16:47:06+08:00",
+      "subject": "MUL-8154 fix(daemon): enforce runtime ownership on daemon routes (#9423)"
+    },
+    {
+      "sha": "4b645a354c80c2c9f3edf4180e5b6982814a81e8",
+      "date": "2026-10-22T16:20:15+08:00",
+      "subject": "fix(agent): clarify opaque Kimi turn failures (MUL-8157) (#9431)"
+    },
+    {
+      "sha": "029466efb3de84a8e64aae3cc7d6cdc6a053ba27",
+      "date": "2026-10-22T15:43:29+08:00",
+      "subject": "feat(agents): move conversation starters to the agent profile (MUL-8151) (#9419)"
+    },
+    {
+      "sha": "51975f95fc0ac985789d898e94276569adb97ffb",
+      "date": "2026-10-22T15:24:37+08:00",
+      "subject": "fix(wakeup): preserve squad leader attribution for issue wakeups (#9427)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ci-paths.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/openclaw-config-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".goreleaser.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vercelignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLI_AND_DAEMON.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.web",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SELF_HOSTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SELF_HOSTING_ADVANCED.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron-builder.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/eslint.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/bundle-cli.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/bundle-cli.node-test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/mac-update-floor.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/mac-update-floor.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/package.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/context-menu.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/context-menu.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/daemon-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/daemon-port.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/daemon-port.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/daemon-profile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/daemon-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/daemon-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/keyboard-shortcuts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/linux-file-dialog.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/linux-file-dialog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/local-directory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/navigation-guard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/App.auth-recovery.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/daemon-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/renderer/src/components/desktop-choose-runtime-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/desktop-layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/tab-bar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/tab-bar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/window-toolbar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/window-toolbar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/workspace-route-layout.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/workspace-route-layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/renderer/src/pages/agent-created-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/platform/issue-window-navigation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/platform/issue-window-navigation.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/platform/navigation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/platform/navigation.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/platform/session-teardown.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/platform/session-teardown.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/platform/tab-coordinator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/routes.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/stores/tab-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/stores/tab-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/components/i18n-frame-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/components/i18n-frame-provider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/agents-create.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/agents-create.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/agents-create.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/agents-create.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/agents-create.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/assigning-issues.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/assigning-issues.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/assigning-issues.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/assigning-issues.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/assigning-issues.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/comments.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/comments.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/comments.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/comments.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/comments.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/daemon-runtimes.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/daemon-runtimes.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/daemon-runtimes.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/daemon-runtimes.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/daemon-runtimes.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/github-integration.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/github-integration.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/github-integration.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/github-integration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/github-integration.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/install-agent-runtime.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/install-agent-runtime.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/install-agent-runtime.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/install-agent-runtime.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/install-agent-runtime.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/issues.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/issues.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/issues.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/issues.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/issues.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/meta.fr.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/meta.ja.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/meta.ko.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/meta.zh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/project-resources.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/projects.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/projects.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/projects.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/projects.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/projects.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/providers.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/providers.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/providers.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/providers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/providers.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/quick-actions.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/quick-actions.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/quick-actions.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/quick-actions.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/quick-actions.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/self-host-quickstart.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/self-host-quickstart.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/self-host-quickstart.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/self-host-quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/self-host-quickstart.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/triggering-agents.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/triggering-agents.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/triggering-agents.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/triggering-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/triggering-agents.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/troubleshooting.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/vcs-integration.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/vcs-integration.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/vcs-integration.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/vcs-integration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/vcs-integration.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/workflows.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/workflows.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/workflows.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/workflows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/workflows.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/app.config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/app.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/app/(app)/[workspace]/(tabs)/_layout.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

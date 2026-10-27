@@ -23,3 +23,7 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [plan-karpathy-claude.forestchang](https://github.com/forrestchang/andrej-karpathy-skills); analyzed commit `2c606141936f1eeef17fa3043a72095b4765b9c2`; commit date 2026-04-20T18:05:04+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--xx-2604-plan-karpathy-claude.forestchang.md).
+<!-- teamagent-analysis:end -->

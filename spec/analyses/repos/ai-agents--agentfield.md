@@ -1,0 +1,207 @@
+# agentfield: change evidence
+
+Source: [agentfield](https://github.com/Agent-Field/agentfield) · [Analysis](../../projects/ai-agents--agentfield.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `ba7da28c45e1dace96250fa5914ce7ee304b320d`; commit date: 2026-10-01T21:51:23Z; review date: unknown; observed SHA: `7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Agent-Field/agentfield/compare/ba7da28c45e1dace96250fa5914ce7ee304b320d...7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [7d4fd1fad6f9](https://github.com/Agent-Field/agentfield/commit/7d4fd1fad6f9b98a5b1b2e92e7906659d0dfae61) 2026-10-27T13:05:29Z: chore(release): v0.1.146-rc.2 [skip ci]
+- [fe89c8557c70](https://github.com/Agent-Field/agentfield/commit/fe89c8557c70ce6f81b65c14a159fe0ae35b45ed) 2026-10-27T13:04:08Z: chore(deps): bump certifi (#1131)
+- [87f9551e4c8e](https://github.com/Agent-Field/agentfield/commit/87f9551e4c8e12c6e3009508ecb90096549f2ab8) 2026-10-27T12:59:40Z: chore(release): v0.1.146-rc.1 [skip ci]
+- [7306a0eb1611](https://github.com/Agent-Field/agentfield/commit/7306a0eb161171a71376b4334b413a82e695cefe) 2026-10-27T12:58:16Z: fix(control-plane): return 503 for transient storage errors during DID resolution (#1087) (#1124)
+- [1b6b8cfd28ca](https://github.com/Agent-Field/agentfield/commit/1b6b8cfd28ca7771e80bc24a3db63d154f64f910) 2026-10-27T11:53:51Z: chore(release): v0.1.145 [skip ci]
+- [73214919af5b](https://github.com/Agent-Field/agentfield/commit/73214919af5b9dd924ca68dcb13f18f8ad11d830) 2026-10-27T04:17:09Z: chore(release): v0.1.145-rc.1 [skip ci]
+- [d26f52da2ac6](https://github.com/Agent-Field/agentfield/commit/d26f52da2ac661ac36c28fd5e02838ac83a49617) 2026-10-27T00:16:44-04:00: fix(sdk): log the CodeAF missing-key warning once, and count the harness config's env (#1132)
+- [05a1a4034616](https://github.com/Agent-Field/agentfield/commit/05a1a4034616c6fca9e599df5031f719ed24b177) 2026-10-27T01:14:57Z: chore(release): v0.1.144 [skip ci]
+- [492cf3a6668b](https://github.com/Agent-Field/agentfield/commit/492cf3a6668b7542dc1f0f3041d584ca4dd6feef) 2026-10-26T22:31:53Z: chore(release): v0.1.144-rc.3 [skip ci]
+- [9780d03b2acd](https://github.com/Agent-Field/agentfield/commit/9780d03b2acd2abfb69cd1b5f28aead44b23b068) 2026-10-26T22:28:28Z: chore(deps): bump the uv group across 1 directory with 3 updates (#1127)
+- [c5658a768bb4](https://github.com/Agent-Field/agentfield/commit/c5658a768bb47065c1555072573969bc11f3706a) 2026-10-26T22:17:46Z: chore(release): v0.1.144-rc.2 [skip ci]
+- [27bc3a137276](https://github.com/Agent-Field/agentfield/commit/27bc3a137276443515c3b2015fac899e7b64f6c7) 2026-10-26T18:17:15-04:00: fix(sdk): fail fast with a clear message when the CodeAF harness has no model key (#1130)
+- [2f3f7dee5681](https://github.com/Agent-Field/agentfield/commit/2f3f7dee5681ccf46f88f3af9e7e7e2dbf1df253) 2026-10-26T13:24:43Z: chore(release): v0.1.144-rc.1 [skip ci]
+- [700456142cec](https://github.com/Agent-Field/agentfield/commit/700456142cecd5efd26c5ab2a535d70e46194614) 2026-10-26T13:06:29Z: fix(sdk/typescript): stop retrying permanent status callbacks (#1126)
+- [1805a79d7826](https://github.com/Agent-Field/agentfield/commit/1805a79d782695f02adf0852061a753a0f7b56e6) 2026-10-24T18:26:10Z: chore(release): v0.1.143 [skip ci]
+- [dbb394aaa1cb](https://github.com/Agent-Field/agentfield/commit/dbb394aaa1cbdd0f1adae09911ba4f1d55c7fedc) 2026-10-24T13:03:53Z: chore(release): v0.1.143-rc.5 [skip ci]
+- [647e31cc4b6f](https://github.com/Agent-Field/agentfield/commit/647e31cc4b6f73660220da5356700184f9254ffe) 2026-10-24T09:03:22-04:00: Make CodeAF the default harness, installed automatically with AgentField (#1128)
+- [3e7bf93e083f](https://github.com/Agent-Field/agentfield/commit/3e7bf93e083f6e776d6622fea1ba68c92b68efd5) 2026-10-20T14:10:35Z: chore(release): v0.1.143-rc.4 [skip ci]
+- [d70e07c56b82](https://github.com/Agent-Field/agentfield/commit/d70e07c56b82df1698489d4f5f80bc7d451b4dd0) 2026-10-20T14:09:15Z: feat: configurable PromptTemplates layer across Python/TS/Go SDKs (#229) (#1092)
+- [1acaf31c974f](https://github.com/Agent-Field/agentfield/commit/1acaf31c974f48386b1c8f5937cd9b124db91ca4) 2026-10-20T13:12:35Z: chore(release): v0.1.143-rc.3 [skip ci]
+- [b312ba5c6d43](https://github.com/Agent-Field/agentfield/commit/b312ba5c6d439438f6d9505898ecd22f976d79b9) 2026-10-20T13:11:16Z: fix(sdk/python): stop retrying permanent status callbacks (#1109)
+- [aaa8dc5d94c1](https://github.com/Agent-Field/agentfield/commit/aaa8dc5d94c13c91baa1ed5be99eba57f11669c4) 2026-10-20T12:51:10Z: chore(release): v0.1.143-rc.2 [skip ci]
+- [a053d68c0bd1](https://github.com/Agent-Field/agentfield/commit/a053d68c0bd1c0aa745d0f690bad46b37701cb13) 2026-10-20T12:49:55Z: fix(sdk/python): parse remaining boolean env flags with the SDK-wide vocabulary (#1089) (#1123)
+- [c7a3d5b92be3](https://github.com/Agent-Field/agentfield/commit/c7a3d5b92be3a50e51c2cb3f378e391f269eb6bf) 2026-10-19T22:33:23Z: chore(release): v0.1.143-rc.1 [skip ci]
+- [c794b4ee9bdd](https://github.com/Agent-Field/agentfield/commit/c794b4ee9bddf8d0cddcc5aa46125cf042e10e96) 2026-10-19T22:32:14Z: chore(deps): patch npm Dependabot advisories (brace-expansion, http-cache-semantics, fast-uri, undici) (#1095)
+- [f3e284af42ec](https://github.com/Agent-Field/agentfield/commit/f3e284af42ecd93a670b56cca4efaaea68d93a44) 2026-10-19T22:32:12Z: fix(sdk): stop harness retries triggered by prompt text in timeout errors (#1104)
+- [92dcfa69a250](https://github.com/Agent-Field/agentfield/commit/92dcfa69a25015b17fc987f6e28132becc8eeedf) 2026-10-19T22:32:10Z: feat(examples): add optional Keenable search backend to deep_research (#1110)
+- [0ab945cbda52](https://github.com/Agent-Field/agentfield/commit/0ab945cbda52ed3bacbfe459dcc0baa5af48b80f) 2026-10-19T22:32:08Z: chore(deps): bump the uv group across 1 directory with 2 updates (#1103)
+- [f59a9c2aa978](https://github.com/Agent-Field/agentfield/commit/f59a9c2aa97890d8b370d9384b8308581b31e2c5) 2026-10-19T21:23:09Z: chore(release): v0.1.142 [skip ci]
+- [7cfc3d750e09](https://github.com/Agent-Field/agentfield/commit/7cfc3d750e096e7555ad63070ce8f6ef4acf22c5) 2026-10-19T20:53:55Z: chore(release): v0.1.142-rc.20 [skip ci]
+- [78398d0568c8](https://github.com/Agent-Field/agentfield/commit/78398d0568c82392b3c1e5e8c71a92c9b2add193) 2026-10-19T16:53:31-04:00: fix(control-plane): refuse IPv4-embedding and special-use ranges in the webhook URL guard (#1122)
+- [4eb659f7086c](https://github.com/Agent-Field/agentfield/commit/4eb659f7086c36518cbc7285805e36bf4b6b036f) 2026-10-19T19:46:39Z: chore(release): v0.1.142-rc.19 [skip ci]
+
+## Changed paths (truncated)
+
+- M: `.github/workflows/docker.yml`
+- M: `.github/workflows/sdk-typescript.yml`
+- M: `CHANGELOG.md`
+- M: `README.md`
+- M: `VERSION`
+- M: `control-plane/.env.example`
+- M: `control-plane/config/agentfield.yaml`
+- A: `control-plane/internal/agenturl/agenturl_test.go`
+- A: `control-plane/internal/agenturl/client.go`
+- A: `control-plane/internal/agenturl/policy.go`
+- A: `control-plane/internal/agenturl/url.go`
+- M: `control-plane/internal/application/container.go`
+- A: `control-plane/internal/cli/codeaf.go`
+- A: `control-plane/internal/cli/codeaf_regression_test.go`
+- A: `control-plane/internal/cli/codeaf_test.go`
+- A: `control-plane/internal/cli/commands/codeaf.go`
+- A: `control-plane/internal/cli/commands/codeaf_test.go`
+- M: `control-plane/internal/cli/commands/install.go`
+- M: `control-plane/internal/cli/doctor.go`
+- M: `control-plane/internal/cli/doctor_probe_test.go`
+- M: `control-plane/internal/cli/furrow_test.go`
+- M: `control-plane/internal/cli/harness_doctor.go`
+- M: `control-plane/internal/cli/harness_doctor_test.go`
+- M: `control-plane/internal/cli/root.go`
+- M: `control-plane/internal/cli/skill.go`
+- M: `control-plane/internal/cli/vc.go`
+- M: `control-plane/internal/cli/verify_provenance.go`
+- A: `control-plane/internal/cli/verify_provenance_unresolved_test.go`
+- A: `control-plane/internal/codeaf/ensure.go`
+- A: `control-plane/internal/codeaf/ensure_test.go`
+- A: `control-plane/internal/codeaf/lock_other.go`
+- A: `control-plane/internal/codeaf/lock_unix.go`
+- A: `control-plane/internal/codeaf/lock_unix_test.go`
+- A: `control-plane/internal/codeaf/regression_test.go`
+- A: `control-plane/internal/config/agent_endpoint_policy_test.go`
+- M: `control-plane/internal/config/config.go`
+- A: `control-plane/internal/events/usage.go`
+- A: `control-plane/internal/events/usage_test.go`
+- A: `control-plane/internal/handlers/agent_endpoint_policy_test.go`
+- M: `control-plane/internal/handlers/agentic/status_test.go`
+- M: `control-plane/internal/handlers/config_storage_test.go`
+- M: `control-plane/internal/handlers/connector/handlers_test.go`
+- M: `control-plane/internal/handlers/coverage_handlers_90_test.go`
+- M: `control-plane/internal/handlers/coverage_handlers_92_target_test.go`
+- M: `control-plane/internal/handlers/coverage_low_branches_test.go`
+- M: `control-plane/internal/handlers/coverage_raise_88_test.go`
+- M: `control-plane/internal/handlers/did_handlers.go`
+- A: `control-plane/internal/handlers/did_vc_chain_verifiable_test.go`
+- M: `control-plane/internal/handlers/empty_input_test.go`
+- M: `control-plane/internal/handlers/execute.go`
+- M: `control-plane/internal/handlers/execute_agent_restart.go`
+- M: `control-plane/internal/handlers/execute_agent_restart_test.go`
+- M: `control-plane/internal/handlers/execute_approval_ssrf_test.go`
+- M: `control-plane/internal/handlers/execute_async_test.go`
+- M: `control-plane/internal/handlers/execute_handler_test.go`
+- M: `control-plane/internal/handlers/execute_helpers.go`
+- M: `control-plane/internal/handlers/execute_prepare.go`
+- M: `control-plane/internal/handlers/execute_test.go`
+- M: `control-plane/internal/handlers/memory.go`
+- A: `control-plane/internal/handlers/memory_authorization_regression_test.go`
+- M: `control-plane/internal/handlers/memory_events.go`
+- A: `control-plane/internal/handlers/memory_events_authorization_test.go`
+- M: `control-plane/internal/handlers/memory_isolation_test.go`
+- M: `control-plane/internal/handlers/nodes_discovery_test.go`
+- M: `control-plane/internal/handlers/nodes_register.go`
+- M: `control-plane/internal/handlers/nodes_serverless_ssrf_test.go`
+- M: `control-plane/internal/handlers/nodes_test.go`
+- M: `control-plane/internal/handlers/reasoners.go`
+- M: `control-plane/internal/handlers/reasoners_test.go`
+- M: `control-plane/internal/handlers/sessions.go`
+- M: `control-plane/internal/handlers/sessions_test.go`
+- A: `control-plane/internal/handlers/ui/agent_endpoint_policy_test.go`
+- M: `control-plane/internal/handlers/ui/config_test.go`
+- M: `control-plane/internal/handlers/ui/coverage_did_services_additional_test.go`
+- M: `control-plane/internal/handlers/ui/did.go`
+- A: `control-plane/internal/handlers/ui/did_h2_issuance_test.go`
+- A: `control-plane/internal/handlers/ui/did_vc_chain_verifiable_test.go`
+- M: `control-plane/internal/handlers/ui/lifecycle.go`
+- M: `control-plane/internal/handlers/ui/node_logs.go`
+- M: `control-plane/internal/handlers/ui/observability_webhook_test.go`
+- M: `control-plane/internal/handlers/usage_ingest.go`
+- M: `control-plane/internal/handlers/usage_ingest_test.go`
+- M: `control-plane/internal/handlers/vector_memory.go`
+- M: `control-plane/internal/infrastructure/communication/agent_client.go`
+- A: `control-plane/internal/infrastructure/communication/agent_endpoint_policy_test.go`
+- M: `control-plane/internal/observability/telemetry.go`
+- A: `control-plane/internal/observability/usage_telemetry.go`
+- A: `control-plane/internal/observability/usage_telemetry_test.go`
+- A: `control-plane/internal/packages/agent_endpoint_policy_test.go`
+- M: `control-plane/internal/packages/node_http.go`
+- A: `control-plane/internal/server/agent_endpoint_policy_test.go`
+- M: `control-plane/internal/server/middleware/did_auth.go`
+- M: `control-plane/internal/server/middleware/did_auth_test.go`
+- A: `control-plane/internal/server/middleware/memory_authorizer.go`
+- A: `control-plane/internal/server/middleware/memory_authorizer_test.go`
+- A: `control-plane/internal/server/middleware/memory_event_streams_test.go`
+- M: `control-plane/internal/server/middleware/memory_permission.go`
+- M: `control-plane/internal/server/middleware/memory_permission_additional_test.go`
+- M: `control-plane/internal/server/middleware/memory_permission_test.go`
+- M: `control-plane/internal/server/routes_core.go`
+- M: `control-plane/internal/server/routes_memory.go`
+- A: `control-plane/internal/server/routes_memory_authorization_test.go`
+- A: `control-plane/internal/server/routes_session_tools_test.go`
+- M: `control-plane/internal/server/server.go`
+- M: `control-plane/internal/server/server_ingress_test.go`
+- M: `control-plane/internal/server/server_routes_test.go`
+- A: `control-plane/internal/services/agent_endpoint_policy_test.go`
+- M: `control-plane/internal/services/cancel_dispatcher.go`
+- A: `control-plane/internal/services/did_g1_retry_test.go`
+- A: `control-plane/internal/services/did_g2_quarantine_test.go`
+- A: `control-plane/internal/services/did_h1_retirement_test.go`
+- A: `control-plane/internal/services/did_i1_publication_test.go`
+- A: `control-plane/internal/services/did_identity_continuity_test.go`
+- A: `control-plane/internal/services/did_identity_hardening_test.go`
+- A: `control-plane/internal/services/did_identity_integrity.go`
+- A: `control-plane/internal/services/did_identity_rehydration_test.go`
+- M: `control-plane/internal/services/did_registry.go`
+- M: `control-plane/internal/services/did_registry_test.go`
+- M: `control-plane/internal/services/did_service.go`
+- M: `control-plane/internal/services/did_service_helpers_additional_test.go`
+- A: `control-plane/internal/services/did_takeover_test.go`
+- M: `control-plane/internal/services/did_web_service.go`
+- M: `control-plane/internal/services/did_web_service_additional_test.go`
+- M: `control-plane/internal/services/did_web_service_test.go`
+- M: `control-plane/internal/services/observability_forwarder_test.go`
+- M: `control-plane/internal/services/services92_did_additional_test.go`
+- M: `control-plane/internal/services/ssrf_safe_client.go`
+- M: `control-plane/internal/services/ssrf_safe_client_test.go`
+- M: `control-plane/internal/services/trigger_dispatcher.go`
+- M: `control-plane/internal/services/vc_chain.go`
+- A: `control-plane/internal/services/vc_chain_verifiable_test.go`
+- A: `control-plane/internal/services/vc_g3_issuer_test.go`
+- M: `control-plane/internal/services/vc_issuance.go`
+- M: `control-plane/internal/services/vc_issuance_trigger.go`
+- M: `control-plane/internal/services/webhook_dispatcher_test.go`
+- D: `control-plane/internal/skillkit/aforge_install_test.go`
+- M: `control-plane/internal/skillkit/catalog.go`
+- M: `control-plane/internal/skillkit/catalog_agentfield_builder_test.go`
+- A: `control-plane/internal/skillkit/codeaf_install_test.go`
+- M: `control-plane/internal/skillkit/furrow_install_test.go`
+- M: `control-plane/internal/skillkit/install.go`
+- M: `control-plane/internal/skillkit/skill_data/agentfield/SKILL.md`
+- M: `control-plane/internal/skillkit/skill_data/agentfield/references/primitives-snapshot.md`
+- M: `control-plane/internal/skillkit/skill_data/agentfield/references/scaffold-recipe.md`
+- M: `control-plane/internal/skillkit/skill_mirror_test.go`
+- M: `control-plane/internal/skillkit/testmain_test.go`
+- M: `control-plane/internal/storage/local.go`
+- M: `control-plane/internal/storage/local_did.go`
+- A: `control-plane/internal/storage/local_did_component_status_test.go`
+- A: `control-plane/internal/storage/local_did_g1_deadline_test.go`
+- M: `control-plane/internal/storage/local_events.go`
+- M: `control-plane/internal/storage/models.go`
+- M: `control-plane/internal/storage/storage.go`
+- M: `control-plane/internal/templates/go/go.mod.tmpl`
+- M: `control-plane/internal/templates/python/requirements.txt.tmpl`
+- M: `control-plane/internal/templates/typescript/package.json.tmpl`
+- A: `control-plane/migrations/037_component_did_status.sql`
+- A: `control-plane/migrations/038_agent_did_x25519_epoch.sql`
+- M: `control-plane/pkg/types/did_types.go`
+- M: `control-plane/pkg/types/usage.go`

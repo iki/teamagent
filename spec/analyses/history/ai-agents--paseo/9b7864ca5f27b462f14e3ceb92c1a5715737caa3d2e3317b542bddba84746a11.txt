@@ -1,0 +1,31 @@
+# paseo
+
+Source: [paseo](https://github.com/getpaseo/paseo) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `749fe3e5ae52b6e1e4eaeadce3182e901caa96d9` (2026-10-03T22:04:28+02:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Strong reference for a daemon that adapts heterogeneous installed agents and serves several client surfaces.
+
+## Source evidence inspected
+
+- [packages/server/src/server/agent/provider-registry.ts, lines 36–180](https://github.com/getpaseo/paseo/blob/749fe3e5ae52b6e1e4eaeadce3182e901caa96d9/packages/server/src/server/agent/provider-registry.ts#L36-L180)
+
+## Observed design and algorithms
+
+The registry constructs separate clients for Codex app-server, Claude, ACP providers, OpenCode and Pi. Provider definitions include catalog fetching, launch configuration, unattended status and tool-policy handling. Exact MCP preapproval is an explicit provider capability; unsupported providers default to false instead of inheriting optimistic support. Catalog discovery is designed to use at most one runtime process per call.
+
+## Harness decision
+
+Shortlist the provider boundary and daemon/client architecture. Model the installed agent as a versioned external runtime with its own process, session and policy capabilities. Reuse only the required adapter/interface pattern if a complete application fork would impose excess coupling.
+
+## Limits and tradeoffs
+
+A generic ACP connection does not imply exact per-tool grants, identical permission behavior or equivalent session resume. The registry alone cannot establish encryption, UI performance, remote-worker isolation or provider-specific correctness. Those require separate checks.
+
+## Validation before adoption
+
+Run a conformance suite for each installed runtime: discovery, catalog, start, cancel, resume, approval round-trip and restart. Verify unsupported permission features fail closed and that a device disconnect does not kill the worker. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [models](../models.md) · [channels](../channels.md).

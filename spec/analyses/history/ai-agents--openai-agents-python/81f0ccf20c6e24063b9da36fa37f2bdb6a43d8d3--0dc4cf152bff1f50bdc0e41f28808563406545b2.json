@@ -1,0 +1,859 @@
+{
+  "id": "ai-agents--openai-agents-python",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/openai/openai-agents-python",
+  "report": "spec/projects/ai-agents--openai-agents-python.md",
+  "analyzedSha": "81f0ccf20c6e24063b9da36fa37f2bdb6a43d8d3",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T18:35:55Z",
+  "observedSha": "0dc4cf152bff1f50bdc0e41f28808563406545b2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0dc4cf152bff1f50bdc0e41f28808563406545b2",
+      "date": "2026-10-22T21:39:28Z",
+      "subject": "fix(deps-dev): bump playwright from 1.50.0 to 1.63.0 (#5402)"
+    },
+    {
+      "sha": "e2de6a8f2c61ea3818f582fc74c8f8a8da9830b2",
+      "date": "2026-10-22T20:30:09Z",
+      "subject": "fix(deps): bump mcp from 2.0.0 to 2.3.0 (#5404)"
+    },
+    {
+      "sha": "442d0ea112e62e3423d3e93478532424f71b3f8a",
+      "date": "2026-10-22T19:57:16Z",
+      "subject": "fix(deps-dev): bump aiohttp from 3.14.3 to 3.14.5 (#5403)"
+    },
+    {
+      "sha": "6bfa5ff5be83d80bb3de4be4a61bd589289c99f2",
+      "date": "2026-10-22T19:57:04Z",
+      "subject": "fix(deps): update fastapi requirement from >=0.142.2 to >=0.143.0 in /examples/realtime/twilio_sip (#5399)"
+    },
+    {
+      "sha": "0e54e4b6ce2aaa96ff917a978ec8774eb7ab85f1",
+      "date": "2026-10-22T19:56:58Z",
+      "subject": "fix(deps): update openai requirement from <4,>=3.26.0 to >=3.29.0,<4 in /examples/realtime/twilio_sip (#5398)"
+    },
+    {
+      "sha": "452c5bda2e481fe21120ec69232e87c83a7d66f5",
+      "date": "2026-10-22T19:56:51Z",
+      "subject": "fix(deps): update twilio requirement from <10,>=9.11.2 to >=9.12.0,<10 in /examples/realtime/twilio (#5397)"
+    },
+    {
+      "sha": "97c8288bc6e97d69f45fc3732f1cf236b321d125",
+      "date": "2026-10-22T19:47:19Z",
+      "subject": "fix(deps): bump mcp from 2.0.0 to 2.2.0 (#5393)"
+    },
+    {
+      "sha": "841dfdd938bfd4ca052475eb76d6245a356868e0",
+      "date": "2026-10-22T00:26:59Z",
+      "subject": "[sandbox-hardening] Avoid loading startup files during workspace operations (#5406)"
+    },
+    {
+      "sha": "64cd5dfc5a1579870dcbed0ea42b27aa84033fee",
+      "date": "2026-10-19T17:14:50Z",
+      "subject": "docs(sandbox): remove Runloop provider guidance (#5370)"
+    },
+    {
+      "sha": "12ce34d8438d6f1f7c964a261b89e069e8a0b3d3",
+      "date": "2026-10-19T17:14:49Z",
+      "subject": "feat(sandbox): remove Runloop provider (#5369)"
+    },
+    {
+      "sha": "970db99b1f97594b30496b9b75031f0c7f4f36ba",
+      "date": "2026-10-19T16:58:56Z",
+      "subject": "fix: raise MCP minimum to 1.21.2 for Pydantic and OAuth compatibility (#5384)"
+    },
+    {
+      "sha": "9abc9182d06dbd28330af888306031269d57a175",
+      "date": "2026-10-17T00:49:49Z",
+      "subject": "docs: clarify local shell approval scope across handoffs (#5385)"
+    },
+    {
+      "sha": "17d994bd3045dae71acda676a4ef4762ed8ecd94",
+      "date": "2026-10-15T02:08:00Z",
+      "subject": "release: 0.24.0 (#5285)"
+    },
+    {
+      "sha": "24ebf1cb0f4b3107d5350b13a1308637d3dec9ca",
+      "date": "2026-10-14T17:46:04Z",
+      "subject": "fix(deps): bump redis from 7.0.1 to 8.1.0 (#5379)"
+    },
+    {
+      "sha": "2938d87a2837537138dc7839003317a27ed3441f",
+      "date": "2026-10-14T16:47:54Z",
+      "subject": "fix(deps): bump vercel-sandbox from 0.7.0 to 0.8.0 (#5374)"
+    },
+    {
+      "sha": "c148280f8f748552cc5b385802ef6dedd8ab6576",
+      "date": "2026-10-14T16:46:20Z",
+      "subject": "fix(deps): bump temporalio from 1.33.0 to 1.34.0 (#5377)"
+    },
+    {
+      "sha": "7da6a927cc42d955c2fdc8f2cb9a7443fefa4f46",
+      "date": "2026-10-14T16:46:13Z",
+      "subject": "fix(deps): bump boto3 from 1.42.75 to 1.43.109 (#5378)"
+    },
+    {
+      "sha": "14f4553e288ad5df2c4097c823f3d91f333a1f84",
+      "date": "2026-10-14T16:46:05Z",
+      "subject": "fix(deps): bump filelock from 3.20.3 to 4.0.12 (#5375)"
+    },
+    {
+      "sha": "172ff5e1dbc5b42f5b302e3f66226eac1a54b96d",
+      "date": "2026-10-14T16:43:54Z",
+      "subject": "fix(deps): update openai requirement from <4,>=3.20.0 to >=3.26.0,<4 in /examples/realtime/twilio_sip (#5376)"
+    },
+    {
+      "sha": "c4cc409d057893eccbddc609c79499f1ac227958",
+      "date": "2026-10-14T16:43:44Z",
+      "subject": "fix(deps): update python-dotenv requirement from >=1.2.3 to >=1.2.4 in /examples/realtime/twilio (#5373)"
+    },
+    {
+      "sha": "f47d2c3771f0aa2299f0cd63c2cbebae95f6599a",
+      "date": "2026-10-14T16:43:26Z",
+      "subject": "fix(deps): update fastapi requirement from >=0.141.1 to >=0.142.2 in /examples/realtime/twilio_sip (#5372)"
+    },
+    {
+      "sha": "408c33fec202c8260c83236e2f09e0f8f802e025",
+      "date": "2026-10-14T16:43:02Z",
+      "subject": "fix(deps): update python-dotenv requirement from >=1.2.3 to >=1.2.4 in /examples/realtime/twilio_sip (#5371)"
+    },
+    {
+      "sha": "1c1a28df92f359dded4eed83976301c2f9850e89",
+      "date": "2026-10-14T00:53:44Z",
+      "subject": "fix: preserve completed tool outputs when a sibling fails (#5332)"
+    },
+    {
+      "sha": "5eb47a5bdeab8ba9f6087de288c7e606816c76c6",
+      "date": "2026-10-13T20:36:39Z",
+      "subject": "fix: defer automatic compaction for pending approvals (#5363)"
+    },
+    {
+      "sha": "2244e9fe302a91b9e9ca97624e273166b8d8bca1",
+      "date": "2026-10-13T20:36:17Z",
+      "subject": "fix: preserve caller-owned exceptions during sandbox redaction (#5367)"
+    },
+    {
+      "sha": "67d4f8ab893ec41e1fac2393c610a1f6e1f4e0b7",
+      "date": "2026-10-13T19:34:37Z",
+      "subject": "fix: preserve embedded separators in sandbox patches (#5365)"
+    },
+    {
+      "sha": "5a30187df904533fe2dbb500d6a6425f0c98b3a2",
+      "date": "2026-10-13T19:34:30Z",
+      "subject": "fix: reject pending input when completed stop tools end resume (#5366)"
+    },
+    {
+      "sha": "d8e0a769b6a32ab580f9c55bf9bc2a85512c0754",
+      "date": "2026-10-13T19:34:17Z",
+      "subject": "fix: preserve RunState agent ownership across hook state changes (#5362)"
+    },
+    {
+      "sha": "6fc4ab765c1f066bcaef01f2fd7b2c12cd4bcf20",
+      "date": "2026-10-13T19:34:03Z",
+      "subject": "docs: document callable local MCP approval policies (#5364)"
+    },
+    {
+      "sha": "8068c37388e2b39268f0aa7e5b9fb0f35d25b73a",
+      "date": "2026-10-13T18:45:24Z",
+      "subject": "fix: scope Redis Cluster rejection to transactional writes (#5361)"
+    },
+    {
+      "sha": "f53c62451c7f34c15f0c87fa745e05404025420f",
+      "date": "2026-10-13T05:56:48Z",
+      "subject": "docs: add native Decisions API integration recipes (#5357)"
+    },
+    {
+      "sha": "75813f83997b249e5f4b53cccaff0d8a03aa179f",
+      "date": "2026-10-13T04:34:30Z",
+      "subject": "feat: expose MCP annotations on converted tools (#5356)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/scripts/run_examples.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/run_integration_tests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guardrails.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/human_in_the_loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/ref/extensions/sandbox/runloop/mounts.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/ref/extensions/sandbox/runloop/sandbox.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sandbox/clients.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sandbox/guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/decisions/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/decisions/classify.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/decisions/model_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/decisions/tool_risk_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/realtime/twilio/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/realtime/twilio_sip/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/run_examples.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/sandbox/extensions/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/sandbox/extensions/runloop/capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/sandbox/extensions/runloop/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/_run_state_agent_identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/exceptions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/extensions/memory/redis_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/extensions/sandbox/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/agents/extensions/sandbox/runloop/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/agents/extensions/sandbox/runloop/mounts.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/agents/extensions/sandbox/runloop/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/function_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/items.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/mcp/util.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/memory/openai_conversations_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/memory/openai_responses_compaction_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/result.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/agent_runner_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/blocked_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/guardrails.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/items.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/run_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/run_steps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/session_persistence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/tool_actions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/tool_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/tool_planning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/turn_resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/_mount_security.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/sandbox/capabilities/tools/_input_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/capabilities/tools/apply_patch_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/capabilities/tools/shell_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/capabilities/tools/view_image.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/sandboxes/unix_local.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/session/base_sandbox_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/sandbox/session/runtime_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/testing/model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/tracing/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/tracing/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/tracing/scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/util/_asyncio_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/version.py",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "tests/deferred_session_writes/__init__.py",
+      "previousPath": "examples/sandbox/extensions/runloop/__init__.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/deferred_session_writes/helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/deferred_session_writes/test_compaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/deferred_session_writes/test_filters.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/deferred_session_writes/test_max_turns.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/deferred_session_writes/test_pending_write.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/deferred_session_writes/test_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/deferred_session_writes/test_resume.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/extensions/memory/test_redis_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/extensions/sandbox/test_daytona.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/extensions/sandbox/test_modal.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/extensions/sandbox/test_runloop.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/extensions/sandbox/test_runloop_capabilities_example.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/extensions/sandbox/test_runloop_mounts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/extensions/sandbox/test_vercel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/fixtures/released_api_contract.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/fixtures/released_api_contract_policy.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/fixtures/run_state/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/run_state/features/v1_18_compaction_metadata.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/run_state/features/v1_19_held_pending_session_write.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/run_state/features/v1_20_tool_output_guardrail_boundary.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/fixtures/run_state/generate_corpus.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/run_state/minimal/v1_18.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/run_state/minimal/v1_19.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/fixtures/run_state/minimal/v1_20.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/fixtures/run_state/sources.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/test_mcp_resume_binding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/test_mcp_util.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/test_runner_calls_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/memory/test_compaction_model_visibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/memory/test_openai_conversations_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/capabilities/test_apply_patch_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sandbox/capabilities/test_tool_input_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/capabilities/test_view_image_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/test_bounded_read.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/test_compatibility_guards.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/test_docker.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sandbox/test_helper_startup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/test_mount_security.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/test_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/test_session_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sandbox/test_unix_local.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_agent_runner_streamed.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_agent_tracing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_asyncio_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_computer_action.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_decisions_examples.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_error_logging_redaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_function_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_native_tool_failure_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_released_api_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_repository_workflow_interfaces.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_run_examples_script.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_run_impl_resume_paths.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_run_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_run_state_aliases.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_run_state_compatibility_corpus.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_run_state_hook_identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_run_state_pending_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_runner_guardrail_resume.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_runner_tracing_disabled.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_tool_batch_failure_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_tool_exception_formatter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_tool_failure_boundaries.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tracing/test_tracing_env_disable.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

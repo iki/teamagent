@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--deepseek-tui",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/codewhale-hq/codewhale",
+  "report": "spec/projects/ai-agents--deepseek-tui.md",
+  "analyzedSha": "9e19f03e68bf0ffaf4ea3d609def6b582db49f33",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T08:13:51-07:00",
+  "observedSha": "a815930d14115ffe8184ba8eb0fec3e9e5c0f6a8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a815930d14115ffe8184ba8eb0fec3e9e5c0f6a8",
+      "date": "2026-10-23T20:40:25-07:00",
+      "subject": "Prepare merged dependency and Herdr contributions for 0.10.2 [skip ci]"
+    },
+    {
+      "sha": "963b9d17993b22624fa9405a2a1cea1e9cae4426",
+      "date": "2026-10-24T11:39:12+08:00",
+      "subject": "Merge pull request #7064: integrate Herdr agent state and resume [skip ci]"
+    },
+    {
+      "sha": "6feeaeb2330cf31c792abfec3230ae0fb7a3336b",
+      "date": "2026-10-24T11:39:08+08:00",
+      "subject": "Merge pull request #7063: update rust-i18n-support to 4.2.4 [skip ci]"
+    },
+    {
+      "sha": "530e9cd8910e126b5ade4428aa3b611c50b341c5",
+      "date": "2026-10-24T11:39:05+08:00",
+      "subject": "Merge pull request #7062: update sha2 to 0.11.1 [skip ci]"
+    },
+    {
+      "sha": "520060d84b80eccf26e2c5bfa43ee4ac03e5df4f",
+      "date": "2026-10-24T11:39:01+08:00",
+      "subject": "Merge pull request #7061: update hyper-util to 0.1.21 [skip ci]"
+    },
+    {
+      "sha": "80a8ee8bbe8ca12ba4759157be0296a090d8519d",
+      "date": "2026-10-24T11:38:57+08:00",
+      "subject": "Merge pull request #7060: update serde_json to 1.0.154 [skip ci]"
+    },
+    {
+      "sha": "6d3f02e388beadd9b2976ad04b396c8dbc6a5456",
+      "date": "2026-10-24T11:38:54+08:00",
+      "subject": "Merge pull request #7059: update syn to 3.0.9 [skip ci]"
+    },
+    {
+      "sha": "34eee750906788cb43b556927070f8b840e6debd",
+      "date": "2026-10-24T11:38:30+08:00",
+      "subject": "Merge pull request #7057: update WhaleNet example zod [skip ci]"
+    },
+    {
+      "sha": "354880ff39488d83afa32eb8dc900297611dc5d8",
+      "date": "2026-10-23T18:13:03-07:00",
+      "subject": "changelog: mirror the orcarouter shorthand note into the tui slice"
+    },
+    {
+      "sha": "e49bff871051ce04ec804270d0dcf3aebc80f0f2",
+      "date": "2026-10-23T18:11:26-07:00",
+      "subject": "fix(config): keep orcarouter's pro shorthand on the pro model"
+    },
+    {
+      "sha": "0c1fa1bf6d9da088daa2360912eb86540bfd4bc1",
+      "date": "2026-10-23T17:46:58-07:00",
+      "subject": "Admit one reviewed dev-only advisory in the extension packager"
+    },
+    {
+      "sha": "71b9945ddefaddfbd2afa186285e715d0cf0f702",
+      "date": "2026-10-23T17:27:44-07:00",
+      "subject": "extension-host: notices name the zod version the bundle ships"
+    },
+    {
+      "sha": "4cec6f0874f7c510e3cce029f226a37d7b8cacec",
+      "date": "2026-10-23T16:40:33-07:00",
+      "subject": "extension-host: pin the mcp digest the committed bundle actually carries"
+    },
+    {
+      "sha": "c32f808876ed24584e554c2f7bbaf009950b3092",
+      "date": "2026-10-24T07:13:24+08:00",
+      "subject": "Merge branch 'main' into dependabot/npm_and_yarn/docs/examples/whalenet-reuse/npm_and_yarn-11c2e24550"
+    },
+    {
+      "sha": "5fcfe1bb6c2c0d2cf3e30761cbf8560c2d18b3e8",
+      "date": "2026-10-23T16:13:15-07:00",
+      "subject": "deps: move undici to 7.30.1 for GHSA-xjj6-f33q-929c"
+    },
+    {
+      "sha": "7eca14affae794438ae5792e477d4c3ad60e7639",
+      "date": "2026-10-23T16:10:16-07:00",
+      "subject": "picker: name the price basis and wire identity, and drop faux reasoning tiers (#6396 8,10,14)"
+    },
+    {
+      "sha": "72cf7d9dfbfae477d93abf477e411129b2fb3af6",
+      "date": "2026-10-23T15:34:14-07:00",
+      "subject": "fix(extension-host): regenerate the committed bundle for zod 4.6.7"
+    },
+    {
+      "sha": "77ba2571122b0fbdb9129dbfc07f4040d3b17d6f",
+      "date": "2026-10-23T15:30:29-07:00",
+      "subject": "fix(web): regenerate the feature registry so the candidate web surface compiles"
+    },
+    {
+      "sha": "9e741d191b8424aac4d1743b84acfd9ae0838476",
+      "date": "2026-10-23T15:29:30-07:00",
+      "subject": "fix(deps): clear the two live npm advisories that turned the release red"
+    },
+    {
+      "sha": "72015a57e48de5494898d25dc90d7d9fc6d22024",
+      "date": "2026-10-23T14:44:59-07:00",
+      "subject": "fix(release): refresh providers golden and trim three feature summaries"
+    },
+    {
+      "sha": "bebf92bc2e1378bbb075c0fdec50effaee2062b8",
+      "date": "2026-10-23T21:18:12Z",
+      "subject": "tui: report agent state, resume command and release to Herdr"
+    },
+    {
+      "sha": "d3048b9e58e70231fa840168db4aa175a3744ea6",
+      "date": "2026-10-23T21:15:55Z",
+      "subject": "chore(deps): bump rust-i18n-support from 4.2.2 to 4.2.4"
+    },
+    {
+      "sha": "c9550610cd5e480d90a63f06637c2d3998c57bb8",
+      "date": "2026-10-23T21:15:44Z",
+      "subject": "chore(deps): bump sha2 from 0.11.0 to 0.11.1"
+    },
+    {
+      "sha": "41b5a985a54fa4c6cb5cbee57c5f83849d4c4da7",
+      "date": "2026-10-23T21:15:31Z",
+      "subject": "chore(deps): bump hyper-util from 0.1.20 to 0.1.21"
+    },
+    {
+      "sha": "996f4543b9678f544546e8992bfac32bcce232f9",
+      "date": "2026-10-23T21:15:18Z",
+      "subject": "chore(deps): bump serde_json from 1.0.151 to 1.0.154"
+    },
+    {
+      "sha": "e9d0f11c310345728a378f3f03ee6a84917d2f99",
+      "date": "2026-10-23T21:15:07Z",
+      "subject": "chore(deps): bump syn from 3.0.6 to 3.0.9"
+    },
+    {
+      "sha": "ec45097d01d30dc47c4b7efe1575a201526ed155",
+      "date": "2026-10-23T12:51:46-07:00",
+      "subject": "changelog: resync the packaged TUI slice so the release candidate resolves"
+    },
+    {
+      "sha": "6467fc28ee4b32e9573b1e509a285e9d3f06e3bd",
+      "date": "2026-10-23T12:50:11-07:00",
+      "subject": "catalog: keep the load path fail-closed and clear the three clippy errors"
+    },
+    {
+      "sha": "3a8d72d09c49a804d2b56b43dfe597ddcb417cf0",
+      "date": "2026-10-23T19:16:30Z",
+      "subject": "chore(deps): bump zod"
+    },
+    {
+      "sha": "d7674aa3b28c981a9fe504eff31da698c40fce56",
+      "date": "2026-10-23T12:14:48-07:00",
+      "subject": "retire RUSTSEC-2026-0386 and print sourced limit overrides"
+    },
+    {
+      "sha": "d05d883bc4c5252e7a65d43131592d8463600731",
+      "date": "2026-10-23T11:41:30-07:00",
+      "subject": "cu: sync the under-budget skill instructions from upstream a1174c3"
+    },
+    {
+      "sha": "d6a6f70e622b37d392504c1fc464e81f736e78ac",
+      "date": "2026-10-23T11:37:44-07:00",
+      "subject": "web: subscribe to turn.provider_request so one receipt no longer resyncs the thread"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cnb.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".config/nextest.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/AUTHOR_MAP",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/d8-executable.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/release-workflows.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/update-homebrew-tap.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cargo-deny.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/claude-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/claude.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codewhale-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/marketplace-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ohos.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pet.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-candidate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-parity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sync-cnb.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/sync-gitcode.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/telemetry-ingest.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-arm64-export-probe.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "R076",
+      "path": ".winget/HunterBown.CodeWhale.yaml",
+      "previousPath": "packaging/winget/Hmbown.CodeWhale.yaml"
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "DEPENDENCY_SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ar.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ca.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.de.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.es-419.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.fr.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.hi.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.id.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.it.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ja-JP.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ko-KR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.pl.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.pt-BR.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ru.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.tr.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.uk.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.vi.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.zh-TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "computer/snapshots/cloud-agent/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "computer/snapshots/cloud-agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config.example.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/agent/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/agent/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/chat_completions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/daemon_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/daemon_socket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/daemon_windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/thread_control.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/thread_control/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/tests/daemon_socket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud/machine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud/work.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/config_bundles.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/dispatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/src/hashing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/update.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/src/update/compiled_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/model_resolve_provenance.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/tests/owner_crash_reentry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cloud-facts/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/config_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "crates/command-contract/src/elapsed.rs",
+      "previousPath": "crates/runtime/src/elapsed.rs"
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets/debug_operations.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets/diagnostics_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/handler.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/metrics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R090",
+      "path": "crates/command-contract/src/money.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/money.rs"
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/navigation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/outcome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/tool_outputs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/commands/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "R097",
+      "path": "crates/commands/src/debug/balance.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/balance.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/cache.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/cache.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/cache_format.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/cache_format.rs"
+    },
+    {
+      "status": "R084",
+      "path": "crates/commands/src/debug/change.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/change.rs"
+    },
+    {
+      "status": "R077",
+      "path": "crates/commands/src/debug/mod.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/mod.rs"
+    },
+    {
+      "status": "R067",
+      "path": "crates/commands/src/debug/operations_tests.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/operations_tests.rs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/commands/src/debug/portable_tests.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/portable_tests.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/preview_request.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/preview_request.rs"
+    },
+    {
+      "status": "R098",
+      "path": "crates/commands/src/debug/receipts.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/receipts.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/tokens.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/tokens.rs"
+    },
+    {
+      "status": "R098",
+      "path": "crates/commands/src/debug/tool_inspection.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/tool_inspection.rs"
+    },
+    {
+      "status": "R066",
+      "path": "crates/commands/src/debug/undo.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/undo.rs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/commands/src/diagnostics_reports/context.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/context.rs"
+    },
+    {
+      "status": "R094",
+      "path": "crates/commands/src/diagnostics_reports/mod.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/mod.rs"
+    },
+    {
+      "status": "A",
+      "path": "crates/commands/src/diagnostics_reports/money.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "crates/commands/src/diagnostics_reports/receipts.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/receipts.rs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/commands/src/diagnostics_reports/tool_snapshot.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/tool_snapshot.rs"
+    },
+    {
+      "status": "A",
+      "path": "crates/commands/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/catalog_corrections.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/models_dev.bundled.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/provider_descriptors.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/app_mode.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/auto_model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog/configured.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog/corrections.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/catalog/reviewed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/cloud_facts/catalog_patch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/cloud_facts/provenance.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/cloud_facts/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/config_document.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/credentials.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/descriptors.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/external_credentials.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/legacy_root.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/model_reference.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/models_dev.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/opencode_go.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/persistence.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/pricing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/pricing/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/private_directory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/provider_defaults.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/provider_kind.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/redaction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/route/authority.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/route/capabilities.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/route/conformance_tests.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

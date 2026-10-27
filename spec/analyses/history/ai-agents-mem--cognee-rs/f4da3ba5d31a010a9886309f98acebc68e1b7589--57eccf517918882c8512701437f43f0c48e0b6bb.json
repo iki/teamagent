@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--cognee-rs",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/topoteretes/cognee-rs",
+  "report": "spec/projects/ai-agents-mem--cognee-rs.md",
+  "analyzedSha": "f4da3ba5d31a010a9886309f98acebc68e1b7589",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-01T02:26:05+03:00",
+  "observedSha": "57eccf517918882c8512701437f43f0c48e0b6bb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "57eccf517918882c8512701437f43f0c48e0b6bb",
+      "date": "2026-10-23T13:35:14+03:00",
+      "subject": "feat(search): batched multi-query graph triplet search (SDK-1063 3/3) (#328)"
+    },
+    {
+      "sha": "c3345af3c7d524377e99c9d6c56b60ba10a49284",
+      "date": "2026-10-23T13:34:53+03:00",
+      "subject": "feat(search)!: weigh importance_weight in triplet ranking and fix the feedback blend (SDK-1063 2/3) (#327)"
+    },
+    {
+      "sha": "2328411f8d2ac7b06fc3b0dfee6574a3a5124631",
+      "date": "2026-10-23T13:34:19+03:00",
+      "subject": "feat(search)!: honour neighborhood_depth / neighborhood_seed_top_k in graph triplet search (SDK-1063 1/3) (#326)"
+    },
+    {
+      "sha": "ef6ba32811edb146ce95cc0538c8e28a285e76fe",
+      "date": "2026-10-23T10:41:29+03:00",
+      "subject": "fix(deps): floor webpki-roots and rustls-webpki past the eMudhra revocation (SDK-1218) (#325)"
+    },
+    {
+      "sha": "017a4dcd65da40b4e576ccbdf60fecf56e927ff5",
+      "date": "2026-10-23T09:28:08+03:00",
+      "subject": "ci: build e2e binaries in the harness base; pin and assert the Linux prebuild glibc floor (#324)"
+    },
+    {
+      "sha": "3f1b594529b9fa43c50db5be0d6e0ec21fabd302",
+      "date": "2026-10-23T09:27:23+03:00",
+      "subject": "build(python): bump PyO3 0.23 -> 0.29 (Python 3.14), drop the PYO3_PYTHON pin (#323)"
+    },
+    {
+      "sha": "cd7f671827fd661ad55432e59d326db9056fbaa1",
+      "date": "2026-10-23T09:26:13+03:00",
+      "subject": "fix(vector): fall back to the exact scan when a pgvector ANN search comes back short (#322)"
+    },
+    {
+      "sha": "25a4af80103f8fced75e848cb1c0134cdf13d9e5",
+      "date": "2026-10-22T18:53:05+03:00",
+      "subject": "feat(graph): export the node-property decoding helpers for external adapters (#321)"
+    },
+    {
+      "sha": "e80f022e701839ac45a6d397b5b150c09766fc76",
+      "date": "2026-10-22T18:01:45+03:00",
+      "subject": "ci: pin Linux runners to ubuntu-24.04 (#320)"
+    },
+    {
+      "sha": "3d61b2f1596e52e5ed248c0a56a67cbb7f34c01a",
+      "date": "2026-10-22T14:00:31+03:00",
+      "subject": "feat(cognify): FromIdentity references in custom graph schemas (SDK-1055 3/3) (#319)"
+    },
+    {
+      "sha": "9596e2a3194fdc4336e1645bd8da79dd97e1958a",
+      "date": "2026-10-22T12:50:22+03:00",
+      "subject": "feat(cognify,bindings,cli): JSON graph-model spec DSL (SDK-1055 2/3) (#318)"
+    },
+    {
+      "sha": "7844ca6d5217b6db1dd8b679d3aae80ea2b3ce67",
+      "date": "2026-10-22T11:26:08+03:00",
+      "subject": "feat(models): add DataPoint serialization and versioning helpers (SDK-1055 1/3) (#317)"
+    },
+    {
+      "sha": "0bccfddcb1c75ae5da14ced2484b62d0eec5619d",
+      "date": "2026-10-22T01:42:34+03:00",
+      "subject": "refactor(llm)!: remove deprecated graph_schema_to_graph_model (#316)"
+    },
+    {
+      "sha": "698f112a4025f23cb6f3cfc792ed91de5c597fee",
+      "date": "2026-10-21T23:08:36+03:00",
+      "subject": "fix(delete)!: remove structural-edge EdgeType points on data-scoped delete (#314)"
+    },
+    {
+      "sha": "1f5c788edcec2c6e7aae79d54b6c734b9f098381",
+      "date": "2026-10-21T22:02:46+03:00",
+      "subject": "fix(cognify): accept Pydantic lax-mode scalar coercions in custom graph schemas (#313)"
+    },
+    {
+      "sha": "0a2bd0371030d35281412cb90a1018ec8be64937",
+      "date": "2026-10-21T15:52:43+03:00",
+      "subject": "fix(ingestion): read PDFs whose xref offsets point just before xref (SDK-1193) (#315)"
+    },
+    {
+      "sha": "dca7228b8bb52a6fdf75adf336b0bb9f77d90a93",
+      "date": "2026-10-21T04:28:26+03:00",
+      "subject": "feat(bindings,cli): expose graph_schema and chunk_attachment on every cognify entry point (SDK-1124 follow-up 5/5) (#312)"
+    },
+    {
+      "sha": "0fae3ab6362f9844758854e918c6be26cc3a8f40",
+      "date": "2026-10-21T03:10:10+03:00",
+      "subject": "feat(cognify)!: temporal hints for custom graphs, drop misleading legacy helpers, end-to-end tests (SDK-1124 follow-up 4/5) (#311)"
+    },
+    {
+      "sha": "e303d505f5fad976f68bd48cee82cf1b3e03d7b2",
+      "date": "2026-10-21T01:48:57+03:00",
+      "subject": "fix(cognify): align runtime schema materialization with Python (SDK-1124 follow-up 3/5) (#309)"
+    },
+    {
+      "sha": "71747a3b5ebf0f556583520697bcc702b25c43dd",
+      "date": "2026-10-21T01:01:48+03:00",
+      "subject": "fix(cognify): record edge_text on custom field-edge ownership rows (SDK-1124 follow-up 2/5) (#308)"
+    },
+    {
+      "sha": "5eeb0f2030e9cbe93a8526d48112d5425f84fc8b",
+      "date": "2026-10-20T23:42:18+03:00",
+      "subject": "fix(cognify): validate custom graph schemas up front (SDK-1124 follow-up 1/5) (#307)"
+    },
+    {
+      "sha": "5d4664b6a1c20172102d5a7b90fc409c684b6d03",
+      "date": "2026-10-20T22:02:33+03:00",
+      "subject": "feat!: delete lock hook, search scoping accessor, pipeline-runs listing API + user_id (cloud S3 follow-ups) (#310)"
+    },
+    {
+      "sha": "55c884c1ce99491fc3f7beeef2a825f1362144b0",
+      "date": "2026-10-20T17:49:26+03:00",
+      "subject": "fix(ingestion,lib)!: node_set follow-ups to #302 (SDK-1129) (#306)"
+    },
+    {
+      "sha": "207694d6544e9436986ddf31e98022bd5d0b16de",
+      "date": "2026-10-20T14:26:53+02:00",
+      "subject": "feat(database): check that an existing column matches its definition (SDK-1050)"
+    },
+    {
+      "sha": "371f90fbffed1f7f95b39db5fcee89ba2a1fb271",
+      "date": "2026-10-20T14:26:53+02:00",
+      "subject": "fix(database)!: name search-history columns as Python does (SDK-1050)"
+    },
+    {
+      "sha": "3506bbf9cf057a77de902d965b21931ec49c0f50",
+      "date": "2026-10-20T14:26:53+02:00",
+      "subject": "feat(search)!: remove SearchRequest::save_interaction (SDK-1050)"
+    },
+    {
+      "sha": "872da1b5116a41da00fdfa6b0ca7cc2bc4ee63d5",
+      "date": "2026-10-20T14:26:53+02:00",
+      "subject": "feat(search): record search history after retrieval, as Python does (SDK-1050)"
+    },
+    {
+      "sha": "0e3b36166895dc3c656c8bb1e68b188b2019d61f",
+      "date": "2026-10-20T14:26:53+02:00",
+      "subject": "feat(config): add the log_search_history setting (SDK-1050)"
+    },
+    {
+      "sha": "89194259aedb97a4ca623361e5bbec87bd27911d",
+      "date": "2026-10-20T14:26:53+02:00",
+      "subject": "feat(database)!: add dataset_id to search history (SDK-1050)"
+    },
+    {
+      "sha": "a66271bf4b3b200b2cf80597ee81c675adb29eae",
+      "date": "2026-10-20T14:26:53+02:00",
+      "subject": "refactor(database): move has_column into migrator helpers"
+    },
+    {
+      "sha": "8edeb5b0ed4947b06c2694f5fc6c2c6b8d35f350",
+      "date": "2026-10-20T14:25:49+02:00",
+      "subject": "Merge pull request #287 from topoteretes/sdk-1050-default-hybrid-completion"
+    },
+    {
+      "sha": "da287479701509a23a1af8612e405340cb9a2ddb",
+      "date": "2026-10-20T13:25:55+02:00",
+      "subject": "feat(search)!: default to HYBRID_COMPLETION, falling back to GRAPH_COMPLETION (SDK-1050)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cache-cleanup.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/capi-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/community.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/http-parity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/java-prebuild.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ort-mirror.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-dry-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/record-cassettes.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/record-perf-cassette.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-open.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ts-prebuild.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/Cross.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/Cross.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/logging.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/pipeline_exec.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk_ops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/sdk_retrieval.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/task.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/telemetry_analytics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/telemetry_otlp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/cognee-capi/src/watcher.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/CMakeLists.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "capi/examples/example_async_exec.c",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "capi/examples/example_watcher_exec.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/init_otlp_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/init_telemetry_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/sdk_config_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/sdk_conventions_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/sdk_feature_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/sdk_handle_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/sdk_negative_path_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/examples/sdk_retrieval_smoke.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/include/cognee.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/include/cognee_sdk.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "capi/scripts/check.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ci/assert-glibc-floor.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ci/assert-glibc-floor.test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ci/cross/aarch64-gnu.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ci/cross/x86_64-gnu.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ci/linux-glibc-floor.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "clippy.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/graph_backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/handle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/admin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/data.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/datasets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/ops/retrieval.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/bindings-common/src/process_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/redact.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/services.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/bindings-common/src/settings_keys.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/src/wire.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/bindings-common/tests/cognify_opts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/tests/graph_backend_registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/bindings-common/tests/handle_close.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/chunking/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/chunking/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/chunking/src/token_counter.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/add.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/add_and_cognify.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/bench.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/src/commands/bench_rss.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/cognify.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/delete.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/export.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/forget.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/improve.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/memify.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/pipeline_unblock.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/recall.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/remember.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/run_sequence.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/search.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/commands/vector_reindex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/config_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/cli_bench.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/cli_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/cli_memify.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/tests/config_key_golden.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/tests/delete_request_builder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/tests/golden/cli_config_keys.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/teardown_flushes_telemetry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/dataset_resolver.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/dynamic_graph.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/edge_reindex.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/cascade.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/fact_extraction/extractor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/fact_extraction/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/fact_extraction/models.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/cascade/extract_graph_edge_triplets_prompt_input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/cascade/extract_graph_edge_triplets_prompt_system.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/cascade/extract_graph_nodes_prompt_input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/cascade/extract_graph_nodes_prompt_system.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/cascade/extract_graph_relationship_names_prompt_input.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/cascade/extract_graph_relationship_names_prompt_system.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/fact_extraction/prompts/generate_graph_prompt.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/generate_graph_prompt_guided.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/generate_graph_prompt_oneshot.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/generate_graph_prompt_simple.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/fact_extraction/prompts/generate_graph_prompt_strict.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/failure.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/graph_extraction/edge_text.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/graph_extraction/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/graph_integration/deduplication.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/graph_integration/expansion.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/graph_integration/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/graph_integration/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/graph_spec.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/distill_sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/index_triplets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/persist_sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/memify/sync_graph_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/rollback.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/tasks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/src/temporal_hints.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/src/triplet_creation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/cascade_extraction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/tests/cross_run_edge_ownership.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/custom_graph_cognify.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/custom_graph_ownership.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/custom_graph_schema_validation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cognify/tests/default_cognify_timestamps.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/tests/e2e_delete_preview_accuracy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/tests/e2e_full_pipeline_memify.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/tests/e2e_lifecycle_loop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cognify/tests/e2e_memify.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

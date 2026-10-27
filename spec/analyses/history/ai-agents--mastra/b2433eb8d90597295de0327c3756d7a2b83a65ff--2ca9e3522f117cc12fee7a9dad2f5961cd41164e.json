@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--mastra",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/mastra-ai/mastra",
+  "report": "spec/projects/ai-agents--mastra.md",
+  "analyzedSha": "b2433eb8d90597295de0327c3756d7a2b83a65ff",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:48:39-07:00",
+  "observedSha": "2ca9e3522f117cc12fee7a9dad2f5961cd41164e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "2ca9e3522f117cc12fee7a9dad2f5961cd41164e",
+      "date": "2026-10-23T20:57:49-07:00",
+      "subject": "fix(core): deliver input from another process into a busy thread's running run (#28298)"
+    },
+    {
+      "sha": "2b9f9a55799ee7a6020a063d2419096429254481",
+      "date": "2026-10-23T20:32:11-07:00",
+      "subject": "fix(core): keep a run whose lease renewal is answered only after its process stalled (#28316)"
+    },
+    {
+      "sha": "cabb887412edb3114c1349806450376835b5dd19",
+      "date": "2026-10-23T22:09:27-05:00",
+      "subject": "test(core): assert exact resumed text in suspended getFullOutput scenario (#28360)"
+    },
+    {
+      "sha": "01e060c971237b72d75e05a42edc4a67816028f3",
+      "date": "2026-10-23T19:48:04-07:00",
+      "subject": "fix(memory): keep context-overflow recovery working for the rest of a long run (#28358)"
+    },
+    {
+      "sha": "decd0a0066286996a4558f63e91a8edfa1143feb",
+      "date": "2026-10-24T04:07:55+02:00",
+      "subject": "fix: show newest models first in Studio and Factory (#27661)"
+    },
+    {
+      "sha": "ca04e2cbb6f5ae13edf006905d9810434b4163fe",
+      "date": "2026-10-23T20:45:46-05:00",
+      "subject": "fix(core): keep pre-approval text in durable and evented resumed streams (#27504) (#27582)"
+    },
+    {
+      "sha": "34ee1d16226852f57d1f8bb34ee7a88397e5cce2",
+      "date": "2026-10-23T20:43:57-05:00",
+      "subject": "fix(core): include unfinished-step text in suspended getFullOutput (#28351)"
+    },
+    {
+      "sha": "308ca4d3fd58aadaa5121466622cd35df86f3a2c",
+      "date": "2026-10-24T00:47:31Z",
+      "subject": "chore: regenerate providers, docs and pricing [skip ci]"
+    },
+    {
+      "sha": "1e31034b30cb9661e38af548dfda646aee74f08f",
+      "date": "2026-10-23T18:34:03-05:00",
+      "subject": "fix(core): read stored run status before thread streams decide run state (#27928)"
+    },
+    {
+      "sha": "b1244bd3bc02343968280cc52d2fb1e23fb554f1",
+      "date": "2026-10-23T16:18:02-05:00",
+      "subject": "fix(inngest): preserve earlier tool calls in resumed agent output (#28080)"
+    },
+    {
+      "sha": "b7ff751ed0fd87a3f93ce438c355c2dcc16e79d5",
+      "date": "2026-10-23T13:38:08-07:00",
+      "subject": "fix(core): stop a stored tool call with unparseable input from breaking a thread (#28332)"
+    },
+    {
+      "sha": "fe8c11d479b7e75bda64f311cadbaf8631782df0",
+      "date": "2026-10-23T13:13:34-07:00",
+      "subject": "fix(memory): hide working-memory data on raw writes and edits (#28149)"
+    },
+    {
+      "sha": "675f65652cb537113416e668df968ff7fe776d30",
+      "date": "2026-10-23T14:57:52-04:00",
+      "subject": "chore(deps): update opencode to ^1.19.3 (#28015)"
+    },
+    {
+      "sha": "7573972d0cc150309f5eaca77096d9f1163d4465",
+      "date": "2026-10-23T20:46:38+02:00",
+      "subject": "feat(factory): show every changed file's diff in one scroll (#28274)"
+    },
+    {
+      "sha": "91732315065e6d3064c67b13f91a03af555efa08",
+      "date": "2026-10-23T20:43:48+02:00",
+      "subject": "feat(factory-ui): factory switcher in the corner, one New session row (#28312)"
+    },
+    {
+      "sha": "f39f5d64d22f7344577f84ecc1bc528b254809a7",
+      "date": "2026-10-23T20:43:48+02:00",
+      "subject": "fix(factory-ui): collapsed sidebar gives the page the whole window, Sessions + closes the mobile drawer (#28300)"
+    },
+    {
+      "sha": "cf0f2b522dfea1fab9d3a3dce2f2724d2401eb31",
+      "date": "2026-10-23T18:23:49Z",
+      "subject": "chore: regenerate providers, docs and pricing [skip ci]"
+    },
+    {
+      "sha": "2ded35cb0c97b26f641a9eb9a5747d32164d45c9",
+      "date": "2026-10-23T12:39:25-05:00",
+      "subject": "fix(core,redis,valkey): stop duplicate observe frames and save evented suspensions before publishing (#27352)"
+    },
+    {
+      "sha": "f9317a71502381936942a36af5692af5604f6c5b",
+      "date": "2026-10-23T13:18:59-04:00",
+      "subject": "chore: version packages (alpha) (#28265)"
+    },
+    {
+      "sha": "c2e7dcc219793e0555d2d056490ad4999e80515f",
+      "date": "2026-10-23T13:18:47-04:00",
+      "subject": "fix(connect): generate Office tools for delegated OAuth (#27314)"
+    },
+    {
+      "sha": "21078dce9475db7d279e980eb7ae22c716e90e8b",
+      "date": "2026-10-23T09:58:03-07:00",
+      "subject": "fix(factory): stop repeating a session's \"finished\" notice on every later run (#28304)"
+    },
+    {
+      "sha": "0fa30cfbeaa84fb7a54dea9e0e457876a02c0305",
+      "date": "2026-10-23T18:41:47+02:00",
+      "subject": "refactor(lint): remove redundant boolean casts and rethrow catches (#27985)"
+    },
+    {
+      "sha": "6008c996858170a036a2ffb139949935b83d33cc",
+      "date": "2026-10-23T16:27:44Z",
+      "subject": "chore: version packages"
+    },
+    {
+      "sha": "7662736615043b8f4d0d2e7277094936ff2c88d6",
+      "date": "2026-10-23T12:22:32-04:00",
+      "subject": "fix(core): keep mapUserToResourceId when defined as a provider subclass method (#28297)"
+    },
+    {
+      "sha": "703b0a1cb342d3a6fce72b5b07685fbb31695674",
+      "date": "2026-10-23T09:00:36-07:00",
+      "subject": "fix(core): keep provider HTTP error details on failed turns and in channel errors (#27906)"
+    },
+    {
+      "sha": "ace7fdd5d7121a1d1834906dfa574f922746384a",
+      "date": "2026-10-23T17:52:07+02:00",
+      "subject": "perf(playground-ui): load 3 turns per page in the thread panel (#28305)"
+    },
+    {
+      "sha": "be82e8d1b5b2dc24b3ccdea69fb9b9ff75e1e2cc",
+      "date": "2026-10-23T11:44:17-04:00",
+      "subject": "security: Vanta remediation (2026-10-22 → 2026-10-23: storybook, vitest 4.1.12, toml 5.0.1, fastify, ip-address) (#28138)"
+    },
+    {
+      "sha": "fa94ed2a5194d45409c046467ffc649148d3ff8b",
+      "date": "2026-10-23T17:42:49+02:00",
+      "subject": "fix(ui): show one primary chat composer action (#28263)"
+    },
+    {
+      "sha": "ca08ed414a77830356d4aa6f8f7790e6caa860d7",
+      "date": "2026-10-23T11:38:36-04:00",
+      "subject": "fix(factory): configure git identity before session commands (#28292)"
+    },
+    {
+      "sha": "3be96ae2f65a2ff3b2189fb79fd03b7eedee3dbe",
+      "date": "2026-10-23T10:31:58-05:00",
+      "subject": "fix(core): keep suspended durable runs resumable with resumeStreamUntilIdle (#28301)"
+    },
+    {
+      "sha": "304124703fbb6bcf61ca0d5c388f17faf94455f5",
+      "date": "2026-10-23T17:31:09+02:00",
+      "subject": "feat(playground-ui): add composable composer headers (#27960)"
+    },
+    {
+      "sha": "1283717ecfc652da293aafe6ff582afa07ca84a5",
+      "date": "2026-10-23T10:52:17-04:00",
+      "subject": "fix(observability): record parent and root entity on spans (#28047)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/real-world-testing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_azure-27995-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_azure-ai-search-27995-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_browser-firecrawl-27996-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_code-sdk-28006-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_core-vanta-2026-10-21-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_gcs-28012-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_loggers-28002-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_mcp-docs-server-vanta-2026-10-21-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_mcp-vanta-2026-10-21-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_playground-ui-vanta-2026-10-22-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_railway-28003-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_railway-28006-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_spanner-28012-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/@mastra_stagehand-27996-dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/afraid-games-vanish.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/afraid-queens-beg.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/agent-model-client-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/agent-model-core.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/agent-model-react.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/agent-model-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/agent-model-studio.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/auth-http-exception-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/automated-model-pricing-20261021-122832.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".changeset/automated-provider-registry-20261021-122832.md",
+      "previousPath": ".changeset/automated-provider-registry-20261001-182907.md"
+    },
+    {
+      "status": "A",
+      "path": ".changeset/background-task-failed-run-settle.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/better-jeans-watch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/big-clubs-push.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/blue-parrots-tie.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/brave-owls-retry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/bumpy-files-unite.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-admins-move.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/calm-berries-drive.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/calm-calls-replay.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/calm-foxes-reset.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-owls-hold.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/calm-owls-preview.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-skeletons-match.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-streams-unlock.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-threads-order.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/channels-export-render-context.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/claude-max-default-model.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/clickhouse-span-aggregate.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/client-js-schedule-completed-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/code-sdk-unbundle.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/common-masks-hunt.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/composer-single-action.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/connect-discord.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/connect-in-chat-prompts-ui.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/connect-in-chat-prompts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/connect-launch-gate.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/contained-read-descriptor-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/core-signal-contents-raw.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/cuddly-socks-tan.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/curly-items-ring.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/curvy-bags-grin.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/custom-route-fga-path-params.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/custom-route-http-exception-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/cute-ads-relax.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/cute-files-flash.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/cute-pears-wonder.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/dataset-failing-items-all-adapters.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/dataset-schema-update-cache.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/dry-geese-punch.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/duckdb-aggregate-traces.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/duckdb-span-aggregate.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/dull-apes-accept.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/durable-approval-text-continuity.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/durable-client-tools-xproc.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/durable-disconnect-conformance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/durable-http-disconnect.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/durable-om-cold-resume-suspension.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/durable-processor-approval-concurrency.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/durable-processor-reminders.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/durable-reader-detach.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/dynamodb-consistent-snapshot-reads.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/early-bats-invent.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/early-mirrors-share.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/early-points-flow.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/eighty-ears-appear.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/eleven-coins-lay.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/elysia-auth-refresh-cookie.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/elysia-stream-cancel.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/elysia-streamed-body-limit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/empty-moose-build.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/empty-pans-wash.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/even-cards-align.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/evented-fail-publish-retry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/evented-foreach-running-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/evented-stopwhen-no-retry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/experiment-dialog-name-model-up-front.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/express-multipart-body-limit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-localhost-names.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-mcp-connect-card.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-session-hover-track.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-settings-model-routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-share-file.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-sidebar-new-session.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-skill-signal-row.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-typed-skill-signal.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/factory-unbundle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fair-doodles-unite.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fair-heads-wait.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/famous-areas-sip.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/famous-rice-give.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/famous-trees-write.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/fast-wombats-clean.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fastembed-pooling-sparse-cache.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/few-pets-shine.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fiery-clouds-cover.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fine-rivers-ring.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fine-seals-wonder.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-deployed-factory-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-token-budget-memory-refs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fluffy-hornets-switch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fluffy-oranges-end.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/forty-clouds-accept.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fresh-carrots-run.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fresh-init-provider-models.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/fresh-threads-wait.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fresh-worlds-bathe.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fs-agent-override-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fs-agent-override-ownership.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/full-eyes-read.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/full-numbers-arrive.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/funky-parents-punch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/funny-eggs-tie.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/funny-forks-brush.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/gentle-buttons-pay.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/gentle-moons-reply.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/giant-rice-tie.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/goal-signal-best-effort.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/good-bags-decide.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/good-symbols-joke.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/good-toys-boil.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/google-analytics-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/grumpy-pets-dream.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/heavy-taxis-bow.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/heavy-times-battle.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/honest-cars-peel.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/honest-slack-links.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/humble-forks-buy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/icy-rules-crash.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/inngest-approval-text-continuity.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/inngest-generation-span-tool-calls.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/inngest-resumed-tool-history.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/input-number.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/itchy-ravens-bow.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/jolly-baths-bet.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/khaki-webs-juggle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/kind-pens-react.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/koa-stream-disconnect-abort.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/large-bottles-laugh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/late-spiders-report.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/late-worlds-flash.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/lazy-rooms-beam.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/legal-clouds-type.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/lemon-rockets-end.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/little-crabs-refuse.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/locked-thinking-bars.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

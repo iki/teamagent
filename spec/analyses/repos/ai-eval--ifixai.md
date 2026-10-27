@@ -1,0 +1,207 @@
+# ifixai: change evidence
+
+Source: [ifixai](https://github.com/ifixai-ai/iFixAi) · [Analysis](../../projects/ai-eval--ifixai.md) · [evolution](../../evolution.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `5b9b12764614950e11208f45fca96ffe5e183c8c`; commit date: 2026-10-02T19:36:20Z; review date: unknown; observed SHA: `28dca412279635361d626574810aae8d91ab6b45`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ifixai-ai/iFixAi/compare/5b9b12764614950e11208f45fca96ffe5e183c8c...28dca412279635361d626574810aae8d91ab6b45). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [28dca4122796](https://github.com/ifixai-ai/iFixAi/commit/28dca412279635361d626574810aae8d91ab6b45) 2026-10-24T23:10:50Z: chore: traction chart update (#365)
+- [92bb5d0a950e](https://github.com/ifixai-ai/iFixAi/commit/92bb5d0a950e5da6ae94bbcddd95824b455058ba) 2026-10-23T00:09:19+03:00: feat: audit any agent over chat (#363)
+- [203507caa93e](https://github.com/ifixai-ai/iFixAi/commit/203507caa93ef49edda355825e173878639adcdf) 2026-10-22T21:54:40+03:00: feat: judging within your budget (#362)
+- [c8cb21e92c0b](https://github.com/ifixai-ai/iFixAi/commit/c8cb21e92c0bbdd8b0ce9dca88b02c0a3263f0fd) 2026-10-22T21:28:55+03:00: fix: keep errored judge samples from unscoring B15/P32 FAILs (#364)
+- [c6d18aa2941f](https://github.com/ifixai-ai/iFixAi/commit/c6d18aa2941fed8a7c56cf2232955408af5fba51) 2026-10-22T21:26:50+03:00: chore: streamline the engine (#361)
+- [d3188a1e5aa6](https://github.com/ifixai-ai/iFixAi/commit/d3188a1e5aa6b4c48a4e9f9be3e1e84328f3ae16) 2026-10-22T21:24:40+03:00: fix(b01): keep coverage diagnostics out of the mandatory gate's evidence floor (#353)
+- [079599dc22a3](https://github.com/ifixai-ai/iFixAi/commit/079599dc22a34612456dfc3dcf36ae8b8f85eb86) 2026-10-22T21:24:13+03:00: fix(trajectory): report a defective delegation grant once, not once per use (#348)
+- [60336160f77e](https://github.com/ifixai-ai/iFixAi/commit/60336160f77e7b5b8d0ac161f06dcdcaa915891b) 2026-10-22T21:23:45+03:00: fix(http): preserve the completed empty-output contract (#216)
+- [ef576a9404e3](https://github.com/ifixai-ai/iFixAi/commit/ef576a9404e3fddb9d84076015e7fc1457b9e70b) 2026-10-22T20:38:52+03:00: feat: V11 emotional guilt tripping inspection (#357)
+- [6180c658a0f3](https://github.com/ifixai-ai/iFixAi/commit/6180c658a0f3c69a5151ec006ba5dc0746940e6a) 2026-10-22T15:03:09+03:00: docs: remove stale full-run default claim (#319)
+- [63b6e2505c4e](https://github.com/ifixai-ai/iFixAi/commit/63b6e2505c4e443c8f5ce54508ed8ba06d01a42c) 2026-10-22T08:14:49+03:00: fix(manifest): canonicalize numeric temperatures before hashing (#323)
+- [652a04b8c3a4](https://github.com/ifixai-ai/iFixAi/commit/652a04b8c3a46476a3bdc0c4d4419c4cd8e49a24) 2026-10-22T07:54:28+03:00: Default MiniMax to M3.1 Flash (#355)
+- [72cbf6bcedaf](https://github.com/ifixai-ai/iFixAi/commit/72cbf6bcedaf342105489f67bc66c2f90636a426) 2026-10-22T07:54:24+03:00: feat(windtunnel): measure which inspections actually detect a seeded governance defect (#360)
+- [d506da222d48](https://github.com/ifixai-ai/iFixAi/commit/d506da222d4818d1c5c7ba941e3ccb2dceba588c) 2026-10-22T07:54:21+03:00: ci: run the test suite, and stop the documented counts from drifting (#359)
+- [3aa2af7cd3ac](https://github.com/ifixai-ai/iFixAi/commit/3aa2af7cd3ac37a1b21bcbc360eac9d9688d24ff) 2026-10-22T07:54:18+03:00: Fix P08 naive timestamp comparison TypeError — ensure _parse_timestamp returns timezone-aware UTC (#325)
+- [28c0fb5d1b98](https://github.com/ifixai-ai/iFixAi/commit/28c0fb5d1b98f69e543fa7b7c2873c390eb07d5a) 2026-10-22T07:54:15+03:00: fix: serialize concurrent checkpoint publication (#320)
+- [f36199799211](https://github.com/ifixai-ai/iFixAi/commit/f36199799211253eb98436e57f395c81389c88a9) 2026-10-22T07:54:12+03:00: fix: keep malformed provider replies scoped to one probe (#247)
+- [bd0ed65f035f](https://github.com/ifixai-ai/iFixAi/commit/bd0ed65f035f8c29c285e65646455b15029297b7) 2026-10-22T07:54:09+03:00: fix(cli): report non-string config keys without a traceback (#354)
+- [85775855934d](https://github.com/ifixai-ai/iFixAi/commit/85775855934d86f171ba265771eb26a262f407e0) 2026-10-22T07:54:05+03:00: fix(artifact): show the real reason for a withheld score and only claim a cap that applied (#352)
+- [31b551c2243a](https://github.com/ifixai-ai/iFixAi/commit/31b551c2243acde1bd2ff8ac4e5459efafc58a51) 2026-10-22T07:54:02+03:00: fix(scoring): keep overall scores on a grade boundary from losing the grade to float error (#351)
+- [2c8801f33754](https://github.com/ifixai-ai/iFixAi/commit/2c8801f33754ee5b51018e95db352e39e83375c6) 2026-10-22T07:53:59+03:00: fix(reporting): label ungraded and diagnostic evidence in the Markdown appendix (#350)
+- [7bfe4e9d69f4](https://github.com/ifixai-ai/iFixAi/commit/7bfe4e9d69f41c498cc3c8e82045912c8a12fcfa) 2026-10-22T07:53:56+03:00: fix(litellm): surface upstream mid-generation aborts instead of grading partial text (#347)
+- [41f00972a196](https://github.com/ifixai-ai/iFixAi/commit/41f00972a196107b145ad96419eab1e2cf1c6e8c) 2026-10-22T07:53:53+03:00: fix(cli): resume full runs when ifixai.yaml saves a default suite (#346)
+- [510343f11243](https://github.com/ifixai-ai/iFixAi/commit/510343f11243e2a28443a2c605b64eb92dd6c43f) 2026-10-22T07:53:50+03:00: fix: keep errored judge samples from unscoring FAIL majorities in S02/P13/P22/P27 (#344)
+- [5d8ea14dbcf9](https://github.com/ifixai-ai/iFixAi/commit/5d8ea14dbcf9b093f383bd154fe74fb6bbe8e38c) 2026-10-22T07:53:47+03:00: fix(reporting): export no grade for runs without an overall score (#343)
+- [354fc88aa6bc](https://github.com/ifixai-ai/iFixAi/commit/354fc88aa6bc5583313cdf0a87f9c37f112fff0f) 2026-10-22T07:53:44+03:00: fix(judge): match fallback provider keys case-insensitively (#342)
+- [84243235f459](https://github.com/ifixai-ai/iFixAi/commit/84243235f459f39e5297a43065e038baac541deb) 2026-10-22T07:53:40+03:00: fix: compute C02/C05/C11/X04/X11 confidence intervals over the scored subset (#341)
+- [37a2d2489a94](https://github.com/ifixai-ai/iFixAi/commit/37a2d2489a9433f7b3d9fa9c9be19d0ce0917574) 2026-10-22T07:53:37+03:00: fix: keep unselected mandatory minimums out of aborted scoped runs (#340)
+- [b973fc0b1269](https://github.com/ifixai-ai/iFixAi/commit/b973fc0b126998612de650e2da2c19625f0d13e7) 2026-10-22T07:53:33+03:00: fix(fixtures): normalize legacy data-source classifications in modern fixtures (#339)
+- [5d62e0ccfa79](https://github.com/ifixai-ai/iFixAi/commit/5d62e0ccfa79e6dd3c87797c49bffcbf67c83883) 2026-10-22T07:53:30+03:00: fix(gemini): treat rejected API keys as fatal auth errors (#338)
+- [c92ddd802f8d](https://github.com/ifixai-ai/iFixAi/commit/c92ddd802f8d29d8b58314748949818893e229d9) 2026-10-22T07:53:25+03:00: fix(bedrock): honor the AWS region chain instead of pinning us-east-1 (#337)
+- [434059814178](https://github.com/ifixai-ai/iFixAi/commit/434059814178e55e5e71f7f9861c4dd8db5e6761) 2026-10-22T07:53:22+03:00: fix(bedrock): treat invalid signatures and expired tokens as auth failures (#336)
+
+## Changed paths (truncated)
+
+- M: `.github/workflows/ci.yml`
+- M: `README.ja.md`
+- M: `README.ko.md`
+- M: `README.md`
+- M: `README.zh-CN.md`
+- M: `SECURITY.md`
+- M: `case_studies/aisi-cyber-range-containment/SCORECARD.md`
+- D: `count_fixture_fields.py`
+- M: `docs/README.md`
+- M: `docs/assets/audits_chart.png`
+- D: `docs/assets/benchmark_execution.png`
+- A: `docs/assets/brand/button-pro-dark.svg`
+- A: `docs/assets/brand/button-pro-light.svg`
+- A: `docs/assets/brand/button-pro.svg`
+- A: `docs/assets/brand/button-site-dark.svg`
+- A: `docs/assets/brand/button-site-light.svg`
+- A: `docs/assets/brand/button-site.svg`
+- A: `docs/assets/brand/hero-audit-dark.svg`
+- A: `docs/assets/brand/hero-audit-light.svg`
+- A: `docs/assets/brand/hero-audit-phone.svg`
+- A: `docs/assets/brand/ifixai-masthead-dark.svg`
+- A: `docs/assets/brand/ifixai-masthead-light.svg`
+- D: `docs/assets/downloads_history.json`
+- D: `docs/assets/ifixai-banner.png`
+- D: `docs/assets/ifixai-demo.gif`
+- M: `docs/assets/pypi_stats_history.json`
+- M: `docs/assets/runs_history.json`
+- D: `docs/assets/scorecard-screenshot.png`
+- A: `docs/business-policy-lab.md`
+- M: `docs/cli.md`
+- M: `docs/fixture_authoring.md`
+- M: `docs/get-started.md`
+- M: `docs/inspections.md`
+- M: `docs/methodology.md`
+- M: `docs/python-api.md`
+- M: `docs/reproducibility.md`
+- M: `docs/scoring.md`
+- M: `docs/testing-your-agent.md`
+- M: `docs/traction.md`
+- A: `docs/trajectory-assurance.md`
+- M: `docs/what-we-test.md`
+- A: `docs/wind-tunnel.md`
+- A: `examples/business_policy_lab.py`
+- A: `examples/trajectory_assurance.py`
+- M: `ifixai/api.py`
+- M: `ifixai/cli/_branding.py`
+- A: `ifixai/cli/author.py`
+- D: `ifixai/cli/colors.py`
+- M: `ifixai/cli/compare.py`
+- M: `ifixai/cli/config_file.py`
+- M: `ifixai/cli/init.py`
+- A: `ifixai/cli/inspection_seeds.py`
+- A: `ifixai/cli/judge_estimate.py`
+- M: `ifixai/cli/main.py`
+- M: `ifixai/cli/model_catalog.py`
+- M: `ifixai/cli/orchestrator.py`
+- A: `ifixai/cli/policy_lab.py`
+- A: `ifixai/cli/pro_offer.py`
+- M: `ifixai/cli/reports.py`
+- M: `ifixai/cli/run.py`
+- M: `ifixai/cli/scaffold.py`
+- M: `ifixai/cli/setup_cmd.py`
+- A: `ifixai/cli/trajectory.py`
+- M: `ifixai/cli/ui.py`
+- M: `ifixai/cli/validate.py`
+- A: `ifixai/cli/windtunnel.py`
+- A: `ifixai/core/applicability.py`
+- M: `ifixai/core/concurrency.py`
+- M: `ifixai/core/connection.py`
+- M: `ifixai/core/discovery.py`
+- M: `ifixai/core/fixture_loader.py`
+- A: `ifixai/core/profile.py`
+- M: `ifixai/core/refusal.py`
+- M: `ifixai/core/runner.py`
+- M: `ifixai/core/types.py`
+- M: `ifixai/evaluation/analytic_judge.py`
+- A: `ifixai/evaluation/analytic_judge_schema.py`
+- M: `ifixai/evaluation/atomic_claims.py`
+- M: `ifixai/evaluation/checkpoint.py`
+- D: `ifixai/evaluation/embedding_classifier.py`
+- M: `ifixai/evaluation/errors.py`
+- M: `ifixai/evaluation/manifest.py`
+- M: `ifixai/evaluation/normalizer.py`
+- M: `ifixai/evaluation/pipeline.py`
+- A: `ifixai/evaluation/purpose_check.py`
+- M: `ifixai/evaluation/response_classifier.py`
+- A: `ifixai/evaluation/run_stop.py`
+- M: `ifixai/evaluation/schemas.py`
+- D: `ifixai/examples/ci_check.py`
+- D: `ifixai/examples/custom_fixture.py`
+- D: `ifixai/examples/run_all.py`
+- D: `ifixai/examples/run_single.py`
+- M: `ifixai/fixtures/README.md`
+- M: `ifixai/fixtures/default/README.md`
+- M: `ifixai/fixtures/default/fixture.yaml`
+- M: `ifixai/fixtures/examples/openclaw_consolidated.yaml`
+- M: `ifixai/fixtures/examples/openclaw_moderate.yaml`
+- M: `ifixai/fixtures/examples/openclaw_strict.yaml`
+- M: `ifixai/fixtures/examples/openwebui.yaml`
+- A: `ifixai/fixtures/reference/fixture.yaml`
+- A: `ifixai/fixtures/reference/profile.json`
+- M: `ifixai/fixtures/schema.json`
+- M: `ifixai/harness/adversarial_mutator.py`
+- D: `ifixai/harness/adversarial_rotator.py`
+- M: `ifixai/harness/base.py`
+- A: `ifixai/harness/completeness.py`
+- M: `ifixai/harness/consistency.py`
+- M: `ifixai/harness/injection_corpus.py`
+- M: `ifixai/harness/prompt_pool.py`
+- M: `ifixai/harness/registry.py`
+- D: `ifixai/harness/seed_resolver.py`
+- M: `ifixai/harness/suites.py`
+- M: `ifixai/harness/validator.py`
+- D: `ifixai/harness/version_enforcement.py`
+- M: `ifixai/inspections/b01_tool_governance/definition.yaml`
+- A: `ifixai/inspections/b01_tool_governance/probes.yaml`
+- A: `ifixai/inspections/b01_tool_governance/rubric.yaml`
+- M: `ifixai/inspections/b01_tool_governance/runner.py`
+- M: `ifixai/inspections/b02_non_llm_layer/definition.yaml`
+- A: `ifixai/inspections/b02_non_llm_layer/probes.yaml`
+- A: `ifixai/inspections/b02_non_llm_layer/rubric.yaml`
+- M: `ifixai/inspections/b02_non_llm_layer/runner.py`
+- M: `ifixai/inspections/b03_auditability/runner.py`
+- M: `ifixai/inspections/b04_deterministic_override/definition.yaml`
+- A: `ifixai/inspections/b04_deterministic_override/probes.yaml`
+- A: `ifixai/inspections/b04_deterministic_override/rubric.yaml`
+- M: `ifixai/inspections/b04_deterministic_override/runner.py`
+- M: `ifixai/inspections/b05_source_provenance/definition.yaml`
+- M: `ifixai/inspections/b05_source_provenance/runner.py`
+- M: `ifixai/inspections/b06_uncertainty_signalling/runner.py`
+- M: `ifixai/inspections/b07_hallucination_rate/definition.yaml`
+- M: `ifixai/inspections/b07_hallucination_rate/rubric.yaml`
+- M: `ifixai/inspections/b07_hallucination_rate/runner.py`
+- M: `ifixai/inspections/b08_privilege_escalation/rubric.yaml`
+- M: `ifixai/inspections/b08_privilege_escalation/runner.py`
+- M: `ifixai/inspections/b09_policy_violation/rubric.yaml`
+- M: `ifixai/inspections/b09_policy_violation/runner.py`
+- D: `ifixai/inspections/b09_policy_violation/service.py`
+- M: `ifixai/inspections/b10_evaluation_drift/runner.py`
+- M: `ifixai/inspections/b11_system_controllability/rubric.yaml`
+- M: `ifixai/inspections/b12_prompt_injection/definition.yaml`
+- M: `ifixai/inspections/b12_prompt_injection/rubric.yaml`
+- M: `ifixai/inspections/b12_prompt_injection/runner.py`
+- M: `ifixai/inspections/b13_plan_traceability/rubric.yaml`
+- M: `ifixai/inspections/b13_plan_traceability/runner.py`
+- M: `ifixai/inspections/b14_covert_side_task/runner.py`
+- M: `ifixai/inspections/b15_long_horizon_drift/runner.py`
+- M: `ifixai/inspections/b16_silent_failure/runner.py`
+- M: `ifixai/inspections/b17_fact_consistency/runner.py`
+- M: `ifixai/inspections/b18_goal_stability/runner.py`
+- M: `ifixai/inspections/b19_context_accuracy/definition.yaml`
+- M: `ifixai/inspections/b19_context_accuracy/runner.py`
+- M: `ifixai/inspections/b20_instruction_adherence/definition.yaml`
+- M: `ifixai/inspections/b20_instruction_adherence/runner.py`
+- M: `ifixai/inspections/b21_cross_turn_objective/runner.py`
+- M: `ifixai/inspections/b22_decision_reproducibility/definition.yaml`
+- M: `ifixai/inspections/b22_decision_reproducibility/runner.py`
+- M: `ifixai/inspections/b23_policy_version_trace/definition.yaml`
+- A: `ifixai/inspections/b23_policy_version_trace/probes.yaml`
+- A: `ifixai/inspections/b23_policy_version_trace/rubric.yaml`

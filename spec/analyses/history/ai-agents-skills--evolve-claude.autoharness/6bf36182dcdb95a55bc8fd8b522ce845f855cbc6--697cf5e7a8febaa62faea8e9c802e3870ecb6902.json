@@ -1,0 +1,574 @@
+{
+  "id": "ai-agents-skills--evolve-claude.autoharness",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/tigerless-labs/autoharness",
+  "report": "spec/projects/ai-agents-skills--evolve-claude.autoharness.md",
+  "analyzedSha": "6bf36182dcdb95a55bc8fd8b522ce845f855cbc6",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-02T17:43:38+08:00",
+  "observedSha": "697cf5e7a8febaa62faea8e9c802e3870ecb6902",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "697cf5e7a8febaa62faea8e9c802e3870ecb6902",
+      "date": "2026-10-28T01:16:51+08:00",
+      "subject": "perf(redact): bound email local-part to 64 chars (#280)"
+    },
+    {
+      "sha": "69deaeabd147a8a73e9f7e4583a2b70d1785a437",
+      "date": "2026-10-27T20:33:51+08:00",
+      "subject": "fix(capture): include truncation markers in byte budgets (#216)"
+    },
+    {
+      "sha": "c0aef3f2a80108ddbafce9eb8f8ac15d7a407dfc",
+      "date": "2026-10-24T00:35:45+08:00",
+      "subject": "Merge pull request #234 from rudycelekli/codex/ah-exact-subfile-pointers"
+    },
+    {
+      "sha": "044ca525de82a6f6b458886b30882503a32e699d",
+      "date": "2026-10-24T00:35:25+08:00",
+      "subject": "Merge pull request #236 from rudycelekli/codex/ah-referenced-python-read-errors"
+    },
+    {
+      "sha": "e12bbe4fa1c9a2cd82e4e3d5465c5be60a335f35",
+      "date": "2026-10-24T00:34:57+08:00",
+      "subject": "Merge pull request #241 from rudycelekli/fix/autoharness-stdio-parse-recovery"
+    },
+    {
+      "sha": "a4edfa8ba215ed2fdfbc0e2f02e9ce3cbf5798a3",
+      "date": "2026-10-24T00:34:34+08:00",
+      "subject": "Merge pull request #265 from rudycelekli/fix/reject-negative-numeric-env-20261014"
+    },
+    {
+      "sha": "edf485dcc5eae14650e1b99549dabcffa1316d2f",
+      "date": "2026-10-24T00:34:08+08:00",
+      "subject": "Merge pull request #272 from rudycelekli/fix/redact-quoted-key-assignment-20261016"
+    },
+    {
+      "sha": "30c66e7374dbd201df9628a63fada25b08161c31",
+      "date": "2026-10-24T00:33:09+08:00",
+      "subject": "Merge main into fix/redact-quoted-key-assignment-20261016"
+    },
+    {
+      "sha": "653c4c2b034cfe7ccc4401de2be3d5b0335d247f",
+      "date": "2026-10-24T00:32:00+08:00",
+      "subject": "Merge pull request #271 from rudycelekli/fix/frontmatter-top-level-keys-20261016"
+    },
+    {
+      "sha": "c9a8f06eaff158432970ce5b655997599d5053af",
+      "date": "2026-10-24T00:31:28+08:00",
+      "subject": "Merge pull request #273 from rudycelekli/fix/redact-fine-grained-github-pat-20261016"
+    },
+    {
+      "sha": "615136af99875f1dc759c843c5c1d6773800c4a7",
+      "date": "2026-10-24T00:30:18+08:00",
+      "subject": "Merge main into fix/redact-fine-grained-github-pat-20261016"
+    },
+    {
+      "sha": "d7c8fc365d1048332f98d1002adcdcf887688097",
+      "date": "2026-10-23T23:42:13+08:00",
+      "subject": "Merge pull request #207 from ivkiwi/fix/project-root-follows-shell-cwd"
+    },
+    {
+      "sha": "a1c6d12c43b29f73e07574922eb85efead0ebaa5",
+      "date": "2026-10-23T23:41:15+08:00",
+      "subject": "Merge main into fix/project-root-follows-shell-cwd"
+    },
+    {
+      "sha": "ed3b659c0d4c288878e20104190a01a704c68981",
+      "date": "2026-10-23T23:40:00+08:00",
+      "subject": "Merge pull request #274 from AlbertNel01/fix/project-root-inside-claude-dir"
+    },
+    {
+      "sha": "3cb401510fab4a51972b7ec957de69072aa2b86d",
+      "date": "2026-10-23T23:39:08+08:00",
+      "subject": "Merge pull request #269 from ivkiwi/fix/redact-pgp-and-clipped-key"
+    },
+    {
+      "sha": "96db5f99581054abb93db5e7383301c150a01142",
+      "date": "2026-10-23T23:38:36+08:00",
+      "subject": "Merge pull request #240 from rudycelekli/codex/ah-evidence-content-hash"
+    },
+    {
+      "sha": "de1bd473f09d0f28383a64ecd2c6e4713ab7b2bf",
+      "date": "2026-10-23T23:38:01+08:00",
+      "subject": "Merge pull request #227 from rudycelekli/codex/autoharness-archive-ledger-boundary"
+    },
+    {
+      "sha": "72bdceb465bb395a02d60ed9ed756a9f817afe85",
+      "date": "2026-10-23T23:37:27+08:00",
+      "subject": "Merge pull request #219 from rudycelekli/fix/dispatch-object-input"
+    },
+    {
+      "sha": "30edfc5ed970ce795c431b6a4da4391d4ee984aa",
+      "date": "2026-10-19T20:03:14+02:00",
+      "subject": "fix(layer): map a session started inside .claude to the project that owns it"
+    },
+    {
+      "sha": "202eee201478faa9c0a8923957d74513b9894876",
+      "date": "2026-10-15T20:03:30-04:00",
+      "subject": "fix(redact): redact fine-grained GitHub personal access tokens"
+    },
+    {
+      "sha": "230344f4d0c192fd235903130487253b02c32df0",
+      "date": "2026-10-15T20:03:03-04:00",
+      "subject": "fix(redact): redact secrets assigned to a quoted key"
+    },
+    {
+      "sha": "0dbc5c64d400205b7b22f213a57f471b084593ae",
+      "date": "2026-10-15T20:02:05-04:00",
+      "subject": "fix(validate): read only top-level frontmatter fields"
+    },
+    {
+      "sha": "27d13c1d8091681db05a10ef9626081217da240f",
+      "date": "2026-10-16T00:22:50+08:00",
+      "subject": "Merge pull request #239 from rudycelekli/codex/ah-relative-redaction-rule-cache"
+    },
+    {
+      "sha": "a77536dacbd1a62ca003d9f0cf9747ae86328dc4",
+      "date": "2026-10-16T00:22:22+08:00",
+      "subject": "Merge pull request #248 from ivkiwi/fix/create-checks-the-other-layer"
+    },
+    {
+      "sha": "b6b244d9dd1fb934953a7f2d3ba962a3e85fd0c4",
+      "date": "2026-10-16T00:21:59+08:00",
+      "subject": "Merge pull request #246 from ivkiwi/fix/child-session-start-guard"
+    },
+    {
+      "sha": "8f53106b836c2716683dc36ab64bd6377bcabba9",
+      "date": "2026-10-16T00:21:34+08:00",
+      "subject": "Merge pull request #266 from rudycelekli/fix/url-python-reference-not-an-escape-20261014"
+    },
+    {
+      "sha": "8c59ab35c9b9d2075502f5d1d6bef6df98d2473e",
+      "date": "2026-10-16T00:21:09+08:00",
+      "subject": "Merge pull request #264 from rudycelekli/fix/guard-rm-flag-order-sudo-pipe-20261014"
+    },
+    {
+      "sha": "a0ce5deee7464de748bf1616dba2a85abe4e2346",
+      "date": "2026-10-15T11:28:25+03:00",
+      "subject": "fix(redact): match PGP key blocks too, and stop a clipped key at its record"
+    },
+    {
+      "sha": "86ddcaa91e4bfcd998269a2007af9c2e604cf1a9",
+      "date": "2026-10-15T10:42:18+03:00",
+      "subject": "fix(promoter): check both layers for a create's namesake, even with global disabled"
+    },
+    {
+      "sha": "b63a0094851af157de0e2f94048d68d96d88e332",
+      "date": "2026-10-15T10:42:18+03:00",
+      "subject": "fix(promoter): reject a create whose name is already live in the other layer"
+    },
+    {
+      "sha": "1ed16e7ecc3e477c23702200c081460d79e5ceb2",
+      "date": "2026-10-15T10:42:05+03:00",
+      "subject": "fix(session-start): reflector and curator children skip SessionStart"
+    },
+    {
+      "sha": "a7ed23c54d9aee0d78a40990ba8af578cc2009ff",
+      "date": "2026-10-14T15:29:31-04:00",
+      "subject": "test: longer filename pointer is rejected at stage time under the exact-pointer check"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".mcp.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adr/2026-10-13-usage-sidecar-fail-safe.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/learn/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/hook/capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/hook/dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/hook/on_session_start.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/hook/on_skill_call.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/hook/promoter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/hook/spawn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/atomic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/counters.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/format_spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/intent_queue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/layer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/autoharness/lib/lock.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/notify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/redact.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/redaction_rules.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/sidecar.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/skill_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/skills_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/lib/validate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/autoharness/stage_skill/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_block_scalar_frontmatter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_capture_truncation_budgets.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_carried_pointer_prefixes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_config_env_validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_crlf_frontmatter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_curator_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_disable_global.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_dispatch_object_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_dispatch_reflector.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_drain_lock.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_e2e_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_evidence_content_hash.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_exact_subfile_pointers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_format_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_global_drain_coordination.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_intent_queue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_layer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_learn_skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_lifecycle_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_on_session_start.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_on_skill_call.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_plugin_manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_promoter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_redact.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_redact_email_quadratic.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_referenced_python_read_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_reflector_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_regression_archive_ledger_boundary.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_regression_atomic_file_modes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_regression_utf8_store_readers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_relative_redaction_rule_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_sentence_subfile_references.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_sidecar.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_skills_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_spawn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_stage_skill.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_stdio_nonobject_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_stdio_parse_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_summary_claim_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_transient_read_retry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_unsafe_archive_metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_validate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_window_record_boundary.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

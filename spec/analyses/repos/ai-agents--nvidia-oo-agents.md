@@ -1,0 +1,207 @@
+# nvidia-oo-agents: change evidence
+
+Source: [nvidia-oo-agents](https://github.com/nvidia-nemo/labs-OO-Agents) · [Analysis](../../projects/ai-agents--nvidia-oo-agents.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `564a34014a354f11009cf7dda44a81b039a04273`; commit date: 2026-10-02T17:03:43+02:00; review date: unknown; observed SHA: `bff0ef449f9bd74ddbb19486489f95c0edc73831`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/nvidia-nemo/labs-OO-Agents/compare/564a34014a354f11009cf7dda44a81b039a04273...bff0ef449f9bd74ddbb19486489f95c0edc73831). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [bff0ef449f9b](https://github.com/nvidia-nemo/labs-OO-Agents/commit/bff0ef449f9bd74ddbb19486489f95c0edc73831) 2026-10-22T16:06:28+02:00: Restore discovery guidance for the exposed events API
+- [76a55b1e0f82](https://github.com/nvidia-nemo/labs-OO-Agents/commit/76a55b1e0f82c7d424ea5aafce8106b8470f7366) 2026-10-22T15:54:31+02:00: Omit events guidance block when the API is hidden
+- [46b71bf196d3](https://github.com/nvidia-nemo/labs-OO-Agents/commit/46b71bf196d3373df82d01649459ca5b020912a9) 2026-10-22T15:54:31+02:00: Keep events prompt close to original discovery guidance
+- [42832816b630](https://github.com/nvidia-nemo/labs-OO-Agents/commit/42832816b63077c594004b82e8e49d5fbc4a1794) 2026-10-22T15:54:30+02:00: Restore prompt guidance when the events API is visible
+- [54fe49c1d236](https://github.com/nvidia-nemo/labs-OO-Agents/commit/54fe49c1d2360643439c287e9a25d9bf3178df2e) 2026-10-22T11:07:50+02:00: Merge pull request #227 from NVIDIA-NeMo/fix/parameter-truncation
+- [7ebda00459e8](https://github.com/nvidia-nemo/labs-OO-Agents/commit/7ebda00459e8b69b35ffd6ca192bd17c8459b4f3) 2026-10-21T16:47:08+02:00: test: document prefill regression cases
+- [c90574013a2e](https://github.com/nvidia-nemo/labs-OO-Agents/commit/c90574013a2e16358cdf51172f24a033264497d8) 2026-10-21T16:46:32+02:00: chore: remove temporary prefill diagnostic quickstart
+- [8f48d0afe3d5](https://github.com/nvidia-nemo/labs-OO-Agents/commit/8f48d0afe3d5c80306331c1d14621c1218002a79) 2026-10-21T14:54:24+02:00: example: demonstrate prefill truncation with a real LLM
+- [1a286aa3788d](https://github.com/nvidia-nemo/labs-OO-Agents/commit/1a286aa3788da165969b229d7bbbb52ef4aa5ddd) 2026-10-21T14:42:47+02:00: fix(runtime): honor prefill overrides and warn on omitted inputs
+- [bdb999ac87be](https://github.com/nvidia-nemo/labs-OO-Agents/commit/bdb999ac87be28e64221dc815d0fe995c5ff9f11) 2026-10-21T13:56:03+02:00: fix(prompts): align inspection with runtime truncation settings
+- [6cec15a16791](https://github.com/nvidia-nemo/labs-OO-Agents/commit/6cec15a1679104548220dd3638dba00e1a6b70c2) 2026-10-21T09:39:12+02:00: Merge pull request #471 from NVIDIA-NeMo/fix/shellresult-repr
+- [5113fa1fdb8f](https://github.com/nvidia-nemo/labs-OO-Agents/commit/5113fa1fdb8f4b130f817bc9808fc0af6839dfe4) 2026-10-21T07:01:39Z: nooa-bench: expect default_timeout in the ShellTools repr
+- [e3aab09bda89](https://github.com/nvidia-nemo/labs-OO-Agents/commit/e3aab09bda89a6ced4711b9c72c7aee21c40d0a9) 2026-10-21T06:48:54Z: ShellResult prints its real class name and always the return code
+- [a7ce6abf0bfd](https://github.com/nvidia-nemo/labs-OO-Agents/commit/a7ce6abf0bfde00856e848f1819c75ebbedf78dd) 2026-10-21T06:41:51Z: Make shell timeouts configurable and visible in tool documentation
+- [90ce8bc3adfa](https://github.com/nvidia-nemo/labs-OO-Agents/commit/90ce8bc3adfa701ac0053313a949ec20263268c7) 2026-10-21T06:41:51Z: fix: align shell result display with returncode attribute
+- [0bc07c6a3b57](https://github.com/nvidia-nemo/labs-OO-Agents/commit/0bc07c6a3b57d408d38b5559c3a15019ffee49fd) 2026-10-20T16:51:58+02:00: Merge pull request #466 from NVIDIA-NeMo/docs/release-connect-media
+- [44fe789a8b5b](https://github.com/nvidia-nemo/labs-OO-Agents/commit/44fe789a8b5b33c732b5c4a0977d80e114c19d76) 2026-10-20T13:58:35Z: docs: move media example to quickstart and address review feedback 🤖🤖🤖
+- [99a327a3f486](https://github.com/nvidia-nemo/labs-OO-Agents/commit/99a327a3f4865266cda5b8edb1eaff8afdaaaada) 2026-10-20T14:38:34+02:00: Merge pull request #465 from furgalep/fix/connect-discovery-tokens-quiet-otel
+- [ce908f3e3c6f](https://github.com/nvidia-nemo/labs-OO-Agents/commit/ce908f3e3c6f36ab1de7c7bddb7036d914b4432e) 2026-10-20T11:57:01Z: docs: simplify media and setup guidance in plain English 🤖🤖🤖
+- [43b1f34fb9e9](https://github.com/nvidia-nemo/labs-OO-Agents/commit/43b1f34fb9e93b4d8e22876a326f08f2fe4ce2c8) 2026-10-20T09:22:42Z: docs: prepare Connect onboarding and media API for release 🤖🤖🤖
+- [e6864f830cfe](https://github.com/nvidia-nemo/labs-OO-Agents/commit/e6864f830cfe84855115a6314d0e2dd69047a216) 2026-10-20T08:46:25Z: tracing: keep quiet_trace_target() per execution context
+- [7c518333382e](https://github.com/nvidia-nemo/labs-OO-Agents/commit/7c518333382e1d37309deef02cb53bd223212bc7) 2026-10-20T08:46:25Z: connect: give --output-tokens and diagnostic_context a real default
+- [bdd25f180baa](https://github.com/nvidia-nemo/labs-OO-Agents/commit/bdd25f180baac821f731aeecbb19034675622c85) 2026-10-20T08:46:25Z: connect: raise interface discovery cap to 2048; keep OTel banner quiet
+- [a6cf62db816e](https://github.com/nvidia-nemo/labs-OO-Agents/commit/a6cf62db816e990259de4ddb2ad3731e46e5dc6c) 2026-10-20T05:19:46+02:00: Merge pull request #445 from NVIDIA-NeMo/feat/explicit-model-media-inputs-main
+- [a53a7bbfaa0d](https://github.com/nvidia-nemo/labs-OO-Agents/commit/a53a7bbfaa0d6a005770c13b38e4bf14fba11458) 2026-10-19T09:17:22-07:00: Make harness-driven compaction blocking
+- [119662d89499](https://github.com/nvidia-nemo/labs-OO-Agents/commit/119662d89499aa5ed87856ba59d8c5e2f4e2004c) 2026-10-19T17:37:03+02:00: test: handle blocking compaction in benchmark shutdown checks
+- [0789f9b038ee](https://github.com/nvidia-nemo/labs-OO-Agents/commit/0789f9b038ee4c3d2b770afa35f7ef3bb0607a32) 2026-10-19T15:46:59+02:00: fix: scope compaction change to blocking harness summaries
+- [7bb6b5cb202a](https://github.com/nvidia-nemo/labs-OO-Agents/commit/7bb6b5cb202a587d471a79accc8eb3da21dae11d) 2026-10-19T15:38:23+02:00: fix: skip redundant compaction after context shrinks
+- [8fa62225bf0a](https://github.com/nvidia-nemo/labs-OO-Agents/commit/8fa62225bf0ac46b42d06cbe45ae6d0be49e6410) 2026-10-19T15:31:40+02:00: refactor: compact prepared requests and report history changes
+- [a9d92076a698](https://github.com/nvidia-nemo/labs-OO-Agents/commit/a9d92076a698596d956bbf9f1d654ab929acda79) 2026-10-19T15:14:44+02:00: refactor: await compaction before building model requests
+- [eb0c6cf11a99](https://github.com/nvidia-nemo/labs-OO-Agents/commit/eb0c6cf11a99f8b00c4b0399199a533799d81754) 2026-10-19T13:02:31Z: Address CodeRabbit on #445; move the tracing-banner change out of this PR
+- [928ac8a08719](https://github.com/nvidia-nemo/labs-OO-Agents/commit/928ac8a087198dcb421a52885dd22103a8abd2b4) 2026-10-19T14:52:21+02:00: fix: compact history before the next model request
+
+## Changed paths (truncated)
+
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `README.md`
+- M: `docs/README.md`
+- M: `docs/cache-sharing-summaries.md`
+- A: `docs/concepts/decisions.md`
+- M: `docs/concepts/prompts-and-context.md`
+- M: `docs/concepts/strategies.md`
+- A: `docs/media.md`
+- M: `docs/model-configuration.md`
+- M: `docs/model-connect.md`
+- A: `docs/shell-service-lifecycle.md`
+- M: `docs/tour.md`
+- M: `examples/README.md`
+- M: `examples/quickstart/13_multimodal.py`
+- A: `examples/quickstart/16_decisions.py`
+- M: `packages/nooa-bench/README.md`
+- M: `packages/nooa-bench/src/nooa_bench/bench_agent.py`
+- M: `packages/nooa-bench/src/nooa_bench/rlm_bench_agent.py`
+- M: `packages/nooa-bench/tests/test_bench_agent.py`
+- M: `packages/nooa-bench/tests/test_runner.py`
+- M: `packages/nooa-bench/tests/test_summarizer_cleanup.py`
+- M: `packages/nooa-cli/src/nooa_cli/AGENTS.md`
+- M: `packages/nooa-cli/src/nooa_cli/coding/activity.py`
+- M: `packages/nooa-cli/src/nooa_cli/commands/_connect_prompts.py`
+- M: `packages/nooa-cli/src/nooa_cli/commands/_connect_registry.py`
+- M: `packages/nooa-cli/src/nooa_cli/commands/_connect_stages.py`
+- M: `packages/nooa-cli/src/nooa_cli/commands/_connect_view.py`
+- M: `packages/nooa-cli/src/nooa_cli/commands/_connect_wizard.py`
+- M: `packages/nooa-cli/src/nooa_cli/commands/connect.py`
+- M: `packages/nooa-cli/tests/test_coding_activity.py`
+- A: `packages/nooa-cli/tests/test_connect_baseline_safety.py`
+- A: `packages/nooa-cli/tests/test_connect_coderabbit_budget.py`
+- M: `packages/nooa-cli/tests/test_connect_command.py`
+- M: `packages/nooa-cli/tests/test_connect_diagnostic.py`
+- M: `packages/nooa-cli/tests/test_connect_edit.py`
+- M: `packages/nooa-cli/tests/test_connect_encrypted_reasoning.py`
+- A: `packages/nooa-cli/tests/test_connect_media_inputs.py`
+- A: `packages/nooa-cli/tests/test_connect_media_onboarding.py`
+- A: `packages/nooa-cli/tests/test_connect_media_review.py`
+- M: `packages/nooa-cli/tests/test_connect_prompts.py`
+- M: `packages/nooa-cli/tests/test_connect_reply_budget.py`
+- M: `packages/nooa-cli/tests/test_connect_review_followups.py`
+- M: `packages/nooa-cli/tests/test_connect_review_readiness.py`
+- M: `packages/nooa-cli/tests/test_connect_stages.py`
+- A: `packages/nooa-cli/tests/test_connect_ux.py`
+- M: `packages/nooa-cli/tests/test_connect_view.py`
+- M: `skills/README.md`
+- M: `skills/nooa-agent-authoring/SKILL.md`
+- M: `skills/nooa-codeact-advanced/SKILL.md`
+- A: `skills/nooa-media/SKILL.md`
+- M: `skills/nooa-model-configuration/SKILL.md`
+- M: `skills/nooa-tools-and-skills/SKILL.md`
+- M: `src/nooa/__init__.py`
+- M: `src/nooa/agent.py`
+- A: `src/nooa/agentdoc/_format_observation.py`
+- M: `src/nooa/agentdoc/_pformat.py`
+- M: `src/nooa/agents/summarization.py`
+- M: `src/nooa/config/__init__.py`
+- M: `src/nooa/config/model_config.py`
+- M: `src/nooa/config/resolved.py`
+- M: `src/nooa/config/strategy_config.py`
+- M: `src/nooa/context_blocks/scoped.py`
+- A: `src/nooa/decisions/__init__.py`
+- A: `src/nooa/decisions/_openai_wire.py`
+- A: `src/nooa/decisions/client.py`
+- A: `src/nooa/decisions/llm_adapter.py`
+- A: `src/nooa/decisions/provenance.py`
+- A: `src/nooa/decisions/resolution.py`
+- A: `src/nooa/decisions/schema.py`
+- A: `src/nooa/decisions/state.py`
+- A: `src/nooa/decisions/types.py`
+- M: `src/nooa/decorators.py`
+- M: `src/nooa/errors/__init__.py`
+- M: `src/nooa/events.py`
+- M: `src/nooa/mcp/tool.py`
+- A: `src/nooa/media_inputs.py`
+- M: `src/nooa/method_llm.py`
+- M: `src/nooa/prompts.py`
+- M: `src/nooa/runtime/actor.py`
+- M: `src/nooa/runtime/channels.py`
+- M: `src/nooa/runtime/code_validator.py`
+- M: `src/nooa/runtime/event_manager.py`
+- M: `src/nooa/runtime/events.py`
+- M: `src/nooa/runtime/harness_metrics.py`
+- M: `src/nooa/runtime/media_capture.py`
+- M: `src/nooa/runtime/method_wrapper.py`
+- M: `src/nooa/runtime/middleware.py`
+- M: `src/nooa/runtime/sandbox/cell_core.py`
+- M: `src/nooa/runtime/sandbox/serialization.py`
+- M: `src/nooa/standalone.py`
+- M: `src/nooa/storage/sqlite.py`
+- M: `src/nooa/strategies/__init__.py`
+- M: `src/nooa/strategies/base.py`
+- M: `src/nooa/strategies/codeact.py`
+- A: `src/nooa/strategies/decide.py`
+- A: `src/nooa/strategies/loop_guard.py`
+- M: `src/nooa/strategies/prefill.py`
+- M: `src/nooa/strategies/pure_python.py`
+- M: `src/nooa/tools/_bash_session.py`
+- A: `src/nooa/tools/shell_lifecycle.py`
+- M: `src/nooa/tools/shell_tools.py`
+- M: `src/nooa/tracing/__init__.py`
+- M: `src/nooa/tracing/_hooks_impl.py`
+- M: `src/nooa/unifiedllm/__init__.py`
+- M: `src/nooa/unifiedllm/chat_parts.py`
+- M: `src/nooa/unifiedllm/connect/__init__.py`
+- A: `src/nooa/unifiedllm/connect/_baseline.py`
+- A: `src/nooa/unifiedllm/connect/_media.py`
+- M: `src/nooa/unifiedllm/connect/_records.py`
+- A: `src/nooa/unifiedllm/connect/_typed_media.py`
+- A: `src/nooa/unifiedllm/connect/_video_fixture.py`
+- M: `src/nooa/unifiedllm/fake.py`
+- M: `src/nooa/unifiedllm/http_config.py`
+- A: `src/nooa/unifiedllm/media_inputs.py`
+- M: `src/nooa/unifiedllm/reasoning.py`
+- M: `src/nooa/unifiedllm/registry.py`
+- M: `src/nooa/unifiedllm/replay_state.py`
+- M: `src/nooa/unifiedllm/response_parts.py`
+- M: `src/nooa/unifiedllm/retry.py`
+- M: `src/nooa/unifiedllm/unifiedllm.py`
+- M: `tests/agents/test_forked_summarizer.py`
+- M: `tests/agents/test_forked_summarizer_wire.py`
+- M: `tests/config/test_resolved_config.py`
+- A: `tests/decisions/test_client.py`
+- A: `tests/decisions/test_llm_adapter.py`
+- A: `tests/decisions/test_openai_api_style.py`
+- A: `tests/decisions/test_provenance.py`
+- A: `tests/decisions/test_raw_response.py`
+- A: `tests/decisions/test_schema.py`
+- M: `tests/integration/test_agent_summary_cache_live.py`
+- M: `tests/integration/test_summarizer_live.py`
+- M: `tests/runtime/sandbox/test_error_serialization.py`
+- M: `tests/runtime/test_code_validator.py`
+- M: `tests/runtime/test_execute_code.py`
+- M: `tests/runtime/test_llm_routing_observability.py`
+- M: `tests/runtime/test_queue_status_cheat_sheet.py`
+- A: `tests/runtime/test_show_media_filtering.py`
+- M: `tests/runtime/test_truncation_config_integration.py`
+- A: `tests/strategies/test_codeact_loop_guard.py`
+- A: `tests/strategies/test_codeact_tool_call_feedback.py`
+- A: `tests/strategies/test_decide.py`
+- M: `tests/strategies/test_param_spec_override.py`
+- A: `tests/strategies/test_prefill_truncation_e2e.py`
+- A: `tests/strategies/test_prefill_truncation_parity.py`
+- A: `tests/strategies/test_prefill_truncation_warnings.py`
+- M: `tests/strategies/test_skills_section_context_events.py`
+- M: `tests/test_event_backend_roundtrip.py`
+- M: `tests/test_mcp/test_call_tool_refresh.py`
+- M: `tests/test_method_llm_callable.py`
+- A: `tests/test_quickstart_multimodal.py`
+- A: `tests/tools/test_bash_session_background.py`
+- M: `tests/tools/test_builtin_libs.py`
+- A: `tests/tools/test_shell_lifecycle.py`
+- A: `tests/tools/test_shell_timeout_contract.py`
+- M: `tests/tools/test_shell_tools_modern_behavior.py`
+- A: `tests/tools/test_shell_tools_stale_match.py`
+- A: `tests/tracing/test_quiet_trace_target.py`
+- M: `tests/tracing/test_viewer_plugin_attr.py`
+- M: `tests/unifiedllm/connect/connect_http.py`

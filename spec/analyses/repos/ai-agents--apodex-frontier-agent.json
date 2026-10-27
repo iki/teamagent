@@ -1,0 +1,400 @@
+{
+  "metadata": {
+    "id": "ai-agents--apodex-frontier-agent",
+    "category": "ai-agents",
+    "name": "apodex-frontier-agent",
+    "url": "https://github.com/ApodexAI/FrontierAgent",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--apodex-frontier-agent.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "179709fee18ae8506ac77bc724b3cea0ac1e0dbf",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T17:35:23+08:00",
+    "reportSha256": "ff111ae0b846d24c15f5b2879ef1476c7720f8404831380de033b8a10bfae97a",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--apodex-frontier-agent",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/ApodexAI/FrontierAgent",
+    "report": "spec/projects/ai-agents--apodex-frontier-agent.md",
+    "analyzedSha": "179709fee18ae8506ac77bc724b3cea0ac1e0dbf",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T17:35:23+08:00",
+    "observedSha": "e4cb2397109c957a2f99c3a5d850b9fc479dbef6",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "e4cb2397109c957a2f99c3a5d850b9fc479dbef6",
+        "date": "2026-10-14T15:59:18+08:00",
+        "subject": "Merge pull request #65 from KennyMcSimpson/fix/download-response-filenames"
+      },
+      {
+        "sha": "ac87e2a7a5dbc9193519ca285a7b020e4f39b148",
+        "date": "2026-10-14T15:50:10+08:00",
+        "subject": "fix(download): fall back to filename when filename* decodes empty"
+      },
+      {
+        "sha": "2251856f88a4fbbfe0dcaa6a3a54e8dc1d2bcdc7",
+        "date": "2026-10-13T09:38:35+08:00",
+        "subject": "Merge pull request #66 from D41910/fix/swarm-gate2-follows-exec-cap"
+      },
+      {
+        "sha": "f88592df3193de73b5974439c138abe03207cde8",
+        "date": "2026-10-11T15:37:17+08:00",
+        "subject": "fix(agent-team): let gate ② track the configurable gate ① for exec tools"
+      },
+      {
+        "sha": "86bf0e1de788b84cfe587aad5519e4b72e7cec93",
+        "date": "2026-10-08T03:22:41+08:00",
+        "subject": "fix(download): parse quoted and extended response filenames"
+      },
+      {
+        "sha": "4b94fbe86b923ede21ef779080d0bb6fe3994266",
+        "date": "2026-10-07T10:13:11+08:00",
+        "subject": "Merge pull request #63 from ApodexAI/fix/deep-nesting-fail-closed"
+      },
+      {
+        "sha": "4f2f89a6e894672e2021fe18dabd4f9be422b101",
+        "date": "2026-10-07T10:09:36+08:00",
+        "subject": "Merge main into PR 63 and preserve both changelog entries"
+      },
+      {
+        "sha": "10109d795a574ec76ff85198837ed12b09f41fa8",
+        "date": "2026-10-07T10:05:52+08:00",
+        "subject": "fix(bash-policy): inspect deep separators and quoted payloads"
+      },
+      {
+        "sha": "a351f33618fd03a1086de1ebd2f7dca4db11c163",
+        "date": "2026-10-07T10:00:37+08:00",
+        "subject": "Merge pull request #62 from ApodexAI/fix/bwrap-skip-is-not-a-pass"
+      },
+      {
+        "sha": "fa7e5085b03f78359715381827d9426e253830b5",
+        "date": "2026-10-06T20:37:10+08:00",
+        "subject": "fix(bash-policy): screen shell nesting past the recursion limit instead of dropping it"
+      },
+      {
+        "sha": "0f04551780cd315722157713f8e712b9cc0c759c",
+        "date": "2026-10-06T19:40:39+08:00",
+        "subject": "ci: keep network isolation on and let the sysctl do the work"
+      },
+      {
+        "sha": "aaf99d46bc1288846835931583ee01a659ac4f3c",
+        "date": "2026-10-06T17:50:47+08:00",
+        "subject": "ci: allow unprivileged user namespaces so bwrap can build its uid map"
+      },
+      {
+        "sha": "d199e0e7a1ed8a53174bab3a2e14c14a54d90965",
+        "date": "2026-10-06T17:44:35+08:00",
+        "subject": "ci: let bubblewrap run on the runner so the jail tests actually execute"
+      },
+      {
+        "sha": "818c72b85e2be9f5e36f49877bee82a588bb80cb",
+        "date": "2026-10-06T17:32:24+08:00",
+        "subject": "test(sandbox): make a skipped bwrap isolation test fail instead of passing quietly"
+      },
+      {
+        "sha": "8012a2ff6ed088730d12e96e76532279bbda7623",
+        "date": "2026-10-06T15:47:58+08:00",
+        "subject": "Merge pull request #61 from ApodexAI/fix/bash-policy-writable-roots"
+      },
+      {
+        "sha": "2d02c857d317fc6147339b76bf3edb753c931a70",
+        "date": "2026-10-06T15:42:33+08:00",
+        "subject": "Merge main into PR 61, harden protected paths and upgrade AgentCore"
+      },
+      {
+        "sha": "3ab9f980612d2e0d355785b757b34fba4c1a6297",
+        "date": "2026-10-06T15:32:51+08:00",
+        "subject": "Merge pull request #60 from ApodexAI/fix/runtime-fs-state"
+      },
+      {
+        "sha": "64796d4b3d7b006290df93f0ef911b5d891cf406",
+        "date": "2026-10-06T15:31:45+08:00",
+        "subject": "fix(runtime): validate mapped input paths and render installed filesystem state"
+      },
+      {
+        "sha": "3af81faed03a7db941b3265f3f411baa986402de",
+        "date": "2026-10-06T15:17:19+08:00",
+        "subject": "Merge pull request #59 from ApodexAI/fix/path-gate-bypass"
+      },
+      {
+        "sha": "e8d664bdbb79780a12133bfdd9b919df999cdb7d",
+        "date": "2026-10-06T15:16:50+08:00",
+        "subject": "Merge pull request #58 from ApodexAI/fix/spill-scope-recovery"
+      },
+      {
+        "sha": "bc124df84d044ae6e9e8ddbf465872f636083978",
+        "date": "2026-10-06T15:02:35+08:00",
+        "subject": "Consult the live sandbox class before creating directories"
+      },
+      {
+        "sha": "89875b2b248d165735643e1c3f4f714aa4a95d81",
+        "date": "2026-10-06T14:57:10+08:00",
+        "subject": "Keep spill changelog separate from path gate entry"
+      },
+      {
+        "sha": "1950946028a5eeb63351a3ec02ebf45f40d327ca",
+        "date": "2026-10-06T14:56:02+08:00",
+        "subject": "Merge main and close path gate review gaps"
+      },
+      {
+        "sha": "382810c310242406ffd1342cf2510436612a22b8",
+        "date": "2026-10-06T14:56:02+08:00",
+        "subject": "Merge main and fix spill recovery CI and scoped reads"
+      },
+      {
+        "sha": "8e0e81187e10b67c75a79960edcb079bc6aa50ad",
+        "date": "2026-10-06T14:50:17+08:00",
+        "subject": "fix(bash-policy): bind group denials in every mode and screen only executed text (#53)"
+      },
+      {
+        "sha": "29d9405387d7cd205d433eb0be006974215953a5",
+        "date": "2026-10-06T13:21:01+08:00",
+        "subject": "fix(bash-policy): exempt this run's writable mounts and compare paths by identity"
+      },
+      {
+        "sha": "b9d85d4d77b09ca83fddc4286b7d9a916b49401d",
+        "date": "2026-10-06T13:09:20+08:00",
+        "subject": "Merge the runtime filesystem state branch (item 4b) for 4c's writable roots"
+      },
+      {
+        "sha": "d97c7bf99369171534c8f2c1de3f80ab892db720",
+        "date": "2026-10-06T13:06:45+08:00",
+        "subject": "Merge the remote PR 53 branch, restoring main's scanner capabilities"
+      },
+      {
+        "sha": "55c24fb4da0faad072f46d387e13b53d8d5a3899",
+        "date": "2026-10-06T13:01:05+08:00",
+        "subject": "Merge origin/main into fix/bash-policy-sync"
+      },
+      {
+        "sha": "4931264377c12b3f7479547f1159e8c9223e60a3",
+        "date": "2026-10-06T08:00:43+08:00",
+        "subject": "fix(runtime): derive every filesystem path from one trusted state"
+      },
+      {
+        "sha": "d1eafa5d35c09975387f0e7386e81da7d2fae7e7",
+        "date": "2026-10-06T06:54:12+08:00",
+        "subject": "fix(paths): make the path gate binding for in-process writes and shell commands"
+      },
+      {
+        "sha": "4a4d509a9769fe795b7ffaef50dbf0fa869a5bbf",
+        "date": "2026-10-05T21:36:59+08:00",
+        "subject": "fix(spill): one store and one scope key for spill storage, mount and reads"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apodex/agent_tools.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apodex/observers.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apodex/tests/test_changes.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apodex/tests/test_features.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apodex/tests/test_tui.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "frontier_agent/core/runtime/loop/agent_loop.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/_bash_policy.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/_deliverable_policy.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/_download_runner.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "plugins/tools/_filesystem_state.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/_overflow.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/_path_auth.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/_sandbox.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/create_file.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/file_editor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/recover_result.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/tools/write_file.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_agent_team_workflow.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_bash_policy.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_bash_policy_composition.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_bash_policy_consumer_audit.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_bash_policy_data_consumers.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_bash_policy_relocated_mounts.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_download_filenames.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_long_run_compaction.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_path_authorization.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_path_gate_is_binding.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_runtime_filesystem_state.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_site3_recovery.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_spill_scope_recovery.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_tool_result_truncation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "uv.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "workflows/agent_team/nodes/main_agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "workflows/agent_team/subagent_runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "workflows/stateful_react_agent/_runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "workflows/stateful_react_agent/nodes/main_agent.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

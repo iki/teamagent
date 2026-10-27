@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--paseo",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/getpaseo/paseo",
+  "report": "spec/projects/ai-agents--paseo.md",
+  "analyzedSha": "749fe3e5ae52b6e1e4eaeadce3182e901caa96d9",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T22:04:28+02:00",
+  "observedSha": "a54cc6dd11f73864fc78100a9587010274ba1e10",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "a54cc6dd11f73864fc78100a9587010274ba1e10",
+      "date": "2026-10-24T12:36:10+07:00",
+      "subject": "chore(acp): refresh pinned provider packages (#7781)"
+    },
+    {
+      "sha": "c1b257b8f4bb389357a5006e1f217d7e383b40ff",
+      "date": "2026-10-24T06:55:07+02:00",
+      "subject": "fix(usage): show Cursor quota percentages without counting bonus spend as overage (#7778)"
+    },
+    {
+      "sha": "f3d74b85759150bffc7a44ac40301d1cb280d66c",
+      "date": "2026-10-24T11:44:08+07:00",
+      "subject": "fix(plugins): restore deprecated useRevealedText compatibility (#7780)"
+    },
+    {
+      "sha": "686588c44be479ee3b5de04ed576ae0a97d3c915",
+      "date": "2026-10-24T09:06:05+07:00",
+      "subject": "feat(app): restore manual workspace sorting (#7771)"
+    },
+    {
+      "sha": "48623801a1bba8f1c259212d37f56a504812e42d",
+      "date": "2026-10-24T03:01:19+02:00",
+      "subject": "fix(app): keep tablet sidebar controls above system navigation (#7768)"
+    },
+    {
+      "sha": "632a7f885958f318ee9e0619b3af075d4798bf55",
+      "date": "2026-10-24T01:05:57+02:00",
+      "subject": "fix(app): keep live workspace rows when a late creation snapshot arrives (#7758)"
+    },
+    {
+      "sha": "48d2c9ec36a026d4c8643c79fa8f2ec7b08fba7b",
+      "date": "2026-10-23T23:54:08+02:00",
+      "subject": "Keep restored Claude background notifications from appearing twice (#7737)"
+    },
+    {
+      "sha": "ca894d49a5e22bd2f5e096fd56048f6bc8b4a85d",
+      "date": "2026-10-23T23:01:02+02:00",
+      "subject": "fix(voice): keep prefetched sentences available for playback (#7756)"
+    },
+    {
+      "sha": "d6fa231894568e6ac9a11e8b2fb475343026eea6",
+      "date": "2026-10-23T18:05:54+02:00",
+      "subject": "fix(plugin): restore ACP history replayed during session load (#7717)"
+    },
+    {
+      "sha": "fed19f3d29cbcd21ecd45834af81adc13d9d5a7f",
+      "date": "2026-10-23T14:57:19+02:00",
+      "subject": "fix(app): identify Android DNS connection failures (#7701)"
+    },
+    {
+      "sha": "74dc764f0df1108f78e6ee3a8b5c876295ea5aa2",
+      "date": "2026-10-23T12:38:01Z",
+      "subject": "fix: update lockfile signatures and Nix hash [skip ci]"
+    },
+    {
+      "sha": "30d8cb044702fa873057ecc5c2676c7964a3da33",
+      "date": "2026-10-23T14:28:15+02:00",
+      "subject": "chore(release): cut 0.13.0-beta.2"
+    },
+    {
+      "sha": "d91d61c6ebd940d2d39a27056acb06f9e2067449",
+      "date": "2026-10-23T14:23:00+02:00",
+      "subject": "docs: update changelog for 0.13.0-beta.2"
+    },
+    {
+      "sha": "59b01b33f1e58a4cfd7f55142d3ef51d95145784",
+      "date": "2026-10-23T19:00:15+07:00",
+      "subject": "fix(app): build iOS releases with the foldable-capable SDK (#7705)"
+    },
+    {
+      "sha": "f3b0199c13991320b5419a94400cb7b19132cac8",
+      "date": "2026-10-23T13:08:09+02:00",
+      "subject": "Open large Claude histories without whole-transcript duplication (#7431)"
+    },
+    {
+      "sha": "582beeb10bf7a0dc2297f35529f78df89dee9358",
+      "date": "2026-10-23T15:57:12+07:00",
+      "subject": "fix(app): preserve compact sidebar context under sheets (#7693)"
+    },
+    {
+      "sha": "6405edd8dc3d8ee2556b219ee22fc95fa3cc947a",
+      "date": "2026-10-23T14:35:27+07:00",
+      "subject": "feat(app): show consistent agent and workspace status in search (#7690)"
+    },
+    {
+      "sha": "4b9b2fe13006f8966ca7b27e65331c5b11101f34",
+      "date": "2026-10-23T14:04:43+07:00",
+      "subject": "fix(app): preserve manual Command Center scrolling during live updates (#7688)"
+    },
+    {
+      "sha": "4fe006df86fc6d605383d81604fb77940813ae77",
+      "date": "2026-10-23T13:26:19+07:00",
+      "subject": "feat(plugins): unify panel props and persist tab state (#7685)"
+    },
+    {
+      "sha": "21e7ccb036dce72c313114121e3ad82fdd917b15",
+      "date": "2026-10-23T13:21:29+07:00",
+      "subject": "Restore agent finish notifications after daemon restart (#7683)"
+    },
+    {
+      "sha": "89727f43bc47caecc893ac3ad3326039915e15f0",
+      "date": "2026-10-23T13:15:14+07:00",
+      "subject": "fix(server): require the daemon password on relay connections (#7668)"
+    },
+    {
+      "sha": "99a1d9a7a26b766cc5ba5aafb1741b6155aace2d",
+      "date": "2026-10-23T11:41:00+07:00",
+      "subject": "fix(app): keep the iPhone skill picker above the composer and keyboard (#7679)"
+    },
+    {
+      "sha": "3c3c272925cb22ecef4d5e832640fd03d916a37e",
+      "date": "2026-10-23T11:18:25+07:00",
+      "subject": "fix(server): publish workspace snapshots without UI subscribers (#7681)"
+    },
+    {
+      "sha": "d972f67c3fea06fbc163608f5ddcc2c443de83ac",
+      "date": "2026-10-22T13:09:27Z",
+      "subject": "fix: update lockfile signatures and Nix hash [skip ci]"
+    },
+    {
+      "sha": "55a7590952b708621ae94f0dd07a34996c382a69",
+      "date": "2026-10-22T19:59:28+07:00",
+      "subject": "Sort sidebar workspaces and keep active overflow visible (#7635)"
+    },
+    {
+      "sha": "793b16c0df93ef378d95edeaab281ea19ab4c975",
+      "date": "2026-10-22T19:50:06+07:00",
+      "subject": "fix(relay): protect sessions against replayed commands (#7610)"
+    },
+    {
+      "sha": "91d749f82c8a4388521b47966e6c2f8297097386",
+      "date": "2026-10-22T19:48:34+07:00",
+      "subject": "fix(server): preserve workspace PR status across reconnects (#7638)"
+    },
+    {
+      "sha": "6376f2bf409405b9857c03262381655433a6d0ee",
+      "date": "2026-10-22T19:47:28+07:00",
+      "subject": "Remove the WebView terminal renderer: xterm on web, native grid on mobile (#7639)"
+    },
+    {
+      "sha": "9d908d678b117e2cde6329cfe197502ad4c156ef",
+      "date": "2026-10-22T17:40:01+07:00",
+      "subject": "feat(terminal): support image paste into agent TUIs, local and remote (#3795)"
+    },
+    {
+      "sha": "4ef4a95a429ec2f76c6a1710e3e3ee88a90d1818",
+      "date": "2026-10-22T12:07:39+02:00",
+      "subject": "Keep Claude session listing from loading whole histories into memory (#7626)"
+    },
+    {
+      "sha": "c3c6a936a423c97b88f96b3c4dad9ba03430a451",
+      "date": "2026-10-22T16:32:10+07:00",
+      "subject": "List plugin header buttons in the workspace menu on phones and narrow windows (#7630)"
+    },
+    {
+      "sha": "12e7a448f0f1a40cb78857cf1e29b385f71670ba",
+      "date": "2026-10-22T14:41:38+07:00",
+      "subject": "fix(app): open notification agents once in their current workspace (#7612)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/ci-paths.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CHANGELOG.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-stream-performance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/android.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/browser-capture-harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/connected-hosts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/custom-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/data-model.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/development.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/explorer-sidebar.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/expo-router.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/floating-panels.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/glossary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/hover.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/i18n.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/markdown-renderer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/menus.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mobile-panels.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mobile-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/native-text-selection.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/permissions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/plugins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol-compatibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/protocol-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/qa-evidence/question-response-retry/after.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/qa-evidence/question-response-retry/before.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/relay-endpoint-security.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/release.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rpc-namespacing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/service-proxy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/terminal-activity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/timeline-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/website-i18n.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110001.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110002.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110003.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110004.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110011.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110012.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110013.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110014.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110021.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110022.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110023.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/110024.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/120001.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/120002.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/120003.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "fastlane/metadata/android/en-US/changelogs/120004.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/desktop-package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/npm-deps.hash",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/.eas/workflows/release-mobile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/Gemfile.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/app.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/app.config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/acp-provider-catalog.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/add-changed-file-to-chat.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/add-project-flow.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-message-rewind.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-message-submission.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-relative-time.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-stream-smoothness.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-tab-image-stability.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/agent-timeline-scroll-smoothness.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/appearance-font-family.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/appearance-theme-picker.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/assistant-message-render-limit.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/assistant-selection-copy.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/bottom-sheet-reopen.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/changes-first-edit.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/changes-pane.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/chat-find.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/chat-outline.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/codex-speed.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/command-center-agent-controls.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/command-center-file-search.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/command-center-scroll.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/command-center-workspaces.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/compact-git-actions-menu.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/compact-workspace-header.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/compact-workspace-sheet.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/composer-autocomplete.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/composer-diff-stat.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/composer-email-mentions.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/composer-focus.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/composer-whitespace.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/context-window-meter.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/creation-idempotency.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/creation-old-daemon.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/custom-model-removal.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/developer-ui.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/explorer-resize-performance.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/explorer-sidebar.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/file-change-conflicts.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/file-editing.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/file-explorer-context-actions.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/folder-links.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/hoplite-model-discovery.real.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/import-session-flow.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/launcher-tab.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/markdown-relative-links.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/new-workspace-composer-draft.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/new-workspace-dictation-submit.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/new-workspace-entry.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/new-workspace-launch-terminal.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/new-workspace-live-pin.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/offline-draft.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/open-project-scroll.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/pair-device-relay.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/paseo-tool-call-details.codex.real.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plan-card-markdown.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-buttons.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/plugin-file-panel-examples.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/plugin-file-panel-picker.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/plugin-file-panel-settings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/plugin-file-panels.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-host-ui.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/plugin-icons.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-management.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-modal-body.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/plugin-popover.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-sidebar-items.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-timeline.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-workspace-panels.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/project-path-spaces.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/projects-settings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/provider-catalog-icons.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/provider-removal.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/provider-settings-refresh.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/question-prompt-pagination.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-toggle-tab-regression.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/sidebar-help.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/sidebar-mobile-menu-sheets.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/sidebar-nav-settings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/sidebar-project-filter.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/sidebar-project-grouping.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/sidebar-reorder.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/browser/sidebar-sort-old-daemon.spec.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

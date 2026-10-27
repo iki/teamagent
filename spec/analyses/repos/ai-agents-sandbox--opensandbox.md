@@ -1,0 +1,207 @@
+# opensandbox: change evidence
+
+Source: [opensandbox](https://github.com/alibaba/OpenSandbox) · [Analysis](../../projects/ai-agents-sandbox--opensandbox.md) · [agents](../../agents.md), [models](../../models.md), [generation](../../generation.md), [security](../../security.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `c7dc78a4090e5de2b9119e9bd93952cae24f87bd`; commit date: 2026-10-01T10:21:12+08:00; review date: unknown; observed SHA: `62a64f0b48cdd6b410f36e53c74dc7559c87719a`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/alibaba/OpenSandbox/compare/c7dc78a4090e5de2b9119e9bd93952cae24f87bd...62a64f0b48cdd6b410f36e53c74dc7559c87719a). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [62a64f0b48cd](https://github.com/alibaba/OpenSandbox/commit/62a64f0b48cdd6b410f36e53c74dc7559c87719a) 2026-10-27T20:35:47+08:00: Merge pull request #2449 from opensandbox-group/release/1.2.0
+- [8bd3312e5e14](https://github.com/alibaba/OpenSandbox/commit/8bd3312e5e1490a024c1027a11e6f5d5da855cbb) 2026-10-27T12:33:57Z: release(opensandbox): pin BOM for 1.2.0
+- [25873227f604](https://github.com/alibaba/OpenSandbox/commit/25873227f60424bdc59bfa83b963bbc00e871297) 2026-10-27T19:53:46+08:00: Merge pull request #2437 from opensandbox-group/docs/release-1.2.0-notes
+- [68d41d34b696](https://github.com/alibaba/OpenSandbox/commit/68d41d34b6960b71d160b2427514c35315ee407f) 2026-10-27T19:20:36+08:00: release(opensandbox): regenerate chart README badges for 1.2.0
+- [c814bdfacae4](https://github.com/alibaba/OpenSandbox/commit/c814bdfacae4c5603ad89309db0d1e3dd90ca870) 2026-10-27T19:17:49+08:00: release(opensandbox): bump platform version to 1.2.0
+- [551a5849166f](https://github.com/alibaba/OpenSandbox/commit/551a5849166f4fb926192044542053e81027a356) 2026-10-27T19:07:04+08:00: docs(release): fold the post-rebase delta into the 1.2.0 release notes
+- [dc8ed9fac229](https://github.com/alibaba/OpenSandbox/commit/dc8ed9fac2290d943b072f4387a08ec020ea0ba6) 2026-10-27T19:01:25+08:00: chore(release): keep release-notes skill in sync with 1.2.0 authoring decisions
+- [5ed820eeb17c](https://github.com/alibaba/OpenSandbox/commit/5ed820eeb17cdf852a67033ba3fa3e2297b6457f) 2026-10-27T19:01:25+08:00: docs(release): draft 1.2.0 umbrella release notes
+- [917e3871be76](https://github.com/alibaba/OpenSandbox/commit/917e3871be76f802053f0aa52cc52109952c3612) 2026-10-27T18:58:10+08:00: Merge pull request #2442 from Pangjiping/chore/bump-fast-sandbox-pin-4c389ae
+- [ab8b24f6375c](https://github.com/alibaba/OpenSandbox/commit/ab8b24f6375cff8a72190cfd4af55fb1ab4b21ab) 2026-10-27T18:43:52+08:00: Merge pull request #2173 from 0ranan/fix/js-sdk-redirect-credential-leak
+- [ec37c52314ec](https://github.com/alibaba/OpenSandbox/commit/ec37c52314ec731b075a4fad2330b5cfd22edebc) 2026-10-27T18:39:55+08:00: Merge pull request #2183 from xxwtiancai/fix/csharp-redirect-credentials
+- [aae7c9d3ce20](https://github.com/alibaba/OpenSandbox/commit/aae7c9d3ce2058040ddbc3b93deca86aead0fbe0) 2026-10-27T18:13:08+08:00: Merge pull request #2381 from Jackmeson1/fix/sdk-go-text-terminators
+- [7761d9933cfe](https://github.com/alibaba/OpenSandbox/commit/7761d9933cfee4e78eb9b0bb2c38620793bbef78) 2026-10-27T18:09:53+08:00: Merge pull request #2408 from Jackmeson1/fix/sdk-python-code-fragments
+- [d928e6a0f30c](https://github.com/alibaba/OpenSandbox/commit/d928e6a0f30cfa16b46648b935af301878bea258) 2026-10-27T18:08:05+08:00: chore(manifests): bump fast-sandbox pin to 4c389ae (main)
+- [a084e40153d8](https://github.com/alibaba/OpenSandbox/commit/a084e40153d8e8ac5f788186fb09a5a56422efaf) 2026-10-27T18:02:21+08:00: Merge remote-tracking branch 'origin/main' into fix/js-sdk-redirect-credential-leak
+- [13b24ab31ab3](https://github.com/alibaba/OpenSandbox/commit/13b24ab31ab3c6bf90477b8eb215f0cee20cb596) 2026-10-27T17:52:31+08:00: Merge pull request #2402 from acodercat/fix/sdk-python-error-status-non-json-body
+- [92e3c6bd4e59](https://github.com/alibaba/OpenSandbox/commit/92e3c6bd4e59d049a1a2a0697ba0dd72255ee38c) 2026-10-27T17:47:37+08:00: Merge pull request #2416 from Pangjiping/fix/kotlin-sdk-preserve-body-on-deserialize-failure
+- [10956dc44b96](https://github.com/alibaba/OpenSandbox/commit/10956dc44b9635567659dd59b8d88eb4b7c05dba) 2026-10-27T17:40:40+08:00: fix(sdk): address redirect review findings (Request options, first-hop deadline)
+- [1110dc0ed93c](https://github.com/alibaba/OpenSandbox/commit/1110dc0ed93c2b26f145c0879f8bedb52f3d14a0) 2026-10-27T17:33:42+08:00: Merge pull request #2419 from Jackmeson1/fix/sdk-python-submillisecond-timeout
+- [554615e74b26](https://github.com/alibaba/OpenSandbox/commit/554615e74b26051bc4cfe9ed26210e40b9f8ec55) 2026-10-27T17:25:08+08:00: Merge pull request #2426 from JasonBuildAI/fix/go-stream-wake-retry-p3n8
+- [ff19497e6680](https://github.com/alibaba/OpenSandbox/commit/ff19497e66800f71e5e1a40d6127a465b80ffa1d) 2026-10-27T17:24:32+08:00: Merge pull request #2149 from JasonBuildAI/fix/sdk-code-interpreter-api-key
+- [c81b5926d6fd](https://github.com/alibaba/OpenSandbox/commit/c81b5926d6fd5a82244913d8af68aabedf58e262) 2026-10-27T17:09:38+08:00: Merge pull request #2357 from acodercat/fix/python-sse-wake-retry
+- [ef788f85ee1e](https://github.com/alibaba/OpenSandbox/commit/ef788f85ee1ed492850db9407fa57ef0f4190d55) 2026-10-27T17:04:39+08:00: Merge remote-tracking branch 'origin/main' into fix/js-sdk-redirect-credential-leak
+- [dbcc6d7f1d30](https://github.com/alibaba/OpenSandbox/commit/dbcc6d7f1d30ffd7c45f587ec86d57d565e83738) 2026-10-27T15:28:09+08:00: chore(manifests): bump fast-sandbox pin to 0e20b90 (master) (#2438)
+- [e9c17d00709a](https://github.com/alibaba/OpenSandbox/commit/e9c17d00709a96cd3562587d44c72d8b1d24c72a) 2026-10-27T15:02:02+08:00: Merge pull request #2393 from opensandbox-group/test/fsb-env-mitm-ca-chain
+- [f4df991945ce](https://github.com/alibaba/OpenSandbox/commit/f4df991945ceb416e938626e11166bb1c41ee3a7) 2026-10-27T14:59:36+08:00: Merge pull request #2428 from Jun516/fix/js-upload-chunk-snapshots
+- [9505ddddac76](https://github.com/alibaba/OpenSandbox/commit/9505ddddac76483d38f8a4c2201730b674f9d833) 2026-10-27T14:58:22+08:00: Merge pull request #2350 from Claire-ovo/fix/js-response-body-cancellation
+- [e53c6d2e3daa](https://github.com/alibaba/OpenSandbox/commit/e53c6d2e3daae055c059d4a90e31296c938b8273) 2026-10-27T14:57:49+08:00: Merge pull request #2369 from yangjj-iso/fix/python-download-response-cleanup
+- [0ab01edad465](https://github.com/alibaba/OpenSandbox/commit/0ab01edad4655979ef1730c6b3f9e42bedd416ad) 2026-10-27T14:57:07+08:00: Merge pull request #2355 from acodercat/fix/mcp-shield-coalesced-connect
+- [a8a05cbcd374](https://github.com/alibaba/OpenSandbox/commit/a8a05cbcd3745be438532453ead1785d3f332e97) 2026-10-27T13:53:46+08:00: Merge pull request #2436 from opensandbox-group/fsb/sdk-e2e-overlaybd-only
+- [f31bdb5f4463](https://github.com/alibaba/OpenSandbox/commit/f31bdb5f44639da34199185de34c87719673bb2e) 2026-10-27T13:16:09+08:00: test(fast-sandbox): run SDK e2e suites on the overlaybd template only
+- [fc9b89596499](https://github.com/alibaba/OpenSandbox/commit/fc9b895964997e083cd372798f9bc4ae8214dd60) 2026-10-27T13:15:56+08:00: Merge pull request #2424 from Pangjiping/feat/isolated-session-tmp-files
+
+## Changed paths (truncated)
+
+- M: `.agents/skills/opensandbox-release-notes/SKILL.md`
+- A: `.github/workflows/console-test.yml`
+- M: `.github/workflows/dependency-stability.yml`
+- M: `.github/workflows/detect-changes.yml`
+- M: `.github/workflows/egress-test.yml`
+- M: `.github/workflows/execd-test.yml`
+- M: `.github/workflows/fast-sandbox-test.yml`
+- M: `.github/workflows/ingress-test.yaml`
+- M: `.github/workflows/kubernetes-nightly-build.yml`
+- M: `.github/workflows/kubernetes-test.yml`
+- M: `.github/workflows/nodeagent-test.yml`
+- M: `.github/workflows/real-e2e.yml`
+- M: `.github/workflows/release-packages.yml`
+- M: `.github/workflows/release-umbrella.yml`
+- M: `.github/workflows/sdk-tests.yml`
+- M: `AGENTS.md`
+- M: `CONTRIBUTING.md`
+- M: `GOVERNANCE.md`
+- M: `README.md`
+- M: `ROADMAP.md`
+- M: `SECURITY.md`
+- M: `cli/README.md`
+- M: `cli/pyproject.toml`
+- M: `cli/src/opensandbox_cli/commands/command.py`
+- M: `cli/src/opensandbox_cli/commands/config_cmd.py`
+- M: `cli/src/opensandbox_cli/commands/diagnostics.py`
+- M: `cli/src/opensandbox_cli/commands/sandbox.py`
+- M: `cli/src/opensandbox_cli/commands/skills.py`
+- A: `cli/src/opensandbox_cli/commands/terminal.py`
+- M: `cli/src/opensandbox_cli/config.py`
+- M: `cli/src/opensandbox_cli/main.py`
+- M: `cli/src/opensandbox_cli/output.py`
+- M: `cli/src/opensandbox_cli/skills/opensandbox-command-execution.md`
+- M: `cli/src/opensandbox_cli/skills/opensandbox-credential-vault.md`
+- M: `cli/src/opensandbox_cli/skills/opensandbox-file-operations.md`
+- M: `cli/src/opensandbox_cli/skills/opensandbox-network-egress.md`
+- M: `cli/src/opensandbox_cli/skills/opensandbox-sandbox-lifecycle.md`
+- M: `cli/src/opensandbox_cli/skills/opensandbox-sandbox-troubleshooting.md`
+- M: `cli/src/opensandbox_cli/utils.py`
+- M: `cli/tests/conftest.py`
+- M: `cli/tests/test_cli_help.py`
+- M: `cli/tests/test_commands.py`
+- M: `cli/tests/test_config.py`
+- A: `cli/tests/test_duration_overflow.py`
+- A: `cli/tests/test_output_encoding.py`
+- M: `cli/tests/test_skills.py`
+- M: `cli/uv.lock`
+- M: `components/egress/Dockerfile`
+- M: `components/egress/credential_vault_active.go`
+- M: `components/egress/docs/fast-sandbox-docs.md`
+- A: `components/egress/docs/live-vault-acceptance.md`
+- M: `components/egress/docs/mitmproxy-transparent.md`
+- M: `components/egress/docs/opentelemetry.md`
+- M: `components/egress/docs/policy-traffic-vault-flow.md`
+- M: `components/egress/fastsandbox.go`
+- M: `components/egress/fastsandbox_actions.go`
+- M: `components/egress/fastsandbox_mitm.go`
+- A: `components/egress/fastsandbox_policy.go`
+- A: `components/egress/fastsandbox_policy_persist.go`
+- A: `components/egress/fastsandbox_policy_persist_test.go`
+- A: `components/egress/fastsandbox_policy_relay_test.go`
+- A: `components/egress/fastsandbox_policy_snapshot.go`
+- A: `components/egress/fastsandbox_policy_snapshot_test.go`
+- M: `components/egress/fastsandbox_server.go`
+- M: `components/egress/fastsandbox_server_test.go`
+- A: `components/egress/fastsandbox_transition.go`
+- A: `components/egress/fastsandbox_transition_actions_test.go`
+- A: `components/egress/fastsandbox_transition_linux_test.go`
+- A: `components/egress/fastsandbox_transition_observability_test.go`
+- A: `components/egress/fastsandbox_transition_policy_test.go`
+- A: `components/egress/fastsandbox_transition_rules_test.go`
+- A: `components/egress/fastsandbox_transition_vault_test.go`
+- A: `components/egress/fastsandbox_vault.go`
+- A: `components/egress/fastsandbox_vault_persist.go`
+- A: `components/egress/fastsandbox_vault_persist_linux_test.go`
+- A: `components/egress/fastsandbox_vault_persist_test.go`
+- A: `components/egress/fastsandbox_vault_snapshot.go`
+- A: `components/egress/fastsandbox_vault_snapshot_test.go`
+- A: `components/egress/fastsandbox_vault_test.go`
+- M: `components/egress/main.go`
+- M: `components/egress/mitmproxy_transparent.go`
+- A: `components/egress/mitmscripts/credential_bound.py`
+- A: `components/egress/mitmscripts/credential_bound_h2.py`
+- M: `components/egress/mitmscripts/decision_snapshot.py`
+- M: `components/egress/mitmscripts/revision_ipc.py`
+- A: `components/egress/mitmscripts/revision_publication.py`
+- M: `components/egress/mitmscripts/revision_receiver.py`
+- A: `components/egress/mitmscripts/static_passthrough.py`
+- A: `components/egress/mitmscripts/subject_revision.py`
+- A: `components/egress/mitmscripts/subject_revision_ipc.py`
+- M: `components/egress/mitmscripts/system.py`
+- M: `components/egress/mitmscripts/tls_decision.py`
+- M: `components/egress/mitmscripts/tls_registry.py`
+- M: `components/egress/nft.go`
+- M: `components/egress/pkg/actionhandler/actionhandler.go`
+- M: `components/egress/pkg/actionhandler/actionhandler_test.go`
+- M: `components/egress/pkg/constants/configuration.go`
+- M: `components/egress/pkg/credentialvault/candidate.go`
+- A: `components/egress/pkg/credentialvault/persist_tx_test.go`
+- A: `components/egress/pkg/credentialvault/policy_snapshot.go`
+- A: `components/egress/pkg/credentialvault/policy_snapshot_test.go`
+- A: `components/egress/pkg/credentialvault/static_passthrough_test.go`
+- A: `components/egress/pkg/credentialvault/testdata/vaultfile/invalid-future-version.json`
+- A: `components/egress/pkg/credentialvault/testdata/vaultfile/v1-empty-vault.json`
+- A: `components/egress/pkg/credentialvault/testdata/vaultfile/v1-simple.json`
+- M: `components/egress/pkg/credentialvault/vault.go`
+- M: `components/egress/pkg/credentialvault/vault_test.go`
+- A: `components/egress/pkg/credentialvault/vaultfile.go`
+- A: `components/egress/pkg/credentialvault/vaultfile_test.go`
+- M: `components/egress/pkg/dnsproxy/proxy.go`
+- M: `components/egress/pkg/dnsproxy/proxy_test.go`
+- M: `components/egress/pkg/fastsandboxnft/fastsandboxnft.go`
+- M: `components/egress/pkg/fastsandboxnft/fastsandboxnft_test.go`
+- M: `components/egress/pkg/iptables/gateway_dns.go`
+- A: `components/egress/pkg/iptables/gateway_dns_linux_test.go`
+- A: `components/egress/pkg/iptables/gateway_dns_test.go`
+- M: `components/egress/pkg/iptables/gateway_mitm_test.go`
+- M: `components/egress/pkg/iptables/redirect_test.go`
+- A: `components/egress/pkg/mitmpassthrough/config.go`
+- A: `components/egress/pkg/mitmpassthrough/config_test.go`
+- M: `components/egress/pkg/mitmproxy/cacert_export.go`
+- M: `components/egress/pkg/mitmproxy/cacert_export_test.go`
+- A: `components/egress/pkg/mitmproxy/cacert_seed.go`
+- A: `components/egress/pkg/mitmproxy/cacert_seed_test.go`
+- M: `components/egress/pkg/mitmproxy/health_gate.go`
+- M: `components/egress/pkg/mitmproxy/health_gate_test.go`
+- M: `components/egress/pkg/mitmproxy/launch.go`
+- M: `components/egress/pkg/mitmproxy/launch_test.go`
+- A: `components/egress/pkg/mitmproxy/tls_admission_test.go`
+- A: `components/egress/pkg/nftables/apply_effect.go`
+- A: `components/egress/pkg/nftables/apply_effect_linux_test.go`
+- A: `components/egress/pkg/nftables/apply_effect_test.go`
+- M: `components/egress/pkg/nftables/connection_tracker.go`
+- M: `components/egress/pkg/nftables/dynamic.go`
+- M: `components/egress/pkg/nftables/manager.go`
+- M: `components/egress/pkg/nftables/manager_test.go`
+- A: `components/egress/pkg/nftables/quiescence.go`
+- A: `components/egress/pkg/nftables/quiescence_linux_test.go`
+- A: `components/egress/pkg/nftables/quiescence_test.go`
+- A: `components/egress/pkg/nftables/runner_linux_test.go`
+- M: `components/egress/pkg/nftables/upstream.go`
+- M: `components/egress/pkg/policy/always_rules.go`
+- M: `components/egress/pkg/policy/always_rules_test.go`
+- A: `components/egress/pkg/policy/atomic_mount_integration_test.go`
+- A: `components/egress/pkg/policy/atomic_store.go`
+- A: `components/egress/pkg/policy/atomic_store_linux.go`
+- A: `components/egress/pkg/policy/atomic_store_linux_test.go`
+- A: `components/egress/pkg/policy/atomic_store_other.go`
+- A: `components/egress/pkg/policy/atomic_store_other_test.go`
+- A: `components/egress/pkg/policy/atomic_store_raw_linux_test.go`
+- A: `components/egress/pkg/policy/atomic_store_raw_nondurable_linux_test.go`
+- A: `components/egress/pkg/policy/coverage.go`
+- A: `components/egress/pkg/policy/coverage_test.go`
+- M: `components/egress/pkg/policy/evaluate_benchmark_test.go`
+- M: `components/egress/pkg/policy/persist.go`
+- M: `components/egress/pkg/policy/policy.go`
+- M: `components/egress/pkg/policy/policy_test.go`
+- A: `components/egress/pkg/policy/policyfile.go`
+- A: `components/egress/pkg/policy/policyfile_test.go`
+- M: `components/egress/pkg/policy/rules_loader.go`

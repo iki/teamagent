@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent); analyzed commit `26f4b155754d17be318db8a4c192a6d744eb66f3`; commit date 2026-10-03T15:12:06+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--mercury-agent.md).
+<!-- teamagent-analysis:end -->

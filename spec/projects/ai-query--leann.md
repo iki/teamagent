@@ -25,3 +25,7 @@ The reviewed constructor and search API expose the knobs; they do not establish 
 Benchmark as an alternative vector backend after the initial SQLite/lexical path is established. Use representative laptop hardware, corpus sizes and churn rates; measure disk size, peak RAM, cold/warm p95 latency, energy and recall. Test missing metadata, moved passages, unavailable embedding models, backend migration, update consistency and permission filters. Adopt only if the measured storage benefit outweighs operational complexity.
 
 Related directions: [memory](../memory.md) · [models](../models.md) · [import-generation](../import-generation.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [leann](https://github.com/yichuan-w/LEANN); analyzed commit `37c5ae3b7a3fc42f73b16f2a834452c8f1d36b2e`; commit date 2026-09-29T14:04:06-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--leann.md).
+<!-- teamagent-analysis:end -->

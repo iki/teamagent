@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--hermes-agent",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/NousResearch/hermes-agent",
+  "report": "spec/projects/ai-agents--hermes-agent.md",
+  "analyzedSha": "3b9a963b8e5cdb804a422755bed9a60fcd778273",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-08-16T21:20:29-07:00",
+  "observedSha": "5894e750c3dba980d43b25aa29e3958149ba2c61",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5894e750c3dba980d43b25aa29e3958149ba2c61",
+      "date": "2026-10-23T17:40:33-07:00",
+      "subject": "test(mcp): let the reconnect tests' fake streamable_http_client take SDK kwargs"
+    },
+    {
+      "sha": "a5a0a4ae33148a8cedaf0ee2b7cf113a6a824ebf",
+      "date": "2026-10-23T17:40:33-07:00",
+      "subject": "refactor(mcp): trim the 1 MiB SSE fix to the transport argument"
+    },
+    {
+      "sha": "7daa2e75d1a2fe45d529b89016a7c7a8efa8f9d8",
+      "date": "2026-10-23T17:40:33-07:00",
+      "subject": "fix(mcp): accept SSE responses over 1 MiB on Streamable HTTP"
+    },
+    {
+      "sha": "43cc33ec6f45ad561ff5960bba43378a5db94ba7",
+      "date": "2026-10-23T17:40:07-07:00",
+      "subject": "fix: address review — Feishu plain .ogg stays a file, Ogg duration walks pages"
+    },
+    {
+      "sha": "3cf89871bbcbfaeb549af4eb79370d64c61aa540",
+      "date": "2026-10-23T17:40:07-07:00",
+      "subject": "test(cron): move the voice-flag delivery tests into their own file"
+    },
+    {
+      "sha": "da1453688a8dbe3b66e2f37fddfe705f9596b19d",
+      "date": "2026-10-23T17:40:07-07:00",
+      "subject": "fix(cron): forward the voice flag when cron delivery calls send_voice"
+    },
+    {
+      "sha": "183cd6cc35fbe8218b1d73cca8d34c4ff78423df",
+      "date": "2026-10-23T17:40:07-07:00",
+      "subject": "fix(gateway): keep plain audio MEDIA out of WhatsApp/BlueBubbles voice notes"
+    },
+    {
+      "sha": "e2fe88cf7a0adf3f170406ac56ce3411471e2115",
+      "date": "2026-10-23T17:40:07-07:00",
+      "subject": "fix(discord): send plain audio as an attachment, voice messages only as Ogg/Opus"
+    },
+    {
+      "sha": "a8144c63abb54fcbcc6551b62c17bd7eb6c91132",
+      "date": "2026-10-23T17:39:48-07:00",
+      "subject": "fix(mcp): mask every secret-shaped argument and show arguments on the text approval"
+    },
+    {
+      "sha": "b91de2cafdac58a92f8b536bff5b47a355708cd3",
+      "date": "2026-10-23T17:39:48-07:00",
+      "subject": "perf(mcp): bound the work behind a large trust-gate argument preview"
+    },
+    {
+      "sha": "84f6e1cd324418212144465a07787550e9f11c6e",
+      "date": "2026-10-23T17:39:48-07:00",
+      "subject": "fix(mcp): keep trust-gate arguments redacted and legible on every approval surface"
+    },
+    {
+      "sha": "2b6f15b4a1e3f3e67774a52ac4e1fd50b136c3ae",
+      "date": "2026-10-23T17:39:48-07:00",
+      "subject": "fix(mcp): show redacted, size-capped arguments on untrusted MCP write approvals"
+    },
+    {
+      "sha": "14e1e43a23761b369641208e204365cd6cb9399d",
+      "date": "2026-10-23T16:54:27-07:00",
+      "subject": "docs: name each YOLO source's reach; sampling never prompts the user"
+    },
+    {
+      "sha": "aa82d233cf24e523b948f1c8a88f0fb3fe9a88df",
+      "date": "2026-10-23T16:54:27-07:00",
+      "subject": "docs: YOLO / approvals.mode off skip the MCP trust prompt, not the spend limit"
+    },
+    {
+      "sha": "1ae21357f411832735da2f2d02de9b1e3622a170",
+      "date": "2026-10-23T16:54:27-07:00",
+      "subject": "fix(mcp): YOLO and approvals.mode off skip the untrusted-server trust prompt"
+    },
+    {
+      "sha": "c78ca093aa4b6759c055c3ed2bfbe7f741cf0292",
+      "date": "2026-10-23T16:27:01-07:00",
+      "subject": "feat(desktop): name the owning chat in transcript directive props"
+    },
+    {
+      "sha": "ad81947668e5c16cdc59eb00a82e450b257ac4df",
+      "date": "2026-10-23T16:16:43-07:00",
+      "subject": "docs(mcp): deleting an Always entry leaves the granting chat's copy until it ends"
+    },
+    {
+      "sha": "3ee9fcfbb5697627da16a7bf42af7c24b02d63fc",
+      "date": "2026-10-23T16:16:43-07:00",
+      "subject": "docs(mcp): what the trust-gate and one-shot consent prompts offer"
+    },
+    {
+      "sha": "5e260854c2358e2c82ee7794e7546e277f661cb0",
+      "date": "2026-10-23T16:16:43-07:00",
+      "subject": "test(mcp): trust-gate approval scopes match what each prompt offers"
+    },
+    {
+      "sha": "ce11b6be1af2b1defe4b461b79a451a02af96a9f",
+      "date": "2026-10-23T16:16:43-07:00",
+      "subject": "fix(mcp): trust-gate Session/Always answers now stick per (server, tool)"
+    },
+    {
+      "sha": "dd5bc7ee13f12c6fbf70ca47d05135f63e76258a",
+      "date": "2026-10-23T16:04:50-07:00",
+      "subject": "docs(image_gen): fit the style-reference catalog line under the 80-char cap"
+    },
+    {
+      "sha": "95505c60e9d7ba01c73c5e6d053c3ea338076a6a",
+      "date": "2026-10-23T16:04:50-07:00",
+      "subject": "docs(tools): lead every tool description with its key capability"
+    },
+    {
+      "sha": "c421c930fe955880aa92d19bf5d9e8527b9f87a7",
+      "date": "2026-10-23T16:00:54-07:00",
+      "subject": "feat(desktop): folder-scoped plugin file access (ctx.files)"
+    },
+    {
+      "sha": "c1d5136363347276ff5610886d21cecd48f1aa15",
+      "date": "2026-10-23T15:54:23-07:00",
+      "subject": "fix(image_gen): keep palette transparency and EXIF orientation when shrinking FAL sources"
+    },
+    {
+      "sha": "e6af3598875d1c1ddf6c73e54b15f73127d752d2",
+      "date": "2026-10-23T15:54:23-07:00",
+      "subject": "fix(image_gen): inline local source paths for FAL edits on the local backend"
+    },
+    {
+      "sha": "709e2adec518ea4808fb4df320637685ab9c2709",
+      "date": "2026-10-23T15:42:04-07:00",
+      "subject": "fix(desktop): the origin guard splits only after a real 'use strict' directive"
+    },
+    {
+      "sha": "e22d823b548e52613f546d08e4fc28b27dba0477",
+      "date": "2026-10-23T15:42:04-07:00",
+      "subject": "fix(desktop): a preview-script revoke storage refuses still binds"
+    },
+    {
+      "sha": "55f3e384240e8be8e716be8dde75d2d37ac29108",
+      "date": "2026-10-23T15:42:04-07:00",
+      "subject": "fix(desktop): preview-script grants hold across windows and removals"
+    },
+    {
+      "sha": "9e2b801b0bd1e5cde877666f51b9d06aa42fb4d0",
+      "date": "2026-10-23T15:42:04-07:00",
+      "subject": "chore: map Schildkrote contributor email"
+    },
+    {
+      "sha": "44c114098f92f36a2453f3eb8171b79eac9780cf",
+      "date": "2026-10-23T15:42:04-07:00",
+      "subject": "docs(desktop): document ctx.preview capability and per-origin consent"
+    },
+    {
+      "sha": "6e1f1dec1b40d67c852ba27827fb71cbb805d140",
+      "date": "2026-10-23T15:42:04-07:00",
+      "subject": "feat(plugins): desktop surface lint refuses reaching the preview webview"
+    },
+    {
+      "sha": "4ff28461102fe4caaa9666eb47de797c4f52326b",
+      "date": "2026-10-23T15:42:04-07:00",
+      "subject": "feat(desktop): gate preview scripts behind a declared capability and per-origin consent"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".coderabbit.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".envrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/check-clean-worktree/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/desktop-build-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/detect-changes/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/e2e-screen-record/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/plugin-validate/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/prune/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/prune/index.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-windows-build-deps/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/blob-size-allowlist.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/run-workspace-checks.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/archive-inputs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/blob-size-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bootstrap-installer-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bootstrap-installer.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/canary-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/case-collision-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/catalog-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-review-comment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/contributor-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-site.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-bundle-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-bundled-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/docs-search-monitor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-site-checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/e2e-desktop-core.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/e2e-desktop-update.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/history-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/icons-freshness-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/infographic-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/install-e2e-macos-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/install-e2e-red.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/install-e2e-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/install-e2e-windows-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/install-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/installer-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-autofix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/label-rerun.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/lazy-deps-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/live-providers.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lockfile-diff.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/nix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/osv-scanner.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/plugin-catalog-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pm-bundle.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/profile-artifact-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/prompt-surface-diff.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/publish-e2e-evidence.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/remote-backends.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/review-labels.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/rust-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/sandbox-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skills-index-freshness.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skills-index.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/stable-release-publication.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/stable-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/supply-chain-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/termux-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests-os.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/uv-lockfile-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-bundle-sdk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-desktop-attach-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-install-update-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-venv-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".mailmap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".npmrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".python-version",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.es.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.es.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ur-pk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.es.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SOUL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/edit_approval.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/elicitation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/events.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_media.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_reply.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_session_meta.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/model_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/modes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/permissions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/provenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "activate",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "activate.fish",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "activate.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/account_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/account_usage_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/acp_openai_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/activity_tracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/agent_init.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_fallback.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_ollama.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_params.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/agent_runtime_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_runtime_helpers_dead_connections.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_runtime_helpers_placeholders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/anthropic_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_endpoints.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_message_convert.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_thinking_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_thinking_replay.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/api_error_summary.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/api_request_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/async_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/aux_accounting.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_async_rebuild.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_call_outcome.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/auxiliary_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_client_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_codex_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_fallback_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_health.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_key_rotation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_local_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_managed_local.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_plugin_oauth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_reasoning_floor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_stream_watchdog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_structured_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_task_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_unavailable.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

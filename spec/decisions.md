@@ -64,6 +64,12 @@ Use decision outputs as logged proposals with outcome labels. Do not train direc
 
 Decision-service outage leaves a functioning deterministic fallback. Malformed output, stale state, unsupported choice and low confidence produce no side effect. Compare rules, constrained local model and Jev on the same state snapshots with total latency/cost, accuracy, abstention and downstream task success. No benchmark result from another task is accepted as a replacement for this evaluation.
 
+## October source refresh: validate decisions before effects
+
+[Pi's refreshed loop and Jev example](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) reinforce two separate gates: complete, schema-valid tool output before execution, and evaluated routing thresholds before model selection. Do not derive permission from a classifier score.
+
+The refreshed [OpenSpec report](projects/ai-spec--openspec.md) ([source](https://github.com/Fission-AI/OpenSpec)) distinguishes hard prerequisite identity checks from uncertain progress-display paths. Reject unknown dependencies, cycles and unsafe paths deterministically. Keep an unresolved display/progress observation visible without silently converting it into a hard authorization decision.
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -169,3 +175,19 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [xberg](https://github.com/xberg-io/xberg) | [Report](projects/ai-query--xberg.md) | screened |
 | [xx-2602-markform](https://github.com/jlevy/markform) | [Report](projects/ai-query--xx-2602-markform.md) | screened |
 <!-- coverage:end -->
+
+
+## Source refresh: 2026-10-27 — evidence before optimization
+
+The refreshed [Pi report](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) finds no change to the reviewed Jev router in this interval; its 0.5 complexity threshold and first-successful-edit phase transition remain uncalibrated heuristics. New durable progress and restart mechanisms offer test cases, not measured utility gains. Keep authorization, durable receipts and ambiguous-action reconciliation outside probabilistic routing and loss-tolerant progress storage.
+
+The [Paseo review](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) illustrates deterministic eligibility checks before an idle-resource optimization. Its baseline-only behavior when a provider probe is absent must be reported rather than promoted to verified safety. The [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) similarly requires explicit evidence levels for authentication and task completion. Measure end-to-end correct outcomes, latency, resource use and recovery costs before ranking these architecture choices.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md) ([source](https://github.com/wh000wh000/awesome-jev-live)).
+- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) ([source](https://github.com/ryanalberts/best-of-agent-harnesses)).
+<!-- analysis-additions:end -->

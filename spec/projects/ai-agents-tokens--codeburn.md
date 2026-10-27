@@ -23,3 +23,7 @@ Evaluate as an optional usage dashboard/importer and a provider-parser reference
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [codeburn](https://github.com/getagentseal/codeburn); analyzed commit `aded4c232622b82284f22d172cecb137354e3071`; commit date 2026-10-02T16:43:15+02:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--codeburn.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,25 @@
+# deepsec
+
+Source: [deepsec](https://github.com/vercel-labs/deepsec) · Category: [ai-security](../categories/ai-security.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4fa67220aff67ac93dfc840206d3d32bfa4411ec`; commit timestamp `2026-09-29T21:12:41+10:00`; 758 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/vercel-labs/deepsec/blob/4fa67220aff67ac93dfc840206d3d32bfa4411ec/README.md)):
+
+> `deepsec` is an agent-powered vulnerability scanner that you can run in your own infrastructure, optimized to perform on-demand review of all code in existing `deepsec` is designed to surface hard-to-find issues that have been lurking in applications for a long time. It is configured to use the best models at maximum thinking levels (tunable via `--thinking-level`, see models), meaning scans can cost thousands or even tens-of-thousands of dollars for large codebases. Our customers have found the cost worth it for how quickly they were able to p
+
+Build/package evidence: [.deepsec/package.json](https://github.com/vercel-labs/deepsec/blob/4fa67220aff67ac93dfc840206d3d32bfa4411ec/.deepsec/package.json); [fixtures/vulnerable-app/package.json](https://github.com/vercel-labs/deepsec/blob/4fa67220aff67ac93dfc840206d3d32bfa4411ec/fixtures/vulnerable-app/package.json); [package.json](https://github.com/vercel-labs/deepsec/blob/4fa67220aff67ac93dfc840206d3d32bfa4411ec/package.json); [packages/core/package.json](https://github.com/vercel-labs/deepsec/blob/4fa67220aff67ac93dfc840206d3d32bfa4411ec/packages/core/package.json); [packages/deepsec/package.json](https://github.com/vercel-labs/deepsec/blob/4fa67220aff67ac93dfc840206d3d32bfa4411ec/packages/deepsec/package.json)
+
+License evidence: [LICENSE](https://github.com/vercel-labs/deepsec/blob/4fa67220aff67ac93dfc840206d3d32bfa4411ec/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-security**. Its category places it in the candidate set for agents, skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

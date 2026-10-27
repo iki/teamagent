@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--commonplace",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/zby/commonplace",
+  "report": "spec/projects/ai-agents-mem--commonplace.md",
+  "analyzedSha": "b0b16933418997017eb0044375fe0a1424d52336",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:04:43+02:00",
+  "observedSha": "0c22a313f5b043b494d622e40cb00058f53dfe9e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0c22a313f5b043b494d622e40cb00058f53dfe9e",
+      "date": "2026-10-27T18:12:26+01:00",
+      "subject": "Guard junction detection on non-Windows"
+    },
+    {
+      "sha": "137da8651f5ba3024f70eff0158d5b672dfdfe97",
+      "date": "2026-10-27T16:14:40+01:00",
+      "subject": "Require Workjig 0.2.0"
+    },
+    {
+      "sha": "340fe41dfe406ac9a3ae7fbaf9bede2d94f6ec53",
+      "date": "2026-10-27T14:38:28+01:00",
+      "subject": "Mark the X likes and encoding fixes done in the Windows test workshop"
+    },
+    {
+      "sha": "291cec5f40a3de73d4eef2480af59a75a730ad69",
+      "date": "2026-10-27T14:36:19+01:00",
+      "subject": "Write test fixtures as UTF-8 so they pass on non-UTF-8 Windows locales"
+    },
+    {
+      "sha": "08b1b0034abe7e4193bbdbbe562c6eda10448eb9",
+      "date": "2026-10-27T14:35:50+01:00",
+      "subject": "Write the X likes inbox as UTF-8 with LF on Windows"
+    },
+    {
+      "sha": "e56440579d3d58826ef0d470fab0d2377722d9ce",
+      "date": "2026-10-27T14:35:24+01:00",
+      "subject": "Lock X likes syncs on Windows too"
+    },
+    {
+      "sha": "06cc95255d73f6c1fda20f5fcbeb74e1050807d8",
+      "date": "2026-10-27T14:32:56+01:00",
+      "subject": "Record that agentic analysis runs on Linux only in the Windows test workshop"
+    },
+    {
+      "sha": "1cf410262dabf80d27c4fc9c9a5670649f6bcfe2",
+      "date": "2026-10-27T14:25:22+01:00",
+      "subject": "Skip the agentic-system-analyses tests on Windows"
+    },
+    {
+      "sha": "24c698fd53f80c65a24e0c2b31cfe7db3c330284",
+      "date": "2026-10-27T13:12:54+01:00",
+      "subject": "Mark the symlink fixes done in the Windows test workshop"
+    },
+    {
+      "sha": "9d703300dbf8942ee9d81d05f40b780e5b6428e3",
+      "date": "2026-10-27T13:10:49+01:00",
+      "subject": "Treat junctioned skill folders as foreign in commonplace-init"
+    },
+    {
+      "sha": "0cfb897f3cbfaa2290407e1bb9af8aa7501ced3f",
+      "date": "2026-10-27T13:09:16+01:00",
+      "subject": "Skip symlink tests where Windows refuses to create symlinks"
+    },
+    {
+      "sha": "197b148f6803bc9af9bc6cdc92522f8e314d0a61",
+      "date": "2026-10-27T13:03:25+01:00",
+      "subject": "Mark the path and line-ending fixes done in the Windows test workshop"
+    },
+    {
+      "sha": "a5002969ccda843716094291ebd3107917398eea",
+      "date": "2026-10-27T13:01:27+01:00",
+      "subject": "Write GitHub and X snapshots without newline translation"
+    },
+    {
+      "sha": "3cb67ca6d4c178b6bd66b050de98c795246f8148",
+      "date": "2026-10-27T13:01:27+01:00",
+      "subject": "Write test snapshots byte-exact so their pins hold on Windows"
+    },
+    {
+      "sha": "6d95f8f58e59e6506a424916c9dc5438360d4b86",
+      "date": "2026-10-27T13:01:26+01:00",
+      "subject": "Check out text files with LF on every platform"
+    },
+    {
+      "sha": "030cfddcb6429a4543f5375d6b7d7181f6f93f65",
+      "date": "2026-10-27T12:58:58+01:00",
+      "subject": "Print repository paths with forward slashes in validation and relocation messages"
+    },
+    {
+      "sha": "b356690ec42122342c9e8598b0b29fbabf2ce1d2",
+      "date": "2026-10-27T10:19:24+01:00",
+      "subject": "Mark the first five Windows fixes done in the workshop"
+    },
+    {
+      "sha": "ef15112e650bbd51757a10d147328d20ccc64f11",
+      "date": "2026-10-27T10:16:37+01:00",
+      "subject": "Keep backslashes literal in site badges and links portable"
+    },
+    {
+      "sha": "20b3c0543b8af22d81ba6b28e14c423bf4e553b4",
+      "date": "2026-10-27T10:15:26+01:00",
+      "subject": "Stop commonplace-init reporting its own templates as changed on Windows"
+    },
+    {
+      "sha": "aee32bd9837dd6ad1712e30a16eaab0b4228883a",
+      "date": "2026-10-27T10:14:16+01:00",
+      "subject": "Normalise CRLF line endings when the validator reads documents"
+    },
+    {
+      "sha": "49e2ef1b92615a3563533b637690cefb7cb3e60a",
+      "date": "2026-10-27T10:12:37+01:00",
+      "subject": "Print repository paths with forward slashes in validation output"
+    },
+    {
+      "sha": "24b06867a926469ee16212903f5e8a2e1f01c95d",
+      "date": "2026-10-27T10:11:54+01:00",
+      "subject": "Write relocated Markdown links with forward slashes on Windows"
+    },
+    {
+      "sha": "ad004f5bc42d8b2d88e051999a1f219bec99fafa",
+      "date": "2026-10-27T10:09:34+01:00",
+      "subject": "Record the diagnosed causes of the Windows test failures"
+    },
+    {
+      "sha": "0894bcdd51ca84f806a04a5b2e54ac431bfec900",
+      "date": "2026-10-27T09:14:31+01:00",
+      "subject": "Start a windows-test-suite workshop for the Windows test failures"
+    },
+    {
+      "sha": "aad4a69d7cf007ca3d172769be76e87c558e21d5",
+      "date": "2026-10-27T09:11:14+01:00",
+      "subject": "Classify the Windows test failures and correct the fcntl attribution"
+    },
+    {
+      "sha": "38c99f4b4920ab112432798c680271fab8df2e9f",
+      "date": "2026-10-27T09:04:37+01:00",
+      "subject": "Correct the windows-install note on pushing after the hook removal"
+    },
+    {
+      "sha": "b7c63f88c8147b521d92c16c251a5cde8abd8b9f",
+      "date": "2026-10-27T09:04:16+01:00",
+      "subject": "Reorganise the proposed Windows install procedure"
+    },
+    {
+      "sha": "43bee5d7d99aa83775168fa949bd9ba4f853ec8f",
+      "date": "2026-10-27T09:04:16+01:00",
+      "subject": "Record the Windows test-suite run and the Workjig fcntl import"
+    },
+    {
+      "sha": "177b886fc375775df9582beb41a49cb3891a4f51",
+      "date": "2026-10-27T09:04:15+01:00",
+      "subject": "Propose a Windows install procedure through a signed system Python"
+    },
+    {
+      "sha": "fbd71fa550ded8aebeb15ceb4139bcbc08c815e2",
+      "date": "2026-10-27T09:04:15+01:00",
+      "subject": "Record shims that run the signed Python without a virtual environment"
+    },
+    {
+      "sha": "152228f2250efb934ddec1920b0b9dbd26692ade",
+      "date": "2026-10-27T09:04:15+01:00",
+      "subject": "Record the signed-Python attempt and the blocked tool path"
+    },
+    {
+      "sha": "48123b25e5745a3dbd9ec117ab884adcc30a081e",
+      "date": "2026-10-27T09:04:15+01:00",
+      "subject": "Start a windows-install workshop for the Windows install problems"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/analyse-agentic-system",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/cp-skill-add-collection",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/analyse-agentic-system",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/cp-skill-add-collection",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/APPEND_SYSTEM.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/agents/commonplace-worker.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/agents/scry-research.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/extensions/subagent/agents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/budgets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/extensions/subagent/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/jobs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/launcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/session-info.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/tests/async.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/tests/budgets.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/tests/launch-overrides.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/tests/native-sessions.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/tests/process.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/extensions/subagent/tests/session-fixture.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "INSTALL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hatch_build.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/COLLECTION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/agentic-memory-systems-comparative-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/IsaacCLupus_mnemosyn_spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/agemem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/fintool.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/incremental-self-improvement.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/nams.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/sig.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/lightweight/trajectory-informed-memory-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/review-framework-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/AI-Context-OS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Agent-S.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/AgentFly.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/AriGraph.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Auto-claude-code-research-in-sleep.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/AutoSci.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Awesome-Agent-Memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/CORAL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Closure-SDK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/HippoRAG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/KBLaM.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Kompl.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/LLM-WIKI-MCP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/LLM-Wiki-v3.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/MehmetGoekce--llm-wiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Memori.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/MemoryOS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/MiroShark.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/OS-Copilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/OpenSage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Pratiyush--llm-wiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/REM.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/ReframeWeb.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Self-Training-LLM.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/SkillRL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/SkillWeaver.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/SkillX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/TheKnowledge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/VLM-wiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/WeKnora.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/Zikkaron.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/a-mem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/ace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/agent-r.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/agent-skills-for-context-engineering.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/agent-workflow-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/agentic-harness-engineering.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/agentic-local-brain.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/ai-memex-cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/ai-research-os-workshop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/amazon-science--SAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/archie.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/arscontexta.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/atlas.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/atomic.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/auto-harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/autocontext.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/basic-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/beever-atlas.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/binder.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/browzy-ai.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/byterover-cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cass_memory_system.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/claude-context-guard.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/claude-obsidian.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/claude-workstream-kit.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/clawvault.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cludebot.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cobusgreyling--llm-wiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cobusgreyling--llm-wiki.replaced.2026-07-06.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cocoindex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cognee.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/compound-engineering-plugin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/context-constitution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/continuity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cortex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/cq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/crewai-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/decapod.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/deja-vu.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/dense-mem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/docmason.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/dynamic-cheatsheet.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/echel.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/echoes-vault-opencode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/echowiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/echowiki.replaced.2026-07-06.2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/echowiki.replaced.2026-07-06.3.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/echowiki.replaced.2026-07-06.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/eidetic.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/engraph.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/equipa.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/exo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/exocomp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/expel.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/funes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/g-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/gbrain.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/getsentry-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/gnosis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/graphiti.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/halo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/hermes-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/hindsight.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/hyalo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/hyperagents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/interview-doc-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/kenhuangus--llm-wiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/kgai.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/lacp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/letta.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/link.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/llm-context-base.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/llm-project-wiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/llm-wiki-coordination.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/llm-wiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/llmwiki-marimo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/mem0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/memex.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/mempalace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/memwiki.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/mentisdb.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/meta-harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/nao.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/napkin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/nuggets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "kb/agent-memory-systems/reviews/o-o.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

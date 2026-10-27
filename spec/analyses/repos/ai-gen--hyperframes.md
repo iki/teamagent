@@ -1,0 +1,208 @@
+# hyperframes: change evidence
+
+Source: [hyperframes](https://github.com/heygen-com/hyperframes) · [Analysis](../../projects/ai-gen--hyperframes.md) · [generation](../../generation.md), [skills](../../skills.md), [agents](../../agents.md), [security](../../security.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `6149ec87e8e1e83e0df4862dfd8512331535eddb`; commit date: 2026-10-03T13:31:30-07:00; review date: unknown; observed SHA: `696ca8f779cd36bfef53102658722c46e9c3e522`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/heygen-com/hyperframes/compare/6149ec87e8e1e83e0df4862dfd8512331535eddb...696ca8f779cd36bfef53102658722c46e9c3e522). Working-tree changes: true; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated_with_local_changes; source lifecycle: active; upstream availability: available.
+- Working-tree modifications are excluded from committed change evidence.
+
+## Recent commits (truncated)
+
+- [696ca8f779cd](https://github.com/heygen-com/hyperframes/commit/696ca8f779cd36bfef53102658722c46e9c3e522) 2026-10-27T16:49:16Z: fix(cli): a failed --against reference no longer also says it has no frame (#6574)
+- [98e774384efd](https://github.com/heygen-com/hyperframes/commit/98e774384efdc785c7d49947948e796a8b8b4004) 2026-10-27T16:15:05Z: feat(cli): doctor names the tested ffmpeg build and says loudness is only comparable on it (#6566)
+- [8cd9c517c79b](https://github.com/heygen-com/hyperframes/commit/8cd9c517c79be5ada1878ba58bdffeac6cfe39eb) 2026-10-27T16:11:51Z: fix(aws-lambda): a network blip no longer stops the release ffmpeg build (#6569)
+- [013fe4e18ad7](https://github.com/heygen-com/hyperframes/commit/013fe4e18ad7c4aa43eb23967abd27ea4e16bf33) 2026-10-27T16:09:12Z: fix(cli): capture waits for a mid-read navigation to settle and reads the page again once (#6567)
+- [d571d77cae9d](https://github.com/heygen-com/hyperframes/commit/d571d77cae9d8ea7ffc1ec7262855fb4905ed859) 2026-10-27T16:08:52Z: fix(cli): a capture DNS helper that dies silently says how it ended (#6570)
+- [624c9becfde7](https://github.com/heygen-com/hyperframes/commit/624c9becfde73dc8bc50de00e210807ad1f6d7bd) 2026-10-27T15:49:29Z: fix(studio): keep the canvas outline off the scaled preview iframe (#6452)
+- [c391b50163d0](https://github.com/heygen-com/hyperframes/commit/c391b50163d0f4e2b1d7b564c4a39a1cc4193741) 2026-10-27T15:49:13Z: test(engine): the test Chrome warms its first page in beforeAll; browser hooks get 30 s (#6568)
+- [9b9dd7665499](https://github.com/heygen-com/hyperframes/commit/9b9dd7665499a128310d3bb26c52b1536918f936) 2026-10-27T14:49:11Z: test(cli): Chrome-driving tests run in their own project after the rest (#6560)
+- [7a0c75bb6992](https://github.com/heygen-com/hyperframes/commit/7a0c75bb69925205eacd109433fb45ff4385bcae) 2026-10-27T14:48:54Z: fix(cli): a snapshot clip whose frame fails is named with ffmpeg's reason (#6564)
+- [556164080915](https://github.com/heygen-com/hyperframes/commit/5561640809154089671bb3b0406ba8e48c99c6f2) 2026-10-27T14:39:19Z: fix(cli): a nearer copy of another version no longer hides the host's pinned onnxruntime-node (#6563)
+- [53c975966611](https://github.com/heygen-com/hyperframes/commit/53c975966611e7012b09b6d46707c26511ea077d) 2026-10-27T14:34:53Z: chore: release v0.8.209 (#6562)
+- [9d9bdd23ba32](https://github.com/heygen-com/hyperframes/commit/9d9bdd23ba32024cf4e4943daa172c3d29fc3bf8) 2026-10-27T14:31:17Z: fix(producer): a taken file-server port fails the render, and the late grading test runs in its lane (#6561)
+- [d6e16aa1879e](https://github.com/heygen-com/hyperframes/commit/d6e16aa1879eb33beb3e656006afee09f26d0419) 2026-10-27T14:28:43Z: fix(studio-server): undo and redo on Windows wait out a briefly held file (#6559)
+- [28f7ee456b8a](https://github.com/heygen-com/hyperframes/commit/28f7ee456b8a1733aa0f7b60492a0c807f1aab3e) 2026-10-27T13:48:51Z: fix(core): a page's variable keeps its own default when a scene declares the same id (#6558)
+- [88068af95078](https://github.com/heygen-com/hyperframes/commit/88068af95078be4a9d849496bce832509515b647) 2026-10-27T13:30:06Z: fix(studio-server): a history lock whose start cannot be recorded is given back (#6557)
+- [4416a41cba0a](https://github.com/heygen-com/hyperframes/commit/4416a41cba0a0d711185bb90166dbebc6427ecb6) 2026-10-27T13:29:56Z: fix(cli): every managed browser closes within a second even if Chrome never exits (#6553)
+- [c1da4a760e6f](https://github.com/heygen-com/hyperframes/commit/c1da4a760e6f2b9ce523ba1f47f8185670c08174) 2026-10-27T13:26:01Z: fix(engine): audio effects launch Chrome like every other render, sandbox retry included (#6550)
+- [cfef528d3ae1](https://github.com/heygen-com/hyperframes/commit/cfef528d3ae1d4549db648242e8f4c9cc7524d71) 2026-10-27T13:09:02Z: fix: phone videos with an undecodable first audio track check, preview and render (#6551)
+- [41a7bc98f77b](https://github.com/heygen-com/hyperframes/commit/41a7bc98f77b2019b98f0401a7e813e978ef111c) 2026-10-27T12:52:31Z: fix(cli): an element marked data-layout-ignore no longer counts as covering text (#6555)
+- [404e8254e6ad](https://github.com/heygen-com/hyperframes/commit/404e8254e6ad07c02f1b83f654500a3656059bd5) 2026-10-27T12:49:04Z: fix(studio-server): an HDR clip previews and snapshots the way the SDR export renders it (#6537)
+- [60927853485d](https://github.com/heygen-com/hyperframes/commit/60927853485ddeb4ed7d8bdf19047be3b384cd20) 2026-10-27T12:29:17Z: fix(studio-server): preview loads root-path media, images and CSS from the project, as render does (#6552)
+- [58552ede4bff](https://github.com/heygen-com/hyperframes/commit/58552ede4bfff5366fa535551845d20cda3f2875) 2026-10-27T11:50:20Z: test(studio): record each edit-accuracy shard's file writes and reloads when HF_WRITE_TRACE is set (#6532)
+- [7053aa90dd16](https://github.com/heygen-com/hyperframes/commit/7053aa90dd16e9d1975b565a7014446964a86b20) 2026-10-27T11:29:02Z: fix(core): text a script splits into letters shows once and carries the variable's value (#6543)
+- [f04be0f7cee1](https://github.com/heygen-com/hyperframes/commit/f04be0f7cee1557115bc0ec125e046355b4044b8) 2026-10-27T11:28:23Z: fix(cli): check waits 10 s for a scene to become ready and says what a timeout means (#6539)
+- [f007882ca727](https://github.com/heygen-com/hyperframes/commit/f007882ca727aed173f601ed1b2f8d1f96706860) 2026-10-27T11:12:48Z: chore: release v0.8.208 (#6529)
+- [2634a343dd58](https://github.com/heygen-com/hyperframes/commit/2634a343dd585fdc994260658977d7716aaecc0c) 2026-10-27T11:09:05Z: fix(engine): a Chrome shell that ignores SIGTERM can no longer freeze the CLI at launch (#6547)
+- [4f1e66d2d0f4](https://github.com/heygen-com/hyperframes/commit/4f1e66d2d0f4083219bb6a3586e7a329fe2fa179) 2026-10-27T11:08:59Z: fix(cli): orphaned Chrome helpers no longer keep a finished snapshot from exiting (#6545)
+- [b428ea92beb0](https://github.com/heygen-com/hyperframes/commit/b428ea92beb052de55f755323f24322f125bcb6f) 2026-10-27T11:08:53Z: fix(cli): closing the managed Chrome also ends the helper processes it leaves behind (#6542)
+- [cf04452c0d00](https://github.com/heygen-com/hyperframes/commit/cf04452c0d00f139ffeca7df9368d52cdd0daf62) 2026-10-27T11:08:00Z: fix(cli): audio --read reads music onsets, effect peaks, pauses and voice against music (#6546)
+- [24d49637d304](https://github.com/heygen-com/hyperframes/commit/24d49637d3048a0239d8d2a09b4b0776cb14b9ea) 2026-10-27T10:49:32Z: fix(cli): a negative number after a flag is its value, not an unknown flag (#6549)
+- [5a92fe7e5ef5](https://github.com/heygen-com/hyperframes/commit/5a92fe7e5ef5ac588ae5b65a79e4e36754ff85ff) 2026-10-27T10:49:26Z: fix(cli): beats given a media file points to hyperframes audio instead of a folder error (#6544)
+- [c2b68fbe0743](https://github.com/heygen-com/hyperframes/commit/c2b68fbe074301aef6e7bdae35a7cc23f79d682d) 2026-10-27T10:28:44Z: fix(cli): snapshot's auto end frame stays within 250 ms of a long composition's end (#6538)
+
+## Changed paths (truncated)
+
+- M: `.agents/skills/captions-overlay/SKILL.md`
+- M: `.claude-plugin/marketplace.json`
+- M: `.claude-plugin/plugin.json`
+- M: `.claude/skills/captions-overlay/SKILL.md`
+- M: `.codex-plugin/plugin.json`
+- M: `.cursor-plugin/plugin.json`
+- M: `.fallowrc.jsonc`
+- M: `.gitattributes`
+- A: `.github/actions/edit-already-passed/action.yml`
+- M: `.github/actions/install-ffmpeg-linux/action.yml`
+- A: `.github/actions/release-only-diff/action.yml`
+- A: `.github/actions/setup-test-workspace/action.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/docs.yml`
+- M: `.github/workflows/fast-video-validation.yml`
+- A: `.github/workflows/lambda-arm64-image.yml`
+- A: `.github/workflows/lambda-sam-template.yml`
+- M: `.github/workflows/player-perf.yml`
+- A: `.github/workflows/player-safari.yml`
+- M: `.github/workflows/preview-regression.yml`
+- M: `.github/workflows/publish.yml`
+- M: `.github/workflows/regression.yml`
+- M: `.github/workflows/sync-skills-to-clawhub.yml`
+- M: `.github/workflows/windows-render.yml`
+- M: `.gitignore`
+- M: `.oxlintrc.json`
+- M: `.prettierignore`
+- M: `AGENTS.md`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile.test`
+- M: `README.md`
+- M: `bun.lock`
+- A: `context7.json`
+- M: `docs/catalog-gallery.css`
+- A: `docs/catalog/blocks/ai-answer-rank.mdx`
+- M: `docs/catalog/blocks/ai-chat-reveal.mdx`
+- M: `docs/catalog/blocks/app-showcase.mdx`
+- M: `docs/catalog/blocks/apple-money-count.mdx`
+- A: `docs/catalog/blocks/aurora.mdx`
+- M: `docs/catalog/blocks/bar-chart-race.mdx`
+- M: `docs/catalog/blocks/beat-freeze-cut.mdx`
+- A: `docs/catalog/blocks/blob.mdx`
+- M: `docs/catalog/blocks/blue-sweater-intro-video.mdx`
+- M: `docs/catalog/blocks/camcorder-hud.mdx`
+- M: `docs/catalog/blocks/camera-dolly-zoom.mdx`
+- M: `docs/catalog/blocks/canopy-part-title.mdx`
+- M: `docs/catalog/blocks/carousel-circle-1.mdx`
+- M: `docs/catalog/blocks/carousel-circle-2.mdx`
+- M: `docs/catalog/blocks/carousel-circle-3.mdx`
+- M: `docs/catalog/blocks/carousel-circle-4.mdx`
+- M: `docs/catalog/blocks/carousel-circle-5.mdx`
+- M: `docs/catalog/blocks/carousel-orbit-1.mdx`
+- M: `docs/catalog/blocks/carousel-orbit-2.mdx`
+- M: `docs/catalog/blocks/carousel-orbit-3.mdx`
+- M: `docs/catalog/blocks/carousel-orbit-4.mdx`
+- M: `docs/catalog/blocks/carousel-orbit-5.mdx`
+- M: `docs/catalog/blocks/carousel-path-1.mdx`
+- M: `docs/catalog/blocks/carousel-path-2.mdx`
+- M: `docs/catalog/blocks/carousel-path-3.mdx`
+- M: `docs/catalog/blocks/carousel-path-4.mdx`
+- M: `docs/catalog/blocks/carousel-path-5.mdx`
+- M: `docs/catalog/blocks/carousel-text-circle-1.mdx`
+- M: `docs/catalog/blocks/carousel-text-circle-2.mdx`
+- M: `docs/catalog/blocks/carousel-text-circle-3.mdx`
+- M: `docs/catalog/blocks/carousel-text-circle-4.mdx`
+- M: `docs/catalog/blocks/carousel-text-circle-5.mdx`
+- M: `docs/catalog/blocks/carousel-vision-1.mdx`
+- M: `docs/catalog/blocks/carousel-vision-2.mdx`
+- M: `docs/catalog/blocks/carousel-vision-3.mdx`
+- M: `docs/catalog/blocks/carousel-vision-4.mdx`
+- M: `docs/catalog/blocks/carousel-vision-5.mdx`
+- M: `docs/catalog/blocks/chatgpt-exchange.mdx`
+- M: `docs/catalog/blocks/chromatic-radial-split.mdx`
+- A: `docs/catalog/blocks/chrome-orb.mdx`
+- A: `docs/catalog/blocks/cinemagraph.mdx`
+- M: `docs/catalog/blocks/cinematic-zoom.mdx`
+- M: `docs/catalog/blocks/claude-exchange.mdx`
+- M: `docs/catalog/blocks/code-3d-extrude.mdx`
+- M: `docs/catalog/blocks/code-diff.mdx`
+- M: `docs/catalog/blocks/code-highlight.mdx`
+- M: `docs/catalog/blocks/code-morph.mdx`
+- M: `docs/catalog/blocks/code-particle-assemble.mdx`
+- M: `docs/catalog/blocks/code-scroll.mdx`
+- M: `docs/catalog/blocks/code-shader-dissolve.mdx`
+- M: `docs/catalog/blocks/code-slice-hero.mdx`
+- M: `docs/catalog/blocks/code-snippet-apple-terminal-pro.mdx`
+- M: `docs/catalog/blocks/code-snippet-dark-2026.mdx`
+- M: `docs/catalog/blocks/code-snippet-dark-modern.mdx`
+- M: `docs/catalog/blocks/code-typing.mdx`
+- A: `docs/catalog/blocks/color-wheel.mdx`
+- M: `docs/catalog/blocks/cosmic-orb.mdx`
+- M: `docs/catalog/blocks/cross-warp-morph.mdx`
+- M: `docs/catalog/blocks/cuboid-carousel.mdx`
+- M: `docs/catalog/blocks/data-chart.mdx`
+- M: `docs/catalog/blocks/domain-warp-dissolve.mdx`
+- M: `docs/catalog/blocks/editorial-flash-overlay.mdx`
+- A: `docs/catalog/blocks/exploded-stack.mdx`
+- A: `docs/catalog/blocks/extruded-logo.mdx`
+- A: `docs/catalog/blocks/falling-lines.mdx`
+- M: `docs/catalog/blocks/flash-through-white.mdx`
+- M: `docs/catalog/blocks/flowchart-vertical.mdx`
+- M: `docs/catalog/blocks/flowchart.mdx`
+- A: `docs/catalog/blocks/flowing-gradient.mdx`
+- A: `docs/catalog/blocks/fractal-noise.mdx`
+- M: `docs/catalog/blocks/freeze-frame-dressing.mdx`
+- M: `docs/catalog/blocks/frost-sequence-camera-orbit.mdx`
+- A: `docs/catalog/blocks/frost.mdx`
+- A: `docs/catalog/blocks/gabor-noise.mdx`
+- M: `docs/catalog/blocks/gallery-tunnel.mdx`
+- A: `docs/catalog/blocks/glass-hero.mdx`
+- M: `docs/catalog/blocks/glass-shard-title.mdx`
+- M: `docs/catalog/blocks/glitch.mdx`
+- A: `docs/catalog/blocks/godrays.mdx`
+- A: `docs/catalog/blocks/goo.mdx`
+- A: `docs/catalog/blocks/gooey-split.mdx`
+- M: `docs/catalog/blocks/gravitational-lens.mdx`
+- M: `docs/catalog/blocks/halftone-field.mdx`
+- A: `docs/catalog/blocks/heatmap.mdx`
+- M: `docs/catalog/blocks/heygen-avatar-promo-card.mdx`
+- A: `docs/catalog/blocks/hologram.mdx`
+- A: `docs/catalog/blocks/holographic.mdx`
+- M: `docs/catalog/blocks/hw-frame.mdx`
+- M: `docs/catalog/blocks/hw-path-text.mdx`
+- M: `docs/catalog/blocks/hw-pipeline.mdx`
+- M: `docs/catalog/blocks/hw-scribble-transition.mdx`
+- M: `docs/catalog/blocks/hw-text-cloud.mdx`
+- M: `docs/catalog/blocks/hw-title.mdx`
+- M: `docs/catalog/blocks/hw-write-title.mdx`
+- M: `docs/catalog/blocks/instagram-follow.mdx`
+- M: `docs/catalog/blocks/ios26-liquid-glass.mdx`
+- A: `docs/catalog/blocks/lens-flare.mdx`
+- A: `docs/catalog/blocks/light-edge.mdx`
+- M: `docs/catalog/blocks/light-leak.mdx`
+- M: `docs/catalog/blocks/liquid-glass-notification.mdx`
+- M: `docs/catalog/blocks/liquid-glass-widgets.mdx`
+- A: `docs/catalog/blocks/liquid-metal.mdx`
+- M: `docs/catalog/blocks/logo-outro.mdx`
+- M: `docs/catalog/blocks/lottie-character-walk.mdx`
+- M: `docs/catalog/blocks/lower-third-bild.mdx`
+- M: `docs/catalog/blocks/lt-accent-underline.mdx`
+- M: `docs/catalog/blocks/lt-bold-block.mdx`
+- M: `docs/catalog/blocks/lt-clean-bar.mdx`
+- M: `docs/catalog/blocks/lt-color-block.mdx`
+- M: `docs/catalog/blocks/lt-dark-card.mdx`
+- M: `docs/catalog/blocks/lt-kicker-name.mdx`
+- M: `docs/catalog/blocks/lt-mask-reveal.mdx`
+- M: `docs/catalog/blocks/lt-neon-border.mdx`
+- M: `docs/catalog/blocks/lt-side-rule.mdx`
+- M: `docs/catalog/blocks/lt-soft-pill.mdx`
+- M: `docs/catalog/blocks/lt-stack-bars.mdx`
+- M: `docs/catalog/blocks/macos-notification.mdx`
+- M: `docs/catalog/blocks/macos-tahoe-liquid-glass.mdx`
+- A: `docs/catalog/blocks/marble.mdx`
+- A: `docs/catalog/blocks/mesh-gradient.mdx`
+- M: `docs/catalog/blocks/message-thread-reveal.mdx`
+- M: `docs/catalog/blocks/mk-background.mdx`
+- M: `docs/catalog/blocks/mk-callout-highlight.mdx`
+- M: `docs/catalog/blocks/mk-clone-wall-transition.mdx`
+- M: `docs/catalog/blocks/mk-line-graph.mdx`

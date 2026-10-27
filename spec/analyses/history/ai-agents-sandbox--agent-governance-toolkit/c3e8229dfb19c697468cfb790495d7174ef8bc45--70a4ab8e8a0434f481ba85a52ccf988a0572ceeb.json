@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-sandbox--agent-governance-toolkit",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/microsoft/agent-governance-toolkit",
+  "report": "spec/projects/ai-agents-sandbox--agent-governance-toolkit.md",
+  "analyzedSha": "c3e8229dfb19c697468cfb790495d7174ef8bc45",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T18:50:53-07:00",
+  "observedSha": "70a4ab8e8a0434f481ba85a52ccf988a0572ceeb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "70a4ab8e8a0434f481ba85a52ccf988a0572ceeb",
+      "date": "2026-10-23T10:49:03-07:00",
+      "subject": "feat(agent-os): add OCSF schema converter and sink for CloudEvents tr… (#4323)"
+    },
+    {
+      "sha": "88066250d65c28e8a4dfac20d2012718e3c55484",
+      "date": "2026-10-23T10:43:17-07:00",
+      "subject": "fix(haystack-agentmesh): record a snapshot of AuditLogger entry metadata (#4402)"
+    },
+    {
+      "sha": "fb950bcd7137c203352a2e0ec65289477078ffd1",
+      "date": "2026-10-23T07:30:48-07:00",
+      "subject": "fix(haystack-agentmesh): charge TrustGate decay once per elapsed hour (#4401)"
+    },
+    {
+      "sha": "4888330a23db9ab8316bc99475e80f96c7252b4c",
+      "date": "2026-10-22T20:35:19-07:00",
+      "subject": "chore(deps): Bump black (#4415)"
+    },
+    {
+      "sha": "49af5897999d58afb611385f0ff90748efd8ed8f",
+      "date": "2026-10-22T20:35:07-07:00",
+      "subject": "chore(deps): Bump opentelemetry-api (#4414)"
+    },
+    {
+      "sha": "99ca9c3167a1511f1f46c909de7df98eca1dd359",
+      "date": "2026-10-22T19:35:19-07:00",
+      "subject": "chore(deps-dev): Bump vite (#4413)"
+    },
+    {
+      "sha": "30fb310107b2b614f301794dabe9ab23041fce2a",
+      "date": "2026-10-22T19:35:06-07:00",
+      "subject": "chore(deps): Bump @vitest/mocker and vitest (#4412)"
+    },
+    {
+      "sha": "7b22c59cef3d10e4a4031bae2d84c609f108e061",
+      "date": "2026-10-22T00:45:09-07:00",
+      "subject": "fix(agent-sandbox): give Docker checkpoints a valid repository for any agent id (#4370)"
+    },
+    {
+      "sha": "90149ab2d7230d67ecb9b6baf1c0decfcfd828e2",
+      "date": "2026-10-21T23:50:30-07:00",
+      "subject": "fix(agent-runtime): report paused Docker containers as stopped, not failed (#4410)"
+    },
+    {
+      "sha": "7e937e6e3e6dbe1a211b8eaa326f8618e9d80ffc",
+      "date": "2026-10-21T23:44:25-07:00",
+      "subject": "fix(agent-sandbox): flag os.posix_spawn and asyncio subprocesses in the code scanner (#4369)"
+    },
+    {
+      "sha": "9c85646570e837aaa4d1709044ee2e10f2fefbf8",
+      "date": "2026-10-21T13:41:58-07:00",
+      "subject": "fix(a2a-protocol): keep message content types in TaskEnvelope.from_dict (#4408)"
+    },
+    {
+      "sha": "8e51b1c38db609ef21b582fc608aaa4ce347edd7",
+      "date": "2026-10-21T11:50:13-07:00",
+      "subject": "fix(agent-lightning): do not count violation summaries as emitted spans (#4365)"
+    },
+    {
+      "sha": "6a8c12b733c852db8902e64aa8d8dcbb2fa0f584",
+      "date": "2026-10-21T00:49:54-07:00",
+      "subject": "fix(agent-learning): check role and permissions in ExcessivePrivilegeEvaluation (#4364)"
+    },
+    {
+      "sha": "e67fba7f96b5a7060de94df7eb21832f8ae8dedc",
+      "date": "2026-10-20T22:50:42-07:00",
+      "subject": "fix(agent-lightning): count a successful episode once in GovernedEnvironment metrics (#4360)"
+    },
+    {
+      "sha": "e9ccebe2dd2f9a7e9ebc82108a313f21cef6acb2",
+      "date": "2026-10-20T14:38:47-07:00",
+      "subject": "fix(agent-os): prevent invisible-character evasion in conversation guardian (#4124)"
+    },
+    {
+      "sha": "3c162e7f7b6109b498846f68e9c6c266bb8071f6",
+      "date": "2026-10-20T09:25:07-07:00",
+      "subject": "docs: update MAINTAINERS.md to the current maintainer set (#4368)"
+    },
+    {
+      "sha": "de16e71a3c3977458081117dd84c604d079347bd",
+      "date": "2026-10-20T08:43:33-07:00",
+      "subject": "chore(deps-dev): Bump hono (#4405)"
+    },
+    {
+      "sha": "edc336afdf5cc0ce03e627649dd198f4dedc1fe1",
+      "date": "2026-10-20T08:43:20-07:00",
+      "subject": "chore(deps): Bump hono (#4404)"
+    },
+    {
+      "sha": "2f735429030d18e1480b6ac0217ccffb6b17a530",
+      "date": "2026-10-20T08:43:05-07:00",
+      "subject": "chore(deps): Bump rustls in /policy-engine/examples/coding_agent/app (#4403)"
+    },
+    {
+      "sha": "bb9fd0df2aed2969a403b6d083c34185cad0eb04",
+      "date": "2026-10-20T07:33:26-07:00",
+      "subject": "fix(agent-discovery): detect llama-index and pyautogen in GitHub dependency files (#4367)"
+    },
+    {
+      "sha": "36b4c0d2c009032b2ebb3677ca1cc8ed088c1f4f",
+      "date": "2026-10-20T07:22:23-07:00",
+      "subject": "chore(deps): Bump aiohttp in /agent-governance-python/agent-hypervisor (#4399)"
+    },
+    {
+      "sha": "38fc8384400f60d48a7a9ffe7c4d8fe2f4435432",
+      "date": "2026-10-20T07:22:09-07:00",
+      "subject": "chore(deps-dev): Update black requirement (#4390)"
+    },
+    {
+      "sha": "bd91b33054f9c04e0a134b23694575ff98c70a03",
+      "date": "2026-10-20T07:21:47-07:00",
+      "subject": "chore(deps-dev): Update fastapi requirement (#4389)"
+    },
+    {
+      "sha": "13ec63cde534e4b0521a35a3bc83753a3ed3cbf5",
+      "date": "2026-10-20T07:21:31-07:00",
+      "subject": "chore(deps-dev): Update hypothesis requirement (#4387)"
+    },
+    {
+      "sha": "c5cff2f584f887adfa4e33212210abdb6499fe92",
+      "date": "2026-10-20T07:21:18-07:00",
+      "subject": "chore(deps-dev): Bump @typescript-eslint/eslint-plugin (#4385)"
+    },
+    {
+      "sha": "94b3f9653437ee4c5d094c70e5a23aff05fc471a",
+      "date": "2026-10-20T02:46:32-07:00",
+      "subject": "chore(deps-dev): Update fastapi requirement (#4397)"
+    },
+    {
+      "sha": "9a278cd22f3c8a7f7d2658c9d74ee64a7f119717",
+      "date": "2026-10-20T02:46:19-07:00",
+      "subject": "chore(deps-dev): Update pydantic requirement (#4396)"
+    },
+    {
+      "sha": "b4c10fd86c7342775f2ce49823c38c164bd896c0",
+      "date": "2026-10-20T02:46:04-07:00",
+      "subject": "chore(deps): Update pydantic requirement (#4395)"
+    },
+    {
+      "sha": "356a4a4784b0b70e9570fedfce682437030bf9a2",
+      "date": "2026-10-20T02:45:51-07:00",
+      "subject": "chore(deps-dev): Update fastapi requirement (#4394)"
+    },
+    {
+      "sha": "2ff1bce0af6d4c3a217b3d3f276c8bb54a13a858",
+      "date": "2026-10-20T02:45:38-07:00",
+      "subject": "chore(deps-dev): Update hypothesis requirement (#4393)"
+    },
+    {
+      "sha": "26eb7089f86a9944db3b6cfd673d6b4f4609b3e5",
+      "date": "2026-10-20T02:45:24-07:00",
+      "subject": "chore(deps-dev): Update fastapi requirement (#4392)"
+    },
+    {
+      "sha": "79fdc6878f9f15b07b50411e3e93caecf0fb0dfc",
+      "date": "2026-10-20T02:45:10-07:00",
+      "subject": "chore(deps-dev): Update pydantic requirement (#4391)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cspell-repo-terms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cspell.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/benchmarks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-python.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sbom-diff-comment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sbom-diff.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sbom.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/supply-chain-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/weekly-security-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BREAKING_CHANGES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MAINTAINERS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-claude-code/lib/policy.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-claude-code/test/hooks.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-claude-code/test/mcp-server.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-claude-code/test/policy.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-dotnet/src/AgentGovernance.Extensions.ModelContextProtocol/McpGovernanceRuntime.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-dotnet/src/AgentGovernance.Extensions.ModelContextProtocol/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-dotnet/tests/AgentGovernance.Tests/AgentGovernance.Tests.csproj",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-dotnet/tests/AgentGovernance.Tests/McpGovernanceExtensionsTests.cs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-opencode/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-opencode/lib/policy.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-opencode/test/duplicate-registration.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-opencode/test/mcp-server.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-opencode/test/plugin.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-opencode/test/policy.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-compliance/src/agent_compliance/supply_chain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-compliance/tests/test_supply_chain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-discovery/src/agent_discovery/scanners/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-discovery/src/agent_discovery/scanners/github.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-discovery/tests/test_config_scanner.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-discovery/tests/test_github_scanner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-hypervisor/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-hypervisor/src/hypervisor/rings/enforcer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-hypervisor/src/hypervisor/session/vector_clock.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-hypervisor/tests/test_session_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-hypervisor/tests/unit/test_command_denylist.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-hypervisor/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-learning/src/agent_learning_gov/evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-learning/tests/test_evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-lightning/src/agent_lightning_gov/emitter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-lightning/src/agent_lightning_gov/environment.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-lightning/tests/test_lightning_comprehensive.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/docs/api-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/packages/mcp-proxy/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/packages/mcp-proxy/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/services/api/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/src/agentmesh/governance/annex_iv.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/src/agentmesh/governance/approval_protocol/digest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/src/agentmesh/governance/compliance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/src/agentmesh/marketplace/_marketplace_impl.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/src/agentmesh/marketplace/installer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/src/agentmesh/reward/trust_decay.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/src/agentmesh/storage/memory_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/tests/governance/test_annex_iv.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/tests/test_approval_protocol.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/tests/test_governance.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-mesh/tests/test_marketplace_dependency_specifiers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/tests/test_storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-mesh/tests/test_trust_decay.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/copilot/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-os/extensions/copilot/eslint.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/copilot/jest.config.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/copilot/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/copilot/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/copilot/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-os/extensions/copilot/tsconfig.test.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/mcp-server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-os/extensions/mcp-server/eslint.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/mcp-server/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/extensions/mcp-server/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/services/cloud-board/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/src/agent_os/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/src/agent_os/_circuit_breaker_impl.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/src/agent_os/event_sink.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/src/agent_os/integrations/conversation_guardian.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-os/src/agent_os/ocsf.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-os/tests/test_circuit_breaker.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-os/tests/test_conversation_guardian_unicode.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-os/tests/test_ocsf.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-primitives/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-runtime/src/agent_runtime/deploy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-runtime/tests/test_deploy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sandbox/src/agent_sandbox/code_scanner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sandbox/src/agent_sandbox/docker_provider/state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sandbox/tests/test_code_scanner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sandbox/tests/test_docker_sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/anomaly/detector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/anomaly/rogue_detector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/api/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/cascade/circuit_breaker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/delivery/rollout.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/fleet/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/replay/capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/sbom.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/slo/objectives.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/slo/spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/src/agent_sre/tracing/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-python/agent-sre/tests/test_api_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_cascade.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_fleet.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_k8s.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_protocol_tracing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_sbom.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/test_slo_spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/unit/test_anomaly_detection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/unit/test_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/unit/test_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/unit/test_objectives.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agent-sre/tests/unit/test_rogue_detector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/a2a-protocol/a2a_agentmesh/task.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/a2a-protocol/tests/test_a2a.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/copilot-governance/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/haystack-agentmesh/src/haystack_agentmesh/audit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/haystack-agentmesh/src/haystack_agentmesh/trust_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/haystack-agentmesh/tests/test_audit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/haystack-agentmesh/tests/test_trust_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/mastra-agentmesh/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-python/agentmesh-integrations/mastra-agentmesh/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-rust/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-rust/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-rust/YAML-MIGRATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-rust/deny.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/jest.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/encryption.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-auto-reconnect.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-event-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-knock-bootstrap.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-knock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-malformed-frame.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-plaintext-downgrade.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-pre-knock-buffer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-reconnect.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tests/mesh-client-session-desync.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-governance-typescript/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-governance-typescript/tsconfig.test.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dependency-audits/2026-09-24-typescript-7-toolchain.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dependency-audits/2026-10-03-acs-alpha4.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/i18n/README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/i18n/README.ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/i18n/README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/i18n/README.zh-TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/package-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/packages/agent-control-specification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/packages/agent-mesh.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -26,3 +26,7 @@ Hash and schema validity establish identity and structure, not factual entailmen
 Adopt the compiler model and snapshot rules for curated team knowledge; evaluate direct reuse only after a bounded pilot. Start with topic summaries, decisions and source reports under version control. Test partial publication, changed source bytes, model/prompt migration, concept rename, deleted inputs, stale review approval and untrusted content attempting to grant itself write authority.
 
 Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [skills](../skills.md) · [import-generation](../import-generation.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler); analyzed commit `605461febe8206e6f78e987bb57f75fa1c5817c5`; commit date 2026-10-02T16:58:40-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--llm-wiki-compiler.md).
+<!-- teamagent-analysis:end -->

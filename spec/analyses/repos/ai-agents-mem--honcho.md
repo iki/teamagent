@@ -1,0 +1,207 @@
+# honcho: change evidence
+
+Source: [honcho](https://github.com/plastic-labs/honcho) · [Analysis](../../projects/ai-agents-mem--honcho.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `8e4df990d974c146a100e96ab4b3957a6591ceab`; commit date: 2026-10-02T17:21:22-04:00; review date: unknown; observed SHA: `bcaf722a9f9077593e0c89a0bb644061c43481b3`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/plastic-labs/honcho/compare/8e4df990d974c146a100e96ab4b3957a6591ceab...bcaf722a9f9077593e0c89a0bb644061c43481b3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [bcaf722a9f90](https://github.com/plastic-labs/honcho/commit/bcaf722a9f9077593e0c89a0bb644061c43481b3) 2026-10-27T12:38:39-04:00: docs(pi): title the Pi guide "Pi agent memory" (#1472)
+- [a95dcdc280e5](https://github.com/plastic-labs/honcho/commit/a95dcdc280e558a5ee1b74242decd71fce24c3fa) 2026-10-27T10:49:20-04:00: fix: tolerate OpenAI-compatible responses that omit usage token counts (#1460)
+- [341024754a75](https://github.com/plastic-labs/honcho/commit/341024754a75f57c65759bdf7c54a4b44af667d2) 2026-10-27T09:11:49-04:00: test: property-based API fuzzing for 5xx, with the fixes it found (#1445)
+- [a72f74d27421](https://github.com/plastic-labs/honcho/commit/a72f74d27421c8acc12ae5580e557780221656fe) 2026-10-27T08:53:14-04:00: chore(deps): upgrade Langfuse Python SDK to v5 for the Langfuse v4 cutover (#1452)
+- [2108daf47aab](https://github.com/plastic-labs/honcho/commit/2108daf47aabac8f38430ba57036f4cc1102615d) 2026-10-26T15:38:10-04:00: feat(hermes-plugin): tag Honcho links opened from Hermes with UTM attribution (#1462)
+- [0f4332547cb2](https://github.com/plastic-labs/honcho/commit/0f4332547cb2045901813572d1779429012e4908) 2026-10-26T11:40:46-04:00: fix: replace and clear workspace configuration (#1458)
+- [b48bb5553ebe](https://github.com/plastic-labs/honcho/commit/b48bb5553ebe472f0895ed2377c4ea4f26e0d4e2) 2026-10-26T10:03:19-04:00: chore(cli): release 0.3.0 (#1454)
+- [7bd41a7ca48b](https://github.com/plastic-labs/honcho/commit/7bd41a7ca48b34dfb0602da2a6d54ff8e156e914) 2026-10-26T10:02:05-04:00: fix: strip NUL from model-generated peer cards and session summaries (#1455)
+- [39a53549cb26](https://github.com/plastic-labs/honcho/commit/39a53549cb269607dd63fe6a4fc90944efb774dc) 2026-10-25T10:44:29-04:00: feat(deletion): hide tombstoned workspaces, peers and sessions from reads (#1450)
+- [5bf3b3489db4](https://github.com/plastic-labs/honcho/commit/5bf3b3489db4295d249c0fbe11797fee82e108ba) 2026-10-23T16:03:12-04:00: chore(deps): require certifi 2026.10.19 in honcho-cli and build the MCP image on Bun 1.4.4 (#1453)
+- [f6e71fd87ab8](https://github.com/plastic-labs/honcho/commit/f6e71fd87ab8b3f66948e005f19281afc1bbcab5) 2026-10-23T15:39:32-04:00: fix(dialectic): stop pair answers from inviting a turn the caller can't take (#1451)
+- [7c12878b7343](https://github.com/plastic-labs/honcho/commit/7c12878b73434ab48646401544a70f3369321945) 2026-10-23T15:27:01-04:00: feat(cli): honcho install finds local AI agents and adds Honcho to them (#1371)
+- [522148b53497](https://github.com/plastic-labs/honcho/commit/522148b534979ce875e9b8b1ae38e7a713e18b65) 2026-10-23T14:41:52-04:00: fix(summarizer): keep summary prompts under an input token budget (#1449)
+- [5314d0a8635f](https://github.com/plastic-labs/honcho/commit/5314d0a8635f02375b8ad73c89eb80f86d7d1cb4) 2026-10-23T13:48:07-04:00: contributing policy (#1421)
+- [bea0b7547f5a](https://github.com/plastic-labs/honcho/commit/bea0b7547f5ae3db38a5550ec958465fef504b5f) 2026-10-23T13:12:46-04:00: chore: add changelog and version updates (#1446)
+- [4634539264fa](https://github.com/plastic-labs/honcho/commit/4634539264fa38b66f94ea262689234f4d2b923d) 2026-10-23T11:57:47-04:00: docs: embed the Grok Bot setup video in the Grok Bot guide (#1440)
+- [70ebbd2d7756](https://github.com/plastic-labs/honcho/commit/70ebbd2d7756894b8a74d0e184955a70dbd33b5d) 2026-10-23T11:40:35-04:00: feat(deletion): add inactive primitive tombstone foundation (#1429)
+- [7478be29bedf](https://github.com/plastic-labs/honcho/commit/7478be29bedf110a38ae463e05c86a6c27cb960b) 2026-10-23T09:55:38-04:00: chore(deps): upgrade certifi to 2026.10.19 (#1439)
+- [f9e397117290](https://github.com/plastic-labs/honcho/commit/f9e39711729052245a623b809fa1797703d6cd99) 2026-10-22T15:39:15-04:00: fix(llm): stop retrying provider-rejected requests when no fallback is configured (#1435)
+- [47d3eac2b975](https://github.com/plastic-labs/honcho/commit/47d3eac2b97519cb410afd8c0504a1d01fce76f4) 2026-10-22T12:30:25-04:00: fix(filter): treat wildcards and {} as TRUE inside AND/OR/NOT (#1433)
+- [b94a416c56f1](https://github.com/plastic-labs/honcho/commit/b94a416c56f16ee4c840541c19e50bc668124e5e) 2026-10-21T12:55:56-04:00: test: cut suite time and run the TypeScript SDK tests outside pytest (#1422)
+- [607438d20c40](https://github.com/plastic-labs/honcho/commit/607438d20c408575d1c9257f325c4885da871e82) 2026-10-20T15:21:00-04:00: docs: set up Grok Bot from the plugin's GitHub link until it is in the Cursor Marketplace (#1416)
+- [e8a2783de97e](https://github.com/plastic-labs/honcho/commit/e8a2783de97ec7a7e97e72ac9cce0a26ffb425d2) 2026-10-20T14:49:34-04:00: docs: point the Pi guide at the official pi-honcho plugin (#1415)
+- [819e66c86e4b](https://github.com/plastic-labs/honcho/commit/819e66c86e4b8c11d5adad3ec751f47c69c64079) 2026-10-20T14:03:00-04:00: fix(ci): recompute release manifest in the GCP POST job (#1414)
+- [bf2e2a875352](https://github.com/plastic-labs/honcho/commit/bf2e2a875352f8eabb2a165b26b277e205bd20f4) 2026-10-20T12:44:12-04:00: chore: add changelog and version updates (#1412)
+- [fc84e42572ca](https://github.com/plastic-labs/honcho/commit/fc84e42572ca6e53779c517d0054e175c1a7af04) 2026-10-20T11:58:36-04:00: docs: move Paperclip to the built-in connector, mark SillyTavern unmaintained (#1411)
+- [d1f2004a8057](https://github.com/plastic-labs/honcho/commit/d1f2004a8057b55d4d41818f2562e7bc3f25bdc2) 2026-10-20T11:50:58-04:00: feat(cursor-honcho): Honcho plugin for Cursor and Grok Bot (#1386)
+- [63b61cbc8791](https://github.com/plastic-labs/honcho/commit/63b61cbc879183cf3f5dff34b1f679dae0d10f8a) 2026-10-20T11:47:23-04:00: feat(migrations): queue pending-work indexes and deletion generations (#1409)
+- [ce56c3e8e07f](https://github.com/plastic-labs/honcho/commit/ce56c3e8e07f33ffcade58809282de102b36ce56) 2026-10-19T19:55:17-04:00: docs: sharpen Overview and Quickstart titles, descriptions; add pricing line (#1404)
+- [d93af3bc3c42](https://github.com/plastic-labs/honcho/commit/d93af3bc3c427b773fbe6109ce8248383f9e5290) 2026-10-19T17:42:07-04:00: fix(mcp): answer a rejected OAuth token with HTTP 401 so clients refresh (#1389)
+- [a56b26366f14](https://github.com/plastic-labs/honcho/commit/a56b26366f1435b0efb03c2c9dfd102d70169328) 2026-10-19T16:57:59-04:00: fix(mcp): reinstall and typecheck before deploying the Worker (#1407)
+- [58b679b9b978](https://github.com/plastic-labs/honcho/commit/58b679b9b9782b869d45e63ba42b346d6e92fe13) 2026-10-19T16:35:05-04:00: feat(dreamer): working memory — budget, write window, brief, and notes (#1378)
+
+## Changed paths (truncated)
+
+- A: `.cursor-plugin/marketplace.json`
+- M: `.env.template`
+- M: `.github/CODEOWNERS`
+- M: `.github/ISSUE_TEMPLATE/1-bug-report.yml`
+- M: `.github/ISSUE_TEMPLATE/3-feature-request.yml`
+- M: `.github/ISSUE_TEMPLATE/4-integration-request.yml`
+- A: `.github/ISSUE_TEMPLATE/6-hermes.yml`
+- M: `.github/pull_request_template.md`
+- D: `.github/scripts/issue-gate.js`
+- D: `.github/scripts/issue-gate.test.js`
+- A: `.github/workflows/compat-matrix.yml`
+- A: `.github/workflows/hermes-plugin-tests.yml`
+- D: `.github/workflows/issue-gate.yml`
+- A: `.github/workflows/kilo-honcho.yml`
+- D: `.github/workflows/pr-sweeper.yml`
+- M: `.github/workflows/push-gcp-registry-prod.yml`
+- M: `.github/workflows/push-gcp-registry-staging.yml`
+- M: `.github/workflows/staticanalysis.yml`
+- M: `.github/workflows/unittest.yml`
+- M: `.pre-commit-config.yaml`
+- M: `CHANGELOG.md`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile`
+- M: `README.md`
+- M: `config.toml.example`
+- M: `database/init.sql`
+- M: `docs/changelog/compatibility-guide.mdx`
+- M: `docs/changelog/introduction.mdx`
+- M: `docs/docs.json`
+- M: `docs/snippets/cli-commands.mdx`
+- A: `docs/snippets/integrations-catalog.jsx`
+- A: `docs/style.css`
+- M: `docs/v2/migrations/from-mem0.mdx`
+- M: `docs/v3/api-reference/endpoint/keys/create-key.mdx`
+- M: `docs/v3/contributing/configuration.mdx`
+- M: `docs/v3/contributing/guidelines.mdx`
+- M: `docs/v3/contributing/self-hosting.mdx`
+- M: `docs/v3/contributing/troubleshooting.mdx`
+- M: `docs/v3/documentation/features/advanced/reasoning-configuration.mdx`
+- M: `docs/v3/documentation/features/advanced/scopes.mdx`
+- M: `docs/v3/documentation/features/advanced/using-filters.mdx`
+- M: `docs/v3/documentation/introduction/overview.mdx`
+- M: `docs/v3/documentation/introduction/quickstart.mdx`
+- M: `docs/v3/documentation/introduction/vibecoding.mdx`
+- M: `docs/v3/documentation/reference/sdk.mdx`
+- M: `docs/v3/guides/community/agent0.mdx`
+- D: `docs/v3/guides/community/pi-honcho-memory.mdx`
+- M: `docs/v3/guides/gmail.mdx`
+- M: `docs/v3/guides/granola.mdx`
+- M: `docs/v3/guides/integrations/claude-code.mdx`
+- M: `docs/v3/guides/integrations/codex.mdx`
+- M: `docs/v3/guides/integrations/crewai.mdx`
+- A: `docs/v3/guides/integrations/cursor.mdx`
+- M: `docs/v3/guides/integrations/deepseek-harness.mdx`
+- A: `docs/v3/guides/integrations/grok-bot.mdx`
+- M: `docs/v3/guides/integrations/hermes.mdx`
+- A: `docs/v3/guides/integrations/kilo.mdx`
+- M: `docs/v3/guides/integrations/langgraph.mdx`
+- M: `docs/v3/guides/integrations/mcp.mdx`
+- M: `docs/v3/guides/integrations/n8n.mdx`
+- M: `docs/v3/guides/integrations/openclaw.mdx`
+- M: `docs/v3/guides/integrations/opencode.mdx`
+- M: `docs/v3/guides/integrations/paperclip.mdx`
+- A: `docs/v3/guides/integrations/pi.mdx`
+- M: `docs/v3/guides/integrations/sillytavern.mdx`
+- M: `docs/v3/guides/integrations/vercel-ai-sdk.mdx`
+- M: `docs/v3/guides/migrations/mem0.mdx`
+- M: `docs/v3/guides/overview.mdx`
+- M: `docs/v3/migrations/from-mem0.mdx`
+- M: `docs/v3/openapi.json`
+- A: `hermes-plugin-honcho/.python-version`
+- D: `hermes-plugin-honcho/HANDOFF.md`
+- M: `hermes-plugin-honcho/README.md`
+- M: `hermes-plugin-honcho/__init__.py`
+- A: `hermes-plugin-honcho/attribution.py`
+- M: `hermes-plugin-honcho/cli.py`
+- M: `hermes-plugin-honcho/client.py`
+- M: `hermes-plugin-honcho/config_schema.py`
+- M: `hermes-plugin-honcho/dialectic.py`
+- A: `hermes-plugin-honcho/docs/banner.png`
+- M: `hermes-plugin-honcho/oauth_flow.py`
+- M: `hermes-plugin-honcho/pyproject.toml`
+- A: `hermes-plugin-honcho/tests/conftest.py`
+- A: `hermes-plugin-honcho/tests/pytest.ini`
+- A: `hermes-plugin-honcho/tests/test_a2a_sessions.py`
+- A: `hermes-plugin-honcho/tests/test_async_memory.py`
+- A: `hermes-plugin-honcho/tests/test_attribution.py`
+- A: `hermes-plugin-honcho/tests/test_auth_recovery.py`
+- A: `hermes-plugin-honcho/tests/test_cli.py`
+- A: `hermes-plugin-honcho/tests/test_client.py`
+- A: `hermes-plugin-honcho/tests/test_client_identity_isolation.py`
+- A: `hermes-plugin-honcho/tests/test_empty_profile_hint.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_cli_peers.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_client_concurrency.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_client_config.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_config_schema.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_session_cache_bounds.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_session_context.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_startup_fail_open.py`
+- A: `hermes-plugin-honcho/tests/test_honcho_summary_sanitize.py`
+- A: `hermes-plugin-honcho/tests/test_identity_signature.py`
+- A: `hermes-plugin-honcho/tests/test_network_isolation.py`
+- A: `hermes-plugin-honcho/tests/test_oauth.py`
+- A: `hermes-plugin-honcho/tests/test_oauth_flow.py`
+- A: `hermes-plugin-honcho/tests/test_peers_map.py`
+- A: `hermes-plugin-honcho/tests/test_pin_peer_name.py`
+- A: `hermes-plugin-honcho/tests/test_query_rewrite.py`
+- A: `hermes-plugin-honcho/tests/test_recall_sync.py`
+- A: `hermes-plugin-honcho/tests/test_resume_catch_up.py`
+- A: `hermes-plugin-honcho/tests/test_save_messages.py`
+- A: `hermes-plugin-honcho/tests/test_session.py`
+- A: `hermes-plugin-honcho/tests/test_session_ai_peer_prefix.py`
+- A: `hermes-plugin-honcho/tests/test_session_routing_integration.py`
+- A: `hermes-plugin-honcho/tests/test_shutdown.py`
+- A: `hermes-plugin-honcho/tests/test_telemetry_headers.py`
+- A: `hermes-plugin-honcho/tests/test_turn_author_peers.py`
+- A: `hermes-plugin-honcho/uv.lock`
+- M: `honcho-cli/CHANGELOG.md`
+- M: `honcho-cli/README.md`
+- M: `honcho-cli/pyproject.toml`
+- M: `honcho-cli/src/honcho_cli/__init__.py`
+- M: `honcho-cli/src/honcho_cli/_help.py`
+- A: `honcho-cli/src/honcho_cli/agents.py`
+- A: `honcho-cli/src/honcho_cli/commands/install.py`
+- M: `honcho-cli/src/honcho_cli/commands/session.py`
+- M: `honcho-cli/src/honcho_cli/commands/workspace.py`
+- M: `honcho-cli/src/honcho_cli/local/templates/init.sql`
+- M: `honcho-cli/src/honcho_cli/main.py`
+- M: `honcho-cli/src/honcho_cli/output.py`
+- M: `honcho-cli/tests/test_commands.py`
+- A: `honcho-cli/tests/test_install.py`
+- A: `integrations/cursor/.cursor-plugin/plugin.json`
+- A: `integrations/cursor/.gitignore`
+- A: `integrations/cursor/CHANGELOG.md`
+- A: `integrations/cursor/LICENSE`
+- A: `integrations/cursor/README.md`
+- A: `integrations/cursor/assets/logo.svg`
+- A: `integrations/cursor/bun.lock`
+- A: `integrations/cursor/commands/recall.md`
+- A: `integrations/cursor/dist/hook.js`
+- A: `integrations/cursor/hooks/hooks.json`
+- A: `integrations/cursor/mcp.json`
+- A: `integrations/cursor/package.json`
+- A: `integrations/cursor/rules/honcho-memory.mdc`
+- A: `integrations/cursor/skills/honcho-grok-bot/SKILL.md`
+- A: `integrations/cursor/skills/honcho-memory/SKILL.md`
+- A: `integrations/cursor/skills/honcho-setup/SKILL.md`
+- A: `integrations/cursor/src/after-agent-response.ts`
+- A: `integrations/cursor/src/before-submit-prompt.ts`
+- A: `integrations/cursor/src/common.ts`
+- A: `integrations/cursor/src/hook.ts`
+- A: `integrations/cursor/src/redact.ts`
+- A: `integrations/cursor/src/session-start.ts`
+- A: `integrations/cursor/tests/hooks.test.ts`
+- A: `integrations/cursor/tsconfig.json`
+- A: `kilo-honcho/.gitignore`
+- A: `kilo-honcho/CHANGELOG.md`
+- A: `kilo-honcho/LICENSE`
+- A: `kilo-honcho/README.md`

@@ -1,0 +1,1008 @@
+{
+  "metadata": {
+    "id": "ai-agents-swarm--crewai",
+    "category": "ai-agents-swarm",
+    "name": "crewai",
+    "url": "https://github.com/crewaiinc/crewai",
+    "aliases": [
+      "https://github.com/crewAIInc/crewAI",
+      "ai-agents--crewai"
+    ],
+    "report": "spec/projects/ai-agents-swarm--crewai.md",
+    "topics": [
+      "agents",
+      "memory",
+      "evolution"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "738c8e19e35c2888d8e0663bc5cc45c5acf6ac2d",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T17:03:54-07:00",
+    "reportSha256": "dd98bed52b69561a35eb58a764f0acf50497ea6824378254155ec3c98b4a1133",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-swarm--crewai",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/crewaiinc/crewai",
+    "report": "spec/projects/ai-agents-swarm--crewai.md",
+    "analyzedSha": "738c8e19e35c2888d8e0663bc5cc45c5acf6ac2d",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T17:03:54-07:00",
+    "observedSha": "3adab2895836ddde6a2150867e2b998a0a1f5334",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "3adab2895836ddde6a2150867e2b998a0a1f5334",
+        "date": "2026-10-27T13:18:16-03:00",
+        "subject": "fix(llm): stop sending 'stop' to GPT-6 and newer models (#8674)"
+      },
+      {
+        "sha": "c5f996ab6d9105cab38109235809232e9eeef008",
+        "date": "2026-10-27T07:08:25Z",
+        "subject": "fix(files): run the provider listing off the loop in acleanup_provider_files (#8642)"
+      },
+      {
+        "sha": "00ef9ea1568f6ff5af9accc5ecfe7eb58f6fe8dd",
+        "date": "2026-10-27T12:26:38+05:30",
+        "subject": "fix: emit LLMGuardrailCompletedEvent for a malformed guardrail result (#8648)"
+      },
+      {
+        "sha": "bb4d892e684e9289422e816b8769e7976fdd451a",
+        "date": "2026-10-26T20:04:50-03:00",
+        "subject": "fix(tools): name the renamed integration token when it is missing (#8636)"
+      },
+      {
+        "sha": "7a15b62d609a9d3f8ff9c820832d79b46902553f",
+        "date": "2026-10-26T19:28:16-03:00",
+        "subject": "SECT-602: fix path traversal in output_file via template interpolation (#8622)"
+      },
+      {
+        "sha": "ed0abf25b325bcb28cf4db89ac16569ca70cc0f7",
+        "date": "2026-10-26T18:19:35-03:00",
+        "subject": "fix(security): patch deserialization, SQL injection, and path traversal vulnerabilities [SECT-601] (#8623)"
+      },
+      {
+        "sha": "5d4f45b904e8746ca3b9505288e3e7fb395ee274",
+        "date": "2026-10-26T17:11:57Z",
+        "subject": "fix(logging): restore configured levels after suppression (#8215)"
+      },
+      {
+        "sha": "8187fdc6616634fefbe91f002044085dfbec5ca3",
+        "date": "2026-10-26T16:47:51Z",
+        "subject": "ci: close PRs associated with completed issues (#8595)"
+      },
+      {
+        "sha": "5394d1b4a6f9e7965904777f15c3536207e1fb45",
+        "date": "2026-10-26T12:48:22-03:00",
+        "subject": "test: cover skill catalog filtering and checkpoint template restore (#8620)"
+      },
+      {
+        "sha": "b7de28ea884e4eedf1a7ab0ef061f9bd023fa677",
+        "date": "2026-10-26T18:23:04+05:30",
+        "subject": "fix(crew): drop checkpoint resume state when copying a crew (#8617)"
+      },
+      {
+        "sha": "f768613eff3b863f3d3b926c773366b88b81fd0f",
+        "date": "2026-10-26T08:23:51Z",
+        "subject": "fix(files): honor an injected aioboto3 session in BedrockFileUploader (#8521)"
+      },
+      {
+        "sha": "aed2a7ea93542a68f04e018254e5429a0129952a",
+        "date": "2026-10-26T07:30:47Z",
+        "subject": "docs: use HTTPS for CrewAI AMP link in CLI concept doc (#8474)"
+      },
+      {
+        "sha": "2cc84c5a692d8709b820e5b039fe042b9b8fe511",
+        "date": "2026-10-26T07:29:16Z",
+        "subject": "docs: fix internal anchor links pointing to English slugs on translated pages (#8456)"
+      },
+      {
+        "sha": "424c0477704f86875c8bd1189dd891b52c995744",
+        "date": "2026-10-26T12:51:03+05:30",
+        "subject": "fix(prompts): use the right task slice with custom templates (#8561)"
+      },
+      {
+        "sha": "a0991cc0d145a4a4b3af40ca1dc56504ec464b24",
+        "date": "2026-10-26T07:01:50Z",
+        "subject": "fix: guard storage listing failures in encoding flow analyze (#8568)"
+      },
+      {
+        "sha": "217894ac741d150ebc9567a47a0556b451a26dce",
+        "date": "2026-10-26T11:50:01+05:30",
+        "subject": "fix: enforce guardrail result/error exclusivity with model validator (#8570)"
+      },
+      {
+        "sha": "d29a4a0ac13a027084a3aeb38363cff6647f8913",
+        "date": "2026-10-26T05:57:39Z",
+        "subject": "fix: filter categories server-side in qdrant edge search (#8572)"
+      },
+      {
+        "sha": "8177dd4df7050efb70ff5d91f17b8755b3bd7be7",
+        "date": "2026-10-26T11:16:51+05:30",
+        "subject": "docs(hooks): fix CrewBase imports in examples (#8582)"
+      },
+      {
+        "sha": "38db11e3324fa0e23beb5eecd0d87e8e31ca2bb0",
+        "date": "2026-10-23T22:55:48-03:00",
+        "subject": "[docs-freeze] docs: snapshot and changelog for v1.15.30 (#8482)"
+      },
+      {
+        "sha": "70efcec62d78179beba49d563b663bd8082787d7",
+        "date": "2026-10-23T22:52:26-03:00",
+        "subject": "feat: bump versions to 1.15.30 (#8478)"
+      },
+      {
+        "sha": "07361f6dc5f96d22efe565ff89297d22bce4a90f",
+        "date": "2026-10-23T17:33:02-03:00",
+        "subject": "fix(cli): AGENTS.md starts the login while evaluating, and stops after three rounds (#8315)"
+      },
+      {
+        "sha": "0bb71138613d0bc5af93ecc15da78a00eebcd493",
+        "date": "2026-10-23T14:35:20-03:00",
+        "subject": "[docs-freeze] docs: snapshot and changelog for v1.15.29 (#8473)"
+      },
+      {
+        "sha": "2ce184ba50b2cce004b6de7f2bf808cb4b772c7f",
+        "date": "2026-10-23T14:31:05-03:00",
+        "subject": "feat: bump versions to 1.15.29 (#8471)"
+      },
+      {
+        "sha": "c6ed18bc52e66da1d3c457bf162667e7c8682700",
+        "date": "2026-10-23T17:28:57Z",
+        "subject": "fix(bedrock): support LiteLLM-compatible kwargs (#8453)"
+      },
+      {
+        "sha": "3b0833f606fb8c9351e4d5523636a138bb1b681f",
+        "date": "2026-10-23T17:23:19Z",
+        "subject": "fix(cli): derive platform integration tokens from login (#8350)"
+      },
+      {
+        "sha": "351717a7f153a77318bce5a01ea2e242b110ebe0",
+        "date": "2026-10-23T17:17:34Z",
+        "subject": "feat(cli): search platform applications (#8357)"
+      },
+      {
+        "sha": "9f033cab5db67223d6d98fe43a5d752f09daa52f",
+        "date": "2026-10-23T17:17:33Z",
+        "subject": "feat(cli): highlight action picker search (#8353)"
+      },
+      {
+        "sha": "efcc7f188de272b660a9296e57f6a1b076c5a3a8",
+        "date": "2026-10-23T16:31:31Z",
+        "subject": "feat(flow): Trace conversation routes and public replies (#8380)"
+      },
+      {
+        "sha": "a519304dfa68f6c26ac32409303b53f759895443",
+        "date": "2026-10-23T09:08:15-07:00",
+        "subject": "test(llm): add direct summary integration coverage (#8330)"
+      },
+      {
+        "sha": "0656245f0787347f0110c4d85dc5d5c2432aea3c",
+        "date": "2026-10-23T20:43:20+05:30",
+        "subject": "fix(mcp): pass every tool result content block to the agent (#8300)"
+      },
+      {
+        "sha": "5e9be90db036caf020d8fd314a6730bb716fd068",
+        "date": "2026-10-23T19:45:39+05:30",
+        "subject": "fix(logging): preserve JSON logs on serialization errors (#8173)"
+      },
+      {
+        "sha": "2f113c04119e5fa30041bcc5ee788b274b639d60",
+        "date": "2026-10-23T19:39:42+05:30",
+        "subject": "fix(usage): count dictionary usage in token callbacks (#8171)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".env.test",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/agents-md-eval.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/agents-md.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build-uv-cache.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/close-associated-prs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/generate-tool-specs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/linter.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/nightly.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/publish.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/type-checker.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/update-test-durations.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/vulnerability-scan.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".pre-commit-config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/changelog.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/concepts/cli.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/concepts/files.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/concepts/flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/concepts/llms.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/concepts/memory.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/concepts/production-architecture.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/concepts/tools.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/examples/example.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/guides/crews/first-crew.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/guides/flows/conversational-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/guides/flows/first-flow.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/learn/before-and-after-kickoff-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/learn/execution-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/learn/human-feedback-in-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/learn/llm-connections.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/learn/llm-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/mcp/dsl-integration.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/observability/langtrace.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/quickstart.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/telemetry.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/ai-ml/aimindtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/ai-ml/codeinterpretertool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/ai-ml/ragtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/database-data/mongodbvectorsearchtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/database-data/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/search-research/tavilyextractortool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/web-scraping/browserbaseloadtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/web-scraping/scrapeelementfromwebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/web-scraping/scrapewebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ar/tools/web-scraping/stagehandtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/changelog.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/concepts/cli.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/concepts/files.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/concepts/flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/concepts/llms.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/concepts/memory.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/concepts/tools.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/examples/example.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/guides/flows/conversational-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/learn/before-and-after-kickoff-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/learn/execution-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/learn/human-feedback-in-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/learn/llm-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/observability/arize-phoenix.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/observability/braintrust.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/observability/galileo.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/observability/langtrace.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/quickstart.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/telemetry.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/ai-ml/aimindtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/ai-ml/codeinterpretertool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/ai-ml/ragtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/database-data/mongodbvectorsearchtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/database-data/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/search-research/tavilyextractortool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/web-scraping/browserbaseloadtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/web-scraping/scrapeelementfromwebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/web-scraping/scrapewebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/en/tools/web-scraping/stagehandtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/changelog.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/concepts/cli.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/concepts/files.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/concepts/flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/concepts/llms.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/concepts/memory.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/concepts/production-architecture.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/concepts/tools.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/examples/cookbooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/examples/example.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/guides/crews/first-crew.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/guides/flows/conversational-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/guides/flows/first-flow.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/learn/before-and-after-kickoff-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/learn/execution-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/learn/human-feedback-in-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/learn/llm-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/mcp/dsl-integration.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/observability/galileo.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/observability/langtrace.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/quickstart.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/telemetry.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/ai-ml/aimindtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/ai-ml/codeinterpretertool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/ai-ml/ragtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/database-data/mongodbvectorsearchtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/database-data/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/search-research/tavilyextractortool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/web-scraping/browserbaseloadtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/web-scraping/scrapeelementfromwebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/web-scraping/scrapewebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/ko/tools/web-scraping/stagehandtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/changelog.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/concepts/cli.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/concepts/files.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/concepts/flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/concepts/llms.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/concepts/memory.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/concepts/production-architecture.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/concepts/tools.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/examples/cookbooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/examples/example.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/guides/crews/first-crew.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/guides/flows/conversational-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/guides/flows/first-flow.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/learn/before-and-after-kickoff-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/learn/execution-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/learn/human-feedback-in-flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/learn/llm-hooks.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/mcp/dsl-integration.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/observability/galileo.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/observability/langtrace.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/quickstart.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/telemetry.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/ai-ml/aimindtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/ai-ml/codeinterpretertool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/ai-ml/ragtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/database-data/mongodbvectorsearchtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/database-data/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/overview.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/search-research/tavilyextractortool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/web-scraping/browserbaseloadtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/web-scraping/scrapeelementfromwebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/web-scraping/scrapewebsitetool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/edge/pt-BR/tools/web-scraping/stagehandtool.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/api-reference/inputs.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/api-reference/introduction.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/api-reference/kickoff.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/api-reference/resume.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/api-reference/status.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/changelog.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/agent-capabilities.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/agents.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/checkpointing.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/cli.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/collaboration.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/crews.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/event-listener.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/files.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/flows.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/knowledge.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/v1.15.24/ar/concepts/llms.mdx",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

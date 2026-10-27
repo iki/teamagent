@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--berd",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/block/berd",
+  "report": "spec/projects/ai-agents--berd.md",
+  "analyzedSha": "81ca89585f68f4d85e7dccf3a4842e401acf18e4",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-28T16:21:25-07:00",
+  "observedSha": "5b500297447917c978dda517641ed8370db4c33b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5b500297447917c978dda517641ed8370db4c33b",
+      "date": "2026-10-27T06:42:20-04:00",
+      "subject": "feat(notifications): typed completion-notification event foundation (#387)"
+    },
+    {
+      "sha": "3217cdc2c776130a5af62fa127cfe6277c51f707",
+      "date": "2026-10-23T15:37:29-04:00",
+      "subject": "Berd Call: clear stuck speech holds, show interim words, playback cancel fixes (#429)"
+    },
+    {
+      "sha": "31661e24e9fe2403d88ef728f70be6d4304f5913",
+      "date": "2026-10-23T15:37:00-04:00",
+      "subject": "fix(berd-call): link Swift bridges built by the swiftbuild system (#430)"
+    },
+    {
+      "sha": "ef7690826ae718ea05982f9993e021bb5df246e2",
+      "date": "2026-10-22T13:19:27-04:00",
+      "subject": "fix(berd-call): label regional Siri voices in the shared catalog (#427)"
+    },
+    {
+      "sha": "690e5d938c8ba152c474814a4f76c401655d6916",
+      "date": "2026-10-22T13:18:36-04:00",
+      "subject": "fix(berd-call): preserve status cue cadence and microphone processing (#425)"
+    },
+    {
+      "sha": "262d37e9ba11c53f631d6ecbf84ac50204c78d7e",
+      "date": "2026-10-22T12:28:10-04:00",
+      "subject": "ci: run Berd Call tests on macOS and Linux (#417)"
+    },
+    {
+      "sha": "b2527af89286a3b32792b76510eea692a8f84233",
+      "date": "2026-10-22T09:18:03-04:00",
+      "subject": "berd-call: stream input activity for typing indicators (#419)"
+    },
+    {
+      "sha": "af01f474d5c013e97c6f8ae1c7fb915246830114",
+      "date": "2026-10-22T08:29:48-04:00",
+      "subject": "berd-call: improve speech playback, Siri voices and Spokesperson controls (#416)"
+    },
+    {
+      "sha": "de9d6b2df1a1d9d36d4efb3abe022e14d57cc2e9",
+      "date": "2026-10-21T15:19:57-04:00",
+      "subject": "berd-call: bias Apple transcription with phrase hints (#418)"
+    },
+    {
+      "sha": "075dd69eb3d0197a1b1396bad2102bf6e4c15c9a",
+      "date": "2026-10-20T22:29:24-04:00",
+      "subject": "berd-call: own status sounds, with a menu bar toggle (#400)"
+    },
+    {
+      "sha": "a6dc41f8a20af46d74ff5b4632ab0eebc3b22568",
+      "date": "2026-10-20T16:59:01-04:00",
+      "subject": "berd-call: hide the Spokesperson toggle without an OpenAI key (#399)"
+    },
+    {
+      "sha": "d1bf7e9322407f6136bae27a138ad1ea770e7961",
+      "date": "2026-10-20T16:56:25-04:00",
+      "subject": "berd-call: show names for code-named Siri voices (#401)"
+    },
+    {
+      "sha": "cf0d93dbc73e5c537db0bba2e3567f38c3a10192",
+      "date": "2026-10-20T16:52:47-04:00",
+      "subject": "berd-call: start the voice session with posix_spawn (#404)"
+    },
+    {
+      "sha": "131016408c5e3eeb32e9f48b7e3acaba92b45291",
+      "date": "2026-10-20T18:58:20Z",
+      "subject": "fix: retain auto routing failure diagnostics (#398)"
+    },
+    {
+      "sha": "629e0af8c1065cb67d2f7dcd04912eece6e8f6a6",
+      "date": "2026-10-20T14:33:12-04:00",
+      "subject": "berd-call: realtime calls for agents: live stream, own voices, and Spokesperson controls (#397)"
+    },
+    {
+      "sha": "58ebbe790d5319bcdb842d035912eb3908b61d3e",
+      "date": "2026-10-20T13:59:03-04:00",
+      "subject": "berd-call: end the call when its worker panics (#395)"
+    },
+    {
+      "sha": "a0ee4a6fdead2c0da2b33985576b6a41270c74ce",
+      "date": "2026-10-19T15:26:00-07:00",
+      "subject": "Show Gemini 4 Argon in model picker (#392)"
+    },
+    {
+      "sha": "62403e46b381eabd34a98e9037620e21218b28c3",
+      "date": "2026-10-19T10:51:51-04:00",
+      "subject": "feat: add configurable auto model modes (#389)"
+    },
+    {
+      "sha": "180fe23c4142752899390c9f5c538df2261e4093",
+      "date": "2026-10-17T18:39:26-07:00",
+      "subject": "Show local chat images and add lightbox actions (#385)"
+    },
+    {
+      "sha": "e25424da3fdfce7c33014cbcc7e33ecc648bfbdd",
+      "date": "2026-10-14T13:54:51-05:00",
+      "subject": "fix(goose): let goose config.yaml DATABRICKS_HOST win over env (#388)"
+    },
+    {
+      "sha": "efb071b48adcf15308b80ba8dae1a58d71452c84",
+      "date": "2026-10-13T06:55:16-04:00",
+      "subject": "feat(notifications): add configurable in-app toast duration (#366)"
+    },
+    {
+      "sha": "e1d2c8e7e8264ce973fe4c5d1d71d253ae850c81",
+      "date": "2026-10-12T20:57:04-04:00",
+      "subject": "BOT-1571: Clarify stable project IDs after project rename (#341)"
+    },
+    {
+      "sha": "174041ca3a26d13bc0d30cc223500c71188006ca",
+      "date": "2026-10-12T11:45:27-07:00",
+      "subject": "distinguish working and unread chats without relying on color (#384)"
+    },
+    {
+      "sha": "d980f5173ad79ac7021db8d1a14d8f058bdfe949",
+      "date": "2026-10-08T14:36:56-04:00",
+      "subject": "fix(connections): migrate Salesforce to Agent Tools (#382)"
+    },
+    {
+      "sha": "6a88cbbd4773d537873bbf12146f85653905d03f",
+      "date": "2026-10-08T10:49:47-07:00",
+      "subject": "fix(berdctl): authenticate local control requests (#272)"
+    },
+    {
+      "sha": "7fb4482f65d2548d39433f35ac89992d5296e306",
+      "date": "2026-10-08T08:37:26-07:00",
+      "subject": "prevent older images from breaking long conversations (#307)"
+    },
+    {
+      "sha": "5bcf29bbf2cf8ffcc01f903b8edfa69390b100ed",
+      "date": "2026-10-07T19:15:48-04:00",
+      "subject": "fix(chat): resolve local home paths before history reload (#379)"
+    },
+    {
+      "sha": "bbdb3113ca1f4d68bcb42059475fcdeb34f4bfae",
+      "date": "2026-10-06T20:22:51Z",
+      "subject": "fix: render bracket equations and prevent duplicate math (#377)"
+    },
+    {
+      "sha": "ed5b8af5d05cf447abbce18185c7779ae3d16583",
+      "date": "2026-10-06T00:16:48-04:00",
+      "subject": "fix(chat): preserve cwd when reloading sessions (#376)"
+    },
+    {
+      "sha": "f23b3501cb6800177f5da534ffa84b1f9b1d3d81",
+      "date": "2026-10-05T17:50:42-04:00",
+      "subject": "chore: bump Goose backend for GPT 6.1 Sol compaction (#378)"
+    },
+    {
+      "sha": "b924b057b424f85492ba04d20588d2855514c0c4",
+      "date": "2026-10-05T15:30:53-04:00",
+      "subject": "feat(berd-call): bundle CLI with Berd and check updates on call start (#360)"
+    },
+    {
+      "sha": "5ac23bef93f59fff8e20df276d7eca8e45cd9d5b",
+      "date": "2026-10-05T14:47:23-04:00",
+      "subject": "feat(voice): configure independent speech endpoints (#359)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "distro/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "distro/config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/auto-model-routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/berd-call-updater-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/berdctl-architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/session-message-search.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/transcript-math-after.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/transcript-math-before.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "goose-backend.lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "justfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "playwright.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/install-berd-call-dev.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/install-berd-call-dev.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/prepare-berdctl-sidecar.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/package-signed-updater.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release/tests/release-scripts.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/test-bundled-updater.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-voice-endpoint-routing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/windows/CI-Windows.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/PROTOCOL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/native/siri_tts_bridge.m",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/native/tests/siri_tts_stream_regression.m",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/audio_output.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/benchmark/stt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/cli_help.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/configured_tts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/crates/berd-call/src/endpoint_url.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/host_control.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/crates/berd-call/src/host_lifetime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/host_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/mac_speech.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/macos_audio_route.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/menu_bar.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/microphone_recovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/openai.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/openai_realtime_protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/openai_spokesperson.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/outbound.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/realtime_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/realtime_host_lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/saved_settings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/session_audio.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/siri.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/crates/berd-call/src/spokesperson_loudness.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/spokesperson_voice_update.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/src/status_sounds.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/crates/berd-call/src/update_guard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/swift/BerdMacSpeechBridge/Sources/BerdMacSpeechBridge/BerdMacSpeechBridge.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/tests/management_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/crates/berd-call/tests/native/render_health.m",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/crates/berd-call/tests/native_render_health.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/tests/session_protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berd-call/tests/synthesis_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/api-surface-feedback.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/api-surface.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/cli-surface-feedback.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/cli-surface.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/src/discovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/crates/berdctl/src/validate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/crates/berdctl/tests/discovery_paths.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/berdctl/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/berdctl/src/discovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/berdctl/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/berdctl/src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/commands/auto_routing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/commands/message_search.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/native_voice.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/openai_audio.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/openai_realtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/openai_voice_credentials.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/commands/openai_voice_endpoints.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/pocket_voice.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/runtime_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/siri_voice.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/updates.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/voice_settings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/deep_links.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/services/acp/goose_serve.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/services/berdctl_discovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/services/goose_config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/services/log_export.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/tauri.macos.conf.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/App.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/AppShell.navigation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/app/AppShell.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/__tests__/commands/commands.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/commands/contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/commands/impl/createProject.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/commands/impl/createSession.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/commands/impl/getContext.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/commands/runtime/projects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/commands/runtime/sessionSend.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/berdctl/commands/runtime/sessionSend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/capabilities/ConversationComposerCapability.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/hooks/__tests__/useChat.compaction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/hooks/__tests__/useChat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/hooks/__tests__/useChatSessionController.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/hooks/__tests__/useResolvedAgentModelPicker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/hooks/useAutoRoutingPicker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/hooks/useChat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/hooks/useChatSessionController.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/hooks/useResolvedAgentModelPicker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/lib/__tests__/contextLimit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/__tests__/resizeImage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/acpSessionMapping.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/attachmentPayloadBudget.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/autoCompact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/lib/autoModelSelection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/lib/autoRoutingDispatch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/lib/autoRoutingDispatch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/lib/autoRoutingPrompt.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/lib/autoRoutingPrompt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/backgroundSend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/lib/contextLimit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/newChat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/newChat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/queuedSessionSend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/resizeImage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/sendCore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/sendCore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/sessionTargetCoordinator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/sessionTargetCoordinator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/lib/sessionTargetTransition.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/stores/__tests__/chatSessionStore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/features/chat/stores/autoModePersistence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/stores/chatSessionStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/transcript/projection/buildTranscriptItems.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/transcript/projection/transcriptProjectionCache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/AgentModelPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/ChatInput.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/ChatInputAttachments.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/ChatInputToolbar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/ChatView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/ClickableImage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/MarkdownImage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/MessageBubble.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/VirtualMessageTimeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/__tests__/AgentModelPicker.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/__tests__/ChatView.mcpApp.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/features/chat/ui/__tests__/MessageBubble.test.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

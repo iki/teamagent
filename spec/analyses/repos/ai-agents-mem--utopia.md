@@ -1,0 +1,207 @@
+# utopia: change evidence
+
+Source: [utopia](https://github.com/deeplethe/utopia) · [Analysis](../../projects/ai-agents-mem--utopia.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `3c55e8be3ad77ec2d9c72444d7456e48f10594d8`; commit date: 2026-10-03T16:50:45+08:00; review date: unknown; observed SHA: `1142792979b61272d92cf322cbfd2f86615f6cb3`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/deeplethe/utopia/compare/3c55e8be3ad77ec2d9c72444d7456e48f10594d8...1142792979b61272d92cf322cbfd2f86615f6cb3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [1142792979b6](https://github.com/deeplethe/utopia/commit/1142792979b61272d92cf322cbfd2f86615f6cb3) 2026-10-27T15:37:10+08:00: A Trino decimal reads as a number, so SUM(amount) is 1234.5 instead of "1234.50" (#1414)
+- [8630da593a72](https://github.com/deeplethe/utopia/commit/8630da593a72ab1380c671413947847f909510fe) 2026-10-27T15:30:33+08:00: A decimal longer than a double keeps every digit, so 12345678901234567.89 is not 1.2345678901234568e16 (#1413)
+- [3fc15f7c62b5](https://github.com/deeplethe/utopia/commit/3fc15f7c62b54493722e58609eb353760103abfd) 2026-10-27T15:24:10+08:00: A Snowflake date or timestamp reads as a date, so 18262 is 2020-01-01 (#1412)
+- [52fb5a618b28](https://github.com/deeplethe/utopia/commit/52fb5a618b28f5c83507689c3d0b771fd761e09e) 2026-10-27T15:14:12+08:00: A quantity read into a larger declared unit keeps its digits, so 350万元 under 亿元 shows 0.035 instead of 0.04 (#1398)
+- [04376a2c212f](https://github.com/deeplethe/utopia/commit/04376a2c212ffafa284b1d67ac6c990fd86c6082) 2026-10-27T15:06:10+08:00: A restore checks its targets and --force before touching the database, and a failed SQL restore rolls back (#1449)
+- [475bb6701d16](https://github.com/deeplethe/utopia/commit/475bb6701d161356fc93b72f8fce7768eae5cac8) 2026-10-27T14:26:56+08:00: A model card's Test button tests only that card (#1447)
+- [5e5b30af43d9](https://github.com/deeplethe/utopia/commit/5e5b30af43d9b8b4943c1349f63cc2520950f3f0) 2026-10-27T04:12:47+08:00: Saving one knowledge base settings card keeps unsaved edits in the other cards (#1452)
+- [6466a5e41b63](https://github.com/deeplethe/utopia/commit/6466a5e41b63c4df430792a7243c2747d62440fc) 2026-10-27T04:06:37+08:00: A search may name a source and an external_id prefix, and both channels recall only those documents before fusion (#1427)
+- [fb0caed87f71](https://github.com/deeplethe/utopia/commit/fb0caed87f7170efb73eb855ed19d80edc59273c) 2026-10-27T04:00:53+08:00: A deployment that refuses reasoning_effort none on tool requests too is not sent none again (#1353) (#1372)
+- [6431a5ad76cb](https://github.com/deeplethe/utopia/commit/6431a5ad76cb7fcac4cbc549fab1e89dda31587a) 2026-10-27T03:54:41+08:00: Prevent GitHub and Jira sync checkpoints from skipping unread tickets (#1359)
+- [c8aedf9206b8](https://github.com/deeplethe/utopia/commit/c8aedf9206b8909c646be299510c54bc5ccf2532) 2026-10-25T15:56:50+08:00: The activity log filter covers the days it names, so 截止日期 2026-10-24 keeps that day's events (#1420)
+- [2eb32b6afd30](https://github.com/deeplethe/utopia/commit/2eb32b6afd30feef5e6ef2f0055f7f535e0e6546) 2026-10-25T15:51:15+08:00: An ontology term named in Chinese takes its key from its English label, so ex:公司 labelled "Company" imports as company (#1419)
+- [ae2449bf9ccb](https://github.com/deeplethe/utopia/commit/ae2449bf9ccb62dcc7278d301f29dda31aea8746) 2026-10-25T15:45:43+08:00: A declared unit with its currency first is read in its magnitude, so "$5 billion" under "USD million" is 5000 (#1417)
+- [22d4ae92f3c5](https://github.com/deeplethe/utopia/commit/22d4ae92f3c5cd3a55ba5c0d4a2392795f325876) 2026-10-25T15:41:17+08:00: A typeset minus sign reads as negative, so "−3.2%" becomes -3.2 instead of no value (#1416)
+- [a321b3f136d8](https://github.com/deeplethe/utopia/commit/a321b3f136d8bb542501caf0271f19e14a40661c) 2026-10-25T15:36:18+08:00: A MySQL YEAR or BIT column reads as its number, so a fiscal year of 2024 is not null (#1410)
+- [f0b31b120ccd](https://github.com/deeplethe/utopia/commit/f0b31b120ccdbaa0a4b28ff98e81c6341cec5b73) 2026-10-25T15:30:12+08:00: Search answers a service with each hit's score, ranks and source, and pages (#1273)
+- [a35edc032e47](https://github.com/deeplethe/utopia/commit/a35edc032e471f2c9992c9542962ea071bcffaed) 2026-10-25T15:25:42+08:00: The library can connect a Google Drive source, and only the person who connected it sees the folder browser (#1388)
+- [5ceb99d066a1](https://github.com/deeplethe/utopia/commit/5ceb99d066a1a1becad893ff2e9e8834eade3613) 2026-10-25T15:21:14+08:00: A person can connect Google Drive, and only they choose which of their folders a base reads (#1386)
+- [fc21f46de641](https://github.com/deeplethe/utopia/commit/fc21f46de641e4b2a53849ed6b234ec52e429e03) 2026-10-25T01:56:58+08:00: fix: use the last opened permitted base for MCP snippets (#1384)
+- [ead46cbafea8](https://github.com/deeplethe/utopia/commit/ead46cbafea89a6d16d4ef0351c0173448bea4d0) 2026-10-25T01:51:30+08:00: A statements document is found by keyword and not embedded, so an embedding model's input limit cannot fail it (#1375) (#1389)
+- [050b0b30db2b](https://github.com/deeplethe/utopia/commit/050b0b30db2b540eddd0a5f54a4a84e8791b1820) 2026-10-25T01:46:01+08:00: list_rules lists ontology axioms with their derivation status, and a derived fact names the axiom's property (#1347) (#1387)
+- [51fbcf7f268f](https://github.com/deeplethe/utopia/commit/51fbcf7f268f219d309d706b9d7b8e8c238a7c71) 2026-10-25T01:40:35+08:00: A correction labels old and new values and includes both in structured changes (#1348) (#1350)
+- [03562d0f66a8](https://github.com/deeplethe/utopia/commit/03562d0f66a864d1881b1a9fe03f53285624a298) 2026-10-24T18:56:32+08:00: A model that refuses max_tokens or a non-default temperature is retried with max_completion_tokens and no temperature, learned once per client (#1394)
+- [d552c30c3b40](https://github.com/deeplethe/utopia/commit/d552c30c3b40e245ea4744761b5bee5e99e89e7a) 2026-10-24T18:50:57+08:00: An extraction reply that arrives after its job is superseded is discarded (#1395)
+- [14bbb76d53e3](https://github.com/deeplethe/utopia/commit/14bbb76d53e3a58419bab9ae16cebee38b66b72d) 2026-10-24T14:05:45+08:00: A written date with an ordinal day is read, so "March 17th, 2020" and "2nd March 2020" become those days instead of no value (#1406)
+- [2dc58cf08e3d](https://github.com/deeplethe/utopia/commit/2dc58cf08e3de239a09592923d8eb04782c3119f) 2026-10-24T14:00:17+08:00: An approximate figure that starts with a capital is still read, so "About 350 people" becomes 350 instead of no value (#1402)
+- [1ba7d6b42385](https://github.com/deeplethe/utopia/commit/1ba7d6b42385249121a38ac07440e45dfd8dfea0) 2026-10-24T13:53:39+08:00: A magnitude word written with a capital scales its number, so "$2.5 Billion" reads as 2.5 billion instead of 2.5 (#1400)
+- [eadbed210f12](https://github.com/deeplethe/utopia/commit/eadbed210f120433bb7f44a0018c5197e990dba0) 2026-10-24T13:49:14+08:00: An interval written from one quarter to another ends in the last month, so Q1 to Q3 runs through September instead of stopping in July (#1404)
+- [b84d9b4eb551](https://github.com/deeplethe/utopia/commit/b84d9b4eb5519266f133f5559f42cd9f65a54d68) 2026-10-24T11:53:13+08:00: A base can start from a scenario pack: the classes, attributes and competency questions one kind of corpus is read for (#1369)
+- [9ec06a3aa3c0](https://github.com/deeplethe/utopia/commit/9ec06a3aa3c0c839f2929cf311a5baebb4c6fd1e) 2026-10-24T11:47:51+08:00: An attribute declared on a class reaches the typed graph: a late entity gets its bound class, a dated statement reads as its period, a text attribute takes a named object, an unreadable value is a drop row (#1370)
+- [292aa66ebc7f](https://github.com/deeplethe/utopia/commit/292aa66ebc7f80a9ef8a4a6d5d03e3527c0756e6) 2026-10-24T11:43:31+08:00: changes and entity_facts take an offset and say how to fetch the next page, and find_entities reports its match count in MCP output (#1396)
+- [00f1172edff8](https://github.com/deeplethe/utopia/commit/00f1172edff8ebec9362eab4524c337c0a0b431a) 2026-10-24T11:38:06+08:00: An identity source's names get no vectors from the backfill, and turning the flag on drops the ones already stored (#1390)
+
+## Changed paths (truncated)
+
+- M: `.env.example`
+- M: `.github/workflows/checks.yml`
+- M: `.roadmap-proposals/backup-restore.md`
+- M: `CONTRIBUTING.md`
+- M: `CONTRIBUTING.zh-CN.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `README.md`
+- M: `README.zh-CN.md`
+- M: `assets/banner.webp`
+- M: `crates/utopia-cli/Cargo.toml`
+- M: `crates/utopia-cli/src/main.rs`
+- A: `crates/utopia-cli/tests/restore.rs`
+- A: `crates/utopia-cli/tests/support/pg_restore.rs`
+- M: `crates/utopia-core/src/config.rs`
+- M: `crates/utopia-core/src/error.rs`
+- M: `crates/utopia-core/src/models.rs`
+- M: `crates/utopia-extract/src/align.rs`
+- M: `crates/utopia-extract/src/lib.rs`
+- M: `crates/utopia-extract/src/open.rs`
+- M: `crates/utopia-extract/src/phrase_align.rs`
+- M: `crates/utopia-extract/src/time.rs`
+- M: `crates/utopia-ingest/src/chunker.rs`
+- M: `crates/utopia-ingest/src/html.rs`
+- M: `crates/utopia-ingest/src/ontology_rdf.rs`
+- M: `crates/utopia-ingest/src/parsers.rs`
+- M: `crates/utopia-ingest/src/table.rs`
+- A: `crates/utopia-ingest/tests/fixtures/calamine/LICENSE-MIT.md`
+- A: `crates/utopia-ingest/tests/fixtures/calamine/date_east_asian.xls`
+- M: `crates/utopia-ingest/tests/pptx_breaks.rs`
+- M: `crates/utopia-ingest/tests/pptx_order.rs`
+- M: `crates/utopia-ingest/tests/pptx_tables.rs`
+- M: `crates/utopia-ingest/tests/spreadsheet_dates.rs`
+- M: `crates/utopia-ingest/tests/spreadsheet_truncation.rs`
+- M: `crates/utopia-llm/Cargo.toml`
+- M: `crates/utopia-llm/src/lib.rs`
+- M: `crates/utopia-reason/Cargo.toml`
+- M: `crates/utopia-reason/src/derive.rs`
+- A: `crates/utopia-reason/src/expressions.rs`
+- M: `crates/utopia-reason/src/lib.rs`
+- M: `crates/utopia-reason/src/rules.rs`
+- M: `crates/utopia-search/src/lib.rs`
+- M: `crates/utopia-server/Cargo.toml`
+- M: `crates/utopia-server/packs/README.md`
+- A: `crates/utopia-server/packs/scenarios/contract-chain.json`
+- A: `crates/utopia-server/packs/scenarios/enterprise-profile.json`
+- A: `crates/utopia-server/packs/scenarios/personnel-records.json`
+- M: `crates/utopia-server/src/adjudication.rs`
+- M: `crates/utopia-server/src/api/admin_routes.rs`
+- M: `crates/utopia-server/src/api/agent.rs`
+- M: `crates/utopia-server/src/api/alerts_routes.rs`
+- M: `crates/utopia-server/src/api/auth_routes.rs`
+- M: `crates/utopia-server/src/api/chat.rs`
+- M: `crates/utopia-server/src/api/chat_context.rs`
+- M: `crates/utopia-server/src/api/chat_empty_reply_tests.rs`
+- M: `crates/utopia-server/src/api/chat_error_code_tests.rs`
+- M: `crates/utopia-server/src/api/chat_finalization.rs`
+- M: `crates/utopia-server/src/api/chat_generation.rs`
+- M: `crates/utopia-server/src/api/chat_graph_citation_tests.rs`
+- M: `crates/utopia-server/src/api/chat_history_tests.rs`
+- M: `crates/utopia-server/src/api/chat_persistence_tests.rs`
+- M: `crates/utopia-server/src/api/chat_registry_tests.rs`
+- M: `crates/utopia-server/src/api/chat_retry_tests.rs`
+- M: `crates/utopia-server/src/api/datasource_routes.rs`
+- M: `crates/utopia-server/src/api/documents_routes.rs`
+- M: `crates/utopia-server/src/api/documents_routes_tests.rs`
+- M: `crates/utopia-server/src/api/events_routes.rs`
+- M: `crates/utopia-server/src/api/export_routes.rs`
+- A: `crates/utopia-server/src/api/google_drive_routes.rs`
+- A: `crates/utopia-server/src/api/google_drive_routes_tests.rs`
+- M: `crates/utopia-server/src/api/graph_routes.rs`
+- A: `crates/utopia-server/src/api/graph_routes_time_tests.rs`
+- M: `crates/utopia-server/src/api/kbs.rs`
+- M: `crates/utopia-server/src/api/mcp_tests.rs`
+- M: `crates/utopia-server/src/api/mod.rs`
+- M: `crates/utopia-server/src/api/oidc_exchange_tests.rs`
+- M: `crates/utopia-server/src/api/oidc_routes.rs`
+- A: `crates/utopia-server/src/api/ontology_regression_routes.rs`
+- A: `crates/utopia-server/src/api/ontology_regression_routes_tests.rs`
+- M: `crates/utopia-server/src/api/ontology_routes.rs`
+- M: `crates/utopia-server/src/api/question_routes.rs`
+- M: `crates/utopia-server/src/api/review_routes.rs`
+- M: `crates/utopia-server/src/api/rig_model.rs`
+- A: `crates/utopia-server/src/api/rule_expression_input.rs`
+- M: `crates/utopia-server/src/api/rule_expression_tests.rs`
+- M: `crates/utopia-server/src/api/rule_routes.rs`
+- M: `crates/utopia-server/src/api/search_routes.rs`
+- M: `crates/utopia-server/src/api/settings_routes.rs`
+- M: `crates/utopia-server/src/api/sources_routes.rs`
+- M: `crates/utopia-server/src/api/sources_statements_tests.rs`
+- A: `crates/utopia-server/src/api/system_admin_tests.rs`
+- A: `crates/utopia-server/src/api/token_read_tests.rs`
+- M: `crates/utopia-server/src/api/token_routes.rs`
+- A: `crates/utopia-server/src/api/token_routes_tests.rs`
+- A: `crates/utopia-server/src/api/token_setup_tests.rs`
+- M: `crates/utopia-server/src/api/tools.rs`
+- M: `crates/utopia-server/src/api/tools_graph.rs`
+- M: `crates/utopia-server/src/auth.rs`
+- D: `crates/utopia-server/src/bootstrap_ontology.rs`
+- M: `crates/utopia-server/src/error.rs`
+- M: `crates/utopia-server/src/extraction.rs`
+- M: `crates/utopia-server/src/extraction_open.rs`
+- A: `crates/utopia-server/src/extraction_open_identity_names_tests.rs`
+- M: `crates/utopia-server/src/extraction_open_known_flow_tests.rs`
+- A: `crates/utopia-server/src/extraction_open_out_of_credit_tests.rs`
+- M: `crates/utopia-server/src/github_issues.rs`
+- A: `crates/utopia-server/src/github_repo.rs`
+- A: `crates/utopia-server/src/github_repo_sync_tests.rs`
+- M: `crates/utopia-server/src/github_sync_tests.rs`
+- A: `crates/utopia-server/src/gitlab_repo.rs`
+- A: `crates/utopia-server/src/gitlab_repo_sync_tests.rs`
+- A: `crates/utopia-server/src/google_drive.rs`
+- A: `crates/utopia-server/src/google_drive_tests.rs`
+- M: `crates/utopia-server/src/ingest_sources.rs`
+- M: `crates/utopia-server/src/jira_issues.rs`
+- M: `crates/utopia-server/src/llm_util.rs`
+- A: `crates/utopia-server/src/llm_util_tests.rs`
+- M: `crates/utopia-server/src/main.rs`
+- A: `crates/utopia-server/src/namesake_scripted_cases.rs`
+- M: `crates/utopia-server/src/notion.rs`
+- A: `crates/utopia-server/src/notion_tests.rs`
+- M: `crates/utopia-server/src/object_storage.rs`
+- M: `crates/utopia-server/src/ontology_agent.rs`
+- M: `crates/utopia-server/src/ontology_agent_tests.rs`
+- M: `crates/utopia-server/src/owl_import.rs`
+- M: `crates/utopia-server/src/phrase_alignment.rs`
+- A: `crates/utopia-server/src/phrase_alignment_declared_tests.rs`
+- M: `crates/utopia-server/src/phrase_alignment_tests.rs`
+- M: `crates/utopia-server/src/pipeline.rs`
+- M: `crates/utopia-server/src/pipeline_tests.rs`
+- D: `crates/utopia-server/src/predicate_match.rs`
+- A: `crates/utopia-server/src/pushed_keys.rs`
+- A: `crates/utopia-server/src/query_engine/clickhouse.rs`
+- M: `crates/utopia-server/src/query_engine/conn.rs`
+- M: `crates/utopia-server/src/query_engine/databricks.rs`
+- M: `crates/utopia-server/src/query_engine/mod.rs`
+- M: `crates/utopia-server/src/query_engine/mysql.rs`
+- M: `crates/utopia-server/src/query_engine/snowflake.rs`
+- M: `crates/utopia-server/src/query_engine/trino.rs`
+- M: `crates/utopia-server/src/rdf.rs`
+- M: `crates/utopia-server/src/readers/ark_ocr.rs`
+- M: `crates/utopia-server/src/retrieval.rs`
+- M: `crates/utopia-server/src/retrieval_tests.rs`
+- A: `crates/utopia-server/src/scenario_packs.rs`
+- A: `crates/utopia-server/src/search_recovery.rs`
+- M: `crates/utopia-server/src/state.rs`
+- A: `crates/utopia-server/src/ticket.rs`
+- A: `crates/utopia-server/src/ticket_golden_tests.rs`
+- M: `crates/utopia-server/src/time_resolution.rs`
+- A: `crates/utopia-server/src/time_resolution_pushed_tests.rs`
+- A: `crates/utopia-server/src/timestamp_checkpoint_tests.rs`
+- M: `crates/utopia-server/src/type_alignment.rs`
+- M: `crates/utopia-server/src/type_alignment_tests.rs`
+- M: `crates/utopia-server/src/webdav.rs`
+- A: `crates/utopia-server/tests/fixtures/github_repo.json`
+- A: `crates/utopia-server/tests/fixtures/gitlab_repo.json`
+- A: `crates/utopia-server/tests/fixtures/ticket_render_golden.json`
+- M: `crates/utopia-store/Cargo.toml`
+- M: `crates/utopia-store/src/access.rs`
+- M: `crates/utopia-store/src/accounts.rs`

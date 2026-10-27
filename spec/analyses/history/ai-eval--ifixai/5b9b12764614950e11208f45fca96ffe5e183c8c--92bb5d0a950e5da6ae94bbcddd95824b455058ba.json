@@ -1,0 +1,984 @@
+{
+  "id": "ai-eval--ifixai",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/ifixai-ai/iFixAi",
+  "report": "spec/projects/ai-eval--ifixai.md",
+  "analyzedSha": "5b9b12764614950e11208f45fca96ffe5e183c8c",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T19:36:20Z",
+  "observedSha": "92bb5d0a950e5da6ae94bbcddd95824b455058ba",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "92bb5d0a950e5da6ae94bbcddd95824b455058ba",
+      "date": "2026-10-23T00:09:19+03:00",
+      "subject": "feat: audit any agent over chat (#363)"
+    },
+    {
+      "sha": "203507caa93ef49edda355825e173878639adcdf",
+      "date": "2026-10-22T21:54:40+03:00",
+      "subject": "feat: judging within your budget (#362)"
+    },
+    {
+      "sha": "c8cb21e92c0bbdd8b0ce9dca88b02c0a3263f0fd",
+      "date": "2026-10-22T21:28:55+03:00",
+      "subject": "fix: keep errored judge samples from unscoring B15/P32 FAILs (#364)"
+    },
+    {
+      "sha": "c6d18aa2941fed8a7c56cf2232955408af5fba51",
+      "date": "2026-10-22T21:26:50+03:00",
+      "subject": "chore: streamline the engine (#361)"
+    },
+    {
+      "sha": "d3188a1e5aa6b4c48a4e9f9be3e1e84328f3ae16",
+      "date": "2026-10-22T21:24:40+03:00",
+      "subject": "fix(b01): keep coverage diagnostics out of the mandatory gate's evidence floor (#353)"
+    },
+    {
+      "sha": "079599dc22a34612456dfc3dcf36ae8b8f85eb86",
+      "date": "2026-10-22T21:24:13+03:00",
+      "subject": "fix(trajectory): report a defective delegation grant once, not once per use (#348)"
+    },
+    {
+      "sha": "60336160f77e7b5b8d0ac161f06dcdcaa915891b",
+      "date": "2026-10-22T21:23:45+03:00",
+      "subject": "fix(http): preserve the completed empty-output contract (#216)"
+    },
+    {
+      "sha": "ef576a9404e3fddb9d84076015e7fc1457b9e70b",
+      "date": "2026-10-22T20:38:52+03:00",
+      "subject": "feat: V11 emotional guilt tripping inspection (#357)"
+    },
+    {
+      "sha": "6180c658a0f3c69a5151ec006ba5dc0746940e6a",
+      "date": "2026-10-22T15:03:09+03:00",
+      "subject": "docs: remove stale full-run default claim (#319)"
+    },
+    {
+      "sha": "63b6e2505c4e443c8f5ce54508ed8ba06d01a42c",
+      "date": "2026-10-22T08:14:49+03:00",
+      "subject": "fix(manifest): canonicalize numeric temperatures before hashing (#323)"
+    },
+    {
+      "sha": "652a04b8c3a46476a3bdc0c4d4419c4cd8e49a24",
+      "date": "2026-10-22T07:54:28+03:00",
+      "subject": "Default MiniMax to M3.1 Flash (#355)"
+    },
+    {
+      "sha": "72cbf6bcedaf342105489f67bc66c2f90636a426",
+      "date": "2026-10-22T07:54:24+03:00",
+      "subject": "feat(windtunnel): measure which inspections actually detect a seeded governance defect (#360)"
+    },
+    {
+      "sha": "d506da222d4818d1c5c7ba941e3ccb2dceba588c",
+      "date": "2026-10-22T07:54:21+03:00",
+      "subject": "ci: run the test suite, and stop the documented counts from drifting (#359)"
+    },
+    {
+      "sha": "3aa2af7cd3ac37a1b21bcbc360eac9d9688d24ff",
+      "date": "2026-10-22T07:54:18+03:00",
+      "subject": "Fix P08 naive timestamp comparison TypeError — ensure _parse_timestamp returns timezone-aware UTC (#325)"
+    },
+    {
+      "sha": "28c0fb5d1b98f69e543fa7b7c2873c390eb07d5a",
+      "date": "2026-10-22T07:54:15+03:00",
+      "subject": "fix: serialize concurrent checkpoint publication (#320)"
+    },
+    {
+      "sha": "f36199799211253eb98436e57f395c81389c88a9",
+      "date": "2026-10-22T07:54:12+03:00",
+      "subject": "fix: keep malformed provider replies scoped to one probe (#247)"
+    },
+    {
+      "sha": "bd0ed65f035f8c29c285e65646455b15029297b7",
+      "date": "2026-10-22T07:54:09+03:00",
+      "subject": "fix(cli): report non-string config keys without a traceback (#354)"
+    },
+    {
+      "sha": "85775855934d86f171ba265771eb26a262f407e0",
+      "date": "2026-10-22T07:54:05+03:00",
+      "subject": "fix(artifact): show the real reason for a withheld score and only claim a cap that applied (#352)"
+    },
+    {
+      "sha": "31b551c2243acde1bd2ff8ac4e5459efafc58a51",
+      "date": "2026-10-22T07:54:02+03:00",
+      "subject": "fix(scoring): keep overall scores on a grade boundary from losing the grade to float error (#351)"
+    },
+    {
+      "sha": "2c8801f33754ee5b51018e95db352e39e83375c6",
+      "date": "2026-10-22T07:53:59+03:00",
+      "subject": "fix(reporting): label ungraded and diagnostic evidence in the Markdown appendix (#350)"
+    },
+    {
+      "sha": "7bfe4e9d69f41c498cc3c8e82045912c8a12fcfa",
+      "date": "2026-10-22T07:53:56+03:00",
+      "subject": "fix(litellm): surface upstream mid-generation aborts instead of grading partial text (#347)"
+    },
+    {
+      "sha": "41f00972a196107b145ad96419eab1e2cf1c6e8c",
+      "date": "2026-10-22T07:53:53+03:00",
+      "subject": "fix(cli): resume full runs when ifixai.yaml saves a default suite (#346)"
+    },
+    {
+      "sha": "510343f11243e2a28443a2c605b64eb92dd6c43f",
+      "date": "2026-10-22T07:53:50+03:00",
+      "subject": "fix: keep errored judge samples from unscoring FAIL majorities in S02/P13/P22/P27 (#344)"
+    },
+    {
+      "sha": "5d8ea14dbcf9b093f383bd154fe74fb6bbe8e38c",
+      "date": "2026-10-22T07:53:47+03:00",
+      "subject": "fix(reporting): export no grade for runs without an overall score (#343)"
+    },
+    {
+      "sha": "354fc88aa6bc5583313cdf0a87f9c37f112fff0f",
+      "date": "2026-10-22T07:53:44+03:00",
+      "subject": "fix(judge): match fallback provider keys case-insensitively (#342)"
+    },
+    {
+      "sha": "84243235f459f39e5297a43065e038baac541deb",
+      "date": "2026-10-22T07:53:40+03:00",
+      "subject": "fix: compute C02/C05/C11/X04/X11 confidence intervals over the scored subset (#341)"
+    },
+    {
+      "sha": "37a2d2489a9433f7b3d9fa9c9be19d0ce0917574",
+      "date": "2026-10-22T07:53:37+03:00",
+      "subject": "fix: keep unselected mandatory minimums out of aborted scoped runs (#340)"
+    },
+    {
+      "sha": "b973fc0b126998612de650e2da2c19625f0d13e7",
+      "date": "2026-10-22T07:53:33+03:00",
+      "subject": "fix(fixtures): normalize legacy data-source classifications in modern fixtures (#339)"
+    },
+    {
+      "sha": "5d62e0ccfa79e6dd3c87797c49bffcbf67c83883",
+      "date": "2026-10-22T07:53:30+03:00",
+      "subject": "fix(gemini): treat rejected API keys as fatal auth errors (#338)"
+    },
+    {
+      "sha": "c92ddd802f8d29d8b58314748949818893e229d9",
+      "date": "2026-10-22T07:53:25+03:00",
+      "subject": "fix(bedrock): honor the AWS region chain instead of pinning us-east-1 (#337)"
+    },
+    {
+      "sha": "434059814178e55e5e71f7f9861c4dd8db5e6761",
+      "date": "2026-10-22T07:53:22+03:00",
+      "subject": "fix(bedrock): treat invalid signatures and expired tokens as auth failures (#336)"
+    },
+    {
+      "sha": "e8681024cde40c248c7146eb109287c92b1a4213",
+      "date": "2026-10-22T07:53:18+03:00",
+      "subject": "fix(setup): don't save a governance path for the mock agent (#335)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "case_studies/aisi-cyber-range-containment/SCORECARD.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "count_fixture_fields.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/audits_chart.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/benchmark_execution.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/button-pro-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/button-pro-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/button-pro.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/button-site-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/button-site-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/button-site.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/hero-audit-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/hero-audit-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/hero-audit-phone.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/ifixai-masthead-dark.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/brand/ifixai-masthead-light.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/downloads_history.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/ifixai-banner.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/ifixai-demo.gif",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/pypi_stats_history.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/runs_history.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/assets/scorecard-screenshot.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/business-policy-lab.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/fixture_authoring.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/get-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/inspections.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/methodology.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/python-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reproducibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scoring.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/testing-your-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/traction.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/trajectory-assurance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/what-we-test.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/wind-tunnel.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/business_policy_lab.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/trajectory_assurance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/_branding.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/cli/author.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/cli/colors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/compare.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/config_file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/init.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/cli/inspection_seeds.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/cli/judge_estimate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/model_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/orchestrator.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/cli/policy_lab.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/cli/pro_offer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/reports.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/scaffold.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/setup_cmd.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/cli/trajectory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/ui.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/cli/validate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/cli/windtunnel.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/core/applicability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/core/concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/core/connection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/core/discovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/core/fixture_loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/core/profile.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/core/refusal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/core/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/core/types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/analytic_judge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/evaluation/analytic_judge_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/atomic_claims.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/checkpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/evaluation/embedding_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/normalizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/evaluation/purpose_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/response_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/evaluation/run_stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/evaluation/schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/examples/ci_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/examples/custom_fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/examples/run_all.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/examples/run_single.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/default/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/default/fixture.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/examples/openclaw_consolidated.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/examples/openclaw_moderate.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/examples/openclaw_strict.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/examples/openwebui.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/fixtures/reference/fixture.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/fixtures/reference/profile.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/fixtures/schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/adversarial_mutator.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/harness/adversarial_rotator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/harness/completeness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/consistency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/injection_corpus.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/prompt_pool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/harness/seed_resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/suites.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/harness/validator.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/harness/version_enforcement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b01_tool_governance/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b01_tool_governance/probes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b01_tool_governance/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b01_tool_governance/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b02_non_llm_layer/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b02_non_llm_layer/probes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b02_non_llm_layer/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b02_non_llm_layer/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b03_auditability/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b04_deterministic_override/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b04_deterministic_override/probes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b04_deterministic_override/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b04_deterministic_override/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b05_source_provenance/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b05_source_provenance/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b06_uncertainty_signalling/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b07_hallucination_rate/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b07_hallucination_rate/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b07_hallucination_rate/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b08_privilege_escalation/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b08_privilege_escalation/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b09_policy_violation/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b09_policy_violation/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "ifixai/inspections/b09_policy_violation/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b10_evaluation_drift/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b11_system_controllability/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b12_prompt_injection/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b12_prompt_injection/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b12_prompt_injection/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b13_plan_traceability/rubric.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b13_plan_traceability/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b14_covert_side_task/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b15_long_horizon_drift/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b16_silent_failure/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b17_fact_consistency/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b18_goal_stability/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b19_context_accuracy/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b19_context_accuracy/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b20_instruction_adherence/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b20_instruction_adherence/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b21_cross_turn_objective/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b22_decision_reproducibility/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b22_decision_reproducibility/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ifixai/inspections/b23_policy_version_trace/definition.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b23_policy_version_trace/probes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ifixai/inspections/b23_policy_version_trace/rubric.yaml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

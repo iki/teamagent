@@ -29,3 +29,7 @@ The inspected state is in-process GenServer state; this excerpt does not establi
 Test process restart during an active task, tracker changes during execution, delayed tick delivery, exhausted account quota and worktree cleanup with uncommitted artifacts. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [channels](../channels.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [symphony](https://github.com/openai/symphony); analyzed commit `be10a1b79df723d6d7612b5651c8522704dafb2e`; commit date 2026-09-15T15:12:07-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--symphony.md).
+<!-- teamagent-analysis:end -->

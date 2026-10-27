@@ -1,0 +1,207 @@
+# paperclip: change evidence
+
+Source: [paperclip](https://github.com/paperclipai/paperclip) · [Analysis](../../projects/ai-agents--paperclip.md) · [agents](../../agents.md), [models](../../models.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `2a8a99e4a5f69aa803b3f10b982f583e75a87042`; commit date: 2026-10-03T12:41:22-05:00; review date: unknown; observed SHA: `50b932a142216331b8d476042b454bc123739c40`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/paperclipai/paperclip/compare/2a8a99e4a5f69aa803b3f10b982f583e75a87042...50b932a142216331b8d476042b454bc123739c40). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [50b932a14221](https://github.com/paperclipai/paperclip/commit/50b932a142216331b8d476042b454bc123739c40) 2026-10-27T12:30:50-05:00: fix(server): require approval before onboarding task creation (#17914)
+- [6e781e0ab20c](https://github.com/paperclipai/paperclip/commit/6e781e0ab20cdaeb6570cebdb5f14dbb8557ba04) 2026-10-27T12:25:01-05:00: fix(connections): preserve removed grants when saving installs (#17906)
+- [f6ba9afab04b](https://github.com/paperclipai/paperclip/commit/f6ba9afab04b17c765a4c7130600fe1c5c7707a6) 2026-10-27T12:05:51-05:00: perf(server): narrow explicit continuation run reads (#17896)
+- [6e5b9794d622](https://github.com/paperclipai/paperclip/commit/6e5b9794d622486fb865176312c4ce50cb3f95a9) 2026-10-27T12:05:30-05:00: perf(github): avoid duplicate webhook body reads (#17894)
+- [7a0c9c23cf96](https://github.com/paperclipai/paperclip/commit/7a0c9c23cf9651dbcace966b2493385c211327a0) 2026-10-27T12:05:01-05:00: perf(github): reduce inherited review-wait transfer (#17893)
+- [8548173fc9ef](https://github.com/paperclipai/paperclip/commit/8548173fc9efdc0fa07644fb92dcc0b6851a95e5) 2026-10-27T11:38:16-05:00: feat(evals): connect hosted Runner costs and traces (#17889)
+- [585b4e6af87a](https://github.com/paperclipai/paperclip/commit/585b4e6af87a7b93f9b5003e24cf4838e28845d7) 2026-10-27T11:34:18-05:00: fix(chat): preserve deferred Retry source batches (#17883)
+- [3be54534c24f](https://github.com/paperclipai/paperclip/commit/3be54534c24fc279533ff421e62a77ad15b72954) 2026-10-27T11:23:09-05:00: perf(server): decode workspace run context keys once (#17898)
+- [475f7df2e75d](https://github.com/paperclipai/paperclip/commit/475f7df2e75d4912b997767fc1b04194b917dd89) 2026-10-27T11:22:25-05:00: perf(server): prefilter chat milestone run candidates (#17892)
+- [a26d217e9467](https://github.com/paperclipai/paperclip/commit/a26d217e94679ce48e625c0680470a5e27ee876f) 2026-10-27T11:21:44-05:00: fix(server): coalesce Cloud membership synchronization writes (#17890)
+- [2f3516f6fdb8](https://github.com/paperclipai/paperclip/commit/2f3516f6fdb83b931fe13a62e4e3ad8617a5bee4) 2026-10-27T11:19:14-05:00: fix(github): authenticate external contributor lookups (#17902)
+- [ac22b1b1f9ce](https://github.com/paperclipai/paperclip/commit/ac22b1b1f9ce7d40feb540188ed4d799521c4e76) 2026-10-27T16:02:43Z: fix: preserve recovered input and task directory continuity (#17878)
+- [eda2a03bfe52](https://github.com/paperclipai/paperclip/commit/eda2a03bfe5213ffef2fbbdefdf572be775f1e14) 2026-10-27T10:25:56-05:00: fix(ui): keep responder avatars visible through comment acknowledgement (#17885)
+- [e71a23c01c8a](https://github.com/paperclipai/paperclip/commit/e71a23c01c8af0e0b4cc5ac983d86886ba324239) 2026-10-27T10:10:45-05:00: fix(ui): animate late task sidebar loading (#17880)
+- [663fe667d66d](https://github.com/paperclipai/paperclip/commit/663fe667d66d3863d0919a8724f1d99500feef0b) 2026-10-27T09:50:50-05:00: fix(recovery): reconstruct missing native workspace obligations (#17877)
+- [b8f6d9b23f90](https://github.com/paperclipai/paperclip/commit/b8f6d9b23f9073979941aff075db558290e99bb2) 2026-10-27T09:40:41-05:00: docs: clarify delegated connection feature and access maps (#17882)
+- [db70c5acd92f](https://github.com/paperclipai/paperclip/commit/db70c5acd92f50fa37fb4f0dea3da0e7685089a2) 2026-10-27T08:45:00-05:00: fix(runner): retain startup Stop and exhaust reconnect recovery (#17812)
+- [bd382eee536f](https://github.com/paperclipai/paperclip/commit/bd382eee536f4ada680072b1cc19100163c3d04a) 2026-10-27T08:21:28-05:00: fix(recovery): explain retained source verification failures (#17773)
+- [0c9d10d695f7](https://github.com/paperclipai/paperclip/commit/0c9d10d695f772a311d596bb43837864be366387) 2026-10-27T08:21:02-05:00: feat(connections): complete saved setup guidance and coverage maps (#17739)
+- [13709b4c7af8](https://github.com/paperclipai/paperclip/commit/13709b4c7af89cadd5f5516ae453778e66af8f10) 2026-10-27T08:20:24-05:00: feat(connections): let agents configure connections within delegated authority (#17737)
+- [0cb3fc7db591](https://github.com/paperclipai/paperclip/commit/0cb3fc7db591ba23e21fbbc70042bc44ec7d6f20) 2026-10-26T21:34:29-07:00: fix(runner): retain ACPX transport failure details (#17837)
+- [94819b6ded75](https://github.com/paperclipai/paperclip/commit/94819b6ded75e2d5a1db942ffd99319ea2702c80) 2026-10-26T21:34:15-07:00: fix(recovery): preserve live heartbeat preparation ownership (#17838)
+- [3edba115764d](https://github.com/paperclipai/paperclip/commit/3edba115764d7cdb178302c691808c6d5ec8a70a) 2026-10-26T21:16:40-07:00: fix(github): stop counting suspended installations as repository access (#17343)
+- [3e7c3ee9a975](https://github.com/paperclipai/paperclip/commit/3e7c3ee9a97538215454054bcaf3891ecefbd44f) 2026-10-26T21:08:49-07:00: fix(ui): fall back to the icon face when an Artifacts V1 preview fails to load (#17260)
+- [4da876ab0b07](https://github.com/paperclipai/paperclip/commit/4da876ab0b07ac8c1a00f7a911586cce4e0fa705) 2026-10-26T21:08:00-07:00: fix(native): always advertise run-scoped readers to provider threads (#16995)
+- [2d72f2c4c0b2](https://github.com/paperclipai/paperclip/commit/2d72f2c4c0b2f119db3b94ea75bd8ee8b70ed959) 2026-10-26T20:55:37-07:00: fix: Serialize ACPX session record saves per record to stop overlapping renames (EPERM on Windows) (#16925)
+- [585d37d4f25e](https://github.com/paperclipai/paperclip/commit/585d37d4f25e26689c60cbb191fdfc5cfd1c60b4) 2026-10-26T20:54:18-07:00: [codex] Preserve AWS secret provider error classification (#10946)
+- [05218571c314](https://github.com/paperclipai/paperclip/commit/05218571c314b172fd221f78fde89296eb46bf90) 2026-10-26T20:53:47-07:00: fix(watchdogs): reject incomplete subtree scans (#15063)
+- [61ecc93033d2](https://github.com/paperclipai/paperclip/commit/61ecc93033d2dc37ac22ef6b36d5080c0b5978f9) 2026-10-26T20:52:47-07:00: fix: count a recovered shutdown interrupt as recovered (#15031)
+- [b46d1ab77bbd](https://github.com/paperclipai/paperclip/commit/b46d1ab77bbd2628c13c69e0d67f2602bb90dc87) 2026-10-26T20:52:20-07:00: feat(ui): request a standalone window so the app can be installed (#13461)
+- [8153061d71f7](https://github.com/paperclipai/paperclip/commit/8153061d71f75b66a531aa393f6c3a6e49493819) 2026-10-26T20:49:07-07:00: fix(pi-local): strip inherited server PAPERCLIP_* env from pi_local processes (#14503)
+- [a02be1efc393](https://github.com/paperclipai/paperclip/commit/a02be1efc393b4d18245df0c1b7603fcc899b8fe) 2026-10-26T20:48:14-07:00: fix(continuation): degrade a stale interruptedRunId hint instead of failing the wake (#14807)
+
+## Changed paths (truncated)
+
+- A: `.agents/skills/create-case/SKILL.md`
+- A: `.agents/skills/create-external-bot-integration/SKILL.md`
+- A: `.agents/skills/create-external-bot-integration/agents/openai.yaml`
+- A: `.agents/skills/create-external-bot-integration/references/conformance-tests.md`
+- A: `.agents/skills/create-external-bot-integration/references/dot-case-study.md`
+- A: `.agents/skills/create-external-bot-integration/references/onboarding-and-prompts.md`
+- A: `.agents/skills/create-external-bot-integration/references/release-contract.md`
+- A: `.agents/skills/create-external-bot-integration/references/runner-architecture.md`
+- A: `.agents/skills/create-external-bot-integration/references/troubleshooting-and-deployment.md`
+- M: `.agents/skills/create-issue-interaction-ui/SKILL.md`
+- A: `.agents/skills/create-runner-adapter/SKILL.md`
+- A: `.agents/skills/create-verification-skill/NOTICE.md`
+- A: `.agents/skills/create-verification-skill/SKILL.md`
+- A: `.agents/skills/create-verification-skill/agents/openai.yaml`
+- A: `.agents/skills/create-verification-skill/references/feature-map-example/README.md`
+- A: `.agents/skills/create-verification-skill/references/feature-map-example/create-note.md`
+- A: `.agents/skills/create-verification-skill/references/feature-map-example/search.md`
+- M: `.agents/skills/diagnose-why-work-stopped/SKILL.md`
+- A: `.agents/skills/directions-lab/SKILL.md`
+- A: `.agents/skills/directions-lab/agents/openai.yaml`
+- A: `.agents/skills/directions-lab/assets/PRECEDENT`
+- A: `.agents/skills/directions-lab/assets/motion/v1-mvp-motion.css`
+- A: `.agents/skills/directions-lab/assets/templates/api-routes.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/api-stub.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/build-info.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/define-lab.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/direction/MotionSpecimen.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/direction/SlotBody.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/direction/index.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/direction/tokens.css.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/entry.html.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/fixtures.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/frames/AppShell.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/frames/Board.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/frames/LabToolbar.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/frames/Slot.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/frames/SurfaceFrame.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/frames/SurfaceView.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/kit.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/lab-state.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/lab.css.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/launch-entries.json.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/main.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/providers.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/registry.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/shot.cjs.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/stories/compare.stories.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/tests/api-stub.test.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/tests/lab-state.test.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/tests/motion-contract.test.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/tests/registry.test.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/tests/today.test.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/today/SlotBody.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/today/adapters.ts.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/today/index.tsx.mjs`
+- A: `.agents/skills/directions-lab/assets/templates/vite.config.mjs.mjs`
+- A: `.agents/skills/directions-lab/evals/asks-how-many-directions/case.yaml`
+- A: `.agents/skills/directions-lab/evals/asks-how-many-directions/graders/01-expected-output.md`
+- A: `.agents/skills/directions-lab/evals/asks-how-many-directions/prompt.md`
+- A: `.agents/skills/directions-lab/evals/multi-surface-three-directions/case.yaml`
+- A: `.agents/skills/directions-lab/evals/multi-surface-three-directions/graders/01-expected-output.md`
+- A: `.agents/skills/directions-lab/evals/multi-surface-three-directions/prompt.md`
+- A: `.agents/skills/directions-lab/evals/single-surface-two-directions/case.yaml`
+- A: `.agents/skills/directions-lab/evals/single-surface-two-directions/graders/01-expected-output.md`
+- A: `.agents/skills/directions-lab/evals/single-surface-two-directions/prompt.md`
+- A: `.agents/skills/directions-lab/references/canonical-directory.md`
+- A: `.agents/skills/directions-lab/references/design-proposals-storybook.md`
+- A: `.agents/skills/directions-lab/references/drawing-phases.md`
+- A: `.agents/skills/directions-lab/references/generator.md`
+- A: `.agents/skills/directions-lab/references/lab-anatomy.md`
+- A: `.agents/skills/directions-lab/references/lifecycle.md`
+- A: `.agents/skills/directions-lab/references/motion-spec.md`
+- A: `.agents/skills/directions-lab/references/questions-and-defaults.md`
+- A: `.agents/skills/directions-lab/references/repo-gates.md`
+- A: `.agents/skills/directions-lab/references/today-fixtures-and-build.md`
+- A: `.agents/skills/directions-lab/scripts/lib/args.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/capabilities.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/check.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/context.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/modes.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/ports.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/registry-edit.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/render.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/shared-files.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/verify.mjs`
+- A: `.agents/skills/directions-lab/scripts/lib/write.mjs`
+- A: `.agents/skills/directions-lab/scripts/scaffold.mjs`
+- A: `.agents/skills/directions-lab/scripts/scaffold.test.mjs`
+- A: `.agents/skills/fix-failed-paperclip-run/SKILL.md`
+- A: `.agents/skills/fix-failed-paperclip-run/references/failure-patterns.md`
+- A: `.agents/skills/fix-slow-queries/SKILL.md`
+- A: `.agents/skills/fix-slow-queries/agents/openai.yaml`
+- A: `.agents/skills/fix-slow-queries/references/cloud-discovery.md`
+- A: `.agents/skills/fix-slow-queries/references/local-proof.md`
+- A: `.agents/skills/honeycomb-tracing/SKILL.md`
+- A: `.agents/skills/honeycomb-tracing/agents/openai.yaml`
+- A: `.agents/skills/honeycomb-tracing/references/ci.md`
+- A: `.agents/skills/honeycomb-tracing/references/runtime.md`
+- A: `.agents/skills/honeycomb-tracing/references/trace-design.md`
+- A: `.agents/skills/maintain-storybook/SKILL.md`
+- A: `.agents/skills/maintain-storybook/agents/openai.yaml`
+- A: `.agents/skills/maintain-verification-skill/NOTICE.md`
+- A: `.agents/skills/maintain-verification-skill/SKILL.md`
+- A: `.agents/skills/maintain-verification-skill/agents/openai.yaml`
+- A: `.agents/skills/review-storybook/SKILL.md`
+- A: `.agents/skills/review-storybook/agents/openai.yaml`
+- A: `.agents/skills/setup-code-maintenance-bot/SKILL.md`
+- A: `.agents/skills/setup-code-maintenance-bot/agents/openai.yaml`
+- A: `.agents/skills/setup-code-maintenance-bot/references/paperclip-api.md`
+- A: `.agents/skills/setup-code-maintenance-bot/references/run-instructions.md`
+- A: `.agents/skills/test-audit/CAMPAIGN.md`
+- A: `.agents/skills/test-audit/NOTICE.md`
+- A: `.agents/skills/test-audit/SKILL.md`
+- A: `.agents/skills/test-audit/agents/openai.yaml`
+- A: `.agents/skills/test-audit/references/audit.md`
+- A: `.agents/skills/test-audit/references/paperclip.md`
+- A: `.agents/skills/test-audit/references/validation.md`
+- A: `.agents/skills/verify-paperclip/SKILL.md`
+- A: `.agents/skills/verify-paperclip/references/hosted-qa-accounts.md`
+- A: `.agents/skills/verify-paperclip/references/npm-install.md`
+- A: `.agents/skills/verify-paperclip/references/verification-targets.md`
+- A: `.agents/skills/verify-paperclip/scripts/doctor.py`
+- A: `.agents/skills/verify-paperclip/scripts/launch.py`
+- A: `.agents/skills/verify-paperclip/scripts/onboarding-smoke.mjs`
+- A: `.agents/skills/verify-paperclip/scripts/stop.py`
+- A: `.agents/skills/verify-paperclip/tests/test_ownership.py`
+- M: `.claude/launch.json`
+- A: `.claude/skills/directions-lab`
+- M: `.dockerignore`
+- M: `.env.example`
+- M: `.env.runner-e2e.example`
+- M: `.github/CODEOWNERS`
+- A: `.github/actions/setup-ci-dependencies/action.yml`
+- M: `.github/docker-context-checks.Dockerfile`
+- A: `.github/infra/runner-e2e-private-history.yml`
+- A: `.github/scripts/tests/ci-dependency-cache.test.mjs`
+- A: `.github/scripts/tests/ci-profile.test.mjs`
+- A: `.github/scripts/tests/ci-routing.test.mjs`
+- M: `.github/scripts/tests/release-runner-cache.test.mjs`
+- A: `.github/workflows/ci-profile.yml`
+- A: `.github/workflows/ci-routing.yml`
+- A: `.github/workflows/ci-work-benchmark.yml`
+- M: `.github/workflows/cloud-migrator-artifacts.yml`
+- M: `.github/workflows/docker-runner-check.yml`
+- M: `.github/workflows/docker.yml`
+- M: `.github/workflows/pr-trusted.yml`
+- M: `.github/workflows/pr.yml`
+- M: `.github/workflows/release-smoke.yml`
+- M: `.github/workflows/release-verify.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/runner-full-stack-e2e.yml`
+- M: `.github/workflows/runner-live-evals.yml`
+- M: `.github/workflows/runner-protocol-live-evals.yml`
+- M: `.github/workflows/storybook-visual.yml`
+- M: `.gitignore`
+- A: `.greptile/README.md`
+- A: `.greptile/config.json`
+- A: `.greptile/files.json`
+- A: `.greptile/rules.md`
+- M: `AGENTS.md`

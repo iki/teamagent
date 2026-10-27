@@ -29,3 +29,7 @@ Default restart counts are operational choices, not experimentally justified uni
 Inject crashes, identical repeated failures, noisy no-progress logs and long silent valid work. Confirm restart state survives supervisor restart and that intervention or cooldown has a recorded reason. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [evolution](../evolution.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `802b6134df87b1d7519df63ed44ad63e1570a5c5`; commit date 2026-10-03T13:44:32-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,984 @@
+{
+  "id": "ai-security--codex-security",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/openai/codex-security",
+  "report": "spec/projects/ai-security--codex-security.md",
+  "analyzedSha": "775e48ffbf682075e60303eb019131aa2390c3b2",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:30:46-07:00",
+  "observedSha": "fd01ea565cb23c834f99a815043ab1c4f3b76f02",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "fd01ea565cb23c834f99a815043ab1c4f3b76f02",
+      "date": "2026-10-27T20:29:37+05:30",
+      "subject": "test(release): remove duplicate label fixtures and shell text assertions (#2073)"
+    },
+    {
+      "sha": "6b2d0416e8cb86176224a6a1adc7ccb1dfb31239",
+      "date": "2026-10-27T20:22:33+05:30",
+      "subject": "docs(artifacts): clarify recovery for historical scan entries (#2027)"
+    },
+    {
+      "sha": "e2e8c0cb193cd735888521bb87569013922ff58a",
+      "date": "2026-10-27T20:06:57+05:30",
+      "subject": "test(sdk): check Snyk remote aliases before publication (#2076)"
+    },
+    {
+      "sha": "08763e603b9b8bd03c791bf7142dbc15bc970c9b",
+      "date": "2026-10-27T20:06:45+05:30",
+      "subject": "test(sdk): exercise external import flag values at their parser (#2075)"
+    },
+    {
+      "sha": "7766603642d579db3d36357fca3dcd0095f04275",
+      "date": "2026-10-27T20:06:18+05:30",
+      "subject": "test(sdk): share the build and batch script import checks (#2071)"
+    },
+    {
+      "sha": "d3593955b4173ff7ee7cc9e45d7f336bca674f60",
+      "date": "2026-10-27T20:06:08+05:30",
+      "subject": "ci: skip container builds for SDK test-only pull requests (#2069)"
+    },
+    {
+      "sha": "7a6fa3f79c38fccc01058730b147f1a8d3c4fbbb",
+      "date": "2026-10-27T20:05:59+05:30",
+      "subject": "test(sdk): use a smaller plugin for credential tests (#2057)"
+    },
+    {
+      "sha": "fc97f7b831c92d0b8b4987277389c1ae882d3bd0",
+      "date": "2026-10-27T20:05:42+05:30",
+      "subject": "fix(mcp): read completed scan artifacts after checkout removal (#2050)"
+    },
+    {
+      "sha": "17826aa594bd8227f3d339478960bbade38cf343",
+      "date": "2026-10-27T20:05:32+05:30",
+      "subject": "fix(cli): resume deep scans after clearing their instructions (#2049)"
+    },
+    {
+      "sha": "2d6355e7b1be78f3cb20f1866108574d92820681",
+      "date": "2026-10-27T20:00:58+05:30",
+      "subject": "ci: exclude the portable checker test from the native cache key (#2055)"
+    },
+    {
+      "sha": "e579b17e0124a0474d8c90a11ced872bf0d59eb0",
+      "date": "2026-10-27T20:00:25+05:30",
+      "subject": "test(sdk): use a local model catalog in native CLI tests (#2077)"
+    },
+    {
+      "sha": "a4107f2eee5e24480e80cd28608deda5ec59ae5b",
+      "date": "2026-10-27T19:59:08+05:30",
+      "subject": "fix(plugin): request fields when reading back GitHub issues (#2048)"
+    },
+    {
+      "sha": "d86c508ecad05111d7264ad4bd84a9e387981398",
+      "date": "2026-10-27T15:27:50+01:00",
+      "subject": "test(mcp): reduce deterministic reducer paging payloads (#2056)"
+    },
+    {
+      "sha": "8ee9fd329dcb78b80b3c81fafbdd812f159a1a78",
+      "date": "2026-10-27T15:25:40+01:00",
+      "subject": "test(ci): exercise gate output in two subprocesses (#2070)"
+    },
+    {
+      "sha": "9fe805efa92805812781bb820fe5b956d4728d83",
+      "date": "2026-10-27T15:24:25+01:00",
+      "subject": "test(evals): drop redundant triage instruction wording checks (#2074)"
+    },
+    {
+      "sha": "cf1e47740392ba4acd827b2487bc9884cdba044d",
+      "date": "2026-10-27T14:54:40+01:00",
+      "subject": "chore(deps): update @inquirer/prompts to 8.7.4 in the SDK (#2072)"
+    },
+    {
+      "sha": "32e9d3ee369a3fdf1625d1dc1a7e370b15fd1edd",
+      "date": "2026-10-27T10:25:19+05:30",
+      "subject": "fix(patch): stop source excerpts at the end of the file (#2015)"
+    },
+    {
+      "sha": "2d2e86680d54df9839f1c5b472a8e40e8b32390b",
+      "date": "2026-10-27T07:53:09+05:30",
+      "subject": "chore(deps): bump fast-uri to 3.1.9 in the triage eval (#2063)"
+    },
+    {
+      "sha": "5b915ea23949a6875a4a40d2485da03d52454598",
+      "date": "2026-10-27T07:43:47+05:30",
+      "subject": "chore(deps): bump fast-uri to 3.1.9 in the MCP app (#2062)"
+    },
+    {
+      "sha": "a4ba26171a8b6b773f313cc3345c92a5313246e9",
+      "date": "2026-10-27T07:06:43+05:30",
+      "subject": "chore(deps): bump fast-uri to 3.1.9 in the SDK (#2061)"
+    },
+    {
+      "sha": "4620e04fde4d544eaa520a7122e0a1e18838374e",
+      "date": "2026-10-27T06:40:51+05:30",
+      "subject": "fix(deps): bump fast-uri to 3.1.9 in the Action runtime (#1914)"
+    },
+    {
+      "sha": "cd5f80f8ba829389b3e0532be12cfe30a61fc48e",
+      "date": "2026-10-27T00:37:50+05:30",
+      "subject": "test(sdk): skip a duplicate Windows MCP launcher case (#2052)"
+    },
+    {
+      "sha": "3a98b5533e16ea47394a465891911a84fbf297bc",
+      "date": "2026-10-26T23:18:49+05:30",
+      "subject": "test(sdk): check the exact MCP root reported by the server (#2047)"
+    },
+    {
+      "sha": "621bad47e69dc41880320259f6fa47bf293c097c",
+      "date": "2026-10-26T17:19:54Z",
+      "subject": "refactor!: simplify scan completion and recovery (#1762)"
+    },
+    {
+      "sha": "424693807a1940d37c921bc4797ae3aff47a25a5",
+      "date": "2026-10-26T22:07:52+05:30",
+      "subject": "test(sdk): remove duplicate fixtures and process runs (#2045)"
+    },
+    {
+      "sha": "f546ba6bc7ecbe25bae00686e10249d5a50e335a",
+      "date": "2026-10-26T22:07:25+05:30",
+      "subject": "test(plugin): consolidate recovery and worker fixtures (#2044)"
+    },
+    {
+      "sha": "b3e9d40f5a3d5898007fdca2f7af26512b4f991f",
+      "date": "2026-10-26T22:06:56+05:30",
+      "subject": "test(tooling): reduce repeated Action and eval setup (#2040)"
+    },
+    {
+      "sha": "dd57e189ffe8c05f66eb78bb1be0cf57f10717bb",
+      "date": "2026-10-26T20:32:12+05:30",
+      "subject": "test(sdk): allow Windows npm fixture installs to finish (#2043)"
+    },
+    {
+      "sha": "9836313403d882646c3e539ed032b60c020c0afc",
+      "date": "2026-10-26T20:16:39+05:30",
+      "subject": "chore(deps): update ip-address in triage evals (#2034)"
+    },
+    {
+      "sha": "dab067b6ac4805bd5ab17997daacf1c52a3b59eb",
+      "date": "2026-10-26T20:11:46+05:30",
+      "subject": "ci: skip the native bundle runner on verified cache hits (#2042)"
+    },
+    {
+      "sha": "b9bf644497b26bf8db838396b999427a8d043445",
+      "date": "2026-10-26T20:09:16+05:30",
+      "subject": "test(sdk): query severity fixtures in Bun (#2041)"
+    },
+    {
+      "sha": "bb599dc8b41d7cecd9c280265c748bb72a361322",
+      "date": "2026-10-26T19:39:48+05:30",
+      "subject": "test(sdk): simplify saved-scan and credential fixtures (#2039)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".devcontainer/devcontainer-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/check-action-candidate/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/download-native/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/native-cache-key/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/native-cache-key/key.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-tools/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-notes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-pr-state.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/check-ci-results.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check_plugin_source_compatibility.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/install-ripgrep.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/invoice-desk-source.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/invoice-desk-target.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/invoice-desk-target.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/release-npm.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/release-progress.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/require_native_python_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/select-ci-checks.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/test-ci-selection.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/test-release-guide.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/test-verify-pr-source.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/test_check_plugin_source_compatibility.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/test_release_progress.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/test_require_native_python_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/verify-pr-source.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/action-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/clean-merged-pr-caches.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/container-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/container-validate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/invoice-desk-scan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/invoice-desk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/native-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/native-musl.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/native-unix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/native-windows.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-github-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-release-cut.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-release-labels.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-release-pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/published-install-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-progress.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/validate-pr-title.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/workflow-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/zizmor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ona/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ona/automations.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ona/devcontainer-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ona/devcontainer.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".prettierrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "compose.findings.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "compose.runner.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docker/fixtures/mock-embeddings.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docker/fixtures/mock-reviews.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/verify-container-compose.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/verify-container-release-version.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-workflows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/bedrock.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/plugin-connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/project-configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/endor.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/semgrep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/snyk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/deep-reducer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "R064",
+      "path": "evals/deep-reducer/run.mts",
+      "previousPath": "evals/deep-reducer/run.mjs"
+    },
+    {
+      "status": "M",
+      "path": "evals/secret-discovery/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "R051",
+      "path": "evals/secret-discovery/fixtures.mts",
+      "previousPath": "evals/secret-discovery/fixtures.mjs"
+    },
+    {
+      "status": "R071",
+      "path": "evals/secret-discovery/grade.mts",
+      "previousPath": "evals/secret-discovery/grade.mjs"
+    },
+    {
+      "status": "R080",
+      "path": "evals/secret-discovery/harness.mts",
+      "previousPath": "evals/secret-discovery/harness.mjs"
+    },
+    {
+      "status": "R079",
+      "path": "evals/secret-discovery/run.mts",
+      "previousPath": "evals/secret-discovery/run.mjs"
+    },
+    {
+      "status": "D",
+      "path": "evals/secret-discovery/runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/secret-discovery/runtime.mts",
+      "previousPath": null
+    },
+    {
+      "status": "R070",
+      "path": "evals/secret-discovery/test_discovery.mts",
+      "previousPath": "evals/secret-discovery/test_discovery.mjs"
+    },
+    {
+      "status": "R074",
+      "path": "evals/secret-discovery/test_runtime.mts",
+      "previousPath": "evals/secret-discovery/test_runtime.mjs"
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/experiment.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/experiment.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/fixtures.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/grade.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/production.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/run.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/summary.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/test_experiment.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/test_grading.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/test_production.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/standard-time-budget/test_summary.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/assertions/calibration-evidence.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/assertions/calibration-evidence.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/assertions/github-rest-intake.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/assertions/github-rest-intake.mts",
+      "previousPath": null
+    },
+    {
+      "status": "R062",
+      "path": "evals/triage-finding/assertions/missing-input.mts",
+      "previousPath": "evals/triage-finding/assertions/missing-input.js"
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/assertions/output.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/assertions/ticket-intake.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/assertions/ticket-intake.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/assertions/triage-io.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/assertions/triage-io.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/datasets/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/fixtures/policy-repo/SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/fixtures/policy-repo/bin/run-command.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/fixtures/policy-repo/launch-service.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/fixtures/policy-repo/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/fixtures/policy-repo/service/SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/fixtures/policy-repo/service/server.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/pnpm-workspace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/promptfooconfig.calibration-smoke.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/promptfooconfig.calibration.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/promptfooconfig.sastbench.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/promptfooconfig.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/prompts/triage-request.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/providers/calibration.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/providers/sastbench.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/providers/triage.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/sastbench/DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/sastbench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/assertions/sastbench-metrics.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/sastbench/assertions/sastbench-metrics.mts",
+      "previousPath": null
+    },
+    {
+      "status": "R055",
+      "path": "evals/triage-finding/sastbench/assertions/sastbench-verdict.mts",
+      "previousPath": "evals/triage-finding/sastbench/assertions/sastbench-verdict.js"
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/sastbench/promptfooconfig.sastbench-sample.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/triage-finding/sastbench/promptfooconfig.sastbench.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/generate-sastbench-tests.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/hydrate-sastbench-repos.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/sastbench/scripts/hydrate-sastbench-repos.mts",
+      "previousPath": null
+    },
+    {
+      "status": "R051",
+      "path": "evals/triage-finding/sastbench/scripts/install-sastbench.mts",
+      "previousPath": "evals/triage-finding/sastbench/scripts/install-sastbench.js"
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/run-sastbench-promptfoo.js",
+      "previousPath": null
+    },
+    {
+      "status": "R051",
+      "path": "evals/triage-finding/sastbench/scripts/sastbench-lib.mts",
+      "previousPath": "evals/triage-finding/sastbench/scripts/sastbench-lib.js"
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/sastbench-result.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/sastbench/scripts/sastbench-result.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/test-hydrate-sastbench-repos.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/test-install-sastbench.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/sastbench/scripts/test-install-sastbench.mts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/test-promptfoo-native-harness.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/sastbench/scripts/test-promptfoo-native-harness.mts",
+      "previousPath": null
+    },
+    {
+      "status": "R060",
+      "path": "evals/triage-finding/sastbench/scripts/test-sastbench-lib.mts",
+      "previousPath": "evals/triage-finding/sastbench/scripts/test-sastbench-lib.js"
+    },
+    {
+      "status": "D",
+      "path": "evals/triage-finding/sastbench/scripts/test-sastbench-result.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/triage-finding/sastbench/scripts/test-sastbench-result.mts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -23,3 +23,7 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [litho-deepwiki-rs](https://github.com/sopaco/deepwiki-rs); analyzed commit `27dbd3ed74535213e7c40be8abcdcec4145bebf2`; commit date 2026-09-14T20:25:42+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--litho-deepwiki-rs.md).
+<!-- teamagent-analysis:end -->

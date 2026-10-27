@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--agent-beacon",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/Asymptote-Labs/agent-beacon",
+  "report": "spec/projects/ai-agents-mem--agent-beacon.md",
+  "analyzedSha": "5937da1cd812660d256c367374b9752316f51cbc",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T22:06:57-07:00",
+  "observedSha": "473c18434d7336cccb34ef9ca3694339088bbbc8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "473c18434d7336cccb34ef9ca3694339088bbbc8",
+      "date": "2026-10-23T17:08:12-07:00",
+      "subject": "fix(sync): stop every session sync before rotation discards its own output (#1011)"
+    },
+    {
+      "sha": "b13760df72fbb0c5f8bf658f495c2304d3735072",
+      "date": "2026-10-23T14:45:36-07:00",
+      "subject": "feat(handoff): launch resumed sessions in detached terminals (#1010)"
+    },
+    {
+      "sha": "b2fe72bc06954b99d949cda0b4c35833eecd6baa",
+      "date": "2026-10-23T19:40:40+02:00",
+      "subject": "fix(browser-extension): capture gzip Claude prompts and stop ChatGPT answer duplication (#1012)"
+    },
+    {
+      "sha": "a1e3f7bfcd1ffc828aa455aaa7d3f564b8d0af61",
+      "date": "2026-10-23T13:30:47-04:00",
+      "subject": "fix(browser-extension): capture gzip Claude prompts and stop ChatGPT answer duplication"
+    },
+    {
+      "sha": "2f5b86aabc10129588ff5596497a50200a116a2e",
+      "date": "2026-10-23T14:53:38Z",
+      "subject": "fix(handoff): cancel unconfirmed detached launches and carry store paths"
+    },
+    {
+      "sha": "fad25e9c7c1491e74ca207ef7ef097066ed46394",
+      "date": "2026-10-23T14:34:36+05:30",
+      "subject": "fix(sync): stop every session sync before rotation discards its own output"
+    },
+    {
+      "sha": "4e26ee4641f9d4aa88807bc85dedf8c68bbea4c2",
+      "date": "2026-10-22T21:37:10-04:00",
+      "subject": "feat(skills): add session handoff workflow"
+    },
+    {
+      "sha": "62a72232dedfd7b1f1421537e4ab48e81c534607",
+      "date": "2026-10-22T21:32:46-04:00",
+      "subject": "feat(handoff): launch resumed sessions in detached terminals"
+    },
+    {
+      "sha": "cfbd7b1d721664e3b1b5ca2fca5eac4327532c07",
+      "date": "2026-10-22T16:43:17-04:00",
+      "subject": "test: cut redundant tests and remove real waits across suites (#1008)"
+    },
+    {
+      "sha": "45895abae45c7dab35e6b6685b1c974676a3dea3",
+      "date": "2026-10-22T15:51:53-04:00",
+      "subject": "release(sdk): @asymptote/sdk 0.2.0 (#1009)"
+    },
+    {
+      "sha": "0f5fa8842f9dd630ba6f2678e01cd320996296b4",
+      "date": "2026-10-22T14:01:13-04:00",
+      "subject": "docs(readme): bust GitHub's cached trending badge (#1007)"
+    },
+    {
+      "sha": "f1818db2563b83cca6e767577d8ce18b222f0487",
+      "date": "2026-10-22T11:00:50-07:00",
+      "subject": "docs(readme): bust GitHub's cached trending badge"
+    },
+    {
+      "sha": "dfa9daa1397ef84fe6fd7cfbc9b365d52919f05b",
+      "date": "2026-10-22T13:49:35-04:00",
+      "subject": "docs(readme): update GitHub trending badge markup (#1006)"
+    },
+    {
+      "sha": "dd1aa6cbdf60992d204f8a948770da15d608a10e",
+      "date": "2026-10-22T10:46:57-07:00",
+      "subject": "docs(readme): update GitHub trending badge markup"
+    },
+    {
+      "sha": "f8177a6814f087fb815e7b7a60ac4295720f6850",
+      "date": "2026-10-22T13:17:07-04:00",
+      "subject": "docs(changelog): record v1.3.46 and the v1.3.45 heading (#1005)"
+    },
+    {
+      "sha": "e92e1e2c5f9fa02a83f6bd517287dc152a8dded3",
+      "date": "2026-10-22T12:45:32-04:00",
+      "subject": "docs(changelog): entries for the PRs merged together on 2026-10-22 (#1004)"
+    },
+    {
+      "sha": "3e1b32f5fa379d0a7a7dc8f397cc0a77cb3fca4d",
+      "date": "2026-10-22T12:29:59-04:00",
+      "subject": "refactor(sessionsync): share the session collectors' sync machinery (#978)"
+    },
+    {
+      "sha": "373cf0620d6867dc8668afb6433ddefc8052e625",
+      "date": "2026-10-22T12:19:57-04:00",
+      "subject": "fix: migrate existing forwarder log paths on upgrade (#916)"
+    },
+    {
+      "sha": "20e82bfed460b9ad82dae47b53e2c8bbb02eeb03",
+      "date": "2026-10-22T12:16:57-04:00",
+      "subject": "fix(memory): keep review state transitions atomic (#985)"
+    },
+    {
+      "sha": "88479497caffa5a8ba4bcd0162e699083c88de42",
+      "date": "2026-10-22T12:15:21-04:00",
+      "subject": "fix(browser-extension): scrub emails in linear time (#1003)"
+    },
+    {
+      "sha": "72b3d7196e61f85752c172d6f8b56be309dc79e1",
+      "date": "2026-10-22T12:07:57-04:00",
+      "subject": "fix(hooks): retain finalized assistant answers from Pi sessions (#984)"
+    },
+    {
+      "sha": "6926f03afc1122a202026d533b0c5f46b3550b87",
+      "date": "2026-10-22T12:05:48-04:00",
+      "subject": "opencode, hermes: read OpenCode 2.x sessions and older Hermes state.db files (#952)"
+    },
+    {
+      "sha": "2ddd5ad4d9e5cdffd4a5a301d13e738493df1ee5",
+      "date": "2026-10-22T12:05:09-04:00",
+      "subject": "fix(exporter): preserve MCP description reversions within batches (#942)"
+    },
+    {
+      "sha": "825ee7ad8c5efcadcc3289e856e890f34b8a7946",
+      "date": "2026-10-22T12:00:11-04:00",
+      "subject": "fix(sdk): restore owned global tracers across restarts (#981)"
+    },
+    {
+      "sha": "1978b3bc697a89f362e87d12bd527994bee92ba5",
+      "date": "2026-10-22T11:56:21-04:00",
+      "subject": "fix(browser): retain canonical answer content and rebuild history (#994)"
+    },
+    {
+      "sha": "1714f62cdb4dca93d98a4a6104576c4f2ab4c42f",
+      "date": "2026-10-22T11:55:15-04:00",
+      "subject": "fix: preserve machine evidence during uninstall verification (#989)"
+    },
+    {
+      "sha": "121030c6d15d1e9debb15ade62cf38b920c1f9e8",
+      "date": "2026-10-22T11:54:53-04:00",
+      "subject": "fix(sandbox): reject unknown scenario fields before dispatch (#979)"
+    },
+    {
+      "sha": "9f9dad81fafe3eead7a7cd91ab75a1760e4f991b",
+      "date": "2026-10-22T11:54:44-04:00",
+      "subject": "fix(memory): preserve the true tail of long evaluation traces (#980)"
+    },
+    {
+      "sha": "fe744cb0fe75998ae36efdd89d04e57a917a525f",
+      "date": "2026-10-22T11:54:00-04:00",
+      "subject": "fix(dashboard): refresh snapshots when lenses reopen (#995)"
+    },
+    {
+      "sha": "a55f00af1a05ff187b8ae9a186a2a2900cbbe16c",
+      "date": "2026-10-22T11:52:14-04:00",
+      "subject": "fix(dashboard): show inventory read failures and recovery status (#947)"
+    },
+    {
+      "sha": "96188fde81d6c1e6e83c6b37d3c17d1bf69e7ec0",
+      "date": "2026-10-22T11:50:08-04:00",
+      "subject": "dsh: install hooks only where dsh can load the hook bridge (#954)"
+    },
+    {
+      "sha": "dd3c0e581538486f4ff7dd4208d0ad40c810774f",
+      "date": "2026-10-22T11:44:19-04:00",
+      "subject": "fix(share): strip private suffixes from root remote URLs (#986)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/start.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/claude-code-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/claude-security-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/npm-publish-sdk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-extension.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/.cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/kimi.plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-skills/skills/beacon-lens-create/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/skills/beacon-memory-distill/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/skills/beacon-memory-promote/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-skills/skills/beacon-memory-recall/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-skills/skills/beacon-session-handoff/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-skills/skills/beacon-trace-share/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/check/check_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/check/fingerprint.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "beacon-sandbox/check/fingerprint_inconclusive_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/check/invariants.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/check/safety_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/check/uninstall.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "beacon-sandbox/check/uninstall_status_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/check/uninstall_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/cmd/beacon-sandbox/doctor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/cmd/beacon-sandbox/doctor_github_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/cmd/beacon-sandbox/doctor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/cmd/beacon-sandbox/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/credentials/credentials_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/dispatch/dispatch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/dispatch/run_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/hostguard/hostguard_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/image/image_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/runner/forward.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/runner/runner.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/runner/runner_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "beacon-sandbox/runner/uninstall_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/sandbox/localexec_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/scenario/scenario.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beacon-sandbox/scenario/scenario_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "browser-extension/e2e/browser-identity.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/e2e/chatgpt.replay.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/e2e/claude.replay.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/e2e/forgery.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/e2e/helpers/sse-replay-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/e2e/permissions.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/e2e/settings-concurrent.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/e2e/settings.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/esbuild.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/fixtures/chatgpt/web-search-split.sse",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/fixtures/claude/web-search.sse",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/fixtures/claude/with-cache-ttl.sse",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/adapters/adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/adapters/chatgpt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/adapters/claude.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/background/assembler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/background/delivery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/src/background/sender.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/background/settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/background/sw.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/content/content.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/interceptor/interceptor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/src/interceptor/request-body.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/options/options.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/options/options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/shared/browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/src/shared/channel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/shared/normalize.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/shared/permissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/src/shared/serial.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/src/shared/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/src/shared/validate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/assembler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/browser-identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/build.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/channel.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/chatgpt.adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/claude.adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/delivery-outage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/message-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/no-direct-chrome.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/normalize.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "browser-extension/test/unit/options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/permissions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/request-body.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/retry-backoff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/sender.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/settings-write.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/test/unit/targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/tool-truncation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/unicode-prefix.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browser-extension/test/unit/validate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser-extension/tools/targets.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/active_session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/agent_response.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/agent_response_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/assistant_response.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/assistant_response_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/cascade_response.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/cascade_response_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/cline_event_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/codex_assistant_response.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/codex_assistant_response_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/devin_permission_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/dsh_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/endpoint_events.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/endpoint_events_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/factory_reply.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/factory_reply_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/goose_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/grok_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/handoff_link_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/helpers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/hook_bench_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/inventory_heartbeat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/kimi.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/kimi_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/kiro.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/kiro_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/muse_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/omo_event_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/omp_approval_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/omp_device_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/omp_event.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/omp_event_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/omp_paths_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/openclaw_event_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/opencode_event.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/opencode_event_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/openhands_hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/perf_ratchet_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/permission_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/pi_assistant_response_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/pi_event.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/pi_event_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/pi_family.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/pi_family_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/beacon-hooks/cmd/post_tool.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/post_tool_claude_bash_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/beacon-hooks/cmd/post_tool_claude_mcp_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

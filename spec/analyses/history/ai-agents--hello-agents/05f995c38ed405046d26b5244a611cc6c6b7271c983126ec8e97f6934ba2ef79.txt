@@ -1,0 +1,25 @@
+# hello-agents
+
+Source: [hello-agents](https://github.com/datawhalechina/hello-agents) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4b014ad47e2658af24b59f21e7bdb3f89a66205e`; commit timestamp `2026-09-29T21:53:44+10:00`; 2,434 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/README.md)):
+
+> &emsp;&emsp;如果说 2024 年是"百模大战"的元年，那么 2025 年无疑开启了"Agent 元年"。技术的焦点正从训练更大的基础模型，转向构建更聪明的智能体应用。然而，当前系统性、重实践的教程却极度匮乏。为此，我们发起了 Hello-Agents 项目，希望能为社区提供一本从零开始、理论与实战并重的智能体系统构建指南。 &emsp;&emsp;Hello-Agents 是 Datawhale 社区的 系统性智能体学习教程 。如今 Agent 构建主要分为两派，一派是 Dify，Coze，n8n 这类软件工程类 Agent，其本质是流程驱动的软件开发，LLM 作为数据处理的后端；另一派则是 AI 原生的 Agent，即真正以 AI 驱动的 Agent。本教程旨在带领大家深入理解并构建后者——真正的 AI Native Agent。教程将带领你穿透框架表象，从智能体的核心原理出发，深入其核心架构，理解其经典范式，并最终亲手构建起属于自己的多智能体应用。我们相信，最好的学习方式就是动手实践。希望这本教程能成为你探索智能体世界的起点，能够从一名大语言模型的"使用者"，蜕变为一名智能体系统的"构建者"。
+
+Build/package evidence: [Co-creation-projects/1zrj-DataAnalysisAgent/requirements.txt](https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/Co-creation-projects/1zrj-DataAnalysisAgent/requirements.txt); [Co-creation-projects/939147533-DatabaseAgent/requirements.txt](https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/Co-creation-projects/939147533-DatabaseAgent/requirements.txt); [Co-creation-projects/Apricity-InnocoreAI/requirements.txt](https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/Co-creation-projects/Apricity-InnocoreAI/requirements.txt); [Co-creation-projects/AstrumPush-Smart-Recipe-Agent/requirements.txt](https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/Co-creation-projects/AstrumPush-Smart-Recipe-Agent/requirements.txt); [Co-creation-projects/BeiXiao-929-AI-Powered-Data-Analyst-Agent/requirements.txt](https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/Co-creation-projects/BeiXiao-929-AI-Powered-Data-Analyst-Agent/requirements.txt)
+
+License evidence: [LICENSE.txt](https://github.com/datawhalechina/hello-agents/blob/4b014ad47e2658af24b59f21e7bdb3f89a66205e/LICENSE.txt) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

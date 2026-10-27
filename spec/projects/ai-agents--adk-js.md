@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [adk-js](https://github.com/google/adk-js); analyzed commit `4395fad8da70a4123cb0b49da98c89883541b0ea`; commit date 2026-10-02T14:22:32-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-js.md).
+<!-- teamagent-analysis:end -->

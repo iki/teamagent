@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--qm",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/yc-software/qm",
+  "report": "spec/projects/ai-agents--qm.md",
+  "analyzedSha": "7a0b6d987dd2031cfb20c53dadc8a86d5301e80f",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T23:52:53-07:00",
+  "observedSha": "95b088619e1057e8dd66659a8f195b1270a4acc7",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "95b088619e1057e8dd66659a8f195b1270a4acc7",
+      "date": "2026-10-23T17:39:25-07:00",
+      "subject": "Keep temporary failures from quarantining loops (#2590)"
+    },
+    {
+      "sha": "f0896f988d455e75a6e4ec68f6b30ecab3bd06b9",
+      "date": "2026-10-23T12:47:54-07:00",
+      "subject": "Show security flags and quarantines outside the newest 200 audit events (#2597)"
+    },
+    {
+      "sha": "f503f61f4e778bdde09971b5486807aa498ad899",
+      "date": "2026-10-23T11:54:02-07:00",
+      "subject": "Let admin-reading crons work unattended, or say why at creation (#2578)"
+    },
+    {
+      "sha": "1a815bd1f8e081956c78804116da7ade52c87524",
+      "date": "2026-10-23T09:57:37-07:00",
+      "subject": "Leave swarm replies in the recipient's mailbox instead of waking it (#2582)"
+    },
+    {
+      "sha": "49cbaa526339356a3502f997f7c5e46b41497469",
+      "date": "2026-10-22T21:27:09-07:00",
+      "subject": "Let team members manage team-owned artifacts (#2591)"
+    },
+    {
+      "sha": "f9f2aafd5a60dd445d1640eb4bc47357fb783c34",
+      "date": "2026-10-22T21:01:10-07:00",
+      "subject": "Default sandbox network to private; clean up test fixture servers (#2583)"
+    },
+    {
+      "sha": "a8487c1ef395df6ddf4c6866315a4bcfb6615701",
+      "date": "2026-10-22T15:29:02-07:00",
+      "subject": "Use one canonical request path for routing and authorization (#2579)"
+    },
+    {
+      "sha": "004a0a4e9f823a53b25b26332285a4917d46d6be",
+      "date": "2026-10-22T14:44:37-07:00",
+      "subject": "Screen loop item data like webhook payloads (#2569)"
+    },
+    {
+      "sha": "36b63795a3f741a80bfb5a00cbae8a51e3b1c562",
+      "date": "2026-10-22T14:25:49-07:00",
+      "subject": "Make reply and command parsers linear-time (#2570)"
+    },
+    {
+      "sha": "33206f26c50f2513d983ddf38e49124a52b83cfb",
+      "date": "2026-10-22T13:05:36-07:00",
+      "subject": "Bump fastify and ip-address to clear npm audit advisories (#2571)"
+    },
+    {
+      "sha": "61a5f0278bc5b0f535539b451114d2865bac1e46",
+      "date": "2026-10-22T12:41:21-07:00",
+      "subject": "Let agents list and abort their own unfinished uploads (#2559)"
+    },
+    {
+      "sha": "5f854e43706e439e640be60252aced17cf097f6b",
+      "date": "2026-10-22T08:11:48-07:00",
+      "subject": "Drop the retired internal_member_overrides table (#2568)"
+    },
+    {
+      "sha": "3eacf780ddcfdf921fc19ca3628d2686563de2d7",
+      "date": "2026-10-21T21:17:23-07:00",
+      "subject": "Remove internal member overrides (#2567)"
+    },
+    {
+      "sha": "eb6c483814adb653f71e37eae9a86f2de8ab778a",
+      "date": "2026-10-21T17:29:45-07:00",
+      "subject": "Serve a large MCP tool catalog as one searchable tool (#2562)"
+    },
+    {
+      "sha": "19c9fe334c95895ee26399f76636fc86445025f5",
+      "date": "2026-10-21T17:18:30-07:00",
+      "subject": "Let any tool declare that each call needs approval (#2561)"
+    },
+    {
+      "sha": "7fda25c64085bdcfbac53d69bfa8d0d011c6101f",
+      "date": "2026-10-21T16:18:07-07:00",
+      "subject": "Re-adopt a suggestions cron whose task was reverted to the standard instructions (#2564)"
+    },
+    {
+      "sha": "d04682911579b79c895fe78cc8bb3c2fad2454b5",
+      "date": "2026-10-21T16:14:47-07:00",
+      "subject": "Read goal evidence files by absolute path and say why one can't be read (#2560)"
+    },
+    {
+      "sha": "5216d383a5547725ca5fb62651c80e9e6a277b45",
+      "date": "2026-10-21T16:13:52-07:00",
+      "subject": "Let a swarm worker wait on another agent without burning its goal (#2543)"
+    },
+    {
+      "sha": "80c75cffd3dea9cf23b14b35c51baf494a62048f",
+      "date": "2026-10-21T16:01:09-07:00",
+      "subject": "browse: install the runner runtime on demand from one shared script (#2557)"
+    },
+    {
+      "sha": "625a86620ec220802975f7389ff0994d46164ed5",
+      "date": "2026-10-21T15:48:59-07:00",
+      "subject": "Make the suggested-activity dismiss X hover and focus subtler (#2563)"
+    },
+    {
+      "sha": "9d8668cd234a21fd55fa436bf20443026471a88c",
+      "date": "2026-10-21T15:06:47-07:00",
+      "subject": "Dismissible suggested activities with a reserve and debounced refresh (#2558)"
+    },
+    {
+      "sha": "ea15103f8f3e154ae934fd84457b6842b5d20a75",
+      "date": "2026-10-21T14:55:11-07:00",
+      "subject": "Keep inbox items current from Gmail and Slack events (#2374)"
+    },
+    {
+      "sha": "e28af006aaffeb3cedb8d0c7ae9b1f4e0cedc4f1",
+      "date": "2026-10-21T14:47:13-07:00",
+      "subject": "Pad the inbox assistant panel and let people hide it (#2555)"
+    },
+    {
+      "sha": "9519b4e9c5c531bb5ab48074a059c369a6ab1756",
+      "date": "2026-10-21T14:46:32-07:00",
+      "subject": "Hand queued swarm messages to a worker's running goal turn (#2533)"
+    },
+    {
+      "sha": "eba9ea9f40791c3dadcd183b56a8acfadbdf947c",
+      "date": "2026-10-21T14:44:21-07:00",
+      "subject": "Expire idle pending uploads so abandoned sessions free the upload quota (#2468)"
+    },
+    {
+      "sha": "a12097f1b73fabe848afffd3bb63663a0231e079",
+      "date": "2026-10-21T14:38:56-07:00",
+      "subject": "Take subagent counts from the server rollup for every row (#2527)"
+    },
+    {
+      "sha": "9ed193be61ff9dbe757d5fbc08ca10a6726d200d",
+      "date": "2026-10-21T14:34:04-07:00",
+      "subject": "Treat a goal governor that cannot decide as no decision (#2536)"
+    },
+    {
+      "sha": "1c0b71e69b7896609e7b69fce5ac68474ffeef5b",
+      "date": "2026-10-21T14:31:25-07:00",
+      "subject": "Read current Slack reactions through the context API (#2556)"
+    },
+    {
+      "sha": "e3a1232151ae71a276b216d4b069ccdf4199e566",
+      "date": "2026-10-21T13:46:28-07:00",
+      "subject": "Give custom Anthropic models the thinking binding of the known model they name (#2528)"
+    },
+    {
+      "sha": "88ba4619158ee7ccaba05246699405c1bd016426",
+      "date": "2026-10-21T12:40:08-07:00",
+      "subject": "Collapse config-store settings into one table-driven helper (#2456)"
+    },
+    {
+      "sha": "3761d0bde2ef7c1561fa47ad36f8f5a4bb8f23f4",
+      "date": "2026-10-21T11:53:34-07:00",
+      "subject": "List every skill under a size budget, name connector token variables, remove pinned skills (#2532)"
+    },
+    {
+      "sha": "c440975ac81c0f9ee54beef294a76dffcf54c0fa",
+      "date": "2026-10-21T11:44:23-07:00",
+      "subject": "Merge pull request #2531 from jetzhou/jet/zoom-connector"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".codex/skills/dev-instance/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cicd.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desk-native.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pgbouncer.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-cli.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/wall-of-shame.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "adrs/e2b-agent-computer.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "aws/microvm-agent/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "aws/microvm-agent/agent.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/aws.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/dev-ci.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/docker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/doctor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/fly.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/background-work.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/canonical-json.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/conformance.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cli/src/contract.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/live-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/preflight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/provider-scaffold.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/providers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/secrets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/services.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/target-env-defaults.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/terraform.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/tool-descriptor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/util.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/aws/main.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/aws/outputs.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/deployment/deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/fly/core.toml",
+      "previousPath": null
+    },
+    {
+      "status": "R073",
+      "path": "cli/templates/fly/egress-proxy.toml",
+      "previousPath": "deploy/egress-proxy-pub/fly.toml"
+    },
+    {
+      "status": "M",
+      "path": "cli/test/auth-broker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/aws-public-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/aws.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/background-work.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/cli-dispatch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cli/test/contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/docker-secrets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R066",
+      "path": "cli/test/e2e/aws-terraform.e2e.test.ts",
+      "previousPath": "cli/test/e2e/aws-rds-config.e2e.test.ts"
+    },
+    {
+      "status": "M",
+      "path": "cli/test/e2e/docker-lifecycle.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/test/egress-proxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fly-derive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fly-sandbox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fly-up.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/infra-image.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/init.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/live-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/microvm-dockerfile.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/package.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/preflight.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/test/scope-storage-key.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/secrets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/terraform.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/util.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/admin/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/admin/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/auth/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/core/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/core/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/do-managed-agents/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/do-managed-agents/register-template.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/e2b/e2b.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/egress-proxy/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/egress-proxy/envoy.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/egress-proxy/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/helm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/portal/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/stacks/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/stacks/acme/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/stacks/acme/qm.config.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/stacks/acme/slack-app-manifest.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/web-ui/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/web-ui/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/cursor.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/cursor.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/cursor.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/PROTOCOL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/rustfmt.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/cancellation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/capture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/focus.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/focus_protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/intervention.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/keys.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/mac.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/mac/input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/mac/markers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/pasteboard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/text.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/src/tree.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/tests/cancellation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/tests/manual/FOCUS-TRACE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/tests/manual/background-input.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/tests/manual/focus-trace.m",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/desk/tests/manual/focus-witness.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/main.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/permissions-preload.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/permissions.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/permissions.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/permissions.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/permissions.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/runtime-preload.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/runtime.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/runtime.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/shortcuts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/desk.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/test/main.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/test/navigation.electron.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/permission-startup.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/permissions-ui.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/permissions.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/runtime-coordinates.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/runtime-notes.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/runtime.electron.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/shortcuts.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/test/updates.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/test/workspace.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/updates.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/workspace-preload.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/background-ownership.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/credential-refresh-handoff.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deploy-directory.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/deployment-broker-credentials.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/do-managed-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/document-inputs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/e2b-template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/error-reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/files-publication.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/loop-ingestion.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp-connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/memory-providers.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

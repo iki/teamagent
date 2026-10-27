@@ -1,0 +1,1004 @@
+{
+  "metadata": {
+    "id": "ai-agents-sandbox--agentenv",
+    "category": "ai-agents-sandbox",
+    "name": "agentenv",
+    "url": "https://github.com/kvcache-ai/AgentEnv",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-sandbox--agentenv.md",
+    "topics": [
+      "agents",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "5843159b1eaf235a45a08a5329fc6647c6e5bc31",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T14:03:10+08:00",
+    "reportSha256": "af185ef93ab704c3152b05e869a3104714e8cbd0012312db0dabfbd3321fc761",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-sandbox--agentenv",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/kvcache-ai/AgentEnv",
+    "report": "spec/projects/ai-agents-sandbox--agentenv.md",
+    "analyzedSha": "5843159b1eaf235a45a08a5329fc6647c6e5bc31",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T14:03:10+08:00",
+    "observedSha": "abc027b29947366d33b3f65b7018cd096840612d",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "abc027b29947366d33b3f65b7018cd096840612d",
+        "date": "2026-10-27T09:56:43+08:00",
+        "subject": "fix: avoid nested image state read locks during writes"
+      },
+      {
+        "sha": "8887fe014afcc29e2908bd91e6e77a9f232fd24b",
+        "date": "2026-10-27T09:52:40+08:00",
+        "subject": "fix(ublk-daemon): roll back device handoffs the client never receives"
+      },
+      {
+        "sha": "d3818b085a20628c44e13d098613f9f9c45ab6b2",
+        "date": "2026-10-26T20:46:07+08:00",
+        "subject": "fix(snapshot): stop interrupted deletes from shadowing aliases"
+      },
+      {
+        "sha": "dfc69836c64c4025ad15ad20077753b99782e294",
+        "date": "2026-10-26T19:08:01+08:00",
+        "subject": "feat: attach image drives to warm starts"
+      },
+      {
+        "sha": "bc51e699421fdf67865665f36269b66a1ffac479",
+        "date": "2026-10-26T10:36:19+08:00",
+        "subject": "feat(gateway): support HTTPS with manual and ACME certificates"
+      },
+      {
+        "sha": "c9bffdfd1c8715d757d7b0dc371365849075d18a",
+        "date": "2026-10-26T10:35:40+08:00",
+        "subject": "fix(overlaybd): bound layer index ranges by file size"
+      },
+      {
+        "sha": "424b852d961ff26d75ab609fa499dae071713528",
+        "date": "2026-10-24T20:47:27+08:00",
+        "subject": "fix(network): drop guest packets with a spoofed source address"
+      },
+      {
+        "sha": "9f76bef65601aacc3615b32ea67ec972044a519d",
+        "date": "2026-10-23T19:26:54+08:00",
+        "subject": "fix(make): keep command-line overrides out of inherited MAKEFLAGS"
+      },
+      {
+        "sha": "9f62cbe07cebfecf416dc9bdcf497e2a97687644",
+        "date": "2026-10-23T11:01:59+08:00",
+        "subject": "chore(release): bump version to v0.2.4"
+      },
+      {
+        "sha": "7d10d652363072e1faca961f66c04d99f5ac2101",
+        "date": "2026-10-23T09:42:57+08:00",
+        "subject": "fix(storage): avoid spurious ZFile and disk size warnings"
+      },
+      {
+        "sha": "09a1a16c490292d51ee63740ff1b62ce447383f0",
+        "date": "2026-10-23T09:41:40+08:00",
+        "subject": "fix(sandbox): hide image refs from guest metadata"
+      },
+      {
+        "sha": "a97473b5192122702b68bfcb2dc640116f275507",
+        "date": "2026-10-22T21:05:05+08:00",
+        "subject": "fix(overlaybd): reconcile mmap limits with open-entry eviction"
+      },
+      {
+        "sha": "52656b92478a4af8018e7309fb9db5072a89c9c1",
+        "date": "2026-10-22T13:15:21+08:00",
+        "subject": "feat(overlaybd): add runtime cache limits and mmap-aware eviction"
+      },
+      {
+        "sha": "b4ee1b73a91148c5956d2efef270ab64ae59ca92",
+        "date": "2026-10-22T09:45:55+08:00",
+        "subject": "fix(sandbox): announce guest MAC changes via arp_notify"
+      },
+      {
+        "sha": "0a4829ac3c320a706c2a6a7fada4833e0703cd14",
+        "date": "2026-10-22T09:32:44+08:00",
+        "subject": "fix: reject explicit volume mounts on snapshots with volumes"
+      },
+      {
+        "sha": "8428a329457f168dd9ba75d41c24d9bc43f4b11b",
+        "date": "2026-10-21T21:20:26+08:00",
+        "subject": "chore(deps): bump github.com/klauspost/compress in /services"
+      },
+      {
+        "sha": "a27b2db909b035f58696ba8798ea0e285c7bfa17",
+        "date": "2026-10-20T19:52:46+08:00",
+        "subject": "fix(scripts): forward environment explicitly for sudo-rs compatibility"
+      },
+      {
+        "sha": "8064830d3cb14861dc4f5e5d17dd03209d5b2464",
+        "date": "2026-10-20T14:05:06+08:00",
+        "subject": "feat(custom-extension): surface hook 4xx/5xx status to API callers"
+      },
+      {
+        "sha": "484a7601ebf6812940aec4f5080e9c3fa155acf3",
+        "date": "2026-10-20T12:57:34+08:00",
+        "subject": "fix(gateway): size reverse proxy idle connection pools for node fan-out"
+      },
+      {
+        "sha": "6de277fa2206b2fcd35f968f20021d884d305d1b",
+        "date": "2026-10-20T10:43:58+08:00",
+        "subject": "feat: add DELETE /snapshots/{snapshotID} endpoint"
+      },
+      {
+        "sha": "cf03e82f15039c7d0e75e77b5dcaff0e7cd1c000",
+        "date": "2026-10-20T10:42:08+08:00",
+        "subject": "feat: persist source sandbox user metadata in published snapshot records"
+      },
+      {
+        "sha": "9a96e460b2fe8f620cf0171c10e3b79db0b61091",
+        "date": "2026-10-20T10:38:52+08:00",
+        "subject": "fix(image): map zero-layer OCI manifest to 4xx"
+      },
+      {
+        "sha": "949cec20010845273e43154bfdc3a6693e281407",
+        "date": "2026-10-20T09:35:56+08:00",
+        "subject": "feat: add fromImageRegistry field to TemplateBuildStartV2"
+      },
+      {
+        "sha": "0ce8eb9bd94d8656b0a40e5be7cdfadfd6e78b45",
+        "date": "2026-10-16T19:13:32+08:00",
+        "subject": "feat: build and publish reusable images with the CLI"
+      },
+      {
+        "sha": "b08655348b3e983d53b09a90060c10d1aa53a5af",
+        "date": "2026-10-16T15:30:58+08:00",
+        "subject": "refactor: move layer references and volume backing out of snapshot"
+      },
+      {
+        "sha": "f7f478d3a5ecd8b6fd99ca4a18caa79777a4e17f",
+        "date": "2026-10-16T09:41:52+08:00",
+        "subject": "refactor(sandbox): move guest volume helpers out of FirecrackerSandbox"
+      },
+      {
+        "sha": "e14d8c53ed15beedeaccfc48aceb4dabf45a03f5",
+        "date": "2026-10-16T09:41:52+08:00",
+        "subject": "refactor(sandbox): split Firecracker start_resume into stages"
+      },
+      {
+        "sha": "ea90c053d54c18d9b7eea7161f10fff85ab53fc1",
+        "date": "2026-10-16T09:41:52+08:00",
+        "subject": "refactor(sandbox): share Firecracker rootfs attach and boot-arg append"
+      },
+      {
+        "sha": "3efe1c389d4e300b285df5e596df7c798e143136",
+        "date": "2026-10-16T09:41:52+08:00",
+        "subject": "refactor(sandbox): own Firecracker host resources in SandboxResources"
+      },
+      {
+        "sha": "f9a39636caa3d234bbb96d2406685d7a6d3dabc4",
+        "date": "2026-10-14T18:21:35+08:00",
+        "subject": "fix(repository): back off when an OSS document changes while being read"
+      },
+      {
+        "sha": "e764b060d38fae143e35935cda5bff477d9c6a95",
+        "date": "2026-10-14T18:21:35+08:00",
+        "subject": "test: fail on dependency cycles between top-level modules"
+      },
+      {
+        "sha": "6afa50b19df0bee0e4f2a56db7566a804bb631cc",
+        "date": "2026-10-14T18:21:35+08:00",
+        "subject": "refactor: break the dependency cycles between top-level modules"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/actions/sandbox-ci-setup/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/integration-tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/open-code-review.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/services-ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Cargo.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Makefile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "adev/src/codegen.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/aenv/src/client/sandboxes.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/aenv/src/client/templates.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/aenv/src/commands/build.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/aenv/src/commands/connect.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "crates/aenv/src/commands/connect/input_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/aenv/src/commands/pull.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/aenv/src/commands/start.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/aenv/src/main.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/benchmarks/benches/snapshot_benchmark.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/e2e-tests/tests/snapshot_oss_e2e_test.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/object-store-operator/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/object-store-operator/src/lib.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/object-store-operator/src/operator.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/test-support/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "deploy/docker-compose.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "deploy/docker/Dockerfile.agentenv",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/concepts/custom-extension/lifecycle-hooks.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/concepts/sandboxes/starting.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/concepts/snapshots/manage.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/concepts/templates/managing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/concepts/volumes/sandbox-forks-and-snapshots.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/configuration/reference.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/getting-started/aenv-cli/sandboxes.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/internals/networking.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/internals/persistence-artifact-inventory.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/src/internals/template-builder-testing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/buildkit/install-buildctl.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/buildkit/test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/run-with-capabilities.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/tests/e2e/suites/15_volume.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/gateway/cmd/main.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/gateway/cmd/main_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/gateway/internal/cluster_list.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/gateway/internal/cluster_list_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "services/gateway/internal/routes.go",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "services/gateway/internal/routes_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/gateway/internal/server.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/gateway/internal/server_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/go.mod",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/go.sum",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/shared/config/config.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/shared/config/config_test.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "services/shared/observability/buckets.go",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/generated/src/apis/sandboxes.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/generated/src/apis/snapshots.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/generated/src/models.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/generated/src/server/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/image_build.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/image_build/cache.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/image_build/cleanup.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/api/impls/image_build/record.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/image_build/tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/image_build/worker.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/pagination.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/sandbox.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/snapshots.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/template.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/impls/template_helpers.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/openapi.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/proxy.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/api/server.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/api/testdata/pagination.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/bin/server.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cfg.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cfg/image.rs",
+        "previousPath": null
+      },
+      {
+        "status": "R097",
+        "path": "src/deps/mod.rs",
+        "previousPath": "src/setup/deps.rs"
+      },
+      {
+        "status": "R099",
+        "path": "src/deps/overlaybd_tools.rs",
+        "previousPath": "src/setup/overlaybd.rs"
+      },
+      {
+        "status": "M",
+        "path": "src/digest.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/buildkit.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/buildkit/history.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/cache/graph.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/cache/mock.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/cache/service.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/cache/store.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/image/catalog.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/oci_image.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/resolver.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/image/test_support.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/lib.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/logging.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/module_cycles.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/observability/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/orchestrator/sandbox_metrics.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/orchestrator/service.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/orchestrator/tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/overlaybd/compact.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/overlaybd/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/p2p/config.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/p2p/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "R100",
+        "path": "src/prometheus.rs",
+        "previousPath": "src/observability/prometheus.rs"
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/common/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "R064",
+        "path": "src/repository/backends/oss/client.rs",
+        "previousPath": "src/snapshot/repository/backends/oss/client.rs"
+      },
+      {
+        "status": "R091",
+        "path": "src/repository/backends/oss/config.rs",
+        "previousPath": "src/snapshot/repository/backends/oss/config.rs"
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/oss/documents.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/oss/lease.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/oss/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/oss/repository.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/posixfs/artifacts.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/posixfs/backend.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/posixfs/catalog.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/backends/posixfs/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/build_cache.rs",
+        "previousPath": null
+      },
+      {
+        "status": "R097",
+        "path": "src/repository/errors.rs",
+        "previousPath": "src/snapshot/repository/errors.rs"
+      },
+      {
+        "status": "A",
+        "path": "src/repository/interfaces.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/layer_config.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/layout.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/repository/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/backend.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/custom_extension/client.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/custom_extension/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/envd.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/sandbox/envd/add_passwd_entry.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/envd/user.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/extra_drive.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/firecracker/config.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/firecracker/instance.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/firecracker/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/firecracker/overlaybd_snapshot.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/sandbox/firecracker/resources.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/firecracker/sandbox.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/sandbox/guest_volumes.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/sandbox/logs.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/mock.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/network/slot.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/sandbox/runtime_versions.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/sandbox/tools_image.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/ublk/device.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/ublk/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/sandbox/ublk/overlaybd.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/setup/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/snapshot/backends/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/snapshot/backends/tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/snapshot/catalog.rs",
+        "previousPath": null
+      },
+      {
+        "status": "R099",
+        "path": "src/snapshot/image_export/acr/client.rs",
+        "previousPath": "src/snapshot/repository/backends/common/acr/client.rs"
+      },
+      {
+        "status": "R099",
+        "path": "src/snapshot/image_export/acr/manifest.rs",
+        "previousPath": "src/snapshot/repository/backends/common/acr/manifest.rs"
+      },
+      {
+        "status": "R076",
+        "path": "src/snapshot/image_export/acr/mod.rs",
+        "previousPath": "src/snapshot/repository/backends/common/acr/mod.rs"
+      },
+      {
+        "status": "R098",
+        "path": "src/snapshot/image_export/acr/publisher.rs",
+        "previousPath": "src/snapshot/repository/backends/common/acr/publisher.rs"
+      },
+      {
+        "status": "R099",
+        "path": "src/snapshot/image_export/acr/source_image.rs",
+        "previousPath": "src/snapshot/repository/backends/common/acr/source_image.rs"
+      },
+      {
+        "status": "M",
+        "path": "src/snapshot/image_export/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/snapshot/image_export/regctl.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/snapshot/image_export/service.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/snapshot/image_export/target.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/snapshot/manager.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/snapshot/mock.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/snapshot/mod.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/snapshot/publish.rs",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

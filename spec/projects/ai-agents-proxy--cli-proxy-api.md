@@ -28,3 +28,7 @@ The default URL is coupled to a provider backend that can change independently o
 ## Related directions
 
 [Models](../models.md) · [Agents](../agents.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI); analyzed commit `d7914afdedca7af95ee974a42453dc49fc1388ce`; commit date 2026-10-03T17:01:12+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--cli-proxy-api.md).
+<!-- teamagent-analysis:end -->

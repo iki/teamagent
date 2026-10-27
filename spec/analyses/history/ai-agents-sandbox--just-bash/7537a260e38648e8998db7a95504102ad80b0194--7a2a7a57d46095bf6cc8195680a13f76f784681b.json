@@ -1,0 +1,474 @@
+{
+  "id": "ai-agents-sandbox--just-bash",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/vercel-labs/just-bash",
+  "report": "spec/projects/ai-agents-sandbox--just-bash.md",
+  "analyzedSha": "7537a260e38648e8998db7a95504102ad80b0194",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-01T21:34:36+09:00",
+  "observedSha": "7a2a7a57d46095bf6cc8195680a13f76f784681b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7a2a7a57d46095bf6cc8195680a13f76f784681b",
+      "date": "2026-10-22T08:52:03+09:00",
+      "subject": "docs: define issue priority and pull request triage (#655)"
+    },
+    {
+      "sha": "9ab0e0d34c1d24978cd40ae890a91ccb223cc606",
+      "date": "2026-10-15T13:35:39+09:00",
+      "subject": "fix(rg): preserve empty piped stdin (#401)"
+    },
+    {
+      "sha": "8386d253f257ca8c2696075e44d0caedc44270aa",
+      "date": "2026-10-15T13:12:09+09:00",
+      "subject": "fix(awk): bound field array growth and record splitting (#590)"
+    },
+    {
+      "sha": "ad9039a850d71ddd67d7786550b9f32ed8f12dc0",
+      "date": "2026-10-15T13:11:40+09:00",
+      "subject": "Copy shopt options, readonly attributes, and hash table per exec (#592)"
+    },
+    {
+      "sha": "8fc1930c50c198c4b6ea9d29c29ae1864ae38de3",
+      "date": "2026-10-14T22:07:45+09:00",
+      "subject": "fix(rg): align Grep tool arguments and output with ripgrep (#584)"
+    },
+    {
+      "sha": "f0baa001a3dfb69e1daed52c612400153a1ea2d8",
+      "date": "2026-10-14T17:20:09+09:00",
+      "subject": "fix(redirections): preserve opened destinations and redirect order (#580)"
+    },
+    {
+      "sha": "3ebd1c291462bc6bad3c6df7ebfe563d8799bfd9",
+      "date": "2026-10-14T02:42:19+09:00",
+      "subject": "fix(redirections): handle /dev/null without filesystem device nodes (#562)"
+    },
+    {
+      "sha": "6df20cebf56bf9bcc2d63b425f26a7446b13a67d",
+      "date": "2026-10-14T01:33:01+09:00",
+      "subject": "fix(redirections): fail the command, not exec(), when a redirect target's parent is missing (#561)"
+    },
+    {
+      "sha": "7c391598ec1efc4ffcc12388546fbef8f76a7b4e",
+      "date": "2026-10-14T01:29:43+09:00",
+      "subject": "fix(jq): evaluate X[expr]'s index against the input (#552)"
+    },
+    {
+      "sha": "58d1ecf31b768ea9834e151b166cf4cea32046ba",
+      "date": "2026-10-07T00:17:24+09:00",
+      "subject": "fix(bash): pass per-exec env to nested sh/bash and stop leaking parent vars (#439)"
+    },
+    {
+      "sha": "864dfe5d4b9cf0447c4eb2002193f2ab2008bd0e",
+      "date": "2026-10-06T22:07:57+09:00",
+      "subject": "perf(text): 2x faster large-file tr/sed with up to 19x less memory allocation (#521)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/awk-field-count-limit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/dev-null-discard.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/hungry-peaches-find.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/jq-index-input.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/nested-shell-environment.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/per-exec-shell-state.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/prepared-routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/quiet-bytes-flow.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/redirect-open-errors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/rg-empty-stdin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/scripts/benchmark-text-allocation.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/Bash.exec-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/Bash.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/awk/awk.allocation-limits.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/awk/builtins.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/awk/interpreter/fields.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/awk/interpreter/variables.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/commands/bash/bash.env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/bash/bash.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/find/find.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/grep/grep.advanced.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/grep/grep.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/commands/jq/jq.index-input.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/commands/js-exec/js-exec.buffer-compat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/commands/js-exec/js-exec.buffer-write.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/js-exec/module-shims.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/query-engine/builtins/resource-limits.security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/query-engine/evaluator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/imported-tests/feature.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/imported-tests/misc.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg-options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg-parser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg-search.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg.basic.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg.edge-cases.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/commands/rg/rg.grep-tool.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg.max-count.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg.stdin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/rg/rg.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/search-engine/matcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/sed/executor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/sed/sed.limits.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/commands/tr/tr.output.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/tr/tr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/commands/xan/xan.map.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/comparison-tests/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/comparison-tests/cd.comparison.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/comparison-tests/fixtures/cd.comparison.fixtures.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/comparison-tests/fixtures/rg-grep-tool.comparison.fixtures.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/comparison-tests/fixtures/sed-global-gaps.comparison.fixtures.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/comparison-tests/rg-grep-tool.comparison.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/comparison-tests/sed-global-gaps.comparison.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/encoding.conversion.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/encoding.fs-fallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/encoding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/fs/overlay-fs/overlay-fs.security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/builtin-dispatch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/builtins/cd.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/builtins/cd.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/fd-table.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/functions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/interpreter/group-stdin.descriptors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/helpers/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/interpreter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/pipeline-execution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/interpreter/redirections.dev-null.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/interpreter/redirections.open-errors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/interpreter/redirections.routing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/redirections.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/state-transaction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/interpreter/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/security/defense-in-depth-hardening.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/spec-tests/bash/cases/builtin-cd.test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/spec-tests/jq/skips.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/just-bash/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/utils/string-builder.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/just-bash/src/utils/string-builder.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

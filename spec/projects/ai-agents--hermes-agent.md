@@ -30,3 +30,7 @@ A single-provider policy is a deliberate simplification, not evidence that one b
 Test a slow or unavailable memory provider, malformed schemas, shutdown with background work and status reads with missing dependencies. Ensure passive scans do not modify the environment. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [memory](../memory.md) · [skills](../skills.md) · [channels](../channels.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `3b9a963b8e5cdb804a422755bed9a60fcd778273`; commit date 2026-08-16T21:20:29-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,459 @@
+{
+  "id": "ai-query--mcp-sdk-rust",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/modelcontextprotocol/rust-sdk",
+  "report": "spec/projects/ai-query--mcp-sdk-rust.md",
+  "analyzedSha": "8f9a28ecdb5f9237dd7927f915df82cd4d02d09b",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T22:44:37+01:00",
+  "observedSha": "8aec3891dd07fc537b21c2eb2596235640de9025",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8aec3891dd07fc537b21c2eb2596235640de9025",
+      "date": "2026-10-23T15:00:59-04:00",
+      "subject": "fix(client): stop SSE reconnects on permanent GET errors (#1363)"
+    },
+    {
+      "sha": "2a401c4ca3eb5880744d2e70fad8073a7fcfb2bc",
+      "date": "2026-10-22T21:08:17-04:00",
+      "subject": "feat(transport): expose body-free HTTP status errors (#1386)"
+    },
+    {
+      "sha": "5d6a11f2ae022f513aec0f6e0f10f89a57891a7f",
+      "date": "2026-10-22T16:00:36-04:00",
+      "subject": "chore: release v3.7.0 (#1384)"
+    },
+    {
+      "sha": "7bc5c0740d93bf8c708eedc896ddb4b044eb5b2b",
+      "date": "2026-10-22T07:40:56-07:00",
+      "subject": "fix(auth): allow cross-origin resource_metadata urls (#1302)"
+    },
+    {
+      "sha": "ac808abcb40d3c90c743a097cd97c7dfc8f71b5d",
+      "date": "2026-10-22T09:10:37-04:00",
+      "subject": "Merge commit from fork"
+    },
+    {
+      "sha": "b11a40d889e022087d7f2b8cd23aa28e19ceaf5b",
+      "date": "2026-10-22T08:38:15-04:00",
+      "subject": "feat(auth): support OIDC ID-token subjects in enterprise exchange (#1385)"
+    },
+    {
+      "sha": "e0e7e50077738dc536bcfbe9a73d192b64a9ddc3",
+      "date": "2026-10-21T19:34:29-04:00",
+      "subject": "fix(transport): keep 401/403 status when the body is a JSON-RPC error (#1341)"
+    },
+    {
+      "sha": "c960b4b841dddca570e00a6f583986dbf78621dc",
+      "date": "2026-10-20T07:01:51-04:00",
+      "subject": "ci(triage): redact command output from failure logs (#1380)"
+    },
+    {
+      "sha": "74d789515fdee63ef46a1635b801364aad6695e4",
+      "date": "2026-10-19T22:47:58-07:00",
+      "subject": "chore: release v3.6.0 (#1327)"
+    },
+    {
+      "sha": "ad2a66a4c2ebd9220d6994e1a9d3d66aade9c824",
+      "date": "2026-10-19T13:49:47-04:00",
+      "subject": "fix(server): reject requests to 2026-07-28 clients (#1326)"
+    },
+    {
+      "sha": "c519c79e6ac58be5e9468e5c96b8927ec9b72f94",
+      "date": "2026-10-19T10:28:26-04:00",
+      "subject": "fix(streamable-http-server): look up tool schemas per request (#1349)"
+    },
+    {
+      "sha": "be386d5209ebc3c8949b0c01a17e843f675387e9",
+      "date": "2026-10-19T10:27:25-04:00",
+      "subject": "fix(transport): follow same-origin 307/308 redirects in the default Streamable HTTP client (#1367)"
+    },
+    {
+      "sha": "50fba5c2848d3ef9d0df0efacb8a7d001914f40e",
+      "date": "2026-10-17T09:54:14-07:00",
+      "subject": "fix(streamable-http-server): answer a session-less non-initialize POST with 400 (#1377)"
+    },
+    {
+      "sha": "017e1c371d246feeb3da2ed67d3ad4734a9dbaf7",
+      "date": "2026-10-16T22:22:53-07:00",
+      "subject": "fix(model): read a request id written in float form as that integer (#1346)"
+    },
+    {
+      "sha": "ad5a2849805f5d8b9a774565a7f0c54578474bd3",
+      "date": "2026-10-16T17:41:53-04:00",
+      "subject": "ci(labeler): drop path-based T-dependencies rule (#1368)"
+    },
+    {
+      "sha": "a156be8bf602a2d772640a53a3eec2a96dac0747",
+      "date": "2026-10-16T16:22:43-04:00",
+      "subject": "fix(client): answer a server ping during the initialize handshake (#1366)"
+    },
+    {
+      "sha": "b7568b82d278872f590b0c2eb5fedb3767cee87c",
+      "date": "2026-10-16T16:18:58-04:00",
+      "subject": "fix(transport): accept nested x-mcp-header annotations (#1359)"
+    },
+    {
+      "sha": "ce3a57a9ab7f8bb6758abe5c1354656c5acaabdb",
+      "date": "2026-10-16T14:27:24-04:00",
+      "subject": "feat(client): cancel an abandoned tools/call, prompts/get or resources/read (#1344)"
+    },
+    {
+      "sha": "98a54789b80110ad210495c4ad845c89e1980471",
+      "date": "2026-10-16T10:54:04-04:00",
+      "subject": "feat(auth): add initial authorization scope selection (#1352)"
+    },
+    {
+      "sha": "5d9935d0fc61affcfc573d475ca0a20e125467be",
+      "date": "2026-10-15T11:09:16-04:00",
+      "subject": "fix(streamable-http-client): handle error responses to initialize (#1361)"
+    },
+    {
+      "sha": "8d226f421cddbd470651f328f8bf3cea7fbda3b0",
+      "date": "2026-10-14T09:37:45-04:00",
+      "subject": "fix(transport): bound the incoming line buffer in AsyncRwTransport (#1049)"
+    },
+    {
+      "sha": "84987c3997ad5576290e2841a21ae3eb51acd224",
+      "date": "2026-10-14T09:36:14-04:00",
+      "subject": "ci(triage): request rotation reviewer on pull requests (#1350)"
+    },
+    {
+      "sha": "e3b4e32b0afbe3672db8d52e085ba337090f2e8a",
+      "date": "2026-10-14T09:32:00-04:00",
+      "subject": "fix(model): reject malformed JSON-RPC messages with conflicting result and error fields (#1283) (#1287)"
+    },
+    {
+      "sha": "718bc6027203288a8fa4e40175dc67e3f54b414c",
+      "date": "2026-10-14T08:42:29-04:00",
+      "subject": "feat(transport): add non-blocking stdio_pipes transport (#1304)"
+    },
+    {
+      "sha": "e957a536a96461ac21480567687658420a369645",
+      "date": "2026-10-13T20:14:38-04:00",
+      "subject": "fix: ship LICENSE in rmcp and rmcp-macros crates (#1342)"
+    },
+    {
+      "sha": "8763a3c3ffb259254d6a16ec1eb4ae9173d5d57d",
+      "date": "2026-10-12T16:12:42-04:00",
+      "subject": "ci: combine AI issue triage with a maintainer rotation as the responsible reviewer (#1260)"
+    },
+    {
+      "sha": "808124bbd48d55de78ff6652649c1a85260aa9df",
+      "date": "2026-10-11T11:40:45-04:00",
+      "subject": "fix(streamable-http-server): release the session map lock before waiting on a session (#1323)"
+    },
+    {
+      "sha": "07ff92d59780017467ccb5ef997e2e53d3a7b2d6",
+      "date": "2026-10-11T11:22:40-04:00",
+      "subject": "fix(rmcp): gate client- and server-only helpers behind their features (#1329)"
+    },
+    {
+      "sha": "c1a8eea312613519b93f53b89a1dc74dc993f5b0",
+      "date": "2026-10-10T08:52:12-07:00",
+      "subject": "chore(conformance): run against 0.2.0-alpha.12 (#1336)"
+    },
+    {
+      "sha": "4048ac40e958fb1a7d614617a2ae8d26666ee2fa",
+      "date": "2026-10-09T10:22:50-04:00",
+      "subject": "fix: cancel pending request tokens after transport EOF (#1333)"
+    },
+    {
+      "sha": "08e021153ef0530aeb0bb406ebb360a38cfb8ee4",
+      "date": "2026-10-06T14:06:27-04:00",
+      "subject": "fix(rmcp): import base64-only prompt content types under the feature (#1314)"
+    },
+    {
+      "sha": "79437f291b2c44053d00dcd5db969fd0cca7c887",
+      "date": "2026-10-05T14:26:31-04:00",
+      "subject": "chore: release v3.5.1 (#1307)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/labeler.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/conformance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/src/bin/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp-macros/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp-macros/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/handler/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/model/prompt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/service.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/service/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/service/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/task_manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/async_rw.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/auth/enterprise.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/auth/enterprise_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/src/transport/auth/metadata_resolver.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/common/client_side_sse.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/common/mcp_headers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/common/reqwest/streamable_http_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/common/server_side_http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/io.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/streamable_http_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/streamable_http_server/session/local.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/src/transport/streamable_http_server/tower.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_abandoned_request_cancel.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_async_rw_max_line_length.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_client_initialization.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_client_lifecycle_modes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_deserialization.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_handler_cache_hints.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_inflight_response_drain.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_package_license.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_sep_2260_request_association.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_server_initialization.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_stateless_http_server_requests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_stateless_server_requests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_streamable_http_4xx_error_body.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_streamable_http_initialize_error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_streamable_http_protocol_version.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_streamable_http_reconnect_classification.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_streamable_http_session_isolation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/rmcp/tests/test_streamable_http_standard_headers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/rmcp/tests/test_streamable_http_status_metadata.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CONTRIBUTE.MD",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

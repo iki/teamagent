@@ -1,0 +1,28 @@
+# llm-wiki-compiler
+
+Incremental source-to-wiki compilation with contract-bound extraction snapshots and separate write authority.
+
+Source: [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler) · Snapshot: `605461febe8206e6f78e987bb57f75fa1c5817c5` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [src/compiler/extraction-snapshot.ts:1-75](https://github.com/atomicmemory/llm-wiki-compiler/blob/605461febe8206e6f78e987bb57f75fa1c5817c5/src/compiler/extraction-snapshot.ts#L1-L75)
+- [src/trust/trusted-write.ts:1-51](https://github.com/atomicmemory/llm-wiki-compiler/blob/605461febe8206e6f78e987bb57f75fa1c5817c5/src/trust/trusted-write.ts#L1-L51)
+
+Extraction snapshots are validated with strict schemas and bind source content to a SHA-256 hash. Their fingerprint includes prompt version, active provider, model, extraction prompt and tool schema. Reuse checks the fingerprint, current content hash and concept ownership; malformed or incompatible snapshots return to fresh extraction. Snapshots are only added when all extracted concept assignments have been published. A separate trusted-write helper requires an out-of-workspace environment grant for a project to auto-apply trust-gated writes; otherwise they stage for review.
+
+## Harness implications
+
+Treat a generated wiki as a versioned materialized view over sources. Compile only affected topics, preserve source-to-page dependencies and retain evidence for every generated assertion. Reuse must be keyed by the transformation contract, not only filename or model nickname. Authority to change durable organizational memory belongs to the harness policy and user scope, never to text imported into the wiki. A reviewed change can be published automatically when the user has already authorized that class of change; the mechanism should support policy rather than force repeated approvals.
+
+## Limitations and tradeoffs
+
+Hash and schema validity establish identity and structure, not factual entailment. A link can resolve while failing to support the sentence citing it. Changing an extraction model may invalidate reusable outputs and create substantial reprocessing work. This review inspected snapshot and grant mechanics, not every workflow, publication transaction or user interface. The large compiler/workflow surface also increases integration complexity compared with plain Markdown plus a small dependency database.
+
+## Adoption and validation
+
+Adopt the compiler model and snapshot rules for curated team knowledge; evaluate direct reuse only after a bounded pilot. Start with topic summaries, decisions and source reports under version control. Test partial publication, changed source bytes, model/prompt migration, concept rename, deleted inputs, stale review approval and untrusted content attempting to grant itself write authority.
+
+Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [skills](../skills.md) · [import-generation](../import-generation.md).

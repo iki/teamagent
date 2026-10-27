@@ -1,0 +1,150 @@
+# pipali: change evidence
+
+Source: [pipali](https://github.com/khoj-ai/pipali) · [Analysis](../../projects/ai-agents--pipali.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `d1efc3cc315c1a0ece86ff490af9e0ff7788219d`; commit date: 2026-09-25T23:08:07-07:00; review date: unknown; observed SHA: `4d347b0b7450508f717d49d727b1ef2215ef757d`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/khoj-ai/pipali/compare/d1efc3cc315c1a0ece86ff490af9e0ff7788219d...4d347b0b7450508f717d49d727b1ef2215ef757d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [4d347b0b7450](https://github.com/khoj-ai/pipali/commit/4d347b0b7450508f717d49d727b1ef2215ef757d) 2026-10-26T23:29:16-07:00: Stop the server before the Windows updater exits the app
+- [c2cf337fd335](https://github.com/khoj-ai/pipali/commit/c2cf337fd3351a69043637439c38b3e5b74e5923) 2026-10-26T23:29:07-07:00: Stop Pipali's processes before the Windows installer replaces them
+- [65ea9855722d](https://github.com/khoj-ai/pipali/commit/65ea9855722d8032fb73d7c270a81600d08f222c) 2026-10-26T22:06:27-07:00: Show a turn woken by background work as a reply of its own
+- [c6259f8f5b70](https://github.com/khoj-ai/pipali/commit/c6259f8f5b701509a0f213eae1acf2b7769dd978) 2026-10-26T22:06:27-07:00: Delete a response through its own answer, not to the next user message
+- [7109520659a2](https://github.com/khoj-ai/pipali/commit/7109520659a20ec21bbc7d373f99750799a142d0) 2026-10-27T06:11:51+05:30: Sandbox Shell Commands on Windows, Harden Sandboxing Everywhere (#58)
+- [1bb6148d2ea8](https://github.com/khoj-ai/pipali/commit/1bb6148d2ea855ba7e73519935a184dde466dd9e) 2026-10-26T17:22:19-07:00: Judge the file a path leads to before skipping a file tool's prompt
+- [5b06565fbe33](https://github.com/khoj-ai/pipali/commit/5b06565fbe33c4c07ae754d3ef3aa67caea58a50) 2026-10-26T16:48:48-07:00: Say why the sandbox did not start in Settings
+- [258a3f56c33a](https://github.com/khoj-ai/pipali/commit/258a3f56c33ad718ea381c7a9e35949dd1e7c21e) 2026-10-26T15:49:32-07:00: Tell the agent what the sandbox refused a command
+- [015330910b38](https://github.com/khoj-ai/pipali/commit/015330910b38016d0816eed337240052bc73846a) 2026-10-26T12:31:42-07:00: Test the sandbox through Pipali's own code
+- [94c0646f1953](https://github.com/khoj-ai/pipali/commit/94c0646f19538c596fc2c5dbec7611131466790d) 2026-10-26T12:31:42-07:00: Set up the Windows sandbox on the first command that needs it
+- [dd869d546e2e](https://github.com/khoj-ai/pipali/commit/dd869d546e2e468e7d50a03d79223ff6eb64dfc6) 2026-10-26T12:31:42-07:00: Set up the Windows sandbox from Settings
+- [9d7e43e4cd75](https://github.com/khoj-ai/pipali/commit/9d7e43e4cd75b228598b9ce57c23ac1c86f4e909) 2026-10-26T12:13:07-07:00: Tell the user and the server when a desktop update fails
+- [3c0c0a7bd323](https://github.com/khoj-ai/pipali/commit/3c0c0a7bd323385e2220b2c9540256037c9e703b) 2026-10-26T12:13:07-07:00: Sandbox shell commands on Windows
+- [bec390f27856](https://github.com/khoj-ai/pipali/commit/bec390f278565c3e8a9798034069675362d54b21) 2026-10-26T12:13:07-07:00: Sign Windows binaries as Tauri bundles them
+- [dcb6b8d4d538](https://github.com/khoj-ai/pipali/commit/dcb6b8d4d5386c069ca0ef78182f3102f82c5819) 2026-10-26T12:13:07-07:00: Ask before running a command the sandbox cannot take
+- [07b7e2327474](https://github.com/khoj-ai/pipali/commit/07b7e2327474daa223c5d76cd0e3e06d189b394f) 2026-10-26T12:13:07-07:00: Upgrade sandbox-runtime to latest version: 0.0.81
+- [697507fac1e9](https://github.com/khoj-ai/pipali/commit/697507fac1e9272a199842358cada8231affeffc) 2026-10-26T12:13:07-07:00: Ask before Pipali changes its own sandbox permissions
+- [36ddf984e929](https://github.com/khoj-ai/pipali/commit/36ddf984e92904a39cd9b9b2918208cbc756e9be) 2026-10-26T12:13:07-07:00: Ask before reading protected paths however they are spelled
+- [fa8ffef3e401](https://github.com/khoj-ai/pipali/commit/fa8ffef3e401ffdc3d9c23853aa743cfb22d06cc) 2026-10-26T12:12:09-07:00: Bump desktop app tauri dependency
+- [8c5c363f7f5b](https://github.com/khoj-ai/pipali/commit/8c5c363f7f5b11526f222916f5632d69c839a901) 2026-10-25T01:12:26-07:00: Raise the step limit on a run from 100 to 1000
+- [acfc4610c6c5](https://github.com/khoj-ai/pipali/commit/acfc4610c6c5ab6d1a647491e69feac091fb4555) 2026-10-25T01:12:26-07:00: Open a conversation link clicked inside the app
+- [d45d846fd4e1](https://github.com/khoj-ai/pipali/commit/d45d846fd4e1b04ec8a041ad5b97471a1aa2da62) 2026-10-25T01:12:26-07:00: Show any routine schedule in plain words and keep it on edit
+- [8eebbc448f92](https://github.com/khoj-ai/pipali/commit/8eebbc448f92e68c7b1b64349397438a40901499) 2026-10-25T01:12:26-07:00: Reject unknown fields in a routine's trigger
+- [a4647bf5995e](https://github.com/khoj-ai/pipali/commit/a4647bf5995e95a352574f10b2ba16141054c23d) 2026-10-25T01:12:26-07:00: Keep a routine's timezone when editing it in the app
+- [9ab4fafbdf8a](https://github.com/khoj-ai/pipali/commit/9ab4fafbdf8af1a01116a69af6fdafd88afd1151) 2026-10-25T01:12:26-07:00: Keep a routine's next run current after each run
+- [5b5955a2197a](https://github.com/khoj-ai/pipali/commit/5b5955a2197a5b7462511be90b1422078d96fa89) 2026-10-25T01:12:26-07:00: Let a routine start running from a later date
+- [abd849cb9622](https://github.com/khoj-ai/pipali/commit/abd849cb962241fcc64b8bcdc0268f90e30eab57) 2026-10-25T01:12:26-07:00: Teach Hey Pipali and stop listening in voice hints
+- [cd24e849b014](https://github.com/khoj-ai/pipali/commit/cd24e849b0140d2f1d0ed250578024e43584c5db) 2026-10-25T01:12:26-07:00: Size the composer to its placeholder
+- [feca57fc2f8b](https://github.com/khoj-ai/pipali/commit/feca57fc2f8bd0daa589de7e44746b0acb5670de) 2026-10-25T00:32:20-07:00: Enable voice mode by default and drop its beta badge
+- [aa4b578eab96](https://github.com/khoj-ai/pipali/commit/aa4b578eab96192cf0dac39323ae4facf8f2a09a) 2026-10-25T00:32:20-07:00: Match the wake word by sound, not by spelling
+- [a76c96807d6e](https://github.com/khoj-ai/pipali/commit/a76c96807d6ef5ae49440f8f2b494f5d6b274be9) 2026-09-26T11:40:38-07:00: Restart the reply window when speech comes to nothing
+
+## Changed paths
+
+- M: `.env.example`
+- M: `.github/workflows/desktop.yml`
+- M: `bun.lock`
+- M: `package.json`
+- M: `scripts/build-tauri.ts`
+- M: `src-tauri/Cargo.lock`
+- M: `src-tauri/src/commands.rs`
+- M: `src-tauri/src/lib.rs`
+- M: `src-tauri/tauri.conf.json`
+- A: `src-tauri/windows/hooks.nsh`
+- M: `src/client/app.tsx`
+- M: `src/client/components/ExternalLink.tsx`
+- M: `src/client/components/automations/AutomationCard.tsx`
+- M: `src/client/components/automations/AutomationDetailModal.tsx`
+- M: `src/client/components/automations/AutomationsPage.tsx`
+- M: `src/client/components/automations/CreateAutomationModal.tsx`
+- A: `src/client/components/automations/StartDateField.tsx`
+- A: `src/client/components/automations/schedule.ts`
+- M: `src/client/components/automations/utils.ts`
+- M: `src/client/components/layout/InputArea.tsx`
+- M: `src/client/components/settings/SettingsPage.tsx`
+- M: `src/client/hooks/useVoiceCompanion.ts`
+- M: `src/client/hooks/useVoiceSettings.ts`
+- M: `src/client/hooks/useWebSocketChat.ts`
+- M: `src/client/i18n/locales/de.json`
+- M: `src/client/i18n/locales/en.json`
+- M: `src/client/i18n/locales/fr.json`
+- M: `src/client/i18n/locales/ja.json`
+- M: `src/client/i18n/locales/zh.json`
+- M: `src/client/styles/pages/automations.css`
+- M: `src/client/styles/pages/settings.css`
+- M: `src/client/types/automations.ts`
+- M: `src/client/types/message.ts`
+- M: `src/client/types/websocket.ts`
+- M: `src/client/utils/chat-messages.ts`
+- A: `src/client/utils/deep-link.ts`
+- M: `src/client/utils/markdown.ts`
+- M: `src/client/utils/tauri.ts`
+- M: `src/client/utils/voice/voice-coach.ts`
+- M: `src/client/utils/voice/voice-intent.ts`
+- M: `src/server/automation/index.ts`
+- M: `src/server/automation/scheduler/cron.ts`
+- M: `src/server/automation/scheduler/index.ts`
+- M: `src/server/automation/types.ts`
+- M: `src/server/events/background-processes.ts`
+- M: `src/server/events/conversation-event-bus.ts`
+- M: `src/server/events/parent-inbox.ts`
+- M: `src/server/events/run-executor.ts`
+- M: `src/server/index.ts`
+- M: `src/server/processor/actor/actor.utils.ts`
+- M: `src/server/processor/actor/edit_file.ts`
+- M: `src/server/processor/actor/grep_files.ts`
+- M: `src/server/processor/actor/read_file.ts`
+- M: `src/server/processor/actor/shell_command.ts`
+- M: `src/server/processor/actor/write_file.ts`
+- M: `src/server/processor/confirmation/confirmation.service.ts`
+- M: `src/server/processor/confirmation/confirmation.types.ts`
+- M: `src/server/processor/conversation/atif/atif.service.ts`
+- M: `src/server/processor/conversation/atif/atif.utils.ts`
+- M: `src/server/processor/director/index.ts`
+- M: `src/server/push/index.ts`
+- M: `src/server/routes/api.ts`
+- M: `src/server/routes/automations.ts`
+- A: `src/server/routes/settings-token.ts`
+- M: `src/server/routes/ws/commands/observe.ts`
+- M: `src/server/routes/ws/message-types.ts`
+- M: `src/server/sandbox/config.ts`
+- M: `src/server/sandbox/index.ts`
+- A: `src/server/sandbox/permission-change.ts`
+- M: `src/server/sandbox/settings.ts`
+- M: `src/server/security/path-validator.ts`
+- M: `src/server/skills/builtin-versions.ts`
+- M: `src/server/skills/builtin/introspect/SKILL.md`
+- M: `src/server/skills/builtin/introspect/references/api.md`
+- M: `src/server/utils.ts`
+- M: `src/shared/index.ts`
+- M: `tests/atif.test.ts`
+- A: `tests/client/automation-schedule.test.ts`
+- M: `tests/client/chat-messages.test.ts`
+- A: `tests/client/deep-link.test.ts`
+- M: `tests/client/markdown.test.ts`
+- M: `tests/client/useWebSocketChat.reducer.test.ts`
+- M: `tests/client/voice-intent.test.ts`
+- A: `tests/client/voice-reply-invitation.test.ts`
+- M: `tests/client/voice-settings.test.ts`
+- M: `tests/e2e/fixtures/mock-llm.ts`
+- M: `tests/e2e/helpers/page-objects/automations.page.ts`
+- M: `tests/e2e/specs/automations-page.e2e.ts`
+- M: `tests/e2e/specs/background-commands.e2e.ts`
+- A: `tests/e2e/specs/deep-link.e2e.ts`
+- A: `tests/e2e/specs/sandbox-permissions.e2e.ts`
+- A: `tests/server/api/automations.test.ts`
+- A: `tests/server/automation_schedule.test.ts`
+- M: `tests/server/director.test.ts`
+- M: `tests/server/push.test.ts`
+- D: `tests/server/sandbox/command-quoting.test.ts`
+- M: `tests/server/sandbox/enforcement.test.ts`
+- A: `tests/server/sandbox/fail-closed.test.ts`
+- A: `tests/server/sandbox/first-need-setup.test.ts`
+- A: `tests/server/sandbox/permission-change.test.ts`
+- M: `tests/server/sandbox/sandbox.test.ts`
+- A: `tests/server/sandbox/settings-token.test.ts`
+- A: `tests/server/sandbox/windows.test.ts`
+- M: `tests/server/security/tool-protection.test.ts`

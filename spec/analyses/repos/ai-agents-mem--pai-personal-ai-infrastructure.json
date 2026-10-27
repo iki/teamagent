@@ -1,0 +1,889 @@
+{
+  "metadata": {
+    "id": "ai-agents-mem--pai-personal-ai-infrastructure",
+    "category": "ai-agents-mem",
+    "name": "pai-personal-ai-infrastructure",
+    "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-mem--pai-personal-ai-infrastructure.md",
+    "topics": [
+      "memory",
+      "evolution"
+    ],
+    "depth": "screened",
+    "analyzedSha": "27c94f9342a404226d2411ac73d2b16acb1189fe",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-08-05T18:02:24-07:00",
+    "reportSha256": "46ca98e0c434886c2aac52fbcf7099c1ab8cbc6759d4143705657cca7e0040ef",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-mem--pai-personal-ai-infrastructure",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
+    "report": "spec/projects/ai-agents-mem--pai-personal-ai-infrastructure.md",
+    "analyzedSha": "27c94f9342a404226d2411ac73d2b16acb1189fe",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-08-05T18:02:24-07:00",
+    "observedSha": "5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c",
+        "date": "2026-09-03T18:07:21-07:00",
+        "subject": "Merge pull request #1982 from xmasyx/feat/issue-template"
+      },
+      {
+        "sha": "1ae76c870995970920b0b0c6db7875713ee84c49",
+        "date": "2026-09-03T16:57:39-07:00",
+        "subject": "docs: credit 29 community contributors from the 2026-09-03 triage (README grid)"
+      },
+      {
+        "sha": "58f22f541e10cc0a7899aa275286c7a475fe8a5d",
+        "date": "2026-08-26T09:27:03+02:00",
+        "subject": "chore(github): add config.yml"
+      },
+      {
+        "sha": "10dd54098611b8c6ae38a0731b6c8ab0f9ef4084",
+        "date": "2026-08-26T09:27:02+02:00",
+        "subject": "chore(github): add bug_report.yml"
+      },
+      {
+        "sha": "ce046f26495c73f007790971869c94d58e0f6a20",
+        "date": "2026-08-14T14:46:23-07:00",
+        "subject": "release 7.40.4: notes completeness pass (Hermes heartbeat, KEV, ComplexityRatchet)"
+      },
+      {
+        "sha": "16624c2862068103b25019f993ffa065090398c8",
+        "date": "2026-08-14T14:44:47-07:00",
+        "subject": "release 7.40.4: release page with art and full notes"
+      },
+      {
+        "sha": "345be4c2630ffb86b83c081ac8a27bd18fe1b9c6",
+        "date": "2026-08-14T14:29:05-07:00",
+        "subject": "docs: credit 7.40.4 community contributors (README grid + lists)"
+      },
+      {
+        "sha": "be9e8ef889f00a29f4fd677dee4772fdf32e07ce",
+        "date": "2026-08-14T14:14:13-07:00",
+        "subject": "release 7.40.4: community triage batch, Algorithm v8.20.2, shipped Pulse dashboard export, hardened release gates"
+      },
+      {
+        "sha": "58381b3df66252d7cc0cddf8b0d4e735fac35109",
+        "date": "2026-08-07T09:06:43-07:00",
+        "subject": "docs: Core Components — single-tier grid; Voice, Learning, Security, Hermes promoted; built-in Agents dropped"
+      }
+    ],
+    "files": [
+      {
+        "status": "A",
+        "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/ISSUE_TEMPLATE/config.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/leak-scan.allowlist.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/INSTALL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/ActivateImports.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/DeployComponents.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/DeployCore.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/InstallEngine.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/InstallHooks.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/InstallSettings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/LinkUser.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/Tools/OverlaySystem.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/ScaffoldUser.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Tools/SeedPulse.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/Workflows/Update.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/CLAUDE.template.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/ALGORITHM/LATEST",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/ALGORITHM/changelog.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/ALGORITHM/eval-guide.md",
+        "previousPath": null
+      },
+      {
+        "status": "R079",
+        "path": "LifeOS/install/LIFEOS/ALGORITHM/v8.20.2.md",
+        "previousPath": "LifeOS/install/LIFEOS/ALGORITHM/v8.17.3.md"
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/ATLAS/Atlas.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/ATLAS/InstallAtlas.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Cloudflare.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Launchd.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Systemd.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.plist.template",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.service.template",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.timer.template",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/CORTEX_INDEX_POLICY.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/ARCHITECTURE_SUMMARY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Algorithm/AlgorithmSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Algorithm/AscentStates.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Arbol/ArbolSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Atlas/AtlasSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/BrandAssets.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Bunker/BunkerSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Conduit/ConduitSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Config/ConfigSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/CoreComponents.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Freshness/FreshnessSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Hermes/HermesSidecar.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Hooks/HookSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISAFormat.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISAHierarchy.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISAHtmlMirror.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/ISA/ISASystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Ledger/LedgerSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/LifeOs/LifeOsSchema.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/LifeOs/LifeOsThesis.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/LifeOs/RenamePlan.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/LifeosSystemArchitecture.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Memory/CortexContract.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Memory/CurationCoverage.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Memory/MemorySystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Notifications/NotificationSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Observability/ObservabilitySystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/DaSubsystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/PulseMetadata.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/PulseSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Pulse/TerminalTabs.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Security/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Services/BackgroundServices.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Skills/SkillSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Synapse/SynapseSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/SystemUserBoundary.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/Helm.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/bin/helm",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/install.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/TabBar.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/cairn_clear_watcher.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/deck.conf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/deck/DeckBar.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/kitty.conf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/sessions/example.kitty-session",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/tab_bar.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/tab_refit_watcher.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Terminal/kitty/tokyo-night-storm.conf",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Testing/TestingDoctrine.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Tools/CliFirstArchitecture.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Tools/Containment.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Tools/Tools.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Upgrades/UpgradesSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Work/WorkSystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/HERMES/Heartbeat/ArtistScan.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/HERMES/Heartbeat/Tick.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/HERMES/LogAnalysis.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/HERMES/Mount.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/HERMES/Policy.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/HERMES/RenderSoul.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/HERMES/bunker.config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/HERMES/plugin/guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/HERMES/plugin/test_guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/LIFEOS_SYSTEM_PROMPT.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/LIFEOS_StatusLine.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/BuildInsight.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/InstallConduit.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/InstallConduitInsight.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/adapters/appFocus.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/adapters/github.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/conduit.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/rollup.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/sources.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/store.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Conduit/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/observability.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/404.html",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1785625581824/_buildManifest.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1786741866628/_buildManifest.js",
+        "previousPath": null
+      },
+      {
+        "status": "R100",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1786741866628/_ssgManifest.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/build-1785625581824/_ssgManifest.js"
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1511.3988ec434daa7d5c.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1511.f1584f17d5c1ed94.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1876-17294df6b8dc0d38.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/1876-c1dcbed098efd1a6.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/3090-71379c7cfe9f8fe1.js",
+        "previousPath": null
+      },
+      {
+        "status": "R091",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/3265-b729fd9d9454c4ef.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/8938-bb2c667515739d2a.js"
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/3328-3825ee4a997297cf.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/6513-38aa68daa1d06adf.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/6513-3cbdf328f129803e.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/6929-81184b76985fb3ad.js",
+        "previousPath": null
+      },
+      {
+        "status": "R079",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/7871.aea3f8a59c958302.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/7871.8607fe8cc4fee6d8.js"
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/9495-17294df6b8dc0d38.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/_not-found/page-57a10662637540bc.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/_not-found/page-867b9e6178c8375a.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/agents/page-2fdfe45df18365ff.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/agents/page-7ca8c88ce26e797b.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/air/page-32cbf89ac29d7756.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/air/page-e8a543c8c171e0e5.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/algorithm/page-1dcdfefdd3ebc5a1.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/algorithm/page-2c5978a363082df2.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/arbol/page-526a48954a2b9754.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/arbol/page-6e193ff1999f8732.js",
+        "previousPath": null
+      },
+      {
+        "status": "R080",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assets/page-c0d90cc660c3e091.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assets/page-d171b8c3edfe998f.js"
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assistant/page-0ca8403207cbee44.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/assistant/page-f9c9b5091b87ca6a.js",
+        "previousPath": null
+      },
+      {
+        "status": "R065",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/atlas/page-7f0ec1e91e7a58d9.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/atlas/page-dcbcbbd20754f8ca.js"
+      },
+      {
+        "status": "R084",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/books/page-c8c497443c740c18.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/books/page-b5e8b8050fb4494f.js"
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/bunker/page-41e6f41a0b96bb73.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/bunker/page-f439de28d66e9d62.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/business/page-5d556bed5badf897.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/business/page-833e8a9e87be73e9.js",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/conduit/page-c3cf20bde6da1749.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/conduit/page-c9ba22704124eb00.js",
+        "previousPath": null
+      },
+      {
+        "status": "R099",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/content/page-796107b2331b079f.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/content/page-58da977ea42f3aeb.js"
+      },
+      {
+        "status": "R093",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/layout-0953b1179b54012f.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/layout-bd518830a29862f7.js"
+      },
+      {
+        "status": "R098",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/page-1af8d9f261865f3c.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/docs/page-565cc9dc073f7f14.js"
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/finances/page-f13113c0aabb367e.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/finances/page-f4664b3d3d9fa825.js",
+        "previousPath": null
+      },
+      {
+        "status": "R092",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/gear/page-42ad1a6cca68b764.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/gear/page-d7620243d36dcbd8.js"
+      },
+      {
+        "status": "R099",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/growth/page-933278af53a8fc86.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/growth/page-313a04b2fcc870dc.js"
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/health/page-3a3e27112596df5d.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/health/page-eb69084498b3eeec.js",
+        "previousPath": null
+      },
+      {
+        "status": "R098",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hooks/page-ce69e103b712171e.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hooks/page-9d6563eb62c65d3b.js"
+      },
+      {
+        "status": "R084",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hypotheses/page-c4a53cd1fde54dd0.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/hypotheses/page-03120e41bea44bda.js"
+      },
+      {
+        "status": "D",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/graph/page-03cbbabe333ed75b.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/graph/page-0a50ee294e2c817e.js",
+        "previousPath": null
+      },
+      {
+        "status": "R085",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/page-9b0e92387dc77d17.js",
+        "previousPath": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/knowledge/page-b619c30a27a82776.js"
+      },
+      {
+        "status": "A",
+        "path": "LifeOS/install/LIFEOS/PULSE/Observability/out/_next/static/chunks/app/layout-174543bbb7a8481b.js",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

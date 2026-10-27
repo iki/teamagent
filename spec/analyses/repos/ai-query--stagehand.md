@@ -1,0 +1,207 @@
+# stagehand: change evidence
+
+Source: [stagehand](https://github.com/browserbase/stagehand) · [Analysis](../../projects/ai-query--stagehand.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `50f3ab81659365ab0fcb960205f41aa88bbfd028`; commit date: 2026-10-02T16:09:52-07:00; review date: unknown; observed SHA: `63078cf85ddfe189da88204539ec30d41959378b`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/browserbase/stagehand/compare/50f3ab81659365ab0fcb960205f41aa88bbfd028...63078cf85ddfe189da88204539ec30d41959378b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [63078cf85ddf](https://github.com/browserbase/stagehand/commit/63078cf85ddfe189da88204539ec30d41959378b) 2026-10-26T19:30:30-07:00: docs(cli): update extension upload instructions to use --stagehand (#3275)
+- [aa67fee03ef7](https://github.com/browserbase/stagehand/commit/aa67fee03ef7b899f9f505350e6410d207496450) 2026-10-26T19:30:30-07:00: feat(cli): add --stagehand flag to browse cloud extensions upload (#3289)
+- [59346d0d5e92](https://github.com/browserbase/stagehand/commit/59346d0d5e923c39535f17e444c2006ae37c66c4) 2026-10-26T12:07:27-07:00: feat(integrations): publish the typescript facade as stagehand-middleware (#3314)
+- [8023f34161d6](https://github.com/browserbase/stagehand/commit/8023f34161d650c196dc343d2c232fb5e129a826) 2026-10-23T16:57:31-07:00: [chore]: rm go sdk src (#3295)
+- [678c84403f50](https://github.com/browserbase/stagehand/commit/678c84403f506026966c46cbc1d2da23c1539ff8) 2026-10-23T16:57:30-07:00: [chore]: rm golang ci & release jobs (#3294)
+- [d1453a923658](https://github.com/browserbase/stagehand/commit/d1453a92365835e0464431cbb2a13de25a87b011) 2026-10-23T16:57:30-07:00: [chore]: rm go build tooling (#3293)
+- [48ad7f2b3f37](https://github.com/browserbase/stagehand/commit/48ad7f2b3f371f42dd3cdab77c9c6326c001f7ee) 2026-10-23T16:57:29-07:00: [chore]: rm go docs validation tests (#3291)
+- [b109ef4d60e0](https://github.com/browserbase/stagehand/commit/b109ef4d60e016ba4215fac5737304ccc9a151f8) 2026-10-23T16:57:29-07:00: [chore]: scope parity tests to python & ts (#3290)
+- [8e9cc5010900](https://github.com/browserbase/stagehand/commit/8e9cc5010900146f926f2ebcfd66db593d76bf56) 2026-10-23T15:51:34-07:00: [chore]: remove stagehand v2 docs (#3313)
+- [0f93c295deab](https://github.com/browserbase/stagehand/commit/0f93c295deabce3cd7b14cdbdeacb1771f93378d) 2026-10-22T20:54:47-07:00: fix(integrations): fall back to the newest managed tab when an unmanaged window has focus (#3299)
+- [b98abd900867](https://github.com/browserbase/stagehand/commit/b98abd90086707de575c9ae6ac9af1a436e76d18) 2026-10-22T19:39:27-07:00: feat(integrations): build the Deep Agents integration on stagehand-middleware (#3286)
+- [60cf3168f89d](https://github.com/browserbase/stagehand/commit/60cf3168f89df48d08e5a467e3ce1a726d7b06a5) 2026-10-22T17:20:28-07:00: feat(integrations): rename the Python facade package to stagehand-middleware (#3284)
+- [e7804f4b3625](https://github.com/browserbase/stagehand/commit/e7804f4b3625e7f3f05fe05492e7143e210a8bec) 2026-10-22T11:23:56-07:00: docs: add security policy (#3300)
+- [6aec9d16a8f5](https://github.com/browserbase/stagehand/commit/6aec9d16a8f503d0e81f22b92ff15a01205c4db2) 2026-10-21T19:18:47-07:00: chore(security): pin patched Node 24.22.1 and override undici (#3298)
+- [d16562dafc40](https://github.com/browserbase/stagehand/commit/d16562dafc402893a65e0fe83e16eacddacb4c58) 2026-10-20T22:58:22-07:00: feat(integrations): opt-in quiet waitForTimeout in the facade (#3282)
+- [57f93423577b](https://github.com/browserbase/stagehand/commit/57f93423577b915e1cb84a1e2ae1848970c70362) 2026-10-20T20:38:59-07:00: feat(integrations): add the Python facade package stagehand-integrations (#3279)
+- [6ff689b10144](https://github.com/browserbase/stagehand/commit/6ff689b10144421ae27488f5a98e36b15bfd1999) 2026-10-20T20:38:59-07:00: feat(integrations): add the facade conformance suite and cap run results (#3278)
+- [228e0d72bfc3](https://github.com/browserbase/stagehand/commit/228e0d72bfc31f76a613c9f7e693a79c62feede6) 2026-10-20T20:38:59-07:00: refactor(integrations): resolve snapshot IDs inside the facade's action runner (#3277)
+- [eda7c3e26ffe](https://github.com/browserbase/stagehand/commit/eda7c3e26ffebf9e85959f9ddad08e1689d5a900) 2026-10-20T20:38:58-07:00: feat(integrations): emit a canonical facade bundle from the core build (#3276)
+- [f293448173a8](https://github.com/browserbase/stagehand/commit/f293448173a8c4bf333e49d2775367afbc6ee603) 2026-10-20T20:38:58-07:00: refactor(integrations): keep the facade compat runtime emit from #3220, drop the Python Stagehand.run (#3256)
+- [2ee356fbb37a](https://github.com/browserbase/stagehand/commit/2ee356fbb37a25dd3aeaf24738e88c26e08c3eee) 2026-10-20T16:43:53-07:00: Dependency updates (#3283)
+- [bc45be1ab9bc](https://github.com/browserbase/stagehand/commit/bc45be1ab9bcc196c2519b3f09b7b6a40ac60404) 2026-10-20T13:46:12-07:00: Release browse@0.11.3 (#3281)
+- [10e0bd848b9a](https://github.com/browserbase/stagehand/commit/10e0bd848b9a6af4a206f0da0443b8723553639c) 2026-10-20T13:26:24-07:00: fix(cli): align Node.js requirement with Stagehand SDK (#3273)
+- [7d25fcecc8a7](https://github.com/browserbase/stagehand/commit/7d25fcecc8a7a6002af35b3a52e465f43ddfbcd2) 2026-10-19T21:16:53-07:00: docs: update for current browser.close behavior (#3271)
+- [621c120639a2](https://github.com/browserbase/stagehand/commit/621c120639a230dbf401965cb250f7c47da96b9c) 2026-10-19T17:24:52-07:00: Release Stagehand packages (#3200)
+- [a38acb668fea](https://github.com/browserbase/stagehand/commit/a38acb668fea2066cb9a2d75d222cbadd4f63ea7) 2026-10-19T17:19:13-07:00: [docs]: add docs for extension zip getter (#3268)
+- [cb9a1d178f20](https://github.com/browserbase/stagehand/commit/cb9a1d178f203664b6d2851c8bb7dfbebc81f738) 2026-10-19T17:19:12-07:00: [feat]: add extension archive getter (#3267)
+- [901eb2764297](https://github.com/browserbase/stagehand/commit/901eb276429702cddd4bfe3a3656946f3ebc166a) 2026-10-19T16:38:05-07:00: feat: expose browser-side function waits across Stagehand SDKs (#3183)
+- [0804f6bf671f](https://github.com/browserbase/stagehand/commit/0804f6bf671f69f0651b204e68d2785359962887) 2026-10-19T16:38:05-07:00: feat: add browser-side function waits to the extension (#3179)
+- [77170ed9f825](https://github.com/browserbase/stagehand/commit/77170ed9f8252581458360ab511c55a4be31fb44) 2026-10-19T15:49:42-07:00: [docs]: add docs for local connect headers (#3266)
+- [a31e2da5098b](https://github.com/browserbase/stagehand/commit/a31e2da5098b77ef457e414827a4497404e243c1) 2026-10-19T15:49:42-07:00: [feat]: expose headers param on `LocalBrowserConnectOptions` (#3265)
+- [ecb2a6b55c67](https://github.com/browserbase/stagehand/commit/ecb2a6b55c6783d510429d6823497136138d28f6) 2026-10-19T15:49:41-07:00: [feat]: expose `headers` param on `localBrowser.connect()` (#3263)
+
+## Changed paths (truncated)
+
+- D: `.changeset/bright-pdfs-print.md`
+- A: `.changeset/cli-extension-upload-instructions.md`
+- A: `.changeset/cli-extension-upload-stagehand.md`
+- M: `.changeset/config.json`
+- D: `.changeset/disable-placeholder-telemetry.md`
+- D: `.changeset/eval-frame-snapshot-maps.md`
+- D: `.changeset/eval-session-ownership.md`
+- D: `.changeset/fifty-teams-decide.md`
+- D: `.changeset/gentle-eagles-browse.md`
+- D: `.changeset/iframe-locator-world-readiness.md`
+- D: `.changeset/long-apes-remain.md`
+- D: `.changeset/wild-loops-lay.md`
+- D: `.changeset/xpath-text-node-predicates.md`
+- M: `.github/CODEOWNERS`
+- M: `.github/actions/setup-node-pnpm/action.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/preview.yml`
+- M: `.github/workflows/publish-python.yml`
+- M: `.github/workflows/release.yml`
+- M: `.gitignore`
+- M: `.oxfmtrc.json`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- A: `SECURITY.md`
+- M: `justfile`
+- A: `media/deepwiki.svg`
+- M: `package.json`
+- M: `packages/cli/CHANGELOG.md`
+- M: `packages/cli/Dockerfile`
+- M: `packages/cli/README.md`
+- M: `packages/cli/bin/run.js`
+- M: `packages/cli/package.json`
+- M: `packages/cli/skills/browse/SKILL.md`
+- M: `packages/cli/src/commands/cloud/extensions/upload.ts`
+- M: `packages/cli/src/commands/cloud/search.ts`
+- M: `packages/cli/src/lib/functions/init.ts`
+- M: `packages/cli/tests/cli-cloud-contract.test.ts`
+- A: `packages/cli/tests/cli-node-version.test.ts`
+- M: `packages/docs/README.md`
+- M: `packages/docs/docs.json`
+- A: `packages/docs/images/integrations/cursor.svg`
+- M: `packages/docs/tests/sdk-reference.test.ts`
+- A: `packages/docs/v2-retired.mdx`
+- D: `packages/docs/v2/basics/act.mdx`
+- D: `packages/docs/v2/basics/agent.mdx`
+- D: `packages/docs/v2/basics/extract.mdx`
+- D: `packages/docs/v2/basics/observe.mdx`
+- D: `packages/docs/v2/best-practices/agent-fallbacks.mdx`
+- D: `packages/docs/v2/best-practices/build-agent.mdx`
+- D: `packages/docs/v2/best-practices/caching.mdx`
+- D: `packages/docs/v2/best-practices/computer-use.mdx`
+- D: `packages/docs/v2/best-practices/contributing.mdx`
+- D: `packages/docs/v2/best-practices/cost-optimization.mdx`
+- D: `packages/docs/v2/best-practices/deployments.mdx`
+- D: `packages/docs/v2/best-practices/mcp-integrations.mdx`
+- D: `packages/docs/v2/best-practices/playwright-interop.mdx`
+- D: `packages/docs/v2/best-practices/prompting-best-practices.mdx`
+- D: `packages/docs/v2/best-practices/speed-optimization.mdx`
+- D: `packages/docs/v2/best-practices/usecase-observe.mdx`
+- D: `packages/docs/v2/best-practices/user-data.mdx`
+- D: `packages/docs/v2/best-practices/using-multiple-tabs.mdx`
+- D: `packages/docs/v2/best-practices/working-with-iframes.mdx`
+- D: `packages/docs/v2/configuration/browser.mdx`
+- D: `packages/docs/v2/configuration/evals.mdx`
+- D: `packages/docs/v2/configuration/logging.mdx`
+- D: `packages/docs/v2/configuration/models.mdx`
+- D: `packages/docs/v2/configuration/observability.mdx`
+- D: `packages/docs/v2/first-steps/ai-rules.mdx`
+- D: `packages/docs/v2/first-steps/installation.mdx`
+- D: `packages/docs/v2/first-steps/introduction.mdx`
+- D: `packages/docs/v2/first-steps/quickstart.mdx`
+- D: `packages/docs/v2/integrations/crew-ai/configuration.mdx`
+- D: `packages/docs/v2/integrations/crew-ai/introduction.mdx`
+- D: `packages/docs/v2/integrations/langchain/configuration.mdx`
+- D: `packages/docs/v2/integrations/langchain/introduction.mdx`
+- D: `packages/docs/v2/integrations/mcp/configuration.mdx`
+- D: `packages/docs/v2/integrations/mcp/introduction.mdx`
+- D: `packages/docs/v2/integrations/mcp/setup.mdx`
+- D: `packages/docs/v2/integrations/mcp/tools.mdx`
+- D: `packages/docs/v2/integrations/vercel/configuration.mdx`
+- D: `packages/docs/v2/integrations/vercel/introduction.mdx`
+- D: `packages/docs/v2/references/act.mdx`
+- D: `packages/docs/v2/references/agent.mdx`
+- D: `packages/docs/v2/references/extract.mdx`
+- D: `packages/docs/v2/references/observe.mdx`
+- D: `packages/docs/v2/references/stagehand.mdx`
+- M: `packages/docs/v3/basics/webmcp.mdx`
+- M: `packages/docs/v3/best-practices/caching.mdx`
+- M: `packages/docs/v3/references/page.mdx`
+- M: `packages/docs/v4/basics/webmcp.mdx`
+- M: `packages/docs/v4/best-practices/deployments.mdx`
+- M: `packages/docs/v4/configuration/browser.mdx`
+- A: `packages/docs/v4/cookbooks/ai-sdk-research-agent.mdx`
+- A: `packages/docs/v4/cookbooks/approve-form-submission.mdx`
+- A: `packages/docs/v4/cookbooks/files-to-bucket.mdx`
+- A: `packages/docs/v4/cookbooks/overview.mdx`
+- A: `packages/docs/v4/cookbooks/paginated-catalog.mdx`
+- A: `packages/docs/v4/cookbooks/persisted-login.mdx`
+- A: `packages/docs/v4/integrations/agent-frameworks/claude-cua-toolset-quickstart.mdx`
+- M: `packages/docs/v4/integrations/agent-frameworks/crewai.mdx`
+- M: `packages/docs/v4/integrations/agent-frameworks/eve.mdx`
+- M: `packages/docs/v4/integrations/agent-frameworks/mastra.mdx`
+- A: `packages/docs/v4/integrations/agent-frameworks/openai-cua-toolset-quickstart.mdx`
+- M: `packages/docs/v4/integrations/agent-frameworks/overview.mdx`
+- M: `packages/docs/v4/integrations/agent-frameworks/vercel-ai-sdk.mdx`
+- M: `packages/docs/v4/integrations/cli-agents/claude-code.mdx`
+- M: `packages/docs/v4/integrations/cli-agents/codex.mdx`
+- A: `packages/docs/v4/integrations/cli-agents/cursor.mdx`
+- M: `packages/docs/v4/integrations/cli-agents/fx.mdx`
+- M: `packages/docs/v4/integrations/cli-agents/overview.mdx`
+- M: `packages/docs/v4/integrations/cli-agents/pi.mdx`
+- M: `packages/docs/v4/integrations/overview.mdx`
+- M: `packages/docs/v4/migrations/browser-use.mdx`
+- M: `packages/docs/v4/migrations/playwright.mdx`
+- M: `packages/docs/v4/migrations/v3.mdx`
+- M: `packages/docs/v4/reference/page.mdx`
+- M: `packages/docs/v4/reference/webmcp.mdx`
+- M: `packages/evals/.gitignore`
+- M: `packages/evals/README.md`
+- A: `packages/evals/assets/readme/doctor.png`
+- M: `packages/evals/assets/readme/preview.png`
+- A: `packages/evals/assets/readme/run-dead-judge.png`
+- A: `packages/evals/assets/readme/run-live.png`
+- A: `packages/evals/assets/readme/run-summary.png`
+- A: `packages/evals/assets/readme/run-verbose.png`
+- D: `packages/evals/assets/readme/run.gif`
+- M: `packages/evals/cli.ts`
+- M: `packages/evals/core/contracts/tool.ts`
+- M: `packages/evals/core/targets/browserbase.ts`
+- M: `packages/evals/core/tasks/page-info/get_url.ts`
+- M: `packages/evals/core/tools/browserSessionLoss.ts`
+- M: `packages/evals/core/tools/registry.ts`
+- M: `packages/evals/core/tools/stagehandFacadeBridge.ts`
+- M: `packages/evals/core/tools/stagehand_facade.ts`
+- A: `packages/evals/docs/harness-contract.md`
+- M: `packages/evals/docs/verifier-gates.md`
+- M: `packages/evals/evals.config.json`
+- A: `packages/evals/evalsEnv.ts`
+- M: `packages/evals/framework/agentToolRuntime.ts`
+- M: `packages/evals/framework/benchHarness.ts`
+- M: `packages/evals/framework/benchPlanner.ts`
+- M: `packages/evals/framework/benchRunner.ts`
+- A: `packages/evals/framework/benchSuites.ts`
+- A: `packages/evals/framework/browserSession.ts`
+- A: `packages/evals/framework/caseIdentity.ts`
+- M: `packages/evals/framework/claudeCodeRunner.ts`
+- M: `packages/evals/framework/claudeCodeToolAdapter.ts`
+- A: `packages/evals/framework/claudeCuaRunner.ts`
+- A: `packages/evals/framework/claudeCuaToolAdapter.ts`
+- M: `packages/evals/framework/codexRunner.ts`
+- M: `packages/evals/framework/codexToolAdapter.ts`
+- A: `packages/evals/framework/costEstimate.ts`
+- A: `packages/evals/framework/cuaToolAdapter.ts`
+- M: `packages/evals/framework/cursorRunner.ts`
+- M: `packages/evals/framework/cursorToolAdapter.ts`
+- M: `packages/evals/framework/deepagentsRunner.ts`
+- M: `packages/evals/framework/deepagentsToolAdapter.ts`
+- M: `packages/evals/framework/discovery.ts`
+- A: `packages/evals/framework/evalSystemPrompt.ts`

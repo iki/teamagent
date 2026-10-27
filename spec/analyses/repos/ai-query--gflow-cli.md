@@ -1,0 +1,207 @@
+# gflow-cli: change evidence
+
+Source: [gflow-cli](https://github.com/ffroliva/gflow-cli) · [Analysis](../../projects/ai-query--gflow-cli.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `c9465a0d573bc0853253d68eb15f13cbc52f532f`; commit date: 2026-10-02T10:47:50+01:00; review date: unknown; observed SHA: `7b6b9054ba419761e3b610d1fd5ca0137b1d0a51`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ffroliva/gflow-cli/compare/c9465a0d573bc0853253d68eb15f13cbc52f532f...7b6b9054ba419761e3b610d1fd5ca0137b1d0a51). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [7b6b9054ba41](https://github.com/ffroliva/gflow-cli/commit/7b6b9054ba419761e3b610d1fd5ca0137b1d0a51) 2026-10-26T09:16:55Z: Merge pull request #1107 from ffroliva/bugfix/988-gate-count
+- [53f1913700ac](https://github.com/ffroliva/gflow-cli/commit/53f1913700ac4745af49000df7da2d3e19c35d29) 2026-10-26T09:06:36Z: fix: sync the shipped gflow-cli skill; list the plugin-skills gate locally (#988)
+- [cd4155745d4e](https://github.com/ffroliva/gflow-cli/commit/cd4155745d4e60207471d2854227911b793bc968) 2026-10-26T09:02:04Z: fix(agent-only): approve only the gate whose count was read (#988 review)
+- [1b513263bec2](https://github.com/ffroliva/gflow-cli/commit/1b513263bec267e60bbbb7718f158aca6a070765) 2026-10-26T08:56:23Z: docs: Security entry last in Unreleased; sync the website mirror (#988)
+- [3b45d2e796f8](https://github.com/ffroliva/gflow-cli/commit/3b45d2e796f881e2c0c0980029a1fcf5cdfaa7e7) 2026-10-26T08:53:06Z: fix(agent-only): read a credit gate's count before approving it (#988)
+- [93e99ce6733d](https://github.com/ffroliva/gflow-cli/commit/93e99ce6733d54ee62a82a53f1de0a7be2fad72a) 2026-10-26T08:51:00Z: Merge pull request #1106 from ffroliva/bugfix/1102-sep2663-tasks
+- [16a5120521d8](https://github.com/ffroliva/gflow-cli/commit/16a5120521d805cf9365be11bb6af4d0457b20a7) 2026-10-26T08:43:12Z: Merge pull request #1103 from ffroliva/docs/1097-session-hardening
+- [3a97f2628089](https://github.com/ffroliva/gflow-cli/commit/3a97f26280898cc4e56935918c07d30fa283e44a) 2026-10-26T08:41:19Z: test(mcp): pin the empty cancel ack in both eras; tick the #1102 plan
+- [fdb2a765cf55](https://github.com/ffroliva/gflow-cli/commit/fdb2a765cf55a530b47a139eb6b5f0f6e39330a3) 2026-10-26T08:36:35Z: fix(mcp): tasks/get and tasks/cancel speak SEP-2663; drop tasks/result (#1102)
+- [5463ce56becb](https://github.com/ffroliva/gflow-cli/commit/5463ce56becb650968deeb1428a753d5d339a7e4) 2026-10-26T08:22:41Z: docs: number the #1097 lessons and drop a private memory pointer
+- [c89af9bd4e85](https://github.com/ffroliva/gflow-cli/commit/c89af9bd4e858ee6e8c79a28f3fec35a02a615e1) 2026-10-26T08:12:45Z: docs: harden the #1097 session lessons
+- [ef7bf3e15502](https://github.com/ffroliva/gflow-cli/commit/ef7bf3e15502144d0b74ed51603ffdcb5a7dc72c) 2026-10-26T07:31:13Z: Merge pull request #1101 from ffroliva/bugfix/1097-wait-false-runs
+- [6cc5c979ead0](https://github.com/ffroliva/gflow-cli/commit/6cc5c979ead0c03654bd6beebd422b23e12dbb1c) 2026-10-25T22:22:55Z: fix(mcp): answer the peer review of the wait=false fix
+- [51e17c84e05c](https://github.com/ffroliva/gflow-cli/commit/51e17c84e05c90a872580af2d3e30a5391ea2d14) 2026-10-25T20:36:26Z: fix(mcp): drain wait=false jobs before stdio teardown too
+- [e3f96cf7a39c](https://github.com/ffroliva/gflow-cli/commit/e3f96cf7a39c3a16ee518dd9dd77ba9b23175a89) 2026-10-25T20:22:27Z: fix(mcp): answer the #1097 council review
+- [e3c8c26a18b1](https://github.com/ffroliva/gflow-cli/commit/e3c8c26a18b188ee86e4fc95524214bf8b308b46) 2026-10-25T20:05:29Z: fix(mcp): run wait=false generations, add tasks/result, make tasks/cancel stop the job (#1097)
+- [9bb1bbf530f3](https://github.com/ffroliva/gflow-cli/commit/9bb1bbf530f3a837387f5a79ac0e52e606a39082) 2026-10-25T12:23:59Z: Merge pull request #1100 from ffroliva/docs/v0.90.0-post-tag-ledger
+- [aaea2930f903](https://github.com/ffroliva/gflow-cli/commit/aaea2930f90340a94617f201f8908a9355533758) 2026-10-25T12:14:28Z: docs(release): v0.90.0 post-tag evidence
+- [427d39cc6a2e](https://github.com/ffroliva/gflow-cli/commit/427d39cc6a2ec6bbc4802dd8a9b007c88770d08a) 2026-10-25T12:13:55Z: chore: back-merge main (v0.90.0) into develop
+- [c073c531b7a4](https://github.com/ffroliva/gflow-cli/commit/c073c531b7a4daf02d7ec2ea88d3ce8529eb8e3d) 2026-10-25T12:13:31Z: Merge pull request #1099 from ffroliva/chore/release-v0.90.0
+- [164b8d262943](https://github.com/ffroliva/gflow-cli/commit/164b8d2629436ef3b879a99dc2a15ee9b0ba7413) 2026-10-25T11:57:42Z: chore(release): v0.90.0
+- [293b4e6c3bf4](https://github.com/ffroliva/gflow-cli/commit/293b4e6c3bf4b35520d026601053fd2a0eb428f3) 2026-10-25T11:37:14Z: Merge pull request #1098 from ffroliva/bugfix/772-migrated-ref-dedup
+- [2dbcd8d334ff](https://github.com/ffroliva/gflow-cli/commit/2dbcd8d334ff64d3e1f43461eca161a657104b0b) 2026-10-25T11:27:09Z: Merge develop
+- [3f202b8a8a45](https://github.com/ffroliva/gflow-cli/commit/3f202b8a8a453137d3d84cc81e537be48e8a5b0a) 2026-10-25T11:26:44Z: Merge pull request #1096 from ffroliva/bugfix/796-corrupt-cookie-store
+- [6796638be7d6](https://github.com/ffroliva/gflow-cli/commit/6796638be7d63a99c60df07454ae803787c4f2df) 2026-10-25T11:14:19Z: Merge develop
+- [c949dec4905d](https://github.com/ffroliva/gflow-cli/commit/c949dec4905dbdda184395adc96bac6171183d2d) 2026-10-25T11:13:49Z: Merge develop
+- [c13ee66f136c](https://github.com/ffroliva/gflow-cli/commit/c13ee66f136c5c024c996ddb8772b85085e0e072) 2026-10-25T11:13:00Z: Merge pull request #1095 from ffroliva/docs/481-mcp-wait
+- [2a8213e6481e](https://github.com/ffroliva/gflow-cli/commit/2a8213e6481eda7b2f5472721bfe0651c47370b6) 2026-10-25T11:10:59Z: fix(image): retry only a miss on a reused image; prove it live (#772)
+- [fe02c091c8a7](https://github.com/ffroliva/gflow-cli/commit/fe02c091c8a7483b6985eb8772b93e3bc6c07e14) 2026-10-25T11:00:44Z: Merge develop into docs/481-mcp-wait
+- [8398f4d19e57](https://github.com/ffroliva/gflow-cli/commit/8398f4d19e5710b38180c62651ad0383057b3b62) 2026-10-25T11:00:07Z: Merge pull request #1094 from ffroliva/bugfix/724-entity-variants
+- [5e930bac417b](https://github.com/ffroliva/gflow-cli/commit/5e930bac417b4df98a9edbbb2221302baf84f4d1) 2026-10-25T10:59:11Z: test(auth): run the real-file #796 tests on Windows; add a portable DatabaseError test
+- [341cad6aaa01](https://github.com/ffroliva/gflow-cli/commit/341cad6aaa0130162da9d8a6c253438878171b59) 2026-10-25T10:57:28Z: Merge pull request #1093 from ffroliva/test/559-canary-stale-e2e
+
+## Changed paths (truncated)
+
+- M: `.codex-plugin/plugin.json`
+- M: `.env.template`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/deps-watch.yml`
+- M: `.github/workflows/governance-advisory.yml`
+- M: `.github/workflows/governance-benchmark.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/scorecard.yml`
+- D: `.github/workflows/selector-probe.yml`
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `KNOWN_ISSUES.md`
+- M: `PLAN.md`
+- M: `README.md`
+- M: `docker-compose.yml`
+- M: `docker/Dockerfile`
+- M: `docs/ACCOUNT_SAFETY.md`
+- M: `docs/AGENT_GUIDE.md`
+- M: `docs/AUTHENTICATION.md`
+- M: `docs/CONFIGURATION.md`
+- M: `docs/DATA_LAYER.md`
+- M: `docs/DEBUGGING.md`
+- M: `docs/DEVELOPMENT.md`
+- M: `docs/E2E_TESTING.md`
+- M: `docs/EXTERNAL_STORAGE.md`
+- M: `docs/IMAGE_UPSCALE_RECON.md`
+- M: `docs/INDEX.md`
+- M: `docs/INSTRUCTIONS.md`
+- A: `docs/LIVE_VERIFICATION_v0.83.0.md`
+- A: `docs/LIVE_VERIFICATION_v0.83.1.md`
+- A: `docs/LIVE_VERIFICATION_v0.83.2.md`
+- A: `docs/LIVE_VERIFICATION_v0.84.0.md`
+- A: `docs/LIVE_VERIFICATION_v0.85.0.md`
+- A: `docs/LIVE_VERIFICATION_v0.86.0.md`
+- A: `docs/LIVE_VERIFICATION_v0.87.0.md`
+- A: `docs/LIVE_VERIFICATION_v0.87.1.md`
+- A: `docs/LIVE_VERIFICATION_v0.88.0.md`
+- A: `docs/LIVE_VERIFICATION_v0.89.0.md`
+- A: `docs/LIVE_VERIFICATION_v0.89.1.md`
+- A: `docs/LIVE_VERIFICATION_v0.90.0.md`
+- M: `docs/MCP.md`
+- M: `docs/MOVIE.md`
+- M: `docs/PROJECT_STATUS.md`
+- M: `docs/REFERENCE_STRATEGIES.md`
+- M: `docs/USAGE.md`
+- M: `docs/USER_GUIDE.md`
+- A: `docs/superpowers/memory/drive-the-page-dont-replay-the-rpc.md`
+- M: `docs/superpowers/memory/flow-recon-must-run-on-denon82-ffroliva-migrated.md`
+- M: `docs/superpowers/memory/ligature-carrier-differs-by-host.md`
+- M: `docs/superpowers/memory/migrated-host-driver-wire-lessons.md`
+- A: `docs/superpowers/plans/2026-09-15-agent-only-composer-driver/ASSESSMENT.md`
+- A: `docs/superpowers/plans/2026-09-15-agent-only-composer-driver/PLAN.md`
+- A: `docs/superpowers/plans/2026-09-15-agent-only-composer-driver/PREDICT.md`
+- A: `docs/superpowers/plans/2026-09-15-agent-only-composer-driver/SCENARIO.md`
+- A: `docs/superpowers/plans/2026-10-17-migrated-video-extend/PLAN.md`
+- A: `docs/superpowers/plans/2026-10-17-migrated-video-extend/PREDICT.md`
+- A: `docs/superpowers/plans/2026-10-17-migrated-video-extend/SCENARIO.md`
+- A: `docs/superpowers/plans/2026-10-19-catalog-refs-in-project/PLAN.md`
+- A: `docs/superpowers/plans/2026-10-19-catalog-refs-in-project/PREDICT.md`
+- A: `docs/superpowers/plans/2026-10-19-catalog-refs-in-project/SCENARIO.md`
+- A: `docs/superpowers/plans/2026-10-25-mcp-wait-false-runs/PLAN.md`
+- A: `docs/superpowers/plans/2026-10-25-mcp-wait-false-runs/SCENARIO.md`
+- A: `docs/superpowers/plans/2026-10-26-agent-only-gate-count/PLAN.md`
+- A: `docs/superpowers/plans/2026-10-26-mcp-tasks-sep2663/PLAN.md`
+- A: `docs/superpowers/plans/2026-10-26-mcp-tasks-sep2663/SCENARIO.md`
+- M: `docs/superpowers/spikes/2026-09-08-migrated-image-submit-wire.md`
+- M: `docs/superpowers/spikes/2026-09-11-nano2-lite-capability.md`
+- A: `docs/superpowers/spikes/2026-09-15-agent-only-composer-drive-surface.md`
+- A: `docs/superpowers/spikes/2026-09-19-migrated-video-extend-wire.md`
+- A: `docs/superpowers/spikes/2026-09-30-migrated-upscale-wire.md`
+- A: `docs/superpowers/spikes/2026-10-06-948-record-slot3-null.md`
+- A: `docs/superpowers/spikes/2026-10-08-nano-banana-21-replaced-2.md`
+- A: `docs/superpowers/spikes/2026-10-10-duration-locale-and-notice-only-cookie-bar.md`
+- A: `docs/superpowers/spikes/2026-10-13-migrated-image-character-mention.md`
+- A: `docs/superpowers/spikes/2026-10-14-labs-nextauth-silent-refresh.md`
+- A: `docs/superpowers/spikes/2026-10-17-agent-only-cohort-profiles.md`
+- A: `docs/superpowers/spikes/2026-10-17-migrated-extend-ui-path.md`
+- A: `docs/superpowers/spikes/2026-10-18-rpc-response-body-readback.md`
+- A: `docs/superpowers/spikes/2026-10-19-earlier-run-ref-in-place.md`
+- A: `docs/superpowers/spikes/2026-10-19-fourth-ref-caret.md`
+- A: `docs/superpowers/spikes/2026-10-19-minio-replacement.md`
+- A: `docs/superpowers/spikes/2026-10-20-migrated-upload-reply-body-eviction.md`
+- A: `docs/superpowers/spikes/2026-10-21-migrated-submit-reply-body-loss.md`
+- A: `docs/superpowers/spikes/2026-10-22-credits-balance-on-nzlxg.md`
+- A: `docs/superpowers/spikes/2026-10-22-image-upscale-lost-body.md`
+- A: `docs/superpowers/spikes/2026-10-22-labs-session-oracle-gone.md`
+- A: `docs/superpowers/spikes/2026-10-25-mcp-detached-task-shutdown.md`
+- M: `llms.txt`
+- M: `plugins/gflow/.claude-plugin/plugin.json`
+- M: `plugins/gflow/skills/gflow-cli/SKILL.md`
+- M: `plugins/gflow/skills/video-production/SKILL.md`
+- M: `pyproject.toml`
+- M: `scripts/canary/register_task.ps1`
+- M: `scripts/canary/run_canary.py`
+- A: `scripts/ci/check_deletions.py`
+- M: `scripts/dev/acceptance/bench.py`
+- A: `scripts/dev/cleanup.py`
+- M: `scripts/dev/live_verify_mcp_tasks.py`
+- M: `scripts/dev/skillopt/tasks.json`
+- A: `scripts/dev/spike_948_project_records.py`
+- A: `scripts/dev/spike_948_submit_envelope.py`
+- A: `scripts/dev/spike_963_duration_locale.py`
+- A: `scripts/dev/spike_995_earlier_run_ref.py`
+- A: `scripts/dev/spike_997_fourth_ref_caret.py`
+- A: `scripts/dev/spike_agent_confirm_radios.py`
+- A: `scripts/dev/spike_agent_only_cohort_profiles.py`
+- A: `scripts/dev/spike_agent_only_composer.py`
+- A: `scripts/dev/spike_agent_only_video_ready.py`
+- A: `scripts/dev/spike_agent_only_video_tile.py`
+- A: `scripts/dev/spike_agent_settings_defaults.py`
+- A: `scripts/dev/spike_credits_balance_carrier.py`
+- M: `scripts/dev/spike_credits_migrated_surface.py`
+- M: `scripts/dev/spike_entity_submit_rpcs.py`
+- A: `scripts/dev/spike_gif_export_delivery.py`
+- A: `scripts/dev/spike_image_submit_references.py`
+- A: `scripts/dev/spike_labs_nextauth_refresh.py`
+- A: `scripts/dev/spike_mcp_detached_shutdown.py`
+- M: `scripts/dev/spike_migrated_end_frame.py`
+- A: `scripts/dev/spike_migrated_extend_ui_path.py`
+- M: `scripts/dev/spike_migrated_queue_read.py`
+- M: `scripts/dev/spike_migrated_refusal_envelope.py`
+- A: `scripts/dev/spike_migrated_submit_body_loss.py`
+- A: `scripts/dev/spike_migrated_upload_body_eviction.py`
+- A: `scripts/dev/spike_nano_banana_21_wire.py`
+- A: `scripts/dev/spike_picker_chip_removal.py`
+- A: `scripts/dev/spike_picker_entity_marker.py`
+- M: `scripts/dev/spike_project_media_status.py`
+- A: `scripts/dev/spike_s3_test_backend.py`
+- A: `scripts/dev/spike_session_oracle.py`
+- A: `scripts/dev/spike_upscale_lost_body.py`
+- A: `scripts/dev/spike_upscale_menu_anchors.py`
+- M: `server.json`
+- M: `skills/check/SKILL.md`
+- M: `skills/gflow-cli/SKILL.md`
+- M: `skills/pr-council-review/SKILL.md`
+- M: `skills/release/SKILL.md`
+- M: `skills/spike/SKILL.md`
+- M: `skills/video-production/SKILL.md`
+- M: `src/gflow_cli/__init__.py`
+- M: `src/gflow_cli/_cli_helpers.py`
+- M: `src/gflow_cli/api/_retry.py`
+- M: `src/gflow_cli/api/client.py`
+- D: `src/gflow_cli/api/credits.py`
+- M: `src/gflow_cli/api/dto.py`
+- M: `src/gflow_cli/api/image.py`
+- M: `src/gflow_cli/api/routes.py`
+- M: `src/gflow_cli/api/transports/_common.py`
+- A: `src/gflow_cli/api/transports/agent_only_composer.py`
+- M: `src/gflow_cli/api/transports/batchexecute.py`
+- M: `src/gflow_cli/api/transports/migrated_composer.py`
+- A: `src/gflow_cli/api/transports/migrated_extend.py`
+- M: `src/gflow_cli/api/transports/migrated_recover.py`
+- A: `src/gflow_cli/api/transports/migrated_upscale.py`
+- A: `src/gflow_cli/api/transports/migrated_video_upscale.py`
+- M: `src/gflow_cli/api/transports/ui_automation.py`
+- M: `src/gflow_cli/api/transports/ui_automation_video.py`
+- M: `src/gflow_cli/auth/cookies.py`
+- M: `src/gflow_cli/auth/internal_chromium.py`
+- M: `src/gflow_cli/auth/real_chrome.py`

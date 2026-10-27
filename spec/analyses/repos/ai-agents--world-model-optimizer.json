@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--world-model-optimizer",
+    "category": "ai-agents",
+    "name": "world-model-optimizer",
+    "url": "https://github.com/experientiallabs/world-model-optimizer",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--world-model-optimizer.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "d85ca8553118cdd718e529238289820a7eb12472",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T12:42:32-07:00",
+    "reportSha256": "a351aff56ca91a2ceda53ef001655216e0f22c718f93a23af0d239dfb26c0e2c",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--world-model-optimizer",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/experientiallabs/world-model-optimizer",
+    "report": "spec/projects/ai-agents--world-model-optimizer.md",
+    "analyzedSha": "d85ca8553118cdd718e529238289820a7eb12472",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T12:42:32-07:00",
+    "observedSha": "5f4348efd714894d8def5a498117e9b830598350",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "5f4348efd714894d8def5a498117e9b830598350",
+        "date": "2026-10-27T09:41:38-04:00",
+        "subject": "Merge pull request #1276 from experientiallabs/release-sync-0.7.221"
+      },
+      {
+        "sha": "5a55226f3a84ae6103acd1194de112568390d679",
+        "date": "2026-10-27T06:29:12Z",
+        "subject": "Merge branch 'release/0.7.221-train' into 'main'"
+      },
+      {
+        "sha": "55630917024cf135ab4ea67d33479f9d37c35428",
+        "date": "2026-10-27T01:23:35-04:00",
+        "subject": "release 0.7.221: keep the merged set inside the repo layout gate"
+      },
+      {
+        "sha": "fa5216ab59e73847071978899375498f0dd44c0c",
+        "date": "2026-10-27T01:14:19-04:00",
+        "subject": "release 0.7.221: setuptools 84.2.0 (expired advisory ignore), accept block-buffer GHSA-qwgh-2vcv-g2f7"
+      },
+      {
+        "sha": "f005a7647f29672b669aedee06b3446a52c64ac2",
+        "date": "2026-10-27T01:12:12-04:00",
+        "subject": "release: experiential 0.7.221, exp-gateway-native 0.3.171 (!177 !129 !130 !131 !153)"
+      },
+      {
+        "sha": "948b449198bbf12db38403f7f9e054910685e7b9",
+        "date": "2026-10-27T01:06:48-04:00",
+        "subject": "Merge remote-tracking branch 'gitlab/fix/responses-chat-tool-message-order' into release/0.7.221-train"
+      },
+      {
+        "sha": "d3b1094094c09c3483591c03f5006785aeecd862",
+        "date": "2026-10-27T01:06:38-04:00",
+        "subject": "Merge remote-tracking branch 'gitlab/gateway/images-fireworks-bedrock' into release/0.7.221-train"
+      },
+      {
+        "sha": "4f609bbccfca489a2e36655a558f4d8e00208b7c",
+        "date": "2026-10-27T01:05:28-04:00",
+        "subject": "Merge remote-tracking branch 'gitlab/gateway/effort-nearest' into release/0.7.221-train"
+      },
+      {
+        "sha": "88b2ff49252c667f055c14da50cd0c99c813f9fc",
+        "date": "2026-10-27T01:05:28-04:00",
+        "subject": "Merge remote-tracking branch 'gitlab/gateway/images-azure-sora' into release/0.7.221-train"
+      },
+      {
+        "sha": "57c23373907d748857f5e27f97d767358cdba8cd",
+        "date": "2026-10-27T01:05:28-04:00",
+        "subject": "Merge remote-tracking branch 'gitlab/gateway/stop-unseen-output-incomplete' into release/0.7.221-train"
+      },
+      {
+        "sha": "f128d0e2162222489a774caab33a45ddb16c9dd0",
+        "date": "2026-10-27T00:44:37-04:00",
+        "subject": "gateway: a stop that reports unseen answer tokens settles Incomplete, not empty"
+      },
+      {
+        "sha": "2fa0f1b14ce40a4fc515139b25d2bdda31752bf8",
+        "date": "2026-10-26T19:55:44Z",
+        "subject": "Merge branch 'gateway/image-input-names-message' into 'main'"
+      },
+      {
+        "sha": "98956710ace2bcc536f585f838940ed5cc3de269",
+        "date": "2026-10-26T15:31:54-04:00",
+        "subject": "gateway: an image refusal names the message that carries the image"
+      },
+      {
+        "sha": "7701d6916906d9567427c4e2ce6ce2b24bf281b3",
+        "date": "2026-10-26T17:08:56Z",
+        "subject": "Merge branch 'gateway/capability-ledger-names' into 'main'"
+      },
+      {
+        "sha": "7607b4bc27dda0e49645cb93bf27a7ab6e7fcba1",
+        "date": "2026-10-26T17:08:34Z",
+        "subject": "Merge branch 'gateway/decisions-point-to-systemone' into 'main'"
+      },
+      {
+        "sha": "104a1aaed4901f630ed0373dbba219fb34c7dfc7",
+        "date": "2026-10-26T17:08:25Z",
+        "subject": "Merge branch 'gateway/openrouter-include-reasoning' into 'main'"
+      },
+      {
+        "sha": "c40584c09517dec9432bc4214c900464a18a5eb3",
+        "date": "2026-10-26T17:08:10Z",
+        "subject": "Merge branch 'gateway/history-tool-arguments' into 'main'"
+      },
+      {
+        "sha": "cf9383686af3dd8298a7a28dc84cb9512f3e2a84",
+        "date": "2026-10-26T17:08:00Z",
+        "subject": "Merge branch 'gateway/null-message-content-400' into 'main'"
+      },
+      {
+        "sha": "1d0cc6218017cc5dc238552d36a0c1514c591e9f",
+        "date": "2026-10-26T17:07:51Z",
+        "subject": "Merge branch 'gateway/legacy-function-call' into 'main'"
+      },
+      {
+        "sha": "581bf167849e003b021d6ed35ef04f3840bbd7a4",
+        "date": "2026-10-26T17:06:45Z",
+        "subject": "Merge branch 'gateway/messages-tool-addition' into 'main'"
+      },
+      {
+        "sha": "65efaceba709708cf96e13a618f54d358b88580b",
+        "date": "2026-10-26T02:02:40-04:00",
+        "subject": "gateway: name the refused capability in the ledger, not only its shared field"
+      },
+      {
+        "sha": "8a49e711ad1229e9bc43d5b958a0139f921ff7f5",
+        "date": "2026-10-25T09:28:23-07:00",
+        "subject": "Merge pull request #1265: restore GitLab history and GitHub CI"
+      },
+      {
+        "sha": "311a554e5d14c2bb15ebcecc2195438a8f4fd5f5",
+        "date": "2026-10-25T06:34:14-04:00",
+        "subject": "gateway: point a native-decisions model refused on /v1/decisions at /v1/systemone"
+      },
+      {
+        "sha": "c5751d426cdfe1070f6e11897bc8b4f9cfa1781a",
+        "date": "2026-10-24T23:11:15-04:00",
+        "subject": "gateway: accept OpenRouter's legacy include_reasoning on Chat as reasoning.exclude"
+      },
+      {
+        "sha": "76b05d108cc60c5693c8b259b091075ade61fb81",
+        "date": "2026-10-24T19:03:18-07:00",
+        "subject": "ci: share advisory policy and build the PR merge revision"
+      },
+      {
+        "sha": "abcc640f3b1e9dc05118ce1d5671cf269fcce4e7",
+        "date": "2026-10-24T18:55:04-07:00",
+        "subject": "ci: preserve GitLab terminal detection in Python test shards"
+      },
+      {
+        "sha": "af8d0f6305acd500c77dd20ff14a56560a3944a5",
+        "date": "2026-10-24T18:48:16-07:00",
+        "subject": "ci: isolate release replay queues and verify uv downloads"
+      },
+      {
+        "sha": "c7bc6a169c4dbce659a629f013f9290ff18693b4",
+        "date": "2026-10-24T18:43:34-07:00",
+        "subject": "ci: preserve manual builds and isolate ordered package uploads"
+      },
+      {
+        "sha": "eadf7e9acab91ceac64af9954b845467ebb84b14",
+        "date": "2026-10-24T18:35:18-07:00",
+        "subject": "Migrate CI and package publishing to GitHub"
+      },
+      {
+        "sha": "bf7c675d86d9373c470134f801c7ae290deef98c",
+        "date": "2026-10-24T18:17:20-07:00",
+        "subject": "Migrate unchanged GitLab history to GitHub [skip ci]"
+      },
+      {
+        "sha": "d1ad10c898b3458d414353dd02bea41c86f2e1d4",
+        "date": "2026-10-25T00:16:42Z",
+        "subject": "Merge branch 'vera-router-parity' into 'main'"
+      },
+      {
+        "sha": "29b51ed85df6e129256cb1c47e1b93ff61969ea8",
+        "date": "2026-10-24T23:08:25Z",
+        "subject": "Merge branch 'fix/decision-full-context' into 'main'"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".claude/skills/ready-for-merge/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/examples/remake-edge-of-the-world.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/examples/style-match-sigma-edit.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/audio.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/build-rules.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/context-sources.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/failure-modes.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/film-patterns.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/interview.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/keys.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/remake-mode.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/references/style-match-mode.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/scripts/analyze_ref.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/scripts/fa_align.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/scripts/uniq_check.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude/skills/video-create/templates/BRIEF.template.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/gate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/gateway-latency.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/python-package.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".gitlab-ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".gitlab/ci/_templates.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".gitlab/ci/gate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".gitlab/ci/osv-scanner.toml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".gitlab/ci/python-package.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/gitlab-ci.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/reference/gateway-anthropic-protocol.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-architecture.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-chat-images.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/reference/gateway-classification-guardrails.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-generation.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-guardrails.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/reference/gateway-history-tool-arguments.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-lane-saturation.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-latency.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/reference/gateway-media-surfaces.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-tool-search.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway-web-search.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/gateway_capture.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/immutable-real-trace-rag.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/ingest.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/model-chains.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/providers.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/release-scope.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/usage.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/build/app.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/build/app_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/build/learning.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/build/learning_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/build/stops.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/build/summary.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/build/wizard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/build/wizard_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/evaluation/app.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/evaluation/fidelity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/evaluation/fidelity_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/evaluation/fidelity_turns.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/evaluation/fidelity_turns_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/evaluation/flow.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/evaluation/held_out_fidelity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/evaluation/held_out_fidelity_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/cli/evaluation/miss_retest.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/evaluation/view.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/gateway/budget_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/gateway/guardrail_setup_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/gateway/provider.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/gateway/serve.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/gateway/serve_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/gateway/setup.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/optimize/router.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/providers/connection_reuse.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/providers/provider_picker.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/shared/consent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/shared/consent_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/shared/progress.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/cli/shared/progress_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/auth/env_names.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/core/json_schema.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/core/json_schema_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/actor_equivalence.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/actor_equivalence_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/evaluations/planning.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/planning_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/reconstruction.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/reconstruction_prompts/behavior.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/reconstruction_prompts/comparison.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/reconstruction_prompts/judge-keyed.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/reconstruction_prompts/judge.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/evaluations/reconstruction_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/models/azure_endpoints.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/models/azure_endpoints_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/catalog.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/catalog_prices.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/catalog_prices_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/catalog_roles.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/catalog_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/client.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/content.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/dispatch_policy.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/dispatch_policy_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/model.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/model_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/setup.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/token_cost.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/token_cost_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/usage_observability.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/models/usage_observability_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/project/hosted_state.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/common/project/hosted_state_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/project/request_budget.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/project/request_budget_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/tasks/task.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/tasks/task_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/traces/ingest/posthog_canonical_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/traces/ingest/vendor_trace.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/common/traces/ingest/vendor_trace_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/continuation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/contracts.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/decision_access.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/export.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/fidelity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/fidelity_memory.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/fidelity_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/held_out_fidelity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/held_out_fidelity_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/judging_resume_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/knowledge_exposure.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/learned_memory.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/learned_memory_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/miss_retest.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/miss_retest_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/planning.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/prepare.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/report.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/retrieval_binding.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/retrieval_binding_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/runs.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/runs_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "exp/optimize/evaluation/service.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/fidelity_lifecycle_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/fidelity_memory_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/fidelity_retrieval_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/investigation_budget_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/knowledge_exposure_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/memory_architecture_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/memory_boundaries_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/memory_forget_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/memory_provenance_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/memory_publication_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/overview_pin_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/proposal_reask_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/replay_retirement_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/tests/role_budget_test.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/trace_learning.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "exp/optimize/evaluation/trace_learning_test.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-skills**. Its category places it in 
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [search.smithery](https://github.com/smithery-ai/cli); analyzed commit `407ac3b33944a585357379bc213fdf1ee55464d7`; commit date 2026-05-31T15:11:21+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--search.smithery.md).
+<!-- teamagent-analysis:end -->

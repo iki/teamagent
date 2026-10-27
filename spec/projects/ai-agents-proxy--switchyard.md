@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [switchyard](https://github.com/NVIDIA-NeMo/Switchyard); analyzed commit `c8848511a7e2e1d605070c7a68905bdc24c6481a`; commit date 2026-10-02T14:59:36-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--switchyard.md).
+<!-- teamagent-analysis:end -->

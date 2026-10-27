@@ -1,0 +1,206 @@
+# mateclaw: change evidence
+
+Source: [mateclaw](https://github.com/mateaix/mateclaw) · [Analysis](../../projects/ai-agents--mateclaw.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `9f49637ac96bf7dd36dcd859ae519a39783a1502`; commit date: 2026-10-03T17:55:16+08:00; review date: unknown; observed SHA: `cf1fd92c6d8a6faf572c378155aeb6fcacc0564b`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mateaix/mateclaw/compare/9f49637ac96bf7dd36dcd859ae519a39783a1502...cf1fd92c6d8a6faf572c378155aeb6fcacc0564b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [cf1fd92c6d8a](https://github.com/mateaix/mateclaw/commit/cf1fd92c6d8a6faf572c378155aeb6fcacc0564b) 2026-10-27T03:41:20-05:00: fix(desktop): harden multi-platform packaging and macOS notarization
+- [e99da0a25762](https://github.com/mateaix/mateclaw/commit/e99da0a2576274d121c7acc6662bc85ad600e78a) 2026-10-26T21:42:02-04:00: release: v3.0.0
+- [c326e98fd23a](https://github.com/mateaix/mateclaw/commit/c326e98fd23a913478d9325e4daab6a77a3efce4) 2026-10-26T06:54:13-04:00: fix(llm): apply thinking controls to deepseek-flash (#672)
+- [f023b6685ab8](https://github.com/mateaix/mateclaw/commit/f023b6685ab8219b1d7ead83817b0d47d4bceae4) 2026-10-23T04:29:00-04:00: fix(agent): retry finalization after reasoning exhausts output budget (#672)
+- [ccf33f835798](https://github.com/mateaix/mateclaw/commit/ccf33f8357988161d3539294346b380b8c89f768) 2026-10-22T22:59:00-04:00: fix(agent): wait for user input before action continuation (#668)
+- [c9c08b86fe09](https://github.com/mateaix/mateclaw/commit/c9c08b86fe09bdc7df6667474874cd99969d9f94) 2026-10-22T05:38:08-05:00: fix(dsh): pin runtime Node to 22 and include bubblewrap (#671)
+- [f449fb229ef1](https://github.com/mateaix/mateclaw/commit/f449fb229ef19e2c07b4369c097849f4e4726c8c) 2026-10-22T05:44:01-04:00: fix(team): ground worker progress and preserve runtime failure causes
+- [a9b4dfd12453](https://github.com/mateaix/mateclaw/commit/a9b4dfd12453334d68755894c88fcef65781a4a5) 2026-10-22T04:33:16-04:00: fix(team): synthesize run summaries before publishing completion
+- [6922614148ff](https://github.com/mateaix/mateclaw/commit/6922614148ff1003f5ac91a9d3d3277316201df0) 2026-10-22T03:55:04-04:00: fix(ui): apply theme surfaces to team run details
+- [945ce6099888](https://github.com/mateaix/mateclaw/commit/945ce609988818064ec066d47321e1d541d8b540) 2026-10-22T03:51:49-04:00: fix(team): improve worker lifecycle and full-result handoff
+- [3eb488fa8a58](https://github.com/mateaix/mateclaw/commit/3eb488fa8a5853b5652a4a5a8e14d26f8fb993d5) 2026-10-21T05:33:55-04:00: fix(agent): harden long-task finalization and code failure accounting
+- [9aaf53dbf35b](https://github.com/mateaix/mateclaw/commit/9aaf53dbf35bbbc2ab40c0d88585e4feb969faf8) 2026-10-21T04:35:54-04:00: feat(dsh): add optional Docker supervision and shared workspace acceptance
+- [bdc5087f7062](https://github.com/mateaix/mateclaw/commit/bdc5087f7062053dd849d69e0fa6eca602773bc0) 2026-10-20T06:17:17-04:00: feat: add pinned DSH candidate and harden runtime recovery
+- [e2335232052c](https://github.com/mateaix/mateclaw/commit/e2335232052c5c9fe679aafa5db98d924babfdf3) 2026-10-20T04:44:44-04:00: docs: improve bilingual 3.0.0 documentation and READMEs
+- [ddbd37b51b3b](https://github.com/mateaix/mateclaw/commit/ddbd37b51b3b60087cf9b0a68438cd749b720fa1) 2026-10-20T04:03:19-04:00: fix: unify prompt budgets on AgentScope 2.0.4
+- [576eb8055afe](https://github.com/mateaix/mateclaw/commit/576eb8055afe080c881dcfb1a81cd4c2d678f296) 2026-10-19T04:26:06-05:00: fix(auth): require secure JWT configuration and persist desktop secret (#666)
+- [614740459a42](https://github.com/mateaix/mateclaw/commit/614740459a4210eaa6850058684233c9044eb34b) 2026-10-16T04:05:25-04:00: fix(agent): respect explicit MCP tool selection with skills disabled
+- [da67c5e8b9a6](https://github.com/mateaix/mateclaw/commit/da67c5e8b9a60baf96dcc79e67b8a0bba97b10b3) 2026-10-15T04:31:14-04:00: fix(agent): continue unfinished work after finalization review
+- [2efd51990425](https://github.com/mateaix/mateclaw/commit/2efd519904251bd5a0dc132ab5c0fe216d232fbd) 2026-10-15T02:01:17-04:00: fix(agent): verify final answers and bound long-task continuation
+- [507fceb2d0cc](https://github.com/mateaix/mateclaw/commit/507fceb2d0ccef1e1274a679ec0c0f2ffb1fcd8f) 2026-10-14T02:16:21-04:00: feat(agent): strengthen decision facts and long-task context budgets
+- [4bcc106eb0c1](https://github.com/mateaix/mateclaw/commit/4bcc106eb0c1464587ef1d763d95ca1302a5e66a) 2026-10-13T22:50:22-04:00: fix(runtime): reduce long-task context and ground execution summaries (#660)
+- [5642c5b1fbe4](https://github.com/mateaix/mateclaw/commit/5642c5b1fbe478dd4326928f55e069996a0520f7) 2026-10-13T21:16:12-04:00: fix(runtime): update Edge TTS handshake and preserve extended reasoning (#660)
+- [bd882038937d](https://github.com/mateaix/mateclaw/commit/bd882038937d80ee5782469d1c18aecd0ddc4f7d) 2026-10-12T21:40:11-04:00: docs: correct member isolation and DSH SDK guidance after review
+- [77c79a9ed01f](https://github.com/mateaix/mateclaw/commit/77c79a9ed01f58a3e42f4a83c08371fbc08aa9ab) 2026-10-12T21:30:50-04:00: docs(release): upgrade to 3.0.0 snapshot with cumulative changelog and architecture documentation
+- [93ba4258e505](https://github.com/mateaix/mateclaw/commit/93ba4258e5056b3bcd872d803f6f94bd40c8b528) 2026-10-12T05:41:24-04:00: feat(runtime): migrate to Spring Boot 4, Spring AI 2 and AgentScope 2 (#660)
+- [10aad3be6c45](https://github.com/mateaix/mateclaw/commit/10aad3be6c45afca65b572dc6d9d8808957e9a68) 2026-10-09T03:54:12-04:00: fix(chat): keep ordinary MCP results out of final answers (#661)
+- [61b7f56bca7e](https://github.com/mateaix/mateclaw/commit/61b7f56bca7e81fcdc4da3190233c595964d1f95) 2026-10-09T03:53:46-04:00: fix(feishu): own WebSocket readiness and resource lifecycle (#659)
+- [6365f0af8ab3](https://github.com/mateaix/mateclaw/commit/6365f0af8ab3e31faad5e8646252c19ad27d863a) 2026-10-09T03:53:21-04:00: fix(llm): validate completed model probe responses (#658)
+- [0394ba280369](https://github.com/mateaix/mateclaw/commit/0394ba2803690f96a768d95ed75e36162f1920b5) 2026-10-09T03:52:30-04:00: fix(db): require explicit opt-in for Flyway history repair (#657)
+- [3b5f7de119f6](https://github.com/mateaix/mateclaw/commit/3b5f7de119f617aedac2e5d1fe29595f8a765a36) 2026-10-05T17:20:30+08:00: fix(chat): display structured tool results below final answers (#656)
+- [a504ae168758](https://github.com/mateaix/mateclaw/commit/a504ae168758246cdd4d479d8da372b9c45dd2a0) 2026-10-04T17:07:35+08:00: feat(tts): add provider voice selection and preview (#646)
+
+## Changed paths (truncated)
+
+- M: `.env.example`
+- A: `CHANGELOG.md`
+- M: `README.md`
+- M: `README_zh.md`
+- M: `assets/architecture-biz-en.svg`
+- M: `assets/architecture-biz-zh.svg`
+- M: `assets/architecture-tech-en.svg`
+- M: `assets/architecture-tech-zh.svg`
+- M: `docker-compose.yml`
+- A: `docs/compatibility/feishu-websocket-lifecycle.md`
+- M: `mateclaw-desktop/README.md`
+- M: `mateclaw-desktop/electron-builder.cjs`
+- M: `mateclaw-desktop/electron/main/index.ts`
+- A: `mateclaw-desktop/electron/main/jwtSecret.d.mts`
+- A: `mateclaw-desktop/electron/main/jwtSecret.mjs`
+- M: `mateclaw-desktop/package.json`
+- A: `mateclaw-desktop/scripts/__tests__/jwt-secret.test.mjs`
+- A: `mateclaw-desktop/scripts/__tests__/sign-jar-natives.test.cjs`
+- A: `mateclaw-desktop/scripts/after-pack.cjs`
+- M: `mateclaw-desktop/scripts/build-all-platforms.sh`
+- M: `mateclaw-desktop/scripts/build.sh`
+- M: `mateclaw-desktop/scripts/download-jre.sh`
+- M: `mateclaw-desktop/scripts/publish-github.sh`
+- A: `mateclaw-desktop/scripts/sign-jar-natives.cjs`
+- M: `mateclaw-desktop/vite.config.ts`
+- M: `mateclaw-server/Dockerfile`
+- M: `mateclaw-server/pom.xml`
+- M: `mateclaw-server/src/main/java/vip/mate/MateClawApplication.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/AgentGraphBuilder.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/AgentService.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/GraphEventPublisher.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/binding/service/AgentBindingService.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/context/BudgetedCompactionModel.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/context/ConversationWindowManager.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/context/LoopBudgetConfig.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/context/LoopMessageBudgeter.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/context/PromptBudget.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/context/TokenEstimator.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/graph/ModelToolOptions.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/NodeStreamingChatHelper.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/graph/PayloadReduction.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/StateGraphReActAgent.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/edge/GoalEvaluationDispatcher.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/edge/ObservationDispatcher.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/edge/ReasoningDispatcher.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolCallDeadline.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolExecutionCheckpoint.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolExecutionCheckpointRejectedException.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolExecutionExecutor.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolResultProperties.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/guard/ActionCompletionPolicy.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinator.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationGate.java`
+- D: `mateclaw-server/src/main/java/vip/mate/agent/graph/lifecycle/ReActLifecycleListener.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/node/ActionNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/node/FinalAnswerNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/node/GoalEvaluationNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/node/LimitExceededNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/node/ObservationNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/node/ReasoningNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/node/SummarizingNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/StateGraphPlanExecuteAgent.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/edge/PlanGenerationDispatcher.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/edge/StepProgressDispatcher.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/DirectAnswerNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/PlanGenerationNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/PlanSummaryNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/StepExecutionNode.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/plan/state/PlanStateAccessor.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/state/ActionExecutionLedger.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/state/MateClawStateAccessor.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/graph/state/MateClawStateKeys.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/progress/ProgressLedger.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/progress/ProgressLedgerProjection.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/AgentRuntime.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/ApplicationGuardedToolkit.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/GuardedToolBatchExecutor.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/GuardedToolBatchResult.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/NativePolicyDriver.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/SpringToolSchemaAdapter.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/ToolBatchResultAdapter.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshDockerProcess.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshLaunchSpec.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshProcessSupervisor.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshRuntimeService.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshSdkProcess.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshSdkTurn.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/management/DshManagementController.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/management/DshManagementService.java`
+- M: `mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/management/DshPinnedInstaller.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/plan/ExplicitPlanRuntime.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/state/EdgeAction.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/state/NodeAction.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/state/RunState.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/state/RunStep.java`
+- A: `mateclaw-server/src/main/java/vip/mate/agent/runtime/state/RuntimeExecutionScope.java`
+- M: `mateclaw-server/src/main/java/vip/mate/auth/service/AuthService.java`
+- A: `mateclaw-server/src/main/java/vip/mate/auth/service/JwtSecretValidator.java`
+- M: `mateclaw-server/src/main/java/vip/mate/auth/sso/SsoStateService.java`
+- M: `mateclaw-server/src/main/java/vip/mate/channel/AbstractChannelAdapter.java`
+- M: `mateclaw-server/src/main/java/vip/mate/channel/ChannelAdapter.java`
+- M: `mateclaw-server/src/main/java/vip/mate/channel/ChannelHealthMonitor.java`
+- M: `mateclaw-server/src/main/java/vip/mate/channel/feishu/FeishuChannelAdapter.java`
+- A: `mateclaw-server/src/main/java/vip/mate/channel/feishu/FeishuWebSocketClient.java`
+- M: `mateclaw-server/src/main/java/vip/mate/channel/health/ChannelsHealthIndicator.java`
+- M: `mateclaw-server/src/main/java/vip/mate/channel/web/ChatStreamTracker.java`
+- M: `mateclaw-server/src/main/java/vip/mate/channel/webchat/WebChatController.java`
+- M: `mateclaw-server/src/main/java/vip/mate/config/FlywayRepairConfig.java`
+- M: `mateclaw-server/src/main/java/vip/mate/config/JacksonConfig.java`
+- A: `mateclaw-server/src/main/java/vip/mate/config/PausedShutdownTaskScheduler.java`
+- M: `mateclaw-server/src/main/java/vip/mate/config/PrefixBudgetProperties.java`
+- A: `mateclaw-server/src/main/java/vip/mate/config/ProviderRetryConfig.java`
+- M: `mateclaw-server/src/main/java/vip/mate/config/SchedulingConfig.java`
+- M: `mateclaw-server/src/main/java/vip/mate/config/SecurityStartupValidator.java`
+- M: `mateclaw-server/src/main/java/vip/mate/decision/provider/RuleDecisionProvider.java`
+- M: `mateclaw-server/src/main/java/vip/mate/execution/evidence/service/ExecutionObservationSink.java`
+- M: `mateclaw-server/src/main/java/vip/mate/goal/model/GoalEntity.java`
+- M: `mateclaw-server/src/main/java/vip/mate/goal/service/GoalDecisionAdapter.java`
+- A: `mateclaw-server/src/main/java/vip/mate/goal/service/GoalDecisionFacts.java`
+- M: `mateclaw-server/src/main/java/vip/mate/goal/service/GoalEvaluationService.java`
+- M: `mateclaw-server/src/main/java/vip/mate/goal/service/GoalRunCoordinator.java`
+- M: `mateclaw-server/src/main/java/vip/mate/goal/service/GoalSegmentRunner.java`
+- A: `mateclaw-server/src/main/java/vip/mate/goal/service/GoalToolExecutionCheckpoint.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/ProviderHttpError.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/cache/AnthropicCacheOptionsFactory.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/cache/CacheUsageExtractor.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatgpt/ChatGPTChatModel.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicChatModelBuilder.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicSdkChatModel.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicSdkWireInterceptor.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicThinkingScope.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ChatModelDefaults.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ClaudeCodeChatModelBuilder.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ClaudeCodeIdentityChatModelDecorator.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/DashScopeChatModelBuilder.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/DeepSeekV4ThinkingDecorator.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiCompatibleChatModelBuilder.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiCompatibleHttpInterceptor.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiReasoningResponseBody.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiRequestRewriter.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiWirePolicyChatModel.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/PinnedOpenAiHttpClient.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ProviderCallCancellation.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/chatmodel/VllmThinkingDecorator.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeChatModel.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeChatOptions.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeConnectionProperties.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeEmbeddingModel.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeException.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeTransport.java`
+- A: `mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeUsage.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/embedding/EmbeddingModelFactory.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/gemini/GeminiChatModel.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/model/ModelFamily.java`
+- M: `mateclaw-server/src/main/java/vip/mate/llm/service/ModelDiscoveryService.java`
+- M: `mateclaw-server/src/main/java/vip/mate/skill/service/SkillFileService.java`
+- M: `mateclaw-server/src/main/java/vip/mate/skill/workspace/BundledSkillSyncer.java`
+- M: `mateclaw-server/src/main/java/vip/mate/skill/workspace/SkillFileSyncer.java`
+- M: `mateclaw-server/src/main/java/vip/mate/skill/workspace/bundle/SkillBundleFiles.java`
+- M: `mateclaw-server/src/main/java/vip/mate/team/service/TeamAnnounceService.java`

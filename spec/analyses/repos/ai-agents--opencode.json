@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--opencode",
+    "category": "ai-agents",
+    "name": "opencode",
+    "url": "https://github.com/anomalyco/opencode",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--opencode.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "907b3bc518fa48e90e8ec24dd327d13eee71c36c",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T21:55:40-07:00",
+    "reportSha256": "d323a52f1e760be3c4fb7dd76882a247b018dfd7b071763bdc6cd66b487f3244",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--opencode",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/anomalyco/opencode",
+    "report": "spec/projects/ai-agents--opencode.md",
+    "analyzedSha": "907b3bc518fa48e90e8ec24dd327d13eee71c36c",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T21:55:40-07:00",
+    "observedSha": "432d870b02683d2e40e895ddc70d437189b25276",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "432d870b02683d2e40e895ddc70d437189b25276",
+        "date": "2026-10-27T17:40:04Z",
+        "subject": "fix(session-ui): use V2 styling for retry tooltip (#59647)"
+      },
+      {
+        "sha": "cdaba26fa5d2c600d4c226d1c8a5f2837c16bf8e",
+        "date": "2026-10-27T12:29:17-05:00",
+        "subject": "perf(core): coalesce snapshot captures and skip repeat ignore work (#59419)"
+      },
+      {
+        "sha": "b3de41a572fd1cf93f6165114e29c36bf44fd6f7",
+        "date": "2026-10-27T17:26:36Z",
+        "subject": "feat(app): refine artifact previews and file actions (#59657)"
+      },
+      {
+        "sha": "5f1f8d094cc8c2a1581fc26befbbe114a6b6ce7a",
+        "date": "2026-10-27T12:21:31-05:00",
+        "subject": "test: deflake shutdown-deadline cleanup and PowerShell permission timeout (#59667)"
+      },
+      {
+        "sha": "e26f85bcd3e14428d3c43770f1ce8e52f9d3f234",
+        "date": "2026-10-27T12:13:30-05:00",
+        "subject": "refactor(codemode): run programs on one job queue instead of a fiber per async call (#57976)"
+      },
+      {
+        "sha": "320445aa090d2223f35e6f5e971c08821ce8006d",
+        "date": "2026-10-27T18:09:52+01:00",
+        "subject": "fix(session-ui): remove agent finish checkmark (#59646)"
+      },
+      {
+        "sha": "618b89066773e707601577230ba7211605c8b569",
+        "date": "2026-10-27T11:47:26-05:00",
+        "subject": "fix(ai): don't treat 429 throttles as context overflow (#59649)"
+      },
+      {
+        "sha": "96ae220b0121679e5d92e621e7da722d9bc76d28",
+        "date": "2026-10-27T11:45:49-05:00",
+        "subject": "chore(ai): drop five unused legacy provider entrypoint aliases (#59506)"
+      },
+      {
+        "sha": "24bf4d488acabad808b5374fc7fa26893f4c5e42",
+        "date": "2026-10-27T11:45:08-05:00",
+        "subject": "fix(core): keep prompt cache settings out of model variants (#59500)"
+      },
+      {
+        "sha": "7b1e54a74f6201e725a50cba5d7fb383aa64e407",
+        "date": "2026-10-27T15:21:02Z",
+        "subject": "feat(app): align search and command palettes (#59604)"
+      },
+      {
+        "sha": "d012e07e6309db4e53eb77714d955fd4daabf6ec",
+        "date": "2026-10-27T15:04:46Z",
+        "subject": "feat(app): focus prompt history search (#59626)"
+      },
+      {
+        "sha": "4ba064f653063365eca21895f1de7af5e880f660",
+        "date": "2026-10-27T15:44:13+01:00",
+        "subject": "feat(app): add session location menu actions (#59607)"
+      },
+      {
+        "sha": "115113931c7a6957ca4325a37fbcdd2936edde79",
+        "date": "2026-10-27T15:27:58+01:00",
+        "subject": "feat(app): refine project and worktree picker (#59397)"
+      },
+      {
+        "sha": "4a85158e27794f59c1d5fe6a32004d57ca3d1bac",
+        "date": "2026-10-27T15:17:12+01:00",
+        "subject": "feat(app): highlight quote source while writing its first comment (#59286)"
+      },
+      {
+        "sha": "51e4de1da6a6e275b94d022fbf60917014d6baef",
+        "date": "2026-10-27T10:14:15-04:00",
+        "subject": "fix(cli): put dev builds back on the shared service and database (#59631)"
+      },
+      {
+        "sha": "112427aeb9f97b6d7587cd98cc0cec97f1398b83",
+        "date": "2026-10-27T15:04:01+01:00",
+        "subject": "fix(app): make dropdowns open instantly (#59268)"
+      },
+      {
+        "sha": "d78b817631258f47926d594593a369ee03a61871",
+        "date": "2026-10-27T14:11:06+01:00",
+        "subject": "refactor(core): drop the ManagedPolicy service (#59609)"
+      },
+      {
+        "sha": "5e313444555b05d55acf43ac5330a0f158210ec4",
+        "date": "2026-10-27T14:05:35+01:00",
+        "subject": "refactor(core): drop the legacy Console config path (#59595)"
+      },
+      {
+        "sha": "5f8487f4d8c8369f8dfe48be9ac68b8e0f646863",
+        "date": "2026-10-27T13:56:42+01:00",
+        "subject": "fix(core): offer Console web search only when the workspace enables it (#59592)"
+      },
+      {
+        "sha": "0b1f1251be0a35795adf723abd0041ea464863bc",
+        "date": "2026-10-27T13:56:20+01:00",
+        "subject": "docs(console): every harness reaches every model (#59611)"
+      },
+      {
+        "sha": "86976449c40d48f2731553a024f74552593d1764",
+        "date": "2026-10-27T19:13:14+10:00",
+        "subject": "release: v2.2.0 (#59558)"
+      },
+      {
+        "sha": "f993a89d13c73ff6f6537d6b97e78e138a3ea363",
+        "date": "2026-10-27T07:19:23Z",
+        "subject": "fix(app): show focus ring while renaming the session title (#59148)"
+      },
+      {
+        "sha": "6aedf36ca307f97919f39d655de13b3ad5ccd24f",
+        "date": "2026-10-27T15:11:22+08:00",
+        "subject": "fix(session-ui): copy Markdown selections without theme colours (#59151)"
+      },
+      {
+        "sha": "54dcd345660ec9416d69fdc89da236b0f82be62e",
+        "date": "2026-10-27T16:26:07+10:00",
+        "subject": "fix(release): restore desktop app-update.yml and keep V1 as the GitHub Latest release (#59529)"
+      },
+      {
+        "sha": "5f8ee0f5074f99a8b5d5cafb94126f879a274b50",
+        "date": "2026-10-27T01:26:24-04:00",
+        "subject": "ci(release): push the Homebrew formula with a homebrew-tap deploy key (#59516)"
+      },
+      {
+        "sha": "362e000b61f9687f0ac97cbd3d6213a03ef70e7e",
+        "date": "2026-10-27T15:03:54+10:00",
+        "subject": "ci(release): publish desktop on every dev commit (#59507)"
+      },
+      {
+        "sha": "5c83520efe18046dc06efc81c08f5450583f2d84",
+        "date": "2026-10-27T01:02:58-04:00",
+        "subject": "chore(ci): deploy dev Cloudflare workers from the dev environment (#59503)"
+      },
+      {
+        "sha": "da638b65f50deda04da8fa1e52fb9f9639825c48",
+        "date": "2026-10-27T00:02:55-05:00",
+        "subject": "docs: document model compatibility settings (#59509)"
+      },
+      {
+        "sha": "08132f189120aa4a46b6f8b23bc2ac2a95f65eac",
+        "date": "2026-10-27T00:01:36-05:00",
+        "subject": "chore(core): update the bundled models.dev catalog (#59508)"
+      },
+      {
+        "sha": "15e56cfd4593b3ae56b564326232928ac6e98fb5",
+        "date": "2026-10-26T23:45:33-05:00",
+        "subject": "fix(core): pass the catalog's decision media format to decision models (#59479)"
+      },
+      {
+        "sha": "f5a174177dd8888348c9dc827416e4695de69778",
+        "date": "2026-10-27T04:42:02Z",
+        "subject": "fix(ui): stop dialogs creating untracked computations on close (#59501)"
+      },
+      {
+        "sha": "92b8c57acae0f971f7773010727945cac8ea3ad1",
+        "date": "2026-10-27T04:41:04Z",
+        "subject": "fix(app): register each shortcut once and drop removed plugins from Shortcuts (#59499)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/CODEOWNERS",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/TEAM_MEMBERS",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actions/setup-bun/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/nix-hashes/publish.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/nix-hashes/validate.sh",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/publish-python-sdk.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/pull_request_template.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/download/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "R100",
+        "path": ".github/release/entitlements/cli.plist",
+        "previousPath": "packages/opencode/script/entitlements.plist"
+      },
+      {
+        "status": "A",
+        "path": ".github/release/entitlements/desktop-cli.plist",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/entitlements/desktop.plist",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/lib.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/plan-release.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-aur.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-cli.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-desktop.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-docker.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-github-release.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-homebrew.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-npm.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/publish-version-pr.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/render-aur.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/render-homebrew.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/render-winget.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/repack-windows.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/sign-cli-macos.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/sign-desktop-macos.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/tag-release.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/unpack-windows.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/upload/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/verify-artifacts.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/verify-signatures-windows.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/release/write-checksums.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/bot-docs-locale.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/bot-nix-hashes.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/check-bot-scope.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/check-nix.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/check-test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/check.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/close-issues.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/close-prs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/compliance-close.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/containers.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/deploy-changelog.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/deploy-files.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/deploy-posts.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/deploy-update.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/deploy-www.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/deploy.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/docs-locale-sync.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/docs-update.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/duplicate-issues.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/generate.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/models-snapshot.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/nightly-beta.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/nix-eval.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/nix-hashes.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/notify-discord.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/opencode.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/pr-management.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/pr-standards.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/publish-github-action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/publish-vscode.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/publish.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/release-dry-run.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/release-github-action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/review.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/stats.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/storybook.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/triage-close-issues.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/triage-close-prs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/triage-compliance-close.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/triage-contributor.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/triage-pr-standards.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/triage.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/typecheck.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".github/workflows/unlock.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".husky/pre-push",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".opencode/agent/duplicate-pr.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".opencode/agent/triage.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/command/ai-deps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/command/changelog.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/command/commit.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/command/rmslop.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/command/translate.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".opencode/glossary/he.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/opencode.jsonc",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".opencode/plugins/tui-smoke.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".opencode/skills/app-e2e-tests/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".opencode/skills/component-tests/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/skills/effect/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".opencode/skills/opencode-dev/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".opencode/skills/sample-skill/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".opencode/skills/tui-tests/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".opencode/skills/unit-tests/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/tool/github-pr-search.ts",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".opencode/tool/github-triage.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".opencode/tui.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".oxlintrc.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".prettierignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "CONTEXT.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.ar.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.bn.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.br.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.bs.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.da.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.de.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.es.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.fr.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.gr.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.it.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.ja.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.ko.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.no.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.pl.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.ru.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.th.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.tr.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.uk.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.vi.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.zh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.zht.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "STATS.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/.gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/bun.lock",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/out/flash-share.mp4",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/out/glm-52-broke-out.mp4",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/out/june-totals.png",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/out/minimax-climb.mp4",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/out/novel-1984.mp4",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/out/nz-sheep.mp4",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/public/book.jpg",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/public/sheep.jpg",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/data.ts",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/flash.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/index.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/june.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/minimax.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/novel.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/sheep.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "artifacts/glm52-rise-video/src/video.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "bun.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "bunfig.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "flake.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "flake.nix",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "github/.gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "github/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "github/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "github/bun.lock",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "github/index.ts",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

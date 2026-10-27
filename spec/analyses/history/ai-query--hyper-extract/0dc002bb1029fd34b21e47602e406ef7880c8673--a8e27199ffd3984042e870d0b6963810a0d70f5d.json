@@ -1,0 +1,184 @@
+{
+  "id": "ai-query--hyper-extract",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/yifanfeng97/Hyper-Extract",
+  "report": "spec/projects/ai-query--hyper-extract.md",
+  "analyzedSha": "0dc002bb1029fd34b21e47602e406ef7880c8673",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-29T21:33:12+08:00",
+  "observedSha": "a8e27199ffd3984042e870d0b6963810a0d70f5d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a8e27199ffd3984042e870d0b6963810a0d70f5d",
+      "date": "2026-10-15T23:25:56+08:00",
+      "subject": "fix: resolve provider-docs conflict markers from the #189 merge (Atlas Cloud + Cheaper Inference union)"
+    },
+    {
+      "sha": "78346b6cface984e51ee922a132fe9021c302f3c",
+      "date": "2026-10-15T23:19:37+08:00",
+      "subject": "Merge PR #189 with #186: keep both Atlas Cloud and Cheaper Inference presets"
+    },
+    {
+      "sha": "3881e6975c45f1a909106e81847ea7dd2dc1f13e",
+      "date": "2026-10-15T23:14:48+08:00",
+      "subject": "Merge pull request #186 from aiapienthusiast/cheaperinference-provider"
+    },
+    {
+      "sha": "22d77a64ed533730fccb771e75e35a6b4029ee7f",
+      "date": "2026-10-15T23:14:33+08:00",
+      "subject": "Merge pull request #188 from dex0shubham/fix/config-init-warns-missing-default-llm"
+    },
+    {
+      "sha": "19305f459d4684c383466b85a2146448d8fac20d",
+      "date": "2026-10-15T23:14:18+08:00",
+      "subject": "Merge pull request #187 from dex0shubham/fix/set-log-level-handlers"
+    },
+    {
+      "sha": "472d15ae430eb534f7a9a85dd8fd8b8e8cb0eb99",
+      "date": "2026-10-15T23:08:42+08:00",
+      "subject": "fix: resolve identifiers.py conflict markers left in the #185 merge (broke import on main)"
+    },
+    {
+      "sha": "190dbf561df2c6e72af3f05b59b6abaf54b8a130",
+      "date": "2026-10-15T23:05:01+08:00",
+      "subject": "Merge origin/main into resolve-185: keep both member-form and relations-section tests"
+    },
+    {
+      "sha": "78c5481a76472f69ca20df0162bcb3f2b72a38b8",
+      "date": "2026-10-15T23:02:28+08:00",
+      "subject": "fix: restore relations-section check for time_field/location_field lost in #185 merge"
+    },
+    {
+      "sha": "5ae6b20e9cc2f07e684a99f360a5d80ac7cdfed2",
+      "date": "2026-10-15T22:59:19+08:00",
+      "subject": "Merge pull request #184 from dex0shubham/fix/identifiers-time-location-section"
+    },
+    {
+      "sha": "1c77074fef261f16afd3ef012d9d23a253eeb0f0",
+      "date": "2026-10-10T13:09:18+08:00",
+      "subject": "feat: add Atlas Cloud provider preset"
+    },
+    {
+      "sha": "ff5c4def05faddfe788cf4b935d9db70d7dd39ad",
+      "date": "2026-10-08T17:43:35+01:00",
+      "subject": "test: config init reports a placeholder LLM model"
+    },
+    {
+      "sha": "55a7cb1f417700e97515f585136c9c34bbddf8b0",
+      "date": "2026-10-08T17:43:35+01:00",
+      "subject": "fix: warn when config init has no preset LLM model"
+    },
+    {
+      "sha": "51e9cd0ea06d395eb9d3545fd157551084dd8b21",
+      "date": "2026-10-05T16:46:12+01:00",
+      "subject": "test: runtime log level changes take effect"
+    },
+    {
+      "sha": "c5f72113f70ca87d011ef3be475c1047e2a63dd1",
+      "date": "2026-10-05T16:46:12+01:00",
+      "subject": "fix: apply set_log_level to root handlers"
+    },
+    {
+      "sha": "934799d56025a88d37808256a3ac5df798aa88eb",
+      "date": "2026-10-05T02:32:24+04:00",
+      "subject": "Add Cheaper Inference as a named provider preset"
+    },
+    {
+      "sha": "2e89aba60256958134d5b9f024d8788f0743bd5f",
+      "date": "2026-09-29T16:49:32+01:00",
+      "subject": "test: hypergraph relation_members field validation"
+    },
+    {
+      "sha": "580b5a0cee40969c9c528d1a6f8384d8ac0fc802",
+      "date": "2026-09-29T16:49:32+01:00",
+      "subject": "fix: validate hypergraph relation_members fields at load time"
+    },
+    {
+      "sha": "9a48b4d4b809f975ea57fe013b5b0d5446f02162",
+      "date": "2026-09-29T16:40:09+01:00",
+      "subject": "test: temporal and spatial presets pass identifier validation"
+    },
+    {
+      "sha": "31639e9222529a118683c078d782981a0e07fe90",
+      "date": "2026-09-29T16:40:09+01:00",
+      "subject": "fix: validate time/location identifier fields against relations"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docs/en/cli/commands/config.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/concepts/provider-system.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/python/guides/provider-configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/cli/commands/config.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/concepts/provider-system.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hyperextract/cli/commands/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hyperextract/utils/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hyperextract/utils/logging.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hyperextract/utils/template_engine/parsers/identifiers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli/test_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/template_engine/test_parser_identifiers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/utils/test_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/utils/test_logging.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

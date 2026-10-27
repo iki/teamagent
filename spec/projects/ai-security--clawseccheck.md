@@ -28,3 +28,7 @@ Use as a design reference and optional scanner, after checking the selected vers
 ## Related directions
 
 [Security](../security.md) · [Skills](../skills.md) · [Agents](../agents.md) · [Evolution](../evolution.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [clawseccheck](https://github.com/gl0di/clawseccheck); analyzed commit `9ad5f14af1b9783dbe33493b4b9cf57e7a9d10d5`; commit date 2026-09-29T16:12:36+03:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--clawseccheck.md).
+<!-- teamagent-analysis:end -->

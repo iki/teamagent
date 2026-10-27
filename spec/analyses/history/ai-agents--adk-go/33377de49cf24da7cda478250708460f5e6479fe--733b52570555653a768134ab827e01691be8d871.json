@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--adk-go",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/google/adk-go",
+  "report": "spec/projects/ai-agents--adk-go.md",
+  "analyzedSha": "33377de49cf24da7cda478250708460f5e6479fe",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T15:56:25+02:00",
+  "observedSha": "733b52570555653a768134ab827e01691be8d871",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "733b52570555653a768134ab827e01691be8d871",
+      "date": "2026-10-23T13:27:13+02:00",
+      "subject": "feat(agentanalytics): add pre-built per-event BigQuery analytics views (#1791)"
+    },
+    {
+      "sha": "5732578a97bea6d8d36e74e1ad7ac6c394fbfbf2",
+      "date": "2026-10-23T11:47:24+02:00",
+      "subject": "fix(agentanalytics): ExactlyOnceDelivery and DropStats follow-ups from #1790 (#1943)"
+    },
+    {
+      "sha": "4df7bdda94fd7beca43e5d5fb27605381d384cda",
+      "date": "2026-10-23T09:49:49+02:00",
+      "subject": "fix(agentanalytics): preserve invocation spans for late callbacks (#1911)"
+    },
+    {
+      "sha": "03e4117750cb4a90fedd1715caa92e55261ca216",
+      "date": "2026-10-22T22:43:28+02:00",
+      "subject": "feat(agentanalytics): add DropStats, ExactlyOnceDelivery, and schema setup hardening (#1790)"
+    },
+    {
+      "sha": "331c9c579fb179e4bde783724463d60f401a4efb",
+      "date": "2026-10-22T15:50:59+02:00",
+      "subject": "feat(agentanalytics): pause GCS uploads after batch timeout and bound run-end write timeout deferral (#1936)"
+    },
+    {
+      "sha": "03a62c3f285204f62b6827bbdf7957223347f1b4",
+      "date": "2026-10-22T15:34:40+02:00",
+      "subject": "fix(agentanalytics): never mark workflow agents taskDelegated (#1935)"
+    },
+    {
+      "sha": "f7db1f4a498781410c3cc032f96c7a2d96930bff",
+      "date": "2026-10-22T14:39:08+02:00",
+      "subject": "fix(agentanalytics): preserve live spans when tasks resume (#1910)"
+    },
+    {
+      "sha": "889816b7288374920efedbae783496153205f1c2",
+      "date": "2026-10-22T09:59:25+02:00",
+      "subject": "chore: update Go version requirements in documentation (#1926)"
+    },
+    {
+      "sha": "3c175bad1239d30b20fde7fcd3538b2a36dde748",
+      "date": "2026-10-22T00:05:00+02:00",
+      "subject": "feat(agentanalytics): add race-free GCS multimodal offloading and ObjectRef support (#1789)"
+    },
+    {
+      "sha": "c240664ffbbda7bdf4f5adbc5684c489bfd99647",
+      "date": "2026-10-21T23:48:53+02:00",
+      "subject": "fix(agentanalytics): redact credentials when a value ends in a key name (#1863)"
+    },
+    {
+      "sha": "f54a8cd890718543bf80d4c3aa2666e688a3d2e5",
+      "date": "2026-10-21T10:09:43+02:00",
+      "subject": "Upgrading go to 1.26.10 (#1916)"
+    },
+    {
+      "sha": "4e549fb6a18e770bb5b087908742835020d21b06",
+      "date": "2026-10-20T23:28:29+02:00",
+      "subject": "feat(agentanalytics): emit rich session/HITL/A2A/workflow events and classify tool_origin (#1788)"
+    },
+    {
+      "sha": "8cb742516609d1d4cb71745a1226255ff20a4b1f",
+      "date": "2026-10-19T17:09:58+02:00",
+      "subject": "fix(adkgo/deploy): stop defaulting Memory Bank to gemini-2.5-flash (#1902)"
+    },
+    {
+      "sha": "424ac79e8f5569d0496d41de11e5e26e891516cb",
+      "date": "2026-10-19T16:36:40+02:00",
+      "subject": "feat(telemetry)!: default to experimental GenAI semconv, with ADK_TELEMETRY_SCHEMA_VERSION_OPT_IN=otel_semconv_1_36 rollback (#1635)"
+    },
+    {
+      "sha": "e26ba22b2fce87e1e341489498d9f56ae3680b24",
+      "date": "2026-10-19T15:18:40+02:00",
+      "subject": "chore(deps): bump golang.org/x/net to v0.60.0 in agentanalytics (#1908)"
+    },
+    {
+      "sha": "cde78833fd1db8260c6abeef116605fd3973476c",
+      "date": "2026-10-19T14:43:31+02:00",
+      "subject": "chore(deps): bump the go-minor-patch group with 2 updates (#1901)"
+    },
+    {
+      "sha": "ccc2c6428b5991d51e18372cb4579bc586d7aae4",
+      "date": "2026-10-19T14:06:17+02:00",
+      "subject": "test(model/gemini): pin that MAX_TOKENS after CONTINUATION is not resumed (#1872)"
+    },
+    {
+      "sha": "62daf3c77f75d8f0a510f5f6d90c01d77447fced",
+      "date": "2026-10-19T12:43:03+02:00",
+      "subject": "fix(agent): make WithAgentTimeout work on tool and callback contexts (#1604)"
+    },
+    {
+      "sha": "d3ab7bfefffde86d2d2344d3c5acef574a3bf272",
+      "date": "2026-10-19T09:54:01+02:00",
+      "subject": "fix(workflow): restore completed predecessors when resuming joins (#1572)"
+    },
+    {
+      "sha": "90efa8d01506e26f142d2855d3559fa9bb76722e",
+      "date": "2026-10-18T19:38:23+02:00",
+      "subject": "fix(agent): record artifact-only deltas from before/after agent callbacks (#1878)"
+    },
+    {
+      "sha": "225454bcd3fd7d81ee9c02af7fecadca751936bd",
+      "date": "2026-10-18T19:31:24+02:00",
+      "subject": "fix(llminternal): record model callback artifact saves on the event (#1800)"
+    },
+    {
+      "sha": "fd32d286d3971101f8aa14017a3eec291cd8e87c",
+      "date": "2026-10-18T19:21:37+02:00",
+      "subject": "feat(agentanalytics): add concurrency-safe trace manager, latency_ms, and streaming TTFT (#1787)"
+    },
+    {
+      "sha": "74faa9ab6bf58b47653ed275f4aa86a93e76280a",
+      "date": "2026-10-17T01:21:44+02:00",
+      "subject": "feat(model/openaimodel): support image/file input via genai InlineData/FileData parts (#1543)"
+    },
+    {
+      "sha": "ec0c362bf00aaf649f0839517762f33ab65ee4d4",
+      "date": "2026-10-17T00:50:37+02:00",
+      "subject": "fix(mcptoolset): stop using context.Background() in connectionRefresher.Close (#1844)"
+    },
+    {
+      "sha": "c7ed87daa909e7563d3167e57daedee55f557d91",
+      "date": "2026-10-16T19:31:36+02:00",
+      "subject": "feat(mcptoolset): identify ADK in the User-Agent of MCP HTTP requests (#1862)"
+    },
+    {
+      "sha": "1d2f5456649f21ac6a689cec5668c74b58297430",
+      "date": "2026-10-16T15:16:48+02:00",
+      "subject": "fix(agenttool): preserve code output in sub-agent results (#1860)"
+    },
+    {
+      "sha": "7b10fa82e6f3e297df4d9d5d99a7a58f293295f1",
+      "date": "2026-10-16T14:25:25+02:00",
+      "subject": "docs(compaction): list the GenerateContentConfig fields the summarizer uses (#1828)"
+    },
+    {
+      "sha": "b595778e9ef2a45be2e439a27b83e31722f83413",
+      "date": "2026-10-16T13:49:57+02:00",
+      "subject": "refactor(workflow): remove redundant goroutine in scheduleRetry (#1849)"
+    },
+    {
+      "sha": "900e2fa4907fa9825f708433ff162f6281069249",
+      "date": "2026-10-15T22:55:25+02:00",
+      "subject": "docs(loopagent): say the context is checked before each pass (#1861)"
+    },
+    {
+      "sha": "c935e6da519cd9b743ff0aeabcadd179cb15395c",
+      "date": "2026-10-15T16:04:23+02:00",
+      "subject": "test(llminternal): match isResumable's doc and test table to the errors it sees (#1750)"
+    },
+    {
+      "sha": "7b1db9555e9d2c09ab09c3760c9905c607725b90",
+      "date": "2026-10-15T15:51:16+02:00",
+      "subject": "test(model/gemini): pin the last citation and accepting AutomaticContinuation (#1825)"
+    },
+    {
+      "sha": "ac0388f73cd0bab01a432af527771e7645e3269b",
+      "date": "2026-10-15T15:38:27+02:00",
+      "subject": "fix(llminternal): prevent silent context degradation by propagating systemic state failures (#1748)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".golangci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/callback_context_wrapper.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/common_context.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/common_context_delta.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/common_context_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/context.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/context_mock.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/identity_matrix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/llmagent/llm_agent_wrapper.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/llmagent/llm_agent_wrapper_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/llmagent/llmagent.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/llmagent/llmagent_clone_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/llmagent/llmagent_compaction_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/llmagent/llmagent_delegation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/llmagent/llmagent_tail_retention_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/llmagent/llmagent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/llmagent/model_callback_artifact_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/llmagent/state_agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/llmagent/testdata/TestTailRetentionE2E.httprr",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/remoteagent/a2a_agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/remoteagent/a2a_agent_compat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/remoteagent/v2/a2a_agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/remoteagent/v2/a2a_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/remoteagent/v2/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/remoteagent/v2/before_run_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/remoteagent/v2/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/remoteagent/v2/utils_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/run_config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/tool_context_wrapper.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/with_agent_timeout_wrapper_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/workflowagent/hitl_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/workflowagent/workflow.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/workflowagents/loopagent/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/workflowagents/loopagent/agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/workflowagents/parallelagent/agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/workflowagents/sequentialagent/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/workflowagents/sequentialagent/agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/workflowagents/sequentialagent/live_injection_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentregistry/factory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agentregistry/mcptoolset_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "artifact/gcsartifact/gcs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "artifact/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/credential.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/credential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/agentidentity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/connector.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/provider_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/gcp/redact.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/providers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/providers_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/store_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/transport.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "auth/transport_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/adkgo/internal/deploy/agentengine/agentengine.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/adkgo/internal/deploy/agentengine/agentengine_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/adkgo/internal/deploy/cloudrun/cloudrun.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/adkgo/internal/deploy/cloudrun/cloudrun_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/console/hitl.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/console/hitl_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/full/full.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/full/full_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/universal/universal.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/web/api/api.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/web/triggers/eventarc/eventarc.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/launcher/web/triggers/eventarc/eventarc_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/launcher/web/triggers/internal/triggerauth/triggerauth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/launcher/web/triggers/internal/triggerauth/triggerauth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/web/triggers/pubsub/pubsub.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/launcher/web/triggers/pubsub/pubsub_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/bidi/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/internal/imagegen/imagegen.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/internal/imagegen/imagegen_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/multiagent/collaboration/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/toolconfirmation/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/toolsearch/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/toolsearch/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/toolsearch/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/workflow/complex/resilient_model.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/workflow/routing/int/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/workflow/routing/llm/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/appinfo/appinfo.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/appinfo/appinfo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/appinfo/handler.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/appinfo/handler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/appinfo/launcher.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/appinfo/launcher_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/compactionctx/compactionctx.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agent/runconfig/limits.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agent/runconfig/limits_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/runconfig/run_config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/backport_script_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/cli/util/oscmd.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/apply.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/apply_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/compactor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/summary_event.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/tail_retention.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/tail_retention_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/telemetry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/compactioninternal/window_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/configurable/configurable_utils_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/configurable/configurable_workflow_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/configurable/conformance/recordplugin/record_plugin_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/configurable/conformance/replayplugin/replay_plugin.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/configurable/conformance/replayplugin/replay_plugin_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/audio_cache_manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/base_flow.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/base_flow_live_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/llminternal/base_flow_resumable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/base_flow_telemetry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/base_flow_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/compaction_concurrent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/compaction_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/compaction_processor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/contents_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/contents_processor_compaction_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/contents_processor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/llminternal/foreign_thoughts_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/googlellm/live_connection.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/instruction_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/instruction_processor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/llminternal/live_injection_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/live_reconnect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/mode_contents_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/parallel_function_call_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/request_confirmation_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/request_confirmation_processor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/stream_aggregator.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/stream_aggregator_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/streaming_tool_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/testdata/TestParallelFunctionCalls_test_parallel_function_calls_gemini-3.1-pro-preview.httprr",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/llminternal/tools_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/llminternal/tools_processor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/originguard/originguard.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/originguard/originguard_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/plugininternal/plugin_manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ranksearch/bm25.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ranksearch/bm25_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ranksearch/ranksearch.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ranksearch/ranksearch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/style_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/telemetry/compaction.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/telemetry/converters.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/telemetry/converters_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/telemetry/experimental_semconv.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

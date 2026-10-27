@@ -1,0 +1,31 @@
+# openswarm
+
+Source: [openswarm](https://github.com/unohee/OpenSwarm) · Category: [ai-agents-swarm](../categories/ai-agents-swarm.md)
+
+Review depth: **focused source review**. Snapshot `47f446dd5125e38d485dd55bb46df8dda8eaa969` (2026-10-04T00:48:18+09:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+Deterministic conflict-free task waves are preferable to having a model arbitrate every scheduling collision.
+
+## Source evidence inspected
+
+- [src/orchestration/conflictAdmission.ts, lines 1–32](https://github.com/unohee/OpenSwarm/blob/47f446dd5125e38d485dd55bb46df8dda8eaa969/src/orchestration/conflictAdmission.ts#L1-L32)
+
+## Observed design and algorithms
+
+buildConflictFreeWaves scans ordered candidates and places each into the first wave compatible with every existing member, otherwise opening a new wave. selectGreedyMaximalIndependentSet returns the first wave. Priority is deliberately owned by the caller, giving stable ordering a clear role. Pairwise checks imply quadratic worst-case work in the candidate count.
+
+## Harness decision
+
+Reuse this pattern with declared file/resource write scopes and a stable priority/age order. The planner proposes task decomposition and scopes; deterministic admission controls concurrent writers. Unknown or broad scopes should conflict conservatively, with isolated worktrees and post-merge testing as additional controls.
+
+## Limits and tradeoffs
+
+A maximal independent set is not necessarily maximum or optimal for throughput. Filename overlap misses semantic conflicts, generated outputs, schema migrations and shared external systems. Low-priority large-scope work can starve unless age or reservations modify ordering.
+
+## Validation before adoption
+
+Test transitive-looking conflict graphs, resource wildcards, stable tie-breaks, starvation and tasks that discover new write scope. Benchmark greedy scheduling against serial work on real code changes. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [decisions](../decisions.md).

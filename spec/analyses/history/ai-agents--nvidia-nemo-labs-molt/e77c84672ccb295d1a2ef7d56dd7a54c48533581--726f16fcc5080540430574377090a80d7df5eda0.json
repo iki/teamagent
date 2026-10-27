@@ -1,0 +1,459 @@
+{
+  "id": "ai-agents--nvidia-nemo-labs-molt",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/NVIDIA-NeMo/labs-molt",
+  "report": "spec/projects/ai-agents--nvidia-nemo-labs-molt.md",
+  "analyzedSha": "e77c84672ccb295d1a2ef7d56dd7a54c48533581",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T05:36:56+08:00",
+  "observedSha": "726f16fcc5080540430574377090a80d7df5eda0",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "726f16fcc5080540430574377090a80d7df5eda0",
+      "date": "2026-10-24T10:23:37+08:00",
+      "subject": "chore(agents): one skill tree under .agents/, mirrored into .claude/ and .codex/; CLAUDE.md -> AGENTS.md (#241)"
+    },
+    {
+      "sha": "9be43f86e5ac73e7f54d43b60a1bd34060667164",
+      "date": "2026-10-23T10:45:36+08:00",
+      "subject": "fix(kl): the rollout KL reference only acts when a KL coefficient is set (#239)"
+    },
+    {
+      "sha": "c5581591457ef498c4726d6cc7aaacfc39bc09b2",
+      "date": "2026-10-23T10:34:40+08:00",
+      "subject": "feat(kl): --algo.kl.ref rollout — KL to the rollout policy from vLLM's log-probs, no reference model (#238)"
+    },
+    {
+      "sha": "841300a748056209663b0489a08d5e72705cd316",
+      "date": "2026-10-23T07:06:45+08:00",
+      "subject": "fix(tools): tolerate invalid bytes in Python output (#236)"
+    },
+    {
+      "sha": "76b3bc97ba2b7dca21b20cafd109cc2bc46955ee",
+      "date": "2026-10-23T07:06:42+08:00",
+      "subject": "fix(chat): keep every message a turn appends after the reply (#237)"
+    },
+    {
+      "sha": "9c009636b56141e491a203488be433fa62be0f2a",
+      "date": "2026-10-22T11:54:55+08:00",
+      "subject": "docs(skill): train-inference-consistency: GPU architecture in the closure, the sm_103 router kernel fact, multi-turn lag and IS-overflow symptoms, the multimodal compared path (#235)"
+    },
+    {
+      "sha": "725598ee595b1eb9fe09ec14e6956dd164dbf08c",
+      "date": "2026-10-19T21:25:09+08:00",
+      "subject": "docs(skill): train-inference-consistency follows main on rollout logprobs, the refit bracket and R3 prefix caching (#234)"
+    },
+    {
+      "sha": "4ea31de6e5e01cdfb20e42d879964e21d3bdd6f5",
+      "date": "2026-10-19T21:24:51+08:00",
+      "subject": "docs(skill): train-inference-consistency: a 20 % rollout performance budget, and facts that follow main (#233)"
+    },
+    {
+      "sha": "d750f2acc95aa37aa743e446b6e1482a9406fd70",
+      "date": "2026-10-19T07:31:02+08:00",
+      "subject": "dockerfile: cutlass-dsl 4.8.0, quack-kernels 0.6.5 and tilelang 0.1.12, the versions vLLM 0.32 pins (#232)"
+    },
+    {
+      "sha": "fde09d40b9e3dfffa667d848fc1d5380bf672c7c",
+      "date": "2026-10-19T03:09:42+08:00",
+      "subject": "deps: vLLM 0.32.0, AutoModel main ea233c99 (#230)"
+    },
+    {
+      "sha": "a8728d0974926c32c05f4788d1aceeec57759db6",
+      "date": "2026-10-19T02:57:05+08:00",
+      "subject": "Update version.txt"
+    },
+    {
+      "sha": "9ba953a12f383ecb64de98ab80e405b988e3ba0e",
+      "date": "2026-10-18T14:06:20+08:00",
+      "subject": "test(lineage): read object-store usage from Ray's public resource accounting (#227)"
+    },
+    {
+      "sha": "baf42de446ae07a7e5b215387448257a0dd279de",
+      "date": "2026-10-18T11:27:14+08:00",
+      "subject": "Chore/simplicity cleanup (#226)"
+    },
+    {
+      "sha": "eeae66080f96772786ecffd328eab7f3d847d9f9",
+      "date": "2026-10-18T11:19:59+08:00",
+      "subject": "fix(chat): a chat request cannot change the rollout's temperature or top_p (#224)"
+    },
+    {
+      "sha": "064d0776085724adcc6dddc854579f81c08ccf42",
+      "date": "2026-10-18T11:18:57+08:00",
+      "subject": "Test/refit layout check teacher forced (#223)"
+    },
+    {
+      "sha": "47b99125f0b4818cc4c12a5d5fd77ce26d4bdd0d",
+      "date": "2026-10-18T10:30:06+08:00",
+      "subject": "test(refit): keep the engine RPC on the main thread in the layout check (#222)"
+    },
+    {
+      "sha": "14563cf62cc45dc154b33ce04aa10748dab0cdcb",
+      "date": "2026-10-18T10:29:20+08:00",
+      "subject": "dockerfile: DeepEP at AutoModel's commit 10d4dd73 with AutoModel's patch (#221)"
+    },
+    {
+      "sha": "4f5f03b736f712e442ceac982bb237564fbd6cfd",
+      "date": "2026-10-18T10:11:55+08:00",
+      "subject": "fix(r3): routing replay turns on vLLM prefix caching (#220)"
+    },
+    {
+      "sha": "202e4941bf89a44485f4cd2c747c3762a70ae68c",
+      "date": "2026-10-18T10:02:24+08:00",
+      "subject": "fix(refit): run vLLM's post-load weight processing after every broadcast (#217)"
+    },
+    {
+      "sha": "8d6494c75393415e103ebdbf3f2d5383c433b23e",
+      "date": "2026-10-18T09:39:02+08:00",
+      "subject": "dockerfile: install nvidia-cudnn-frontend before building TE 2.19 (#219)"
+    },
+    {
+      "sha": "ca4ff0b93de09d111f9db243c35eebda9802ac8c",
+      "date": "2026-10-18T09:29:59+08:00",
+      "subject": "dockerfile: keep torch's cu13 runtime headers out of the TE build's CPATH (#218)"
+    },
+    {
+      "sha": "12ed898152e35fb4e49518f7727a61ba1ac7705c",
+      "date": "2026-10-18T08:47:54+08:00",
+      "subject": "deps: AutoModel main b9377eee, TransformerEngine v2.19.0 with AutoModel's build flags, ray 2.59.0 (#216)"
+    },
+    {
+      "sha": "259163f2e91a198249f9686df374a309a2a47e91",
+      "date": "2026-10-16T16:14:40+08:00",
+      "subject": "fix(rollout): do not retry the group join, so consumed heavy tensors are freed (#215)"
+    },
+    {
+      "sha": "bce2946e333ccad9051e8f25c2b8624b8bb692a0",
+      "date": "2026-10-16T10:35:40+08:00",
+      "subject": "docs(skill): editorial pass — routes by task, one meaning per term, fillable report template, acceptance recipe as deltas (#214)"
+    },
+    {
+      "sha": "2a163739c047f307ff7d88c38cbabb9b5607a02a",
+      "date": "2026-10-16T07:55:01+08:00",
+      "subject": "docs(skill): train-inference-consistency at parity with the vLLM skill (C0-C10), molt-adapted (#213)"
+    },
+    {
+      "sha": "9b42d977f24908afb609695d69d9422404c5afc3",
+      "date": "2026-10-16T07:25:44+08:00",
+      "subject": "fix(rl): materialize rollout dumps so --train.rollout_replay_dir works across jobs (#212)"
+    },
+    {
+      "sha": "43034284576522fc943d92ba96d6d560ebf653fd",
+      "date": "2026-10-15T20:50:14+08:00",
+      "subject": "docs: present the consistency skill as Molt's own, inspired by the vLLM post (#211)"
+    },
+    {
+      "sha": "6a8ad87f27261603954a8f6190a604a168c45171",
+      "date": "2026-10-15T20:35:04+08:00",
+      "subject": "docs: add the train-inference-consistency skill (bitwise rollout vs. … (#209)"
+    },
+    {
+      "sha": "28ac05b63425acc9c8bfe196fa1c4c5d64ffd278",
+      "date": "2026-10-15T18:43:26+08:00",
+      "subject": "chore: bump version to 0.2.0 (#210)"
+    },
+    {
+      "sha": "f2e549ff7aa01abc99dce580878739df8bc22d38",
+      "date": "2026-10-15T16:45:06+08:00",
+      "subject": "docs: shorter score-centering note; FlashREINFORCE is drift-free by construction (#208)"
+    },
+    {
+      "sha": "fe7fc5497447f38c83d231163bf90d2bab6d0063",
+      "date": "2026-10-15T16:36:16+08:00",
+      "subject": "feat(rl): score centering — off-policy REINFORCE without an importance ratio (#182)"
+    },
+    {
+      "sha": "11f538f397d22aba15e26fad98cfad9088a9f4db",
+      "date": "2026-10-15T10:08:54+08:00",
+      "subject": "fix(ci): name the release build's runners instead of following the test path's (#207)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/pr-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/simplicity-first/SKILL.md",
+      "previousPath": ".claude/skills/simplicity-first/SKILL.md"
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/acceptance.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/contracts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/debugging.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/evidence.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/molt-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/training-side.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/train-inference-consistency/workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codex/skills",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/claude-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "T",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dockerfile/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dockerfile/deepep.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/python/agents/geo3k.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/python/tools/python_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/agents/_chat_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/agents/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/cli/train_rl_ray.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/models/actor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/models/loss.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "molt/models/score_centering.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/models/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/algorithm/experience.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/rl_trainer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/rollout/experience_maker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/rollout/router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/rollout/samples_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/vllm/vllm_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/vllm/vllm_worker_wrap.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "molt/trainer/workers/policy_actor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/check_vllm_refit_layout.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_chat_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_cp_thd_packing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_experience.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_gather_group_lineage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_geo3k_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_length_penalty.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_log_probs_from_logits.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_mismatch_metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_policy_loss.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_python_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_refit_layerwise_reload.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_samples_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_score_centering.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "version.txt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

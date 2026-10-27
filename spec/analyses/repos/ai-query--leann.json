@@ -1,0 +1,535 @@
+{
+  "metadata": {
+    "id": "ai-query--leann",
+    "category": "ai-query",
+    "name": "leann",
+    "url": "https://github.com/yichuan-w/LEANN",
+    "aliases": [],
+    "report": "spec/projects/ai-query--leann.md",
+    "topics": [
+      "memory",
+      "models",
+      "import-generation"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "37c5ae3b7a3fc42f73b16f2a834452c8f1d36b2e",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-09-29T14:04:06-07:00",
+    "reportSha256": "3b38ffb17c3937a50d11c09d92aff4a94146f3b54edd4a8fd33cb8eb08f3d5ca",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-query--leann",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/yichuan-w/LEANN",
+    "report": "spec/projects/ai-query--leann.md",
+    "analyzedSha": "37c5ae3b7a3fc42f73b16f2a834452c8f1d36b2e",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-09-29T14:04:06-07:00",
+    "observedSha": "c443fc418417f7f2f84d6e1a30115f5e13376ed3",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "c443fc418417f7f2f84d6e1a30115f5e13376ed3",
+        "date": "2026-10-27T23:34:38+08:00",
+        "subject": "fix(release): install uv before lockfile update"
+      },
+      {
+        "sha": "a5f3bbc935eed3161a6f1bd6251fa334893a1036",
+        "date": "2026-10-27T23:34:12+08:00",
+        "subject": "chore: release v0.3.9"
+      },
+      {
+        "sha": "a63f484a0b00627fbc641b500ee377d35344eb72",
+        "date": "2026-10-26T15:36:18-07:00",
+        "subject": "fix(release): publish all backends and test loopback bind (#447)"
+      },
+      {
+        "sha": "0463b761916d87cb737462b2c87f102f333953bc",
+        "date": "2026-10-26T15:35:47-07:00",
+        "subject": "fix(core): refuse to load a custom encoder as a vanilla BertModel (#445)"
+      },
+      {
+        "sha": "37795892341d698ec09ad2ce1eb23cda3d39227f",
+        "date": "2026-10-26T15:35:35-07:00",
+        "subject": "fix: compare numeric metadata strings by value (#446)"
+      },
+      {
+        "sha": "b51ddc0b1f8085eefe6d4c3209d5cdb71ddecba1",
+        "date": "2026-10-23T23:58:25-07:00",
+        "subject": "fix(chunking): keep first line of AST chunks that contains '|' (#444)"
+      },
+      {
+        "sha": "db2609817e7b1d0dec48adad38f6bbc7d5d73b26",
+        "date": "2026-10-23T23:57:01-07:00",
+        "subject": "fix(core): drop the build template from query embeddings on the fallback path (#442)"
+      },
+      {
+        "sha": "25141f6c93b046812d434218ed543b05210ab32d",
+        "date": "2026-10-23T23:55:26-07:00",
+        "subject": "docs(search): restore ZMQ thread-safety warning (#441)"
+      },
+      {
+        "sha": "287859de0b53cc313259948195563b83237b584c",
+        "date": "2026-10-23T23:54:54-07:00",
+        "subject": "Fix --use-ocr PDF loading (#440)"
+      },
+      {
+        "sha": "b415df84ec49fc13c36e3142fba3e8494216d4d1",
+        "date": "2026-10-21T00:16:04-07:00",
+        "subject": "Implement OCR support and benchmark evaluation for PDF extraction (#190)"
+      },
+      {
+        "sha": "c6fa59b33b78bf4cb294cf3ba354d40b6e031607",
+        "date": "2026-10-20T22:06:31-07:00",
+        "subject": "polish runner and add result (#318)"
+      },
+      {
+        "sha": "ae9fa67bc8dcbca1606a6eea950478c3957cd413",
+        "date": "2026-10-20T22:02:42-07:00",
+        "subject": "docs: update repository URLs to StarTrail-org/LEANN (#426)"
+      },
+      {
+        "sha": "1add62fa811400ff96f6b9e32e47087f47165fc5",
+        "date": "2026-10-20T22:02:39-07:00",
+        "subject": "chore: untrack the generated .leann index store (#439)"
+      },
+      {
+        "sha": "115254ebe89bf650372a3d5a34e5c3f2ee1af81f",
+        "date": "2026-10-20T16:47:28-07:00",
+        "subject": "feat(search): cache query embeddings per searcher (#436)"
+      },
+      {
+        "sha": "0710a9e136a8a02ff0a404adc1ca51510129c675",
+        "date": "2026-10-20T16:11:23-07:00",
+        "subject": "fix(deps): pin pymupdf below 2.0 (#438)"
+      },
+      {
+        "sha": "bcd8ac3d2a61f0b30606e9dc6c483d4e5b6b3664",
+        "date": "2026-10-20T12:41:36-07:00",
+        "subject": "perf: lazy-load the public API so importing leann.mcp stays lightweight (#437)"
+      },
+      {
+        "sha": "7fcb3b548fe274e981e492624f9206a151819150",
+        "date": "2026-10-15T20:50:53-07:00",
+        "subject": "Optimize recompute latency: Add query embedding cache and reusable ZMQ connections (#226)"
+      },
+      {
+        "sha": "00710edff4aba84c41f4adfc75b79175b28132f2",
+        "date": "2026-10-12T14:15:10-07:00",
+        "subject": "fix(core): fit chunk sizes to the embedding model's sequence limit (#434)"
+      },
+      {
+        "sha": "035a92c64a7cc5cc7a8bb0554455eabdd8589a83",
+        "date": "2026-10-12T13:22:22-07:00",
+        "subject": "feat: add an opt-in Parallel MCP web document reader (#433)"
+      },
+      {
+        "sha": "7f51f6cfcf70646a249fa9f3be002ae08128cb61",
+        "date": "2026-10-08T20:25:51-07:00",
+        "subject": "fix(core): keep index metadata when MCP status counts passages (#430)"
+      },
+      {
+        "sha": "b9da860e80ca4542547c7c7915c47e94e27d85f0",
+        "date": "2026-10-08T20:25:37-07:00",
+        "subject": "fix(core): let update_index choose passage IDs for unclaimed chunks (#428)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/workflows/build-reusable.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-manual.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/document_rag.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/multimodal/vision-based-pdf-multi-vector/colqwen_forward.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/parallel_data/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/parallel_data/__main__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/parallel_data/parallel_mcp_reader.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/parallel_data/requirements.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/parallel_rag.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/contextbench/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/contextbench/scripts/auto_run.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/contextbench/scripts/batch_run_random.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/contextbench/scripts/batch_run_selected.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "benchmarks/contextbench/scripts/contextbench_official_eval_claude_baseline.jsonl",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "benchmarks/contextbench/scripts/contextbench_official_eval_claude_leann.jsonl",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/contextbench/scripts/prepare_repos_with_leann.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/financebench/verify_recall.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/update/bench_hnsw_rng_recompute.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/update/bench_update_vs_offline_search.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "demo.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/Dockerfile.cpu",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/COLQWEN_GUIDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/RELEASE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/ast_chunking_guide.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/configuration-guide.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/metadata_filtering.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/parallel-mcp.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/user-scripts-tr.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/user-scripts.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "llms.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-diskann/leann_backend_diskann/diskann_backend.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-diskann/leann_backend_diskann/diskann_embedding_server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-diskann/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-flashlib-ivf/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-flashlib/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-hnsw/leann_backend_hnsw/hnsw_embedding_server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-hnsw/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-backend-ivf/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/api.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/chunking_utils.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/cli.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/embedding_compute.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/leann-core/src/leann/embedding_server_endpoint.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/mcp.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/metadata_filter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-core/src/leann/searcher_base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann-mcp/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/leann/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/bump_version.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/leann-memory/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_astchunk_integration.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_chunk_size_cap.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_cli_prompt_template.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_cli_verbosity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_document_rag_ocr.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_embedding_server_bind.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_incremental_build.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_lazy_package_import.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_mcp_status_metadata.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_metadata_filter_numeric_strings.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_parallel_mcp_reader.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_prompt_template_persistence.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_query_embedding_cache.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_trust_remote_code.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_update_index_auto_passage_ids.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "uv.lock",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

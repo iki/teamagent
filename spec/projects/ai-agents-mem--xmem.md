@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [xmem](https://github.com/XortexAI/Xmem); analyzed commit `ed518422bf0971023b63c0734a4be2664d2f12ee`; commit date 2026-06-03T19:15:57+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--xmem.md).
+<!-- teamagent-analysis:end -->

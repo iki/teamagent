@@ -23,3 +23,7 @@ This entry was catalogued under **ai-info**. Its category places it in the candi
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [ai-agent-tools](https://github.com/cporter202/ai-agent-tools); analyzed commit `017b11024524bdb97a2c636c53b1069ce4ebb3e3`; commit date 2025-12-09T10:20:01-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-info--ai-agent-tools.md).
+<!-- teamagent-analysis:end -->

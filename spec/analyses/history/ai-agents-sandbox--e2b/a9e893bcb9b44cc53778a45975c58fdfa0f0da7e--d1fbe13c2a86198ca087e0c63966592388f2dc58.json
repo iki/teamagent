@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-sandbox--e2b",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/e2b-dev/e2b",
+  "report": "spec/projects/ai-agents-sandbox--e2b.md",
+  "analyzedSha": "a9e893bcb9b44cc53778a45975c58fdfa0f0da7e",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T14:22:20-07:00",
+  "observedSha": "d1fbe13c2a86198ca087e0c63966592388f2dc58",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d1fbe13c2a86198ca087e0c63966592388f2dc58",
+      "date": "2026-10-23T15:47:30+02:00",
+      "subject": "chore: build the codegen Go tools with Go 1.26.10 (eMudhra CA distrust) (#2024)"
+    },
+    {
+      "sha": "e514999404993fc6ca3bb14cc472519fa4178772",
+      "date": "2026-10-23T15:33:18+02:00",
+      "subject": "feat(sdk): retry control-plane requests on Should-Retry, falling back to 429/502/503/504 (#1998)"
+    },
+    {
+      "sha": "b1cc3a7913833102f3ec301a763633b79e0d855c",
+      "date": "2026-10-23T11:10:54+02:00",
+      "subject": "chore: bump Bun to 1.4.4, Deno to 2.9.8 and uv to 0.13.4 (#2023)"
+    },
+    {
+      "sha": "db8d80dad5be3d6a94c960e29017c8a9e29680c4",
+      "date": "2026-10-22T16:19:39Z",
+      "subject": "[skip ci] Release new versions"
+    },
+    {
+      "sha": "61b6b55ad6fc683685483a41e9d34bd0a1225da0",
+      "date": "2026-10-22T16:05:50Z",
+      "subject": "feat(sdk): use the sandbox proxy endpoint on e2b-tango.dev, e2b-juliett.dev and foxtrot-2.e2b.dev (#2020)"
+    },
+    {
+      "sha": "5a714f09a6985fb1229d0e8d87edf799229d8d90",
+      "date": "2026-10-22T15:58:29Z",
+      "subject": "chore(sdk): deprecate apiUrl and sandboxUrl connection options (#2018)"
+    },
+    {
+      "sha": "e5a9fa618c3b61bf9703793bc7ef68fd1a73c9bd",
+      "date": "2026-10-22T14:53:11Z",
+      "subject": "feat(sdk): add dnsServers / dns_servers to the network config (#2013)"
+    },
+    {
+      "sha": "2cd23051f46a96123c88e000383053be049e8d1d",
+      "date": "2026-10-22T14:26:03Z",
+      "subject": "fix(python-sdk): don't crash the build error path on a non-numeric reason.step (#1816)"
+    },
+    {
+      "sha": "d7c022e97c6afea2aea842d4f79c2162d03ae646",
+      "date": "2026-10-22T09:31:42Z",
+      "subject": "[skip ci] Release new versions"
+    },
+    {
+      "sha": "c9fc92f2057a959237683d7572432789762d3c5e",
+      "date": "2026-10-22T11:29:21+02:00",
+      "subject": "fix(deps): bump vite override to ^6.4.4 and vitest catalog to ^4.1.12 for security advisories (#2016)"
+    },
+    {
+      "sha": "f0c19af61d0845c53f4255cc1ebf79014fb9a883",
+      "date": "2026-10-21T21:13:39+02:00",
+      "subject": "chore: bump Node.js to 22.23.4 (October 2026 security release) (#2015)"
+    },
+    {
+      "sha": "8ad31ed91b7427a615ffc9a822fd2dda83c98ce4",
+      "date": "2026-10-21T18:40:27Z",
+      "subject": "GHSA-6q48-6c7w-9gw2 (critical): bump certifi to 2026.10.19 (#2010)"
+    },
+    {
+      "sha": "5ad398f0965b340cae3206ad5266d39654d7dd4c",
+      "date": "2026-10-21T20:31:24+02:00",
+      "subject": "test(sdk): match run_cmd build error without the command name (#2014)"
+    },
+    {
+      "sha": "2416fdb25fe553110864cdcdc35ad6a6ec3a119f",
+      "date": "2026-10-21T18:18:37+02:00",
+      "subject": "CVE-2026-112404 / CVE-2026-112895 (high): require pillow 13 in e2b-desktop (#2011)"
+    },
+    {
+      "sha": "7433b8c61641f9a1b2511a3a165141ab61018b9d",
+      "date": "2026-10-20T17:49:10Z",
+      "subject": "[skip ci] Release new versions"
+    },
+    {
+      "sha": "a398b08d0b598588d7686fb34d01052b6bd18e54",
+      "date": "2026-10-20T19:39:06+02:00",
+      "subject": "feat(cli): stream terminal input over a single StreamInput RPC (#2005)"
+    },
+    {
+      "sha": "3c4c7cf6fa759e9537260ad19f89a911f8ad6e16",
+      "date": "2026-10-20T19:24:10+02:00",
+      "subject": "feat(sdk): add streamInput / stream_input for commands and pty (#1997)"
+    },
+    {
+      "sha": "d7ed073584ad0e2979322892b7cd995aeaac518b",
+      "date": "2026-10-20T19:03:57+02:00",
+      "subject": "chore(python-sdk): drop Python 3.10 compatibility shims (#2004)"
+    },
+    {
+      "sha": "8b472f558626e935e7cf4073fbb1c7229b5a693c",
+      "date": "2026-10-20T14:57:16Z",
+      "subject": "[skip ci] Release new versions"
+    },
+    {
+      "sha": "b8afc3491d1c49f4b0bc41b22270c9818fc3df18",
+      "date": "2026-10-20T14:53:48Z",
+      "subject": "fix(cli): bundle @e2b/dockerfile-utils from source to avoid release build race (#2002)"
+    },
+    {
+      "sha": "85dd0e5ac545747925d25f5fc24fef3f1ff9e8f2",
+      "date": "2026-10-20T14:28:53Z",
+      "subject": "[skip ci] Release new versions"
+    },
+    {
+      "sha": "a1ad3266d7088eb0dcaf720adf6665ab59be12c4",
+      "date": "2026-10-20T16:17:03+02:00",
+      "subject": "feat(sdk): support TLS on the BYOP egress proxy connection (#1958)"
+    },
+    {
+      "sha": "f572bc7371afd8b6c751cbf229294f19ab42f96c",
+      "date": "2026-10-20T15:51:49+02:00",
+      "subject": "chore(python-sdk): bump protobuf-py to 0.6.0 and connectrpc to 0.12.1 (#2000)"
+    },
+    {
+      "sha": "dc625eb2e95447648e631fd56f76bc1f58ab9da9",
+      "date": "2026-10-19T18:56:52Z",
+      "subject": "fix(deps): CVE-2026-96889 (high) — bump sharp override to ^0.35.5 (GHSA-wq5f-xc86-pv6w) (#1995)"
+    },
+    {
+      "sha": "9f4a9efcfe96453a16bcc72f48cc080f9d652284",
+      "date": "2026-10-19T15:41:26+02:00",
+      "subject": "chore(deps): scheduled patch/minor dependency updates for js-sdk / cli / python-sdk (#1994)"
+    },
+    {
+      "sha": "999782e05c6f3a39fc5ec3bc10bad4ea648b46ca",
+      "date": "2026-10-19T15:25:16+02:00",
+      "subject": "chore(sdk): share process kill between commands and PTY, share CLI --language parser, drop unused internal exports (#1993)"
+    },
+    {
+      "sha": "62a17dfc3f11439d1d06bfb9bb515eadc5adfcd3",
+      "date": "2026-10-13T15:01:41Z",
+      "subject": "[skip ci] Release new versions"
+    },
+    {
+      "sha": "6a74c397c3269d9fadfc350e0d4d09098fd4861f",
+      "date": "2026-10-13T16:43:13+02:00",
+      "subject": "feat(js-sdk)!: drop undici 7 and the in-flight cap, depend on undici@^8 only (#1733)"
+    },
+    {
+      "sha": "2456bca6891055e84853691ea06c81d3b19f42cc",
+      "date": "2026-10-13T16:00:06+02:00",
+      "subject": "chore: remove base template and its CI/CD (#1976)"
+    },
+    {
+      "sha": "73a784dcb5159a7a3e5449e50c45b5a05dda5c9e",
+      "date": "2026-10-13T14:05:08+02:00",
+      "subject": "chore(js): require Node.js 22 (#1979)"
+    },
+    {
+      "sha": "775f0173bbddb6d8b1a72e775434caf5cb074a8a",
+      "date": "2026-10-12T19:32:50+02:00",
+      "subject": "feat(python-sdk): use pyqwest native HTTP/2 connection balancing (#1931)"
+    },
+    {
+      "sha": "547deccfa802fe7c8e881c12cafb4dcb32fd1405",
+      "date": "2026-10-12T17:47:27+02:00",
+      "subject": "chore(python): require Python 3.11 (#1974)"
+    }
+  ],
+  "files": [
+    {
+      "status": "D",
+      "path": ".changeset/desktop-python-urllib3-floor.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/python-retry-bad-gateway-replayable.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/retry-bad-gateway-replayable.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/should-retry-header.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/watch-stop-clean-exit.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/build_release_itinerary.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/code_interpreter_js_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/code_interpreter_python_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop_js_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop_python_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/dockerfile_utils_js_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/dockerfile_utils_python_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js_sdk_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pkg_artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python_sdk_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/templates.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".tool-versions",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "codegen.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/template/generators/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/template/init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/template/migrate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/terminal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/tests/terminal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/tsdown.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/src/messaging.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/src/sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/src/utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/bash.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/bar.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/boxAndWhisker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/line.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/log.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/pie.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/scales.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/scatter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/superchart.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/charts/unknown.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/tests/contexts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/cwd.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/data.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/defaultKernels.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/displayData.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/code-interpreter-js/tests/envVars.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/env_vars/bash.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/env_vars/java.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/env_vars/js.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/env_vars/python.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/env_vars/r.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/executionCount.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/images/bar.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/javaKernelReadiness.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/kernels.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/tests/messaging.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/tests/sandboxUrl.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-js/tests/setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/statefulness.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-js/tests/systemd.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/code-interpreter-js/tests/utils.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/e2b_code_interpreter/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/e2b_code_interpreter/code_interpreter_async.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/e2b_code_interpreter/code_interpreter_sync.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/e2b_code_interpreter/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/env_vars/test_bash.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/env_vars/test_java.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/env_vars/test_js.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/env_vars/test_python.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/env_vars/test_r.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_bash.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/tests/async/test_async_contexts.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_custom_repr_object.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_cwd.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_data.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_default_kernels.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_display_data.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/code-interpreter-python/tests/async/test_async_env_vars.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_execution_count.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_kernels.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_statefulness.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/async/test_async_systemd.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_bar.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_box_and_whiskers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/code-interpreter-python/tests/charts/test_deserialize.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_line.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_log_chart.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_pie.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_scale.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_scatter.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_superchart.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/charts/test_unknown.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/images/test_images.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/env_vars/test_bash.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/env_vars/test_java.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/env_vars/test_js.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/env_vars/test_python.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/env_vars/test_r.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_bash.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/tests/sync/test_contexts.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_custom_repr_object.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_cwd.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_data.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_default_kernels.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_display_data.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/code-interpreter-python/tests/sync/test_env_vars.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_execution_count.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_kernels.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_statefulness.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/sync/test_systemd.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/test_error_diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/tests/test_execute_timeout.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/code-interpreter-python/tests/test_format_exception.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/code-interpreter-python/tests/test_java_kernel_readiness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/tests/test_sandbox_url.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-interpreter-python/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-js/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-js/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-python/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-python/e2b_desktop/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-python/e2b_desktop/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-python/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-python/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/desktop-python/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/NOTICE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/src/dockerignore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/src/lexer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/src/syntax.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/buildkit-parser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/buildkit-shell.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/dockerignore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfile-line/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles-negative/empty_dockerfile/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles-negative/env_no_value/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles-negative/only_comments/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles-negative/shykes-nested-json/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/ADD-COPY-with-JSON/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/ADD-COPY-with-JSON/result",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/args/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/args/result",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/brimstone-consuldock/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/brimstone-consuldock/result",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/brimstone-docker-consul/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/dockerfile-utils-js/tests/fixtures/buildkit/parser/testfiles/brimstone-docker-consul/result",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

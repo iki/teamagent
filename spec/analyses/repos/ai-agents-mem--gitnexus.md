@@ -1,0 +1,207 @@
+# gitnexus: change evidence
+
+Source: [gitnexus](https://github.com/abhigyanpatwari/GitNexus) · [Analysis](../../projects/ai-agents-mem--gitnexus.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [agents](../../agents.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `5f9f95f22454b1f878ca549bc38b4c2ef5066b9a`; commit date: 2026-10-03T18:22:21+01:00; review date: 2026-10-04; observed SHA: `bad2422aa1bd6473e4cbb4da15873090944b67d6`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/abhigyanpatwari/GitNexus/compare/5f9f95f22454b1f878ca549bc38b4c2ef5066b9a...bad2422aa1bd6473e4cbb4da15873090944b67d6). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [bad2422aa1bd](https://github.com/abhigyanpatwari/GitNexus/commit/bad2422aa1bd6473e4cbb4da15873090944b67d6) 2026-10-27T16:46:58Z: feat: add the test scenario map and a Vitest 5 mutation runner (#3686)
+- [b2c72997ea34](https://github.com/abhigyanpatwari/GitNexus/commit/b2c72997ea347ceff682f26f260a534975525563) 2026-10-27T15:41:48Z: fix(scope): reduce memory for terminal import misses (#3741)
+- [374b10de864d](https://github.com/abhigyanpatwari/GitNexus/commit/374b10de864d7f2aec2fd8f5396115e576e28b78) 2026-10-27T09:56:16Z: fix(mcp): shut down when the stdio parent exits (#3737)
+- [3a2987636528](https://github.com/abhigyanpatwari/GitNexus/commit/3a29876365289ca397e8f7d0fd568a9eeca7b7b5) 2026-10-27T09:30:26Z: fix(mcp): reduce tool context and preserve repository hints (#3739)
+- [9a0ef8fbbb26](https://github.com/abhigyanpatwari/GitNexus/commit/9a0ef8fbbb2655b2271f04f86981dc345e552970) 2026-10-27T09:17:08Z: fix(eval): reuse reference settings for PR cost previews (#3738)
+- [afea705e3695](https://github.com/abhigyanpatwari/GitNexus/commit/afea705e36955be318bff21f9fe2cfd26ddfcf99) 2026-10-27T07:32:26Z: test(mcp): retain paired performance measurements (#3730)
+- [c417ccfc8157](https://github.com/abhigyanpatwari/GitNexus/commit/c417ccfc81574462a11c00780ae6ee9458bd0967) 2026-10-26T15:13:48Z: perf(ingestion): reduce indexing overhead and declaration memory (#3726)
+- [6122657afce0](https://github.com/abhigyanpatwari/GitNexus/commit/6122657afce0f0089990dd472b9ca0af2fa195fb) 2026-10-26T08:53:47Z: fix(mcp): bound query previews and advertise repo defaults (#3728)
+- [63f2f8e590c8](https://github.com/abhigyanpatwari/GitNexus/commit/63f2f8e590c812519ca41586efbf3921617e08f5) 2026-10-26T07:57:55Z: fix(ingestion): retain named class-expression owners (#3725)
+- [34b873696b37](https://github.com/abhigyanpatwari/GitNexus/commit/34b873696b3766c3237700b5be23823c05d89374) 2026-10-25T21:05:02Z: fix(cli): recover pnpm and Bun invocation paths (#3721)
+- [f759753794fd](https://github.com/abhigyanpatwari/GitNexus/commit/f759753794fda8e399d670ef7f04b9d7473d6082) 2026-10-25T18:30:17Z: fix(eval): retain large session measurements (#3722)
+- [9772bcd24fdf](https://github.com/abhigyanpatwari/GitNexus/commit/9772bcd24fdfb872a8ff2e8f5e44e4fc1f4a1834) 2026-10-25T18:29:09Z: feat(api_impact): list the callers of the requesting function as indirect consumers (#3720)
+- [ee7eff97f7f4](https://github.com/abhigyanpatwari/GitNexus/commit/ee7eff97f7f4eb7d68f7090cba448f7cc8285db2) 2026-10-25T09:38:21Z: fix(ci): rebalance native tests and stabilize flaky gates (#3719)
+- [be32540b6bf0](https://github.com/abhigyanpatwari/GitNexus/commit/be32540b6bf0fa914c64ab3f89922de8d56a1996) 2026-10-25T07:21:55Z: fix(wiki): keep valid Mermaid labels and link text through the sanitizer (#3707)
+- [68c0cdf19808](https://github.com/abhigyanpatwari/GitNexus/commit/68c0cdf198088fcf69e74c0379ec23a4defb235a) 2026-10-25T07:20:48Z: fix(wiki): pass real page slugs into parent and overview prompts (#3710)
+- [5c651091dcf1](https://github.com/abhigyanpatwari/GitNexus/commit/5c651091dcf1f0634145571dc2ec9c77009d1ee7) 2026-10-25T05:02:16Z: fix(cli): write the AGENTS.md/CLAUDE.md block in the file's own line ending (#3708)
+- [146f54988600](https://github.com/abhigyanpatwari/GitNexus/commit/146f549886008b3a4e0ed83aec55ebbcf8621964) 2026-10-25T05:01:08Z: fix(eval): keep candidate code out of agent comparisons (#3715)
+- [c7d0607d9055](https://github.com/abhigyanpatwari/GitNexus/commit/c7d0607d9055e9d2f910f4f5a3fcbb6123cb3dec) 2026-10-25T05:00:44Z: chore(deps): consolidate body-parser and fast-uri updates (#3716)
+- [36227d93d1a2](https://github.com/abhigyanpatwari/GitNexus/commit/36227d93d1a2d7becf543efcc3565cbe3b62e01f) 2026-10-24T22:04:46+01:00: perf: benchmark scope resolution and remove redundant allocation (#3711)
+- [d8a256a03a10](https://github.com/abhigyanpatwari/GitNexus/commit/d8a256a03a101a767dc4e1118913c679af740336) 2026-10-24T15:37:26+01:00: fix(taint): avoid false positives for guarded Git arguments (#3703)
+- [5dd58a5eec23](https://github.com/abhigyanpatwari/GitNexus/commit/5dd58a5eec23e03230cfc0971cc9afaa072f6659) 2026-10-24T14:42:43+01:00: chore(deps): consolidate updates and vendor compatible VECTOR (#3709)
+- [11a49a15c6be](https://github.com/abhigyanpatwari/GitNexus/commit/11a49a15c6befbe4d5de1cebe74b5456aeb44b99) 2026-10-24T09:58:58+01:00: fix(cli): reap embedding sidecar after query (#3693)
+- [0f3bad23b9ef](https://github.com/abhigyanpatwari/GitNexus/commit/0f3bad23b9efd87ce60c2f65c73dbd4880291f82) 2026-10-24T08:45:24+01:00: feat(web): resolve a root-relative GITNEXUS_BACKEND_URL against the page origin (#3640)
+- [69a3ab1d58d7](https://github.com/abhigyanpatwari/GitNexus/commit/69a3ab1d58d703e89778f642faa0c44e7d574cf8) 2026-10-23T21:02:27+01:00: chore(deps)(deps): bump dompurify (#3699)
+- [466d56280a37](https://github.com/abhigyanpatwari/GitNexus/commit/466d56280a37cb3dae9cdce8788937964824a3d5) 2026-10-23T20:25:47+01:00: fix(eval): retain pending completion notifications (#3700)
+- [f3fa67b1445b](https://github.com/abhigyanpatwari/GitNexus/commit/f3fa67b1445b8e8eeb23ae253fd3110044dc3624) 2026-10-23T18:25:20+01:00: fix(routes): link consumers to wrapper-composed URLs (#3697)
+- [62a6f67083fc](https://github.com/abhigyanpatwari/GitNexus/commit/62a6f67083fcd1f85634a49b118b4faf3fd5198d) 2026-10-23T12:39:13+01:00: chore(deps)(deps): bump ignore from 7.0.12 to 7.0.13 in /gitnexus (#3690)
+- [5726ad42f0e0](https://github.com/abhigyanpatwari/GitNexus/commit/5726ad42f0e0e5fef610ec89f540a6eb6a786282) 2026-10-23T10:49:45+01:00: chore(deps): consolidate all open Dependabot updates (#3682)
+- [48f108a58a99](https://github.com/abhigyanpatwari/GitNexus/commit/48f108a58a99c06ba21b9af5652597ee7e56f81d) 2026-10-23T09:06:03+01:00: docs: simplify guides and verify receiver gaps (#3694)
+- [bbbc1b49e342](https://github.com/abhigyanpatwari/GitNexus/commit/bbbc1b49e3427c467b8ac83a112f7793109e279b) 2026-10-23T00:05:10Z: test(bench): type the JS, Ruby and PHP receiver shapes; mark C dispatch N/A (#3498) (#3663)
+- [09b7a5b17449](https://github.com/abhigyanpatwari/GitNexus/commit/09b7a5b1744913f62bd860d5ee288617bd3d62cc) 2026-10-22T23:33:50Z: fix(ingestion): read more receiver-chain spellings (#3498) (#3667)
+- [cc0b5d54f795](https://github.com/abhigyanpatwari/GitNexus/commit/cc0b5d54f795b458a8ab38d009b0a8044f335d87) 2026-10-22T22:52:11Z: fix(swift,dart): type chained receivers through hoisted return types (#3498) (#3666)
+
+## Changed paths (truncated)
+
+- M: `.claude/skills/gitnexus-debugging/SKILL.md`
+- M: `.claude/skills/gitnexus-exploring/SKILL.md`
+- M: `.claude/skills/gitnexus-guide/SKILL.md`
+- M: `.claude/skills/gitnexus-refactoring/SKILL.md`
+- M: `.claude/skills/gitnexus-review/SKILL.md`
+- M: `.claude/skills/gitnexus/gitnexus-taint-analysis/SKILL.md`
+- M: `.devcontainer/Dockerfile`
+- M: `.devcontainer/README.md`
+- A: `.devcontainer/bootstrap-native.cjs`
+- A: `.devcontainer/dependencies.cjs`
+- A: `.devcontainer/dependencies.test.cjs`
+- A: `.devcontainer/dev-test.cjs`
+- M: `.devcontainer/devcontainer.json`
+- A: `.devcontainer/doctor.cjs`
+- M: `.devcontainer/install-deps.sh`
+- M: `.devcontainer/post-create.sh`
+- A: `.devcontainer/profile.cjs`
+- A: `.devcontainer/profiles.test.cjs`
+- A: `.devcontainer/resources.cjs`
+- A: `.devcontainer/resources.test.cjs`
+- A: `.devcontainer/seed-codex.sh`
+- A: `.devcontainer/seed-codex.test.cjs`
+- A: `.devcontainer/tune-9p.sh`
+- A: `.devcontainer/tune-9p.test.cjs`
+- A: `.devcontainer/verify-git-hooks.cjs`
+- A: `.devcontainer/verify-git-hooks.test.cjs`
+- M: `.env.example`
+- A: `.github/actions/ec2-runner/action.yml`
+- A: `.github/actions/require-agent-release-evidence/action.yml`
+- A: `.github/actions/upload-test-artifact/action.yml`
+- M: `.github/dependabot.yml`
+- M: `.github/scripts/check-tree-sitter-upgrade-readiness.py`
+- M: `.github/scripts/check-workflow-concurrency.py`
+- A: `.github/scripts/evolution-runner-ready.py`
+- A: `.github/scripts/evolution-runner.py`
+- M: `.github/scripts/test_check_tree_sitter_upgrade_readiness.py`
+- M: `.github/scripts/update-vendored-grammars.mjs`
+- M: `.github/vendored-grammars.json`
+- M: `.github/workflows/build-tree-sitter-prebuilds.yml`
+- M: `.github/workflows/ci-devcontainer.yml`
+- M: `.github/workflows/ci-e2e.yml`
+- M: `.github/workflows/ci-quality.yml`
+- M: `.github/workflows/ci-report.yml`
+- M: `.github/workflows/ci-tests.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/codeql.yml`
+- M: `.github/workflows/commit-fork-prebuilds.yml`
+- A: `.github/workflows/devcontainer-publish.yml`
+- M: `.github/workflows/docker.yml`
+- M: `.github/workflows/gitnexus-review-agent.yml`
+- M: `.github/workflows/gitnexus-skill-evolution.yml`
+- M: `.github/workflows/grammar-update-monitor.yml`
+- M: `.github/workflows/impact-pdg-mutation-report.yml`
+- A: `.github/workflows/mutation-runner-validation.yml`
+- M: `.github/workflows/pr-autofix-apply.yml`
+- M: `.github/workflows/pr-autofix-publish.yml`
+- M: `.github/workflows/pr-autofix.yml`
+- A: `.github/workflows/pr-cost-evaluation.yml`
+- M: `.github/workflows/pr-labeler.yml`
+- M: `.github/workflows/publish.yml`
+- A: `.github/workflows/release-evaluation.yml`
+- M: `.github/workflows/scorecard.yml`
+- M: `.github/workflows/skill-sync.yml`
+- A: `.github/workflows/test-scenario-map.yml`
+- M: `.github/workflows/tree-sitter-upgrade-readiness.yml`
+- M: `.github/workflows/trivy.yml`
+- M: `.github/workflows/workflow-lint.yml`
+- M: `.github/zizmor.yml`
+- M: `.gitignore`
+- M: `.gitleaksignore`
+- M: `.prettierignore`
+- M: `AGENTS.md`
+- M: `ARCHITECTURE.md`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile.cli`
+- M: `GUARDRAILS.md`
+- M: `MIGRATION.md`
+- M: `README.md`
+- M: `RUNBOOK.md`
+- M: `TESTING.md`
+- M: `docker-compose.yaml`
+- M: `docker-server.mjs`
+- M: `docker-server.test.mjs`
+- A: `docs/cli-reference.md`
+- A: `docs/deployment.md`
+- A: `docs/editor-setup.md`
+- A: `docs/languages/README.md`
+- A: `docs/languages/c-ingestion-gaps.md`
+- A: `docs/languages/cobol-ingestion-gaps.md`
+- A: `docs/languages/cpp-ingestion-gaps.md`
+- A: `docs/languages/csharp-ingestion-gaps.md`
+- A: `docs/languages/dart-ingestion-gaps.md`
+- A: `docs/languages/go-ingestion-gaps.md`
+- A: `docs/languages/java-ingestion-gaps.md`
+- A: `docs/languages/javascript-ingestion-gaps.md`
+- A: `docs/languages/kotlin-ingestion-gaps.md`
+- A: `docs/languages/local-import-scoping.md`
+- A: `docs/languages/objective-c-ingestion-gaps.md`
+- A: `docs/languages/php-ingestion-gaps.md`
+- A: `docs/languages/python-ingestion-gaps.md`
+- A: `docs/languages/receiver-resolution-audit.md`
+- A: `docs/languages/ruby-ingestion-gaps.md`
+- A: `docs/languages/rust-ingestion-gaps.md`
+- A: `docs/languages/swift-ingestion-gaps.md`
+- A: `docs/languages/typescript-ingestion-gaps.md`
+- A: `docs/languages/vue-ingestion-gaps.md`
+- A: `docs/languages/zig-ingestion-gaps.md`
+- A: `docs/mcp-reference.md`
+- A: `docs/optimize/guard-taint-overhead-report.md`
+- A: `docs/optimize/guard-taint-overhead-results.json`
+- A: `docs/plans/2026-10-18-2259-fix-lexical-binding-provenance-plan.md`
+- A: `docs/plans/2026-10-23-1823-feat-stryker-vitest5-runner-phase0-plan.md`
+- A: `docs/plans/2026-10-23-test-scenario-map-design.md`
+- A: `docs/plans/2026-10-24-0902-feat-test-scenario-map-phase1-plan.md`
+- A: `docs/plans/2026-10-25-1700-feat-scenario-fingerprint-plan.md`
+- A: `docs/wiki-generation.md`
+- M: `eslint.config.mjs`
+- A: `eval/check_test_execution.py`
+- A: `eval/tests/test_baseline_guidance.py`
+- M: `eval/tests/test_ce_plugin_runtime.py`
+- A: `eval/tests/test_check_test_execution.py`
+- A: `eval/tests/test_ec2_workflows.py`
+- A: `eval/tests/test_evolution_runner.py`
+- A: `eval/tests/test_evolution_runner_ready.py`
+- M: `eval/tests/test_evolve.py`
+- M: `eval/tests/test_offline_sweep_integration.py`
+- M: `eval/tests/test_oracle_assets.py`
+- A: `eval/tests/test_pr_evaluation.py`
+- M: `eval/tests/test_process_control.py`
+- M: `eval/tests/test_proposer_sandbox.py`
+- A: `eval/tests/test_release_build.py`
+- A: `eval/tests/test_release_evaluation_smoke.py`
+- A: `eval/tests/test_release_evidence.py`
+- A: `eval/tests/test_release_gate.py`
+- A: `eval/tests/test_release_preflight.py`
+- A: `eval/tests/test_release_report.py`
+- M: `eval/tests/test_runner_hardening.py`
+- M: `eval/tests/test_task_assets.py`
+- M: `eval/tests/test_workflow_bench.py`
+- M: `eval/tests/test_workflow_bench_sessions.py`
+- M: `eval/uv.lock`
+- M: `eval/workflow_bench/README.md`
+- A: `eval/workflow_bench/baseline_guidance.py`
+- A: `eval/workflow_bench/mcp_transport.py`
+- A: `eval/workflow_bench/measure_mcp_serialization.py`
+- A: `eval/workflow_bench/measurement-2026-10-24.json`
+- A: `eval/workflow_bench/measurement-2026-10-24.md`
+- M: `eval/workflow_bench/oracles/cross-module-parse-retry.oracle.test.ts`
+- D: `eval/workflow_bench/oracles/inv-bug-c-system-include.oracle.test.ts`
+- A: `eval/workflow_bench/oracles/inv-feature-c-include-provenance.oracle.test.ts`
+- M: `eval/workflow_bench/oracles/inv-feature-list-repos-filter.oracle.test.ts`
+- A: `eval/workflow_bench/oracles/reference/cross-module-parse-retry-pool-startup-only.patch`
+- A: `eval/workflow_bench/oracles/reference/cross-module-parse-retry-pool.patch`
+- A: `eval/workflow_bench/oracles/reference/cross-module-parse-retry-startup-only.patch`
+- A: `eval/workflow_bench/oracles/reference/cross-module-parse-retry.patch`
+- A: `eval/workflow_bench/oracles/reference/inv-feature-c-include-provenance-delimiter.patch`
+- A: `eval/workflow_bench/oracles/reference/inv-feature-c-include-provenance-flag.patch`
+- A: `eval/workflow_bench/oracles/reference/inv-feature-list-repos-filter.patch`
+- A: `eval/workflow_bench/oracles/reference/trivial-status-json-alias.patch`

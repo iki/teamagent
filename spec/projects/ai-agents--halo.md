@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [halo](https://github.com/context-labs/halo); analyzed commit `b7f8509745d67b499b4e80efe20ea37c03426a74`; commit date 2026-08-14T09:39:25Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--halo.md).
+<!-- teamagent-analysis:end -->

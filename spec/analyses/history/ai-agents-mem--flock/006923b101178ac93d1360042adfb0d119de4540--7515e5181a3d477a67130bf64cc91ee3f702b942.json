@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--flock",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/whiteducksoftware/flock",
+  "report": "spec/projects/ai-agents-mem--flock.md",
+  "analyzedSha": "006923b101178ac93d1360042adfb0d119de4540",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-06T02:30:04+02:00",
+  "observedSha": "7515e5181a3d477a67130bf64cc91ee3f702b942",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7515e5181a3d477a67130bf64cc91ee3f702b942",
+      "date": "2026-10-15T15:22:17+02:00",
+      "subject": "Merge pull request #663 from whiteducksoftware/fix-jupyter"
+    },
+    {
+      "sha": "ee1e826e139e360a9e710c147974097cfe34b4a7",
+      "date": "2026-10-14T16:55:36+02:00",
+      "subject": "fix: update Jupyter Server to prevent Referer token leaks"
+    },
+    {
+      "sha": "11d83989f51e2704546313a3acce316ae3815ce9",
+      "date": "2026-10-12T12:44:26+02:00",
+      "subject": "Merge pull request #633 from whiteducksoftware/feat/618-rest-correlation"
+    },
+    {
+      "sha": "04cf95e7f5d24bd6221625a294c3c475a8223e4b",
+      "date": "2026-10-12T12:39:29+02:00",
+      "subject": "fix: a run's webhook numbers survive eviction, the limit holds on insert (#618)"
+    },
+    {
+      "sha": "d597d8e75265d0ab2d23f9a9f4f7cc322dc1f2bd",
+      "date": "2026-10-12T12:30:42+02:00",
+      "subject": "fix: named runs keep their webhook sequence and their status route (#618)"
+    },
+    {
+      "sha": "89471a30f24014f77bbadfb53eca4a578970bbc4",
+      "date": "2026-10-12T12:20:40+02:00",
+      "subject": "feat: a REST publish can name its run with correlation_id (#618)"
+    },
+    {
+      "sha": "e8a55cdd439a7492a3e8e5f96fd313bedd8d2030",
+      "date": "2026-10-12T11:29:52+02:00",
+      "subject": "Merge pull request #631 from whiteducksoftware/feat/601-attribute-cap"
+    },
+    {
+      "sha": "630ff467124572fd3e3dc224fd1311590c7251bc",
+      "date": "2026-10-12T11:25:50+02:00",
+      "subject": "fix: the whole capped attribute fits the cap, artifacts keep their payload (#601)"
+    },
+    {
+      "sha": "f023117df0ae4f26c13eb6803a3d6198a9218f45",
+      "date": "2026-10-12T11:12:45+02:00",
+      "subject": "feat: cap span inputs and outputs, trace artifacts as references (#601)"
+    },
+    {
+      "sha": "1dcd16f578040ada47659e572960b3a1aa129679",
+      "date": "2026-10-12T10:21:15+02:00",
+      "subject": "Merge pull request #628 from whiteducksoftware/feat/601-trace-level"
+    },
+    {
+      "sha": "464dc0f15dee93faf50b5322da5b094d2b921c8e",
+      "date": "2026-10-12T10:16:33+02:00",
+      "subject": "fix: keep a host's request span and repeated baggage headers (#601)"
+    },
+    {
+      "sha": "6db9467e3408e73ba68ee9b808ee1d71089c00c8",
+      "date": "2026-10-12T10:05:11+02:00",
+      "subject": "fix: requests continue the caller's trace at the agents level (#601)"
+    },
+    {
+      "sha": "1894ecda9782a2c4732f9226ca56828da4898a12",
+      "date": "2026-10-12T09:55:29+02:00",
+      "subject": "Merge pull request #627 from whiteducksoftware/fix/foundry-sample-pin"
+    },
+    {
+      "sha": "95cb9ead1af5894f014aba91c006be4a6fd6a6a1",
+      "date": "2026-10-12T09:55:09+02:00",
+      "subject": "feat: trace agent work by default, Flock's internals at FLOCK_TRACE_LEVEL=all (#601)"
+    },
+    {
+      "sha": "7bda2b75f940db43ef3c83331208a64476348ffc",
+      "date": "2026-10-12T09:48:44+02:00",
+      "subject": "docs: the Foundry guide requires flock-core 0.5.700"
+    },
+    {
+      "sha": "0e5944f17c292f1274d975106897cc47f73a6c20",
+      "date": "2026-10-12T09:48:11+02:00",
+      "subject": "fix: pin the Foundry sample to the released flock-core 0.5.700"
+    },
+    {
+      "sha": "2e2a5cd58bb8fba17c3c7bcd771327a849eca4e7",
+      "date": "2026-10-12T09:23:56+02:00",
+      "subject": "Merge pull request #624 from whiteducksoftware/fix/601-batch-export"
+    },
+    {
+      "sha": "2d7406d0bd458f4af778b94c7d5755da41c1de51",
+      "date": "2026-10-12T09:17:36+02:00",
+      "subject": "fix: a provider is drained only once its export worker ended (#601)"
+    },
+    {
+      "sha": "1bee778a8461c8d59085c01f189e029f4b49ceae",
+      "date": "2026-10-12T09:13:21+02:00",
+      "subject": "fix: flush again after an older flush, a stopped provider is drained (#601)"
+    },
+    {
+      "sha": "f667feb549c60b91bce1ea38e931b96670a9bead",
+      "date": "2026-10-12T09:02:51+02:00",
+      "subject": "fix: one trace flush at a time, no clear before it finished (#601)"
+    },
+    {
+      "sha": "a230c17d6f1bad78acd5f1b2f07fe2625caafada",
+      "date": "2026-10-12T08:54:47+02:00",
+      "subject": "fix: bound the trace flush, flush before clearing traces (#601)"
+    },
+    {
+      "sha": "c697581229796b2e44a6cd9395c57e68789ad4a3",
+      "date": "2026-10-12T08:34:52+02:00",
+      "subject": "fix: export spans in batches, off the event loop (#601)"
+    },
+    {
+      "sha": "aeaada9cd54bab1c49dcc90ac4f2d41b0edbbf9c",
+      "date": "2026-10-12T00:18:40+02:00",
+      "subject": "Merge pull request #611 from whiteducksoftware/feat/610-review-queue"
+    },
+    {
+      "sha": "3ccd20f6630f0f734cdc9ef0ebc696fbee5463f4",
+      "date": "2026-10-12T00:13:15+02:00",
+      "subject": "fix: the review queue reads only reviews of unsure decisions, and nothing without any (#610)"
+    },
+    {
+      "sha": "67274b49e8eeee76e64245ebf3c1a79e08e3b16e",
+      "date": "2026-10-12T00:05:54+02:00",
+      "subject": "feat: a decider's queue of unsure decisions that need a review (#610)"
+    },
+    {
+      "sha": "4bb60c71e4e2c4e601e8e1bf9993a3ee0a2d9f8c",
+      "date": "2026-10-11T23:56:05+02:00",
+      "subject": "Merge pull request #609 from whiteducksoftware/feat/608-active-runs"
+    },
+    {
+      "sha": "b58dcc051b3fe6d8defef33e6f8bae8591963cb8",
+      "date": "2026-10-11T23:48:24+02:00",
+      "subject": "feat: active runs for a dashboard that connects while runs go on (#608)"
+    },
+    {
+      "sha": "a51549f4febaffd03f1801bafdd873750881e922",
+      "date": "2026-10-11T23:27:37+02:00",
+      "subject": "Merge pull request #606 from whiteducksoftware/feat/605-artifact-consumptions"
+    },
+    {
+      "sha": "6f6aec18ce9b2a9331df03ed11a70da507e501f7",
+      "date": "2026-10-11T23:22:34+02:00",
+      "subject": "fix: an artifact's history is read by its ID in every store (#605)"
+    },
+    {
+      "sha": "c45aed39d426a9bc55239ac833392bb47d57f883",
+      "date": "2026-10-11T22:57:02+02:00",
+      "subject": "feat: an artifact by ID with its consumption history (#605)"
+    },
+    {
+      "sha": "0fd1d56c0ed4297fdb7a73ad8957d8f764e9ee82",
+      "date": "2026-10-11T20:43:06+02:00",
+      "subject": "Merge pull request #600 from whiteducksoftware/fix/599-trace-connection"
+    },
+    {
+      "sha": "8b993f00be5210f124b61782764628ba8eb24950",
+      "date": "2026-10-11T20:37:41+02:00",
+      "subject": "fix: dashboard trace reads connect like the tracer's exporter (#599)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".envtemplate",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/about/changelog.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/about/contributing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/about/roadmap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-blackboard.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-checklist-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-checklist-blackboard.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-checklist-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-checklist-decider.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-coverage-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-coverage-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-escalation-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-escalation-card-unsure.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-escalation-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-explain-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-explained-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-explanation-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-hover.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-item-thresholds.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-lanes.gif",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-network-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-network-blackboard.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-review-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-review-buttons.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-review-by-human.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-reviewed.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-sections-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-shadow-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-shadow-card-unsure.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-shadow-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-sorter.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-tournament-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-tournament-blackboard.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-tournament-bracket-trace.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-tournament-bracket.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-tournament-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-types-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-types-blackboard.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-types-decider.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-types-scale-unsure.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-voting-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-voting-card-unsure.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/decisions/decision-voting-card.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/image-inputs/image-detail-full.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/image-inputs/image-detail-thumbnail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/image-inputs/image-inputs-agent-view.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/image-inputs/image-inputs-blackboard.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/image-inputs/image-inputs-wrong-caption.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/image-inputs/image-publish-panel.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/image-inputs/image-publish-result.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/images/run-status-usage.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guides/applications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/components.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/context-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guides/decisions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/dspy-engine.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guides/foundry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guides/images.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/imports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/local-models.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/persistent-blackboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/rest-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/scheduling.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/semantic-subscriptions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/server_components/tracing-component.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tracing/auto-tracing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tracing/how_to_use_tracing_effectively.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tracing/tracing-production.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tutorials/scheduled-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tutorials/semantic-routing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/01-getting-started/19_image_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/01-getting-started/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/03-hackathon/06_timer_scheduling.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/04-misc/08_local_transformers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/04-misc/10_dashboard_triage_demo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/04-misc/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/08-semantic/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/10-scheduling/01_simple_health_monitor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/10-scheduling/02_error_log_analyzer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/10-scheduling/03_daily_report_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/10-scheduling/04_batch_data_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/10-scheduling/05_one_time_reminder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/10-scheduling/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/13-applications/01_worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/13-applications/02_starlette_sse.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/13-applications/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/13-applications/incident_app.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/azure.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/.dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/14-foundry/incident-triage/src/flock-incident-triage/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/01_ticket_triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/02_arxiv_race.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/03_color_sorter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/04_question_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/05_compliance_checklist.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/06_control_mapping_tournament.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/07_escalation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/08_voting.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/09_shadow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/10_explain.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/11_coverage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/12_long_documents.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/13_human_review.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/14_calibration.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/data/arxiv_abstracts.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/data/compliance_controls.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/data/compliance_documents.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/15-decisions/data/make_compliance_data.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/app-sketches/z-explorer/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mkdocs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "scripts/build_dashboard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/flock/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/agent/context_resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/agent/output_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/api/base_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/api/collector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/api/graph_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/flock/api/image_uploads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/api/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/api/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/flock/api/static_files/assets/index-4XohUlZm.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/flock/api/static_files/assets/index-EDoH04eq.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/flock/api/static_files/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/flock/api/thumbnails.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/api/webhooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/flock/application/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/flock/application/application.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/flock/application/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/flock/application/types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/agent/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/orchestrator/activation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/orchestrator/circuit_breaker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/orchestrator/collection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/orchestrator/deduplication.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/orchestrator/scheduling/timer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/server/artifacts/artifacts_component.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/server/artifacts/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/server/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/flock/components/server/control/control_routes_component.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

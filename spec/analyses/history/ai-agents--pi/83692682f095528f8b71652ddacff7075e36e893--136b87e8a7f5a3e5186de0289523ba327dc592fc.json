@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--pi",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/earendil-works/pi",
+  "report": "spec/projects/ai-agents--pi.md",
+  "analyzedSha": "83692682f095528f8b71652ddacff7075e36e893",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T15:23:44+02:00",
+  "observedSha": "136b87e8a7f5a3e5186de0289523ba327dc592fc",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "136b87e8a7f5a3e5186de0289523ba327dc592fc",
+      "date": "2026-10-23T22:16:54+02:00",
+      "subject": "docs: require changelog entries for work targeting main from any branch"
+    },
+    {
+      "sha": "acf83acfd88f18e94e8d6634064b2ee2cca6f317",
+      "date": "2026-10-23T22:10:30+02:00",
+      "subject": "docs: restore existing changelog attributions"
+    },
+    {
+      "sha": "e9c3ac9d9860154f4cb712f043485ae806b21809",
+      "date": "2026-10-23T22:10:30+02:00",
+      "subject": "docs: drop author attribution from backfilled changelog entries"
+    },
+    {
+      "sha": "a8fe8e0adc8b958425a43d1a7b2cc045f68be53b",
+      "date": "2026-10-23T22:10:30+02:00",
+      "subject": "docs: add missing changelog entries for #9301, #11289, #11290, #11293, #11296, #11347"
+    },
+    {
+      "sha": "1c8cb1781785f3baf66f3ba1edf8eb239fe35ba2",
+      "date": "2026-10-23T21:59:31+02:00",
+      "subject": "fix(tui): bound image line search by tallest registered image"
+    },
+    {
+      "sha": "4464442f95edc25f511772a417986c8f334aba78",
+      "date": "2026-10-23T21:59:31+02:00",
+      "subject": "fix(tui): crop boxed images scrolled above the fullscreen viewport"
+    },
+    {
+      "sha": "a7b94a03f09f20f4937fa1a76339014c60d261ad",
+      "date": "2026-10-23T21:53:34+02:00",
+      "subject": "fix(ai): preserve literal data in Gemini tool schemas"
+    },
+    {
+      "sha": "7314819f0fe30fa616f32fa3a1fc8d1a856a1446",
+      "date": "2026-10-23T21:53:34+02:00",
+      "subject": "fix(ai): send const as enum in Gemini tool schemas"
+    },
+    {
+      "sha": "ed76cca69b136931fd93198b4d44f5c3b59e684c",
+      "date": "2026-10-23T21:24:38+02:00",
+      "subject": "fix(coding-agent): test forkFrom copied content instead of fs calls"
+    },
+    {
+      "sha": "8ddc44ec8bccf74afb89bb92e8ceb41bcc19305b",
+      "date": "2026-10-23T21:24:38+02:00",
+      "subject": "fix(coding-agent): write forked session through one fd"
+    },
+    {
+      "sha": "f3fa8bd92430a2bf443681027a01c58586f35464",
+      "date": "2026-10-23T21:22:02+02:00",
+      "subject": "fix(ai): do not count faux cache writes as input tokens"
+    },
+    {
+      "sha": "606af8662ec4c3f5b9047c0593b4138f3db5c30d",
+      "date": "2026-10-23T21:19:51+02:00",
+      "subject": "feat(coding-agent): show model names in model selectors when they add information"
+    },
+    {
+      "sha": "5e106ab1ca357e4e9f19c5ac909f095381a50d6e",
+      "date": "2026-10-23T19:03:58Z",
+      "subject": "feat(chord): NativeWatchable, the in-process counterpart of Watchable"
+    },
+    {
+      "sha": "3953e9ef497024d13c6f4aa646d0adda2e37b0f8",
+      "date": "2026-10-23T20:20:02+02:00",
+      "subject": "fix(examples): todo renderResult returns undefined on validation errors"
+    },
+    {
+      "sha": "c55972086d5642593c19c331f9c4eaf02054c530",
+      "date": "2026-10-23T19:48:59+02:00",
+      "subject": "docs(coding-agent): add changelog entry for #11209"
+    },
+    {
+      "sha": "c8ec752cf92a612c340249f1d0abd1bdecaf5b9f",
+      "date": "2026-10-23T19:48:59+02:00",
+      "subject": "fix(coding-agent): skip fd/rg downloads on unsupported architectures"
+    },
+    {
+      "sha": "ff689647155ce7b852e6a318301c7a54fa2687ff",
+      "date": "2026-10-23T19:32:30+02:00",
+      "subject": "fix(tui): use iterm2 word characters for fullscreen double-click selection (#11340)"
+    },
+    {
+      "sha": "bc73eb8b1584e43dca3ffaaca7a509fabedd491c",
+      "date": "2026-10-23T19:11:46+02:00",
+      "subject": "docs(tui): remove stale comment about Rex's Kitty images"
+    },
+    {
+      "sha": "ede2c9b468d8e061c557d16957513715e6d49cd6",
+      "date": "2026-10-23T17:02:41+02:00",
+      "subject": "docs: fix provider checklist, MCP anchors, and missing commands/settings (#11338)"
+    },
+    {
+      "sha": "36be9c612e64082a4f0d4d0a94706c38ecbc20a1",
+      "date": "2026-10-23T14:47:34+02:00",
+      "subject": "fix(coding-agent): decode pi.exec output across UTF-8 chunk boundaries (#11326)"
+    },
+    {
+      "sha": "8a2ebd38549c3521a02db0e5d758a24320e97f94",
+      "date": "2026-10-23T12:46:03+02:00",
+      "subject": "fix(tui): stop nested blockquote rendering from growing exponentially (#11321)"
+    },
+    {
+      "sha": "6dfb5467851adb603d525f9c27e28f341e3f08b9",
+      "date": "2026-10-23T12:27:45+02:00",
+      "subject": "fix(coding-agent): start when a configured package fails to install (#11304)"
+    },
+    {
+      "sha": "9ffd27cfaaeed5c1ecf9369f393c3222975729b4",
+      "date": "2026-10-23T12:19:56+02:00",
+      "subject": "fix(mcp): accept only http and https OAuth URLs"
+    },
+    {
+      "sha": "e3bc05e8719ac939c364a2236807376108107afa",
+      "date": "2026-10-23T12:11:54+02:00",
+      "subject": "fix(ai): send fixed low top-level effort with Anthropic per-message effort"
+    },
+    {
+      "sha": "3141dfdcf409e0bb2685a98ed298fa65920b1c7d",
+      "date": "2026-10-23T09:31:13Z",
+      "subject": "Merge remote-tracking branch 'upstream/main' into watchable"
+    },
+    {
+      "sha": "a2fd25f56c07251204168c2dd0e31e8a45669533",
+      "date": "2026-10-23T09:31:09Z",
+      "subject": "feat(chord): Watchable, the common interface of values that can be watched"
+    },
+    {
+      "sha": "a1836b06c3f93af50c76dbbd468b4d4f8771ef15",
+      "date": "2026-10-23T11:20:01+02:00",
+      "subject": "fix: handle npm 12 pack --json output in preview-packages"
+    },
+    {
+      "sha": "14c8118412bffc8f8df7a088fde51d2ffa74fd8f",
+      "date": "2026-10-23T10:54:18+02:00",
+      "subject": "feat(ai): carry responseModel on pi-messages terminal events (#11265)"
+    },
+    {
+      "sha": "906e1302f94829ec7e228059199681c11faec0b0",
+      "date": "2026-10-23T10:31:50+02:00",
+      "subject": "fix(coding-agent): build standalone binaries with Bun 1.4.4 (#11319)"
+    },
+    {
+      "sha": "42cb822f1c5d3153069dd0661bfd297424666cf1",
+      "date": "2026-10-23T07:05:23Z",
+      "subject": "feat(chord): shared watch-handle implementation (Watch, NativeWatch); Durable uses it"
+    },
+    {
+      "sha": "936e5f40aede9327b9142b63506ed2b68bc6b4ac",
+      "date": "2026-10-22T23:32:38+02:00",
+      "subject": "fix(evals): drop autoevals dependency"
+    },
+    {
+      "sha": "8c03fef4d3b7ecf7a9e8cc5b1312ff60ec2be149",
+      "date": "2026-10-22T21:39:17+02:00",
+      "subject": "fix(tui,coding-agent): rank contiguous fuzzy matches and search session fields separately"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/APPROVED_CONTRIBUTORS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-binaries.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/env-daemons.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/env.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/issue-triage-labels.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/preview-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-model-catalog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".husky/pre-commit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/extensions/import-repro.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/prompts/dup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/prompts/wr.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/skills/add-llm-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".pi/skills/github-work.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/skills/release.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "biome.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/model-catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/agent-loop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/agent-loop.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/test/agent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/scripts/ai-gateway-pricing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/scripts/generate-models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/scripts/openrouter-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/anthropic-messages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/api/azure-openai-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/azure-openai-responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/api/classifier-shared.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/cloudflare-workers-ai-system-one.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/google-generative-ai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/google-shared.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/google-vertex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/lazy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/llama-cpp-classify.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/mistral-conversations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/openai-codex-responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/openai-completions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/api/openai-decisions.lazy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/api/openai-decisions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/openai-responses-shared.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/openai-responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/openrouter-images.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/pi-messages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/simple-options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/system-one-shared.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/transform-messages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/api/typesafe-system-one.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/oauth/anthropic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/oauth/openai-chatgpt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/oauth/openai-codex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/resolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/auth/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/compat/extension-oauth-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/env-api-keys.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/models.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/all.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/src/providers/azure-openai-responses.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/src/providers/azure-openai-responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/providers/azure.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/providers/azure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/providers/compat-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/faux.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/kimi-coding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/providers/model-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/opencode-go.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/providers/openrouter-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openrouter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/radius.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/telemetry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/src/utils/assistant-message-frame.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/estimate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/event-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/utils/identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/json-parse.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/model-operations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/utils/openrouter-cost.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/overflow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/src/utils/pi-user-agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/provider-retry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/retry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/transcript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/validation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/src/utils/version.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/abort.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/anthropic-adaptive-thinking-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/anthropic-auth-token.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/anthropic-error-tool-result-images.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/anthropic-mid-conversation-effort.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/anthropic-oauth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/anthropic-sse-parsing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/anthropic-strict-tool-fallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/test/assistant-message-frame.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/azure-openai-base-url.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/azure-openai-completions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/azure-openai-tool-choice.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/baseten-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/bedrock-convert-messages.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/bedrock-thinking-payload.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/classifier-images-live.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/classifier-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/cloudflare-workers-ai-system-one.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/codex-websocket-cached-probe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/compat-schema.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/context-estimate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/context-overflow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/cross-provider-handoff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/empty.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/event-stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/faux-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/github-copilot-anthropic.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/github-copilot-request-size-overflow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/google-raw-stop-reason.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/google-shared-convert-tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/google-thinking-level-map.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/image-model-data.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/image-tool-result.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/json-parse.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/mistral-http-transport.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/model-cost-tiers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/models-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-chatgpt-oauth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-codex-cache-affinity-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-codex-oauth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-codex-stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-completions-empty-tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-completions-provider-stream-event.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-completions-reasoning-details.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-completions-tool-choice.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-completions-tool-result-images.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/openai-decisions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-responses-compat.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openai-responses-empty-tool-result.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

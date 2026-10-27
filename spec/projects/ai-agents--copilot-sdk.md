@@ -30,3 +30,7 @@ A connected SDK and cached model list do not guarantee that an inference turn is
 Test missing or mismatched runtime, stale catalog, account changes, token refresh, permission callbacks and cancellation. Verify a minimal authorized turn in an explicit connection test before marking a model usable. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [copilot-sdk](https://github.com/github/copilot-sdk); analyzed commit `ef04633cc84e4ba8e79888a39259ca276f5de732`; commit date 2026-10-02T22:14:56Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--copilot-sdk.md).
+<!-- teamagent-analysis:end -->

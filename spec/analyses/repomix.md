@@ -1,0 +1,43 @@
+# Repomix evidence audit
+
+Source: [yamadashy/repomix](https://github.com/yamadashy/repomix) · [project review](../projects/ai-query--repomix.md) · [import/generation](../import-generation.md) · [memory](../memory.md) · [incremental analysis](README.md)
+
+Repomix is an optional local packaging adapter. Git commit/path evidence remains the default locator for incremental research. A smaller pack is not evidence of better analysis: removing the implementation's tests, fixtures or helper scripts can remove the material needed to evaluate a claim.
+
+## Existing configuration audit
+
+The historical [packing launcher](../archive/legacy-research/tooling/.rmx.cmd) delegates to machine-specific helper commands and a partial category list. Its archived [shared ignore file](../archive/legacy-research/tooling/.rmxignore) excludes test/spec source files, fixture/reference directories, changelogs, skill scripts, styles, translations and several asset/build/data patterns. Those exclusions can be reasonable for a narrowly scoped prompt, but the result must not be presented as a complete source review or a reproducible full corpus. The benchmark preserves the original ignore file and hashes it.
+
+The inspected source snapshot `e696384d062f08f0246ffd2580d5a206484fc0a4` exposes external file processors in configuration. The schema documents their command, error and timeout behavior, and a runtime gate intended to keep processors disabled for library/MCP/hosted callers unless explicitly enabled ([configuration](https://github.com/yamadashy/repomix/blob/e696384d062f08f0246ffd2580d5a206484fc0a4/src/config/configSchema.ts#L34-L55), [runtime gate](https://github.com/yamadashy/repomix/blob/e696384d062f08f0246ffd2580d5a206484fc0a4/src/config/configSchema.ts#L175-L192)). Our benchmark supplies an explicit JSON configuration with an empty processor list, retains security scanning, and does not load repository executable configuration. The installed benchmark package's version and entry digest are recorded independently from the source checkout SHA; matching version labels are not a claim of byte-identical builds.
+
+## Measurement protocol
+
+The reproducible [host runner](../../app/research/repomix-benchmark.ts) invokes the existing package. It invokes an explicitly selected, already installed Repomix JavaScript entry with Bun 1.4.2. It does not install dependencies, use a Node launcher, modify source repositories or execute their build/skill scripts. Output goes to `TEAMAGENT_REPOMIX_CACHE`, default `.cache/git.repomix`, in an exclusive timestamped directory.
+
+The three preselected sources are [Agent Skills](https://github.com/agentskills/agentskills) ([report](../projects/ai-agents-skills--docs.skills.md)), [Vercel Skills](https://github.com/vercel-labs/skills) ([report](../projects/ai-agents-skills--search.vercel.md)) and [Spec Kit](https://github.com/github/spec-kit) ([report](../projects/ai-spec--spec-kit.md)). They provide documentation, TypeScript and Python/workflow material. This is a small convenience sample, not a representative performance ranking.
+
+Each source runs with two profiles: the original additional ignore patterns, and evidence-retaining defaults without those additional exclusions. Both retain Repomix defaults, source ignore files and security scanning; both cap individual files at 500 KB and preserve comments/content without compression. Neither profile guarantees inclusion of every tracked file. The manifest reports total tracked paths, packed paths, omitted tracked paths, included test/fixture paths, pack byte size and elapsed time. Up to 100 omitted paths are listed with an explicit truncation flag.
+
+Each configuration runs once and immediately repeats. OS/tool caches are not cleared, so these are **first invocation** and **immediate repeat**, not cold/warm controlled-cache benchmarks. The manifest records Bun version, platform, architecture, source SHA, checkout dirty state, package version, entry/config/output/ignore hashes and outcome. A failure stays unavailable; no size, speed success or quality score is inferred. Raw output packs are local caches, while the small result manifest can be retained as review evidence.
+
+## Adoption criteria
+
+Use packs to help locate relevant source when direct bounded file reads are inconvenient. Keep immutable source SHA and included/omitted path manifests attached to every derived pack. Preserve tests, configuration, skill scripts and security boundaries when those are part of the review question. Never advance an analyzed SHA because a pack was regenerated. Evaluate retrieval and answer quality on a separate held-out task set before claiming semantic benefits; the measurements here concern only packaging cost and coverage.
+
+
+## Measured results — 2026-10-24
+
+All 12 runs completed under Bun 1.4.2 on Windows x64 with installed Repomix 1.18.1. The [unaltered result manifest](repomix-benchmark.json) records full source commits, configuration and output hashes. All three sampled checkouts were clean at measurement. Times below include process startup, discovery, scanning, packing and output production; they exclude the benchmark's subsequent JSON parsing/counting.
+
+| Source / profile | Packed / tracked paths | Test or fixture paths | Output bytes | First invocation (s) | Immediate repeat (s) |
+|---|---:|---:|---:|---:|---:|
+| Agent Skills / legacy ignores | 36 / 139 | 0 | 204,964 | 5.578 | 4.463 |
+| Agent Skills / evidence defaults | 131 / 139 | 4 | 1,174,207 | 0.700 | 0.707 |
+| Vercel Skills / legacy ignores | 71 / 143 | 0 | 661,246 | 4.983 | 4.791 |
+| Vercel Skills / evidence defaults | 142 / 143 | 71 | 1,236,314 | 1.001 | 0.841 |
+| Spec Kit / legacy ignores | 591 / 987 | 1 | 7,024,262 | 17.415 | 18.191 |
+| Spec Kit / evidence defaults | 979 / 987 | 362 | 14,572,388 | 1.821 | 1.315 |
+
+In this run the additional legacy exclusions produced smaller packs but also slower measured completion. Profile ordering was fixed and caches were not reset, so these observations do not isolate the cause or establish a general speed advantage. The file-retention difference is directly observable: the evidence-default profile retained 95 more Agent Skills paths, 71 more Vercel Skills paths and 388 more Spec Kit paths. Default exclusions, source ignore files, the input size bound and security scanning still leave omissions; consult the manifest's omitted-path lists before using any pack as evidence.
+
+No retrieval, task correctness, answer quality, model token usage or reasoning improvement was measured. There is no semantic quality score to compare. The practical decision is to preserve evidence relevant to the question and prefer bounded Git changes plus selected original files for routine refreshes; regenerate a full pack when its broader coverage justifies the cost.

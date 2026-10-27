@@ -1,0 +1,1006 @@
+{
+  "metadata": {
+    "id": "ai-agents--dspy",
+    "category": "ai-agents",
+    "name": "dspy",
+    "url": "https://github.com/stanfordnlp/dspy",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--dspy.md",
+    "topics": [
+      "evolution",
+      "skills",
+      "models",
+      "decisions"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "ba3f9198efe5d125c7c1a2b40b1f1e6166209bd2",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T01:15:23-04:00",
+    "reportSha256": "fa8731e5863d64b086bcd00c9448e59fdf768f2be1e03992deff3e27e89754b9",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--dspy",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/stanfordnlp/dspy",
+    "report": "spec/projects/ai-agents--dspy.md",
+    "analyzedSha": "ba3f9198efe5d125c7c1a2b40b1f1e6166209bd2",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T01:15:23-04:00",
+    "observedSha": "159898accc7ae83c2847309aad295468ea4da31c",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "159898accc7ae83c2847309aad295468ea4da31c",
+        "date": "2026-10-27T12:02:11-04:00",
+        "subject": "fix(dspy): let majority() vote on non-string field values (#10720)"
+      },
+      {
+        "sha": "cb2ed98879eb428ca36f91cf50fc4ba7e5ed1708",
+        "date": "2026-10-27T12:00:00-04:00",
+        "subject": "fix(dspy): parse negative numbers in string signature Literal types (#10678)"
+      },
+      {
+        "sha": "b8588f10fd7c2af03cba9f45f002b8442bfcbde4",
+        "date": "2026-10-27T08:08:09-04:00",
+        "subject": "docs: repair outdated notebook and API examples (#10727)"
+      },
+      {
+        "sha": "4dbeec17c267f296117630af59274bbeaf142117",
+        "date": "2026-10-26T13:11:06-04:00",
+        "subject": "Fix two-step bounding box test output formatting (#10728)"
+      },
+      {
+        "sha": "f1986727924e467fce11ff2f99d65b533890d182",
+        "date": "2026-10-26T12:27:29-04:00",
+        "subject": "feat(cache): enable restricted pickle loading by default (#10726)"
+      },
+      {
+        "sha": "7177792be92aea5fe1cfcb5bbe41fa9542f3f7d9",
+        "date": "2026-10-26T10:27:21-04:00",
+        "subject": "feat(adapters): make XML the default adapter (#10707)"
+      },
+      {
+        "sha": "1d17345818dfe5392f6b8c6fabbac8142e620217",
+        "date": "2026-10-26T08:56:16-04:00",
+        "subject": "fix(dspy): preserve integer precision when loading pandas data (#10471)"
+      },
+      {
+        "sha": "790d5affaff8e35a89a637e4181deeb7c7cd2d28",
+        "date": "2026-10-26T08:55:18-04:00",
+        "subject": "fix(teleprompt): respect MIPROv2.compile seed=0 (#10322)"
+      },
+      {
+        "sha": "67c65f9eb2fce8be946974cfb040a36e79ee5193",
+        "date": "2026-10-26T08:53:52-04:00",
+        "subject": "docs(dspy): fix cache env var names in FAQ (#10610)"
+      },
+      {
+        "sha": "8511d6aa93d3662580f70aac9d6ef1b59920b27b",
+        "date": "2026-10-26T08:52:33-04:00",
+        "subject": "docs: fix stale import paths in the deployment and GEPA guides (#10608)"
+      },
+      {
+        "sha": "288b0146c96bcf8f805742ddaad7ac82eae90082",
+        "date": "2026-10-26T08:50:46-04:00",
+        "subject": "test: build the subprocess PYTHONPATH with os.pathsep (#10589)"
+      },
+      {
+        "sha": "15aad8de2678a4d89a3a093e944fe58f8744c497",
+        "date": "2026-10-25T08:18:26-04:00",
+        "subject": "docs: fix ControlArena tutorial link (#10722)"
+      },
+      {
+        "sha": "98830391be6fbf81523757271432bba1c6c4eb80",
+        "date": "2026-10-22T15:44:59-04:00",
+        "subject": "fix(ci): repair publisher container CA trust (#10711)"
+      },
+      {
+        "sha": "6ee6ca3d427ae6567416dcc9b727db89adb786a9",
+        "date": "2026-10-22T15:15:45-04:00",
+        "subject": "Add BoundingBox type with automatic Jev image support (#10665)"
+      },
+      {
+        "sha": "a42c98b0cb276d6b4eaaf3ef780eea881e9aa4c1",
+        "date": "2026-10-22T13:33:53-04:00",
+        "subject": "fix(dspy): parse XMLAdapter outputs as typed tags with literal leaves (#10402)"
+      },
+      {
+        "sha": "000b09cd15b016359c9a1a91b8c5db70a1097261",
+        "date": "2026-10-22T13:07:54-04:00",
+        "subject": "fix(dspy): require patched installers and CA bundles (#10703)"
+      },
+      {
+        "sha": "9597fe1fea452dc271afc347ab9a44adc5847dd0",
+        "date": "2026-10-22T11:50:33-04:00",
+        "subject": "docs: remove unavailable community resources and restore moved links (#10702)"
+      },
+      {
+        "sha": "3fdb93f205b0f24a9338449c5bbad0092b5cce1c",
+        "date": "2026-10-22T08:23:15-04:00",
+        "subject": "docs: fix async-tool tutorial cross-links (#10699)"
+      },
+      {
+        "sha": "b4beb23d94711857f618042f4e89260b2e8e09b3",
+        "date": "2026-10-21T15:11:01-04:00",
+        "subject": "Fix use-case logo paths for Zensical builds (#10691)"
+      },
+      {
+        "sha": "661b2f1a25218f3b44aa125384d11d5508316ecb",
+        "date": "2026-10-20T15:59:49-04:00",
+        "subject": "Preserve parallel executor task types with ty (#10688)"
+      },
+      {
+        "sha": "351b87285716a03227892e171b6085d61db8d1fc",
+        "date": "2026-10-20T15:19:30-04:00",
+        "subject": "Preserve callback decorator signatures with ty (#10684)"
+      },
+      {
+        "sha": "4706e3cd6b5e9e308b535eeeb309020bcf65bb67",
+        "date": "2026-10-20T12:11:23-04:00",
+        "subject": "fix(dspy): preserve CoT parse failures in bootstrap traces (#10683)"
+      },
+      {
+        "sha": "d4c090015fc078bedbf7187f49fe5ed9f8ef14c8",
+        "date": "2026-10-20T10:35:27-04:00",
+        "subject": "fix(BootstrapFewShot): honor metric_threshold=0.0 (#10604)"
+      },
+      {
+        "sha": "319aed59308975f106265ff64bde7c3f7f14b180",
+        "date": "2026-10-20T10:02:36-04:00",
+        "subject": "docs(dspy): correct precision_score docstring example value (#10681)"
+      },
+      {
+        "sha": "ab1ca173e60ec39cde2328e37a149d5812e36d31",
+        "date": "2026-10-19T19:15:10-04:00",
+        "subject": "Add incremental internal typing with ty in CI and pre-commit (#10673)"
+      },
+      {
+        "sha": "2872410cef53b91d04a00e6ca017636f82ef7f6c",
+        "date": "2026-10-19T13:32:51-04:00",
+        "subject": "Consolidate Jev on dspy.LM via bundled lm15 (#10648)"
+      },
+      {
+        "sha": "634fa01974499d780622a664dc90a68fca7218c1",
+        "date": "2026-10-19T09:15:41-04:00",
+        "subject": "Update bundled lm15 to 1.5.0 with reviewed source patches (#10660)"
+      },
+      {
+        "sha": "1a4f8372eb47e28d975cebf5d09ca6d7f863d32b",
+        "date": "2026-10-18T06:26:51-07:00",
+        "subject": "Refresh LiteLLM metadata to 1.106.0 and reject router-fee-only estimates (#10670)"
+      },
+      {
+        "sha": "c7e9752debcce5715fee62cd5f1ae538c14d5ce4",
+        "date": "2026-10-16T15:11:07-04:00",
+        "subject": "feat(dspy): ReActV2 show the agent its remaining turn budget each turn (#10662)"
+      },
+      {
+        "sha": "869874767729866f96f77e757a685ee72fb663a5",
+        "date": "2026-10-15T17:27:41-04:00",
+        "subject": "Stabilize reasoning tests across LiteLLM dependency versions (#10655)"
+      },
+      {
+        "sha": "4d3323ef8088c87b53b96c1f6e929694caf2ef19",
+        "date": "2026-10-15T15:11:17-04:00",
+        "subject": "chore(deps): bump zensical from 0.0.64 to 0.0.69 in /docs (#10651)"
+      },
+      {
+        "sha": "c85fae85e5dbf504d7fe46042cd88b93e3787023",
+        "date": "2026-10-15T09:07:49-07:00",
+        "subject": "docs: fix broken links in faqs, optimizers overview, and built-with-dspy (#10622)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/.internal_dspyai/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/actions/pypi-publish/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/actions/pypi-publish/action.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflow_scripts/install_testpypi_pkg.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build_and_release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/dependency-range.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/docs-push.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/precommits_check.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/run_tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".pre-commit-config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/Pipfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/Pipfile.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/api/experimental/DecisionTypes.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/api/experimental/ReAnchor.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/api/modules/ChainOfThought.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/api/modules/Flex.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/api/optimizers/GEPA/GEPA_Advanced.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/docs/api/primitives/BoundingBox.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/api/primitives/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/api/utils/configure.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/community/built-with-dspy.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/community/community-resources.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/community/use-cases.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/diving-deeper/adapters.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/diving-deeper/flex.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/diving-deeper/gepa-in-depth.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/diving-deeper/react.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/diving-deeper/rlm.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/diving-deeper/settings-and-context.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/faqs.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/getting-started/first-program.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/learn/optimization/optimizers.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/learn/programming/adapters.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/agents/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/async/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/cache/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/classification_finetuning/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/deployment/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/entity_extraction/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/games/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/gepa_trusted_monitor/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/image_generation_prompting/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/jev_decisions/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/math/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/multihop_search/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/program_of_thought/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/rag/index.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/docs/tutorials/yahoo_finance_react/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/mkdocs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/requirements.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/scripts/zensical_build.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/vercel.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/__metadata__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/UPDATING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15-provenance.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/_authlock.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/_version.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/_vet_managed.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/_vet_tables.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/access.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/auth.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/cloud/chains.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/cloud/hosts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/compat.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/doctor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/errors.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/features.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/interactive.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/judgments.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/bound.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/declared.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/engine.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/claude.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/codex.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/copilot.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/kimi.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/meta.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/openrouter.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/recipes.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/flows/xai.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/manager.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/store.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/terminal.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/login/types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/models.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/profiles.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/_vendor/lm15/providers/_managed.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/anthropic.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/async_base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/claude_code.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/common.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/gemini.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/openai.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/openai_chat.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/openai_codex.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/typesafe.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/providers/xai.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/router.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/serde.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/sse.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "dspy/_vendor/lm15/tools.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/transports/_types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/_vendor/lm15/vet.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/baml_adapter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/chat_adapter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/decision.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/decision_state.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/json_adapter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/two_step_adapter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/types/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "dspy/adapters/types/bounding_box.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/types/citation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/types/reasoning.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/types/tool.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/utils.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/adapters/xml_adapter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/base_lm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/cache.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/costs.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/engines/stream_guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/errors.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/lm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/model_metadata/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/model_metadata/provenance.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/clients/model_metadata/snapshot.json.gz",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "dspy/clients/typesafe.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/datasets/dataloader.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/dsp/utils/dpr.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/dsp/utils/settings.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/evaluate/evaluate.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/evaluate/metrics.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/experimental/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/aggregation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/chain_of_thought.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/multi_chain_comparison.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/predict.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/react.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/react_v2.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/refine.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/predict/rlm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/primitives/_facade_shim.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/primitives/code_interpreter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/primitives/example.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/retrievers/databricks_rm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/retrievers/weaviate_rm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/signatures/signature.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dspy/streaming/messages.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

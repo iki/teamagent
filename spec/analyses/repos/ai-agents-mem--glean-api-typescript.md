@@ -1,0 +1,181 @@
+# glean-api-typescript: change evidence
+
+Source: [glean-api-typescript](https://github.com/gleanwork/api-client-typescript) · [Analysis](../../projects/ai-agents-mem--glean-api-typescript.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `05fc58a4563eb2322fb4628e4c630c5eaab10a84`; commit date: 2026-10-03T07:21:21-06:00; review date: unknown; observed SHA: `261c16b61d0d7d6476c8e0ac5c81a9e4541358f9`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gleanwork/api-client-typescript/compare/05fc58a4563eb2322fb4628e4c630c5eaab10a84...261c16b61d0d7d6476c8e0ac5c81a9e4541358f9). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [261c16b61d0d](https://github.com/gleanwork/api-client-typescript/commit/261c16b61d0d7d6476c8e0ac5c81a9e4541358f9) 2026-10-22T11:02:41-07:00: Merge pull request #162 from gleanwork/speakeasy-sdk-regen-1792019894
+- [fb66c628e785](https://github.com/gleanwork/api-client-typescript/commit/fb66c628e78547f52f290194aa5ef0c3bcadaa2c) 2026-10-22T17:59:13Z: empty commit to trigger [run-tests] workflow
+- [70b279136d10](https://github.com/gleanwork/api-client-typescript/commit/70b279136d10873062737e7dcd3c4756c7c76719) 2026-10-22T17:59:03Z: ## Typescript SDK Changes: * `glean.admin.idpgroups.list()`:  `response.results[].isActive` **Removed** (Breaking ⚠️) * `glean.users.list()`:  `response.results[].isActive` **Removed** (Breaking ⚠️) * `glean.departments.list()`:   *  `request.filters` **Removed** (Breaking ⚠️)   *  `response.results
+- [0fcab45116b0](https://github.com/gleanwork/api-client-typescript/commit/0fcab45116b0b6943d0f3fcc2f680dbad0d4d253) 2026-10-14T15:02:28-07:00: Merge pull request #161 from gleanwork/speakeasy-sdk-regen-1791086694
+- [acf229a752d4](https://github.com/gleanwork/api-client-typescript/commit/acf229a752d4e85e983d7bcf4b11efcb46e327a2) 2026-10-14T21:58:06Z: empty commit to trigger [run-tests] workflow
+- [4d68d2e93f1e](https://github.com/gleanwork/api-client-typescript/commit/4d68d2e93f1ed562f6dc517af9f9604c849226bb) 2026-10-14T21:57:57Z: ## Typescript SDK Changes: * `glean.admin.usage.getSettings()`: **Added** * `glean.admin.usage.updateSettings()`: **Added** * `glean.admin.idpgroups.list()`: **Added** * `glean.admin.agents.list()`: **Added** * `glean.departments.list()`: **Added** * `glean.users.list()`: **Added** * `glean.triggers
+
+## Changed paths (truncated)
+
+- M: `.speakeasy/gen.lock`
+- M: `.speakeasy/gen.yaml`
+- M: `.speakeasy/glean-merged-spec.yaml`
+- M: `.speakeasy/tests.arazzo.yaml`
+- M: `.speakeasy/workflow.lock`
+- M: `README.md`
+- M: `RELEASES.md`
+- M: `docs/models/components/answer.md`
+- M: `docs/models/components/answercreationdata.md`
+- M: `docs/models/components/answerresult.md`
+- M: `docs/models/components/chatmessage.md`
+- M: `docs/models/components/dlpconfig.md`
+- M: `docs/models/components/dlpexportfindingsrequest.md`
+- M: `docs/models/components/dlpexportfindingsrequestexporttype.md`
+- M: `docs/models/components/dlpissuefilter.md`
+- M: `docs/models/components/documentinteractions.md`
+- M: `docs/models/components/editanswerrequest.md`
+- M: `docs/models/components/employeeinfodefinition.md`
+- M: `docs/models/components/exportinfo.md`
+- M: `docs/models/components/exportinfoexporttype.md`
+- M: `docs/models/components/externalsharingoptions.md`
+- M: `docs/models/components/facetfiltervalue.md`
+- M: `docs/models/components/feedrequestcategory.md`
+- M: `docs/models/components/feedresultcategory.md`
+- M: `docs/models/components/getcollectionresponse.md`
+- M: `docs/models/components/inputoptions.md`
+- M: `docs/models/components/insightsoverviewresponse.md`
+- M: `docs/models/components/inviteinfo.md`
+- M: `docs/models/components/justificationtype.md`
+- M: `docs/models/components/listcollectionsrequest.md`
+- M: `docs/models/components/manualfeedbackinfo.md`
+- M: `docs/models/components/period.md`
+- A: `docs/models/components/platformadminagent.md`
+- A: `docs/models/components/platformadminagentfilter.md`
+- A: `docs/models/components/platformadminagentfilteroperator.md`
+- A: `docs/models/components/platformchat.md`
+- A: `docs/models/components/platformchatupdaterequest.md`
+- A: `docs/models/components/platformchatupdateresponse.md`
+- A: `docs/models/components/platformdepartmentreference.md`
+- A: `docs/models/components/platformgetdepartmentresponse.md`
+- A: `docs/models/components/platformgetidpgroupresponse.md`
+- A: `docs/models/components/platformgetoauthclientresponse.md`
+- A: `docs/models/components/platformgetuserresponse.md`
+- A: `docs/models/components/platformidpgroup.md`
+- A: `docs/models/components/platformidpgroupfilter.md`
+- A: `docs/models/components/platformidpgroupfilteroperator.md`
+- A: `docs/models/components/platformlistadminagentsresponse.md`
+- A: `docs/models/components/platformlistdepartmentsresponse.md`
+- A: `docs/models/components/platformlistidpgroupsresponse.md`
+- A: `docs/models/components/platformlistoauthclientsresponse.md`
+- A: `docs/models/components/platformlistusersresponse.md`
+- A: `docs/models/components/platformoauthclient.md`
+- A: `docs/models/components/platformoauthclientaigateway.md`
+- A: `docs/models/components/platformoauthclientfilter.md`
+- A: `docs/models/components/platformoauthclientfilteroperator.md`
+- A: `docs/models/components/platformoauthclientregistrationtype.md`
+- A: `docs/models/components/platformoauthclienttype.md`
+- A: `docs/models/components/platformoauthgranttype.md`
+- A: `docs/models/components/platformoauthtokenendpointauthmethod.md`
+- A: `docs/models/components/platformpersontype.md`
+- M: `docs/models/components/platformresult.md`
+- M: `docs/models/components/platformtriggereventreason.md`
+- A: `docs/models/components/platformuser.md`
+- A: `docs/models/components/platformuserdatasourceprofile.md`
+- A: `docs/models/components/platformuserfilter.md`
+- A: `docs/models/components/platformuserfilteroperator.md`
+- A: `docs/models/components/platformuserinclude.md`
+- A: `docs/models/components/platformusermanager.md`
+- M: `docs/models/components/relateddocuments.md`
+- M: `docs/models/components/searchresultsnippet.md`
+- M: `docs/models/components/sensitivecontentoptions.md`
+- M: `docs/models/components/sensitiveinfotype.md`
+- M: `docs/models/components/sensitiveinfotypelikelihoodthreshold.md`
+- M: `docs/models/components/sharingoptions.md`
+- M: `docs/models/components/socialnetwork.md`
+- M: `docs/models/components/viewerinfo.md`
+- M: `docs/models/components/viewerinforole.md`
+- A: `docs/models/operations/platformadminagentslistrequest.md`
+- A: `docs/models/operations/platformadminidpgroupsgetrequest.md`
+- A: `docs/models/operations/platformadminidpgroupslistrequest.md`
+- A: `docs/models/operations/platformadminoauthclientsgetrequest.md`
+- A: `docs/models/operations/platformadminoauthclientslistrequest.md`
+- A: `docs/models/operations/platformchatupdaterequest.md`
+- A: `docs/models/operations/platformdepartmentsgetrequest.md`
+- A: `docs/models/operations/platformdepartmentslistrequest.md`
+- A: `docs/models/operations/platformusersgetrequest.md`
+- A: `docs/models/operations/platformuserslistrequest.md`
+- A: `docs/sdks/adminagents/README.md`
+- M: `docs/sdks/answers/README.md`
+- M: `docs/sdks/chat/README.md`
+- A: `docs/sdks/clients/README.md`
+- A: `docs/sdks/departments/README.md`
+- A: `docs/sdks/idpgroups/README.md`
+- M: `docs/sdks/indexingdocuments/README.md`
+- M: `docs/sdks/people/README.md`
+- A: `docs/sdks/users/README.md`
+- M: `examples/package-lock.json`
+- M: `jsr.json`
+- M: `package-lock.json`
+- M: `package.json`
+- A: `src/__tests__/adminagents.test.ts`
+- M: `src/__tests__/chat.test.ts`
+- A: `src/__tests__/clients.test.ts`
+- A: `src/__tests__/departments.test.ts`
+- A: `src/__tests__/idpgroups.test.ts`
+- M: `src/__tests__/messages.test.ts`
+- M: `src/__tests__/mockserver/internal/handler/generated_handlers.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapiadminagents.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapiadminidpgroups.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapiadminidpgroupsidpgroupid.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapiadminoauthclients.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapiadminoauthclientsclientid.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapidepartments.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapidepartmentsdepartmentid.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapiusers.go`
+- A: `src/__tests__/mockserver/internal/handler/pathgetapiusersuserid.go`
+- A: `src/__tests__/mockserver/internal/handler/pathpatchapichatschatid.go`
+- M: `src/__tests__/mockserver/internal/handler/pathpostrestapiv1createcollection.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/answer.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/answercreationdata.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/chatmessage.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/dlpconfig.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/dlpexportfindingsrequest.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/documentinteractions.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/editanswerrequest.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/employeeinfodefinition.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/exportinfo.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/externalsharingoptions.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/facetfiltervalue.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/feedentry.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/feedrequest.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/feedresult.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/inputoptions.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/inviteinfo.go`
+- M: `src/__tests__/mockserver/internal/sdk/models/components/listcollectionsrequest.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformadminagent.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformadminagentfilter.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformchat.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformchatupdaterequest.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformchatupdateresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformdepartmentreference.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformgetdepartmentresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformgetidpgroupresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformgetoauthclientresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformgetuserresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformidpgroup.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformidpgroupfilter.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformlistadminagentsresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformlistdepartmentsresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformlistidpgroupsresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformlistoauthclientsresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformlistusersresponse.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformoauthclient.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformoauthclientaigateway.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformoauthclientfilter.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformoauthclientregistrationtype.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformoauthclienttype.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformoauthgranttype.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformoauthtokenendpointauthmethod.go`
+- A: `src/__tests__/mockserver/internal/sdk/models/components/platformpersontype.go`

@@ -28,3 +28,7 @@ Shortlist where cross-client interoperability matters. The repository states tha
 ## Related directions
 
 [Generation](../generation.md) · [Channels](../channels.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [a2ui](https://github.com/google/A2UI); analyzed commit `1444719acd8833eeb5e70529c7ac47bc50b7390c`; commit date 2026-10-02T21:54:49Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--a2ui.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,25 @@
+# personalive
+
+Source: [personalive](https://github.com/GVCLab/PersonaLive) · Category: [ai-media](../categories/ai-media.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `abdd112e01dcf7d89122c2e5efa29fcff0669740`; commit timestamp `2026-08-28T12:01:07+08:00`; 149 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/GVCLab/PersonaLive/blob/abdd112e01dcf7d89122c2e5efa29fcff0669740/README.md)):
+
+> 1  University of Macau  &nbsp;&nbsp;  2  Dzine.ai  &nbsp;&nbsp;  3  GVC Lab, Great Bay University - [ ] If you find PersonaLive useful or interesting, please give us a Star🌟! Your support drives us to keep improving.
+
+Build/package evidence: [webcam/frontend/package.json](https://github.com/GVCLab/PersonaLive/blob/abdd112e01dcf7d89122c2e5efa29fcff0669740/webcam/frontend/package.json)
+
+License evidence: [LICENSE](https://github.com/GVCLab/PersonaLive/blob/abdd112e01dcf7d89122c2e5efa29fcff0669740/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-media**. Its category places it in the candidate set for import-generation; those associations are navigational and have not been individually validated as implemented capabilities. See [import-generation](../import-generation.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

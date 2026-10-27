@@ -29,3 +29,7 @@ An API-compatible class is not automatically portable outside its Durable Object
 Test worker eviction, code-update resets, callback schema migration, repeated queue delivery and late alarms. Run CLI/GPU jobs on separately supervised workers with explicit placement constraints. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [channels](../channels.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [agents.cloudflare](https://github.com/cloudflare/agents); analyzed commit `2f3176b9fa03c6429c805b560c8dc14371c15f64`; commit date 2026-10-02T22:15:08+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agents.cloudflare.md).
+<!-- teamagent-analysis:end -->

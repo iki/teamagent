@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--kimi-code",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/MoonshotAI/kimi-code",
+  "report": "spec/projects/ai-agents--kimi-code.md",
+  "analyzedSha": "21406fb4c805cc8c715e6d1f16ad3fb5f25f4fe3",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-30T15:23:40+08:00",
+  "observedSha": "68a283894163204e93b072cef20db164015a5cad",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "68a283894163204e93b072cef20db164015a5cad",
+      "date": "2026-10-27T18:59:19+08:00",
+      "subject": "fix(agent-core-v2): keep the prompt cache through auto compaction (#4456)"
+    },
+    {
+      "sha": "e2ad1dcf214337ecfb5ca160fa36d5ef73560ab6",
+      "date": "2026-10-27T16:49:48+08:00",
+      "subject": "feat: support symlinked directories in file tree (#4457)"
+    },
+    {
+      "sha": "78b72fe456ac730a1970ded9bb0d28f8b584ab95",
+      "date": "2026-10-27T14:52:47+08:00",
+      "subject": "fix(kap-server): apply swarm mode from prompt submissions (#4460)"
+    },
+    {
+      "sha": "39d149eb64e2126e7873f00758abc07c20b88c1e",
+      "date": "2026-10-27T14:33:17+08:00",
+      "subject": "fix(agent-core-v2): answer questions without edits and clean up test leftovers (#4450)"
+    },
+    {
+      "sha": "3154ec41f008d22f22379fa08686693470334a70",
+      "date": "2026-10-27T14:21:38+08:00",
+      "subject": "fix(agent-core-v2): scope verification to the change and stop repeating passed checks (#4451)"
+    },
+    {
+      "sha": "979304401c70b2a0ea3fe18d86fc6be2d7eaf565",
+      "date": "2026-10-27T13:06:24+08:00",
+      "subject": "feat: add independent dev release channel (#4425)"
+    },
+    {
+      "sha": "461c6e92d53cd4ff473fbe63fd1d238df819ef3f",
+      "date": "2026-10-27T12:43:12+08:00",
+      "subject": "feat(kap-server): push approvals and questions as interaction frames (#4428)"
+    },
+    {
+      "sha": "d18a7bcd319dcc166df031b9c7e32113a58a70b5",
+      "date": "2026-10-27T12:19:31+08:00",
+      "subject": "chore: sync release/2026-10-26 (2.3.3) back to main (#4453)"
+    },
+    {
+      "sha": "4be3f0b741e13677f441c84eee40795ccc1df1db",
+      "date": "2026-10-27T11:24:42+08:00",
+      "subject": "fix(agent-core-v2): reconnect MCP servers automatically after transient failures (#4283)"
+    },
+    {
+      "sha": "8dabf4a10eaec7302344ba3060b7b3c69a5a76dc",
+      "date": "2026-10-26T22:07:04+08:00",
+      "subject": "fix(agent-core-v2): keep media recovery across turns and compaction (#4413)"
+    },
+    {
+      "sha": "93137cad204eed4a6a66196e85cafbaf722a1d65",
+      "date": "2026-10-26T21:43:37+08:00",
+      "subject": "fix(agent-core-v2): return a stopped subagent's partial output to the parent agent (#4430)"
+    },
+    {
+      "sha": "4ba65932026395efac8de533e38899439e6a9229",
+      "date": "2026-10-26T21:27:56+08:00",
+      "subject": "docs(changelog): sync 2.3.3 from apps/kimi-code/CHANGELOG.md (#4445)"
+    },
+    {
+      "sha": "b3c6e0a75a3b1716a360a75eed7194be9b97c176",
+      "date": "2026-10-26T21:05:23+08:00",
+      "subject": "feat(tui): support OSC 7501 program status (#4347)"
+    },
+    {
+      "sha": "2e539f2f68c872d79a747655cb1962d5f0b596bd",
+      "date": "2026-10-26T19:55:37+08:00",
+      "subject": "fix(workspace): reclaim instances when last owner releases (#4422)"
+    },
+    {
+      "sha": "70a661c873bfc30f0f0de954e0d13ad0a0ed3855",
+      "date": "2026-10-26T19:47:13+08:00",
+      "subject": "fix(server): allow Shiki WASM in CSP (#4435)"
+    },
+    {
+      "sha": "f47400a4187c8296d3cc879172d97c8f1e8cfe24",
+      "date": "2026-10-26T19:26:30+08:00",
+      "subject": "fix(server): allow data and blob media fetches in CSP (#4434)"
+    },
+    {
+      "sha": "98c1cfbfbd397d2ebf7b4cf154296ed324e6e7cf",
+      "date": "2026-10-26T19:07:05+08:00",
+      "subject": "fix(agent-core-v2): close idle MCP OAuth callback connections (#4431)"
+    },
+    {
+      "sha": "f7d28cd26863d7b1422b24eb1d341a1cac555dc2",
+      "date": "2026-10-26T16:35:01+08:00",
+      "subject": "fix(agent-core-v2): drop empty OpenAI tool declaration messages (#4421)"
+    },
+    {
+      "sha": "f70c3652945a99e87c06d3ccf60275665eb410ab",
+      "date": "2026-10-26T15:27:03+08:00",
+      "subject": "fix(tui): show compacting activity with working tips (#4346)"
+    },
+    {
+      "sha": "8df234a618f5ba1f5261cc1696b0cf4340989f8e",
+      "date": "2026-10-26T15:08:59+08:00",
+      "subject": "feat(tui): refine fullscreen docks and transcript cards (#4310)"
+    },
+    {
+      "sha": "a9dc3a9af466a769a6dc93776c61ed89a0e653df",
+      "date": "2026-10-26T15:08:20+08:00",
+      "subject": "fix(agent-core-v2): stop stripping dynamic tool context from compaction requests (#4410)"
+    },
+    {
+      "sha": "eb1205c4023a5ed719bf62f2257c67cbe56a0aba",
+      "date": "2026-10-26T13:56:15+08:00",
+      "subject": "fix(agent-core-v2): truncate tool results on code point boundaries (#4365)"
+    },
+    {
+      "sha": "4a24ae12389f1bc5db33c1aed39a092bfeb2fc13",
+      "date": "2026-10-26T13:48:16+08:00",
+      "subject": "feat: import Claude Code and Codex sessions (#4342)"
+    },
+    {
+      "sha": "1011d8b63fcc150998a4710641563cd0f73369c9",
+      "date": "2026-10-26T10:57:55+08:00",
+      "subject": "chore: sync release/2026-10-25 (2.3.2) back to main (#4387)"
+    },
+    {
+      "sha": "743f140978bddaf8b6aa524765fcd578f7c22fc9",
+      "date": "2026-10-25T18:30:27+08:00",
+      "subject": "docs(changelog): sync 2.3.2 from apps/kimi-code/CHANGELOG.md (#4388)"
+    },
+    {
+      "sha": "7ccac2b45b8a3481c76f771bb99c043b562de2c5",
+      "date": "2026-10-23T19:58:17+08:00",
+      "subject": "fix(agent-core-v2): wait for MCP discovery before tool announcements (#4364)"
+    },
+    {
+      "sha": "087db850e02d3e487ac834c4867e90b3334a63d6",
+      "date": "2026-10-23T18:04:00+08:00",
+      "subject": "test: isolate cloud config in message flow tests (#4363)"
+    },
+    {
+      "sha": "273ddb077ae3c5b16555cb083088fda972e965f5",
+      "date": "2026-10-23T16:11:29+08:00",
+      "subject": "feat(oauth): infer region for logged-out installs (#4311)"
+    },
+    {
+      "sha": "f8925ab95e7c9fe78d4ede4dd3af92252d9d246c",
+      "date": "2026-10-23T16:09:49+08:00",
+      "subject": "chore: sync release/2026-10-23 (2.3.1) back to main (#4361)"
+    },
+    {
+      "sha": "fc31d047cb146139cb903772f2a785274e162838",
+      "date": "2026-10-23T15:50:51+08:00",
+      "subject": "docs(changelog): sync 2.3.1 from apps/kimi-code/CHANGELOG.md (#4360)"
+    },
+    {
+      "sha": "0325b755db46f865f2dc0bca0d6c3d95ad817fcb",
+      "date": "2026-10-23T13:18:59+08:00",
+      "subject": "feat(agent-core-v2): leave Plan mode to the user and review every plan (#4247)"
+    },
+    {
+      "sha": "01ef64ea926c3f939da5ecc7361e504f6f519060",
+      "date": "2026-10-23T12:11:50+08:00",
+      "subject": "feat(tower): improve concurrency, locking, and per-spawn model selection (#4312)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/gen-changesets/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/pre-changelog/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".changeset/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/cancelled-question-history.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/expand-live-thinking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/expose-interaction-agent-id.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/file-tree-symlink-directories.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-compaction-prompt-cache-deferred-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-first-turn-mcp-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/fix-hook-prompt-fold.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-mcp-oauth-completion.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-prompt-swarm-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-web-csp-media-connect.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-web-csp-wasm-highlight.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/fork-cron-clear.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fullscreen-dock-caps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fullscreen-refocus-click-guard.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fullscreen-selector-mouse.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/goal-permission-mode-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/hook-result-prompt-part.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/import-cc-codex-refresh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/import-external-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/interaction-ws-event.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/kap-session-idle-reclaim.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/keep-media-recovery-across-turns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/mcp-reconnect-retry.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/notify-nudge-host-gate.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/notify-user-transcript-card.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/omit-default-completion-token-cap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/osc7501-child-records.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/pi-tui-refocus-mouse-guard.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/plan-mode-user-controlled.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/plan-option-descriptions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/provider-refresh-command.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/quick-resume-long-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/reclaim-idle-workspaces.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/report-terminal-program-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/shorter-wait-for.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/show-compacting-activity.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/steer-into-notification-seeded-turn.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/sticky-user-messages.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/subagent-partial-output-on-stop.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/sync-pi-tui-upstream.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/todo-transcript-card.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/tool-result-truncation-surrogate-pair.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/tower-orchestration.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/trust-panel-disclosure.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/trust-workspace-env.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/undo-interruption-reminder.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/update-cli-terminal-rendering.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/updates-panel.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/user-message-bullet.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/viewport-layout-effects.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/wedged-turn-transcript-axis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/_native-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/dev-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/vscode-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/CodeBlockNode-BKKYmwvi.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/CodeBlockNode-x8gR_NJ_.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/PreCodeBlock-D94rgfjG.js",
+      "previousPath": null
+    },
+    {
+      "status": "R075",
+      "path": "apps/kimi-code/dist-web/assets/Tooltip-Ck3rGjEN.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/Tooltip-CIPmRSvR.js"
+    },
+    {
+      "status": "R085",
+      "path": "apps/kimi-code/dist-web/assets/abnfDiagram-VRR7QNED-D8ez8uim.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/abnfDiagram-VRR7QNED-BMMI9BxQ.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/arc-CRRKlX-p.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/arc-CrYCtH7Y.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/architectureDiagram-ZJ3FMSHR-ddPbJ_Dn.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/architectureDiagram-ZJ3FMSHR-BnFVlZdh.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/blockDiagram-677ZJIJ3-BRka2cox.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/blockDiagram-677ZJIJ3-CdD99ZPj.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/c4Diagram-LMCZKHZV-BDG3tEBQ.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/c4Diagram-LMCZKHZV-00KJvcAb.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/channel-CVJjJLW-.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/channel-CsfHBtue.js",
+      "previousPath": null
+    },
+    {
+      "status": "R067",
+      "path": "apps/kimi-code/dist-web/assets/chunk-2Q5K7J3B-Bj3vlj3y.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-2Q5K7J3B-BPnkU_Dg.js"
+    },
+    {
+      "status": "R096",
+      "path": "apps/kimi-code/dist-web/assets/chunk-32BRIVSS-B8gSFtLK.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-32BRIVSS-Jyv5c8Oy.js"
+    },
+    {
+      "status": "R083",
+      "path": "apps/kimi-code/dist-web/assets/chunk-5VM5RSS4-CnrQ4AgJ.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-5VM5RSS4-ELPNZt4V.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-EX3LRPZG-4ZFETIzN.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-EX3LRPZG-DlBdl9hh.js"
+    },
+    {
+      "status": "R071",
+      "path": "apps/kimi-code/dist-web/assets/chunk-JWPE2WC7-CFaSk12U.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-JWPE2WC7-CCwoyuWi.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-MOJQB5TN-nz6Iv7r_.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-MOJQB5TN-DlZ2OL1h.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-RYQCIY6F-MtH8gVIz.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-RYQCIY6F-hOcXr3tj.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-V7JOEXUC-DUDFnGWS.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-V7JOEXUC-DGXwP3rv.js"
+    },
+    {
+      "status": "R087",
+      "path": "apps/kimi-code/dist-web/assets/chunk-VR4S4FIN-DMqAUMdK.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-VR4S4FIN-FdPeJe6y.js"
+    },
+    {
+      "status": "R072",
+      "path": "apps/kimi-code/dist-web/assets/chunk-XXDRQBXY-BRRtW_Of.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-XXDRQBXY-CgSo79dI.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-OUVF2IWQ-C7YnXWqb.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-OUVF2IWQ-Cf1m8L1F.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-v2-EOCWNBFH-C7YnXWqb.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-v2-EOCWNBFH-Cf1m8L1F.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/cose-bilkent-JH36ORCC-D8ns0-Kn.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/cose-bilkent-JH36ORCC-Darjcrxi.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/cynefin-VYW2F7L2-Bp-nxK3W.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/cynefin-VYW2F7L2-5G3hA7cr.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/cynefinDiagram-TSTJHNR4-PvbCPnDc.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/cynefinDiagram-TSTJHNR4-Qyp0nUBB.js"
+    },
+    {
+      "status": "R097",
+      "path": "apps/kimi-code/dist-web/assets/dagre-VKFMJZFB-BzVLGs_J.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/dagre-VKFMJZFB-CYSXGctv.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/diagram-FQU43EPY-rDegz4b3.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-FQU43EPY-ZrAxI-dk.js"
+    },
+    {
+      "status": "R097",
+      "path": "apps/kimi-code/dist-web/assets/diagram-G47NLZAW-D-K95T9W.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-G47NLZAW-BcXugaAM.js"
+    },
+    {
+      "status": "R093",
+      "path": "apps/kimi-code/dist-web/assets/diagram-NH7WQ7WH-vAxkrrkL.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-NH7WQ7WH-DYlJF7uY.js"
+    },
+    {
+      "status": "R096",
+      "path": "apps/kimi-code/dist-web/assets/diagram-OA4YK3LP-BnCNL17Z.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-OA4YK3LP-DT_vdkMQ.js"
+    },
+    {
+      "status": "R095",
+      "path": "apps/kimi-code/dist-web/assets/diagram-WEI45ONY-Cq5_ZmJn.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-WEI45ONY-C9NbHUum.js"
+    },
+    {
+      "status": "R087",
+      "path": "apps/kimi-code/dist-web/assets/ebnfDiagram-CCIWWBDH-ydUyyG4g.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/ebnfDiagram-CCIWWBDH-BtYop6_W.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/erDiagram-Q63AITRT-1GF9mnaH.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/erDiagram-Q63AITRT-hOQ0lT_K.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/flowDiagram-23GEKE2U-Dp3ubqO7.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/flowDiagram-23GEKE2U-CNuvMMcz.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/ganttDiagram-NO4QXBWP-6TLLIXAF.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/ganttDiagram-NO4QXBWP-D-jxKbra.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/gitGraphDiagram-IHSO6WYX-D3uFEC45.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/gitGraphDiagram-IHSO6WYX-CfAxfZAI.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index-C-jEQeCU.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index-CM1IMrEN.js",
+      "previousPath": null
+    },
+    {
+      "status": "R094",
+      "path": "apps/kimi-code/dist-web/assets/index-CWMEBP78.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index-DmgTlO-b.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index-CiJ6FDOC.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index-Cj6xJi2l.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index-Dnz6Zudc.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index-JrJ6_GOd.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index-zbwnJKhO.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index10-Ba5OIfKd.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index10-bV3Rt9BF.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index11-1rn8G5-L.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index5-CjSUSUGm.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index5-imM41z_l.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index6-DA3uJFWk.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index6-DNCbjemX.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index7-QSn9lPwh.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index8-Cv4eRvXY.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index8-DrKPJmGd.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index9-BIqXoaM4.js",
+      "previousPath": null
+    },
+    {
+      "status": "R067",
+      "path": "apps/kimi-code/dist-web/assets/infoDiagram-FWYZ7A6U-CbULgfiG.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/infoDiagram-FWYZ7A6U-Bfob5tUX.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/ishikawaDiagram-FXEZZL3T-CzOmYQGA.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/ishikawaDiagram-FXEZZL3T-DVWhDYOu.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/journeyDiagram-5HDEW3XC-Bn6UdTtP.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/journeyDiagram-5HDEW3XC-BssF6You.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/kanban-definition-HUTT4EX6-D46M2hPT.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/kanban-definition-HUTT4EX6-dzAmBIuH.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/layout-DcalC1b9.js",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/linear-rQmBrEzK.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/linear-DQD3t2Xn.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/markstream-UDoFrbnV.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/mermaid.core-AN7v7N47.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/mermaid.core-C9jyadm5.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/mindmap-definition-LN4V7U3C-D6hZ84pJ.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/mindmap-definition-LN4V7U3C-Cr2y1CVV.js"
+    },
+    {
+      "status": "R086",
+      "path": "apps/kimi-code/dist-web/assets/pegDiagram-2B236MQR-Dqj-SYF9.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/pegDiagram-2B236MQR-KgvyboWs.js"
+    },
+    {
+      "status": "R094",
+      "path": "apps/kimi-code/dist-web/assets/pieDiagram-ENE6RG2P-Bxrj0TDW.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/pieDiagram-ENE6RG2P-Bwk5uJs3.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/preCodeDiffMetrics-CMO2XhRi.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/quadrantDiagram-ABIIQ3AL-CtlNm0IB.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/quadrantDiagram-ABIIQ3AL-B9nqRXzL.js"
+    },
+    {
+      "status": "R084",
+      "path": "apps/kimi-code/dist-web/assets/railroadDiagram-RFXS5EU6-ABT3be4u.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/railroadDiagram-RFXS5EU6-D8JNLWlO.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/requirementDiagram-TGXJPOKE-DbHli6K8.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/requirementDiagram-TGXJPOKE-e-2aWNck.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/sankeyDiagram-HTMAVEWB-BFMFIBNb.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/sankeyDiagram-HTMAVEWB-Dy4-rUyp.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/sequenceDiagram-DBY2YBRQ-DVB5lIDi.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/sequenceDiagram-DBY2YBRQ-Cpmd7yl8.js"
+    },
+    {
+      "status": "R086",
+      "path": "apps/kimi-code/dist-web/assets/sizeCapture-X5ZJPWSS-D1OKv4-0.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/sizeCapture-X5ZJPWSS-BEZnpCcJ.js"
+    },
+    {
+      "status": "R096",
+      "path": "apps/kimi-code/dist-web/assets/stateDiagram-2N3HPSRC-C1Huslxu.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/stateDiagram-2N3HPSRC-BlPnr6FV.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/stateDiagram-v2-6OUMAXLB-Dh0BUURk.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/stateDiagram-v2-6OUMAXLB-ui4kGWzh.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/swimlanes-5IMT3BWC-Dq3EyHqU.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/swimlanes-5IMT3BWC-NdRerzVX.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/swimlanesDiagram-G3AALYLV-CLWojsyT.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/swimlanesDiagram-G3AALYLV-DLGtYanS.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/timeline-definition-FHXFAJF6-Cmkj9bPT.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/timeline-definition-FHXFAJF6-a2gsEX7B.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/turnDiff.worker-BzeNtFko.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/vennDiagram-L72KCM5P-Bur71wRn.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/vennDiagram-L72KCM5P-DmbZn6B3.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/vue.runtime.esm-bundler-CSen4mnJ.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/vue.runtime.esm-bundler-rUWK3qjQ.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/wardleyDiagram-EHGQE667-Ctr798MD.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/wardleyDiagram-EHGQE667-CPNoDv5i.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/xychartDiagram-FW5EYKEG-Dvaf_OjS.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/xychartDiagram-FW5EYKEG-DlWidJnk.js"
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/dist-web/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/cli/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/src/cli/sub/app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/cli/sub/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/cli/sub/update-download.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/cli/sub/upgrade.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/cli/sub/web/remote-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/cli/sub/web/run.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

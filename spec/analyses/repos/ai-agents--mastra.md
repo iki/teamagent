@@ -1,0 +1,207 @@
+# mastra: change evidence
+
+Source: [mastra](https://github.com/mastra-ai/mastra) · [Analysis](../../projects/ai-agents--mastra.md) · [agents](../../agents.md), [memory](../../memory.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `b2433eb8d90597295de0327c3756d7a2b83a65ff`; commit date: 2026-10-03T13:48:39-07:00; review date: unknown; observed SHA: `cc9aff79025018752c6efceefb10d9b02c1a5075`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mastra-ai/mastra/compare/b2433eb8d90597295de0327c3756d7a2b83a65ff...cc9aff79025018752c6efceefb10d9b02c1a5075). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [cc9aff790250](https://github.com/mastra-ai/mastra/commit/cc9aff79025018752c6efceefb10d9b02c1a5075) 2026-10-27T12:48:18-05:00: Support bulk vector deletion by ID in Couchbase (#28614)
+- [580452acbbb9](https://github.com/mastra-ai/mastra/commit/580452acbbb9812eae1b31d4f3ded716c348a78b) 2026-10-27T12:47:35-05:00: Forward workflow step writer to tools for progress streaming (#28615)
+- [709a1daa6484](https://github.com/mastra-ai/mastra/commit/709a1daa64843cc92ac0b817c4dc05b2efdc92ac) 2026-10-27T12:47:04-05:00: fix(mastracode): register no subagents unless the user opts in (#28600)
+- [680b01acd54b](https://github.com/mastra-ai/mastra/commit/680b01acd54b1af3f18d20d8deb9c42d35258902) 2026-10-27T12:46:50-05:00: Validate FastEmbed ONNX output names and reject non-finite embeddings (#28613)
+- [d580530ff36d](https://github.com/mastra-ai/mastra/commit/d580530ff36d43e752b1f838b3f8e16017e8f92b) 2026-10-27T13:24:35-04:00: fix(core): stop background tasks cancelled from another process from running to completion (#28523)
+- [2447071b11d7](https://github.com/mastra-ai/mastra/commit/2447071b11d7a5f159e6dc726eb5df0aa0db69da) 2026-10-27T12:13:50-05:00: fix(core): report uncertain scheduler publication outcomes (#28544)
+- [e56f88e18d90](https://github.com/mastra-ai/mastra/commit/e56f88e18d906635b033173abcae637cf361ce8a) 2026-10-27T11:55:29-05:00: fix(core): remove orphaned hosted tool results when switching providers (#28286)
+- [b63456befb5f](https://github.com/mastra-ai/mastra/commit/b63456befb5f51d1a2b1288225f02c30738b6099) 2026-10-27T12:46:32-04:00: fix(core): background tasks and agent calls no longer fail FGA checks on internal workflows (#28506)
+- [2bd23443f327](https://github.com/mastra-ai/mastra/commit/2bd23443f3272f381f58fb3ea40def39d1ff8d40) 2026-10-27T12:41:31-04:00: Fix ClickHouse thread tests that relied on the old default page size (#28606)
+- [e09f669534b6](https://github.com/mastra-ai/mastra/commit/e09f669534b67feead697bc3e951bd3bb407ba0d) 2026-10-27T17:31:03+01:00: fix(factory-ui): align search menus and add option icons (#28597)
+- [84fa97871ab0](https://github.com/mastra-ai/mastra/commit/84fa97871ab0b328d65136f1a714c74a0de75767) 2026-10-27T17:06:07+01:00: Validate the checked-in factory templates and retire the generated softwarefactory-template (#28436)
+- [5f52c2c4d369](https://github.com/mastra-ai/mastra/commit/5f52c2c4d36927cf1156f55852fe41c4c11772dc) 2026-10-27T17:06:07+01:00: Pick the create-factory template based on --no-platform (#28430)
+- [1001dcc4a8ad](https://github.com/mastra-ai/mastra/commit/1001dcc4a8ade1485dba16555bd173a13c4eba71) 2026-10-27T17:06:06+01:00: Add template-factory starter for the software factory (#28255)
+- [2c4763fcc4f0](https://github.com/mastra-ai/mastra/commit/2c4763fcc4f07fda598fdc1934d74c6176852465) 2026-10-27T16:50:38+01:00: docs: fix reference and platform docs that drifted from code (#28599)
+- [4ad204dc5bdd](https://github.com/mastra-ai/mastra/commit/4ad204dc5bdde76dca26cb7d87c48dd11f97316d) 2026-10-27T16:44:33+01:00: feat(observability): generate span-aware previews in exporters (#28442)
+- [852110d4eeaf](https://github.com/mastra-ai/mastra/commit/852110d4eeaf5ab74ea94747343501700033a1e8) 2026-10-27T11:40:21-04:00: Remove model and provider from thread rows and cap thread pages at 100 (#28595)
+- [97dd6269a2ca](https://github.com/mastra-ai/mastra/commit/97dd6269a2ca118bfb1763ea6495a4992716b605) 2026-10-27T16:33:47+01:00: docs: fix vectorize, weaviate and addInstructions reference mismatches (#28598)
+- [3cdaaa86f488](https://github.com/mastra-ai/mastra/commit/3cdaaa86f48812bdae1077e55be1d58dd5e85fc5) 2026-10-27T16:18:06+01:00: fix(core): always provide observe to tools called directly or as workflow steps (#28579)
+- [ab1727d5cafb](https://github.com/mastra-ai/mastra/commit/ab1727d5cafb64e36b04fad9f8871dc6640d2420) 2026-10-27T16:02:33+01:00: fix(observability): end spans started by another exporter instance (#28147)
+- [67b998ea0c43](https://github.com/mastra-ai/mastra/commit/67b998ea0c43630236699724c7654ccdb762f00d) 2026-10-27T10:56:41-04:00: test(stores): pin thread-row traceCount to aggregateTraces over full history (#28524)
+- [abf2daec0743](https://github.com/mastra-ai/mastra/commit/abf2daec0743ac01b9c0bb26fc6e936a09e60979) 2026-10-27T10:56:28-04:00: test(duckdb): expect span-aggregate in observability capabilities (#28432)
+- [e41dd166d537](https://github.com/mastra-ai/mastra/commit/e41dd166d537d4542efe23ed550e5fbbd068f275) 2026-10-27T15:31:09+01:00: fix(factory-ui): give the run error card's actions room below the message (#28571)
+- [e638d5893b86](https://github.com/mastra-ai/mastra/commit/e638d5893b86ee07284b983cd9cebc0fb04a5c95) 2026-10-27T15:29:34+01:00: fix(factory): support separate Jira API base URLs (#28569)
+- [5e883545edd6](https://github.com/mastra-ai/mastra/commit/5e883545edd6082e741cdce1d192e0e83fa5dc2e) 2026-10-27T19:47:30+05:30: feat(core): add model and provider to agent run and model step spans (#28485)
+- [c9445e008d80](https://github.com/mastra-ai/mastra/commit/c9445e008d8036cad08bca9dd61b698d72fa96bf) 2026-10-27T19:44:01+05:30: fix(observability): keep Vercel AI Gateway routing on model step spans (#28558)
+- [b59da216b350](https://github.com/mastra-ai/mastra/commit/b59da216b35097e5adc14914e5cae76f811ee8ec) 2026-10-27T14:27:31+01:00: docs: fix reference pages that drifted from vector store, storage, and streaming code (#28578)
+- [27c3083df0d0](https://github.com/mastra-ai/mastra/commit/27c3083df0d0989f0884c784f3ffd8e190434c00) 2026-10-27T14:26:09+01:00: docs: correct dountil, voice.send, and LocalSandbox isolation behavior (#28574)
+- [cd4722a583a0](https://github.com/mastra-ai/mastra/commit/cd4722a583a0eb75022b1da6a6f8210f8126e486) 2026-10-27T14:25:26+01:00: docs: fix gateway ID, grep clipping, Run.cancel, processor retry and merged-PR descriptions (#28576)
+- [f9e64dc4cb53](https://github.com/mastra-ai/mastra/commit/f9e64dc4cb53af7e553c1101cc7c8663a892cd3c) 2026-10-27T14:25:10+01:00: feat(playground-ui): live updates for the Spans and Threads lists (#28591)
+- [fab9b825414f](https://github.com/mastra-ai/mastra/commit/fab9b825414f4c66960ea45ff6ab68fce3463157) 2026-10-27T14:23:55+01:00: fix(docs): fail production builds when search or Ask AI credentials are missing (#28577)
+- [d3ddf1318ca6](https://github.com/mastra-ai/mastra/commit/d3ddf1318ca6f2478e2b1994d1aac1a61a7210d4) 2026-10-27T09:07:18-04:00: feat(playground-ui): unified Metrics cards: Breakdown, Resources and threads, P99 latency (#28272)
+- [168e0abe689f](https://github.com/mastra-ai/mastra/commit/168e0abe689f5591d9ab834057351f79e62a881e) 2026-10-27T09:05:35-04:00: feat(playground-ui): data layer for Metrics cards on trace and span aggregates (#27908)
+
+## Changed paths (truncated)
+
+- A: `.agents/skills/real-world-testing/SKILL.md`
+- A: `.changeset/@mastra_acp-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_agent-browser-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_agent-builder-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_agentcore-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_agentfs-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_apple-container-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_archil-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_arize-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_arthur-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_astra-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-auth0-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-better-auth-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-clerk-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-cloud-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-firebase-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-google-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-neon-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-okta-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-studio-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-supabase-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_auth-workos-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_azure-27995-dependencies.md`
+- A: `.changeset/@mastra_azure-ai-search-27995-dependencies.md`
+- A: `.changeset/@mastra_azure-ai-search-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_azure-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_blaxel-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_braintrust-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_browser-firecrawl-27996-dependencies.md`
+- A: `.changeset/@mastra_browser-firecrawl-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_browser-viewer-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_chroma-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_claude-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_clickhouse-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_client-js-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_cloudflare-d1-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_cloudflare-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_cloudflare-sandbox-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_code-sdk-28006-dependencies.md`
+- A: `.changeset/@mastra_code-sdk-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_codemod-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_connect-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_convex-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_core-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_core-vanta-2026-10-21-dependencies.md`
+- A: `.changeset/@mastra_couchbase-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_cursor-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_datadog-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_daytona-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_deepeval-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_deployer-cloud-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_deployer-cloudflare-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_deployer-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_deployer-netlify-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_deployer-sandbox-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_deployer-vercel-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_discord-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_docker-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_dsql-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_duckdb-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_dynamodb-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_e2b-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_e2b-desktop-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_editor-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_elasticsearch-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_elysia-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_evals-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_express-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_factory-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_fastembed-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_fastify-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_files-sdk-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_gcs-28012-dependencies.md`
+- A: `.changeset/@mastra_gcs-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_google-cloud-pubsub-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_google-drive-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_hono-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_inngest-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_isolated-vm-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_koa-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_laminar-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_lance-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_langfuse-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_langsmith-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_libsql-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_livekit-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_loggers-28002-dependencies.md`
+- A: `.changeset/@mastra_loggers-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_longmemeval-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mcp-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mcp-docs-server-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mcp-docs-server-vanta-2026-10-21-dependencies.md`
+- A: `.changeset/@mastra_mcp-registry-registry-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mcp-vanta-2026-10-21-dependencies.md`
+- A: `.changeset/@mastra_memory-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mesa-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_modal-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mongodb-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mssql-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_mysql-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_nestjs-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_next-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_observability-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_openai-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_opencode-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_opensearch-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_oracledb-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_otel-bridge-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_otel-exporter-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_parallel-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_pg-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_pinecone-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_platform-workspace-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_playground-ui-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_playground-ui-vanta-2026-10-22-dependencies.md`
+- A: `.changeset/@mastra_posthog-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_qdrant-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_quickjs-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_rag-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_railway-28003-dependencies.md`
+- A: `.changeset/@mastra_railway-28006-dependencies.md`
+- A: `.changeset/@mastra_railway-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_react-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_redis-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_redis-streams-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_s3-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_s3vectors-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_schema-compat-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_sentry-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_server-adapters-test-suite-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_server-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_slack-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_spanner-28012-dependencies.md`
+- A: `.changeset/@mastra_spanner-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_sprites-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_stagehand-27996-dependencies.md`
+- A: `.changeset/@mastra_stagehand-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_tanstack-start-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_teams-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_telegram-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_temporal-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_turbopuffer-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_turso-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_upstash-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_valkey-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_valkey-streams-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_vectorize-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_vercel-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-aws-nova-sonic-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-azure-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-cloudflare-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-deepgram-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-elevenlabs-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-gladia-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-google-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-google-gemini-live-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-inworld-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-mistral-deps-2026-10-26-dependencies.md`
+- A: `.changeset/@mastra_voice-modelslab-deps-2026-10-26-dependencies.md`

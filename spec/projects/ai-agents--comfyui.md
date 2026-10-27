@@ -29,3 +29,7 @@ The reviewed base is_cached method returns false; effective caching depends on s
 Test cancellation and worker loss between graph nodes, malformed graphs, missing models, duplicate submission and artifact recovery. Reproducibility records must include model weights, node packages, seed and runtime configuration. No tests, live inference, installation, or production operation were performed for this review. License indicator: GPL; inspect version; verify the exact files and dependencies before reuse.
 
 Related directions: [import-generation](../import-generation.md) · [agents](../agents.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `e9027f2b30f37bb3052714eb08fcf479542f4fc0`; commit date 2026-10-03T01:20:37-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
+<!-- teamagent-analysis:end -->

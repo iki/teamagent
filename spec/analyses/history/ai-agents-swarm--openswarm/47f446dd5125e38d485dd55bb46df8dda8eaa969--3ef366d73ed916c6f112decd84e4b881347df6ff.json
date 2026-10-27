@@ -1,0 +1,964 @@
+{
+  "id": "ai-agents-swarm--openswarm",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/unohee/openswarm",
+  "report": "spec/projects/ai-agents-swarm--openswarm.md",
+  "analyzedSha": "47f446dd5125e38d485dd55bb46df8dda8eaa969",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-04T00:48:18+09:00",
+  "observedSha": "3ef366d73ed916c6f112decd84e4b881347df6ff",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3ef366d73ed916c6f112decd84e4b881347df6ff",
+      "date": "2026-10-22T18:15:03+09:00",
+      "subject": "fix(daemon): close review findings on the S6 stack (#838-#846) (#847)"
+    },
+    {
+      "sha": "ac683908e5512cca2bb19320f9851bf4afd68eda",
+      "date": "2026-10-22T02:54:41+09:00",
+      "subject": "feat(daemon): dispatch only Todo and stop declined issues before the claim (AGT-4784) (#846)"
+    },
+    {
+      "sha": "a42ecd6d2b56bc5a9ed8080e5a95a7f894009eb2",
+      "date": "2026-10-22T02:24:52+09:00",
+      "subject": "fix(daemon): pause dispatch on low disk and carry workerSandbox to the runner (AGT-4785) (#845)"
+    },
+    {
+      "sha": "8d96d6e625f6768c7c82d93b68fa9f96258b570f",
+      "date": "2026-10-22T01:59:05+09:00",
+      "subject": "fix(publish): a run that did not finish opens no pull request (AGT-4786) (#844)"
+    },
+    {
+      "sha": "3ca38309e1274cfd2ff235b5cbb83471022033b7",
+      "date": "2026-10-22T01:38:25+09:00",
+      "subject": "fix(scheduler): idle_fill does not lift a park or backoff on an issue whose input never changed (AGT-4787) (#843)"
+    },
+    {
+      "sha": "35bb419674b7063a743214af32e85dc3ba117c98",
+      "date": "2026-10-22T01:23:13+09:00",
+      "subject": "fix(adapters): refuse to start the autonomous runner on delegated CLI adapters (AGT-4444) (#842)"
+    },
+    {
+      "sha": "2bd8d54b24027e0a4e738f6ef988bf1b315fdd2d",
+      "date": "2026-10-21T14:53:16+09:00",
+      "subject": "feat(worker): loopback-only network for worker bash and a per-project setup step (AGT-4798) (#841)"
+    },
+    {
+      "sha": "032c03af99875b5b7dee21772107f7ae236379f7",
+      "date": "2026-10-21T14:34:01+09:00",
+      "subject": "fix(worker): withhold credentials from worker bash and fail closed without a sandbox (AGT-4783) (#840)"
+    },
+    {
+      "sha": "b62ce4bdcbfdcbdfe761ccfbc74990d2622cfb8c",
+      "date": "2026-10-20T19:55:55+09:00",
+      "subject": "feat(cli): exec --issue hands one Linear issue's pipeline to an external orchestrator (#839)"
+    },
+    {
+      "sha": "fa5497127dca0d48ac3040fbbdd6cab3a37cdaaa",
+      "date": "2026-10-20T19:48:23+09:00",
+      "subject": "feat(web): project orchestration and durable collaboration chat (AGT-4776) (#836)"
+    },
+    {
+      "sha": "eb7eaf4a1b29f0e4ac8ab9b2901a193eb7c9f6fe",
+      "date": "2026-10-20T19:36:29+09:00",
+      "subject": "feat(autonomy): durable recovery and bounded Recovery Advisor (#837)"
+    },
+    {
+      "sha": "2d080a10887a347cfe772df9c6782bb15673e767",
+      "date": "2026-10-20T19:36:24+09:00",
+      "subject": "feat(web): finish Departure Board dashboard polish (Step 10) (#835)"
+    },
+    {
+      "sha": "0ee88a32c30723917d1505fb0a448f42301069aa",
+      "date": "2026-10-20T19:36:20+09:00",
+      "subject": "fix(pr): preserve GitHub lookup failures during branch PR resolution (AGT-3474) (#824)"
+    },
+    {
+      "sha": "f989dedc46f4d6d11a90a8cc01241084975caa47",
+      "date": "2026-10-20T19:28:40+09:00",
+      "subject": "fix(test): redirect the task-state store out of the operator's live state dir (#838)"
+    },
+    {
+      "sha": "cb0a54b43e656e326897cd451a756aa6fa37ca16",
+      "date": "2026-10-19T16:00:52+09:00",
+      "subject": "feat(web): first-run guidance for the warehouse and a local-tracker Cockpit (#834)"
+    },
+    {
+      "sha": "eb9764c89928180e3388e191c88101f7ad204e2e",
+      "date": "2026-10-19T15:41:48+09:00",
+      "subject": "feat(web): layout and type floor for threads, orchestration and usage (#833)"
+    },
+    {
+      "sha": "0fb37f3df6d6b7d35a43ca9e81ceb92d4c3e1e7f",
+      "date": "2026-10-19T15:22:06+09:00",
+      "subject": "feat(web): clarify copy across the dashboard (English times, repo names, defined terms) (#832)"
+    },
+    {
+      "sha": "f5e77385c63521ae212b7125f4b5f3ad2db55350",
+      "date": "2026-10-19T15:01:10+09:00",
+      "subject": "feat(web): redesign the Supervisor as a departure board (#831)"
+    },
+    {
+      "sha": "1ca17fc37053551d74fac992798e1f18ca891ed4",
+      "date": "2026-10-19T14:36:07+09:00",
+      "subject": "refactor(web): serve the Supervisor as a static page instead of a server-rendered string (#830)"
+    },
+    {
+      "sha": "68447a41a6f5fe020a22b6139aff45276e444f78",
+      "date": "2026-10-19T14:07:47+09:00",
+      "subject": "feat(web): shared shell with one nav, a sourced status line and a /settings page (#829)"
+    },
+    {
+      "sha": "a796a396b4ababc385f21a47e2908fd8f0aa2817",
+      "date": "2026-10-19T13:34:14+09:00",
+      "subject": "feat(web): dashboard redesign steps 1–4 — product context, IA brief, Departure Board tokens (#828)"
+    },
+    {
+      "sha": "bf435cb03722904a132dbe238a65bafe6152bf88",
+      "date": "2026-10-19T12:31:45+09:00",
+      "subject": "fix(web): make Supervisor actions report their outcome and pin the chat recipient (#827)"
+    },
+    {
+      "sha": "5625efbb555bb657f0461c7b7780c9a1eb25e8b9",
+      "date": "2026-10-08T05:27:44+09:00",
+      "subject": "Merge pull request #826 from Intrect-io/wt/agt4024"
+    },
+    {
+      "sha": "6102e382b45e586c23550341b687708e21c149f9",
+      "date": "2026-10-08T04:03:56+09:00",
+      "subject": "test(task-state): observe mutex contention in compatibility test"
+    },
+    {
+      "sha": "392aea995d3f708660afa3fa57b6869edd169f2f",
+      "date": "2026-10-08T03:46:34+09:00",
+      "subject": "test(task-state): prove mixed-lock writer waits"
+    },
+    {
+      "sha": "9f9856b77c5cca40f0f34f6d8dec5fef5d769726",
+      "date": "2026-10-08T03:40:32+09:00",
+      "subject": "test(task-state): synchronize mixed-lock compatibility test"
+    },
+    {
+      "sha": "d705bf39545bbd450aa37abdb8f1bf3f35d2fc93",
+      "date": "2026-10-08T03:35:32+09:00",
+      "subject": "feat(task-state): add transitional SQLite mutex"
+    },
+    {
+      "sha": "eacad1b841ce7c196ebd1d02b8b0bb55dfa3200e",
+      "date": "2026-10-05T16:14:37+09:00",
+      "subject": "feat(web): usage row drill-down — server half (AGT-4297) (#825)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".impeccable/surfaces/web-static.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "PRODUCT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/recoveryAdvisorProof.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/results/20261019-recovery-evidence.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config.example.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/design/incumbent-2026-10.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/design/project-collaboration-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/durable-recovery-advisor.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/alias-repair.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/browser-results.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/browser-zoom.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/cold-threads.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/detector.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/http-proof.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/legacy-repair.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/live-receipts.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/method-guard.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/nongit-repair.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/project-polling.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/scale-http.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-1440-dark-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-1440-dark-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-1440-light-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-1440-light-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-390-dark-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-390-dark-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-390-light-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/chat-390-light-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-1440-dark-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-1440-dark-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-1440-light-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-1440-light-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-390-dark-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-390-dark-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-390-light-detail.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/screens/orchestration-390-light-projects.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/evidence/agt-4776/ui-performance.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check-dashboard-responsive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-project-collaboration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-project-zoom.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/measure-project-collaboration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/measure-project-ui.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/project-chat-preview.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/prove-channel-http.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/prove-project-collaboration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/adapters/agenticLoop.coordinationProgress.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/agenticLoop.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/agenticLoop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/agenticLoop.turns.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/codexResponses.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/codexResponses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/ollamaCloud.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/ollamaCloud.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/adapters/toolArgsSummary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/adapters/tools.sandboxUnavailable.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adapters/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/adapters/unattendedPolicy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/adapters/unattendedPolicy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/adapters/workerEnv.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/adapters/workerEnv.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/agentPair.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/auditor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/documenter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/draftScope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/draftScope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/loopRecovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/loopRecoveryEvidence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/loopRecoveryEvidence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/pairIterationLoop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/pairPipeline.recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/pairPipeline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/pairPipelineResult.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/pairPipelineRoleScope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/pairPipelineTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/recoveryAdvisor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/recoveryAdvisor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/recoveryPremise.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/reviewer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/reviewerStageOptions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/skillDocumenter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/stageExecutionBoundary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/stageFences.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/stageRecoveryMetadata.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/tester.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/workerSetup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agents/workerSetup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/autonomousRunner.advisorRoles.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/autonomousRunner.agentEligibility.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/autonomousRunner.coverage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/autonomousRunner.dispatchFingerprint.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/autonomousRunner.execHold.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/autonomousRunner.hostHealth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/autonomousRunner.operatorQuestionPark.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/autonomousRunner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/dispatchFingerprint.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/dispatchFingerprint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/draftGrooming.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/durableRunCoordinator.executionBoundary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/durableRunCoordinator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/durableRunCoordinator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/execHold.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/execHold.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/executionTaskContext.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/loopRecoveryTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/missingWorktreeDisposition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/publishOnPark.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/publishOnPark.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/readinessGate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/readinessGate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/runLedger.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/runLedgerExpired.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/runRecoveryStore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/automation/runRecoveryStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/runnerExecution.coverage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/runnerExecution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/runnerTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/automation/workRunner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/execCommand.process.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/execCommand.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/execCommand.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/execGuarded.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/prResolve.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/prResolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/workCommand.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/workCommand.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/workExecution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/workExecution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/channelQueue.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/channelSchema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/channelStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/coordinationStore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/coordinationStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/coordinationThreadRoutes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/coordinationThreadTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/coordinationThreads.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/coordinationTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/coordinationTrace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/humanQuestions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/humanQuestions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/orchestratorSupervisor.execHold.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/orchestratorSupervisor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/orchestratorSupervisor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/orchestratorTrackerTools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/coordination/orchestratorTrackerTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/projectCollaboration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/projectModel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/projectQueries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/projectRoutes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/coordination/projectRuntime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/config.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

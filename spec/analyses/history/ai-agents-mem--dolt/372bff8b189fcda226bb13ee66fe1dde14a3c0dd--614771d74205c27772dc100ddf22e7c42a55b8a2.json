@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--dolt",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/dolthub/dolt",
+  "report": "spec/projects/ai-agents-mem--dolt.md",
+  "analyzedSha": "372bff8b189fcda226bb13ee66fe1dde14a3c0dd",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T17:08:16-07:00",
+  "observedSha": "614771d74205c27772dc100ddf22e7c42a55b8a2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "614771d74205c27772dc100ddf22e7c42a55b8a2",
+      "date": "2026-10-23T19:49:40-04:00",
+      "subject": "Merge pull request #12203 from dolthub/elian/12177"
+    },
+    {
+      "sha": "293b36c4a892d46a7535c9047841f4e6311e5d42",
+      "date": "2026-10-23T22:47:01Z",
+      "subject": "nbs: deduplicate archive dictionaries by content"
+    },
+    {
+      "sha": "48d72d5f3f8f7229a4f64a6654c1cfdcbc786e48",
+      "date": "2026-10-23T15:33:51-04:00",
+      "subject": "Merge pull request #12194 from dolthub/elian/12179"
+    },
+    {
+      "sha": "e83e6a9392cb704ad77b23aba749e641cc696ba6",
+      "date": "2026-10-23T12:15:52-07:00",
+      "subject": "[no release notes] Merge pull request #12198 from dolthub/macneale4/virtual-base-utc"
+    },
+    {
+      "sha": "77409d6a91032c94aa7842f240598c9018c17f5b",
+      "date": "2026-10-23T18:11:30Z",
+      "subject": "nbs: reduce idle chunk journal memory with on-demand write buffers and range index maps"
+    },
+    {
+      "sha": "19f1b8c01a29ce17874269ec43c33e21f7aa6733",
+      "date": "2026-10-23T18:10:17Z",
+      "subject": "Build virtual merge bases in UTC"
+    },
+    {
+      "sha": "05e6bceb1a210a7a8d770b74b8ef4825c165c0a8",
+      "date": "2026-10-23T03:52:29Z",
+      "subject": "[ga-bump-release] Update Dolt version to 2.6.0 and release v2.6.0"
+    },
+    {
+      "sha": "74d839a8d4054bcc11cf6efbbdbab72782a461c7",
+      "date": "2026-10-22T20:20:05-07:00",
+      "subject": "Merge pull request #12195 from dolthub/nicktobey-38a1fb50"
+    },
+    {
+      "sha": "8611f7e60ba934bc769615f445f730f733130232",
+      "date": "2026-10-23T03:13:11Z",
+      "subject": "[skip actions] [ga-update-correctness] SQL Correctness updated to 99.991225"
+    },
+    {
+      "sha": "5f37556a0b6e8f29053e1d5176abc56039bfb1fd",
+      "date": "2026-10-23T02:13:25Z",
+      "subject": "[ga-bump-dep] Bump dependency in Dolt by nicktobey"
+    },
+    {
+      "sha": "6cb5cc027e02010a56cad590f9fb9feca4480382",
+      "date": "2026-10-22T21:17:47-04:00",
+      "subject": "Merge pull request #12192 from dolthub/elian/12178"
+    },
+    {
+      "sha": "d77e8c06a2c394764be28bde17e65e0115ac3584",
+      "date": "2026-10-23T00:48:15Z",
+      "subject": "[ga-format-pr] Run go/utils/repofmt/format_repo.sh and go/Godeps/update.sh"
+    },
+    {
+      "sha": "2de22a1989b42d74257840d70c5d8816c649822e",
+      "date": "2026-10-23T00:32:24Z",
+      "subject": "enginetest: move HistorySystemTableScriptTests to dolt_queries_dtables.go"
+    },
+    {
+      "sha": "f44b72cb15b956cbc0b4d7b6eb31919df9a58bc4",
+      "date": "2026-10-22T23:51:37Z",
+      "subject": "dtables: mark commit_hash index non-unique in dolt_commit_ancestors"
+    },
+    {
+      "sha": "318a5007f8995f94a69b6c16368d483bbf9727d6",
+      "date": "2026-10-22T13:51:59-07:00",
+      "subject": "Merge pull request #12174 from dolthub/aaron/remotesapi-upload-do-not-overwrite"
+    },
+    {
+      "sha": "5a34c33477d55e0b9f2d085c69b6fbc0370fb8e9",
+      "date": "2026-10-22T13:40:03-07:00",
+      "subject": "Merge pull request #12182 from dolthub/macneale4/three-dot-diff"
+    },
+    {
+      "sha": "19a20aa1113827d74d7fb0d9d97dc4f9697854f2",
+      "date": "2026-10-22T13:38:13-07:00",
+      "subject": "Explain windows retry"
+    },
+    {
+      "sha": "3d7614f3a9ac6f6c99b711777e8907eeb4575c26",
+      "date": "2026-10-22T13:31:29-07:00",
+      "subject": "[ga-bump-dep] Bump dependency in Dolt by jycor (#12183)"
+    },
+    {
+      "sha": "098811895aac26c34792c1da8433a9c908499a8f",
+      "date": "2026-10-22T19:08:30Z",
+      "subject": "Use HEAD for an omitted left side of dolt diff ...B"
+    },
+    {
+      "sha": "b7698d2c323c8e78a13904f89781ed24ed3278c9",
+      "date": "2026-10-22T18:13:51Z",
+      "subject": "Warn on three-dot diffs with several merge bases; fix three-dot log"
+    },
+    {
+      "sha": "6dbffc45c853e8f4c939fac5e3dbaad148ba62a7",
+      "date": "2026-10-22T11:12:36-07:00",
+      "subject": "Merge pull request #12125 from dolthub/macneale4/dolt_merge"
+    },
+    {
+      "sha": "8662ac032dc281d56c952c0b61b9d07c22c47bbc",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Simplify the virtual merge base code"
+    },
+    {
+      "sha": "4053351c4f1d8ea3bc583e193f272bff4dc3e427",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Drop duplicated merge scripts and share the two-branch merge setup"
+    },
+    {
+      "sha": "69366da3a6a569dc2775921c91f10e1eab720ccf",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Write merge scripts with mergeScript and bothDirections helpers"
+    },
+    {
+      "sha": "6c4c90b327ac4b57d6165919437ec55c89679229",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Build virtual merge base Go tests on the shared criss-cross builder"
+    },
+    {
+      "sha": "64ae85285c1f29e1cec92c3c713e08af8fa80891",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Build criss-cross test histories with one shared builder"
+    },
+    {
+      "sha": "a40f0039c503640b96e3d451ba238f3fc736e431",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Test a virtual merge base's vector index"
+    },
+    {
+      "sha": "7620cf89a2b3f52b8cebd86a45446dbebc920ff3",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Test rebuilding garbage collected virtual merge bases of more kinds"
+    },
+    {
+      "sha": "51b486940f213a65a70a2c2c7fbf84b87a460459",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Test a virtual merge base's prefix, unique and composite indexes"
+    },
+    {
+      "sha": "9ff3e6dc645d6f164b3b93ba01b30d1f6811e247",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Test a virtual merge base's Full-Text index when its rows merge cleanly"
+    },
+    {
+      "sha": "1db877edc682a9c44c9d27442e83a8063230d657",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Test constraints that only a merged row's generated value violates"
+    },
+    {
+      "sha": "84329eae68d7c55466040acabf91e0bedee25d2b",
+      "date": "2026-10-22T17:19:57Z",
+      "subject": "Test keyless rows that collapse under a virtual merge base's schema"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/scripts/sql-correctness/current_correctness.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cd-release-pgo.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-bats-unix.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-multi-branch-concurrency.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/docker-entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/serverDockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/serverREADME.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/assist.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/debug.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/engine/sqlengine.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/dolt/commands/engine/sqlengine_lifecycle_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/dolt/commands/engine/system_variable_assignment_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/filter-branch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/merge_base.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/schcmds/copy-tags.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/sql.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/sql_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/sqlserver/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/sqlserver/server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/sqlserver/sqlserver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/commands/version.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/dolt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/dolt/doltversion/version.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/branch_control/branch_control.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/commitgraph/commitgraph.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/commitgraph/merge_bases.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/commitgraph/merge_bases_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/dbfactory/git_remote.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/dbfactory/git_remote_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/diff/diff_stat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/diff/table_deltas.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/branch_activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/doltdb/branch_activity_lifecycle_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/commit.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/doltdb/commit_ancestor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/doltdb/commit_ancestry.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/doltdb/commit_resolver.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/doltdb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/doltdb_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/gcctx/gc_safepoint_controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/gcctx/gc_safepoint_controller_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/doltdb/head_updates.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/hooksdatabase.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/table.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/doltdb/virtual_merge_base.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/doltdb/workingset.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/dtestutils/crisscross.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/dtestutils/testcommands/multienv.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/env/actions/commit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/env/actions/commitwalk/commitwalk.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/env/actions/remotes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/env/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/env/repo_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/fulltext_rebuild.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/merge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/merge_base.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/merge/merge_base_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/merge_prolly_rows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/merge_rows.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/merge_schema.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/merge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/row_merge_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/row_merge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/merge/schema_merge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/merge/virtual_merge_base.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/merge/virtual_merge_base_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/remotesrv/http.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/remotesrv/http_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/remotesrv/validate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/remotesrv/validate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/revert/revert.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/schema/column.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/schema/schema.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/schema/schema_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/servercfg/serverconfig.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/auto_gc_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_consumer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_primary_controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_primary_log_manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_primary_streamer.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_primary_streamer_lifecycle_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_primary_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_producer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_queries_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_replica_applier.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/binlog_replication_filters_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/binlogreplication/system_variable_utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/cluster/controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/cluster/interceptors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/cluster/interceptors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/commit_hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/database.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/database_provider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/database_provider_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dfunctions/has_ancestor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dfunctions/join_cost.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dprocedures/dolt_commit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dprocedures/dolt_gc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dprocedures/dolt_merge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dprocedures/dolt_rebase.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dprocedures/dolt_remote.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dprocedures/init.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dsess/doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dsess/dolt_session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dsess/sequence_tracker.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dsess/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dsess/session_state_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dsess/transactions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dsess/variables.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/dsess/variables_registry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_diff_summary.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_log.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_merge_bases.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_patch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_preview_merge_conflicts.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_preview_merge_conflicts_summary.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_query_diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/dolt_test_run.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtablefunctions/init.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtables/blame_view.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtables/commit_ancestors_table.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtables/conflicts_tables_prolly.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtables/diff_table.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtables/log_table.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/dtables/schema_conflicts_table.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/branch_control_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_engine_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_engine_tests.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_harness.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_multi_branch_commit_queries.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_multi_branch_transaction_queries.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_privilege_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_commit_all.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_dtables.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_foreign_keys.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_merge.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_merge_bases.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_merge_multiple_bases.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_nonlocal.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_revert.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_queries_schema_merge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_query_plans.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_server_tests.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/enginetest/dolt_transaction_queries.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/enginetest/row_lookup_join_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/libraries/doltcore/sqle/enginetest/virtual_merge_base_gc_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/index/dolt_index_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/index/prolly_index_iter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/kvexec/builder.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/kvexec/count_agg_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/kvexec/lookup_join.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/libraries/doltcore/sqle/kvexec/lookup_join_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

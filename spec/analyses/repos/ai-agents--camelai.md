@@ -1,0 +1,157 @@
+# camelai: change evidence
+
+Source: [camelai](https://github.com/qaml-ai/camelAI) · [Analysis](../../projects/ai-agents--camelai.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `3825a9a671b2260cc6138929535de30e435c1f93`; commit date: 2026-10-03T09:38:47-05:00; review date: unknown; observed SHA: `f4108141d856edef72cc282ac5c4646c27caf621`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/qaml-ai/camelAI/compare/3825a9a671b2260cc6138929535de30e435c1f93...f4108141d856edef72cc282ac5c4646c27caf621). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [f4108141d856](https://github.com/qaml-ai/camelAI/commit/f4108141d856edef72cc282ac5c4646c27caf621) 2026-10-26T16:52:12-05:00: Run camelCode on DeepSeek V4.1 Flash 1017 (nitro), like camelBots' builder (#185)
+- [09ac07b3c338](https://github.com/qaml-ai/camelAI/commit/09ac07b3c3382dc4f7ba69015207595f185f942b) 2026-10-26T16:49:29-05:00: Let deploy_project and run_notebook succeed without a chat thread (#184)
+- [e53aed209372](https://github.com/qaml-ai/camelAI/commit/e53aed20937224050b17c876672b8b16c19b61ad) 2026-10-24T18:40:04-05:00: Fix unattended runtime input cancellation lookup (#183)
+- [860325802eca](https://github.com/qaml-ai/camelAI/commit/860325802eca675c83e62b58e21df8e3f0de5206) 2026-10-23T22:20:11-05:00: Fix Google/GitHub sign-in: use manual redirects in OAuth fetches (#182)
+- [5e9299e8bd8c](https://github.com/qaml-ai/camelAI/commit/5e9299e8bd8c23f84d69941e47dffa5376192717) 2026-10-23T20:52:52-05:00: Bound runtime chat seeds and stop provider revalidation loops (#181)
+- [5d49b8714186](https://github.com/qaml-ai/camelAI/commit/5d49b8714186ed403ee27e6e4a7f8b0a1a3887a5) 2026-10-22T16:28:54-05:00: Isolate OAuth state cookies and strip cross-environment platform credentials
+- [0733f84ae253](https://github.com/qaml-ai/camelAI/commit/0733f84ae2538c933026b09a380e098ccd6a7117) 2026-10-22T16:27:32-05:00: Harden OAuth identity linking, callback binding, and token replay defenses
+- [2b6e14a734ec](https://github.com/qaml-ai/camelAI/commit/2b6e14a734ecbedb9f02908df4c21fec566d4ffd) 2026-10-22T16:15:58-05:00: Pin browser E2E to supported Ubuntu runner
+- [c94b7889e384](https://github.com/qaml-ai/camelAI/commit/c94b7889e384f5cbef78c14e1e7d2a7469ee1065) 2026-10-22T16:15:17-05:00: Harden file previews, browser writes, redirects, and dependencies
+- [e915d565cff8](https://github.com/qaml-ai/camelAI/commit/e915d565cff8b81487086be04088d51517eae427) 2026-10-20T11:25:00-05:00: Show MCP HTTP error details and strip pasted Bearer prefixes (#178)
+- [c0c9e19b8ecb](https://github.com/qaml-ai/camelAI/commit/c0c9e19b8ecb98255e2b8c4af9c68ca9a5ec12f2) 2026-10-20T11:24:55-05:00: chore: upgrade camelRun SDK to 0.22.1 (#179)
+- [2adf0a370f59](https://github.com/qaml-ai/camelAI/commit/2adf0a370f592dff39a87462efe3284cafb9b6b0) 2026-10-15T22:28:23-05:00: Bump @camelai/run to 0.21.0 (#177)
+- [07320e9fde74](https://github.com/qaml-ai/camelAI/commit/07320e9fde741fa7ac09978705078230286d4f7d) 2026-10-12T18:34:18-05:00: Merge pull request #176 from qaml-ai/claude/fix-network-docs-link
+- [712572d373f2](https://github.com/qaml-ai/camelAI/commit/712572d373f20bad67ec698ca21839039617e404) 2026-10-12T18:32:30-05:00: Point the Network docs button at a docs page that exists
+- [2228fe4a3819](https://github.com/qaml-ai/camelAI/commit/2228fe4a381979da6ba6173696dd09a15e64d401) 2026-10-10T12:16:26-05:00: Merge pull request #175 from qaml-ai/chore/camelrun-0.20
+- [a48a79d16c0a](https://github.com/qaml-ai/camelAI/commit/a48a79d16c0ab95b9568618d9ea823df3568a445) 2026-10-10T12:13:24-05:00: Document four shared Azure runner slots [skip ci]
+- [697cf92d61da](https://github.com/qaml-ai/camelAI/commit/697cf92d61dab00bd892682e411004fb41d75057) 2026-10-10T11:44:42-05:00: Run trusted branch test shards on shared Azure runners
+- [2865e339a25b](https://github.com/qaml-ai/camelAI/commit/2865e339a25b913b633d4b23c8ec987c15c3a6ac) 2026-10-09T23:10:25-05:00: Move to @camelai/run 0.20.0 and the agent runtime 0.9.0
+- [9a97310c6e66](https://github.com/qaml-ai/camelAI/commit/9a97310c6e66a00c36b839edde3a3a47c53a725e) 2026-10-09T10:58:43-05:00: Merge pull request #174 from qaml-ai/fix/runtime-image-usage-kind
+- [46f388648b51](https://github.com/qaml-ai/camelAI/commit/46f388648b51e248054b532b2b990b753030dff3) 2026-10-09T10:47:06-05:00: Record camelRun image usage as image usage, not LLM
+- [26013aafaf1a](https://github.com/qaml-ai/camelAI/commit/26013aafaf1a99cda013cddd22ffd20763d0188e) 2026-10-09T03:59:43-05:00: Merge pull request #172 from qaml-ai/chore/pi-1.1
+- [6dcf42b6b641](https://github.com/qaml-ai/camelAI/commit/6dcf42b6b641484c004ee640471f49e7a92b32d6) 2026-10-09T03:54:54-05:00: Move to Pi 1.1 (@earendil-works/pi-ai 1.1.0); drop chiridion's catalog fallbacks
+- [53794c2ebcfe](https://github.com/qaml-ai/camelAI/commit/53794c2ebcfe4a3f3206d4c999f1944ff1cc2f74) 2026-10-09T03:46:35-05:00: Merge pull request #171 from qaml-ai/chore/camelrun-0.17
+- [c18e54b0a7b2](https://github.com/qaml-ai/camelAI/commit/c18e54b0a7b21cec78cf756e0e08be174aea3dc1) 2026-10-09T03:37:09-05:00: Add Claude Haiku 5.5 to the model picker
+- [2fcf5ca311d6](https://github.com/qaml-ai/camelAI/commit/2fcf5ca311d6ff26053e9c94f0af576dccb2b8f5) 2026-10-09T03:37:09-05:00: Move to @camelai/run 0.17.0 and the agent runtime 0.6.0
+- [7bab3a0a47a1](https://github.com/qaml-ai/camelAI/commit/7bab3a0a47a18a3b9a94efabbec8e8142abd6dc0) 2026-10-08T18:49:11-05:00: Merge pull request #170 from qaml-ai/codex/runtime-transcription-usage
+- [164ca2c88567](https://github.com/qaml-ai/camelAI/commit/164ca2c885678726c3bbdc823e56939427143870) 2026-10-08T17:20:12-05:00: Runtime usage: label transcription events as audio usage
+- [211cf26cd80a](https://github.com/qaml-ai/camelAI/commit/211cf26cd80ac9ce3c4c9ee0dfee263eb4cddb0b) 2026-10-08T12:31:44-05:00: Move GPT-6 Sol to GPT-6.1 Sol
+- [3ab90d397af3](https://github.com/qaml-ai/camelAI/commit/3ab90d397af3cefa3c1f392ad15c027798376880) 2026-10-08T07:44:18-05:00: Merge pull request #169 from qaml-ai/selfhost-runtime-0.5.0
+- [0e32fe9eb9fb](https://github.com/qaml-ai/camelAI/commit/0e32fe9eb9fb73727c134b7c1dacf3b04f69210d) 2026-10-08T07:39:06-05:00: Self-host: run the agent runtime 0.5.0
+- [638e56f75536](https://github.com/qaml-ai/camelAI/commit/638e56f755366aefc9b319869a3ecf316efe148c) 2026-10-08T07:20:28-05:00: Merge pull request #168 from qaml-ai/chore/camelai-run-0.16.0
+- [53b402cb38c6](https://github.com/qaml-ai/camelAI/commit/53b402cb38c6e24ff78e2e6092475e1635584072) 2026-10-07T22:27:40-05:00: Adopt @camelai/run 0.16.0
+
+## Changed paths
+
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/e2e.yml`
+- M: `README.md`
+- A: `SECURITY_REVIEW.md`
+- M: `bun.lock`
+- M: `package.json`
+- M: `scripts/selfhost-agent-runtime.mjs`
+- M: `src/components/Chat.tsx`
+- M: `src/components/sidebar/app-sidebar.tsx`
+- A: `src/hooks/use-settled-fetcher-result.ts`
+- M: `src/lib/admin-mcp-oauth.server.ts`
+- M: `src/lib/file-content-headers.ts`
+- A: `src/lib/integration-token.ts`
+- M: `src/lib/llm-provider-config.ts`
+- M: `src/lib/model-catalog.ts`
+- M: `src/lib/oauth-config.ts`
+- M: `src/lib/runtime-threads.server.ts`
+- A: `src/lib/safe-redirect.ts`
+- M: `src/lib/sandbox-network.ts`
+- M: `src/lib/usage-pricing.ts`
+- M: `src/lib/use-runtime-thread.ts`
+- M: `src/routes/_app.connections.tsx`
+- M: `src/routes/_auth.login.tsx`
+- M: `src/routes/_auth.signup.tsx`
+- M: `src/routes/_auth.tsx`
+- M: `src/routes/api/threads.$id.files.$.ts`
+- M: `src/routes/api/workspaces.$id.fs.content.$.ts`
+- M: `src/routes/api/workspaces.$id.outputs.$.ts`
+- M: `src/routes/api/workspaces.$id.projects.$project.fs.content.$.ts`
+- M: `src/routes/api/workspaces.$id.uploads.$.ts`
+- M: `src/types.ts`
+- A: `tests/browser-request-security.test.ts`
+- M: `tests/chat-credit-status.test.ts`
+- M: `tests/chat-do-model-picker-state.test.ts`
+- M: `tests/connections-action.test.ts`
+- A: `tests/integration-token.test.ts`
+- M: `tests/model-catalog.test.ts`
+- M: `tests/model-fallback-banner.test.tsx`
+- M: `tests/model-picker-access.test.ts`
+- M: `tests/model-picker-config.test.ts`
+- M: `tests/model-picker.test.tsx`
+- M: `tests/model-settings-action.test.ts`
+- M: `tests/model-settings-ui.test.tsx`
+- M: `tests/new-chat-sales-prompt-loader.test.ts`
+- A: `tests/oauth-provider-security.test.ts`
+- M: `tests/recent-model.test.ts`
+- A: `tests/runtime-api-timeout.test.ts`
+- A: `tests/runtime-thread-seed.test.ts`
+- M: `tests/runtime-thread-send-flash.test.tsx`
+- A: `tests/safe-redirect.test.ts`
+- M: `tests/unlock-premium-modal.test.tsx`
+- M: `tests/usage-pricing.test.ts`
+- M: `tests/use-billing-credit-status.test.tsx`
+- M: `tests/use-runtime-thread.test.tsx`
+- A: `tests/use-settled-fetcher-result.test.tsx`
+- M: `tests/workspaces-outputs-api.test.ts`
+- M: `tests/workspaces-uploads-api.test.ts`
+- M: `vite.renderer.config.ts`
+- M: `workers/dispatcher/src/index.ts`
+- M: `workers/main/src/admin-mcp-oauth.ts`
+- M: `workers/main/src/agent-runtime/model-routes.ts`
+- M: `workers/main/src/agent-runtime/run-gates.ts`
+- M: `workers/main/src/agent-runtime/runtime-api.ts`
+- M: `workers/main/src/agent-runtime/runtime-thread-telemetry.ts`
+- M: `workers/main/src/agent-runtime/thread-runtime.ts`
+- M: `workers/main/src/agent-runtime/usage.ts`
+- M: `workers/main/src/ai-virtual-binding.ts`
+- M: `workers/main/src/bedrock-pi-model.ts`
+- A: `workers/main/src/browser-request-security.ts`
+- M: `workers/main/src/chat-thread/pi-model-config.ts`
+- M: `workers/main/src/code-mode-tools.ts`
+- M: `workers/main/src/connections-runtime.ts`
+- M: `workers/main/src/cookies.ts`
+- M: `workers/main/src/deterministic-automation-workflow.ts`
+- M: `workers/main/src/identity/user-do.ts`
+- M: `workers/main/src/index.ts`
+- M: `workers/main/src/integration-oauth-state.ts`
+- M: `workers/main/src/pi-model-resolution.ts`
+- M: `workers/main/src/remote-mcp-oauth.ts`
+- M: `workers/main/src/routes/admin-mcp.ts`
+- M: `workers/main/src/routes/admin/schemas.ts`
+- M: `workers/main/src/routes/agent-runtime-events.ts`
+- M: `workers/main/src/routes/discord-integrations.ts`
+- M: `workers/main/src/routes/integrations.ts`
+- M: `workers/main/src/routes/oauth-helpers.ts`
+- M: `workers/main/src/routes/oauth.ts`
+- M: `workers/main/src/services/oauth.ts`
+- M: `workers/main/src/signed-session.ts`
+- M: `workers/main/tests/admin-mcp-oauth.test.ts`
+- M: `workers/main/tests/agent-runtime-events.test.ts`
+- M: `workers/main/tests/agent-runtime-key-scopes.test.ts`
+- M: `workers/main/tests/agent-runtime-model-routes.test.ts`
+- M: `workers/main/tests/agent-runtime-usage.test.ts`
+- M: `workers/main/tests/ai-virtual-binding.test.ts`
+- M: `workers/main/tests/auth-do.test.ts`
+- A: `workers/main/tests/code-mode-threadless.test.ts`
+- M: `workers/main/tests/connections-runtime.test.ts`
+- M: `workers/main/tests/cookies.test.ts`
+- M: `workers/main/tests/deterministic-automation-workflow.test.ts`
+- M: `workers/main/tests/discord-oauth-callback.test.ts`
+- M: `workers/main/tests/evals/hosted-credit-camel-free-fallback-live.test.ts`
+- M: `workers/main/tests/llm-provider-config.test.ts`
+- M: `workers/main/tests/oauth-domain-blocklist.test.ts`
+- A: `workers/main/tests/oauth-state-security.test.ts`
+- A: `workers/main/tests/pi-catalog-coverage.test.ts`
+- M: `workers/main/tests/remote-mcp-oauth.test.ts`
+- M: `workers/main/tests/runtime-thread-telemetry.test.ts`
+- M: `workers/main/tests/runtime-thread-turns.test.ts`
+- M: `workers/main/tests/selfhost-dispatcher-auth.test.ts`
+- M: `workers/main/tests/slack-oauth-callback.test.ts`

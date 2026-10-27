@@ -1,0 +1,25 @@
+# fengarde
+
+Source: [fengarde](https://github.com/supermhel/fengarde) · Category: [ai-security](../categories/ai-security.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `285ca7244032aed3e3402da437a07d97b9792ade`; commit timestamp `2026-09-10T02:35:39+02:00`; 527 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/README.md)):
+
+> [](https://github.com/supermhel/fengarde/actions/workflows/ci.yml) [](https://github.com/supermhel/fengarde/actions/workflows/codeql.yml)
+
+Build/package evidence: [pyproject.toml](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/pyproject.toml); [services/devkit-feeder/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/devkit-feeder/requirements.txt); [services/ws1-collectors/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/ws1-collectors/requirements.txt); [services/ws2-normalization/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/ws2-normalization/requirements.txt); [services/ws3-indexer/requirements.txt](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/services/ws3-indexer/requirements.txt)
+
+License evidence: [LICENSE](https://github.com/supermhel/fengarde/blob/285ca7244032aed3e3402da437a07d97b9792ade/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-security**. Its category places it in the candidate set for agents, skills, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [skills](../skills.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

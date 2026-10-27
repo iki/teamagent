@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-query--office-parser",
+    "category": "ai-query",
+    "name": "office-parser",
+    "url": "https://github.com/harshankur/officeParser",
+    "aliases": [],
+    "report": "spec/projects/ai-query--office-parser.md",
+    "topics": [
+      "memory",
+      "import-generation",
+      "decisions"
+    ],
+    "depth": "screened",
+    "analyzedSha": "43124945d65b90fd89ec942fdb5c6a3e8413649e",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-29T23:24:28+02:00",
+    "reportSha256": "9126b06c824ea67cc8c346a1bf1b4f31c5093a34857b312ebfa8e9ac1d329d77",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-query--office-parser",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/harshankur/officeParser",
+    "report": "spec/projects/ai-query--office-parser.md",
+    "analyzedSha": "43124945d65b90fd89ec942fdb5c6a3e8413649e",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-29T23:24:28+02:00",
+    "observedSha": "57f2d144916191ef0cca8677f40cf169195a66d7",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "57f2d144916191ef0cca8677f40cf169195a66d7",
+        "date": "2026-10-26T23:11:44+01:00",
+        "subject": "docs: XLSX, ODS, PPTX and ODP output named everywhere, and the wrong-tool post brought up to date"
+      },
+      {
+        "sha": "707f3bc7fdd0096a69acb3e105e6a2b9285aef0a",
+        "date": "2026-10-26T22:56:39+01:00",
+        "subject": "chore(release): 8.3.0 changelog, docs and site"
+      },
+      {
+        "sha": "1452648be0e4f79ff7f59c35d7e24dd6da76c99f",
+        "date": "2026-10-26T22:47:58+01:00",
+        "subject": "fix(docx): a section's end goes in an onNode paragraph's spaced or empty properties, not a second pPr"
+      },
+      {
+        "sha": "ed2a21895c3cc373d22cd5c73a95011d93bb99ae",
+        "date": "2026-10-26T21:56:24+01:00",
+        "subject": "fix: a section's start is hidden in HTML without the stylesheet, and DOCX after onNode blocks is linear"
+      },
+      {
+        "sha": "5eee2c53bcc4ff23e5ca8f408582084da2514d0e",
+        "date": "2026-10-26T21:27:03+01:00",
+        "subject": "fix: section writing in linear time, and LaTeX, ODT and HTML section starts"
+      },
+      {
+        "sha": "833f75856954b4b7e0f912c58b6d7f9e166e9e53",
+        "date": "2026-10-26T20:31:41+01:00",
+        "subject": "fix: sections saved again stay the same, and keep their numbering"
+      },
+      {
+        "sha": "6e02c1bb14bc8202bc5e09ad716f7efd4ec5fcc3",
+        "date": "2026-10-26T20:31:06+01:00",
+        "subject": "chore: ignore the local next-release ledger"
+      },
+      {
+        "sha": "cc23efcce39af94ba3c37de99e1c9a7dc7300d38",
+        "date": "2026-10-26T19:24:44+01:00",
+        "subject": "fix: page numbers follow each section's format by default"
+      },
+      {
+        "sha": "5d45550f41a00dcc10fb97d2a398b1ddfacfa13e",
+        "date": "2026-10-26T18:26:40+01:00",
+        "subject": "fix: seventeenth review fixes: bounded shaping, nested frames, page number formats"
+      },
+      {
+        "sha": "0f5b467260f691b73d6a4b26e6fa2c56e0711c42",
+        "date": "2026-10-26T17:18:01+01:00",
+        "subject": "fix(chunks): every chunk of a split table starts with its header row"
+      },
+      {
+        "sha": "7043e755b79dea1a083014ab14bb34d5343f56a8",
+        "date": "2026-10-26T16:49:13+01:00",
+        "subject": "blog: three posts for 8.3.0, interactive figures, and live demos in two earlier posts"
+      },
+      {
+        "sha": "2dbddfbd6a947229f676cd2a3e66233fbf89106b",
+        "date": "2026-10-26T16:49:05+01:00",
+        "subject": "fix(xlsx): elapsed-time number formats have their shown text"
+      },
+      {
+        "sha": "5dfdc0636b17bb2203e668c316e3fe15f6f68956",
+        "date": "2026-10-26T16:13:06+01:00",
+        "subject": "feat(site): read the readme, changelog and the other repository documents on the site"
+      },
+      {
+        "sha": "fb2105d0812243a1f3d68f2830798bf6b30a7f22",
+        "date": "2026-10-26T16:08:37+01:00",
+        "subject": "fix: sixteenth review fixes for floating frames, stray vowel signs and split page fields"
+      },
+      {
+        "sha": "54862328b97e917e81c25db3c98c32886b82be47",
+        "date": "2026-10-26T15:18:34+01:00",
+        "subject": "fix(pdf): Indic text drawn where the font places it, copied as written; CFF fonts embedded whole"
+      },
+      {
+        "sha": "d8ced0ebc4f24db070d94d63b3c6c2d641945c2a",
+        "date": "2026-10-26T14:56:14+01:00",
+        "subject": "feat: floating frames beside the text, in their place in native PDFs"
+      },
+      {
+        "sha": "5cc202bea04b3ae5586eb7cbb2f24e426d5254a0",
+        "date": "2026-10-26T14:24:02+01:00",
+        "subject": "feat(pdf): keepHeadersAndFootersInPages keeps running headers and footers in their pages"
+      },
+      {
+        "sha": "83f09a19cf57b9cc496e8ea6ad24574879b56df3",
+        "date": "2026-10-26T14:17:08+01:00",
+        "subject": "fix: automatic chart titles, a page field's result in several runs"
+      },
+      {
+        "sha": "329cf30320e61e53183b19b6e98cc5c9710ff0a2",
+        "date": "2026-10-26T14:01:52+01:00",
+        "subject": "fix(rtf): a table before a section break, endnotes marked \\ftnalt, page fields"
+      },
+      {
+        "sha": "fabad9d82d89f96d966f8b8b83e396964d9d1bd6",
+        "date": "2026-10-26T14:01:52+01:00",
+        "subject": "fix(xlsx, ods, pptx, odp): fourteenth review fixes for linear time"
+      },
+      {
+        "sha": "ab6847d6ccacda2f6ea89a97d0728df8f5fea4a0",
+        "date": "2026-10-26T13:20:21+01:00",
+        "subject": "fix(xlsx, ods): thirteenth review fixes for negatives shown without their sign"
+      },
+      {
+        "sha": "750df33817d872d3926f301aeaedcafe99452900",
+        "date": "2026-10-26T12:58:20+01:00",
+        "subject": "fix: twelfth review fixes for shown formats and halo labels"
+      },
+      {
+        "sha": "328dad8420ac813080ba42a59f4558dae9223f0f",
+        "date": "2026-10-26T12:19:39+01:00",
+        "subject": "fix: eleventh review fixes for column cuts, ODS format sections and halo spaces"
+      },
+      {
+        "sha": "68d266e8cdff4ef7392e410a234834e494d1dd79",
+        "date": "2026-10-26T11:46:56+01:00",
+        "subject": "fix: tenth review fixes for column cuts, halo text and scaled formats"
+      },
+      {
+        "sha": "bf01e02931ef625e2f772f543c5f9898abba75cc",
+        "date": "2026-10-26T11:01:05+01:00",
+        "subject": "fix: ninth review fixes for SVG halos, linear reading and scaled formats"
+      },
+      {
+        "sha": "2aa0d7d6fdbfa7eb7cfc8dfbe60f63f6d0bcf2dd",
+        "date": "2026-10-26T10:17:30+01:00",
+        "subject": "fix: eighth review fixes for shared headers, sections, landscape pages and SVG"
+      },
+      {
+        "sha": "91b2835c009947c43e352b0b22e7b7e19a5d6c36",
+        "date": "2026-10-26T10:17:10+01:00",
+        "subject": "fix(xlsx, ods, pptx, odp): eighth review fixes for cell values, merges, comments and pictures"
+      },
+      {
+        "sha": "a7a115955d47105fb7b14c45315644b2d3f17df4",
+        "date": "2026-10-22T18:15:52+02:00",
+        "subject": "fix(pdf): eighth review fixes for paragraphs, tables and columns"
+      },
+      {
+        "sha": "d552608bfb771caa33cedd9114705555500e104b",
+        "date": "2026-10-22T17:48:28+02:00",
+        "subject": "fix(xlsx, ods, pptx, odp): seventh review fixes for cell values, links, limits and pictures"
+      },
+      {
+        "sha": "70102a1cf20d9cfc9f72541b8348bf7cc3fa663d",
+        "date": "2026-10-22T17:30:01+02:00",
+        "subject": "fix: seventh review fixes for headers, footers, sections and SVG stylesheets"
+      },
+      {
+        "sha": "3d8b2053aaeebdb96f41ce805797e799f9f11ac1",
+        "date": "2026-10-22T17:29:50+02:00",
+        "subject": "fix(pdf): seventh review fixes for line direction, columns and tables"
+      },
+      {
+        "sha": "30cb9bed0ce355d771b4cd9db7cb5001ce24203b",
+        "date": "2026-10-22T16:36:31+02:00",
+        "subject": "fix: sixth review fixes for title pages and even pages"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".husky/pre-commit",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/assets/blog.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/assets/blog.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/drawing-hindi-in-a-pdf.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/from-text-extraction-to-ast-and-round-trip.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/how-pptx-stores-a-slide.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/laying-out-a-page-around-a-floating-frame.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/rag-document-chunking-done-right.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/reading-the-spreadsheet-you-see.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/security-war-stories-zip-bombs-and-ssrf.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/what-is-actually-inside-a-docx.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/where-officeparser-is-the-wrong-tool.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/posts/why-pdf-text-extraction-is-hard.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/templates/layout.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/templates/list.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "blog/templates/post.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "build_browser.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/.nojekyll",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/blog.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/blog.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/drawing-hindi-in-a-pdf.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/feed.xml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/from-text-extraction-to-ast-and-round-trip.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/how-pptx-stores-a-slide.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/index.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/laying-out-a-page-around-a-floating-frame.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/rag-document-chunking-done-right.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/reading-the-spreadsheet-you-see.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/search.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/security-war-stories-zip-bombs-and-ssrf.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/what-is-actually-inside-a-docx.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/where-officeparser-is-the-wrong-tool.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/blog/why-pdf-text-extraction-is-hard.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/dist/officeparser.browser.iife.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/dist/officeparser.browser.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/dist/officeparser.browser.slim.iife.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/dist/officeparser.browser.slim.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/OFL-Inter.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/OFL-JetBrainsMono.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/OFL-Outfit.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/fonts.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/inter-latin-ext-wght.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/inter-latin-wght.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/jetbrains-mono-latin-ext-wght.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/jetbrains-mono-latin-wght.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/outfit-latin-ext-wght.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/fonts/outfit-latin-wght.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/images/buymeacoffee-button.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/images/buymeacoffee-logo.svg",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/index.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/repo/CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/repo/CODE_OF_CONDUCT.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/repo/CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/repo/LICENSE.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/repo/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/repo/SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/repo/SUPPORT.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/robots.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/site/repo-docs.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/site/repo-docs.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/sitemap.xml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/ast_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/cli_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/config_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/converter_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/debugging_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/generator_config_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/generator_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/specs/template_fragment.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/bidi_edges_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/bidi_mixed_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/bidi_numbers_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/bilingual_columns_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/cjk_wrapped_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/column_bullets_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/columns_bidi_words_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/columns_then_paragraph_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/dash_column_table_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/english_in_hebrew_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/form_labels_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/hebrew_columns_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/hebrew_document_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/hebrew_punctuation_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/hebrew_table_borderless_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/hindi_tables_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/indented_bidi_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/indented_quote_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/indic_chromium.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/indic_conjunct_spaces_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/lists_rtl_items_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/merged_title_table.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/nested_list_continued_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/paragraphs_flush_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/ragged_prose_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/right_aligned_bidi_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/rtl_words_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/scripts_table_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/scripts_words_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/sparse_table_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/superscripts_chrome.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/table_then_text_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/tagged_headings.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/text_beside_picture_libreoffice.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/test/files/pdf/two_columns_narrow_latex.pdf",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/test/files/template/invoice.docx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/SOURCES.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/chart.js-4.5.1/LICENSE.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/chart.js-4.5.1/chart.umd.min.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/OFL.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-sans-serif-500-italic.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-sans-serif-500-roman.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-sans-serif-700-italic.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-sans-serif-700-roman.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-serif-500-italic.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-serif-500-roman.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-serif-700-italic.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-serif-700-roman.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-typewriter-text-500-italic.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-typewriter-text-500-roman.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/computer-modern-0.1.3/cmu-typewriter-text-700-roman.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/highlight.js-11.9.0/LICENSE",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/highlight.js-11.9.0/highlight.min.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/highlight.js-11.9.0/languages/latex.min.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/highlight.js-11.9.0/styles/atom-one-dark.min.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/highlight.js-11.9.0/styles/atom-one-light.min.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/LICENSE",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_AMS-Regular.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_AMS-Regular.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_AMS-Regular.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Caligraphic-Bold.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Caligraphic-Bold.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Caligraphic-Bold.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Caligraphic-Regular.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Caligraphic-Regular.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Caligraphic-Regular.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Fraktur-Bold.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Fraktur-Bold.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Fraktur-Bold.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Fraktur-Regular.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Fraktur-Regular.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Fraktur-Regular.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Bold.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Bold.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Bold.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-BoldItalic.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-BoldItalic.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-BoldItalic.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Italic.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Italic.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Italic.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Regular.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Regular.woff",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Main-Regular.woff2",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Math-BoldItalic.ttf",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vendor/katex-0.19.0/fonts/KaTeX_Math-BoldItalic.woff",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

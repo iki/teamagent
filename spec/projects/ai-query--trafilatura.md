@@ -25,3 +25,7 @@ Output length is a quality heuristic, not evidence that the correct article was 
 Adopt for static web content behind a bounded fetch adapter. Keep response headers, retrieval time, canonical URL, original HTML and extraction version. Test article pages, documentation, forums, multilingual content, paywalls/consent shells and pages with long related-content sections. Expose incomplete extraction to the user and retrieval layer rather than indexing a consent banner as if it were the requested source.
 
 Related directions: [import-generation](../import-generation.md) · [memory](../memory.md) · [decisions](../decisions.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [trafilatura](https://github.com/adbar/trafilatura); analyzed commit `6c1977a00b4e82ebb7e6fad1192467adaf24d430`; commit date 2026-10-02T18:53:21+02:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--trafilatura.md).
+<!-- teamagent-analysis:end -->

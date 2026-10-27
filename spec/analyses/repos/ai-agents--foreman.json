@@ -1,0 +1,620 @@
+{
+  "metadata": {
+    "id": "ai-agents--foreman",
+    "category": "ai-agents",
+    "name": "foreman",
+    "url": "https://github.com/thruwire/foreman",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--foreman.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "e5d1aa45183382390e388512dcbfebd747ec89ba",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-28T19:44:20-04:00",
+    "reportSha256": "0b195c0055203881e28041f3562eb3d0b8a0c2c63ac95f01c3db9328f3ee28e5",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--foreman",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/thruwire/foreman",
+    "report": "spec/projects/ai-agents--foreman.md",
+    "analyzedSha": "e5d1aa45183382390e388512dcbfebd747ec89ba",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-28T19:44:20-04:00",
+    "observedSha": "c3142ef636617f32f772140125aa310d81ceece9",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "c3142ef636617f32f772140125aa310d81ceece9",
+        "date": "2026-10-15T08:58:59-04:00",
+        "subject": "Fix managed Codex supervision and prepare Foreman 0.5.1 (#56)"
+      },
+      {
+        "sha": "cfe4ad51aa85b2dd814322661b8931f94a4b904e",
+        "date": "2026-10-15T08:22:20-04:00",
+        "subject": "Generalize Foreman decision models and add Jev/OpenAI adapters (#54)"
+      },
+      {
+        "sha": "381ca2de90af9efc2781a58055cc3028c7cabbb9",
+        "date": "2026-10-09T10:43:12-04:00",
+        "subject": "Doc update"
+      },
+      {
+        "sha": "2d1736ec4ae4b13c1d5da7303fea4c81d975ca73",
+        "date": "2026-10-09T08:57:54-04:00",
+        "subject": "Document Deep Agents marketplace plugin setup (#52)"
+      },
+      {
+        "sha": "40f35977443f62352a69d2ed7f75a0ad68e47ebe",
+        "date": "2026-10-08T20:03:12-04:00",
+        "subject": "Add Deep Agents workers and native hooks; release 0.5.0 (#51)"
+      },
+      {
+        "sha": "8a0ab0e25d134d0db51e311b566674ec95570c80",
+        "date": "2026-10-07T08:06:20-04:00",
+        "subject": "docs: document OpenRouter setup through the TypeSafe SDK (#50)"
+      },
+      {
+        "sha": "965810c33fafcd76a16a0469018fccbaaf2705f8",
+        "date": "2026-10-06T21:34:19-04:00",
+        "subject": "ci: pin GitHub Actions to immutable commits (#49)"
+      },
+      {
+        "sha": "50d4de4ac275a8694ab4d30a4468b09fd3e5aef9",
+        "date": "2026-10-06T21:17:18-04:00",
+        "subject": "Document published Foreman core and Pi bridge installation (#48)"
+      },
+      {
+        "sha": "61564071ba29097e919805a839273379cec77ddd",
+        "date": "2026-10-06T21:12:09-04:00",
+        "subject": "Release foreman-core 0.4.4 and prepare Pi bridge for npm"
+      },
+      {
+        "sha": "48d20212792c3c434bda0a69bdcf83d1b3dee310",
+        "date": "2026-10-06T17:39:10-04:00",
+        "subject": "Add Pi and Pi Durable hook integrations with replay-safe supervision (#47)"
+      },
+      {
+        "sha": "6a68b5f8807d82005b4134c929ba2bbb6826d5ad",
+        "date": "2026-10-06T16:59:14-04:00",
+        "subject": "Reduce routine Jev input and recover oversized hook sessions (#45)"
+      },
+      {
+        "sha": "335e14609118ffb7804c01ef25be8347818063e5",
+        "date": "2026-10-06T12:47:43-04:00",
+        "subject": "Add generic local hook responsibilities for 0.4.2 (#43)"
+      },
+      {
+        "sha": "a72594463d5cd57e410a7a9db19a44b0cb3788c4",
+        "date": "2026-10-05T09:01:02-04:00",
+        "subject": "test_summary: count pytest xfailed/xpassed so expected-fail runs are observed (#41)"
+      },
+      {
+        "sha": "b4c5452b2e6cd185631832c07a376c4f5a3b8517",
+        "date": "2026-10-05T09:00:51-04:00",
+        "subject": "Reject malformed run-state containers before migration (#39)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".env.example",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/test.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/decision-models.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/evidence.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/hooks.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/openrouter.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/releases/0.4.3.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/releases/0.4.4.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/releases/0.5.0.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/releases/0.5.1.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/releasing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/routing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/runtime.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/steering.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/theory.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/what-foreman-proves.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/why-jev.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/workers.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integrations/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integrations/claude/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/deepagents/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/deepagents/live-test-results.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/.gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/LICENSE",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/src/durable.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/src/pi.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/src/transport.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/cli-provider.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/core-fixture.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/core.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/durable.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/fixture.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/helpers.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/pi-cli.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/pi-sdk.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/pi.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tests/transport.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "integrations/pi/tsconfig.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/cli.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/config.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/decision_models/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/decision_models/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/decision_models/jev.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/decision_models/openai.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/deepagents_setup.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/evidence.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/extensions.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/foreman/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/foreman/decision.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/foreman/jev.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/hook_adapters.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/hook_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/hooks.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/jev_usage.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/models/worker.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/observation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/persistence.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/policy.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/repository_scope.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/request_budget.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/responsibilities/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/responsibilities/configuration.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/responsibilities/declarative.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/routing.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/steering.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/terminal.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/test_summary.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/usage.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/workers/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/workers/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/workers/codex.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/foreman/workers/codex_app_server.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/workers/codex_errors.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/foreman/workers/deepagents.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_decision_models.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_declarative_responsibilities.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_deepagents.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_deepagents_hooks.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_hook_configuration.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_hooks.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_integration.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_jev_usage.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_observation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_persistence.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_pi_hooks.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_request_budget.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_test_summary.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_version.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_worker.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

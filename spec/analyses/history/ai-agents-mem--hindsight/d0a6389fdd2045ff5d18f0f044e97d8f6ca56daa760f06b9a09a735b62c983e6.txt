@@ -1,0 +1,28 @@
+# hindsight
+
+Multi-arm recall and separate reflection with explicit failure handling for derived-memory refresh.
+
+Source: [hindsight](https://github.com/vectorize-io/hindsight) · Snapshot: `f7dd3f4fd7420f7beec60c32c965e5e5cf7be066` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [hindsight-api-slim/hindsight_api/engine/search/fusion.py:8-176](https://github.com/vectorize-io/hindsight/blob/f7dd3f4fd7420f7beec60c32c965e5e5cf7be066/hindsight-api-slim/hindsight_api/engine/search/fusion.py#L8-L176)
+- [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:170-215](https://github.com/vectorize-io/hindsight/blob/f7dd3f4fd7420f7beec60c32c965e5e5cf7be066/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L170-L215)
+
+Fusion supports per-source candidate caps and reciprocal-rank fusion over semantic, BM25, graph and temporal result lists. It keeps source ranks and raw arm scores so the merged result remains explainable. A second fusion strategy interleaves ranks across arms, ensuring each arm's strongest candidates appear early. The reflection module defines explicit failures for unusable tool calls and evidence-tool execution failures; its documentation explains why failed refreshes must not overwrite accumulated mental models with placeholder or no-information text.
+
+## Harness implications
+
+Use separate query-recall and consolidation-recall policies. Query answering benefits from agreement across retrieval arms; deduplication may need the best semantic twin even when graph and lexical arms do not find it. A background memory refresh must distinguish no evidence from unavailable evidence. Retain the previous approved summary until a new one is complete, source-backed and validated. Store retrieval status with the output so an empty result cannot masquerade as a successful complete search.
+
+## Limitations and tradeoffs
+
+The inspected fusion code verifies algorithm behavior, while comments about past refresh failures explain design intent rather than independently reproduced incidents. Reflection is a model-driven operation and can still synthesize mistaken beliefs from valid facts. More retrieval arms do not automatically increase usefulness: broad graph or temporal results can consume the reranker budget. Source caps and tool-call support vary by task/model and require explicit compatibility testing.
+
+## Adoption and validation
+
+Pilot as an optional richer memory service and borrow its retain/recall/reflect separation. Use a simpler local baseline as the control. Evaluate contradiction handling, temporal recall, cross-session preferences and consolidation duplication. Add chaos cases in which embeddings, storage or reranking fail during refresh; assert that old derived memory and watermarks survive unchanged and the run reports failure.
+
+Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [decisions](../decisions.md).

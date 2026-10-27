@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--deepcode",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/HKUDS/DeepCode",
+  "report": "spec/projects/ai-agents--deepcode.md",
+  "analyzedSha": "84c37f79c726bd12e74e39541adceb8b5e47b0d5",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-28T15:47:21+08:00",
+  "observedSha": "cd7ab47d09cf059cca391f84b900234baff6b3d3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "cd7ab47d09cf059cca391f84b900234baff6b3d3",
+      "date": "2026-10-27T02:07:15+08:00",
+      "subject": "build(ci): regenerate the CI lock for the patched sidecar pins"
+    },
+    {
+      "sha": "f427a77eef64a2a22fc1dc99228c1ecf223e5cbb",
+      "date": "2026-10-27T02:06:50+08:00",
+      "subject": "fix(cli): treat a local path given to npx -p or uvx --from as no package"
+    },
+    {
+      "sha": "db4088229b465dba3b46151b8eafcb0be9f12471",
+      "date": "2026-10-27T02:06:09+08:00",
+      "subject": "Merge PR #278: take the patched sidecar pins for the dependency audit"
+    },
+    {
+      "sha": "befd3938a1fcc94ab67c5e721e858ab70fcf8e9a",
+      "date": "2026-10-27T02:06:09+08:00",
+      "subject": "Merge PR #275: flag unpinned npx/uvx packages in mcp list"
+    },
+    {
+      "sha": "1452113f63ae6be8a46b2cf09b90f6f825b76602",
+      "date": "2026-10-27T02:06:09+08:00",
+      "subject": "Merge PR #271: ask before file tools write hook config, and match sensitive paths through trailing dots"
+    },
+    {
+      "sha": "2b8c9832057c1a06ed902f7e2c028fb11e4f602a",
+      "date": "2026-10-27T02:06:09+08:00",
+      "subject": "Merge PR #270: keep runtime status, verification, and Responses ids intact"
+    },
+    {
+      "sha": "139c7127eaee7677cf8f8e70582ceb63a52e1ad2",
+      "date": "2026-10-25T23:52:05+08:00",
+      "subject": "docs: point the README introduction video at the DeepCode V2 promo"
+    },
+    {
+      "sha": "1aacb6740b20dd4dd55d43a0d97a385f5ca279b0",
+      "date": "2026-10-24T18:49:37+08:00",
+      "subject": "build(desktop): take the patched aiohttp, certifi, mcp, pypdf and setuptools"
+    },
+    {
+      "sha": "1767abb42a918f320d595ca7fac1e21f46efd1be",
+      "date": "2026-10-24T01:44:06+08:00",
+      "subject": "fix(cli): read the mcp list package from launcher options, pin npm fully"
+    },
+    {
+      "sha": "5ce349a5e96c5317bc4b929c2a82c172dd4d046d",
+      "date": "2026-10-24T01:31:15+08:00",
+      "subject": "test(cli): derive mcp posture denominator from printed rows"
+    },
+    {
+      "sha": "4580c2a779cd571dc57c6c7f25e2704a17b3fb9f",
+      "date": "2026-10-24T01:31:15+08:00",
+      "subject": "feat(cli): flag unpinned npx/uvx package specs in mcp list"
+    },
+    {
+      "sha": "ec357492fda7c23435cd86b24adc85ab3ed95454",
+      "date": "2026-10-23T22:43:07+08:00",
+      "subject": "permissions: let Full Access write hook-discovery files without asking"
+    },
+    {
+      "sha": "a6dc3e4310f8ab6d3d2362210f8aafe84ef696f4",
+      "date": "2026-10-23T22:43:07+08:00",
+      "subject": "permissions: confirm before writing the files hooks are discovered from"
+    },
+    {
+      "sha": "2ff01d8974b42739ac9f150532326764be2a7d8d",
+      "date": "2026-10-22T18:42:25+08:00",
+      "subject": "fix: address DeepCode PR feedback"
+    },
+    {
+      "sha": "49805ef25e5c18b2a58ae797028f599b6aca161b",
+      "date": "2026-10-22T16:47:04+08:00",
+      "subject": "docs(ci): describe the lint row by what it checks, like the other rows"
+    },
+    {
+      "sha": "3bb8c88c3cce2c05ac98b8ce771afa1be2dd3af5",
+      "date": "2026-10-22T16:46:46+08:00",
+      "subject": "Merge PR #274: keep the docs/CI.md check table aligned with workflow jobs"
+    },
+    {
+      "sha": "5efea2653e2cbb67e7b365a1f121d9163635c245",
+      "date": "2026-10-21T22:22:41+08:00",
+      "subject": "test(ci): match the check table's first column and document the lint row"
+    },
+    {
+      "sha": "fe84714e44c585be0c39929621bb3b5737e72857",
+      "date": "2026-10-21T22:18:39+08:00",
+      "subject": "test(ci): keep the docs/CI.md check table aligned with workflow jobs"
+    },
+    {
+      "sha": "8332d745f12698fe236fa1a35160938e837fd890",
+      "date": "2026-10-21T18:11:30+08:00",
+      "subject": "docs(ci): give the Windows lifecycle commands one line each"
+    },
+    {
+      "sha": "7d11c2d87af8bf5d37cb021b0b4b231f478bf3b4",
+      "date": "2026-10-21T18:11:04+08:00",
+      "subject": "Merge PR #273: document how to reproduce the secret, browser and Windows lifecycle checks locally"
+    },
+    {
+      "sha": "e40ac1dd76307b3baa3fe36d5fd2bc804b015c39",
+      "date": "2026-10-21T17:03:22+08:00",
+      "subject": "docs: README news for a quiet Windows service, a code font and community fixes"
+    },
+    {
+      "sha": "249efc2e62340dbdd27b9f3a1f3ebda30c30e78d",
+      "date": "2026-10-21T17:00:28+08:00",
+      "subject": "Merge PR #267: start the Windows service without a console window"
+    },
+    {
+      "sha": "73d7846fe37cb29cfaedb5c4abc93be87de7aced",
+      "date": "2026-10-21T17:00:28+08:00",
+      "subject": "Merge PR #259: keep an MCP server's settings and credential in step"
+    },
+    {
+      "sha": "e6d1f0c673ad0982052fdc3b623c135e446e23d8",
+      "date": "2026-10-21T17:00:28+08:00",
+      "subject": "Merge PR #265: let Desktop code text use its own preferred font"
+    },
+    {
+      "sha": "7d5c2512c130341ce90c128ad93d5b51f0dd0faa",
+      "date": "2026-10-21T17:00:28+08:00",
+      "subject": "Merge PR #261: let optional MCP tool arguments accept null"
+    },
+    {
+      "sha": "153fa1716dff3bc1cc9759694344b67c46c08e2d",
+      "date": "2026-10-21T17:00:28+08:00",
+      "subject": "Merge PR #264: fix two TUI tests that only fail on Windows"
+    },
+    {
+      "sha": "770abce669e1263c5d2c068b28bc860dbb85ec93",
+      "date": "2026-10-20T19:59:17+08:00",
+      "subject": "docs(ci): document local reproduction of the secret, browser, and Windows lifecycle checks"
+    },
+    {
+      "sha": "4a40e8b25160609cb15244c7e9180804df575721",
+      "date": "2026-10-17T20:42:00+08:00",
+      "subject": "fix(service): start the detached service without a console window on Windows"
+    },
+    {
+      "sha": "284e55e5381f69cd5f26f810201ca08c01472388",
+      "date": "2026-10-17T19:52:49+08:00",
+      "subject": "feat(desktop): let monospace text use its own preferred font"
+    },
+    {
+      "sha": "67376e00ab953fad168e04e4b7ce1e2d762d8f4b",
+      "date": "2026-10-17T19:18:55+08:00",
+      "subject": "tests: fix two TUI cases that only fail on Windows"
+    },
+    {
+      "sha": "8ed9edbc8f0b5a923df724aced42ac0c86268d51",
+      "date": "2026-10-16T21:59:59+08:00",
+      "subject": "fix(mcp): make paired settings/credential writes atomic"
+    },
+    {
+      "sha": "aeef932fed4d3ca6b4f2fea926ea2df306e8bac3",
+      "date": "2026-10-16T03:01:49+08:00",
+      "subject": "fix(providers): preserve Responses tool identities across turns"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/python-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTORS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_ZH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/blocking_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/browser_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/dispatcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/native_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/peer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/protocol/notifications.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app_server/protocol/timeouts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/runtime_probe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/service_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/stdio_relay.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app_server/websocket.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/exec_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/goal_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/headless_turn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/mcp_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/rpc_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/schedule_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/service_catalogs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/service_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/service_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/service_thread_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/skill_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/domain_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/goal_controller.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/input.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tui/markdown_stream.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tui/theme.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/web_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/compaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/processes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_runtime/tools/mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent_setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/agent_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/automation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/event_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/execution_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/git_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/goal_extension.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/application/live_items.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/llm_configuration_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/mcp_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/session_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/settings_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/thread_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/turn_input_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/turn_projection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/turn_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/views.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/workflow_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/workflow_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/application/worktree_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/events/protocol.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/events/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/agents/external_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/code_mode/tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/command_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/env_sanitize.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/hooks/execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/permissions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/patch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/tools/shell.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/harness/windows_sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/network/safe_http.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/observability/bus.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/persistence/database.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/persistence/event_repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/platform_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/catalog_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai_responses/converters.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai_responses/parsing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/profiles.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/safe_git.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schedule/monitor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/sessions/store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/sessions/transcript.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/skills/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/skills/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/team/worktree.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/verification.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deepcode.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/e2e/web.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/scripts/build-sidecar.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/sidecar-requirements.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/sidecar-requirements.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src-tauri/src/sidecar.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/App.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/BrowserShell.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/BrowserShell.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/accessPreset.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/accessPreset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/appearance.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/appearance.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/i18n.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/liveText.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/app/liveText.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/threadEventStream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/useDesktopUi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/useWorkspaceController.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/workspaceState.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/app/workspaceState.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/automations/AutomationsPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/automations/AutomationsPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/Composer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/ModelPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/TranscriptModePicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/commands.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/commands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/execution/itemPresentation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/extensions/SkillsPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/goal/GoalRail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/inspector/ArtifactsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/inspector/ChangesPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/inspector/DetailsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/inspector/FilesPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/inspector/Inspector.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/inspector/Inspector.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/inspector/TestsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/mcp/McpPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/mcp/McpPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/navigation/DesktopSidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/navigation/SessionRow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/navigation/runtimePhaseLabel.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "desktop/src/features/navigation/runtimePhaseLabel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/plugins/PluginsPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/presets/PresetPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/settings/AppearanceSettings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/settings/ConnectionSettings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/settings/ConnectionVerification.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/settings/ModelListEditor.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/settings/ModelListEditor.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/settings/SettingsDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src/features/settings/sections/AgentModelCard.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

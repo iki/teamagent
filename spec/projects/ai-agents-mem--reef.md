@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `297af97ab0483d0e52169b364c1be70a239453e8`; commit date 2026-10-02T08:11:44Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
+<!-- teamagent-analysis:end -->

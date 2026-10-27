@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--gascity",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/gastownhall/gascity",
+  "report": "spec/projects/ai-agents--gascity.md",
+  "analyzedSha": "802b6134df87b1d7519df63ed44ad63e1570a5c5",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:44:32-07:00",
+  "observedSha": "47b36c3a0f1b09011e87cd9e1017a30d663ced45",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "47b36c3a0f1b09011e87cd9e1017a30d663ced45",
+      "date": "2026-10-24T05:22:09Z",
+      "subject": "fix(contrib): force klauspost/compress 1.18.7 into rebuilt gh and Dolt (CVE-2026-63209) (#8248)"
+    },
+    {
+      "sha": "07e3c4ca8eb753677d7a46b6caeef0fe9832f1ca",
+      "date": "2026-10-24T05:20:05Z",
+      "subject": "fix(deps): bump gc-mcp-mail aiohttp, Pillow and mcp to patched releases (#8243)"
+    },
+    {
+      "sha": "1d576f98c5e91d812ecd6e6be58e18a347a766d9",
+      "date": "2026-10-24T05:17:34Z",
+      "subject": "fix(deps): bump @modelcontextprotocol/sdk to 1.32.2 and ip-address to 10.7.4 in openclaw-bridge (#8242)"
+    },
+    {
+      "sha": "21ebe18a225ba300323440c2cb44793952b3ebb0",
+      "date": "2026-10-24T05:17:10Z",
+      "subject": "fix(deps): refresh mayor-chat lockfile for ip-address, body-parser, fast-uri and zod advisories (#8247)"
+    },
+    {
+      "sha": "f151a9287b24ec2d524d0e85231601e434c55502",
+      "date": "2026-10-24T05:13:14Z",
+      "subject": "fix(deps): override dashboard js-yaml to ^4.3.2 (#8245)"
+    },
+    {
+      "sha": "717663ea3349c021552f82cfa1c1ba472de2e93b",
+      "date": "2026-10-24T05:08:49Z",
+      "subject": "fix(beads): size CloseAll batch buffers without arithmetic on input length (#8246)"
+    },
+    {
+      "sha": "76bd2692214d43031dbd4d538b601938ca89fa56",
+      "date": "2026-10-24T05:05:42Z",
+      "subject": "fix(deps): bump dashboard vite to 7.3.7 and vitest to 4.1.12 (#8244)"
+    },
+    {
+      "sha": "ba3ed611de712d00206969c57abc41afed84d984",
+      "date": "2026-10-23T20:47:02Z",
+      "subject": "chore(complexity): refresh the generated baseline (#8236)"
+    },
+    {
+      "sha": "f8f323a707935e3a5b11dac51c336ce7a3ee615b",
+      "date": "2026-10-23T20:29:10Z",
+      "subject": "fix(hook-claim): a sibling seat of the same workflow holding the input is not a handoff (stacked on #6134) (#6475)"
+    },
+    {
+      "sha": "9110648983aba294d672a2617568c15d14243986",
+      "date": "2026-10-23T20:23:06Z",
+      "subject": "fix(acceptance): retry init once on pinned bd proxy-open stall (#8234)"
+    },
+    {
+      "sha": "648f3b5e3fc4d1ee2bf17d57a4502bec0cfd765a",
+      "date": "2026-10-23T18:29:26Z",
+      "subject": "fix(t3bridge): preserve context deadline identity across candidate failures (#8233)"
+    },
+    {
+      "sha": "ab2ff1edd17e66d3cb53320eef7af33b32fa875c",
+      "date": "2026-10-23T15:37:55Z",
+      "subject": "fix(escalate): keep alerting through an escalate.sh override that predates incident keys (#8231)"
+    },
+    {
+      "sha": "87a47634d0cebe611874df321c723bba95dcffea",
+      "date": "2026-10-23T10:26:55Z",
+      "subject": "feat(reconciler): v2 by default with a config-only legacy fallback; conditional writes default to auto (#8214)"
+    },
+    {
+      "sha": "c7bff99421712d3c51ff8993d26c45d79ea036f6",
+      "date": "2026-10-23T09:21:16Z",
+      "subject": "fix(mail): mark-read takes a list; archive marks unread mail read first (#6873)"
+    },
+    {
+      "sha": "ca17c379f6f321c70303df94f3f720361e52ad95",
+      "date": "2026-10-22T23:35:14-07:00",
+      "subject": "docs: correct wisp_ttl, exec provider, Claude option_defaults, order override and API reference claims (#8212)"
+    },
+    {
+      "sha": "2230eea0a29f08a94a1bffb2881a863f65c41651",
+      "date": "2026-10-22T23:34:51-07:00",
+      "subject": "fix(orders): order history has_output reflects recorded output; a timed-out order says it timed out (#8208)"
+    },
+    {
+      "sha": "3dc8c58967d4f2682f4c1cd63a35f44d190b1b95",
+      "date": "2026-10-22T23:26:16-07:00",
+      "subject": "fix(api): /agents reports live bounded-pool workers and no provider for the control dispatcher (#8211)"
+    },
+    {
+      "sha": "cff13efe0f6834210a3347b851ccc26d38c330ca",
+      "date": "2026-10-22T23:25:54-07:00",
+      "subject": "fix(api): /runs shows formula-v1 steps and /sessions?state=closed lists closed sessions (#8209)"
+    },
+    {
+      "sha": "aaaff91d5da3e459527eedd7483e273ed30b05bc",
+      "date": "2026-10-22T23:25:05-07:00",
+      "subject": "fix(reaper): skip the session-prune backup gate when bd prune has nothing to delete (#6284) (#8206)"
+    },
+    {
+      "sha": "feeb3300293be6bffe07c95db44ee7abd80af6cd",
+      "date": "2026-10-22T23:16:52-07:00",
+      "subject": "fix(beads): emit bead.deleted for every deleted id, so a burned run leaves the run census (#5934) (#8207)"
+    },
+    {
+      "sha": "0297e3d17cdff3b0ce0c1930f15fa11f70ffc149",
+      "date": "2026-10-23T04:03:42Z",
+      "subject": "fix(core): give the orphan-sweep order a timeout below its 5m interval (#8205)"
+    },
+    {
+      "sha": "330f8b4a0b367c012b27330c69f5b3c1fd346479",
+      "date": "2026-10-23T03:34:51Z",
+      "subject": "fix(runtime): an exec adapter's start or provision that exits 2 is a failure (#8204)"
+    },
+    {
+      "sha": "a926d04f076eafae02296f345fdc2ea93eea3690",
+      "date": "2026-10-23T03:16:53Z",
+      "subject": "test(opjournal): the X12 crash harness for shadow ops (OJ-8) (#8217)"
+    },
+    {
+      "sha": "340ed858199970dc0cf3a9dea744c1ba539cbe16",
+      "date": "2026-10-22T20:02:00Z",
+      "subject": "test(contract): isolate managed-city reachability checks (#6938)"
+    },
+    {
+      "sha": "f1324d5eac5b446ed716bcd26a5beaa88e1e419f",
+      "date": "2026-10-22T19:42:11Z",
+      "subject": "fix(session): fence advisory heals with the mutation lock (#8193)"
+    },
+    {
+      "sha": "3bd6c5e46fce77c921a4af48b2e57e7955072efb",
+      "date": "2026-10-22T12:00:12Z",
+      "subject": "feat(opjournal): deliver-now, message{when: now}, as one interrupt-then-message unit (OJ-17) (#8145)"
+    },
+    {
+      "sha": "1b0bc3b5fb1dce4a50c4248cc2f1ff1b8d93689a",
+      "date": "2026-10-22T11:02:36Z",
+      "subject": "fix(test): stabilize X2 lane-host queued receipts (#8189)"
+    },
+    {
+      "sha": "13ba4e0592fb6cd98d3adeeb51c05ac268871fb7",
+      "date": "2026-10-22T08:24:42Z",
+      "subject": "feat(session): the content_hold cell (OJ-19) (#8143)"
+    },
+    {
+      "sha": "c1429d5366054ef7530b21eeb9b18f253292cef2",
+      "date": "2026-10-22T07:07:58Z",
+      "subject": "feat(opjournal): the interrupt op kind (OJ-15) (#8139)"
+    },
+    {
+      "sha": "3b56611e7bf38d52dcba2ef46efb24b06c92c6eb",
+      "date": "2026-10-22T07:05:54Z",
+      "subject": "fix(opjournal): keep previous-build legacy respond rows readable; ACP gone is stale (#8185)"
+    },
+    {
+      "sha": "729ca22c70d012c25783249a562c68fc9fddd9ac",
+      "date": "2026-10-22T05:50:56Z",
+      "subject": "fix(doctor): stop order-outcome-healthy and pool-idle-routed-work timing out on large cities (#6839)"
+    },
+    {
+      "sha": "a98eae64c51ef141ad2e7a1d343811906a187557",
+      "date": "2026-10-22T04:54:40Z",
+      "subject": "feat(opjournal): the respond op kind, keyed by the interaction occurrence (OJ-16) (#8099)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".bazelignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bazelrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".bazelversion",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/gascity-docs/references/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/lib/beads-chain.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".githooks/lib/local-runtime.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".githooks/lib/push-suite.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/pre-commit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".githooks/pre-push",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/fresh-merge/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/go-mod-download/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/llvm-archive-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/llvm-archive-cache/locate.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/rbe-worker/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/rbe-worker/fetch.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/rbe-worker/h5.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/rbe-worker/pin",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bazel/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".github/actions/setup-bazel/fork-credential.sh",
+      "previousPath": "tools/rbe/fork-credential.sh"
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-bazel/write-bazelrc.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-gascity-macos/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-gascity-ubuntu/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/requirements/mcp-agent-mail.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/requirements/mcp-agent-mail.overrides.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/requirements/mcp-agent-mail.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/docs-render-check.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/go-mod-download-retry.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/go-mod-verify-cache.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/install-dolt-archive.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/rrc-writer-credential.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bazel-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/bazel-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bazel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-verdict-watchdog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/complexity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/container-scan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dispatch-labeled-pr-suite.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-autofix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/fork-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/govulncheck.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mac-regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ollama-acceptance-c.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-evidence-watchdog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/rbe-fork-pool.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/rbe-worker-env-canary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/rbe-worker-pool.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/rc-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/review-formulas.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scripts/runner_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scripts/test_runner_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/scripts/test_worker_report_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/scripts/worker_report_rollup.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/scripts/worker_report_stub.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/scripts/worker_report_summary.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".golangci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trivyignore.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MODULE.bazel.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TESTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bazel-gascity-bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc-write-mint/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc-write-mint/e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/acp_route_seed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/actor_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/adoption_barrier.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/adoption_barrier_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/agent_build_params.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/agent_lookup_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_backoff.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_backoff_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_backstop_lane.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_backstop_lane_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_bucket.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_bucket_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_census.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_census_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_create.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_create_named.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_create_named_prerefactor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_create_named_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_create_prerefactor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_create_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_decide.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_decide_purity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_decide_smoke_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_decide_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_demand_reads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_demand_reads_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_differential_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_health.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_health_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_index.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_index_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cmd/gc/allocator_ledger.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cmd/gc/allocator_ledger_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_observe.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_observe_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_pending_create_keep_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_plan.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_plan_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_scalecheck_lane.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_scalecheck_lane_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_seams_prerefactor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_seams_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/allocator_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_agents_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_async_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_async_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_beads_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_config_mail_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_extmsg_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_harness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_rigs_events_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_suite_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_supervisor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_waivers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_contract_workflow_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_kill_fence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_cache_reconcile_snapshot_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_conditional_writes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_event_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_pack_transaction_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_rollout_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_storage_routes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_state_wake_refusal.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/api_state_wake_refusal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/assigned_work_class_binding_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/assigned_work_hold_wake_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/assigned_work_residency.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/assigned_work_residency_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/assigned_work_scope.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/assigned_work_scope_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/autoclose_fence.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/autoclose_fence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/autoclose_sweep.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/autoclose_sweep_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_close_actor.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_close_actor_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -29,3 +29,7 @@ A threshold over already-observed cost can overshoot during concurrent or long-r
 Test two workers consuming the same remaining budget, late usage events, month boundaries, idempotent cost ingestion and cancellation failures. Expose estimate-versus-measured accounting clearly. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [models](../models.md) · [evolution](../evolution.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `2a8a99e4a5f69aa803b3f10b982f583e75a87042`; commit date 2026-10-03T12:41:22-05:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
+<!-- teamagent-analysis:end -->

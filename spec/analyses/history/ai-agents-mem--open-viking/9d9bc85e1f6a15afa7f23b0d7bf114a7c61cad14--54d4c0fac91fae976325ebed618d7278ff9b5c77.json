@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--open-viking",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/volcengine/OpenViking",
+  "report": "spec/projects/ai-agents-mem--open-viking.md",
+  "analyzedSha": "9d9bc85e1f6a15afa7f23b0d7bf114a7c61cad14",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-03T19:10:51+08:00",
+  "observedSha": "54d4c0fac91fae976325ebed618d7278ff9b5c77",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "54d4c0fac91fae976325ebed618d7278ff9b5c77",
+      "date": "2026-10-27T22:31:53+08:00",
+      "subject": "fix(pathlock): prevent path aliases from bypassing locks (#6687)"
+    },
+    {
+      "sha": "f3d408a409abd2ca31742928f1565b8a80306e88",
+      "date": "2026-10-27T21:55:58+08:00",
+      "subject": "fix(pathlock): reject Redis Tree locks spanning scopes (#6685)"
+    },
+    {
+      "sha": "15cf3ae28bed80753cf49b7613bfbcafd2e3961c",
+      "date": "2026-10-27T21:21:12+08:00",
+      "subject": "feat(ragfs): add transactional SQLite path locks (#6679)"
+    },
+    {
+      "sha": "3f85145b71a8e011df4deba1eced057b0409f147",
+      "date": "2026-10-27T20:40:25+08:00",
+      "subject": "fix(privacy): pause automatic session secret discovery (#6680)"
+    },
+    {
+      "sha": "ecd54b27c4831d6a798d25e4fad45018893f0212",
+      "date": "2026-10-27T20:30:17+08:00",
+      "subject": "perf(pathlock): batch Redis lease refresh by scope (#6665)"
+    },
+    {
+      "sha": "3901724ac4e4e3602599de34887aeea96a29bf9e",
+      "date": "2026-10-27T20:24:01+08:00",
+      "subject": "feat(encryption): support inline local root key (#6678)"
+    },
+    {
+      "sha": "d4a50718f2169948ce9d7045408c9287b4c9f781",
+      "date": "2026-10-27T19:21:09+08:00",
+      "subject": "feat(cli): add OVPack progress feedback (#6675)"
+    },
+    {
+      "sha": "e2145009cc2736df9e11b8cc8c41b479f8822169",
+      "date": "2026-10-27T19:08:09+08:00",
+      "subject": "feat(auth): support self-service user API key rotation (#6649)"
+    },
+    {
+      "sha": "b34a7dc484237e3d9b2050cd6c316e8a17cfc53b",
+      "date": "2026-10-27T18:47:29+08:00",
+      "subject": "fix(server): preserve MySQL isolation and legacy API compatibility (#6674)"
+    },
+    {
+      "sha": "e15732a8eeb6533c327ebc0e6b458af4ae69462a",
+      "date": "2026-10-27T17:35:27+08:00",
+      "subject": "fix(cli): poll task status for add-resource --wait (#6487)"
+    },
+    {
+      "sha": "db808df316cee8812c7a129329ee1d8ca59bf632",
+      "date": "2026-10-27T17:22:14+08:00",
+      "subject": "test(ci): mock models for integration tests without credentials (#6657)"
+    },
+    {
+      "sha": "f6e0ed9f48e82a715fc34fb3a7d865296dd49ab7",
+      "date": "2026-10-27T17:06:10+08:00",
+      "subject": "fix(storage): require manage for shared resource deletion (#6643)"
+    },
+    {
+      "sha": "25b5a5e5c89ab34587e38419074fb964dd7ae2a6",
+      "date": "2026-10-27T01:59:34-07:00",
+      "subject": "feat(gateway): configure session expiry in seconds (#6651)"
+    },
+    {
+      "sha": "1e7b90a41fef968f25da363c14f9fff0e4be0372",
+      "date": "2026-10-27T15:56:57+08:00",
+      "subject": "feat(dsh): support DeepSeek Harness Desktop (#6626)"
+    },
+    {
+      "sha": "9853c3319fb4027b19e72f0fbbbeec2abb2eef79",
+      "date": "2026-10-27T00:00:39-07:00",
+      "subject": "ci(maf): add trusted PyPI publishing (#6483)"
+    },
+    {
+      "sha": "f9bc07fad1b3f4fbe7e6b20bf92091e51123c897",
+      "date": "2026-10-27T14:04:46+08:00",
+      "subject": "feat(multiwrite): 多写 IOPS 优化 (#6646)"
+    },
+    {
+      "sha": "f9e55078b08876d312c763a0c82b456dfb0e444c",
+      "date": "2026-10-27T11:27:10+08:00",
+      "subject": "Fix/resource move acl 20261027 (#6641)"
+    },
+    {
+      "sha": "60e48ca4ab0bd7409e764eaab5fb1dcfd263a169",
+      "date": "2026-10-27T11:26:47+08:00",
+      "subject": "refactor(session): remove legacy path compatibility (#6642)"
+    },
+    {
+      "sha": "fb92347a09d810c787ef723b5bc6f5c038d17d1e",
+      "date": "2026-10-27T11:06:46+08:00",
+      "subject": "fix(queue): stop deduplicating the retries that run before a lease exists (#6197)"
+    },
+    {
+      "sha": "2425cf41b9120bffdc83723afc9d8473a7794407",
+      "date": "2026-10-27T10:29:06+08:00",
+      "subject": "fix(compile): 禁止 system 命名空间作为输出目录Fix/system compile to namespace (#6634)"
+    },
+    {
+      "sha": "5c066d97094d713238c483c10691d7b4e1cfbf6e",
+      "date": "2026-10-26T23:02:36+08:00",
+      "subject": "fix(storage): 修复递归删除导致 PathLock 提前失效 (#6631)"
+    },
+    {
+      "sha": "5ec33e2973364cb9a4e92ddd2233a62442134e51",
+      "date": "2026-10-26T21:47:20+08:00",
+      "subject": "ci: run Rust CLI tests before publishing (#6624)"
+    },
+    {
+      "sha": "d840333cfdd9964ca7258933053dc21d176b95d1",
+      "date": "2026-10-26T20:11:13+08:00",
+      "subject": "fix(storage): 修复中文路径的旧版锁交接恢复 (#6620)"
+    },
+    {
+      "sha": "026f1a23b8873ce9654effedf8f8eb7e3d8f319a",
+      "date": "2026-10-26T19:08:11+08:00",
+      "subject": "feat(gateway): run the standalone gateway as a multi-replica service on Redis (#6513)"
+    },
+    {
+      "sha": "07b5181d61c18d8a0c187bb7a9bc53729fca4058",
+      "date": "2026-10-26T18:41:16+08:00",
+      "subject": "fix(metrics): 复用标准 SDK 并修复长耗时统计 (#6474)"
+    },
+    {
+      "sha": "df87b21857c9023f1be30cc981a1f2f49cca49f1",
+      "date": "2026-10-26T18:08:15+08:00",
+      "subject": "feat(ragfs): gate existing data reconciliation (#6617)"
+    },
+    {
+      "sha": "c81e4e123fdc8dfa7985410611e2bde32bfa6f8e",
+      "date": "2026-10-26T02:59:37-07:00",
+      "subject": "docs: add Rules (Beta) guides and API reference (#6613)"
+    },
+    {
+      "sha": "d6271e630b04808c58905aa509df58fe63c8a506",
+      "date": "2026-10-26T17:05:06+08:00",
+      "subject": "fix(auth): reveal only the caller's own user API key in admin listings (#6610)"
+    },
+    {
+      "sha": "1f323923ab5b4a7e6051169bb452b542ef984347",
+      "date": "2026-10-26T17:01:17+08:00",
+      "subject": "docs: refresh WeChat group QR code (#6602)"
+    },
+    {
+      "sha": "22a28101089515ddef85b96617449924baef9f35",
+      "date": "2026-10-26T15:52:29+08:00",
+      "subject": "feat: add DingTalk connector OAuth auth (#6609)"
+    },
+    {
+      "sha": "c7239e819eb77f1c33525f421528f46eedb5dd9a",
+      "date": "2026-10-26T00:44:32-07:00",
+      "subject": "fix(retrieve): opt-in rerank for context mode and decouple rerank.threshold (#6605)"
+    },
+    {
+      "sha": "7993aa83ab23b6ad8b966740f5d68e488a268714",
+      "date": "2026-10-26T15:22:51+08:00",
+      "subject": "feat(rule): add rule service and expose new tool (openviking_rule_search) to agents (#6364)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/host-compat.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/build-plugin-downloads.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-marketplace-archive.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-plugin-version-bumps.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/dsh-desktop-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/generate-channels-json.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/host-compat.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/_build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/_docs-deploy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/api_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-tos.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/framework-layout.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gateway-chart.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gateway-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gateway.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/hermes-plugin-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/host-compat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/python-agent-framework-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/python-agent-framework.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-langchain-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/rust-cli.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Caddyfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MANIFEST.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/servers/shared/mcp-proxy-core.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/servers/shared/ov-http.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/skills/openviking-memory/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugins/skills/ov-resources/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/aml/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/aml/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/custom/session_contention_benchmark.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/locomo/vikingbot/run_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/README_CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/docs/en/concepts/02-agent-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/docs/en/concepts/04-openviking-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/docs/zh/concepts/02-agent-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/docs/zh/concepts/04-openviking-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_agent_loop_outcome.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_bot_provider_thinking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_bot_vlm_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_bot_vlm_streaming.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/tests/test_compile.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/tests/test_compile_readtrace.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/tests/test_direct_windows_posix.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_exec_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openapi_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_opensandbox_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openviking_api_key_type.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openviking_peer_identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/tests/test_openviking_rule_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openviking_session_retention.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/tests/test_sandbox_file_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_stream_tool_calls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_studio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_subagent_skills_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/tests/test_web_fetch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/subagent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/compile.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/filesystem.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/ov_file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/spawn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/web.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/bus/events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/bus/queue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/mochat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/openapi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/openapi_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/single_turn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/cli/commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/file_ops.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/hashing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/compile/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/common.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/finalize.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/map.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/reduce.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/shuffle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/pipeline_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/pipeline_io.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/plan.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/vikingbot/compile/readlist.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/vikingbot/compile/readtrace/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/vikingbot/compile/readtrace/sitecustomize.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/compile/renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/results.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/review.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/compile/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/skill_resources.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/sources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/config/loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/config/schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/hooks/builtins/openviking_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/openviking_mount/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/openviking_mount/ov_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/providers/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/providers/vlm_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/backends/aiosandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/backends/direct.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/backends/opensandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/managed_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/providers/feishu/channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/providers/feishu/icon.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/providers/feishu/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/workspace/TOOLS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/README_CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/base_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ov_cli/src/client/resource_wait_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/admin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/content.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/filesystem.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/pack.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/privacy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/resources.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/search.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/skills.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/snapshot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/system.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/config_wizard/store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/error_ui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/handlers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/help_ui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/openviking_assets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/tui/app.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ov_cli/tests/api_key_rotation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/tests/config_override.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ov_cli/tests/resource_wait_interrupt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs-python/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs-python/src/git.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs-python/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs-python/src/privacy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs-python/src/privacy_extractor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs/benches/pathlock_perf.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

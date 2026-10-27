@@ -29,3 +29,7 @@ These contracts do not establish durable delivery, channel authentication correc
 Test missing/invalid enablement values, per-instance configuration, secret redaction, connector reconnect and cross-workspace conversation routing. Verify disabled channels never import or start active runtimes. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [channels](../channels.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [nanobot](https://github.com/HKUDS/nanobot); analyzed commit `96ad7b4dbf617b11e0991e92c7d295dbd828a956`; commit date 2026-10-03T21:08:47+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--nanobot.md).
+<!-- teamagent-analysis:end -->

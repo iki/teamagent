@@ -1,0 +1,984 @@
+{
+  "id": "ai-query--playwright",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/microsoft/playwright",
+  "report": "spec/projects/ai-query--playwright.md",
+  "analyzedSha": "7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T07:57:47+01:00",
+  "observedSha": "a169686c61af856cd1434b4994ef9c3222ee1041",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a169686c61af856cd1434b4994ef9c3222ee1041",
+      "date": "2026-10-27T13:19:01Z",
+      "subject": "fix(locator): prevent handler deadlocks after action timeouts (#43612)"
+    },
+    {
+      "sha": "c409f8c83ec04485e829809beceb722d9cf8ff38",
+      "date": "2026-10-26T17:15:48-07:00",
+      "subject": "test: do not keep evaluate promises pending across other calls (#43656)"
+    },
+    {
+      "sha": "81a95bede21fcf716e60cf3205e73600dc71b32c",
+      "date": "2026-10-26T15:08:17-07:00",
+      "subject": "devops: triage a task without an issue, revise triage PRs from review comments (#43654)"
+    },
+    {
+      "sha": "b8336b3b7207be8af5439bf5de53252edde158cf",
+      "date": "2026-10-26T12:06:01-07:00",
+      "subject": "test(webkit): screenshot with unused font face with failed local() source (#43652)"
+    },
+    {
+      "sha": "3558cd594944db00a1c5cb2312707afa8a3ec368",
+      "date": "2026-10-26T10:31:08-07:00",
+      "subject": "devops: run all tests 2 jobs only on push and CQ1 label (#43603)"
+    },
+    {
+      "sha": "e14be57ce6162c2ef588a8e63238f1d07c470712",
+      "date": "2026-10-26T10:03:33-06:00",
+      "subject": "chore(deps): bump the github-actions group with 2 updates (#43639)"
+    },
+    {
+      "sha": "e478109de5542aa6bd69f817d6cb054523af9ce4",
+      "date": "2026-10-26T15:12:50Z",
+      "subject": "chore(deps): bump undici (#43609)"
+    },
+    {
+      "sha": "5cabe8e9ba47f73fea53533120fff7ee354af473",
+      "date": "2026-10-26T15:12:07Z",
+      "subject": "chore(deps-dev): bump electron from 42.11.3 to 42.11.16 (#43611)"
+    },
+    {
+      "sha": "0a626efef020dac9fb7228cc4f120ae640bd200a",
+      "date": "2026-10-26T15:11:23Z",
+      "subject": "chore(deps-dev): bump fast-uri from 3.1.7 to 3.1.9 (#43610)"
+    },
+    {
+      "sha": "009f8875104da500ef2c309fbba0b35ad00b7afc",
+      "date": "2026-10-26T12:48:40Z",
+      "subject": "fix(webmcp): handle Chromium tool API changes (#43578)"
+    },
+    {
+      "sha": "a2b65a057a78204d8411b068e1e28d0db23db44b",
+      "date": "2026-10-25T21:28:07Z",
+      "subject": "fix(chromium): continue requests reported while interception was disabled (#43627)"
+    },
+    {
+      "sha": "1a5b60a8305a3f762645328168300132823e58b4",
+      "date": "2026-10-25T21:18:11Z",
+      "subject": "fix(assertions): check disabled options inside labels directly (#43636)"
+    },
+    {
+      "sha": "5481776edb570f5b69124da2d4d172b5060a41dc",
+      "date": "2026-10-25T21:17:44Z",
+      "subject": "fix(mcp): preserve origin filters when modifying request headers (#43637)"
+    },
+    {
+      "sha": "7199ba40261e30c855499701c382b39ceaeebbbb",
+      "date": "2026-10-25T21:15:30Z",
+      "subject": "fix(aria): honor reflected label references (#43577)"
+    },
+    {
+      "sha": "2a1a3c9aced26fbc657dff91eb76eec8df7d52fb",
+      "date": "2026-10-25T21:06:28Z",
+      "subject": "test(chromium): wait for OOPIF paint before screenshot (#43585)"
+    },
+    {
+      "sha": "97b3fd702b0b2ae92ce9a2e9c9a962ec4c91c0ef",
+      "date": "2026-10-25T21:03:55Z",
+      "subject": "fix(chromium): disable TCP port randomization on Windows (#43605)"
+    },
+    {
+      "sha": "c14d78e9e74eafb845151b0e787961c6c1ffb6d0",
+      "date": "2026-10-25T20:36:45Z",
+      "subject": "fix(aria): preserve iframe snapshots with fallback text (#43635)"
+    },
+    {
+      "sha": "8c1b148f3d73120aa90f10119920358062fda177",
+      "date": "2026-10-25T11:26:02Z",
+      "subject": "docs(ci): align upload-artifact to v5 in CI guides (#43624)"
+    },
+    {
+      "sha": "1c9b809bc5e7ba5daba762122f1a9b6e936cd135",
+      "date": "2026-10-25T11:25:40Z",
+      "subject": "docs(ci): fix malformed Python setup step in deploy workflow (#43625)"
+    },
+    {
+      "sha": "91a765d1681cb3eeb0d0fb89fefec3cf0d21bd9b",
+      "date": "2026-10-24T10:04:31-07:00",
+      "subject": "fix(electron): enable SwiftShader fallback for WebGL (#43615)"
+    },
+    {
+      "sha": "b4695e3eb2e6736d1a7b1fd255c4e94f78553660",
+      "date": "2026-10-23T16:38:59-07:00",
+      "subject": "devops: triage labeled issues end to end, up to a draft PR (#43614)"
+    },
+    {
+      "sha": "7d001dc572b583db9e08de646ace7b1b38ffbf6c",
+      "date": "2026-10-23T16:42:54-06:00",
+      "subject": "chore(deps-dev): bump @modelcontextprotocol/sdk from 1.31.0 to 1.32.0 (#43567)"
+    },
+    {
+      "sha": "b80bcb5a873a1c497597e86da7fa86154a940b3d",
+      "date": "2026-10-23T16:28:49-06:00",
+      "subject": "feat(chromium): roll to r1252 (#43608)"
+    },
+    {
+      "sha": "de26fbad644f4b208b0319af46171325a355d208",
+      "date": "2026-10-23T14:43:40-06:00",
+      "subject": "fix(video): hide ffmpeg console windows on Windows (#43575)"
+    },
+    {
+      "sha": "15cdc4ee5dd003f0f33f1f4cc992448c15580dce",
+      "date": "2026-10-23T13:22:51-06:00",
+      "subject": "chore(deps-dev): bump electron from 42.10.0 to 42.11.3 (#43568)"
+    },
+    {
+      "sha": "b4891f1ce97fe3e1b78c942b8ae6b3dc5343b881",
+      "date": "2026-10-23T13:21:46-06:00",
+      "subject": "chore(deps-dev): bump vite from 8.1.0 to 8.1.6 (#43556)"
+    },
+    {
+      "sha": "b8f2857ed102174de8a46f0bb18a3e7beb422997",
+      "date": "2026-10-23T10:11:05-06:00",
+      "subject": "fix(html): handle user attachments named stdout and stderr (#43576)"
+    },
+    {
+      "sha": "20a2087ea43412b90c172c88faef80786ee18b8b",
+      "date": "2026-10-22T11:08:06-07:00",
+      "subject": "fix(chromium): stop remaining startup requests to Google services (#43571)"
+    },
+    {
+      "sha": "652f4b0b673b14c46d6e1141d0491f316a01a2a7",
+      "date": "2026-10-22T09:38:02-07:00",
+      "subject": "feat(chromium): roll to r1251 (#43531)"
+    },
+    {
+      "sha": "eecb129caa67c85d3ebe9411161d3d350d75312b",
+      "date": "2026-10-22T16:28:51+01:00",
+      "subject": "chore: remove onTestPaused from reporters (#43570)"
+    },
+    {
+      "sha": "ca7ca36145b84183cf423c2a099bd7e9cd8b1cb3",
+      "date": "2026-10-21T21:20:25-07:00",
+      "subject": "fix(chromium): detach page-side service worker session without resuming it (#43566)"
+    },
+    {
+      "sha": "6e2c003f16e01822c3ea45bc894c2542a6e98189",
+      "date": "2026-10-21T16:37:46-07:00",
+      "subject": "devops: run the Windows tests on the 64-core runner with 16 workers (#43565)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-dev/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-dev/vendor.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/playwright-release-notes/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/playwright-revision/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-test-results/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-triage/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": ".claude/skills/playwright-triage/bot-voice.md",
+      "previousPath": ".github/workflows/bot-voice.md"
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/playwright-triage/triage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/run-test/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/check_copilot_models.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/create_test_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/infra.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-ci-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish_extension.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish_release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/revision.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/roll_nodejs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests_bidi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests_docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests_extension.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests_mcp.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests_primary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests_secondary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests_webview_simulator.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/triage_linux.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/triage_mac.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/triage_win.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update_test_results_db.yml",
+      "previousPath": null
+    },
+    {
+      "status": "R088",
+      "path": "AGENTS.md",
+      "previousPath": "CLAUDE.md"
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/UPSTREAM_CONFIG.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/TargetRegistry.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/content/FrameTree.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/content/PageAgent.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/content/Runtime.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/content/main.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/protocol/PageHandler.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/juggler/protocol/Protocol.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/patches/bootstrap.diff",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/firefox/preferences/playwright.cfg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/webkit/UPSTREAM_CONFIG.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/webkit/embedder/Playwright/mac/AppDelegate.m",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/webkit/embedder/Playwright/win/WinMain.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browser_patches/webkit/patches/bootstrap.diff",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/actionability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api-testing-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-apirequest.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-apirequestcontext.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-apiresponse.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-browser.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-browsercontext.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-cdpsession.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-consolemessage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-credentials.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-debugger.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-disposable.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-elementhandle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-formdata.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-frame.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-jshandle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-keyboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-locator.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-locatorassertions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-logger.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-page.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-request.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-response.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-screencast.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-tracing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-weberror.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-webmcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-websocketroute.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/class-webstorage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/api/params.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/ci-intro.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/emulation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/getting-started-mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/handles.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/mobile-api/class-androiddevice.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/release-notes-csharp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/release-notes-java.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/release-notes-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/release-notes-python.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-api/class-fixtures.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-api/class-fullconfig.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-api/class-test.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-api/class-testconfig.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-api/class-testinfo.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-api/class-testoptions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-api/class-testproject.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-cli-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-global-setup-teardown-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-parallel-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporter-api/class-reporter.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporter-api/class-suite.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporter-api/class-testcase.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporter-api/class-testresult.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-reporters-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-sharding-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-timeouts-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-typescript-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/test-use-options-js.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/extension/src/ui/connect.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/ariaSnapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/clock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/domUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/injectedScript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/roleUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/storageScript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/utilityScript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/webAuthn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/injected/src/webMCP.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/isomorphic/codeFrame.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/codegen/javascript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/deviceDescriptorsSource.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/headers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/locatorParser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/locatorUtils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/mimeType.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/protocolMetainfo.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/isomorphic/secrets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/yaml.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-browser-chromium/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-browser-firefox/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-browser-webkit/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-chromium/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-client/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-client/types/types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/browsers.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/cli/driver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/android.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/browserContext.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/browserType.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/cdpSession.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/channelOwner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/channels.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/connection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/electron.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/frame.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/input.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/locator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/network.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/page.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/screencast.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/tracing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/client/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/remote/playwrightServer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/android/android.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/bidi/bidiBrowser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/bidi/bidiChromium.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/bidi/bidiFirefox.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

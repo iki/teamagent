@@ -1,0 +1,25 @@
+# learn-harness-engineering
+
+Source: [learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `38ddcd2bf8d65271f668b94e7c875ca1d629d622`; commit timestamp `2026-10-01T12:30:39+08:00`; 2,750 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/walkinglabs/learn-harness-engineering/blob/38ddcd2bf8d65271f668b94e7c875ca1d629d622/README.md)):
+
+> A project-based course on building the environment, state management, verification, and control mechanisms that make AI coding agents work reliably. Key idea:** The course gives you a framework; these breakdowns show you how the same principles actually play out in production harnesses.
+
+Build/package evidence: [package.json](https://github.com/walkinglabs/learn-harness-engineering/blob/38ddcd2bf8d65271f668b94e7c875ca1d629d622/package.json); [projects/project-01/solution/package.json](https://github.com/walkinglabs/learn-harness-engineering/blob/38ddcd2bf8d65271f668b94e7c875ca1d629d622/projects/project-01/solution/package.json); [projects/project-01/starter/package.json](https://github.com/walkinglabs/learn-harness-engineering/blob/38ddcd2bf8d65271f668b94e7c875ca1d629d622/projects/project-01/starter/package.json); [projects/project-02/solution/package.json](https://github.com/walkinglabs/learn-harness-engineering/blob/38ddcd2bf8d65271f668b94e7c875ca1d629d622/projects/project-02/solution/package.json); [projects/project-02/starter/package.json](https://github.com/walkinglabs/learn-harness-engineering/blob/38ddcd2bf8d65271f668b94e7c875ca1d629d622/projects/project-02/starter/package.json)
+
+License evidence: [LICENSE](https://github.com/walkinglabs/learn-harness-engineering/blob/38ddcd2bf8d65271f668b94e7c875ca1d629d622/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

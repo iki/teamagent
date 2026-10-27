@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-skills--admin.teamai-cli.tencent",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/Tencent/teamai-cli",
+  "report": "spec/projects/ai-agents-skills--admin.teamai-cli.tencent.md",
+  "analyzedSha": "6c5949f86e5ef9a8051d0454a8c6e3be440b2cf1",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T22:20:41+08:00",
+  "observedSha": "fb17c4885f3d45820f10c6b472099ff13a3b24ce",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "fb17c4885f3d45820f10c6b472099ff13a3b24ce",
+      "date": "2026-10-24T12:56:19+08:00",
+      "subject": "feat(score): score a finished agent session with a team scorer (#1298)"
+    },
+    {
+      "sha": "d790b2c353c687cf6b5b02895513d4b7452611c3",
+      "date": "2026-10-24T12:37:17+08:00",
+      "subject": "feat(scorers): judge workflow steps with team scorers (#1297)"
+    },
+    {
+      "sha": "4bf1082ce34312e712f09f5c71ce69555bb73b4a",
+      "date": "2026-10-24T11:23:13+08:00",
+      "subject": "fix(recall): write promoted skills in discoverable layout (#1352)"
+    },
+    {
+      "sha": "8f8532d703ebd57c5f9e59790db944cf8a48f8c5",
+      "date": "2026-10-24T11:23:01+08:00",
+      "subject": "fix(import): paginate GitLab MR commits (#1354)"
+    },
+    {
+      "sha": "f0d8a99bb4de57bf80583b5c041024e4848e77a7",
+      "date": "2026-10-24T11:22:48+08:00",
+      "subject": "feat(workflow): publish and resume workflow runs across machines (#1084) (#1280)"
+    },
+    {
+      "sha": "7bb2e27bab2b65f8d6b7dcce0663ff91dddd4e41",
+      "date": "2026-10-24T11:22:36+08:00",
+      "subject": "fix(codex): keep member hook groups at their keys and trust with the newest build (#1244, #1250) (#1263)"
+    },
+    {
+      "sha": "a890d9663429d6569c48b392fb6c7583b01336bc",
+      "date": "2026-10-23T18:22:32+02:00",
+      "subject": "fix(rules): preserve rule bodies after empty frontmatter (#1350)"
+    },
+    {
+      "sha": "a44493f6ec20e32197a1bca4c3e000be2cd6fe70",
+      "date": "2026-10-23T18:16:25+02:00",
+      "subject": "test(isolation): reject temporary directories inside Git checkouts (#1349)"
+    },
+    {
+      "sha": "1c84db37351fa9586a62e71f17cebc95f77f7852",
+      "date": "2026-10-23T18:16:13+02:00",
+      "subject": "fix(session): match CodeBuddy long project directory names (#1347)"
+    },
+    {
+      "sha": "59f2d88251bfe11921d8114f66d6cd1b683a72e4",
+      "date": "2026-10-23T18:16:01+02:00",
+      "subject": "fix(mcp): preserve Muse-saved entries during reconciliation (#1345)"
+    },
+    {
+      "sha": "6467c3d752d495ec64a50d03aff78099412ce8bb",
+      "date": "2026-10-23T23:32:46+08:00",
+      "subject": "feat(locate): rules, blocks, agents, and MCP go through locate (#1221) (#1265)"
+    },
+    {
+      "sha": "4b9e00004c37f5676ef856ee2abd3940dbfdf23f",
+      "date": "2026-10-23T22:20:15+08:00",
+      "subject": "build(deps-dev): bump handlebars from 4.7.9 to 4.7.10 (#1312)"
+    },
+    {
+      "sha": "decdf5baf73ceb957ef686291d2c2efa3af5407c",
+      "date": "2026-10-23T22:18:07+08:00",
+      "subject": "perf(ci): cut the E2E critical path by 51% and the macOS unit leg by 15% (#1283)"
+    },
+    {
+      "sha": "54622c3a8b86e23280171b1e1cda2494ef378095",
+      "date": "2026-10-23T22:10:14+08:00",
+      "subject": "fix(ai): preserve stdout errors and exit diagnostics (#1342)"
+    },
+    {
+      "sha": "da9d53ea8bfbb9a21043d55b320ad6ff8fc34f9b",
+      "date": "2026-10-23T22:10:06+08:00",
+      "subject": "test(reports): cover rejected session-start pushes (#1348)"
+    },
+    {
+      "sha": "d90056de0f53f6928fabf9671db70922bfed25ba",
+      "date": "2026-10-23T22:09:58+08:00",
+      "subject": "fix(redact): keep redaction linear on long tokens (#1299)"
+    },
+    {
+      "sha": "a56ce7126e35b91139af10f4804f56309c3cb8b0",
+      "date": "2026-10-23T22:09:52+08:00",
+      "subject": "fix(dashboard): unwrap question replies for every Codex id (#1289)"
+    },
+    {
+      "sha": "328e87c4b8d1b80743fc02df13d31e936d75a887",
+      "date": "2026-10-23T22:02:19+08:00",
+      "subject": "Merge pull request #1292 from ydflow/fix/github-pr-commit-pagination"
+    },
+    {
+      "sha": "12b80e7f50db78354cfb6d256fbc61b82b05bee4",
+      "date": "2026-10-23T14:50:53+02:00",
+      "subject": "fix(session): serialize archive publication and roll back failed saves (#1334)"
+    },
+    {
+      "sha": "d019b5bb64ef8cc3be3d205552cc9981e85bc91b",
+      "date": "2026-10-23T14:50:46+02:00",
+      "subject": "fix(doctor): detect OpenClaw bootstrap file truncation (#1332)"
+    },
+    {
+      "sha": "ebbaae5a5a850fc1a66e5af1d20a3d6ec94f1b1d",
+      "date": "2026-10-23T14:50:37+02:00",
+      "subject": "fix(hooks): deliver self-scope ZCode hooks to its HOME config (#1330)"
+    },
+    {
+      "sha": "83f6d1db22cdc21ab801556c5c3d95950d3e5e8e",
+      "date": "2026-10-23T13:33:57+02:00",
+      "subject": "fix(reports): await the late usage report in session-start pull (#1323)"
+    },
+    {
+      "sha": "6dec7c0032a2d7a0b7a75d0770398253e05c982b",
+      "date": "2026-10-23T13:33:45+02:00",
+      "subject": "fix(mcp): retain Muse ownership after inferred stdio saves (#1319)"
+    },
+    {
+      "sha": "e1a4217848e378ca457ea99e4a0dfb9aa84ad847",
+      "date": "2026-10-23T13:33:33+02:00",
+      "subject": "fix(hermes): quote managed hook script paths (#1311)"
+    },
+    {
+      "sha": "c3bf248e02e8ce5b87b22103e8d451e4ec46c3aa",
+      "date": "2026-10-23T13:33:21+02:00",
+      "subject": "fix(git-exclude): classify internal Claude instruction files (#1318)"
+    },
+    {
+      "sha": "5974448e718a078f9b9d348221119a4a392f917a",
+      "date": "2026-10-23T13:33:09+02:00",
+      "subject": "fix(session): preserve Buddy drive letters in project directories (#1315)"
+    },
+    {
+      "sha": "99d21ff35d0c0b72055b5cec82a6165c199e4397",
+      "date": "2026-10-23T13:32:56+02:00",
+      "subject": "fix(hooks): render Cursor Windows hooks for PowerShell (#1294)"
+    },
+    {
+      "sha": "6c57c3b70904d3d126ce23425827209ffd165f71",
+      "date": "2026-10-23T12:19:02+02:00",
+      "subject": "refactor(session): centralize migration results and archive ownership (#1302)"
+    },
+    {
+      "sha": "e3c6f81f1075cbc765e7a8cefcc6a83800c53927",
+      "date": "2026-10-23T12:18:49+02:00",
+      "subject": "fix(skills): isolate files blocking tool skill directories (#1310)"
+    },
+    {
+      "sha": "08c0c2e4336314b169d220964642a0734c5e7fd7",
+      "date": "2026-10-23T12:18:37+02:00",
+      "subject": "fix(dashboard): style all dropdown menus (#1296)"
+    },
+    {
+      "sha": "a6b1a9f38805257b8b9dacf5ea7c03cbb2bcf63f",
+      "date": "2026-10-23T12:18:25+02:00",
+      "subject": "fix(exec): decode captureTail streams with StringDecoder for split UTF-8 (#1313)"
+    },
+    {
+      "sha": "562a438717a378204baf19f3fa499f3270538741",
+      "date": "2026-10-23T12:18:12+02:00",
+      "subject": "fix(openclaw): launch hooks through the installed Node entry (#1307)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ast-grep-rules/ts-verbosity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/erosion-summary.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/code-erosion.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.th.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/teamai-recall.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/ci-code-erosion.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/ci-e2e-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/designs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/dashboard-unified.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/designs/dashboard-unified.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/data-directory-layout.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/designs/env-by-directory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/git-native-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/gitcode-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/management-backend.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/designs/management-backend.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/model-profiles.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/designs/model-profiles.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/multi-project-management.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/designs/session-user-repo-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/skill-serving.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/team-intelligence-platform.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/team-secrets.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/designs/team-secrets.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/designs/workspace-children.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dev/adding-a-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dev/agent-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "docs/dev/ci-code-erosion.md",
+      "previousPath": "docs/ci-code-erosion.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/dev/ci-e2e-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dev/workflow-engine.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/http-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/knowledge.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/member-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/scorers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/team-culture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/workflow-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/http-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/knowledge.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/member-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/scorers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/skill.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/team-culture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/workflow-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/guide/zh-CN/workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product-overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product-overview.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage-guide.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/windows-hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/windows-hooks.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ci/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ci/coding-ci-mr-extract.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ci/github-actions-mr-extract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/contribute-member.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/join-member.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/manage-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/setup-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/uninstall.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/share/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/references/agents/kb-doc-generator.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/references/methodology/phase0-collection.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/references/overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/references/phases/phase0-init.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/references/templates/project-overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/wiki/scripts/scan_repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-format.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-observation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-session-copy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-session-find.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-session-list.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-session-platform.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-session-subagents.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-session-tool-roots.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/agent-session-transcript.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-version.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agents.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/ai-client-openclaw.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/ai-client.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/anchors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/ast-swift-module-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/buddy-windows-cwd.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/builtin-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/builtin-rules.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/ci-extract-mr.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/claude-tool-result-images.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/claudemd.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/clone.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/coauthor-reconcile.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/code-knowledge-recall-wiki-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codebase-extract-fallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/codebase-freshness.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codebase-reconcile.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/codebuddy-ide-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/codebuddy-workbuddy-rules.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codex-legacy-rules.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/codex-team-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codex-trust.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/commands-reference.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/confidence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/config-legacy-role-migration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/config-not-initialized.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/contribute-check-e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/contribute-edge-modes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/contribute.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/copilot-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/copilot-agents.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/copilot-mcp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/cross-repo-edges.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/cursor-bubble-range.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/cursor-mdc.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/cursor-tool-roots.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/cursor-user-images.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/cursor-user-rules-hook.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-collector.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-delivery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-distribution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-http.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-report-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-resources-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-resources.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

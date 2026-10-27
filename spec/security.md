@@ -109,3 +109,31 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [skillspector](https://github.com/NVIDIA/SkillSpector) | [Report](projects/ai-security--skillspector.md) | source-reviewed |
 | [trivy](https://github.com/aquasecurity/trivy) | [Report](projects/ai-security--trivy.md) | source-reviewed |
 <!-- coverage:end -->
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [rea](analyses/unreviewed/ai-security--rea.md) ([source](https://github.com/morluto/rea)).
+<!-- analysis-additions:end -->
+
+## Media training and recovery authority
+
+The [media policy contract](media-training.md) and [runtime contract](media-runtime.md) apply before ranking and again before content upload, including voice enrollment. General/shared model improvement is distinct from the requested private clone. Unknown, stale or mismatched policy is blocked. A known training-permitted route requires the invocation's explicit `--allow-training`; backend/model overrides, stored priorities and plan JSON cannot grant it. This option never changes provider sharing settings. Scoped documentary exclusions require current account/key binding; user assertions remain assertions, and authentication alone proves no exclusion.
+
+Backend lists and plans are passive. `media diagnose` performs explicit authenticated metadata requests. Voice consent, retention, cloud egress, commercial rights and training exclusion remain separate decisions. Local inference requires trusted provisioned resources; Python socket restrictions are not an OS firewall.
+
+HeyGen mutations journal an encrypted receipt before submission. Responses preserve bounded redacted HTTP evidence and absent IDs as null. A completed artifact reference is encrypted before URL validation/download; public output discloses only a safe origin/path summary. Download recovery uses the reviewed exact HTTPS origin/path allowlist, no authorization or cookies, no redirects, bounded bytes/time, WAV integrity checks and atomic exclusive publication. It cannot synthesize again. Uncertain attempts require reconciliation; new filenames/keys do not authorize automatic retries. See the runtime contract for the narrower coverage of other adapters and expired URL recovery limits.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [rea](analyses/unreviewed/ai-security--rea.md) ([source](https://github.com/morluto/rea)).
+<!-- analysis-additions:end -->
+
+## Source refresh: 2026-10-27
+
+The [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) separates credential presence from authenticated readiness, and worktree ownership from execution isolation. Its explicit auto-approval option does not establish a safe Teamagent default. Imported repository-list headers are inert data; the owned inventory and executable updater have separate roles. Static article retention and conditional HTTP reuse preserve their own integrity checks without granting imported content execution authority. See [source maintenance](research-sync.md) and [source memory](memory-imports.md).

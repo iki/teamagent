@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--tolaria",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/refactoringhq/tolaria",
+  "report": "spec/projects/ai-agents-mem--tolaria.md",
+  "analyzedSha": "04030c3e0a23ce93f39a83d821b1b87ec03aec4e",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-26T00:28:02+02:00",
+  "observedSha": "ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f",
+      "date": "2026-10-27T15:46:31Z",
+      "subject": "fix: use Hermes third-party source tag (TOL-257)"
+    },
+    {
+      "sha": "f72a2943fcc65164d102b193136967770dd960f4",
+      "date": "2026-10-27T16:15:44+01:00",
+      "subject": "fix(mobile): render horizontal rules in editor (TOL-254)"
+    },
+    {
+      "sha": "a07526e140d3e1bb83956eef29e478010ac87974",
+      "date": "2026-10-27T15:32:06+01:00",
+      "subject": "test(codacy): pin the exclude list and prove findings outside it still fail the gate"
+    },
+    {
+      "sha": "c100aa57996ec7795eec9610041697e5951ea744",
+      "date": "2026-10-27T15:04:27+01:00",
+      "subject": "fix(codacy): match exclude globs without dynamic RegExp or fs paths"
+    },
+    {
+      "sha": "4e9a1b4ac798ba7fb46f26467a74aad54fee4a60",
+      "date": "2026-10-27T15:00:27+01:00",
+      "subject": "docs: point mobile beta at the public TestFlight invite and community talk at Discord"
+    },
+    {
+      "sha": "9d99ad637a0edafbba2a4e93a721a3e1a772aaa6",
+      "date": "2026-10-27T14:59:15+01:00",
+      "subject": "fix(site): serve the docs home at /docs/ and redeploy on workspace changes"
+    },
+    {
+      "sha": "70ef3ec74f9eb65d4d9ac19d20edebe356100200",
+      "date": "2026-10-27T14:58:12+01:00",
+      "subject": "fix(site): clear Codacy findings in the docs theme"
+    },
+    {
+      "sha": "d820a7114f984be31fdab36ab03feecec67eee8f",
+      "date": "2026-10-27T14:57:09+01:00",
+      "subject": "chore(codacy): exclude imported landing and honor .codacy.yaml exclude_paths in the local gate"
+    },
+    {
+      "sha": "7692e34906ce0da5307425c62d6b13d57eb6f9f9",
+      "date": "2026-10-27T14:33:09+01:00",
+      "subject": "docs: correct Hybrid command-palette note and mobile OTA channel details"
+    },
+    {
+      "sha": "3ba87947b114d6d73e25d74c09468df0718763da",
+      "date": "2026-10-27T14:29:21+01:00",
+      "subject": "fix(site): keep README sponsor logos at site/public/landing/sponsors"
+    },
+    {
+      "sha": "5fa43af51e078606aef0d6e88aba1cfbd94703ec",
+      "date": "2026-10-27T14:25:08+01:00",
+      "subject": "chore(site): remove verification screenshots and ad-hoc scripts committed by cloud agent"
+    },
+    {
+      "sha": "471403a19d9a3e5362bb9ebbb3b5d98336e66f24",
+      "date": "2026-10-27T13:22:58Z",
+      "subject": "chore: update landing screenshots for tolaria-landing@6387fa1"
+    },
+    {
+      "sha": "54e25a6ae500be6310f3e6db56a30385e57a2984",
+      "date": "2026-10-27T14:20:07+01:00",
+      "subject": "feat(site): update landing to tolaria-landing@6387fa1 (colorful vault types, richer mock note)"
+    },
+    {
+      "sha": "82dc1c3b9b570ead27688d6a24c8460a8726f353",
+      "date": "2026-10-27T13:17:33Z",
+      "subject": "docs: add Hybrid appearance, Skills in AI panel, mobile Alpha channel"
+    },
+    {
+      "sha": "c9ed520dc093a3175ee2e21e1a8b3e3e985fd245",
+      "date": "2026-10-27T13:09:48Z",
+      "subject": "feat(site): wire new landing and docs theme"
+    },
+    {
+      "sha": "4758caa54ffbd345a349aaf099a4a7dd15d5ddf4",
+      "date": "2026-10-27T14:06:06+01:00",
+      "subject": "feat(site): import new landing and docs theme from tolaria-landing@60c8add"
+    },
+    {
+      "sha": "bae5bdbfe7c8e34d3998b80ec49946ba8a41df28",
+      "date": "2026-10-27T11:40:51Z",
+      "subject": "fix: show settings tooltips above panel (TOL-253)"
+    },
+    {
+      "sha": "b967ffb195e4eb2a4deff8cf2ed67db0873e83ec",
+      "date": "2026-10-27T10:58:54Z",
+      "subject": "fix: wrap translated settings labels (TOL-252)"
+    },
+    {
+      "sha": "58bfb0ef0932677901796c5df189baf71120ed82",
+      "date": "2026-10-27T08:18:42Z",
+      "subject": "fix: cancel timed-out updater operation (TOL-250)"
+    },
+    {
+      "sha": "4ae8af14329379799926554eef420de6e78b5143",
+      "date": "2026-10-27T07:48:36Z",
+      "subject": "fix: bound updater checks after launch (TOL-250)"
+    },
+    {
+      "sha": "9f764c163479f71fae37195c2102d391fed3bf3f",
+      "date": "2026-10-27T02:07:37Z",
+      "subject": "fix: ignore Chunk notices in sidecar polling (TOL-249)"
+    },
+    {
+      "sha": "8eff80a80fbd17cfb11fea715c218e4ed024b095",
+      "date": "2026-10-27T01:31:30Z",
+      "subject": "fix: avoid unsafe collapsed section indexing (TOL-248)"
+    },
+    {
+      "sha": "87c828377038eab8d96f8e79232d03b4779d7007",
+      "date": "2026-10-27T01:31:30Z",
+      "subject": "refactor: centralize collapsed section bounds (TOL-248)"
+    },
+    {
+      "sha": "512da4616d5e554c8df7009175657809bb972651",
+      "date": "2026-10-27T01:19:09Z",
+      "subject": "Revert \"fix: preserve caret key repeat in WYSIWYG editor (TOL-137)\""
+    },
+    {
+      "sha": "1230da9eb3eed3ef85a12dc0d84c03dc8fbb8443",
+      "date": "2026-10-27T01:19:08Z",
+      "subject": "Revert \"fix(TOL-63): declare iOS privacy metadata\""
+    },
+    {
+      "sha": "74a6a99e9dbe791a2a7e8be413aea1caade7d92d",
+      "date": "2026-10-26T21:57:14Z",
+      "subject": "test/fix: keep the offline worker out of the sharing spec's windows (web-gates sharing flake)"
+    },
+    {
+      "sha": "898aa19d4d4702063b272c3c39366289eaaec0de",
+      "date": "2026-10-26T22:04:58+01:00",
+      "subject": "fix: stop note editor remounts on vault refresh (TOL-247)"
+    },
+    {
+      "sha": "71aad8572e5ba10db21c8c45055709cece5f58d3",
+      "date": "2026-10-26T20:00:14+01:00",
+      "subject": "test: add file-triggered TOL-75 diagnostics"
+    },
+    {
+      "sha": "b4f85fcc1498d4fc741942f83ea8bde4ea896708",
+      "date": "2026-10-26T17:28:17Z",
+      "subject": "fix: release the create button's focus while a new note opens (TOL-244 follow-up, web-gates flake)"
+    },
+    {
+      "sha": "e547dc9b24fc5562c6fcd253ac0898723c3f55c4",
+      "date": "2026-10-26T18:10:24+01:00",
+      "subject": "test(TOL-245): cover mobile wikilink round trips"
+    },
+    {
+      "sha": "e66c7652143585452fb655721e6caa5bfc2eda46",
+      "date": "2026-10-26T16:53:10+01:00",
+      "subject": "docs(agents): plain Linear comments, proof before push, full-CI gate"
+    },
+    {
+      "sha": "d53611b2cd06feca45fb660b91f5db5e62053c20",
+      "date": "2026-10-26T15:02:14Z",
+      "subject": "test: cover emoji-led markdown bullet import (TOL-1)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".chunk/run-playwright-shards.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".chunk/run-playwright-smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".chunk/run-sidecar-gates-local.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".chunk/test-sidecar-status-poll.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".circleci/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".circleci/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codacy.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codacy/cli-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codacy/tools-configs/eslint.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codacy/tools-configs/languages-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codacy/tools-configs/pylint.rc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codacy/tools-configs/ruleset.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codescene-thresholds",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/HOOKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-build-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-stable.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".husky/pre-commit",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".husky/pre-push",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".verity/standard.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "VERITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/app.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/app.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/diagram-renderer.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/icon-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/icon-light.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/1f7230f5833098edcfb9da64435d7baab94585a1118e482f561dc5ca91b54bed.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/28073b1e880ef4204a75c0ec76fa7a932ea84bb6e67c4713ee496fcf9511bddd.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/36d117e8860874a488c9a324f2f38129fa5e540125bb00387ca35eebde67fd9b.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/3c26f471a51fb3819858bbbacb18394092bbb3ad454cfac5f578a52c99c50163.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/41c60644a692ff6ea4ee39d85f38b13cdcfd278e1074cd19c3e4da233afe0f80.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/43383433d3f3bbc5e5b6f724f9c614eda4811b4d2590230917b09e8be4610573.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/56d6fca59555bcb88614148498e191d32c9ace1ce7f885deb8e2ff2644da4c06.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/7bd6025fce46d008a8879c77e5ee303b7191dc88d4acabf7c0199c3ae19e3a0e.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/94267e449a709d439d6fc832ee354f4f276c00a3e3b1e8f3c5554e665698023d.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/9bebdc40b64df21a27ce9b58517b13fe9e5d1738acaefcf0eec6a3c657f20097.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/a3d20f74b79f0d32c0d81eff7d5b73983f34a0cdc8afe9820dd1ccbddef1630a.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/a459706b90604d2f4d4454b910d8e5383e5f8d06f460b8b90f083ed5ed97b5a2.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/ac289334d8b2f282f01c5a18b6cd6d52170f58805c31addb14801585f72422b6.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/b6ca79150c47e4a981688297e5a65bab96c5d7bbc92fc219e91b17d5f1623334.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/ba81bfd8615994f9a50a5a55250a456ab1b1dfe3fdda4130e0d6463902c3172f.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/d9fb582979984e60050fedd28022fd1fbbc46f3624a449ccdad2ce48a8b04ddc.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/df0e56946fad560ff8c1b14f19f72605cc3a0bea9429431e445ae0965a4daab5.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/e7f781b85864874edba48db17adc089803f4f1de20661491c25d748439e6dd2b.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/images/f1dfc77cfa38a37b1ee08e100021df769592d0cc89ad179e1941cadd256fce96.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/assets/starter-vault/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/babel.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/components.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/fingerprint.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/global.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/metro.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/Package.resolved",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/Package.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/expo-module.config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/NativeCrashCache.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/NativeCrashConsent.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/NativeCrashContext.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/NativeCrashFrames.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/NativeCrashOptions.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/NativeCrashPrivacy.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/NativeCrashReporter.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/PrivacyInfo.xcprivacy",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/TolariaCrashReporting.podspec",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/ios/TolariaCrashReportingModule.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/tests/NativeCrashCacheTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-crash-reporting/tests/NativeCrashPrivacyTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-key-commands/expo-module.config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-key-commands/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-key-commands/ios/TolariaKeyCommands.podspec",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-key-commands/ios/TolariaKeyCommandsModule.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-key-commands/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/Package.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/expo-module.config.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/CoordinatedWorkspaceFile.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedConflictNativeProof.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedConflictPlan.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedConflictPublication.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedConflictReview.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedWorkspaceBackgroundProof.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedWorkspacePlan.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedWorkspaceSession.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedWorkspaceStore.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/LinkedWorkspaceTree.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/ManagedWorkspaceImport.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/ManagedWorkspacePath.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/ManagedWorkspaceText.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/TolariaWorkspaceAccess.podspec",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/TolariaWorkspaceAccessModule.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceBackgroundLease.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceBookmarkStore.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceEntryFingerprint.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceEntryNativeProof.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceEntryRecovery.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceFileIndex.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceFileNativeProof.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceFileSafety.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceGitMetadata.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceMutationCoordination.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceTextRecord.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceTextRecovery.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/ios/WorkspaceTextRecoveryNativeProof.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/CoordinatedWorkspaceFileTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/LinkedConflictRetentionTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/LinkedConflictTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/LinkedWorkspaceFixture.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/LinkedWorkspacePlanTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/LinkedWorkspaceSafetyTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/LinkedWorkspaceSyncTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/ManagedWorkspaceImportTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/ManagedWorkspaceTextTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceBackgroundLeaseTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceBookmarkTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceEntryRecoverySafetyTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceEntryRecoveryTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceEntryRetryTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceFileIndexTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceFileSafetyTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceGitMetadataTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceTextBatchTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceTextRecoverySafetyTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceTextRecoveryTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/modules/tolaria-workspace-access/tests/WorkspaceTextRetryTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileAccessibilityAuditTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileBottomEdgeTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileCloneProgressTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileCreateNoteButtonTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileCreatedNoteFocusTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileDefaultNoteTypeTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileDiagramPreviewTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileEditorFocusTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileEditorResumeTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileFilePreviewTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileFilenameHeaderTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileFormKeyboardTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileFormattingKeyboardTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileInlineFilenameTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileInspectorContextTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileLargeVaultReadOnlyTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileModalEscapeTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileMountedRefreshTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileNavigationStateTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileNeighborhoodNavigationTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileOfflineImageTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobileOtaUpdateTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobilePanelNavigationTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobilePendingCatalogTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/native-ui-tests/MobilePendingSyncPillTests.swift",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

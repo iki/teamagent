@@ -1,0 +1,959 @@
+{
+  "id": "ai-spec--openspec",
+  "generatedAt": "2026-10-24T06:36:54.441Z",
+  "observedAt": "2026-10-24T06:36:43.1574360+00:00",
+  "source": "https://github.com/Fission-AI/OpenSpec",
+  "report": "spec/projects/ai-spec--openspec.md",
+  "analyzedSha": "2500d6da971336167548b53731a35b2127df35ac",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-02T17:34:46Z",
+  "observedSha": "6d04a1b58dedc95729d34e4f223d9d483aae210a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "6d04a1b58dedc95729d34e4f223d9d483aae210a",
+      "date": "2026-10-24T03:51:03Z",
+      "subject": "fix(website): use the OpenSpec pixel-O favicon on the docs site (#2142)"
+    },
+    {
+      "sha": "8e0288df12d401b0e183e2f47254d22528c1dffb",
+      "date": "2026-10-24T00:42:20Z",
+      "subject": "Version Packages (#2136)"
+    },
+    {
+      "sha": "31c6d1c43468754332d1ab16de6dff1e1e92419c",
+      "date": "2026-10-24T00:22:53Z",
+      "subject": "feat(cli): ship standalone binaries for installs without Node.js (#2137)"
+    },
+    {
+      "sha": "56ef0ac1fd2270e88d276b40da9f23ec0f9c6e96",
+      "date": "2026-10-23T00:51:12Z",
+      "subject": "fix(security): bump next to 16.4.2 in the website (#2140)"
+    },
+    {
+      "sha": "1cecb72258b7395d82709d3c126bfdeb41bfec80",
+      "date": "2026-10-23T00:51:10Z",
+      "subject": "fix(security): patch vitest, vite and launch-editor dev tooling (#2141)"
+    },
+    {
+      "sha": "c2304240c5b671d86eb6756743ab921fe20270e1",
+      "date": "2026-10-22T21:12:21Z",
+      "subject": "feat(update): add --dry-run to report what an update would change (#2109)"
+    },
+    {
+      "sha": "6b15619931472f4b6bf9c91cafd4c76bd72d72b5",
+      "date": "2026-10-22T21:04:25Z",
+      "subject": "fix(verify): match REMOVED baselines by exact normalized name (#2114)"
+    },
+    {
+      "sha": "15b3b50f15dc7210b2ae6189b5d76f74fd528b0f",
+      "date": "2026-10-22T21:04:19Z",
+      "subject": "perf(cli): load ora only when a spinner is shown (#2116)"
+    },
+    {
+      "sha": "832e2cf836b8c8cdefa2f5e500145bd55323ea06",
+      "date": "2026-10-22T21:04:14Z",
+      "subject": "fix(new-change): name the configured schema in the progress line (#2120)"
+    },
+    {
+      "sha": "264afd80edfea130d490c7cd06d80cfdcf975254",
+      "date": "2026-10-22T21:03:56Z",
+      "subject": "ci: bump the github-actions group with 3 updates (#2121)"
+    },
+    {
+      "sha": "d2490453a81bf5dc3693cb8728f8eb16ba7056dc",
+      "date": "2026-10-22T21:03:37Z",
+      "subject": "chore(deps): bump the website-dependencies group (#2124)"
+    },
+    {
+      "sha": "5cec33feb4a43ef9e8d5393e305125fd1b7f1b0f",
+      "date": "2026-10-22T21:03:31Z",
+      "subject": "chore(deps): bump zod, smol-toml and typescript-eslint (#2125)"
+    },
+    {
+      "sha": "c04f30e57817422c1a107ea00a682c1d29a423ca",
+      "date": "2026-10-20T18:16:54Z",
+      "subject": "docs(changelog): stop presenting symlinks as supported (#2135)"
+    },
+    {
+      "sha": "f988c526edfe9748ced5d18512976974ac10e089",
+      "date": "2026-10-20T18:16:47Z",
+      "subject": "docs(contributing): require an approved issue before every PR (#2044)"
+    },
+    {
+      "sha": "c794978f4f8845ce59693373c9dd882ee776588c",
+      "date": "2026-10-17T01:43:43Z",
+      "subject": "Version Packages (#2112)"
+    },
+    {
+      "sha": "e33245d22ba6f994596a1747baf17130fe04515d",
+      "date": "2026-10-17T00:35:10Z",
+      "subject": "fix(security): replace fast-glob with tinyglobby to drop braces (#2103)"
+    },
+    {
+      "sha": "c9a8adef5021e9793ed9e104f65834fce0fb16cb",
+      "date": "2026-10-17T00:30:30Z",
+      "subject": "fix(website): preview the built site without a server dependency (#2110)"
+    },
+    {
+      "sha": "5251f2ef5e9e83eac68dd6950091928c4324b127",
+      "date": "2026-10-17T00:30:25Z",
+      "subject": "fix(validate): stop the spinner flooding a zero-width TTY (#2108)"
+    },
+    {
+      "sha": "276d015090965791d8be3d02daf6bfd71de884c3",
+      "date": "2026-10-17T00:30:16Z",
+      "subject": "fix(workflows): keep glob artifact paths inside the change directory (#2104)"
+    },
+    {
+      "sha": "87a69a2bf8eb3315a8c042d001520eb7766ab580",
+      "date": "2026-10-17T00:30:13Z",
+      "subject": "fix(specs): accept a spec.md symlink to a file elsewhere in the project (#2101)"
+    },
+    {
+      "sha": "f80d860fc510ba4f51180c8ddde35b91b32de657",
+      "date": "2026-10-15T00:04:13Z",
+      "subject": "Version Packages (#2093)"
+    },
+    {
+      "sha": "e0a2f00f95731af7cf22a30c2c4a8b7ff910b509",
+      "date": "2026-10-14T23:27:55Z",
+      "subject": "fix(metadata): stop reporting x- extension keys in .openspec.yaml as unknown (#2063)"
+    },
+    {
+      "sha": "4c56264b79635ffef2d5a403a14337013dc7e710",
+      "date": "2026-10-14T23:03:51Z",
+      "subject": "docs(community): add OpenSpec Review and OpenSpec Compact on SkillGild (#2094)"
+    },
+    {
+      "sha": "3fea2a96b2e04e01097f4617573734c47a57589b",
+      "date": "2026-10-14T22:37:04Z",
+      "subject": "fix(workflows): check removed requirements against their baseline, unblock the glob new-file flow (#2083)"
+    },
+    {
+      "sha": "4e490dfac34c924982efd283527c68d0f8b3b7f3",
+      "date": "2026-10-14T22:31:14Z",
+      "subject": "docs(community): add Entalpa (#2081)"
+    },
+    {
+      "sha": "7acf282050c0b2a27bd18f30c48fbcc0986bfc45",
+      "date": "2026-10-14T22:16:44Z",
+      "subject": "fix(artifact-graph): reject brace nesting deeper than 16 levels (#2061)"
+    },
+    {
+      "sha": "9ce48081afa6865757e555ab6f4e023f57c83f14",
+      "date": "2026-10-14T21:55:37Z",
+      "subject": "fix(security): override compression in the website to clear GHSA-vc2v-76pw-4v95 (#2096)"
+    },
+    {
+      "sha": "7701149db3cf4086f617968894e2801c5ab3fd12",
+      "date": "2026-10-14T20:45:07Z",
+      "subject": "chore(deps-dev): bump the development-dependencies group with 2 updates (#2072)"
+    },
+    {
+      "sha": "9cb5ba8cec4bc47227dcac4974a74b4adf1819f6",
+      "date": "2026-10-14T20:03:49Z",
+      "subject": "fix(explore): scope the capture table to the default schema (#2086)"
+    },
+    {
+      "sha": "40db61856a5e9ed4db3c871b97386b7c0610d41d",
+      "date": "2026-10-14T20:01:27Z",
+      "subject": "fix(security): override shell-quote to clear critical advisory (#2085)"
+    },
+    {
+      "sha": "1bce87f858c2591b2cb58108597ae6f0a9bb5d7c",
+      "date": "2026-10-14T19:31:03Z",
+      "subject": "fix(archive): warn when a delta holds text archive will not carry (#2054)"
+    },
+    {
+      "sha": "d9c703ab386b69d921597d8b03e5a590bf077846",
+      "date": "2026-10-14T19:13:12Z",
+      "subject": "docs(community): mention MySpec MCP server and Claude Code plugins (#2035)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/release-openspec/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/lazy-cli-commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/requirement-length-strict.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/view-current-work-only.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/binaries.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-prepare.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/reference/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/reference/configuration/change-metadata.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/reference/schemas/schema-yaml.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/reference/schemas/spec-driven/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs-lab/start/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/community.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/customization.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "install.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openspec/changes/fix-validate-view-resolution-parity/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openspec/specs/artifact-graph/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openspec/specs/cli-archive/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openspec/specs/opsx-verify-skill/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openspec/specs/schema-resolution/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openspec/specs/telemetry/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-workspace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "schemas/spec-driven/schema.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/binary/build.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/binary/e2e.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/binary/entry.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/binary/install-check.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/binary/install.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/binary/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/binary/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/openspec-continue-change/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/openspec-explore/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/openspec-ff-change/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/openspec-propose/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/openspec-update-change/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/openspec-verify-change/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/change.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/completion.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/feedback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/commands/install-standalone.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/validate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/workflow/instructions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/workflow/new-change.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/workflow/status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/workflow/templates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/archive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/artifact-graph/outputs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/artifact-graph/resolver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/available-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/completion-tip.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/completions/command-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/completions/completion-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/config-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/file-view.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/github-copilot/cloud-agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/global-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/legacy-cleanup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/migration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/parsers/requirement-blocks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/profile-sync-drift.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/shared-skill-target.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/shared/tool-detection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/specs-apply.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/standalone-tip.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/templates/workflows/continue-change.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/templates/workflows/explore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/templates/workflows/ff-change.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/templates/workflows/propose.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/templates/workflows/update-change.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/templates/workflows/verify-change.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/update-plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/update.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/validation/validator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/version-check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/change-metadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/utils/executable-path.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/file-system.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/interactive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/utils/spec-discovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/utils/spec-path-containment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/binary-installer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/cli-e2e/basic.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/cli-e2e/spec-symlink-into-project.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/cli-e2e/startup-modules.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/cli-e2e/store-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/cli-e2e/update-dry-run.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/commands/feedback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/commands/install-standalone.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/commands/schema.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/commands/workset.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/archive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/artifact-graph/outputs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/artifact-graph/resolver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/cli-is-json-run.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/commands/spec-command.security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/completion-tip.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/completions/generators/zsh-generator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/config-schema.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/core/parsers/unapplied-content.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/shared-skill-target.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/core/specs-apply.project-linked-spec.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/specs-apply.security.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/core/standalone-tip.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/task-checkboxes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/core/templates/glob-path-bounding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/templates/propose.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/templates/skill-templates-parity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/templates/update-change.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/templates/verify-change-delta-operations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/templates/verify-change.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/core/update-dry-run.property.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/core/update-dry-run.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/validation.archive-preflight.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/validation.unknown-metadata-keys.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core/version-check.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/explore-docs-claims.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/run-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/pnpm-workspace-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/utils/change-metadata.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/utils/interactive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/utils/spec-discovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/utils/spec-path-containment.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/website-preview.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "website/app/apple-icon.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "website/app/icon.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "website/app/icon1.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "website/app/icon2.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/pnpm-workspace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "website/scripts/preview.mjs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

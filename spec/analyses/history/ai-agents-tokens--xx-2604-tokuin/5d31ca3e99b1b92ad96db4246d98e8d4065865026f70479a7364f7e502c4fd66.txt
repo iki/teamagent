@@ -1,0 +1,25 @@
+# xx-2604-tokuin
+
+Source: [xx-2604-tokuin](https://github.com/nooscraft/tokuin) · Category: [ai-agents-tokens](../categories/ai-agents-tokens.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `046ae29dd23fc630bdfe29b35255e0643e09c169`; commit timestamp `2026-04-21T13:14:03+05:30`; 96 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/nooscraft/tokuin/blob/046ae29dd23fc630bdfe29b35255e0643e09c169/README.md)):
+
+> A fast, CLI tool to **estimate token usage**, **control API costs**, and **compress prompts** for LLM providers. Built in Rust for performance, portability, and safety. - **Prompt Compression** — Reduce prompt tokens by 70-90% using the Hieratic format
+
+Build/package evidence: [Cargo.toml](https://github.com/nooscraft/tokuin/blob/046ae29dd23fc630bdfe29b35255e0643e09c169/Cargo.toml); [tests/compression_benchmark/pyproject.toml](https://github.com/nooscraft/tokuin/blob/046ae29dd23fc630bdfe29b35255e0643e09c169/tests/compression_benchmark/pyproject.toml); [tests/compression_benchmark/requirements.txt](https://github.com/nooscraft/tokuin/blob/046ae29dd23fc630bdfe29b35255e0643e09c169/tests/compression_benchmark/requirements.txt)
+
+License evidence: [LICENSE-APACHE](https://github.com/nooscraft/tokuin/blob/046ae29dd23fc630bdfe29b35255e0643e09c169/LICENSE-APACHE); [LICENSE-MIT](https://github.com/nooscraft/tokuin/blob/046ae29dd23fc630bdfe29b35255e0643e09c169/LICENSE-MIT) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-tokens**. Its category places it in the candidate set for models, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [models](../models.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

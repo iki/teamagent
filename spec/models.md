@@ -100,6 +100,10 @@ The first release should demonstrate one local server, one provider API, and one
 
 Execution boundaries belong in [security](security.md); asynchronous media providers in [generation](generation.md); adapter and skill promotion in [evolution](evolution.md).
 
+## October source refresh: routing remains a measured choice
+
+The current [Pi/Jev example](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) still uses a 0.5 complexity cutoff and switches after the first successful edit. The source refresh supplies no new calibration or entitlement evidence. Keep provider availability, account authorization, selected model, context revision and routing reason in separate records; evaluate re-escalation and cache-miss cost before adopting this heuristic.
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -317,3 +321,31 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [qmd](https://github.com/tobi/qmd) | [Report](projects/ai-query--qmd.md) | source-reviewed |
 | [rag-anything](https://github.com/HKUDS/RAG-Anything) | [Report](projects/ai-query--rag-anything.md) | source-reviewed |
 <!-- coverage:end -->
+
+
+## Source refresh: 2026-10-27 — readiness evidence and provider jobs
+
+The [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) demonstrates why credential presence, authenticated identity, model access and account data policy need separate fields: its inspected helper can report authentication from an environment value alone. Passive catalogs must disclose the evidence level; an explicit diagnostic may verify only the capabilities its actual request exercised. Neither subscription presence nor an API key establishes training exclusion.
+
+The [Pi refresh](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) preserves a deferred response handle when a poll is interrupted, while ordinary request retry and clean-close behavior remain distinct. Model routing should retain provider/model identity, attempt policy and recoverable job identity rather than silently resubmit work. The [Paseo refresh](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) also distinguishes provider-specific background-work evidence from a baseline-only fallback. None of these source reviews changes Teamagent's media training gate, free/paid model choice or prohibition on blindly retrying ambiguous provider actions.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [claude-code](analyses/unreviewed/ai-agents--claude-code.md) ([source](https://github.com/anthropics/claude-code)).
+- [hanzo-cli](analyses/unreviewed/ai-agents--hanzo-cli.md) ([source](https://github.com/hanzoai/cli)).
+- [hanzo-dev](analyses/unreviewed/ai-agents--hanzo-dev.md) ([source](https://github.com/hanzoai/dev)).
+- [hanzo-hips](analyses/unreviewed/ai-agents--hanzo-hips.md) ([source](https://github.com/hanzoai/hips)).
+- [hanzo-sdk](analyses/unreviewed/ai-agents--hanzo-sdk.md) ([source](https://github.com/hanzoai/sdk)).
+- [hanzo-sdk-ts](analyses/unreviewed/ai-agents--hanzo-sdk-ts.md) ([source](https://github.com/hanzoai/js-sdk)).
+- [harness2](analyses/unreviewed/ai-agents--harness2.md) ([source](https://github.com/google-research/harness2)).
+- [murage](analyses/unreviewed/ai-agents--murage.md) ([source](https://github.com/ferroxlabs/murage)).
+- [openrig](analyses/unreviewed/ai-agents--openrig.md) ([source](https://github.com/mvschwarz/openrig)).
+- [trellis](analyses/unreviewed/ai-agents--trellis.md) ([source](https://github.com/mindfold-ai/trellis)).
+- [yoagent](analyses/unreviewed/ai-agents--yoagent.md) ([source](https://github.com/yologdev/yoagent)).
+- [jantt](analyses/unreviewed/ai-gen--jantt.md) ([source](https://github.com/ahmadhassan-bted/jantt)).
+- [deepinfer](analyses/unreviewed/ai-model-run--deepinfer.md) ([source](https://github.com/deepseek-ai/deepinfer)).
+- [hanzo-engine](analyses/unreviewed/ai-model-run--hanzo-engine.md) ([source](https://github.com/hanzoai/engine)).
+<!-- analysis-additions:end -->

@@ -1,0 +1,834 @@
+{
+  "id": "ai-skills--bundle.pskoett",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/pskoett/pskoett-ai-skills",
+  "report": "spec/projects/ai-skills--bundle.pskoett.md",
+  "analyzedSha": "92a21ceb0c9e97ea9b4783de6c1955f40960aae6",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T11:05:22+02:00",
+  "observedSha": "878b0e48bca74849c6219815882e75e60cfa2b72",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "878b0e48bca74849c6219815882e75e60cfa2b72",
+      "date": "2026-10-27T16:30:12Z",
+      "subject": "Bump plugin bundles to 2.8.1"
+    },
+    {
+      "sha": "9694f305daa1681c7f3b430d7576837608c64cd5",
+      "date": "2026-10-27T14:44:46Z",
+      "subject": "docs(learnings): record PR review tooling recoveries"
+    },
+    {
+      "sha": "3fa08b8cb928741f48526b4c0d1aa430bee950a6",
+      "date": "2026-10-27T14:44:45Z",
+      "subject": "docs(verify-gate): add Playwright verification reference"
+    },
+    {
+      "sha": "0c4b550ad357b28a204e05d3901d20dd083d1764",
+      "date": "2026-10-27T15:38:08+01:00",
+      "subject": "docs(verify-gate): add agent-qa evidence reference (#12)"
+    },
+    {
+      "sha": "8158b12d2ecc603ddac5226a8e659ca165365f50",
+      "date": "2026-10-25T18:49:53Z",
+      "subject": "Remove plugin agent presets and bump to 2.8.0"
+    },
+    {
+      "sha": "47dc16a191d10c35a9c71203a65bb00752c79f94",
+      "date": "2026-10-19T11:21:51Z",
+      "subject": "Keep thread relevance README focused on usage"
+    },
+    {
+      "sha": "dd6f48a50fa20941305c2eba40af2cecb5b97593",
+      "date": "2026-10-19T09:55:55Z",
+      "subject": "Add Amp thread relevance plugin source and installation guide"
+    },
+    {
+      "sha": "e4d598ccdd1d5867d05b14d949a9136868ad37c3",
+      "date": "2026-10-18T11:16:44Z",
+      "subject": "Fix plugin generation ownership and validate native package roots"
+    },
+    {
+      "sha": "660ea250496983e0fce4296a867e507d925c2e43",
+      "date": "2026-10-18T09:40:33Z",
+      "subject": "Add native Amp reminder plugin source and installation guide"
+    },
+    {
+      "sha": "314b029068a79bd98168afa10f7cdb11d94e1e2d",
+      "date": "2026-10-17T20:16:24Z",
+      "subject": "Record non-CI scope for personal Amp skills"
+    },
+    {
+      "sha": "f1b06e965e40809e4240d24daa29736d0ff12ebc",
+      "date": "2026-10-17T20:14:53Z",
+      "subject": "Bump plugin bundles to 2.7.1"
+    },
+    {
+      "sha": "8575ebcef4cff08212f040951b4f21ff1b1def5e",
+      "date": "2026-10-17T20:09:56Z",
+      "subject": "Correct self-improvement setup and agent-specific failure hooks"
+    },
+    {
+      "sha": "1e343e460b9e8aa2f7a414e61ae6e518d7efd8f4",
+      "date": "2026-10-17T19:49:23Z",
+      "subject": "Sync local self-improvement skill with canonical source"
+    },
+    {
+      "sha": "d86390bdcb9d9e546822df5fe2d7dfdff139d9e3",
+      "date": "2026-10-17T19:48:27Z",
+      "subject": "Remove OpenClaw integration from self-improvement"
+    },
+    {
+      "sha": "6c9c55fd526a3151bf5e94bdbc0e83db43d630b8",
+      "date": "2026-10-17T16:05:57Z",
+      "subject": "Add session-context to the skill pipeline"
+    },
+    {
+      "sha": "b092ea6286213f8bca9247e6bbb6b96571198c57",
+      "date": "2026-10-17T07:46:59Z",
+      "subject": "docs: rewrite README prose with ghost writing guidance"
+    },
+    {
+      "sha": "5a836dc7163da6799fe34ed4283da6d7f0358f14",
+      "date": "2026-10-05T10:33:40Z",
+      "subject": "Clarify ownership handoffs and downstream context revalidation"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/context-surfing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/context-surfing/scripts/handoff-checker.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/intent-framed-agent/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/plan-interview/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/self-improvement/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/self-improvement/assets/LEARNINGS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/self-improvement/assets/claude-hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/self-improvement/references/amp-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/self-improvement/references/context-maintenance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/self-improvement/references/examples.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/self-improvement/references/hooks-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/self-improvement/references/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".agents/skills/self-improvement/references/openclaw-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/self-improvement/scripts/error-detector.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/simplify-and-harden/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/simplify-and-harden/references/agent-context-snippets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/copilot-instructions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".learnings/HEALS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".learnings/LEARNINGS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/context-decay/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/context-decay/references/examples.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/context-surfing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/eval-creator-ci/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/eval-creator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/intent-framed-agent/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/learning-aggregator-ci/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/learning-aggregator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/pre-flight-check/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/self-healing/references/hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/self-improvement/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugin/skills/self-improvement/assets/claude-hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-plugin/skills/self-improvement/hooks/openclaw/HOOK.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-plugin/skills/self-improvement/hooks/openclaw/handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugin/skills/self-improvement/references/amp-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/self-improvement/references/hooks-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugin/skills/self-improvement/references/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "agent-plugin/skills/self-improvement/references/openclaw-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/self-improvement/scripts/error-detector.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugin/skills/session-context/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/simplify-and-harden/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/simplify-and-harden/references/agent-context-snippets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/skill-pipeline/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/skill-pipeline/references/classification-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/skill-pipeline/references/handoff-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/skill-pipeline/references/pipeline-variants.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugin/skills/verify-gate/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugin/skills/verify-gate/references/agent-qa.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugin/skills/verify-gate/references/playwright.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/self-improvement.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/thread-relevance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/thread-relevance/audience.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/thread-relevance/export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/thread-relevance/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/thread-relevance/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "amp-plugin/thread-relevance/search.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/.copilot-plugin/agents/context-monitor.agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/.copilot-plugin/agents/harden-auditor.agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/.copilot-plugin/agents/harness-updater.agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/.copilot-plugin/agents/self-improvement-logger.agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/.copilot-plugin/agents/simplify-auditor.agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/.copilot-plugin/agents/spec-auditor.agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/.copilot-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/agents/context-monitor.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/agents/harden-auditor.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/agents/harness-updater.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/agents/self-improvement-logger.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/agents/simplify-auditor.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/agents/spec-auditor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/context-decay/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/context-decay/references/examples.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/context-surfing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/eval-creator-ci/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/eval-creator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/intent-framed-agent/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/learning-aggregator-ci/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/learning-aggregator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/pre-flight-check/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/self-healing/references/hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/self-improvement/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugin/skills/self-improvement/assets/claude-hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugin/skills/self-improvement/references/amp-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/self-improvement/references/hooks-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugin/skills/self-improvement/references/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "plugin/skills/self-improvement/references/openclaw-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/self-improvement/scripts/error-detector.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugin/skills/session-context/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/simplify-and-harden/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/simplify-and-harden/references/agent-context-snippets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/skill-pipeline/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/skill-pipeline/references/classification-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/skill-pipeline/references/handoff-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/skill-pipeline/references/pipeline-variants.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/verify-gate/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugin/skills/verify-gate/references/agent-qa.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugin/skills/verify-gate/references/playwright.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/skill-distributions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/sync-plugin.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/sync_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/test-self-improvement-hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/test-sync-plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/test-validate-plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate-agent-plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate-plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/context-decay/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/context-decay/references/examples.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/context-surfing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/eval-creator-ci/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/eval-creator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/intent-framed-agent/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/learning-aggregator-ci/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/learning-aggregator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/pre-flight-check/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/self-healing/references/hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/self-improvement/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/self-improvement/assets/claude-hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "skills/self-improvement/hooks/openclaw/HOOK.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "skills/self-improvement/hooks/openclaw/handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/self-improvement/references/amp-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/self-improvement/references/hooks-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/self-improvement/references/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "skills/self-improvement/references/openclaw-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/self-improvement/scripts/error-detector.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/session-context/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/simplify-and-harden/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/simplify-and-harden/references/agent-context-snippets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/skill-pipeline/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/skill-pipeline/evals/evals.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/skill-pipeline/references/classification-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/skill-pipeline/references/handoff-matrix.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/skill-pipeline/references/pipeline-variants.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/verify-gate/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/verify-gate/references/agent-qa.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/verify-gate/references/playwright.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

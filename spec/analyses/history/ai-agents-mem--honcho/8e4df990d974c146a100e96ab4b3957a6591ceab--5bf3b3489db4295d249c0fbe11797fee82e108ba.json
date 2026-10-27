@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--honcho",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/plastic-labs/honcho",
+  "report": "spec/projects/ai-agents-mem--honcho.md",
+  "analyzedSha": "8e4df990d974c146a100e96ab4b3957a6591ceab",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T17:21:22-04:00",
+  "observedSha": "5bf3b3489db4295d249c0fbe11797fee82e108ba",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5bf3b3489db4295d249c0fbe11797fee82e108ba",
+      "date": "2026-10-23T16:03:12-04:00",
+      "subject": "chore(deps): require certifi 2026.10.19 in honcho-cli and build the MCP image on Bun 1.4.4 (#1453)"
+    },
+    {
+      "sha": "f6e71fd87ab8b3f66948e005f19281afc1bbcab5",
+      "date": "2026-10-23T15:39:32-04:00",
+      "subject": "fix(dialectic): stop pair answers from inviting a turn the caller can't take (#1451)"
+    },
+    {
+      "sha": "7c12878b73434ab48646401544a70f3369321945",
+      "date": "2026-10-23T15:27:01-04:00",
+      "subject": "feat(cli): honcho install finds local AI agents and adds Honcho to them (#1371)"
+    },
+    {
+      "sha": "522148b534979ce875e9b8b1ae38e7a713e18b65",
+      "date": "2026-10-23T14:41:52-04:00",
+      "subject": "fix(summarizer): keep summary prompts under an input token budget (#1449)"
+    },
+    {
+      "sha": "5314d0a8635f02375b8ad73c89eb80f86d7d1cb4",
+      "date": "2026-10-23T13:48:07-04:00",
+      "subject": "contributing policy (#1421)"
+    },
+    {
+      "sha": "bea0b7547f5ae3db38a5550ec958465fef504b5f",
+      "date": "2026-10-23T13:12:46-04:00",
+      "subject": "chore: add changelog and version updates (#1446)"
+    },
+    {
+      "sha": "4634539264fa38b66f94ea262689234f4d2b923d",
+      "date": "2026-10-23T11:57:47-04:00",
+      "subject": "docs: embed the Grok Bot setup video in the Grok Bot guide (#1440)"
+    },
+    {
+      "sha": "70ebbd2d7756894b8a74d0e184955a70dbd33b5d",
+      "date": "2026-10-23T11:40:35-04:00",
+      "subject": "feat(deletion): add inactive primitive tombstone foundation (#1429)"
+    },
+    {
+      "sha": "7478be29bedf110a38ae463e05c86a6c27cb960b",
+      "date": "2026-10-23T09:55:38-04:00",
+      "subject": "chore(deps): upgrade certifi to 2026.10.19 (#1439)"
+    },
+    {
+      "sha": "f9e39711729052245a623b809fa1797703d6cd99",
+      "date": "2026-10-22T15:39:15-04:00",
+      "subject": "fix(llm): stop retrying provider-rejected requests when no fallback is configured (#1435)"
+    },
+    {
+      "sha": "47d3eac2b97519cb410afd8c0504a1d01fce76f4",
+      "date": "2026-10-22T12:30:25-04:00",
+      "subject": "fix(filter): treat wildcards and {} as TRUE inside AND/OR/NOT (#1433)"
+    },
+    {
+      "sha": "b94a416c56f16ee4c840541c19e50bc668124e5e",
+      "date": "2026-10-21T12:55:56-04:00",
+      "subject": "test: cut suite time and run the TypeScript SDK tests outside pytest (#1422)"
+    },
+    {
+      "sha": "607438d20c408575d1c9257f325c4885da871e82",
+      "date": "2026-10-20T15:21:00-04:00",
+      "subject": "docs: set up Grok Bot from the plugin's GitHub link until it is in the Cursor Marketplace (#1416)"
+    },
+    {
+      "sha": "e8a2783de97ec7a7e97e72ac9cce0a26ffb425d2",
+      "date": "2026-10-20T14:49:34-04:00",
+      "subject": "docs: point the Pi guide at the official pi-honcho plugin (#1415)"
+    },
+    {
+      "sha": "819e66c86e4b8c11d5adad3ec751f47c69c64079",
+      "date": "2026-10-20T14:03:00-04:00",
+      "subject": "fix(ci): recompute release manifest in the GCP POST job (#1414)"
+    },
+    {
+      "sha": "bf2e2a875352f8eabb2a165b26b277e205bd20f4",
+      "date": "2026-10-20T12:44:12-04:00",
+      "subject": "chore: add changelog and version updates (#1412)"
+    },
+    {
+      "sha": "fc84e42572ca6e53779c517d0054e175c1a7af04",
+      "date": "2026-10-20T11:58:36-04:00",
+      "subject": "docs: move Paperclip to the built-in connector, mark SillyTavern unmaintained (#1411)"
+    },
+    {
+      "sha": "d1f2004a8057b55d4d41818f2562e7bc3f25bdc2",
+      "date": "2026-10-20T11:50:58-04:00",
+      "subject": "feat(cursor-honcho): Honcho plugin for Cursor and Grok Bot (#1386)"
+    },
+    {
+      "sha": "63b61cbc879183cf3f5dff34b1f679dae0d10f8a",
+      "date": "2026-10-20T11:47:23-04:00",
+      "subject": "feat(migrations): queue pending-work indexes and deletion generations (#1409)"
+    },
+    {
+      "sha": "ce56c3e8e07f33ffcade58809282de102b36ce56",
+      "date": "2026-10-19T19:55:17-04:00",
+      "subject": "docs: sharpen Overview and Quickstart titles, descriptions; add pricing line (#1404)"
+    },
+    {
+      "sha": "d93af3bc3c427b773fbe6109ce8248383f9e5290",
+      "date": "2026-10-19T17:42:07-04:00",
+      "subject": "fix(mcp): answer a rejected OAuth token with HTTP 401 so clients refresh (#1389)"
+    },
+    {
+      "sha": "a56b26366f1435b0efb03c2c9dfd102d70169328",
+      "date": "2026-10-19T16:57:59-04:00",
+      "subject": "fix(mcp): reinstall and typecheck before deploying the Worker (#1407)"
+    },
+    {
+      "sha": "58b679b9b9782b869d45e63ba42b346d6e92fe13",
+      "date": "2026-10-19T16:35:05-04:00",
+      "subject": "feat(dreamer): working memory — budget, write window, brief, and notes (#1378)"
+    },
+    {
+      "sha": "bd1bd197928be79195303a8cfac2ffbc0eef9827",
+      "date": "2026-10-19T15:57:52-04:00",
+      "subject": "fix(mcp): error on chat include_evidence when the SDK ignores it (#1406)"
+    },
+    {
+      "sha": "43210f38ddc56c62eb02a880a9a0afd8c30c945d",
+      "date": "2026-10-19T13:46:43-04:00",
+      "subject": "fix(llm): honor thinking_tool_choice_conflict on the OpenAI transport (#1402)"
+    },
+    {
+      "sha": "ed9fe6c122446a30a74bbba1364003349bf0acb5",
+      "date": "2026-10-16T17:20:08-04:00",
+      "subject": "docs(scopes): drop internal service name from the managed-key note (#1396)"
+    },
+    {
+      "sha": "0f4dc36c62fadc069042140a2b7082eafb9804b9",
+      "date": "2026-10-16T16:04:01-04:00",
+      "subject": "feat(api): expose a stable uid on workspaces, peers and sessions (#1394)"
+    },
+    {
+      "sha": "df1f5088d9e7088b81b119eefc2856024c718a9d",
+      "date": "2026-10-16T16:03:56-04:00",
+      "subject": "ci: run the previous release and the candidate on the candidate's schema (#1397)"
+    },
+    {
+      "sha": "08dce3dc2722d273a1c10fe1bcadbfd54cf79276",
+      "date": "2026-10-16T16:03:34-04:00",
+      "subject": "feat(release): send a migration manifest with each release (#1395)"
+    },
+    {
+      "sha": "154b6b84374c646e5b5cc4cf166b2f68163829e5",
+      "date": "2026-10-16T16:02:51-04:00",
+      "subject": "fix(llm): retry tool-loop answers that miss their response_model (#1393)"
+    },
+    {
+      "sha": "9d6969289eebe4aee613fa895e6328626cc0a0f7",
+      "date": "2026-10-16T14:18:13-04:00",
+      "subject": "docs: add a real non-Docker install path and fix stale LLM key defaults (#1392)"
+    },
+    {
+      "sha": "4fc0490724371f3bcb030249c499382744fd0e0a",
+      "date": "2026-10-16T11:29:18-04:00",
+      "subject": "fix(dialectic): return 422 when a chat answer fails its response_format (#1379)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".cursor-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/1-bug-report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/3-feature-request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/4-integration-request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/6-hermes.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/issue-gate.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/scripts/issue-gate.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/compat-matrix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/hermes-plugin-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/issue-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/kilo-honcho.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/pr-sweeper.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/push-gcp-registry-prod.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/push-gcp-registry-staging.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/staticanalysis.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unittest.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config.toml.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "database/init.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelog/compatibility-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelog/introduction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/snippets/cli-commands.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/snippets/integrations-catalog.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/style.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v2/migrations/from-mem0.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/api-reference/endpoint/keys/create-key.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/contributing/configuration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/contributing/guidelines.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/contributing/self-hosting.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/contributing/troubleshooting.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/reasoning-configuration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/scopes.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/features/advanced/using-filters.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/introduction/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/introduction/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/introduction/vibecoding.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/documentation/reference/sdk.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/community/agent0.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/v3/guides/community/pi-honcho-memory.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/gmail.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/granola.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/claude-code.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/codex.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/crewai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v3/guides/integrations/cursor.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/deepseek-harness.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v3/guides/integrations/grok-bot.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/hermes.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v3/guides/integrations/kilo.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/langgraph.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/mcp.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/n8n.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/openclaw.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/opencode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/paperclip.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v3/guides/integrations/pi.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/sillytavern.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/integrations/vercel-ai-sdk.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/migrations/mem0.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/guides/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/migrations/from-mem0.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/v3/openapi.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/.python-version",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "hermes-plugin-honcho/HANDOFF.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/dialectic.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/docs/banner.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "hermes-plugin-honcho/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/pytest.ini",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_a2a_sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_async_memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_auth_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_client_identity_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_empty_profile_hint.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_cli_peers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_client_concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_client_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_config_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_session_cache_bounds.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_session_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_startup_fail_open.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_honcho_summary_sanitize.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_identity_signature.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_network_isolation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_oauth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_oauth_flow.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_peers_map.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_pin_peer_name.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_query_rewrite.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_recall_sync.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_resume_catch_up.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_save_messages.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_session.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_session_ai_peer_prefix.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_session_routing_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_shutdown.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_telemetry_headers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/tests/test_turn_author_peers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hermes-plugin-honcho/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/_help.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "honcho-cli/src/honcho_cli/agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "honcho-cli/src/honcho_cli/commands/install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/commands/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/commands/workspace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/local/templates/init.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/src/honcho_cli/output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "honcho-cli/tests/test_commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "honcho-cli/tests/test_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/.cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/assets/logo.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/commands/recall.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/dist/hook.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/hooks/hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/mcp.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/rules/honcho-memory.mdc",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/skills/honcho-grok-bot/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/skills/honcho-memory/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/skills/honcho-setup/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/src/after-agent-response.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/src/before-submit-prompt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/src/common.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/src/hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/src/redact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/src/session-start.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/tests/hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/scripts/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/skills/honcho-memory/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/src/activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/src/core.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "kilo-honcho/src/file-guard.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

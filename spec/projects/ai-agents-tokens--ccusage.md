@@ -24,3 +24,7 @@ Use ccusage as an optional local accounting adapter or cross-check, with read-on
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `7b9e09b09f8015cf082f191cbcc7739a44c699ff`; commit date 2026-10-03T20:01:22Z; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
+<!-- teamagent-analysis:end -->

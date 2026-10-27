@@ -1,0 +1,25 @@
+# hyper-extract
+
+Source: [hyper-extract](https://github.com/yifanfeng97/Hyper-Extract) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `0dc002bb1029fd34b21e47602e406ef7880c8673`; commit timestamp `2026-09-29T21:33:12+08:00`; 549 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/yifanfeng97/Hyper-Extract/blob/0dc002bb1029fd34b21e47602e406ef7880c8673/README.md)):
+
+> More providers  — Anthropic (Claude), Google Gemini, Alibaba Bailian, OrcaRouter… OpenAI and Bailian provide both LLM and embedding models in one API. Anthropic, Google Gemini, and DeepSeek are LLM-only (pair them with an OpenAI-compatible embedder). DeepSeek is the most cost-effective option (~$0.001-0.005/page).
+
+Build/package evidence: [pyproject.toml](https://github.com/yifanfeng97/Hyper-Extract/blob/0dc002bb1029fd34b21e47602e406ef7880c8673/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/yifanfeng97/Hyper-Extract/blob/0dc002bb1029fd34b21e47602e406ef7880c8673/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

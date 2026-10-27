@@ -1,0 +1,207 @@
+# flint-chart: change evidence
+
+Source: [flint-chart](https://github.com/microsoft/flint-chart) · [Analysis](../../projects/ai-gen--flint-chart.md) · [import-generation](../../import-generation.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `683d5de1ffd0c1a76001ca5aa044f297276d7734`; commit date: 2026-09-23T08:57:32-07:00; review date: unknown; observed SHA: `a794557384adcc3293a77043f6b9aff1c33d152c`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/microsoft/flint-chart/compare/683d5de1ffd0c1a76001ca5aa044f297276d7734...a794557384adcc3293a77043f6b9aff1c33d152c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [a794557384ad](https://github.com/microsoft/flint-chart/commit/a794557384adcc3293a77043f6b9aff1c33d152c) 2026-10-21T16:39:01-07:00: Merge pull request #153 from microsoft/dev
+- [1055149d004a](https://github.com/microsoft/flint-chart/commit/1055149d004a50c03ae2ee28127ce10f57b57d7b) 2026-10-21T16:13:35-07:00: front page fix
+- [f098e497f27a](https://github.com/microsoft/flint-chart/commit/f098e497f27a2b36daabc33b659c0988c17ac0f2) 2026-10-21T15:21:28-07:00: [deploy] fix plotly issue and mcp (#152)
+- [16f567ddc613](https://github.com/microsoft/flint-chart/commit/16f567ddc61364a38898c659e5c219e6c231c324) 2026-10-21T14:19:04-07:00: fixes
+- [f2177495a2a9](https://github.com/microsoft/flint-chart/commit/f2177495a2a9b5d509cc22b864405139497ecf8b) 2026-10-21T14:03:58-07:00: updates
+- [e28e559b26ae](https://github.com/microsoft/flint-chart/commit/e28e559b26aea0dc1d310a8376ea78cdb6fd89c7) 2026-10-21T12:45:05-07:00: Merge pull request #150 from microsoft/dev
+- [4542d6df76b4](https://github.com/microsoft/flint-chart/commit/4542d6df76b482187429336b56e4f22cb5d46997) 2026-10-21T12:44:35-07:00: Merge branch 'dev' of github.com:microsoft/flint-chart into dev
+- [a12314116eb7](https://github.com/microsoft/flint-chart/commit/a12314116eb7c0bb4af2217f6f764825939fbe90) 2026-10-21T12:44:28-07:00: local
+- [5694e098bebd](https://github.com/microsoft/flint-chart/commit/5694e098bebdd57a40dd2bb16aeb293d4aa822fa) 2026-10-21T12:33:06-07:00: chore(copilot): sync the plugin's app build
+- [7d75e8bcc766](https://github.com/microsoft/flint-chart/commit/7d75e8bcc766f298006f9e17cc3e7afb68331722) 2026-10-21T12:30:06-07:00: fix(mcp-ui): the chart card never scrolls its frame; a tall chart scales into it
+- [9d27982c2c35](https://github.com/microsoft/flint-chart/commit/9d27982c2c355cecd8fa95066dceccbf1acc6cc7) 2026-10-21T12:09:55-07:00: fix(mcp): get_flint_skill finds a section by the start of its heading
+- [da100fb15f01](https://github.com/microsoft/flint-chart/commit/da100fb15f01cfc38e41f61cd431a183f3310109) 2026-10-21T11:57:59-07:00: docs: stateless MCP in the README, setup tutorials, MCP page and CHANGELOG
+- [66a2c2907819](https://github.com/microsoft/flint-chart/commit/66a2c29078199111840964d9cc5ba50af15c4bd7) 2026-10-21T11:57:59-07:00: feat(mcp)!: the server keeps nothing; show takes the spec
+- [d2a65d198536](https://github.com/microsoft/flint-chart/commit/d2a65d1985363b4d141e9b17d8dc1ff0f48946e4) 2026-10-21T11:04:50-07:00: coffee
+- [d6b85b8e29a3](https://github.com/microsoft/flint-chart/commit/d6b85b8e29a30db2f36687cc2265857dc9ed7467) 2026-10-21T10:19:40-07:00: fixes
+- [68d8b7511c5d](https://github.com/microsoft/flint-chart/commit/68d8b7511c5d67d1b26b2b16cdabaff3facf0628) 2026-10-21T09:02:19-07:00: chore(release): 1.0.1
+- [74aafd42e2af](https://github.com/microsoft/flint-chart/commit/74aafd42e2afbb4d8579b7fb99b983b47823cb73) 2026-10-21T09:00:15-07:00: fix
+- [cf8e162be5eb](https://github.com/microsoft/flint-chart/commit/cf8e162be5ebe61c08607d7466468ee7c79f921e) 2026-10-21T08:58:31-07:00: Merge main (the 1.0 squash, #146) into dev
+- [1187607536a9](https://github.com/microsoft/flint-chart/commit/1187607536a93810f9f0a0f0f7d9a0579bff09df) 2026-10-21T08:57:00-07:00: slides fix
+- [2377d112214b](https://github.com/microsoft/flint-chart/commit/2377d112214bc3c78a7d6efb53baa283ec1f716d) 2026-10-21T08:48:02-07:00: fixes
+- [4872cc006a15](https://github.com/microsoft/flint-chart/commit/4872cc006a157fcef19654993bd3f734d1600eb5) 2026-10-21T08:38:21-07:00: fix
+- [60324d2fa31a](https://github.com/microsoft/flint-chart/commit/60324d2fa31acd46bb2e79bc4503930da69f2619) 2026-10-20T23:57:13-07:00: [deploy] Flint 1.0 release (#146)
+- [a02848efb3da](https://github.com/microsoft/flint-chart/commit/a02848efb3dad595924db2d312800fb34fec7ccd) 2026-10-20T23:41:45-07:00: add talk material
+- [9aa7e4e12d87](https://github.com/microsoft/flint-chart/commit/9aa7e4e12d8793415969c044758c745e8291b5c5) 2026-10-20T23:08:35-07:00: Merge branch 'dev' of github.com:microsoft/flint-chart into dev
+- [c1a23e92cb4b](https://github.com/microsoft/flint-chart/commit/c1a23e92cb4b4a906d0ad24ea9f279f9a308af0d) 2026-10-20T23:08:27-07:00: updates
+- [3e99e1bfcfc5](https://github.com/microsoft/flint-chart/commit/3e99e1bfcfc5acbd4eebb37826ed28840fc6f505) 2026-10-20T22:46:29-07:00: fix(vegalite): a dodge over years lanes each year, not each value (#147)
+- [475eac37dce8](https://github.com/microsoft/flint-chart/commit/475eac37dce8233c24086a2cb3c2071fed44c38b) 2026-10-20T20:32:37-07:00: docs(skills): board charts draw their own heading; Link charts and chart Step 4 sections
+- [c3cb5f9c24d3](https://github.com/microsoft/flint-chart/commit/c3cb5f9c24d359cdf053ce72ca614f00f14a4aaf) 2026-10-20T20:20:50-07:00: fix(mcp-ui): copying a chart or a board as PNG works in sandboxed hosts and keeps each chart's furniture
+- [adddaf591048](https://github.com/microsoft/flint-chart/commit/adddaf591048ec9f9115f877221b7fca8f1da691) 2026-10-20T20:17:38-07:00: refactor(mcp-ui)!: each board cell is one whole Flint chart
+- [8afece03b4e9](https://github.com/microsoft/flint-chart/commit/8afece03b4e98c5ccd586c2159ed6b9f6a69b691) 2026-10-20T20:17:38-07:00: fix(mcp-ui): boards draw the theme's furniture as charts do
+- [9caad86687ee](https://github.com/microsoft/flint-chart/commit/9caad86687eeb5a8a5d51c2a3299bc997ad73449) 2026-10-20T20:11:30-07:00: fixes
+- [90c9e1c7b097](https://github.com/microsoft/flint-chart/commit/90c9e1c7b0977c0404b66c233f430240cb11e2ab) 2026-10-20T19:29:23-07:00: ok
+
+## Changed paths (truncated)
+
+- M: `.github/extensions/flint-chart/.mcp.json`
+- M: `.github/extensions/flint-chart/.plugin/plugin.json`
+- A: `.github/extensions/flint-chart/README.md`
+- M: `.github/extensions/flint-chart/assets/flint-app.html`
+- M: `.github/extensions/flint-chart/extension.mjs`
+- M: `.github/extensions/flint-chart/skills/flint-chart-author/SKILL.md`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/npm-publish.yml`
+- M: `.github/workflows/pages.yml`
+- M: `.gitignore`
+- M: `CHANGELOG.md`
+- M: `README.md`
+- M: `agent-skills/README.md`
+- A: `agent-skills/flint-board-author/SKILL.md`
+- M: `agent-skills/flint-chart-author/SKILL.md`
+- A: `agent-skills/flint-interaction-author/SKILL.md`
+- M: `agent-skills/flint-theme-author/SKILL.md`
+- M: `docs/README.md`
+- M: `docs/adding-a-backend.md`
+- M: `docs/adding-a-chart-template.md`
+- M: `docs/api-reference.md`
+- A: `docs/design-accessible-navigation.md`
+- M: `docs/design-interactions.md`
+- A: `docs/design-layout-plan.md`
+- A: `docs/design-linked-charts.md`
+- M: `docs/design-stretch-model.md`
+- A: `docs/figs/flint-compilation-pipeline.png`
+- A: `docs/figs/flint-interactive-warming-globe.png`
+- A: `docs/figs/flint-mcp-chat.png`
+- A: `docs/interaction-api.md`
+- A: `docs/interaction-capability-roadmap.md`
+- A: `docs/interaction-components.md`
+- A: `docs/interaction-introduction.md`
+- A: `docs/interaction-preset-readiness.md`
+- M: `docs/interaction-spec.md`
+- M: `docs/reference-echarts.md`
+- M: `docs/reference-vegalite.md`
+- M: `docs/theme-spec.md`
+- M: `docs/tutorials/chart-sizing.md`
+- M: `docs/tutorials/setup-flint-mcp.md`
+- M: `docs/zh-CN/adding-a-backend.md`
+- M: `docs/zh-CN/adding-a-chart-template.md`
+- M: `docs/zh-CN/api-reference.md`
+- M: `docs/zh-CN/design-interactions.md`
+- A: `docs/zh-CN/design-layout-plan.md`
+- M: `docs/zh-CN/design-stretch-model.md`
+- M: `docs/zh-CN/interaction-spec.md`
+- M: `docs/zh-CN/reference-echarts.md`
+- M: `docs/zh-CN/theme-spec.md`
+- M: `docs/zh-CN/tutorials/chart-sizing.md`
+- M: `docs/zh-CN/tutorials/setup-flint-mcp.md`
+- M: `package-lock.json`
+- M: `package.json`
+- M: `packages/flint-js/README.md`
+- M: `packages/flint-js/package.json`
+- M: `packages/flint-js/src/README.md`
+- M: `packages/flint-js/src/chart-types/geo.ts`
+- M: `packages/flint-js/src/chartjs/assemble.ts`
+- M: `packages/flint-js/src/chartjs/instantiate-spec.ts`
+- M: `packages/flint-js/src/chartjs/interactive.ts`
+- M: `packages/flint-js/src/chartjs/templates/area.ts`
+- M: `packages/flint-js/src/chartjs/templates/bar.ts`
+- M: `packages/flint-js/src/chartjs/templates/bump.ts`
+- M: `packages/flint-js/src/chartjs/templates/line.ts`
+- M: `packages/flint-js/src/chartjs/templates/range-area.ts`
+- M: `packages/flint-js/src/core/aggregate.ts`
+- A: `packages/flint-js/src/core/analyze.ts`
+- A: `packages/flint-js/src/core/arc-label-fit.ts`
+- A: `packages/flint-js/src/core/axis-labels.ts`
+- A: `packages/flint-js/src/core/axis-roles.ts`
+- A: `packages/flint-js/src/core/axis-title-fit.ts`
+- M: `packages/flint-js/src/core/band-dodge.ts`
+- A: `packages/flint-js/src/core/band-label-choice.ts`
+- A: `packages/flint-js/src/core/calendar-labels.ts`
+- A: `packages/flint-js/src/core/canvas-fit.ts`
+- A: `packages/flint-js/src/core/channel-decisions.ts`
+- A: `packages/flint-js/src/core/chart-table.ts`
+- M: `packages/flint-js/src/core/chart-transitions.ts`
+- A: `packages/flint-js/src/core/color-controls.ts`
+- M: `packages/flint-js/src/core/color-decisions.ts`
+- M: `packages/flint-js/src/core/compute-layout.ts`
+- M: `packages/flint-js/src/core/decisions.ts`
+- M: `packages/flint-js/src/core/field-semantics.ts`
+- M: `packages/flint-js/src/core/filter-overflow.ts`
+- A: `packages/flint-js/src/core/frame-furniture.ts`
+- A: `packages/flint-js/src/core/furniture-plan.ts`
+- A: `packages/flint-js/src/core/furniture-reserve.ts`
+- A: `packages/flint-js/src/core/group-gaps.ts`
+- A: `packages/flint-js/src/core/header-gaps.ts`
+- A: `packages/flint-js/src/core/header-plan.ts`
+- A: `packages/flint-js/src/core/honour.ts`
+- M: `packages/flint-js/src/core/index.ts`
+- M: `packages/flint-js/src/core/interaction-contracts.ts`
+- M: `packages/flint-js/src/core/interaction-semantics.ts`
+- M: `packages/flint-js/src/core/interaction-spec.ts`
+- A: `packages/flint-js/src/core/kpi-format.ts`
+- A: `packages/flint-js/src/core/label-sequence.ts`
+- A: `packages/flint-js/src/core/layout-costs.ts`
+- A: `packages/flint-js/src/core/legend-layout.ts`
+- A: `packages/flint-js/src/core/legend-plan.ts`
+- A: `packages/flint-js/src/core/measure-domain.ts`
+- A: `packages/flint-js/src/core/natural-shape.ts`
+- M: `packages/flint-js/src/core/normalize-properties.ts`
+- A: `packages/flint-js/src/core/number-compact.ts`
+- A: `packages/flint-js/src/core/plan.ts`
+- M: `packages/flint-js/src/core/recommendation.ts`
+- M: `packages/flint-js/src/core/resolve-semantics.ts`
+- A: `packages/flint-js/src/core/rule-plan.ts`
+- A: `packages/flint-js/src/core/ruler.ts`
+- A: `packages/flint-js/src/core/self-naming-values.ts`
+- M: `packages/flint-js/src/core/semantic-types.ts`
+- A: `packages/flint-js/src/core/series-end.ts`
+- A: `packages/flint-js/src/core/source-plan.ts`
+- A: `packages/flint-js/src/core/structure.ts`
+- A: `packages/flint-js/src/core/target-selector.ts`
+- A: `packages/flint-js/src/core/temporal-parse.ts`
+- A: `packages/flint-js/src/core/text-case.ts`
+- A: `packages/flint-js/src/core/text-width.ts`
+- A: `packages/flint-js/src/core/text-widths.generated.ts`
+- A: `packages/flint-js/src/core/theme/chrome.ts`
+- M: `packages/flint-js/src/core/theme/ground.ts`
+- M: `packages/flint-js/src/core/theme/index.ts`
+- M: `packages/flint-js/src/core/theme/presence.ts`
+- M: `packages/flint-js/src/core/theme/presets.ts`
+- A: `packages/flint-js/src/core/theme/presets/apple.ts`
+- A: `packages/flint-js/src/core/theme/presets/bbc.ts`
+- M: `packages/flint-js/src/core/theme/presets/cartoon.ts`
+- M: `packages/flint-js/src/core/theme/presets/datawrapper.ts`
+- A: `packages/flint-js/src/core/theme/presets/de-stijl.ts`
+- M: `packages/flint-js/src/core/theme/presets/economist.ts`
+- M: `packages/flint-js/src/core/theme/presets/icons.ts`
+- A: `packages/flint-js/src/core/theme/presets/material.ts`
+- M: `packages/flint-js/src/core/theme/presets/mckinsey.ts`
+- M: `packages/flint-js/src/core/theme/presets/nyt.ts`
+- M: `packages/flint-js/src/core/theme/presets/pop.ts`
+- M: `packages/flint-js/src/core/theme/presets/powerbi-light.ts`
+- M: `packages/flint-js/src/core/theme/presets/powerbi.ts`
+- M: `packages/flint-js/src/core/theme/presets/swiss.ts`
+- A: `packages/flint-js/src/core/theme/series-sign.ts`
+- M: `packages/flint-js/src/core/theme/types.ts`
+- A: `packages/flint-js/src/core/title-fit.ts`
+- A: `packages/flint-js/src/core/title-plan.ts`
+- A: `packages/flint-js/src/core/trailing-parenthetical.ts`
+- M: `packages/flint-js/src/core/types.ts`
+- A: `packages/flint-js/src/core/value-colors.ts`
+- A: `packages/flint-js/src/core/value-label-measure.ts`
+- A: `packages/flint-js/src/core/value-label-plan.ts`
+- A: `packages/flint-js/src/core/views.ts`
+- A: `packages/flint-js/src/core/window.ts`
+- M: `packages/flint-js/src/echarts/assemble.ts`
+- A: `packages/flint-js/src/echarts/color-controls.ts`
+- M: `packages/flint-js/src/echarts/instantiate-spec.ts`
+- M: `packages/flint-js/src/echarts/templates/bar.ts`
+- M: `packages/flint-js/src/echarts/templates/boxplot.ts`
+- M: `packages/flint-js/src/echarts/templates/calendar.ts`
+- M: `packages/flint-js/src/echarts/templates/heatmap.ts`
+- M: `packages/flint-js/src/echarts/templates/line.ts`
+- M: `packages/flint-js/src/echarts/templates/scatter.ts`
+- M: `packages/flint-js/src/excel/assemble.ts`
+- M: `packages/flint-js/src/excel/codegen.ts`

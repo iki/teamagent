@@ -29,3 +29,7 @@ Adding an agent still requires concrete implementation or an existing shared pro
 Validate duplicate IDs, missing binaries, unsupported versions and environment-specific executable resolution. Exercise each adapter against contract tests without relying on terminal text heuristics for success. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [channels](../channels.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator); analyzed commit `a2a8917c22e2246bf63b98e06a97c417f3b3fb76`; commit date 2026-10-03T20:20:43+05:30; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agent-orchestrator.md).
+<!-- teamagent-analysis:end -->

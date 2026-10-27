@@ -1,0 +1,207 @@
+# eve: change evidence
+
+Source: [eve](https://github.com/vercel/eve) · [Analysis](../../projects/ai-agents--eve.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `6c2e941946383a7a3d1f8f90b5bc6828de40c724`; commit date: 2026-10-03T15:08:36-04:00; review date: unknown; observed SHA: `afc64ba3a14faad7346ee8e6cb660e4003daf54b`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vercel/eve/compare/6c2e941946383a7a3d1f8f90b5bc6828de40c724...afc64ba3a14faad7346ee8e6cb660e4003daf54b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [afc64ba3a14f](https://github.com/vercel/eve/commit/afc64ba3a14faad7346ee8e6cb660e4003daf54b) 2026-10-27T10:13:21-07:00: fix(benchmarks): add GPT-6.1 models, fix cost accounting, run dispatches in parallel (#5439)
+- [94837830ab76](https://github.com/vercel/eve/commit/94837830ab762343af1dbdd9789438d293baaea7) 2026-10-27T10:05:31-07:00: fix(docs): keep integration fragment links in the current tab (#5437)
+- [085f77104826](https://github.com/vercel/eve/commit/085f77104826f7c8422b2314de24427ea0b5fcc0) 2026-10-27T10:05:31-07:00: test(docs): pin fragment links opening integration sections in a new tab (#5436)
+- [27c6f1904856](https://github.com/vercel/eve/commit/27c6f1904856a423ee8cad66fa4b5b2e7938f9c2) 2026-10-27T17:01:16Z: ci(eval-benchmark): run at most one leg per model when a dispatch narrows models (#5440)
+- [b3f444c54ca9](https://github.com/vercel/eve/commit/b3f444c54ca930742a2f2cbc4b1320806b7f945c) 2026-10-27T09:13:37-07:00: fix(benchmarks): count docs read relative to a cd into the docs (#5398)
+- [f5b2c47f2316](https://github.com/vercel/eve/commit/f5b2c47f231602877a251094aebceb4b8a8da101) 2026-10-27T16:12:45Z: Version Packages (#5407)
+- [36570003a284](https://github.com/vercel/eve/commit/36570003a2845e24a5f6144193afa9f9eb02bec8) 2026-10-27T16:03:33Z: fix(templates): bump templates to the eve release their code uses (#5403)
+- [b32209679002](https://github.com/vercel/eve/commit/b3220967900237b2d61c5e482db55c43201a9e7f) 2026-10-27T15:43:52Z: fix(eve): fail the turn instead of the session when in-turn compaction fails (#5352)
+- [66103be94d83](https://github.com/vercel/eve/commit/66103be94d832fbec46b31663523616313aa649e) 2026-10-27T15:39:09Z: fix(eve): hide console windows for eve dev child processes on Windows (#5292)
+- [040519a20b1d](https://github.com/vercel/eve/commit/040519a20b1db150fa404a9bcff6e4f1851d3851) 2026-10-27T15:37:23Z: fix(eve): keep eve's Zod from compiling code from strings under a strict CSP (#5367)
+- [105bf60b9282](https://github.com/vercel/eve/commit/105bf60b92820d6f1806d61edf55ebaa2cfebbf9) 2026-10-27T15:36:48Z: fix(eve): create missing parent directories for nested eve init targets (#5423)
+- [cb1db127724e](https://github.com/vercel/eve/commit/cb1db127724e0e7e417814c9bd44355c881d65d9) 2026-10-27T15:36:42Z: fix(eve): send optimistic messages without crypto.randomUUID (#5416)
+- [4276727c13b2](https://github.com/vercel/eve/commit/4276727c13b212b7d486466c2fec89f2c72901d3) 2026-10-27T15:35:34Z: fix(eve): carry the accepting deployment through ctx.to() deliveries (#5409)
+- [bea10fd258de](https://github.com/vercel/eve/commit/bea10fd258de16a4a88b46e5ed54b05098f56b32) 2026-10-27T15:34:10Z: fix(eve): retry AI Gateway 402s that only throttled the credit balance check (#5428)
+- [41916a59a523](https://github.com/vercel/eve/commit/41916a59a523891e6a846cbbdfc251ca1ea8fc2c) 2026-10-27T11:12:23-04:00: Resolve runtime model metadata from the build snapshot (#5431)
+- [5458bc4a23ea](https://github.com/vercel/eve/commit/5458bc4a23ea40a050e3e00a0491e7d97b885523) 2026-10-27T09:34:29-04:00: Avoid repeated inbox lookups between conversation turns (#5392)
+- [5bb6d4363a70](https://github.com/vercel/eve/commit/5bb6d4363a70b94b2199ef9371c610056a1053c0) 2026-10-27T08:55:50-04:00: fix(eve): pre-bundle eve/vue for the Nuxt auto-import (#5404)
+- [a5328b448281](https://github.com/vercel/eve/commit/a5328b4482812da9cf97e7ad90df363950627032) 2026-10-26T23:04:18-03:00: feat(eve): opt-in stdin on sandbox spawn (#5401)
+- [9e9320f861af](https://github.com/vercel/eve/commit/9e9320f861af5fa83ee9c104f81bb57054aa890e) 2026-10-27T00:11:37Z: fix(benchmarks): run the Vercel mock setup for author-003 (#5397)
+- [c39629f61f7d](https://github.com/vercel/eve/commit/c39629f61f7db5191df6a1719751446de28a0573) 2026-10-26T17:00:33-07:00: ci(eval-benchmark): backfill published eve releases into the benchmark (#5385)
+- [dc9c5b7f9520](https://github.com/vercel/eve/commit/dc9c5b7f95208f1ba3b308693144ff3cd4aa5e6d) 2026-10-26T23:48:49Z: fix(benchmarks): update author-009 grader to current eve APIs (#5396)
+- [9378186b1023](https://github.com/vercel/eve/commit/9378186b102319148f62b01f13d3916da90b581c) 2026-10-26T23:31:44Z: fix(benchmarks): publish single-model authoring runs (#5395)
+- [b7ed9a9071d6](https://github.com/vercel/eve/commit/b7ed9a9071d617fd97f91255a0dcc54a5dec25c5) 2026-10-26T15:59:04-07:00: [2/3] feat(benchmarks): publish authoring benchmark results to Blob (#5381)
+- [32dab65d0321](https://github.com/vercel/eve/commit/32dab65d03213d272fe49f5b1b541398c30d6195) 2026-10-26T15:59:03-07:00: [1/3] fix(benchmarks): track docs pages agents read across all harnesses (#5330)
+- [1dd6e72da5a9](https://github.com/vercel/eve/commit/1dd6e72da5a91bb54d1427a7ec4678ec475c33d8) 2026-10-26T22:49:25Z: docs(evals): show how to judge every reply in a turn (#5390)
+- [189e99965bf4](https://github.com/vercel/eve/commit/189e99965bf47b33c2d86d68a83094716eef100f) 2026-10-26T22:02:56Z: Version Packages (#5376)
+- [c73177b8c76f](https://github.com/vercel/eve/commit/c73177b8c76fa9c923da859a7e893d843bb4718d) 2026-10-26T14:47:33-07:00: test(benchmarks): add company-brain and ops-agent authoring cases with partial-credit scoring (#5228)
+- [678d062eecec](https://github.com/vercel/eve/commit/678d062eececbb6d6ec38d00cec3f428460b6b62) 2026-10-26T17:33:11-04:00: docs: add external Deploy navigation link (#5380)
+- [76f6bc13013d](https://github.com/vercel/eve/commit/76f6bc13013de9dae993400d46f44d5efede96e3) 2026-10-26T14:26:50-07:00: fix(eval-metrics): count concurrent tool time once in framework overhead (#5374)
+- [90cf168c4729](https://github.com/vercel/eve/commit/90cf168c4729d75a227ffe19fdb84acf29f879de) 2026-10-26T14:25:21-07:00: ci(eval-benchmark): mirror and import release-PR workflow stress artifacts (#5333)
+- [8efe110a209b](https://github.com/vercel/eve/commit/8efe110a209b75cf7c2a7ee7623f126d1dd86dda) 2026-10-26T17:01:22-04:00: fix(eve): tag the sandbox image by its Dockerfile contents (#5378)
+- [e7453f1e3408](https://github.com/vercel/eve/commit/e7453f1e3408cb89b9f41f5a612e5bcf9d9d90cb) 2026-10-26T20:58:43Z: fix(eve): block session callbacks to non-public destinations (#5364)
+
+## Changed paths (truncated)
+
+- A: `.agents/skills/pr-shepherd/SKILL.md`
+- D: `.changeset/route-args-describe.md`
+- A: `.gitattributes`
+- M: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- M: `.github/ISSUE_TEMPLATE/feature_request.yml`
+- A: `.github/actions/sandbox-image/action.yml`
+- M: `.github/pull_request_template.md`
+- M: `.github/scripts/discover-e2e-fixtures.mjs`
+- A: `.github/scripts/resolve-authoring-benchmark.mjs`
+- A: `.github/scripts/resolve-authoring-benchmark.test.mjs`
+- A: `.github/scripts/stage-benchmark-leg.sh`
+- A: `.github/workflows/authoring-benchmark.yml`
+- M: `.github/workflows/bundle-analysis.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/docker-image-size-analysis.yml`
+- M: `.github/workflows/e2e-local.yml`
+- M: `.github/workflows/e2e-postgres.yml`
+- M: `.github/workflows/e2e-vercel.yml`
+- A: `.github/workflows/eval-benchmark.yml`
+- A: `.github/workflows/mirror-stress-artifacts.yml`
+- M: `.github/workflows/release.yml`
+- M: `.gitignore`
+- M: `.oxfmtrc.json`
+- M: `.oxlintrc.json`
+- M: `.syncpackrc.json`
+- M: `AGENTS.md`
+- M: `CODEOWNERS`
+- M: `CONTRIBUTING.md`
+- M: `NOTICE`
+- M: `README.md`
+- M: `apps/benchmarks/README.md`
+- M: `apps/benchmarks/evals/author-003-deploy-new-project/CASE.ts`
+- M: `apps/benchmarks/evals/author-003-deploy-new-project/EVAL.ts`
+- M: `apps/benchmarks/evals/author-005-conditional-approval/EVAL.ts`
+- A: `apps/benchmarks/evals/author-009-company-brain/CASE.ts`
+- A: `apps/benchmarks/evals/author-009-company-brain/EVAL.ts`
+- A: `apps/benchmarks/evals/author-010-ops-agent/CASE.ts`
+- A: `apps/benchmarks/evals/author-010-ops-agent/EVAL.ts`
+- D: `apps/benchmarks/evals/mock-vercel-cli.mjs`
+- D: `apps/benchmarks/evals/vercel-setup.ts`
+- M: `apps/benchmarks/lib/authoring-case.ts`
+- M: `apps/benchmarks/lib/benchmark-config.test.mjs`
+- M: `apps/benchmarks/lib/benchmark-config.ts`
+- A: `apps/benchmarks/lib/checks.test.mjs`
+- A: `apps/benchmarks/lib/checks.ts`
+- M: `apps/benchmarks/lib/experiment-files.mjs`
+- M: `apps/benchmarks/lib/experiment-files.test.mjs`
+- M: `apps/benchmarks/lib/experiment.test.mjs`
+- M: `apps/benchmarks/lib/experiment.ts`
+- M: `apps/benchmarks/lib/native-authoring-setup.test.mjs`
+- M: `apps/benchmarks/lib/native-authoring-setup.ts`
+- A: `apps/benchmarks/lib/setups/mock-vercel-cli.mjs`
+- A: `apps/benchmarks/lib/setups/northstar-fulfillment.test.mjs`
+- A: `apps/benchmarks/lib/setups/northstar-fulfillment.ts`
+- A: `apps/benchmarks/lib/setups/vercel.ts`
+- M: `apps/benchmarks/run.mjs`
+- M: `apps/benchmarks/scripts/analyze.mjs`
+- A: `apps/benchmarks/scripts/analyze.test.mjs`
+- M: `apps/benchmarks/scripts/cost.mjs`
+- M: `apps/benchmarks/scripts/cost.test.mjs`
+- A: `apps/benchmarks/scripts/docs-reads.mjs`
+- M: `apps/benchmarks/scripts/export-results.mjs`
+- M: `apps/benchmarks/scripts/export-results.test.mjs`
+- A: `apps/benchmarks/scripts/publish-results.mjs`
+- A: `apps/benchmarks/scripts/publish-results.test.mjs`
+- A: `apps/benchmarks/scripts/run-analysis.mjs`
+- M: `apps/docs/app/(nights)/eves/page.tsx`
+- M: `apps/docs/app/[lang]/(home)/components/architecture.tsx`
+- M: `apps/docs/app/[lang]/(home)/components/cta.tsx`
+- M: `apps/docs/app/[lang]/(home)/components/eve-logo-shader/hooks.ts`
+- M: `apps/docs/app/[lang]/(home)/components/file-tree.tsx`
+- M: `apps/docs/app/[lang]/(home)/components/home-content.tsx`
+- M: `apps/docs/app/[lang]/(home)/components/nextjs-interop.tsx`
+- M: `apps/docs/app/[lang]/benchmarks/page.tsx`
+- M: `apps/docs/app/[lang]/docs/[[...slug]]/page.tsx`
+- M: `apps/docs/app/[lang]/integrations/[slug]/page.tsx`
+- M: `apps/docs/app/[lang]/integrations/components/gallery.tsx`
+- M: `apps/docs/app/[lang]/integrations/components/markdown.tsx`
+- M: `apps/docs/app/[lang]/integrations/page.tsx`
+- M: `apps/docs/app/[lang]/llms.mdx/[[...slug]]/route.ts`
+- M: `apps/docs/app/[lang]/templates/[slug]/page.tsx`
+- M: `apps/docs/app/[lang]/templates/[slug]/template-actions.tsx`
+- M: `apps/docs/app/[lang]/templates/[slug]/template-readme.tsx`
+- M: `apps/docs/app/[lang]/templates/integration-icons.tsx`
+- M: `apps/docs/app/[lang]/templates/page.tsx`
+- M: `apps/docs/app/[lang]/templates/template-gallery.tsx`
+- A: `apps/docs/app/api/mcp/route.ts`
+- M: `apps/docs/components/geistdocs/agent-runtime-diagram.tsx`
+- A: `apps/docs/components/geistdocs/json-ld.tsx`
+- M: `apps/docs/components/geistdocs/mdx-components.tsx`
+- A: `apps/docs/components/geistdocs/use-cases.tsx`
+- M: `apps/docs/geistdocs.tsx`
+- M: `apps/docs/lib/evals/benchmark-results.json`
+- A: `apps/docs/lib/evals/eve-code-format.test.ts`
+- A: `apps/docs/lib/evals/eve-code-format.ts`
+- M: `apps/docs/lib/evals/eve-code-results.ts`
+- A: `apps/docs/lib/evals/og-image.test.ts`
+- M: `apps/docs/lib/evals/og-image.tsx`
+- A: `apps/docs/lib/geistdocs/agent-runtime-diagram.ts`
+- M: `apps/docs/lib/geistdocs/config.tsx`
+- M: `apps/docs/lib/geistdocs/llms-index.ts`
+- M: `apps/docs/lib/geistdocs/metadata-title.test.ts`
+- M: `apps/docs/lib/geistdocs/metadata-title.ts`
+- M: `apps/docs/lib/geistdocs/og.ts`
+- M: `apps/docs/lib/geistdocs/redirects.test.ts`
+- M: `apps/docs/lib/geistdocs/redirects.ts`
+- A: `apps/docs/lib/geistdocs/remark-benchmark-markdown.test.ts`
+- A: `apps/docs/lib/geistdocs/remark-benchmark-markdown.ts`
+- A: `apps/docs/lib/geistdocs/remark-component-markdown.test.ts`
+- A: `apps/docs/lib/geistdocs/remark-component-markdown.ts`
+- A: `apps/docs/lib/geistdocs/structured-data.test.ts`
+- A: `apps/docs/lib/geistdocs/structured-data.ts`
+- M: `apps/docs/lib/integrations/connection-setup.test.ts`
+- M: `apps/docs/lib/integrations/data.ts`
+- M: `apps/docs/lib/integrations/discovery.test.ts`
+- A: `apps/docs/lib/integrations/gallery.test.ts`
+- A: `apps/docs/lib/integrations/gallery.ts`
+- M: `apps/docs/lib/integrations/logos.tsx`
+- A: `apps/docs/lib/integrations/markdown-links.test.ts`
+- M: `apps/docs/lib/integrations/og-image.tsx`
+- A: `apps/docs/lib/integrations/posthog-instrumentation.test.ts`
+- A: `apps/docs/lib/integrations/sent-registry.test.ts`
+- A: `apps/docs/lib/integrations/waydock.test.ts`
+- A: `apps/docs/lib/og-logo.ts`
+- M: `apps/docs/lib/templates/compose.ts`
+- M: `apps/docs/lib/templates/manifest.ts`
+- M: `apps/docs/lib/templates/og-image.tsx`
+- M: `apps/docs/lib/templates/readme-links.test.ts`
+- M: `apps/docs/lib/templates/readme-links.ts`
+- M: `apps/docs/package.json`
+- A: `apps/docs/public/og/docs-use-cases.png`
+- M: `apps/docs/registry.json`
+- M: `apps/docs/registry/channel/web-sign-in-with-vercel/lib/auth.ts`
+- A: `apps/docs/registry/channel/web-tanstack/app/fonts.css`
+- A: `apps/docs/registry/channel/web-tanstack/app/router.tsx`
+- A: `apps/docs/registry/channel/web-tanstack/app/routes/__root.tsx`
+- A: `apps/docs/registry/channel/web-tanstack/app/routes/index.tsx`
+- A: `apps/docs/registry/channel/web-tanstack/app/routes/s.index.tsx`
+- A: `apps/docs/registry/channel/web-tanstack/app/routes/s.session-id.tsx`
+- A: `apps/docs/registry/channel/web-tanstack/app/start.ts`
+- A: `apps/docs/registry/channel/web-tanstack/components.json`
+- A: `apps/docs/registry/channel/web-tanstack/tsconfig.json`
+- A: `apps/docs/registry/channel/web-tanstack/vite.config.ts`
+- M: `apps/docs/registry/channel/web/app/_components/agent-chat.tsx`
+- M: `apps/docs/registry/channel/web/app/_components/agent-message.tsx`
+- M: `apps/docs/registry/channel/web/app/globals.css`
+- D: `apps/docs/registry/channel/web/components/ai-elements/chain-of-thought.tsx`
+- M: `apps/docs/registry/channel/web/components/ai-elements/prompt-input.tsx`
+- D: `apps/docs/registry/channel/web/components/ai-elements/question.tsx`
+- D: `apps/docs/registry/channel/web/components/ai-elements/reasoning.tsx`
+- D: `apps/docs/registry/channel/web/components/ai-elements/shimmer.tsx`
+- M: `apps/docs/registry/channel/web/components/ai-elements/tool.tsx`
+- D: `apps/docs/registry/channel/web/components/ui/badge.tsx`
+- D: `apps/docs/registry/channel/web/components/ui/command.tsx`
+- D: `apps/docs/registry/channel/web/components/ui/dialog.tsx`
+- D: `apps/docs/registry/channel/web/components/ui/hover-card.tsx`
+- A: `apps/docs/registry/channel/web/components/ui/questionnaire.tsx`
+- D: `apps/docs/registry/channel/web/components/ui/spinner.tsx`
+- A: `apps/docs/registry/channel/web/components/ui/trace.tsx`
+- M: `apps/docs/registry/channel/web/tsconfig.json`

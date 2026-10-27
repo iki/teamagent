@@ -1,0 +1,207 @@
+# cli-proxy-api: change evidence
+
+Source: [cli-proxy-api](https://github.com/router-for-me/CLIProxyAPI) · [Analysis](../../projects/ai-agents-proxy--cli-proxy-api.md) · [models](../../models.md), [agents](../../agents.md), [security](../../security.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `d7914afdedca7af95ee974a42453dc49fc1388ce`; commit date: 2026-10-03T17:01:12+08:00; review date: unknown; observed SHA: `ad8bdd3f20bef44f0684b8a6096a216b2c76040d`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/router-for-me/CLIProxyAPI/compare/d7914afdedca7af95ee974a42453dc49fc1388ce...ad8bdd3f20bef44f0684b8a6096a216b2c76040d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [ad8bdd3f20be](https://github.com/router-for-me/CLIProxyAPI/commit/ad8bdd3f20bef44f0684b8a6096a216b2c76040d) 2026-10-27T23:23:26+08:00: fix(middleware): bound zstd decompression output and window in request logging
+- [477605dc6deb](https://github.com/router-for-me/CLIProxyAPI/commit/477605dc6deb301e587dff646f9f43ea8b58ee60) 2026-10-27T23:11:21+08:00: fix(api): prevent incomplete unauthenticated request bodies from exhausting descriptors
+- [b74422180e86](https://github.com/router-for-me/CLIProxyAPI/commit/b74422180e867ac24bf5da4820acac40099eb974) 2026-10-27T21:22:46+08:00: fix(auth,usage): snapshot request state to avoid reading reused gin.Context (#7056)
+- [86a1aabf0178](https://github.com/router-for-me/CLIProxyAPI/commit/86a1aabf0178be8b188cfa2c9d2fedc5fcc48a02) 2026-10-27T18:35:03+08:00: fix(codex): retry another credential on early websocket 429 without closing downstream
+- [643161274449](https://github.com/router-for-me/CLIProxyAPI/commit/643161274449d6bf92977060af2a756265d5b4cf) 2026-10-27T17:27:24+08:00: feat(translator): support Vertex streaming functionCall partialArgs conversion
+- [826bb167802f](https://github.com/router-for-me/CLIProxyAPI/commit/826bb167802f147c40c1f2eba6c36b6aafbf8601) 2026-10-27T17:27:20+08:00: fix(images): apply payload default rules to xAI image endpoints
+- [b4f59d7035da](https://github.com/router-for-me/CLIProxyAPI/commit/b4f59d7035da9b0ff014d8555ab71e76f590241a) 2026-10-27T16:19:45+08:00: fix(devin): log apply_patch rejection diagnostics and recover complete bare patches
+- [f73e66ac2a0d](https://github.com/router-for-me/CLIProxyAPI/commit/f73e66ac2a0d783c829e7c4fc2683206376a5fd4) 2026-10-27T15:32:41+08:00: fix(responses-ws): keep downstream websocket open on upstream Codex disconnect
+- [10417e5b6b85](https://github.com/router-for-me/CLIProxyAPI/commit/10417e5b6b85461e8d7072a6fea6ad9f781b1f0f) 2026-10-27T15:32:39+08:00: feat(registry,management): support on-demand v8 management refresh for model catalogs
+- [908e95d94b61](https://github.com/router-for-me/CLIProxyAPI/commit/908e95d94b617330ae3d78778bb2e6403447087a) 2026-10-27T15:32:38+08:00: fix(models): preserve channel prefix in Gemini model names during prefix registration
+- [437386db57b8](https://github.com/router-for-me/CLIProxyAPI/commit/437386db57b888c9bce7a72d0da7907dede0f1a7) 2026-10-27T10:29:09+08:00: Merge pull request #7042 from sususu98/fix/antigravity-caqs-channel-id
+- [7517549a6487](https://github.com/router-for-me/CLIProxyAPI/commit/7517549a64879b1dec6adf90bb023361d64c21e7) 2026-10-27T10:24:02+08:00: fix(signature): do not reject Antigravity CAQS signatures by channel ID
+- [be929f07fa3c](https://github.com/router-for-me/CLIProxyAPI/commit/be929f07fa3c294371f3ead12d22c3c56f7d821e) 2026-10-27T09:49:17+08:00: fix(interactions): normalize gemini stream sse lines
+- [023dd2adca74](https://github.com/router-for-me/CLIProxyAPI/commit/023dd2adca74de73896f8aa25eb789b35f188de3) 2026-10-27T09:47:48+08:00: Merge pull request #7016 from sususu98/fix/vertex-gemini-thought-signature-7007
+- [a8582fbaca90](https://github.com/router-for-me/CLIProxyAPI/commit/a8582fbaca90d5c17d0e3a93d8e3259d7b919f58) 2026-10-27T09:39:35+08:00: fix(signature): pin Vertex bare-Tink recognition to observed key ids
+- [19398539ff69](https://github.com/router-for-me/CLIProxyAPI/commit/19398539ff69ddb0dc004d858417b8e5d42d3fc9) 2026-10-27T07:16:40+08:00: feat(codex): add workspace and cloud agent orchestrator restrictions to client models
+- [9a35fa12b2f3](https://github.com/router-for-me/CLIProxyAPI/commit/9a35fa12b2f388b235afec48736b7dfecfcc4de5) 2026-10-27T04:29:38+08:00: fix(codex): treat turn_rate_limit_exceeded as transient capacity with retry hint
+- [c37671233fd2](https://github.com/router-for-me/CLIProxyAPI/commit/c37671233fd2f8bdba1f3c47107d43997bc6ad08) 2026-10-27T02:37:57+08:00: Merge pull request #6959 from JohnsonRan/patch/thinking-delete-missing-nocopy
+- [1f917e77c456](https://github.com/router-for-me/CLIProxyAPI/commit/1f917e77c4562623aa49e9804d999524151a2f96) 2026-10-26T23:48:37+08:00: docs(readme): remove APIMart sponsor sections and assets
+- [1398f273905b](https://github.com/router-for-me/CLIProxyAPI/commit/1398f273905b4281d8ae37601b38bd01293642e8) 2026-10-26T23:33:12+08:00: fix(signature): scope Vertex bare-Tink replay to Vertex targets
+- [58a4d04f3291](https://github.com/router-for-me/CLIProxyAPI/commit/58a4d04f32919f3f5c07e34a477c5abc6542b66a) 2026-10-26T23:33:12+08:00: fix(signature): recognize Vertex bare-Tink Gemini thought signatures
+- [ec81e70aa223](https://github.com/router-for-me/CLIProxyAPI/commit/ec81e70aa2238da2d6455c39fbd8aeab175d5148) 2026-10-26T21:14:15+08:00: Merge pull request #7010 from sususu98/feat/discovery-ietf-draft
+- [aa4130e64c84](https://github.com/router-for-me/CLIProxyAPI/commit/aa4130e64c84546aa3f0c5db23af3961b62ba14e) 2026-10-26T21:07:08+08:00: fix(gemini): keep truncated HTTP 200 streams out of credential cooldown and failover
+- [999526c76def](https://github.com/router-for-me/CLIProxyAPI/commit/999526c76def7063e9baa09c1ea2750e8cf5a5b6) 2026-10-26T20:53:59+08:00: docs(discovery): describe LAN resolution limits and trust boundaries
+- [11e5f67bdb36](https://github.com/router-for-me/CLIProxyAPI/commit/11e5f67bdb36c42af94ab5338440975f2b4f3746) 2026-10-26T20:53:59+08:00: fix(discovery): resolve split mDNS responses with scoped bounded caches
+- [37bd18b08d9c](https://github.com/router-for-me/CLIProxyAPI/commit/37bd18b08d9c6d6116412b128c9712b29af14dc4) 2026-10-26T20:52:11+08:00: fix(antigravity): accept bare content-block lists in interactions input
+- [1d45a5f33290](https://github.com/router-for-me/CLIProxyAPI/commit/1d45a5f3329025414ee430341daf2686cf0c029a) 2026-10-26T20:36:51+08:00: fix(claude): handle forced tool restrictions in claude 5.5
+- [b214385c1cf3](https://github.com/router-for-me/CLIProxyAPI/commit/b214385c1cf31b5aee6885b108538663731a2610) 2026-10-26T19:15:29+08:00: chore(config): deprecate discovery advertise-management
+- [8a982a521019](https://github.com/router-for-me/CLIProxyAPI/commit/8a982a5210197a0b98837297cde73a1ad1f7e4c6) 2026-10-26T19:15:29+08:00: feat(discovery): align TXT schema with draft-su-ai-gateway-discovery-00
+- [ede07cafa64a](https://github.com/router-for-me/CLIProxyAPI/commit/ede07cafa64a5a485590e30f9470bdc6b2ebc850) 2026-10-26T18:40:53+08:00: fix(interactions): emit [DONE] sentinel after terminal usage frame in Antigravity and Gemini streams
+- [6fe654bfc6b6](https://github.com/router-for-me/CLIProxyAPI/commit/6fe654bfc6b62309b9cda2367832cef9feb20ce2) 2026-10-26T16:47:13+08:00: perf(pluginhost): gate request interceptor body delivery behind schema v7 opt-out
+- [058b803b2cce](https://github.com/router-for-me/CLIProxyAPI/commit/058b803b2cce45ff5fde7905dada3086aba7567d) 2026-10-26T16:25:39+08:00: fix(api): explicitly allow Authorization in CORS preflight responses
+
+## Changed paths (truncated)
+
+- M: `.github/workflows/release.yaml`
+- M: `AGENTS.md`
+- M: `README.md`
+- M: `README_CN.md`
+- M: `README_JA.md`
+- D: `assets/aiberm.png`
+- D: `assets/apimart-en.png`
+- D: `assets/apimart-zh.png`
+- A: `assets/chenju.png`
+- D: `assets/fluxa-baidu-ai-cloud.png`
+- A: `assets/kedaya.jpg`
+- A: `assets/modelflare.png`
+- A: `assets/xcode.gif`
+- M: `cmd/fetch_codex_models/main.go`
+- M: `cmd/fetch_codex_models/main_test.go`
+- M: `cmd/fetch_devin_models/main.go`
+- M: `cmd/fetch_devin_models/main_test.go`
+- M: `cmd/server/main.go`
+- M: `cmd/server/main_test.go`
+- M: `config.example.yaml`
+- A: `docs/lan-discovery.md`
+- M: `docs/management-api-v8.md`
+- M: `examples/custom-provider/main.go`
+- M: `examples/plugin/claude-web-search-router/go/go.mod`
+- M: `examples/plugin/claude-web-search-router/go/go.sum`
+- M: `examples/plugin/codex-service-tier/go/go.mod`
+- M: `examples/plugin/frontend-auth-exclusive/go/go.mod`
+- M: `examples/plugin/host-callback-auth-files/go/go.mod`
+- M: `examples/plugin/host-model-callback/go/go.mod`
+- M: `examples/plugin/request-lifecycle/go/go.mod`
+- M: `examples/plugin/scheduler/go/go.mod`
+- M: `examples/plugin/simple/go/go.mod`
+- M: `go.mod`
+- M: `go.sum`
+- M: `internal/api/buffered_conn.go`
+- A: `internal/api/github_token_test.go`
+- M: `internal/api/handlers/management/api_tools.go`
+- M: `internal/api/handlers/management/auth_files.go`
+- M: `internal/api/handlers/management/auth_files_crud.go`
+- M: `internal/api/handlers/management/auth_files_devin_oauth.go`
+- A: `internal/api/handlers/management/auth_files_excluded_models_test.go`
+- M: `internal/api/handlers/management/auth_files_fields.go`
+- M: `internal/api/handlers/management/auth_files_filter_test.go`
+- M: `internal/api/handlers/management/auth_files_oauth_callback.go`
+- M: `internal/api/handlers/management/auth_files_patch_fields_test.go`
+- M: `internal/api/handlers/management/auth_files_provider_oauth.go`
+- M: `internal/api/handlers/management/auth_files_refresh.go`
+- M: `internal/api/handlers/management/auth_files_v8.go`
+- M: `internal/api/handlers/management/config_basic.go`
+- M: `internal/api/handlers/management/config_lists.go`
+- A: `internal/api/handlers/management/config_reload_fence_test.go`
+- M: `internal/api/handlers/management/config_v8.go`
+- A: `internal/api/handlers/management/config_v8_etag_test.go`
+- M: `internal/api/handlers/management/config_v8_test.go`
+- M: `internal/api/handlers/management/handler.go`
+- M: `internal/api/handlers/management/model_definitions.go`
+- A: `internal/api/handlers/management/model_definitions_test.go`
+- M: `internal/api/handlers/management/oauth_callback.go`
+- M: `internal/api/handlers/management/oauth_codex_concurrency_test.go`
+- A: `internal/api/handlers/management/oauth_session_proxy_test.go`
+- M: `internal/api/handlers/management/oauth_sessions.go`
+- A: `internal/api/handlers/management/oauth_siwc.go`
+- A: `internal/api/handlers/management/oauth_siwc_mutations.go`
+- A: `internal/api/handlers/management/oauth_siwc_mutations_test.go`
+- A: `internal/api/handlers/management/oauth_siwc_test.go`
+- M: `internal/api/handlers/management/plugin_quota.go`
+- M: `internal/api/handlers/management/plugin_quota_test.go`
+- M: `internal/api/handlers/management/plugin_store.go`
+- M: `internal/api/handlers/management/plugins.go`
+- M: `internal/api/handlers/management/plugins_test.go`
+- M: `internal/api/handlers/management/quota.go`
+- M: `internal/api/handlers/management/vertex_import.go`
+- A: `internal/api/home_models_empty_test.go`
+- A: `internal/api/max_request_body_bytes_test.go`
+- M: `internal/api/middleware/request_logging.go`
+- M: `internal/api/middleware/request_logging_test.go`
+- M: `internal/api/middleware/response_writer.go`
+- M: `internal/api/mux_listener.go`
+- M: `internal/api/protocol_multiplexer.go`
+- M: `internal/api/protocol_multiplexer_test.go`
+- M: `internal/api/redis_queue_protocol.go`
+- M: `internal/api/redis_queue_protocol_integration_test.go`
+- A: `internal/api/response_compression.go`
+- A: `internal/api/response_compression_review_test.go`
+- A: `internal/api/response_compression_server_test.go`
+- A: `internal/api/response_compression_test.go`
+- A: `internal/api/runtime_reload_regression_test.go`
+- M: `internal/api/server.go`
+- A: `internal/api/server_claude_tool_search_test.go`
+- A: `internal/api/server_codex_search_siwc_test.go`
+- A: `internal/api/server_config_v8_etag_test.go`
+- A: `internal/api/server_cors_preflight_test.go`
+- A: `internal/api/server_home_tool_search_test.go`
+- M: `internal/api/server_management.go`
+- M: `internal/api/server_management_v8.go`
+- M: `internal/api/server_management_v8_test.go`
+- M: `internal/api/server_middleware.go`
+- A: `internal/api/server_model_detail_test.go`
+- M: `internal/api/server_reload.go`
+- M: `internal/api/server_routes.go`
+- A: `internal/api/server_siwc_test.go`
+- M: `internal/api/server_test.go`
+- M: `internal/auth/antigravity/auth.go`
+- M: `internal/auth/antigravity/auth_test.go`
+- A: `internal/auth/codex/filelock_unix.go`
+- A: `internal/auth/codex/filelock_windows.go`
+- M: `internal/auth/codex/oauth_server.go`
+- M: `internal/auth/codex/openai.go`
+- M: `internal/auth/codex/openai_auth.go`
+- A: `internal/auth/codex/refresh_patch.go`
+- A: `internal/auth/codex/refresh_patch_test.go`
+- A: `internal/auth/codex/siwc_auth.go`
+- A: `internal/auth/codex/siwc_auth_test.go`
+- M: `internal/auth/codex/token.go`
+- A: `internal/cache/antigravity_interactions_session.go`
+- A: `internal/cache/antigravity_interactions_session_test.go`
+- A: `internal/cache/claude_web_search_result_cache.go`
+- A: `internal/cache/claude_web_search_result_cache_test.go`
+- M: `internal/cache/codex_reasoning_replay_cache.go`
+- A: `internal/cache/issue6332_delivery_test.go`
+- A: `internal/cache/issue6332_export_test.go`
+- M: `internal/cache/signature_cache.go`
+- M: `internal/client/codex/live/capabilities.go`
+- M: `internal/client/codex/live/client_secret.go`
+- M: `internal/client/codex/models/apply_patch.go`
+- M: `internal/client/codex/models/apply_patch_test.go`
+- M: `internal/client/codex/models/models.go`
+- M: `internal/client/codex/models/models_test.go`
+- M: `internal/client/codex/optimize-multi-agent-v2/optimize_multi_agent_v2.go`
+- M: `internal/client/codex/optimize-multi-agent-v2/optimize_multi_agent_v2_test.go`
+- M: `internal/clienterror/client_error.go`
+- M: `internal/clienterror/client_error_test.go`
+- M: `internal/cmd/discover.go`
+- A: `internal/cmd/discover_review_test.go`
+- M: `internal/cmd/discover_test.go`
+- A: `internal/cmd/siwc_bind.go`
+- A: `internal/cmd/siwc_bind_test.go`
+- M: `internal/cmd/vertex_import.go`
+- M: `internal/config/claude_code_test.go`
+- M: `internal/config/claude_header_defaults_test.go`
+- M: `internal/config/client_test.go`
+- M: `internal/config/clone_test.go`
+- A: `internal/config/codex_compression_test.go`
+- M: `internal/config/codex_websocket_header_defaults_test.go`
+- M: `internal/config/config.go`
+- M: `internal/config/config_load.go`
+- A: `internal/config/config_load_test.go`
+- M: `internal/config/config_normalization.go`
+- M: `internal/config/config_types.go`
+- M: `internal/config/config_v8.go`
+- M: `internal/config/config_yaml.go`
+- A: `internal/config/github_token_test.go`
+- A: `internal/config/model_catalogs.go`
+- A: `internal/config/model_catalogs_test.go`
+- M: `internal/config/parse.go`
+- A: `internal/config/response_compression_test.go`
+- M: `internal/config/sdk_config.go`
+- A: `internal/config/tls_handshake_timeout_test.go`
+- M: `internal/config/vertex_compat.go`
+- A: `internal/config/vertex_openapi_test.go`

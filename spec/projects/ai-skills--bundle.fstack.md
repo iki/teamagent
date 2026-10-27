@@ -23,3 +23,7 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [bundle.fstack](https://github.com/flaviocopes/fstack); analyzed commit `48598b558b0d33de0e4a79afb4824c623ddbeeee`; commit date 2026-07-17T16:58:44+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--bundle.fstack.md).
+<!-- teamagent-analysis:end -->

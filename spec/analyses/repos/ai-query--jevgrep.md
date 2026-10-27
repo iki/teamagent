@@ -1,0 +1,154 @@
+# jevgrep: change evidence
+
+Source: [jevgrep](https://github.com/dzhng/jevgrep) · [Analysis](../../projects/ai-query--jevgrep.md) · [decisions](../../decisions.md), [memory](../../memory.md), [agents](../../agents.md), [models](../../models.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `703aba1a36a3b854be405244ea748f607cd630c0`; commit date: 2026-10-02T12:02:25-07:00; review date: 2026-10-04; observed SHA: `28cf384d444e1f4bf5571142ec32357cb84973ae`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/dzhng/jevgrep/compare/703aba1a36a3b854be405244ea748f607cd630c0...28cf384d444e1f4bf5571142ec32357cb84973ae). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [28cf384d444e](https://github.com/dzhng/jevgrep/commit/28cf384d444e1f4bf5571142ec32357cb84973ae) 2026-10-21T23:34:38+04:00: skills: catch regressions end to end; unit tests only where they speed iteration
+- [5a50fedceb24](https://github.com/dzhng/jevgrep/commit/5a50fedceb24e691c15d90c8585d7957a95f8c8a) 2026-10-21T14:02:28+04:00: test: use a Windows-compatible inventory fixture
+- [7970cc6c096c](https://github.com/dzhng/jevgrep/commit/7970cc6c096c48dd31ab1c740e6f41ee6df2aebc) 2026-10-20T11:30:58+04:00: codex skill: fix the screenshot-critique link for the flat skills layout
+- [ee4fb1de3343](https://github.com/dzhng/jevgrep/commit/ee4fb1de3343f005d1d2933725f159f43051689c) 2026-10-20T11:20:20+04:00: Install ratchet-files skill and hook
+- [2377c4956518](https://github.com/dzhng/jevgrep/commit/2377c4956518b32560e4a3d8620fc73f08d7866e) 2026-10-18T20:40:23-07:00: test: create Windows fixture parent directories safely
+- [2d9bce074f9c](https://github.com/dzhng/jevgrep/commit/2d9bce074f9c5f4423e2e33e146fddb5fe117d2d) 2026-10-18T02:25:04-07:00: chore: release 0.8.5
+- [157715f88d39](https://github.com/dzhng/jevgrep/commit/157715f88d3974bdbf0c91c5922b51a9847a1c3c) 2026-10-18T01:59:24-07:00: fix(cli): treat resource limits as partial success
+- [2e4be714bb1e](https://github.com/dzhng/jevgrep/commit/2e4be714bb1ed9e1a2908e1db7e272948b2f11a0) 2026-10-18T01:29:38-07:00: feat(cli): show terminal search progress
+- [88d4f3a814a5](https://github.com/dzhng/jevgrep/commit/88d4f3a814a5d9f56f501c600ae6a4f1bd0ab7af) 2026-10-18T00:27:55-07:00: chore: release 0.8.4
+- [5e4bcdce209f](https://github.com/dzhng/jevgrep/commit/5e4bcdce209f091a78588e90c0b9d9ef9f4307dd) 2026-10-18T00:03:42-07:00: fix: retain scored navigation on probe cancellation
+- [da5c05674c91](https://github.com/dzhng/jevgrep/commit/da5c05674c91e38f1b1c5641301eb8f3bc5d1aaa) 2026-10-18T00:03:42-07:00: fix: preserve discovery evidence on cancellation
+- [c20dcddea301](https://github.com/dzhng/jevgrep/commit/c20dcddea3019624fac47394d0f1541e5d91b06c) 2026-10-18T00:03:42-07:00: fix: emit expanded discovery chunks once per level
+- [14f08be812b4](https://github.com/dzhng/jevgrep/commit/14f08be812b40fbead2816fceb0b61ffe7c2df6a) 2026-10-18T00:03:42-07:00: fix: drain streamed discovery results on stop
+- [481e7df5cf90](https://github.com/dzhng/jevgrep/commit/481e7df5cf903cf7040d4bddaddc96dbdb775ef0) 2026-10-18T00:03:42-07:00: fix: stream discovery scoring with bounded backpressure
+- [6c2e6332a55a](https://github.com/dzhng/jevgrep/commit/6c2e6332a55ad42e8a1d25d1bd2e797ff25b73a4) 2026-10-18T00:03:42-07:00: perf(parser): reuse encoded source snapshots
+- [b9d24fca0eee](https://github.com/dzhng/jevgrep/commit/b9d24fca0eee72a8177cf107bf09bd0aa9a83097) 2026-10-17T21:54:43-07:00: docs: define contribution and PR review policy
+- [041178911274](https://github.com/dzhng/jevgrep/commit/0411789112746a678d8918cd500243f006073c48) 2026-10-17T18:59:26-07:00: chore: release 0.8.3
+- [59e9471367ee](https://github.com/dzhng/jevgrep/commit/59e9471367eebd703df476f044fb82b549eca825) 2026-10-17T18:53:49-07:00: Merge pull request #58: Add --no-locations output control
+- [c2498aa9ea98](https://github.com/dzhng/jevgrep/commit/c2498aa9ea984c86f27d0d11152bb0145ca5bb5e) 2026-10-17T18:53:35-07:00: Merge pull request #42: Remove retrieval cliffs and make repeated searches reproducible
+- [54ab869d7912](https://github.com/dzhng/jevgrep/commit/54ab869d791213041ef053972adfe1f80b81412d) 2026-10-17T18:22:29-07:00: fix: tighten retrieval review coverage
+- [308803651305](https://github.com/dzhng/jevgrep/commit/308803651305efc561c537dd5ed91167b26ea7be) 2026-10-17T18:20:27-07:00: fix(cli): keep no-locations output honest
+- [a809db6a33a7](https://github.com/dzhng/jevgrep/commit/a809db6a33a7f3362967e6c5898228dfa789d5e1) 2026-10-18T09:02:41+08:00: feat(cli): add --no-locations flag to omit Declaration locations section
+- [b8ff61d0715a](https://github.com/dzhng/jevgrep/commit/b8ff61d0715a8a02836b75d736a9d1a2185206f5) 2026-10-17T18:02:34-07:00: fix: reconcile retrieval rebase
+- [7ae428799fcd](https://github.com/dzhng/jevgrep/commit/7ae428799fcd542a11973d376ae61af02d091e91) 2026-10-17T17:55:45-07:00: Record upstream measurements in the ported ledger entries
+- [0414b8e260e6](https://github.com/dzhng/jevgrep/commit/0414b8e260e6f973d0822c84da1fa5001251218e) 2026-10-17T17:55:45-07:00: Find Rust attribute starts without quadratic sibling walks
+- [d325ee80c137](https://github.com/dzhng/jevgrep/commit/d325ee80c1371580dbdf1f0fbc5774a7f694973c) 2026-10-17T17:55:45-07:00: Remove superlinear work on comment windows and declaration indexes
+- [f0715412704c](https://github.com/dzhng/jevgrep/commit/f0715412704c6f8758598218cf2b29d628c5fcec) 2026-10-17T17:55:45-07:00: Parse long Python comment runs in linear time
+- [2cd0fbd4214e](https://github.com/dzhng/jevgrep/commit/2cd0fbd4214eec6d849105032554b418f598a980) 2026-10-17T17:55:45-07:00: Mark class context structurally instead of by name
+- [ea708e5f7863](https://github.com/dzhng/jevgrep/commit/ea708e5f78637ee0e55993e0cabf18822322ea9a) 2026-10-17T17:55:45-07:00: Reuse a snapshot while its file identity is unchanged
+- [5e0dc9ec6d91](https://github.com/dzhng/jevgrep/commit/5e0dc9ec6d9175d5939c6c609099ae0af0350efa) 2026-10-17T17:53:32-07:00: Overlap declaration groups within a file
+- [7a7e27dd829c](https://github.com/dzhng/jevgrep/commit/7a7e27dd829c2d1cf96de339b3e056284939a148) 2026-10-17T17:52:34-07:00: Order cross-file evidence deterministically
+- [71dd9af740aa](https://github.com/dzhng/jevgrep/commit/71dd9af740aaabbaed3c7c3a74a7d71ed07410c3) 2026-10-17T17:52:08-07:00: Use navigation decisions in item order, not completion order
+
+## Changed paths
+
+- M: `.agents/skills/audit-agents/assets/example-agents.md`
+- M: `.agents/skills/claude/SKILL.md`
+- M: `.agents/skills/code-review/SKILL.md`
+- M: `.agents/skills/codex/SKILL.md`
+- M: `.agents/skills/compare-screenshots/SKILL.md`
+- M: `.agents/skills/compare-screenshots/references/subagent-visual-review.md`
+- M: `.agents/skills/compare-screenshots/scripts/visual-parity-diff.eval.mjs`
+- M: `.agents/skills/compare-screenshots/scripts/visual-parity-diff.mjs`
+- A: `.agents/skills/compare-screenshots/test/fixtures/target-without-helper-packages/README.md`
+- A: `.agents/skills/compare-screenshots/test/fixtures/target-without-helper-packages/candidate/fixture.png`
+- A: `.agents/skills/compare-screenshots/test/fixtures/target-without-helper-packages/reference/fixture.png`
+- A: `.agents/skills/compare-screenshots/test/visual-parity-diff.test.mjs`
+- A: `.agents/skills/compare-screenshots/vendor/pixelmatch/LICENSE`
+- A: `.agents/skills/compare-screenshots/vendor/pixelmatch/index.js`
+- A: `.agents/skills/compare-screenshots/vendor/pixelmatch/package.json`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/LICENSE`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/bitmapper.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/bitpacker.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/chunkstream.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/constants.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/crc.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/filter-pack.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/filter-parse-async.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/filter-parse-sync.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/filter-parse.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/format-normaliser.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/interlace.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/packer-async.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/packer-sync.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/packer.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/paeth-predictor.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/parser-async.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/parser-sync.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/parser.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/png-sync.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/png.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/sync-inflate.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/lib/sync-reader.js`
+- A: `.agents/skills/compare-screenshots/vendor/pngjs/package.json`
+- M: `.agents/skills/implement-spec/SKILL.md`
+- M: `.agents/skills/jevgrep/SKILL.md`
+- A: `.agents/skills/ratchet-files/SKILL.md`
+- M: `.agents/skills/refactor-clean/SKILL.md`
+- M: `.agents/skills/screenshot-critique/SKILL.md`
+- A: `.agents/skills/screenshot-critique/scripts/receipts.eval.mjs`
+- A: `.agents/skills/screenshot-critique/scripts/receipts.mjs`
+- M: `.agents/skills/write-skills/SKILL.md`
+- M: `.agents/skills/write-tests/SKILL.md`
+- M: `.gitattributes`
+- A: `.husky/pre-commit`
+- M: `AGENTS.md`
+- A: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `apps/cli/README.md`
+- M: `apps/cli/package.json`
+- M: `apps/cli/src/args.ts`
+- M: `apps/cli/src/auth.ts`
+- A: `apps/cli/src/exit-code.ts`
+- M: `apps/cli/src/index.ts`
+- A: `apps/cli/src/progress.ts`
+- M: `apps/cli/src/render.ts`
+- M: `apps/cli/src/skill.ts`
+- M: `apps/cli/test/args.test.ts`
+- M: `apps/cli/test/auth.test.ts`
+- M: `apps/cli/test/cli.ts`
+- A: `apps/cli/test/exit-code.test.ts`
+- A: `apps/cli/test/progress.test.ts`
+- M: `apps/cli/test/render.test.ts`
+- A: `apps/cli/test/skill.test.ts`
+- M: `bun.lock`
+- M: `docs/architecture.md`
+- M: `package.json`
+- M: `packages/core/src/cache.ts`
+- M: `packages/core/src/call-context.ts`
+- M: `packages/core/src/filesystem.ts`
+- M: `packages/core/src/index.ts`
+- M: `packages/core/src/inventory.ts`
+- M: `packages/core/src/parser-declarations.mjs`
+- M: `packages/core/src/parser-helpers.mjs`
+- M: `packages/core/src/retrieve.ts`
+- A: `packages/core/src/secrets.ts`
+- M: `packages/core/src/selection.ts`
+- M: `packages/core/src/source.ts`
+- M: `packages/core/src/storage.ts`
+- M: `packages/core/src/test-body-selection.ts`
+- M: `packages/core/src/types.ts`
+- M: `packages/core/test/cache.test.ts`
+- M: `packages/core/test/filesystem.test.ts`
+- A: `packages/core/test/inventory-list.test.ts`
+- A: `packages/core/test/secrets.test.ts`
+- M: `packages/core/test/selection.test.ts`
+- M: `packages/core/test/storage.test.ts`
+- M: `scripts/build-cli.ts`
+- A: `scripts/check-file-size.mjs`
+- M: `scripts/test-native.mjs`
+- M: `skills/jevgrep/SKILL.md`
+- M: `specs/done/jevgrep/README.md`
+- M: `specs/done/jevgrep/choices.md`
+- M: `specs/done/jevgrep/contracts.md`
+- M: `test/discovery.test.ts`
+- M: `test/installed.test.mjs`
+- M: `test/parser/README.md`
+- M: `test/parser/languages.test.ts`
+- M: `test/parser/parity.test.ts`
+- M: `test/parser/source.test.ts`
+- M: `test/retrieval.test.ts`
+- M: `test/skill.test.mjs`

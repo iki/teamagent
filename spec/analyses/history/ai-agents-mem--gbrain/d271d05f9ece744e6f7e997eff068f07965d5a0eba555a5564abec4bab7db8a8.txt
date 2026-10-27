@@ -1,0 +1,25 @@
+# gbrain
+
+Source: [gbrain](https://github.com/garrytan/gbrain) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `109b992172e1f49107f9de9841758c1d043a2668`; commit timestamp `2026-10-03T19:41:11Z`; 8,575 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/garrytan/gbrain/blob/109b992172e1f49107f9de9841758c1d043a2668/README.md)):
+
+> Give the agent you already use a memory you control.** GBrain stores explicit facts with their sources, supports corrections and withdrawal, and makes the same memory available across your agents. Start with keyless memory and keyword retrieval; add semantic search, synthesis, and background enrichment when you need them. Keep skills beside knowledge.** New local brains include memory skills in their
+
+Build/package evidence: [admin/package.json](https://github.com/garrytan/gbrain/blob/109b992172e1f49107f9de9841758c1d043a2668/admin/package.json); [package.json](https://github.com/garrytan/gbrain/blob/109b992172e1f49107f9de9841758c1d043a2668/package.json); [recipes/agent-voice/package.json](https://github.com/garrytan/gbrain/blob/109b992172e1f49107f9de9841758c1d043a2668/recipes/agent-voice/package.json); [test/fixtures/guards/check-compile-autoload.sh/bad/package.json](https://github.com/garrytan/gbrain/blob/109b992172e1f49107f9de9841758c1d043a2668/test/fixtures/guards/check-compile-autoload.sh/bad/package.json); [test/fixtures/guards/check-compile-autoload.sh/good/package.json](https://github.com/garrytan/gbrain/blob/109b992172e1f49107f9de9841758c1d043a2668/test/fixtures/guards/check-compile-autoload.sh/good/package.json)
+
+License evidence: [LICENSE](https://github.com/garrytan/gbrain/blob/109b992172e1f49107f9de9841758c1d043a2668/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

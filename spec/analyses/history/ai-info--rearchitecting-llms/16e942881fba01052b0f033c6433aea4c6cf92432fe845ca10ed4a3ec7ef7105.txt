@@ -1,0 +1,26 @@
+# Rearchitecting LLMs
+
+Source: [peremartra/Rearchitecting-LLMs](https://github.com/peremartra/Rearchitecting-LLMs) · Reviewed revision: `fa7027b6be9f68e8689dd0d561735a72f347eb33` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [models](../models.md) · [evolution](../evolution.md) · [decisions](../decisions.md).
+
+## Evidence inspected
+
+- [`README.md` lines 17–54](https://github.com/peremartra/Rearchitecting-LLMs/blob/fa7027b6be9f68e8689dd0d561735a72f347eb33/README.md#L17-L54)
+- [`utils.py` lines 31–92](https://github.com/peremartra/Rearchitecting-LLMs/blob/fa7027b6be9f68e8689dd0d561735a72f347eb33/utils.py#L31-L92)
+
+## Observed architecture and behavior
+
+The repository is an educational companion covering structural pruning, distillation, specialization, attention optimization, and model families. The inspected performance helper measures generation latency and throughput, tracks batching, selects available mixed precision, and reports measurement/sample counts. The README distinguishes completed and forthcoming chapters. This is an experimental training and measurement resource, not a production harness or evidence that an arbitrary reduced model will preserve coding and tool-use quality.
+
+## Implications and tradeoffs for Teamagent
+
+Teamagent's first optimization layer should remain routing, retrieval, prompt/skill selection, and execution efficiency. Weight-level specialization becomes attractive only for stable, frequent subtasks with representative data and measurable local inference savings. Candidate examples are intent classification, relevance filtering, or schema extraction, where outputs can be validated. Evaluate end-to-end quality and latency, not only token throughput: batching, precision, context length, hardware, and warmup can dominate measurements. A reduced model can lose rare capabilities, calibration, or instruction-following behavior even when an aggregate text metric improves.
+
+## Adoption decision
+
+Keep as a research reference for a later specialized-local-model program. Separate calibration, recovery, training, validation, and held-out task data. Record the original model, license, transformation recipe, hardware, precision, and model artifact hash. Require integration-level evaluation of the resulting model with its intended skills and tools before routing production tasks to it. Do not make pruning or fine-tuning a prerequisite for the initial local/cloud harness, and do not treat educational notebook outputs as independently validated benchmarks.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.

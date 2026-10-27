@@ -29,3 +29,7 @@ A maximal independent set is not necessarily maximum or optimal for throughput. 
 Test transitive-looking conflict graphs, resource wildcards, stable tie-breaks, starvation and tasks that discover new write scope. Benchmark greedy scheduling against serial work on real code changes. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [decisions](../decisions.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [openswarm](https://github.com/unohee/openswarm); analyzed commit `47f446dd5125e38d485dd55bb46df8dda8eaa969`; commit date 2026-10-04T00:48:18+09:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--openswarm.md).
+<!-- teamagent-analysis:end -->

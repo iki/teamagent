@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-proxy**. Its category places it in t
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [proxypilot-win](https://github.com/Finesssee/ProxyPilot); analyzed commit `7ff4825858bd3887772411faf0ab7eaaf7045691`; commit date 2026-06-24T19:23:19+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--proxypilot-win.md).
+<!-- teamagent-analysis:end -->

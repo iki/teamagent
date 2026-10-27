@@ -1,0 +1,207 @@
+# gascity: change evidence
+
+Source: [gascity](https://github.com/gastownhall/gascity) · [Analysis](../../projects/ai-agents--gascity.md) · [agents](../../agents.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `802b6134df87b1d7519df63ed44ad63e1570a5c5`; commit date: 2026-10-03T13:44:32-07:00; review date: unknown; observed SHA: `e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/gascity/compare/802b6134df87b1d7519df63ed44ad63e1570a5c5...e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [e73ebbfb48fd](https://github.com/gastownhall/gascity/commit/e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6) 2026-10-27T14:24:46Z: fix(runtime): report an idle wait that read nothing as unobserved (ga-pts3qe) (#8393)
+- [9bba6374c942](https://github.com/gastownhall/gascity/commit/9bba6374c9428e8a4ebe6a6b7824c4e69048320a) 2026-10-27T13:59:44Z: fix(tmux): treat a dead pane with an empty pane_pid as dead (#8365)
+- [a1ff5e2ade78](https://github.com/gastownhall/gascity/commit/a1ff5e2ade785882a414bcdc71f5be32b599f094) 2026-10-27T08:23:31Z: docs(reconciler-v2): A8 delivery is at-least-once, not exactly-once (V2-5) (#8379)
+- [826934be9486](https://github.com/gastownhall/gascity/commit/826934be94866ae4d5f1cc84ce885fcd3ad7edcb) 2026-10-27T07:21:37Z: fix(herdr): resolve socket dir by herdr's XDG rule on every platform (#8347)
+- [e4c3c722d864](https://github.com/gastownhall/gascity/commit/e4c3c722d864d8da4fc3fb8dab716895b6e3a0e6) 2026-10-27T07:09:52Z: test(session): pin killed as an operator stop in both sleep-reason lists (#8351)
+- [44762ed99cfb](https://github.com/gastownhall/gascity/commit/44762ed99cfbcf4e2617e6adef38e09072f83439) 2026-10-27T07:01:33Z: fix(session): search a passed-through CLAUDE_CONFIG_DIR beside the city roots (#6677) (#8346)
+- [234bd7aa750c](https://github.com/gastownhall/gascity/commit/234bd7aa750c6bd476407b2d5e5c9fe1ac22dcc3) 2026-10-27T06:40:47Z: fix(prime): fail --strict on prompt_template parse and execute errors (#8149) (#8316)
+- [b99450fcb8f5](https://github.com/gastownhall/gascity/commit/b99450fcb8f5868120125df42ccaf91e39bb4998) 2026-10-27T06:30:45Z: fix(dolt): answer the listener probe from the kernel socket tables, not lsof (#8334)
+- [8a1d2121d2d4](https://github.com/gastownhall/gascity/commit/8a1d2121d2d412afb74b42e515ebf8d8bdd1f2c1) 2026-10-27T06:22:36Z: fix(core): wake routed unassigned dependents on blocker close (#8356)
+- [55adb7cd74d2](https://github.com/gastownhall/gascity/commit/55adb7cd74d2aea178050d2131615f0ed71c75ad) 2026-10-27T06:18:13Z: fix(doctor): stop warning that unmatched public imports need credentials; report the credential hint on gc doctor --fix auth failures (#8357)
+- [7eb6ba1a668d](https://github.com/gastownhall/gascity/commit/7eb6ba1a668db11c05be759271dfdb2d3dcf9655) 2026-10-27T06:15:56Z: fix(core): drop coordinator-role judgment from worker escalation prose (#8355)
+- [c2f5a09e4add](https://github.com/gastownhall/gascity/commit/c2f5a09e4add680755df54825b83445fae616596) 2026-10-27T06:12:56Z: test(core pack): every retry-managed core step states the outcome contract (#8342)
+- [792f0e210d95](https://github.com/gastownhall/gascity/commit/792f0e210d954b612653d935840fa7fd33e5b815) 2026-10-27T06:09:11Z: fix(api): skip effectively suspended rigs in the active-bead lookup (#8319)
+- [9ea659fc5f22](https://github.com/gastownhall/gascity/commit/9ea659fc5f220833c137252050117943ddc9e5d7) 2026-10-27T06:08:45Z: docs(dispatch): state maxCheckInfraRetries semantics per lane (#8336)
+- [298ba0f771a5](https://github.com/gastownhall/gascity/commit/298ba0f771a5aec7983db10d574cd5ce83721ab6) 2026-10-27T06:07:54Z: fix(core): close mol-do-work's do-work step via its verified hook claim (#8326)
+- [5ee67e887d87](https://github.com/gastownhall/gascity/commit/5ee67e887d873d60ba5ed7d7271ed006ca2e7806) 2026-10-27T03:03:26Z: test(proctable): assert orphan-scan errors by PID (#8371)
+- [45563e2abf21](https://github.com/gastownhall/gascity/commit/45563e2abf2154191a775f12cd20611f82b23924) 2026-10-27T00:54:49Z: fix(molecule): resolve attachment nesting without the forward pointer (#8318)
+- [e6abcce27a3a](https://github.com/gastownhall/gascity/commit/e6abcce27a3a9d7306d8e3160eff42a86a4851f0) 2026-10-27T00:35:56Z: fix(ci): fail stale worker-env bases instead of skipping Bazel (#8366)
+- [37bd09351ac8](https://github.com/gastownhall/gascity/commit/37bd09351ac80604606366872b4efeed63b624b8) 2026-10-26T21:39:39Z: test(cmd/gc): read settled process environments through exec windows (#8297)
+- [eeaf532f2ecf](https://github.com/gastownhall/gascity/commit/eeaf532f2ecf3b7efc01f3e24030676bf4932a90) 2026-10-26T21:36:19Z: fix(lane): wake busy keystroke boundaries at their quiescence deadline (#8308)
+- [1036b2cb20c1](https://github.com/gastownhall/gascity/commit/1036b2cb20c15f0a6532fbd04fbb7d63ae42e2b3) 2026-10-26T20:22:29Z: fix(session): let operator closes outlast reconciliation writes (#8299)
+- [e2671dc4dfee](https://github.com/gastownhall/gascity/commit/e2671dc4dfeeb7bc5ff99a2d55ced65431911aee) 2026-10-26T19:59:55Z: fix(ops): the default auto gate records only on SQLite op stores (#8362)
+- [4bab0b485a76](https://github.com/gastownhall/gascity/commit/4bab0b485a76646fb480c3089e8d541d6f96d88c) 2026-10-26T18:45:13Z: fix(session): bound synchronous start wave waits (#8300)
+- [f78779e41522](https://github.com/gastownhall/gascity/commit/f78779e415224ec372001245b51b9f25b4a4368b) 2026-10-26T09:46:32Z: fix(deps): require Dolt 2.6.0; Go 1.27.3; re-pin rbe worker host (#8291)
+- [1904f5b2062e](https://github.com/gastownhall/gascity/commit/1904f5b2062e803c52efce14e05ef04b8319e1ed) 2026-10-26T09:38:11Z: test(conversationlane): X12 Dolt arm collects garbage and reports retained op-row bytes (#8340)
+- [aa576f9fe92c](https://github.com/gastownhall/gascity/commit/aa576f9fe92c0df64b09a2beff052b53a8608be3) 2026-10-26T09:27:26Z: feat(events): [events.mirror] writes a copy of the event log outside .gc (#8328)
+- [db0629225435](https://github.com/gastownhall/gascity/commit/db0629225435be6967882a4c4e8a0281460c33ff) 2026-10-26T09:15:13Z: chore(lint): golangci-lint v2.14.0, gofumpt v0.12.0, staticcheck v0.8.1 (#8321)
+- [3fb225b904e0](https://github.com/gastownhall/gascity/commit/3fb225b904e0dce01eacc7decf86aa783e7598e0) 2026-10-26T05:46:05Z: fix: bound default-branch probing during desired-state builds (#8081)
+- [999ce2eac978](https://github.com/gastownhall/gascity/commit/999ce2eac978db6b236d5935e318bb7cb0f593f5) 2026-10-26T05:32:44Z: feat(ops): the op-journal rollout gates default to auto (OJ-8) (#8325)
+- [ac87ee77ea32](https://github.com/gastownhall/gascity/commit/ac87ee77ea3293cb120c470bd1d0d56675dbce42) 2026-10-26T04:52:41Z: fix(deps): hold gc-mcp-mail filelock below 4 and GitPython on 3.1.x (regressions from #8307) (#8329)
+- [a4590b74cad2](https://github.com/gastownhall/gascity/commit/a4590b74cad2d7834b42fd88003dbe301d286c0f) 2026-10-26T03:46:02Z: fix(core pack): jsonl-export never leaves the archive path without .git (ga-ooxzxz) (#8322)
+- [adae2e67873c](https://github.com/gastownhall/gascity/commit/adae2e67873c0e9fab834d32d21da4393218ffcf) 2026-10-26T03:00:34Z: test(gastown): real-bd fixture waits for its proxies and Dolt to exit before TempDir removal (ga-urgs30) (#8323)
+
+## Changed paths (truncated)
+
+- M: `.bazelignore`
+- M: `.bazelrc`
+- M: `.bazelversion`
+- M: `.claude/skills/gascity-docs/references/verification.md`
+- M: `.devcontainer/README.md`
+- M: `.devcontainer/devcontainer.json`
+- M: `.gitattributes`
+- M: `.githooks/lib/beads-chain.sh`
+- A: `.githooks/lib/local-runtime.sh`
+- A: `.githooks/lib/push-suite.sh`
+- M: `.githooks/pre-commit`
+- M: `.githooks/pre-push`
+- M: `.github/CODEOWNERS`
+- M: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- M: `.github/ISSUE_TEMPLATE/config.yml`
+- M: `.github/ISSUE_TEMPLATE/feature_request.yml`
+- A: `.github/actions/fresh-merge/action.yml`
+- A: `.github/actions/go-mod-download/action.yml`
+- A: `.github/actions/llvm-archive-cache/action.yml`
+- A: `.github/actions/llvm-archive-cache/locate.sh`
+- A: `.github/actions/rbe-worker/action.yml`
+- A: `.github/actions/rbe-worker/fetch.sh`
+- A: `.github/actions/rbe-worker/h5.sh`
+- A: `.github/actions/rbe-worker/pin`
+- A: `.github/actions/setup-bazel/action.yml`
+- R100: `.github/actions/setup-bazel/fork-credential.sh` (from `tools/rbe/fork-credential.sh`)
+- A: `.github/actions/setup-bazel/write-bazelrc.sh`
+- M: `.github/actions/setup-gascity-macos/action.yml`
+- M: `.github/actions/setup-gascity-ubuntu/action.yml`
+- M: `.github/pull_request_template.md`
+- M: `.github/requirements/mcp-agent-mail.in`
+- M: `.github/requirements/mcp-agent-mail.overrides.txt`
+- M: `.github/requirements/mcp-agent-mail.txt`
+- M: `.github/scripts/docs-render-check.sh`
+- A: `.github/scripts/go-mod-download-retry.sh`
+- A: `.github/scripts/go-mod-verify-cache.sh`
+- M: `.github/scripts/install-bd-archive.sh`
+- M: `.github/scripts/install-claude-native.sh`
+- M: `.github/scripts/install-dolt-archive.sh`
+- A: `.github/scripts/mcp-mail-filelock-exit-regression.py`
+- A: `.github/scripts/rrc-writer-credential.sh`
+- A: `.github/workflows/bazel-nightly.yml`
+- D: `.github/workflows/bazel-test.yml`
+- A: `.github/workflows/bazel.yml`
+- M: `.github/workflows/ci-verdict-watchdog.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/codeql.yml`
+- M: `.github/workflows/complexity.yml`
+- M: `.github/workflows/container-scan.yml`
+- M: `.github/workflows/dispatch-labeled-pr-suite.yml`
+- M: `.github/workflows/docs-autofix.yml`
+- M: `.github/workflows/docs-render.yml`
+- M: `.github/workflows/fork-verify.yml`
+- M: `.github/workflows/govulncheck.yml`
+- M: `.github/workflows/mac-regression.yml`
+- M: `.github/workflows/nightly.yml`
+- M: `.github/workflows/ollama-acceptance-c.yml`
+- M: `.github/workflows/pr-evidence-watchdog.yml`
+- M: `.github/workflows/rbe-fork-pool.yml`
+- A: `.github/workflows/rbe-worker-env-canary.yml`
+- A: `.github/workflows/rbe-worker-legacy.yml`
+- M: `.github/workflows/rbe-worker-pool.yml`
+- M: `.github/workflows/rc-gate.yml`
+- M: `.github/workflows/review-formulas.yml`
+- M: `.github/workflows/scripts/runner_policy.py`
+- M: `.github/workflows/scripts/test_runner_policy.py`
+- D: `.github/workflows/scripts/test_worker_report_artifacts.py`
+- D: `.github/workflows/scripts/worker_report_rollup.py`
+- D: `.github/workflows/scripts/worker_report_stub.py`
+- D: `.github/workflows/scripts/worker_report_summary.py`
+- A: `.github/workflows/worker-env-notify-beads-pr.yml`
+- A: `.github/workflows/worker-env-notify-beads.yml`
+- M: `.golangci.yml`
+- M: `.trivyignore.yaml`
+- M: `AGENTS.md`
+- M: `BUILD.bazel`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `MODULE.bazel`
+- M: `MODULE.bazel.lock`
+- M: `Makefile`
+- M: `README.md`
+- A: `ROADMAP.md`
+- M: `TESTING.md`
+- D: `bazel-gascity-bazel`
+- M: `cmd/BUILD.bazel`
+- M: `cmd/gc-write-mint/BUILD.bazel`
+- M: `cmd/gc-write-mint/e2e_test.go`
+- M: `cmd/gc/BUILD.bazel`
+- M: `cmd/gc/acp_route_seed_test.go`
+- A: `cmd/gc/actor_helpers_test.go`
+- M: `cmd/gc/adoption_barrier.go`
+- M: `cmd/gc/adoption_barrier_test.go`
+- M: `cmd/gc/agent_build_params.go`
+- A: `cmd/gc/agent_lookup_test.go`
+- A: `cmd/gc/allocator_backoff.go`
+- A: `cmd/gc/allocator_backoff_test.go`
+- M: `cmd/gc/allocator_backstop_lane.go`
+- M: `cmd/gc/allocator_backstop_lane_test.go`
+- M: `cmd/gc/allocator_bucket.go`
+- M: `cmd/gc/allocator_bucket_test.go`
+- M: `cmd/gc/allocator_census.go`
+- M: `cmd/gc/allocator_census_test.go`
+- M: `cmd/gc/allocator_create.go`
+- A: `cmd/gc/allocator_create_named.go`
+- A: `cmd/gc/allocator_create_named_prerefactor_test.go`
+- A: `cmd/gc/allocator_create_named_test.go`
+- M: `cmd/gc/allocator_create_prerefactor_test.go`
+- M: `cmd/gc/allocator_create_test.go`
+- A: `cmd/gc/allocator_decide.go`
+- A: `cmd/gc/allocator_decide_purity_test.go`
+- A: `cmd/gc/allocator_decide_smoke_test.go`
+- A: `cmd/gc/allocator_decide_test.go`
+- M: `cmd/gc/allocator_demand_reads.go`
+- M: `cmd/gc/allocator_demand_reads_test.go`
+- A: `cmd/gc/allocator_differential_test.go`
+- M: `cmd/gc/allocator_health.go`
+- M: `cmd/gc/allocator_health_test.go`
+- A: `cmd/gc/allocator_index.go`
+- A: `cmd/gc/allocator_index_test.go`
+- D: `cmd/gc/allocator_ledger.go`
+- D: `cmd/gc/allocator_ledger_test.go`
+- M: `cmd/gc/allocator_observe.go`
+- M: `cmd/gc/allocator_observe_test.go`
+- A: `cmd/gc/allocator_pending_create_keep_test.go`
+- A: `cmd/gc/allocator_plan.go`
+- A: `cmd/gc/allocator_plan_test.go`
+- M: `cmd/gc/allocator_scalecheck_lane.go`
+- M: `cmd/gc/allocator_scalecheck_lane_test.go`
+- A: `cmd/gc/allocator_seams_prerefactor_test.go`
+- A: `cmd/gc/allocator_seams_test.go`
+- A: `cmd/gc/allocator_snapshot.go`
+- A: `cmd/gc/api_contract_agents_test.go`
+- A: `cmd/gc/api_contract_async_helpers_test.go`
+- A: `cmd/gc/api_contract_async_test.go`
+- A: `cmd/gc/api_contract_beads_test.go`
+- A: `cmd/gc/api_contract_config_mail_test.go`
+- A: `cmd/gc/api_contract_extmsg_test.go`
+- A: `cmd/gc/api_contract_harness_test.go`
+- A: `cmd/gc/api_contract_rigs_events_test.go`
+- A: `cmd/gc/api_contract_sessions_test.go`
+- A: `cmd/gc/api_contract_suite_test.go`
+- A: `cmd/gc/api_contract_supervisor_test.go`
+- A: `cmd/gc/api_contract_waivers_test.go`
+- A: `cmd/gc/api_contract_workflow_test.go`
+- A: `cmd/gc/api_kill_fence_test.go`
+- M: `cmd/gc/api_state.go`
+- M: `cmd/gc/api_state_cache_reconcile_snapshot_test.go`
+- M: `cmd/gc/api_state_conditional_writes.go`
+- M: `cmd/gc/api_state_event_identity_test.go`
+- M: `cmd/gc/api_state_pack_transaction_test.go`
+- M: `cmd/gc/api_state_rollout_test.go`
+- M: `cmd/gc/api_state_storage_routes_test.go`
+- M: `cmd/gc/api_state_test.go`
+- A: `cmd/gc/api_state_wake_refusal.go`
+- A: `cmd/gc/api_state_wake_refusal_test.go`
+- M: `cmd/gc/assigned_work_class_binding_test.go`
+- A: `cmd/gc/assigned_work_hold_wake_test.go`
+- M: `cmd/gc/assigned_work_residency.go`
+- M: `cmd/gc/assigned_work_residency_test.go`

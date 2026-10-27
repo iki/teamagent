@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--omnigraph",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/ModernRelay/omnigraph",
+  "report": "spec/projects/ai-agents-mem--omnigraph.md",
+  "analyzedSha": "10a3dc53a392e061aff0dc8fd21d54b6268bdef3",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T19:51:03Z",
+  "observedSha": "7711e4a3def5c179cf95ec2525a6263819155916",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7711e4a3def5c179cf95ec2525a6263819155916",
+      "date": "2026-10-24T00:25:46Z",
+      "subject": "perf(engine): probe an edge load's endpoints on the parse partitions (#1147)"
+    },
+    {
+      "sha": "3602c30896f6696c17cfdef28135d1749cd593ca",
+      "date": "2026-10-23T18:16:59Z",
+      "subject": "docs(release): document the 0.13 to 0.14 upgrade (#1144)"
+    },
+    {
+      "sha": "67f6994f34838680429c83e818ac446a8e610bd9",
+      "date": "2026-10-23T17:20:51Z",
+      "subject": "fix(deps): require Tokio with the AsyncFd safety fix (#1145)"
+    },
+    {
+      "sha": "1ec9b32e60b678329c35468220f85344f1940faf",
+      "date": "2026-10-23T13:23:34Z",
+      "subject": "docs: replace the pull request template's form with a prose description (#1143)"
+    },
+    {
+      "sha": "484e33451c9cf52e0b99b5b2c43ce3f211780a65",
+      "date": "2026-10-23T10:02:05Z",
+      "subject": "perf(planner): make an overwrite's removal a plan decision (#1141)"
+    },
+    {
+      "sha": "9f1b59974c63d1eb489c2229eb47e95d7af0dd54",
+      "date": "2026-10-23T00:13:36Z",
+      "subject": "docs(release): align guides with the 0.14 release (#1142)"
+    },
+    {
+      "sha": "242ab02f0eaec1be652c40fa5f3d5d4bd7b33493",
+      "date": "2026-10-22T17:31:18Z",
+      "subject": "release(version): start 0.14.1 development (#1140)"
+    },
+    {
+      "sha": "60bfd19db780fdff3a5178f959c1204143420114",
+      "date": "2026-10-22T15:33:41Z",
+      "subject": "docs(release): prepare v0.14.0 snapshot (#1138)"
+    },
+    {
+      "sha": "f8fb548d1425b1ced752f7c4e6445d6df626b71d",
+      "date": "2026-10-22T14:22:58Z",
+      "subject": "fix(planner): preserve full-text block scopes (#1136)"
+    },
+    {
+      "sha": "129b5ef7cf00d150bcd004472720fab37a47b578",
+      "date": "2026-10-22T13:51:07Z",
+      "subject": "fix(cli)!: distinguish current configuration protocols (#1135)"
+    },
+    {
+      "sha": "9d92f3970311d5229f55b1a1fc06b2d3fba30a55",
+      "date": "2026-10-22T12:40:59Z",
+      "subject": "rfc: standardize HTTP API conventions (#1089)"
+    },
+    {
+      "sha": "5cd4b3a293363b441b7f28e9ed1977ec612033a5",
+      "date": "2026-10-22T12:29:46Z",
+      "subject": "feat(api)!: standardize the 0.14 HTTP contract (#1133)"
+    },
+    {
+      "sha": "edf9166c23609135ec8ce0fe32dcb2919badfa12",
+      "date": "2026-10-22T12:18:10Z",
+      "subject": "refactor(api): bind HTTP MCP and CLI operation inventories (#1132)"
+    },
+    {
+      "sha": "5a96c3632ac7007e95b1cb92f239d54955c88315",
+      "date": "2026-10-22T12:03:26Z",
+      "subject": "docs(api): enforce OpenAPI conventions and response coverage (#1131)"
+    },
+    {
+      "sha": "febfcc4314112c1cb5a7bf30897c014188768a73",
+      "date": "2026-10-22T11:07:27Z",
+      "subject": "feat(engine): toward partitioned operators, a csv overwrite's source in slices, swept per partition (#1134)"
+    },
+    {
+      "sha": "e60eb016941c6a4d41e03e74aa40c923a4ee4c01",
+      "date": "2026-10-22T06:42:01Z",
+      "subject": "test(dst): name unreachable crash windows and fix index-build reach (#1035)"
+    },
+    {
+      "sha": "228a455a6ca1bc86365d78b7700546cb84087b6a",
+      "date": "2026-10-22T06:41:08Z",
+      "subject": "feat(cli): relay an agent's stdio MCP to an existing server (#1118)"
+    },
+    {
+      "sha": "242025ccd33e436fe0e2531e3142383dc2d780b4",
+      "date": "2026-10-22T06:23:09Z",
+      "subject": "fix(server): settle an embedded error's facts before it is logged (#1123)"
+    },
+    {
+      "sha": "63919e7e2cda6c63240574f27af482df08710f57",
+      "date": "2026-10-22T06:10:38Z",
+      "subject": "fix(release): read a pre-0.14 stable release's HTTP contract from its source (#1125)"
+    },
+    {
+      "sha": "7fff9dfd91835201986d72f3e3e014b36c3e636a",
+      "date": "2026-10-22T01:54:14Z",
+      "subject": "docs(readme): say what Omnigraph Cloud includes (#1128)"
+    },
+    {
+      "sha": "97788d37faa3773bcd97354939768526f05c9da2",
+      "date": "2026-10-22T01:16:51Z",
+      "subject": "fix(server): send WWW-Authenticate on every 401 (#1122)"
+    },
+    {
+      "sha": "584f6f6e751e5518bcb102883ae8b1366bb7d7d6",
+      "date": "2026-10-22T00:23:56Z",
+      "subject": "refactor(mcp): extract protocol implementation into a separate crate (#1106)"
+    },
+    {
+      "sha": "ff542202c6cf45fb6bc53f8ab87de37f4c5a2977",
+      "date": "2026-10-21T23:38:05Z",
+      "subject": "feat(cli)!: simplify profile setup and target authentication (#1126)"
+    },
+    {
+      "sha": "229ea51b27944a8a09c4c2a9176931ca54511def",
+      "date": "2026-10-21T23:16:30Z",
+      "subject": "rfc: a later check reports a held version as a loss (#1119)"
+    },
+    {
+      "sha": "888223b7619715b2491fb2211c47de08d788c156",
+      "date": "2026-10-21T19:08:22Z",
+      "subject": "feat(cluster)!: take over a silent server's S3 lock through a lease (#1097)"
+    },
+    {
+      "sha": "f7db38da63b612a823b0db81a7449452fcdb3da8",
+      "date": "2026-10-21T18:54:24Z",
+      "subject": "feat(cli)!: adopt owner-scoped operator configuration (#1115)"
+    },
+    {
+      "sha": "626cdfb95db369291b1b33b13b86e20eaba15178",
+      "date": "2026-10-21T18:10:41Z",
+      "subject": "fix(server): scope an unknown storage outcome to its key and branch (#1096)"
+    },
+    {
+      "sha": "10f5517c5d41c433005603b0c5a29358ec9560a8",
+      "date": "2026-10-21T17:36:35Z",
+      "subject": "fix(server): log the status an error response sends (#1117)"
+    },
+    {
+      "sha": "0c72cfab2c888d1f07769fc0ce4bd4314fda47a1",
+      "date": "2026-10-21T17:32:52Z",
+      "subject": "rfc: storage outcomes per operation and restartable ownership (#1093)"
+    },
+    {
+      "sha": "235cd3b9a18aa4b89da57c796e41f504d7ef10b4",
+      "date": "2026-10-21T17:17:50Z",
+      "subject": "docs: name every command that can leave an unfinished JSON object (#1120)"
+    },
+    {
+      "sha": "13ecdc8b1e1f65f3e4267c2857d5311b58668e65",
+      "date": "2026-10-21T16:56:06Z",
+      "subject": "perf(load): fan out a csv overwrite's Lance writers over file-sized chunks (#1121)"
+    },
+    {
+      "sha": "092411dc67d2cc34d0be9c85fda8ccb786a7056e",
+      "date": "2026-10-21T16:19:23Z",
+      "subject": "feat(cli): say who you are at a target and what you may do (#1104)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".config/nextest.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/branch-protection.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/build-release-archives.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dst.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gq-logic-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gqt-slow-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-title.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-crates.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-edge.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-vocabulary-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/tests-slow-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".typos.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "GOVERNANCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/benchmarks.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/custom.example.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/deferred/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph-bench/examples/compare_engines.rs.disabled",
+      "previousPath": "crates/omnigraph-bench/examples/compare_engines.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph-bench/examples/issue_shapes.rs.disabled",
+      "previousPath": "crates/omnigraph-bench/examples/issue_shapes.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph-cli/tests/support/http_bench.rs.disabled",
+      "previousPath": "crates/omnigraph-cli/tests/support/http_bench.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph-cli/tests/support/http_perf_layout.rs.disabled",
+      "previousPath": "crates/omnigraph-cli/tests/support/http_perf_layout.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph-cli/tests/support/http_retention.rs.disabled",
+      "previousPath": "crates/omnigraph-cli/tests/support/http_retention.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph-cli/tests/support/http_soak.rs.disabled",
+      "previousPath": "crates/omnigraph-cli/tests/support/http_soak.rs"
+    },
+    {
+      "status": "R094",
+      "path": "benchmarks/deferred/crates/omnigraph-server/examples/bench_actor_isolation.rs.disabled",
+      "previousPath": "crates/omnigraph-server/examples/bench_actor_isolation.rs"
+    },
+    {
+      "status": "R098",
+      "path": "benchmarks/deferred/crates/omnigraph-server/examples/bench_concurrent_http.rs.disabled",
+      "previousPath": "crates/omnigraph-server/examples/bench_concurrent_http.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/benches/scenarios.rs.disabled",
+      "previousPath": "crates/omnigraph/benches/scenarios.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/benches/scenarios/branch_control.rs.disabled",
+      "previousPath": "crates/omnigraph/benches/scenarios/branch_control.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/benches/scenarios/child_protocol.rs.disabled",
+      "previousPath": "crates/omnigraph/benches/scenarios/child_protocol.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/benches/scenarios/concurrent_writes.rs.disabled",
+      "previousPath": "crates/omnigraph/benches/scenarios/concurrent_writes.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/benches/scenarios/fixture_controls.rs.disabled",
+      "previousPath": "crates/omnigraph/benches/scenarios/fixture_controls.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/benches/scenarios/rfc023.rs.disabled",
+      "previousPath": "crates/omnigraph/benches/scenarios/rfc023.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/benches/scenarios/rfc023_limits.rs.disabled",
+      "previousPath": "crates/omnigraph/benches/scenarios/rfc023_limits.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/examples/bench_expand.rs.disabled",
+      "previousPath": "crates/omnigraph/examples/bench_expand.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/tests/benchmark_scenario_contract.rs.disabled",
+      "previousPath": "crates/omnigraph/tests/benchmark_scenario_contract.rs"
+    },
+    {
+      "status": "R058",
+      "path": "benchmarks/deferred/crates/omnigraph/tests/compaction_memory.rs.disabled",
+      "previousPath": "crates/omnigraph/tests/compaction_memory.rs"
+    },
+    {
+      "status": "R093",
+      "path": "benchmarks/deferred/crates/omnigraph/tests/manifest_history_curve.rs.disabled",
+      "previousPath": "crates/omnigraph/tests/manifest_history_curve.rs"
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/deferred/crates/omnigraph/tests/manifest_row_bytes.rs.disabled",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/crates/omnigraph/tests/repro_issue_563.rs.disabled",
+      "previousPath": "crates/omnigraph/tests/repro_issue_563.rs"
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/deferred/scripts/bench-branch-age.py.disabled",
+      "previousPath": "scripts/bench-branch-age.py"
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/deferred/sources.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/branch_merge_d50.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/branch_merge_d50_history64.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_branch_adopt_untouched.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_branch_adopt_written.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_branch_delete.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_branch_first_write.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_branch_registry.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_merge_all_changed.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_merge_all_new.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_merge_diverged_updates.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_mixed_load.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_nearest_nprobes_one.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_nearest_prefilter.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_query_issues.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_query_shapes.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_query_wide.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_rrf_traversal.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/e2e_traversal.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/equal_current_narrow_one_batch.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/equal_current_wide_four_batches.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/equal_current_wide_one_batch.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "benchmarks/fixtures/finbench/finbench-2026-08-21-sf10-v1.fixture-reference-v1.yaml",
+      "previousPath": "benchmarks/fixtures/finbench-2026-08-21-sf10-v1.fixture-reference-v1.yaml"
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/finbench/finbench_disjoint.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/hot_table_idle_base.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/hot_table_idle_branches_4.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/hot_table_idle_branches_4_aged.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/hot_table_idle_tables_4.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/identity_lifecycle.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/nearest_ranks_updated_embedding.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/nearest_skips_deleted_rows_and_fills_limit.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/parallel_tables.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/repeated_deletion_recreation_branches.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/repeated_deletion_recreation_rows.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/threshold_crossings_after.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/threshold_crossings_at.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/threshold_crossings_before.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/threshold_crossings_production_control.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/tiny_graph.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/unattached_chain_32.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/very_long_history_1000.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/very_long_history_10000.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/very_long_history_100000.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/fixtures/very_long_history_32.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "benchmarks/suites/aws-xfs-process-cold.suite-v1.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "benchmarks/suites/local-smoke.suite-v1.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/branch_merge_d50_cold.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/branch_merge_d50_warm.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_branch_adopt_untouched.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_branch_adopt_written.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_branch_create.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_branch_create_from.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_branch_delete.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_branch_first_write.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_branch_list.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_merge_all_changed.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_merge_all_new.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_merge_diverged_updates.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_mixed_load.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_nearest_nprobes_one.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_nearest_prefilter.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_count.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_count_bare.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_count_bare_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_count_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_destination_projection.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_destination_projection_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_destination_search.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_filter.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_filter_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_filtered_friends.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_filtered_friends_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_friends.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_friends_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_grouped.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_grouped_fanout.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_grouped_fanout_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_grouped_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_lookup.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_lookup_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_no_friends.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_no_friends_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_scan.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_scan_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_top_people.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_top_people_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_wide_scan.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_query_wide_scan_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_rrf_traversal.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_hop1.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_hop1_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_hop2.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_hop2_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_hop3.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_hop3_served.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_selective_csr.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/e2e_traversal_selective_indexed.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/equal_current_different_history.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/finbench_disjoint_merge.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/hot_table_idle_base.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/hot_table_idle_branches_4.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/hot_table_idle_branches_4_aged.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/hot_table_idle_tables_4.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/identity_lifecycle.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/nearest_ranks_updated_embedding.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/nearest_skips_deleted_rows_and_fills_limit.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/parallel_tables_1.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/workloads/parallel_tables_2.gqt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

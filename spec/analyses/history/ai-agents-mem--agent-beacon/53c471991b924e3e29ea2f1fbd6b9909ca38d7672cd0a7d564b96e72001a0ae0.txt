@@ -1,0 +1,25 @@
+# agent-beacon
+
+Source: [agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5937da1cd812660d256c367374b9752316f51cbc`; commit timestamp `2026-10-02T22:06:57-07:00`; 1,659 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/README.md)):
+
+> Beacon captures **agent session history** across Claude Code, Cursor, Codex, OpenCode, and 20+ other harnesses, then turns useful workflows, corrections, and debugging patterns into reusable knowledge for future agents. A problem solved by one agent shouldn't need to be learned from scratch by another.
+
+Build/package evidence: [beacon-sandbox/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/beacon-sandbox/go.mod); [browser-extension/package.json](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/browser-extension/package.json); [cli/beacon-hooks/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/cli/beacon-hooks/go.mod); [cli/beacon/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/cli/beacon/go.mod); [collector-builder/exporter/beaconjsonexporter/go.mod](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/collector-builder/exporter/beaconjsonexporter/go.mod)
+
+License evidence: [LICENSE](https://github.com/Asymptote-Labs/agent-beacon/blob/5937da1cd812660d256c367374b9752316f51cbc/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

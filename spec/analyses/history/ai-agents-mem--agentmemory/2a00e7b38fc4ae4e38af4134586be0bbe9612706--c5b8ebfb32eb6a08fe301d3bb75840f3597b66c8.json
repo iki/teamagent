@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--agentmemory",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/rohitg00/agentmemory",
+  "report": "spec/projects/ai-agents-mem--agentmemory.md",
+  "analyzedSha": "2a00e7b38fc4ae4e38af4134586be0bbe9612706",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:30:09+05:30",
+  "observedSha": "c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8",
+      "date": "2026-10-26T19:06:20+05:30",
+      "subject": "fix(doctor): judge the LLM provider the way the daemon does (#1575)"
+    },
+    {
+      "sha": "fa1171d282225ae198cb1d79e4388f5292413fb5",
+      "date": "2026-10-25T17:44:34+05:30",
+      "subject": "fix(cli): show the embedding provider the server reports in agentmemory status (#1499)"
+    },
+    {
+      "sha": "bb8f0508cdc028c1ccbfdb31766e723de6b8217c",
+      "date": "2026-10-25T17:10:27+05:30",
+      "subject": "chore: prepare 0.9.31 (#1612)"
+    },
+    {
+      "sha": "36bdbe9d3ac3c2bc011eb3ea50ad23c05da320ca",
+      "date": "2026-10-25T16:25:15+05:30",
+      "subject": "Upgrade to iii 0.25.0 with Worker Compose (#1592)"
+    },
+    {
+      "sha": "3a6758ac8d21172e727f97910800865d3d07cb28",
+      "date": "2026-10-25T15:01:01+05:30",
+      "subject": "fix(release): verify gated npm artifacts and provenance (#1561)"
+    },
+    {
+      "sha": "22dc07ce3498fb1c78ed2b00bd59493e34ee3ada",
+      "date": "2026-10-25T14:59:15+05:30",
+      "subject": "feat(cursor): workspace adapter on top of the marketplace plugin (#1112)"
+    },
+    {
+      "sha": "de0c036b0f8be26cdf73cc32c36f8c83221a9909",
+      "date": "2026-10-25T14:19:12+05:30",
+      "subject": "feat(pi): make the native extension installable as a package (#1607)"
+    },
+    {
+      "sha": "2755916a1092cd4e369eb9af6feda1b6bf1d4b9e",
+      "date": "2026-10-25T13:23:12+05:30",
+      "subject": "feat(omp): add Oh My Pi extension plugin (#1099)"
+    },
+    {
+      "sha": "a56ce901b4010c6ca69a3c2570a63500fcfa6a87",
+      "date": "2026-10-25T12:49:18+05:30",
+      "subject": "feat(dsh): bundle native capture with AgentMemory (#1609)"
+    },
+    {
+      "sha": "70517d2bdf302a0aed11ca470151ee854e74c678",
+      "date": "2026-10-23T18:58:13+05:30",
+      "subject": "fix(dsh): preserve config and forward daemon credentials (#1606)"
+    },
+    {
+      "sha": "1c995081c45dd465877c4f6ecbf313490baa8820",
+      "date": "2026-10-21T15:46:57+05:30",
+      "subject": "fix(import): reject malformed sections and rows before a replace import deletes the store (#1576)"
+    },
+    {
+      "sha": "14dfd6e133c03f482311dd32150696be4b9dbaca",
+      "date": "2026-10-20T17:28:58+05:30",
+      "subject": "feat(website): research citations, live stats and a scrolling featured strip (#1595)"
+    },
+    {
+      "sha": "6961ea577c84d53c6f73566681b879b91c1263ba",
+      "date": "2026-10-20T15:56:31+05:30",
+      "subject": "fix(reflect): report clustering strategy (#1523)"
+    },
+    {
+      "sha": "b3164b5826010523ae22c5e27101fe6fbfe42c70",
+      "date": "2026-10-20T12:49:49+05:30",
+      "subject": "fix(import-jsonl): ignore timestampless entries for session times and make re-import idempotent (#1526)"
+    },
+    {
+      "sha": "a79fe1df833af2132da9d58d722eb65d207f369a",
+      "date": "2026-10-20T12:48:57+05:30",
+      "subject": "fix: decouple import per-session obs ceiling from MAX_OBS_PER_SESSION env (#1556)"
+    },
+    {
+      "sha": "8a81e1d85bf3a1d08fa4950d2d6e10b4630d6a59",
+      "date": "2026-10-20T12:46:31+05:30",
+      "subject": "fix: load actions beyond the first page (#1524)"
+    },
+    {
+      "sha": "e6d5136ee7cfa7ea4c1afb4689c1d1b35b180aec",
+      "date": "2026-10-20T12:45:25+05:30",
+      "subject": "fix: keep routine logs off MCP stdout (#1522)"
+    },
+    {
+      "sha": "4b95a629a5750dda414e56461eded4959b3e00bf",
+      "date": "2026-10-20T12:43:49+05:30",
+      "subject": "feat(export): paginate the non-session collections the frame guard's hint calls out (#1143)"
+    },
+    {
+      "sha": "85dc30fb22dd1ac8f6a804daf45bdf90ef73378a",
+      "date": "2026-10-20T12:42:40+05:30",
+      "subject": "feat(hooks): capture the assistant's final reply from the Stop hook (#1510)"
+    },
+    {
+      "sha": "72e126676ba3e0428300daf6edb6938f1cccda35",
+      "date": "2026-10-20T12:41:12+05:30",
+      "subject": "fix(hooks): stop collapsing distinct subagent, task and notification events (#1513)"
+    },
+    {
+      "sha": "4ab436e717e3dde7cf32d2d4579002c5c3002425",
+      "date": "2026-10-20T12:40:27+05:30",
+      "subject": "fix(facets): cascade facet deletion on memory delete (#1591)"
+    },
+    {
+      "sha": "3188d88259db40220d95e46f9109298be5958d78",
+      "date": "2026-10-20T12:39:07+05:30",
+      "subject": "fix(cli): count a relative iii-exec worker entry only when it exists in the engine's working directory (#1578)"
+    },
+    {
+      "sha": "5f440859c966da6650cde58dc852cfa1efe52595",
+      "date": "2026-10-20T12:38:22+05:30",
+      "subject": "fix(mcp): say when a write only reached the local fallback store (#1563)"
+    },
+    {
+      "sha": "34b790c2623b7fc412c2e638a2cb5cfed78ccd66",
+      "date": "2026-10-20T12:37:54+05:30",
+      "subject": "fix(connect): make --with-hooks work when a hook handler has no command (#1574)"
+    },
+    {
+      "sha": "e01540ec187ec06f2e94ff73891e0e370d144484",
+      "date": "2026-10-18T10:46:09+05:30",
+      "subject": "fix(config): drop the development iii-exec worker from the bundled iii-config.yaml (#1581)"
+    },
+    {
+      "sha": "6a182c410ed3858adacd57af141591d913d00aba",
+      "date": "2026-10-16T18:44:49+05:30",
+      "subject": "fix(graph): keep each observation's best graph score (#1560)"
+    },
+    {
+      "sha": "ec28162bb3f6731d5c71b288146852b091150017",
+      "date": "2026-10-16T18:43:57+05:30",
+      "subject": "fix(devin): capture sessions from the Devin plugin and prepare it for the marketplace (#1570)"
+    },
+    {
+      "sha": "ea2f629f04d7d340c16b4966e34e31ad593dbbf6",
+      "date": "2026-10-16T15:58:01+05:30",
+      "subject": "fix: preserve structured capture redaction (#1569)"
+    },
+    {
+      "sha": "7bf9c53e4c855e2896820e7e540c8edc42b26605",
+      "date": "2026-10-16T15:17:38+05:30",
+      "subject": "fix: preserve vector recovery across checkpoints and restarts (#1562)"
+    },
+    {
+      "sha": "d9a20dafafc58a8ea8b0c423fc046de92c3b9e61",
+      "date": "2026-10-16T14:13:09+05:30",
+      "subject": "fix: retain and recover failed observation compression (#1546)"
+    },
+    {
+      "sha": "857cf1babf5bf0f5142af89bd5a91c57e7cdfe52",
+      "date": "2026-10-16T13:13:49+05:30",
+      "subject": "fix(graph): bound retrieval reads and resume explicit index migrations (#1559)"
+    },
+    {
+      "sha": "062159c52f3f7be4b04f5b356e9465b879ef7b4d",
+      "date": "2026-10-16T12:57:04+05:30",
+      "subject": "fix: serialize Redis state mutations per key (#1568)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "INSTALL_FOR_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.ar-SA.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.bn-BD.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.cs-CZ.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.da-DK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.de-DE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.el-GR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.es-ES.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.fi-FI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.fr-FR.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.he-IL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.hi-IN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.hu-HU.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.id-ID.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.it-IT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.ja-JP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.ko-KR.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.nb-NO.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.nl-NL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.pl-PL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.pt-BR.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.pt-PT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.ro-RO.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.ru-RU.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.sv-SE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.th-TH.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.tl-PH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.tr-TR.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.uk-UA.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.ur-PK.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "READMEs/README.vi-VN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "READMEs/README.zh-TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/iii-console/states.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/iii-console/traces-waterfall.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/iii-console/workers.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/tags/light/section-agents.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/tags/light/stat-tests.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/tags/section-agents.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/tags/stat-tests.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/capture-costs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/coolify/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/coolify/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/coolify/docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/coolify/entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/fly/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/fly/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/fly/entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/fly/fly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/railway/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/railway/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/railway/entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/railway/railway.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/render/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/render/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deploy/render/entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/render/render.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/runtime/agentmemory.worker.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/runtime/entrypoint.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/runtime/worker-compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/2026-10-09-evaluation-baseline.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/coding-prefix-fix/evidence.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/coding-prefix-fix/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/coding-prefix-fix/scores.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/coding-prefix-fix/summary.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/lifecycle-prefix-fix/checks.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/lifecycle-prefix-fix/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/lifecycle-prefix-fix/summary.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-final/evidence.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-final/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-final/scores.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-final/summary.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/evidence.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/scores.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/summary.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-local-final/evidence.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-local-final/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-local-final/scores.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-local-final/summary.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/evidence.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/scores.ndjson",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/summary.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dsh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/graph-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/native-integration-tests.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/plugins/antigravity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/plugins/codex-local.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/plugins/copilot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/recall.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reflection-evidence.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reliability/compression-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reliability/graph-index-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reliability/graph-search-budget.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reliability/source-and-vector-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reliability/state-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reliability/summary-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/reranking.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/upgrades/iii-0.25.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/adapters/agentmemory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/adapters/bm25.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/adapters/grep.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/adapters/vector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/coding-life.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/fingerprint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/input.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/lifecycle-fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/load.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/longmemeval.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/recall-quality.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/runner/sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/score.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/runner/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/scripts/sandbox.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/python/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/python/observe_and_recall.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/python/quickstart.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "iii-config.docker.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "iii-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/_env.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/close-stale-am-sessions.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/install-local.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/cursor/verify-flow.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/filesystem-watcher/watcher.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/hermes/.npmignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/hermes/plugin.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/omp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/omp/capture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/omp/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/omp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/omp/security.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/openclaw/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/openclaw/openclaw.plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/openclaw/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/openclaw/plugin.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/openclaw/plugin.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "integrations/pi/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/pi/README.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

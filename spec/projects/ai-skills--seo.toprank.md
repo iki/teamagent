@@ -23,3 +23,7 @@ This entry was catalogued under **ai-skills**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [seo.toprank](https://github.com/nowork-studio/toprank); analyzed commit `1a53d4e4da69a6060c24de42c23333fb48e927c4`; commit date 2026-09-30T22:11:58-07:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-skills--seo.toprank.md).
+<!-- teamagent-analysis:end -->

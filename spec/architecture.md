@@ -98,3 +98,10 @@ The personal profile, project knowledge, team memory and private channel convers
 ## What establishes SOTA for this harness
 
 No common benchmark was run across the 507 projects. Their feature lists and task-specific demos cannot establish a global ordering. The decision should be a Pareto comparison of task success, latency, cost, intervention rate, privacy and recovery reliability on the intended workload. Use the [evaluation plan](evaluation.md), publish per-slice results and pin configurations. A more complicated system earns adoption only when the improvement survives held-out tasks and failure injection.
+
+## Research evidence and update boundary
+
+The implemented [maintenance workflow](research-sync.md) separates source discovery, successful fetch, extraction, scoped review and recommendation changes. Preserve original source bytes and full Git revisions. A repository rename must retain the report identity and aliases; an unavailable origin cannot silently become a deleted analysis. The [incremental index](analyses/repositories.md) and [architecture changelog](CHANGELOG.md) expose remaining review work.
+
+Apply the same boundary to the product: fetched knowledge is a candidate input; analyzed claims and executable skills require their own promotion receipt. Source age, commit volume and cache hits are operational signals, not estimates of truth or task success. An automated change packet must carry truncation, shallow-history and dirty-worktree limits to the human or agent reviewer.
+

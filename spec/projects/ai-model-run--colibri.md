@@ -29,3 +29,7 @@ Research pilot rather than default engine until representative task benchmarks a
 ## Related directions
 
 [Models](../models.md) · [Decisions](../decisions.md) · [Agents](../agents.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [colibri](https://github.com/JustVugg/colibri); analyzed commit `ce370e87d7b623d7759b52ec2007d75fc5b0e87e`; commit date 2026-09-25T00:09:37+02:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--colibri.md).
+<!-- teamagent-analysis:end -->

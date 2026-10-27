@@ -1,0 +1,207 @@
+# open-design: change evidence
+
+Source: [open-design](https://github.com/nexu-io/open-design) · [Analysis](../../projects/ai-gen--open-design.md) · [agents](../../agents.md), [models](../../models.md), [skills](../../skills.md), [generation](../../generation.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `53231d40b778d88eba23f35547bf99485d3ae9fc`; commit date: 2026-09-30T15:31:47Z; review date: unknown; observed SHA: `b7c5dd6d350bf54587a76bef1899bcbc183ea59d`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/nexu-io/open-design/compare/53231d40b778d88eba23f35547bf99485d3ae9fc...b7c5dd6d350bf54587a76bef1899bcbc183ea59d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [b7c5dd6d350b](https://github.com/nexu-io/open-design/commit/b7c5dd6d350bf54587a76bef1899bcbc183ea59d) 2026-10-27T09:51:29Z: fix(analytics): preserve project intent across Motion routing (#9090)
+- [325494e5a1e5](https://github.com/nexu-io/open-design/commit/325494e5a1e5858f7aa63bd71d7f326bdf911e7f) 2026-10-27T02:55:40Z: test(daemon): separate Pi natural exits from forced shutdown (#9063)
+- [26d60298f812](https://github.com/nexu-io/open-design/commit/26d60298f8129e229a1c10aab4df7ca25b1e9ad3) 2026-10-26T02:57:10Z: [OPEND-4220] fix(telemetry): hold first-session stability events until the installation id exists (#8991)
+- [411162cb1b97](https://github.com/nexu-io/open-design/commit/411162cb1b97ada701a498a1f34b4366cc9898f5) 2026-10-26T02:57:04Z: [OPEND-4256] fix(sidecar): report a target's signal death as a real signal, not 128+N (#8995)
+- [9724c44142ea](https://github.com/nexu-io/open-design/commit/9724c44142ea0afaee3d207f37901b31c66a44ad) 2026-10-24T13:46:23Z: [OPEND-3478] fix(web): keep campaign modal touchpoint host transparent (#9054)
+- [e03d5c23f308](https://github.com/nexu-io/open-design/commit/e03d5c23f308c39f4de7c057568df66c29a84385) 2026-10-22T13:46:21Z: [OPEND-4299] docs(release): publish 0.26.1 whats-new copy (#9013)
+- [61ab0f2a6dbf](https://github.com/nexu-io/open-design/commit/61ab0f2a6dbfea20a1010b841d7f5234c69327b4) 2026-10-22T10:23:52Z: [OPEND-4285] fix(motion): keep Future gallery cover blue after baking (#9005)
+- [fcd1c5f0b323](https://github.com/nexu-io/open-design/commit/fcd1c5f0b323f35ad5e858664e647341eee28f3e) 2026-10-22T09:36:34Z: fix(release): keep smoke report uploads advisory (#9002)
+- [37db87b0df39](https://github.com/nexu-io/open-design/commit/37db87b0df394bdcd3035918927efac7fb2440f7) 2026-10-22T08:54:37Z: fix(motion): use the future hero frame as its cover (#8997)
+- [417b81c75292](https://github.com/nexu-io/open-design/commit/417b81c752921f26094c5f3cd66ea945ef658da8) 2026-10-22T08:40:45Z: [OPEND-4240] chore(tooling): migrate workspace to TypeScript 7 (#8957)
+- [6ef59618e99e](https://github.com/nexu-io/open-design/commit/6ef59618e99eb59dd78b5e9295211789e13756b1) 2026-10-22T08:21:36Z: [OPEND-4274] fix(ci): isolate E2E startup from Next registry lookup (#8993)
+- [4bd36280f13a](https://github.com/nexu-io/open-design/commit/4bd36280f13ac91e0cbbd1097622dca8330351c2) 2026-10-22T06:33:56Z: fix(ci): pin prerelease E2E runner to Ubuntu 24.04 (#8984)
+- [ad130f37a1b8](https://github.com/nexu-io/open-design/commit/ad130f37a1b87b6f2b5cc3a62dd8b79e25674727) 2026-10-22T06:27:16Z: [OPEND-4257] fix(web): restore pre-8408 chat artifact action styles (#8978)
+- [c575e6e46458](https://github.com/nexu-io/open-design/commit/c575e6e46458ca4b8f347f96d819aa06dcaffaa0) 2026-10-22T06:16:04Z: [OPEND-3919] fix(web): remove the home @ picker plugin hover card (#8911)
+- [5b6fbb55eada](https://github.com/nexu-io/open-design/commit/5b6fbb55eada2ab4cccf19f1d7bb0b880589f0be) 2026-10-22T05:55:52Z: [OPEND-3712] feat(telemetry): stability metrics for launch, project entry, and memory (#8805)
+- [75693e95f49d](https://github.com/nexu-io/open-design/commit/75693e95f49d06c301ca4773d476fd625eaa9347) 2026-10-22T05:14:59Z: [OPEND-3114] feat(od-next): open registered agents and CLI BYOK (#8702)
+- [4d4f53fdf422](https://github.com/nexu-io/open-design/commit/4d4f53fdf4224cf21038e1f2f54b5822f4680b44) 2026-10-22T05:12:50Z: [OPEND-4150] fix(share): refresh previews during comments and unblock publication (#8904)
+- [341641d71a99](https://github.com/nexu-io/open-design/commit/341641d71a9925d3f5acff65d3a85f64756d4ac0) 2026-10-22T04:53:43Z: [OPEND-3962] fix(motion): 修复预览声音与模板配乐约束 (#8777)
+- [2b4e672c6cfb](https://github.com/nexu-io/open-design/commit/2b4e672c6cfb0784d7962d90894a7361024dfbc1) 2026-10-22T03:58:25Z: fix(ci): prefer Google Docker Hub mirror with upstream fallback (#8958)
+- [2ba458503fc2](https://github.com/nexu-io/open-design/commit/2ba458503fc2335aa1d0336a45c2638dd976336e) 2026-10-22T03:58:10Z: [OPEND-4236] perf(pack): remove redundant checks and defer cache persistence (#8955)
+- [938a09b12c9f](https://github.com/nexu-io/open-design/commit/938a09b12c9f3ee883559e3b31d966f284afd959) 2026-10-22T03:52:55Z: [OPEND-3334] feat(web): one project view from the Home send — no hand-off, one Working state (#8267)
+- [becd6c6594fd](https://github.com/nexu-io/open-design/commit/becd6c6594fdb58593afacfef70ae55bd501aee4) 2026-10-22T02:23:10Z: [OPEND-3928] perf(desktop): accelerate Motion frame capture (#8798)
+- [b354e88704b2](https://github.com/nexu-io/open-design/commit/b354e88704b2aa427e56afb5cf39a4d577ea6962) 2026-10-22T01:48:32Z: fix(web): restore task type pills and downward menu (OPEND-4215) (#8947)
+- [8d820a698908](https://github.com/nexu-io/open-design/commit/8d820a698908dc279ef3d5aeb4ce6d156211a499) 2026-10-21T11:55:23Z: [OPEND-3799] feat(od-next): use configurable company stock search and HTML safeguards (#8691)
+- [93cfde4a4cbc](https://github.com/nexu-io/open-design/commit/93cfde4a4cbc6ba2ea5b5e249ebb189a8f6d8d21) 2026-10-21T11:35:35Z: fix(daemon): honor active workspace in MCP bridge (#7619)
+- [3dfd41c6b3e4](https://github.com/nexu-io/open-design/commit/3dfd41c6b3e4adb5dabaf8c716b1c3eb8319e9f4) 2026-10-21T09:05:01Z: [OPEND-2800][OPEND-4117] feat(od-next): integrate Discovery delivery and validated prototype fixes (#8804)
+- [dd43a3cef168](https://github.com/nexu-io/open-design/commit/dd43a3cef168969a69b0d2641e13b58d8523f7de) 2026-10-21T08:21:00Z: [OPEND-4136] feat(web): use Feishu community links for Chinese locales (#8884)
+- [3b0df90f305c](https://github.com/nexu-io/open-design/commit/3b0df90f305c8279e748c292accf336d02b924ef) 2026-10-20T16:06:49Z: docs(release): publish 0.26.0 collaboration whats-new copy (#8910)
+- [7133326a1935](https://github.com/nexu-io/open-design/commit/7133326a19357de3db799a2647dc5bacaa74fe52) 2026-10-20T11:54:00Z: docs(release): add v0.26.0 changelog (#8899)
+- [45a6fd80b2c2](https://github.com/nexu-io/open-design/commit/45a6fd80b2c2e8a5a9cbc908ff96e7a1d57fa095) 2026-10-20T10:52:52Z: fix(cms): stop comparing Test tester member id with the app account id (#8892)
+- [93d4031572df](https://github.com/nexu-io/open-design/commit/93d4031572df0ab05307558eb8d8486cdc4c287c) 2026-10-20T09:24:25Z: chore(pack): bump Vela CLI to 0.1.7 (#8883)
+- [23cc8cb6a8b5](https://github.com/nexu-io/open-design/commit/23cc8cb6a8b5631c3312637e96fa262f34c0a840) 2026-10-20T03:54:26Z: fix(e2e): compare motion assets with Buffer.equals (#8871)
+
+## Changed paths (truncated)
+
+- M: `.github/AGENTS.md`
+- A: `.github/actions/defer-pack-cache/action.yml`
+- M: `.github/actions/setup-playwright/action.yml`
+- A: `.github/screenshots/cms-touchpoint/hover-entry.png`
+- A: `.github/screenshots/cms-touchpoint/hover-open.png`
+- A: `.github/screenshots/cms-touchpoint/production-modal.png`
+- A: `.github/screenshots/cms-touchpoint/test-modal.png`
+- A: `.github/screenshots/cms-touchpoint/test-replay.png`
+- M: `.github/scripts/handoff.py`
+- A: `.github/scripts/release/bump-policy.ts`
+- M: `.github/scripts/release/cache/win.ps1`
+- A: `.github/scripts/release/cache/windows.ts`
+- A: `.github/scripts/release/stable-docker.py`
+- M: `.github/workflows/cache-maintenance.yml`
+- M: `.github/workflows/cut-release.yml`
+- M: `.github/workflows/docker-image.yml`
+- M: `.github/workflows/finalize-release.yml`
+- M: `.github/workflows/release-beta.yml`
+- M: `.github/workflows/release-prerelease-smoke.yml`
+- M: `.github/workflows/release-prerelease-tests.yml`
+- M: `.github/workflows/release-prerelease.yml`
+- A: `.github/workflows/release-stable-docker.yml`
+- M: `.github/workflows/release-stable.yml`
+- A: `.github/workflows/release-withdraw.yml`
+- M: `.github/workflows/rerun.atom.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `PRIVACY.md`
+- M: `QUICKSTART.md`
+- M: `README.md`
+- M: `apps/closure/package.json`
+- M: `apps/daemon/package.json`
+- M: `apps/daemon/src/agent-protocol/acp/session.ts`
+- M: `apps/daemon/src/agent-protocol/pi-rpc/session.ts`
+- M: `apps/daemon/src/analytics.ts`
+- M: `apps/daemon/src/app-config.ts`
+- M: `apps/daemon/src/app-version.ts`
+- A: `apps/daemon/src/artifacts/javascript-image-references.ts`
+- A: `apps/daemon/src/artifacts/motion-delivery.ts`
+- M: `apps/daemon/src/artifacts/successful-run-deliverable-finalization.ts`
+- M: `apps/daemon/src/brands/safe-fetch.ts`
+- M: `apps/daemon/src/chat-artifacts/cover.ts`
+- A: `apps/daemon/src/chat-artifacts/motion-cover.ts`
+- M: `apps/daemon/src/chat-artifacts/refs.ts`
+- M: `apps/daemon/src/chat-artifacts/store.ts`
+- M: `apps/daemon/src/chat-artifacts/video-cover.ts`
+- M: `apps/daemon/src/cli.ts`
+- M: `apps/daemon/src/collab/authorized-team-project-pull.ts`
+- M: `apps/daemon/src/collab/collab-cloud-service.ts`
+- M: `apps/daemon/src/collab/collab-publish-watcher.ts`
+- A: `apps/daemon/src/collab/comment-alignment.ts`
+- A: `apps/daemon/src/collab/comment-batch-receipt.ts`
+- A: `apps/daemon/src/collab/comment-file-authority.ts`
+- A: `apps/daemon/src/collab/comment-file-deletion.ts`
+- A: `apps/daemon/src/collab/comment-file-facts.ts`
+- A: `apps/daemon/src/collab/comment-file-identity-recovery.ts`
+- A: `apps/daemon/src/collab/comment-file-publication-coordination.ts`
+- A: `apps/daemon/src/collab/comment-file-publisher.ts`
+- A: `apps/daemon/src/collab/comment-file-retirements.ts`
+- A: `apps/daemon/src/collab/comment-inbound-store.ts`
+- M: `apps/daemon/src/collab/comment-relay-outbox.ts`
+- A: `apps/daemon/src/collab/comment-relay-publication-mapping.ts`
+- A: `apps/daemon/src/collab/comment-relay-scope.ts`
+- A: `apps/daemon/src/collab/comment-sync-state.ts`
+- A: `apps/daemon/src/collab/local-comment-files.ts`
+- A: `apps/daemon/src/collab/owned-content-files.ts`
+- A: `apps/daemon/src/collab/owned-content-store.ts`
+- A: `apps/daemon/src/collab/owned-content-sync.ts`
+- M: `apps/daemon/src/collab/proactive-content-pull.ts`
+- A: `apps/daemon/src/collab/project-comment-workspace-context.ts`
+- A: `apps/daemon/src/collab/project-public-file-stop.ts`
+- M: `apps/daemon/src/collab/project-request-authority.ts`
+- M: `apps/daemon/src/collab/public-file-failure.ts`
+- A: `apps/daemon/src/collab/public-file-mutations.ts`
+- A: `apps/daemon/src/collab/public-file-publication-recording.ts`
+- M: `apps/daemon/src/collab/public-file-publication-store.ts`
+- A: `apps/daemon/src/collab/public-file-resource-id.ts`
+- A: `apps/daemon/src/collab/public-share-project-bootstrap.ts`
+- A: `apps/daemon/src/collab/public-share-team-visibility.ts`
+- A: `apps/daemon/src/collab/public-share-viewer-url.ts`
+- M: `apps/daemon/src/collab/publish-scheduler.ts`
+- A: `apps/daemon/src/collab/published-comment-backfill-state.ts`
+- A: `apps/daemon/src/collab/published-comment-mutation.ts`
+- A: `apps/daemon/src/collab/published-file-comment-backfill.ts`
+- A: `apps/daemon/src/collab/resume-pending-share-binding.ts`
+- M: `apps/daemon/src/collab/runtime.ts`
+- A: `apps/daemon/src/collab/share-alias-recovery.ts`
+- A: `apps/daemon/src/collab/share-alias-reservation.ts`
+- A: `apps/daemon/src/collab/share-binding-outbox.ts`
+- A: `apps/daemon/src/collab/share-binding-startup.ts`
+- A: `apps/daemon/src/collab/share-content-fingerprint.ts`
+- A: `apps/daemon/src/collab/share-file-mapping.ts`
+- A: `apps/daemon/src/collab/share-publication-completion.ts`
+- A: `apps/daemon/src/collab/share-publish-response.ts`
+- A: `apps/daemon/src/collab/share-staging.ts`
+- M: `apps/daemon/src/collab/team-mirror-materializer.ts`
+- M: `apps/daemon/src/collab/vela-cli-collab-client.ts`
+- M: `apps/daemon/src/collab/vela-cli-resource-adapter.ts`
+- M: `apps/daemon/src/collab/vela-cli-team-projects.ts`
+- A: `apps/daemon/src/collab/vela-pinned-command.ts`
+- A: `apps/daemon/src/collab/vela-project-share-state.ts`
+- A: `apps/daemon/src/collab/vela-public-file-stop.ts`
+- A: `apps/daemon/src/collab/vela-share-binding-prepare.ts`
+- A: `apps/daemon/src/collab/vela-share-binding.ts`
+- A: `apps/daemon/src/collab/vela-share-publish.ts`
+- A: `apps/daemon/src/collab/vela-share-status.ts`
+- A: `apps/daemon/src/collab/vela-share-stop.ts`
+- M: `apps/daemon/src/collab/workspace-projects-reconciler.ts`
+- M: `apps/daemon/src/connectionTest.ts`
+- M: `apps/daemon/src/daemon-startup.ts`
+- M: `apps/daemon/src/db.ts`
+- M: `apps/daemon/src/deploy.ts`
+- M: `apps/daemon/src/design-systems/index.ts`
+- M: `apps/daemon/src/design-systems/server-services.ts`
+- A: `apps/daemon/src/http/json-body-size.ts`
+- A: `apps/daemon/src/http/powered-preview-origin.ts`
+- M: `apps/daemon/src/import-export-routes.ts`
+- M: `apps/daemon/src/integrations/collab-cloud.ts`
+- A: `apps/daemon/src/integrations/share-viewer-origin.ts`
+- M: `apps/daemon/src/integrations/vela-billing.ts`
+- M: `apps/daemon/src/integrations/vela-command.ts`
+- M: `apps/daemon/src/integrations/vela-team-projects.ts`
+- M: `apps/daemon/src/integrations/vela-wallet.ts`
+- M: `apps/daemon/src/langfuse-bridge.ts`
+- M: `apps/daemon/src/langfuse-trace.ts`
+- M: `apps/daemon/src/mcp-workspace-context.ts`
+- A: `apps/daemon/src/media/hyperframes-audio.ts`
+- M: `apps/daemon/src/media/hyperframes-scaffold.ts`
+- M: `apps/daemon/src/media/index.ts`
+- A: `apps/daemon/src/media/stock-search.ts`
+- A: `apps/daemon/src/media/stock-telemetry.ts`
+- A: `apps/daemon/src/media/vela-stock-search.ts`
+- M: `apps/daemon/src/media/vela.ts`
+- M: `apps/daemon/src/memory-extractions.ts`
+- M: `apps/daemon/src/memory-llm.ts`
+- M: `apps/daemon/src/memory.ts`
+- M: `apps/daemon/src/migration/update-apply-observations.ts`
+- M: `apps/daemon/src/observability/task-analytics-operations.ts`
+- M: `apps/daemon/src/observability/task-observation-aggregation.ts`
+- M: `apps/daemon/src/observability/task-observation-otlp-exporter.ts`
+- M: `apps/daemon/src/observability/task-observation-rollout.ts`
+- A: `apps/daemon/src/observability/task-telemetry-receipt.ts`
+- M: `apps/daemon/src/observability/task-trace-projection.ts`
+- M: `apps/daemon/src/plugins/apply.ts`
+- M: `apps/daemon/src/plugins/scenario-binding.ts`
+- M: `apps/daemon/src/plugins/strategy-binding.ts`
+- M: `apps/daemon/src/plugins/strategy-package.ts`
+- M: `apps/daemon/src/plugins/trust.ts`
+- M: `apps/daemon/src/project-file-versions.ts`
+- M: `apps/daemon/src/projects.ts`
+- M: `apps/daemon/src/prompt-telemetry.ts`
+- M: `apps/daemon/src/prompts/media-contract.ts`
+- M: `apps/daemon/src/prompts/system.ts`
+- A: `apps/daemon/src/public-asset-fetch.ts`
+- M: `apps/daemon/src/routes/collab-context.ts`
+- M: `apps/daemon/src/routes/collab-presence.ts`
+- M: `apps/daemon/src/routes/collab-sync.ts`
+- M: `apps/daemon/src/routes/media.ts`

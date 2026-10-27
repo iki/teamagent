@@ -163,6 +163,12 @@ Acceptance requires reproducible task/configuration identity; independent train/
 [gh-tob]: https://github.com/trailofbits/skills
 [r-tob]: projects/ai-skills--security.trailofbits.md
 
+## October source refresh: preserve the review baseline
+
+The [analysis maintenance workflow](research-sync.md) implements the same separation needed for evolution: observed source HEAD, last analyzed commit, reviewed report content and adopted architecture are different versions. A fetch or a generated summary cannot promote its own findings. Retain previous reports and source identities, inspect bounded deltas, then record the scoped review and its affected direction documents.
+
+[Spec Kit's refreshed trust ledger](projects/ai-spec--spec-kit.md) ([source](https://github.com/github/spec-kit)) and [Vercel Skills' ref-aware update grouping](projects/ai-agents-skills--search.vercel.md) ([source](https://github.com/vercel-labs/skills)) are concrete references for content-bound grants and independent candidate updates. Preserve rollback and evaluator separation when applying these patterns to prompts, skills, memory or routing policies.
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -320,3 +326,21 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [techsio.ontos](https://github.com/TechsioCZ/ontos) | [Report](projects/ai-spec--techsio.ontos.md) | screened |
 | [trellis](https://github.com/mindfold-ai/Trellis) | [Report](projects/ai-spec--trellis.md) | screened |
 <!-- coverage:end -->
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md) ([source](https://github.com/jovidecroock/gittifacts)).
+- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md) ([source](https://github.com/helixdb/helix-foundry)).
+- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md) ([source](https://github.com/xerj-org/xerj)).
+- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md) ([source](https://github.com/wh000wh000/awesome-jev-live)).
+- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) ([source](https://github.com/ryanalberts/best-of-agent-harnesses)).
+- [assets-icons.better](analyses/unreviewed/ai-skills--assets-icons.better.md) ([source](https://github.com/better-auth/better-icons)).
+- [render-anatomy](analyses/unreviewed/ai-skills--render-anatomy.md) ([source](https://github.com/wheresryan22/anatomy)).
+<!-- analysis-additions:end -->
+
+## Source refresh: 2026-10-27
+
+Use the [Emdash](analyses/unreviewed/ai-agents--emdash.md), [Pi](projects/ai-agents--pi.md) and [Paseo](projects/ai-agents--paseo.md) refreshes as fixture candidates for launch/completion evidence, durable progress and provider-job recovery, and safe worker collection. Require local conformance and measured outcomes before adopting their patterns. A fetched revision, launch receipt or unchanged HTTP validator does not advance an evaluated capability claim. The [maintenance record](analyses/latest-run.md) keeps imports, scoped reviews and outstanding work separate.

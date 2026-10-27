@@ -29,3 +29,7 @@ The leakage gate is optional and token-based, so it cannot prove absence of sema
 Attempt hidden modifications, test-answer leakage, no-op proposals, broad regressions and evaluator tampering. Require rollbackable artifact versions and evidence from held-out tasks before promotion. No tests, live inference, installation, or production operation were performed for this review. License indicator: not classified; inspect source; verify the exact files and dependencies before reuse.
 
 Related directions: [evolution](../evolution.md) · [agents](../agents.md) · [skills](../skills.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [metaharness](https://github.com/SuperagenticAI/metaharness); analyzed commit `b8deaf6ba62cd2acac4b0a5b30f9f2d1c21ef71f`; commit date 2026-09-02T10:08:03+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--metaharness.md).
+<!-- teamagent-analysis:end -->

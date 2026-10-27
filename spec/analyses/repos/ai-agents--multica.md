@@ -1,0 +1,207 @@
+# multica: change evidence
+
+Source: [multica](https://github.com/multica-ai/multica) · [Analysis](../../projects/ai-agents--multica.md) · [channels](../../channels.md), [agents](../../agents.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `b2561aad61055dd9937fc08f6497846b1458d018`; commit date: 2026-10-02T07:25:26-07:00; review date: unknown; observed SHA: `d7d1831fcf39b874911aae1e48b2fbf804bd068e`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/multica-ai/multica/compare/b2561aad61055dd9937fc08f6497846b1458d018...d7d1831fcf39b874911aae1e48b2fbf804bd068e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [d7d1831fcf39](https://github.com/multica-ai/multica/commit/d7d1831fcf39b874911aae1e48b2fbf804bd068e) 2026-10-27T18:18:32+08:00: feat(cli): add run-targeted retries with a fresh option (#9592)
+- [a008d893ddd5](https://github.com/multica-ai/multica/commit/a008d893ddd549f22f899790808f2afad45922be) 2026-10-27T18:17:27+08:00: MUL-8292: refactor(brief): move Available Commands detail behind --help (#9596)
+- [aec9b0b16999](https://github.com/multica-ai/multica/commit/aec9b0b1699939a6d993da9ca2ebd2c62900a8e0) 2026-10-27T17:39:22+08:00: MUL-8287: docs(changelog): release 0.7.1 (#9593)
+- [317e17f12322](https://github.com/multica-ai/multica/commit/317e17f12322e3c22403e32ca59e17bb91404d7e) 2026-10-27T17:03:32+08:00: MUL-8287: fix(web): stop sending workspace titles to Google Analytics (#9595)
+- [0a83848c0d02](https://github.com/multica-ai/multica/commit/0a83848c0d024a7cb3543e5142555a6031dacfa3) 2026-10-27T15:58:26+08:00: MUL-8284: docs(agents): require buy-in for speculative edge cases; trim duplicated rules (#9585)
+- [984d9db74b57](https://github.com/multica-ai/multica/commit/984d9db74b573098ff19427f089ba1e1ae1bca03) 2026-10-27T15:47:51+08:00: MUL-7695: fix(desktop): stop daemon before Windows update install (#9582)
+- [b8306f975c47](https://github.com/multica-ai/multica/commit/b8306f975c47be0743e6ee16bdbe4ec67eb440c1) 2026-10-27T15:04:07+08:00: MUL-7130: feat(issues): add overview and sub-issues to the outline (#8135)
+- [188971168d0e](https://github.com/multica-ai/multica/commit/188971168d0e2a6fa7796f8825e2ed096ccc5fe3) 2026-10-27T14:06:52+08:00: fix(runtimes): spell out Qoder Cloud Agents instead of QCA (MUL-8282) (#9581)
+- [ac673fbf1923](https://github.com/multica-ai/multica/commit/ac673fbf19237cf37903b45c0fa30e87de7ae4d1) 2026-10-27T13:19:05+08:00: MUL-7384: fix(onboarding): require confirmed daemon setup targets (#8907)
+- [c11b3375f506](https://github.com/multica-ai/multica/commit/c11b3375f50682ce497ea0851aeeb10a5bf997a0) 2026-10-27T13:02:58+08:00: MUL-8269: fix(runtimes): price Bedrock-served Anthropic ids and DeepSeek-V4.1-Flash (#9561)
+- [16a067f30ab2](https://github.com/multica-ai/multica/commit/16a067f30ab2dc4f88e966055f2f446fafaeba58) 2026-10-27T12:59:48+08:00: MUL-8270: fix(db): keep lease claims within query limits (#9563)
+- [73f5664ca483](https://github.com/multica-ai/multica/commit/73f5664ca483666a9ed7dc6f4b029e11ef9e9d43) 2026-10-27T12:59:25+08:00: MUL-8263 fix(agents): reject reserved custom arguments on save (#9560)
+- [bcf40040e0e3](https://github.com/multica-ai/multica/commit/bcf40040e0e3ca45511075327231c5f1bcef48b3) 2026-10-27T12:37:13+08:00: MUL-8233: fix Pi cancellation and guard unconfirmed cleanup (#9557)
+- [e3f265ae5ae2](https://github.com/multica-ai/multica/commit/e3f265ae5ae23b3608cac66694947f47e418adbd) 2026-10-27T12:29:04+08:00: MUL-8280: refactor(issues): trim issue sidebar header actions (#9580)
+- [ff6d3207c83f](https://github.com/multica-ai/multica/commit/ff6d3207c83fad7fede12118d5c1c2d507a5a7fd) 2026-10-27T12:27:02+08:00: fix(agent): keep per-run usage when Claude resume baseline capture fails (#9567)
+- [b18ed90235c6](https://github.com/multica-ai/multica/commit/b18ed90235c6b5338f8768428d31feaddfdce6a2) 2026-10-27T11:58:52+08:00: MUL-8246: fix(issues): smaller sidebar headings, trailing arrow (#9579)
+- [fa37dcef3fe2](https://github.com/multica-ai/multica/commit/fa37dcef3fe22e9d866efedd7821a43cf5e01ba4) 2026-10-27T11:52:11+08:00: MUL-8277 fix(issues): load every Gantt page when the server caps page size (#9573)
+- [fae0a9060c6e](https://github.com/multica-ai/multica/commit/fae0a9060c6e399c48f931c5546e4a4d95cd6fb5) 2026-10-27T11:47:41+08:00: feat(issues): unify sidebar layout and execution summaries (#9532)
+- [a097f592be73](https://github.com/multica-ai/multica/commit/a097f592be73067d56908ca50ece557fa2af1293) 2026-10-26T19:14:36+08:00: MUL-8260 feat(web): fit the mobile web app to iPhone Duo (#9558)
+- [8aead14ab841](https://github.com/multica-ai/multica/commit/8aead14ab8419fe9a1654fef2a4e43929c68726e) 2026-10-26T18:40:23+08:00: fix(issues): resolve local directory hint from assigned agent daemon (#8948)
+- [7c50af7b66e7](https://github.com/multica-ai/multica/commit/7c50af7b66e7707e5eb069fb71fd48e169e8ced6) 2026-10-26T18:20:16+08:00: MUL-8094: feat(wakeups): accept blocked in --until-issue-state (#9553)
+- [2213734215f8](https://github.com/multica-ai/multica/commit/2213734215f847a0e1046ae95e81cfeea05ea035) 2026-10-26T18:04:40+08:00: MUL-8253 feat(web): opt-in Google Analytics via GOOGLE_ANALYTICS_ID (#9544)
+- [9b78e3c309e3](https://github.com/multica-ai/multica/commit/9b78e3c309e32d1b6467e177a90a99433a3e51cc) 2026-10-26T17:23:20+08:00: feat(agents): show model column by default and keep list search across navigation (MUL-8224) (#9550)
+- [346f441b3b64](https://github.com/multica-ai/multica/commit/346f441b3b6421a284e0c7398cbbf9d5285c408c) 2026-10-26T17:06:48+08:00: fix(views): keep the step inspector reachable on phones (#9484)
+- [e30ae35301cb](https://github.com/multica-ai/multica/commit/e30ae35301cb1324a87642c1b122b86e6c50af45) 2026-10-26T16:49:59+08:00: fix(search): treat out-of-range issue numbers as text (#9501)
+- [f4250e4298fd](https://github.com/multica-ai/multica/commit/f4250e4298fd10b947a8943dfd1421e77efbf023) 2026-10-26T16:49:04+08:00: MUL-8215: fix(runtimes): show Qoder Cloud Agents without encryption setup
+- [9543a0c65aad](https://github.com/multica-ai/multica/commit/9543a0c65aad9b2783dfcde174458786050174db) 2026-10-26T16:34:39+08:00: MUL-6546 fix(util): ignore mentions inside markdown code blocks and inline code (#7397)
+- [2de89ff46e87](https://github.com/multica-ai/multica/commit/2de89ff46e87ec42171e2273e1adb75178654887) 2026-10-26T16:30:18+08:00: MUL-8244: fix(agent): preserve recovered Antigravity stream responses (#9534)
+- [ac963e9b0881](https://github.com/multica-ai/multica/commit/ac963e9b08814799f6052a0f800414168502655d) 2026-10-26T16:19:37+08:00: MUL-7981: fix(execenv): fork past a re-dispatched task's fallback branch (#9547)
+- [a53cbab942b3](https://github.com/multica-ai/multica/commit/a53cbab942b3c3a809870be7ece138a5acdd98b5) 2026-10-26T16:04:52+08:00: fix(workflow): brief handler-less steps as one span (MUL-8231) (#9546)
+- [0a17a5b9fb8a](https://github.com/multica-ai/multica/commit/0a17a5b9fb8a4b0aaa494e082a2a476db03cadfd) 2026-10-26T15:59:06+08:00: fix(i18n): add zh-Hant strings missing after concurrent merges (MUL-8031) (#9548)
+- [5b72b8cd4e29](https://github.com/multica-ai/multica/commit/5b72b8cd4e296a63aa3075aa28d9fd827d6718a5) 2026-10-26T15:29:08+08:00: fix(editor): clamp html block layout at the collapse point in the same render its height arrives (#9271)
+
+## Changed paths (truncated)
+
+- M: `.dockerignore`
+- M: `.env.example`
+- M: `.github/RELEASING.md`
+- M: `.github/ci-paths.json`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/desktop-smoke.yml`
+- M: `.github/workflows/openclaw-config-smoke.yml`
+- M: `.github/workflows/release.yml`
+- M: `.goreleaser.yml`
+- M: `.vercelignore`
+- M: `AGENTS.md`
+- M: `CLI_AND_DAEMON.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile`
+- M: `Dockerfile.web`
+- M: `Makefile`
+- M: `README.md`
+- M: `README.zh.md`
+- M: `SELF_HOSTING.md`
+- M: `SELF_HOSTING_ADVANCED.md`
+- M: `apps/desktop/electron-builder.yml`
+- M: `apps/desktop/eslint.config.mjs`
+- M: `apps/desktop/package.json`
+- M: `apps/desktop/scripts/bundle-cli.mjs`
+- A: `apps/desktop/scripts/bundle-cli.node-test.mjs`
+- A: `apps/desktop/scripts/mac-update-floor.cjs`
+- A: `apps/desktop/scripts/mac-update-floor.test.mjs`
+- M: `apps/desktop/scripts/package.mjs`
+- M: `apps/desktop/scripts/package.test.mjs`
+- M: `apps/desktop/src/main/context-menu.test.ts`
+- M: `apps/desktop/src/main/context-menu.ts`
+- M: `apps/desktop/src/main/daemon-manager.ts`
+- A: `apps/desktop/src/main/daemon-port.test.ts`
+- A: `apps/desktop/src/main/daemon-port.ts`
+- M: `apps/desktop/src/main/daemon-profile.ts`
+- M: `apps/desktop/src/main/daemon-recovery.test.ts`
+- M: `apps/desktop/src/main/daemon-recovery.ts`
+- M: `apps/desktop/src/main/index.ts`
+- M: `apps/desktop/src/main/keyboard-shortcuts.ts`
+- A: `apps/desktop/src/main/linux-file-dialog.test.ts`
+- A: `apps/desktop/src/main/linux-file-dialog.ts`
+- A: `apps/desktop/src/main/local-directory.test.ts`
+- M: `apps/desktop/src/main/navigation-guard.ts`
+- A: `apps/desktop/src/main/update-install-gate.test.ts`
+- A: `apps/desktop/src/main/update-install-gate.ts`
+- A: `apps/desktop/src/main/update-install-lifecycle.test.ts`
+- M: `apps/desktop/src/main/updater.test.ts`
+- M: `apps/desktop/src/main/updater.ts`
+- M: `apps/desktop/src/renderer/src/App.auth-recovery.test.tsx`
+- M: `apps/desktop/src/renderer/src/App.tsx`
+- M: `apps/desktop/src/renderer/src/components/daemon-panel.tsx`
+- A: `apps/desktop/src/renderer/src/components/desktop-choose-runtime-page.tsx`
+- M: `apps/desktop/src/renderer/src/components/desktop-layout.test.tsx`
+- M: `apps/desktop/src/renderer/src/components/desktop-layout.tsx`
+- M: `apps/desktop/src/renderer/src/components/tab-bar.test.tsx`
+- M: `apps/desktop/src/renderer/src/components/tab-bar.tsx`
+- M: `apps/desktop/src/renderer/src/components/window-toolbar.test.tsx`
+- M: `apps/desktop/src/renderer/src/components/window-toolbar.tsx`
+- M: `apps/desktop/src/renderer/src/components/workspace-route-layout.test.tsx`
+- M: `apps/desktop/src/renderer/src/components/workspace-route-layout.tsx`
+- A: `apps/desktop/src/renderer/src/pages/agent-created-page.tsx`
+- M: `apps/desktop/src/renderer/src/platform/issue-window-navigation.test.tsx`
+- M: `apps/desktop/src/renderer/src/platform/issue-window-navigation.tsx`
+- M: `apps/desktop/src/renderer/src/platform/navigation.test.tsx`
+- M: `apps/desktop/src/renderer/src/platform/navigation.tsx`
+- M: `apps/desktop/src/renderer/src/platform/session-teardown.test.ts`
+- M: `apps/desktop/src/renderer/src/platform/session-teardown.ts`
+- M: `apps/desktop/src/renderer/src/platform/tab-coordinator.ts`
+- M: `apps/desktop/src/renderer/src/routes.tsx`
+- M: `apps/desktop/src/renderer/src/stores/tab-store.test.ts`
+- M: `apps/desktop/src/renderer/src/stores/tab-store.ts`
+- M: `apps/docs/app/[lang]/[...slug]/page.tsx`
+- M: `apps/docs/app/[lang]/layout.tsx`
+- M: `apps/docs/app/[lang]/page.tsx`
+- M: `apps/docs/app/global.css`
+- A: `apps/docs/components/demos/agent-access-demo.tsx`
+- A: `apps/docs/components/demos/assign-demo.tsx`
+- A: `apps/docs/components/demos/autopilot-demo.tsx`
+- A: `apps/docs/components/demos/channel-chat-demo.tsx`
+- A: `apps/docs/components/demos/chat-demo.tsx`
+- A: `apps/docs/components/demos/chat-queue-demo.tsx`
+- A: `apps/docs/components/demos/concept-map-demo.tsx`
+- A: `apps/docs/components/demos/create-agent-demo.tsx`
+- A: `apps/docs/components/demos/deliverables-demo.tsx`
+- A: `apps/docs/components/demos/demo-kit.tsx`
+- A: `apps/docs/components/demos/desktop-tabs-demo.tsx`
+- A: `apps/docs/components/demos/inbox-demo.tsx`
+- A: `apps/docs/components/demos/issue-draft-demo.tsx`
+- A: `apps/docs/components/demos/issue-status-demo.tsx`
+- A: `apps/docs/components/demos/local-dir-mode-demo.tsx`
+- A: `apps/docs/components/demos/mention-demo.tsx`
+- A: `apps/docs/components/demos/pr-link-demo.tsx`
+- A: `apps/docs/components/demos/project-demo.tsx`
+- A: `apps/docs/components/demos/provider-picker-demo.tsx`
+- A: `apps/docs/components/demos/quick-action-demo.tsx`
+- A: `apps/docs/components/demos/resolve-thread-demo.tsx`
+- A: `apps/docs/components/demos/roles-demo.tsx`
+- A: `apps/docs/components/demos/run-lifecycle-demo.tsx`
+- A: `apps/docs/components/demos/run-path-demo.tsx`
+- A: `apps/docs/components/demos/runtime-offline-demo.tsx`
+- A: `apps/docs/components/demos/skill-demo.tsx`
+- A: `apps/docs/components/demos/squad-demo.tsx`
+- A: `apps/docs/components/demos/steer-demo.tsx`
+- A: `apps/docs/components/demos/trigger-chooser-demo.tsx`
+- A: `apps/docs/components/demos/usage-demo.tsx`
+- A: `apps/docs/components/demos/wakeup-demo.tsx`
+- A: `apps/docs/components/demos/workflow-demo.tsx`
+- A: `apps/docs/components/i18n-frame-provider.test.ts`
+- A: `apps/docs/components/i18n-frame-provider.tsx`
+- A: `apps/docs/components/search-dialog.tsx`
+- M: `apps/docs/content/docs/agents-create.fr.mdx`
+- M: `apps/docs/content/docs/agents-create.ja.mdx`
+- M: `apps/docs/content/docs/agents-create.ko.mdx`
+- M: `apps/docs/content/docs/agents-create.mdx`
+- M: `apps/docs/content/docs/agents-create.zh.mdx`
+- M: `apps/docs/content/docs/agents.fr.mdx`
+- M: `apps/docs/content/docs/agents.ja.mdx`
+- M: `apps/docs/content/docs/agents.ko.mdx`
+- M: `apps/docs/content/docs/agents.mdx`
+- M: `apps/docs/content/docs/agents.zh.mdx`
+- A: `apps/docs/content/docs/analytics.fr.mdx`
+- A: `apps/docs/content/docs/analytics.ja.mdx`
+- A: `apps/docs/content/docs/analytics.ko.mdx`
+- A: `apps/docs/content/docs/analytics.mdx`
+- A: `apps/docs/content/docs/analytics.zh.mdx`
+- M: `apps/docs/content/docs/assigning-issues.fr.mdx`
+- M: `apps/docs/content/docs/assigning-issues.ja.mdx`
+- M: `apps/docs/content/docs/assigning-issues.ko.mdx`
+- M: `apps/docs/content/docs/assigning-issues.mdx`
+- M: `apps/docs/content/docs/assigning-issues.zh.mdx`
+- M: `apps/docs/content/docs/auth-setup.fr.mdx`
+- M: `apps/docs/content/docs/auth-setup.ja.mdx`
+- M: `apps/docs/content/docs/auth-setup.ko.mdx`
+- M: `apps/docs/content/docs/auth-setup.mdx`
+- M: `apps/docs/content/docs/auth-setup.zh.mdx`
+- M: `apps/docs/content/docs/auth-tokens.zh.mdx`
+- M: `apps/docs/content/docs/autopilots.fr.mdx`
+- M: `apps/docs/content/docs/autopilots.ja.mdx`
+- M: `apps/docs/content/docs/autopilots.ko.mdx`
+- M: `apps/docs/content/docs/autopilots.mdx`
+- M: `apps/docs/content/docs/autopilots.zh.mdx`
+- M: `apps/docs/content/docs/channels.fr.mdx`
+- M: `apps/docs/content/docs/channels.ja.mdx`
+- M: `apps/docs/content/docs/channels.ko.mdx`
+- M: `apps/docs/content/docs/channels.mdx`
+- M: `apps/docs/content/docs/channels.zh.mdx`
+- M: `apps/docs/content/docs/chat.fr.mdx`
+- M: `apps/docs/content/docs/chat.ja.mdx`
+- M: `apps/docs/content/docs/chat.ko.mdx`
+- M: `apps/docs/content/docs/chat.mdx`
+- M: `apps/docs/content/docs/chat.zh.mdx`
+- M: `apps/docs/content/docs/cli.fr.mdx`
+- M: `apps/docs/content/docs/cli.ja.mdx`
+- M: `apps/docs/content/docs/cli.ko.mdx`
+- M: `apps/docs/content/docs/cli.mdx`
+- M: `apps/docs/content/docs/cli.zh.mdx`
+- M: `apps/docs/content/docs/cloud-quickstart.fr.mdx`
+- M: `apps/docs/content/docs/cloud-quickstart.ja.mdx`
+- M: `apps/docs/content/docs/cloud-quickstart.ko.mdx`
+- M: `apps/docs/content/docs/cloud-quickstart.mdx`

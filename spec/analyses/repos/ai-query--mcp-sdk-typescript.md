@@ -1,0 +1,199 @@
+# mcp-sdk-typescript: change evidence
+
+Source: [mcp-sdk-typescript](https://github.com/modelcontextprotocol/typescript-sdk) · [Analysis](../../projects/ai-query--mcp-sdk-typescript.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `8aabbdcef6e016978a3132045281dfbd51c69792`; commit date: 2026-10-02T18:43:19Z; review date: unknown; observed SHA: `b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/modelcontextprotocol/typescript-sdk/compare/8aabbdcef6e016978a3132045281dfbd51c69792...b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [b415e60bdf0e](https://github.com/modelcontextprotocol/typescript-sdk/commit/b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2) 2026-10-26T14:29:44Z: fix(client/auth): allow opting out of prompt=consent for offline_access (#2877)
+- [951fe5603a7e](https://github.com/modelcontextprotocol/typescript-sdk/commit/951fe5603a7ec0b2dcb6a0b95d92cd86f93ad9e5) 2026-10-23T19:16:23+01:00: Version Packages (#2959)
+- [895007fe728b](https://github.com/modelcontextprotocol/typescript-sdk/commit/895007fe728b9c57fbe3ed45fe279ddc51f731f7) 2026-10-23T17:58:00Z: fix(server): set Allow: POST on stateless legacy 405 responses (#3002)
+- [28124dbb5759](https://github.com/modelcontextprotocol/typescript-sdk/commit/28124dbb57594be1ca25e85122066d1e5d4535b5) 2026-10-23T17:33:50Z: fix(docs): use relative POSIX package entry globs (#3016)
+- [f7289b3531cd](https://github.com/modelcontextprotocol/typescript-sdk/commit/f7289b3531cdd7d8487663ca437496c1dfe0fe05) 2026-10-23T17:29:29Z: docs: say that a spec handler's params drop members the spec does not define (#3087)
+- [a63375661399](https://github.com/modelcontextprotocol/typescript-sdk/commit/a63375661399956a744ff8b34d03d36e3d09e98a) 2026-10-23T17:25:12Z: feat(client): add an opt-in for sending scope on token refresh (#3085)
+- [10c26b00cb9c](https://github.com/modelcontextprotocol/typescript-sdk/commit/10c26b00cb9c6d12332a92ea02f75530452450e4) 2026-10-23T17:20:56Z: chore(node): accept @hono/node-server 1.x or 2.x (#3084)
+- [ef38c6765a15](https://github.com/modelcontextprotocol/typescript-sdk/commit/ef38c6765a15ee29030340dfea28b013893fa0a2) 2026-10-23T17:16:35Z: chore(deps): build the bundled ajv with fast-uri 3.1.8 (#3083)
+- [5820f796a48a](https://github.com/modelcontextprotocol/typescript-sdk/commit/5820f796a48ae6b8e756a7fbfd627e7e2e1ac891) 2026-10-23T17:11:57Z: fix(server): treat an outputSchema root $ref to an object definition as an object schema (#3081)
+- [a513cfecff33](https://github.com/modelcontextprotocol/typescript-sdk/commit/a513cfecff33d6a34469854d331fa0cc84e208d4) 2026-10-23T17:07:34Z: docs: close the v1 to v2 quick path with the 2026-07-28 serving decision (#3086)
+- [c822443f270f](https://github.com/modelcontextprotocol/typescript-sdk/commit/c822443f270fbec2f15d36dcced45bd7e8556f2e) 2026-10-23T18:00:09+01:00: docs(server): mark SkillsExtension.attach as experimental (#3080)
+- [9adb8d5e5b20](https://github.com/modelcontextprotocol/typescript-sdk/commit/9adb8d5e5b2032d75a8362cd21e018e871e5144f) 2026-10-22T17:04:52+01:00: docs: publish the Skills over MCP guides as an agent skill (#3068)
+- [b5bd4dc13d5c](https://github.com/modelcontextprotocol/typescript-sdk/commit/b5bd4dc13d5cc0f3ea0cdd185186875adebc6957) 2026-10-22T16:58:19+01:00: test(e2e): cover the Skills extension (SEP-2640) (#3065)
+- [c05225a636c6](https://github.com/modelcontextprotocol/typescript-sdk/commit/c05225a636c679870b65f8ca4fe83a76ea1cf113) 2026-10-21T01:09:57+03:00: fix(server): preserve forwarded params and support modern low-level connections (#3057)
+- [46d9c9921b65](https://github.com/modelcontextprotocol/typescript-sdk/commit/46d9c9921b6542e813c1ecc5f9fc964085e8e3bb) 2026-10-20T15:31:27+01:00: feat: Skills extension (SEP-2640) for server and client (#3047)
+- [9bc40e903fde](https://github.com/modelcontextprotocol/typescript-sdk/commit/9bc40e903fde15534ec06ff4c1347d47000dbe16) 2026-10-13T13:11:15+01:00: Docs/migration skill (#2968)
+- [43c45f4941d8](https://github.com/modelcontextprotocol/typescript-sdk/commit/43c45f4941d824e7251a7d1266823a84af90fab3) 2026-10-12T17:10:44+01:00: fix(server): keep the Mcp-Param check on a tool with a number-typed header (#2960)
+- [b381559edc0d](https://github.com/modelcontextprotocol/typescript-sdk/commit/b381559edc0dbe25ab8324cada345b49bd1d2fc4) 2026-10-12T10:54:16+01:00: fix(server): reflect resource title updates in list responses (#3005)
+- [b022522089a0](https://github.com/modelcontextprotocol/typescript-sdk/commit/b022522089a0c8b632595c6e7b536453945ed5a9) 2026-10-05T15:38:02+01:00: fix(core): reject x-mcp-header on number-typed parameters (#2762)
+- [324299b22ce5](https://github.com/modelcontextprotocol/typescript-sdk/commit/324299b22ce5d4c95f6fc266ad2033c89e4363d6) 2026-10-05T13:19:05+01:00: ci: skip the Publish job when every version is already on npm (#2956)
+- [fcef852f6cda](https://github.com/modelcontextprotocol/typescript-sdk/commit/fcef852f6cdafea07f36cf6fae69b37c8adf85be) 2026-10-05T12:46:43+01:00: Version Packages (#2953)
+- [e8b7f05f5b9e](https://github.com/modelcontextprotocol/typescript-sdk/commit/e8b7f05f5b9e4204510289dc0596531265e9ddcb) 2026-10-05T12:40:24+01:00: docs: one opening note in the server and client package READMEs (#2955)
+- [5a1867390b91](https://github.com/modelcontextprotocol/typescript-sdk/commit/5a1867390b91b8836f49af76c45427279f513325) 2026-10-05T12:22:31+01:00: feat(server-legacy): add expectedResource to requireBearerAuth (#2952)
+- [3ab61c61f5ff](https://github.com/modelcontextprotocol/typescript-sdk/commit/3ab61c61f5ff1cd6b67eec6222247c66635495fd) 2026-10-05T11:14:51+01:00: docs: update the README banners (#2940)
+
+## Changed paths (truncated)
+
+- A: `.changeset/skip-offline-access-consent-prompt.md`
+- M: `.github/workflows/conformance.yml`
+- M: `.github/workflows/release.yml`
+- M: `CONTRIBUTING.md`
+- M: `DEPENDENCY_POLICY.md`
+- M: `README.md`
+- M: `docs/.vitepress/config.mts`
+- M: `docs/.vitepress/llms.ts`
+- M: `docs/.vitepress/nav.ts`
+- A: `docs/.vitepress/skill.ts`
+- M: `docs/_meta/CONVENTIONS.md`
+- M: `docs/advanced/low-level-server.md`
+- M: `docs/behavior-surface-pins.md`
+- M: `docs/clients/oauth.md`
+- A: `docs/clients/skills.md`
+- M: `docs/migration/index.md`
+- M: `docs/migration/support-2026-07-28.md`
+- M: `docs/migration/upgrade-to-v2.md`
+- M: `docs/servers/notifications.md`
+- A: `docs/servers/skills.md`
+- M: `examples/README.md`
+- M: `examples/client-quickstart/tsconfig.json`
+- M: `examples/guides/README.md`
+- M: `examples/guides/clients/oauth.examples.ts`
+- A: `examples/guides/clients/skills.examples.ts`
+- A: `examples/guides/servers/skills.examples.ts`
+- A: `examples/guides/servers/skills/acme/billing/refunds/SKILL.md`
+- A: `examples/guides/servers/skills/git-workflow/SKILL.md`
+- A: `examples/guides/servers/skills/git-workflow/references/REVIEW.md`
+- M: `examples/server-quickstart/tsconfig.json`
+- M: `examples/shared/tsconfig.json`
+- A: `examples/skills/README.md`
+- A: `examples/skills/client.ts`
+- A: `examples/skills/package.json`
+- A: `examples/skills/server.ts`
+- A: `examples/skills/skills/acme/billing/refunds/SKILL.md`
+- A: `examples/skills/skills/acme/billing/refunds/escalation/SKILL.md`
+- A: `examples/skills/skills/acme/billing/refunds/templates/refund-email.md`
+- A: `examples/skills/skills/git-workflow/SKILL.md`
+- A: `examples/skills/skills/git-workflow/references/REVIEW.md`
+- M: `examples/tsconfig.json`
+- M: `package.json`
+- M: `packages/client/CHANGELOG.md`
+- M: `packages/client/README.md`
+- M: `packages/client/package.json`
+- M: `packages/client/src/client/auth.ts`
+- M: `packages/client/src/client/client.ts`
+- A: `packages/client/src/ext/skills/entries.ts`
+- A: `packages/client/src/ext/skills/errors.ts`
+- A: `packages/client/src/ext/skills/index.ts`
+- A: `packages/client/src/ext/skills/pageSchemas.ts`
+- A: `packages/client/src/ext/skills/skillsClient.ts`
+- A: `packages/client/src/ext/skills/verify.ts`
+- M: `packages/client/test/client/auth.test.ts`
+- M: `packages/client/test/client/barrelClean.test.ts`
+- M: `packages/client/test/client/errorBrandConformance.test.ts`
+- M: `packages/client/test/client/mcpParamMirroring.test.ts`
+- A: `packages/client/test/ext/skills/fixtures.ts`
+- A: `packages/client/test/ext/skills/read.test.ts`
+- A: `packages/client/test/ext/skills/scripted.ts`
+- A: `packages/client/test/ext/skills/skillsClient.test.ts`
+- A: `packages/client/test/ext/skills/verify.test.ts`
+- M: `packages/client/tsconfig.json`
+- M: `packages/client/tsdown.config.ts`
+- M: `packages/codemod/CHANGELOG.md`
+- M: `packages/codemod/package.json`
+- M: `packages/core-internal/CHANGELOG.md`
+- M: `packages/core-internal/package.json`
+- A: `packages/core-internal/src/ext/skills/bytes.ts`
+- A: `packages/core-internal/src/ext/skills/entry.ts`
+- A: `packages/core-internal/src/ext/skills/frontmatter.ts`
+- A: `packages/core-internal/src/ext/skills/index.ts`
+- A: `packages/core-internal/src/ext/skills/mime.ts`
+- A: `packages/core-internal/src/ext/skills/uri.ts`
+- M: `packages/core-internal/src/index.ts`
+- M: `packages/core-internal/src/shared/mcpParamHeaders.ts`
+- M: `packages/core-internal/src/util/standardSchema.ts`
+- M: `packages/core-internal/src/validators/fastUriShim.d.ts`
+- A: `packages/core-internal/test/ext/skills/bytes.test.ts`
+- A: `packages/core-internal/test/ext/skills/entry.test.ts`
+- A: `packages/core-internal/test/ext/skills/frontmatter.differential.test.ts`
+- A: `packages/core-internal/test/ext/skills/frontmatter.test.ts`
+- A: `packages/core-internal/test/ext/skills/mime.test.ts`
+- A: `packages/core-internal/test/ext/skills/uri.test.ts`
+- M: `packages/core-internal/test/packageTopologyPins.test.ts`
+- M: `packages/core-internal/test/shared/mcpParamHeaders.test.ts`
+- M: `packages/core-internal/tsconfig.json`
+- M: `packages/core/CHANGELOG.md`
+- M: `packages/core/package.json`
+- A: `packages/core/src/ext/skills/capability.ts`
+- A: `packages/core/src/ext/skills/constants.ts`
+- A: `packages/core/src/ext/skills/index.ts`
+- A: `packages/core/src/ext/skills/schemas.ts`
+- A: `packages/core/src/ext/skills/types.ts`
+- A: `packages/core/test/ext/skills/schemas.test.ts`
+- M: `packages/core/tsdown.config.ts`
+- M: `packages/middleware/express/tsconfig.json`
+- M: `packages/middleware/fastify/tsconfig.json`
+- M: `packages/middleware/hono/tsconfig.json`
+- M: `packages/middleware/node/CHANGELOG.md`
+- M: `packages/middleware/node/package.json`
+- M: `packages/middleware/node/tsconfig.json`
+- M: `packages/server-legacy/CHANGELOG.md`
+- M: `packages/server-legacy/package.json`
+- M: `packages/server-legacy/src/auth/middleware/bearerAuth.ts`
+- M: `packages/server-legacy/test/auth/middleware/bearerAuth.test.ts`
+- M: `packages/server-legacy/tsconfig.json`
+- M: `packages/server/CHANGELOG.md`
+- M: `packages/server/README.md`
+- M: `packages/server/package.json`
+- A: `packages/server/src/ext/skills/catalogBuild.ts`
+- A: `packages/server/src/ext/skills/catalogSource.ts`
+- A: `packages/server/src/ext/skills/errors.ts`
+- A: `packages/server/src/ext/skills/extension.ts`
+- A: `packages/server/src/ext/skills/files.ts`
+- A: `packages/server/src/ext/skills/fsPath.ts`
+- A: `packages/server/src/ext/skills/index.ts`
+- A: `packages/server/src/ext/skills/internal.ts`
+- A: `packages/server/src/ext/skills/node.ts`
+- A: `packages/server/src/ext/skills/paging.ts`
+- A: `packages/server/src/ext/skills/skillEntry.ts`
+- A: `packages/server/src/ext/skills/types.ts`
+- M: `packages/server/src/server/createMcpHandler.ts`
+- M: `packages/server/src/server/mcp.ts`
+- M: `packages/server/src/server/perRequestTransport.ts`
+- M: `packages/server/src/server/server.ts`
+- M: `packages/server/src/server/serverEventBus.ts`
+- A: `packages/server/test/ext/skills/catalog.test.ts`
+- A: `packages/server/test/ext/skills/catalogBuild.test.ts`
+- A: `packages/server/test/ext/skills/extension.test.ts`
+- A: `packages/server/test/ext/skills/fixtures.ts`
+- A: `packages/server/test/ext/skills/harness.ts`
+- A: `packages/server/test/ext/skills/node.test.ts`
+- A: `packages/server/test/ext/skills/paging.test.ts`
+- M: `packages/server/test/server/barrelClean.test.ts`
+- M: `packages/server/test/server/createMcpHandler.test.ts`
+- M: `packages/server/test/server/errorBrandConformance.test.ts`
+- M: `packages/server/test/server/legacyStatelessFallback.test.ts`
+- M: `packages/server/test/server/mcpParamValidation.test.ts`
+- M: `packages/server/tsconfig.json`
+- M: `packages/server/tsdown.config.ts`
+- M: `pnpm-lock.yaml`
+- M: `pnpm-workspace.yaml`
+- A: `scripts/check-skills.ts`
+- A: `scripts/check-unpublished.mjs`
+- M: `scripts/sync-snippets.ts`
+- A: `skills/mcp-typescript-sdk-skills/SKILL.md`
+- A: `skills/mcp-typescript-sdk-skills/references/client.md`
+- A: `skills/mcp-typescript-sdk-skills/references/server.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/SKILL.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/auth.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/behavioral-changes.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/enhancements.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/errors.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/http-headers.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/imports-transports.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/packaging-runtime.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/protocol-ctx.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/server-registration.md`
+- A: `skills/mcp-typescript-sdk-upgrade-to-v2/references/types-schemas.md`

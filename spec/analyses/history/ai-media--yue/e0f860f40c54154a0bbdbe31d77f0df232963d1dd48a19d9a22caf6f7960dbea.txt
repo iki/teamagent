@@ -1,0 +1,31 @@
+# YuE snapshot: symbolic-plan-first music generation
+
+Source: [yue](https://github.com/multimodal-art-projection/YuE) · Category: `ai-media`
+
+Review depth: **source-reviewed**. Snapshot `1dc1c50ef9a98597e2e82fe6bac232a05b160acf`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The checked-out default branch is YuE2; the README directs users of original YuE to a separate v1 branch. The pipeline separates a symbolic plan from semantic tokens and final audio. A plan includes the request, ABC representation, token IDs, prefix, timing, and truncation state. Saving writes both structured data and arrays plus checksums; loading rejects unexpected filenames, symlinks, checksum changes, and token-array mismatches, with pickle disabled for arrays.
+
+The result object preserves audio, sample rate, semantic plan, latents, generation configuration, weight identity, and timing. Audio delivery is separate from a full artifact export. This is a strong pattern for an evolving generation system: editable intermediate representation plus reproducible final outputs.
+
+## Harness adoption
+
+Offer music generation as an optional GPU tool, using an inspectable composition plan and approved references. Persist model/weight revision, sampler configuration, input identity, intermediate score, seed where available, and all generated asset hashes. Revisions to composition should create a new request lineage rather than modifying the identity of an earlier accepted result.
+
+Use quality/cost decisions to choose preview length, candidate count, and final rendering. Media retrieval should index lyrics, style, structure, and captions alongside the audio; raw waveforms are not substitutes for searchable metadata.
+
+## Limitations and decision
+
+Prototype only until hardware memory, latency, weight licensing, and task-level quality are measured. The README's frontier-quality and benchmark claims were not reproduced and should not be used as the default route-selection prior without evidence. A checksum proves artifact consistency, not quality, ownership, or correctness. Keep the v1/v2 distinction explicit in package/model identifiers and adapter compatibility rather than installing a generic tool called only `yue`.
+
+## Evidence read
+
+- [Symbolic plan persistence and integrity checks](https://github.com/multimodal-art-projection/YuE/blob/1dc1c50ef9a98597e2e82fe6bac232a05b160acf/src/yue2/pipeline.py#L1-L65)
+- [Audio result and complete artifact export](https://github.com/multimodal-art-projection/YuE/blob/1dc1c50ef9a98597e2e82fe6bac232a05b160acf/src/yue2/pipeline.py#L75-L115)
+- [Snapshot project identity](https://github.com/multimodal-art-projection/YuE/blob/1dc1c50ef9a98597e2e82fe6bac232a05b160acf/README.md#L1-L21)
+
+## Related directions
+
+[Generation](../generation.md) · [Models](../models.md) · [Memory](../memory.md) · [Decisions](../decisions.md)

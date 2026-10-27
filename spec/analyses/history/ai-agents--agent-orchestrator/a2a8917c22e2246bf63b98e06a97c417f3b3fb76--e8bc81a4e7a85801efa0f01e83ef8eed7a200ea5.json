@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--agent-orchestrator",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/ComposioHQ/agent-orchestrator",
+  "report": "spec/projects/ai-agents--agent-orchestrator.md",
+  "analyzedSha": "a2a8917c22e2246bf63b98e06a97c417f3b3fb76",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T20:20:43+05:30",
+  "observedSha": "e8bc81a4e7a85801efa0f01e83ef8eed7a200ea5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e8bc81a4e7a85801efa0f01e83ef8eed7a200ea5",
+      "date": "2026-10-24T02:23:13+05:30",
+      "subject": "fix(cloud): 11x feedback: stranded worker bootstrap, standalone working folder, live tool calls in Chat (#7150)"
+    },
+    {
+      "sha": "6a35f65af7088452ea490b937e41429961796110",
+      "date": "2026-10-24T01:39:23+05:30",
+      "subject": "fix(cloud): index the GitHub webhook claim and prune finished deliveries (P0 DB CPU) (#7145)"
+    },
+    {
+      "sha": "b13b9514126c936a06e2b3f692495d9a95ba420e",
+      "date": "2026-10-24T01:26:49+05:30",
+      "subject": "fix(mobile): keep an open Archive cheap with read-only archived rows (#7122)"
+    },
+    {
+      "sha": "6e1d78318232a0cb3b16ecbf618aa065a9dce21b",
+      "date": "2026-10-24T00:47:51+05:30",
+      "subject": "feat(chat): ship agent switching without Developer mode (#7126)"
+    },
+    {
+      "sha": "533ab6466e8535f0860f1c02379c2485498e1b04",
+      "date": "2026-10-23T23:57:42+05:30",
+      "subject": "feat(chat): show worker updates as rows in the orchestrator chat (#7096)"
+    },
+    {
+      "sha": "c122bc1e8f7044c0c485995a40782803acc73623",
+      "date": "2026-10-23T22:18:48+05:30",
+      "subject": "fix(telemetry): preserve installation attribution across identities (#7112)"
+    },
+    {
+      "sha": "9fbd3f44d7cf67a7929889823f7600bdbbabba7a",
+      "date": "2026-10-23T22:03:40+05:30",
+      "subject": "fix(renderer): show how many projects still have a pending orchestrator replacement (#6926)"
+    },
+    {
+      "sha": "21396b90d9862b91c90fc73f035524f21dbc3c7f",
+      "date": "2026-10-23T22:03:04+05:30",
+      "subject": "feat(docs): add Open Graph tags, preview images and structured data (#7016)"
+    },
+    {
+      "sha": "484932e07595c435c380ee3c422edff79df11883",
+      "date": "2026-10-23T21:40:27+05:30",
+      "subject": "feat(cloud): store cloud session artifacts in S3 behind AO_CLOUD_ARTIFACTS (1/3) (#6769)"
+    },
+    {
+      "sha": "ccd63f9d896a9273bc271be821694dc3449f5b18",
+      "date": "2026-10-23T21:39:10+05:30",
+      "subject": "fix(files): restore image review scrolling and collapse controls (#6923)"
+    },
+    {
+      "sha": "9adbcf44184495cd744a297770eb162968498983",
+      "date": "2026-10-23T21:38:15+05:30",
+      "subject": "feat(docs): crawlable URLs for translated articles (#7010)"
+    },
+    {
+      "sha": "717ff50cb3d4725677a17291b7140c2908bb1c02",
+      "date": "2026-10-23T21:31:49+05:30",
+      "subject": "fix(chat): restore background title and branch generation (#7119)"
+    },
+    {
+      "sha": "3b52fd9a0eeb3d9d41caa0465d4a235247c020ae",
+      "date": "2026-10-23T20:58:48+05:30",
+      "subject": "fix(artifacts): skip OS metadata files and keep helper code out of artifact dir (#7120)"
+    },
+    {
+      "sha": "1f7689badb8cff7ed8a55c0988a5aa0149d3a5da",
+      "date": "2026-10-23T20:55:16+05:30",
+      "subject": "feat(command-code): deliver standing instructions through a per-session home (#6778)"
+    },
+    {
+      "sha": "526fc9dc09aa1332d7af00b688e90277693b3a1c",
+      "date": "2026-10-23T20:53:34+05:30",
+      "subject": "feat(docs): translate the docs interface into 17 languages (#6967)"
+    },
+    {
+      "sha": "a50ec935167d6b48d0880cbe7ef202cfb6d57c3a",
+      "date": "2026-10-23T20:24:47+05:30",
+      "subject": "fix(files): drop \"Open diff in center\" from the maximized explorer (#7127)"
+    },
+    {
+      "sha": "59c72e8d51fcea04a4ffcbb8dcd94ceb4f144dca",
+      "date": "2026-10-23T20:16:02+05:30",
+      "subject": "fix(hermes): accept Homebrew bottles whose banner reads vunknown (#7132)"
+    },
+    {
+      "sha": "60202ba110c3b1856a5cac568d1717ace3253342",
+      "date": "2026-10-23T19:22:32+05:30",
+      "subject": "fix(send): fail on unconfirmed delivery and adapt multiline paste delay (#6873)"
+    },
+    {
+      "sha": "8e0a30441a906c24562c83fcc27a234bf3da41ac",
+      "date": "2026-10-23T19:17:34+05:30",
+      "subject": "ci: cancel superseded PR runs in every PR-triggered workflow (#7139)"
+    },
+    {
+      "sha": "eebead0cdb14492e30e4748ee49c7b7a7acb868f",
+      "date": "2026-10-23T18:46:40+05:30",
+      "subject": "fix(cloud): load Chat model choices once the worker connects, not on a timer (#7075)"
+    },
+    {
+      "sha": "2c9a71b547b094e0266b1cf94f8089d4b86111b6",
+      "date": "2026-10-23T17:59:44+05:30",
+      "subject": "docs: add robots.txt pointing to the sitemap (#7008)"
+    },
+    {
+      "sha": "b15072cfbe1f584dc50f66380745c8d654e82407",
+      "date": "2026-10-23T17:46:11+05:30",
+      "subject": "fix(updates): keep release-note links when the feed sends HTML (#6994)"
+    },
+    {
+      "sha": "b1148ce931a0c6f49ff4539dcd72eddd203c9de6",
+      "date": "2026-10-23T16:01:32+05:30",
+      "subject": "feat: show confirmed AO actions in chat (#6507)"
+    },
+    {
+      "sha": "fd7be1b7c2c66db803e6a167d9d2af7ef6a49678",
+      "date": "2026-10-23T14:24:42+05:30",
+      "subject": "fix(browser): discover and select newly opened tabs (#7115)"
+    },
+    {
+      "sha": "4b6924e46839058402af1f6b3bd4a104d9773f3b",
+      "date": "2026-10-23T01:54:37-07:00",
+      "subject": "fix(chat): move idle orchestrators to a new harness release (#7055)"
+    },
+    {
+      "sha": "c2722b7e7725c510aabb414c800288d4534b324c",
+      "date": "2026-10-23T14:17:22+05:30",
+      "subject": "fix(httpd): reject untrusted browser access to terminals and APIs (#7077)"
+    },
+    {
+      "sha": "b087ce794d2eb21d4868cb07a9e57feb24887454",
+      "date": "2026-10-23T12:15:00+05:30",
+      "subject": "fix(httpd): restrict terminal mux access to trusted clients (#7105)"
+    },
+    {
+      "sha": "2083f0e186881b7a7c972edab8fc1341bcbed683",
+      "date": "2026-10-23T12:03:03+05:30",
+      "subject": "fix(chat): a steer starts a new visual turn and stays visible (#7108)"
+    },
+    {
+      "sha": "2f4fd3694962d233263ecadea1fb3467f058b96c",
+      "date": "2026-10-23T11:55:02+05:30",
+      "subject": "fix(mobile): open GitHub PR links on the PR in the iOS GitHub app (#7109)"
+    },
+    {
+      "sha": "4458cb183cb4ee690cf9a4548abe37c05c03a05c",
+      "date": "2026-10-23T11:53:12+05:30",
+      "subject": "fix(cloud): rebuild Brotli with the upstream decoder fix for the worker image (#7107)"
+    },
+    {
+      "sha": "c4b9431b483765f5abb544c121825638c5a8e749",
+      "date": "2026-10-23T11:46:43+05:30",
+      "subject": "fix(terminal): split large paste into bounded messages (#7110)"
+    },
+    {
+      "sha": "9e347ec0268647cc58f2c4bfdfdb79832a5a32c7",
+      "date": "2026-10-23T10:25:12+05:30",
+      "subject": "fix(artifacts): delete a file's version history when the user deletes it (#7087)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/ao-desktop-dev/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/bug-triage/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/.gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-gate-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/frontend.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gitleaks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/go.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/harness-proof-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/harness-release-feeds.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/optional-private-submodule.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pricing-catalog-validate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/version-floor-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTEXT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/.golangci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/gencodexproto/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/e2e/chat_approval_restart_stub_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/e2e/chat_usage_limit_daemon_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/e2e/harness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/activitydispatch/dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/activitydispatch/dispatch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/activitystate/activitystate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/activitystate/activitystate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/agentbase/agentbase.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/agentbase/agentbase_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/agentbase/native_resume.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/agentbase/native_resume_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/agy/agy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/agy/agy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/agy/bridge.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/agy/bridge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/agy/terminal_activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/agy/terminal_activity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/agy/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/aider/aider.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/aider/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/aider/auth_evidence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/aider/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/amp/amp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/amp/amp_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/amp/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/amp/auth_account_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/amp/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/amp/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/auggie/auggie.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/auggie/auggie_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/auggie/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/auggie/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/authprobe/authprobe.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/authprobe/authprobe_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/authprobe/credential_diagnostics.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/authprobe/diagnostics_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/authprobe/token_identity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/authprobe/token_identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/autohand/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/autohand/autohand.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/autohand/autohand_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/autohand/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/binaryutil/binaryutil.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/binaryutil/managed.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/binaryutil/managed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/activity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/auth_account_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/auth_diagnostics_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/claudecode.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/claudecode_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/expired_login_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/claudecode/local_credential.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/turn_interrupts.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/claudecode/turn_interrupts_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/activity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/cline.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cline/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/cline/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/cline/version_refresh_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codewhale/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codewhale/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codewhale/codewhale.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codewhale/codewhale_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codewhale/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codewhale/hooks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codewhale/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/codex.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/codex_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codex/managed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/terminal_activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/terminal_activity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codex/turn_failures.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/codex/turn_failures_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/commandcode.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/commandcode_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/sessionhome.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/sessionhome_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/commandcode/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/continueagent/continueagent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/continueagent/terminal_activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/continueagent/terminal_activity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/continueagent/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/copilot/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/auth_evidence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/copilot/copilot.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/copilot/copilot_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/handoff.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/handoff_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/copilot/hooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/terminal_activity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/terminal_activity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/transcript.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/transcript_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/trust.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/trust_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/copilot/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/crush/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/crush/crush.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/crush/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cursor/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/cursor/auth_account_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cursor/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/cursor/cursor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/deepseekharness/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/deepseekharness/deepseekharness.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/deepseekharness/deepseekharness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/deepseekharness/shim.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/deepseekharness/shim_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/deepseekharness/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/devin/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/devin/auth_account_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/devin/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/devin/devin.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/devin/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/droid/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/droid/droid.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/adapters/agent/droid/version_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/fake/fake_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

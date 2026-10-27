@@ -1,0 +1,207 @@
+# agentenv: change evidence
+
+Source: [agentenv](https://github.com/kvcache-ai/AgentEnv) · [Analysis](../../projects/ai-agents-sandbox--agentenv.md) · [agents](../../agents.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `5843159b1eaf235a45a08a5329fc6647c6e5bc31`; commit date: 2026-10-03T14:03:10+08:00; review date: unknown; observed SHA: `abc027b29947366d33b3f65b7018cd096840612d`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/kvcache-ai/AgentEnv/compare/5843159b1eaf235a45a08a5329fc6647c6e5bc31...abc027b29947366d33b3f65b7018cd096840612d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [abc027b29947](https://github.com/kvcache-ai/AgentEnv/commit/abc027b29947366d33b3f65b7018cd096840612d) 2026-10-27T09:56:43+08:00: fix: avoid nested image state read locks during writes
+- [8887fe014afc](https://github.com/kvcache-ai/AgentEnv/commit/8887fe014afcc29e2908bd91e6e77a9f232fd24b) 2026-10-27T09:52:40+08:00: fix(ublk-daemon): roll back device handoffs the client never receives
+- [d3818b085a20](https://github.com/kvcache-ai/AgentEnv/commit/d3818b085a20628c44e13d098613f9f9c45ab6b2) 2026-10-26T20:46:07+08:00: fix(snapshot): stop interrupted deletes from shadowing aliases
+- [dfc69836c64c](https://github.com/kvcache-ai/AgentEnv/commit/dfc69836c64c4025ad15ad20077753b99782e294) 2026-10-26T19:08:01+08:00: feat: attach image drives to warm starts
+- [bc51e699421f](https://github.com/kvcache-ai/AgentEnv/commit/bc51e699421fdf67865665f36269b66a1ffac479) 2026-10-26T10:36:19+08:00: feat(gateway): support HTTPS with manual and ACME certificates
+- [c9bffdfd1c87](https://github.com/kvcache-ai/AgentEnv/commit/c9bffdfd1c8715d757d7b0dc371365849075d18a) 2026-10-26T10:35:40+08:00: fix(overlaybd): bound layer index ranges by file size
+- [424b852d961f](https://github.com/kvcache-ai/AgentEnv/commit/424b852d961ff26d75ab609fa499dae071713528) 2026-10-24T20:47:27+08:00: fix(network): drop guest packets with a spoofed source address
+- [9f76bef65601](https://github.com/kvcache-ai/AgentEnv/commit/9f76bef65601aacc3615b32ea67ec972044a519d) 2026-10-23T19:26:54+08:00: fix(make): keep command-line overrides out of inherited MAKEFLAGS
+- [9f62cbe07ceb](https://github.com/kvcache-ai/AgentEnv/commit/9f62cbe07cebfecf416dc9bdcf497e2a97687644) 2026-10-23T11:01:59+08:00: chore(release): bump version to v0.2.4
+- [7d10d6523630](https://github.com/kvcache-ai/AgentEnv/commit/7d10d652363072e1faca961f66c04d99f5ac2101) 2026-10-23T09:42:57+08:00: fix(storage): avoid spurious ZFile and disk size warnings
+- [09a1a16c4902](https://github.com/kvcache-ai/AgentEnv/commit/09a1a16c490292d51ee63740ff1b62ce447383f0) 2026-10-23T09:41:40+08:00: fix(sandbox): hide image refs from guest metadata
+- [a97473b51921](https://github.com/kvcache-ai/AgentEnv/commit/a97473b5192122702b68bfcb2dc640116f275507) 2026-10-22T21:05:05+08:00: fix(overlaybd): reconcile mmap limits with open-entry eviction
+- [52656b92478a](https://github.com/kvcache-ai/AgentEnv/commit/52656b92478a4af8018e7309fb9db5072a89c9c1) 2026-10-22T13:15:21+08:00: feat(overlaybd): add runtime cache limits and mmap-aware eviction
+- [b4ee1b73a911](https://github.com/kvcache-ai/AgentEnv/commit/b4ee1b73a91148c5956d2efef270ab64ae59ca92) 2026-10-22T09:45:55+08:00: fix(sandbox): announce guest MAC changes via arp_notify
+- [0a4829ac3c32](https://github.com/kvcache-ai/AgentEnv/commit/0a4829ac3c320a706c2a6a7fada4833e0703cd14) 2026-10-22T09:32:44+08:00: fix: reject explicit volume mounts on snapshots with volumes
+- [8428a329457f](https://github.com/kvcache-ai/AgentEnv/commit/8428a329457f168dd9ba75d41c24d9bc43f4b11b) 2026-10-21T21:20:26+08:00: chore(deps): bump github.com/klauspost/compress in /services
+- [a27b2db909b0](https://github.com/kvcache-ai/AgentEnv/commit/a27b2db909b035f58696ba8798ea0e285c7bfa17) 2026-10-20T19:52:46+08:00: fix(scripts): forward environment explicitly for sudo-rs compatibility
+- [8064830d3cb1](https://github.com/kvcache-ai/AgentEnv/commit/8064830d3cb14861dc4f5e5d17dd03209d5b2464) 2026-10-20T14:05:06+08:00: feat(custom-extension): surface hook 4xx/5xx status to API callers
+- [484a7601ebf6](https://github.com/kvcache-ai/AgentEnv/commit/484a7601ebf6812940aec4f5080e9c3fa155acf3) 2026-10-20T12:57:34+08:00: fix(gateway): size reverse proxy idle connection pools for node fan-out
+- [6de277fa2206](https://github.com/kvcache-ai/AgentEnv/commit/6de277fa2206b2fcd35f968f20021d884d305d1b) 2026-10-20T10:43:58+08:00: feat: add DELETE /snapshots/{snapshotID} endpoint
+- [cf03e82f1503](https://github.com/kvcache-ai/AgentEnv/commit/cf03e82f15039c7d0e75e77b5dcaff0e7cd1c000) 2026-10-20T10:42:08+08:00: feat: persist source sandbox user metadata in published snapshot records
+- [9a96e460b2fe](https://github.com/kvcache-ai/AgentEnv/commit/9a96e460b2fe8f620cf0171c10e3b79db0b61091) 2026-10-20T10:38:52+08:00: fix(image): map zero-layer OCI manifest to 4xx
+- [949cec200108](https://github.com/kvcache-ai/AgentEnv/commit/949cec20010845273e43154bfdc3a6693e281407) 2026-10-20T09:35:56+08:00: feat: add fromImageRegistry field to TemplateBuildStartV2
+- [0ce8eb9bd94d](https://github.com/kvcache-ai/AgentEnv/commit/0ce8eb9bd94d8656b0a40e5be7cdfadfd6e78b45) 2026-10-16T19:13:32+08:00: feat: build and publish reusable images with the CLI
+- [b08655348b3e](https://github.com/kvcache-ai/AgentEnv/commit/b08655348b3e983d53b09a90060c10d1aa53a5af) 2026-10-16T15:30:58+08:00: refactor: move layer references and volume backing out of snapshot
+- [f7f478d3a5ec](https://github.com/kvcache-ai/AgentEnv/commit/f7f478d3a5ecd8b6fd99ca4a18caa79777a4e17f) 2026-10-16T09:41:52+08:00: refactor(sandbox): move guest volume helpers out of FirecrackerSandbox
+- [e14d8c53ed15](https://github.com/kvcache-ai/AgentEnv/commit/e14d8c53ed15beedeaccfc48aceb4dabf45a03f5) 2026-10-16T09:41:52+08:00: refactor(sandbox): split Firecracker start_resume into stages
+- [ea90c053d54c](https://github.com/kvcache-ai/AgentEnv/commit/ea90c053d54c18d9b7eea7161f10fff85ab53fc1) 2026-10-16T09:41:52+08:00: refactor(sandbox): share Firecracker rootfs attach and boot-arg append
+- [3efe1c389d4e](https://github.com/kvcache-ai/AgentEnv/commit/3efe1c389d4e300b285df5e596df7c798e143136) 2026-10-16T09:41:52+08:00: refactor(sandbox): own Firecracker host resources in SandboxResources
+- [f9a39636caa3](https://github.com/kvcache-ai/AgentEnv/commit/f9a39636caa3d234bbb96d2406685d7a6d3dabc4) 2026-10-14T18:21:35+08:00: fix(repository): back off when an OSS document changes while being read
+- [e764b060d38f](https://github.com/kvcache-ai/AgentEnv/commit/e764b060d38fae143e35935cda5bff477d9c6a95) 2026-10-14T18:21:35+08:00: test: fail on dependency cycles between top-level modules
+- [6afa50b19df0](https://github.com/kvcache-ai/AgentEnv/commit/6afa50b19df0bee0e4f2a56db7566a804bb631cc) 2026-10-14T18:21:35+08:00: refactor: break the dependency cycles between top-level modules
+
+## Changed paths (truncated)
+
+- M: `.github/actions/sandbox-ci-setup/action.yml`
+- M: `.github/workflows/integration-tests.yml`
+- M: `.github/workflows/open-code-review.yml`
+- M: `.github/workflows/services-ci.yml`
+- M: `CLAUDE.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `Makefile`
+- M: `adev/src/codegen.rs`
+- M: `crates/aenv/src/client/sandboxes.rs`
+- M: `crates/aenv/src/client/templates.rs`
+- M: `crates/aenv/src/commands/build.rs`
+- M: `crates/aenv/src/commands/connect.rs`
+- A: `crates/aenv/src/commands/connect/input_tests.rs`
+- M: `crates/aenv/src/commands/pull.rs`
+- M: `crates/aenv/src/commands/start.rs`
+- M: `crates/aenv/src/main.rs`
+- M: `crates/benchmarks/benches/snapshot_benchmark.rs`
+- M: `crates/e2e-tests/tests/snapshot_oss_e2e_test.rs`
+- M: `crates/object-store-operator/Cargo.toml`
+- M: `crates/object-store-operator/src/lib.rs`
+- M: `crates/object-store-operator/src/operator.rs`
+- M: `crates/test-support/Cargo.toml`
+- M: `deploy/docker-compose.yml`
+- M: `deploy/docker/Dockerfile.agentenv`
+- M: `docs/src/concepts/custom-extension/lifecycle-hooks.md`
+- M: `docs/src/concepts/sandboxes/starting.md`
+- M: `docs/src/concepts/snapshots/manage.md`
+- M: `docs/src/concepts/templates/managing.md`
+- M: `docs/src/concepts/volumes/sandbox-forks-and-snapshots.md`
+- M: `docs/src/configuration/reference.md`
+- M: `docs/src/getting-started/aenv-cli/sandboxes.md`
+- M: `docs/src/internals/networking.md`
+- M: `docs/src/internals/persistence-artifact-inventory.md`
+- M: `docs/src/internals/template-builder-testing.md`
+- M: `scripts/buildkit/install-buildctl.sh`
+- M: `scripts/buildkit/test.py`
+- M: `scripts/run-with-capabilities.sh`
+- M: `scripts/tests/e2e/suites/15_volume.sh`
+- M: `services/README.md`
+- M: `services/gateway/cmd/main.go`
+- M: `services/gateway/cmd/main_test.go`
+- M: `services/gateway/internal/cluster_list.go`
+- M: `services/gateway/internal/cluster_list_test.go`
+- A: `services/gateway/internal/routes.go`
+- A: `services/gateway/internal/routes_test.go`
+- M: `services/gateway/internal/server.go`
+- M: `services/gateway/internal/server_test.go`
+- M: `services/go.mod`
+- M: `services/go.sum`
+- M: `services/shared/config/config.go`
+- M: `services/shared/config/config_test.go`
+- M: `services/shared/observability/buckets.go`
+- M: `src/api/generated/src/apis/sandboxes.rs`
+- M: `src/api/generated/src/apis/snapshots.rs`
+- M: `src/api/generated/src/models.rs`
+- M: `src/api/generated/src/server/mod.rs`
+- M: `src/api/impls/image_build.rs`
+- M: `src/api/impls/image_build/cache.rs`
+- M: `src/api/impls/image_build/cleanup.rs`
+- A: `src/api/impls/image_build/record.rs`
+- M: `src/api/impls/image_build/tests.rs`
+- M: `src/api/impls/image_build/worker.rs`
+- M: `src/api/impls/mod.rs`
+- M: `src/api/impls/pagination.rs`
+- M: `src/api/impls/sandbox.rs`
+- M: `src/api/impls/snapshots.rs`
+- M: `src/api/impls/template.rs`
+- M: `src/api/impls/template_helpers.rs`
+- M: `src/api/openapi.yml`
+- M: `src/api/proxy.rs`
+- M: `src/api/server.rs`
+- A: `src/api/testdata/pagination.json`
+- M: `src/bin/server.rs`
+- M: `src/cfg.rs`
+- M: `src/cfg/image.rs`
+- R097: `src/deps/mod.rs` (from `src/setup/deps.rs`)
+- R099: `src/deps/overlaybd_tools.rs` (from `src/setup/overlaybd.rs`)
+- M: `src/digest.rs`
+- M: `src/image/buildkit.rs`
+- M: `src/image/buildkit/history.rs`
+- M: `src/image/cache/graph.rs`
+- M: `src/image/cache/mock.rs`
+- M: `src/image/cache/service.rs`
+- M: `src/image/cache/store.rs`
+- A: `src/image/catalog.rs`
+- M: `src/image/mod.rs`
+- M: `src/image/oci_image.rs`
+- M: `src/image/resolver.rs`
+- A: `src/image/test_support.rs`
+- M: `src/lib.rs`
+- M: `src/logging.rs`
+- A: `src/module_cycles.rs`
+- M: `src/observability/mod.rs`
+- M: `src/orchestrator/sandbox_metrics.rs`
+- M: `src/orchestrator/service.rs`
+- M: `src/orchestrator/tests.rs`
+- A: `src/overlaybd/compact.rs`
+- M: `src/overlaybd/mod.rs`
+- M: `src/p2p/config.rs`
+- M: `src/p2p/mod.rs`
+- R100: `src/prometheus.rs` (from `src/observability/prometheus.rs`)
+- A: `src/repository/backends/common/mod.rs`
+- A: `src/repository/backends/mod.rs`
+- R064: `src/repository/backends/oss/client.rs` (from `src/snapshot/repository/backends/oss/client.rs`)
+- R091: `src/repository/backends/oss/config.rs` (from `src/snapshot/repository/backends/oss/config.rs`)
+- A: `src/repository/backends/oss/documents.rs`
+- A: `src/repository/backends/oss/lease.rs`
+- A: `src/repository/backends/oss/mod.rs`
+- A: `src/repository/backends/oss/repository.rs`
+- A: `src/repository/backends/posixfs/artifacts.rs`
+- A: `src/repository/backends/posixfs/backend.rs`
+- A: `src/repository/backends/posixfs/catalog.rs`
+- A: `src/repository/backends/posixfs/mod.rs`
+- A: `src/repository/build_cache.rs`
+- R097: `src/repository/errors.rs` (from `src/snapshot/repository/errors.rs`)
+- A: `src/repository/interfaces.rs`
+- A: `src/repository/layer_config.rs`
+- A: `src/repository/layout.rs`
+- A: `src/repository/mod.rs`
+- M: `src/sandbox/backend.rs`
+- M: `src/sandbox/custom_extension/client.rs`
+- M: `src/sandbox/custom_extension/mod.rs`
+- M: `src/sandbox/envd.rs`
+- A: `src/sandbox/envd/add_passwd_entry.sh`
+- M: `src/sandbox/envd/user.rs`
+- M: `src/sandbox/extra_drive.rs`
+- M: `src/sandbox/firecracker/config.rs`
+- M: `src/sandbox/firecracker/instance.rs`
+- M: `src/sandbox/firecracker/mod.rs`
+- M: `src/sandbox/firecracker/overlaybd_snapshot.rs`
+- A: `src/sandbox/firecracker/resources.rs`
+- M: `src/sandbox/firecracker/sandbox.rs`
+- A: `src/sandbox/guest_volumes.rs`
+- A: `src/sandbox/logs.rs`
+- M: `src/sandbox/mock.rs`
+- M: `src/sandbox/mod.rs`
+- M: `src/sandbox/network/slot.rs`
+- A: `src/sandbox/runtime_versions.rs`
+- A: `src/sandbox/tools_image.rs`
+- M: `src/sandbox/ublk/device.rs`
+- M: `src/sandbox/ublk/mod.rs`
+- M: `src/sandbox/ublk/overlaybd.rs`
+- M: `src/setup/mod.rs`
+- A: `src/snapshot/backends/mod.rs`
+- A: `src/snapshot/backends/tests.rs`
+- A: `src/snapshot/catalog.rs`
+- R099: `src/snapshot/image_export/acr/client.rs` (from `src/snapshot/repository/backends/common/acr/client.rs`)
+- R099: `src/snapshot/image_export/acr/manifest.rs` (from `src/snapshot/repository/backends/common/acr/manifest.rs`)
+- R076: `src/snapshot/image_export/acr/mod.rs` (from `src/snapshot/repository/backends/common/acr/mod.rs`)
+- R098: `src/snapshot/image_export/acr/publisher.rs` (from `src/snapshot/repository/backends/common/acr/publisher.rs`)
+- R099: `src/snapshot/image_export/acr/source_image.rs` (from `src/snapshot/repository/backends/common/acr/source_image.rs`)
+- M: `src/snapshot/image_export/mod.rs`
+- M: `src/snapshot/image_export/regctl.rs`
+- M: `src/snapshot/image_export/service.rs`
+- M: `src/snapshot/image_export/target.rs`
+- M: `src/snapshot/manager.rs`
+- M: `src/snapshot/mock.rs`
+- M: `src/snapshot/mod.rs`
+- A: `src/snapshot/publish.rs`

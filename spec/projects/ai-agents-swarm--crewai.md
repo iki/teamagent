@@ -29,3 +29,7 @@ The excerpt does not establish transactional external side effects or distribute
 Compare single-agent and role-team baselines with equal budgets. Resume after tool success but before checkpoint commit, and test simultaneous crews for state leakage. No tests, live inference, installation, or production operation were performed for this review. License indicator: not classified; inspect source; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [memory](../memory.md) · [evolution](../evolution.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `738c8e19e35c2888d8e0663bc5cc45c5acf6ac2d`; commit date 2026-10-02T17:03:54-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
+<!-- teamagent-analysis:end -->

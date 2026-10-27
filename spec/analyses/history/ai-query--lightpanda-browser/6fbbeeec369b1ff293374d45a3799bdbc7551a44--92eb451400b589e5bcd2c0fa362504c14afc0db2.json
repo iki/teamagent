@@ -1,0 +1,984 @@
+{
+  "id": "ai-query--lightpanda-browser",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/lightpanda-io/browser",
+  "report": "spec/projects/ai-query--lightpanda-browser.md",
+  "analyzedSha": "6fbbeeec369b1ff293374d45a3799bdbc7551a44",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T16:02:42+08:00",
+  "observedSha": "92eb451400b589e5bcd2c0fa362504c14afc0db2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "92eb451400b589e5bcd2c0fa362504c14afc0db2",
+      "date": "2026-10-27T16:52:13+01:00",
+      "subject": "Merge pull request #4237 from lightpanda-io/isocline-hangup"
+    },
+    {
+      "sha": "51d43873498cb888061fd82754fb0ae13f11c567",
+      "date": "2026-10-27T16:36:21+01:00",
+      "subject": "deps: bump isocline to 41bb0c5"
+    },
+    {
+      "sha": "ce0a1f155d317951edb9b115ee01ca289c0a7552",
+      "date": "2026-10-27T22:25:21+08:00",
+      "subject": "Merge pull request #4232 from starboy-3/fix/is-equal-node-namespace"
+    },
+    {
+      "sha": "0a7af7f82596fd17053d046b1f5f1ac22b0bf93a",
+      "date": "2026-10-27T20:40:02+08:00",
+      "subject": "keep enum namespace comparison for known enums"
+    },
+    {
+      "sha": "68a4dfff66471d5a6d89947e0fb2672dc492a734",
+      "date": "2026-10-27T19:19:18+08:00",
+      "subject": "Merge pull request #4230 from lucoffe/fix/arena-reset-frees-oversized-block"
+    },
+    {
+      "sha": "34b0b5ec2f4f6b41b148addc692dd0b36ede13a3",
+      "date": "2026-10-27T11:14:35+01:00",
+      "subject": "webapi: compare element namespace URIs in isEqualNode"
+    },
+    {
+      "sha": "0251ef89bdef8f028bbf53a7c5eea51cc14cdcc0",
+      "date": "2026-10-27T16:10:41+08:00",
+      "subject": "Merge pull request #4225 from jayhemnani9910/fix/email-validation"
+    },
+    {
+      "sha": "44a9c6432eb98068b0580101c0c6a4987bff9bff",
+      "date": "2026-10-27T15:32:24+08:00",
+      "subject": "Merge pull request #4226 from jayhemnani9910/fix/dataset-invalid-name"
+    },
+    {
+      "sha": "e2046f933df354f50cd3566c00bc0b66dfd822ba",
+      "date": "2026-10-27T11:18:53+08:00",
+      "subject": "Merge pull request #4207 from jayhemnani9910/fix/script-main-world"
+    },
+    {
+      "sha": "6c44d0871aa4d42cf1b88b8c7dde873cafd2755e",
+      "date": "2026-10-27T10:11:58+08:00",
+      "subject": "Merge pull request #4215 from lightpanda-io/orderfile-regen"
+    },
+    {
+      "sha": "eddbb047ed4cf85b3e1fc4fcc2001d8d6d9ac894",
+      "date": "2026-10-26T18:34:27-07:00",
+      "subject": "Merge pull request #4214 from lightpanda-io/zig-deps-regen"
+    },
+    {
+      "sha": "edf097e66d18f1a01432211bd1f6173edc6f3cb8",
+      "date": "2026-10-27T01:05:03Z",
+      "subject": "orderfile: regenerate the hot-code profile"
+    },
+    {
+      "sha": "08c0fbc278b9f475a0e85487cc5158e527bd45e3",
+      "date": "2026-10-27T00:56:58Z",
+      "subject": "nix: regenerate zig-deps.nix"
+    },
+    {
+      "sha": "e58cfbd4482b08b8c519afa7cf047f2fc8be1df1",
+      "date": "2026-10-27T08:48:30+08:00",
+      "subject": "scripts: run in the main world when inserted from an isolated world"
+    },
+    {
+      "sha": "6d71524a2feaacec05b7baafa8d7678d99014c2c",
+      "date": "2026-10-27T07:08:32+08:00",
+      "subject": "Merge pull request #4209 from lightpanda-io/feat/xai-provider-v2"
+    },
+    {
+      "sha": "18dd85fa9cae7aa8f0bb3665639a7df443abfd2f",
+      "date": "2026-10-27T07:03:00+08:00",
+      "subject": "Merge pull request #4205 from lightpanda-io/cdp-error-message"
+    },
+    {
+      "sha": "9148d5aeb21bf20d4ba3d176ecfb5456fe210746",
+      "date": "2026-10-27T07:02:48+08:00",
+      "subject": "Merge pull request #4203 from lightpanda-io/empty-form-action"
+    },
+    {
+      "sha": "33dbdb5783d3baddc2529c087910b2842fc0b08b",
+      "date": "2026-10-27T07:02:32+08:00",
+      "subject": "Merge pull request #4202 from lightpanda-io/css-setFloat-undefined"
+    },
+    {
+      "sha": "fe1d90d5a90209b526425a09c28c449543bf7a5b",
+      "date": "2026-10-27T07:02:03+08:00",
+      "subject": "Merge pull request #4201 from lightpanda-io/robots-cache-time-limit"
+    },
+    {
+      "sha": "13908ea453ebc4d29d3f1e7693b8758b5f19142f",
+      "date": "2026-10-27T07:01:48+08:00",
+      "subject": "Merge pull request #4200 from lightpanda-io/color-parsing"
+    },
+    {
+      "sha": "82a56c21178f3c9ae50cd21930b8f958f71f7fef",
+      "date": "2026-10-27T07:01:24+08:00",
+      "subject": "Merge pull request #4199 from lightpanda-io/test-cross-validate"
+    },
+    {
+      "sha": "bf227ade6074eed933f779bc2d7957574a7876b2",
+      "date": "2026-10-27T07:00:57+08:00",
+      "subject": "Merge pull request #4198 from lightpanda-io/script-cache"
+    },
+    {
+      "sha": "3c7a91e3926cff5434db72995ed3a3c6e7066e0f",
+      "date": "2026-10-27T07:00:34+08:00",
+      "subject": "Merge pull request #4196 from lightpanda-io/axnode-shadowroot"
+    },
+    {
+      "sha": "288961a4e08140f8c7351232175fd41c35aa6d02",
+      "date": "2026-10-26T23:08:38+01:00",
+      "subject": "arena: a reset frees the block it can't keep instead of shrinking it in place"
+    },
+    {
+      "sha": "675e17c0c0b7fe5f175be2826707e4edac84f526",
+      "date": "2026-10-27T01:19:06+05:30",
+      "subject": "dataset: reject invalid names and map a leading capital to data--"
+    },
+    {
+      "sha": "ee2bb5f59cbb83a01c6d61caf0ce2f8f3cf07df0",
+      "date": "2026-10-27T01:16:10+05:30",
+      "subject": "input: validate type=email addresses like the HTML spec"
+    },
+    {
+      "sha": "aacb17775ef3cf513a46fd6497cc7dc448d916ba",
+      "date": "2026-10-26T12:24:55-07:00",
+      "subject": "Merge pull request #4152 from bringking/codex/web-bot-auth-cloudflare-profile"
+    },
+    {
+      "sha": "7073a438809f09cddece4e72fc3bfc27dda0f1da",
+      "date": "2026-10-26T11:45:26-07:00",
+      "subject": "fix: reuse Web Bot Auth agent and avoid test port race"
+    },
+    {
+      "sha": "f637f64e1edb6e022ca0b592bd0089faf610921b",
+      "date": "2026-10-26T11:45:07-07:00",
+      "subject": "fix: align Web Bot Auth signing with Cloudflare request profile"
+    },
+    {
+      "sha": "5fb5d72244a5a94213f2693d693aa99688c9ad82",
+      "date": "2026-10-26T11:20:54-07:00",
+      "subject": "Merge pull request #3959 from lightpanda-io/nix-flake"
+    },
+    {
+      "sha": "d7a96a9118f3ebd025c2b4759152e14df8f93b9b",
+      "date": "2026-10-26T11:00:14-07:00",
+      "subject": "update README with new Nix features"
+    },
+    {
+      "sha": "fae244ef57664c816906965acbc48772ddd14358",
+      "date": "2026-10-26T10:38:56-07:00",
+      "subject": "Merge pull request #3903 from navidemad/fix-navigate-to-history-entry-same-document"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/install/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/v8-snapshot/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/agent-regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-integration-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/nix-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/nix-deps.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/orderfile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/wpt.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/zig-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".plumber.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build.zig.zon",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "nix/package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "nix/update-v8-deps.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "nix/update-zig-deps-hash.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "nix/v8-deps.nix",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "nix/zig-deps.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/lightpanda.ld",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/mark_hot_sections.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/tools/regen.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "orderfile/v8.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/App.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Arena.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/ArenaAllocator.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/ArenaPool.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Config.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Metrics.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Notification.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/RecyclingAllocator.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Regex.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/SemanticTree.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/Sighandler.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/TestHTTPServer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/TestWSServer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Agent.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Conversation.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agent/ModelCall.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Spinner.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/Terminal.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agent/Trace.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/auth/auth.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/auth/codex.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/auth/models_dev.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/js_highlight.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/md_term.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/picker.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/prompt_assist.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/save.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/settings.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent/welcome.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/CustomElementReactions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/Download.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/EventManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/EventManagerBase.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Factory.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Frame.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/IdMap.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ImportMap.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Mime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Page.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/PageStatus.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/RenderTree.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Runner.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ScriptManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/ScriptManagerBase.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/SelectorPath.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/Session.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/StyleManager.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/URL.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/actions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/clutter.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/color.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/MediaQuery.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/Parser.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/Tokenizer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/css/charset.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/css/units.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/data_url.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/dump.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/forms.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/framing.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/frame/keyboard.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/node_factory.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/observers.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/preload.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/resource_load.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/frame/user_input.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/global_scope.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/image_dimensions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/interactive.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Caller.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Context.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Env.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Execution.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Function.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Identity.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Inspector.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Isolate.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Local.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Module.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Object.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Origin.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Promise.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/PromiseResolver.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/RegExp.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Scheduler.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Script.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Snapshot.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/String.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/TaggedOpaque.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/TryCatch.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/Value.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/WasmStreaming.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/bridge.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/js/js.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/markdown.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/parser/Parser.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/parser/html5ever.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/pdf.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/referrer.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/screenshot.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/structured_data.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/animation/animation.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/beacon.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/blob.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/broadcast_channel.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cache/teardown.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/canvas/canvas_serialization.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/cdata_section.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/character_data.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/comment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/data.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/raw_text_chunked.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdata/text.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdp/accname.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/ax_aria_states.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/ax_depth.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdp/ax_tree.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/download_link.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/tests/cdp/isolated_world_redirect.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/log_canceled.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/log_subresources.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/page_status.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/shadow_dom.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/slotted_hidden.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_budget.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_budget_dialog.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_budget_nav.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_heading_links.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/browser/tests/cdp/tree_multiline.html",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,207 @@
+# agent-copilot: change evidence
+
+Source: [agent-copilot](https://github.com/github/awesome-copilot) · [Analysis](../../projects/ai-skills--agent-copilot.md) · [skills](../../skills.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `143a3d976b3c1603cc8932984d5e1f28501cb5fc`; commit date: 2026-10-02T08:21:25+10:00; review date: unknown; observed SHA: `d75b41863510272ed217a3074c7045202b96e93f`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/awesome-copilot/compare/143a3d976b3c1603cc8932984d5e1f28501cb5fc...d75b41863510272ed217a3074c7045202b96e93f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [d75b41863510](https://github.com/github/awesome-copilot/commit/d75b41863510272ed217a3074c7045202b96e93f) 2026-10-27T15:48:46+11:00: Merge pull request #5707 from github/aaronpowell-board-periodic-refresh
+- [c601e5dd38b8](https://github.com/github/awesome-copilot/commit/c601e5dd38b8c36dd37f362f3b71fc701699d3d7) 2026-10-27T14:51:00+11:00: fix(pr-board): clear obsolete choices when delayed feedback finishes
+- [6b3889a13450](https://github.com/github/awesome-copilot/commit/6b3889a13450e3a1931b2c529153a3de4f22b745) 2026-10-27T14:29:15+11:00: fix(pr-board): preserve current state when old feedback completes
+- [1291ae102070](https://github.com/github/awesome-copilot/commit/1291ae1020702bc2ea2fb62e1ede04088992759c) 2026-10-27T14:04:40+11:00: fix(pr-board): expose provenance and guard detail cache writes
+- [920e3b927a55](https://github.com/github/awesome-copilot/commit/920e3b927a553642834af13097f53f6f716947db) 2026-10-27T13:49:38+11:00: Merge pull request #5196 from github/docs/learning-hub-cli-1-0-101-update-8530609dd17dd577
+- [210f1e2bcb56](https://github.com/github/awesome-copilot/commit/210f1e2bcb56ea63bc1f1fec4bbbc999d549bd58) 2026-10-27T13:46:35+11:00: Merge pull request #5708 from github/digitarald/vscode-plugin-canvas-install
+- [03f1e3890916](https://github.com/github/awesome-copilot/commit/03f1e38909169be700dec5d0e15c247b578826c4) 2026-10-27T13:37:39+11:00: fix(plugin-board): discard invalidated cache writes and render errors
+- [fb6a4e7cf68b](https://github.com/github/awesome-copilot/commit/fb6a4e7cf68b97ca58333fb816759739251be3b9) 2026-10-27T02:32:54Z: Fix VS Code install accessible names
+- [93d1d11d097d](https://github.com/github/awesome-copilot/commit/93d1d11d097d372a21b207a2d74708d3f6bbc902) 2026-10-27T13:16:17+11:00: fix(boards): reject stale feedback and out-of-order details
+- [f9c05ffca7b0](https://github.com/github/awesome-copilot/commit/f9c05ffca7b0716fd1a0efc7fc738b34c6e7f932) 2026-10-27T12:50:10+11:00: fix(pr-board): preserve heads across delayed actions and moves
+- [76959aedab19](https://github.com/github/awesome-copilot/commit/76959aedab19f305c3984abda15874ae49710eba) 2026-10-26T18:47:23-07:00: website: simplify VS Code install integration
+- [4e8cb448520f](https://github.com/github/awesome-copilot/commit/4e8cb448520f70e64ccfe874ad061c42d59cd7b5) 2026-10-27T12:29:24+11:00: fix(boards): retain approval commit provenance across refreshes
+- [5112058d88df](https://github.com/github/awesome-copilot/commit/5112058d88df1dd7459afbb441f968d2d1bb0ab7) 2026-10-26T18:28:05-07:00: website: add VS Code installs for plugins and canvases
+- [cedca119df1f](https://github.com/github/awesome-copilot/commit/cedca119df1f4648a78a05ee43f123698eb59496) 2026-10-27T12:07:41+11:00: fix(boards): keep refreshed previews and approvals commit-safe
+- [3b2c4935170e](https://github.com/github/awesome-copilot/commit/3b2c4935170e765f1341df5200020283d9a1f6f1) 2026-10-27T11:45:59+11:00: feat(boards): refresh review canvases every 15 minutes
+- [d106008300bd](https://github.com/github/awesome-copilot/commit/d106008300bd4c8396e9c3c085c7c8e3ed976d48) 2026-10-27T11:43:34+11:00: Merge pull request #5583 from markksantos/add-caption-qa-skill
+- [0dde2f885063](https://github.com/github/awesome-copilot/commit/0dde2f885063abe9fd2677d4516043d0605f3343) 2026-10-27T11:29:15+11:00: Merge pull request #5705 from pierceboggan/pierceboggan-update-sentry-triage-canvas
+- [e6b217c15200](https://github.com/github/awesome-copilot/commit/e6b217c152000bbca64b9790b47938e05460d155) 2026-10-26T17:20:18-07:00: Add light mode to sentry-triage canvas (1.4.0)
+- [e8a5349d0742](https://github.com/github/awesome-copilot/commit/e8a5349d07425eb8157d59d102b23e47077804ad) 2026-10-27T10:31:03+11:00: Merge pull request #5111 from jhauga/website-select-resource-page-size
+- [3e3704ea4629](https://github.com/github/awesome-copilot/commit/3e3704ea4629c9284417ae1604f0c3027309406b) 2026-10-27T10:29:57+11:00: Merge pull request #5382 from pablonete/publish-ga/ga-v0.2.1
+- [1a20973216c3](https://github.com/github/awesome-copilot/commit/1a20973216c39b55bdb3f825234a0d6effbc1b6b) 2026-10-26T10:03:15Z: Propose github-security 0.2.1
+- [b1a00457c0b8](https://github.com/github/awesome-copilot/commit/b1a00457c0b8794243883f387e7de71e88800e3e) 2026-10-26T16:43:08+11:00: Merge pull request #5611 from pierceboggan/pierceboggan-update-sentry-triage-canvas
+- [3d35fad5fce8](https://github.com/github/awesome-copilot/commit/3d35fad5fce8028bc11daa4152e32a8d306709f7) 2026-10-25T23:37:08-06:00: Update sentry-triage canvas to 1.3.0
+- [eed23f005059](https://github.com/github/awesome-copilot/commit/eed23f0050591a710148fe40d207bc88dfd1d58b) 2026-10-26T16:09:37+11:00: Merge pull request #5051 from furukawa658/feat/markdown-to-word-mermaid
+- [4443541beafa](https://github.com/github/awesome-copilot/commit/4443541beafa7e389688f7f3c52756455d80eb48) 2026-10-26T15:58:35+11:00: Merge pull request #5606 from github/dependabot/npm_and_yarn/npm_and_yarn-3eaef22b7c
+- [6918645da61d](https://github.com/github/awesome-copilot/commit/6918645da61dee9690c633a2a7b5a45e72b396a8) 2026-10-26T15:51:10+11:00: Merge pull request #5609 from github/automation/external-plugin-approve-5165-nitrosend
+- [88d07530efac](https://github.com/github/awesome-copilot/commit/88d07530efac79fa65f287890769dfcf1d6c1e32) 2026-10-26T15:35:47+11:00: Merge pull request #5251 from github/aaronpowell-staleness-review-canvas
+- [718d547e8bcd](https://github.com/github/awesome-copilot/commit/718d547e8bcdfc7280a7fee0d27c1882da5b3535) 2026-10-26T14:22:17+11:00: fix(canvas): keep diagnostic prose out of coordinator context
+- [53ce61343cd2](https://github.com/github/awesome-copilot/commit/53ce61343cd233a556437e353bbd3787ebdf22f9) 2026-10-26T03:18:42Z: Merge remote-tracking branch 'origin/main' into automation/external-plugin-approve-5165-nitrosend
+- [b9431b91f0d1](https://github.com/github/awesome-copilot/commit/b9431b91f0d1073d58d026d37a7aafed8ab956a0) 2026-10-26T13:47:36+11:00: fix(canvas): preserve action recovery and constrain result context
+- [d9589d876d95](https://github.com/github/awesome-copilot/commit/d9589d876d951bc9878be1279956da04057e11fb) 2026-10-26T12:42:33+11:00: fix(canvas): coordinate scans and qualify child evidence
+- [1ce2a78feb49](https://github.com/github/awesome-copilot/commit/1ce2a78feb497ab276fc4073607996f5b08138cb) 2026-10-26T12:35:47+11:00: Merge pull request #5199 from github/automation/external-plugin-approve-2773-megalinter
+
+## Changed paths (truncated)
+
+- M: `.all-contributorsrc`
+- M: `.codespellrc`
+- M: `.github/aw/actions-lock.json`
+- M: `.github/copilot-instructions.md`
+- A: `.github/extensions/duplicate-review-board/README.md`
+- A: `.github/extensions/duplicate-review-board/extension.mjs`
+- A: `.github/extensions/duplicate-review-board/lib/github.mjs`
+- A: `.github/extensions/duplicate-review-board/lib/publish.mjs`
+- A: `.github/extensions/duplicate-review-board/lib/report.mjs`
+- A: `.github/extensions/duplicate-review-board/lib/review.mjs`
+- A: `.github/extensions/duplicate-review-board/lib/state.mjs`
+- A: `.github/extensions/duplicate-review-board/public/app.js`
+- A: `.github/extensions/duplicate-review-board/public/index.html`
+- A: `.github/extensions/duplicate-review-board/public/styles.css`
+- M: `.github/extensions/external-plugin-review-board/README.md`
+- M: `.github/extensions/external-plugin-review-board/extension.mjs`
+- M: `.github/extensions/external-plugin-review-board/lib/github.mjs`
+- A: `.github/extensions/external-plugin-review-board/lib/github.test.mjs`
+- A: `.github/extensions/external-plugin-review-board/lib/request-fixes.mjs`
+- M: `.github/extensions/external-plugin-review-board/lib/server.mjs`
+- M: `.github/extensions/external-plugin-review-board/lib/state.mjs`
+- M: `.github/extensions/external-plugin-review-board/public/app.js`
+- M: `.github/extensions/external-plugin-review-board/public/index.html`
+- M: `.github/extensions/external-plugin-review-board/public/styles.css`
+- M: `.github/extensions/external-plugin-review-board/review-guidance.md`
+- A: `.github/extensions/open-pr-board/README.md`
+- A: `.github/extensions/open-pr-board/extension.mjs`
+- A: `.github/extensions/open-pr-board/lib/decisions.mjs`
+- A: `.github/extensions/open-pr-board/lib/github.mjs`
+- A: `.github/extensions/open-pr-board/lib/review-prompt.mjs`
+- A: `.github/extensions/open-pr-board/lib/server.mjs`
+- A: `.github/extensions/open-pr-board/lib/state.mjs`
+- A: `.github/extensions/open-pr-board/public/app.js`
+- A: `.github/extensions/open-pr-board/public/index.html`
+- A: `.github/extensions/open-pr-board/public/styles.css`
+- A: `.github/extensions/open-pr-board/review-guidance.md`
+- A: `.github/extensions/resource-staleness-board/README.md`
+- A: `.github/extensions/resource-staleness-board/extension.mjs`
+- A: `.github/extensions/resource-staleness-board/lib/diagnostics.mjs`
+- A: `.github/extensions/resource-staleness-board/lib/inventory.mjs`
+- A: `.github/extensions/resource-staleness-board/lib/preview.mjs`
+- A: `.github/extensions/resource-staleness-board/lib/state.mjs`
+- A: `.github/extensions/resource-staleness-board/lib/work.mjs`
+- A: `.github/extensions/resource-staleness-board/public/app.js`
+- A: `.github/extensions/resource-staleness-board/public/index.html`
+- A: `.github/extensions/resource-staleness-board/public/styles.css`
+- M: `.github/plugin/marketplace.json`
+- A: `.github/review-metrics.yml`
+- M: `.github/review-routing.yml`
+- M: `.github/risk-tiers.yml`
+- A: `.github/scripts/app-for-beginners-sync.mjs`
+- A: `.github/scripts/app-for-beginners-sync.test.mjs`
+- M: `.github/skills/agentic-workflows/SKILL.md`
+- M: `.github/skills/code-review/SKILL.md`
+- M: `.github/workflows/advanced-copilot-cli-sync.lock.yml`
+- M: `.github/workflows/agentics-maintenance.yml`
+- R065: `.github/workflows/app-for-beginners-sync.lock.yml` (from `.github/workflows/codeowner-update.lock.yml`)
+- A: `.github/workflows/app-for-beginners-sync.md`
+- A: `.github/workflows/canvas-smoke-test-comment.yml`
+- A: `.github/workflows/canvas-smoke-test.yml`
+- M: `.github/workflows/cli-for-beginners-sync.lock.yml`
+- D: `.github/workflows/codeowner-update.md`
+- M: `.github/workflows/contributor-check.yml`
+- M: `.github/workflows/copilot-setup-steps.yml`
+- M: `.github/workflows/copilot-workshops-sync.lock.yml`
+- M: `.github/workflows/copilot-workshops-sync.md`
+- M: `.github/workflows/deploy-website-preview.yml`
+- M: `.github/workflows/duplicate-resource-detector.lock.yml`
+- M: `.github/workflows/external-plugin-command-router.yml`
+- M: `.github/workflows/external-plugin-intake.yml`
+- M: `.github/workflows/external-plugin-pr-quality-gates-writer.yml`
+- M: `.github/workflows/external-plugin-pr-quality-gates.yml`
+- M: `.github/workflows/label-pr-intent-writer.yml`
+- M: `.github/workflows/label-pr-intent.yml`
+- M: `.github/workflows/learning-hub-updater.lock.yml`
+- M: `.github/workflows/learning-hub-updater.md`
+- M: `.github/workflows/pr-duplicate-check.lock.yml`
+- M: `.github/workflows/pr-quality-signal.lock.yml`
+- M: `.github/workflows/pr-quality-signal.md`
+- M: `.github/workflows/resource-staleness-report.lock.yml`
+- M: `.github/workflows/resource-staleness-report.md`
+- A: `.github/workflows/review-metrics.yml`
+- M: `.github/workflows/setup-labels.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `CODEOWNERS`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `agents/gem-browser-tester.agent.md`
+- M: `agents/gem-code-simplifier.agent.md`
+- M: `agents/gem-debugger.agent.md`
+- M: `agents/gem-devops.agent.md`
+- M: `agents/gem-documentation-writer.agent.md`
+- M: `agents/gem-implementer.agent.md`
+- M: `agents/gem-mobile-tester.agent.md`
+- M: `agents/gem-orchestrator.agent.md`
+- M: `agents/gem-planner.agent.md`
+- M: `agents/gem-researcher.agent.md`
+- M: `agents/gem-reviewer.agent.md`
+- M: `agents/gem-skill-creator.agent.md`
+- M: `agents/java-mcp-expert.agent.md`
+- M: `agents/oracle-to-postgres-migration-expert.agent.md`
+- M: `agents/python-mcp-expert.agent.md`
+- M: `cookbook/copilot-sdk/README.md`
+- M: `cookbook/copilot-sdk/java/README.md`
+- M: `cookbook/copilot-sdk/java/accessibility-report.md`
+- M: `cookbook/copilot-sdk/java/error-handling.md`
+- A: `cookbook/copilot-sdk/java/in-process-runtime.md`
+- M: `cookbook/copilot-sdk/java/managing-local-files.md`
+- M: `cookbook/copilot-sdk/java/multiple-sessions.md`
+- M: `cookbook/copilot-sdk/java/persisting-sessions.md`
+- M: `cookbook/copilot-sdk/java/pr-visualization.md`
+- M: `cookbook/copilot-sdk/java/ralph-loop.md`
+- M: `cookbook/copilot-sdk/java/recipe/AccessibilityReport.java`
+- M: `cookbook/copilot-sdk/java/recipe/ErrorHandling.java`
+- A: `cookbook/copilot-sdk/java/recipe/InProcessRuntime.java`
+- M: `cookbook/copilot-sdk/java/recipe/ManagingLocalFiles.java`
+- M: `cookbook/copilot-sdk/java/recipe/MultipleSessions.java`
+- M: `cookbook/copilot-sdk/java/recipe/PRVisualization.java`
+- M: `cookbook/copilot-sdk/java/recipe/PersistingSessions.java`
+- M: `cookbook/copilot-sdk/java/recipe/README.md`
+- M: `cookbook/copilot-sdk/java/recipe/RalphLoop.java`
+- M: `docs/README.agents.md`
+- M: `docs/README.instructions.md`
+- M: `docs/README.plugins.md`
+- M: `docs/README.skills.md`
+- A: `docs/maintainers/canvas-evidence-and-metrics.md`
+- M: `docs/maintainers/review-routing.md`
+- M: `docs/maintainers/submission-gate.md`
+- M: `eng/README.md`
+- A: `eng/board-bulk-actions.test.mjs`
+- A: `eng/board-column-order.test.mjs`
+- A: `eng/board-periodic-refresh.test.mjs`
+- A: `eng/board-preview.test.mjs`
+- A: `eng/board-state-storage.test.mjs`
+- A: `eng/canvas-smoke-test.mjs`
+- A: `eng/canvas-smoke-test.test.mjs`
+- M: `eng/create-skill.mjs`
+- A: `eng/create-skill.test.mjs`
+- A: `eng/duplicate-review-board-access.test.mjs`
+- A: `eng/duplicate-review-board-background.test.mjs`
+- A: `eng/duplicate-review-board-parser.test.mjs`
+- A: `eng/duplicate-review-board-provenance.test.mjs`
+- A: `eng/duplicate-review-board-state.test.mjs`
+- A: `eng/duplicate-review-board-ui.test.mjs`
+- A: `eng/duplicate-review-board.test.mjs`
+- M: `eng/external-plugin-intake-state.mjs`
+- A: `eng/external-plugin-intake-state.test.mjs`
+- M: `eng/external-plugin-intake.mjs`
+- M: `eng/external-plugin-intake.test.mjs`
+- M: `eng/external-plugin-pr-quality-gates.mjs`
+- M: `eng/external-plugin-quality-gates.mjs`
+- M: `eng/external-plugin-quality-gates.test.mjs`
+- A: `eng/external-plugin-review-board-fixes-request.test.mjs`
+- A: `eng/external-plugin-review-board-state.test.mjs`
+- A: `eng/external-plugin-review-board-ui.test.mjs`
+- A: `eng/external-plugin-review-board.test.mjs`
+- M: `eng/generate-website-data.mjs`
+- A: `eng/lib/external-plugin-readme.mjs`
+- A: `eng/lib/external-plugin-readme.test.mjs`

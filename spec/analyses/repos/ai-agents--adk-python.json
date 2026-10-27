@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--adk-python",
+    "category": "ai-agents",
+    "name": "adk-python",
+    "url": "https://github.com/google/adk-python",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--adk-python.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "63aed55113d4fe78245d3d6667b6e87569888bf5",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T06:13:21-07:00",
+    "reportSha256": "c772f7df6e231d9c54e7996965dd3572aea7a76d6fdb13368f0cd9a84fac119d",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--adk-python",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/google/adk-python",
+    "report": "spec/projects/ai-agents--adk-python.md",
+    "analyzedSha": "63aed55113d4fe78245d3d6667b6e87569888bf5",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T06:13:21-07:00",
+    "observedSha": "0e5d6c963cb6935ff1c28535f167c96a96746ad4",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "0e5d6c963cb6935ff1c28535f167c96a96746ad4",
+        "date": "2026-10-27T10:54:12-07:00",
+        "subject": "fix: skip the MCP mTLS probe unless google-auth would use a client cert"
+      },
+      {
+        "sha": "329933f755d5f987d7e25d8348548dc718b21a0a",
+        "date": "2026-10-27T10:47:23-07:00",
+        "subject": "fix: take final input and cache counts from Anthropic message_delta"
+      },
+      {
+        "sha": "7a64c7c552d369a03c644317df7eb1a133acc75d",
+        "date": "2026-10-27T10:24:53-07:00",
+        "subject": "docs: say ContainerCodeExecutor runs as the image's user, not non-root"
+      },
+      {
+        "sha": "c54b253eba3359264a5f86805051aeb6cd93034d",
+        "date": "2026-10-27T09:51:49-07:00",
+        "subject": "feat(features): graduate 26 auth, environment, app, cli, and cache modules from experimental"
+      },
+      {
+        "sha": "2084efbe1b9fd51c24f214fa9e2d818081a549c9",
+        "date": "2026-10-27T00:00:27-07:00",
+        "subject": "feat: expose active lifecycle hook metadata"
+      },
+      {
+        "sha": "5e52b21a8cf0b82805283a3f77f3fcfcda4811e7",
+        "date": "2026-10-26T23:53:11-07:00",
+        "subject": "fix: leave no-usage turns out of the token_usage_v1 average"
+      },
+      {
+        "sha": "047815043ca57dae1abfec263768c3fca4130659",
+        "date": "2026-10-26T22:57:39-07:00",
+        "subject": "fix: list built-in tools in the rubric multi-turn trajectory evaluator"
+      },
+      {
+        "sha": "7394fba39042d8ec7b7a12217128eaa45614d8c5",
+        "date": "2026-10-26T22:39:50-07:00",
+        "subject": "fix: validate skill_id path segments before GCS blob lookup"
+      },
+      {
+        "sha": "b13fa19ad61ad857690758e6a440a7b7de3f9128",
+        "date": "2026-10-26T21:52:28-07:00",
+        "subject": "fix: report long-running AgentEngineEnvironment commands as timed out"
+      },
+      {
+        "sha": "4c880408b5468afb9196a4701cf6cb2a34c6b545",
+        "date": "2026-10-26T19:04:17-07:00",
+        "subject": "feat: read large files from AgentEngineEnvironment in chunks"
+      },
+      {
+        "sha": "5843c582f15a89627bf379accea4ca182bcf706c",
+        "date": "2026-10-26T18:48:25-07:00",
+        "subject": "feat: support large file writes in AgentEngineEnvironment"
+      },
+      {
+        "sha": "25105b40ed9f84769ae368edc35e821df2a19e69",
+        "date": "2026-10-26T16:33:09-07:00",
+        "subject": "fix: match SKILL.md frontmatter delimiters as whole lines"
+      },
+      {
+        "sha": "d3a199d4c47d4c01bab91aee3cd36af1277fd510",
+        "date": "2026-10-26T16:30:53-07:00",
+        "subject": "docs(samples): add an AgentEngineEnvironment sample agent"
+      },
+      {
+        "sha": "27cdf7fb5017e2bc220049bcf9db74d0a995a2fd",
+        "date": "2026-10-26T15:56:26-07:00",
+        "subject": "fix: keep in-memory artifact scopes separate when identifiers contain /"
+      },
+      {
+        "sha": "8038bd7f43657d7bf5330cbc9cae0b8da95ee6f4",
+        "date": "2026-10-26T15:54:35-07:00",
+        "subject": "fix: classify compaction failures with error.type"
+      },
+      {
+        "sha": "0c053dd5a6ae208a8ef262eced276137a7a7b441",
+        "date": "2026-10-26T15:46:59-07:00",
+        "subject": "fix: filter hidden artifacts from LLM context"
+      },
+      {
+        "sha": "c4b2640d3e4aa1e34954d48b43780a5c909fbf31",
+        "date": "2026-10-26T14:40:16-07:00",
+        "subject": "fix(workflow): never retry configuration or invariant errors and add policy helpers"
+      },
+      {
+        "sha": "a81df0ef978502dd0e9e144d3630a87d14476e27",
+        "date": "2026-10-26T14:07:19-07:00",
+        "subject": "fix: use the continue URI and scopes from Agent Registry bindings"
+      },
+      {
+        "sha": "de34d8dc53e6165db59aad37f32e8259d66f2765",
+        "date": "2026-10-26T14:01:34-07:00",
+        "subject": "fix: exclude thought parts from SQLite memory search results"
+      },
+      {
+        "sha": "799fc9459eb9443a63db11a179d6422b7e1dc1c0",
+        "date": "2026-10-26T13:50:39-07:00",
+        "subject": "feat(features): promote 16 toolset and integration features to stable"
+      },
+      {
+        "sha": "cec52fc005a2c76963feb0a424647ca9576ebb2d",
+        "date": "2026-10-26T11:46:39-07:00",
+        "subject": "fix: copy initial state in InMemorySessionService.create_session"
+      },
+      {
+        "sha": "a96fc11b58a92187ad6cdaba0059d6999964fbe8",
+        "date": "2026-10-26T11:38:33-07:00",
+        "subject": "fix: set error.type on spans that end in an error"
+      },
+      {
+        "sha": "3cd87427ac9c016b0cf335459a90c9902b0737d9",
+        "date": "2026-10-26T11:36:31-07:00",
+        "subject": "feat(live): save image frames when save_live_blob is set"
+      },
+      {
+        "sha": "5849762718871e206b7745f0318f8399a5dd5f52",
+        "date": "2026-10-26T11:35:24-07:00",
+        "subject": "fix(bigquery): improve error messages when write_mode is BLOCKED"
+      },
+      {
+        "sha": "4496bef701661b48221df56f75a89ff70449bcdc",
+        "date": "2026-10-26T10:54:14-07:00",
+        "subject": "fix: export all shipped plugins from google.adk.plugins"
+      },
+      {
+        "sha": "3b227d6ec82490dae6473f681dcc825b1ac31679",
+        "date": "2026-10-26T10:33:43-07:00",
+        "subject": "fix!: close malformed live WebSockets instead of wedging them"
+      },
+      {
+        "sha": "960cd5ddfff135c39cf8dbe185f0f08a309c927c",
+        "date": "2026-10-26T07:23:25-07:00",
+        "subject": "fix: align gen_ai.choice system name with request model for LiteLLM"
+      },
+      {
+        "sha": "bf6739723c1b8b03bff8bb1e6ffada4d88098fcf",
+        "date": "2026-10-25T10:53:40-07:00",
+        "subject": "ci: limit the PR triage job token to read-only"
+      },
+      {
+        "sha": "da35ca77d71f7d74c8b7d7550f6e1b591a6690e0",
+        "date": "2026-10-24T23:03:03-07:00",
+        "subject": "fix: harden callable type hint resolution and FunctionNode TypeAdapter handling"
+      },
+      {
+        "sha": "12c7bed7661ccf942f0f6d3b62bed22a23ea0a85",
+        "date": "2026-10-24T04:27:28-07:00",
+        "subject": "fix: pass the caller's temp: state to an AgentTool's wrapped agent"
+      },
+      {
+        "sha": "25d191710985371dfb93a131f2fa797734850952",
+        "date": "2026-10-23T20:28:20-07:00",
+        "subject": "fix: mark failed A2A tasks as error events"
+      },
+      {
+        "sha": "b98125006644d8fee70606dab71d350ab674daf0",
+        "date": "2026-10-23T19:02:42-07:00",
+        "subject": "fix: stop list_sessions(user_id=\"\") from listing every user in Firestore"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-agent-builder/references/callbacks-and-plugins.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-agent-builder/references/function-nodes.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-agent-builder/references/getting-started.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-agent-builder/references/human-in-the-loop.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-agent-builder/references/llm-agent-nodes.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-agent-builder/references/multi-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-agent-builder/references/task-mode.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-architecture/references/api-principles.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-architecture/references/architecture-node-runner.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-architecture/references/interface-workflow.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-debug/references/failure-modes.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-review/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-setup/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-style/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-style/references/pydantic.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-style/references/testing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-style/references/typing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-style/references/visibility.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/adk-unit-guide/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/.release-please-manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/release-please-config.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/constant.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/csat.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/continuous-integration.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/copybara-pr-handler.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/csat.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/pr-triage.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-artifact-check.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-cut.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-finalize.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-publish.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "constraints-3.11.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "constraints-3.12.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "constraints-3.13.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "constraints-3.14.txt",
+        "previousPath": null
+      },
+      {
+        "status": "R059",
+        "path": "constraints-3.15.txt",
+        "previousPath": "constraints-3.10.txt"
+      },
+      {
+        "status": "M",
+        "path": "contributing/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/adk_project_overview_and_architecture.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/adk_team/adk_issue_monitoring_agent/PROMPT_INSTRUCTION.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/adk_team/adk_issue_monitoring_agent/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/adk_team/adk_pr_triaging_agent/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/adk_team/adk_pr_triaging_agent/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/adk_team/adk_stale_agent/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "contributing/samples/adk_team/adk_triaging_agent/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/adk_team/component_owners.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/core/hello_world/tests/roll_and_check.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/environment_and_skills/agent_engine_environment/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/environment_and_skills/agent_engine_environment/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/environment_and_skills/agent_engine_environment/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/environment_and_skills/opensandbox_environment/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/environment_and_skills/opensandbox_environment/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/environment_and_skills/opensandbox_environment/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/hitl/classifier_tool_gate/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/hitl/classifier_tool_gate/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/hitl/classifier_tool_gate/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/hitl/classifier_tool_gate/tool_gate.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/hitl/human_in_loop/tests/reimburse_dinner.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/hitl/human_tool_confirmation/tests/request_time_off_approved.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/authn-adk-all-in-one/adk_agents/agent_openapi_tools/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/authn-adk-all-in-one/requirements.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/gcp_auth/client/main.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/gcp_auth/client/requirements.txt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/gepa/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/gepa/gepa_tau_bench.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/gepa/voter_agent/gepa.ipynb",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/parameter_manager/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/parameter_manager/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/parameter_manager/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/integrations/rag_agent/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/secret_manager/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/secret_manager/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/secret_manager/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/teams_notification_agent/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/teams_notification_agent/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/integrations/teams_notification_agent/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/live/cascade/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/live/cascade/README_elevenlabs.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/live/cascade/README_gemini.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/live/cascade/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/live/cascade/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/live/non_blocking_tool_agent/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/live/non_blocking_tool_agent/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/mcp/mcp_server_side_sampling/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/models/hello_world_nvidia/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/multi_agent/task_sub_agent/tests/10_burgers.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/multimodal/computer_use/playwright.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/tools/model_consult/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/workflows/auth_api_key/tests/go.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/workflows/classifier_node/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "contributing/samples/workflows/classifier_node/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/workflows/request_input_rerun/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "contributing/samples/workflows/request_input_rerun/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agents/invocation_context/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agents/llm_agent/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/agents/remote_a2a_agent/task.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/agents/run_config/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/apps/app/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/apps/events_compaction/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/apps/resumability/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/artifacts/artifact_service/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/auth/kms_encryptor/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/auth/tool_auth/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/code_executors/code_executor/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/environment/base_environment/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/evaluation/agent_evaluator/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/evaluation/efficiency_evaluators/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/evaluation/eval_config/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/evaluation/eval_service/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/evaluation/evaluator/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/events/event/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/events/event_actions/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/events/internal_metadata/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/events/request_input/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/examples/example/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/features/feature_registry/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/integrations/daytona/daytona_environment/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/integrations/firestore/firestore_session_service/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/integrations/model_armor/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/integrations/mongodb/memory_service/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/integrations/mongodb/mongodb_toolset/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/integrations/mongodb/session_service/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/integrations/redis/redis_session_service/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/integrations/typesafe/typesafe_classifier/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/integrations/vmaas/agent_engine_environment/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/labs/classifiers/classifier_node/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/labs/classifiers/llm_classifier/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/live/cascade_live/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/live/gemini_stt/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/live/gemini_tts/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/live/live_request_queue/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/memory/memory_service/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/models/llm_registry/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/plugins/tool_call_integrity_plugin/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/runners/runner/abort.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/runners/runner/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/runners/runner/live.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/runners/runner/rewind.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/sessions/session/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/sessions/state/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/skills/skill/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/telemetry/telemetry_config/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/agent_tool/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/base_tool/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/base_toolset/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/long_running_tool/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/tools/mcp_tool/agent_to_mcp/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/mcp_tool/mcp_toolset/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/model_consult/force_escalation_plugin/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/model_consult/observability_plugin/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/tools/node_tool/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/skill_toolset/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/tool_args_matcher/tool_args_matcher/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/guides/tools/tool_confirmation/index.md",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

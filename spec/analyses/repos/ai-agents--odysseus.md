@@ -1,0 +1,207 @@
+# odysseus: change evidence
+
+Source: [odysseus](https://github.com/pewdiepie-archdaemon/odysseus) · [Analysis](../../projects/ai-agents--odysseus.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `2992bf6d368a11472323e47d3bfed91e79cefc6b`; commit date: 2026-10-01T20:18:33-06:00; review date: unknown; observed SHA: `339c6886cbbb2f5cf897b2b6795da448c02c8f20`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/pewdiepie-archdaemon/odysseus/compare/2992bf6d368a11472323e47d3bfed91e79cefc6b...339c6886cbbb2f5cf897b2b6795da448c02c8f20). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [339c6886cbbb](https://github.com/pewdiepie-archdaemon/odysseus/commit/339c6886cbbb2f5cf897b2b6795da448c02c8f20) 2026-10-27T16:35:16Z: Merge pull request #6739 from odysseus-dev/codex/review-7011-editor-server-20261015
+- [25c2fad3e1df](https://github.com/pewdiepie-archdaemon/odysseus/commit/25c2fad3e1df26259f4b3885525ab7678abb5219) 2026-10-27T16:20:08Z: test(editor): preserve ASGI event loop across bridge requests
+- [d105fbde95b0](https://github.com/pewdiepie-archdaemon/odysseus/commit/d105fbde95b065005334893ded8c6e5e33927dfe) 2026-10-27T15:36:17Z: fix(editor): harden bridge isolation and completion semantics
+- [020fe02aa069](https://github.com/pewdiepie-archdaemon/odysseus/commit/020fe02aa069d99c552e1c814fff6a3aff191d16) 2026-10-26T16:53:52Z: Scope backend checks to backend behavior and retain ownership regression coverage
+- [d9797ce10f40](https://github.com/pewdiepie-archdaemon/odysseus/commit/d9797ce10f40b40085c034f782fee1978e9d4140) 2026-10-26T16:50:07Z: Cover recolor normalization with pathological whitespace
+- [6c2a1e68739b](https://github.com/pewdiepie-archdaemon/odysseus/commit/6c2a1e68739b0b02da2c0fec811c981cf2222657) 2026-10-26T16:49:01Z: Avoid regex backtracking in prompt cleanup and keep Gallery UI tests with client reviews
+- [89b41b9224e1](https://github.com/pewdiepie-archdaemon/odysseus/commit/89b41b9224e1104cb64c88023d47bb1dcd2cf2e9) 2026-10-26T16:23:29Z: Use explicit editor endpoints in backend regression fixtures
+- [39ca749f9498](https://github.com/pewdiepie-archdaemon/odysseus/commit/39ca749f94987aa02775f5b327e48e0d52beb5e4) 2026-10-26T16:21:22Z: Refresh configuration reference for the integrated review scope
+- [93da30c4af59](https://github.com/pewdiepie-archdaemon/odysseus/commit/93da30c4af59ed05f1106e93f70ad772fc927aba) 2026-10-26T16:21:17Z: Merge current dev and refresh PR #6739 from the 7011 integration
+- [4d0610a1eb47](https://github.com/pewdiepie-archdaemon/odysseus/commit/4d0610a1eb470460c59b091b34dbe649a8084c49) 2026-10-26T09:47:03-06:00: fix(email): guard user-supplied IMAP/SMTP hosts against SSRF (#6355)
+- [be9f575b590e](https://github.com/pewdiepie-archdaemon/odysseus/commit/be9f575b590ea61f3a686060e7cfc91a8db3c61a) 2026-10-26T09:46:57-06:00: fix(security): block read-only cookbook tools for non-admin owners (#6353)
+- [1000b6582c74](https://github.com/pewdiepie-archdaemon/odysseus/commit/1000b6582c747b0542ab71606d1de66c02953477) 2026-10-26T09:46:52-06:00: fix(agent): give file tools the agent workspace as root when no workspace is set (#6722)
+- [9d0d3720f4ca](https://github.com/pewdiepie-archdaemon/odysseus/commit/9d0d3720f4ca181d87bef94da826d730acc6d483) 2026-10-25T13:45:49+01:00: fix(deps): require Pillow 13 with compatible FastEmbed (#6845)
+- [a0c93f38ef19](https://github.com/pewdiepie-archdaemon/odysseus/commit/a0c93f38ef196aff5c2bdb90ba2c64419254d012) 2026-10-24T17:44:07+02:00: chore: harden and update supporting services (#6788)
+- [ed78beee1bd4](https://github.com/pewdiepie-archdaemon/odysseus/commit/ed78beee1bd4bb645af6048e6424112b3f651f23) 2026-10-24T17:26:21+02:00: fix(security): refresh client trust and adopt corrected upstream SearXNG (#6791)
+- [f8e043e8ca7c](https://github.com/pewdiepie-archdaemon/odysseus/commit/f8e043e8ca7cb051785b36dc1e7a669d386fd7fa) 2026-10-23T13:19:04-06:00: fix(approvals): seal approved bash/python and file writes in the agent workspace when no workspace is set (#6705)
+- [98a16242c675](https://github.com/pewdiepie-archdaemon/odysseus/commit/98a16242c675b13da13248fb06a0d123f67344f5) 2026-10-23T13:18:59-06:00: fix(security): add SSRF validation to manage_endpoints agent tool (#6327)
+- [0dbf457c004c](https://github.com/pewdiepie-archdaemon/odysseus/commit/0dbf457c004cd96553d8c96e7ef70d049fd46317) 2026-10-23T13:18:54-06:00: fix(security): block SSRF via user-supplied model endpoint URLs (#6316)
+- [b4ae7ebcc43d](https://github.com/pewdiepie-archdaemon/odysseus/commit/b4ae7ebcc43daa6207de0ef614ef336d7707d20f) 2026-10-23T13:18:49-06:00: feat(agent): expose chat history with existing chat scope (#6443)
+- [01566b158e62](https://github.com/pewdiepie-archdaemon/odysseus/commit/01566b158e627748f70ac402571f2f78241fb6f9) 2026-10-22T17:08:05+01:00: fix(ci): lowercase container image repository names (#6802)
+- [a98013dd33cb](https://github.com/pewdiepie-archdaemon/odysseus/commit/a98013dd33cb57d3d4af5155701ed9e7117e2ef3) 2026-10-22T11:18:07+01:00: Merge pull request #6785 from RaresKeY/fix/emudhra-ca-trust
+- [77a02c30ffd3](https://github.com/pewdiepie-archdaemon/odysseus/commit/77a02c30ffd3f86a34f1bc9e2843589acad76e67) 2026-10-21T21:40:05Z: fix(security): verify deployed trust before dependency work
+- [cd9f1f734fc1](https://github.com/pewdiepie-archdaemon/odysseus/commit/cd9f1f734fc12d3479de3039558902cf421c5454) 2026-10-21T20:48:34Z: fix(security): detect incident CAs in custom trust stores
+- [5d0a219edee6](https://github.com/pewdiepie-archdaemon/odysseus/commit/5d0a219edee63039f48cb7e2c98188a17d7571ec) 2026-10-21T20:09:54Z: fix: distrust incident certificates in Chromium and gRPC
+- [c4fdaf59b3d7](https://github.com/pewdiepie-archdaemon/odysseus/commit/c4fdaf59b3d74377b191938b028a710ee5aad5c7) 2026-10-21T18:59:02Z: fix(tls): accept hashed non-CA certificates during trust checks
+- [df1c2c8b192f](https://github.com/pewdiepie-archdaemon/odysseus/commit/df1c2c8b192f693fdbcad5020df4b1545db99910) 2026-10-21T18:27:05Z: fix: refresh outbound HTTPS trust and installer bootstrap
+- [8877273e195a](https://github.com/pewdiepie-archdaemon/odysseus/commit/8877273e195a90d51bc6a37f3a1b60dc3414c431) 2026-10-20T16:37:53+01:00: Merge pull request #6742 from odysseus-dev/codex/review-7011-email-export-20261015
+- [377070ab7951](https://github.com/pewdiepie-archdaemon/odysseus/commit/377070ab7951d161b10542a62c02740408bba2d3) 2026-10-20T15:36:16+01:00: fix(email): propagate preflight safety failure across all mailbox groups
+- [f06ec5d91ffb](https://github.com/pewdiepie-archdaemon/odysseus/commit/f06ec5d91ffb5bc5fa6292f79a96737c59a82fca) 2026-10-20T15:01:55+01:00: Merge branch 'upstream/dev' into fix/pr-6742-email-export
+- [057ae92c17d0](https://github.com/pewdiepie-archdaemon/odysseus/commit/057ae92c17d0c01e9988a9baa89e06c8622aecc0) 2026-10-20T15:00:13+01:00: fix(email): support case-insensitive IMAP atoms and portable browser discovery
+- [75df766358c2](https://github.com/pewdiepie-archdaemon/odysseus/commit/75df766358c2e6e04368c6416dbc8c5d1a500412) 2026-10-20T14:09:47+01:00: fix(email): harden RFC822.SIZE preflight validation and ignore duplicate IMAP records
+- [c7d1555eea99](https://github.com/pewdiepie-archdaemon/odysseus/commit/c7d1555eea99c388d60a0d0c3ae9a12d4e63ba43) 2026-10-20T11:38:12+01:00: fix(email): resolve memory safety, print rendering, and accounting defects
+
+## Changed paths (truncated)
+
+- M: `.dockerignore`
+- M: `.env.example`
+- M: `.gitattributes`
+- M: `.github/pull_request_template.md`
+- M: `.github/scripts/check-pr-description.js`
+- A: `.github/scripts/validate-searxng-image.sh`
+- A: `.github/searxng-validation.compose.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/container-trivy.yml`
+- M: `.github/workflows/dependency-review.yml`
+- M: `.github/workflows/docker-publish.yml`
+- A: `.github/workflows/searxng-image.yml`
+- M: `.github/workflows/workflow-security.yml`
+- M: `.gitignore`
+- A: `.gitleaks.toml`
+- M: `ACKNOWLEDGMENTS.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile`
+- A: `HARNESS_VERSION`
+- M: `Odysseus.spec`
+- A: `PUBLICATION_ASSET_DECISIONS.md`
+- M: `README.md`
+- A: `THIRD_PARTY_PROVENANCE.json`
+- M: `THREAT_MODEL.md`
+- M: `app.py`
+- M: `build-macos-app.sh`
+- M: `build-windows-portable.ps1`
+- M: `core/atomic_io.py`
+- M: `core/auth.py`
+- M: `core/database.py`
+- M: `core/models.py`
+- M: `core/platform_compat.py`
+- M: `core/session_manager.py`
+- M: `docker-compose.gpu-amd.yml`
+- M: `docker-compose.gpu-nvidia.yml`
+- M: `docker-compose.yml`
+- A: `docker/chromium-ca-policy.md`
+- A: `docker/chromium-emudhra.json`
+- A: `docker/host-network.yml`
+- A: `docker/host-workspace.yml`
+- A: `docker/searxng/Dockerfile`
+- A: `docker/searxng/Dockerfile.dockerignore`
+- A: `docker/searxng/validate_image.py`
+- A: `docs/AGENT_TURN_CONTRACT.md`
+- A: `docs/BACKGROUND_TOOL_JOBS.md`
+- A: `docs/CODE_REVIEW_2026-09-16.md`
+- A: `docs/EDITOR_AGENT_API.md`
+- A: `docs/HISTORICAL_ODYSSEUS_QA_QUEUE.md`
+- A: `docs/ODYSSEUS_FIX_WORKSTREAMS.md`
+- A: `docs/ODYSSEUS_SFT_ALEX_CORPUS.md`
+- A: `docs/ODYSSEUS_TOOL_INSTRUCTIONS_EXAMPLE.md`
+- A: `docs/REVIEW_FIX_PROGRESS.md`
+- A: `docs/TYPO_ROUTING_AUDIT_20260909.md`
+- A: `docs/chromadb-volume-migration.md`
+- A: `docs/frontend-architecture/ADR-001-source-and-deployment.md`
+- A: `docs/frontend-architecture/assessment.md`
+- A: `docs/frontend-architecture/evidence/notes/implementation.sha256`
+- A: `docs/frontend-architecture/evidence/notes/native-desktop.png`
+- A: `docs/frontend-architecture/evidence/notes/native-mobile.png`
+- A: `docs/frontend-architecture/handbook.md`
+- A: `docs/frontend-architecture/notes-case-study.md`
+- A: `docs/frontend-architecture/notes-changed-files.md`
+- A: `docs/frontend-architecture/notes-module-inventory.md`
+- A: `docs/frontend-architecture/notes-roadmap.md`
+- A: `docs/frontend-architecture/notes-validation.md`
+- A: `docs/frontend-architecture/validation.md`
+- A: `docs/maintainers/README.md`
+- A: `docs/maintainers/changes-and-review.md`
+- A: `docs/maintainers/documentation.md`
+- A: `docs/maintainers/product-and-features.md`
+- A: `docs/maintainers/review-playbook.md`
+- A: `docs/maintainers/roles-and-access.md`
+- A: `docs/maintainers/testing-and-releases.md`
+- A: `docs/maintainers/triage.md`
+- A: `docs/ref-parity-audit.md`
+- A: `docs/runtime-decomposition/COMPARISON_PROTOCOL.md`
+- A: `docs/runtime-decomposition/WAVE_1_1_RECONCILIATION.md`
+- A: `docs/runtime-decomposition/validation/wave-1-1-reconciliation-gates.txt`
+- A: `docs/runtime-decomposition/validation/wave-3-browser-final-results.json`
+- A: `docs/runtime-decomposition/validation/wave-3-closure-focused-tests.txt`
+- A: `docs/runtime-decomposition/validation/wave-3-corrective-pass.md`
+- A: `docs/runtime-decomposition/validation/wave-3-corrective-results.json`
+- A: `docs/runtime-decomposition/validation/wave-3-s-failed-nodes.json`
+- A: `docs/runtime-decomposition/validation/wave-3-s-node-environment.txt`
+- A: `docs/runtime-decomposition/wave-2-request-authority.md`
+- A: `docs/runtime-decomposition/wave-2-validation-full.md`
+- A: `docs/runtime-decomposition/wave-3-browser-authority.md`
+- A: `docs/runtime-decomposition/wave-3-checkpoint-a-tests.txt`
+- A: `docs/runtime-decomposition/wave-3-checkpoint-a.md`
+- A: `docs/runtime-decomposition/wave-3-final-tests.txt`
+- A: `docs/runtime-decomposition/wave-3-independent-adapters.md`
+- A: `docs/runtime-decomposition/wave-3-resource-identity.md`
+- A: `docs/runtime-decomposition/wave-3-s-delivery-2026-10-01.md`
+- A: `docs/runtime-decomposition/wave-4-effects-provenance-integration.md`
+- A: `docs/runtime-decomposition/wave-5a-browser-lifecycle.md`
+- A: `docs/search-quality-audit-20260917.md`
+- A: `docs/searxng-trust-image.md`
+- A: `docs/skills-audit-architecture.md`
+- A: `docs/skills-audit-second-review.md`
+- A: `docs/skills-lifecycle.md`
+- A: `docs/tls-trust.md`
+- A: `frontend/modules.json`
+- A: `frontend/src/features/notes/application/agentActions.js`
+- A: `frontend/src/features/notes/application/cardOperations.js`
+- A: `frontend/src/features/notes/application/checklistOperations.js`
+- A: `frontend/src/features/notes/application/deletion.js`
+- A: `frontend/src/features/notes/application/drafts.js`
+- A: `frontend/src/features/notes/application/queries.js`
+- A: `frontend/src/features/notes/application/reminders.js`
+- A: `frontend/src/features/notes/application/selection.js`
+- A: `frontend/src/features/notes/application/state.js`
+- A: `frontend/src/features/notes/application/submission.js`
+- A: `frontend/src/features/notes/application/workflows.js`
+- A: `frontend/src/features/notes/domain/noteRules.js`
+- A: `frontend/src/features/notes/domain/recurrence.js`
+- A: `frontend/src/features/notes/index.js`
+- A: `frontend/src/features/notes/infrastructure/http.js`
+- A: `frontend/src/features/notes/infrastructure/notifications.js`
+- A: `frontend/src/features/notes/infrastructure/storage.js`
+- A: `frontend/src/features/notes/ui/cardChecklist.js`
+- A: `frontend/src/features/notes/ui/cardInteractions.js`
+- A: `frontend/src/features/notes/ui/cardRendering.js`
+- A: `frontend/src/features/notes/ui/cardReorder.js`
+- A: `frontend/src/features/notes/ui/checklist.js`
+- A: `frontend/src/features/notes/ui/checklistReorder.js`
+- A: `frontend/src/features/notes/ui/clipboard.js`
+- A: `frontend/src/features/notes/ui/colors.js`
+- A: `frontend/src/features/notes/ui/draftEditor.js`
+- A: `frontend/src/features/notes/ui/drawing.js`
+- A: `frontend/src/features/notes/ui/editor.js`
+- A: `frontend/src/features/notes/ui/filters.js`
+- A: `frontend/src/features/notes/ui/layout.js`
+- A: `frontend/src/features/notes/ui/lifecycle.js`
+- A: `frontend/src/features/notes/ui/mobileEditor.js`
+- A: `frontend/src/features/notes/ui/mobileReorder.js`
+- A: `frontend/src/features/notes/ui/panel.js`
+- A: `frontend/src/features/notes/ui/quickAdd.js`
+- A: `frontend/src/features/notes/ui/reminderDisplay.js`
+- A: `frontend/src/features/notes/ui/reminderPicker.js`
+- A: `frontend/src/features/notes/ui/selection.js`
+- A: `frontend/src/features/notes/ui/text.js`
+- A: `frontend/src/features/notes/ui/toolbar.js`
+- A: `frontend/src/features/notes/ui/windowLayout.js`
+- A: `frontend/src/package.json`
+- A: `frontend/src/shared/actionMenuOrder.js`
+- A: `frontend/src/shared/ui/confetti.js`
+- M: `integrations/claude/skills/odysseus/SKILL.md`
+- M: `integrations/claude/skills/odysseus/scripts/odysseus_api.py`
+- M: `integrations/codex/skills/odysseus/SKILL.md`
+- M: `launch-windows.ps1`
+- M: `launcher.py`
+- A: `licenses/FiraCode-OFL-1.1.txt`
+- A: `licenses/Inter-OFL-1.1.txt`
+- A: `licenses/SheetJS-Apache-2.0.txt`
+- A: `licenses/docx-8.5.0-NOTICES.txt`
+- A: `licenses/highlightjs-BSD-3-Clause.txt`
+- A: `licenses/mammoth-1.8.0-NOTICES.txt`
+- M: `mcp_servers/email_server.py`
+- M: `mcp_servers/image_gen_server.py`
+- M: `package-lock.json`

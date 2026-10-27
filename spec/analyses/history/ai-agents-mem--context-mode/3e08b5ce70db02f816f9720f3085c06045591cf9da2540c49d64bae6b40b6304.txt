@@ -1,0 +1,28 @@
+# context-mode
+
+Tool-output indexing and adapter detection with explicit lessons about inherited environment leakage.
+
+Source: [context-mode](https://github.com/mksglu/context-mode) · Snapshot: `dbfa57d50ccaacb37ade53dd226c5b0cf7bea335` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [src/store.ts:475-543](https://github.com/mksglu/context-mode/blob/dbfa57d50ccaacb37ade53dd226c5b0cf7bea335/src/store.ts#L475-L543)
+- [src/adapters/detect.ts:1-142](https://github.com/mksglu/context-mode/blob/dbfa57d50ccaacb37ade53dd226c5b0cf7bea335/src/adapters/detect.ts#L1-L142)
+
+The content store creates separate SQLite FTS5 indexes with porter/unicode61 and trigram tokenizers. This supplies lexical retrieval without an embedding dependency. Adapter detection distinguishes environment identifiers from workspace variables, maintains a client/platform registry, and documents confidence levels for environment and directory signals. The examined helper checks installed Claude plugin metadata to disambiguate a VS Code environment. Its comments also explain why foreign identification variables must be scrubbed when spawning under a different host.
+
+## Harness implications
+
+Use a searchable tool-result buffer for large command output, fetched documents and session events. Give the model a compact handle and retrieve relevant spans on demand. For installed-agent discovery, combine executable resolution, version/capability probes and explicit runtime identity; directory existence is only a weak signal. Child-agent environment construction should whitelist the relevant identity and workspace variables so one agent does not misattribute another's memory or settings.
+
+## Limitations and tradeoffs
+
+Lexical indexing reduces prompt volume but is not semantic long-term memory or proof that a resumed model has all required context. The documented fallback to a common host is inappropriate as a harness authority decision: unknown must remain a valid result. Installed plugin metadata can be stale. Porter stemming and trigram search have language and storage tradeoffs. The review did not execute adapter hooks, establish exact client compatibility, or measure claimed context savings.
+
+## Adoption and validation
+
+Adopt the buffer and adapter-registry patterns behind harness-owned session identities. Treat discovery as observation, then probe before use. Preserve raw output as an artifact, index scoped excerpts, and return source spans with every search result. Test nested agents, stale configuration directories, multiple installed clients, non-English logs, revocation after indexing and compaction/resume with missing context.
+
+Related directions: [memory](../memory.md) · [agents](../agents.md) · [models](../models.md).

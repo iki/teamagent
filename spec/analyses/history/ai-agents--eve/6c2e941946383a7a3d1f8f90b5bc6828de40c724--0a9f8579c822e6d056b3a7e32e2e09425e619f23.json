@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--eve",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/vercel/eve",
+  "report": "spec/projects/ai-agents--eve.md",
+  "analyzedSha": "6c2e941946383a7a3d1f8f90b5bc6828de40c724",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T15:08:36-04:00",
+  "observedSha": "0a9f8579c822e6d056b3a7e32e2e09425e619f23",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0a9f8579c822e6d056b3a7e32e2e09425e619f23",
+      "date": "2026-10-23T21:38:56-07:00",
+      "subject": "Make session handover delays easier to diagnose (#5318)"
+    },
+    {
+      "sha": "eda61225e10bcc6a88314b69b89819343db07152",
+      "date": "2026-10-24T04:08:22Z",
+      "subject": "Add eve framework metrics to the nightly benchmark (#5322)"
+    },
+    {
+      "sha": "d77462dfa8a1bce20db6d3fc1fa74f83cb51cf99",
+      "date": "2026-10-23T22:22:52Z",
+      "subject": "fix(discover): allow non-module files such as JSON in lib/ (#5237)"
+    },
+    {
+      "sha": "13399a545103e64a7b3013ea2f43a440e8b1d408",
+      "date": "2026-10-23T20:33:18Z",
+      "subject": "docs: add dedicated OG image for the use cases page (#5317)"
+    },
+    {
+      "sha": "04686dd8edaed3f6fba194b61ec10f1cf5871b7e",
+      "date": "2026-10-23T13:02:47-07:00",
+      "subject": "fix(docs): authenticate template sync with Vercel Connect GitHub app (#5309)"
+    },
+    {
+      "sha": "7615897022eb2fc7289e5676d3a34b9c11dfb0c7",
+      "date": "2026-10-23T15:41:54-04:00",
+      "subject": "fix(deps): resolve @vercel/connect's eve peer to the workspace package (#5316)"
+    },
+    {
+      "sha": "77f4473fc21257a9c84c2ebc9f5a2b523cc050dd",
+      "date": "2026-10-23T15:38:51-04:00",
+      "subject": "feat(eve): add eval repeat option for repeatability runs (#5295)"
+    },
+    {
+      "sha": "3fbef894348b6fc0306868e4d6fc4e50dd112667",
+      "date": "2026-10-23T14:50:03-04:00",
+      "subject": "feat: race sandbox work against the model call (#5288)"
+    },
+    {
+      "sha": "062898fff437e89e0e859ee5eea338e288cf9e03",
+      "date": "2026-10-23T17:21:52Z",
+      "subject": "fix(docs): update template manifest for renamed kody and typefully files (#5305)"
+    },
+    {
+      "sha": "90a39c76928cec2c74eadccddac5bb131ef070d0",
+      "date": "2026-10-23T10:15:28-07:00",
+      "subject": "feat(templates): add conversational Discord agent template (#5244)"
+    },
+    {
+      "sha": "3c03b204d0fabb8fc155a93a40ba34d2c51f1628",
+      "date": "2026-10-23T11:33:59-04:00",
+      "subject": "docs: add a use cases page (#5204)"
+    },
+    {
+      "sha": "6f551a78c6658fdbaf428be989c023f504537468",
+      "date": "2026-10-23T11:12:51-04:00",
+      "subject": "fix: stop resuming the sandbox to hydrate attachments that need no bytes (#5289)"
+    },
+    {
+      "sha": "09f8de5904abd523d8a4fd3c2fa276852c34b1da",
+      "date": "2026-10-23T10:18:23-04:00",
+      "subject": "feat(registry): add Nimble extension (#5255)"
+    },
+    {
+      "sha": "25c9fff80b79504c73127f169eb9fa7182bc349a",
+      "date": "2026-10-23T08:23:37-04:00",
+      "subject": "feat(eve): support an endsTurn function on dynamic tools (#5296)"
+    },
+    {
+      "sha": "d5b96012c55982d924950039fce7cffe8688ee1e",
+      "date": "2026-10-22T21:18:58-04:00",
+      "subject": "chore: update root development dependencies (#5286)"
+    },
+    {
+      "sha": "261043d87ef0844a705c2ccf90ce5ea77d1c0bf9",
+      "date": "2026-10-22T20:26:53-04:00",
+      "subject": "Version Packages (#5177)"
+    },
+    {
+      "sha": "b9f984c8e1b170706461ad233aeb8283c20f2fd4",
+      "date": "2026-10-22T20:02:14-04:00",
+      "subject": "chore: Bump workflow (#5279)"
+    },
+    {
+      "sha": "00aa593595b2d7d315ce41a337c3be2581bc54fb",
+      "date": "2026-10-22T19:53:18-04:00",
+      "subject": "refactor(sandbox): run core on the public provider contract and add workspace roots (#5284)"
+    },
+    {
+      "sha": "b848a517a731ad3d49dc7c874cedf9616aed4b1b",
+      "date": "2026-10-22T19:34:21-04:00",
+      "subject": "perf(sandbox): skip redundant setup for prepared Vercel sandboxes (#5276)"
+    },
+    {
+      "sha": "9d804f2a39663c3e5dff4bf5a2adc0b0167f7a18",
+      "date": "2026-10-22T19:32:32-04:00",
+      "subject": "fix(sandbox): untrack a stopped sandbox when its session ends (#5283)"
+    },
+    {
+      "sha": "ee2b7f8450ce7c4e603edcbbdfff2ef5296ff117",
+      "date": "2026-10-22T18:40:44-04:00",
+      "subject": "feat(registry): add Waydock MCP connection (#5254)"
+    },
+    {
+      "sha": "fe2daa53566d36ecff9aaf1b485c4380a85ab222",
+      "date": "2026-10-22T18:40:40-04:00",
+      "subject": "test(sandbox): expect shutdown to stop a stopped connection again (#5282)"
+    },
+    {
+      "sha": "d34c5249451131ac833e142fe43cf0fd2f876cf9",
+      "date": "2026-10-22T18:33:37-04:00",
+      "subject": "feat(registry): add Sent connection (#5249)"
+    },
+    {
+      "sha": "62112b5d7a54c7ae433b12ff7af0c847553e09c2",
+      "date": "2026-10-22T18:14:09-04:00",
+      "subject": "refactor(sandbox): build the just-bash provider on the public provider API (#5275)"
+    },
+    {
+      "sha": "950409f6876942ef1b1c034124ae03babb4a160b",
+      "date": "2026-10-22T18:13:31-04:00",
+      "subject": "refactor(sandbox)!: build the Vercel provider on the public provider API (#5274)"
+    },
+    {
+      "sha": "4db529f901e3bf9fd61d35239147cbc9f62a666d",
+      "date": "2026-10-22T18:06:53-04:00",
+      "subject": "refactor(sandbox): build the Docker provider on the public provider API (#5273)"
+    },
+    {
+      "sha": "aaea0b41e993512d18c8c310251d7f39e1065bff",
+      "date": "2026-10-22T22:00:23Z",
+      "subject": "ci: run scenario tests with Bun 1.4.4 (#5277)"
+    },
+    {
+      "sha": "077f8f0943774439755047589c094121c3d7f095",
+      "date": "2026-10-22T17:59:01-04:00",
+      "subject": "docs(registry): add Memanto memory provider (#5252)"
+    },
+    {
+      "sha": "f6bba398ecbde01627b79e934b333476e80ebe73",
+      "date": "2026-10-22T17:58:21-04:00",
+      "subject": "docs: add Oodle instrumentation registry item (#5247)"
+    },
+    {
+      "sha": "c49ddb97f49966bb69bc66d82d11eb19b564157d",
+      "date": "2026-10-22T17:56:31-04:00",
+      "subject": "Add Firecrawl MCP connection to the registry (#5248)"
+    },
+    {
+      "sha": "c2f6404dc9c15ec234bce7361883373e513ebf93",
+      "date": "2026-10-22T17:54:19-04:00",
+      "subject": "feat(registry): add FLORA MCP connection (#5246)"
+    },
+    {
+      "sha": "84daf59a16ae697231d9be5b596a3a99472dff3b",
+      "date": "2026-10-22T17:00:33-04:00",
+      "subject": "fix(compiler): prune stale authored-module cache bundles (#5258)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/pr-shepherd/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/dynamic-tool-ends-turn-function.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/eval-client-clock.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/eval-repeat.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/lazy-attachment-hydration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/lib-non-module-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/prewarm-session-sandbox.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/route-args-describe.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/trace-session-handover.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/discover-e2e-fixtures.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/stage-benchmark-leg.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bundle-analysis.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-local.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-postgres.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-vercel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/eval-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxfmtrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".syncpackrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "NOTICE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/authoring-case.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/benchmark-config.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/benchmark-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/experiment.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/experiment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/native-authoring-setup.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/native-authoring-setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/scripts/cost.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/scripts/export-results.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/(nights)/eves/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/architecture.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/cta.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/eve-logo-shader/hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/file-tree.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/home-content.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/(home)/components/nextjs-interop.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/benchmarks/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/docs/[[...slug]]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/integrations/[slug]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/integrations/components/gallery.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/integrations/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/templates/[slug]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/templates/[slug]/template-actions.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/templates/[slug]/template-readme.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/templates/integration-icons.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/templates/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/app/[lang]/templates/template-gallery.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/app/api/mcp/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/geistdocs/agent-runtime-diagram.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/components/geistdocs/json-ld.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/components/geistdocs/mdx-components.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/components/geistdocs/use-cases.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/geistdocs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/evals/benchmark-results.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/evals/eve-code-format.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/evals/eve-code-format.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/evals/eve-code-results.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/evals/og-image.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/evals/og-image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/geistdocs/agent-runtime-diagram.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/config.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/llms-index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/metadata-title.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/metadata-title.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/og.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/redirects.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/geistdocs/redirects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/geistdocs/remark-benchmark-markdown.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/geistdocs/remark-benchmark-markdown.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/geistdocs/remark-component-markdown.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/geistdocs/remark-component-markdown.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/geistdocs/structured-data.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/geistdocs/structured-data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/integrations/connection-setup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/integrations/data.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/integrations/discovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/integrations/gallery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/integrations/gallery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/integrations/logos.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/integrations/og-image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/integrations/posthog-instrumentation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/integrations/sent-registry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/integrations/waydock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/lib/og-logo.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/templates/compose.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/templates/manifest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/templates/og-image.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/templates/readme-links.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/lib/templates/readme-links.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/public/og/docs-use-cases.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channel/web-sign-in-with-vercel/lib/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/app/fonts.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/app/router.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/app/routes/__root.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/app/routes/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/app/routes/s.index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/app/routes/s.session-id.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/app/start.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/components.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web-tanstack/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channel/web/app/_components/agent-chat.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channel/web/app/_components/agent-message.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channel/web/app/globals.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/registry/channel/web/components/ai-elements/question.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/channel/web/components/ui/questionnaire.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-agentphone.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-beeper.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-dial.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-gchat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-kapso.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-lark.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-liveblocks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-messenger.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-novu.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-resend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-sendblue.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-velt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-whatsapp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-x.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/chat-sdk-zernio.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/channels/gmail.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/connections/dataforseo.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/connections/firecrawl.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/connections/flora.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/connections/sanity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/connections/sent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/connections/waydock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/registry/extensions/hindsight-hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/registry/extensions/hindsight-instructions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/extensions/nimble/extension.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/extensions/nimble/tools/agent_start.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/instrumentation/oodle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/registry/instrumentation/posthog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/memory/hindsight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/registry/memory/memanto.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/docs/registry/tools/load_skill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/sync-templates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/validate-channel-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/validate-connection-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/validate-instrumentation-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/scripts/validate-memory-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/source.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/fixtures/agent-tui-client/agent/connections/stub-mcp-user.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/frameworks/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/frameworks/next-multi-agent/app/page.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

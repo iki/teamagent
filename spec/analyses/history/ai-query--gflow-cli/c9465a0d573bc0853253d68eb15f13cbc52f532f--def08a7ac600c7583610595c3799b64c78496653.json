@@ -1,0 +1,984 @@
+{
+  "id": "ai-query--gflow-cli",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/ffroliva/gflow-cli",
+  "report": "spec/projects/ai-query--gflow-cli.md",
+  "analyzedSha": "c9465a0d573bc0853253d68eb15f13cbc52f532f",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T10:47:50+01:00",
+  "observedSha": "def08a7ac600c7583610595c3799b64c78496653",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "def08a7ac600c7583610595c3799b64c78496653",
+      "date": "2026-10-24T05:25:52+01:00",
+      "subject": "Merge pull request #1080 from ffroliva/bugfix/about-landing-reverify-hint"
+    },
+    {
+      "sha": "af885059958455c71c0e3d1df563bfd25cfb1ae9",
+      "date": "2026-10-24T05:16:31+01:00",
+      "subject": "Merge remote-tracking branch 'origin/develop' into bugfix/about-landing-reverify-hint"
+    },
+    {
+      "sha": "3fd85a005c3485f31844183c98758f326e9171b3",
+      "date": "2026-10-24T05:16:25+01:00",
+      "subject": "Merge pull request #1079 from ffroliva/chore/713-deletion-advisory"
+    },
+    {
+      "sha": "a941b3882af324c04108375fd174d9f85b50be4c",
+      "date": "2026-10-24T05:15:39+01:00",
+      "subject": "Merge pull request #1078 from ffroliva/bugfix/1067-upscale-tile-listed-late"
+    },
+    {
+      "sha": "39b05bcd11982c4248c71c03536184465bd721f5",
+      "date": "2026-10-24T05:05:32+01:00",
+      "subject": "Merge remote-tracking branch 'origin/develop' into bugfix/about-landing-reverify-hint"
+    },
+    {
+      "sha": "5905957a6f0d62d53dfa4d6cbcddf0da4a3f863b",
+      "date": "2026-10-24T05:05:27+01:00",
+      "subject": "Merge remote-tracking branch 'origin/develop' into chore/713-deletion-advisory"
+    },
+    {
+      "sha": "fe9597315d422dcbab1bcc9f87894de910e7f7fe",
+      "date": "2026-10-24T05:05:24+01:00",
+      "subject": "Merge remote-tracking branch 'origin/develop' into bugfix/1067-upscale-tile-listed-late"
+    },
+    {
+      "sha": "340b0a7a333515490773064822c1474add1378dd",
+      "date": "2026-10-24T05:05:00+01:00",
+      "subject": "Merge pull request #1077 from ffroliva/chore/759-ponytail-cleanup"
+    },
+    {
+      "sha": "3e07501f372332324b6bf829075b97492368400b",
+      "date": "2026-10-24T05:04:57+01:00",
+      "subject": "Merge pull request #1076 from ffroliva/bugfix/1075-image-reply-body-lost"
+    },
+    {
+      "sha": "b99e5275add8ae72697701dd40648777e856af19",
+      "date": "2026-10-24T04:52:29+01:00",
+      "subject": "Merge remote-tracking branch 'origin/develop' into bugfix/about-landing-reverify-hint"
+    },
+    {
+      "sha": "04a94301454297c882153369d42eed8da5ac62ec",
+      "date": "2026-10-24T04:51:48+01:00",
+      "subject": "fix(auth): the /about landing names Google's identity re-check (#881)"
+    },
+    {
+      "sha": "dc5ac6e1a31643fc195990dcce5a03c61995f6b7",
+      "date": "2026-10-24T04:50:06+01:00",
+      "subject": "chore(ci): advisory check for gutted docs and orphaned references to deleted paths (#713)"
+    },
+    {
+      "sha": "067a09853914b72e0087cb5ba43edcfc3d7a644f",
+      "date": "2026-10-24T04:49:45+01:00",
+      "subject": "Merge remote-tracking branch 'origin/develop' into bugfix/1075-image-reply-body-lost"
+    },
+    {
+      "sha": "6bf3553b228c40ad824d08745528173ff9cd19db",
+      "date": "2026-10-24T04:49:33+01:00",
+      "subject": "fix(migrated): grid recovery holds still, needs a readable baseline, skips references (#1075)"
+    },
+    {
+      "sha": "c6b559d8738adfd2a56bb4437c5a5ecfc115c9f4",
+      "date": "2026-10-24T04:49:08+01:00",
+      "subject": "Merge pull request #1074 from ffroliva/bugfix/788-hidden-model-picker"
+    },
+    {
+      "sha": "e9775319b8710e24291b0b736a8175038c6afe8e",
+      "date": "2026-10-24T04:48:30+01:00",
+      "subject": "fix(migrated): an upscale reloads the grid for a tile listed late (#1067)"
+    },
+    {
+      "sha": "95674223339a8aa4cfa80cdbf52dae996b6d6477",
+      "date": "2026-10-24T04:47:39+01:00",
+      "subject": "chore(spike): cut the queue spike's never-run download path (#759)"
+    },
+    {
+      "sha": "6346dd7d421f5b41e1733d34d904075c0fb2be1c",
+      "date": "2026-10-24T04:39:31+01:00",
+      "subject": "fix(migrated): an image whose reply body is lost is read off the grid (#1075)"
+    },
+    {
+      "sha": "6ddb19b0abed29840a1797d4b404a371becdd260",
+      "date": "2026-10-24T04:39:17+01:00",
+      "subject": "fix(migrated): a hidden model picker carries the Agent-chip hint (#788)"
+    },
+    {
+      "sha": "ad22744088b1c99fc9e7af86c5882a58bc274d87",
+      "date": "2026-10-23T12:23:16+01:00",
+      "subject": "fix(migrated): refuse a hidden model picker instead of reading it (#788)"
+    },
+    {
+      "sha": "69c7b66b5cf7015051c079c4f91781d577c4ba6e",
+      "date": "2026-10-23T12:11:29+01:00",
+      "subject": "Merge pull request #1073 from ffroliva/bugfix/755-upload-declined-wording"
+    },
+    {
+      "sha": "45fd046f2f0c4c2139252cbf905e25cd2a166e10",
+      "date": "2026-10-23T11:29:40+01:00",
+      "subject": "fix(migrated): an upload Flow declines (gRPC 3) says so, not 'no media id' (#755)"
+    },
+    {
+      "sha": "1178cb6b05f4293f0fa328f304b44aa6d273d35d",
+      "date": "2026-10-23T11:16:59+01:00",
+      "subject": "Merge pull request #1072 from ffroliva/bugfix/737-character-identity-metadata"
+    },
+    {
+      "sha": "a013ffd663342aedcef1b565b54078b9851910c7",
+      "date": "2026-10-23T11:07:01+01:00",
+      "subject": "fix(data): a successful character create keeps entity_id and name (#737)"
+    },
+    {
+      "sha": "ad9f8751173187bc20d6575326c458df10796358",
+      "date": "2026-10-23T11:00:07+01:00",
+      "subject": "Merge pull request #1071 from ffroliva/chore/743-drop-spike-verdict"
+    },
+    {
+      "sha": "def549abf0140dd79e8416af294accc4eb9b134f",
+      "date": "2026-10-23T10:50:20+01:00",
+      "subject": "chore(spike): drop a verdict field that derived a wrong answer from a filtered set (#743)"
+    },
+    {
+      "sha": "499685e0fd797e2b1c175031937e27fcde9eb89e",
+      "date": "2026-10-23T10:34:51+01:00",
+      "subject": "chore: back-merge main (v0.89.0) into develop"
+    },
+    {
+      "sha": "3d9eab2464d305d7d12162e44aa3db5dea91ac33",
+      "date": "2026-10-23T10:34:37+01:00",
+      "subject": "Merge pull request #1070 from ffroliva/chore/release-v0.89.0"
+    },
+    {
+      "sha": "3cad0ab6395a6b4f0d84e5a5231881da6925b8e3",
+      "date": "2026-10-23T10:23:10+01:00",
+      "subject": "chore(release): v0.89.0"
+    },
+    {
+      "sha": "f56f94ecf2c9dfa6079f3beb958112986ae4a171",
+      "date": "2026-10-23T09:58:43+01:00",
+      "subject": "Merge pull request #1069 from ffroliva/bugfix/770-upload-rejected-incident"
+    },
+    {
+      "sha": "7592a4c0ec9ea16b95e20da23759f3fbfebcec9a",
+      "date": "2026-10-23T09:49:59+01:00",
+      "subject": "fix(diagnostics): a rejected upload (exit 27) writes an incident bundle (#770)"
+    },
+    {
+      "sha": "29171fd41f37b74f4367d8d57b885deab8524b1a",
+      "date": "2026-10-23T09:20:29+01:00",
+      "subject": "Merge pull request #1068 from ffroliva/bugfix/914-parked-page-route"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deps-watch.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/governance-advisory.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/governance-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/selector-probe.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "KNOWN_ISSUES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ACCOUNT_SAFETY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/AGENT_GUIDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/AUTHENTICATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CONFIGURATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/DEBUGGING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/E2E_TESTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/EXTERNAL_STORAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/IMAGE_UPSCALE_RECON.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/INSTRUCTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.83.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.83.1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.83.2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.84.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.85.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.86.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.87.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.87.1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.88.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/LIVE_VERIFICATION_v0.89.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/MCP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/MOVIE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/PROJECT_STATUS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/REFERENCE_STRATEGIES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/USAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/USER_GUIDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/memory/drive-the-page-dont-replay-the-rpc.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/superpowers/memory/flow-recon-must-run-on-denon82-ffroliva-migrated.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/superpowers/memory/migrated-host-driver-wire-lessons.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-09-15-agent-only-composer-driver/ASSESSMENT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-09-15-agent-only-composer-driver/PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-09-15-agent-only-composer-driver/PREDICT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-09-15-agent-only-composer-driver/SCENARIO.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-10-17-migrated-video-extend/PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-10-17-migrated-video-extend/PREDICT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-10-17-migrated-video-extend/SCENARIO.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-10-19-catalog-refs-in-project/PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-10-19-catalog-refs-in-project/PREDICT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/plans/2026-10-19-catalog-refs-in-project/SCENARIO.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/superpowers/spikes/2026-09-08-migrated-image-submit-wire.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/superpowers/spikes/2026-09-11-nano2-lite-capability.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-09-15-agent-only-composer-drive-surface.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-09-19-migrated-video-extend-wire.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-09-30-migrated-upscale-wire.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-06-948-record-slot3-null.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-08-nano-banana-21-replaced-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-10-duration-locale-and-notice-only-cookie-bar.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-13-migrated-image-character-mention.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-14-labs-nextauth-silent-refresh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-17-agent-only-cohort-profiles.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-17-migrated-extend-ui-path.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-18-rpc-response-body-readback.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-19-earlier-run-ref-in-place.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-19-fourth-ref-caret.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-19-minio-replacement.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-20-migrated-upload-reply-body-eviction.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-21-migrated-submit-reply-body-loss.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-22-credits-balance-on-nzlxg.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-22-image-upscale-lost-body.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/superpowers/spikes/2026-10-22-labs-session-oracle-gone.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "llms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/gflow/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/gflow/skills/gflow-cli/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/gflow/skills/video-production/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/ci/check_deletions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/cleanup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/skillopt/tasks.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_948_project_records.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_948_submit_envelope.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_963_duration_locale.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_995_earlier_run_ref.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_997_fourth_ref_caret.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_agent_confirm_radios.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_agent_only_cohort_profiles.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_agent_only_composer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_agent_only_video_ready.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_agent_only_video_tile.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_agent_settings_defaults.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_credits_balance_carrier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/spike_credits_migrated_surface.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/spike_entity_submit_rpcs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_gif_export_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_image_submit_references.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_labs_nextauth_refresh.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/spike_migrated_end_frame.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_migrated_extend_ui_path.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/spike_migrated_queue_read.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/spike_migrated_refusal_envelope.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_migrated_submit_body_loss.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_migrated_upload_body_eviction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_nano_banana_21_wire.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_picker_chip_removal.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_picker_entity_marker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev/spike_project_media_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_s3_test_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_session_oracle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_upscale_lost_body.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/dev/spike_upscale_menu_anchors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/gflow-cli/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/pr-council-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/release/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/spike/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/video-production/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/_cli_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/_retry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/gflow_cli/api/credits.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/dto.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/image.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/transports/_common.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/gflow_cli/api/transports/agent_only_composer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/transports/batchexecute.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/transports/migrated_composer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/gflow_cli/api/transports/migrated_extend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/transports/migrated_recover.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/gflow_cli/api/transports/migrated_upscale.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/gflow_cli/api/transports/migrated_video_upscale.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/transports/ui_automation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/api/transports/ui_automation_video.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/auth/cookies.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/auth/internal_chromium.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/auth/real_chrome.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/gflow_cli/auth/renew.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/auth/verification.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/browser_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli_credits.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli_data.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli_image.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli_movie.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/cli_video.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/data/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/data/recorder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/data/redaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/data/repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/diagnostics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gflow_cli/errors.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -1,0 +1,25 @@
+# forgecode
+
+Source: [forgecode](https://github.com/antinomyhq/forgecode) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `937577539c6e1b57b765fad231a802f1cc0d1a11`; commit timestamp `2026-10-03T17:10:41Z`; 936 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/antinomyhq/forgecode/blob/937577539c6e1b57b765fad231a802f1cc0d1a11/README.md)):
+
+> A comprehensive coding agent that integrates AI capabilities with your development environment On first run, Forge will guide you through setting up your AI provider credentials using the interactive login flow. Alternatively, you can configure providers beforehand:
+
+Build/package evidence: [Cargo.toml](https://github.com/antinomyhq/forgecode/blob/937577539c6e1b57b765fad231a802f1cc0d1a11/Cargo.toml); [crates/forge_api/Cargo.toml](https://github.com/antinomyhq/forgecode/blob/937577539c6e1b57b765fad231a802f1cc0d1a11/crates/forge_api/Cargo.toml); [crates/forge_app/Cargo.toml](https://github.com/antinomyhq/forgecode/blob/937577539c6e1b57b765fad231a802f1cc0d1a11/crates/forge_app/Cargo.toml); [crates/forge_ci/Cargo.toml](https://github.com/antinomyhq/forgecode/blob/937577539c6e1b57b765fad231a802f1cc0d1a11/crates/forge_ci/Cargo.toml); [crates/forge_config/Cargo.toml](https://github.com/antinomyhq/forgecode/blob/937577539c6e1b57b765fad231a802f1cc0d1a11/crates/forge_config/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/antinomyhq/forgecode/blob/937577539c6e1b57b765fad231a802f1cc0d1a11/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

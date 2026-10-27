@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--reef",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/Human-Agent-Society/reef",
+  "report": "spec/projects/ai-agents-mem--reef.md",
+  "analyzedSha": "297af97ab0483d0e52169b364c1be70a239453e8",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T08:11:44Z",
+  "observedSha": "8094de4d93d8498dd3d43c35df15a2b272fc5574",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8094de4d93d8498dd3d43c35df15a2b272fc5574",
+      "date": "2026-10-24T05:15:47Z",
+      "subject": "chore(deps): bump virtualenv from 21.14.9 to 21.14.13 (#915)"
+    },
+    {
+      "sha": "6d01f3f286ccbf2289e57a38d8ce45a43503bf1d",
+      "date": "2026-10-24T13:07:24+08:00",
+      "subject": "chore(deps): bump filelock from 3.32.4 to 4.2.1 (#914)"
+    },
+    {
+      "sha": "e389bc1293ec02b58c4c9256b81c73f38b75baf6",
+      "date": "2026-10-24T04:19:47Z",
+      "subject": "feat(record2task): generate tasks without running them and roll saved tasks out as batches (#877)"
+    },
+    {
+      "sha": "3d77a9ad8e28349598676c498b23e3c753cad593",
+      "date": "2026-10-24T11:02:40+08:00",
+      "subject": "fix(docker): match Slime's Qwen3.5 vision tower to SGLang, and fix CP 1 training (#910)"
+    },
+    {
+      "sha": "151aef9a4724592ba293d6c6fc18652e49b14b5d",
+      "date": "2026-10-24T01:44:51Z",
+      "subject": "chore(deps): bump certifi from 2026.7.22 to 2026.10.19 (#907)"
+    },
+    {
+      "sha": "1f62e04f3dcd8310ad1e4e084c15aed651d954bc",
+      "date": "2026-10-24T01:38:04Z",
+      "subject": "chore(deps): bump virtualenv from 21.7.13 to 21.14.9 (#906)"
+    },
+    {
+      "sha": "26ed235635d3d4843f663df6fb8ca64646cc17bb",
+      "date": "2026-10-23T18:58:05Z",
+      "subject": "chore(deps): bump dompurify from 3.4.16 to 3.4.17 in /docs/site (#908)"
+    },
+    {
+      "sha": "f021a45d083519e955ced222aa20689b0207453e",
+      "date": "2026-10-23T18:01:49Z",
+      "subject": "chore(deps): bump opentelemetry-api from 1.45.0 to 1.45.1 (#905)"
+    },
+    {
+      "sha": "2c11c6eaac526fc32580685269573a284d483c49",
+      "date": "2026-10-23T16:41:13Z",
+      "subject": "chore(deps): bump pillow from 12.3.0 to 13.0.0 (#904)"
+    },
+    {
+      "sha": "426e0116f7eadb8b085f15c18009de1c60745ccc",
+      "date": "2026-10-24T00:33:29+08:00",
+      "subject": "fix: keep git gc out of repository snapshots and split JSONL trajectories on newlines only (#903)"
+    },
+    {
+      "sha": "b8809cdcec899c7603708f6eaeddbb4955070043",
+      "date": "2026-10-23T23:01:46+08:00",
+      "subject": "fix: exclude engine-aborted records in record2record (#874)"
+    },
+    {
+      "sha": "f9e4fd1c493af1103492e472e0bfbcefad629f98",
+      "date": "2026-10-23T11:05:59Z",
+      "subject": "fix(train): restart and serve each LoRA scenario like full-weight training, so LoRA can save every N-th version (#900)"
+    },
+    {
+      "sha": "6d5a3a21de1ee0aa56832f10a8439c3d6247db6c",
+      "date": "2026-10-23T10:58:50Z",
+      "subject": "feat(record2task): stage saved tasks again and mark episodes that could not run (#839)"
+    },
+    {
+      "sha": "13c3472607092256d3ad24b5c0d3ab95d070e8a5",
+      "date": "2026-10-23T10:45:51Z",
+      "subject": "fix(record2task): run the generator service's jobs at the same time (#902)"
+    },
+    {
+      "sha": "8ba6304f398bf8cf2ffa6bd01a7c8ae715540f2d",
+      "date": "2026-10-23T09:22:36Z",
+      "subject": "feat(inference): train without an inference engine with inference.backend: none (#895)"
+    },
+    {
+      "sha": "1aaffca065611e6f9e97de924818b3c7c0fb7aeb",
+      "date": "2026-10-23T09:16:44Z",
+      "subject": "docs: rename the recipe catalog rows and add the distillation recipes (#892)"
+    },
+    {
+      "sha": "10e1ae5e56b36c1741f0e1a780d931e5f327eb43",
+      "date": "2026-10-23T17:01:41+08:00",
+      "subject": "feat(train): let Slime publish LoRA adapters to remote inference engines (#898)"
+    },
+    {
+      "sha": "70f95ac48bdede58153a89612da1d7793698e0a5",
+      "date": "2026-10-23T08:25:38Z",
+      "subject": "refactor(runtime)!: remove the compatibility paths for old training markers and commits (#897)"
+    },
+    {
+      "sha": "57921b5c8c66f816fb39079311b586b679da4889",
+      "date": "2026-10-23T08:18:53Z",
+      "subject": "fix(tests): keep SGLang variables out of vLLM engines and stop harness recipe tests installing npm packages (#896)"
+    },
+    {
+      "sha": "2cd99ddfb624d2474441187276b831cfa8f15d62",
+      "date": "2026-10-23T07:53:17Z",
+      "subject": "feat(train): let Slime publish full weights to remote inference engines (#891)"
+    },
+    {
+      "sha": "26c11035c828e30bb51b7fbe9441c543f1d734cd",
+      "date": "2026-10-23T14:36:29+08:00",
+      "subject": "refactor(train)!: let the training backend own the batch size, and keep a sample buffer in task2batch (#879)"
+    },
+    {
+      "sha": "3d9020556a5d1206cf18209033f89b422df7c0d1",
+      "date": "2026-10-23T04:48:54Z",
+      "subject": "fix(slime): empty the CUDA cache before the gradient collective when device memory is low (#894)"
+    },
+    {
+      "sha": "59e1a9435d22d8c93512672bc2103e2c31a0b087",
+      "date": "2026-10-22T21:55:38+08:00",
+      "subject": "feat(inference)!: serve trained weights from a remote inference component (#886)"
+    },
+    {
+      "sha": "0c441c7aed2c713fa507559a022bbea33fe43311",
+      "date": "2026-10-22T11:17:09Z",
+      "subject": "refactor(storage)!: keep SQLite commits in the scenario database (#888)"
+    },
+    {
+      "sha": "b1be760bb27118abb47d762335f609f5ca673242",
+      "date": "2026-10-22T10:14:14Z",
+      "subject": "refactor(runtime)!: select the weight transfer by preference and split colocated memory control (#884)"
+    },
+    {
+      "sha": "9efc654ed5c06223760c28216b71ec504cc6c58e",
+      "date": "2026-10-22T15:10:40+08:00",
+      "subject": "feat(inference, sft): chat_template_kwargs for the handler default and the SFT render (#885)"
+    },
+    {
+      "sha": "c97dd9c7f233ce354153dc6562dabd669eb3d14b",
+      "date": "2026-10-22T05:57:04Z",
+      "subject": "fix(train): report the Slime train step from the last pipeline stage (#882)"
+    },
+    {
+      "sha": "39590fb19b40d3cb607b414770cf6c8489f4e721",
+      "date": "2026-10-22T11:55:42+08:00",
+      "subject": "refactor!: publish every saved checkpoint, and drop checkpoint_every_n_versions (#881)"
+    },
+    {
+      "sha": "eba33dac69fc8c2de4607b9e8d2399470c8614b1",
+      "date": "2026-10-21T19:14:42+08:00",
+      "subject": "fix(train)!: save the Slime training checkpoint by --save-interval (#880)"
+    },
+    {
+      "sha": "52a9f188c916e410c89da1a13dc3e7246692850d",
+      "date": "2026-10-21T05:31:50Z",
+      "subject": "fix(train)!: refuse Slime's --save-interval, which Reef never reads (#876)"
+    },
+    {
+      "sha": "f9c0543ecfcdc3e73a0a58ccb03d27096a5327fe",
+      "date": "2026-10-21T13:00:05+08:00",
+      "subject": "feat!: import a deployment's Harbor tasks into each scenario, and let Cordis evaluate on their eval split (#875)"
+    },
+    {
+      "sha": "4bede1ce59bf7d3b7bd9ecc9701969ad1be6b2ba",
+      "date": "2026-10-20T15:57:44Z",
+      "subject": "ci: skip Claude Code Review on pull requests from forks (#872)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/MAINTAINER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/labeler.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/python-design-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check_python_design.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/check_test_layout.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/claude-code-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/claude.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/harness-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pull-request-base.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/review-reminders.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CITATION.cff",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/Dockerfile.reef",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/patch/sglang_qwen3_5_mrope_rope.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/patch/slime_qwen3_5_vision_numerics.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/patch/slime_qwen3_5_vl_vision_numerics.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/patch/slime_thd_cp1_indices.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced_topics/state-model.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contributing/adding-components.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contributing/codebase-structure.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contributing/testing.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/executors.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/harness-adapters.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/loss-families.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/processors.rst",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/developer-guide/sandboxes.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/surface.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/write-a-harness-method.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/developer-guide/write-a-recipe.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/core-loop.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/getting-started/quickstart.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/cli.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/glossary.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/http-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/python-api.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rfcs/method-integration.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rfcs/reef-router.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rfcs/stale-sample-training.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/lib/docs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/public/slides/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/scripts/check-doc-contracts.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/scripts/check-doc-links.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/site/scripts/fetch-repo-stats.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/evolve-your-harness.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/evolve-your-model.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/operate.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/gepa.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/guidance-ttt.rst",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/user-guide/recipes/opd.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/openclawrl.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/reefine.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/sao.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/sdft.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/sdpo.rst",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/user-guide/recipes/sft.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/skillclaw.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/recipes/tttd.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/scenario-models.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/tinker.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-guide/troubleshooting.rst",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/basic/external-provider.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/basic/local-sglang.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/author.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/author_tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/examples/tinker/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/autoenvscaling/sources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/examples/coral_demo/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/coral/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/spade/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/spade/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/spade/examples/tinker/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/beta/spade/generation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/beta/spade/generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "recipes/beta/spade/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "recipes/beta/spade/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/examples/aime/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/examples/aime/gepa.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/examples/aime/harness/aime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/examples/aime/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/method.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/gepa/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/examples/terminal_bench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/examples/terminal_bench/harness/benchmark.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/examples/terminal_bench/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/examples/terminal_bench/terminal_bench.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/method.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/population.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/meta_harness/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/examples/math/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/examples/math/prepare.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/examples/math/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/examples/math/results/2026-10-13-aime24-qwen3-8b-32b/learning_curve.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/examples/math/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/examples/math/run.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/examples/math/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/objective.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/slime/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/opd/slime/objective.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/examples/openclawrl/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/examples/openclawrl/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "recipes/openclawrl/judging.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/prm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/openclawrl/turns.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/examples/ceobench/harness/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/examples/ceobench/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/examples/imo_answerbench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/examples/imo_answerbench/serve-30b-multi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/examples/imo_answerbench/serve-30b.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/examples/imo_answerbench/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/examples/imo_answerbench/stream.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/slime/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sao/slime/objective.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdft/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdft/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdft/examples/skill_stream/harbor/science/environment/stage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdft/examples/skill_stream/harbor/tooluse/environment/stage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdft/examples/skill_stream/serve.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdft/processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdft/recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdpo/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "recipes/sdpo/__init__.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

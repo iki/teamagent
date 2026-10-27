@@ -1,0 +1,984 @@
+{
+  "id": "ai-query--docling",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/docling-project/docling",
+  "report": "spec/projects/ai-query--docling.md",
+  "analyzedSha": "51fe9ff4578e9f150ef3bc6246433e6092a8ebfb",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-04T01:04:30+08:00",
+  "observedSha": "53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4",
+      "date": "2026-10-23T17:00:16+02:00",
+      "subject": "feat(ASR): add transformers and MLX presets for the ASR pipelines (#4771)"
+    },
+    {
+      "sha": "36be1d247d6cc35bed2b815b64e1fd924e6f50ed",
+      "date": "2026-10-23T19:04:09+08:00",
+      "subject": "fix(docx): leave hidden text out of the default export (#4958)"
+    },
+    {
+      "sha": "db7995566b4facb1038c9356136c378ce8c6ce5d",
+      "date": "2026-10-23T11:44:36+02:00",
+      "subject": "fix(csv): use following rows when the header holds two delimiters (#4896)"
+    },
+    {
+      "sha": "5de229e511475e986e72218d74f738fe6a5c026a",
+      "date": "2026-10-23T11:23:46+02:00",
+      "subject": "docs: fix typos and grammar in FAQ, installation, and advanced options (#4986)"
+    },
+    {
+      "sha": "4d97a18aadec5d7fb71910e93f0850c39730a62d",
+      "date": "2026-10-23T11:17:25+02:00",
+      "subject": "docs: add RAG example with TopK (#4983)"
+    },
+    {
+      "sha": "e38fceb2ccd536b9e931e62189466a4c9ebc9576",
+      "date": "2026-10-23T11:14:03+02:00",
+      "subject": "feat(vlm): let a GenerationStopper declare a valid end of the output (#4927)"
+    },
+    {
+      "sha": "498c1b60fc2071b41e6da1719d0a85eb604113e0",
+      "date": "2026-10-23T08:18:47Z",
+      "subject": "chore: bump version to 2.142.1 [skip ci]"
+    },
+    {
+      "sha": "0db3aea34d93f370bd797f085b75f90a936f327e",
+      "date": "2026-10-23T09:26:06+02:00",
+      "subject": "fix: clamp page_range bounds to sys.maxsize (#4980)"
+    },
+    {
+      "sha": "ce0f04c4353800cb46475dff2ec6ace4606ca36e",
+      "date": "2026-10-23T09:24:34+02:00",
+      "subject": "fix: limit the decompressed size of DOCX, XLSX and EPUB archive members (#4977)"
+    },
+    {
+      "sha": "a63ec343ade9c994fabc0927083d39daae065421",
+      "date": "2026-10-23T08:49:49+02:00",
+      "subject": "fix(xlsx): clip merged-cell and hyperlink ranges while loading workbooks (#4979)"
+    },
+    {
+      "sha": "bae7aa3f24fe98b71e5aee9eb8f0d589e081ba73",
+      "date": "2026-10-23T08:47:25+02:00",
+      "subject": "fix: decode image pages on demand and limit decoded image pixels (#4976)"
+    },
+    {
+      "sha": "cf8959f769f16cf134c3395110806ff57e5bc86a",
+      "date": "2026-10-23T08:47:05+02:00",
+      "subject": "fix(xbrl): apply the fetch options to taxonomy references (#4975)"
+    },
+    {
+      "sha": "c06628838b12557a90cf8d2c622a213ea4eb80fd",
+      "date": "2026-10-23T08:46:54+02:00",
+      "subject": "fix(latex): clamp \\multicolumn and \\multirow spans (#4974)"
+    },
+    {
+      "sha": "be69ba3e55be98b8719b91f69c106998ca587016",
+      "date": "2026-10-23T08:46:44+02:00",
+      "subject": "fix(docx): bound argument runs in code call detection pattern (#4973)"
+    },
+    {
+      "sha": "7f574a0fd7a45627171c9d41b26dced7e4cb06aa",
+      "date": "2026-10-23T08:46:03+02:00",
+      "subject": "fix(asciidoc): stop constrained inline marks at the next mark (#4972)"
+    },
+    {
+      "sha": "a29600709c0428afb1df63dd139614c3ace8feb0",
+      "date": "2026-10-23T08:45:48+02:00",
+      "subject": "fix: bound the ODF mimetype read during ZIP format detection (#4971)"
+    },
+    {
+      "sha": "3980c8672c73c218163f4249edcf7fb2fb73ed1f",
+      "date": "2026-10-23T08:45:46+02:00",
+      "subject": "fix(latex): require trusted input for Tectonic TikZ rendering (#4970)"
+    },
+    {
+      "sha": "1ee1db0f648c4bd2d25146f5dd100d1b75d94d7d",
+      "date": "2026-10-22T19:24:43+02:00",
+      "subject": "ci: add nightly update of locked docling dependencies (#4978)"
+    },
+    {
+      "sha": "a03d5430cf52639af82a895aa7ea4858a880f418",
+      "date": "2026-10-22T19:24:30+02:00",
+      "subject": "chore: update locked deps and address eMudhra CA incident (#4939)"
+    },
+    {
+      "sha": "7d5fc2a51e563d7938731e8c0d61fb6324a1ae52",
+      "date": "2026-10-22T16:49:37+02:00",
+      "subject": "test(latex): let the arXiv corpus test re-check failures and read chosen shards (#4969)"
+    },
+    {
+      "sha": "6aaf87ebd99b8c7d3699d90f7aba372555d0140e",
+      "date": "2026-10-22T14:28:22Z",
+      "subject": "chore: bump version to 2.142.0 [skip ci]"
+    },
+    {
+      "sha": "787ad5e789ed850f8a2f3c0cbb67cf999826d3c4",
+      "date": "2026-10-22T15:53:14+02:00",
+      "subject": "fix(cli): exit with code 1 when a document fails to convert (#4888)"
+    },
+    {
+      "sha": "3b0f25f9b2d2bb8cc13992120f5c94a961a70042",
+      "date": "2026-10-22T15:47:22+02:00",
+      "subject": "fix(nemotron-parse): bound work on untrusted model output (#4923)"
+    },
+    {
+      "sha": "a4016299b0fcdfa4cc299ddda13825f5c59e583b",
+      "date": "2026-10-22T15:36:52+02:00",
+      "subject": "fix: align transformer engine input dtype with model weights (fixes #3110) (#4158)"
+    },
+    {
+      "sha": "d18c25b9c094592e7b1108d1a2694b678f50dbdc",
+      "date": "2026-10-22T15:36:38+02:00",
+      "subject": "fix(asr): end merged sentences at full-width CJK punctuation (#4836)"
+    },
+    {
+      "sha": "af3e144f294e5af7ca0c7f327aac94ba3965d2a5",
+      "date": "2026-10-22T15:26:49+02:00",
+      "subject": "feat(afp): treat a move to a new baseline as a line boundary (#4962)"
+    },
+    {
+      "sha": "4e6a6155ebf530553d631bc7cca2074a8489be2a",
+      "date": "2026-10-22T14:12:17+02:00",
+      "subject": "fix: adapt to docling-core 2.103.1 image and HTML changes"
+    },
+    {
+      "sha": "91a64399f8767ec93470869d65c6a25be4a59e2d",
+      "date": "2026-10-22T14:12:17+02:00",
+      "subject": "docs(vlm): correct the heading rule docs and comments"
+    },
+    {
+      "sha": "197a65c3c05320b58495648656ab973b171329d4",
+      "date": "2026-10-22T14:12:17+02:00",
+      "subject": "fix(deps): require docling-core 2.103.1"
+    },
+    {
+      "sha": "73b7c97c8316501502abb8d417f0ed7c0419ac2e",
+      "date": "2026-10-22T14:12:17+02:00",
+      "subject": "fix(vlm): keep every markup heading depth distinct across VLM mappers"
+    },
+    {
+      "sha": "d2b076a944f0bf0dd47f87f43037b2ad5a2894a2",
+      "date": "2026-10-22T14:12:17+02:00",
+      "subject": "fix(vlm): share the Nemotron 3.5 formula delimiter normalizer"
+    },
+    {
+      "sha": "91332c99b68c6d8290253fb1a574aba511099b50",
+      "date": "2026-10-22T14:12:17+02:00",
+      "subject": "fix: normalize Nemotron formula delimiters before export"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/skills/review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/skill-router.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/review",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codex/skills/review",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CI_LABELS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/run-bobshell/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-ubuntu-ci/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ai-triage/custom_modes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ai-triage/review-prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ai-triage/triage-prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/max-lines-ignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ai_pr_event.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ai_pr_review.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/ai_pr_triage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/check_skill_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/groundtruth_diff.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/pr_approval_reminder.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/pr_topic_labels.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ai-pr-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-reminders.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pypi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/update-deps.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/python-sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/service-client.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/afp_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/asciidoc_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/csv_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/docling_parse_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/ebcdic_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/email_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/epub_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/html_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/image_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/iwork/archives.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/iwork/cells.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/iwork/chart_image.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/iwork/charts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/iwork/numbers_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/iwork/numbers_iwa.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/iwork/numbers_xml.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/iwork_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/json/docling_json_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/constants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/engines/tectonic.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/handlers/environments.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/handlers/macros.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/handlers/math.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/latex/handlers/metadata.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/utils/latex_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/utils/table.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/latex/utils/text.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/latex/utils/whitespace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/md_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/msexcel_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/mspowerpoint_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/msword_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/opendocument_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/pdf_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/pypdfium2_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/utils/archive_limits.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/utils/charts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/utils/image.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/utils/image_resource_loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/utils/markdown_html.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/xml/jats_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/xml/xbrl_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/backend/xml/xbrl_web_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/cli/engine_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/remote.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/asr_model_specs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/datamodel/asr_presets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/backend_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/base_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/chart_extraction_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/pipeline_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/pipeline_options_asr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/pipeline_options_vlm_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/datamodel/progress.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/service/options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/service/responses.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/spatial.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/stage_model_specs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/vlm_engine_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/vlm_model_specs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/document_converter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/experimental/pipeline/threaded_layout_vlm_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/base_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/base_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/extraction/nuextract_transformers_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/extraction/transformers_extraction_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/image_classification/transformers_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/object_detection/transformers_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/api_openai_compatible_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/auto_inline_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/mlx_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/transformers_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/inference_engines/vlm/vllm_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/picture_description_base_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/postprocessing/reading_order_rb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/chart_extraction/granite_vision.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/code_formula/code_formula_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/code_formula/code_formula_vlm_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/form_field_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/candidates.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/geometry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/inputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/rules.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/solver.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/symmetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/tables.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/models/stages/form_field/keying/types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/heading_hierarchy/heading_hierarchy_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/easyocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/nemotron_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/ocr_mac_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/rapid_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/tesseract_ocr_cli_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/tesseract_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/page_assemble/page_assemble_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/picture_classifier/document_picture_classifier.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/reading_order/readingorder_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/utils/generation_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/utils/hf_model_download.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/utils/hf_stopping_criteria.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/vlm_pipeline_models/api_vlm_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/vlm_pipeline_models/hf_transformers_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/vlm_pipeline_models/mlx_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/vlm_pipeline_models/vllm_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/asr_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/asr_transcriber.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/pipeline/asr_transformers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/base_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/native_pdf_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/standard_pdf_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/video_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/vlm_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/service_client/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/api_image_request.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/chandra_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/deepseekocr_utils.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

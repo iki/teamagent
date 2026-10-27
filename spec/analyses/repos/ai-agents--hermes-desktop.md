@@ -1,0 +1,207 @@
+# hermes-desktop: change evidence
+
+Source: [hermes-desktop](https://github.com/fathah/hermes-desktop) · [Analysis](../../projects/ai-agents--hermes-desktop.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `2ed89070bc6c9e8231a37bb55df8a7722a3776b8`; commit date: 2026-09-24T18:32:34+04:00; review date: unknown; observed SHA: `171024862c849475634d217a5635fedff796360c`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/fathah/hermes-desktop/compare/2ed89070bc6c9e8231a37bb55df8a7722a3776b8...171024862c849475634d217a5635fedff796360c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [171024862c84](https://github.com/fathah/hermes-desktop/commit/171024862c849475634d217a5635fedff796360c) 2026-10-13T20:23:54+05:30: Update issue-triage-ledger.md
+- [23c78fc18afc](https://github.com/fathah/hermes-desktop/commit/23c78fc18afc009be31067117e479652d378a167) 2026-10-12T10:35:14+05:30: test(settings): settle About remount before update admission (#1032)
+- [ec163da40a7a](https://github.com/fathah/hermes-desktop/commit/ec163da40a7ab707663066723ff5c26236148348) 2026-10-12T10:29:19+05:30: test(updates): settle About remount before update admission
+- [d80d90741335](https://github.com/fathah/hermes-desktop/commit/d80d90741335170dc1d4e150b5accf413e590775) 2026-10-12T10:10:28+05:30: fix(updates): show measured downloads and owned Agent phases (#1030)
+- [41107c0e7770](https://github.com/fathah/hermes-desktop/commit/41107c0e7770d6d3b5d89aaca8ec29b92d16bf7f) 2026-10-12T10:08:26+05:30: fix(chat): recover confirmed missing reply tails (#1024)
+- [acaf9ea1a5cc](https://github.com/fathah/hermes-desktop/commit/acaf9ea1a5cc726c529d003e1b78f42b8096eed0) 2026-10-12T09:58:43+05:30: fix(chat): retain bottom follow and respect upward reading (#1028)
+- [f4af0de3ec44](https://github.com/fathah/hermes-desktop/commit/f4af0de3ec449871ae5948427d4df6c59295a006) 2026-10-12T09:53:21+05:30: fix(backup): require consent and pin the restore profile (#1031)
+- [56b4b58d5993](https://github.com/fathah/hermes-desktop/commit/56b4b58d5993aeb12f26d62ab3edf79e70b662f5) 2026-10-12T09:52:44+05:30: Merge current main into reply-tail recovery repair
+- [e7c0a1bbb35d](https://github.com/fathah/hermes-desktop/commit/e7c0a1bbb35d8d48fe391697853a3fb20c70a0e1) 2026-10-12T09:52:17+05:30: Merge main into update progress repair
+- [4813ebf65e39](https://github.com/fathah/hermes-desktop/commit/4813ebf65e39f1d797c62ddf9e24be9b19c32b0b) 2026-10-12T09:47:37+05:30: feat(providers): expose OpenCode Zen and Go presets (#1027)
+- [ae7b0d38b206](https://github.com/fathah/hermes-desktop/commit/ae7b0d38b2063b4bec2e06f68ec223da757580ad) 2026-10-12T09:45:16+05:30: fix(remote): allow default Legacy model inventory reads (#1025)
+- [bc0dd9f2eee4](https://github.com/fathah/hermes-desktop/commit/bc0dd9f2eee42b71ba300d321f3b2cf47e5f74f9) 2026-10-12T09:42:02+05:30: docs(backup): describe the post-consent mode check precisely
+- [f1468fae0e8f](https://github.com/fathah/hermes-desktop/commit/f1468fae0e8f847d5b51fa79a17b2ec4296e7461) 2026-10-12T09:40:52+05:30: fix(community): restore valid Discord invitation links (#1022)
+- [c9de385e5913](https://github.com/fathah/hermes-desktop/commit/c9de385e5913403700760fba9fbc5e0f2873c7b1) 2026-10-12T09:40:37+05:30: fix(updates): keep operations running after window closes
+- [b4a94203ad7e](https://github.com/fathah/hermes-desktop/commit/b4a94203ad7ed849249de4d1eea9c68232c85693) 2026-10-12T09:40:26+05:30: fix(chat): retain following through native bottom clamps
+- [29c085bbd7c9](https://github.com/fathah/hermes-desktop/commit/29c085bbd7c9c8a1c95df37d9a232fb6aeb44fe0) 2026-10-12T09:39:54+05:30: docs: clarify desktop downloads and source dependencies (#1029)
+- [34aec6ab0ad6](https://github.com/fathah/hermes-desktop/commit/34aec6ab0ad6ac52f4a9f640aa97d338ffc57619) 2026-10-12T09:38:30+05:30: fix(tls): honor system trust roots in main-process HTTPS (#1026)
+- [2698cebdc697](https://github.com/fathah/hermes-desktop/commit/2698cebdc697b266f10ec4d8a8f47c4ce9ac7049) 2026-10-12T09:37:15+05:30: docs(backup): specify Local restore switch boundary
+- [dbac07f8a3d2](https://github.com/fathah/hermes-desktop/commit/dbac07f8a3d2b9b0bcda2f56db4a5399ae2dc777) 2026-10-12T09:36:27+05:30: fix(chat): preserve saved sessions after busy refusal (#1023)
+- [3e134c8882f6](https://github.com/fathah/hermes-desktop/commit/3e134c8882f6743a4f1208cfad4c249db54b5e8b) 2026-10-12T09:34:39+05:30: fix(chat): preserve upward intent and editor navigation
+- [4ae82ce28cae](https://github.com/fathah/hermes-desktop/commit/4ae82ce28caec41d41fa02f75eacdaad9fb75964) 2026-10-12T09:34:19+05:30: docs(install): scope contributing link to development
+- [171c0d9042a0](https://github.com/fathah/hermes-desktop/commit/171c0d9042a0c537a76a8ee583b71ff28157d36c) 2026-10-12T09:31:03+05:30: fix(linux): restore complete package installation hooks (#1021)
+- [b8bf1685b47f](https://github.com/fathah/hermes-desktop/commit/b8bf1685b47f5dc5909c54feb0b1e6a35d6c0b9b) 2026-10-12T09:28:43+05:30: fix(updates): show measured downloads and honest Agent phases
+- [ae61c8404f30](https://github.com/fathah/hermes-desktop/commit/ae61c8404f3009b9b0990b9b17ef989a26e97ccb) 2026-10-12T09:27:16+05:30: fix(backup): require native consent for noninteractive restore
+- [3232fa5126c9](https://github.com/fathah/hermes-desktop/commit/3232fa5126c9284b2652370c7ad66401187287b3) 2026-10-12T09:24:34+05:30: docs(install): distinguish desktop downloads from npm dependencies
+- [6729fe0af4c7](https://github.com/fathah/hermes-desktop/commit/6729fe0af4c76390b32385cc70df900d5471fbfc) 2026-10-12T09:17:10+05:30: fix(providers): expose native OpenCode Zen and Go setup
+- [f98c4e2536d0](https://github.com/fathah/hermes-desktop/commit/f98c4e2536d0896aac9b51c7556b90e7bd90f6d2) 2026-10-12T09:14:37+05:30: fix(office): pause retained rendering while hidden (#1020)
+- [3609ecf831e3](https://github.com/fathah/hermes-desktop/commit/3609ecf831e3c3332d2add7dcda7e148ca96f214) 2026-10-12T09:13:54+05:30: fix(chat): retain empty transcript centering
+- [e231a94cb433](https://github.com/fathah/hermes-desktop/commit/e231a94cb433e97e7befa54c9c30765d935a13bc) 2026-10-12T09:08:26+05:30: fix(chat): preserve bottom follow through transcript growth
+- [5e7c672d319a](https://github.com/fathah/hermes-desktop/commit/5e7c672d319a93b15334401eb464fa9af8240bd2) 2026-10-12T09:02:02+05:30: fix(tls): preserve default CAs and trust system roots early
+- [317ce16dcd61](https://github.com/fathah/hermes-desktop/commit/317ce16dcd61a0556d2af42206e265e690ff209d) 2026-10-12T08:57:49+05:30: test(packaging): skip POSIX hook execution on Windows
+- [b8d206bd2c73](https://github.com/fathah/hermes-desktop/commit/b8d206bd2c73e66ccdfb30c112a9904e95b8fb2f) 2026-10-12T08:57:45+05:30: fix(chat): recover confirmed missing assistant tails
+
+## Changed paths (truncated)
+
+- M: `.codex/issue-triage-ledger.md`
+- M: `.github/workflows/ci.yml`
+- M: `README.es-LATAM.md`
+- M: `README.md`
+- A: `SECURITY.md`
+- D: `build/linux-after-install.sh`
+- A: `docs/images/bot-groups/desktop-1280.png`
+- A: `docs/images/bot-groups/desktop-600.png`
+- M: `electron-builder.yml`
+- M: `electron.vite.config.ts`
+- M: `lat.md/agent-sync.md`
+- A: `lat.md/approval-completion.md`
+- A: `lat.md/backup-import.md`
+- A: `lat.md/bot-groups.md`
+- M: `lat.md/chat-commands.md`
+- M: `lat.md/chat-input.md`
+- M: `lat.md/chat-performance.md`
+- M: `lat.md/code-blocks.md`
+- A: `lat.md/config-health-navigation.md`
+- M: `lat.md/connections.md`
+- A: `lat.md/dashboard-shutdown.md`
+- M: `lat.md/desktop-security.md`
+- M: `lat.md/desktop-updates.md`
+- A: `lat.md/discover.md`
+- A: `lat.md/external-memory-providers-tests.md`
+- A: `lat.md/external-memory-providers.md`
+- M: `lat.md/kanban.md`
+- M: `lat.md/lat.md`
+- M: `lat.md/main-process.md`
+- M: `lat.md/mcp-servers.md`
+- M: `lat.md/model-context.md`
+- M: `lat.md/model-selection.md`
+- A: `lat.md/office-rendering-tests.md`
+- A: `lat.md/office-rendering.md`
+- M: `lat.md/onboarding.md`
+- A: `lat.md/profile-editors.md`
+- M: `lat.md/provider-setup.md`
+- M: `lat.md/remote-dashboard-oauth.md`
+- A: `lat.md/remote-profiles.md`
+- A: `lat.md/remote-providers.md`
+- A: `lat.md/rtl-chat.md`
+- M: `lat.md/scheduled-jobs.md`
+- A: `lat.md/session-title-generation.md`
+- A: `lat.md/shared-pets.md`
+- M: `lat.md/sidebar-navigation.md`
+- A: `lat.md/speech-playback-tests.md`
+- A: `lat.md/speech-playback.md`
+- A: `lat.md/ssh-session-delete.md`
+- A: `lat.md/subagents.md`
+- M: `lat.md/wallet-token-balances.md`
+- M: `package-lock.json`
+- M: `package.json`
+- A: `scripts/verify-bot-groups-runtime.py`
+- A: `scripts/verify-bot-groups-ui.mjs`
+- A: `src/main/app/managed-quit.ts`
+- M: `src/main/app/start.ts`
+- M: `src/main/app/updater.ts`
+- A: `src/main/bot-groups.test.ts`
+- A: `src/main/bot-groups.ts`
+- M: `src/main/config.ts`
+- M: `src/main/connection-status.test.ts`
+- M: `src/main/connection-status.ts`
+- A: `src/main/cronjobs.history-proxy.test.ts`
+- A: `src/main/cronjobs.history.test.ts`
+- M: `src/main/cronjobs.ts`
+- A: `src/main/dashboard-api-url.test.ts`
+- A: `src/main/dashboard-api-url.ts`
+- A: `src/main/dashboard-process-stop.ts`
+- M: `src/main/dashboard.ts`
+- M: `src/main/db.ts`
+- A: `src/main/gateway-liveness.ts`
+- A: `src/main/gateway-ports.test.ts`
+- M: `src/main/gateway-ports.ts`
+- M: `src/main/hermes.test.ts`
+- M: `src/main/hermes.ts`
+- M: `src/main/host-derived-env.ts`
+- M: `src/main/index.ts`
+- M: `src/main/installer-download.ts`
+- A: `src/main/installer-errors.ts`
+- A: `src/main/installer-windows-download.ts`
+- M: `src/main/installer.ts`
+- M: `src/main/ipc/register.ts`
+- A: `src/main/js-yaml.d.ts`
+- M: `src/main/kanban.ts`
+- A: `src/main/mcp-servers.captured.test.ts`
+- A: `src/main/mcp-servers.remote.test.ts`
+- M: `src/main/mcp-servers.ts`
+- A: `src/main/memory-provider-discovery.test.ts`
+- A: `src/main/memory-provider-discovery.ts`
+- M: `src/main/memory.ts`
+- A: `src/main/messaging-platforms.remote.test.ts`
+- M: `src/main/messaging-platforms.ts`
+- A: `src/main/minimax-speech.ts`
+- A: `src/main/profile-editor-target.test.ts`
+- A: `src/main/profile-editor-target.ts`
+- A: `src/main/profiles.gateway-status.test.ts`
+- M: `src/main/profiles.ts`
+- M: `src/main/provider-registry.ts`
+- A: `src/main/provider-request-target.ts`
+- A: `src/main/registry-integrity.ts`
+- M: `src/main/registry.ts`
+- A: `src/main/remote-discover.test.ts`
+- A: `src/main/remote-discover.ts`
+- A: `src/main/remote-gateway.test.ts`
+- A: `src/main/remote-gateway.ts`
+- A: `src/main/remote-kanban.test.ts`
+- A: `src/main/remote-kanban.ts`
+- A: `src/main/remote-memory.test.ts`
+- A: `src/main/remote-memory.ts`
+- A: `src/main/remote-models.ipc.test.ts`
+- M: `src/main/remote-models.ts`
+- M: `src/main/remote-oauth.ts`
+- A: `src/main/remote-profile-selection.ts`
+- A: `src/main/remote-profiles.ipc.test.ts`
+- A: `src/main/remote-profiles.test.ts`
+- A: `src/main/remote-profiles.ts`
+- A: `src/main/remote-providers.test.ts`
+- A: `src/main/remote-providers.ts`
+- A: `src/main/remote-session-usage.test.ts`
+- A: `src/main/remote-session-usage.ts`
+- M: `src/main/remote-sessions.ts`
+- M: `src/main/remote-skills.test.ts`
+- M: `src/main/remote-skills.ts`
+- M: `src/main/session-cache.ts`
+- A: `src/main/session-conversation.ts`
+- A: `src/main/sessions.test.ts`
+- M: `src/main/sessions.ts`
+- A: `src/main/speech.test.ts`
+- A: `src/main/speech.ts`
+- A: `src/main/ssh-command.ts`
+- M: `src/main/ssh-remote.ts`
+- A: `src/main/ssh-session-delete.ts`
+- M: `src/main/ssh-tunnel.ts`
+- A: `src/main/system-ca-trust.test.ts`
+- A: `src/main/system-ca-trust.ts`
+- M: `src/main/tui-gateway-stream.test.ts`
+- M: `src/main/tui-gateway-stream.ts`
+- M: `src/main/utils.ts`
+- M: `src/main/wallet-balances.test.ts`
+- A: `src/main/yaml-document.ts`
+- M: `src/preload/index.d.ts`
+- M: `src/preload/index.ts`
+- A: `src/renderer/src/assets/logos/requesty.svg`
+- M: `src/renderer/src/assets/main.css`
+- M: `src/renderer/src/components/AgentMarkdown.test.tsx`
+- M: `src/renderer/src/components/AgentMarkdown.tsx`
+- M: `src/renderer/src/components/ConfigHealthBanner.tsx`
+- M: `src/renderer/src/components/I18nProvider.test.tsx`
+- A: `src/renderer/src/components/ProviderEndpointIdentity.test.tsx`
+- A: `src/renderer/src/components/ProviderKeysSection.test.tsx`
+- M: `src/renderer/src/components/ProviderKeysSection.tsx`
+- M: `src/renderer/src/components/common/BrandLogo.tsx`
+- A: `src/renderer/src/components/common/useUpdateDownloadText.ts`
+- A: `src/renderer/src/components/pet/FloatingPet.test.tsx`
+- A: `src/renderer/src/components/pet/FloatingPet.tsx`
+- A: `src/renderer/src/components/pet/PetSettings.test.tsx`
+- A: `src/renderer/src/components/pet/PetSettings.tsx`
+- A: `src/renderer/src/components/pet/PetSprite.test.tsx`
+- A: `src/renderer/src/components/pet/PetSprite.tsx`
+- A: `src/renderer/src/components/pet/petGateway.test.ts`

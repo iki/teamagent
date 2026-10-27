@@ -26,3 +26,7 @@ A classifier score is not a guarantee that a file is safe, well-formed or suppor
 Adopt as an optional MIME-sniffing stage with an unknown/ambiguous outcome and parser-confirmation fallback. Preserve both extension and detected type in metadata. Do not authorize execution based on classification. Test mislabeled files, empty/tiny inputs, mixed encodings, archives, polyglots and streams with nonzero initial positions. Measure downstream parser success and false-routing cost rather than reporting classifier accuracy alone.
 
 Related directions: [import-generation](../import-generation.md) · [decisions](../decisions.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [magika](https://github.com/google/magika); analyzed commit `dbd9d853848ed5222b5ccfed9e2c957ac623d85e`; commit date 2026-10-02T10:54:58+02:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--magika.md).
+<!-- teamagent-analysis:end -->

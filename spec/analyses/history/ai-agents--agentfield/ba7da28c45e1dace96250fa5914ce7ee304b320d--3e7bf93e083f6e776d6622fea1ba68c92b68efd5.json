@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--agentfield",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/Agent-Field/agentfield",
+  "report": "spec/projects/ai-agents--agentfield.md",
+  "analyzedSha": "ba7da28c45e1dace96250fa5914ce7ee304b320d",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-01T21:51:23Z",
+  "observedSha": "3e7bf93e083f6e776d6622fea1ba68c92b68efd5",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3e7bf93e083f6e776d6622fea1ba68c92b68efd5",
+      "date": "2026-10-20T14:10:35Z",
+      "subject": "chore(release): v0.1.143-rc.4 [skip ci]"
+    },
+    {
+      "sha": "d70e07c56b82df1698489d4f5f80bc7d451b4dd0",
+      "date": "2026-10-20T14:09:15Z",
+      "subject": "feat: configurable PromptTemplates layer across Python/TS/Go SDKs (#229) (#1092)"
+    },
+    {
+      "sha": "1acaf31c974f48386b1c8f5937cd9b124db91ca4",
+      "date": "2026-10-20T13:12:35Z",
+      "subject": "chore(release): v0.1.143-rc.3 [skip ci]"
+    },
+    {
+      "sha": "b312ba5c6d439438f6d9505898ecd22f976d79b9",
+      "date": "2026-10-20T13:11:16Z",
+      "subject": "fix(sdk/python): stop retrying permanent status callbacks (#1109)"
+    },
+    {
+      "sha": "aaa8dc5d94c13c91baa1ed5be99eba57f11669c4",
+      "date": "2026-10-20T12:51:10Z",
+      "subject": "chore(release): v0.1.143-rc.2 [skip ci]"
+    },
+    {
+      "sha": "a053d68c0bd1c0aa745d0f690bad46b37701cb13",
+      "date": "2026-10-20T12:49:55Z",
+      "subject": "fix(sdk/python): parse remaining boolean env flags with the SDK-wide vocabulary (#1089) (#1123)"
+    },
+    {
+      "sha": "c7a3d5b92be3a50e51c2cb3f378e391f269eb6bf",
+      "date": "2026-10-19T22:33:23Z",
+      "subject": "chore(release): v0.1.143-rc.1 [skip ci]"
+    },
+    {
+      "sha": "c794b4ee9bddf8d0cddcc5aa46125cf042e10e96",
+      "date": "2026-10-19T22:32:14Z",
+      "subject": "chore(deps): patch npm Dependabot advisories (brace-expansion, http-cache-semantics, fast-uri, undici) (#1095)"
+    },
+    {
+      "sha": "f3e284af42ecd93a670b56cca4efaaea68d93a44",
+      "date": "2026-10-19T22:32:12Z",
+      "subject": "fix(sdk): stop harness retries triggered by prompt text in timeout errors (#1104)"
+    },
+    {
+      "sha": "92dcfa69a25015b17fc987f6e28132becc8eeedf",
+      "date": "2026-10-19T22:32:10Z",
+      "subject": "feat(examples): add optional Keenable search backend to deep_research (#1110)"
+    },
+    {
+      "sha": "0ab945cbda52ed3bacbfe459dcc0baa5af48b80f",
+      "date": "2026-10-19T22:32:08Z",
+      "subject": "chore(deps): bump the uv group across 1 directory with 2 updates (#1103)"
+    },
+    {
+      "sha": "f59a9c2aa97890d8b370d9384b8308581b31e2c5",
+      "date": "2026-10-19T21:23:09Z",
+      "subject": "chore(release): v0.1.142 [skip ci]"
+    },
+    {
+      "sha": "7cfc3d750e096e7555ad63070ce8f6ef4acf22c5",
+      "date": "2026-10-19T20:53:55Z",
+      "subject": "chore(release): v0.1.142-rc.20 [skip ci]"
+    },
+    {
+      "sha": "78398d0568c82392b3c1e5e8c71a92c9b2add193",
+      "date": "2026-10-19T16:53:31-04:00",
+      "subject": "fix(control-plane): refuse IPv4-embedding and special-use ranges in the webhook URL guard (#1122)"
+    },
+    {
+      "sha": "4eb659f7086c36518cbc7285805e36bf4b6b036f",
+      "date": "2026-10-19T19:46:39Z",
+      "subject": "chore(release): v0.1.142-rc.19 [skip ci]"
+    },
+    {
+      "sha": "17abda758c7469fb92d80b89dd0bfc47b13e9cfd",
+      "date": "2026-10-19T15:46:06-04:00",
+      "subject": "fix(control-plane): run session tool calls through the execute pipeline in-process (#1121)"
+    },
+    {
+      "sha": "3e2849913c8dfc31a8720d90df3e30051e859934",
+      "date": "2026-10-19T18:46:12Z",
+      "subject": "chore(release): v0.1.142-rc.18 [skip ci]"
+    },
+    {
+      "sha": "f0771542f7dcc5223389eaacb864369cb131a944",
+      "date": "2026-10-19T14:45:42-04:00",
+      "subject": "fix(control-plane): validate agent endpoints and restrict control-plane-to-agent destinations (#1116)"
+    },
+    {
+      "sha": "884d7ed1fb9819cd0909d8dac9c00e93a13c0f05",
+      "date": "2026-10-19T18:14:22Z",
+      "subject": "chore(release): v0.1.142-rc.17 [skip ci]"
+    },
+    {
+      "sha": "8e2650bf50a1bead2384999d3502f3b19097f67c",
+      "date": "2026-10-19T14:10:00-04:00",
+      "subject": "fix(control-plane): preserve DID identities across restarts and home path changes (#1119)"
+    },
+    {
+      "sha": "f4ea098b8d8db06763816828dfa98f1969d0fc84",
+      "date": "2026-10-19T14:09:48-04:00",
+      "subject": "fix(web): render untrusted markdown and links safely in the UI (#1118)"
+    },
+    {
+      "sha": "415ae3e4accad3d86d3f51e9b7f7094904a1f783",
+      "date": "2026-10-19T18:09:10Z",
+      "subject": "chore(release): v0.1.142-rc.16 [skip ci]"
+    },
+    {
+      "sha": "c53dfb9f7ab532aa9f461c3920d630156f9f0f40",
+      "date": "2026-10-19T14:08:49-04:00",
+      "subject": "fix(control-plane): enforce memory authorization on the scope each request accesses (#1117)"
+    },
+    {
+      "sha": "56bb3476d333d01352e921b540247786270976e6",
+      "date": "2026-10-19T17:42:55Z",
+      "subject": "chore(release): v0.1.142-rc.15 [skip ci]"
+    },
+    {
+      "sha": "8aa3aba466c375a70ed469b6527cf21830cf037a",
+      "date": "2026-10-19T13:42:30-04:00",
+      "subject": "test(sdk/python): drop the stale enable_mcp kwarg from Agent fixtures (#1120)"
+    },
+    {
+      "sha": "2f5583e5d88f27c1175e58978a4464463553b38d",
+      "date": "2026-10-17T03:15:27Z",
+      "subject": "chore(release): v0.1.142-rc.14 [skip ci]"
+    },
+    {
+      "sha": "2460793da1997274f02863dd3694a2db566075be",
+      "date": "2026-10-16T23:14:55-04:00",
+      "subject": "fix(sdk/python): make memory exists() detect a missing key (#1106)"
+    },
+    {
+      "sha": "d85ece35202c7a5a2a3da5b16ea971833787738e",
+      "date": "2026-10-17T03:01:20Z",
+      "subject": "chore(release): v0.1.142-rc.13 [skip ci]"
+    },
+    {
+      "sha": "07e148dde7424150ca7ddae0f3062d26e4be3170",
+      "date": "2026-10-16T23:00:51-04:00",
+      "subject": "fix(sdk/python): report a provider-confirmed zero cost instead of unknown (#1105)"
+    },
+    {
+      "sha": "9bd0a0dd2510f4e3bc58e466046d76b591e09366",
+      "date": "2026-10-15T15:21:41Z",
+      "subject": "chore(release): v0.1.142-rc.12 [skip ci]"
+    },
+    {
+      "sha": "ef721281a6fcb8f38d9beeb65ba0255d3a415ef8",
+      "date": "2026-10-15T11:21:09-04:00",
+      "subject": "fix(control-plane): write the executions row for legacy reasoner and skill calls (#1099)"
+    },
+    {
+      "sha": "d5fa13811280e9912ad486c3787f9c567ada1a5b",
+      "date": "2026-10-15T14:58:55Z",
+      "subject": "chore(release): v0.1.142-rc.11 [skip ci]"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/sdk-typescript.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/config/agentfield.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/agenturl/agenturl_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/agenturl/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/agenturl/policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/agenturl/url.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/application/container.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/cli/furrow_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/cli/vc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/cli/verify_provenance.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/cli/verify_provenance_unresolved_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/config/agent_endpoint_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/events/usage.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/events/usage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/handlers/agent_endpoint_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/agentic/status_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/config_storage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/connector/handlers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/coverage_handlers_90_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/coverage_handlers_92_target_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/coverage_low_branches_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/coverage_raise_88_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/did_handlers.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/handlers/did_vc_chain_verifiable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/empty_input_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_agent_restart.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_agent_restart_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_approval_ssrf_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_async_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_handler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_helpers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_prepare.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/execute_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/memory.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/handlers/memory_authorization_regression_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/memory_events.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/handlers/memory_events_authorization_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/memory_isolation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/nodes_discovery_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/nodes_register.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/nodes_serverless_ssrf_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/nodes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/reasoners.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/reasoners_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/sessions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/handlers/ui/agent_endpoint_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/ui/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/ui/coverage_did_services_additional_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/ui/did.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/handlers/ui/did_h2_issuance_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/handlers/ui/did_vc_chain_verifiable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/ui/lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/ui/node_logs.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/ui/observability_webhook_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/usage_ingest.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/usage_ingest_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/handlers/vector_memory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/infrastructure/communication/agent_client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/infrastructure/communication/agent_endpoint_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/observability/telemetry.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/observability/usage_telemetry.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/observability/usage_telemetry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/packages/agent_endpoint_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/packages/node_http.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/server/agent_endpoint_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/server/middleware/memory_authorizer.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/server/middleware/memory_authorizer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/server/middleware/memory_event_streams_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/middleware/memory_permission.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/middleware/memory_permission_additional_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/middleware/memory_permission_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/routes_core.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/routes_memory.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/server/routes_memory_authorization_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/server/routes_session_tools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/server_ingress_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/server/server_routes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/agent_endpoint_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/cancel_dispatcher.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_g1_retry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_g2_quarantine_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_h1_retirement_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_i1_publication_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_identity_continuity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_identity_hardening_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_identity_integrity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_identity_rehydration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/did_registry.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/did_registry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/did_service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/did_service_helpers_additional_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/did_takeover_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/observability_forwarder_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/services92_did_additional_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/ssrf_safe_client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/ssrf_safe_client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/trigger_dispatcher.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/vc_chain.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/vc_chain_verifiable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/services/vc_g3_issuer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/vc_issuance.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/vc_issuance_trigger.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/services/webhook_dispatcher_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/skillkit/furrow_install_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/storage/local.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/storage/local_did.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/storage/local_did_component_status_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/internal/storage/local_did_g1_deadline_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/storage/models.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/storage/storage.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/templates/go/go.mod.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/templates/python/requirements.txt.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/internal/templates/typescript/package.json.tmpl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/migrations/037_component_did_status.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/migrations/038_agent_did_x25519_epoch.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/pkg/types/did_types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/pkg/types/usage.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/components/execution/CompactExecutionHeader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/execution/EnhancedModal.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/components/execution/EnhancedModal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/components/execution/ExecutionApprovalPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/execution/approval-url.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/ui/SafeMarkdown.boundary.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/ui/SafeMarkdown.followup.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/ui/SafeMarkdown.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/ui/SafeMarkdown.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/ui/UnifiedJsonViewer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/components/ui/UnifiedJsonViewer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/ui/json-syntax-highlight.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/components/ui/json-syntax-highlight.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/components/vc/VCChainVerifiabilityWarning.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/components/vc/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/pages/DiscoveryPage.security.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/pages/DiscoveryPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/pages/RunDetailPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/test/components/vc/VCChainVerifiabilityWarning.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "control-plane/web/client/src/test/markdownSecurity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/test/pages/DiscoveryPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/test/pages/RunDetailPage.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/test/ui/UnifiedJsonViewer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/test/ui/ui-modals.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/types/did.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/utils/safeExternalUrl.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "control-plane/web/client/src/utils/safeExternalUrl.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ENVIRONMENT_VARIABLES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/VC_AUTHORIZATION_ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/anonymous-usage-telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/customizing-sdk-prompts.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

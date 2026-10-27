@@ -23,3 +23,7 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [mantic.sh](https://github.com/marcoaapfortes/Mantic.sh); analyzed commit `59065a25fea706657af05fcdfce9c848469706b3`; commit date 2026-07-13T23:55:44+01:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--mantic.sh.md).
+<!-- teamagent-analysis:end -->

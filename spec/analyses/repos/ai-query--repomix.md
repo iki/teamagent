@@ -1,0 +1,169 @@
+# repomix: change evidence
+
+Source: [repomix](https://github.com/yamadashy/repomix) · [Analysis](../../projects/ai-query--repomix.md) · [import-generation](../../import-generation.md), [memory](../../memory.md), [skills](../../skills.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `8d6429121e98ed178e4d3a975c2bdbbecc958c4a`; commit date: 2026-10-03T15:05:16+09:00; review date: 2026-10-04; observed SHA: `a835271f41701245ee24b3c8ba162c5abb3d6f12`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/yamadashy/repomix/compare/8d6429121e98ed178e4d3a975c2bdbbecc958c4a...a835271f41701245ee24b3c8ba162c5abb3d6f12). Working-tree changes: false; shallow history: false; report changed since recorded review: true.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [a835271f4170](https://github.com/yamadashy/repomix/commit/a835271f41701245ee24b3c8ba162c5abb3d6f12) 2026-10-26T00:46:24+09:00: Merge pull request #1912 from plox-sumit/fix/css-url-not-a-comment
+- [d067ebbbb41e](https://github.com/yamadashy/repomix/commit/d067ebbbb41ebc50b36f3e792f6e585255d809cb) 2026-10-26T00:38:52+09:00: fix(core): Keep unquoted URLs when removing CSS comments
+- [3f72927c0733](https://github.com/yamadashy/repomix/commit/3f72927c07336192265b140fbab408e8a6097125) 2026-10-26T00:34:12+09:00: Merge pull request #1875 from sxh313/fix/quiet-keeps-fatal-errors
+- [1e8a2226c5fa](https://github.com/yamadashy/repomix/commit/1e8a2226c5fabc27baa88e7947d637e02107a0ec) 2026-10-26T00:25:36+09:00: fix(cli): Keep fatal errors visible under --quiet and --stdout
+- [1691ef9fee4b](https://github.com/yamadashy/repomix/commit/1691ef9fee4bfcca088a990584f92f8c2294c1c6) 2026-10-26T00:16:47+09:00: Merge pull request #1921 from lorenzozanee/fix/split-output-self-ignore
+- [f22b2ee64335](https://github.com/yamadashy/repomix/commit/f22b2ee64335de9e79eebee4fc111755e46cdafa) 2026-10-26T00:10:06+09:00: fix(core): Match only generated split part numbers when ignoring them
+- [ea90b30d9b18](https://github.com/yamadashy/repomix/commit/ea90b30d9b1853efdbb228bdeef8974b0a49b3c0) 2026-10-26T00:02:21+09:00: fix(core): Ignore numbered split output files during input discovery
+- [4f67709b4b77](https://github.com/yamadashy/repomix/commit/4f67709b4b77a949f37ad96cdacd130e289e8bbd) 2026-10-26T00:01:28+09:00: Merge pull request #1963 from yamadashy/fix/ignore-trailing-wildcard
+- [a397162d88f3](https://github.com/yamadashy/repomix/commit/a397162d88f3cc8f0c762a685745dd4bf2bea2ca) 2026-10-25T23:58:07+09:00: fix(cli): Never watch the output file in watch mode
+- [6cbe1bc43073](https://github.com/yamadashy/repomix/commit/6cbe1bc43073a8c2378f386b72df7ef2ed47b2af) 2026-10-25T23:50:09+09:00: fix(cli): Keep watching ignore-control files under trailing-wildcard patterns
+- [b9e76b04c2f0](https://github.com/yamadashy/repomix/commit/b9e76b04c2f04da24ff232cdff9cfb14a4372e9d) 2026-10-25T23:23:43+09:00: fix(core): Exclude files matched by ignore patterns ending in a wildcard
+- [5f4923b92a62](https://github.com/yamadashy/repomix/commit/5f4923b92a6289cb6497666c6945e95752a1df90) 2026-10-25T23:21:49+09:00: Merge pull request #1869 from sxh313/fix/grep-output-context-blocks
+- [7ed841ad467b](https://github.com/yamadashy/repomix/commit/7ed841ad467bb0c0b7e183750974101c4b81c077) 2026-10-25T23:09:27+09:00: fix(mcp): Follow grep separator and prefix semantics in grep_repomix_output output
+- [232d9317d708](https://github.com/yamadashy/repomix/commit/232d9317d708f981b1c92d998f64adaf315fbf28) 2026-10-25T22:50:25+09:00: Merge pull request #1865 from sxh313/fix/mcp-quiet-log-level-leak
+- [7f424d7b2d6d](https://github.com/yamadashy/repomix/commit/7f424d7b2d6d0e6219f956bbaf075c1c1433c62f) 2026-10-25T22:21:52+09:00: Merge branch 'main' into fix/mcp-quiet-log-level-leak
+- [c72454e738df](https://github.com/yamadashy/repomix/commit/c72454e738dfddda7dd134b6ad8bd9b5f558ce3d) 2026-10-25T22:20:10+09:00: Merge pull request #1867 from sxh313/fix/mcp-diagnostics-on-stderr
+- [54be507e5575](https://github.com/yamadashy/repomix/commit/54be507e5575106963416103242c7c8054b1c5f3) 2026-10-25T22:10:22+09:00: fix(cli): keep --mcp diagnostics off stdout
+- [0dc05b7400b1](https://github.com/yamadashy/repomix/commit/0dc05b7400b1f66c4f2f62ca58fafea4e3e95c67) 2026-10-25T21:34:02+09:00: Merge pull request #1961 from yamadashy/docs/mcp-workspace-config-trust
+- [272e7d7ce80a](https://github.com/yamadashy/repomix/commit/272e7d7ce80a7de16b322228a06833d0b6923556) 2026-10-25T21:29:23+09:00: docs(mcp): Document that pack_codebase trusts workspace configs without --sandbox
+- [7ae0a5458ce3](https://github.com/yamadashy/repomix/commit/7ae0a5458ce346b0289134bcc0fe4481c8be46d5) 2026-10-25T21:22:35+09:00: Merge pull request #1962 from yamadashy/ci/jev-pr-labeler-permissions
+- [ec78e8fe8b68](https://github.com/yamadashy/repomix/commit/ec78e8fe8b68ca48fbb2f8a5f4abb01862c122dd) 2026-10-25T21:16:56+09:00: ci(labeler): Grant pull-requests write so Jev can label pull requests
+- [9fdff328c33f](https://github.com/yamadashy/repomix/commit/9fdff328c33fd65d7338a7eb853d781a98991bf5) 2026-10-25T20:49:50+09:00: Merge pull request #1960 from yamadashy/fix/mcp-enforce-security-check
+- [71d851b28a4f](https://github.com/yamadashy/repomix/commit/71d851b28a4f657a4e9a6a6506545b0fcdb417fe) 2026-10-25T18:46:45+09:00: fix(mcp): Enforce secret scan when securityCheck is explicitly true
+- [3ee1eb826273](https://github.com/yamadashy/repomix/commit/3ee1eb826273241d52fb8411c678a7891fe56742) 2026-10-25T17:42:04+09:00: Merge pull request #1959 from yamadashy/fix/mcp-max-listeners
+- [ea83183c7098](https://github.com/yamadashy/repomix/commit/ea83183c7098c33498de80e9155c9df092bdb1fe) 2026-10-25T17:38:32+09:00: fix(core): Undo only listener limits a pool actually raised
+- [3b5645fbee18](https://github.com/yamadashy/repomix/commit/3b5645fbee185fc4b44c4035905a5a7280cba79d) 2026-10-25T16:55:52+09:00: fix(core): Avoid spurious MaxListenersExceededWarning with worker pools
+- [b2061b21c3dd](https://github.com/yamadashy/repomix/commit/b2061b21c3dde918fe99d90356e33051fa1a970a) 2026-10-25T16:47:17+09:00: Merge pull request #1958 from yamadashy/feat/mcp-cancellation
+- [722f1b64a8ae](https://github.com/yamadashy/repomix/commit/722f1b64a8ae98b7fd6cb2e32d03c59efa09d828) 2026-10-25T16:37:36+09:00: fix(mcp): Abort archive extraction when the request is cancelled
+- [02f297ac9f63](https://github.com/yamadashy/repomix/commit/02f297ac9f63e9f584b4cf49f20eea5637a9efdf) 2026-10-25T16:34:31+09:00: fix(mcp): Keep a written skill when generate_skill fails after writing
+- [f0497d621405](https://github.com/yamadashy/repomix/commit/f0497d621405397b34515a6aa6a5996d38ebbc81) 2026-10-25T16:34:31+09:00: fix(mcp): Address cancellation review feedback
+- [51e3e9f31a73](https://github.com/yamadashy/repomix/commit/51e3e9f31a739f161ccb4a925ea44c6a5aecd939) 2026-10-25T16:34:31+09:00: feat(mcp): Stop long-running pack tools when a request is cancelled
+- [971c5b2444f9](https://github.com/yamadashy/repomix/commit/971c5b2444f9ed181554e0310f937cf60b8e8e14) 2026-10-25T16:19:31+09:00: Merge pull request #1956 from yamadashy/renovate/root-non-major-dependencies
+
+## Changed paths
+
+- M: `.github/actionlint.yaml`
+- M: `.github/actions/repomix/action.yml`
+- M: `.github/workflows/autofix.yml`
+- M: `.github/workflows/benchmark.yml`
+- M: `.github/workflows/ci-browser.yml`
+- M: `.github/workflows/ci-quality.yml`
+- M: `.github/workflows/ci-website.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/claude-code-review.yml`
+- M: `.github/workflows/claude-issue-similar.yml`
+- M: `.github/workflows/claude.yml`
+- M: `.github/workflows/codeql.yml`
+- M: `.github/workflows/docker.yml`
+- M: `.github/workflows/jev-pr-labeler.yml`
+- M: `.github/workflows/mcp-registry-publish.yml`
+- M: `.github/workflows/npm-publish.yml`
+- M: `.github/workflows/pack-repository.yml`
+- M: `.github/workflows/perf-benchmark-history.yml`
+- M: `.github/workflows/perf-benchmark.yml`
+- M: `.github/workflows/pinact.yml`
+- M: `.github/workflows/schema-update.yml`
+- M: `.github/workflows/test-action.yml`
+- M: `.github/zizmor.yml`
+- M: `README.md`
+- M: `browser/package-lock.json`
+- M: `browser/package.json`
+- M: `package-lock.json`
+- M: `package.json`
+- M: `scripts/memory/package-lock.json`
+- M: `scripts/memory/package.json`
+- M: `src/cli/actions/defaultAction.ts`
+- M: `src/cli/actions/remoteAction.ts`
+- M: `src/cli/actions/watch/watchIgnore.ts`
+- M: `src/cli/cliRun.ts`
+- M: `src/cli/types.ts`
+- M: `src/core/file/fileManipulate.ts`
+- M: `src/core/file/fileProcess.ts`
+- M: `src/core/file/fileSearch.ts`
+- M: `src/core/git/gitCommand.ts`
+- M: `src/core/git/gitHubArchive.ts`
+- M: `src/core/metrics/calculateMetrics.ts`
+- M: `src/core/packager.ts`
+- M: `src/core/security/securityCheck.ts`
+- M: `src/core/security/validateFileSafety.ts`
+- M: `src/core/skill/packSkill.ts`
+- M: `src/mcp/mcpServer.ts`
+- A: `src/mcp/mcpServerIcons.ts`
+- M: `src/mcp/prompts/packRemoteRepositoryPrompts.ts`
+- M: `src/mcp/tools/attachPackedOutputTool.ts`
+- M: `src/mcp/tools/fileSystemReadDirectoryTool.ts`
+- M: `src/mcp/tools/fileSystemReadFileTool.ts`
+- M: `src/mcp/tools/generateSkillTool.ts`
+- M: `src/mcp/tools/grepRepomixOutputTool.ts`
+- A: `src/mcp/tools/mcpProgress.ts`
+- M: `src/mcp/tools/mcpToolRuntime.ts`
+- M: `src/mcp/tools/packCodebaseTool.ts`
+- M: `src/mcp/tools/packRemoteRepositoryTool.ts`
+- M: `src/mcp/tools/readRepomixOutputTool.ts`
+- M: `src/shared/errorHandle.ts`
+- M: `src/shared/logger.ts`
+- M: `src/shared/processConcurrency.ts`
+- A: `src/shared/progressCallback.ts`
+- M: `tests/cli/actions/defaultAction.buildCliConfig.test.ts`
+- M: `tests/cli/actions/defaultAction.test.ts`
+- M: `tests/cli/actions/remoteAction.test.ts`
+- M: `tests/cli/actions/watch/watchIgnore.test.ts`
+- M: `tests/cli/cliRun.test.ts`
+- M: `tests/core/file/fileManipulate.test.ts`
+- M: `tests/core/file/fileProcess.test.ts`
+- M: `tests/core/file/fileSearch.test.ts`
+- A: `tests/core/file/fileSearch.trailingWildcardSpec.test.ts`
+- M: `tests/core/git/gitCommand.test.ts`
+- M: `tests/core/git/gitHubArchive.test.ts`
+- M: `tests/core/packager.test.ts`
+- M: `tests/core/security/validateFileSafety.test.ts`
+- M: `tests/core/skill/packSkill.test.ts`
+- M: `tests/mcp/mcpServer.test.ts`
+- M: `tests/mcp/prompts/packRemoteRepositoryPrompts.test.ts`
+- M: `tests/mcp/tools/attachPackedOutputTool.test.ts`
+- M: `tests/mcp/tools/fileSystemReadDirectoryTool.sandbox.test.ts`
+- M: `tests/mcp/tools/fileSystemReadDirectoryTool.test.ts`
+- M: `tests/mcp/tools/fileSystemReadFileTool.sandbox.test.ts`
+- M: `tests/mcp/tools/fileSystemReadFileTool.test.ts`
+- M: `tests/mcp/tools/generateSkillTool.test.ts`
+- M: `tests/mcp/tools/grepRepomixOutputTool.test.ts`
+- A: `tests/mcp/tools/mcpProgress.test.ts`
+- M: `tests/mcp/tools/mcpToolRuntime.test.ts`
+- M: `tests/mcp/tools/outputToolsSandbox.test.ts`
+- M: `tests/mcp/tools/packCodebaseTool.test.ts`
+- M: `tests/mcp/tools/packRemoteRepositoryTool.test.ts`
+- M: `tests/mcp/tools/readRepomixOutputTool.test.ts`
+- M: `tests/mcp/tools/sandbox.contract.test.ts`
+- M: `tests/shared/errorHandle.test.ts`
+- M: `tests/shared/logger.test.ts`
+- M: `tests/shared/processConcurrency.test.ts`
+- A: `tests/shared/progressCallback.test.ts`
+- M: `tests/testing/testUtils.ts`
+- M: `website/client/package-lock.json`
+- M: `website/client/package.json`
+- M: `website/client/src/de/guide/mcp-server.md`
+- M: `website/client/src/en/guide/mcp-server.md`
+- M: `website/client/src/es/guide/mcp-server.md`
+- M: `website/client/src/fr/guide/mcp-server.md`
+- M: `website/client/src/hi/guide/mcp-server.md`
+- M: `website/client/src/id/guide/mcp-server.md`
+- M: `website/client/src/it/guide/mcp-server.md`
+- M: `website/client/src/ja/guide/mcp-server.md`
+- M: `website/client/src/ko/guide/mcp-server.md`
+- M: `website/client/src/pt-br/guide/mcp-server.md`
+- M: `website/client/src/ru/guide/mcp-server.md`
+- M: `website/client/src/tr/guide/mcp-server.md`
+- M: `website/client/src/vi/guide/mcp-server.md`
+- M: `website/client/src/zh-cn/guide/mcp-server.md`
+- M: `website/client/src/zh-tw/guide/mcp-server.md`
+- M: `website/server/package-lock.json`
+- M: `website/server/package.json`
+- M: `website/server/src/actions/packEventSchema.ts`
+- M: `website/server/src/actions/packRequestMessages.ts`
+- M: `website/server/src/actions/packRequestSchema.ts`
+- M: `website/server/src/domains/pack/utils/validation.ts`
+- M: `website/server/tests/packEventSchema.test.ts`
+- A: `website/server/tests/patternValidation.test.ts`

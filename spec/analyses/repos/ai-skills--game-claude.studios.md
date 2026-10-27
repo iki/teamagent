@@ -1,0 +1,177 @@
+# game-claude.studios: change evidence
+
+Source: [game-claude.studios](https://github.com/Donchitos/Claude-Code-Game-Studios) · [Analysis](../../projects/ai-skills--game-claude.studios.md) · [skills](../../skills.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `b21fa0f7f289fc3e726cf36fb12b9bc1e7a51e4d`; commit date: 2026-09-29T21:32:19+10:00; review date: unknown; observed SHA: `05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Donchitos/Claude-Code-Game-Studios/compare/b21fa0f7f289fc3e726cf36fb12b9bc1e7a51e4d...05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [05ad7c8a5b8a](https://github.com/Donchitos/Claude-Code-Game-Studios/commit/05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418) 2026-10-19T13:09:09+11:00: Release 1.2.0 — the main path, rebuilt and tested
+- [be8993bbc5a1](https://github.com/Donchitos/Claude-Code-Game-Studios/commit/be8993bbc5a1f016bc770b2846ce06272d284526) 2026-10-08T17:52:48+11:00: Release 1.1.3 — long skills keep their later steps
+
+## Changed paths (truncated)
+
+- M: `.claude/agents/accessibility-specialist.md`
+- M: `.claude/agents/ai-programmer.md`
+- M: `.claude/agents/analytics-engineer.md`
+- M: `.claude/agents/art-director.md`
+- M: `.claude/agents/audio-director.md`
+- M: `.claude/agents/community-manager.md`
+- M: `.claude/agents/creative-director.md`
+- M: `.claude/agents/devops-engineer.md`
+- M: `.claude/agents/economy-designer.md`
+- M: `.claude/agents/engine-programmer.md`
+- M: `.claude/agents/game-designer.md`
+- M: `.claude/agents/gameplay-programmer.md`
+- M: `.claude/agents/godot-csharp-specialist.md`
+- M: `.claude/agents/godot-gdextension-specialist.md`
+- M: `.claude/agents/godot-gdscript-specialist.md`
+- M: `.claude/agents/godot-shader-specialist.md`
+- M: `.claude/agents/godot-specialist.md`
+- M: `.claude/agents/lead-programmer.md`
+- M: `.claude/agents/level-designer.md`
+- M: `.claude/agents/live-ops-designer.md`
+- M: `.claude/agents/localization-lead.md`
+- M: `.claude/agents/narrative-director.md`
+- M: `.claude/agents/network-programmer.md`
+- M: `.claude/agents/performance-analyst.md`
+- M: `.claude/agents/producer.md`
+- M: `.claude/agents/prototyper.md`
+- M: `.claude/agents/qa-lead.md`
+- M: `.claude/agents/qa-tester.md`
+- M: `.claude/agents/release-manager.md`
+- M: `.claude/agents/security-engineer.md`
+- M: `.claude/agents/sound-designer.md`
+- M: `.claude/agents/systems-designer.md`
+- M: `.claude/agents/technical-artist.md`
+- M: `.claude/agents/technical-director.md`
+- M: `.claude/agents/tools-programmer.md`
+- M: `.claude/agents/ue-blueprint-specialist.md`
+- M: `.claude/agents/ue-gas-specialist.md`
+- M: `.claude/agents/ue-replication-specialist.md`
+- M: `.claude/agents/ue-umg-specialist.md`
+- M: `.claude/agents/ui-programmer.md`
+- M: `.claude/agents/unity-addressables-specialist.md`
+- M: `.claude/agents/unity-dots-specialist.md`
+- M: `.claude/agents/unity-shader-specialist.md`
+- M: `.claude/agents/unity-specialist.md`
+- M: `.claude/agents/unity-ui-specialist.md`
+- M: `.claude/agents/unreal-specialist.md`
+- M: `.claude/agents/ux-designer.md`
+- M: `.claude/agents/world-builder.md`
+- M: `.claude/agents/writer.md`
+- M: `.claude/docs/automation-modes.md`
+- M: `.claude/docs/code-root-resolution.md`
+- M: `.claude/docs/coding-standards.md`
+- M: `.claude/docs/config-resolution.md`
+- M: `.claude/docs/context-management.md`
+- M: `.claude/docs/coordination-rules.md`
+- M: `.claude/docs/director-gates.md`
+- M: `.claude/docs/directory-structure.md`
+- M: `.claude/docs/effects-map.md`
+- M: `.claude/docs/error-recovery-protocol.md`
+- M: `.claude/docs/hooks-reference.md`
+- M: `.claude/docs/model-tiers.md`
+- M: `.claude/docs/quick-start.md`
+- M: `.claude/docs/rules-reference.md`
+- M: `.claude/docs/run-and-observe.md`
+- M: `.claude/docs/settings-guidance.md`
+- M: `.claude/docs/settings-local-template.md`
+- M: `.claude/docs/setup-requirements.md`
+- M: `.claude/docs/templates/accessibility-requirements.md`
+- A: `.claude/docs/templates/adoption-plan.md`
+- A: `.claude/docs/templates/adoption-summary.md`
+- M: `.claude/docs/templates/architecture-decision-record.md`
+- M: `.claude/docs/templates/architecture-traceability.md`
+- A: `.claude/docs/templates/bug-closure-record.md`
+- A: `.claude/docs/templates/bug-report.md`
+- A: `.claude/docs/templates/certification-console.md`
+- A: `.claude/docs/templates/certification-itch.md`
+- A: `.claude/docs/templates/certification-none.md`
+- A: `.claude/docs/templates/certification-steam.md`
+- A: `.claude/docs/templates/certification-unknown.md`
+- A: `.claude/docs/templates/changelog-internal.md`
+- M: `.claude/docs/templates/changelog-template.md`
+- M: `.claude/docs/templates/difficulty-curve.md`
+- M: `.claude/docs/templates/game-design-document.md`
+- M: `.claude/docs/templates/guidance/accessibility-requirements-guide.md`
+- A: `.claude/docs/templates/guidance/game-design-document-guide.md`
+- M: `.claude/docs/templates/guidance/interaction-pattern-library-guide-game-specific.md`
+- M: `.claude/docs/templates/guidance/interaction-pattern-library-guide-standard-controls.md`
+- A: `.claude/docs/templates/help-escalation.md`
+- A: `.claude/docs/templates/help-where-you-are-minimal.md`
+- A: `.claude/docs/templates/help-where-you-are.md`
+- M: `.claude/docs/templates/hud-design.md`
+- M: `.claude/docs/templates/interaction-pattern-library.md`
+- A: `.claude/docs/templates/launch-checklist.md`
+- A: `.claude/docs/templates/patch-notes-brief.md`
+- A: `.claude/docs/templates/patch-notes-commentary.md`
+- M: `.claude/docs/templates/player-journey.md`
+- M: `.claude/docs/templates/project-stage-report.md`
+- M: `.claude/docs/templates/prototype-report.md`
+- A: `.claude/docs/templates/quick-design-change.md`
+- A: `.claude/docs/templates/quick-design-new-system.md`
+- A: `.claude/docs/templates/quick-design-tuning.md`
+- M: `.claude/docs/templates/release-checklist-template.md`
+- M: `.claude/docs/templates/release-notes.md`
+- A: `.claude/docs/templates/release-platform-requirements.md`
+- M: `.claude/docs/templates/session-state.md`
+- A: `.claude/docs/templates/soak-test-protocol.md`
+- M: `.claude/docs/templates/sprint-plan.md`
+- A: `.claude/docs/templates/sprint-status.yaml`
+- A: `.claude/docs/templates/start-paths.md`
+- A: `.claude/docs/templates/story.md`
+- M: `.claude/docs/templates/systems-index.md`
+- M: `.claude/docs/templates/technical-design-document.md`
+- M: `.claude/docs/templates/test-plan.md`
+- M: `.claude/docs/templates/ux-spec.md`
+- M: `.claude/docs/templates/vertical-slice-report.md`
+- M: `.claude/docs/workflow-catalog.yaml`
+- M: `.claude/docs/workflow-modes.md`
+- M: `.claude/hooks/detect-gaps.sh`
+- M: `.claude/hooks/log-agent-stop.sh`
+- M: `.claude/hooks/log-agent.sh`
+- M: `.claude/hooks/log-instructions.sh`
+- M: `.claude/hooks/notify.sh`
+- D: `.claude/hooks/post-compact.sh`
+- M: `.claude/hooks/pre-compact.sh`
+- M: `.claude/hooks/session-start.sh`
+- M: `.claude/hooks/session-stop.sh`
+- A: `.claude/hooks/update-check.sh`
+- A: `.claude/hooks/validate-agent-artifact.sh`
+- M: `.claude/hooks/validate-assets.sh`
+- M: `.claude/hooks/validate-commit.sh`
+- M: `.claude/hooks/validate-push.sh`
+- A: `.claude/hooks/validate-read.sh`
+- A: `.claude/hooks/validate-registry.sh`
+- M: `.claude/hooks/validate-skill-change.sh`
+- A: `.claude/hooks/validate-write.sh`
+- M: `.claude/hooks/yaml-helper.sh`
+- M: `.claude/rules/agent-memory.md`
+- A: `.claude/rules/scene-files.md`
+- M: `.claude/rules/skill-authoring.md`
+- M: `.claude/scripts/adr-dep-graph.sh`
+- A: `.claude/scripts/adr-status.sh`
+- A: `.claude/scripts/agent-check.sh`
+- A: `.claude/scripts/asset-scan.sh`
+- A: `.claude/scripts/bug-stats.sh`
+- A: `.claude/scripts/code-markers.sh`
+- A: `.claude/scripts/compat-inventory.sh`
+- A: `.claude/scripts/config-set.sh`
+- A: `.claude/scripts/content-count.sh`
+- A: `.claude/scripts/debt-register.sh`
+- A: `.claude/scripts/flaky-stats.sh`
+- M: `.claude/scripts/gdd-structure-check.sh`
+- A: `.claude/scripts/hook-input.sh`
+- A: `.claude/scripts/inputs-check.sh`
+- A: `.claude/scripts/md-section.sh`
+- M: `.claude/scripts/migrate-v1-config.sh`
+- A: `.claude/scripts/plan-math.sh`
+- M: `.claude/scripts/project-coherence.sh`
+- A: `.claude/scripts/project-state.sh`
+- A: `.claude/scripts/read-guard.sh`
+- A: `.claude/scripts/registry.sh`

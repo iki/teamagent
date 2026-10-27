@@ -1,0 +1,207 @@
+# py-gpt: change evidence
+
+Source: [py-gpt](https://github.com/szczyglis-dev/py-gpt) · [Analysis](../../projects/ai-agents--xx-2602-py-gpt.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `016da1c48e363f76e619de6e9e1b068960047976`; commit date: 2026-10-03T04:52:01+02:00; review date: unknown; observed SHA: `a6766d0b2b7e839c2501f68575c1f00d7cfe012f`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/szczyglis-dev/py-gpt/compare/016da1c48e363f76e619de6e9e1b068960047976...a6766d0b2b7e839c2501f68575c1f00d7cfe012f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [a6766d0b2b7e](https://github.com/szczyglis-dev/py-gpt/commit/a6766d0b2b7e839c2501f68575c1f00d7cfe012f) 2026-10-06T04:19:35+02:00: Release: 2.9.1
+- [4df2bf96da13](https://github.com/szczyglis-dev/py-gpt/commit/4df2bf96da13b96ca16e75f24e20dc9dcf1f1916) 2026-10-06T04:07:16+02:00: Release: 2.9.1
+- [3c118670cf95](https://github.com/szczyglis-dev/py-gpt/commit/3c118670cf9545a5c45c414a28aae1e0e3cccec7) 2026-10-06T03:14:26+02:00: Fix: setVisible() after parent
+- [a18b753d779a](https://github.com/szczyglis-dev/py-gpt/commit/a18b753d779a2789f38587245c86154f92f2c72b) 2026-10-06T03:13:52+02:00: Attachment file block fixes
+- [d3ae585042d3](https://github.com/szczyglis-dev/py-gpt/commit/d3ae585042d395c9eeb4acb1fa4a5499ce60f7dd) 2026-10-06T01:29:36+02:00: Syntax pallette from text editor
+- [4a0428c19e72](https://github.com/szczyglis-dev/py-gpt/commit/4a0428c19e7210e7d00a5884d12930d5c703ac49) 2026-10-06T01:09:53+02:00: Add: tab autocomplete in terminal
+- [199fd88675b2](https://github.com/szczyglis-dev/py-gpt/commit/199fd88675b22ddb073822c976daf4b2b2b32f14) 2026-10-06T01:06:32+02:00: Add: custom sandbox path config
+- [e34d4b411363](https://github.com/szczyglis-dev/py-gpt/commit/e34d4b41136338f6aa9eed4e5c798e9e94302fb9) 2026-10-06T00:45:19+02:00: Fix: buttons and icons
+- [1d12341979f2](https://github.com/szczyglis-dev/py-gpt/commit/1d12341979f20ce6294a36be18b81e3d01a1b8ca) 2026-10-06T00:45:09+02:00: Updated tests
+- [da538531f4b5](https://github.com/szczyglis-dev/py-gpt/commit/da538531f4b55eabfbaa3900236ad55f2a9790a8) 2026-10-06T00:44:54+02:00: Changed builder monit
+- [2dea128f4052](https://github.com/szczyglis-dev/py-gpt/commit/2dea128f4052668dd4a0a8e23802524863a632f5) 2026-10-06T00:41:08+02:00: Changed builder monit
+- [ad5dfd6aa572](https://github.com/szczyglis-dev/py-gpt/commit/ad5dfd6aa572110fbe904a5247b2e0b4070bfc85) 2026-10-06T00:29:54+02:00: Updated tests
+- [b0b746c4166f](https://github.com/szczyglis-dev/py-gpt/commit/b0b746c4166fa00082387613b7e7975cd4969436) 2026-10-06T00:20:46+02:00: Fix: padding
+- [9755b8abdeea](https://github.com/szczyglis-dev/py-gpt/commit/9755b8abdeea3d113ad61163284a801bc7e7bba9) 2026-10-06T00:13:07+02:00: Fix: padding
+- [5ea41c4abd48](https://github.com/szczyglis-dev/py-gpt/commit/5ea41c4abd48f3ea44a24a577dc4c147a647631e) 2026-10-06T00:13:00+02:00: Add: plugins sys prompt calc to tokens
+- [a64d36db95d1](https://github.com/szczyglis-dev/py-gpt/commit/a64d36db95d13c462627fcadf9b88e80809799d5) 2026-10-06T00:06:27+02:00: Updated youtube-transcript
+- [22a1a5aa8273](https://github.com/szczyglis-dev/py-gpt/commit/22a1a5aa82730b60a6085358487b6331d86b7787) 2026-10-06T00:04:13+02:00: Add: show image block even if empty input
+- [e0680ba8c737](https://github.com/szczyglis-dev/py-gpt/commit/e0680ba8c737a87a242355b493a132fed16ad37e) 2026-10-05T23:56:06+02:00: Add: pending attachments on interrupt
+- [5549b52b1c88](https://github.com/szczyglis-dev/py-gpt/commit/5549b52b1c88520165125b28ccf3caae431dcdff) 2026-10-05T23:45:03+02:00: Fix: fixture stream chunks
+- [ed9493efb717](https://github.com/szczyglis-dev/py-gpt/commit/ed9493efb7175cc414a846d883d134d9a9ae2b32) 2026-10-05T23:38:48+02:00: Add: shutdown signals handler
+- [f068801923d1](https://github.com/szczyglis-dev/py-gpt/commit/f068801923d1e8e3d1495b7c8f4f09f1c9c37736) 2026-10-05T23:37:49+02:00: Fix: quick start plugin select
+- [c170ef451a07](https://github.com/szczyglis-dev/py-gpt/commit/c170ef451a07a5601ad23144d07785078fcb3354) 2026-10-05T23:30:01+02:00: Fix: adjust size
+- [c5d3bf72d961](https://github.com/szczyglis-dev/py-gpt/commit/c5d3bf72d961a11156a1e85579997ffb2010f0ff) 2026-10-05T23:21:49+02:00: Removed attachment borders
+- [231209125066](https://github.com/szczyglis-dev/py-gpt/commit/231209125066482801ffee16484cbe21b856d985) 2026-10-05T23:20:28+02:00: Add: web loader settings persist
+- [83124018e7c1](https://github.com/szczyglis-dev/py-gpt/commit/83124018e7c13dee5bc3bec04df744c1c3eb12f1) 2026-10-05T22:57:29+02:00: Add: chat history search by title
+- [ee0b3764e949](https://github.com/szczyglis-dev/py-gpt/commit/ee0b3764e949b06b775782fd5d2530e327a413eb) 2026-10-05T22:47:35+02:00: Optimize: mention tree discovery
+- [cdcca663cd3d](https://github.com/szczyglis-dev/py-gpt/commit/cdcca663cd3dcfeeebc8cb8ab92426828f4cb2c4) 2026-10-05T22:32:51+02:00: Add: toolbox placement config
+- [366eed5113b8](https://github.com/szczyglis-dev/py-gpt/commit/366eed5113b8adfbc372f54e8afc53fe62297973) 2026-10-05T21:59:00+02:00: Removed old versions of files, python, os plugins
+- [37611fca2184](https://github.com/szczyglis-dev/py-gpt/commit/37611fca2184ff6aa5b12cd991cb8ee35d11226c) 2026-10-05T21:43:27+02:00: Fix: page height
+- [857baffbc2aa](https://github.com/szczyglis-dev/py-gpt/commit/857baffbc2aa1f16772f52b5da1fc882607d1f13) 2026-10-05T21:40:02+02:00: Filesystem, Python and OS integrated into single plugin
+- [e1c8f4a04798](https://github.com/szczyglis-dev/py-gpt/commit/e1c8f4a0479840b305acd55e1b27c467747f3de6) 2026-10-05T19:20:27+02:00: Extended web loaders config dialog
+- [9e41118b94b9](https://github.com/szczyglis-dev/py-gpt/commit/9e41118b94b9701865f838aae23a6e97ab178c73) 2026-10-05T17:51:02+02:00: Add: attachment shared num suffix
+
+## Changed paths (truncated)
+
+- M: `AppImageBuilder.yml`
+- M: `CHANGELOG.md`
+- M: `PyGPT_Linux_PAD_File.xml`
+- M: `PyGPT_Windows_PAD_File.xml`
+- M: `README.md`
+- M: `bin/Product.wxs`
+- M: `bin/build.sh`
+- M: `bin/build_all.bat`
+- M: `bin/build_installer.bat`
+- M: `bin/build_installer_store.bat`
+- A: `docs/development/loader-configuration.md`
+- M: `docs/source/addons_api.rst`
+- M: `docs/source/attachments.rst`
+- M: `docs/source/canvas.rst`
+- M: `docs/source/conf.py`
+- M: `docs/source/configuration.rst`
+- M: `docs/source/context.rst`
+- M: `docs/source/images/attachment.png`
+- M: `docs/source/images/canvas.png`
+- M: `docs/source/images/rag.png`
+- M: `docs/source/images/v2_code_execute.png`
+- M: `docs/source/images/v2_draw.png`
+- M: `docs/source/images/v2_file_input.png`
+- M: `docs/source/images/v2_light.png`
+- A: `docs/source/images/v2_light2.png`
+- M: `docs/source/images/v2_main.png`
+- M: `docs/source/images/v2_main2.png`
+- A: `docs/source/images/v2_main4.png`
+- M: `docs/source/images/v2_mode_chat.png`
+- A: `docs/source/images/v2_mode_chat2.png`
+- A: `docs/source/images/v2_mode_chat3.png`
+- M: `docs/source/images/v2_preset.png`
+- M: `docs/source/images/v2_screenshot.png`
+- M: `docs/source/images/v2_tokens1.png`
+- M: `docs/source/images/v2_tokens2.png`
+- M: `docs/source/images/v3_img.png`
+- M: `docs/source/images/v3_vision_chat.png`
+- M: `docs/source/index.rst`
+- M: `docs/source/indexing.rst`
+- M: `docs/source/intro.rst`
+- M: `docs/source/modes.rst`
+- M: `docs/source/plugins.rst`
+- M: `docs/source/security.rst`
+- M: `docs/source/tools.rst`
+- M: `examples/addons/loaders/example_loader/loader.py`
+- M: `examples/addons/loaders/example_loader/locale/locale.en.ini`
+- M: `examples/addons/loaders/example_loader/locale/locale.pl.ini`
+- M: `examples/addons/loaders/example_loader/manifest.json`
+- M: `examples/addons/tools/example_tool/README.md`
+- M: `examples/addons/tools/example_tool/tool.py`
+- M: `linux.spec`
+- M: `poetry.lock`
+- M: `pyproject.toml`
+- M: `requirements.txt`
+- M: `snap/snapcraft.yaml`
+- M: `src/pygpt_net/CHANGELOG.txt`
+- M: `src/pygpt_net/__init__.py`
+- M: `src/pygpt_net/app.py`
+- M: `src/pygpt_net/app_core.py`
+- M: `src/pygpt_net/config.py`
+- M: `src/pygpt_net/controller/__init__.py`
+- M: `src/pygpt_net/controller/access/control.py`
+- M: `src/pygpt_net/controller/attachment/attachment.py`
+- M: `src/pygpt_net/controller/audio/audio.py`
+- M: `src/pygpt_net/controller/audio/ui.py`
+- D: `src/pygpt_net/controller/calendar/note.py`
+- M: `src/pygpt_net/controller/camera/camera.py`
+- M: `src/pygpt_net/controller/chat/attachment.py`
+- M: `src/pygpt_net/controller/chat/common.py`
+- M: `src/pygpt_net/controller/chat/files.py`
+- M: `src/pygpt_net/controller/chat/input.py`
+- M: `src/pygpt_net/controller/chat/input_worker.py`
+- M: `src/pygpt_net/controller/chat/stream_worker.py`
+- M: `src/pygpt_net/controller/chat/text.py`
+- M: `src/pygpt_net/controller/config/placeholder.py`
+- M: `src/pygpt_net/controller/ctx/common.py`
+- M: `src/pygpt_net/controller/ctx/ctx.py`
+- M: `src/pygpt_net/controller/ctx/extra.py`
+- M: `src/pygpt_net/controller/debug/fixtures.py`
+- M: `src/pygpt_net/controller/dialogs/confirm.py`
+- D: `src/pygpt_net/controller/files/__init__.py`
+- D: `src/pygpt_net/controller/files/files.py`
+- M: `src/pygpt_net/controller/idx/indexer.py`
+- M: `src/pygpt_net/controller/kernel/reply.py`
+- M: `src/pygpt_net/controller/lang/custom.py`
+- M: `src/pygpt_net/controller/lang/lang.py`
+- M: `src/pygpt_net/controller/lang/mapping.py`
+- M: `src/pygpt_net/controller/layout/layout.py`
+- D: `src/pygpt_net/controller/notepad/notepad.py`
+- D: `src/pygpt_net/controller/painter/__init__.py`
+- D: `src/pygpt_net/controller/painter/painter.py`
+- M: `src/pygpt_net/controller/presets/presets.py`
+- M: `src/pygpt_net/controller/realtime/realtime.py`
+- M: `src/pygpt_net/controller/settings/editor.py`
+- M: `src/pygpt_net/controller/settings/settings.py`
+- M: `src/pygpt_net/controller/tabs/chat.py`
+- M: `src/pygpt_net/controller/tabs/handler.py`
+- M: `src/pygpt_net/controller/tabs/lifecycle.py`
+- M: `src/pygpt_net/controller/tabs/operations.py`
+- M: `src/pygpt_net/controller/tabs/split.py`
+- M: `src/pygpt_net/controller/tabs/state.py`
+- M: `src/pygpt_net/controller/tabs/titles.py`
+- M: `src/pygpt_net/controller/theme/common.py`
+- M: `src/pygpt_net/controller/theme/menu.py`
+- M: `src/pygpt_net/controller/theme/nodes.py`
+- M: `src/pygpt_net/controller/theme/theme.py`
+- A: `src/pygpt_net/controller/toolbar/__init__.py`
+- M: `src/pygpt_net/controller/tools/tools.py`
+- M: `src/pygpt_net/controller/ui/mode.py`
+- M: `src/pygpt_net/controller/ui/ui.py`
+- M: `src/pygpt_net/controller/ui/vision.py`
+- M: `src/pygpt_net/core/agents/memory.py`
+- M: `src/pygpt_net/core/agents/tools.py`
+- M: `src/pygpt_net/core/agents_v2/artifacts.py`
+- M: `src/pygpt_net/core/agents_v2/context.py`
+- M: `src/pygpt_net/core/agents_v2/execution/worker.py`
+- M: `src/pygpt_net/core/agents_v2/memory.py`
+- M: `src/pygpt_net/core/agents_v2/prompts.py`
+- M: `src/pygpt_net/core/agents_v2/tools.py`
+- M: `src/pygpt_net/core/agents_v2/toolset.py`
+- M: `src/pygpt_net/core/attachments/attachments.py`
+- M: `src/pygpt_net/core/attachments/context.py`
+- A: `src/pygpt_net/core/attachments/project.py`
+- M: `src/pygpt_net/core/bridge/context.py`
+- M: `src/pygpt_net/core/bridge/worker.py`
+- D: `src/pygpt_net/core/calendar/__init__.py`
+- M: `src/pygpt_net/core/command/command.py`
+- M: `src/pygpt_net/core/context_manager/manager.py`
+- M: `src/pygpt_net/core/ctx/ctx.py`
+- M: `src/pygpt_net/core/debug/ui.py`
+- M: `src/pygpt_net/core/docker/docker.py`
+- M: `src/pygpt_net/core/extensions/extensions.py`
+- M: `src/pygpt_net/core/filesystem/actions.py`
+- M: `src/pygpt_net/core/filesystem/editor.py`
+- M: `src/pygpt_net/core/filesystem/filesystem.py`
+- A: `src/pygpt_net/core/filesystem/local_mapper.py`
+- M: `src/pygpt_net/core/filesystem/url.py`
+- M: `src/pygpt_net/core/idx/chat.py`
+- M: `src/pygpt_net/core/idx/context.py`
+- M: `src/pygpt_net/core/idx/indexing.py`
+- M: `src/pygpt_net/core/idx/rag_context.py`
+- A: `src/pygpt_net/core/idx/ui/field.py`
+- M: `src/pygpt_net/core/idx/ui/loaders.py`
+- M: `src/pygpt_net/core/installer/installer.py`
+- M: `src/pygpt_net/core/locale/locale.py`
+- D: `src/pygpt_net/core/notepad/__init__.py`
+- D: `src/pygpt_net/core/notepad/notepad.py`
+- M: `src/pygpt_net/core/plugins/plugins.py`
+- M: `src/pygpt_net/core/render/web/body.py`
+- M: `src/pygpt_net/core/render/web/parser.py`
+- M: `src/pygpt_net/core/render/web/parts/messages.py`
+- M: `src/pygpt_net/core/render/web/parts/streaming.py`
+- M: `src/pygpt_net/core/render/web/syntax_highlight.py`
+- A: `src/pygpt_net/core/sandbox/README.md`
+- M: `src/pygpt_net/core/sandbox/builtin.py`
+- A: `src/pygpt_net/core/sandbox/cache_policy.py`
+- A: `src/pygpt_net/core/sandbox/native_tools.py`
+- M: `src/pygpt_net/core/sandbox/preparer.py`
+- A: `src/pygpt_net/core/shutdown_signals.py`
+- M: `src/pygpt_net/core/skills/skills.py`

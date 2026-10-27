@@ -1,0 +1,26 @@
+# FrontierHarness Eval
+
+Source: [frontier-harness-eval/eval](https://github.com/frontier-harness-eval/eval) · Reviewed revision: `e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [evolution](../evolution.md) · [agents](../agents.md) · [models](../models.md) · [decisions](../decisions.md).
+
+## Evidence inspected
+
+- [`README.md` lines 60–91](https://github.com/frontier-harness-eval/eval/blob/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63/README.md#L60-L91)
+- [`skills/frontierharness-eval/scripts/normalize-results.mjs` lines 34–85](https://github.com/frontier-harness-eval/eval/blob/e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63/skills/frontierharness-eval/scripts/normalize-results.mjs#L34-L85)
+
+## Observed architecture and behavior
+
+This repository includes public tasks, normalized results, harness metadata, and a reproduction workflow. The normalizer restricts results to a frozen task manifest, excludes warm/smoke or noncanonical attempts, retains cost coverage information, and recalculates accounting from retained evidence. The README explicitly states that published baseline network allowlists were not recorded; new runs default to methodology_comparable=false and require a matched control before ranking claims. Internal infrastructure and private evidence are not all shipped.
+
+## Implications and tradeoffs for Teamagent
+
+The main architectural lesson is to evaluate the complete model-plus-harness configuration and preserve environmental comparability. Task completion, cost, cache behavior, latency, network policy, tool availability, and retries can vary even with an identical model. A single leaderboard does not establish general superiority for Teamagent's repositories, memory workloads, local models, or channels. Keep invalid/infrastructure failures distinguishable from model failures, and include failed-run expenditure in effective cost. Use repeated trials and matched controls when comparing a skill or routing policy. Cold and warm cache measurements answer different questions and should remain separate.
+
+## Adoption decision
+
+Adopt its frozen-manifest, retained-evidence, and comparability-gate patterns for the evaluation service. Treat its public suite as one external benchmark slice, complemented by private team tasks and safety regressions. Do not select a default agent solely from the published rankings. Before running the workflow, review its external runtime requirements and network permissions; this analysis did not execute the benchmark or reproduce its performance claims.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.

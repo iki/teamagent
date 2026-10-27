@@ -28,3 +28,7 @@ Adopt as a generation tool, not as a general cinematic video model or the primar
 ## Related directions
 
 [Generation](../generation.md) · [Skills](../skills.md) · [Agents](../agents.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [hyperframes](https://github.com/heygen-com/hyperframes); analyzed commit `6149ec87e8e1e83e0df4862dfd8512331535eddb`; commit date 2026-10-03T13:31:30-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--hyperframes.md).
+<!-- teamagent-analysis:end -->

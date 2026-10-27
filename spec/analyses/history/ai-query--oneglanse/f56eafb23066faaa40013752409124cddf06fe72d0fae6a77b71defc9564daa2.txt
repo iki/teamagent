@@ -1,0 +1,25 @@
+# oneglanse
+
+Source: [oneglanse](https://github.com/aryamantodkar/oneglanse) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `b2c6e730b6818e64a4cef8b73c6605911c890626`; commit timestamp `2026-10-03T15:13:27+05:30`; 462 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/aryamantodkar/oneglanse/blob/b2c6e730b6818e64a4cef8b73c6605911c890626/README.md)):
+
+> Track what ChatGPT, Perplexity, Gemini, Claude, and Google AI Overview say about your brand by running prompts on their actual websites, not model APIs. Free and open source. Run it locally or on your own server. Bring your own AI accounts and analysis model key.
+
+Build/package evidence: [apps/agent/package.json](https://github.com/aryamantodkar/oneglanse/blob/b2c6e730b6818e64a4cef8b73c6605911c890626/apps/agent/package.json); [apps/landing/package.json](https://github.com/aryamantodkar/oneglanse/blob/b2c6e730b6818e64a4cef8b73c6605911c890626/apps/landing/package.json); [apps/web/package.json](https://github.com/aryamantodkar/oneglanse/blob/b2c6e730b6818e64a4cef8b73c6605911c890626/apps/web/package.json); [package.json](https://github.com/aryamantodkar/oneglanse/blob/b2c6e730b6818e64a4cef8b73c6605911c890626/package.json); [packages/db/package.json](https://github.com/aryamantodkar/oneglanse/blob/b2c6e730b6818e64a4cef8b73c6605911c890626/packages/db/package.json)
+
+License evidence: [LICENSE](https://github.com/aryamantodkar/oneglanse/blob/b2c6e730b6818e64a4cef8b73c6605911c890626/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

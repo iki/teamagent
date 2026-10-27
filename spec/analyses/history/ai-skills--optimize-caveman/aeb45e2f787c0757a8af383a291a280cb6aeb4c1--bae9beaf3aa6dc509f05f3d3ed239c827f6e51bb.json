@@ -1,0 +1,984 @@
+{
+  "id": "ai-skills--optimize-caveman",
+  "generatedAt": "2026-10-24T06:36:54.441Z",
+  "observedAt": "2026-10-24T06:36:43.1574360+00:00",
+  "source": "https://github.com/JuliusBrussee/caveman",
+  "report": "spec/projects/ai-skills--optimize-caveman.md",
+  "analyzedSha": "aeb45e2f787c0757a8af383a291a280cb6aeb4c1",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T08:45:26+02:00",
+  "observedSha": "bae9beaf3aa6dc509f05f3d3ed239c827f6e51bb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "bae9beaf3aa6dc509f05f3d3ed239c827f6e51bb",
+      "date": "2026-10-24T03:00:14+02:00",
+      "subject": "Merge pull request #1380 from JuliusBrussee/automation/product-review-20261023-wedge-lock"
+    },
+    {
+      "sha": "0f261a9e71b99c636a9170b2f5606eb14337ecee",
+      "date": "2026-10-23T17:37:47-07:00",
+      "subject": "test(cli): load wedge preload through file URL"
+    },
+    {
+      "sha": "b0c3f0f6e55d2020eb731aef1536738b26b8d263",
+      "date": "2026-10-23T17:11:17-07:00",
+      "subject": "fix(cli): retry locked wedge output renames"
+    },
+    {
+      "sha": "b4531dfc05a3ef0ba93b57e8bfa5f48564a4b4d6",
+      "date": "2026-10-22T21:57:51-07:00",
+      "subject": "fix(release): patch Go CVE-2026-111943"
+    },
+    {
+      "sha": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
+      "date": "2026-10-17T23:08:52+02:00",
+      "subject": "Merge pull request #1320 from JuliusBrussee/fix/codex-exec-json-output"
+    },
+    {
+      "sha": "3cc8653a499bf2f501e22f5a6b65fc1633f7b017",
+      "date": "2026-10-17T13:33:25-07:00",
+      "subject": "test(cli): retry Windows cleanup in every native-stub fixture"
+    },
+    {
+      "sha": "f071d816796c23f12bafc20001e6976c85c70ce9",
+      "date": "2026-10-17T13:33:25-07:00",
+      "subject": "fix(engine): drop the computed capacity CodeQL flags in the Codex unwrap"
+    },
+    {
+      "sha": "d8ede5cf0c27cc86a074c3224bcbba280a76c60e",
+      "date": "2026-10-17T12:46:41-07:00",
+      "subject": "fix(engine): compress Codex code-mode command output inside its JSON line"
+    },
+    {
+      "sha": "81958ad82f2e2da4417778f81f8a3c838d81b798",
+      "date": "2026-10-17T08:16:56+02:00",
+      "subject": "Merge pull request #1284 from ab-gad-leadliaison/fix/skill-scan-flags"
+    },
+    {
+      "sha": "399e25377aeca7b20650219b2f70028bfc5577f3",
+      "date": "2026-10-17T08:16:06+02:00",
+      "subject": "Merge pull request #1309 from JuliusBrussee/maint/repo-maintenance-2026-10-16"
+    },
+    {
+      "sha": "dd699ee3ac2461dcfcfcd4302491978e38fb4465",
+      "date": "2026-10-17T08:11:21+02:00",
+      "subject": "Merge pull request #1292 from Yi-111-a/fix/pi-warn-on-silent-native-runtime"
+    },
+    {
+      "sha": "71ef66cdd9bd25c17d5e438b5bcacc516d7cda4a",
+      "date": "2026-10-17T08:11:16+02:00",
+      "subject": "Merge pull request #1275 from peppekerstens/fix/opencode-v2-setup-once"
+    },
+    {
+      "sha": "4c4c0c1c19aab080a754962ef94e47b5bea082ea",
+      "date": "2026-10-17T05:51:23Z",
+      "subject": "chore: sync SKILL.md copies [skip ci]"
+    },
+    {
+      "sha": "a41139f03ef1f03e847ad75cae4971eacc4c65af",
+      "date": "2026-10-17T07:51:20+02:00",
+      "subject": "Merge pull request #1283 from JuliusBrussee/dependabot/github_actions/github-actions-500748d999"
+    },
+    {
+      "sha": "57514f5fb9d189bca281bbdc55a5ba6aeba79dba",
+      "date": "2026-10-17T07:51:16+02:00",
+      "subject": "Merge pull request #1280 from JuliusBrussee/dependabot/docker/docker-5d5d6295ea"
+    },
+    {
+      "sha": "9b810b834c71185c1798041a34eb92831195e833",
+      "date": "2026-10-17T07:51:13+02:00",
+      "subject": "Merge pull request #1281 from JuliusBrussee/dependabot/pip/dot-github/requirements/pip-9813b551f3"
+    },
+    {
+      "sha": "fea6f6aa4358d42cf638d112cc75e844dfd8cad4",
+      "date": "2026-10-17T07:51:09+02:00",
+      "subject": "Merge pull request #1277 from jwcastillo/fix/learn-remember-stdin"
+    },
+    {
+      "sha": "84de42b871ec8f622aeecfc9f8710ea6f6ab1540",
+      "date": "2026-10-17T07:50:20+02:00",
+      "subject": "Merge pull request #1310 from JuliusBrussee/maint/agent-pins-2026-10-16"
+    },
+    {
+      "sha": "abcc8a53ee8d2278d441d622db7e19ce18f73e69",
+      "date": "2026-10-17T07:49:56+02:00",
+      "subject": "Merge pull request #1191 from JuliusBrussee/fix/codeql-alerts"
+    },
+    {
+      "sha": "c88e7258c541932ebb5100d37f183b7122222ea8",
+      "date": "2026-10-16T22:49:30-07:00",
+      "subject": "Merge origin/main (#1271) into maint/repo-maintenance-2026-10-16"
+    },
+    {
+      "sha": "addbbcde25ad12a450fd781eccf8070ec0798090",
+      "date": "2026-10-17T07:48:48+02:00",
+      "subject": "Merge pull request #1271 from JuliusBrussee/daily-triage/2026-10-14"
+    },
+    {
+      "sha": "eabc091f4e885cbe61ce81e92552e8ae723a506f",
+      "date": "2026-10-16T19:49:12-07:00",
+      "subject": "fix(nativeruntime): queue on a one-slot channel per stripe"
+    },
+    {
+      "sha": "90c8b2d857f9194001faa5411809c555c5370b93",
+      "date": "2026-10-16T19:43:02-07:00",
+      "subject": "fix(nativeruntime): keep event order on the session stripe and run state-only events"
+    },
+    {
+      "sha": "67c6cf22ab7ba5db3d1414ceec3a94bfb77c4124",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "docs(learn): list Pi as a scanned session source"
+    },
+    {
+      "sha": "969dc730ef15a3a2549450127d3a6740a66abec9",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "fix(learn): read Pi usage as pi-ai's disjoint buckets"
+    },
+    {
+      "sha": "58b717e0d6219741ad6e38d1454dabc239f79811",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "fix(learn): harden Pi source parsing and add fixture test"
+    },
+    {
+      "sha": "0c633ed0efcb8ee2f53e874337c782b0f78207f9",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "test(learn): expect Pi in empty-source message"
+    },
+    {
+      "sha": "10ba76e354b5e55900b79fe14c2d0a139066276e",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "fix(learn): use constant upper bound check for Pi context conversion"
+    },
+    {
+      "sha": "8e1469c1bcd57ab9433f4383117af83e410541e1",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "feat(learn): include Pi sessions in the default scan"
+    },
+    {
+      "sha": "4bcb828dbc25c6072582942222c8e5749766f8ea",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "feat(learn): collect Pi sessions alongside other agents"
+    },
+    {
+      "sha": "c90e0a4c9d59589ab9d1f8570ec9d5405108ce5e",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "fix(nativeruntime): never drop session.end at the hook deadline"
+    },
+    {
+      "sha": "e6759e6e3c874aae264a9cb975836c7ec1e115c1",
+      "date": "2026-10-16T19:25:29-07:00",
+      "subject": "fix(nativeruntime): honor the hook deadline inside Handle"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".blocks/release-smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex/codex-sessionstart.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/requirements/release-python.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-doc-links.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/agent-conformance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-links.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/engine-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/middleware-canary.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/middleware-conformance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/profiles.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-binaries.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-packages.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "INSTALL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LICENSING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/agents.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/cavecrew-investigator.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/compile.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/delegate/portable-process.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drift-report.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/probe-installed.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/claude.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/codex.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/gemini.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/hermes.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/kilo.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/openclaw.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/opencode.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/pi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/profiles/qwen.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/reserved-verbs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bin/lib/portable-process.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/bin/release.generated.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/cmd/caveman-browse/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "browse/cmd/caveman-browse/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "browse/cmd/caveman-browse/version_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/aws-ecs-task-definition.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/kubernetes-ha.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/kubernetes.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dist/caveman.skill",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/AUTO-BENCHMARK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/HONEST-NUMBERS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/PACKAGE_RELEASES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/WRAP-BENCHMARK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install-windows.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/agent-profile-registry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/agent-wrapping.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/cli-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/deploy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/engine.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/installer-provider-discovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/learn.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/proxy-and-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/proxy-reliability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/sdks-and-packages.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/security-and-privacy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/stats-accounting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/technical/three-skills-refactor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/ccr/retry_busy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/ccr/sqlite_file_security_linux.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/ccr/sqlite_parent_security_posix.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/ccr/sqlite_parent_security_posix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/ccr/store_locking_procfs_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/ccr/store_permissions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/ccr/store_reopen_race_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/ccr/store_sqlite.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/cmd/caveman-engine/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/cmd/caveman-engine/version_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/codexexec.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/codexexec_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/compressors/breadth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/compressors/code_listing.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/compressors/compressor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/compressors/diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/compressors/terminal.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/compressors/terminal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/compressors/testreport.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/compressors/testreport_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/detect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/detect_html_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/filewrap.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/listing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/pixel/applicability.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/pixel/history_anthropic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/pixel/history_anthropic_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/pixel/render.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/pixel/transform_anthropic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/pixel/transform_gemini.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/pixel/transform_openai.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/release_shape_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engine/terminal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "engine/testdata/codex_exec_code_mode.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/llm_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/measure.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/prompts/fidelity.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/prompts/fr.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/prompts/pt.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/reminder_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evals/score_fidelity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evals/snapshot_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/scripts/firefox-e2e.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/src/caveman.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/test/provider-composer.spec.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/test/provider-harness.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "hooks/hooks-cursor.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "install.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "R066",
+      "path": "installer/install.js",
+      "previousPath": "bin/install.js"
+    },
+    {
+      "status": "R100",
+      "path": "installer/lib/command-args.js",
+      "previousPath": "bin/lib/command-args.js"
+    },
+    {
+      "status": "A",
+      "path": "installer/lib/cursor-native.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "installer/lib/host-hooks.js",
+      "previousPath": null
+    },
+    {
+      "status": "R077",
+      "path": "installer/lib/openclaw.js",
+      "previousPath": "bin/lib/openclaw.js"
+    },
+    {
+      "status": "R086",
+      "path": "installer/lib/opencode-agent.js",
+      "previousPath": "bin/lib/opencode-agent.js"
+    },
+    {
+      "status": "R083",
+      "path": "installer/lib/owned-install.js",
+      "previousPath": "bin/lib/owned-install.js"
+    },
+    {
+      "status": "R100",
+      "path": "installer/lib/platform-paths.js",
+      "previousPath": "bin/lib/platform-paths.js"
+    },
+    {
+      "status": "A",
+      "path": "installer/lib/portable-process.js",
+      "previousPath": null
+    },
+    {
+      "status": "R097",
+      "path": "installer/lib/provider-skills.js",
+      "previousPath": "bin/lib/provider-skills.js"
+    },
+    {
+      "status": "R086",
+      "path": "installer/lib/settings.js",
+      "previousPath": "bin/lib/settings.js"
+    },
+    {
+      "status": "M",
+      "path": "mcp/bin/release.generated.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem/CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem/cmd/cavemem/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mem/cmd/cavemem/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mem/cmd/cavemem/version_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/BINARY_RELEASE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/BLOCKS_RELEASE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/TERMINAL_UX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/scripts/benchmark-native-hooks.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/scripts/gen-device-auth.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/scripts/gen-modules-index.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/scripts/gen-wedge-installer.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/agent-skills.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/agents.generated.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

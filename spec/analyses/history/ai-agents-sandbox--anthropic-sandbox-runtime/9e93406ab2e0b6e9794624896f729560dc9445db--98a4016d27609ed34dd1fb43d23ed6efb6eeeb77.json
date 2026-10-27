@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-sandbox--anthropic-sandbox-runtime",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/anthropic-experimental/sandbox-runtime",
+  "report": "spec/projects/ai-agents-sandbox--anthropic-sandbox-runtime.md",
+  "analyzedSha": "9e93406ab2e0b6e9794624896f729560dc9445db",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T13:33:01+01:00",
+  "observedSha": "98a4016d27609ed34dd1fb43d23ed6efb6eeeb77",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "98a4016d27609ed34dd1fb43d23ed6efb6eeeb77",
+      "date": "2026-10-25T15:32:22-07:00",
+      "subject": "Merge pull request #774 from anthropics/claude/slack-thread-fix-8rtgzm"
+    },
+    {
+      "sha": "e021c50d1a680d08600dbdd613dee326e682f313",
+      "date": "2026-10-23T23:17:10Z",
+      "subject": "windows: correct the npx command for windows-install"
+    },
+    {
+      "sha": "c66fb77b28fdbea8b9788aca72377238ae67ca20",
+      "date": "2026-10-23T10:52:01-04:00",
+      "subject": "proxy: a SOCKS CONNECT to a mitmProxy host goes through the MITM socket (#764)"
+    },
+    {
+      "sha": "aceba124fd725f4a43d7016ed3f5651d61f83115",
+      "date": "2026-10-21T11:04:25-04:00",
+      "subject": "ci: drop some CA roots from the runners' trust store (#754)"
+    },
+    {
+      "sha": "c40cf14a65d025e3cd27f071f13a73c12b3b1f92",
+      "date": "2026-10-19T20:58:17-04:00",
+      "subject": "Release v0.0.81 (#749)"
+    },
+    {
+      "sha": "fed4ef8160d4cf419b3d5748fb10b05ac0059c06",
+      "date": "2026-10-20T00:36:53Z",
+      "subject": "windows: a session start does not block the event loop (#748)"
+    },
+    {
+      "sha": "81145771c9bfc51c5669f071b515209321e0d078",
+      "date": "2026-10-19T20:16:20-04:00",
+      "subject": "windows: network fence fix, a fuller fence check, and a loopback switch (#745)"
+    },
+    {
+      "sha": "5c90ea1eca096950ee6202fdeef7962938db7898",
+      "date": "2026-10-19T23:08:54Z",
+      "subject": "windows: report a disabled Secondary Logon service by name (#709)"
+    },
+    {
+      "sha": "38d1aee29c72035f1dba1337ac89b03a2f655d26",
+      "date": "2026-10-19T22:45:04Z",
+      "subject": "windows: skip the deny restore unless every grant was released (#708)"
+    },
+    {
+      "sha": "22947fb879efbdac48863054e119c94b16ebe8b3",
+      "date": "2026-10-19T22:39:39Z",
+      "subject": "docs(windows): the network fence does not cover SMB or WSL (#726)"
+    },
+    {
+      "sha": "8e16f78571bd27eed5ef7673c023dcf4d85c758e",
+      "date": "2026-10-19T18:24:15-04:00",
+      "subject": "windows: one spelling per environment variable for the sandboxed command (#739)"
+    },
+    {
+      "sha": "adabac90e7c7d602bf310d0f5624db028dc76397",
+      "date": "2026-10-19T15:21:33-07:00",
+      "subject": "windows: give the sandbox the client end of the stdin pipe (#724)"
+    },
+    {
+      "sha": "642424c6da8fca8e5da61c30c536d17fe9a2e3c4",
+      "date": "2026-10-19T17:22:48-04:00",
+      "subject": "Node's built-in HTTP clients use the sandbox's proxy (#738)"
+    },
+    {
+      "sha": "626a59671ee2be556d70a290a8036224be996193",
+      "date": "2026-10-16T18:18:16+01:00",
+      "subject": "Release v0.0.80 (#664)"
+    },
+    {
+      "sha": "3a2954dc8ab938877fe4e279f04dfe4dd18ab40d",
+      "date": "2026-10-16T12:29:35-04:00",
+      "subject": "Brackets are read in linear time, and a read rule is compiled once (#718)"
+    },
+    {
+      "sha": "0ded0c80bf8f44b64b30ad9e6bfc084cb9fc9dc5",
+      "date": "2026-10-16T02:37:19+01:00",
+      "subject": "Merge pull request #698 from anthropics/fix/never-rewrite-a-request-target-silently"
+    },
+    {
+      "sha": "f38088d62b1e8f1cb08d1f9f09564a63d9343c38",
+      "date": "2026-10-16T02:30:41+01:00",
+      "subject": "linux: a file above a write deny is kept there (#705)"
+    },
+    {
+      "sha": "db96f626023bf67c7ef0d1a9efe15849b2b743f2",
+      "date": "2026-10-16T02:29:11+01:00",
+      "subject": "proxy: an answer that arrived whole is passed on (#717)"
+    },
+    {
+      "sha": "e7550a63b681ef2c03a760f681d2f65240eca992",
+      "date": "2026-10-16T02:24:58+01:00",
+      "subject": "Merge branch 'main' into fix/never-rewrite-a-request-target-silently"
+    },
+    {
+      "sha": "0c0539f3a1f42417721c6de07e6d81431f729cbe",
+      "date": "2026-10-16T01:28:24+01:00",
+      "subject": "linux: the relays in the sandbox name the family they listen on (#719)"
+    },
+    {
+      "sha": "1e8b808ea49a70f8e8ae3e9111c85555163d9e5e",
+      "date": "2026-10-16T01:26:54+01:00",
+      "subject": "In a terminated tunnel, an HTTP/1.0 client gets the whole answer (#704)"
+    },
+    {
+      "sha": "298a34e146ccc89db4d88fb357d20964f284c89f",
+      "date": "2026-10-14T02:22:49Z",
+      "subject": "Merge main into fix/never-rewrite-a-request-target-silently"
+    },
+    {
+      "sha": "9a277e5e04af1ab1b04feea4400a6ed8a5b72039",
+      "date": "2026-10-13T19:11:46-07:00",
+      "subject": "linux: a sandboxed command stays in the namespaces made for it (#588)"
+    },
+    {
+      "sha": "9ce832fccc4101265b13edc87f2e5ae238f161fa",
+      "date": "2026-10-13T19:07:21-07:00",
+      "subject": "A refused upload keeps its answer, no clear-text 502 in a tunnel, and OPTIONS * keeps its host (#702)"
+    },
+    {
+      "sha": "48a08dc69d7660b1d33e78bb81adf808adc6596e",
+      "date": "2026-10-13T19:04:49-07:00",
+      "subject": "The real path is the kernel's on every runtime (#689)"
+    },
+    {
+      "sha": "a478351bc162cb6f1160e564e0d8af82c28838a2",
+      "date": "2026-10-13T20:13:47Z",
+      "subject": "Merge main into fix/never-rewrite-a-request-target-silently"
+    },
+    {
+      "sha": "32cdd861b93fca377f0faebf8621a54ab1beabbe",
+      "date": "2026-10-13T13:10:01-07:00",
+      "subject": "Terminated tunnels end (#700)"
+    },
+    {
+      "sha": "0fabe2c73e28db34e37738d08b7fea12aa7e92b3",
+      "date": "2026-10-13T13:08:03-07:00",
+      "subject": "linux: the bridges inside the sandbox take a burst of connections (#701)"
+    },
+    {
+      "sha": "a1dfd433d89b38b79e4e7697c3e422d17cb45c9a",
+      "date": "2026-10-13T13:06:41-07:00",
+      "subject": "linux: no placeholder where no mount point can be made (#688)"
+    },
+    {
+      "sha": "2de68a685eba430ff1faf01ac78ecb8092f4609e",
+      "date": "2026-10-13T11:11:43Z",
+      "subject": "A fragment is cut off, and a request the parser refuses in a tunnel is answered and recorded"
+    },
+    {
+      "sha": "a3667a64109200fedf76552eaa48b4b5a4d62ac6",
+      "date": "2026-10-13T02:59:53Z",
+      "subject": "Merge main into fix/never-rewrite-a-request-target-silently"
+    },
+    {
+      "sha": "0f82db25769c9d556be1d4e6527b36029c9b6dd4",
+      "date": "2026-10-13T02:55:17Z",
+      "subject": "A target outside ASCII goes percent-encoded, \"#\" is refused, and every refusal is recorded"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/integration-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/srt-proxy.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eslint.config.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/proxy-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/proxy-main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/aws-sigv4.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/credential-mask-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/decider-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/domain-pattern.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/emitted-connection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/glob-pattern.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/http-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/linux-sandbox-utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/macos-sandbox-utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/mitm-ca.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/mitm-leaf.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/mux-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/own-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/parent-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/path-entries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/proxy-only.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/read-deny-glob.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/request-filter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sandbox-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sandbox-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sandbox-schemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sandbox-utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sandbox-violation-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/socks-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/tls-terminate-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/windows-sandbox-utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/utils/real-path.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/config-validation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/docker-weak-sandbox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/srt-proxy-hello.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/fixtures/tunnel-ends.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/bwrap-argv.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/emitted-connections.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/fake-decider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/proxy-cli.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/public-exports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/brackets-that-spell-no-set.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/byte-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/canonical-host-routing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/client-abort.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/client-hello-sni.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/close-after-flush.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/connect-non-tls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/credential-mask-body.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/credential-mask-env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/credential-mask-files.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/credential-mask-sigv4.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/credential-mask.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/decider-client-bounds.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/decider-client-verdicts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/decider-client.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/default-write-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/deny-late-body.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/deny-order-independence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/deny-path-made-meanwhile.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/execute-only-binary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/git-over-ssh.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/glob-expand.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/glob-pattern.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/glob-walk.property.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/invalid-upstream-response.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/linux-ancestor-pin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/linux-bridge-burst.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/linux-bwrap-args-file.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/linux-file-above-deny.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/linux-nested-userns.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/linux-one-mount-per-destination.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/linux-relays-listen.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/linux-unmakeable-mount-point.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/literal-path-entries.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/macos-literal-deny-brackets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/mandatory-deny-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/mitm-ca.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/mitm-leaf.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/mux-proxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/names-that-are-no-text.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/names-with-a-backslash.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/own-files.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/pid-namespace-isolation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/plaintext-header-set.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/proxy-deny-violations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/proxy-env-vars.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/proxy-only-edges.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/proxy-only-methods.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/proxy-only-whole.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/proxy-only.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/read-deny-glob.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/read-list-precedence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/readonly-deny-dir-binds.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/readonly-deny-dir-stubs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/request-filter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/request-rewriting.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/request-target-forwarding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/resolved-address-guard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/response-header-bytes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/rules-through-links-on-every-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/seccomp-filter-generator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/seccomp-vsock-block.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/socks-unauthenticated-probe.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/stale-mount-point.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/symlinked-deny-paths.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/temp-objects-at-exit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tls-terminate-destroy-soon.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tls-terminate-handshake-deadline.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tls-terminate-in-process.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/tls-terminate-keepalive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/tls-terminate-proxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tls-terminate-relay-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tls-terminate-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tls-terminate-tunnel-ends.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tls-terminate-upload-gate.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/trailers-then-request.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/tunnel-cap-refusal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/update-config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/winsrt.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/sandbox/wrap-with-sandbox.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/sandbox/write-deny-way-cut-short.property.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/utils/real-path.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/seccomp-src/apply-seccomp.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/seccomp-src/seccomp-unix-block.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/seccomp/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/ci/cleanup.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/ci/smoke-aces.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/ci/smoke-exec.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "vendor/srt-win-src/ci/smoke-profile-read.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "vendor/srt-win-src/ci/smoke-write-restricted.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/ci/smoke.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/acl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/install.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/launch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/logon.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/path_id.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "vendor/srt-win-src/src/persist.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "vendor/srt-win-src/src/probe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "vendor/srt-win-src/src/profile.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "vendor/srt-win-src/src/profile_plan.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/reg.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/runner.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/self_protect.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/state_db.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/token.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/user.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/util.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/srt-win-src/src/wfp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "vendor/srt-win-src/tests/data/read-deny-cases.txt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

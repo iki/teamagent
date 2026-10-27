@@ -53,6 +53,8 @@ Identity must include scope. The same document title or entity name in two teams
 
 Use separate event time and knowledge time. [Graphiti](https://github.com/getzep/graphiti) ([report](projects/ai-agents-mem--graphiti.md)) explicitly models episode provenance and relation validity/invalidation. This is valuable for “who owned this then?” and “what changed?” questions. Store uncertainty when a source gives no exact date; do not invent precision.
 
+The refreshed [Graphiti report](projects/ai-agents-mem--graphiti.md) also distinguishes ingestion progress from event-time recency when summarizing episodes. Keep separate watermarks and a deterministic source-ID/offset cursor. A bounded prompt and a timestamp alone do not prove that a truncated episode, late-arriving event, or timestamp tie was consumed completely.
+
 ## 3. Local and cloud persistence
 
 The recommended first implementation is a local service with SQLite metadata/FTS and a content-addressed asset directory, plus an optional vector index. The cloud variant can use PostgreSQL and object storage behind the same contracts. These are proposed deployment choices, not measured winners. Keep backend-specific objects behind adapters and export canonical records in documented formats.
@@ -105,7 +107,7 @@ At task completion, propose memory candidates from observable outcomes: stable p
 
 Consolidation groups related records, retrieves possible duplicates and contradictions, and creates a new version with links to all supports. Preserve negative evidence and disagreements. A new assertion may supersede an old one only with matching scope and temporal meaning. Similar wording alone is insufficient; the lexical deduplication option in [MentisDB](https://github.com/CloudLLM-ai/mentisdb) ([report](projects/ai-agents-mem--mentisdb.md)) illustrates why similarity and semantic replacement must remain distinct.
 
-[Mem0](https://github.com/mem0ai/mem0) ([report](projects/ai-agents-mem--mem0.md)) provides a compact scoped raw/inferred memory path; the inspected version uses additive extraction. [Cognee](https://github.com/topoteretes/cognee) ([report](projects/ai-agents-mem--cognee.md)) makes provenance and contradiction stages configurable. The harness must record whether such stages actually ran, rather than assuming that a backend capability is always enabled.
+[Mem0](https://github.com/mem0ai/mem0) ([report](projects/ai-agents-mem--mem0.md)) provides a compact scoped raw/inferred memory path; the inspected version uses additive extraction. [Cognee](https://github.com/topoteretes/cognee) ([updated report](projects/ai-agents-mem--cognee.md)) now separates normal ingestion from opt-in conflict review through `improve(review_conflicts=True)`; the old `functional_relationships` path is rejected. Treat conflict review as a separately recorded operation with its own model and evidence requirements, not an automatic property of graph ingestion.
 
 Failed refreshes must preserve the previous materialized artifact. If a retrieval provider fails, a summary saying “there is no information” must not replace years of accumulated knowledge. [Hindsight](https://github.com/vectorize-io/hindsight) ([report](projects/ai-agents-mem--hindsight.md)) explicitly separates these failure cases. [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler) ([report](projects/ai-agents-mem--llm-wiki-compiler.md)) binds extraction reuse to source bytes and the provider/model/prompt contract. Apply the same versioning discipline to captions, embeddings, summaries and skill candidates.
 
@@ -279,3 +281,18 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [get-shit-done](https://github.com/gsd-build/get-shit-done) | [Report](projects/ai-spec--get-shit-done.md) | source-reviewed |
 | [openspec](https://github.com/Fission-AI/OpenSpec) | [Report](projects/ai-spec--openspec.md) | source-reviewed |
 <!-- coverage:end -->
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md) ([source](https://github.com/jovidecroock/gittifacts)).
+- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md) ([source](https://github.com/helixdb/helix-foundry)).
+- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md) ([source](https://github.com/xerj-org/xerj)).
+- [awesome-jev-live](analyses/unreviewed/ai-info--awesome-jev-live.md) ([source](https://github.com/wh000wh000/awesome-jev-live)).
+- [best-of-agent-harnesses](analyses/unreviewed/ai-info--best-of-agent-harnesses.md) ([source](https://github.com/ryanalberts/best-of-agent-harnesses)).
+- [better-icons](analyses/unreviewed/ai-query--better-icons.md) ([source](https://github.com/better-auth/better-icons)).
+- [dbx](analyses/unreviewed/ai-query--dbx.md) ([source](https://github.com/t8y2/dbx)).
+- [yt-dlp](analyses/unreviewed/ai-query--yt-dlp.md) ([source](https://github.com/yt-dlp/yt-dlp)).
+<!-- analysis-additions:end -->

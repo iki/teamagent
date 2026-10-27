@@ -1,0 +1,207 @@
+# tracedecay: change evidence
+
+Source: [tracedecay](https://github.com/ScriptedAlchemy/tracedecay) · [Analysis](../../projects/ai-agents-mem--tracedecay.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `413755b1f699477f7ca7d1ca744ed0b4000dedc3`; commit date: 2026-10-03T11:55:23-07:00; review date: unknown; observed SHA: `950f37db306a12bc3503a290ebfedf22b46f0bd3`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ScriptedAlchemy/tracedecay/compare/413755b1f699477f7ca7d1ca744ed0b4000dedc3...950f37db306a12bc3503a290ebfedf22b46f0bd3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [950f37db306a](https://github.com/ScriptedAlchemy/tracedecay/commit/950f37db306a12bc3503a290ebfedf22b46f0bd3) 2026-10-27T10:31:27-07:00: simplify(diagnostics): publish compiler status through the project owner (#4545)
+- [f993aac66095](https://github.com/ScriptedAlchemy/tracedecay/commit/f993aac6609539930d2f07a00e803bd1a863f099) 2026-10-27T09:09:42-07:00: fix(lsp): refuse expired semantic work before analyzer admission (#4580)
+- [e19b1695dcd4](https://github.com/ScriptedAlchemy/tracedecay/commit/e19b1695dcd4a5bddbcff3887f0444bff5e53340) 2026-10-27T09:01:33-07:00: fix(windows): restore native build and runtime validation (#4581)
+- [251b87ea16d5](https://github.com/ScriptedAlchemy/tracedecay/commit/251b87ea16d55c8e79d27b0f5fc65bd411bb69c8) 2026-10-27T08:59:26-07:00: chore(deps): update dependency @tanstack/react-virtual to v3.14.23 (#4565)
+- [bd769d2b8580](https://github.com/ScriptedAlchemy/tracedecay/commit/bd769d2b858015106a9dc1ef66744449755ab1b7) 2026-10-27T08:53:22-07:00: fix(sdk): separate delivered stream cursors from watermarks (#4489)
+- [c696f28ee1a0](https://github.com/ScriptedAlchemy/tracedecay/commit/c696f28ee1a00b3224de1c42ce474b46a6f6b9f9) 2026-10-27T03:54:08-07:00: fix(graph-db): report and verify drifting corruption verdicts (#4578)
+- [5f8892c5b0dc](https://github.com/ScriptedAlchemy/tracedecay/commit/5f8892c5b0dcf62a3edc125d312504a36870a020) 2026-10-27T01:22:00-07:00: build(ci): pin Rust 1.99 and share Cargo acquisition policy (#4543)
+- [93303be367d3](https://github.com/ScriptedAlchemy/tracedecay/commit/93303be367d3c4cf91b5c933ccb2ace2aa38dc5b) 2026-10-27T07:03:13Z: chore(deps): update dependency @rsbuild/core to v2.2.14 (#4557)
+- [436cf0f263da](https://github.com/ScriptedAlchemy/tracedecay/commit/436cf0f263da17d7df5dd7321b196c24b46661eb) 2026-10-27T07:03:05Z: chore(deps): update dependency python to v3.15.2 (#4566)
+- [fea107e80d14](https://github.com/ScriptedAlchemy/tracedecay/commit/fea107e80d14031c435e33915bb3e0890cf781c0) 2026-10-26T22:04:08-07:00: chore(deps): update dependency @tanstack/react-query to v5.105.0 (#4568)
+- [1e7e8aed9871](https://github.com/ScriptedAlchemy/tracedecay/commit/1e7e8aed987152b4e1336c2a02c27f3788e6898e) 2026-10-26T21:51:38-07:00: simplify(proximity): remove discarded risk metadata (#4549)
+- [6658a900c271](https://github.com/ScriptedAlchemy/tracedecay/commit/6658a900c2719419a11f0af1c4e7b6aa9b8e5d65) 2026-10-27T04:07:07Z: fix(lsp): retain admitted diagnostic snapshots for pull (#4524)
+- [a35ef6224107](https://github.com/ScriptedAlchemy/tracedecay/commit/a35ef6224107895384a51e634a5e149a451f9167) 2026-10-27T03:21:14Z: docs(code-index): design a smaller decoded generation (#4560)
+- [cbaedbad31fd](https://github.com/ScriptedAlchemy/tracedecay/commit/cbaedbad31fd2d0061d2338a6a84bec883877adf) 2026-10-26T19:45:10-07:00: fix(sessions): converge host ingest and hook redrive on hard failures (#4567)
+- [96fe61bd57af](https://github.com/ScriptedAlchemy/tracedecay/commit/96fe61bd57afb21d3f756b65fd463853cdd330bb) 2026-10-26T19:45:04-07:00: fix(sessions): back off history passes while retained ingest is Blocked (#4573)
+- [0d7c88d0d32d](https://github.com/ScriptedAlchemy/tracedecay/commit/0d7c88d0d32d8360c6a56b79b098d17baffa4111) 2026-10-26T19:44:57-07:00: fix(graph-db): log drifting corruption verdicts at error level (#4574)
+- [f3d8946cd340](https://github.com/ScriptedAlchemy/tracedecay/commit/f3d8946cd340b12cfbb6753a5eea42bb9e005283) 2026-10-26T19:04:32-07:00: fix(code-index): key panic quarantine on input, not pass progress (#4572)
+- [22adbdb4ae99](https://github.com/ScriptedAlchemy/tracedecay/commit/22adbdb4ae999b2e714f68aeb29f9150b95c1196) 2026-10-26T18:03:16-07:00: Merge pull request #4556 from ScriptedAlchemy/renovate/rules_rust-0.x
+- [89d72ecbb6fa](https://github.com/ScriptedAlchemy/tracedecay/commit/89d72ecbb6fa123888b3c07d55a1ddcea8a38683) 2026-10-26T12:07:25-07:00: Merge pull request #4542 from ScriptedAlchemy/simplify/automation-task-lease
+- [29f8e251f44b](https://github.com/ScriptedAlchemy/tracedecay/commit/29f8e251f44b8d519070187aec00997d0c6fc3c6) 2026-10-26T12:00:49-07:00: Merge pull request #4562 from ScriptedAlchemy/fix/http-observation-drain
+- [790eeba2bc42](https://github.com/ScriptedAlchemy/tracedecay/commit/790eeba2bc4240f4f825172618a768a87f7082ad) 2026-10-26T02:45:10-07:00: fix(test): drain queued connections before HTTP observation stops
+- [2f00b0ebd556](https://github.com/ScriptedAlchemy/tracedecay/commit/2f00b0ebd5565657d7309e0235f5989e270c6555) 2026-10-26T00:13:42-07:00: Merge origin/master into simplify/automation-task-lease
+- [ccee11995132](https://github.com/ScriptedAlchemy/tracedecay/commit/ccee1199513291f38a4a96e30d336896f22252b4) 2026-10-26T00:10:16-07:00: ci(windows): stop duplicating debug databases in build caches
+- [bbfcad7c03a3](https://github.com/ScriptedAlchemy/tracedecay/commit/bbfcad7c03a37c6ad0c92f9d0eba8cc93767ea69) 2026-10-25T23:49:24-07:00: ci(bazel): recover from brief remote coordinator outages
+- [b10ce4e3cb5d](https://github.com/ScriptedAlchemy/tracedecay/commit/b10ce4e3cb5d83a7db55f913468b380585ce19a3) 2026-10-25T22:46:32-07:00: ci(cli): classify the full refresh memory workload as large
+- [9a30479b6210](https://github.com/ScriptedAlchemy/tracedecay/commit/9a30479b6210c92f74eb82d9b0c4c7581e31250b) 2026-10-25T22:23:24-07:00: Merge pull request #4554 from ScriptedAlchemy/devin/1792965256-drop-rsbuild-patch
+- [54e8b3f40e5b](https://github.com/ScriptedAlchemy/tracedecay/commit/54e8b3f40e5bde6673071a8f663bc42f55047f6b) 2026-10-25T21:52:56-07:00: ci: start fleet validation alongside repository checks
+- [47647d89cfa1](https://github.com/ScriptedAlchemy/tracedecay/commit/47647d89cfa18c8bafc51b2a1e3bc1244d24e79d) 2026-10-26T04:40:28Z: fix(build): rebase rules_rust patches onto 0.75.0
+- [23bca99639ba](https://github.com/ScriptedAlchemy/tracedecay/commit/23bca99639ba2121fc5d92799bb001247e3a2acb) 2026-10-26T04:33:53Z: chore(deps): update dependency rules_rust to v0.75.0
+- [55b27f973e7a](https://github.com/ScriptedAlchemy/tracedecay/commit/55b27f973e7aec40b4f75aef2f66656e12af7417) 2026-10-25T20:52:40-07:00: Merge pull request #4552 from ScriptedAlchemy/fix/s2-4481-pi-quarantine
+- [430e4475095c](https://github.com/ScriptedAlchemy/tracedecay/commit/430e4475095c52ad8b2b0c36821eef32819c9dc6) 2026-10-25T20:17:08-07:00: Merge pull request #4553 from ScriptedAlchemy/devin/1792964118-windows-test-portability
+- [d639dade53f2](https://github.com/ScriptedAlchemy/tracedecay/commit/d639dade53f25a30127ba9f894ee0c4a62e8328d) 2026-10-26T03:00:46Z: ci: rerun Linux fleet after code-index warmup timeouts
+
+## Changed paths (truncated)
+
+- A: `.bazelignore`
+- A: `.bazelrc`
+- A: `.bazelversion`
+- A: `.cargo/acquisition.toml`
+- M: `.cargo/config.toml`
+- D: `.changeset/bounded-daemon-maintenance-shutdown.md`
+- D: `.changeset/consolidation-maintenance-telemetry.md`
+- D: `.changeset/daemon-status-headline.md`
+- D: `.changeset/exact-root-inventory-fast-path.md`
+- D: `.changeset/prove-daemon-and-store-observation.md`
+- D: `.changeset/session-correlation-presence-fast-path.md`
+- D: `.changeset/v2-foundation-crates.md`
+- M: `.claude/skills/evaluating-hook-hints/SKILL.md`
+- M: `.claude/skills/self-improving-from-usage-logs/SKILL.md`
+- M: `.claude/skills/tracedecay-dev-sweep/SKILL.md`
+- D: `.claude/skills/using-hotpath/SKILL.md`
+- D: `.claude/skills/using-hotpath/references/hotpath-0.24.md`
+- D: `.claude/skills/using-hotpath/references/instrumentation-facilities.md`
+- M: `.claude/skills/writing-agent-managed-skills/SKILL.md`
+- M: `.codex/skills/evaluating-hook-hints/SKILL.md`
+- M: `.codex/skills/self-improving-from-usage-logs/SKILL.md`
+- M: `.codex/skills/tracedecay-dev-sweep/SKILL.md`
+- D: `.codex/skills/using-hotpath/SKILL.md`
+- D: `.codex/skills/using-hotpath/agents/openai.yaml`
+- D: `.codex/skills/using-hotpath/references/hotpath-0.24.md`
+- D: `.codex/skills/using-hotpath/references/instrumentation-facilities.md`
+- M: `.codex/skills/writing-agent-managed-skills/SKILL.md`
+- M: `.gitattributes`
+- M: `.github/ISSUE_TEMPLATE/bug_report.yml`
+- M: `.github/actionlint.yaml`
+- A: `.github/actions/build-cli/action.yml`
+- D: `.github/actions/install-ast-grep/action.yml`
+- A: `.github/actions/package-release/action.yml`
+- A: `.github/actions/setup-bazel/action.yml`
+- A: `.github/actions/setup-bazel/configure_fleet.py`
+- D: `.github/actions/setup-linux-mold/action.yml`
+- M: `.github/actions/setup-pnpm/action.yml`
+- M: `.github/actions/tune-windows-runner/action.yml`
+- D: `.github/hauler-ci.json`
+- D: `.github/hauler/Dockerfile`
+- D: `.github/linux-test-partitions.json`
+- M: `.github/pull_request_template.md`
+- A: `.github/workflows/blaze.yml`
+- M: `.github/workflows/ci.yml`
+- D: `.github/workflows/distribution-acceptance.yml`
+- D: `.github/workflows/hauler-ci.yml`
+- D: `.github/workflows/hauler-image.yml`
+- M: `.github/workflows/hawk.yml`
+- A: `.github/workflows/hermetic-evals.yml`
+- D: `.github/workflows/hotpath-comment.yml`
+- D: `.github/workflows/hotpath-coverage.yml`
+- D: `.github/workflows/hotpath-profile.yml`
+- D: `.github/workflows/hotpath-runtime-core.yml`
+- M: `.github/workflows/plugin-validation.yml`
+- M: `.github/workflows/release-beta.yml`
+- M: `.github/workflows/release-please.yml`
+- M: `.github/workflows/release.yml`
+- A: `.github/workflows/renovate-embedded-bundles.yml`
+- M: `.github/workflows/sdk-conformance.yml`
+- A: `.github/workflows/upstream-compat.yml`
+- M: `.gitignore`
+- M: `.mcp.json`
+- A: `.npmrc`
+- M: `.release-please-manifest.json`
+- D: `.signpath/artifact-configuration.xml`
+- M: `AGENTS.md`
+- A: `BUILD.bazel`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- A: `MODULE.bazel`
+- M: `README.md`
+- M: `SECURITY.md`
+- A: `benchmark_data/BUILD.bazel`
+- M: `benchmark_data/claude-observation/README.md`
+- M: `benchmark_data/claude-observation/workload-v1.json`
+- M: `benchmark_data/index-bench/README.md`
+- M: `benchmark_data/query-code-index/expected-v1.json`
+- M: `benchmark_data/query-code-index/workload-v1.json`
+- M: `benchmark_data/run_benchmarks.py`
+- M: `benchmark_data/runtime/fixtures.py`
+- A: `benchmark_data/runtime/fixtures/project/.gitignore`
+- A: `benchmark_data/runtime/fixtures/project/Cargo.toml`
+- M: `benchmark_data/runtime/fixtures/project/src/catalog.py`
+- A: `benchmark_data/runtime/fixtures/project/src/lib.rs`
+- M: `benchmark_data/runtime/fixtures/project/src/report.ts`
+- A: `benchmark_data/runtime/fixtures/project/tests/catalog.rs`
+- M: `benchmark_data/runtime/run.py`
+- M: `benchmark_data/runtime/tests/test_capture_dispatch.py`
+- M: `benchmark_data/session-temporal/README.md`
+- M: `benchmark_data/session-temporal/workload-v1.json`
+- A: `clippy.toml`
+- M: `commitlint.config.cjs`
+- A: `crates/tracedecay-agent-hosts/BUILD.bazel`
+- M: `crates/tracedecay-agent-hosts/Cargo.toml`
+- M: `crates/tracedecay-agent-hosts/build.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/antigravity.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/chatgpt.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/claude.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/claude/tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/cline.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/codex.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/codex/mcp_registry.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/codex/plugin_registry.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/codex/tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/context_scout.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/context_scout/address_registry.rs`
+- A: `crates/tracedecay-agent-hosts/src/agents/context_scout/decision_engine.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/context_scout/evidence.rs`
+- A: `crates/tracedecay-agent-hosts/src/agents/context_scout/intent_pass.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/context_scout/model.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/context_scout/owner.rs`
+- A: `crates/tracedecay-agent-hosts/src/agents/context_scout/session_window.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/context_scout/store.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/context_scout/store_tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/copilot.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/copilot/tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/cursor.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/devin.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/droid.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/gemini.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/gemini/extension.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/gemini/tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/git_post_commit_hook.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/hermes.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/hermes/dashboard_wrapper.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/hermes/lifecycle.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/hermes/profile_config.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/hermes/templates/plugin_init.py`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/component_set.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/control.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/doctor.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/mod.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/model.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/planner.rs`
+- D: `crates/tracedecay-agent-hosts/src/agents/host_bundle/runtime.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle/writer.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_bundle_registry.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_cli.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_component_registration.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_config_io.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_config_io/json_edit.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/host_config_io/tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/kilo.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/kimi.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/kimi/web_refresh.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/kiro.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/kiro/tests.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/mcp_registration.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/mod.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/opencode.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/opencode/plugin_cli.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/plugin_bundle.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/prompt_rules.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/roo_code.rs`
+- A: `crates/tracedecay-agent-hosts/src/agents/serve_args.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/text_file_transaction.rs`
+- M: `crates/tracedecay-agent-hosts/src/agents/vibe.rs`

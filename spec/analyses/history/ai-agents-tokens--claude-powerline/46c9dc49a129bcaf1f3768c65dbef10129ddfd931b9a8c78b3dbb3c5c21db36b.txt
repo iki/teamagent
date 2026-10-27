@@ -1,0 +1,25 @@
+# claude-powerline
+
+Source: [claude-powerline](https://github.com/Owloops/claude-powerline) · Category: [ai-agents-tokens](../categories/ai-agents-tokens.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `e8696d7dd9791e5cfd45bca8cead6f9204c9284f`; commit timestamp `2026-09-27T07:36:19Z`; 106 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Owloops/claude-powerline/blob/e8696d7dd9791e5cfd45bca8cead6f9204c9284f/README.md)):
+
+> A vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and custom themes. Requires Node.js 18+, Claude Code, and Git 2.0+. For best display, install a Nerd Font or use `--charset=text` for ASCII-only symbols.
+
+Build/package evidence: [package.json](https://github.com/Owloops/claude-powerline/blob/e8696d7dd9791e5cfd45bca8cead6f9204c9284f/package.json)
+
+License evidence: [LICENSE](https://github.com/Owloops/claude-powerline/blob/e8696d7dd9791e5cfd45bca8cead6f9204c9284f/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-tokens**. Its category places it in the candidate set for models, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [models](../models.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

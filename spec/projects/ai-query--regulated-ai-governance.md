@@ -23,3 +23,7 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [regulated-ai-governance](https://github.com/ashutoshrana/regulated-ai-governance); analyzed commit `664a753aa46062d5e07b0e3a35f8fbf2367a4638`; commit date 2026-09-11T15:36:55-05:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--regulated-ai-governance.md).
+<!-- teamagent-analysis:end -->

@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-tokens**. Its category places it in 
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [tokuin](https://github.com/nooscraft/tokuin); analyzed commit `046ae29dd23fc630bdfe29b35255e0643e09c169`; commit date 2026-04-21T13:14:03+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--xx-2604-tokuin.md).
+<!-- teamagent-analysis:end -->

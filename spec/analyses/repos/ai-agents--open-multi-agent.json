@@ -1,0 +1,490 @@
+{
+  "metadata": {
+    "id": "ai-agents--open-multi-agent",
+    "category": "ai-agents",
+    "name": "open-multi-agent",
+    "url": "https://github.com/JackChen-me/open-multi-agent",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--open-multi-agent.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "3563a9312b304fffca49873c0dcf6c3b259a0f58",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T00:26:29+08:00",
+    "reportSha256": "09bd05da140e2b392706ffa67c0605947c9e253e5db2eac63c87437d3dd706c3",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--open-multi-agent",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/JackChen-me/open-multi-agent",
+    "report": "spec/projects/ai-agents--open-multi-agent.md",
+    "analyzedSha": "3563a9312b304fffca49873c0dcf6c3b259a0f58",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T00:26:29+08:00",
+    "observedSha": "009bdbe079a9dfa00ec1ae5819b79000a2889135",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "009bdbe079a9dfa00ec1ae5819b79000a2889135",
+        "date": "2026-10-24T11:41:14+08:00",
+        "subject": "fix(release-bot): stop when the lockfile nests a published workspace copy (#641)"
+      },
+      {
+        "sha": "12d7e4ee3501f85686d546a26945a0659c1b292e",
+        "date": "2026-10-24T10:36:09+08:00",
+        "subject": "feat(core): accept Zod 4 schemas alongside Zod 3 (#640)"
+      },
+      {
+        "sha": "8cb66e0cf098387fd1180aa34fced0cffd0621e0",
+        "date": "2026-10-24T10:21:34+08:00",
+        "subject": "fix(core): bound validation issue reports sent to the model (#639)"
+      },
+      {
+        "sha": "5ee9aae9f3c0c35a973b8560970629da42fa424d",
+        "date": "2026-10-24T00:05:03+08:00",
+        "subject": "chore: release core v1.22.0 and create-oma-app v0.8.11 (#638)"
+      },
+      {
+        "sha": "88c1fa457860fa1e2134221bc21521356f7de3de",
+        "date": "2026-10-23T23:41:06+08:00",
+        "subject": "fix(release-bot): record deterministic bump overrides before review (#636)"
+      },
+      {
+        "sha": "28c75be94d38d4489ddcfb2eebfe4292970a4b3b",
+        "date": "2026-10-23T22:45:30+08:00",
+        "subject": "docs: record Team.addTask option fix and credit contributor (#634)"
+      },
+      {
+        "sha": "3312747909698e5edb42e72e57f593277c510778",
+        "date": "2026-10-23T22:27:18+08:00",
+        "subject": "fix(core): preserve task options in Team.addTask (#633)"
+      },
+      {
+        "sha": "a938c2a55ddb014b2d03a52c7cab217926a66356",
+        "date": "2026-10-21T02:36:05+08:00",
+        "subject": "feat(minimax): default new configurations to M3.1 Flash (#631)"
+      },
+      {
+        "sha": "4dfa29dd13323d6c3cbf89e6c1e4ea57343c6716",
+        "date": "2026-10-19T14:24:57+08:00",
+        "subject": "docs: simplify README feature summaries and quick starts (#630)"
+      },
+      {
+        "sha": "fa7e65267a57f280b63a90ad81ee7699dec3ca9f",
+        "date": "2026-10-18T21:38:47+08:00",
+        "subject": "docs: add OrchestrAI to bilingual user showcase (#629)"
+      },
+      {
+        "sha": "39eecb269746f939182e4235b84e1ebacbc2d4bb",
+        "date": "2026-10-17T00:00:52+08:00",
+        "subject": "chore: release core v1.21.3 and create-oma-app v0.8.10 (#627)"
+      },
+      {
+        "sha": "d4084ef803c4cfb9b241e5545b2ff236ceb2603e",
+        "date": "2026-10-16T10:42:32+08:00",
+        "subject": "fix(core): resolve dangling symlinks in the filesystem sandbox check (#626)"
+      },
+      {
+        "sha": "6ec5498643c7e431aa66751f17f47a529e7f927c",
+        "date": "2026-10-10T03:23:19+08:00",
+        "subject": "chore: release core v1.21.2 and create-oma-app v0.8.9 (#625)"
+      },
+      {
+        "sha": "d1291c058b25781815329e24b825a99b8e6b2582",
+        "date": "2026-10-08T12:57:06+08:00",
+        "subject": "docs: route community feedback to issues (#624)"
+      },
+      {
+        "sha": "75a67581c98df3bce3c90035dcaf445a989155d2",
+        "date": "2026-10-04T08:21:42+08:00",
+        "subject": "fix(release-bot): wait up to eight minutes for npm to serve a published version (#622)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/RELEASING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTORS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_zh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/coordinator.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/durable-approvals.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/errors.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/run-journal.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/sandbox-and-shell.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/tool-configuration.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/README_zh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/examples/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/examples/cookbook/narrative-puzzle-hint-arbitration.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/examples/integrations/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/examples/integrations/express-customer-support/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/examples/providers/minimax.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/agent/structured-output.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/cli/oma.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/eval/evalset.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/eval/file.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/eval/gate.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/eval/judge.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/eval/scorers/structured-output.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/llm/minimax.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/memory/shared.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/orchestrator/consensus.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/orchestrator/coordinator.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/orchestrator/task-profiler.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/team/team.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/tool/built-in/delegate.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/tool/built-in/path-safety.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/tool/executor.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/tool/framework.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/src/utils/validation-issues.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/tests/built-in-tools.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/tests/coordinator-manifest.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/tests/fixtures/zod-versions.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/tests/llm-adapter-capabilities.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/tests/minimax-http.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/tests/shared-memory.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/tests/structured-output.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/tests/team-messaging.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/tests/tool-executor.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/tests/validation-issues.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/tests/zod-versions.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/vitest.zod3.config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/create-oma-app/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/create-oma-app/template/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/create-oma-app/templates/demo/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/create-oma-app/templates/pr-review/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/create-oma-app/templates/security/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/src/cli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/release-bot/src/lockfile.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/src/orchestrator.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/src/prepare.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/src/publisher.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/src/schema.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/release-bot/tests/lockfile.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/tests/orchestrator.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/tests/package-boundary.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/tests/prepare.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/tests/publisher.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/release-bot/tests/schema.test.ts",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

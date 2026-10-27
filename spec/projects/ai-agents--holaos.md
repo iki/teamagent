@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents**. Its category places it in the can
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [holaos](https://github.com/holaboss-ai/holaOS); analyzed commit `4684714ee133794cdbb86630e42b7d93447fb2e2`; commit date 2026-08-21T20:32:29+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents--holaos.md).
+<!-- teamagent-analysis:end -->

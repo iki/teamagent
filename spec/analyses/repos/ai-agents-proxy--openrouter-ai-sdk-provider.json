@@ -1,0 +1,504 @@
+{
+  "metadata": {
+    "id": "ai-agents-proxy--openrouter-ai-sdk-provider",
+    "category": "ai-agents-proxy",
+    "name": "openrouter-ai-sdk-provider",
+    "url": "https://github.com/OpenRouterTeam/ai-sdk-provider",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-proxy--openrouter-ai-sdk-provider.md",
+    "topics": [
+      "models",
+      "decisions"
+    ],
+    "depth": "screened",
+    "analyzedSha": "1b22b05352cb0f9243a6c3fdd326038dd3705544",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-19T07:14:33-07:00",
+    "reportSha256": "f92043fbb7f902ae2b0b7c673867ad3124a64860dd59f2ad15108093d7a581d4",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-proxy--openrouter-ai-sdk-provider",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/OpenRouterTeam/ai-sdk-provider",
+    "report": "spec/projects/ai-agents-proxy--openrouter-ai-sdk-provider.md",
+    "analyzedSha": "1b22b05352cb0f9243a6c3fdd326038dd3705544",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-19T07:14:33-07:00",
+    "observedSha": "0d2e6922091b77b71cc44e81eba69ed5fbd92f0f",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "0d2e6922091b77b71cc44e81eba69ed5fbd92f0f",
+        "date": "2026-10-27T01:27:57-04:00",
+        "subject": "ci: pin third-party actions to commit SHAs & add dependabot config (#618)"
+      },
+      {
+        "sha": "d8edda07b62de696d613ae0115823382465665cd",
+        "date": "2026-10-21T17:08:12-05:00",
+        "subject": "fix: implement workflow serde hooks for durable execution (#525) (#526)"
+      },
+      {
+        "sha": "9a4737333e201df0497cd7aeacc84278fc1e03cd",
+        "date": "2026-10-21T16:35:10-05:00",
+        "subject": "feat(chat): forward videoProcessing option to video_url.processing (#584)"
+      },
+      {
+        "sha": "b5f253f74b3d158e86f213d0087c4de98d3d3277",
+        "date": "2026-10-21T16:34:57-05:00",
+        "subject": "fix: support cache_control on tool providerOptions (#517)"
+      },
+      {
+        "sha": "8f01d1bd4781a16e721e102d2beb8efeb39e77c6",
+        "date": "2026-10-21T16:26:38-05:00",
+        "subject": "test(e2e): replace retired anthropic model slugs (#523)"
+      },
+      {
+        "sha": "b76b19b83edfe26d4e4bb3d66baed1cb62d81f76",
+        "date": "2026-10-21T16:26:31-05:00",
+        "subject": "fix: honour part-level cacheControl on assistant text parts (#585)"
+      },
+      {
+        "sha": "a76ca9ff8e2d49dbe24a9e32d92e8098ccaab75e",
+        "date": "2026-10-21T16:26:23-05:00",
+        "subject": "fix(usage): preserve is_byok as isByok in providerMetadata.openrouter.usage (#550)"
+      },
+      {
+        "sha": "bacdd1afc9f11caebc5708a936d7200a1e0f116a",
+        "date": "2026-10-21T16:26:16-05:00",
+        "subject": "fix(image): merge runtime provider options with configured routing preferences (#551)"
+      },
+      {
+        "sha": "55773610ffb0b6d058edcc05f4c5dab6892c9da5",
+        "date": "2026-10-21T16:26:08-05:00",
+        "subject": "fix(chat): support OpenAI image detail parameter (#493) (#552)"
+      },
+      {
+        "sha": "f54b359f6f9bea44910b470f28713c50e1d52a08",
+        "date": "2026-10-21T16:25:59-05:00",
+        "subject": "fix(chat): forward tool strict setting to API request (#548)"
+      },
+      {
+        "sha": "cd86f5da5cc975a978218358f6b9abbe0b036226",
+        "date": "2026-10-21T16:25:50-05:00",
+        "subject": "perf(chat): avoid re-parsing streamed tool-call arguments on every delta (#586)"
+      },
+      {
+        "sha": "9ded35b74ff4a498cd67c80a2bf02ff0534a9b60",
+        "date": "2026-10-21T16:25:43-05:00",
+        "subject": "fix: forward invalid streamed tool arguments to the AI SDK for repair (#575)"
+      },
+      {
+        "sha": "b7012730f1123d0ecc2a56212796b4a0d7eac3ff",
+        "date": "2026-10-21T16:25:34-05:00",
+        "subject": "fix: accept max reasoning effort in provider settings (#566)"
+      },
+      {
+        "sha": "32fd6d93c1782d85bef14eaeaf70eb55a596bfdd",
+        "date": "2026-10-21T16:25:27-05:00",
+        "subject": "feat: support `reasoning` parameter introduced in AI SDK v7 (#518)"
+      },
+      {
+        "sha": "5fe77f6c79d16ff025fc22c3fae228ba256a6659",
+        "date": "2026-10-21T16:25:19-05:00",
+        "subject": "fix: keep separately signed reasoning.text blocks separate when streaming (#583)"
+      },
+      {
+        "sha": "92961e42dfef9254b73a27bbf96f262d91f34cee",
+        "date": "2026-10-21T16:25:12-05:00",
+        "subject": "fix: prevent assigning undefined keys during streaming reasoning accumulation (#540) (#547)"
+      },
+      {
+        "sha": "4013aa76cbd5b668d3f9f401d8d8bc46c83b6afb",
+        "date": "2026-10-21T16:25:04-05:00",
+        "subject": "fix: unwrap AI SDK state parts before calling the Decisions API (#577)"
+      },
+      {
+        "sha": "59fe4942033bbfe296f47b7a806a72b73b512778",
+        "date": "2026-10-21T16:24:56-05:00",
+        "subject": "feat: add runtime reranking model support (#553)"
+      },
+      {
+        "sha": "0ad203a0e50a40a8237f2da0a5a0ea2f619f3404",
+        "date": "2026-10-21T16:24:48-05:00",
+        "subject": "fix(completion): finish AI SDK v7 migration for the completion model (#536)"
+      },
+      {
+        "sha": "d9d01b50f4802feca2ced9876364116315f6cb57",
+        "date": "2026-10-21T16:24:40-05:00",
+        "subject": "fix(provider): declare specificationVersion v4 on provider object (#549)"
+      }
+    ],
+    "files": [
+      {
+        "status": "A",
+        "path": ".changeset/assistant-part-cache-control.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/bright-owls-reason.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/calm-seas-shave.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/curvy-singers-yawn.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/decision-state-parts.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/fix-issue-540-reasoning-signature.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/forward-invalid-tool-args.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/forward-tool-strict.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/incremental-tool-args-scan.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/merge-image-provider-routing-options.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/pin-third-party-actions.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/preserve-usage-is-byok.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/provider-specification-version.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/reranking-model-runtime.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/split-signed-reasoning-blocks.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/support-image-detail.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/tool-cache-control.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/video-processing-mode.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/warm-completion-lifecycle.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".changeset/workflow-serialization-hooks.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/dependabot.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/publish-manual.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/publish.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/cache-control.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-194-grok-invalid-json.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-196-anthropic-1h-cache-ttl.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-248-gemini-web-search-empty-response.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-287-tool-calls-missing-arguments.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-341-cache-control-last-text-part.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-389-system-cache-control.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-391-reasoning-effort-values.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-394-reasoning-end-signature.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-407-token-usage-details.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-419-usage-fallback.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/issues/issue-453-signature-reopen.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/pdf-blob/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/pdf-url/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/reasoning-effort.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/tools-with-reasoning.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/usage-accounting.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "e2e/web-search/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/chat/convert-to-openrouter-chat-messages.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/chat/convert-to-openrouter-chat-messages.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/chat/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/chat/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/chat/schemas.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/completion/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/completion/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/completion/schemas.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/evaluation/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/evaluation/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/image/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/internal/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/provider.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/provider.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/reranking/index.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/reranking/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/reranking/schemas.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/schemas/provider-metadata.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/tests/provider-options.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/types/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/types/openrouter-chat-completions-input.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/types/openrouter-reranking-settings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/utils/json-completeness-scanner.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/utils/json-completeness-scanner.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/utils/resolve-reasoning.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/utils/resolve-reasoning.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/utils/workflow-serde.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/utils/workflow-serde.ts",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

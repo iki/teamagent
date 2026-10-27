@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-model-edit--obliteratus",
+    "category": "ai-model-edit",
+    "name": "obliteratus",
+    "url": "https://github.com/elder-plinius/OBLITERATUS",
+    "aliases": [],
+    "report": "spec/projects/ai-model-edit--obliteratus.md",
+    "topics": [
+      "models",
+      "evolution",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "b847511776a2afa7ed076f676184a4abfef2b162",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-20T21:04:56-04:00",
+    "reportSha256": "6bfce633ef306bc2d11966e9355b8a54d0333cb8712eed55a978b96d9658806c",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-model-edit--obliteratus",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/elder-plinius/OBLITERATUS",
+    "report": "spec/projects/ai-model-edit--obliteratus.md",
+    "analyzedSha": "b847511776a2afa7ed076f676184a4abfef2b162",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-09-20T21:04:56-04:00",
+    "observedSha": "7e8cf557053f7e1a756c37d86e6a68682b9f7421",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "7e8cf557053f7e1a756c37d86e6a68682b9f7421",
+        "date": "2026-10-24T15:19:02-04:00",
+        "subject": "Merge pull request #385 from jmagly/feat/qwen38-symlink-inputs"
+      },
+      {
+        "sha": "aa900a71a3cae41d24b10b8f2fb760d23e09bf0a",
+        "date": "2026-10-24T09:56:49-04:00",
+        "subject": "Require every recorded symlinked input to be hashed"
+      },
+      {
+        "sha": "e45c1910ae845515eb649e05a7ac5c444568fc79",
+        "date": "2026-10-24T09:48:38-04:00",
+        "subject": "Hash symlinked inputs through handles bound to their recorded identity"
+      },
+      {
+        "sha": "2d42fdd1ee5c3e7a5bfde40d0fa11f98ae5c9748",
+        "date": "2026-10-24T09:37:10-04:00",
+        "subject": "Record symlink identities so a link swapped during hashing is refused"
+      },
+      {
+        "sha": "4dfd1a4a0108088790bf0757419fbb7841499ca9",
+        "date": "2026-10-23T20:33:34-04:00",
+        "subject": "Check the symlink-inputs path as given and bind the loader overlay"
+      },
+      {
+        "sha": "52f4597589471add119f2ab5a55bc9503748fff0",
+        "date": "2026-10-23T19:46:42-04:00",
+        "subject": "Close the remaining symlinked-input gaps from review r2"
+      },
+      {
+        "sha": "337df822981210bc055c3c12e6778de5cf1c4b32",
+        "date": "2026-10-23T19:00:37-04:00",
+        "subject": "Pin symlinked campaign inputs to one device and re-check them in workers"
+      },
+      {
+        "sha": "13e3982f9a1bed45be1b7b07e4383e08b4b58e2d",
+        "date": "2026-10-23T18:16:51-04:00",
+        "subject": "Test symlinked-ancestor escapes and the reverse manifest lock"
+      },
+      {
+        "sha": "7e2383023694752410b5b3b467e25a32ea3c8628",
+        "date": "2026-10-23T18:15:21-04:00",
+        "subject": "Confine symlinked campaign inputs to one allowed directory"
+      },
+      {
+        "sha": "be28ff900e671f4b00998c2a30503da27e327331",
+        "date": "2026-10-23T18:08:49-04:00",
+        "subject": "Let the Qwen3.8 campaign symlink cached inputs from another filesystem"
+      },
+      {
+        "sha": "4c3527f2ba3bcbf280fc6b431db5d4f9e4677824",
+        "date": "2026-10-23T10:43:01-04:00",
+        "subject": "Merge pull request #382 from jmagly/feat/pain-axis-qwen-32b-72b"
+      },
+      {
+        "sha": "add78ba0b7af6fc6615c9a43ffdc3df9c5c09130",
+        "date": "2026-10-23T10:04:50-04:00",
+        "subject": "Register Qwen2.5-32B/72B-Instruct in the Pain Axis replication harness"
+      },
+      {
+        "sha": "b9252dce78f7efe51f0aa1eb68026b147cf6ed1d",
+        "date": "2026-10-23T08:51:43-04:00",
+        "subject": "Merge pull request #381 from jmagly/feat/campaign-min-free-disk"
+      },
+      {
+        "sha": "972342181851c3d4277d2c4eb9f7d316982a3617",
+        "date": "2026-10-23T08:19:40-04:00",
+        "subject": "Merge pull request #380 from jmagly/fix/model-identity-iterator-errors"
+      },
+      {
+        "sha": "fee11f5dab3dc1816d059c2f0a74920a782f0118",
+        "date": "2026-10-23T07:55:29-04:00",
+        "subject": "Fail closed on cache misses and link failures under a lowered disk floor"
+      },
+      {
+        "sha": "cce21520e836e0b47cd2af0408c9c9f6b3957dda",
+        "date": "2026-10-23T07:48:21-04:00",
+        "subject": "Add a locked --min-free-disk-gb admission for cached campaign inputs"
+      },
+      {
+        "sha": "d242b3f7253248bdcaadd4025b35403f8d4f4c81",
+        "date": "2026-10-23T07:41:04-04:00",
+        "subject": "Map iterator-initialization failures to ContractError"
+      },
+      {
+        "sha": "83946b36dcd873aa636ee710b73b050efbc4a951",
+        "date": "2026-10-23T07:36:14-04:00",
+        "subject": "Map source-iterator and descriptor-close failures to ContractError"
+      },
+      {
+        "sha": "6a6b6c3ad4741e90914bbae6873e2f8a2e15837b",
+        "date": "2026-10-22T23:11:17-04:00",
+        "subject": "Merge pull request #379 from jmagly/fix/package-digest-oserror"
+      },
+      {
+        "sha": "03da4985f990b0f14f5ff694117dca92601ee1e5",
+        "date": "2026-10-22T22:35:36-04:00",
+        "subject": "Map OSError and StopIteration from distribution metadata to ContractError"
+      },
+      {
+        "sha": "5e685a5d8b9ec901691f9085ea15a6f1148aa49c",
+        "date": "2026-10-22T22:24:32-04:00",
+        "subject": "Merge pull request #377 from jmagly/fix/egg-info-shadowing"
+      },
+      {
+        "sha": "fa4aa5a905ac29036ea8b58bf0d1b1cb0bacf5e5",
+        "date": "2026-10-22T21:48:53-04:00",
+        "subject": "Refuse a symlinked checkout egg-info; normalize csv.Error from RECORD"
+      },
+      {
+        "sha": "6886d5596af14312774a1986c26df8fb24f5bc37",
+        "date": "2026-10-22T21:37:55-04:00",
+        "subject": "Exempt only this checkout's egg-info; normalize malformed RECORD"
+      },
+      {
+        "sha": "9129e765d12a0d6ca4e80d09802d13f1f227e4e6",
+        "date": "2026-10-22T21:22:41-04:00",
+        "subject": "Bind the package digest to the installed wheel, not source-tree egg-info"
+      },
+      {
+        "sha": "3d178f337945b027bf25c4f04043183ad318f7af",
+        "date": "2026-10-22T21:09:42-04:00",
+        "subject": "Merge pull request #375 from jmagly/fix/gate-summary-git-sha"
+      },
+      {
+        "sha": "aade685d6a625a459138c2ad6a02df6fb664f633",
+        "date": "2026-10-22T20:59:20-04:00",
+        "subject": "Merge pull request #376 from jmagly/fix/gloo-verify-load-tolerant-timeouts"
+      },
+      {
+        "sha": "ce9f7efd9b0f8a337dd8cba0a6a14b659a0a00c4",
+        "date": "2026-10-22T20:32:16-04:00",
+        "subject": "Allowlist the git environment instead of denylisting overrides"
+      },
+      {
+        "sha": "0a6bb0de890dc0bf46325ab573eca2fd7a900be7",
+        "date": "2026-10-22T20:27:58-04:00",
+        "subject": "Also drop git stdio redirection and config selection; never prompt"
+      },
+      {
+        "sha": "cdde845a99d78fda71a98f86371e59cac5875310",
+        "date": "2026-10-22T20:21:19-04:00",
+        "subject": "Restore original collective limits; size reapers for unchecked intervals"
+      },
+      {
+        "sha": "e0646aa35cc9ead831c7512e04d0e0411e82c6ad",
+        "date": "2026-10-22T20:21:17-04:00",
+        "subject": "Run git metadata commands with a sanitized environment"
+      },
+      {
+        "sha": "0e63f445328c08734e22965656a75ef5e93a7c5a",
+        "date": "2026-10-22T20:08:49-04:00",
+        "subject": "Restore the short rank-loss oracle and fix the model reaper"
+      },
+      {
+        "sha": "79914ca4fa3d69a877e6b7cdb991c7f2fe690f99",
+        "date": "2026-10-22T20:08:47-04:00",
+        "subject": "Validate GITHUB_SHA and git HEAD independently; align the summary producer"
+      }
+    ],
+    "files": [
+      {
+        "status": "A",
+        "path": ".aiwg/architecture/adr/ADR-002-concept-target-registry.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/architecture/adr/ADR-003-concept-pack-format-and-builtin-policy.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/architecture/adr/ADR-004-validation-gate-before-intervention.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/architecture/adr/ADR-005-intervention-modes-and-coherence-repair.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/architecture/data-contracts/DES-DATA-CV-01-concept-pack.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/architecture/design/concept-vector-subsystem.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/architecture/interfaces/DES-IFC-CV-01-concept-interfaces.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/planning/backlog-concept-vectors.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/planning/concept-targeting-roadmap-2026-10-17.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/planning/issue-drafts-concept-vectors.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/planning/pain-axis-4d75cd90.sha256",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/planning/readiness-evidence.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/planning/roadmap-outstanding-work.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/reports/discovery-iteration-1-concept-vectors.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/reports/pain-axis-phase1-local-2026-10-16.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/reports/pain-axis-phase2-local-2026-10-17.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/stakeholder-requests/RQST-CV-stakeholder-requests.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/supplementary-spec-concept-vectors.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/use-case-briefs/UC-CV-01-select-builtin-concept-pack.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/use-case-briefs/UC-CV-02-define-custom-concept.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/use-case-briefs/UC-CV-03-validate-concept-direction.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/use-case-briefs/UC-CV-04-intervene-on-concept.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/use-case-briefs/UC-CV-05-repair-coherence.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/use-case-briefs/UC-CV-06-compare-and-export.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/requirements/use-case-briefs/UC-CV-07-share-import-concept-packs.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/risks/risks-concept-vectors.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/acceptance-cards/AT-CV-01-builtin-pack.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/acceptance-cards/AT-CV-02-custom-concept.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/acceptance-cards/AT-CV-03-validate.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/acceptance-cards/AT-CV-04-intervene.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/acceptance-cards/AT-CV-05-repair.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/acceptance-cards/AT-CV-06-compare-export.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/acceptance-cards/AT-CV-07-share-import.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/baselines/moe-offload-regression-nodeids.txt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/baselines/pain/Qwen2.5-7B-Instruct.validation.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/baselines/pain/Qwen3-8B-Base.validation.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".aiwg/testing/test-strategy-delta-concept-vectors.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/actionlint.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/conditional-tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ci/conditional-test-policy.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "ci/core-test-durations.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "ci/gloo-test-durations.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "ci/gsq-source-v1.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ci/pr-test-policy.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "ci/rank-local-profiles.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ci/supply-chain-policy.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ci/test-quality-policy.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ci/test-risk-map.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/CHOOSING_FEATURES.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/CONCEPT_INTERVENTIONS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/CONCEPT_PACKS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/CONCEPT_VALIDATION.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/CONCEPT_WORKFLOW.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/HARDENED_MODEL_PILOTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/MCP_CAPABILITY_DECISIONS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/MCP_LOCAL_SETUP.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/MCP_VALIDATION.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/PAIN_AXIS_APPENDIX_D.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/QWEN38_A100_CAMPAIGN.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/SUPPLY_CHAIN_POLICY.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/UI_READINESS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/attention-cache-qualification.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/capacity-planning.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/complementary_blending.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/conditional-testing.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/deployment/shared-gpu-host.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/distributed-excise.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/distributed-export.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/distributed-model-load.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/distributed-preflight.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/distributed-probe-distill.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/distributed-rank-local.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/distributed-shared-storage-plan.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/distributed-verification.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/executive_research_summary.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/gpu-qualification.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/gsq-quantization.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/index.html",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/input-execution-device.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/legacy-ablation-offload.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/mcp-read-only-tools.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/model-snapshots.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/phase-memory-admission.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/recovery.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/refusal-metrics.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/abliterate.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/adaptive_defaults.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/analysis/direction_methods.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/analysis/leace.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/analysis/leace_exact.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/analysis/numerical_contracts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/analysis/steering_vectors.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/architecture_profiles.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/auto_obliterate.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/bayesian_optimizer.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/benchmark_lifecycle.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/capacity_planning.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/checkpoint_evaluation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/checkpoint_service.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/checkpoint_writer.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/cli.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/community.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/baseline.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/cli.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/direction.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/entry_points.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/evaluation.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/evaluation_model.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/export.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/extraction.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/gate.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/gate_memory.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/geometry.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/intervention.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/moe.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/pack.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/pack_io.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/packs/pain/DATASET_CARD.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/packs/pain/manifest.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/preservation.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/repair.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/repair_model.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/rescore.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/runs.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/schema/concept-pack.v1.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/schema/concept-provenance.v1.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/selectors.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/statistics.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/target.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/concepts/validation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/device.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/consensus.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/contracts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/evidence.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/export.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/export_contracts.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/journal.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/launcher.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/model.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/model_evidence.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/model_identity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/model_manifest.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/model_registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/model_session.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/model_topology.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/numerical.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "obliteratus/distributed/preflight.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "obliteratus/distributed/probe.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

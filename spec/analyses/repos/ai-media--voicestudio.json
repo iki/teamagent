@@ -1,0 +1,1006 @@
+{
+  "metadata": {
+    "id": "ai-media--voicestudio",
+    "category": "ai-media",
+    "name": "voicestudio",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "aliases": [],
+    "report": "spec/projects/ai-media--voicestudio.md",
+    "topics": [
+      "generation",
+      "channels",
+      "models",
+      "security"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "c4d63ef207f345b4405f8e8320a73d273ce7187f",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T06:24:59+05:30",
+    "reportSha256": "11dd643379e2504106bac488de40e802da6ea365ed9a442f5a9be6ab3c0c22d9",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-media--voicestudio",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/debpalash/VoiceStudio",
+    "report": "spec/projects/ai-media--voicestudio.md",
+    "analyzedSha": "c4d63ef207f345b4405f8e8320a73d273ce7187f",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T06:24:59+05:30",
+    "observedSha": "331879da16f2d04088a58fc43a6e1cc7ae1efef3",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": true,
+    "commits": [
+      {
+        "sha": "331879da16f2d04088a58fc43a6e1cc7ae1efef3",
+        "date": "2026-10-27T22:45:02+05:30",
+        "subject": "Merge pull request #3591 from debpalash/cla/rewrite-wave-6"
+      },
+      {
+        "sha": "905e7783baa6a67933e762f1c7bb47c344603851",
+        "date": "2026-10-27T22:33:53+05:30",
+        "subject": "changelog: fragment for the wave-6 clean-room rewrite"
+      },
+      {
+        "sha": "62856226e6e019b77f340baf7b1b9b49c0133501",
+        "date": "2026-10-27T22:32:10+05:30",
+        "subject": "refactor(stream): clean-room reimplementation of the proxy keepalive wrapper"
+      },
+      {
+        "sha": "ffa59bbd34367db32758d3facaba08d9aab41a1b",
+        "date": "2026-10-27T22:32:10+05:30",
+        "subject": "chore(provenance): remove stream keepalive wrapper pending clean-room reimplementation"
+      },
+      {
+        "sha": "46c188b94b47bcd6932d1b3c9ad0b481c89be7fc",
+        "date": "2026-10-27T22:32:10+05:30",
+        "subject": "i18n(en): clean-room wording for five English catalog values"
+      },
+      {
+        "sha": "1b9047a6f6227ac404b9bfe3a85f9af24016d6cb",
+        "date": "2026-10-27T22:32:10+05:30",
+        "subject": "chore(provenance): remove five English catalog values that still match contributor wording, pending clean-room rewording"
+      },
+      {
+        "sha": "bb4077fd5aa5bf69b8554f3850512e0604a19733",
+        "date": "2026-10-27T22:16:49+05:30",
+        "subject": "Merge pull request #3590 from debpalash/fix/cla-wave5-review"
+      },
+      {
+        "sha": "e139f61c6ed1f0a56e520ed371e49b658db2ac8b",
+        "date": "2026-10-27T22:14:53+05:30",
+        "subject": "changelog: fragment for the seed 0 restore fix"
+      },
+      {
+        "sha": "97aa5868342305f6e727cf01535476ffe5c14add",
+        "date": "2026-10-27T22:14:42+05:30",
+        "subject": "fix(design): keep seed 0 when reopening a take; tighten wave-5 regression tests"
+      },
+      {
+        "sha": "77fd8407a5d07d389a14b03e666663f4758e2ac7",
+        "date": "2026-10-27T21:37:24+05:30",
+        "subject": "Merge pull request #3587 from debpalash/cla/rewrite-wave-5-code"
+      },
+      {
+        "sha": "6c5603d3d1ae9b861e0440a5d32eb0312abb49f8",
+        "date": "2026-10-27T21:30:42+05:30",
+        "subject": "Merge remote-tracking branch 'origin/main' into cla/rewrite-wave-5-code"
+      },
+      {
+        "sha": "bd6066ccb0807645fa393806175cb5d42ec0f841",
+        "date": "2026-10-27T21:30:29+05:30",
+        "subject": "Merge pull request #3586 from debpalash/cla/rewrite-wave-5-catalogs"
+      },
+      {
+        "sha": "f6a2905d16c4c73ef40c8ccf53272d867af0592a",
+        "date": "2026-10-27T21:15:03+05:30",
+        "subject": "changelog: fragment for the wave-5 clean-room reimplementation"
+      },
+      {
+        "sha": "ee3cbaa6c8a95874fde8fd4a499d7521b22f51ba",
+        "date": "2026-10-27T21:12:46+05:30",
+        "subject": "refactor: clean-room reimplementation of design draft helpers, render details, mastering docs, EPUB matter detection and Urdu input checks"
+      },
+      {
+        "sha": "cdb44eb9b66a78c7c4cdf3cdee9f23e1cbe77634",
+        "date": "2026-10-27T21:12:46+05:30",
+        "subject": "chore(provenance): remove design draft, render details, mastering docs, EPUB matter and Urdu scope code pending clean-room reimplementation"
+      },
+      {
+        "sha": "fc2314fb141001f2489d7df6b7f509c3c68e8e2c",
+        "date": "2026-10-27T21:07:26+05:30",
+        "subject": "refactor(dictation): clean-room reimplementation of native start/stop delivery handling"
+      },
+      {
+        "sha": "48613d5eec9aaec7b2e34a5c736653219cac6ccc",
+        "date": "2026-10-27T21:07:26+05:30",
+        "subject": "chore(provenance): remove dictation native delivery acknowledgement and Start dictation tests pending clean-room reimplementation"
+      },
+      {
+        "sha": "76abb684f081dffef169ef084bb3247ed6866b6b",
+        "date": "2026-10-27T21:07:26+05:30",
+        "subject": "refactor(rocm): clean-room reimplementation of the pyannote soundfile adapter and CTranslate2 wheel extraction"
+      },
+      {
+        "sha": "3882c7ee2c2206f6c6a52fa50b48307531607bad",
+        "date": "2026-10-27T21:07:26+05:30",
+        "subject": "chore(provenance): remove pyannote audio compat and CT2 wheel extraction pending clean-room reimplementation"
+      },
+      {
+        "sha": "6338dfae4cf6d17aa89698ac1336799c12df60da",
+        "date": "2026-10-27T21:07:26+05:30",
+        "subject": "refactor(sherpa-onnx): clean-room reimplementation of Piper/lexicon VITS loading and the phone licence gate"
+      },
+      {
+        "sha": "c5147e9df32a67285b00fc5393c5d6fa02b96f53",
+        "date": "2026-10-27T21:07:26+05:30",
+        "subject": "chore(provenance): remove sherpa-onnx Piper/lexicon loading and phone engine-id gate pending clean-room reimplementation"
+      },
+      {
+        "sha": "6681c38aaf9af4ed8b60a9d543429f9fa388bf95",
+        "date": "2026-10-27T21:07:11+05:30",
+        "subject": "changelog: fragment for the wave-5 catalog retranslation"
+      },
+      {
+        "sha": "388ebcc490686b735035f5aa1c728e2cdb4e50d4",
+        "date": "2026-10-27T21:06:37+05:30",
+        "subject": "fix(electron): keep the blank-window fallback in step with the retranslated zh-CN catalog"
+      },
+      {
+        "sha": "613e15296fcee0fdfac2c8b503820573b9fa8c96",
+        "date": "2026-10-27T21:05:41+05:30",
+        "subject": "i18n(zh-CN): clean-room retranslation of Simplified Chinese catalog values"
+      },
+      {
+        "sha": "4c9808eb756323f3ee20a7c8a3002c53b8b5c66e",
+        "date": "2026-10-27T21:05:41+05:30",
+        "subject": "chore(provenance): remove Simplified Chinese catalog values that still match contributor translations, pending clean-room retranslation"
+      },
+      {
+        "sha": "d527892132ca180ab902da33c1340f167229b650",
+        "date": "2026-10-27T21:05:41+05:30",
+        "subject": "i18n(ko): clean-room retranslation of Korean catalog values"
+      },
+      {
+        "sha": "033dac8df96eb397d68229693c16ace858b8458f",
+        "date": "2026-10-27T21:05:41+05:30",
+        "subject": "chore(provenance): remove Korean catalog values that still match contributor translations, pending clean-room retranslation"
+      },
+      {
+        "sha": "2e3ee7922399a725549dbd0a397edcb4d970ca82",
+        "date": "2026-10-27T20:36:56+05:30",
+        "subject": "Merge pull request #3585 from debpalash/docs/readme-sponsor-header"
+      },
+      {
+        "sha": "e87ab3514ea09901bfc4396233240d52823d5437",
+        "date": "2026-10-27T20:36:31+05:30",
+        "subject": "docs(readme): show the Strategic sponsor logo in the README header"
+      },
+      {
+        "sha": "22271eae5431902e4f49a3d0bfdd14554ed88581",
+        "date": "2026-10-27T20:34:16+05:30",
+        "subject": "Merge pull request #3583 from debpalash/docs/sponsor-supermetry"
+      },
+      {
+        "sha": "991bea0bbd274ae5a6a371dc6bafafaf57590016",
+        "date": "2026-10-27T20:17:42+05:30",
+        "subject": "changelog: fragment for the Supermetry sponsor listing"
+      },
+      {
+        "sha": "489f46bf0c354654547b2fc6006936d09dc796fe",
+        "date": "2026-10-27T20:17:15+05:30",
+        "subject": "docs(sponsors): welcome Supermetry as Strategic Sponsor"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".claude/skills/omnivoice/LEGACY.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".claude/skills/omnivoice/references/engines-comparison.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".claude/skills/omnivoice/references/mcp-setup.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".claude/skills/omnivoice/scripts/check-health.sh",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".claude/skills/omnivoice/scripts/record-reference.sh",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".claude/skills/omnivoice/scripts/start-backend.sh",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": ".claude/skills/omnivoice/scripts/stop-backend.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".dagger/.gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".dagger/.gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".dagger/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".dagger/src/voicestudio/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".dagger/src/voicestudio/main.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".dagger/uv.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/FUNDING.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/ISSUE_TEMPLATE/sponsor.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/pull_request_template.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/cancel_stale_runs.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/scripts/cla_check.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/gallery_pin.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/scripts/scam_guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/android-play-internal.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build-omnivoice-tts.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/cancel-closed-pr-runs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/commit-identity.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/contributors-refresh.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/docker.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/electron-build.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/electron-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/gallery-pin.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/ios-testflight.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/mac-app-store.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/merge-queue-checks.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/microsoft-store.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/mobile-release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/mobile.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/scam-guard.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/security.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/snap-store.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/virustotal.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitleaks.toml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".gitleaksignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "LICENSE-NOTICE.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "Makefile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "README_CN.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "README_JA.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "SPONSORS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/dependencies.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/archetypes.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/audiobook.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/batch.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/calls.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/capture.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/capture_ws.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/api/routers/cloud_sync.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/community.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/dictation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/dub_core.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/dub_export.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/dub_generate.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/dub_translate.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/engines.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/exports.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/gallery.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/generation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/glossary.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/longform_jobs.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/marketplace.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/api/routers/model_licenses.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/openai_compat.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/personas.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/profile_images.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/profiles.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/api/routers/project_bundles.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/projects.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/pronunciation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/settings.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/setup/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/setup/download.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/setup/models.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/setup/wizard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/system.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/tts_stream.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/voice_convert.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/routers/watermark.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "backend/api/routers/workers.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/api/schemas.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/assets/samples/demo/dubbing/manifest.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/config/model_licenses.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/config/model_licenses.schema.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/config/models.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/app_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/auth.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/browser_guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/change_hooks.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/changelog.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/crash_diagnostics.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/csrf.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/cudnn8.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/db.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/db_backup.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/device_caps.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/diagnose.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/error_docs_map.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/error_journal.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/execstack.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/failure.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/generate_budget.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/gpu_inventory.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/gpu_report.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/job_store.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/language_variants.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/loop_stall_monitor.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/media_types.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/nonblocking_stdio.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/onboarding.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/path_authorization.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/path_security.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/poll_guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/prefs.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/public_errors.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/run_sentinel.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/safe_archive.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/scrub.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/spa_inject.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/stream_keepalive.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/tasks.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/url_safety.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/user_env.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/core/version.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/voice_leases.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/artifacts.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/ct2.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/failures.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/install.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/native.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/pipelines.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/probe.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/recipe.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/smoke.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/windows_rocm/verify.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/core/xpu_compat.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/docker_entrypoint.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/engines/_asr_sidecar/main.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/engines/audiocpp/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/engines/audiocpp/bootstrap.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "backend/engines/confucius4/main.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/engines/cosyvoice_gguf/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "backend/engines/cosyvoice_gguf/bootstrap.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

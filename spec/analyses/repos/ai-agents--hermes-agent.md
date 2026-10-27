@@ -1,0 +1,207 @@
+# hermes-agent: change evidence
+
+Source: [hermes-agent](https://github.com/NousResearch/hermes-agent) · [Analysis](../../projects/ai-agents--hermes-agent.md) · [agents](../../agents.md), [memory](../../memory.md), [skills](../../skills.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `3b9a963b8e5cdb804a422755bed9a60fcd778273`; commit date: 2026-08-16T21:20:29-07:00; review date: unknown; observed SHA: `e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NousResearch/hermes-agent/compare/3b9a963b8e5cdb804a422755bed9a60fcd778273...e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [e5ea5fd9ccdf](https://github.com/NousResearch/hermes-agent/commit/e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6) 2026-10-27T08:02:46-07:00: Revert "fix(gateway): the worker reservation always binds the owner's OS subject"
+- [357a3428d424](https://github.com/NousResearch/hermes-agent/commit/357a3428d424b32c3f0ec886f8840afa211cafa6) 2026-10-27T08:02:46-07:00: fix(gateway): the worker reservation always binds the owner's OS subject
+- [0831057aa666](https://github.com/NousResearch/hermes-agent/commit/0831057aa6662abb7a5409044f32228978a5ae77) 2026-10-27T08:02:46-07:00: fix(gateway): a managed worker adopts an automation turn as the owner's OS user
+- [22b67fd50c0e](https://github.com/NousResearch/hermes-agent/commit/22b67fd50c0e1bade5836b6b0d2a5f600df659f2) 2026-10-27T10:56:48-04:00: fix(skills): manage_catalog reads a ClawHub install back through its card id
+- [27e6375b413c](https://github.com/NousResearch/hermes-agent/commit/27e6375b413c9528cd605a7b7b4beb667fec1094) 2026-10-27T10:56:48-04:00: fix(skills): a malformed ClawHub lock row no longer empties the installed map
+- [82d7e2dba798](https://github.com/NousResearch/hermes-agent/commit/82d7e2dba79880934b1fc83c658874c80e235d20) 2026-10-27T10:56:48-04:00: fix(skills): match a ClawHub install by source, not through a bare slug alias
+- [9b93cfe64bc1](https://github.com/NousResearch/hermes-agent/commit/9b93cfe64bc15f47394f6e1afe9069243496e89a) 2026-10-27T10:56:48-04:00: test(desktop): a ClawHub card shows as installed when its lock row is owner-qualified
+- [f73b3147f3a1](https://github.com/NousResearch/hermes-agent/commit/f73b3147f3a138f50c82708b2b3a6d9851cadabd) 2026-10-27T10:56:48-04:00: fix(skills): ClawHub installs read as installed on catalog cards and in hub search
+- [4b90de5022fe](https://github.com/NousResearch/hermes-agent/commit/4b90de5022fea93a25adbed39b7e3dffd453822b) 2026-10-27T07:53:07-07:00: fix(update): each update stage names itself where it starts, so a failed build still shows the restart
+- [eea30482750e](https://github.com/NousResearch/hermes-agent/commit/eea30482750eb2a7c061445aa8b7d588bf7c4f00) 2026-10-27T07:53:07-07:00: fix(update): a restored relaunch may relaunch again once current; update --check backs off
+- [121393e1e741](https://github.com/NousResearch/hermes-agent/commit/121393e1e741da4e138b93442e03f9bc3e7ff9de) 2026-10-27T07:53:07-07:00: fix(desktop-update): the tethered Windows relaunch does not inherit the stage relay
+- [427c2132951a](https://github.com/NousResearch/hermes-agent/commit/427c2132951a2a06b08f02c0f182b240185ed1d0) 2026-10-27T07:53:07-07:00: fix(desktop): bundle skew decides by runtime content, not commit count
+- [3eeeb172dd8d](https://github.com/NousResearch/hermes-agent/commit/3eeeb172dd8d0e0aed1bfdf3d35379cb561a33a7) 2026-10-27T07:53:07-07:00: fix(update): a backed-off failed dependency sync boots instead of re-execing forever
+- [3e0a0e1f1a5e](https://github.com/NousResearch/hermes-agent/commit/3e0a0e1f1a5effbcc300d461f36b3374cdce4524) 2026-10-27T07:53:07-07:00: fix(update): a corrected source update is retried past a failed launch sync's backoff
+- [2ff5f4aa2b9f](https://github.com/NousResearch/hermes-agent/commit/2ff5f4aa2b9f38c4ce6a32f22272191ebb8d5e4c) 2026-10-27T07:53:07-07:00: fix(ci): route desktop_build_reuse to the update and desktop-update suites
+- [70e42ba889a3](https://github.com/NousResearch/hermes-agent/commit/70e42ba889a3f13c385cf29e4bb488fbd670bb06) 2026-10-27T07:53:07-07:00: test(desktop-update): load the tree's hermes_cli in the Windows stage-relay fixture
+- [b49f77a19383](https://github.com/NousResearch/hermes-agent/commit/b49f77a1938319b6d21cc40df06d6cbde4a6f837) 2026-10-27T07:53:07-07:00: fix(update): bound failed source sync retries
+- [c9b55ea26d23](https://github.com/NousResearch/hermes-agent/commit/c9b55ea26d23472ab69871dee7cf29e0e3317916) 2026-10-27T07:53:07-07:00: fix(desktop-update): the update window names the stage it is in, on Windows too
+- [766a973e25e4](https://github.com/NousResearch/hermes-agent/commit/766a973e25e4659cc790751ba315c493eb2e3ad7) 2026-10-27T07:53:07-07:00: test(update): the packaged desktop app survives a commit that changed no desktop input
+- [7a954418ceb8](https://github.com/NousResearch/hermes-agent/commit/7a954418ceb8e771753f87d2d2d6b66d213eb08c) 2026-10-27T07:53:07-07:00: fix(update): reuse the packaged desktop app when no desktop build input changed
+- [5c6660eaf54c](https://github.com/NousResearch/hermes-agent/commit/5c6660eaf54c6e9150440a9801a3614800a3e980) 2026-10-27T10:33:32-04:00: fix(tui): drop the stale context meter when /compress commits
+- [0189fb43d380](https://github.com/NousResearch/hermes-agent/commit/0189fb43d380ecffe5ccdada9b094bc745fd425f) 2026-10-27T10:33:32-04:00: test(tui): cover the context meter after a committed /compress
+- [ef1b19e5e02e](https://github.com/NousResearch/hermes-agent/commit/ef1b19e5e02ec6e8af35f8adb65c6b4a27135453) 2026-10-27T07:28:27-07:00: test(desktop): the completion-list send test waits as long as the first list paint takes under load
+- [67dc499d8111](https://github.com/NousResearch/hermes-agent/commit/67dc499d811143df08814455d80cc8d13ad8f808) 2026-10-27T07:28:27-07:00: test(desktop): five more vitest files load their module graph before the test clock starts
+- [48c1761cbc7e](https://github.com/NousResearch/hermes-agent/commit/48c1761cbc7e7b4821a1092f100520f3bbee4d85) 2026-10-27T07:28:27-07:00: test(desktop): six vitest files stop paying cold module loads inside the test timeout
+- [8af92e6db1a9](https://github.com/NousResearch/hermes-agent/commit/8af92e6db1a92d9c5d0f67fd40ec571d59047083) 2026-10-27T07:27:51-07:00: test(tui_gateway): release the approval key the fallback-sync tests bind at turn admission
+- [31ef97fde726](https://github.com/NousResearch/hermes-agent/commit/31ef97fde726f3b97a18b8a2d5bd121cdc349dc0) 2026-10-27T07:27:11-07:00: test(telemetry): settle the routed turns before snapshotting the revoked profile's rows
+- [633aeff2a295](https://github.com/NousResearch/hermes-agent/commit/633aeff2a2955a072ef5573be09a7d92fcac3146) 2026-10-27T07:26:36-07:00: chore: map sibelius's commit email for attribution
+- [349f919c5fff](https://github.com/NousResearch/hermes-agent/commit/349f919c5fff7f97419bbc57ee10e485f971faab) 2026-10-27T07:26:36-07:00: fix(sessions): pin the page-first list contract, keep the facade under its cap
+- [3e8e7bd3bfbf](https://github.com/NousResearch/hermes-agent/commit/3e8e7bd3bfbffe9238d8d0684683ea08f78834e9) 2026-10-27T07:26:36-07:00: perf(state): reuse unchanged local lineage projections
+- [0dd2f36ffc9e](https://github.com/NousResearch/hermes-agent/commit/0dd2f36ffc9ea736b361ae0a1cfb399d9be3d75a) 2026-10-27T07:26:36-07:00: fix(sessions): rank list pages on ids before projecting, seed chains only from parents
+- [198f6ad53c66](https://github.com/NousResearch/hermes-agent/commit/198f6ad53c661e42ff2423ba42d6262078520e69) 2026-10-27T10:22:52-04:00: fix(desktop): a late GPU crash on Mesa/AMD/Intel Linux no longer pins software rendering
+
+## Changed paths (truncated)
+
+- M: `.coderabbit.yaml`
+- M: `.dockerignore`
+- M: `.env.example`
+- M: `.envrc`
+- M: `.gitattributes`
+- A: `.github/CODEOWNERS`
+- M: `.github/ISSUE_TEMPLATE/config.yml`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- A: `.github/actionlint.yaml`
+- A: `.github/actions/check-clean-worktree/action.yml`
+- A: `.github/actions/desktop-build-cache/action.yml`
+- M: `.github/actions/detect-changes/action.yml`
+- A: `.github/actions/e2e-screen-record/action.yml`
+- A: `.github/actions/plugin-validate/action.yml`
+- A: `.github/actions/setup-pm/README.md`
+- A: `.github/actions/setup-pm/action.yml`
+- A: `.github/actions/setup-pm/prune/action.yml`
+- A: `.github/actions/setup-pm/prune/index.mjs`
+- A: `.github/actions/setup-windows-build-deps/action.yml`
+- A: `.github/blob-size-allowlist.txt`
+- A: `.github/scripts/run-workspace-checks.mjs`
+- A: `.github/workflows/archive-inputs.yml`
+- A: `.github/workflows/blob-size-check.yml`
+- A: `.github/workflows/bootstrap-installer-build.yml`
+- A: `.github/workflows/bootstrap-installer.yml`
+- A: `.github/workflows/canary-release.yml`
+- A: `.github/workflows/case-collision-check.yml`
+- A: `.github/workflows/catalog-tests.yml`
+- M: `.github/workflows/ci-review-comment.yml`
+- A: `.github/workflows/ci.yaml`
+- D: `.github/workflows/ci.yml`
+- M: `.github/workflows/contributor-check.yml`
+- M: `.github/workflows/deploy-site.yml`
+- A: `.github/workflows/desktop-bundle-smoke.yml`
+- A: `.github/workflows/desktop-bundled-release.yml`
+- M: `.github/workflows/docker-lint.yml`
+- M: `.github/workflows/docker.yml`
+- A: `.github/workflows/docs-search-monitor.yml`
+- M: `.github/workflows/docs-site-checks.yml`
+- A: `.github/workflows/e2e-desktop-core.yml`
+- A: `.github/workflows/e2e-desktop-update.yml`
+- M: `.github/workflows/e2e-desktop.yml`
+- M: `.github/workflows/history-check.yml`
+- A: `.github/workflows/icons-freshness-check.yml`
+- M: `.github/workflows/infographic-check.yml`
+- A: `.github/workflows/install-e2e-macos-run.yml`
+- A: `.github/workflows/install-e2e-red.yml`
+- M: `.github/workflows/install-e2e-run.yml`
+- A: `.github/workflows/install-e2e-windows-run.yml`
+- M: `.github/workflows/install-e2e.yml`
+- D: `.github/workflows/installer-tests.yml`
+- M: `.github/workflows/js-autofix.yml`
+- M: `.github/workflows/js-tests.yml`
+- M: `.github/workflows/label-rerun.yml`
+- A: `.github/workflows/lazy-deps-guard.yml`
+- M: `.github/workflows/lint.yml`
+- A: `.github/workflows/live-providers.yml`
+- M: `.github/workflows/lockfile-diff.yml`
+- A: `.github/workflows/nix.yml`
+- M: `.github/workflows/osv-scanner.yml`
+- A: `.github/workflows/plugin-catalog-ci.yml`
+- A: `.github/workflows/pm-bundle.yml`
+- A: `.github/workflows/profile-artifact-check.yml`
+- A: `.github/workflows/prompt-surface-diff.yml`
+- D: `.github/workflows/publish-e2e-evidence.yml`
+- A: `.github/workflows/remote-backends.yml`
+- D: `.github/workflows/review-labels.yml`
+- A: `.github/workflows/rust-tests.yml`
+- A: `.github/workflows/sandbox-image.yml`
+- M: `.github/workflows/skills-index-freshness.yml`
+- M: `.github/workflows/skills-index.yml`
+- A: `.github/workflows/stable-release-publication.yml`
+- A: `.github/workflows/stable-release.yml`
+- M: `.github/workflows/supply-chain-audit.yml`
+- A: `.github/workflows/termux-verify.yml`
+- M: `.github/workflows/tests-os.yml`
+- M: `.github/workflows/tests.yml`
+- M: `.github/workflows/uv-lockfile-check.yml`
+- A: `.github/workflows/windows-bundle-sdk.yml`
+- A: `.github/workflows/windows-desktop-attach-e2e.yml`
+- A: `.github/workflows/windows-install-update-e2e.yml`
+- A: `.github/workflows/windows-venv-e2e.yml`
+- M: `.gitignore`
+- M: `.mailmap`
+- M: `.npmrc`
+- M: `.python-version`
+- M: `AGENTS.md`
+- M: `CONTRIBUTING.es.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile`
+- M: `README.es.md`
+- M: `README.md`
+- M: `README.ur-pk.md`
+- M: `README.zh-CN.md`
+- M: `SECURITY.es.md`
+- M: `SECURITY.md`
+- A: `SOUL.md`
+- M: `acp_adapter/auth.py`
+- A: `acp_adapter/catalog.py`
+- A: `acp_adapter/commands.py`
+- A: `acp_adapter/content.py`
+- M: `acp_adapter/edit_approval.py`
+- A: `acp_adapter/elicitation.py`
+- M: `acp_adapter/entry.py`
+- M: `acp_adapter/events.py`
+- A: `acp_adapter/gateway_commands.py`
+- A: `acp_adapter/gateway_media.py`
+- A: `acp_adapter/gateway_reply.py`
+- A: `acp_adapter/gateway_server.py`
+- A: `acp_adapter/gateway_session_meta.py`
+- A: `acp_adapter/model_catalog.py`
+- A: `acp_adapter/modes.py`
+- M: `acp_adapter/permissions.py`
+- M: `acp_adapter/provenance.py`
+- M: `acp_adapter/server.py`
+- M: `acp_adapter/session.py`
+- M: `acp_adapter/tools.py`
+- A: `activate`
+- A: `activate.fish`
+- A: `activate.ps1`
+- A: `agent/AGENTS.md`
+- M: `agent/__init__.py`
+- M: `agent/account_usage.py`
+- A: `agent/account_usage_cache.py`
+- A: `agent/acp_client.py`
+- A: `agent/acp_openai_bridge.py`
+- A: `agent/activity_tracking.py`
+- M: `agent/agent_init.py`
+- A: `agent/agent_init_compression_notice.py`
+- A: `agent/agent_init_fallback.py`
+- A: `agent/agent_init_memory_provider.py`
+- A: `agent/agent_init_ollama.py`
+- A: `agent/agent_init_params.py`
+- M: `agent/agent_runtime_helpers.py`
+- A: `agent/agent_runtime_helpers_dead_connections.py`
+- A: `agent/agent_runtime_helpers_placeholders.py`
+- M: `agent/anthropic_adapter.py`
+- A: `agent/anthropic_credentials.py`
+- A: `agent/anthropic_endpoints.py`
+- A: `agent/anthropic_message_convert.py`
+- A: `agent/anthropic_thinking_policy.py`
+- A: `agent/anthropic_thinking_replay.py`
+- A: `agent/api_error_summary.py`
+- A: `agent/api_request_hooks.py`
+- M: `agent/async_utils.py`
+- M: `agent/aux_accounting.py`
+- A: `agent/auxiliary_async_rebuild.py`
+- A: `agent/auxiliary_call_outcome.py`
+- M: `agent/auxiliary_client.py`
+- A: `agent/auxiliary_client_registry.py`
+- A: `agent/auxiliary_codex_response.py`
+- A: `agent/auxiliary_fallback_recovery.py`
+- A: `agent/auxiliary_health.py`
+- A: `agent/auxiliary_hooks.py`
+- A: `agent/auxiliary_key_rotation.py`
+- A: `agent/auxiliary_local_runtime.py`
+- A: `agent/auxiliary_managed_local.py`
+- A: `agent/auxiliary_plugin_oauth.py`
+- A: `agent/auxiliary_reasoning_floor.py`
+- A: `agent/auxiliary_stream_watchdog.py`

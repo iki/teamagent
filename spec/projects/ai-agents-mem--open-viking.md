@@ -25,3 +25,7 @@ A deduplication cooldown can hide information still needed after compaction or a
 Borrow the context-assembly boundary even if the underlying stores differ. Make the selected evidence manifest inspectable and preserve a route back to full source. Start with deterministic tier selection and optional rewriting. Test small token budgets, repeated turns, model changes, ambiguous intent, planner failure, oversized abstracts and permission changes between candidate retrieval and body fetch.
 
 Related directions: [memory](../memory.md) · [skills](../skills.md) · [evolution](../evolution.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [open-viking](https://github.com/volcengine/OpenViking); analyzed commit `9d9bc85e1f6a15afa7f23b0d7bf114a7c61cad14`; commit date 2026-10-03T19:10:51+08:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--open-viking.md).
+<!-- teamagent-analysis:end -->

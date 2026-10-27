@@ -1,0 +1,207 @@
+# clawseccheck: change evidence
+
+Source: [clawseccheck](https://github.com/gl0di/clawseccheck) · [Analysis](../../projects/ai-security--clawseccheck.md) · [security](../../security.md), [skills](../../skills.md), [agents](../../agents.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `9ad5f14af1b9783dbe33493b4b9cf57e7a9d10d5`; commit date: 2026-09-29T16:12:36+03:00; review date: unknown; observed SHA: `948128ce3d1293adf2f84fed1b69cb0cd6c0efa6`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gl0di/clawseccheck/compare/9ad5f14af1b9783dbe33493b4b9cf57e7a9d10d5...948128ce3d1293adf2f84fed1b69cb0cd6c0efa6). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [948128ce3d12](https://github.com/gl0di/clawseccheck/commit/948128ce3d1293adf2f84fed1b69cb0cd6c0efa6) 2026-10-24T15:28:49+03:00: Merge pull request #48 from gl0di/dev
+- [975cfc3fa001](https://github.com/gl0di/clawseccheck/commit/975cfc3fa001c9ce613d0268838efc1243d35137) 2026-10-24T14:09:37+03:00: Merge remote-tracking branch 'origin/main' into dev
+- [1488f478e50e](https://github.com/gl0di/clawseccheck/commit/1488f478e50e3a03f3ea235647911d4dbb1269fe) 2026-10-24T14:09:36+03:00: chore: v4.4.4 — fetch plan runs no package code, compromise advice checks persistence before rotating, OpenClaw 2026.10.6
+- [1d321beb85bc](https://github.com/gl0di/clawseccheck/commit/1d321beb85bc2158659d833b19af691d9d9abb55) 2026-10-24T10:04:22+03:00: fix: name the --incident report without the bare console command, and keep SKILL.md in budget
+- [dd6d2a86cbaa](https://github.com/gl0di/clawseccheck/commit/dd6d2a86cbaac96f958253be10dc6043d1e5bff1) 2026-10-24T09:33:24+03:00: feat(iocdb): add the tensorlake exfiltration host and regenerate the check catalogue
+- [64533dbcb7ec](https://github.com/gl0di/clawseccheck/commit/64533dbcb7eca764fdc78236eaad57ee6695aa44) 2026-10-24T09:33:24+03:00: security: match pip's full archive suffix list and check the whole spec string
+- [387948ae9357](https://github.com/gl0di/clawseccheck/commit/387948ae93573a6f85264640724d7e977bdac8a4) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-753-754-docs-runtime-disttags' into dev
+- [f6e0c97db112](https://github.com/gl0di/clawseccheck/commit/f6e0c97db1128d85430d78bba85ea5c8fdb5e427) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-752-dependabot-fixtures' into dev
+- [5dbddf83fd88](https://github.com/gl0di/clawseccheck/commit/5dbddf83fd88f095a2dab576a1878c170fce9714) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-751-publish-verdict' into dev
+- [a49097ee17c7](https://github.com/gl0di/clawseccheck/commit/a49097ee17c7da9f14eb0b1a5d0584d5b34d753e) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-750-iocdb-refresh' into dev
+- [893b1d912900](https://github.com/gl0di/clawseccheck/commit/893b1d912900696a7effad1aa4a1d486904f6a33) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-749-macos-launchagents' into dev
+- [a992e42aef32](https://github.com/gl0di/clawseccheck/commit/a992e42aef3277a011f33930960abef2565b7eb9) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-748-agent-config-writes' into dev
+- [e82b4a92930e](https://github.com/gl0di/clawseccheck/commit/e82b4a92930e157fd89743c673cedfd4346f8491) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-747-ir-advice-order' into dev
+- [a3bbbd573f55](https://github.com/gl0di/clawseccheck/commit/a3bbbd573f55a7dbd149b1b42f02f17db60a1f66) 2026-10-24T09:30:58+03:00: Merge branch 'task/c-745-pip-only-binary' into dev
+- [fa7e42541f7e](https://github.com/gl0di/clawseccheck/commit/fa7e42541f7eecc3d334f771518385027ddf4ebc) 2026-10-24T09:30:38+03:00: security: refuse an npm/pypi name that is an archive or wheel filename
+- [0f59ff6e9830](https://github.com/gl0di/clawseccheck/commit/0f59ff6e9830c4d640754f219afbe205741c047d) 2026-10-24T09:30:23+03:00: fix: advise persistence check before rotating secrets after a compromise
+- [7f5e513c6469](https://github.com/gl0di/clawseccheck/commit/7f5e513c6469097abc27a70d6e105bbf54284862) 2026-10-24T09:28:00+03:00: security: build a fetch command only for a plain registry npm/pypi spec
+- [a3ac9ae7b125](https://github.com/gl0di/clawseccheck/commit/a3ac9ae7b125ff71ecbd269ae8420c229459fcd7) 2026-10-24T09:26:26+03:00: feat: refresh IOC dataset with GitHub-advisory-confirmed npm malware (revision 2026-10-24)
+- [8916ae619236](https://github.com/gl0di/clawseccheck/commit/8916ae61923683c2923096bda85dd4ddcad09ff4) 2026-10-24T09:21:16+03:00: ci: re-probe the registry at decide time and poll 60 min after a CLI publish failure
+- [3b24a669ac6c](https://github.com/gl0di/clawseccheck/commit/3b24a669ac6c8e932a1ef7f7d7156e04c9a68d5c) 2026-10-24T09:20:59+03:00: docs: record the Node runtime gap and the 2026-10-24 dist-tags reading
+- [d2f980761ba6](https://github.com/gl0di/clawseccheck/commit/d2f980761ba6b9886694d5c8f7b6d81fb8eccbb9) 2026-10-24T09:20:50+03:00: test: pin measured coverage of agent-config persistence writes (tensorlake form)
+- [651b1d773b85](https://github.com/gl0di/clawseccheck/commit/651b1d773b857c36126ad0acacca3dd460c29bf0) 2026-10-24T09:20:47+03:00: fix(host): disclose unread macOS launchd locations instead of reporting no persistence
+- [a16542fb32e1](https://github.com/gl0di/clawseccheck/commit/a16542fb32e1d920bd0a33d22bef61300b551fbe) 2026-10-24T09:20:39+03:00: ci: document that dependabot.yml scoping does not cover security updates
+- [f77f269d98f0](https://github.com/gl0di/clawseccheck/commit/f77f269d98f0255cff77f381df5cd3326685a7f1) 2026-10-24T09:19:47+03:00: security: fetch plan uses wheels-only pip and --ignore-scripts npm so no package code runs before the scan
+- [ed624e9e1d03](https://github.com/gl0di/clawseccheck/commit/ed624e9e1d03f8068051224324b2f366071ee559) 2026-10-23T23:44:39+03:00: Merge branch 'task/c-746-openclaw-10-6' into dev
+- [bc3aa3b83c23](https://github.com/gl0di/clawseccheck/commit/bc3aa3b83c234eb0f7f132462795ac7febe9683e) 2026-10-23T23:35:38+03:00: docs: re-ground on OpenClaw 2026.10.6, and follow the vendor on the worker image and an empty plugins.installs
+- [c4386dfad504](https://github.com/gl0di/clawseccheck/commit/c4386dfad50416fd1e93bdca853b85d044f9f8f0) 2026-10-23T13:33:48+03:00: Merge pull request #46 from gl0di/dev
+- [faf434109d13](https://github.com/gl0di/clawseccheck/commit/faf434109d13f5346e2000d2b8e6b0b748a3104b) 2026-10-23T12:21:41+03:00: Merge remote-tracking branch 'origin/main' into dev
+- [f40c9aab1230](https://github.com/gl0di/clawseccheck/commit/f40c9aab12305d5cfec62876089ae41248d7c266) 2026-10-23T12:21:41+03:00: chore: v4.4.3 — re-ground on OpenClaw 2026.10.5, carrying the 4.4.2 fixes that never reached ClawHub
+- [5af63e7b0793](https://github.com/gl0di/clawseccheck/commit/5af63e7b0793603a9c394c76a6f62498e24ee757) 2026-10-20T14:47:57+03:00: ci: stop quoting the flagged sentence in the gitleaks ignore comment
+- [cabbf9db0d80](https://github.com/gl0di/clawseccheck/commit/cabbf9db0d80eed392a000b94c05471b6237024d) 2026-10-19T18:15:50+03:00: ci: pin the vendor's retired-config sentence in the battery as a known gitleaks false positive
+- [6c21d4555862](https://github.com/gl0di/clawseccheck/commit/6c21d4555862000e04bd1865b85229663a66bf0d) 2026-10-19T18:09:48+03:00: Merge branch 'task/c-744-openclaw-10-5' into dev
+
+## Changed paths (truncated)
+
+- M: `.github/dependabot.yml`
+- M: `.github/tools/requirements-ci.txt`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/clawhub-publish.yml`
+- M: `.gitleaksignore`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `SECURITY_MODEL.md`
+- M: `SKILL.md`
+- M: `audit.py`
+- M: `clawseccheck/__init__.py`
+- M: `clawseccheck/adjudication/__init__.py`
+- M: `clawseccheck/adjudication/_builder.py`
+- M: `clawseccheck/adjudication/_verdicts.py`
+- M: `clawseccheck/ansi.py`
+- M: `clawseccheck/attest.py`
+- M: `clawseccheck/baseline.py`
+- M: `clawseccheck/behavioral.py`
+- M: `clawseccheck/canary.py`
+- M: `clawseccheck/catalog.py`
+- M: `clawseccheck/checks/__init__.py`
+- M: `clawseccheck/checks/_agents.py`
+- M: `clawseccheck/checks/_capability.py`
+- M: `clawseccheck/checks/_config.py`
+- M: `clawseccheck/checks/_content.py`
+- M: `clawseccheck/checks/_egress.py`
+- M: `clawseccheck/checks/_host.py`
+- M: `clawseccheck/checks/_lifecycle.py`
+- M: `clawseccheck/checks/_mcp.py`
+- M: `clawseccheck/checks/_shared.py`
+- M: `clawseccheck/checks/_vet.py`
+- M: `clawseccheck/cli.py`
+- M: `clawseccheck/collector.py`
+- M: `clawseccheck/configjournal.py`
+- M: `clawseccheck/configloader.py`
+- M: `clawseccheck/coverage.py`
+- M: `clawseccheck/deptree.py`
+- M: `clawseccheck/dossier.py`
+- M: `clawseccheck/dryrun.py`
+- M: `clawseccheck/guide.py`
+- M: `clawseccheck/harnessruntime.py`
+- M: `clawseccheck/history.py`
+- M: `clawseccheck/hostpersist.py`
+- M: `clawseccheck/hostwatch.py`
+- M: `clawseccheck/incident.py`
+- M: `clawseccheck/incidentstore.py`
+- M: `clawseccheck/integrity.py`
+- M: `clawseccheck/invocation.py`
+- M: `clawseccheck/iocdb.py`
+- M: `clawseccheck/layers.py`
+- M: `clawseccheck/ledger.py`
+- M: `clawseccheck/livetestproof.py`
+- M: `clawseccheck/locking.py`
+- M: `clawseccheck/logdiscovery.py`
+- M: `clawseccheck/logsafe.py`
+- M: `clawseccheck/logscan.py`
+- M: `clawseccheck/mcpsurface.py`
+- M: `clawseccheck/menu.py`
+- M: `clawseccheck/monitor.py`
+- M: `clawseccheck/monitordims/__init__.py`
+- M: `clawseccheck/monitordims/_coverage.py`
+- M: `clawseccheck/monitordims/_credentials.py`
+- M: `clawseccheck/monitordims/_execpolicy.py`
+- M: `clawseccheck/monitordims/_gateway.py`
+- M: `clawseccheck/monitordims/_hostpersist.py`
+- M: `clawseccheck/monitordims/_memory.py`
+- M: `clawseccheck/monitordims/_plugins.py`
+- M: `clawseccheck/monitordims/_skills.py`
+- M: `clawseccheck/monitorstore.py`
+- M: `clawseccheck/multiturn.py`
+- M: `clawseccheck/native.py`
+- M: `clawseccheck/openclawdist.py`
+- M: `clawseccheck/palette.py`
+- A: `clawseccheck/pathprobe.py`
+- M: `clawseccheck/pdf.py`
+- M: `clawseccheck/pipeline.py`
+- M: `clawseccheck/prescan.py`
+- M: `clawseccheck/redteam.py`
+- M: `clawseccheck/report.py`
+- A: `clawseccheck/retiredformats.py`
+- M: `clawseccheck/risk.py`
+- M: `clawseccheck/runstore.py`
+- M: `clawseccheck/safeio.py`
+- M: `clawseccheck/sarif.py`
+- M: `clawseccheck/sbom.py`
+- M: `clawseccheck/sbom_runs.py`
+- M: `clawseccheck/scoring.py`
+- M: `clawseccheck/skillast.py`
+- M: `clawseccheck/skilldiscovery.py`
+- M: `clawseccheck/skillprovenance.py`
+- M: `clawseccheck/toolgrant.py`
+- M: `clawseccheck/toolpolicy.py`
+- M: `clawseccheck/trajaudit.py`
+- M: `clawseccheck/trajectory.py`
+- M: `clawseccheck/trajectorystore.py`
+- M: `clawseccheck/update.py`
+- M: `clawseccheck/watch.py`
+- M: `docs/ATTESTATION.md`
+- M: `docs/CHECKS.md`
+- M: `docs/FAQ.md`
+- M: `docs/FLOW_CHOICES.md`
+- M: `docs/IOC_DATA.md`
+- M: `docs/ISOLATION.md`
+- M: `docs/OUTPUT_SCHEMA.md`
+- M: `docs/README.md`
+- M: `docs/RELEASING.md`
+- M: `docs/THREAT_COVERAGE.md`
+- M: `docs/THREAT_INTAKE.md`
+- M: `docs/TROUBLESHOOTING.md`
+- M: `docs/USAGE.md`
+- M: `docs/assets/stats-dark.svg`
+- M: `docs/assets/stats-light.svg`
+- M: `docs/design/watch-mechanism.md`
+- A: `docs/playbook/CARD_ANATOMY.md`
+- A: `docs/playbook/DASHBOARD.md`
+- A: `docs/playbook/JUDGE_PANEL.md`
+- A: `docs/playbook/LIVE_TEST_VERDICTS.md`
+- A: `docs/playbook/MODES.md`
+- A: `docs/playbook/QUICK_MAP.md`
+- A: `docs/playbook/RUN_NOTES.md`
+- A: `docs/playbook/SCOPE.md`
+- A: `docs/playbook/VET_JUDGE_PANEL.md`
+- M: `fixtures/README.md`
+- A: `fixtures/bad_b350_terminal_default_on_stamped/openclaw.json`
+- M: `fixtures/clean_b4_peragent_sandbox/openclaw.json`
+- M: `fixtures/clean_b4_peragent_sandbox_shared_scope/openclaw.json`
+- M: `fixtures/clean_c014_egress_inventory/openclaw.json`
+- M: `fixtures/clean_c6_hook_policy_fixedver/openclaw.json`
+- M: `fixtures/reliability/bad_b297_wildcard_group_account_scoped/openclaw.json`
+- M: `fixtures/reliability/clean_b297_wildcard_group_account_allowfrom/openclaw.json`
+- M: `fixtures/reliability/clean_b297_wildcard_group_base_allowfrom_account_groups/openclaw.json`
+- M: `pyproject.toml`
+- M: `references/cli-flags.md`
+- M: `scripts/fleet_fp_gate.py`
+- M: `scripts/monitor_detection_gate.py`
+- M: `scripts/monitor_fp_gate.py`
+- M: `scripts/state_db_drift_gate.py`
+- A: `tests/_c692oracle.py`
+- M: `tests/_distgrounding.py`
+- M: `tests/_harnessoracle.py`
+- A: `tests/_retiredformatsoracle.py`
+- A: `tests/_skillcorpus.py`
+- M: `tests/_toolgrantoracle.py`
+- A: `tests/c728_json5_oracle.json`
+- A: `tests/c730_old_patterns.json`
+- M: `tests/checks_public_api.txt`
+- M: `tests/data/harnessruntime_battery.json`
+- A: `tests/data/retiredformats_battery.json`
+- M: `tests/dist_citation_baseline.txt`
+- M: `tests/dist_verified_paths.txt`
+- M: `tests/dm_policy_shape_manifest.txt`
+- M: `tests/finding_fingerprint_manifest.txt`
+- M: `tests/state_schema_snapshot.sql`
+- M: `tests/test_adjudication.py`
+- M: `tests/test_attest.py`
+- M: `tests/test_attest_agents.py`
+- M: `tests/test_b101_run_all_isolation.py`
+- M: `tests/test_b104_offboarding_hygiene.py`
+- M: `tests/test_b136_b138_new_checks.py`

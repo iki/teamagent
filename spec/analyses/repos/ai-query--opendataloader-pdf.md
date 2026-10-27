@@ -1,0 +1,169 @@
+# opendataloader-pdf: change evidence
+
+Source: [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) · [Analysis](../../projects/ai-query--opendataloader-pdf.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `72e475c05b0f1c375af71a5b04a751ed22fcbf25`; commit date: 2026-10-01T18:37:52+09:00; review date: unknown; observed SHA: `1652ba9bca5e7e9daa006a0b2a45df6b6a309638`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/opendataloader-project/opendataloader-pdf/compare/72e475c05b0f1c375af71a5b04a751ed22fcbf25...1652ba9bca5e7e9daa006a0b2a45df6b6a309638). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [1652ba9bca5e](https://github.com/opendataloader-project/opendataloader-pdf/commit/1652ba9bca5e7e9daa006a0b2a45df6b6a309638) 2026-10-27T18:26:06+09:00: chore(deps)!: bump filelock 3.32.7 -> 4.2.4 in python/opendataloader-pdf/
+- [8680932b0c8f](https://github.com/opendataloader-project/opendataloader-pdf/commit/8680932b0c8f762e0e5ade0b08ec07b758b9b74a) 2026-10-27T18:20:23+09:00: chore(deps)!: bump pillow 12.3.0 -> 13.0.0 in python/opendataloader-pdf/
+- [73b1bac7d9f2](https://github.com/opendataloader-project/opendataloader-pdf/commit/73b1bac7d9f290b7e84cdc3172c77e77eb33e289) 2026-10-27T18:20:23+09:00: chore(deps): bump docling family to lift the pillow<13 cap
+- [5f0a1c9b942b](https://github.com/opendataloader-project/opendataloader-pdf/commit/5f0a1c9b942bcc2881ec5edf179475489b4cf4ff) 2026-10-27T18:14:17+09:00: chore(python)!: require Python 3.11 or later
+- [4274410dd85a](https://github.com/opendataloader-project/opendataloader-pdf/commit/4274410dd85a6f110062c2422c12ec24c28bff31) 2026-10-27T18:13:40+09:00: chore(deps): bump certifi 2026.7.22 -> 2026.10.23 in python/opendataloader-pdf-mcp/
+- [aab8e5839f89](https://github.com/opendataloader-project/opendataloader-pdf/commit/aab8e5839f89196644e99e4aea9e3a47067907fe) 2026-10-27T18:13:40+09:00: chore(deps): bump certifi and setuptools in python/opendataloader-pdf/
+- [25cb582b95b9](https://github.com/opendataloader-project/opendataloader-pdf/commit/25cb582b95b92f218194251f0b0558003ab9fd02) 2026-10-27T18:13:40+09:00: chore(deps): bump vite 8.3.0 -> 8.3.5 and vitest 5.0.0 -> 5.0.5 in node/
+- [0a45396331dd](https://github.com/opendataloader-project/opendataloader-pdf/commit/0a45396331ddedeeed0eaebb4664469a9222b7d6) 2026-10-27T06:00:08Z: chore: begin 2.5.17-SNAPSHOT
+- [532eed1dca90](https://github.com/opendataloader-project/opendataloader-pdf/commit/532eed1dca90266f3fc317291842dde697a6abe6) 2026-10-27T14:48:20+09:00: docs(skills): odl-fix removes the release worktree in the final report
+- [ad67e7bba503](https://github.com/opendataloader-project/opendataloader-pdf/commit/ad67e7bba50388ea47f45f3cbd45823f550e71b8) 2026-10-27T14:48:20+09:00: docs(skills): odl-fix uses the attachment, side-effect, and benchmark tools of odl-review
+- [504531895928](https://github.com/opendataloader-project/opendataloader-pdf/commit/504531895928414bb8c6242ae1194d8bfa6c9849) 2026-10-27T14:40:53+09:00: fix(tagging): scope the first cell of a first row of data to its row
+- [46b308c24c21](https://github.com/opendataloader-project/opendataloader-pdf/commit/46b308c24c2198bae985657ae956fbf06f5e7133) 2026-10-27T13:59:02+09:00: docs(skills): state which security values of an objection mean "not security"
+- [ecabd09a5a65](https://github.com/opendataloader-project/opendataloader-pdf/commit/ecabd09a5a650a1da33b93faee7371f6841328cf) 2026-10-27T13:59:02+09:00: fix(skills): count each precedent as new when the earlier round has no list
+- [0941443a248c](https://github.com/opendataloader-project/opendataloader-pdf/commit/0941443a248c25650f210591a4683459aa81a498) 2026-10-27T13:59:02+09:00: fix(skills): address the second CodeRabbit review of odl-review
+- [b12bedf9366f](https://github.com/opendataloader-project/opendataloader-pdf/commit/b12bedf9366f83579b822ecc4db101fe77dfc141) 2026-10-27T13:59:02+09:00: fix(skills): address the CodeRabbit review of odl-review
+- [2bb687bae7c6](https://github.com/opendataloader-project/opendataloader-pdf/commit/2bb687bae7c6d7b18d3b4eaf44c322162860261b) 2026-10-27T13:59:02+09:00: feat(skills): replace odl-review with a results-based merge verdict
+- [65f2d4b94a16](https://github.com/opendataloader-project/opendataloader-pdf/commit/65f2d4b94a1674d5c9502b1a01ba250ec00fd466) 2026-10-26T17:24:55+09:00: test(tagged-pdf): pin an image with the name of its form in the tagged PDF
+- [70d11b757a78](https://github.com/opendataloader-project/opendataloader-pdf/commit/70d11b757a788bbf0f0f73e3034bd22295025014) 2026-10-26T13:43:46+09:00: test(tagging): tag an image in a form inside a form, end to end
+- [96362b8cbc67](https://github.com/opendataloader-project/opendataloader-pdf/commit/96362b8cbc67dac3a00d996bc69a5def97dfabb9) 2026-10-26T13:43:46+09:00: fix(tagging): fold a piece into every piece of its element that it overlaps
+- [45d6d81f71c4](https://github.com/opendataloader-project/opendataloader-pdf/commit/45d6d81f71c41ae21ee53721d48f7426e55c23f9) 2026-10-26T13:43:46+09:00: fix(tagging): do not enter a form again from inside it
+- [2a3113eecfd7](https://github.com/opendataloader-project/opendataloader-pdf/commit/2a3113eecfd7098d67e0b023f9fea3b1ff095fbc) 2026-10-26T13:43:46+09:00: fix(tagging): reach content in a form that another form draws
+- [3280448e1b47](https://github.com/opendataloader-project/opendataloader-pdf/commit/3280448e1b47546c6a186957bd69b611337213b5) 2026-10-26T13:43:46+09:00: fix(tagging): give overlapping pieces of one string one MCID
+- [ae7a3c38709c](https://github.com/opendataloader-project/opendataloader-pdf/commit/ae7a3c38709c3350f5c1dce2d67b4391bd4f68ea) 2026-10-26T13:43:46+09:00: fix(tagging): scope every heading row's cells to their columns
+- [e6f92f371bcf](https://github.com/opendataloader-project/opendataloader-pdf/commit/e6f92f371bcf0de9324607483fb0f500e3a7fb98) 2026-10-26T13:43:46+09:00: fix(tagging): place a caption inside its parent's box by height
+- [4222a8c6f857](https://github.com/opendataloader-project/opendataloader-pdf/commit/4222a8c6f85725eda8f7748caa3f598401147449) 2026-10-26T10:58:22+09:00: Fix parser downgrade instructions in Type3 glyph regression test
+- [9a9f769a8d64](https://github.com/opendataloader-project/opendataloader-pdf/commit/9a9f769a8d64f1d0149044a07016bdd2ea0a59f8) 2026-10-26T10:58:22+09:00: test(regression): pin the veraPDF fix for Type3 glyphs that start with d0
+- [48cdd35c9539](https://github.com/opendataloader-project/opendataloader-pdf/commit/48cdd35c95399387cf348ab303d0cbe8e9e1018b) 2026-10-23T10:50:35+09:00: test: assert that closeDocument(null) returns and leaves the current document open
+- [c92e3c9e1482](https://github.com/opendataloader-project/opendataloader-pdf/commit/c92e3c9e1482624b45bf5f00b492b5284f814aac) 2026-10-23T10:50:35+09:00: fix(api): give closeDocument one documented contract
+- [21d780a5dc28](https://github.com/opendataloader-project/opendataloader-pdf/commit/21d780a5dc2852f214503b2611b1afede0418105) 2026-10-23T10:50:35+09:00: test: use distinct text in the two Issue #791 PDFs
+- [9f7902acb5f7](https://github.com/opendataloader-project/opendataloader-pdf/commit/9f7902acb5f778d2a8c0f0638427e3267c26aeae) 2026-10-23T10:50:35+09:00: fix(api): close TaggingResult without clearing a later extraction's thread state
+- [007007dc0516](https://github.com/opendataloader-project/opendataloader-pdf/commit/007007dc05165f6112ef82d16b4649248abdbbe5) 2026-10-22T06:04:30Z: chore: begin 2.5.16-SNAPSHOT
+- [b4a5ad5e18e2](https://github.com/opendataloader-project/opendataloader-pdf/commit/b4a5ad5e18e26ebbe91118d77d17c0696e29f3ec) 2026-10-22T14:24:08+09:00: test(processors): pin that a page-processing failure is wrapped in IOException
+
+## Changed paths
+
+- A: `.agents/skills/odl-fix/SKILL.md`
+- A: `.agents/skills/odl-review/SKILL.md`
+- A: `.agents/skills/odl-review/evals/run.py`
+- A: `.agents/skills/odl-review/references/catalog.json`
+- A: `.agents/skills/odl-review/references/checks.md`
+- A: `.agents/skills/odl-review/references/evidence.md`
+- A: `.agents/skills/odl-review/references/reviewers.md`
+- A: `.agents/skills/odl-review/references/samples.md`
+- A: `.agents/skills/odl-review/references/tools.md`
+- A: `.agents/skills/odl-review/scripts/artifacts.py`
+- A: `.agents/skills/odl-review/scripts/bench.py`
+- A: `.agents/skills/odl-review/scripts/demo.py`
+- A: `.agents/skills/odl-review/scripts/diff_scan.py`
+- A: `.agents/skills/odl-review/scripts/fetch_attachment.sh`
+- A: `.agents/skills/odl-review/scripts/inspect_pdf.py`
+- A: `.agents/skills/odl-review/scripts/isolate.reference.sh`
+- A: `.agents/skills/odl-review/scripts/md_lists.py`
+- A: `.agents/skills/odl-review/scripts/panel_brief.py`
+- A: `.agents/skills/odl-review/scripts/precedents.py`
+- A: `.agents/skills/odl-review/scripts/prepare.py`
+- A: `.agents/skills/odl-review/scripts/save_report.py`
+- A: `.agents/skills/odl-review/scripts/side_effects.sh`
+- A: `.agents/skills/odl-review/scripts/suite_compare.py`
+- A: `.agents/skills/odl-review/scripts/verdict.py`
+- A: `.claude/skills`
+- A: `.github/workflows/pr-reminders.yml`
+- M: `.github/workflows/release.yml`
+- M: `.github/workflows/snapshot.yml`
+- M: `.github/workflows/test-benchmark.yml`
+- A: `AGENTS.md`
+- A: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `examples/python/batch/README.md`
+- M: `examples/python/batch/batch_processing.py`
+- M: `examples/python/batch/requirements.txt`
+- M: `examples/python/rag/README.md`
+- A: `examples/sanitize-rules/default-rules.json`
+- M: `java/opendataloader-pdf-cli/pom.xml`
+- M: `java/opendataloader-pdf-cli/src/main/java/org/opendataloader/pdf/cli/CLIMain.java`
+- M: `java/opendataloader-pdf-cli/src/test/java/org/opendataloader/pdf/cli/CLIMainTest.java`
+- M: `java/opendataloader-pdf-core/pom.xml`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/AutoTagger.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/FilterConfig.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/OutputWriter.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/TaggingResult.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/api/cli/CLIOptions.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/autotagging/ChunksWriter.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/exceptions/TempDirectoryNotWritableException.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/json/JsonWriter.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/AutoTaggingProcessor.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/DocumentProcessor.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/ExtractionResult.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/ContentSanitizer.java`
+- M: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/SanitizationRule.java`
+- A: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/SanitizationRuleException.java`
+- A: `java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/utils/SanitizationRulesLoader.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/IntegrationTest.java`
+- D: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/Issue336IntegrationTest.java`
+- D: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/Issue408IntegrationTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/Issue767IntegrationTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/api/AutoTaggerTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/api/FilterConfigTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/api/cli/CLIOptionsContentSafetyTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/entities/PictureDescriptionE2ETest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue336UndersegmentedTableTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue408FileLockTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue779ExtractionCloseTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue783FailedExtractionCloseTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue791TaggingResultCloseTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue813InsertedSpaceTaggedPdfTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue820SanitizedLinkTaggedPdfTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/AutoTaggingTemporaryFileTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/BackgroundFilterTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/CaptionPlacementTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/CidFontDetectionTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/DocumentProcessorArtifactPruneTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/DocumentProcessorParallelFailureTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/DocumentProcessorTempDirTest.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/HybridReferenceTrailerTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/NestedFormTaggedPdfTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/NestedFormXObjectTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/OverlappingPiecesMcidTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/TableHeaderScopeTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/processors/TaggedPdfMarkedContentTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/regression/Type3D0GlyphRegressionTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/regression/XObjectNameCollisionTaggedPdfTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/testsupport/TestSamples.java`
+- M: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/utils/ContentSanitizerTest.java`
+- A: `java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/utils/SanitizationRulesLoaderTest.java`
+- D: `java/opendataloader-pdf-core/src/test/resources/cid-font-no-tounicode.pdf`
+- D: `java/opendataloader-pdf-core/src/test/resources/generate-cid-test-pdf.py`
+- A: `java/opendataloader-pdf-core/src/test/resources/issue-767-repro.pdf`
+- M: `java/pom.xml`
+- M: `node/opendataloader-pdf/package.json`
+- M: `node/opendataloader-pdf/pnpm-lock.yaml`
+- M: `node/opendataloader-pdf/pnpm-workspace.yaml`
+- M: `node/opendataloader-pdf/src/cli-options.generated.ts`
+- M: `node/opendataloader-pdf/src/convert-options.generated.ts`
+- M: `node/opendataloader-pdf/src/index.ts`
+- M: `node/opendataloader-pdf/test/convert-options.test.ts`
+- M: `node/opendataloader-pdf/test/executeJar.unit.test.ts`
+- M: `options.json`
+- M: `python/opendataloader-pdf-mcp/README.md`
+- M: `python/opendataloader-pdf-mcp/pyproject.toml`
+- M: `python/opendataloader-pdf-mcp/uv.lock`
+- M: `python/opendataloader-pdf/pyproject.toml`
+- M: `python/opendataloader-pdf/src/opendataloader_pdf/cli_options_generated.py`
+- M: `python/opendataloader-pdf/src/opendataloader_pdf/convert_generated.py`
+- M: `python/opendataloader-pdf/src/opendataloader_pdf/hybrid_server.py`
+- A: `python/opendataloader-pdf/src/opendataloader_pdf/py.typed`
+- M: `python/opendataloader-pdf/src/opendataloader_pdf/runner.py`
+- M: `python/opendataloader-pdf/tests/test_cli_options.py`
+- A: `python/opendataloader-pdf/tests/test_hybrid_server_failure_response.py`
+- M: `python/opendataloader-pdf/tests/test_runner.py`
+- M: `python/opendataloader-pdf/uv.lock`
+- D: `samples/pdf/issue-336-conto-economico-bialetti.pdf`
+- M: `scripts/generate-options.mjs`
+- A: `scripts/pin-maven.sh`
+- A: `scripts/pr-reminders.py`
+- M: `skills/odl-pdf-maintenance/MAINTAINING.md`
+- M: `verification/ci-verify.py`

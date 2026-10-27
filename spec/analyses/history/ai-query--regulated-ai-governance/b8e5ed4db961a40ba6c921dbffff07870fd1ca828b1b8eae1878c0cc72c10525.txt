@@ -1,0 +1,25 @@
+# regulated-ai-governance
+
+Source: [regulated-ai-governance](https://github.com/ashutoshrana/regulated-ai-governance) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `664a753aa46062d5e07b0e3a35f8fbf2367a4638`; commit timestamp `2026-09-11T15:36:55-05:00`; 182 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/ashutoshrana/regulated-ai-governance/blob/664a753aa46062d5e07b0e3a35f8fbf2367a4638/README.md)):
+
+> [](https://github.com/ashutoshrana/regulated-ai-governance/actions/workflows/ci.yml) Governance framework for AI agents and RAG systems in regulated environments — 41 examples, 25 jurisdictions, 10 AI frameworks, 2,631 tests.
+
+Build/package evidence: [pyproject.toml](https://github.com/ashutoshrana/regulated-ai-governance/blob/664a753aa46062d5e07b0e3a35f8fbf2367a4638/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/ashutoshrana/regulated-ai-governance/blob/664a753aa46062d5e07b0e3a35f8fbf2367a4638/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

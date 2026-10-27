@@ -1,0 +1,207 @@
+# codegraph: change evidence
+
+Source: [codegraph](https://github.com/colbymchenry/codegraph) · [Analysis](../../projects/ai-agents-mem--codegraph.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `6560052a6f856855d3f71eee838fd66ccfa4285d`; commit date: 2026-10-03T06:38:45Z; review date: unknown; observed SHA: `f93e89a82d415408f46f5ee5887506df66478b02`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/colbymchenry/codegraph/compare/6560052a6f856855d3f71eee838fd66ccfa4285d...f93e89a82d415408f46f5ee5887506df66478b02). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [f93e89a82d41](https://github.com/colbymchenry/codegraph/commit/f93e89a82d415408f46f5ee5887506df66478b02) 2026-10-27T17:47:28Z: fix(paths): a project at a Windows drive root indexes its files (#2931)
+- [0187366697c2](https://github.com/colbymchenry/codegraph/commit/0187366697c29065d4576ea2c1314125066dedb6) 2026-10-27T17:36:28Z: fix(cli): codegraph status opens the index read-only, and says when a rebuild is running
+- [5e0c42cb63c9](https://github.com/colbymchenry/codegraph/commit/5e0c42cb63c9e5d6c6ddb1786b7dc7279f7db36d) 2026-10-27T17:20:10Z: fix(security): the sensitive-folder guard refuses links, case variants and \?\ paths (#2929)
+- [7ff2841e3788](https://github.com/colbymchenry/codegraph/commit/7ff2841e37882b085d6dd35d32db210b67349011) 2026-10-27T17:05:28Z: fix(resolution): ties that decide a link break by code unit, not the host's locale
+- [4eb8c2a5f266](https://github.com/colbymchenry/codegraph/commit/4eb8c2a5f2668a0bbdaf9100b7a87c450296c65c) 2026-10-27T16:45:47Z: perf(synthesis): line numbers from a newline index, not a split per match
+- [0b194448dc86](https://github.com/colbymchenry/codegraph/commit/0b194448dc8694702ca8121d25c714447376bb82) 2026-10-27T16:45:04Z: fix(resolution): a call a method hands on to another object no longer links back to it
+- [b6379e6d5ee7](https://github.com/colbymchenry/codegraph/commit/b6379e6d5ee7edf75f41cff521bf77777f1694ed) 2026-10-27T15:59:08Z: fix(scala): an Outer.Inner(...) call reaches the Scala case class or object it builds
+- [81559dcc37f5](https://github.com/colbymchenry/codegraph/commit/81559dcc37f58bc4db4f280a6dd941119f47e0d3) 2026-10-27T15:26:51Z: fix(resolution): a call reaches the caller's own copy of a duplicated module
+- [69af19ace270](https://github.com/colbymchenry/codegraph/commit/69af19ace270f2e940444d514de6dde971df12df) 2026-10-24T02:16:17Z: fix(build): building from source with bun finishes instead of starting itself over
+- [4c572e07b690](https://github.com/colbymchenry/codegraph/commit/4c572e07b690d5299d513080b631188593746d3e) 2026-10-24T01:52:27Z: fix(play): a Class.method reference reaches a member of the class it names
+- [cde4cd74ebab](https://github.com/colbymchenry/codegraph/commit/cde4cd74ebab4bd7541a2e70fa8dc0a70edd3159) 2026-10-24T01:23:32Z: fix(resolution): a lone same-file definition scores as a strong match
+- [0b238452a3c5](https://github.com/colbymchenry/codegraph/commit/0b238452a3c5be685a2b10fc49f6bcc66bc9312d) 2026-10-24T00:55:56Z: fix(mcp): explore's maxFiles text gives the real default, not 12
+- [de2b80e9212a](https://github.com/colbymchenry/codegraph/commit/de2b80e9212abddbf1c9604e94212b2a17f0642e) 2026-10-24T00:37:33Z: fix(mcp): a project opened for projectPath is released on its own idle deadline
+- [3a93f57ae179](https://github.com/colbymchenry/codegraph/commit/3a93f57ae1796b47cf6f27e8685e58de957392c3) 2026-10-23T22:14:17Z: fix(java): a record is indexed as a class, with its components' fields and accessors
+- [a565f215f15c](https://github.com/colbymchenry/codegraph/commit/a565f215f15c92328ae080e2937beff7ce26700f) 2026-10-23T21:49:37Z: fix(viewer): saved trails stay inside the project when a folder or trail file is a link
+- [37509214868b](https://github.com/colbymchenry/codegraph/commit/37509214868bbc8cfa7671455f9f5a46901e30e9) 2026-10-23T21:06:53Z: test(resolution): calls on nested receivers keep their evidence and guess no target
+- [d02a88d052c3](https://github.com/colbymchenry/codegraph/commit/d02a88d052c3a5fd5a38a71cff8759df13d380c7) 2026-10-23T20:40:56Z: fix(java,csharp): a call on a new object reaches the class the file imports, not a namesake (#2864)
+- [43a4f5b9f905](https://github.com/colbymchenry/codegraph/commit/43a4f5b9f90516b37881bd0826ba0cbf973463e8) 2026-10-23T20:28:22Z: fix(graph): the type hierarchy returns a type's subtypes, not only its ancestors
+- [a278c2ee12a8](https://github.com/colbymchenry/codegraph/commit/a278c2ee12a852c15f2efb41a868e99ec480bc12) 2026-10-23T20:06:41Z: fix(scope): a folder git ignores matches only itself, not every folder with its name (#2858)
+- [44adef821bb8](https://github.com/colbymchenry/codegraph/commit/44adef821bb8c3d7723cd6469ec4d79d276805f2) 2026-10-23T19:53:00Z: fix(erlang): a comment in an argument list no longer counts as an argument
+- [90c5dc6fc964](https://github.com/colbymchenry/codegraph/commit/90c5dc6fc964e22b3ec1fb69b97406d948e3220f) 2026-10-23T19:38:20Z: fix(extraction): a Go method carries the exportedness of its name
+- [8f8f04b7fc14](https://github.com/colbymchenry/codegraph/commit/8f8f04b7fc14e1d2a01db5d0a51a6c8c9a1ef6c7) 2026-10-23T19:21:32Z: fix(java,ts): a parameterized supertype links its type, like implements Store<String>
+- [428b3c487d9d](https://github.com/colbymchenry/codegraph/commit/428b3c487d9ddf326af359aafc1947bc7f1985a7) 2026-10-23T18:58:14Z: fix(js,ts): a nested function takes calls to a name the file imports from a package
+- [0d46dba08f87](https://github.com/colbymchenry/codegraph/commit/0d46dba08f870164cbfdad978cdcad146f889f9a) 2026-10-23T18:34:25Z: fix(js,ts): a call on a new C() receiver resolves through C
+- [16f2d357bc49](https://github.com/colbymchenry/codegraph/commit/16f2d357bc49f4e54702d0c26df38c4a7c02da87) 2026-10-23T18:11:55Z: fix(go): a project package named like a standard-library package is not the standard library
+- [449eefa7da8b](https://github.com/colbymchenry/codegraph/commit/449eefa7da8bea0c147129785e2904739ab27bcb) 2026-10-23T17:50:28Z: fix(js,ts): a call on an element of a class field reaches the element's type
+- [5c5bfd4051a7](https://github.com/colbymchenry/codegraph/commit/5c5bfd4051a7571657798d3046ddfd64f5a19eaa) 2026-10-23T17:39:09Z: fix(php): a namespace alias matches whatever case it is written in
+- [33dc2ae72b5a](https://github.com/colbymchenry/codegraph/commit/33dc2ae72b5abd8443a7ca0376c75b32c84f0ab4) 2026-10-23T16:56:54Z: fix(viewer): the routes list's limit counts routes, not one route's calls
+- [2def0a6d6df2](https://github.com/colbymchenry/codegraph/commit/2def0a6d6df2c532e47c8b5a571b6641044723b0) 2026-10-23T16:43:22Z: test(kernel): skip the kernel-only suites when CODEGRAPH_KERNEL=0
+- [679c4e095a53](https://github.com/colbymchenry/codegraph/commit/679c4e095a5395a30f501122dd906240fa791346) 2026-10-23T16:38:59Z: test(windows): the windowsHide guard reads quoted and computed keys, and named options
+- [9c4794d694c6](https://github.com/colbymchenry/codegraph/commit/9c4794d694c62d343e43f29f2a76f576ed8b0e99) 2026-10-23T14:07:45Z: fix(rust): a call keeps its whole receiver chain, and links through method calls in it (#2846)
+- [865ddf4ada35](https://github.com/colbymchenry/codegraph/commit/865ddf4ada35036c1d1084c02d5ac81a7c4227ca) 2026-10-23T13:30:13Z: fix(library): indexFiles keeps other writers out until its files are stored (#2845)
+
+## Changed paths (truncated)
+
+- M: `.claude/skills/add-lang/SKILL.md`
+- M: `AGENTS.md`
+- M: `BUNDLING.md`
+- M: `CHANGELOG.md`
+- M: `README.md`
+- A: `__tests__/absent-member-calls.test.ts`
+- A: `__tests__/add-lang-check-grammar.test.ts`
+- A: `__tests__/ambient-module-imports.test.ts`
+- M: `__tests__/angular-router.test.ts`
+- M: `__tests__/bundle-launcher.test.ts`
+- A: `__tests__/c-cpp-declaration-types.test.ts`
+- A: `__tests__/c-cpp-member-supertypes.test.ts`
+- A: `__tests__/c-feature-macro-variants.test.ts`
+- A: `__tests__/c-include-lone-macros.test.ts`
+- A: `__tests__/c-macro-return-types.test.ts`
+- A: `__tests__/c-static-call-rescue.test.ts`
+- M: `__tests__/call-receiver-no-fabrication.test.ts`
+- A: `__tests__/call-value-targets.test.ts`
+- A: `__tests__/catch-all-path-alias.test.ts`
+- M: `__tests__/celery-dispatch-synthesizer.test.ts`
+- A: `__tests__/cfml-create-object.test.ts`
+- A: `__tests__/cfml-embedded-parse-warning.test.ts`
+- A: `__tests__/cfml-include.test.ts`
+- M: `__tests__/cfml-inheritance-resolution.test.ts`
+- M: `__tests__/child-process-windows-hide.test.ts`
+- M: `__tests__/cli-affected-test-conventions.test.ts`
+- M: `__tests__/cli-ui-command.test.ts`
+- M: `__tests__/cli-unlock.test.ts`
+- M: `__tests__/context.test.ts`
+- A: `__tests__/cpp-absl-holder-receiver.test.ts`
+- A: `__tests__/cpp-alias-inherited-member.test.ts`
+- A: `__tests__/cpp-anonymous-union-members.test.ts`
+- A: `__tests__/cpp-attribute-macros.test.ts`
+- A: `__tests__/cpp-auto-iterator-arrow.test.ts`
+- A: `__tests__/cpp-auto-local-receiver.test.ts`
+- A: `__tests__/cpp-auto-range-for-receiver.test.ts`
+- A: `__tests__/cpp-base-class-lookup.test.ts`
+- A: `__tests__/cpp-binding-and-wrapper-receivers.test.ts`
+- A: `__tests__/cpp-block-comment-lines.test.ts`
+- A: `__tests__/cpp-brace-scopes.test.ts`
+- A: `__tests__/cpp-class-name-receiver-members.test.ts`
+- A: `__tests__/cpp-comparisons-and-template-declarators.test.ts`
+- A: `__tests__/cpp-container-accessor-calls.test.ts`
+- A: `__tests__/cpp-declarator-clause-names.test.ts`
+- A: `__tests__/cpp-declared-type-receiver.test.ts`
+- A: `__tests__/cpp-dereferenced-iterator-calls.test.ts`
+- A: `__tests__/cpp-element-access-calls.test.ts`
+- A: `__tests__/cpp-free-function-overloads.test.ts`
+- A: `__tests__/cpp-global-alias-target.test.ts`
+- A: `__tests__/cpp-global-scope-names.test.ts`
+- A: `__tests__/cpp-gtest-fixture-scope.test.ts`
+- A: `__tests__/cpp-implicit-this-calls.test.ts`
+- A: `__tests__/cpp-included-test-suite.test.ts`
+- A: `__tests__/cpp-iterator-arrow.test.ts`
+- A: `__tests__/cpp-library-type-receiver.test.ts`
+- A: `__tests__/cpp-listed-declarator-receiver.test.ts`
+- A: `__tests__/cpp-local-callable-calls.test.ts`
+- A: `__tests__/cpp-macro-defined-methods.test.ts`
+- A: `__tests__/cpp-map-iterator-calls.test.ts`
+- A: `__tests__/cpp-member-chain-base-members.test.ts`
+- A: `__tests__/cpp-member-chain-outside-calls.test.ts`
+- A: `__tests__/cpp-member-chain-project-calls.test.ts`
+- A: `__tests__/cpp-member-receiver.test.ts`
+- A: `__tests__/cpp-member-template-returns.test.ts`
+- A: `__tests__/cpp-namespace-qualifier.test.ts`
+- A: `__tests__/cpp-nested-template-receiver.test.ts`
+- A: `__tests__/cpp-nullptr-deleted-overloads.test.ts`
+- A: `__tests__/cpp-operator-arrow-targets.test.ts`
+- A: `__tests__/cpp-outside-type-receiver.test.ts`
+- A: `__tests__/cpp-overload-argument-types.test.ts`
+- A: `__tests__/cpp-overload-constness.test.ts`
+- A: `__tests__/cpp-pimpl-member-chains.test.ts`
+- A: `__tests__/cpp-qualified-declarator-receiver.test.ts`
+- A: `__tests__/cpp-range-for-receiver.test.ts`
+- A: `__tests__/cpp-receiver-global-far-library.test.ts`
+- A: `__tests__/cpp-smart-pointer-receiver.test.ts`
+- A: `__tests__/cpp-specialization-names.test.ts`
+- A: `__tests__/cpp-specialization-qualifiers.test.ts`
+- A: `__tests__/cpp-string-literal-declarations.test.ts`
+- A: `__tests__/cpp-template-member-types.test.ts`
+- A: `__tests__/cpp-test-fixture-call.test.ts`
+- A: `__tests__/cpp-test-translation-unit.test.ts`
+- A: `__tests__/cpp-translation-unit-visibility.test.ts`
+- A: `__tests__/cpp-translation-unit.test.ts`
+- A: `__tests__/cpp-two-line-receivers.test.ts`
+- A: `__tests__/cpp-type-alias-receiver.test.ts`
+- A: `__tests__/cpp-undeclared-qualifier.test.ts`
+- A: `__tests__/cpp-written-scope-class-names.test.ts`
+- A: `__tests__/csharp-member-initializers.test.ts`
+- A: `__tests__/csharp-property-accessors.test.ts`
+- M: `__tests__/csharp-type-position-refs.test.ts`
+- M: `__tests__/daemon-candidates.ts`
+- A: `__tests__/daemon-install-check.test.ts`
+- A: `__tests__/daemon-lock-holder.test.ts`
+- A: `__tests__/daemon-older-version.test.ts`
+- M: `__tests__/daemon-registry.test.ts`
+- A: `__tests__/daemon-silent-holder.test.ts`
+- A: `__tests__/dart-annotated-member-docs.test.ts`
+- A: `__tests__/dart-annotation-comments.test.ts`
+- A: `__tests__/dart-annotation-targets.test.ts`
+- A: `__tests__/dart-bodiless-member-docs.test.ts`
+- A: `__tests__/dart-chain-links.test.ts`
+- A: `__tests__/dart-comment-split-chains.test.ts`
+- A: `__tests__/dart-const-constructors.test.ts`
+- A: `__tests__/dart-generic-calls.test.ts`
+- A: `__tests__/dart-generic-factory-chain.test.ts`
+- A: `__tests__/dart-getter-reads.test.ts`
+- A: `__tests__/dart-import-prefix-calls.test.ts`
+- A: `__tests__/dart-import-uris.test.ts`
+- A: `__tests__/dart-initializer-calls.test.ts`
+- A: `__tests__/dart-library-visibility.test.ts`
+- A: `__tests__/dart-local-call-scope.test.ts`
+- A: `__tests__/dart-part-directives.test.ts`
+- A: `__tests__/dart-part-privacy.test.ts`
+- A: `__tests__/dart-type-positions.test.ts`
+- A: `__tests__/dart-typedef-refs.test.ts`
+- M: `__tests__/dead-code.test.ts`
+- A: `__tests__/default-export-declaration.test.ts`
+- A: `__tests__/dominant-file-plan.test.ts`
+- A: `__tests__/dominant-file-window.test.ts`
+- A: `__tests__/dynamic-import-binding.test.ts`
+- M: `__tests__/erlang-arity-resolution.test.ts`
+- A: `__tests__/explore-cobol-copybook.test.ts`
+- M: `__tests__/explore-cross-call-dedup.test.ts`
+- A: `__tests__/explore-long-query.test.ts`
+- A: `__tests__/explore-low-value-tests.test.ts`
+- M: `__tests__/explore-output-budget.test.ts`
+- A: `__tests__/explore-queried-oversize-symbol.test.ts`
+- A: `__tests__/explore-synth-link-endpoints.test.ts`
+- A: `__tests__/explore-unindexed-names.test.ts`
+- M: `__tests__/expo-router.test.ts`
+- M: `__tests__/expression-receiver-calls.test.ts`
+- M: `__tests__/extraction.test.ts`
+- M: `__tests__/fixtures/kernel-parity/Torture.java`
+- A: `__tests__/fixtures/kernel-parity/TortureAnnotatedComments.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureAnnotatedDocs.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureCommentChains.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureConstCtors.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureDeclarationDocs.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureDirectives.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureGenericCalls.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureInitializers.dart`
+- A: `__tests__/fixtures/kernel-parity/TorturePartOfName.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureReadsTypes.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureRecord.java`
+- A: `__tests__/fixtures/kernel-parity/TortureTry.swift`
+- A: `__tests__/fixtures/kernel-parity/TortureTypedefs.dart`
+- A: `__tests__/fixtures/kernel-parity/TortureWrappedCalls.swift`
+- M: `__tests__/fixtures/kernel-parity/torture.c`
+- M: `__tests__/fixtures/kernel-parity/torture.cpp`
+- M: `__tests__/fixtures/kernel-parity/torture.dart`
+- M: `__tests__/fixtures/kernel-parity/torture.go`
+- M: `__tests__/fixtures/kernel-parity/torture.js`
+- M: `__tests__/fixtures/kernel-parity/torture.kt`
+- M: `__tests__/fixtures/kernel-parity/torture.py`
+- M: `__tests__/fixtures/kernel-parity/torture.rs`
+- M: `__tests__/fixtures/kernel-parity/torture.tsx`
+- A: `__tests__/fixtures/older-daemon.cjs`
+- M: `__tests__/fixtures/record-detached-spawns.cjs`
+- A: `__tests__/flow-named-implementation.test.ts`

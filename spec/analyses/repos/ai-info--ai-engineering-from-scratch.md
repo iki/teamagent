@@ -1,0 +1,207 @@
+# ai-engineering-from-scratch: change evidence
+
+Source: [ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) · [Analysis](../../projects/ai-info--ai-engineering-from-scratch.md) · [agents](../../agents.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `3be078b37ffd8f0c04953c0678e48f5c6d0c7775`; commit date: 2026-10-02T05:37:23Z; review date: unknown; observed SHA: `3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/rohitg00/ai-engineering-from-scratch/compare/3be078b37ffd8f0c04953c0678e48f5c6d0c7775...3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [3f9715c62a3b](https://github.com/rohitg00/ai-engineering-from-scratch/commit/3f9715c62a3bedcffb68a260f1a65ee2dd9cc10a) 2026-10-23T18:39:18+05:30: fix(manual/miles-101): connect the GB10 plate parts (#702)
+- [7a843199252e](https://github.com/rohitg00/ai-engineering-from-scratch/commit/7a843199252e55e924e0486d2a18545c6ea939e9) 2026-10-23T12:49:18Z: chore(site): rebuild data.js
+- [80d5a6584a17](https://github.com/rohitg00/ai-engineering-from-scratch/commit/80d5a6584a17156d6f32d3fdc35176ba5600317b) 2026-10-23T18:18:47+05:30: feat(manuals): publish vLLM 101 and Miles 101 (#700)
+- [c6c7511ed2ad](https://github.com/rohitg00/ai-engineering-from-scratch/commit/c6c7511ed2ad8b04cb1a2720202e87f9db727baf) 2026-10-23T18:18:30+05:30: fix(manuals): clock-locked GPU0 results for vLLM 101 and SGLang 101 (#701)
+- [bb3976e6d0f9](https://github.com/rohitg00/ai-engineering-from-scratch/commit/bb3976e6d0f9ddabc5f34ba8886694ea837a93e1) 2026-10-23T12:13:00Z: chore(site): rebuild data.js
+- [b76e92793f08](https://github.com/rohitg00/ai-engineering-from-scratch/commit/b76e92793f085212ade830ba658e327830c75e5b) 2026-10-23T17:42:27+05:30: docs: update contribution guide and add sponsor billing contact (#699)
+- [5c4479f7b296](https://github.com/rohitg00/ai-engineering-from-scratch/commit/5c4479f7b2968d4c2629efe153fd0f8f282844f9) 2026-10-23T17:19:34+05:30: chore(cheatsheets): new and updated sheets (#679)
+- [a652739b1886](https://github.com/rohitg00/ai-engineering-from-scratch/commit/a652739b188699eee195d7ef5e5ae8b99159af4c) 2026-10-23T17:19:02+05:30: feat(manuals): write the measured GPU results into SGLang 101, vLLM 101, and Miles 101 (#698)
+- [b77d4aeaad19](https://github.com/rohitg00/ai-engineering-from-scratch/commit/b77d4aeaad1950ea24e71c03d98740d2f1259ca6) 2026-10-23T17:17:29+05:30: feat(manuals): hardware-specific cover plates for SGLang, vLLM and Miles (#696)
+- [71dc48bff5c7](https://github.com/rohitg00/ai-engineering-from-scratch/commit/71dc48bff5c73c995a169edc8796d6cabbc787e1) 2026-10-23T07:59:50Z: chore(site): rebuild data.js
+- [861b44f8007d](https://github.com/rohitg00/ai-engineering-from-scratch/commit/861b44f8007d53f2ca379cd3587b571f5ba60028) 2026-10-23T13:29:21+05:30: fix(site): keep highlights clearance with read-aloud on tablets (#697)
+- [f61894d9ba60](https://github.com/rohitg00/ai-engineering-from-scratch/commit/f61894d9ba605fb8a24ad90e9fcf6601c9afe5dc) 2026-10-23T07:26:46Z: chore(site): rebuild data.js
+- [ec3d46dec0e5](https://github.com/rohitg00/ai-engineering-from-scratch/commit/ec3d46dec0e50feda4b55a47302900113442eb6d) 2026-10-23T12:56:17+05:30: fix(lessons): sync phase 12 cheatsheets with issue 585 fixes (#695)
+- [ad7e977c40ca](https://github.com/rohitg00/ai-engineering-from-scratch/commit/ad7e977c40ca0f59bff8675d431848585e87335f) 2026-10-23T07:20:56Z: chore(site): rebuild data.js
+- [cbc761b453ad](https://github.com/rohitg00/ai-engineering-from-scratch/commit/cbc761b453add05abffbc86d4ddcf923679f5235) 2026-10-23T12:50:27+05:30: fix(lessons): source errors in phases 00 to 06 from #585 (#691)
+- [7e8c846d8f39](https://github.com/rohitg00/ai-engineering-from-scratch/commit/7e8c846d8f3972c9894d1ef30f685e9163cc47b3) 2026-10-23T07:16:53Z: chore(site): rebuild data.js
+- [46da6d2b4cc7](https://github.com/rohitg00/ai-engineering-from-scratch/commit/46da6d2b4cc75de51b8933d78b884c9d65aba164) 2026-10-23T12:46:22+05:30: fix(lessons): phases 07-11 source errors from #585 (#692)
+- [cac8dd0e2327](https://github.com/rohitg00/ai-engineering-from-scratch/commit/cac8dd0e2327dcc2957e3bbe01d0f519e5cc69fc) 2026-10-23T07:15:10Z: chore(site): rebuild data.js
+- [c669516a4bb9](https://github.com/rohitg00/ai-engineering-from-scratch/commit/c669516a4bb9d507e10cc9510e711de70fc45a04) 2026-10-23T12:44:42+05:30: feat(site): lesson numbers and done checkboxes in the catalog (#689)
+- [5ca116d2c5c5](https://github.com/rohitg00/ai-engineering-from-scratch/commit/5ca116d2c5c51fe46b0d3ae1581a114d2a2e3f6e) 2026-10-23T07:09:21Z: chore(site): rebuild data.js
+- [dddba22ac749](https://github.com/rohitg00/ai-engineering-from-scratch/commit/dddba22ac7495b10d26d96a208f9e32249ab226c) 2026-10-23T12:38:53+05:30: Merge pull request #694 from rohitg00/fix/highlights-button-mobile-overlap
+- [ecdc7f2e8a72](https://github.com/rohitg00/ai-engineering-from-scratch/commit/ecdc7f2e8a72cd9c60e3cc84569f5677b0852512) 2026-10-23T07:05:48Z: chore(site): rebuild data.js
+- [510e11c2fc4c](https://github.com/rohitg00/ai-engineering-from-scratch/commit/510e11c2fc4c56d4251431d78737d87cf2523c9f) 2026-10-23T12:35:21+05:30: Merge pull request #690 from rohitg00/fix/translate-pipeline
+- [f260ba1cc582](https://github.com/rohitg00/ai-engineering-from-scratch/commit/f260ba1cc5824071fcc4f30f4e62997ee922c736) 2026-10-23T12:33:21+05:30: fix(site): stack highlights button above the mobile lessons toggle
+- [b2be5adeeedd](https://github.com/rohitg00/ai-engineering-from-scratch/commit/b2be5adeeedd503b6db2c9b2fe64a8ea0edae674) 2026-10-23T07:03:11Z: chore(site): rebuild data.js
+- [a89c1307576e](https://github.com/rohitg00/ai-engineering-from-scratch/commit/a89c1307576e783c1c4498e69701e841dce82226) 2026-10-23T12:32:35+05:30: Merge pull request #688 from rohitg00/fix/manual-section-lastmod
+- [cb60ed9aaa85](https://github.com/rohitg00/ai-engineering-from-scratch/commit/cb60ed9aaa853ef29c7e30ff4b77a9674da47e46) 2026-10-23T07:02:23Z: chore(site): rebuild data.js
+- [494e93843e4b](https://github.com/rohitg00/ai-engineering-from-scratch/commit/494e93843e4b4d29729243f53d7eceecb443fbe1) 2026-10-23T12:31:53+05:30: Merge pull request #693 from rohitg00/fix/585-phases-12-19
+- [1b1f5f565aab](https://github.com/rohitg00/ai-engineering-from-scratch/commit/1b1f5f565aab0b20789091c9dc77f1fb1fa3512e) 2026-10-23T12:29:33+05:30: fix(i18n): address review findings on translation repair
+- [7e711f5d2474](https://github.com/rohitg00/ai-engineering-from-scratch/commit/7e711f5d247492c82c07ee3b53e1a3519a8ab1da) 2026-10-23T12:29:33+05:30: test(phase-14/42): cover the encoding checker
+- [e9b8c25cd5da](https://github.com/rohitg00/ai-engineering-from-scratch/commit/e9b8c25cd5da29f0cd1de5ddcc3bb65fff330c67) 2026-10-23T12:24:17+05:30: fix(lessons): scope phase 19 sharded checkpoint atomicity
+- [ab860b61c6e8](https://github.com/rohitg00/ai-engineering-from-scratch/commit/ab860b61c6e8548a78a71ea73d625868e19cb901) 2026-10-23T12:24:17+05:30: fix(lessons): align phase 12 Emu3 video tokens and OneVision figure
+
+## Changed paths (truncated)
+
+- A: `.claude/skills/blueprint-figure/SKILL.md`
+- A: `.claude/skills/blueprint-figure/references/checks.md`
+- A: `.claude/skills/blueprint-figure/references/grammar.md`
+- A: `.claude/skills/blueprint-figure/references/kinds.md`
+- A: `.claude/skills/blueprint-figure/templates/figure.mjs`
+- M: `.claude/skills/course-guide/SKILL.md`
+- A: `.claude/skills/course-style/SKILL.md`
+- A: `.claude/skills/course-style/references/accessibility.md`
+- A: `.claude/skills/course-style/references/labels-and-layout.md`
+- A: `.claude/skills/course-style/references/plain-english.md`
+- A: `.claude/skills/course-style/references/tokens.md`
+- A: `.claude/skills/course-style/references/typography.md`
+- A: `.claude/skills/isometric-explainer/SKILL.md`
+- A: `.claude/skills/isometric-explainer/kit/LICENSE`
+- A: `.claude/skills/isometric-explainer/kit/ink.mjs`
+- A: `.claude/skills/isometric-explainer/kit/iso-kit.mjs`
+- A: `.claude/skills/isometric-explainer/kit/lathe.mjs`
+- A: `.claude/skills/isometric-explainer/kit/tube.mjs`
+- A: `.claude/skills/isometric-explainer/references/colour-and-ink.md`
+- A: `.claude/skills/isometric-explainer/references/concept.md`
+- A: `.claude/skills/isometric-explainer/references/geometry.md`
+- A: `.claude/skills/isometric-explainer/references/live.md`
+- A: `.claude/skills/isometric-explainer/references/state-model.md`
+- A: `.claude/skills/isometric-explainer/references/verify.md`
+- A: `.claude/skills/isometric-explainer/templates/build.mjs`
+- A: `.claude/skills/isometric-explainer/templates/live.js`
+- A: `.claude/skills/isometric-explainer/templates/model.mjs`
+- A: `.claude/skills/isometric-explainer/templates/model.test.mjs`
+- A: `.claude/skills/learn-reverse-engineering/SKILL.md`
+- M: `.claude/skills/learn/SKILL.md`
+- A: `.claude/skills/motion-figure/SKILL.md`
+- A: `.claude/skills/motion-figure/references/dither-fields.md`
+- A: `.claude/skills/motion-figure/references/mechanism-figures.md`
+- A: `.claude/skills/motion-figure/references/smil-rules.md`
+- A: `.claude/skills/motion-figure/references/tokens.md`
+- A: `.claude/skills/motion-figure/references/toolkit.md`
+- A: `.claude/skills/motion-figure/templates/dither.js`
+- A: `.claude/skills/motion-figure/templates/mechanism.html`
+- M: `.claude/skills/start-learning/SKILL.md`
+- A: `.claude/skills/write-manual/SKILL.md`
+- A: `.claude/skills/write-manual/references/audit.md`
+- A: `.claude/skills/write-manual/references/capture-kit.md`
+- A: `.claude/skills/write-manual/references/manual-json.md`
+- A: `.claude/skills/write-manual/references/prose-rules.md`
+- A: `.claude/skills/write-manual/references/research-and-sources.md`
+- A: `.claude/skills/write-manual/references/section-template.md`
+- M: `.coderabbit.yaml`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- A: `.github/workflows/cheatsheets-generate.yml`
+- A: `.github/workflows/cheatsheets.yml`
+- M: `.github/workflows/curriculum.yml`
+- A: `.github/workflows/manuals.yml`
+- A: `.github/workflows/practice-generate.yml`
+- A: `.github/workflows/practice.yml`
+- M: `.github/workflows/translate.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `BACKERS.md`
+- M: `CONTRIBUTING.md`
+- M: `LESSON_TEMPLATE.md`
+- M: `README.md`
+- M: `ROADMAP.md`
+- M: `SPONSORS.md`
+- A: `api/blogs.js`
+- M: `api/certification.js`
+- M: `api/lesson.js`
+- M: `api/markdown.js`
+- A: `api/mcp.js`
+- A: `api/not-found.js`
+- A: `api/og.js`
+- A: `api/v1/catalog.js`
+- A: `api/v1/resource.js`
+- A: `api/writing.js`
+- M: `assets/banner.svg`
+- A: `assets/readme/101-gradient-dark.gif`
+- A: `assets/readme/101-gradient-dark.png`
+- A: `assets/readme/101-gradient-data.json`
+- A: `assets/readme/101-gradient-light.gif`
+- A: `assets/readme/101-gradient-light.png`
+- A: `assets/readme/101-gradient-mobile-dark.gif`
+- A: `assets/readme/101-gradient-mobile-dark.png`
+- A: `assets/readme/101-gradient-mobile-light.gif`
+- A: `assets/readme/101-gradient-mobile-light.png`
+- A: `assets/readme/cheatsheet-sample.jpg`
+- A: `assets/readme/header-dark.svg`
+- A: `assets/readme/header-light.svg`
+- A: `assets/sponsors/serpapi-banner-compact.png`
+- A: `book/math-blocks.lua`
+- M: `book/theme.tex`
+- M: `certifications/claude/assessments/ccar-f/diagnostic.json`
+- M: `certifications/claude/assessments/ccar-f/mock-01.json`
+- M: `certifications/claude/lessons/18-tool-contracts-errors-and-progressive-discovery/docs/en.md`
+- M: `certifications/mcpa/lessons/22-trust-boundaries/docs/en.md`
+- A: `cheatsheets/AUTHORING.md`
+- A: `cheatsheets/a2a-and-agent-messaging.md`
+- A: `cheatsheets/a2a.md`
+- A: `cheatsheets/agent-benchmarks.md`
+- A: `cheatsheets/agent-failure-modes.md`
+- A: `cheatsheets/agent-frameworks-compared.md`
+- A: `cheatsheets/agent-harness.md`
+- A: `cheatsheets/agent-planning.md`
+- A: `cheatsheets/agent-reasoning-patterns.md`
+- A: `cheatsheets/agent-skills.md`
+- A: `cheatsheets/agent-state-graphs.md`
+- A: `cheatsheets/agent-tool-use-skills.md`
+- A: `cheatsheets/agent-workbench-ops.md`
+- A: `cheatsheets/ai-governance.md`
+- A: `cheatsheets/ai-safety.md`
+- A: `cheatsheets/ai-security-incidents.md`
+- A: `cheatsheets/ai-tutor-learning-tools.md`
+- A: `cheatsheets/alignment-training.md`
+- A: `cheatsheets/asr-whisper.md`
+- A: `cheatsheets/async-disaggregated-inference.md`
+- A: `cheatsheets/attention-variants.md`
+- A: `cheatsheets/audio-features.md`
+- A: `cheatsheets/audio-generation-alms.md`
+- A: `cheatsheets/autonomous-agents.md`
+- A: `cheatsheets/autonomous-research.md`
+- A: `cheatsheets/bert-gpt-t5.md`
+- A: `cheatsheets/calculus-optimization.md`
+- A: `cheatsheets/classical-ml.md`
+- A: `cheatsheets/cnn-architectures.md`
+- A: `cheatsheets/coding-agents.md`
+- A: `cheatsheets/computer-vision.md`
+- A: `cheatsheets/constitutional-classifiers.md`
+- A: `cheatsheets/context-engineering.md`
+- A: `cheatsheets/data-quality-workbenches.md`
+- A: `cheatsheets/debate-and-roles.md`
+- A: `cheatsheets/deceptive-alignment.md`
+- A: `cheatsheets/decision-briefing-tools.md`
+- A: `cheatsheets/deep-learning-training.md`
+- A: `cheatsheets/delegation-feedback.md`
+- A: `cheatsheets/detection-segmentation.md`
+- A: `cheatsheets/dialogue-systems.md`
+- A: `cheatsheets/diffusion-models.md`
+- A: `cheatsheets/distributed-training.md`
+- A: `cheatsheets/docker-sandboxes.md`
+- A: `cheatsheets/edge-inference.md`
+- A: `cheatsheets/embeddings-vector-search.md`
+- A: `cheatsheets/embodied-computer-use.md`
+- A: `cheatsheets/emergent-agent-societies.md`
+- A: `cheatsheets/eval-driven-agents.md`
+- A: `cheatsheets/evidence/a2a-and-agent-messaging.md`
+- A: `cheatsheets/evidence/a2a.md`
+- A: `cheatsheets/evidence/agent-benchmarks.md`
+- A: `cheatsheets/evidence/agent-failure-modes.md`
+- A: `cheatsheets/evidence/agent-frameworks-compared.md`
+- A: `cheatsheets/evidence/agent-harness.md`
+- A: `cheatsheets/evidence/agent-planning.md`
+- A: `cheatsheets/evidence/agent-reasoning-patterns.md`
+- A: `cheatsheets/evidence/agent-skills.md`
+- A: `cheatsheets/evidence/agent-state-graphs.md`
+- A: `cheatsheets/evidence/agent-tool-use-skills.md`
+- A: `cheatsheets/evidence/agent-workbench-ops.md`
+- A: `cheatsheets/evidence/ai-governance.md`
+- A: `cheatsheets/evidence/ai-safety.md`
+- A: `cheatsheets/evidence/ai-security-incidents.md`
+- A: `cheatsheets/evidence/ai-tutor-learning-tools.md`
+- A: `cheatsheets/evidence/alignment-training.md`
+- A: `cheatsheets/evidence/asr-whisper.md`

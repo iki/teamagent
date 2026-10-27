@@ -1,0 +1,25 @@
+# dolt
+
+Source: [dolt](https://github.com/dolthub/dolt) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `372bff8b189fcda226bb13ee66fe1dde14a3c0dd`; commit timestamp `2026-10-02T17:08:16-07:00`; 2,495 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/dolthub/dolt/blob/372bff8b189fcda226bb13ee66fe1dde14a3c0dd/README.md)):
+
+> Dolt is a SQL database that you can fork, clone, branch, merge, push Connect to Dolt just like any MySQL database to read or modify schema
+
+Build/package evidence: [.github/actions/check-deferred-ci/package.json](https://github.com/dolthub/dolt/blob/372bff8b189fcda226bb13ee66fe1dde14a3c0dd/.github/actions/check-deferred-ci/package.json); [.github/actions/ses-email-action/package.json](https://github.com/dolthub/dolt/blob/372bff8b189fcda226bb13ee66fe1dde14a3c0dd/.github/actions/ses-email-action/package.json); [go/go.mod](https://github.com/dolthub/dolt/blob/372bff8b189fcda226bb13ee66fe1dde14a3c0dd/go/go.mod); [integration-tests/go-sql-server-driver/go.mod](https://github.com/dolthub/dolt/blob/372bff8b189fcda226bb13ee66fe1dde14a3c0dd/integration-tests/go-sql-server-driver/go.mod); [integration-tests/mysql-client-tests/go-mysql/go.mod](https://github.com/dolthub/dolt/blob/372bff8b189fcda226bb13ee66fe1dde14a3c0dd/integration-tests/mysql-client-tests/go-mysql/go.mod)
+
+License evidence: [LICENSE](https://github.com/dolthub/dolt/blob/372bff8b189fcda226bb13ee66fe1dde14a3c0dd/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -1,0 +1,755 @@
+{
+  "metadata": {
+    "id": "ai-query--mcp-sdk-python",
+    "category": "ai-query",
+    "name": "mcp-sdk-python",
+    "url": "https://github.com/modelcontextprotocol/python-sdk",
+    "aliases": [],
+    "report": "spec/projects/ai-query--mcp-sdk-python.md",
+    "topics": [
+      "memory",
+      "import-generation",
+      "decisions"
+    ],
+    "depth": "screened",
+    "analyzedSha": "2118f14f8a19bc158d8a1cf90af58d85d187f849",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T22:56:10+01:00",
+    "reportSha256": "861568f2865df309e1278888e0c65d11163c32c531482dabe1c040b2b3e11575",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-query--mcp-sdk-python",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/modelcontextprotocol/python-sdk",
+    "report": "spec/projects/ai-query--mcp-sdk-python.md",
+    "analyzedSha": "2118f14f8a19bc158d8a1cf90af58d85d187f849",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T22:56:10+01:00",
+    "observedSha": "d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "d7845c073a2b9ba5ab2817ecf93d3e45ef24cd14",
+        "date": "2026-10-27T12:15:09+01:00",
+        "subject": "Carry `capabilities.extensions` on legacy `initialize` handshakes (#3776)"
+      },
+      {
+        "sha": "a525a3d9bece967d91534b746a6c842931b7b4ec",
+        "date": "2026-10-24T13:19:26-07:00",
+        "subject": "Give bare `dict`, `set` and `frozenset` return annotations structured output (#3758)"
+      },
+      {
+        "sha": "5a3a23af65def4d636864d55701ff9395cad92d0",
+        "date": "2026-10-24T10:53:50-07:00",
+        "subject": "Treat `typing.Dict[str, X]` return annotations like `dict[str, X]` (#3756)"
+      },
+      {
+        "sha": "72ff38cb5cb7c0f6d5024d1b185e5bf0c05f0cb0",
+        "date": "2026-10-24T10:39:29-07:00",
+        "subject": "Drop generated titles from tool input and output schemas (#3757)"
+      },
+      {
+        "sha": "86ca12b4e977fe4739b478430e2b86018126ed6e",
+        "date": "2026-10-24T09:46:22-07:00",
+        "subject": "Resolve open code scanning alerts (#3755)"
+      },
+      {
+        "sha": "910efd9497057f0c636afaebf52a2b9f8bf0c3b8",
+        "date": "2026-10-24T07:48:34-07:00",
+        "subject": "Bump the python-security group across 1 directory with 4 updates (#3752)"
+      },
+      {
+        "sha": "2af9e3089ac66b35c1550c500aae86a82efb1e17",
+        "date": "2026-10-17T15:54:35+02:00",
+        "subject": "Give each SSE response its own header list (#3726)"
+      },
+      {
+        "sha": "9f66f376d486e84e9810b368cf8be9d5908661ab",
+        "date": "2026-10-16T13:08:26+02:00",
+        "subject": "Add cache fields to directory read and `_meta` to `Skill` (#3719)"
+      },
+      {
+        "sha": "754254c08fe1c3eda18b69da3d336106fe8d72d6",
+        "date": "2026-10-13T11:20:58+02:00",
+        "subject": "Return invalid params for unknown prompts and missing arguments (#3696)"
+      },
+      {
+        "sha": "9db497ed31e7b8a87febe0f3bb8c2ba35e4f21dc",
+        "date": "2026-10-13T10:59:41+02:00",
+        "subject": "Read MCP Apps tool results from notification params (#3679)"
+      },
+      {
+        "sha": "c9356a2a8fb805ac2202e44c05371cf005edc923",
+        "date": "2026-10-12T14:37:35+02:00",
+        "subject": "Update httpx2 and datamodel-code-generator (#3645)"
+      },
+      {
+        "sha": "c4492554da517f93ddd52b072d9c4d07292f1161",
+        "date": "2026-10-12T14:16:21+02:00",
+        "subject": "Drop support for Python 3.10 (#3690)"
+      },
+      {
+        "sha": "9535c0e81a8bd373d4172067a73c1deab4d4b639",
+        "date": "2026-10-12T14:13:14+02:00",
+        "subject": "Update uv to 0.12.24 across the project (#3689)"
+      },
+      {
+        "sha": "3ecd2af67b09cdc9309d3b3e50606f83b2deda35",
+        "date": "2026-10-12T13:48:15+02:00",
+        "subject": "Add support for Python 3.15 (#3688)"
+      },
+      {
+        "sha": "4b5fe5afeb5a6391a167d124d8ee0c21a5f2abec",
+        "date": "2026-10-11T16:45:05+02:00",
+        "subject": "Remove unused chatbot stdio context attribute (#3678)"
+      },
+      {
+        "sha": "9a754b0aabb873d9707d52dc165b569fb442ec8c",
+        "date": "2026-10-11T16:44:19+02:00",
+        "subject": "Add `Skills` extension (#3485)"
+      },
+      {
+        "sha": "91941ed4d3985d59def99e090baa3f880c626cc8",
+        "date": "2026-10-05T14:22:35+01:00",
+        "subject": "Bump pyjwt from 2.13.0 to 2.15.0 (#3608)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".claude/skills/test-quality/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/conformance.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/deploy-docs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/docs-preview.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/main.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/publish-pypi.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/shared.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".pre-commit-config.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/advanced/extensions.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/advanced/low-level-server.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/advanced/skills.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/client/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/get-started/installation.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/handlers/context.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/handlers/dependencies.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/handlers/lifespan.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/servers/prompts.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/servers/structured-output.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/servers/tools.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs_src/apps/tutorial001.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs_src/skills/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs_src/skills/tutorial001.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs_src/skills/tutorial001_client.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/clients/simple-auth-client/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "examples/clients/simple-chatbot/.python-version",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/clients/simple-chatbot/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/clients/simple-chatbot/mcp_simple_chatbot/main.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/clients/simple-chatbot/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/clients/sse-polling-client/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/mcpserver/memory.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/everything-server/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/simple-auth/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/simple-pagination/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "examples/servers/simple-prompt/.python-version",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/simple-prompt/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "examples/servers/simple-resource/.python-version",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/simple-resource/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/simple-streamablehttp-stateless/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/simple-streamablehttp/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "examples/servers/simple-tool/.python-version",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/simple-tool/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/sse-polling-demo/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/servers/structured-output-lowlevel/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/snippets/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/stories/_harness.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/stories/apps/server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/de/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/es/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/fr/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/hi/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/ja/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/ko/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/pt/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/ru/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/tr/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/uk/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/zh-hant/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "i18n/zh/pages/advanced/apps.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mkdocs.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/gen_surface_types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp-types/mcp_types/_types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp-types/mcp_types/_v2025_11_25/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp-types/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/client/client.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/client/extension.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/mcp/client/extensions/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/mcp/client/extensions/skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/client/session.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/client/session_group.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/_streamable_http_modern.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/auth/settings.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/lowlevel/server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/mcpserver/context.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/mcpserver/prompts/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/mcpserver/prompts/manager.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/mcpserver/server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/mcpserver/tools/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/server/mcpserver/utilities/func_metadata.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/mcp/server/skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/mcp/shared/_stream_protocols.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/mcp/shared/skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/client/extensions/test_skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/client/test_client.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/client/test_client_extensions.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/client/test_session_claims.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/conftest.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/docs_src/test_apps.test.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_client.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_context.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_dependencies.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_first_steps.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_lifespan.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_progress.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_prompts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_real_host.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/docs_src/test_skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_structured_output.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/docs_src/test_tools.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/examples/conftest.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/interaction/_helpers.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/interaction/_requirements.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/interaction/mcpserver/test_prompts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/interaction/mcpserver/test_tools.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/mcpserver/prompts/test_base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/mcpserver/prompts/test_manager.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/mcpserver/test_extension.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/mcpserver/test_func_metadata.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/mcpserver/test_resolve.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/mcpserver/test_server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/mcpserver/test_tool_manager.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/test_apps.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/test_extensions_capability.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/server/test_skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/server/test_streamable_http_modern.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/shared/test_skills.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_examples.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/types/test_methods.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "uv.lock",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

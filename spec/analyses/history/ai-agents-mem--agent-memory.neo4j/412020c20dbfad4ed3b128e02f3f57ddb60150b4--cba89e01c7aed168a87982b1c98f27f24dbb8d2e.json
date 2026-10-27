@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--agent-memory.neo4j",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/neo4j-labs/agent-memory",
+  "report": "spec/projects/ai-agents-mem--agent-memory.neo4j.md",
+  "analyzedSha": "412020c20dbfad4ed3b128e02f3f57ddb60150b4",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-24T18:40:06-06:00",
+  "observedSha": "cba89e01c7aed168a87982b1c98f27f24dbb8d2e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "cba89e01c7aed168a87982b1c98f27f24dbb8d2e",
+      "date": "2026-10-22T13:50:27-06:00",
+      "subject": "Merge pull request #378 from neo4j-labs/0.6.0-release"
+    },
+    {
+      "sha": "5ccaf1aacff2f29b25a68174f4a3a25839d48105",
+      "date": "2026-10-22T15:07:13-04:00",
+      "subject": "docs: bump Python package pins and release statements to 0.8.0"
+    },
+    {
+      "sha": "f5dfb798a5cea3ebdead6325d9a25e352d1d545a",
+      "date": "2026-10-22T13:48:39-04:00",
+      "subject": "chore(release): bump neo4j-agent-memory to 0.8.0"
+    },
+    {
+      "sha": "5dd995481bf48df4a560e638d19f55b8d5e4f917",
+      "date": "2026-10-22T12:57:52-04:00",
+      "subject": "docs: bump TS package pins and release statements to SDK 0.6.0 / provider 0.4.0"
+    },
+    {
+      "sha": "0672ffad4c0a312855c74c926abbb72363033f09",
+      "date": "2026-10-22T09:59:50-06:00",
+      "subject": "Merge pull request #341 from FBISiri/docs/contributing-test-env-vars"
+    },
+    {
+      "sha": "835d6e90f3dcd4cd87291a2fe83e16e239683f3c",
+      "date": "2026-10-22T09:58:46-06:00",
+      "subject": "Merge pull request #355 from BlueLi66/fix/156-embedding-dependency-guidance"
+    },
+    {
+      "sha": "018dda3f877e4dc1a8049a5d0b765b3af7d9be4d",
+      "date": "2026-10-22T09:58:15-06:00",
+      "subject": "Merge pull request #180 from JulianZJN/contrib/issue-170-wrapper-semantics"
+    },
+    {
+      "sha": "9a1f42737e06c3780f9bd296e34fb0cb2d0cf591",
+      "date": "2026-10-22T09:57:10-06:00",
+      "subject": "Merge pull request #345 from neo4j-labs/agent_memory_eve"
+    },
+    {
+      "sha": "a938522a2c0f8ecee59b6ebf168d1c40aff0f409",
+      "date": "2026-10-22T09:42:39-06:00",
+      "subject": "Merge pull request #365 from neo4j-labs/alert-autofix-14"
+    },
+    {
+      "sha": "ae8a47651954430e55f3b953f7c6e503b2770a04",
+      "date": "2026-10-22T09:27:11-06:00",
+      "subject": "Potential fix for code scanning alert no. 14: Workflow does not contain permissions"
+    },
+    {
+      "sha": "c15996a08e90cc3607f64052335faaa61b0aaec0",
+      "date": "2026-10-22T11:20:33-04:00",
+      "subject": "chore(release): bump SDK to 0.6.0 and nams-ai-provider to 0.4.0"
+    },
+    {
+      "sha": "a9a703071476a3b7e698c4115a446d8524315017",
+      "date": "2026-10-22T11:16:46-04:00",
+      "subject": "fix(ci): build the SDK in the provider publish workflow"
+    },
+    {
+      "sha": "bf6f916ed4994b5be0cec914a408bcb029258221",
+      "date": "2026-10-22T11:02:41-04:00",
+      "subject": "fix(ci): repair failing PR checks from the main merge"
+    },
+    {
+      "sha": "c321b90919e7cc89641091c02525ff291542d638",
+      "date": "2026-10-22T10:32:27-04:00",
+      "subject": "Merge branch 'main' into agent_memory_eve"
+    },
+    {
+      "sha": "0722ff9b9858a3f8e46009cf8f611c3557ccd87b",
+      "date": "2026-10-22T08:22:09-06:00",
+      "subject": "Merge pull request #360 from neo4j-labs/dependabot-fixes"
+    },
+    {
+      "sha": "85d52bd6a2e73c255622e4170d88986698c52ecf",
+      "date": "2026-10-22T09:46:22-04:00",
+      "subject": "Merge main into dependabot-fixes"
+    },
+    {
+      "sha": "3d6a4868861dbf72dd4fda6ac15345b37f37239d",
+      "date": "2026-10-22T09:40:00-04:00",
+      "subject": "fix(ci): repair failing CI jobs from the dependency security upgrades"
+    },
+    {
+      "sha": "7d1403dbfab591cb935e6241f546f801d8b89f9c",
+      "date": "2026-10-21T15:05:29-06:00",
+      "subject": "Merge pull request #359 from neo4j-labs/certifi-fix"
+    },
+    {
+      "sha": "4343b8e60c7056d03dd1ce9336f71655f81d5bcb",
+      "date": "2026-10-21T16:45:09-04:00",
+      "subject": "fix(deps): resolve 528 Dependabot security alerts across Python and npm"
+    },
+    {
+      "sha": "b363aef8c02b7e3e84fd8a3de2761915e4f705d6",
+      "date": "2026-10-21T14:14:29-06:00",
+      "subject": "Merge pull request #358 from neo4j-labs/seo-docs-restructure"
+    },
+    {
+      "sha": "eba8536dc12d814e6b7a8cb040c32e52e565e899",
+      "date": "2026-10-21T14:06:23-06:00",
+      "subject": "Merge pull request #357 from neo4j-labs/sdk-fixes-for-vercel"
+    },
+    {
+      "sha": "2ddc7e9adf9ce9c73dd0ed0443c7c7f9d99cda1a",
+      "date": "2026-10-21T14:05:39-06:00",
+      "subject": "Merge pull request #354 from neo4j-labs/labs-disclaimer"
+    },
+    {
+      "sha": "c33b971c28fbc9d0eb20269fe283c495d6e73349",
+      "date": "2026-10-21T16:02:21-04:00",
+      "subject": "security: remove trust in compromised eMudhra intermediate CAs"
+    },
+    {
+      "sha": "7d783f982bea304dcf1f40feddef41ca23ad9cdb",
+      "date": "2026-10-20T16:01:18Z",
+      "subject": "handled comments"
+    },
+    {
+      "sha": "31c8f916403e339214e7ae0a3cce815ad4d56734",
+      "date": "2026-10-20T10:35:18-04:00",
+      "subject": "docs: fix SEO for agent-memory pages (canonical, meta descriptions, sitemap)"
+    },
+    {
+      "sha": "a4332ee3c373857ada4c7aa7860c3a2d91811cb0",
+      "date": "2026-10-19T07:01:41Z",
+      "subject": "fixed some sdk changes"
+    },
+    {
+      "sha": "e647ce378b677b9e52391e0781cc56d226a40ab4",
+      "date": "2026-10-14T12:36:38Z",
+      "subject": "resolved comments"
+    },
+    {
+      "sha": "0e74b9951e67d5f5e23a45f05e12a3c3a5936df0",
+      "date": "2026-10-14T11:40:30Z",
+      "subject": "updated ai sdk package"
+    },
+    {
+      "sha": "4470e253319124fa60f01c1442dd2f4e98795c75",
+      "date": "2026-10-13T18:25:04+08:00",
+      "subject": "test: trim redundant NAMS wrapper checks"
+    },
+    {
+      "sha": "34ecb0a75be7e2718daee5329f60d04e6f931630",
+      "date": "2026-10-13T16:04:25+08:00",
+      "subject": "Merge main and keep NAMS wrapper changes unreleased"
+    },
+    {
+      "sha": "efc7ab7c63bdf151b74187926c8810b434747708",
+      "date": "2026-10-10T13:11:07+08:00",
+      "subject": "fix: clarify missing OpenAI embedding dependency guidance"
+    },
+    {
+      "sha": "222d3615c1f6a7ffe3993385dc31f027307f7486",
+      "date": "2026-10-09T16:49:46+02:00",
+      "subject": "Add Neo4j Labs disclaimer"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-python.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-typescript.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nams-integration.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-nams-ai-provider.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LABS_DISCLAIMER.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README-pypi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/compare_extractors.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/data/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/data/poleo_gold.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmarks/data/poleo_resolution_gold.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmarks/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/cloudrun/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/mcpb/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/mcpb/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/MAINTAINING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/antora-playbook.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/antora.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/diagrams/excalidraw/three-extraction-approaches.excalidraw",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-17/appendix.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-17/coverage-followup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-17/docs-review-unified-feedback.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-17/findings.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-17/implementation-report-rendered.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-17/implementation-report.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-17/rendered-site-review-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-24/branch-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-24/findings.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-24/remediation-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/audit-evidence/2026-09-24/remediation-status.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/diagrams/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/diagrams/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/diagrams/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/extensions/example-files.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/extensions/sitemap.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/assets/hierarchy.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/assets/navigation.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/assets/search.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.AuthClient.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.AuthenticationError.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.ConnectionError.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.LongTermMemory.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.MemoryClient.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.MemoryError.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.NotFoundError.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.NotSupportedError.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.OntologyClient.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.QueryConsole.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.ReasoningMemory.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.RestTransport.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.ShortTermMemory.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.TransportError.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/index.ValidationError.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/integrations_langchain.Neo4jChatMessageHistory.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/integrations_langchain.Neo4jEntityRetriever.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/integrations_mastra.Neo4jMastraMemory.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/integrations_strands.Neo4jConversationManager.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/integrations_strands.Neo4jMemoryStore.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/integrations_strands.Neo4jSessionStorage.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/classes/testing.BridgeTransport.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/integrations_strands.connectMemoryToAgent.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/integrations_strands.isSyntheticStrandsMessage.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/integrations_strands.registerReasoningHooks.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/mcp.createMemoryTools.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/mcp.handleMemoryToolCall.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/mcp.memoryToolAnnotations.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/mcp_register.memoryToolShapes.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/mcp_register.registerMemoryTools.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/middleware_vercel-ai.agentMemoryMiddleware.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/functions/middleware_vercel-ai.promptContentToText.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/hierarchy.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.AccessTokenPair.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ActiveOntology.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.AddMessageOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.AddRelationshipOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.AgentStep.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.AgentStepExplanation.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ApiKey.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.BulkMessageInput.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.CompleteTraceOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Conversation.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ConversationContext.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ConversationTrace.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.CreateApiKeyInput.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.CreateConversationOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.CreateOntologyOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.CypherResult.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.DomainInfo.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Entity.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityFeedbackResult.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityGraph.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityGraphEdge.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityGraphNode.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityHistory.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityMention.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityMergeResult.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityProvenance.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityRelationshipRef.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.EntityTypeDef.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ExpandedGraph.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Fact.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.GetConversationOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.GetEntityByNameOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.GetRelatedEntitiesOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.GetSimilarTracesOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ImportOntologyOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ImportWarning.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ListConversationsOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ListEntitiesOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ListSessionsOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ListTracesOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.MemoryClientOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Message.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.MigrateOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.MigrationJob.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Observation.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Ontology.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.OntologyDiff.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.OntologyDocument.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.OntologyImportResult.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.OntologyRecord.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.OntologySummary.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.OntologyVersion.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Preference.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.PropertyDef.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ReasoningStep.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ReasoningTrace.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.RecordStepInput.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.RecordToolCallOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Reflection.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Relationship.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.RelationshipDef.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.RestTransportOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.SearchEntitiesOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.SearchMessagesOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.SearchPreferencesOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.SessionInfo.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.SetEntityFeedbackOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ToolCall.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.ToolStats.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.Transport.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.TypeMapping.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.UpdateEntityOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/index.UpdateOntologyOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_mastra.MastraMemoryMessage.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_mastra.MastraThread.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_strands.ConnectMemoryToAgentResult.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_strands.Neo4jConversationManagerOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_strands.Neo4jMemoryAddMessagesResult.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_strands.Neo4jMemoryAddResult.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_strands.Neo4jMemoryStoreOptions.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/modules/ROOT/attachments/api/typescript/interfaces/integrations_strands.ReasoningHooksOptions.html",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -23,3 +23,7 @@ This entry was catalogued under **ai-security**. Its category places it in the c
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [paper.2604.security.many-ih](https://github.com/JHU-CLSP/ManyIH); analyzed commit `3287f82436fff86d7506b7737dbd3b5e2e524d01`; commit date 2026-04-13T02:39:01Z; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-security--paper.2604.security.many-ih.md).
+<!-- teamagent-analysis:end -->

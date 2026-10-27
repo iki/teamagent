@@ -1,0 +1,560 @@
+{
+  "metadata": {
+    "id": "ai-query--officecli",
+    "category": "ai-query",
+    "name": "officecli",
+    "url": "https://github.com/iOfficeAI/OfficeCLI",
+    "aliases": [],
+    "report": "spec/projects/ai-query--officecli.md",
+    "topics": [
+      "memory",
+      "import-generation",
+      "decisions"
+    ],
+    "depth": "screened",
+    "analyzedSha": "b590a433a6a699bfe1008b9e4c581521528bcb77",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T01:11:33+08:00",
+    "reportSha256": "38d7ea6edd2b886bc756dd932d7b5395765a9d9e20029fa10f93050b8b903e95",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-query--officecli",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/iOfficeAI/OfficeCLI",
+    "report": "spec/projects/ai-query--officecli.md",
+    "analyzedSha": "b590a433a6a699bfe1008b9e4c581521528bcb77",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T01:11:33+08:00",
+    "observedSha": "585c0dc283311a47c37578d1189fb96133e437f5",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "585c0dc283311a47c37578d1189fb96133e437f5",
+        "date": "2026-10-27T18:32:40+08:00",
+        "subject": "chore(security): add OSS Scanner build and threat model"
+      },
+      {
+        "sha": "5e625bf58aca732335590d7aa271f6337535a7ef",
+        "date": "2026-10-27T14:37:07+08:00",
+        "subject": "chore(release): bump version to 1.0.159"
+      },
+      {
+        "sha": "5dc0aab54e5e0ce8e3ea019fceef7dfcaf00178b",
+        "date": "2026-10-27T13:34:21+08:00",
+        "subject": "fix(xlsx): a formula chain over a circular seed evaluates in linear time"
+      },
+      {
+        "sha": "a0aa907840b4f0eacd87009d085df5a5db358e38",
+        "date": "2026-10-27T13:19:08+08:00",
+        "subject": "fix(docx): a screenshot page range is laid out as a one-column sheet of those pages"
+      },
+      {
+        "sha": "8b8e12af0211e42a25464f795458365be8a79e18",
+        "date": "2026-10-27T13:08:43+08:00",
+        "subject": "fix(docx): a tracked find/replace may span a hyperlink boundary"
+      },
+      {
+        "sha": "5fc6f7313dfc313f680dbc36183af02ff7fff63a",
+        "date": "2026-10-27T12:10:31+08:00",
+        "subject": "fix(chart): varyColors is written only into chart groups that declare it"
+      },
+      {
+        "sha": "63bdd9a1e23eed5fa803eb14065161a6c4aea38d",
+        "date": "2026-10-27T12:10:31+08:00",
+        "subject": "fix(chart): a verbatim series spPr on a pie series lands before explosion"
+      },
+      {
+        "sha": "8dbb2b2f287cc16afe29a71dadda13441c255bdc",
+        "date": "2026-10-27T12:02:19+08:00",
+        "subject": "fix(set): the applied receipt for marker=symbol:size:color names the size and colour"
+      },
+      {
+        "sha": "d6444a846ac32df0932f18ccc336997944947d58",
+        "date": "2026-10-26T18:45:27+08:00",
+        "subject": "fix(chart): the size in pointN.marker=symbol:size is range-checked like every other marker size"
+      },
+      {
+        "sha": "be66deade620aae242a626fc46b3b7f94ec7f7ba",
+        "date": "2026-10-26T15:42:23+08:00",
+        "subject": "fix(pptx): merge reaches placeholders in table cells and grouped shapes"
+      },
+      {
+        "sha": "7fbc4d562f80daf60159e69e30e7dc19972a9bf7",
+        "date": "2026-10-26T15:05:01+08:00",
+        "subject": "fix(pptx): removing an animated shape leaves no empty timing lists behind"
+      },
+      {
+        "sha": "a7c58869a10d70b363d1d3436e189c0c31c0846e",
+        "date": "2026-10-26T15:04:53+08:00",
+        "subject": "fix(pptx): a duplicated slide's animations target the copy's own shapes"
+      },
+      {
+        "sha": "8608078bb50689bfe8c10680d79bfd7eb7f40a98",
+        "date": "2026-10-26T15:04:40+08:00",
+        "subject": "fix(pptx): a duplicated slide keeps its video, audio and p14:media relationships"
+      },
+      {
+        "sha": "bf187ad7b48824e76dc84d873a8987aeff926c60",
+        "date": "2026-10-26T13:50:53+08:00",
+        "subject": "fix(docx): a cloned table row lands at its anchor, and merged cells follow colWidths"
+      },
+      {
+        "sha": "a096d0109e631cdc2135b1819c2d623223046d64",
+        "date": "2026-10-26T13:37:16+08:00",
+        "subject": "fix(chart): title styling without a title is a clear error, and no empty title is fabricated"
+      },
+      {
+        "sha": "bc27879e1b7159ea69bcd8fc8023d744cb7bfb5b",
+        "date": "2026-10-26T12:24:44+08:00",
+        "subject": "fix(pptx): a chart marker size outside 2..72 is rejected instead of written"
+      },
+      {
+        "sha": "5d931cde42fa6754c175e8dcfe8d8b7c7a6bd4f6",
+        "date": "2026-10-26T12:10:42+08:00",
+        "subject": "fix(pptx): a cloned shape owns its tags part and nested clones get fresh ids"
+      },
+      {
+        "sha": "4cba322977440987e06cb80f2e5418a1f11a169b",
+        "date": "2026-10-26T11:43:31+08:00",
+        "subject": "fix(pptx): a cloned chart owns its style parts and keeps its linked-workbook relationship"
+      },
+      {
+        "sha": "888be058d95a95a8f7af884e09975be06c5981e3",
+        "date": "2026-10-26T11:01:18+08:00",
+        "subject": "fix(plugins): a protocol-mismatched plugin is reported as protocol_mismatch"
+      },
+      {
+        "sha": "545ce515f9ee6d431b0a76067c697f85c0191da2",
+        "date": "2026-10-25T11:39:05+08:00",
+        "subject": "fix(query): a `>` combinator resolves the parent's predicates on the parent, in every format"
+      },
+      {
+        "sha": "5e3e26278753be846b4b0b2fb0387f42d911553a",
+        "date": "2026-10-23T12:27:25+08:00",
+        "subject": "build: remove the solution file"
+      },
+      {
+        "sha": "06ab520135a5289d0556d3e47fc2d42523f86547",
+        "date": "2026-10-20T21:59:06+08:00",
+        "subject": "fix(docx): four list-numbering cases follow Word"
+      },
+      {
+        "sha": "118932dc8daec352a0951194e86bbc9c5e2b7a14",
+        "date": "2026-10-20T21:57:32+08:00",
+        "subject": "Merge pull request #523 from argszero/fix/batch-query-read-options"
+      },
+      {
+        "sha": "ab338aad178ef3a672bb353875410f91a8989bb0",
+        "date": "2026-10-20T21:57:26+08:00",
+        "subject": "Merge pull request #519 from argszero/fix/chart-category-label-auto-rotate"
+      },
+      {
+        "sha": "2900a4a20f49d6a94384d6ea7fb8cc0120999825",
+        "date": "2026-10-20T14:34:01+08:00",
+        "subject": "chore(release): bump version to 1.0.158"
+      },
+      {
+        "sha": "eddf46961789cac5a56379b65baf7ed906365836",
+        "date": "2026-10-20T14:25:44+08:00",
+        "subject": "docs(skills): docx — \\n starts a paragraph and \\v is the soft line break"
+      },
+      {
+        "sha": "1a709c145e250911006a0c6bd9f194a2b902672f",
+        "date": "2026-10-20T14:25:44+08:00",
+        "subject": "fix(chart): value-axis settings reach the axis they name on scatter and dual-axis charts"
+      },
+      {
+        "sha": "84418ffe459473bcae08edcc2f77310b139f3a92",
+        "date": "2026-10-20T14:25:44+08:00",
+        "subject": "fix(chart): a scatter series' literal seriesN.categories become its X values"
+      },
+      {
+        "sha": "a9b56ae87b15bff80982cbef36c9e9c4b6a3293a",
+        "date": "2026-10-20T14:25:43+08:00",
+        "subject": "fix(chart): a series colour on a markers-only scatter colours the markers, not a line"
+      },
+      {
+        "sha": "7c4a806f861a3e0b7bce7a7ed87344e9d82ad9dd",
+        "date": "2026-10-20T14:18:30+08:00",
+        "subject": "fix(chart): a later dataLabels set places the group's c:dLbls right after the last series"
+      },
+      {
+        "sha": "e7cdc451712282d17320e3d035ee1f3d62d13b09",
+        "date": "2026-10-20T14:18:30+08:00",
+        "subject": "fix(docx): a numbered list in a table cell follows its own definition in view html"
+      },
+      {
+        "sha": "dced039dec4488a5ac32f3fee0317bd7e84b3f27",
+        "date": "2026-10-20T14:17:38+08:00",
+        "subject": "fix: a save that fails is reported instead of silently dropping the edits"
+      }
+    ],
+    "files": [
+      {
+        "status": "A",
+        "path": ".oss-scanner/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".oss-scanner/threat_model.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_zh.md",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "officecli.slnx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "plugins/plugin-protocol.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "schemas/help/pptx/picture.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "schemas/help/pptx/placeholder.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "schemas/help/pptx/shape.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/officecli-docx/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/BatchTypes.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.Add.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.Batch.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.Help.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.Import.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.Raw.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.Set.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.View.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/CommandBuilder.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/AtomicPackageWriter.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/AttributeFilter.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Chart/ChartHelper.Axis.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Chart/ChartHelper.Builder.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Chart/ChartHelper.Reader.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Chart/ChartHelper.Setter.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Chart/ChartHelper.SetterHelpers.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Chart/ChartSvgRenderer.cs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/officecli/Core/DeferredStdout.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Formula/FormulaEvaluator.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/HtmlScreenshot.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Installer.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/ParseHelpers.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/Plugins/PluginRegistry.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Core/TemplateMerger.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/DocumentHandlerFactory.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/ExcelHandler.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/PowerPointHandler.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Add.Media.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Add.Slide.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Animations.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Helpers.Path.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Helpers.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.HtmlPreview.Shapes.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.HtmlPreview.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Mutations.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.NodeBuilder.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Notes.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Query.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.Set.Slide.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.StyleList.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Pptx/PowerPointHandler.SvgPreview.cs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/officecli/Handlers/Pptx/SlideComposition.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Add.Structure.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Add.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Helpers.FindReplace.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Helpers.SectionTable.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Helpers.Text.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.HtmlPreview.Css.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.HtmlPreview.Tables.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.HtmlPreview.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Mutations.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Navigation.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Set.Dispatch.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Set.Element.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.Set.SectionLayout.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/Word/WordHandler.StyleList.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/Handlers/WordHandler.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/McpInstaller.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/ResidentClient.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/ResidentServer.cs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/officecli/officecli.csproj",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

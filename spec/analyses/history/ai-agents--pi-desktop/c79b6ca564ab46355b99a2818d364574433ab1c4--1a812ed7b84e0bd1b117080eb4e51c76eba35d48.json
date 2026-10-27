@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--pi-desktop",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/vastsa/PI-Desktop",
+  "report": "spec/projects/ai-agents--pi-desktop.md",
+  "analyzedSha": "c79b6ca564ab46355b99a2818d364574433ab1c4",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-04T02:32:05+09:00",
+  "observedSha": "1a812ed7b84e0bd1b117080eb4e51c76eba35d48",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "1a812ed7b84e0bd1b117080eb4e51c76eba35d48",
+      "date": "2026-10-24T04:12:48+08:00",
+      "subject": "chore(release): v0.21.0-beta.8 (#1854)"
+    },
+    {
+      "sha": "1191e07f1960cf0044f449ee7d7743858b8bbac6",
+      "date": "2026-10-24T02:55:14+08:00",
+      "subject": "feat(chat): scope background tasks to their session and share one dock with todo (#1844)"
+    },
+    {
+      "sha": "96fafc8545cc1fb375cb978a12bb53a287d3971f",
+      "date": "2026-10-24T02:50:21+08:00",
+      "subject": "feat(models): infer custom endpoint auth from optional API keys"
+    },
+    {
+      "sha": "87fee11864cbaeae1fa32dff6e7ef119fce9b3ac",
+      "date": "2026-10-24T00:33:51+08:00",
+      "subject": "feat(chat): make inline visualizations an opt-in setting"
+    },
+    {
+      "sha": "cdad68e61e504adbfd1af10492a338daec09bdfa",
+      "date": "2026-10-23T22:32:22+08:00",
+      "subject": "Merge pull request #1846 from Seraph-x/fix/model-reasoning-effort"
+    },
+    {
+      "sha": "b9ad8e68a912d269db202beee1d9520d1569be11",
+      "date": "2026-10-23T20:35:57+08:00",
+      "subject": "fix: preserve explicit model reasoning effort overrides"
+    },
+    {
+      "sha": "3f374a800a317e3cc42f83998405cd6b172fd34e",
+      "date": "2026-10-23T19:36:38+08:00",
+      "subject": "Merge pull request #1826 from zszz3/feat/gen-ui-inline-visualization"
+    },
+    {
+      "sha": "e012b684f4611ad8b323e5ff385480966e26c9c3",
+      "date": "2026-10-23T18:42:44+08:00",
+      "subject": "chore(integration): refresh GenUI native candidate"
+    },
+    {
+      "sha": "54824dd9f48de1cbc048b4e7ac8f2c2a9cc92a39",
+      "date": "2026-10-23T18:32:07+08:00",
+      "subject": "fix(gen-ui): bind Windows fragment reads to native directories"
+    },
+    {
+      "sha": "e7d87652a7b1b428cb9fddecc2036a618b5ae581",
+      "date": "2026-10-23T18:08:06+08:00",
+      "subject": "Merge pull request #1843 from vastsa/feat/browser-background-lifecycle"
+    },
+    {
+      "sha": "c3e0bbdad717bbf9132858ad977fc4fd30777b04",
+      "date": "2026-10-23T17:48:31+08:00",
+      "subject": "fix(browser): keep session pages available in the background"
+    },
+    {
+      "sha": "20e8e1c0a39f68849891807125a1f38e7bad7fd4",
+      "date": "2026-10-23T17:47:12+08:00",
+      "subject": "Merge pull request #1842 from vastsa/fix/turn-usage-popover-up"
+    },
+    {
+      "sha": "6d08e7a10b0caac0682de7eb5340fd332db8b322",
+      "date": "2026-10-23T17:29:58+08:00",
+      "subject": "chore(integration): refresh GenUI candidate against main"
+    },
+    {
+      "sha": "bd2e390f8de27f1194eb1acc66ff6ed06cb7215f",
+      "date": "2026-10-23T17:29:58+08:00",
+      "subject": "fix(gen-ui): establish Windows directory share pins"
+    },
+    {
+      "sha": "820479151fed2861fb85c8e01704c942a422b87d",
+      "date": "2026-10-23T17:11:46+08:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into fix/turn-usage-popover-up"
+    },
+    {
+      "sha": "ecd9ea9f6c35160774915db5feec8b456e59d526",
+      "date": "2026-10-23T17:10:56+08:00",
+      "subject": "fix(chat): open turn usage popover upward"
+    },
+    {
+      "sha": "36e19eb59b9b4e0cab1e2d47b8bcb70304ddad60",
+      "date": "2026-10-23T17:06:47+08:00",
+      "subject": "fix(composer): prevent stale submits from restoring old drafts"
+    },
+    {
+      "sha": "4f6340acf5a6ecaf7aaf32651261b08feb82cc97",
+      "date": "2026-10-23T17:04:26+08:00",
+      "subject": "fix(composer): release stale submit restore ownership"
+    },
+    {
+      "sha": "5d533099269f5cf4cc78969184b46c97dc76d242",
+      "date": "2026-10-23T16:56:00+08:00",
+      "subject": "chore(integration): refresh PR 1826 against current main"
+    },
+    {
+      "sha": "487b6fca87c8a7b2217979845d02a83b0a946db3",
+      "date": "2026-10-23T16:54:36+08:00",
+      "subject": "fix(composer): track the submit epoch without a renderer-owned ref"
+    },
+    {
+      "sha": "0eef9df3ad306f6a0b3bde2ad69946f4951ff5b1",
+      "date": "2026-10-23T16:54:35+08:00",
+      "subject": "fix(composer): drop stale failure restores from superseded submits"
+    },
+    {
+      "sha": "0252ca2cfee21a5fa4461b9911ff17e38aef68a4",
+      "date": "2026-10-23T16:50:29+08:00",
+      "subject": "Merge pull request #1840 from zszz3/fix/extension-context-first-request"
+    },
+    {
+      "sha": "5eb24960cd1bcae59952f7c0ec80a6e4c54a7662",
+      "date": "2026-10-23T16:48:54+08:00",
+      "subject": "fix(test): allow standalone host cold-start handshake"
+    },
+    {
+      "sha": "4970dfa9073ef62318acc727b954079a13655256",
+      "date": "2026-10-23T16:31:43+08:00",
+      "subject": "fix(gen-ui): harden contained roots and native fragment serving"
+    },
+    {
+      "sha": "c90fa4feb7f5a978b3f19381a5e801b88fa79543",
+      "date": "2026-10-23T16:31:27+08:00",
+      "subject": "fix(agent-runtime): emit extension context before every request"
+    },
+    {
+      "sha": "bdafc1b71c2dcab9db3da3e659071346da851e58",
+      "date": "2026-10-23T14:39:10+08:00",
+      "subject": "docs: record inline generative UI visualizations"
+    },
+    {
+      "sha": "cffaed033babb5f91a5f0a8cd6b5a652b7caf99c",
+      "date": "2026-10-23T14:36:03+08:00",
+      "subject": "feat(chat): render visualization references as inline cards"
+    },
+    {
+      "sha": "591d9e72ecb05515863fa7a9f6af6df2f7a6f9e4",
+      "date": "2026-10-23T14:36:03+08:00",
+      "subject": "feat(agent-runtime): teach agents to write inline visualizations"
+    },
+    {
+      "sha": "1d3c114489c7df0dcb2f8605aa6e0a049bcc7402",
+      "date": "2026-10-23T14:36:03+08:00",
+      "subject": "feat(desktop): serve visualizations through a sandboxed pi-genui scheme"
+    },
+    {
+      "sha": "63f1cf855a4c9ec2d1d7593299fee34e42260c37",
+      "date": "2026-10-23T14:36:03+08:00",
+      "subject": "feat(host-core): add a session visualization root"
+    },
+    {
+      "sha": "ce9746baee47913cf0058891877e73854542fd6e",
+      "date": "2026-10-23T14:36:03+08:00",
+      "subject": "feat(shared): add inline visualization contracts"
+    },
+    {
+      "sha": "1ddfd7203fe58cd970fc6f929218253369706de7",
+      "date": "2026-10-23T12:50:38+08:00",
+      "subject": "Merge pull request #1835 from vastsa/chore/release-0.21.0-beta.7"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron.vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/app-lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/close-behavior.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/bootstrap/lifecycle-dialog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/main-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/remote-hosts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/shutdown.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/startup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/browser-backing-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/browser-cdp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/browser-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/browser-view.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/builtin-skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/chat-ref-resolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/composer-mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/fs-index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/gen-ui-document.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/gen-ui-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/gen-ui-kit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/gen-ui-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/host-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/importers/model-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/agent-import-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/agent-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/ipc/background-tasks-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/composer-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/config-sync-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/ipc/jev-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/market-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/plugin-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/plugin-ui-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/provider-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/register.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/remote-host-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/ipc/remote-session-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/session-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/settings-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/skills-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/window-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/workspace-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/ipc/worktree-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/jev-probe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/live-voice/call-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/live-voice/gemini-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/live-voice/live-work-backend-port.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/live-voice/microphone-permissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/live-voice/openai-realtime-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/live-voice/websocket-endpoint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/live-voice/websocket-transport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/mcp-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/mcp-oauth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/mcp-stdio-launch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/model-discovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/models-dev-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/network-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/oauth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/persistence-outbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/pi-model-metadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-host-process.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/plugin-net-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-panel-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-panel-senders.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/plugin-prompt-enhancement-migration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/plugin-provider-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-schemes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/plugin-session-push-gate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/plugin-session-scope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-view-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/prompt-attachments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/desktop/electron/main/prompt-enhancement-timeout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/provider-certificate-retry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/provider-https-metadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/provider-metadata-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/public-https-direct.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/public-https-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/backend-router.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/pi-host-bootstrap-script.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/pi-host-installer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/racp-remote-host-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/remote-backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-deploy-lock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/remote-event-bridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/remote-host-connection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-host-metadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-host-realign.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/remote-host-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-host-supervisor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-provider-sync.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-provider-transfer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-session-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-subscriptions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/remote-transcript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-workspace-instructions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-workspace-outcome.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/remote-workspace-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/ssh-artifact-transfer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/ssh-bootstrap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/ssh-transport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/remote/ssh-tunnel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/remote/workspace-file-scope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/event-persistence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/plans.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/provider-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/session-coordination.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/session-launch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/sidecar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/services/composer-suggestion.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/services/image-generation-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/services/plugin-services.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/services/plugin-session-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/services/session-search.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/skill-market-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/storage/bootstrap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/storage/files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/storage/link-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/storage/startup-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/tray-sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/user-mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/voice-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/window-background.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/window-native-corners.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/window-shape.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/work-panel-window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/workspace-git.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/worktree-ref.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/test/agent-import-ipc.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/app-update.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/LICENSE-APACHE-2.0.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/vendor/d3-7.9.0.min.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/vendor/d3-7.9.0.min.js.LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/vendor/floating-ui-core-1.7.3.min.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/vendor/floating-ui-core-1.7.3.min.js.LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/vendor/floating-ui-dom-1.7.4.min.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/vendor/floating-ui-dom-1.7.4.min.js.LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/vendor/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/visualize-kit.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/visualize.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/models.dev/api.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/plugins/pi.browser/main.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/plugins/pi.browser/views/browser.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/skills/image-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/skills/plugin-development.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/skills/visualize.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/AskToolCard.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

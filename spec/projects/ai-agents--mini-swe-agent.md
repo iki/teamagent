@@ -29,3 +29,7 @@ The cost ceiling is checked before the next query, so an individual request can 
 Compare pass rate, intervention count, latency and spend on the same task/environment/model budgets. Include malformed model output and exceptions to verify terminal status and trace durability. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [evolution](../evolution.md) · [models](../models.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent); analyzed commit `04d809ceab9df28f9adaed044884180159172930`; commit date 2026-09-03T01:05:59-04:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mini-swe-agent.md).
+<!-- teamagent-analysis:end -->

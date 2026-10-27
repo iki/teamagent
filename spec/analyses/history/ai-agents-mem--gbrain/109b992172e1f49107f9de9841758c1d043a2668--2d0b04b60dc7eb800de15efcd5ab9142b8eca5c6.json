@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--gbrain",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/garrytan/gbrain",
+  "report": "spec/projects/ai-agents-mem--gbrain.md",
+  "analyzedSha": "109b992172e1f49107f9de9841758c1d043a2668",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T19:41:11Z",
+  "observedSha": "2d0b04b60dc7eb800de15efcd5ab9142b8eca5c6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "2d0b04b60dc7eb800de15efcd5ab9142b8eca5c6",
+      "date": "2026-10-24T04:36:15Z",
+      "subject": "Merge pull request #7456 from garrytan/gbra133-wave6"
+    },
+    {
+      "sha": "888e7e339ac3571723c631b5f349c6f348a06b5a",
+      "date": "2026-10-24T04:11:04Z",
+      "subject": "v0.60.420.0 chore(release): restamp onto master v0.60.419.0"
+    },
+    {
+      "sha": "7f980674c98627c849b6cf7f5a0586633aafa0e7",
+      "date": "2026-10-24T04:10:49Z",
+      "subject": "docs(changelog): GBRA-133 wave 6"
+    },
+    {
+      "sha": "2bd49e8b1d294b6cce00247f4b5f162b443ea581",
+      "date": "2026-10-24T04:10:49Z",
+      "subject": "Merge origin/master into gbra133-wave6"
+    },
+    {
+      "sha": "968f709ad179201ce1d9ae6088c53596bf5ea67b",
+      "date": "2026-10-24T04:10:14Z",
+      "subject": "Merge pull request #7455 from garrytan/gbra156-prod-wave"
+    },
+    {
+      "sha": "d7da3097e81c9becd68de05007b90dff6386bc32",
+      "date": "2026-10-24T03:43:56Z",
+      "subject": "v0.60.419.0 chore(release): restamp onto master v0.60.418.0"
+    },
+    {
+      "sha": "873e4163d1b96f956183e419d23c18dd49c9b4ee",
+      "date": "2026-10-24T03:42:44Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into gbra156-prod-wave"
+    },
+    {
+      "sha": "a0dec66dc0f4883d1b4b40b69853acab2348c77f",
+      "date": "2026-10-24T03:42:09Z",
+      "subject": "Merge pull request #7446 from garrytan/capy/gbra181-tla-drain-lease"
+    },
+    {
+      "sha": "ad67515473154a05c908173b4fa69992ae130b11",
+      "date": "2026-10-24T03:32:56Z",
+      "subject": "fix(persistence): git-durability push probe passes a moved remote the Git effect publishes itself"
+    },
+    {
+      "sha": "c21d4b1a2fe0842cf5bfa99d7db967ae90927ec8",
+      "date": "2026-10-24T03:19:41Z",
+      "subject": "test: the #7402 recheck test's operation context typechecks"
+    },
+    {
+      "sha": "48356866a27ebb550b66d1f1416e03450e49a888",
+      "date": "2026-10-24T03:19:13Z",
+      "subject": "facts: a caller's explicit request_id keeps its recorded outcome; the held-file recheck applies only to page-triggered and opted-in batches (#7402)"
+    },
+    {
+      "sha": "247253761c2e9509c353539434310c3b1891262e",
+      "date": "2026-10-24T03:18:16Z",
+      "subject": "v0.60.418.0 chore(release): restamp onto master v0.60.417.0"
+    },
+    {
+      "sha": "25edeb30cd0468e0b0cfcd8d6019b0fb71bd65bf",
+      "date": "2026-10-24T03:17:51Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into gbra181-fold"
+    },
+    {
+      "sha": "1c060f6063600459fcb05912d3e23c6ea39110d4",
+      "date": "2026-10-24T03:17:45Z",
+      "subject": "docs(changelog): drain-lease TLA+ model entry"
+    },
+    {
+      "sha": "0e3c362462e18a9f540726fd4248fc1bb7f909e4",
+      "date": "2026-10-24T03:17:02Z",
+      "subject": "Merge pull request #7454 from garrytan/gbra133-effect-claim-release"
+    },
+    {
+      "sha": "cdc53a8d3d9faa82e29bcfea33b0486f3234b329",
+      "date": "2026-10-24T03:14:03Z",
+      "subject": "GBRA-156: pin the supersede-edge probe to the partial supersedes index (EXPLAIN e2e on a populated links table, with a no-index control)"
+    },
+    {
+      "sha": "8dd30575b5d7d49d4831e84dc4b0b3f446d929ca",
+      "date": "2026-10-24T02:17:13Z",
+      "subject": "GBRA-156: doctor goldens gain cli_socket_refusals; export surface gains TransactionOptions.readOnly"
+    },
+    {
+      "sha": "b03d4dc212aa9e9f598cfc07a87396e429eca6ee",
+      "date": "2026-10-24T02:05:43Z",
+      "subject": "GBRA-156: round-trip cap suggestion names no serve flag; context test pins the timeout error; readOnly begin keeps the one-argument form"
+    },
+    {
+      "sha": "02558516fcd27c277f64dfa1acb40dd3e76bad63",
+      "date": "2026-10-24T01:39:24Z",
+      "subject": "test: pinned-reads compares no effect claim owner stamp (lifecycle, like state); no-op settle clears it too"
+    },
+    {
+      "sha": "4f8f14b2ccccdb825315a3c94dacf5e59174448c",
+      "date": "2026-10-24T01:38:56Z",
+      "subject": "GBRA-156: CHANGELOG entry; raw-schema Postgres catalog golden gains the supersedes index"
+    },
+    {
+      "sha": "eb84da90d12f6ef3f73e01d0955bec6fede770e7",
+      "date": "2026-10-24T01:34:44Z",
+      "subject": "test: tag the drain-lease constants test's source read of the renewal timeout"
+    },
+    {
+      "sha": "f88dbb80f5ce24432ee6d0319e737642b0ceda74",
+      "date": "2026-10-24T01:30:34Z",
+      "subject": "GBRA-156: warm socket production wave (narrowed identity, loud refusals, cancellation, round-trip cap error, sweep gating, read-only search transactions, deferred bookkeeping, supersedes index)"
+    },
+    {
+      "sha": "f689b1f42560de7f3f329c04c05af4b00cfbf0a2",
+      "date": "2026-10-24T01:19:11Z",
+      "subject": "spec(tla): fold #7442's FOR KEY SHARE fence into the drain-lease model"
+    },
+    {
+      "sha": "7843b9b423c1e1cc2d2ce1c6c66082191087cd87",
+      "date": "2026-10-24T01:18:25Z",
+      "subject": "v268 claim_owner: catalog goldens, bootstrap exemption and deletion inventory; runbook row; the dead-owner e2e gives its repositories a Git identity"
+    },
+    {
+      "sha": "c890a13c38e2627fc4cb72474f4812da96fd4ec8",
+      "date": "2026-10-24T01:00:46Z",
+      "subject": "sync: keepGrandfatherStamp lives with alignWithStored, which import now shares (module-size)"
+    },
+    {
+      "sha": "59edc1fd0030787855008d4695c0a521daa8517e",
+      "date": "2026-10-24T00:57:10Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into gbra181-fold"
+    },
+    {
+      "sha": "753f96bcac5dcb22e618ebf23a590aa060fadec4",
+      "date": "2026-10-24T00:52:13Z",
+      "subject": "v0.60.417.0 chore(release): restamp onto master v0.60.416.0"
+    },
+    {
+      "sha": "0e5196c2fba03d7e16b48a792cf0eee414c99394",
+      "date": "2026-10-24T00:51:49Z",
+      "subject": "docs(changelog): the effect-claim release and side-unknown holds entry"
+    },
+    {
+      "sha": "3d7a434399b245be285417991ee4ff49ba268738",
+      "date": "2026-10-24T00:51:14Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into gbra133-effect-claim-release"
+    },
+    {
+      "sha": "e5320487b6b3ec70e96c35ad07e18c09252559e7",
+      "date": "2026-10-24T00:50:24Z",
+      "subject": "Merge pull request #7444 from garrytan/capy/gbra135-wave-9b"
+    },
+    {
+      "sha": "333e9f193da57f410041905c3496751bbbd1b667",
+      "date": "2026-10-24T00:21:20Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into gbra133-effect-claim-release"
+    },
+    {
+      "sha": "fc1b7bf2cf343ca5ed4f38a4a0f9ec31f18a0df4",
+      "date": "2026-10-24T00:15:42Z",
+      "subject": "Merge branch 'gbra133-side-unknown-holds' into gbra133-effect-claim-release"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/mcp.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/nightly-known-red.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-health.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/convergence-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/fix-wave-closeout.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/fix-wave-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/full-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/heavy-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/macos-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/native-locks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/nightly-watch.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/osv-scanner.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/persistence-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/production-soak.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scale-tier.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/semgrep.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/stress.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/sync-freshness-gate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/tla-spec.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitleaksignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/pregate.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gstack/ship-policy.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BOOTSTRAP_FOR_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "INSTALL_FOR_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TODOS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "admin/dist/assets/index-B9c8JuNx.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "admin/dist/assets/index-BIUmQPmn.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "admin/dist/assets/index-CaaGFcPc.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/dist/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/e2e/admin.pw.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/e2e/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/src/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/src/lib/scope-constants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "admin/src/lib/visibility-poll.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/src/pages/Agents.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/src/pages/Dashboard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "admin/src/pages/OAuthConsent.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bunfig.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dbg-tmp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ENGINES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/GBRAIN_RECOMMENDED_SCHEMA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/GBRAIN_VERIFY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/INSTALL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/TESTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/TOOL_CATALOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/UPGRADING_DOWNSTREAM_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ai-providers/claude-cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ai-providers/google.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ai-providers/llama-server-reranker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ai-providers/typesafe.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/KEY_FILES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/RETRIEVAL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/brains-and-sources.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/canonical-writers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/canonical-writers.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/conversation-parser-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/derived-census.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/generations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/agent-bootstrap-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/agent-bootstrap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/agent-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/ambient-capture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/belief-ledger.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/canonical-reconciliation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/ci-health-and-test-guards.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-2-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/commands-3-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-3.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/commands-4-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-4.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-5.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-6.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/commit-notifier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/company-brain.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-ai-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-ai.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-cycle-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-cycle-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-cycle-primitive.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-cycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-decide.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-fence-repair.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-minions-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-minions-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-persistence-capacity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-persistence-facts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-persistence-graduation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-persistence-request-indexes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-questions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-search-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-search-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-search-cjk.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-services-1-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-services-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/core-services-2-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-services-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-services-3.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-utilities-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-utilities-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/engines-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/engines-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/entity-recall.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/entrypoints-and-docs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/evaluation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/files-and-sync-1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/files-and-sync-2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/generations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/google-and-loops-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/google-and-loops.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/google-api-access.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/graph-and-facts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/hindsight.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/managed-sync-bookkeeping.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/memory-purge.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/open-loops-engine.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/page-identity-and-administration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/persistence-stalls.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/quarantine.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/schema-mutation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/secret-scan.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/security.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/shared-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/tooling-and-tests.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/architecture/key-files/workspace-push-and-backup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/managed-mutating-writers.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/pack-upgrade-mechanism.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/postgres-cancellation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/schema-packs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/system-of-record.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/thin-client.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/topologies.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/type-taxonomy.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

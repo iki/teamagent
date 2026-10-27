@@ -29,3 +29,7 @@ Hiding tool documentation is not capability revocation. Code execution amplifies
 Attempt calls to undocumented and unauthorized bindings, oversized fan-out, timeouts and malformed arguments. Measure total context plus discovery overhead, not only the initial prompt size. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [skills](../skills.md) · [decisions](../decisions.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [ai.tanstack](https://github.com/tanstack/ai); analyzed commit `632fd806bb3e68e52a2a8eae937873c5defe6786`; commit date 2026-10-03T15:31:51Z; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--ai.tanstack.md).
+<!-- teamagent-analysis:end -->

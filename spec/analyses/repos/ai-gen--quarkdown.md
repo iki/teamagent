@@ -1,0 +1,207 @@
+# quarkdown: change evidence
+
+Source: [quarkdown](https://github.com/iamgio/quarkdown) · [Analysis](../../projects/ai-gen--quarkdown.md) · [import-generation](../../import-generation.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `c81f8db1d0abce2e66f957cb0006d6785e7fbe0f`; commit date: 2026-10-03T00:04:07-07:00; review date: unknown; observed SHA: `0bacdef6bd32c6dba1b6ef34c45a83c864a716c7`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/iamgio/quarkdown/compare/c81f8db1d0abce2e66f957cb0006d6785e7fbe0f...0bacdef6bd32c6dba1b6ef34c45a83c864a716c7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [0bacdef6bd32](https://github.com/iamgio/quarkdown/commit/0bacdef6bd32c6dba1b6ef34c45a83c864a716c7) 2026-10-25T20:14:41-07:00: fix(kmp): fix sanitization cross-platform drift (#771)
+- [a3cd4e082783](https://github.com/iamgio/quarkdown/commit/a3cd4e0827836328a8dc884839dca9c987c3b89a) 2026-10-25T20:06:29-07:00: fix(kmp): fix sanitization cross-platform drift
+- [bc4a6ff83b0c](https://github.com/iamgio/quarkdown/commit/bc4a6ff83b0c2f439cc5c8f6039983e090483855) 2026-10-25T16:16:06-07:00: build(deps): bump npm deps (#770)
+- [b8177805af3e](https://github.com/iamgio/quarkdown/commit/b8177805af3e1cb9ede7726c04cf2de46a3ae9d5) 2026-10-25T00:53:39-07:00: build(deps): bump npm deps
+- [80f90cb20bf7](https://github.com/iamgio/quarkdown/commit/80f90cb20bf70ccee8d3107013ea1fc516b29acd) 2026-10-24T23:56:34-07:00: Merge pull request #769 from iamgio/10-24-fix_value_fix_dynamic_dictionary_rejected_as_an_iterable_argument
+- [b35ba031e328](https://github.com/iamgio/quarkdown/commit/b35ba031e328ae4e9ac3b627125c6afc8899fd01) 2026-10-24T23:37:19-07:00: fix(value): fix dynamic dictionary rejected as an iterable argument
+- [f71e76bb1331](https://github.com/iamgio/quarkdown/commit/f71e76bb133186852f42b218b3027cadfbc0edfc) 2026-10-24T20:54:24-07:00: feat(stdlib): add .emptycollection and .emptydictionary (#768)
+- [6c6f6db3dc42](https://github.com/iamgio/quarkdown/commit/6c6f6db3dc42ea57d50782a47dbcd922a2636c74) 2026-10-24T20:45:58-07:00: feat(stdlib): add .emptycollection and .emptydictionary
+- [4a7f2d318799](https://github.com/iamgio/quarkdown/commit/4a7f2d3187997de6954cd87fd729f091dfba7a82) 2026-10-24T20:05:28-07:00: feat(stdlib): add .contains (#766)
+- [4cf6ce46add8](https://github.com/iamgio/quarkdown/commit/4cf6ce46add86dc4087559e50f6dbc900b797d20) 2026-10-25T02:57:28Z: feat(stdlib): add .contains
+- [a57470a0ec60](https://github.com/iamgio/quarkdown/commit/a57470a0ec602c523c2a78138257abf1441b5a16) 2026-10-24T19:08:55-07:00: fix(ui): keep sidebar hidden while dragging (#767)
+- [5cf038dad677](https://github.com/iamgio/quarkdown/commit/5cf038dad677e5e60e32e1540eb519c5294a7015) 2026-10-24T19:01:26-07:00: fix(ui): keep sidebar hidden while dragging
+- [0b2879a580e7](https://github.com/iamgio/quarkdown/commit/0b2879a580e7647a3710949ee8a26ba5d804e0b8) 2026-10-24T18:26:28-07:00: fix: fix wrong inline->block wrapping (#764)
+- [58d515809a56](https://github.com/iamgio/quarkdown/commit/58d515809a5611fe18cd0c0e0ca6656b6c16d154) 2026-10-25T01:18:37Z: fix: fix wrong inline->block wrapping
+- [f5ba75d4afa6](https://github.com/iamgio/quarkdown/commit/f5ba75d4afa630b363c91e005e7d1f0abc190a3c) 2026-10-24T17:52:10-07:00: feat(stdlib): add .split (#765)
+- [88116683d966](https://github.com/iamgio/quarkdown/commit/88116683d966853d9be9884f50652904d087f181) 2026-10-24T17:44:26-07:00: feat(stdlib): add .split
+- [1c802cb80754](https://github.com/iamgio/quarkdown/commit/1c802cb80754674c31f7d82051ebe3c233369a81) 2026-10-24T16:55:56-07:00: feat(stdlib): add .findall (#763)
+- [dc4b3da5040d](https://github.com/iamgio/quarkdown/commit/dc4b3da5040d3e6430e83adfbf09b3cafc99c4ce) 2026-10-24T16:47:21-07:00: feat(stdlib): add .findall
+- [149d4ffd2a60](https://github.com/iamgio/quarkdown/commit/149d4ffd2a60c271bb10a2fad88e43196dc6a421) 2026-10-24T16:40:28-07:00: fix(paged): prevent text loss at page breaks with hyphenation and footnotes (#756)
+- [6f6d481a44da](https://github.com/iamgio/quarkdown/commit/6f6d481a44daa92bcd49fefb94dc5994b1079733) 2026-10-24T23:31:27Z: fix(paged): prevent text loss at page breaks with hyphenation and footnotes
+- [9d7e4b67ea05](https://github.com/iamgio/quarkdown/commit/9d7e4b67ea05ca54623e3178872ca477dd98933f) 2026-10-24T16:31:02-07:00: feat(stdlib): add .join (#762)
+- [7974ed7a06ca](https://github.com/iamgio/quarkdown/commit/7974ed7a06ca82330595c1ca7869dee710508d7b) 2026-10-24T16:22:16-07:00: feat(stdlib): add .join
+- [2bad21aef674](https://github.com/iamgio/quarkdown/commit/2bad21aef6740235b06435363fbfc2e1b8d8cda1) 2026-10-24T12:36:30-07:00: feat(stdlib): add padding to .pageformat (#761)
+- [d407cbb8b764](https://github.com/iamgio/quarkdown/commit/d407cbb8b764fae3d6445af3eea46e67f9d4baae) 2026-10-24T19:29:23Z: feat(stdlib): add padding to .pageformat
+- [7bbe81ecfa98](https://github.com/iamgio/quarkdown/commit/7bbe81ecfa9851bf7eb8b0b4c47fffb73adb991b) 2026-10-24T12:13:43-07:00: docs(changelog): add linux-arm entry (#735)
+- [5d7c33e95d1c](https://github.com/iamgio/quarkdown/commit/5d7c33e95d1c892746868dfb23cb7474909fed89) 2026-10-23T23:03:55-07:00: feat(stdlib): add .findfirst (#759)
+- [9a3403704b01](https://github.com/iamgio/quarkdown/commit/9a3403704b01a99ff64b2363310141eeaa0caaa3) 2026-10-23T22:56:14-07:00: feat(stdlib): add .findfirst
+- [e81cdc6f1604](https://github.com/iamgio/quarkdown/commit/e81cdc6f1604d13afc0c154d21efbc42af99c87a) 2026-10-23T22:08:56-07:00: feat(stdlib): add .withindices (#758)
+- [06b5aa64a726](https://github.com/iamgio/quarkdown/commit/06b5aa64a726be94b695173f01f7ecd891e1701c) 2026-10-23T21:59:40-07:00: feat(stdlib): add .withindices
+- [5b469d76475f](https://github.com/iamgio/quarkdown/commit/5b469d76475fba7d43fb61a664e4d10688d6734c) 2026-10-23T21:37:10-07:00: feat(stdlib): add .and and .or (#757)
+- [e8ec8526727e](https://github.com/iamgio/quarkdown/commit/e8ec8526727e69fb0e21a4024d9cf39d8c3a2f72) 2026-10-23T21:28:19-07:00: feat(stdlib): add .and and .or
+- [a03e283f8d70](https://github.com/iamgio/quarkdown/commit/a03e283f8d70bf5425fe97c3e0fa031b14c18fef) 2026-10-23T15:24:31-07:00: feat(stdlib): add .joinstring (#755)
+
+## Changed paths (truncated)
+
+- M: `.github/actions/bump-homebrew/action.yml`
+- M: `.github/actions/setup-environment/action.yml`
+- M: `.github/workflows/gradle-distribution-verify.yml`
+- M: `.github/workflows/gradle-test.yml`
+- M: `.gitignore`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `Dockerfile`
+- M: `README.md`
+- M: `build.gradle.kts`
+- M: `docs/_nav.qd`
+- M: `docs/boolean.qd`
+- M: `docs/cli-compiler.qd`
+- M: `docs/cli-options.qd`
+- M: `docs/cli-project-creator.qd`
+- M: `docs/color.qd`
+- M: `docs/dictionary.qd`
+- M: `docs/element-styling-properties.qd`
+- M: `docs/including-other-quarkdown-files.qd`
+- M: `docs/iterable.qd`
+- M: `docs/loops.qd`
+- A: `docs/packages.qd`
+- M: `docs/page-format.qd`
+- A: `docs/publishing-packages.qd`
+- M: `docs/quickstart.qd`
+- M: `docs/stacks.qd`
+- M: `gradle/libs.versions.toml`
+- M: `quarkdown-cli/build.gradle.kts`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/ProjectCreator.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/command/CreateProjectCommand.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/content/DefaultProjectCreatorInitialContentSupplier.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/content/DocsProjectCreatorInitialContentSupplier.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/content/EmptyProjectCreatorInitialContentSupplier.kt`
+- A: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/content/InitialContentTemplates.kt`
+- A: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/content/PackageTemplateInitialContentSupplier.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/content/ProjectCreatorInitialContentSupplier.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/content/SlidesProjectCreatorInitialContentSupplier.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/template/DefaultProjectCreatorTemplateProcessorFactory.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/template/DocsProjectCreatorTemplateProcessorFactory.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/creator/template/ProjectCreatorTemplatePlaceholders.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/exec/ExecuteCommand.kt`
+- A: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/util/PromptUnless.kt`
+- M: `quarkdown-cli/src/main/kotlin/com/quarkdown/cli/watcher/DirectoryWatcher.kt`
+- M: `quarkdown-cli/src/test/kotlin/com/quarkdown/cli/CompileCommandTest.kt`
+- M: `quarkdown-cli/src/test/kotlin/com/quarkdown/cli/ProjectCreatorCommandTest.kt`
+- M: `quarkdown-cli/src/test/kotlin/com/quarkdown/cli/ProjectCreatorTest.kt`
+- M: `quarkdown-cli/src/test/kotlin/com/quarkdown/cli/WatcherTest.kt`
+- A: `quarkdown-cli/src/test/kotlin/com/quarkdown/cli/creator/FakePackageRepository.kt`
+- A: `quarkdown-cli/src/test/kotlin/com/quarkdown/cli/util/PromptUnlessTest.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/ast/quarkdown/block/Stacked.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/context/Context.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/document/layout/page/PageFormatInfo.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/function/value/factory/ValueFactory.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/function/value/output/node/InlineNodeOutputValueVisitor.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/log/Log.kt`
+- A: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/packages/PackageReferenceSyntax.kt`
+- A: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/packages/PackageResolutionException.kt`
+- A: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/packages/PackageResolver.kt`
+- A: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/packages/ResolvedPackage.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/permissions/Permission.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/pipeline/PipelineOptions.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/pipeline/output/FsEntryOutputResource.kt`
+- A: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/util/Sanitization.kt`
+- M: `quarkdown-core/src/commonMain/kotlin/com/quarkdown/core/util/StringUtils.kt`
+- A: `quarkdown-core/src/commonTest/kotlin/com/quarkdown/core/util/SanitizeFileNameTest.kt`
+- A: `quarkdown-core/src/commonTest/kotlin/com/quarkdown/core/util/ToUriIdentifierTest.kt`
+- A: `quarkdown-core/src/jvmTest/kotlin/com/quarkdown/core/FsEntryOutputResourcesTest.kt`
+- A: `quarkdown-core/src/jvmTest/kotlin/com/quarkdown/core/PackageResolverTest.kt`
+- M: `quarkdown-core/src/jvmTest/kotlin/com/quarkdown/core/log/LogTest.kt`
+- M: `quarkdown-core/src/jvmTest/kotlin/com/quarkdown/core/util/StringUtilsTest.kt`
+- M: `quarkdown-html-pdf/scripts/chrome.properties`
+- M: `quarkdown-html-pdf/scripts/install-chrome.sh`
+- M: `quarkdown-html/package-lock.json`
+- M: `quarkdown-html/package.json`
+- M: `quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/css/CssBuilder.kt`
+- M: `quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/css/CssPageSelectors.kt`
+- A: `quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/css/PrintCssPageSelectors.kt`
+- A: `quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/css/SlidesCssPageSelectors.kt`
+- M: `quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/node/QuarkdownHtmlNodeRenderer.kt`
+- M: `quarkdown-html/src/commonMain/kotlin/com/quarkdown/rendering/html/post/document/HtmlDocumentStylesheet.kt`
+- M: `quarkdown-html/src/jvmTest/kotlin/com/quarkdown/rendering/html/HtmlPostRendererTest.kt`
+- A: `quarkdown-html/src/jvmTest/kotlin/com/quarkdown/rendering/html/css/CssPageSelectorsTest.kt`
+- M: `quarkdown-html/src/main/scss/components/_footnote.scss`
+- M: `quarkdown-html/src/main/scss/components/_sidebar.scss`
+- A: `quarkdown-html/src/main/scss/components/_slides.scss`
+- M: `quarkdown-html/src/main/scss/components/_table.scss`
+- M: `quarkdown-html/src/main/scss/components/_viewport.scss`
+- M: `quarkdown-html/src/main/scss/global.scss`
+- M: `quarkdown-html/src/main/typescript/document/handlers/__tests__/footnotes-paged.spec.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/__tests__/place-footnotes.spec.ts`
+- M: `quarkdown-html/src/main/typescript/document/handlers/__tests__/repeat-table-headers.spec.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/__tests__/sidebar.spec.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/__tests__/split-oversized-table-rows.spec.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/__tests__/word-boundary-breaks.spec.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/footnotes/detached-footnotes.ts`
+- M: `quarkdown-html/src/main/typescript/document/handlers/footnotes/footnotes-paged.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/paged/node/place-footnotes.ts`
+- M: `quarkdown-html/src/main/typescript/document/handlers/paged/node/repeat-table-headers.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/paged/node/split-oversized-table-rows.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/paged/overflow-column.ts`
+- A: `quarkdown-html/src/main/typescript/document/handlers/paged/word-boundary-breaks.ts`
+- M: `quarkdown-html/src/main/typescript/document/handlers/sidebar.ts`
+- M: `quarkdown-html/src/main/typescript/document/type/paged-document.ts`
+- M: `quarkdown-html/src/main/typescript/footnotes/footnote-dom.ts`
+- A: `quarkdown-html/src/main/typescript/navigation/selection-drag.ts`
+- M: `quarkdown-html/src/main/typescript/types/pagedjs.d.ts`
+- A: `quarkdown-html/src/test/e2e/__util/paged.ts`
+- A: `quarkdown-html/src/test/e2e/font/customization-themed/customization-themed.spec.ts`
+- A: `quarkdown-html/src/test/e2e/font/customization-themed/main.qd`
+- A: `quarkdown-html/src/test/e2e/footnote/long-definition/long-definition.spec.ts`
+- A: `quarkdown-html/src/test/e2e/footnote/long-definition/main.qd`
+- M: `quarkdown-html/src/test/e2e/math/math.spec.ts`
+- M: `quarkdown-html/src/test/e2e/math/paged-wrap/paged-wrap.spec.ts`
+- A: `quarkdown-html/src/test/e2e/page-break/cjk/cjk.spec.ts`
+- A: `quarkdown-html/src/test/e2e/page-break/cjk/main.qd`
+- A: `quarkdown-html/src/test/e2e/page-break/hyphenation/hyphenation.spec.ts`
+- A: `quarkdown-html/src/test/e2e/page-break/hyphenation/main.qd`
+- M: `quarkdown-html/src/test/e2e/page-format/border/border.spec.ts`
+- A: `quarkdown-html/src/test/e2e/page-format/padding/main.qd`
+- A: `quarkdown-html/src/test/e2e/page-format/padding/padding.spec.ts`
+- A: `quarkdown-html/src/test/e2e/page-format/padding/paged-overflow/main.qd`
+- A: `quarkdown-html/src/test/e2e/page-format/padding/paged-overflow/paged-overflow.spec.ts`
+- A: `quarkdown-html/src/test/e2e/page-format/scoped/slides/main.qd`
+- A: `quarkdown-html/src/test/e2e/page-format/scoped/slides/slides.spec.ts`
+- M: `quarkdown-html/src/test/e2e/sidebar/sidebar.spec.ts`
+- A: `quarkdown-html/src/test/e2e/stack/styling/main.qd`
+- A: `quarkdown-html/src/test/e2e/stack/styling/styling.spec.ts`
+- A: `quarkdown-html/src/test/e2e/table/issue_oversized-row/issue_oversized-row.spec.ts`
+- A: `quarkdown-html/src/test/e2e/table/issue_oversized-row/main.qd`
+- R100: `quarkdown-html/vitest.config.mts` (from `quarkdown-html/vitest.config.ts`)
+- M: `quarkdown-native-library-annotations/src/commonMain/kotlin/com/quarkdown/processor/annotation/Spread.kt`
+- M: `quarkdown-native-library-processor/src/main/kotlin/com/quarkdown/processor/discovery/ModuleDescriber.kt`
+- M: `quarkdown-native-library-processor/src/main/kotlin/com/quarkdown/processor/generation/KDocComposer.kt`
+- M: `quarkdown-native-library-processor/src/main/kotlin/com/quarkdown/processor/model/ModuleDescriptor.kt`
+- A: `quarkdown-native-library-processor/src/test/kotlin/com/quarkdown/processor/fixtures/SpreadExclusion.kt`
+- A: `quarkdown-native-library-processor/src/test/kotlin/com/quarkdown/processor/integration/SpreadExclusionTest.kt`
+- A: `quarkdown-package-manager/README.md`
+- A: `quarkdown-package-manager/build.gradle.kts`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/install/PackageWriter.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/install/VirtualFileSystemPackageWriter.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/layout/PackageLayout.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/manifest/ManifestParser.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/manifest/TomlManifestParser.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/PackageDownload.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/PackageIdentifier.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/PackageManifest.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/PackagePathSegment.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/PackageReference.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/PackageRepository.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/model/Versions.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/net/DefaultRemoteFetcher.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/net/RemoteFetchException.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/net/RemoteFetcher.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/repo/AtomsPackageRepository.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/repo/PackageRepositories.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/repo/github/GitHubRepositoryCoordinates.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/repo/github/GitHubTree.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/repo/github/GitHubTreeIndex.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/resolve/InstalledPackage.kt`
+- A: `quarkdown-package-manager/src/commonMain/kotlin/com/quarkdown/pm/resolve/LocalPackageResolver.kt`

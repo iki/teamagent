@@ -23,3 +23,7 @@ This entry was catalogued under **ai-agents-mem**. Its category places it in the
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [context-engine](https://github.com/Emmimal/context-engine); analyzed commit `e0e84cbb33fb9cf2bc48df98517b1609435db27f`; commit date 2026-05-18T11:16:14+05:30; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--context-engine.md).
+<!-- teamagent-analysis:end -->

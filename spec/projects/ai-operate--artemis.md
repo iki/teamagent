@@ -28,3 +28,7 @@ Prototype for authorized device testing or personal automation. Do not interpret
 ## Related directions
 
 [Agents](../agents.md) · [Channels](../channels.md) · [Decisions](../decisions.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [artemis](https://github.com/google/artemis); analyzed commit `351ca8422f7b5b54e80a9c1ce03a222e02415b6b`; commit date 2026-09-28T17:29:02-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-operate--artemis.md).
+<!-- teamagent-analysis:end -->

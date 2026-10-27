@@ -1,0 +1,984 @@
+{
+  "id": "ai-query--xberg",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/xberg-io/xberg",
+  "report": "spec/projects/ai-query--xberg.md",
+  "analyzedSha": "536311f2f9eff39c3e8834b3a90ca8df715d33ba",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T12:40:17+02:00",
+  "observedSha": "58a490e21e60e0ab12ce690779744ac38a572b01",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "58a490e21e60e0ab12ce690779744ac38a572b01",
+      "date": "2026-10-24T08:24:32+03:00",
+      "subject": "fix(mathml): limits on big operators, mmultiscripts and invisible operators (#2228)"
+    },
+    {
+      "sha": "49aace3719b8dc005bd0d3f396207b3063392853",
+      "date": "2026-10-24T00:53:13+03:00",
+      "subject": "fix(deps): patch Python PDF and environment security flaws"
+    },
+    {
+      "sha": "634f60254beccb351f42cd266ac4cb3a2efd8ed1",
+      "date": "2026-10-23T22:57:59+03:00",
+      "subject": "fix(pdf): warn and keep the structure when the table model is unavailable (#2230)"
+    },
+    {
+      "sha": "6463fc2e97865271eeb6a0a31e0331b68805c123",
+      "date": "2026-10-23T22:40:26+03:00",
+      "subject": "fix(ocr): keep vlm_config on the layout-aware mixed OCR stage (#2229)"
+    },
+    {
+      "sha": "6b32f56b880f53ada793795572d4cadf09c3705c",
+      "date": "2026-10-23T17:48:32+03:00",
+      "subject": "ci: align shared Actions pins with v1.27.1"
+    },
+    {
+      "sha": "119670afdcec664b69a7edb5a083e46a6f89097e",
+      "date": "2026-10-23T17:36:10+03:00",
+      "subject": "fix(deps): update benchmark Brotli decoder for security"
+    },
+    {
+      "sha": "43bbffaa6c5d8ede46f02c5ae6316b0a2e8795ae",
+      "date": "2026-10-23T15:36:56+03:00",
+      "subject": "docs: clarify HTML fix and Pillow security coverage"
+    },
+    {
+      "sha": "74f2280196c58bf88a9d741a8c26dbd45360561f",
+      "date": "2026-10-23T14:59:29+03:00",
+      "subject": "chore(deps): update UUID to 1.29"
+    },
+    {
+      "sha": "db173dd4001075627b4006e620c95348aec55ef8",
+      "date": "2026-10-23T14:49:19+03:00",
+      "subject": "chore(deps): update compatible Rust, Ruff, and Dart dependencies"
+    },
+    {
+      "sha": "f850c7111550c25c15a1be62374fd8b57588affc",
+      "date": "2026-10-23T14:39:25+03:00",
+      "subject": "chore: prepare version 1.4.0 across packages and integrations"
+    },
+    {
+      "sha": "8a9137220a37b165271c4a388989f26e09197038",
+      "date": "2026-10-23T14:20:32+03:00",
+      "subject": "fix(deps): resolve ctutils constant-time vulnerabilities"
+    },
+    {
+      "sha": "4b3e0b99904010cea0dbe54940a225b9855170e2",
+      "date": "2026-10-23T10:45:29+03:00",
+      "subject": "fix(toml): print a date or time as its TOML text (#2225)"
+    },
+    {
+      "sha": "6d0d5b0e26f8ded98de00eb502925ec666169353",
+      "date": "2026-10-23T09:37:54+03:00",
+      "subject": "chore(deps): update Unstructured benchmark dependency"
+    },
+    {
+      "sha": "a0b62efda337f0110bcd4b4cd3664ec26f02b730",
+      "date": "2026-10-23T09:30:38+03:00",
+      "subject": "chore(deps): update RMCP to 3.7"
+    },
+    {
+      "sha": "ee15af94e80b3462ec1f3bab47e9048b5689c532",
+      "date": "2026-10-23T09:04:41+03:00",
+      "subject": "fix(ocr): render legacy image pipeline tables once"
+    },
+    {
+      "sha": "e40158509b6bb67e56664e6f894bd594ca7544fa",
+      "date": "2026-10-22T23:55:37+03:00",
+      "subject": "chore(deps): update Dart HTTP test server"
+    },
+    {
+      "sha": "601fbbd9c237e54eac452432726a32e0eb8e8aab",
+      "date": "2026-10-22T21:50:49+03:00",
+      "subject": "fix(ci): stabilize Dart generation formatting context"
+    },
+    {
+      "sha": "703983951c51609807fff3de4fab49b556d8ea5d",
+      "date": "2026-10-22T21:33:39+03:00",
+      "subject": "fix(latex): attach references to their owning elements"
+    },
+    {
+      "sha": "be3defc97dc0e3e02259d72653f980498560d6dc",
+      "date": "2026-10-22T20:52:50+03:00",
+      "subject": "test(latex): verify exact footnote reference ownership"
+    },
+    {
+      "sha": "c98e1ffdeb53e93abbe59305cc8ef731cc938e31",
+      "date": "2026-10-22T20:45:44+03:00",
+      "subject": "chore: merge current main for LaTeX reference review"
+    },
+    {
+      "sha": "b70d762975171a31f22d33d4b9a36503cf55f7f1",
+      "date": "2026-10-22T20:38:24+03:00",
+      "subject": "chore: merge main for LaTeX reference review"
+    },
+    {
+      "sha": "b27b2d848048df778bf32be96fa2cfcccbf3d6ce",
+      "date": "2026-10-22T20:21:37+03:00",
+      "subject": "fix(ocr): preserve validated structured backend output"
+    },
+    {
+      "sha": "1afdffe0a22d0fffcfdb70580b40bb6e80e51cc3",
+      "date": "2026-10-22T20:08:32+03:00",
+      "subject": "Merge branch 'main' into fix/structured-ocr-handoff"
+    },
+    {
+      "sha": "0070c49d895610f92dc9b7dea59cf934be89f88e",
+      "date": "2026-10-22T19:51:34+03:00",
+      "subject": "fix(latex): decode accents while preserving literal spans"
+    },
+    {
+      "sha": "f592ab35dd4dad7f8e2189eb35e3228f26d476c0",
+      "date": "2026-10-22T18:24:14+02:00",
+      "subject": "fix(latex): attach the references inside a footnote to the footnote"
+    },
+    {
+      "sha": "5cf8417053600e8043ee93f781cd59db3c38fcc2",
+      "date": "2026-10-22T19:22:46+03:00",
+      "subject": "fix(latex): preserve literal spans and command arguments"
+    },
+    {
+      "sha": "86fee09013493e299abf4133dc8a92a1da7197dc",
+      "date": "2026-10-22T19:15:16+03:00",
+      "subject": "chore: merge main for LaTeX symbol review"
+    },
+    {
+      "sha": "e84020dac271e693d8b96b22ce075b1debe8cb92",
+      "date": "2026-10-22T18:38:02+03:00",
+      "subject": "fix(archive): extract readable members from encrypted ZIPs"
+    },
+    {
+      "sha": "7c6aca4760af255beb53f111398b69931fd7026d",
+      "date": "2026-10-22T18:25:55+03:00",
+      "subject": "chore(docs): update Astro and document its Node requirement"
+    },
+    {
+      "sha": "5a824ec01e4e1d29e9e49517427bdd72b3fb77ce",
+      "date": "2026-10-22T18:25:37+03:00",
+      "subject": "chore(deps): update pnpm package identity validation"
+    },
+    {
+      "sha": "314c55f7afae6a1a1b44a46f37458697522a9cfa",
+      "date": "2026-10-22T18:25:14+03:00",
+      "subject": "fix(ocr): preserve structured backend output in image and PDF extraction"
+    },
+    {
+      "sha": "14c9b3d36a2cea4f71943d6714f0f66147bf881f",
+      "date": "2026-10-22T18:25:00+03:00",
+      "subject": "chore(deps): refresh Docling and schema tooling"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".ai-rulez-generated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/.generated-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/agents/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/agents/xberg-developer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/ai-rulez.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/config.plugins.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/domains/document-extraction/agents/extraction-engineer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/document-extraction/agents/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/document-extraction/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/domains/document-extraction/rules/api-compatibility.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/domains/document-extraction/rules/async-and-concurrency.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/domains/document-extraction/rules/extraction-safety.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/document-extraction/rules/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/ocr-integration/agents/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/domains/ocr-integration/agents/ocr-engineer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/ocr-integration/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/plugin-system/agents/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/domains/plugin-system/agents/plugin-engineer.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/domains/plugin-system/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/rules/changelog-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/rules/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/alef-generated-bindings/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/alef-generated-bindings/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/api-server-mcp/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/api-server-mcp/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/benchmark-workflow/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/benchmark-workflow/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/chunking-embeddings/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/chunking-embeddings/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/config-loading-precedence/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/config-loading-precedence/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/crate-structure/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/crate-structure/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/extraction-pipeline-patterns/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/extraction-pipeline-patterns/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/feature-flag-policy/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/feature-flag-policy/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/format-specific-extraction/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/format-specific-extraction/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/mime-detection-routing/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/mime-detection-routing/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/ocr-pipeline-and-quality/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/ocr-pipeline-and-quality/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/pdf-backends/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/pdf-backends/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/plugin-architecture-patterns/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/plugin-architecture-patterns/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/polyrepo-boundaries/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/polyrepo-boundaries/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/release-readiness/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/release-readiness/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/release-versioning/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/release-versioning/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/test-corpus/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/test-corpus/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/wasm-constraints/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/wasm-constraints/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".ai-rulez/skills/xberg-typescript-toolchain/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".ai-rulez/skills/xberg-typescript-toolchain/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".alef-generation.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".alef-ownership.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".alef-toml-merge-provenance.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/cache-benchmark-harness/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-onnx-runtime/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ai-rulez-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/benchmarks.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-docker.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-docs.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-e2e.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-gpu.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-integrations.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-lint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-mobile.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-python-wheel-smoke.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-rust.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-scripts.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/plugin-artifacts.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-docker.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-pubdev.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/validate-issues.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/validate-pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".task/languages/dart.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".task/languages/go.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".task/languages/python.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".task/languages/rust.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".task/tools/plugin.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".task/tools/version-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".task/workflows/benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PLATFORM_SUPPORT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Package.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Taskfile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "alef.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/xberg/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/xberg/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli-proxy/npm/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli-proxy/pypi/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "composer.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "composer.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-candle-ocr/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-candle-ocr/src/models/deepseek_ocr/model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/commands/cache.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/commands/extract/batch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/commands/extract/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/commands/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/commands/overrides/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/commands/overrides/output.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/commands/overrides/tests/output_and_concurrency.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-cli/tests/contract_cli.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-ffi/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-ffi/cbindgen.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-ffi/include/xberg.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-ffi/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-gliner/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-gliner/src/candle/lora.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-gliner/src/candle/streaming_load.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-gliner/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-gliner/src/session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-jni/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-libheif/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-libwpd/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/converters/text_post_processor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/xberg-native-pdf/src/converters/text_post_processor/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/decoders/jpx.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/xberg-native-pdf/src/document/classify.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/extract_api.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/images.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/xberg-native-pdf/src/document/key_value_rows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/objects.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/open.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/span_postprocess.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/xberg-native-pdf/src/document/tests/key_value_rows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/tests/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/tests/objects.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/document/tests/pdf_fixtures.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/elements/path.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/xberg-native-pdf/src/elements/path/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/encryption/algorithms.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/xberg-native-pdf/src/encryption/algorithms/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/extractors/images.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/fonts/cff_encoding.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/xberg-native-pdf/src/fonts/cff_encoding/sid_names.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/xberg-native-pdf/src/fonts/cmap.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

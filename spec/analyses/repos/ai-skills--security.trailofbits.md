@@ -1,0 +1,198 @@
+# security.trailofbits: change evidence
+
+Source: [security.trailofbits](https://github.com/trailofbits/skills) · [Analysis](../../projects/ai-skills--security.trailofbits.md) · [skills](../../skills.md), [agents](../../agents.md), [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `82fe8226252622fa807643bdca1710901198553a`; commit date: 2026-09-28T14:06:37-04:00; review date: 2026-10-04; observed SHA: `196a9073ab10d35bacf111f945e02c00b2c6883a`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/trailofbits/skills/compare/82fe8226252622fa807643bdca1710901198553a...196a9073ab10d35bacf111f945e02c00b2c6883a). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [196a9073ab10](https://github.com/trailofbits/skills/commit/196a9073ab10d35bacf111f945e02c00b2c6883a) 2026-10-23T11:26:17+02:00: Add CodeQL + Semgrep exclusion warnings (#475)
+- [1e0cb77d071a](https://github.com/trailofbits/skills/commit/1e0cb77d071a8b9453391d111f17d34d2114e057) 2026-10-22T11:19:47-04:00: deps: bump the python-minor-patch group across 3 directories with 3 updates (#473)
+- [22d756ad7ceb](https://github.com/trailofbits/skills/commit/22d756ad7cebb8e4a8333c4c936bdc4868dd86da) 2026-10-22T11:00:39-04:00: docs: update README description and related links (#474)
+- [db5393caf5dd](https://github.com/trailofbits/skills/commit/db5393caf5ddc0e158849199930be78ad9539ebb) 2026-10-22T09:35:52-04:00: Add Calcifier recipe for github-triage (#402)
+- [f0dd11d2b1da](https://github.com/trailofbits/skills/commit/f0dd11d2b1da17a1ff8c403741fbe1f6bca0f871) 2026-10-21T11:01:26-07:00: Add Calcifier recipe for dimensional-analysis (#432)
+- [a3131740a392](https://github.com/trailofbits/skills/commit/a3131740a39291e42fd15b9eac07e0b393ad71b1) 2026-10-20T16:16:47-04:00: Add regression-hunt and patching-bugs plugins (#471)
+- [5c99c03fb8a9](https://github.com/trailofbits/skills/commit/5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0) 2026-10-15T14:16:40-04:00: fix(devcontainer-setup): pin fnm instead of installing its latest release (#346)
+- [1f68e03536f7](https://github.com/trailofbits/skills/commit/1f68e03536f7980d4c0e6869596f708043a19443) 2026-10-15T10:34:14-04:00: fix(gh-cli): stop SessionStart hooks piling duplicate exports into the env (#347)
+- [41604b5e728e](https://github.com/trailofbits/skills/commit/41604b5e728e24e3d246b8fe9307d410a78bdee0) 2026-10-15T09:20:15-04:00: Add Codex support to entry-point-analyzer and correct caller classification (#359)
+- [4fc769be6355](https://github.com/trailofbits/skills/commit/4fc769be63559c8b108f225e1ea1ed60821c85ea) 2026-10-15T08:15:41-04:00: deps: bump ruff (#380)
+- [e1f86a390d4c](https://github.com/trailofbits/skills/commit/e1f86a390d4caf28bf1c377a7d86707b2898669c) 2026-10-14T17:06:29-04:00: ci: bump the actions-minor-patch group with 2 updates (#379)
+- [4b43b5bcfdb2](https://github.com/trailofbits/skills/commit/4b43b5bcfdb2385e7cb5bffc9a3f69eb9bcb467f) 2026-10-14T17:01:41-04:00: Maker Week: make firebase-apk-scanner report what the scan actually found (#374)
+- [29424a451e2b](https://github.com/trailofbits/skills/commit/29424a451e2b9c8adc44f6d5251310df8f044ae7) 2026-10-14T16:03:08-04:00: fix(diagramming-code): drop the unused pre-analysis step and name a language in examples (#365)
+- [bbbc59c5f4a3](https://github.com/trailofbits/skills/commit/bbbc59c5f4a3a382b4b7d939f9bf72da48e59a68) 2026-10-14T15:46:04-04:00: fix(mermaid-to-proverif): read ProVerif results correctly and test forward secrecy properly (#367)
+- [d1ee58bdb055](https://github.com/trailofbits/skills/commit/d1ee58bdb055f6bd1ba93e22f4ee2773cc4be671) 2026-10-14T15:37:21-04:00: Make `zeroize-audit` agent-agnostic (#377)
+- [3e0c3b1c3b65](https://github.com/trailofbits/skills/commit/3e0c3b1c3b65810a59b5a094d4f9bf64ffc10275) 2026-10-14T15:22:35-04:00: Fix YARA skill resource paths (#378)
+- [4a48f7fa49c9](https://github.com/trailofbits/skills/commit/4a48f7fa49c991be70cf2cbcecd9bad20cb2c544) 2026-10-14T14:24:05-04:00: Maker Week: fix yara-rule-authoring's examples and add a one-call review helper (#372)
+- [a12ea6a1afd7](https://github.com/trailofbits/skills/commit/a12ea6a1afd751664540a48f83ba1c5654e9a238) 2026-10-14T13:50:02-04:00: Maker Week: fix trailmark-finding-triage's broken query recipe (+ one-call evidence packet) (#360)
+- [0f44fe01dcb0](https://github.com/trailofbits/skills/commit/0f44fe01dcb00bd6929b4ba82a257d305de04554) 2026-10-14T08:10:11-04:00: Update `demensional-analysis` plugin (#371)
+- [8e54050ae63c](https://github.com/trailofbits/skills/commit/8e54050ae63c2f62224c35b1616efe71865b4777) 2026-10-13T11:24:26-04:00: Fix let-fate-decide resource paths (#357)
+- [442fc9d6c89b](https://github.com/trailofbits/skills/commit/442fc9d6c89b1e937e6f7a477e7071ea75fcbea4) 2026-10-09T17:55:03-04:00: Use Codex for PR reviews (#356)
+- [fdfe4f41b65d](https://github.com/trailofbits/skills/commit/fdfe4f41b65d4c75162b902d1458211b90e91113) 2026-10-09T15:20:05-04:00: deps: bump the python-minor-patch group across 2 directories with 2 updates (#354)
+- [b9b88148c653](https://github.com/trailofbits/skills/commit/b9b88148c653c2829ab21102c02d7fbf81b4e12f) 2026-10-09T14:26:06-04:00: Rename Chrome MCP troubleshooting plugin to avoid reserved name (#355)
+
+## Changed paths (truncated)
+
+- M: `.claude-plugin/marketplace.json`
+- A: `.github/codex/review-schema.json`
+- A: `.github/codex/review.md`
+- M: `.github/dependabot.yml`
+- D: `.github/scripts/claude_review.sh`
+- A: `.github/scripts/codex_review.py`
+- D: `.github/workflows/claude-review.yml`
+- A: `.github/workflows/codex-review.yml`
+- M: `.github/workflows/lint.yml`
+- M: `CODEOWNERS`
+- M: `README.md`
+- R066: `plugins/chrome-mcp-troubleshooting/.claude-plugin/plugin.json` (from `plugins/claude-in-chrome-troubleshooting/.claude-plugin/plugin.json`)
+- R076: `plugins/chrome-mcp-troubleshooting/README.md` (from `plugins/claude-in-chrome-troubleshooting/README.md`)
+- R100: `plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting/SKILL.md` (from `plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting/SKILL.md`)
+- R100: `plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting/agents/openai.yaml` (from `plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting/agents/openai.yaml`)
+- R100: `plugins/chrome-mcp-troubleshooting/skills/chrome-mcp-troubleshooting/assets/trail-of-bits-mark.svg` (from `plugins/claude-in-chrome-troubleshooting/skills/chrome-mcp-troubleshooting/assets/trail-of-bits-mark.svg`)
+- M: `plugins/devcontainer-setup/.claude-plugin/plugin.json`
+- M: `plugins/devcontainer-setup/skills/devcontainer-setup/resources/Dockerfile`
+- M: `plugins/dimensional-analysis/.claude-plugin/plugin.json`
+- M: `plugins/dimensional-analysis/README.md`
+- M: `plugins/dimensional-analysis/agents/arithmetic-scanner.md`
+- M: `plugins/dimensional-analysis/agents/dimension-annotator.md`
+- M: `plugins/dimensional-analysis/agents/dimension-discoverer.md`
+- M: `plugins/dimensional-analysis/agents/dimension-propagator.md`
+- M: `plugins/dimensional-analysis/agents/dimension-validator.md`
+- A: `plugins/dimensional-analysis/evals/planted-bugs/graders/criteria.md`
+- A: `plugins/dimensional-analysis/evals/planted-bugs/prompt.md`
+- A: `plugins/dimensional-analysis/evals/trigger-annotate/graders/criteria.md`
+- A: `plugins/dimensional-analysis/evals/trigger-annotate/prompt.md`
+- A: `plugins/dimensional-analysis/evals/trigger-audit/graders/criteria.md`
+- A: `plugins/dimensional-analysis/evals/trigger-audit/prompt.md`
+- A: `plugins/dimensional-analysis/evals/trigger-explicit/graders/criteria.md`
+- A: `plugins/dimensional-analysis/evals/trigger-explicit/prompt.md`
+- A: `plugins/dimensional-analysis/evals/trigger-oblique/graders/criteria.md`
+- A: `plugins/dimensional-analysis/evals/trigger-oblique/prompt.md`
+- A: `plugins/dimensional-analysis/skills/dimensional-analysis/.calcifier/recipe.py`
+- M: `plugins/dimensional-analysis/skills/dimensional-analysis/SKILL.md`
+- A: `plugins/dimensional-analysis/skills/dimensional-analysis/references/step1.md`
+- A: `plugins/dimensional-analysis/skills/dimensional-analysis/references/step2.md`
+- A: `plugins/dimensional-analysis/skills/dimensional-analysis/references/step3.md`
+- A: `plugins/dimensional-analysis/skills/dimensional-analysis/references/step4.md`
+- A: `plugins/dimensional-analysis/tests/fixtures/ANSWER-KEY.md`
+- A: `plugins/dimensional-analysis/tests/fixtures/selftest/findings-complete.json`
+- A: `plugins/dimensional-analysis/tests/fixtures/src/AssetRegistry.sol`
+- A: `plugins/dimensional-analysis/tests/fixtures/src/InterestIndex.sol`
+- A: `plugins/dimensional-analysis/tests/fixtures/src/MarginVault.sol`
+- A: `plugins/dimensional-analysis/tests/fixtures/src/StakingRewards.sol`
+- A: `plugins/dimensional-analysis/tests/fixtures/src/UniV3Oracle.sol`
+- A: `plugins/dimensional-analysis/tests/fixtures/src/libraries/FixedPointMath.sol`
+- A: `plugins/dimensional-analysis/tests/fixtures/src/libraries/PriceLib.sol`
+- A: `plugins/dimensional-analysis/tests/fixtures/trigger/src/Vault.sol`
+- A: `plugins/dimensional-analysis/tests/smoke-test.sh`
+- A: `plugins/dimensional-analysis/tests/summarize_arms.py`
+- A: `plugins/dimensional-analysis/tests/trigger-test.sh`
+- A: `plugins/dimensional-analysis/tests/validate_eval_result.py`
+- A: `plugins/dimensional-analysis/tests/validate_findings.py`
+- M: `plugins/entry-point-analyzer/.claude-plugin/plugin.json`
+- M: `plugins/entry-point-analyzer/README.md`
+- M: `plugins/entry-point-analyzer/skills/entry-point-analyzer/SKILL.md`
+- M: `plugins/entry-point-analyzer/skills/entry-point-analyzer/references/move-aptos.md`
+- M: `plugins/entry-point-analyzer/skills/entry-point-analyzer/references/move-sui.md`
+- M: `plugins/entry-point-analyzer/skills/entry-point-analyzer/references/solidity.md`
+- M: `plugins/entry-point-analyzer/skills/entry-point-analyzer/references/vyper.md`
+- A: `plugins/entry-point-analyzer/tests/README.md`
+- A: `plugins/entry-point-analyzer/tests/scenario.md`
+- M: `plugins/firebase-apk-scanner/.claude-plugin/plugin.json`
+- M: `plugins/firebase-apk-scanner/skills/firebase-apk-scanner/SKILL.md`
+- A: `plugins/firebase-apk-scanner/skills/firebase-apk-scanner/references/manual-fallback.md`
+- M: `plugins/firebase-apk-scanner/skills/firebase-apk-scanner/scanner.sh`
+- A: `plugins/firebase-apk-scanner/tests/test_scanner_reports.py`
+- M: `plugins/gh-cli/.claude-plugin/plugin.json`
+- M: `plugins/gh-cli/hooks/persist-session-id.sh`
+- M: `plugins/gh-cli/hooks/session-hooks.bats`
+- M: `plugins/gh-cli/hooks/setup-shims.bats`
+- M: `plugins/gh-cli/hooks/setup-shims.sh`
+- M: `plugins/github-triage/.claude-plugin/plugin.json`
+- M: `plugins/github-triage/README.md`
+- A: `plugins/github-triage/skills/github-triage/.calcifier/recipe.py`
+- M: `plugins/let-fate-decide/.claude-plugin/plugin.json`
+- M: `plugins/let-fate-decide/agents/draw.md`
+- M: `plugins/let-fate-decide/skills/let-fate-decide/SKILL.md`
+- A: `plugins/patching-bugs/.claude-plugin/plugin.json`
+- A: `plugins/patching-bugs/README.md`
+- A: `plugins/patching-bugs/assets/maintainer-report.html`
+- A: `plugins/patching-bugs/assets/report.css`
+- A: `plugins/patching-bugs/assets/report.html`
+- A: `plugins/patching-bugs/pyproject.toml`
+- A: `plugins/patching-bugs/references/records.md`
+- A: `plugins/patching-bugs/schemas/finding.schema.json`
+- A: `plugins/patching-bugs/schemas/patch.schema.json`
+- A: `plugins/patching-bugs/schemas/prove.schema.json`
+- A: `plugins/patching-bugs/schemas/regression.schema.json`
+- A: `plugins/patching-bugs/schemas/report-input.schema.json`
+- A: `plugins/patching-bugs/schemas/reproduce.schema.json`
+- A: `plugins/patching-bugs/schemas/run.schema.json`
+- A: `plugins/patching-bugs/schemas/validate.schema.json`
+- A: `plugins/patching-bugs/scripts/arms.py`
+- A: `plugins/patching-bugs/scripts/native_proof.py`
+- A: `plugins/patching-bugs/scripts/records.py`
+- A: `plugins/patching-bugs/scripts/render.py`
+- A: `plugins/patching-bugs/scripts/repair_scope.py`
+- A: `plugins/patching-bugs/scripts/report_sections.py`
+- A: `plugins/patching-bugs/scripts/report_views.py`
+- A: `plugins/patching-bugs/scripts/terminal.py`
+- A: `plugins/patching-bugs/scripts/verdict.py`
+- A: `plugins/patching-bugs/skills/implement-patch/SKILL.md`
+- A: `plugins/patching-bugs/skills/patching-bugs/SKILL.md`
+- A: `plugins/patching-bugs/skills/prove-patch/SKILL.md`
+- A: `plugins/patching-bugs/skills/reproduce-bug/SKILL.md`
+- A: `plugins/patching-bugs/skills/validate-bug/SKILL.md`
+- A: `plugins/patching-bugs/tests/cold-run.md`
+- A: `plugins/patching-bugs/tests/fixtures/planted-bug/app.py`
+- A: `plugins/patching-bugs/tests/fixtures/planted-bug/build.py`
+- A: `plugins/patching-bugs/tests/fixtures/planted-bug/poc.py`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/finding.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/fix.patch`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/manifest.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/patch.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/patch/attempt-1/tests.patch`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/manifest.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/prove.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/arms/poc.txt`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-baseline.stderr`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-baseline.stdout`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-patched.stderr`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/interior-patched.stdout`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-baseline.stderr`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-baseline.stdout`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-patched.stderr`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/ordinary-patched.stdout`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/project-patched.stderr`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/project-patched.stdout`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/proof-case.py`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-baseline.stderr`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-baseline.stdout`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-patched.stderr`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/repeated-patched.stdout`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/prove/attempt-1/receipts/source.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/regression/manifest.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/regression/receipts/decision.txt`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/regression/regression.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/report-input.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/reproduce/manifest.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/reproduce/poc/poc.py`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/reproduce/receipts/build.txt`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/reproduce/receipts/poc.txt`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/reproduce/reproduce.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/run.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/validate/manifest.json`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/validate/receipts/poc.txt`
+- A: `plugins/patching-bugs/tests/fixtures/run-ready/validate/validate.json`
+- A: `plugins/patching-bugs/tests/test_arms.py`
+- A: `plugins/patching-bugs/tests/test_native_proof.py`
+- A: `plugins/patching-bugs/tests/test_proof_types.py`
+- A: `plugins/patching-bugs/tests/test_records.py`
+- A: `plugins/patching-bugs/tests/test_render.py`
+- A: `plugins/patching-bugs/tests/test_repair_scope.py`
+- A: `plugins/patching-bugs/tests/test_report_outputs.py`
+- A: `plugins/patching-bugs/tests/test_s0_report.py`
+- A: `plugins/patching-bugs/tests/test_skill_examples.py`

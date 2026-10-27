@@ -1,0 +1,207 @@
+# openai-agents-python: change evidence
+
+Source: [openai-agents-python](https://github.com/openai/openai-agents-python) · [Analysis](../../projects/ai-agents--openai-agents-python.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `81f0ccf20c6e24063b9da36fa37f2bdb6a43d8d3`; commit date: 2026-10-02T18:35:55Z; review date: unknown; observed SHA: `bc4c6e124d39626f9ad77c58cb136c67e66c4cf7`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/openai/openai-agents-python/compare/81f0ccf20c6e24063b9da36fa37f2bdb6a43d8d3...bc4c6e124d39626f9ad77c58cb136c67e66c4cf7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [bc4c6e124d39](https://github.com/openai/openai-agents-python/commit/bc4c6e124d39626f9ad77c58cb136c67e66c4cf7) 2026-10-27T17:34:02Z: fix: preserve Pydantic run context snapshots (#5444)
+- [b040da59037b](https://github.com/openai/openai-agents-python/commit/b040da59037b1a34fee3a0dd4da95a571460eb98) 2026-10-27T05:28:55Z: fix: preserve nested handoff record boundaries (#5430)
+- [b235388f7c04](https://github.com/openai/openai-agents-python/commit/b235388f7c04b4573c2a789785eccc4aae265370) 2026-10-27T05:28:40Z: fix: require patched MCP dependency versions (#5431)
+- [a88d2919631d](https://github.com/openai/openai-agents-python/commit/a88d2919631dbd93801a79eb0f97011ef9b451b7) 2026-10-27T04:01:33Z: fix: align implicit settings with provider-selected models (#5425)
+- [9de261bffaf7](https://github.com/openai/openai-agents-python/commit/9de261bffaf7a7ec312beda856bd7e5468eebd41) 2026-10-26T23:58:23Z: docs: Add external sandbox provider guide and runnable package (#5426)
+- [16fdb2091d0b](https://github.com/openai/openai-agents-python/commit/16fdb2091d0b18cc1200d26ba6a20ee6f1962455) 2026-10-26T23:36:06Z: feat: expose utilities for third-party session adapters (#5428)
+- [addc737f48b2](https://github.com/openai/openai-agents-python/commit/addc737f48b260785cecc13d0edec192e7ade54a) 2026-10-26T22:07:02Z: fix(realtime): honor explicit interruption with automatic VAD (#5427)
+- [28c29bc952bf](https://github.com/openai/openai-agents-python/commit/28c29bc952bf0cce573a95683503132f4233608c) 2026-10-26T21:43:43Z: fix: replay ID-less assistant output in Chat Completions sessions (#5419)
+- [a6ed84f38ed3](https://github.com/openai/openai-agents-python/commit/a6ed84f38ed374585fb3969a8177a76755d58d94) 2026-10-26T21:37:29Z: fix: add opt-in handoff error recovery (#5418)
+- [3396dca75663](https://github.com/openai/openai-agents-python/commit/3396dca75663d3e72f27aed3e3a79c5d018b8332) 2026-10-26T21:37:20Z: fix: default GPT-6 Chat Completions tool requests to non-reasoning (#5420)
+- [dda19f9b91cd](https://github.com/openai/openai-agents-python/commit/dda19f9b91cd540cedba2a2d76bcea56deabee98) 2026-10-26T21:37:07Z: perf: avoid repeatedly fingerprinting completed tool calls (#5421)
+- [275108af03f3](https://github.com/openai/openai-agents-python/commit/275108af03f3647a82b1bc745714b3f77e4922fd) 2026-10-26T21:37:00Z: docs: clarify streaming consumer ownership and cleanup (#5422)
+- [455ce7cbf279](https://github.com/openai/openai-agents-python/commit/455ce7cbf2793c8763bda8a8bb47c5dff4da43f5) 2026-10-26T21:36:50Z: docs: clarify approved tool recovery after a crash (#5424)
+- [963d032fe611](https://github.com/openai/openai-agents-python/commit/963d032fe611571bd01a91ba9d4eb42ab92ec2e8) 2026-10-26T21:36:30Z: fix: preserve empty structured shell results (#5423)
+- [e00ea5c2d416](https://github.com/openai/openai-agents-python/commit/e00ea5c2d416fb723c66d741b2bd67c541c454a0) 2026-10-26T20:56:30Z: docs(mcp): clarify timeouts and constructor options (#5417)
+- [0dc4cf152bff](https://github.com/openai/openai-agents-python/commit/0dc4cf152bff1f50bdc0e41f28808563406545b2) 2026-10-22T21:39:28Z: fix(deps-dev): bump playwright from 1.50.0 to 1.63.0 (#5402)
+- [e2de6a8f2c61](https://github.com/openai/openai-agents-python/commit/e2de6a8f2c61ea3818f582fc74c8f8a8da9830b2) 2026-10-22T20:30:09Z: fix(deps): bump mcp from 2.0.0 to 2.3.0 (#5404)
+- [442d0ea112e6](https://github.com/openai/openai-agents-python/commit/442d0ea112e62e3423d3e93478532424f71b3f8a) 2026-10-22T19:57:16Z: fix(deps-dev): bump aiohttp from 3.14.3 to 3.14.5 (#5403)
+- [6bfa5ff5be83](https://github.com/openai/openai-agents-python/commit/6bfa5ff5be83d80bb3de4be4a61bd589289c99f2) 2026-10-22T19:57:04Z: fix(deps): update fastapi requirement from >=0.142.2 to >=0.143.0 in /examples/realtime/twilio_sip (#5399)
+- [0e54e4b6ce2a](https://github.com/openai/openai-agents-python/commit/0e54e4b6ce2aaa96ff917a978ec8774eb7ab85f1) 2026-10-22T19:56:58Z: fix(deps): update openai requirement from <4,>=3.26.0 to >=3.29.0,<4 in /examples/realtime/twilio_sip (#5398)
+- [452c5bda2e48](https://github.com/openai/openai-agents-python/commit/452c5bda2e481fe21120ec69232e87c83a7d66f5) 2026-10-22T19:56:51Z: fix(deps): update twilio requirement from <10,>=9.11.2 to >=9.12.0,<10 in /examples/realtime/twilio (#5397)
+- [97c8288bc6e9](https://github.com/openai/openai-agents-python/commit/97c8288bc6e97d69f45fc3732f1cf236b321d125) 2026-10-22T19:47:19Z: fix(deps): bump mcp from 2.0.0 to 2.2.0 (#5393)
+- [841dfdd938bf](https://github.com/openai/openai-agents-python/commit/841dfdd938bfd4ca052475eb76d6245a356868e0) 2026-10-22T00:26:59Z: [sandbox-hardening] Avoid loading startup files during workspace operations (#5406)
+- [64cd5dfc5a15](https://github.com/openai/openai-agents-python/commit/64cd5dfc5a1579870dcbed0ea42b27aa84033fee) 2026-10-19T17:14:50Z: docs(sandbox): remove Runloop provider guidance (#5370)
+- [12ce34d8438d](https://github.com/openai/openai-agents-python/commit/12ce34d8438d6f1f7c964a261b89e069e8a0b3d3) 2026-10-19T17:14:49Z: feat(sandbox): remove Runloop provider (#5369)
+- [970db99b1f97](https://github.com/openai/openai-agents-python/commit/970db99b1f97594b30496b9b75031f0c7f4f36ba) 2026-10-19T16:58:56Z: fix: raise MCP minimum to 1.21.2 for Pydantic and OAuth compatibility (#5384)
+- [9abc9182d06d](https://github.com/openai/openai-agents-python/commit/9abc9182d06dbd28330af888306031269d57a175) 2026-10-17T00:49:49Z: docs: clarify local shell approval scope across handoffs (#5385)
+- [17d994bd3045](https://github.com/openai/openai-agents-python/commit/17d994bd3045dae71acda676a4ef4762ed8ecd94) 2026-10-15T02:08:00Z: release: 0.24.0 (#5285)
+- [24ebf1cb0f4b](https://github.com/openai/openai-agents-python/commit/24ebf1cb0f4b3107d5350b13a1308637d3dec9ca) 2026-10-14T17:46:04Z: fix(deps): bump redis from 7.0.1 to 8.1.0 (#5379)
+- [2938d87a2837](https://github.com/openai/openai-agents-python/commit/2938d87a2837537138dc7839003317a27ed3441f) 2026-10-14T16:47:54Z: fix(deps): bump vercel-sandbox from 0.7.0 to 0.8.0 (#5374)
+- [c148280f8f74](https://github.com/openai/openai-agents-python/commit/c148280f8f748552cc5b385802ef6dedd8ab6576) 2026-10-14T16:46:20Z: fix(deps): bump temporalio from 1.33.0 to 1.34.0 (#5377)
+- [7da6a927cc42](https://github.com/openai/openai-agents-python/commit/7da6a927cc42d955c2fdc8f2cb9a7443fefa4f46) 2026-10-14T16:46:13Z: fix(deps): bump boto3 from 1.42.75 to 1.43.109 (#5378)
+
+## Changed paths (truncated)
+
+- M: `.github/scripts/run_examples.sh`
+- M: `.github/scripts/run_integration_tests.py`
+- M: `.github/workflows/tests.yml`
+- M: `.release-please-manifest.json`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `docs/guardrails.md`
+- M: `docs/human_in_the_loop.md`
+- M: `docs/mcp.md`
+- M: `docs/models/index.md`
+- D: `docs/ref/extensions/sandbox/runloop/mounts.md`
+- D: `docs/ref/extensions/sandbox/runloop/sandbox.md`
+- M: `docs/sandbox/clients.md`
+- A: `docs/sandbox/custom-providers.md`
+- M: `docs/sandbox/guide.md`
+- M: `docs/streaming.md`
+- M: `docs/tools.md`
+- A: `examples/decisions/README.md`
+- A: `examples/decisions/classify.py`
+- A: `examples/decisions/model_router.py`
+- A: `examples/decisions/tool_risk_gate.py`
+- A: `examples/memory/custom_session.py`
+- M: `examples/realtime/twilio/requirements.txt`
+- M: `examples/realtime/twilio_sip/requirements.txt`
+- M: `examples/run_examples.py`
+- M: `examples/sandbox/extensions/README.md`
+- D: `examples/sandbox/extensions/runloop/capabilities.py`
+- D: `examples/sandbox/extensions/runloop/runner.py`
+- A: `examples/sandbox/external_provider/README.md`
+- A: `examples/sandbox/external_provider/pyproject.toml`
+- A: `examples/sandbox/external_provider/src/example_docker_provider/__init__.py`
+- A: `examples/sandbox/external_provider/src/example_docker_provider/demo.py`
+- M: `integration_tests/README.md`
+- M: `integration_tests/packaging/test_distribution_contents.py`
+- M: `mkdocs.yml`
+- M: `pyproject.toml`
+- M: `src/agents/_run_state_agent_identity.py`
+- M: `src/agents/_tool_invocation.py`
+- M: `src/agents/agent.py`
+- M: `src/agents/exceptions.py`
+- M: `src/agents/extensions/memory/redis_session.py`
+- M: `src/agents/extensions/models/any_llm_model.py`
+- M: `src/agents/extensions/models/litellm_model.py`
+- M: `src/agents/extensions/sandbox/__init__.py`
+- D: `src/agents/extensions/sandbox/runloop/__init__.py`
+- D: `src/agents/extensions/sandbox/runloop/mounts.py`
+- D: `src/agents/extensions/sandbox/runloop/sandbox.py`
+- M: `src/agents/function_schema.py`
+- M: `src/agents/handoffs/__init__.py`
+- M: `src/agents/handoffs/history.py`
+- M: `src/agents/items.py`
+- M: `src/agents/mcp/util.py`
+- M: `src/agents/memory/__init__.py`
+- M: `src/agents/memory/openai_conversations_session.py`
+- M: `src/agents/memory/openai_responses_compaction_session.py`
+- M: `src/agents/memory/session.py`
+- M: `src/agents/memory/session_settings.py`
+- M: `src/agents/model_settings.py`
+- M: `src/agents/models/chatcmpl_converter.py`
+- M: `src/agents/models/interface.py`
+- M: `src/agents/models/openai_chatcompletions.py`
+- M: `src/agents/realtime/session.py`
+- M: `src/agents/result.py`
+- M: `src/agents/run.py`
+- M: `src/agents/run_config.py`
+- M: `src/agents/run_internal/agent_bindings.py`
+- M: `src/agents/run_internal/agent_runner_helpers.py`
+- M: `src/agents/run_internal/blocked_output.py`
+- M: `src/agents/run_internal/guardrails.py`
+- M: `src/agents/run_internal/items.py`
+- M: `src/agents/run_internal/run_loop.py`
+- M: `src/agents/run_internal/run_steps.py`
+- M: `src/agents/run_internal/session_persistence.py`
+- M: `src/agents/run_internal/tool_actions.py`
+- M: `src/agents/run_internal/tool_execution.py`
+- M: `src/agents/run_internal/tool_planning.py`
+- M: `src/agents/run_internal/turn_preparation.py`
+- M: `src/agents/run_internal/turn_resolution.py`
+- M: `src/agents/run_state.py`
+- M: `src/agents/sandbox/_mount_security.py`
+- A: `src/agents/sandbox/capabilities/tools/_input_errors.py`
+- M: `src/agents/sandbox/capabilities/tools/apply_patch_tool.py`
+- M: `src/agents/sandbox/capabilities/tools/shell_tool.py`
+- M: `src/agents/sandbox/capabilities/tools/view_image.py`
+- M: `src/agents/sandbox/runtime.py`
+- M: `src/agents/sandbox/sandboxes/unix_local.py`
+- M: `src/agents/sandbox/session/base_sandbox_session.py`
+- M: `src/agents/sandbox/session/runtime_helpers.py`
+- M: `src/agents/testing/model.py`
+- M: `src/agents/tool.py`
+- M: `src/agents/tracing/context.py`
+- M: `src/agents/tracing/provider.py`
+- M: `src/agents/tracing/scope.py`
+- M: `src/agents/util/_asyncio_tasks.py`
+- M: `src/agents/version.py`
+- R100: `tests/deferred_session_writes/__init__.py` (from `examples/sandbox/extensions/runloop/__init__.py`)
+- A: `tests/deferred_session_writes/helpers.py`
+- A: `tests/deferred_session_writes/test_compaction.py`
+- A: `tests/deferred_session_writes/test_filters.py`
+- A: `tests/deferred_session_writes/test_max_turns.py`
+- A: `tests/deferred_session_writes/test_pending_write.py`
+- A: `tests/deferred_session_writes/test_recovery.py`
+- A: `tests/deferred_session_writes/test_resume.py`
+- M: `tests/extensions/memory/test_redis_session.py`
+- M: `tests/extensions/sandbox/test_daytona.py`
+- M: `tests/extensions/sandbox/test_modal.py`
+- D: `tests/extensions/sandbox/test_runloop.py`
+- D: `tests/extensions/sandbox/test_runloop_capabilities_example.py`
+- D: `tests/extensions/sandbox/test_runloop_mounts.py`
+- M: `tests/extensions/sandbox/test_vercel.py`
+- M: `tests/fixtures/released_api_contract.json`
+- M: `tests/fixtures/released_api_contract_policy.json`
+- M: `tests/fixtures/run_state/README.md`
+- A: `tests/fixtures/run_state/features/v1_18_compaction_metadata.json`
+- A: `tests/fixtures/run_state/features/v1_19_held_pending_session_write.json`
+- A: `tests/fixtures/run_state/features/v1_20_tool_output_guardrail_boundary.json`
+- M: `tests/fixtures/run_state/generate_corpus.py`
+- A: `tests/fixtures/run_state/minimal/v1_18.json`
+- A: `tests/fixtures/run_state/minimal/v1_19.json`
+- A: `tests/fixtures/run_state/minimal/v1_20.json`
+- M: `tests/fixtures/run_state/sources.json`
+- M: `tests/mcp/test_mcp_resume_binding.py`
+- M: `tests/mcp/test_mcp_util.py`
+- M: `tests/mcp/test_runner_calls_mcp.py`
+- M: `tests/memory/test_compaction_model_visibility.py`
+- M: `tests/memory/test_openai_conversations_session.py`
+- A: `tests/memory/test_session_helpers.py`
+- M: `tests/models/test_default_models.py`
+- A: `tests/models/test_gpt6_chat_tool_defaults.py`
+- M: `tests/models/test_openai_chatcompletions.py`
+- M: `tests/models/test_openai_chatcompletions_converter.py`
+- M: `tests/realtime/test_openai_realtime.py`
+- M: `tests/realtime/test_session.py`
+- M: `tests/sandbox/capabilities/test_apply_patch_tool.py`
+- A: `tests/sandbox/capabilities/test_tool_input_errors.py`
+- M: `tests/sandbox/capabilities/test_view_image_tool.py`
+- M: `tests/sandbox/test_bounded_read.py`
+- M: `tests/sandbox/test_compatibility_guards.py`
+- M: `tests/sandbox/test_docker.py`
+- A: `tests/sandbox/test_external_provider_example.py`
+- A: `tests/sandbox/test_helper_startup.py`
+- M: `tests/sandbox/test_mount_security.py`
+- M: `tests/sandbox/test_runtime.py`
+- M: `tests/sandbox/test_session_utils.py`
+- M: `tests/sandbox/test_unix_local.py`
+- M: `tests/test_agent_runner_streamed.py`
+- M: `tests/test_agent_tracing.py`
+- M: `tests/test_asyncio_tasks.py`
+- M: `tests/test_computer_action.py`
+- A: `tests/test_decisions_examples.py`
+- M: `tests/test_error_logging_redaction.py`
+- M: `tests/test_extension_filters.py`
+- M: `tests/test_function_schema.py`
+- A: `tests/test_handoff_failure_error_function.py`
+- M: `tests/test_handoff_history_duplication.py`
+- A: `tests/test_native_tool_failure_history.py`
+- M: `tests/test_released_api_contract.py`
+- M: `tests/test_repository_workflow_interfaces.py`
+- M: `tests/test_run_config.py`
+- M: `tests/test_run_examples_script.py`

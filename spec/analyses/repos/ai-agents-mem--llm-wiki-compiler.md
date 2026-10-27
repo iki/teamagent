@@ -1,0 +1,189 @@
+# llm-wiki-compiler: change evidence
+
+Source: [llm-wiki-compiler](https://github.com/atomicmemory/llm-wiki-compiler) · [Analysis](../../projects/ai-agents-mem--llm-wiki-compiler.md) · [memory](../../memory.md), [evolution](../../evolution.md), [skills](../../skills.md), [import-generation](../../import-generation.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `605461febe8206e6f78e987bb57f75fa1c5817c5`; commit date: 2026-10-02T16:58:40-07:00; review date: 2026-10-04; observed SHA: `c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/atomicmemory/llm-wiki-compiler/compare/605461febe8206e6f78e987bb57f75fa1c5817c5...c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits
+
+- [c9c8734be8a0](https://github.com/atomicmemory/llm-wiki-compiler/commit/c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f) 2026-10-19T12:40:59-07:00: release: ship llmwiki 1.5.0 (#289)
+- [50380af5558a](https://github.com/atomicmemory/llm-wiki-compiler/commit/50380af5558af6f5e828b041fa7bafdf4dbbf41f) 2026-10-15T03:05:15-07:00: release: prepare llmwiki 1.5.0-rc.1 for early testing
+- [2de2c8f5a30e](https://github.com/atomicmemory/llm-wiki-compiler/commit/2de2c8f5a30e1ae35c22927a73e08e28ad396940) 2026-10-15T02:18:20-07:00: refactor(storage): separate wiki behavior from local filesystem I/O (#287)
+- [e3885a107abb](https://github.com/atomicmemory/llm-wiki-compiler/commit/e3885a107abb6ceee865e575147c6f5503a6595c) 2026-10-15T01:12:06-07:00: feat(providers): support bearer-authenticated Converse endpoints (#282)
+- [47769971ca8e](https://github.com/atomicmemory/llm-wiki-compiler/commit/47769971ca8e1196ab727fd52ea104d2bbc3330c) 2026-10-13T22:52:12-07:00: docs(changelog): credit Lorenzo Gentile's three contributions (#286)
+- [6e77d23d4773](https://github.com/atomicmemory/llm-wiki-compiler/commit/6e77d23d47738a6b15b32b6174e3b2d6ad596435) 2026-10-13T22:17:50-07:00: feat(compile): Add opt-in --no-pages-limit extraction mode (#285)
+- [f7df886ceb68](https://github.com/atomicmemory/llm-wiki-compiler/commit/f7df886ceb68178b8983066d737a323e59012d17) 2026-10-13T21:06:49-07:00: fix(compiler): Normalize extracted wikilink titles (#278)
+- [8a1d764cf45d](https://github.com/atomicmemory/llm-wiki-compiler/commit/8a1d764cf45d335357089292f1791fae26d1a317) 2026-10-13T20:39:07-07:00: fix(openai): Support GPT-6 Luna request parameters (#279)
+- [a3eb4473b0b2](https://github.com/atomicmemory/llm-wiki-compiler/commit/a3eb4473b0b2d2aa747d2f4a7f683d35efe16521) 2026-10-09T23:41:03-07:00: fix(freshness): hash sources without blocking on a named pipe (#280)
+- [3df33070479d](https://github.com/atomicmemory/llm-wiki-compiler/commit/3df33070479d7cc0834753c5f81578ba4f775027) 2026-10-09T00:53:41-07:00: fix(viewer): stop snapshot refresh when the viewer closes (#276)
+- [b86a31f88464](https://github.com/atomicmemory/llm-wiki-compiler/commit/b86a31f88464a83083e4db8b74ed11fc833bc8f5) 2026-10-08T13:02:37-07:00: feat(view): add LLMWIKI_VIEW_PORT environment variable support (#274)
+- [ab589068d106](https://github.com/atomicmemory/llm-wiki-compiler/commit/ab589068d1060a37c2f4de8dbfbe6f9b8a450cd6) 2026-10-08T12:40:28-07:00: feat(viewer): add throttled on-request dynamic snapshot refresh (#275)
+- [0e084836fd3f](https://github.com/atomicmemory/llm-wiki-compiler/commit/0e084836fd3fb827336217e2369732b9bedcb3b0) 2026-10-06T22:06:58-07:00: fix(mcp): run the whole stdio server in quiet mode (#273)
+- [4dee5958ac6b](https://github.com/atomicmemory/llm-wiki-compiler/commit/4dee5958ac6b49b4027d172932e9ab4ca20c5a64) 2026-10-06T21:05:54-07:00: fix(mcp): keep the wiki tools' progress output off stdout (#270)
+
+## Changed paths (truncated)
+
+- M: `ARCHITECTURE.md`
+- M: `CHANGELOG.md`
+- M: `README.md`
+- M: `docs/cli/compile.mdx`
+- M: `docs/cli/view.mdx`
+- M: `docs/configuration/environment-variables.mdx`
+- M: `docs/configuration/providers.mdx`
+- M: `docs/guides/sdk-upgrade.mdx`
+- M: `docs/guides/sdk.mdx`
+- M: `docs/installation.mdx`
+- M: `package-lock.json`
+- M: `package.json`
+- M: `packages/llmwiki-core/package.json`
+- M: `packages/llmwiki-dev-backend/package.json`
+- M: `packages/llmwiki-limited-isolation-backend/package.json`
+- M: `packages/llmwiki-local-workflows/package.json`
+- M: `src/artifacts/apply-guards.ts`
+- M: `src/artifacts/apply-members.ts`
+- M: `src/artifacts/apply.ts`
+- M: `src/artifacts/capture-member.ts`
+- M: `src/artifacts/discover.ts`
+- M: `src/artifacts/enforce-precondition.ts`
+- M: `src/artifacts/execution-provenance.ts`
+- M: `src/artifacts/read-verified.ts`
+- M: `src/artifacts/resolve-members.ts`
+- M: `src/artifacts/resolve.ts`
+- M: `src/artifacts/store.ts`
+- M: `src/capability-providers/packages/paths.ts`
+- M: `src/citations/answer-index.ts`
+- M: `src/citations/answer-publication.ts`
+- M: `src/citations/frontmatter-reader.ts`
+- M: `src/citations/generic-publication.ts`
+- M: `src/cli.ts`
+- A: `src/cli/view-port.ts`
+- M: `src/commands/compile.ts`
+- M: `src/commands/eval.ts`
+- M: `src/commands/export.ts`
+- M: `src/commands/ingest-session.ts`
+- M: `src/commands/ingest.ts`
+- M: `src/commands/lint-fix-propose.ts`
+- M: `src/commands/lint.ts`
+- M: `src/commands/operation/cancel.ts`
+- M: `src/commands/operation/drive.ts`
+- M: `src/commands/operation/inspect.ts`
+- M: `src/commands/operation/list.ts`
+- M: `src/commands/operation/resolve.ts`
+- M: `src/commands/product/init.ts`
+- M: `src/commands/product/status.ts`
+- M: `src/commands/query-citation-report.ts`
+- M: `src/commands/query-proposal.ts`
+- M: `src/commands/query-publication.ts`
+- A: `src/commands/query-reads.ts`
+- M: `src/commands/query-save.ts`
+- M: `src/commands/query-selection.ts`
+- M: `src/commands/query.ts`
+- M: `src/commands/refresh.ts`
+- M: `src/commands/reset-plan.ts`
+- M: `src/commands/review-approve-batch.ts`
+- M: `src/commands/review-approve.ts`
+- M: `src/commands/review-batch-gates.ts`
+- M: `src/commands/review-batch-plan.ts`
+- M: `src/commands/review-embedding-intent.ts`
+- M: `src/commands/review-finalize.ts`
+- M: `src/commands/review-publication.ts`
+- M: `src/commands/review-reject.ts`
+- M: `src/commands/review-target-precondition.ts`
+- M: `src/commands/rm.ts`
+- M: `src/commands/rules.ts`
+- M: `src/commands/schema.ts`
+- M: `src/commands/state-reset.ts`
+- M: `src/commands/view.ts`
+- M: `src/commands/visualize.ts`
+- M: `src/commands/watch.ts`
+- M: `src/compiler-cli.ts`
+- M: `src/compiler/candidate-custody.ts`
+- M: `src/compiler/candidate-paths.ts`
+- M: `src/compiler/candidate-publication.ts`
+- M: `src/compiler/candidate-read.ts`
+- M: `src/compiler/candidate-rejection.ts`
+- M: `src/compiler/candidate-selection.ts`
+- M: `src/compiler/candidate-store-paths.ts`
+- M: `src/compiler/candidates.ts`
+- A: `src/compiler/compile-access.ts`
+- A: `src/compiler/compile-finalize.ts`
+- A: `src/compiler/compile-phases.ts`
+- M: `src/compiler/compile-report.ts`
+- M: `src/compiler/compile-state-draft.ts`
+- M: `src/compiler/compile-write-ids.ts`
+- M: `src/compiler/compile-write.ts`
+- A: `src/compiler/concept-title.ts`
+- M: `src/compiler/confined-wiki-read.ts`
+- M: `src/compiler/deps.ts`
+- M: `src/compiler/extraction-phase.ts`
+- M: `src/compiler/extraction-snapshot.ts`
+- M: `src/compiler/hasher.ts`
+- M: `src/compiler/index.ts`
+- M: `src/compiler/indexgen.ts`
+- M: `src/compiler/link-repair.ts`
+- M: `src/compiler/link-targets.ts`
+- M: `src/compiler/obsidian.ts`
+- M: `src/compiler/orphan.ts`
+- M: `src/compiler/page-renderer.ts`
+- M: `src/compiler/prompt-modifiers.ts`
+- M: `src/compiler/prompts.ts`
+- M: `src/compiler/refresh-plan.ts`
+- M: `src/compiler/resolver.ts`
+- M: `src/compiler/review-pipeline.ts`
+- M: `src/compiler/rule-candidates.ts`
+- M: `src/compiler/rule-extractor.ts`
+- M: `src/compiler/rule-state.ts`
+- M: `src/compiler/seed-pages.ts`
+- M: `src/compiler/source-state.ts`
+- M: `src/connectors/candidate-supersession.ts`
+- M: `src/connectors/config.ts`
+- M: `src/connectors/rate-limit.ts`
+- M: `src/connectors/run.ts`
+- M: `src/connectors/stage-candidate.ts`
+- A: `src/connectors/stage-draft.ts`
+- A: `src/context/build-reads.ts`
+- M: `src/context/build.ts`
+- M: `src/context/pack-warnings.ts`
+- M: `src/context/provenance.ts`
+- M: `src/context/retrieval.ts`
+- M: `src/context/typed-pages.ts`
+- M: `src/eval/cache.ts`
+- M: `src/eval/candidate-evidence.ts`
+- M: `src/eval/candidates.ts`
+- M: `src/eval/citation-coverage.ts`
+- M: `src/eval/citation-depth.ts`
+- M: `src/eval/citation-support.ts`
+- A: `src/eval/file-reads.ts`
+- A: `src/eval/file-writes.ts`
+- M: `src/eval/graph-health.ts`
+- M: `src/eval/health.ts`
+- M: `src/eval/index.ts`
+- M: `src/eval/page-health-distribution.ts`
+- M: `src/eval/source-path.ts`
+- M: `src/eval/source-utilization.ts`
+- M: `src/eval/stats.ts`
+- M: `src/eval/thresholds.ts`
+- M: `src/events/operation-events.ts`
+- M: `src/events/store-read.ts`
+- M: `src/events/store-version.ts`
+- M: `src/events/store.ts`
+- M: `src/events/types.ts`
+- M: `src/export/collect.ts`
+- M: `src/export/okf/bundle-block.ts`
+- M: `src/export/okf/bundle.ts`
+- M: `src/export/okf/profile-docs.ts`
+- M: `src/export/okf/references.ts`
+- M: `src/export/okf/run.ts`
+- M: `src/export/profile-block.ts`
+- M: `src/export/rule-candidates-json.ts`
+- M: `src/freshness/index.ts`
+- M: `src/import/bundle-block-read.ts`
+- M: `src/import/okf-collision.ts`
+- M: `src/import/okf-import.ts`
+- M: `src/import/okf-read.ts`
+- M: `src/import/okf-refresh.ts`
+- M: `src/import/profile-import.ts`

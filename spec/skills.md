@@ -172,6 +172,12 @@ Acceptance requires: deterministic registration from a pinned source; no script 
 [gh-ecc]: https://github.com/affaan-m/everything-claude-code
 [r-ecc]: projects/ai-skills--bundle-claude.ecc.affaan-m.md
 
+## October source refresh: update identity and execution trust
+
+The refreshed [Vercel Skills report](projects/ai-agents-skills--search.vercel.md) ([source](https://github.com/vercel-labs/skills)) shows why update grouping must include the source ref: two skills from one repository can intentionally follow different refs. Preserve source, ref, path and content digest in the registry. An advertised well-known digest and a hash of fetched bytes have different provenance and must remain distinguishable.
+
+The refreshed [Spec Kit report](projects/ai-spec--spec-kit.md) ([source](https://github.com/github/spec-kit)) separates package verification from executable integration trust and stores trusted file identities outside mutable project metadata. Missing optional archive digests mean unverified acquisition. Bind execution and cleanup grants to project plus installed-file hashes; a content update must not inherit executable authority solely because its display name is unchanged.
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -308,3 +314,13 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [techsio.ontos](https://github.com/TechsioCZ/ontos) | [Report](projects/ai-spec--techsio.ontos.md) | screened |
 | [trellis](https://github.com/mindfold-ai/Trellis) | [Report](projects/ai-spec--trellis.md) | screened |
 <!-- coverage:end -->
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [rea](analyses/unreviewed/ai-security--rea.md) ([source](https://github.com/morluto/rea)).
+- [assets-icons.better](analyses/unreviewed/ai-skills--assets-icons.better.md) ([source](https://github.com/better-auth/better-icons)).
+- [render-anatomy](analyses/unreviewed/ai-skills--render-anatomy.md) ([source](https://github.com/wheresryan22/anatomy)).
+<!-- analysis-additions:end -->

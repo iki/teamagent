@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--deepseek-tui",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/codewhale-hq/codewhale",
+  "report": "spec/projects/ai-agents--deepseek-tui.md",
+  "analyzedSha": "9e19f03e68bf0ffaf4ea3d609def6b582db49f33",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T08:13:51-07:00",
+  "observedSha": "eaff21a8b8e62e4693c69e71faa03db866820b9c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "eaff21a8b8e62e4693c69e71faa03db866820b9c",
+      "date": "2026-10-27T09:08:28-07:00",
+      "subject": "docs(changelog): composer history honors CODEWHALE_HOME (Refs #7069, CW-7525)"
+    },
+    {
+      "sha": "f75bb12d62138eae111c5ff99e7764d2095b4861",
+      "date": "2026-10-27T09:08:26-07:00",
+      "subject": "fix(dependencies): a version probe that outlives its deadline means installed, not missing (CW-7525)"
+    },
+    {
+      "sha": "3f4c4f2c3424baf436d4e554bdf40c46994c32df",
+      "date": "2026-10-27T09:08:24-07:00",
+      "subject": "fix(action): require an explicit provider and pin the review workflow to v0.10.2 (CW-7525)"
+    },
+    {
+      "sha": "8084ead09c29ca2f9c95e0f4289fbe57a3364389",
+      "date": "2026-10-27T09:08:05-07:00",
+      "subject": "fix(review): drop fixed per-tier output caps; reviews use the route's output limit (Refs #7067, CW-7525)"
+    },
+    {
+      "sha": "e66998bec3efc79703e082c933a0e55545407aa8",
+      "date": "2026-10-27T07:18:03-07:00",
+      "subject": "feat(uninstall): Windows receipts, package-manager commands and --purge-data (Refs #7091, CW-7525)"
+    },
+    {
+      "sha": "3824cdea0c3ad2c2ae5044261594d2a910d973d8",
+      "date": "2026-10-27T13:54:56Z",
+      "subject": "feat(runtime): deliver scheduled messages as turns in an existing thread"
+    },
+    {
+      "sha": "e1acc381ab40e0d50a71b9f176a5175cf24fe8d7",
+      "date": "2026-10-27T05:17:53-07:00",
+      "subject": "feat(mcp): authorization-scoped catalog freshness and the Skills extension (CW-7547, CW-7545)"
+    },
+    {
+      "sha": "17ebeb5f61f8feb945eaf5e4c096c2cf670ed9c8",
+      "date": "2026-10-27T04:48:01-07:00",
+      "subject": "feat(extension-host): DSH sessions.flush through an acknowledged Engine checkpoint (CW-7054)"
+    },
+    {
+      "sha": "57adfdfea67a15dace754df60d0422ce2ea8de41",
+      "date": "2026-10-27T04:35:20-07:00",
+      "subject": "test(tui): align pricing and picker-action tests with the 7d2308ac81 provider fix"
+    },
+    {
+      "sha": "c5cd7c87f004af4918dd710adb9e3ed784b18c9d",
+      "date": "2026-10-27T10:04:53Z",
+      "subject": "refactor(split): provider pre-cuts into codewhale-models and runtime (S22, CW-6129) [skip ci]"
+    },
+    {
+      "sha": "19616707f8ba6c22f7a30a28116f5dfc644b1729",
+      "date": "2026-10-27T10:04:53Z",
+      "subject": "refactor(split): move canonical_action and tool contract helpers out of tui (S29/S30, CW-6129) [skip ci]"
+    },
+    {
+      "sha": "ff1709578306769f5d6e8104838f2c7d888dbdfd",
+      "date": "2026-10-27T10:04:53Z",
+      "subject": "refactor(split): extract codewhale-util from codewhale-tui (S14, CW-6129) [skip ci]"
+    },
+    {
+      "sha": "25225ef0514c592c95d011b105c2bb66d39ee095",
+      "date": "2026-10-27T02:20:55-07:00",
+      "subject": "fix(extension-host): offer reviewed plugin tools on the first turn (CW-7054)"
+    },
+    {
+      "sha": "0cf390f01eb7195c9ab38c3a3076432b5d07211f",
+      "date": "2026-10-27T01:38:37-07:00",
+      "subject": "feat(tui): change mode and permissions mid-turn; record steering in Unreleased (CW-7552)"
+    },
+    {
+      "sha": "9ff7099b90b5f181657fc626c194809ecf14325c",
+      "date": "2026-10-27T01:04:30-07:00",
+      "subject": "feat(web): 0.10.3 home highlights and Unreleased changelog entries"
+    },
+    {
+      "sha": "7d2308ac8199f3d75594b77d6fd7acd8ec0395c6",
+      "date": "2026-10-27T01:01:36-07:00",
+      "subject": "fix(provider): switching provider lands on its current model; /model lists the route's roster"
+    },
+    {
+      "sha": "3400ebb5c93baa8e74e0609f9b49119e66bf8a31",
+      "date": "2026-10-26T23:35:02-07:00",
+      "subject": "docs(changelog): record that remote control attaches again [skip ci]"
+    },
+    {
+      "sha": "4cf2d2cfffd41f7ac27b56dbf01214793055102a",
+      "date": "2026-10-26T23:28:43-07:00",
+      "subject": "feat: integrate the verified 0.10.3 combined Engine batch [skip ci]"
+    },
+    {
+      "sha": "5c3d461d8ae9ade1d90e6f0109e2e43cfc19661e",
+      "date": "2026-10-27T14:26:50+08:00",
+      "subject": "feat(context): per-scope instruction budgets with visible truncation (#7086)"
+    },
+    {
+      "sha": "363f03a2bb103923de0f9bb62eaba1f1e22768d8",
+      "date": "2026-10-26T23:05:29-07:00",
+      "subject": "Merge main into fix/instruction-budget-6526"
+    },
+    {
+      "sha": "ef30199b50531c10f1204ee30f631fd279526f75",
+      "date": "2026-10-27T05:22:28Z",
+      "subject": "fix(tui): resolve the state root before opening session-side state (#7097)"
+    },
+    {
+      "sha": "b1a6191e79c17d183c080ce702d400719d644119",
+      "date": "2026-10-26T22:02:21-07:00",
+      "subject": "chore(changelog): sync crates/tui/CHANGELOG.md with root Unreleased"
+    },
+    {
+      "sha": "7fe0cc2b4f41e45a71e833ffa302d60c4dc52613",
+      "date": "2026-10-26T03:16:03-07:00",
+      "subject": "docs(web): prepare simpler Computer Use onboarding (CW-6732) [skip ci]"
+    },
+    {
+      "sha": "88772172b67715f92356d251c577949b2f32ba4c",
+      "date": "2026-10-26T01:08:48-07:00",
+      "subject": "docs(actions): distinguish account configuration from optional BYOK [skip ci]"
+    },
+    {
+      "sha": "6f92f0d5e2af427a07bd96f0ecdd0e5c6fc4e843",
+      "date": "2026-10-26T00:46:11-07:00",
+      "subject": "fix(action): accept OrcaRouter keys and recommend the free route [skip ci]"
+    },
+    {
+      "sha": "81558024ca0156c6fc13eafee9c1915246fa5ddc",
+      "date": "2026-10-26T00:30:04-07:00",
+      "subject": "feat(integrations): reuse Engine reviews and durable chat admission [skip ci]"
+    },
+    {
+      "sha": "fb10884b4fb7749f4329725857c943eae6eb3642",
+      "date": "2026-10-25T21:24:26-07:00",
+      "subject": "feat(engine): opt into bounded answerless output-limit recovery [skip ci]"
+    },
+    {
+      "sha": "6378f3b6b954309cebabddd19650a69add592386",
+      "date": "2026-10-25T20:28:59-07:00",
+      "subject": "fix(docs): keep the OrcaRouter registry summary within its limit [skip ci]"
+    },
+    {
+      "sha": "eea9f1ea45059936740066e7773139f29da5060e",
+      "date": "2026-10-25T20:05:07-07:00",
+      "subject": "docs(changelog): credit the verified NoNewPrivs container fix [skip ci]"
+    },
+    {
+      "sha": "579c8d92b3f64e5ff216c51ba1074eb5f2a1e3f8",
+      "date": "2026-10-25T20:02:34-07:00",
+      "subject": "feat(tui): recommend the OrcaRouter partner offer in route pickers [skip ci]"
+    },
+    {
+      "sha": "a129eb544aa2c11f534971b92c619ea390f122d0",
+      "date": "2026-10-25T19:05:01-07:00",
+      "subject": "fix(tui): localize question footers and portable command feedback [skip ci]"
+    },
+    {
+      "sha": "8c2bf6b49ed4e8a380a7c5e9e328c0e417fe5208",
+      "date": "2026-10-25T19:04:59-07:00",
+      "subject": "fix(tui): localize the seeded plan handoff to-do reminder [skip ci]"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".cnb.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".config/nextest.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/AUTHOR_MAP",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/d8-executable.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/release-workflows.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/update-homebrew-tap.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cargo-deny.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/claude-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/claude.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codewhale-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/marketplace-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ohos.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pet.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-candidate.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-parity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sync-cnb.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/sync-gitcode.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/telemetry-ingest.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/web.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-arm64-export-probe.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "R076",
+      "path": ".winget/HunterBown.CodeWhale.yaml",
+      "previousPath": "packaging/winget/Hmbown.CodeWhale.yaml"
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "DEPENDENCY_SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ar.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ca.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.de.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.es-419.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.fr.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.hi.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.id.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.it.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ja-JP.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ko-KR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.pl.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.pt-BR.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.ru.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.tr.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.uk.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.vi.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "README.zh-TW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "computer/snapshots/cloud-agent/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "computer/snapshots/cloud-agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config.example.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/agent-contract/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/agent-contract/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R090",
+      "path": "crates/agent-contract/src/role.rs",
+      "previousPath": "crates/tui/src/fleet/role.rs"
+    },
+    {
+      "status": "R097",
+      "path": "crates/agent-contract/src/worker_profile.rs",
+      "previousPath": "crates/tui/src/worker_profile.rs"
+    },
+    {
+      "status": "M",
+      "path": "crates/agent/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/agent/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/chat_completions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/daemon_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/daemon_socket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/daemon_windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/thread_control.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/app-server/src/thread_control/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/app-server/tests/daemon_socket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/build-support/tests/build_script_relocation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/src/cloud/computer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud/machine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/cloud/work.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/config_bundles.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/dispatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/src/hashing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/src/update.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/src/update/compiled_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/src/update/uninstall.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/help_dispatch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/mcp_server_proxy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cli/tests/model_resolve_provenance.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/cli/tests/owner_crash_reentry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/cloud-facts/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/config_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "crates/command-contract/src/elapsed.rs",
+      "previousPath": "crates/runtime/src/elapsed.rs"
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets/debug_operations.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/facets/diagnostics_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/handler.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/metrics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R090",
+      "path": "crates/command-contract/src/money.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/money.rs"
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/navigation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/outcome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/command-contract/src/tool_outputs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/command-contract/src/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/commands/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "R097",
+      "path": "crates/commands/src/debug/balance.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/balance.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/cache.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/cache.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/cache_format.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/cache_format.rs"
+    },
+    {
+      "status": "R084",
+      "path": "crates/commands/src/debug/change.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/change.rs"
+    },
+    {
+      "status": "R077",
+      "path": "crates/commands/src/debug/mod.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/mod.rs"
+    },
+    {
+      "status": "R067",
+      "path": "crates/commands/src/debug/operations_tests.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/operations_tests.rs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/commands/src/debug/portable_tests.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/portable_tests.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/preview_request.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/preview_request.rs"
+    },
+    {
+      "status": "R098",
+      "path": "crates/commands/src/debug/receipts.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/receipts.rs"
+    },
+    {
+      "status": "R099",
+      "path": "crates/commands/src/debug/tokens.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/tokens.rs"
+    },
+    {
+      "status": "R098",
+      "path": "crates/commands/src/debug/tool_inspection.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/tool_inspection.rs"
+    },
+    {
+      "status": "R066",
+      "path": "crates/commands/src/debug/undo.rs",
+      "previousPath": "crates/tui/src/commands/groups/debug/undo.rs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/commands/src/diagnostics_reports/context.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/context.rs"
+    },
+    {
+      "status": "R094",
+      "path": "crates/commands/src/diagnostics_reports/mod.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/mod.rs"
+    },
+    {
+      "status": "A",
+      "path": "crates/commands/src/diagnostics_reports/money.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "crates/commands/src/diagnostics_reports/receipts.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/receipts.rs"
+    },
+    {
+      "status": "R100",
+      "path": "crates/commands/src/diagnostics_reports/tool_snapshot.rs",
+      "previousPath": "crates/tui/src/diagnostics_reports/tool_snapshot.rs"
+    },
+    {
+      "status": "A",
+      "path": "crates/commands/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/catalog_corrections.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/models_dev.bundled.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/assets/provider_descriptors.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/app_mode.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/auto_model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog/configured.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog/corrections.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/catalog/reviewed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/catalog/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/cloud_facts/catalog_patch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/cloud_facts/provenance.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/cloud_facts/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/config_document.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/credentials.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/descriptors.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/extension_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/external_credentials.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/hooks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/config/src/instruction_budget.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/legacy_root.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/config/src/model_reference.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

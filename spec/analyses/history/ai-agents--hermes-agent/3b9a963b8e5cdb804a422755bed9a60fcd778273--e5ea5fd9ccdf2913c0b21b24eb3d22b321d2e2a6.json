@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--hermes-agent",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/NousResearch/hermes-agent",
+  "report": "spec/projects/ai-agents--hermes-agent.md",
+  "analyzedSha": "3b9a963b8e5cdb804a422755bed9a60fcd778273",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-08-16T21:20:29-07:00",
+  "observedSha": "e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6",
+      "date": "2026-10-27T08:02:46-07:00",
+      "subject": "Revert \"fix(gateway): the worker reservation always binds the owner's OS subject\""
+    },
+    {
+      "sha": "357a3428d424b32c3f0ec886f8840afa211cafa6",
+      "date": "2026-10-27T08:02:46-07:00",
+      "subject": "fix(gateway): the worker reservation always binds the owner's OS subject"
+    },
+    {
+      "sha": "0831057aa6662abb7a5409044f32228978a5ae77",
+      "date": "2026-10-27T08:02:46-07:00",
+      "subject": "fix(gateway): a managed worker adopts an automation turn as the owner's OS user"
+    },
+    {
+      "sha": "22b67fd50c0e1bade5836b6b0d2a5f600df659f2",
+      "date": "2026-10-27T10:56:48-04:00",
+      "subject": "fix(skills): manage_catalog reads a ClawHub install back through its card id"
+    },
+    {
+      "sha": "27e6375b413c9528cd605a7b7b4beb667fec1094",
+      "date": "2026-10-27T10:56:48-04:00",
+      "subject": "fix(skills): a malformed ClawHub lock row no longer empties the installed map"
+    },
+    {
+      "sha": "82d7e2dba79880934b1fc83c658874c80e235d20",
+      "date": "2026-10-27T10:56:48-04:00",
+      "subject": "fix(skills): match a ClawHub install by source, not through a bare slug alias"
+    },
+    {
+      "sha": "9b93cfe64bc15f47394f6e1afe9069243496e89a",
+      "date": "2026-10-27T10:56:48-04:00",
+      "subject": "test(desktop): a ClawHub card shows as installed when its lock row is owner-qualified"
+    },
+    {
+      "sha": "f73b3147f3a138f50c82708b2b3a6d9851cadabd",
+      "date": "2026-10-27T10:56:48-04:00",
+      "subject": "fix(skills): ClawHub installs read as installed on catalog cards and in hub search"
+    },
+    {
+      "sha": "4b90de5022fea93a25adbed39b7e3dffd453822b",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(update): each update stage names itself where it starts, so a failed build still shows the restart"
+    },
+    {
+      "sha": "eea30482750eb2a7c061445aa8b7d588bf7c4f00",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(update): a restored relaunch may relaunch again once current; update --check backs off"
+    },
+    {
+      "sha": "121393e1e741da4e138b93442e03f9bc3e7ff9de",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(desktop-update): the tethered Windows relaunch does not inherit the stage relay"
+    },
+    {
+      "sha": "427c2132951a2a06b08f02c0f182b240185ed1d0",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(desktop): bundle skew decides by runtime content, not commit count"
+    },
+    {
+      "sha": "3eeeb172dd8d0e0aed1bfdf3d35379cb561a33a7",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(update): a backed-off failed dependency sync boots instead of re-execing forever"
+    },
+    {
+      "sha": "3e0a0e1f1a5effbcc300d461f36b3374cdce4524",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(update): a corrected source update is retried past a failed launch sync's backoff"
+    },
+    {
+      "sha": "2ff5f4aa2b9f38c4ce6a32f22272191ebb8d5e4c",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(ci): route desktop_build_reuse to the update and desktop-update suites"
+    },
+    {
+      "sha": "70e42ba889a3f13c385cf29e4bb488fbd670bb06",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "test(desktop-update): load the tree's hermes_cli in the Windows stage-relay fixture"
+    },
+    {
+      "sha": "b49f77a1938319b6d21cc40df06d6cbde4a6f837",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(update): bound failed source sync retries"
+    },
+    {
+      "sha": "c9b55ea26d23472ab69871dee7cf29e0e3317916",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(desktop-update): the update window names the stage it is in, on Windows too"
+    },
+    {
+      "sha": "766a973e25e4659cc790751ba315c493eb2e3ad7",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "test(update): the packaged desktop app survives a commit that changed no desktop input"
+    },
+    {
+      "sha": "7a954418ceb8e771753f87d2d2d6b66d213eb08c",
+      "date": "2026-10-27T07:53:07-07:00",
+      "subject": "fix(update): reuse the packaged desktop app when no desktop build input changed"
+    },
+    {
+      "sha": "5c6660eaf54c6e9150440a9801a3614800a3e980",
+      "date": "2026-10-27T10:33:32-04:00",
+      "subject": "fix(tui): drop the stale context meter when /compress commits"
+    },
+    {
+      "sha": "0189fb43d380ecffe5ccdada9b094bc745fd425f",
+      "date": "2026-10-27T10:33:32-04:00",
+      "subject": "test(tui): cover the context meter after a committed /compress"
+    },
+    {
+      "sha": "ef1b19e5e02ec6e8af35f8adb65c6b4a27135453",
+      "date": "2026-10-27T07:28:27-07:00",
+      "subject": "test(desktop): the completion-list send test waits as long as the first list paint takes under load"
+    },
+    {
+      "sha": "67dc499d811143df08814455d80cc8d13ad8f808",
+      "date": "2026-10-27T07:28:27-07:00",
+      "subject": "test(desktop): five more vitest files load their module graph before the test clock starts"
+    },
+    {
+      "sha": "48c1761cbc7e7b4821a1092f100520f3bbee4d85",
+      "date": "2026-10-27T07:28:27-07:00",
+      "subject": "test(desktop): six vitest files stop paying cold module loads inside the test timeout"
+    },
+    {
+      "sha": "8af92e6db1a92d9c5d0f67fd40ec571d59047083",
+      "date": "2026-10-27T07:27:51-07:00",
+      "subject": "test(tui_gateway): release the approval key the fallback-sync tests bind at turn admission"
+    },
+    {
+      "sha": "31ef97fde726f3b97a18b8a2d5bd121cdc349dc0",
+      "date": "2026-10-27T07:27:11-07:00",
+      "subject": "test(telemetry): settle the routed turns before snapshotting the revoked profile's rows"
+    },
+    {
+      "sha": "633aeff2a2955a072ef5573be09a7d92fcac3146",
+      "date": "2026-10-27T07:26:36-07:00",
+      "subject": "chore: map sibelius's commit email for attribution"
+    },
+    {
+      "sha": "349f919c5fff7f97419bbc57ee10e485f971faab",
+      "date": "2026-10-27T07:26:36-07:00",
+      "subject": "fix(sessions): pin the page-first list contract, keep the facade under its cap"
+    },
+    {
+      "sha": "3e8e7bd3bfbffe9238d8d0684683ea08f78834e9",
+      "date": "2026-10-27T07:26:36-07:00",
+      "subject": "perf(state): reuse unchanged local lineage projections"
+    },
+    {
+      "sha": "0dd2f36ffc9ea736b361ae0a1cfb399d9be3d75a",
+      "date": "2026-10-27T07:26:36-07:00",
+      "subject": "fix(sessions): rank list pages on ids before projecting, seed chains only from parents"
+    },
+    {
+      "sha": "198f6ad53c661e42ff2423ba42d6262078520e69",
+      "date": "2026-10-27T10:22:52-04:00",
+      "subject": "fix(desktop): a late GPU crash on Mesa/AMD/Intel Linux no longer pins software rendering"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".coderabbit.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".envrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actionlint.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/check-clean-worktree/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/desktop-build-cache/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/detect-changes/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/e2e-screen-record/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/plugin-validate/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/prune/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-pm/prune/index.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/setup-windows-build-deps/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/blob-size-allowlist.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/run-workspace-checks.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/archive-inputs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/blob-size-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bootstrap-installer-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/bootstrap-installer.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/canary-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/case-collision-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/catalog-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-review-comment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/contributor-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deploy-site.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-bundle-smoke.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/desktop-bundled-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/docs-search-monitor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-site-checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/e2e-desktop-core.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/e2e-desktop-update.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/history-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/icons-freshness-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/infographic-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/install-e2e-macos-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/install-e2e-red.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/install-e2e-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/install-e2e-windows-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/install-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/installer-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-autofix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/js-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/label-rerun.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/lazy-deps-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/live-providers.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lockfile-diff.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/nix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/osv-scanner.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/plugin-catalog-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pm-bundle.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/profile-artifact-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/prompt-surface-diff.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/publish-e2e-evidence.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/remote-backends.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/review-labels.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/rust-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/sandbox-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skills-index-freshness.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skills-index.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/stable-release-publication.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/stable-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/supply-chain-audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/termux-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests-os.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/uv-lockfile-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-bundle-sdk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-desktop-attach-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-install-update-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-venv-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".mailmap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".npmrc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".python-version",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.es.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.es.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ur-pk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.es.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SOUL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/edit_approval.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/elicitation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/events.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_media.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_reply.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/gateway_session_meta.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/model_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "acp_adapter/modes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/permissions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/provenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/session.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "acp_adapter/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "activate",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "activate.fish",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "activate.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/account_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/account_usage_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/acp_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/acp_openai_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/activity_tracking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/agent_init.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_compression_notice.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_fallback.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_memory_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_ollama.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_init_params.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/agent_runtime_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_runtime_helpers_dead_connections.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/agent_runtime_helpers_placeholders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/anthropic_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_endpoints.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_message_convert.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_thinking_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/anthropic_thinking_replay.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/api_error_summary.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/api_request_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/async_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/aux_accounting.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_async_rebuild.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_call_outcome.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/auxiliary_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_client_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_codex_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_fallback_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_health.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_key_rotation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_local_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_managed_local.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_plugin_oauth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_reasoning_floor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent/auxiliary_stream_watchdog.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

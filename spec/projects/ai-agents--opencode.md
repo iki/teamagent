@@ -29,3 +29,7 @@ This is intentionally a narrow contract review. The runner implementation, actua
 Run adapter conformance against the pinned executable: history recording, continuation, cancellation, restart and permission mediation. Inject each error class and verify correct retry classification. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [models](../models.md) · [channels](../channels.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `907b3bc518fa48e90e8ec24dd327d13eee71c36c`; commit date 2026-10-02T21:55:40-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
+<!-- teamagent-analysis:end -->

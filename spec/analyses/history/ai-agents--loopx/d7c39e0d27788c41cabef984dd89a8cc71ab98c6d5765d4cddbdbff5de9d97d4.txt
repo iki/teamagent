@@ -1,0 +1,25 @@
+# loopx
+
+Source: [loopx](https://github.com/huangruiteng/loopx) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `99839aeb8fed5fae38a5d319391cd050672a6508`; commit timestamp `2026-10-04T01:14:41+08:00`; 5,643 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/README.md)):
+
+> The open, local-first control plane for long-horizon agents and personal agent teams. Keep goals, decisions and evidence across sessions. Work with Codex, Claude Code, DeepSeek Harness and other supported runtimes.
+
+Build/package evidence: [apps/desktop/loopx-control-plane/package.json](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/apps/desktop/loopx-control-plane/package.json); [apps/desktop/loopx-control-plane/src-tauri/Cargo.toml](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/apps/desktop/loopx-control-plane/src-tauri/Cargo.toml); [apps/presentation/dashboard/package.json](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/apps/presentation/dashboard/package.json); [apps/presentation/site/package.json](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/apps/presentation/site/package.json); [examples/dsh-loopx-demo/package.json](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/examples/dsh-loopx-demo/package.json)
+
+License evidence: [LICENSE](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/LICENSE); [LICENSE-MIT](https://github.com/huangruiteng/loopx/blob/99839aeb8fed5fae38a5d319391cd050672a6508/LICENSE-MIT) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

@@ -1,0 +1,207 @@
+# openhuman: change evidence
+
+Source: [openhuman](https://github.com/tinyhumansai/openhuman) · [Analysis](../../projects/ai-agents--openhuman.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `d0d1e51eaed715dce78e332f84010784aead84a0`; commit date: 2026-10-03T21:36:31+05:30; review date: unknown; observed SHA: `9d5a06c7b0216d3a496f93f1030d491d734a6bd7`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/tinyhumansai/openhuman/compare/d0d1e51eaed715dce78e332f84010784aead84a0...9d5a06c7b0216d3a496f93f1030d491d734a6bd7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [9d5a06c7b021](https://github.com/tinyhumansai/openhuman/commit/9d5a06c7b0216d3a496f93f1030d491d734a6bd7) 2026-10-27T23:06:39+05:30: Merge pull request #8457 from M3gA-Mind/chore/tinyagents-v3.1.3-zstd-0.14
+- [5f83dfd3cf2f](https://github.com/tinyhumansai/openhuman/commit/5f83dfd3cf2f19da4b04e83f90edc16f9c6d9462) 2026-10-27T22:54:12+05:30: chore(deps): lock tinyagents 3.1.3 and tinystoragedrivers 2.1.2
+- [37559f6cbfcb](https://github.com/tinyhumansai/openhuman/commit/37559f6cbfcbaca8fcaa806edda4aa792d3fcd44) 2026-10-27T22:41:15+05:30: chore(vendor): move tinyagents to v3.1.3 and tinystoragedrivers to v2.1.2
+- [2787a28749e5](https://github.com/tinyhumansai/openhuman/commit/2787a28749e589085bbc35159d9fc3940ed1bab9) 2026-10-27T22:35:59+05:30: Merge pull request #8455 from M3gA-Mind/test/mcp-registry-e2e-tenant-contract
+- [fe0944c2743d](https://github.com/tinyhumansai/openhuman/commit/fe0944c2743d4600531bf8e5df76c77e8349b99f) 2026-10-27T22:35:46+05:30: Merge pull request #8454 from M3gA-Mind/fix/mcp-registry-e2e-state-leak
+- [f596ccc069cf](https://github.com/tinyhumansai/openhuman/commit/f596ccc069cf62850847f018a0b6debcec9ee380) 2026-10-27T22:35:35+05:30: Merge pull request #8450 from M3gA-Mind/fix/proposal-card-single-save
+- [1c4bd7acf50c](https://github.com/tinyhumansai/openhuman/commit/1c4bd7acf50c68b871faaa2831b78fae2566b6d3) 2026-10-27T21:33:09+05:30: Merge pull request #8448 from M3gA-Mind/fix/builder-live-handoff
+- [a45d245adb0e](https://github.com/tinyhumansai/openhuman/commit/a45d245adb0e198fd0033826ac9db2cc2a738a78) 2026-10-27T21:31:31+05:30: fix(chat): date proposal revisions by their draft and key cards by identity
+- [1a242fcfefa1](https://github.com/tinyhumansai/openhuman/commit/1a242fcfefa1f69fb9d5a37931b770724ff3a703) 2026-10-27T21:21:01+05:30: test(modules): cover the storage callback join failure
+- [9c1eafb38cd4](https://github.com/tinyhumansai/openhuman/commit/9c1eafb38cd449c302dec89ba32d0e9112359f43) 2026-10-27T21:10:53+05:30: fix(orchestrator): carry require_approval when saving a new proposal
+- [bffd844a5cb3](https://github.com/tinyhumansai/openhuman/commit/bffd844a5cb3876ad7502a16aef8d26578f53c75) 2026-10-27T20:56:11+05:30: test(mcp_registry_e2e): drop the second workspace from the 401 hint test
+- [cb4404d2046e](https://github.com/tinyhumansai/openhuman/commit/cb4404d2046e0545d9d4a0c05dd88b464f0c6e1b) 2026-10-27T20:55:35+05:30: Merge pull request #8446 from M3gA-Mind/fix/tsd-zstd-0.14
+- [7aa320d7af28](https://github.com/tinyhumansai/openhuman/commit/7aa320d7af283efeeaa0aef6f20419bc3aede004) 2026-10-27T20:55:20+05:30: Merge pull request #8443 from M3gA-Mind/fix/workflow-builder-recovery
+- [a7fc271dc6b1](https://github.com/tinyhumansai/openhuman/commit/a7fc271dc6b1352766c30f5e69e52f5127043068) 2026-10-27T20:31:36+05:30: fix(chat): refuse stale proposal revisions and bind saves to their proposal
+- [c75365eae83a](https://github.com/tinyhumansai/openhuman/commit/c75365eae83a00070898e247d774577bcae1a500) 2026-10-27T20:01:54+05:30: fix(orchestrator): save a new proposal without ids by its name and graph
+- [05d81539d8bb](https://github.com/tinyhumansai/openhuman/commit/05d81539d8bbb67d793a8a005d644624c59949ff) 2026-10-27T19:53:14+05:30: fix(modules): prepare module storage callbacks on the module runtime
+- [783b2cf4492f](https://github.com/tinyhumansai/openhuman/commit/783b2cf4492f6a0d9f8ccace3e40ce8fed5cfb4c) 2026-10-27T19:46:08+05:30: fix(chat): save each workflow proposal once, onto the flow it revises
+- [71e9a6058015](https://github.com/tinyhumansai/openhuman/commit/71e9a605801583356d7375079d9523a4dbe1966f) 2026-10-27T17:15:10+03:00: Merge pull request #8430 from M3gA-Mind/fix/credentials-signout-restore-key
+- [ed79f5f39e06](https://github.com/tinyhumansai/openhuman/commit/ed79f5f39e06b843e548fb3031ff262c28e22026) 2026-10-27T19:42:27+05:30: fix(orchestrator): end the turn on spawned work and save proposals as delivered
+- [3a6a179fbe3e](https://github.com/tinyhumansai/openhuman/commit/3a6a179fbe3ede3ed54e33b5b0f65c15b61d418b) 2026-10-27T19:42:27+05:30: fix(flows): stamp the proposal name into the proposed graph
+- [7c88875c2f6b](https://github.com/tinyhumansai/openhuman/commit/7c88875c2f6bbdd1ece510f27d46771c026e1c76) 2026-10-27T19:34:37+05:30: chore(vendor): repoint tinystoragedrivers to the tinystoragedrivers#88 merge commit
+- [6671baa40862](https://github.com/tinyhumansai/openhuman/commit/6671baa40862c6b10a4a6dd4449eece3052e09f1) 2026-10-27T19:34:28+05:30: chore(vendor): point tinyagents at the merged arg-recovery fix
+- [4b97ca8b336b](https://github.com/tinyhumansai/openhuman/commit/4b97ca8b336b14a20658dd1b30c9389f3b0b7ab6) 2026-10-27T19:09:04+05:30: fix(tokenjuice): delegate retrieve_tool_output to juice_retrieve
+- [41f1a9d196ca](https://github.com/tinyhumansai/openhuman/commit/41f1a9d196caa5b928db5e20fcdfc6c2e6b67e5d) 2026-10-27T19:08:18+05:30: chore(deps): drop zstd 0.13.3 and zstd-safe 7.3.0 from both lockfiles
+- [0bed6810867b](https://github.com/tinyhumansai/openhuman/commit/0bed6810867bff34d86cbc0c9c8e38e0ae59d2e7) 2026-10-27T19:07:32+05:30: chore(vendor): move tinyagents to the reviewed arg-recovery fix
+- [6a6545adf6bd](https://github.com/tinyhumansai/openhuman/commit/6a6545adf6bd610dd931f469400cd7a551fbe3bf) 2026-10-27T18:53:27+05:30: chore(vendor): advance tinystoragedrivers to zstd 0.14.3 (tinystoragedrivers#88 head)
+- [027722b144d6](https://github.com/tinyhumansai/openhuman/commit/027722b144d60a7d3fec7719aa464045f09efa58) 2026-10-27T18:51:08+05:30: fix(credentials): put the API key back only where it was
+- [ea0ed92d89ee](https://github.com/tinyhumansai/openhuman/commit/ea0ed92d89eee8670b15d1301ad37aecb217064d) 2026-10-27T18:47:44+05:30: chore(vendor): point tinyagents at the arg-recovery fix
+- [6cbcbb555036](https://github.com/tinyhumansai/openhuman/commit/6cbcbb555036417d3d7df94a0c7d9e24b8ac12bd) 2026-10-27T18:47:44+05:30: fix(workflow_builder): prefer graph handles over inline graph JSON
+- [b14928e21467](https://github.com/tinyhumansai/openhuman/commit/b14928e214673cf94dbabafcc3ec1a5f5bda57a6) 2026-10-27T18:47:43+05:30: fix(tokenjuice): read the advertised token key in retrieve_tool_output
+- [a38ac299a357](https://github.com/tinyhumansai/openhuman/commit/a38ac299a35761720bd2ef4ff80f90daebdb3d54) 2026-10-27T16:27:03+05:30: style(credentials): cargo fmt the restore tests
+- [36f5e9a0a157](https://github.com/tinyhumansai/openhuman/commit/36f5e9a0a15740ba7f14c04a458e836903f15e05) 2026-10-27T15:44:59+05:30: fix(credentials): restore the API key when a sign-out fails after reload
+
+## Changed paths (truncated)
+
+- M: `.cargo/config.toml`
+- M: `.claude/agents/deploy-agent.md`
+- M: `.claude/rules/README.md`
+- M: `.claude/skills/migrate-to-submodule/SKILL.md`
+- M: `.config/nextest.toml`
+- M: `.do/app.yaml`
+- M: `.env.example`
+- M: `.fly/fly.toml`
+- M: `.github/Dockerfile`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- A: `.github/actionlint.yaml`
+- M: `.github/ci-paths-filter.yml`
+- M: `.github/workflows/android-compile.yml`
+- M: `.github/workflows/build-ci-image.yml`
+- M: `.github/workflows/build-desktop.yml`
+- M: `.github/workflows/ci-fast-hosted.yml`
+- M: `.github/workflows/ci-fast.yml`
+- M: `.github/workflows/ci-full.yml`
+- M: `.github/workflows/ci-lanes.yml`
+- M: `.github/workflows/e2e-agent-review.yml`
+- M: `.github/workflows/e2e-playwright.yml`
+- M: `.github/workflows/e2e-reusable.yml`
+- M: `.github/workflows/ios-appstore.yml`
+- M: `.github/workflows/ios-compile.yml`
+- M: `.github/workflows/pr-quality.yml`
+- M: `.github/workflows/release-packages.yml`
+- M: `.github/workflows/release-production.yml`
+- M: `.github/workflows/test-reusable.yml`
+- M: `.github/workflows/test.yml`
+- M: `.gitignore`
+- M: `.gitmodules`
+- M: `.husky/pre-push`
+- A: `.oss-scanner/Dockerfile`
+- A: `.oss-scanner/Dockerfile.dockerignore`
+- A: `.oss-scanner/README.md`
+- A: `.oss-scanner/threat_model.md`
+- D: `.sdd-progress.md`
+- M: `AGENTS.md`
+- M: `CONTRIBUTING.md`
+- M: `Cargo.lock`
+- M: `Cargo.toml`
+- M: `Dockerfile`
+- A: `EMBED.md`
+- M: `INSTALL.md`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `app/.env.example`
+- M: `app/.prettierignore`
+- M: `app/README.md`
+- M: `app/package.json`
+- M: `app/patches/@assistant-ui__react-lexical@0.2.10.patch`
+- A: `app/patches/mdast-util-gfm-autolink-literal@2.0.1.patch`
+- D: `app/pnpm-lock.yaml`
+- A: `app/public/live-voice/pcm-capture-processor.js`
+- D: `app/schema.json`
+- M: `app/scripts/e2e-agent-review.sh`
+- M: `app/scripts/e2e-crypto-payment.sh`
+- M: `app/scripts/e2e-gmail.sh`
+- M: `app/scripts/e2e-merge-affected.sh`
+- M: `app/scripts/e2e-payment.sh`
+- M: `app/scripts/e2e-run-all-flows.sh`
+- M: `app/scripts/e2e-run-session.sh`
+- M: `app/scripts/e2e-run-shards.sh`
+- D: `app/scripts/e2e-telegram.sh`
+- M: `app/scripts/e2e-web-build.sh`
+- A: `app/scripts/e2e-web-selection-contract.json`
+- A: `app/scripts/e2e-web-selection.mjs`
+- M: `app/scripts/e2e-web-session.sh`
+- A: `app/scripts/e2e-web-shards.sh`
+- M: `app/src-tauri-mobile/Cargo.toml`
+- M: `app/src-tauri-mobile/icons/README.md`
+- M: `app/src-tauri-web/README.md`
+- M: `app/src/App.tsx`
+- M: `app/src/AppRoutes.auth.test.tsx`
+- M: `app/src/AppRoutes.connections-flows.test.tsx`
+- M: `app/src/AppRoutes.guards.test.tsx`
+- M: `app/src/AppRoutes.redirects.test.tsx`
+- M: `app/src/AppRoutes.skills.test.tsx`
+- M: `app/src/AppRoutes.tsx`
+- M: `app/src/AppRoutes.webhooks.test.tsx`
+- M: `app/src/__tests__/App.boot.test.tsx`
+- D: `app/src/assets/audio/README.md`
+- D: `app/src/assets/audio/ptt-close.wav`
+- D: `app/src/assets/audio/ptt-error.wav`
+- D: `app/src/assets/audio/ptt-open.wav`
+- A: `app/src/assets/provider-icons/cognee.png`
+- A: `app/src/assets/provider-icons/cortexdb.png`
+- A: `app/src/assets/provider-icons/letta.png`
+- A: `app/src/assets/provider-icons/mem0.svg`
+- A: `app/src/assets/provider-icons/sarvam.svg`
+- A: `app/src/assets/provider-icons/supermemory.svg`
+- A: `app/src/assets/provider-icons/tinyhumans.svg`
+- A: `app/src/assets/provider-icons/zep.png`
+- M: `app/src/components/BootCheckGate/BootCheckGate.tsx`
+- M: `app/src/components/BootCheckGate/__tests__/BootCheckGate.test.tsx`
+- D: `app/src/components/DictationHotkeyManager.tsx`
+- D: `app/src/components/InitProgressScreen/HarnessInitOverlay.test.tsx`
+- D: `app/src/components/InitProgressScreen/HarnessInitOverlay.tsx`
+- D: `app/src/components/InitProgressScreen/InitProgressScreen.test.tsx`
+- D: `app/src/components/InitProgressScreen/InitProgressScreen.tsx`
+- A: `app/src/components/LanguageSelect.test.tsx`
+- M: `app/src/components/LanguageSelect.tsx`
+- D: `app/src/components/PttHotkeyManager.tsx`
+- A: `app/src/components/TimezoneSelect.test.tsx`
+- A: `app/src/components/TimezoneSelect.tsx`
+- M: `app/src/components/__tests__/SecurityBanner.test.tsx`
+- M: `app/src/components/assistant-ui/__tests__/UserActionBar.test.tsx`
+- A: `app/src/components/assistant-ui/__tests__/markdown-text.lookbehind.test.tsx`
+- M: `app/src/components/assistant-ui/__tests__/markdown-text.test.tsx`
+- M: `app/src/components/assistant-ui/activity-group.tsx`
+- M: `app/src/components/assistant-ui/attachment.tsx`
+- M: `app/src/components/assistant-ui/directive-text.tsx`
+- M: `app/src/components/assistant-ui/elements/agent-plan.tsx`
+- M: `app/src/components/assistant-ui/elements/agent-status.aui.tsx`
+- M: `app/src/components/assistant-ui/elements/agent-status.tsx`
+- M: `app/src/components/assistant-ui/elements/approval-card.tsx`
+- M: `app/src/components/assistant-ui/elements/artifact-card.tsx`
+- M: `app/src/components/assistant-ui/elements/background-inbox.tsx`
+- M: `app/src/components/assistant-ui/elements/code-diff.tsx`
+- M: `app/src/components/assistant-ui/elements/composer.tsx`
+- M: `app/src/components/assistant-ui/elements/connection-state.tsx`
+- M: `app/src/components/assistant-ui/elements/context-breakdown.tsx`
+- M: `app/src/components/assistant-ui/elements/context-display.tsx`
+- M: `app/src/components/assistant-ui/elements/conversation-map.tsx`
+- M: `app/src/components/assistant-ui/elements/conversation-search.tsx`
+- M: `app/src/components/assistant-ui/elements/data-table.tsx`
+- M: `app/src/components/assistant-ui/elements/edit-message.tsx`
+- M: `app/src/components/assistant-ui/elements/elicitation-form.tsx`
+- M: `app/src/components/assistant-ui/elements/error-state.tsx`
+- M: `app/src/components/assistant-ui/elements/guardrail-notice.tsx`
+- M: `app/src/components/assistant-ui/elements/image-generation.tsx`
+- M: `app/src/components/assistant-ui/elements/image.tsx`
+- M: `app/src/components/assistant-ui/elements/job-progress.tsx`
+- M: `app/src/components/assistant-ui/elements/loading-state.tsx`
+- M: `app/src/components/assistant-ui/elements/memory-chips.tsx`
+- M: `app/src/components/assistant-ui/elements/message-queue.tsx`
+- M: `app/src/components/assistant-ui/elements/permission-grant.tsx`
+- M: `app/src/components/assistant-ui/elements/reasoning-panel.tsx`
+- M: `app/src/components/assistant-ui/elements/schedule-card.tsx`
+- A: `app/src/components/assistant-ui/elements/scroll-anchor.aui.tsx`
+- M: `app/src/components/assistant-ui/elements/settings-panel.tsx`
+- M: `app/src/components/assistant-ui/elements/stopped-run.tsx`
+- M: `app/src/components/assistant-ui/elements/subagent-list.tsx`
+- M: `app/src/components/assistant-ui/elements/task-card.aui.tsx`
+- A: `app/src/components/assistant-ui/elements/task-card.test.tsx`
+- M: `app/src/components/assistant-ui/elements/task-card.tsx`
+- M: `app/src/components/assistant-ui/elements/terminal-block.tsx`
+- M: `app/src/components/assistant-ui/elements/timeline.tsx`
+- A: `app/src/components/assistant-ui/elements/todo-list.test.tsx`
+- M: `app/src/components/assistant-ui/elements/todo-list.tsx`
+- M: `app/src/components/assistant-ui/elements/tool-call.tsx`
+- M: `app/src/components/assistant-ui/elements/tool-error.tsx`
+- M: `app/src/components/assistant-ui/elements/tool-fallback.tsx`
+- M: `app/src/components/assistant-ui/elements/tool-group.tsx`
+- M: `app/src/components/assistant-ui/elements/tool-timeline.tsx`
+- M: `app/src/components/assistant-ui/elements/web-preview.tsx`
+- M: `app/src/components/assistant-ui/elements/web-search.tsx`
+- A: `app/src/components/assistant-ui/lib/task-card-dock.tsx`
+- A: `app/src/components/assistant-ui/lib/useComposerFocusOnThreadOpen.ts`
+- M: `app/src/components/assistant-ui/markdown-text.tsx`

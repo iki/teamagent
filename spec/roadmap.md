@@ -8,6 +8,18 @@ See the [implemented contract](harness.md) and [verification](harness-verificati
 Mobile is deferred. The phases below include future features; this increment does
 not establish their exit criteria or live-provider benchmarks.
 
+## Research maintenance increment
+
+The [research sync workflow](research-sync.md) maintains source lists, checkouts, text imports, and reviewed analysis baselines. Execution results, partial sources and remaining source-review work belong in [incremental analyses](analyses/README.md); implementing synchronization does not establish the product phases below or promote fetched findings automatically.
+
+## Speech and media library increment
+
+The [media/channel CLI contract](media-runtime.md) implements bounded file media operations, speech backend selection, local microphone capture commands, reference synthesis/provider enrollment, canonical channel input and durable receipts. It does not complete remote bot gateways, streaming duplex voice, UI playback or the evaluated generation/evolution milestones below. The [channel input study](channel-input.md) and [media processing study](media-processing.md) define those follow-up decisions and acceptance criteria.
+
+The voice backend extension adds direct HeyGen/Fish adapters, an offline OmniVoice worker and `media setup [backend]` with official URLs. [Setup](media-setup.md) and [service/source analysis](media-processing.md) distinguish supported file operations from future streaming transports. Provider fixtures and a real Python worker protocol fixture are credential-free; model quality and live account compatibility require separate acceptance evidence.
+
+The 2026-10-25 media revision adds fail-closed [training policy](media-training.md), explicit HeyGen lifecycle/authentication checks, encrypted recovery receipts and SRT speech import. [Runtime verification notes](media-runtime.md) distinguish fixture execution from the separately reported live Czech-to-English delivery. These changes do not publish the package or integrate it into downstream projects.
+
 ## Phase 0 — choose boundaries through small experiments
 
 Implement an adapter conformance runner with mock effects and a persistent task/event record. Compare Pi embedded execution with a native installed-agent session; evaluate Paseo-style provider adaptation against adopting a larger framework. Review source/dependency licenses for the selected components. Establish the evaluation baseline and test data. Exit when one real coding task survives process restart and produces a verified artifact with usage accounting.

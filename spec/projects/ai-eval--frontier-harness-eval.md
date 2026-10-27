@@ -24,3 +24,7 @@ Adopt its frozen-manifest, retained-evidence, and comparability-gate patterns fo
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [frontier-harness-eval](https://github.com/frontier-harness-eval/eval); analyzed commit `e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63`; commit date 2026-09-08T10:09:22-07:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-eval--frontier-harness-eval.md).
+<!-- teamagent-analysis:end -->

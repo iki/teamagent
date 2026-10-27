@@ -1,0 +1,207 @@
+# a2ui: change evidence
+
+Source: [a2ui](https://github.com/google/A2UI) · [Analysis](../../projects/ai-gen--a2ui.md) · [generation](../../generation.md), [channels](../../channels.md), [security](../../security.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `1444719acd8833eeb5e70529c7ac47bc50b7390c`; commit date: 2026-10-02T21:54:49Z; review date: unknown; observed SHA: `02174297d59451bd293c3c995792274b5d333c58`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/A2UI/compare/1444719acd8833eeb5e70529c7ac47bc50b7390c...02174297d59451bd293c3c995792274b5d333c58). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [02174297d594](https://github.com/google/A2UI/commit/02174297d59451bd293c3c995792274b5d333c58) 2026-10-27T13:42:14-04:00: fix(swift): scale Text headings with Dynamic Type (#3255)
+- [9821da8a7b15](https://github.com/google/A2UI/commit/9821da8a7b15af8597d691daf5f0fd6d96165562) 2026-10-27T17:41:59Z: fix(a2ui_core,a2ui_agent): encode a regex parse error as JSON and reject a number out of double range (#3627)
+- [03e1d8ca7b33](https://github.com/google/A2UI/commit/03e1d8ca7b334e541c4f510acd7bf8fa59f39117) 2026-10-27T13:38:12-04:00: fix(swift): refuse agentOnly functions in bindings and actions (#3546)
+- [ab3954fdef84](https://github.com/google/A2UI/commit/ab3954fdef84d1bea723128ceac41cf88a5979cb) 2026-10-27T17:26:40Z: Resolve inconsistency around catalogId. (#3650)
+- [fa8346d92803](https://github.com/google/A2UI/commit/fa8346d92803b6ef89c617336fb54ef601e37dc8) 2026-10-27T17:25:21Z: feat(python/adk)!: drive SendA2uiToClientToolset and the A2A converters from one A2uiRequestProcessor (#3299)
+- [ac0c925d5653](https://github.com/google/A2UI/commit/ac0c925d56531efafd0d5e24242958b280a6ebb4) 2026-10-27T09:56:53-07:00: fix(a2ui_core,a2ui_flutter)!: deliver errors and warnings outside Flutter build (#3614)
+- [dec736f237e3](https://github.com/google/A2UI/commit/dec736f237e3c00db33b9c7078c8042d175ecfff) 2026-10-26T17:07:58-07:00: docs(agents): add the Yarn-not-npm principle to the TypeScript coding principles (#3639)
+- [77c975ac6b53](https://github.com/google/A2UI/commit/77c975ac6b5344df276822d6fc5175d9bd1f5dc4) 2026-10-26T22:05:02Z: fix(swift): treat warning and info check results as non-blocking (#3374)
+- [b701e000ad47](https://github.com/google/A2UI/commit/b701e000ad47e0441f1b0cfcf1740c2fbb94a3aa) 2026-10-26T21:50:47Z: Update second line triage rules to address updated requirements. (#3630)
+- [5c0d7449fda8](https://github.com/google/A2UI/commit/5c0d7449fda80e4e336fd90a93d07e265549eee4) 2026-10-26T14:25:43-07:00: ci: detect changed paths with git instead of the GitHub API (#3641)
+- [3c1e30fb4d96](https://github.com/google/A2UI/commit/3c1e30fb4d9611539a31488446943fe226244f38) 2026-10-26T17:09:03-04:00: fix(swift): format numbers, currencies and plurals in en_US by default (#3372)
+- [c90de4a053af](https://github.com/google/A2UI/commit/c90de4a053af6e69db575234e87915b3eec14d96) 2026-10-26T20:31:12Z: feat(samples): add the Kanban board showcase for agent and MCP App communication (#3226)
+- [9235dc5888f0](https://github.com/google/A2UI/commit/9235dc5888f04c3197e323eacca4340cce16f66e) 2026-10-26T20:31:11Z: [MCP] fix(catalogs): ignore inherited object keys in DataModelSync.applyChange (#3593)
+- [eef796fa5787](https://github.com/google/A2UI/commit/eef796fa5787b7907900c948ffc2f2d342a3381b) 2026-10-26T20:31:11Z: [MCP] feat(angular): render the MCP App examples in the Angular explorer (#3358)
+- [df8f92fb1db4](https://github.com/google/A2UI/commit/df8f92fb1db4ee12d434fabe7bddc8f772e705e6) 2026-10-26T20:31:10Z: [MCP] feat(react): render the MCP App examples in the React explorer (#3357)
+- [7ec1e322b95b](https://github.com/google/A2UI/commit/7ec1e322b95b82febec468ff65b36e99067cd975) 2026-10-26T20:31:10Z: [MCP] feat(lit): render the MCP App examples in the Lit explorer (#3356)
+- [83a0921db7fd](https://github.com/google/A2UI/commit/83a0921db7fdae55b297004c3d65ef0bd33e7847) 2026-10-26T20:31:09Z: [MCP] feat(catalogs): add the 3D geometry example to the MCP catalog (#3010)
+- [3f9f12fecacb](https://github.com/google/A2UI/commit/3f9f12fecacbb9fcdc4e00f676a9223dc6a51d2d) 2026-10-27T06:22:20+10:30: feat(builder,cli): support A2UI Protocol v1.0 in Dart CLI and Python builder (#2897) (#3070)
+- [32daaa211b42](https://github.com/google/A2UI/commit/32daaa211b42663499a8f9526236df23ed12ad7f) 2026-10-26T19:32:54Z: feat(eval): upgrade evaluation framework with full inference options and gated scoring (#3393)
+- [15e7679d9e29](https://github.com/google/A2UI/commit/15e7679d9e293397d8ea5ba733c118d99c102d63) 2026-10-26T11:45:44-07:00: refactor(eval): remove TypeScript and Dart evaluation bridges (#3591)
+- [77f2fe6ea17b](https://github.com/google/A2UI/commit/77f2fe6ea17b4054a88b4acab0ff5c4f2f475d21) 2026-10-26T18:18:18Z: [MCP] test(catalogs): end-to-end MCP App scenarios through the real sandbox (#3352)
+- [c3cfacd2d99f](https://github.com/google/A2UI/commit/c3cfacd2d99f71a35ea0ba0643fff58777aa8a43) 2026-10-26T18:18:18Z: [MCP] feat(catalogs): add the McpApp universal component and mcpCatalog to @a2ui/catalog-mcp (#2799)
+- [09482a1b506c](https://github.com/google/A2UI/commit/09482a1b506c75a2e9a417921405d1e906aba771) 2026-10-26T18:18:17Z: [MCP] feat(catalogs): add the MCP Apps host bridge to @a2ui/catalog-mcp (#3351)
+- [d7acd99c554d](https://github.com/google/A2UI/commit/d7acd99c554db4c1e805b5cdc37e2af6276b8f46) 2026-10-26T18:18:17Z: build(samples): move the MCP sample clients to configureMcpCatalog and the monorepo builds (#3349)
+- [5dd688f9c459](https://github.com/google/A2UI/commit/5dd688f9c459441263133973aa08201be7a0c307) 2026-10-26T17:28:33Z: feat(catalog-mcp): configureMcpCatalog and the v1.0 entry point (#3186)
+- [de6617a94b63](https://github.com/google/A2UI/commit/de6617a94b6330b3af891eff3279d46c7bdc53b9) 2026-10-26T10:00:45-07:00: ci: pin format-check and ci-renderers to ubuntu-24.04 (#3613)
+- [409ded29ccac](https://github.com/google/A2UI/commit/409ded29ccac3eebc541979ae5320771703248e8) 2026-10-24T00:40:25Z: ci: Release/agent sdk 0.0.2 (#3590)
+- [c177173ca12a](https://github.com/google/A2UI/commit/c177173ca12a9d4739e16e56d6eb87b1e0608d85) 2026-10-23T17:08:44-07:00: test(conformance): pin SkillSet export cleanup scope and align Python with TypeScript (#3539)
+- [5f94564b0549](https://github.com/google/A2UI/commit/5f94564b0549876705f31090f0c1b99157155ac8) 2026-10-23T17:08:43-07:00: feat(agent): implement Skill, SkillSet, and SkillGenerator (#3397)
+- [7b962c2650b6](https://github.com/google/A2UI/commit/7b962c2650b61fac08e6be73807d8d3d27f6186f) 2026-10-23T16:53:49-07:00: fix(python/core): never fetch peer catalogs over HTTP (#3554)
+- [a4ad97a399fb](https://github.com/google/A2UI/commit/a4ad97a399fb602b781eedb092b54a7d582def91) 2026-10-23T23:45:57Z: fix(express): keep map literals whose keys are named like AST nodes (#3525)
+- [7270aea52ac8](https://github.com/google/A2UI/commit/7270aea52ac81c198dd676b66458d9bae6e7f863) 2026-10-23T19:37:41Z: docs: tweak changelog writing skill (#3537)
+
+## Changed paths (truncated)
+
+- M: `.agents/skills/a2ui-add-eval-datapoint/SKILL.md`
+- M: `.agents/skills/a2ui-generate-pydantic-models/SKILL.md`
+- M: `.agents/skills/a2ui-generate-pydantic-models/scripts/catalog_generators.py`
+- M: `.agents/skills/a2ui-generate-pydantic-models/scripts/codegen_pydantic.py`
+- M: `.agents/skills/a2ui-generate-pydantic-models/scripts/engine.py`
+- M: `.agents/skills/a2ui-issue-triage/references/triage_criteria.md`
+- M: `.agents/skills/a2ui-issue-triage/scripts/suggest_triage.py`
+- D: `.agents/skills/a2ui-python-development/SKILL.md`
+- M: `.agents/skills/a2ui-release-python/SKILL.md`
+- D: `.agents/skills/a2ui-swift-development/SKILL.md`
+- A: `.agents/skills/coding-principles/SKILL.md`
+- A: `.agents/skills/coding-principles/subskills/dart/INDEX.md`
+- A: `.agents/skills/coding-principles/subskills/dart/versioning-and-releases.md`
+- A: `.agents/skills/coding-principles/subskills/public-api-and-cross-framework-design.md`
+- A: `.agents/skills/coding-principles/subskills/python/INDEX.md`
+- A: `.agents/skills/coding-principles/subskills/python/architecture-and-facades.md`
+- A: `.agents/skills/coding-principles/subskills/python/coding-standards-and-verification.md`
+- A: `.agents/skills/coding-principles/subskills/swift/INDEX.md`
+- A: `.agents/skills/coding-principles/subskills/swift/coding-standards-and-testing.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/INDEX.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/accessibility-semantics.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/css-theming-styling.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/reactive-lifecycle-performance.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/references/inspecting-typescript-public-api.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/testing-isolation.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/typescript-closure-compiler.md`
+- A: `.agents/skills/coding-principles/subskills/typescript/yarn-workspace-tooling.md`
+- M: `.agents/skills/natural-writing/SKILL.md`
+- A: `.agents/skills/pr-hygiene/SKILL.md`
+- A: `.agents/skills/update-changelog/SKILL.md`
+- M: `.github/scripts/release_version.py`
+- M: `.github/scripts/tests/test_release_version.py`
+- M: `.github/workflows/community_code.yml`
+- M: `.github/workflows/docs.yml`
+- M: `.github/workflows/e2e_test.yml`
+- M: `.github/workflows/flutter_packages_test.yml`
+- M: `.github/workflows/presubmit-lint.yml`
+- M: `.github/workflows/python_ci.yml`
+- M: `.github/workflows/release-pypi.yml`
+- M: `.github/workflows/run_evals.yml`
+- M: `.github/workflows/swift_build_and_test.yml`
+- M: `.github/workflows/triage.yml`
+- M: `.github/workflows/web_ci.yml`
+- M: `.gitignore`
+- M: `.prettierignore`
+- M: `AGENTS.md`
+- M: `LICENSE`
+- M: `Package.swift`
+- M: `README.md`
+- A: `blueprints/codebases/dart/a2ui_core/codebase.blueprint.md`
+- M: `blueprints/codebases/dart/a2ui_flutter/codebase.blueprint.md`
+- M: `blueprints/codebases/python/a2ui_agent/codebase.blueprint.md`
+- D: `blueprints/codebases/typescript/a2ui_agent/design_doc.blueprint.md`
+- A: `blueprints/codebases/typescript/agents/a2ui_agent/codebase.blueprint.md`
+- R097: `blueprints/codebases/typescript/core/web_core/codebase.blueprint.md` (from `blueprints/codebases/typescript/web_core/codebase.blueprint.md`)
+- R095: `blueprints/codebases/typescript/renderers/angular/codebase.blueprint.md` (from `blueprints/codebases/renderers/angular/codebase.blueprint.md`)
+- R096: `blueprints/codebases/typescript/renderers/lit/codebase.blueprint.md` (from `blueprints/codebases/renderers/lit/codebase.blueprint.md`)
+- R096: `blueprints/codebases/typescript/renderers/react/codebase.blueprint.md` (from `blueprints/codebases/renderers/react/codebase.blueprint.md`)
+- M: `blueprints/features/node_resolution.blueprint.md`
+- M: `blueprints/features/skill_generator.blueprint.md`
+- A: `blueprints/features/universal_custom_elements.blueprint.md`
+- M: `blueprints/modules/a2ui_agent.blueprint.md`
+- M: `blueprints/modules/a2ui_core.blueprint.md`
+- M: `blueprints/modules/a2ui_framework_adapter.blueprint.md`
+- M: `blueprints/validate_blueprints.py`
+- M: `catalogs/README.md`
+- M: `catalogs/basic/v1/catalog.json`
+- M: `catalogs/basic/v1/examples/31_incremental-dashboard.json`
+- M: `catalogs/mcp/README.md`
+- A: `catalogs/mcp/v1/catalog.json`
+- A: `catalogs/mcp/v1/examples/mcp-app-3d-geometry.json`
+- R084: `catalogs/mcp/v1/mcp_app_specification.md` (from `samples/community/client/angular/projects/mcp_calculator/src/a2ui-catalog/mcp-apps-component_spec.md`)
+- A: `catalogs/vegachart/README.md`
+- A: `catalogs/vegachart/v0_9/catalog.json`
+- A: `catalogs/vegachart/v1/catalog.json`
+- M: `conformance/README.md`
+- M: `conformance/agent/catalog_resolution.yaml`
+- M: `conformance/agent/catalog_transformer.yaml`
+- M: `conformance/agent/direct_json/compiler.yaml`
+- M: `conformance/agent/direct_json/decompiler.yaml`
+- M: `conformance/agent/direct_json/prompt_generator.yaml`
+- M: `conformance/agent/direct_json/response_parser.yaml`
+- M: `conformance/agent/direct_json/response_streaming.yaml`
+- A: `conformance/agent/direct_json/scaling.yaml`
+- M: `conformance/agent/express/compiler.yaml`
+- M: `conformance/agent/express/decompiler.yaml`
+- M: `conformance/agent/express/prompt_generator.yaml`
+- M: `conformance/agent/express/response_parser.yaml`
+- A: `conformance/agent/express/scaling.yaml`
+- M: `conformance/agent/legacy/inference_format.yaml`
+- M: `conformance/agent/legacy/streaming_parser.yaml`
+- A: `conformance/agent/multi_catalog_formats.yaml`
+- M: `conformance/agent/request_processor.yaml`
+- M: `conformance/agent/skill.yaml`
+- M: `conformance/conformance_schema.json`
+- M: `conformance/core/accessibility.yaml`
+- M: `conformance/core/catalog.yaml`
+- M: `conformance/core/data_model.yaml`
+- M: `conformance/core/expressions.yaml`
+- M: `conformance/core/functions.yaml`
+- A: `conformance/core/message_processor_scaling.yaml`
+- M: `conformance/core/message_processor_v0_9.yaml`
+- M: `conformance/core/message_processor_v1_0.yaml`
+- M: `conformance/core/reserved_keys.yaml`
+- M: `conformance/core/rpc_functions.yaml`
+- M: `conformance/core/validator_v0_8.yaml`
+- M: `conformance/core/validator_v0_9.yaml`
+- M: `conformance/core/validator_v1_0.yaml`
+- M: `conformance/extensions/adk/adk_extensions.yaml`
+- A: `conformance/test_data/catalogs/agent_functions_catalog_v1_0.json`
+- A: `conformance/test_data/catalogs/composition_catalog_v1_0.json`
+- A: `conformance/test_data/catalogs/cross_ref_catalog_v1_0.json`
+- M: `conformance/test_data/catalogs/custom_catalog_v1_0.json`
+- M: `conformance/test_data/catalogs/forms_catalog_v1_0.json`
+- A: `conformance/test_data/catalogs/function_metadata_catalog_v1_0.json`
+- A: `conformance/test_data/catalogs/literal_map_catalog_v1_0.json`
+- A: `conformance/test_data/catalogs/peer_matching/alpha/catalog.json`
+- A: `conformance/test_data/catalogs/peer_matching/beta/catalog.json`
+- A: `conformance/test_data/catalogs/peer_matching/mcp_catalog.json`
+- A: `conformance/test_data/catalogs/peer_matching/referencing_catalog_v1_0.json`
+- M: `conformance/test_data/catalogs/simplified_catalog_v1_0.json`
+- A: `conformance/test_data/catalogs/streaming_catalog_v0_8.json`
+- A: `conformance/test_data/catalogs/streaming_catalog_v0_9.json`
+- A: `conformance/test_data/catalogs/weighted_catalog_v1_0.json`
+- A: `conformance/test_data/prompts/direct_json/allowed_messages.txt`
+- A: `conformance/test_data/prompts/direct_json/cross_ref_catalogs_pruned.txt`
+- A: `conformance/test_data/prompts/direct_json/multi_catalog_examples.txt`
+- A: `conformance/test_data/prompts/direct_json/pruned_components.txt`
+- A: `conformance/test_data/prompts/direct_json/pruned_functions.txt`
+- A: `conformance/test_data/prompts/direct_json/simplified_catalog.txt`
+- A: `conformance/test_data/prompts/direct_json/single_example.txt`
+- A: `conformance/test_data/prompts/direct_json/two_catalogs.txt`
+- A: `conformance/test_data/prompts/direct_json/two_catalogs_pruned.txt`
+- A: `conformance/test_data/prompts/direct_json/two_catalogs_single_example.txt`
+- M: `conformance/test_data/skills/express_base_rules.txt`
+- M: `conformance/test_data/skills/express_basic_catalog.skill.md`
+- M: `conformance/test_data/skills/express_basic_monolithic.skill.md`
+- M: `conformance/test_data/skills/express_catalog_instructions.txt`
+- M: `conformance/test_data/skills/express_core.skill.md`
+- A: `conformance/test_data/validation_schema/test_v08_basic_validation_schema.json`
+- A: `conformance/test_data/validation_schema/test_v09_basic_validation_schema.json`
+- A: `conformance/test_data/validation_schema/test_v09_custom_validation_schema_flattening.json`
+- A: `conformance/test_data/validation_schema/test_v10_basic_validation_schema.json`
+- A: `conformance/test_data/validation_schema/test_v10_cross_catalog_validation_schema.json`
+- M: `dart/a2ui_agent/CHANGELOG.md`
+- M: `dart/a2ui_agent/LICENSE`
+- M: `dart/a2ui_agent/README.md`
+- A: `dart/a2ui_agent/analysis_options.yaml`
+- A: `dart/a2ui_agent/dart_test.yaml`
+- M: `dart/a2ui_agent/e2e_test/test/direct_json_turn_test.dart`
+- M: `dart/a2ui_agent/e2e_test/test/express_turn_test.dart`
+- A: `dart/a2ui_agent/e2e_test/test/test_infra/basic_catalog.dart`
+- M: `dart/a2ui_agent/e2e_test/test/test_infra/login_form.dart`
+- D: `dart/a2ui_agent/e2e_test/test/test_infra/renderer_catalog.dart`
+- M: `dart/a2ui_agent/example/a2ui_agent_example.dart`
+- M: `dart/a2ui_agent/lib/a2ui_agent.dart`
+- M: `dart/a2ui_agent/lib/src/catalog_transformers/pruning.dart`
+- M: `dart/a2ui_agent/lib/src/inference_format.dart`
+- A: `dart/a2ui_agent/lib/src/inference_formats/direct_json/blocks.dart`
+- M: `dart/a2ui_agent/lib/src/inference_formats/direct_json/format.dart`

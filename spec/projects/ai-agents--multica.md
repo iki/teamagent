@@ -32,3 +32,7 @@ Simulate a lease expiry while a process is suspended, two replicas claiming the 
 License correction from implementation audit, 2026-10-04: the [LICENSE at this snapshot](https://github.com/multica-ai/multica/blob/b2561aad61055dd9937fc08f6497846b1458d018/LICENSE) is the custom Multica License, combining Apache-2.0 with additional hosting, commercial embedding, branding and attribution conditions. The earlier Apache-2.0 indicator was incomplete. Reuse the general concurrency pattern through an independent implementation; do not copy this project's source or UI under an assumption of plain Apache-2.0 terms. See [reuse decisions](../architecture/reuse.md).
 
 Related directions: [channels](../channels.md) · [agents](../agents.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `b2561aad61055dd9937fc08f6497846b1458d018`; commit date 2026-10-02T07:25:26-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
+<!-- teamagent-analysis:end -->

@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--gitnexus",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/abhigyanpatwari/GitNexus",
+  "report": "spec/projects/ai-agents-mem--gitnexus.md",
+  "analyzedSha": "5f9f95f22454b1f878ca549bc38b4c2ef5066b9a",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-03T18:22:21+01:00",
+  "observedSha": "69a3ab1d58d703e89778f642faa0c44e7d574cf8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "69a3ab1d58d703e89778f642faa0c44e7d574cf8",
+      "date": "2026-10-23T21:02:27+01:00",
+      "subject": "chore(deps)(deps): bump dompurify (#3699)"
+    },
+    {
+      "sha": "466d56280a37cb3dae9cdce8788937964824a3d5",
+      "date": "2026-10-23T20:25:47+01:00",
+      "subject": "fix(eval): retain pending completion notifications (#3700)"
+    },
+    {
+      "sha": "f3fa67b1445b8e8eeb23ae253fd3110044dc3624",
+      "date": "2026-10-23T18:25:20+01:00",
+      "subject": "fix(routes): link consumers to wrapper-composed URLs (#3697)"
+    },
+    {
+      "sha": "62a6f67083fcd1f85634a49b118b4faf3fd5198d",
+      "date": "2026-10-23T12:39:13+01:00",
+      "subject": "chore(deps)(deps): bump ignore from 7.0.12 to 7.0.13 in /gitnexus (#3690)"
+    },
+    {
+      "sha": "5726ad42f0e0e5fef610ec89f540a6eb6a786282",
+      "date": "2026-10-23T10:49:45+01:00",
+      "subject": "chore(deps): consolidate all open Dependabot updates (#3682)"
+    },
+    {
+      "sha": "48f108a58a99c06ba21b9af5652597ee7e56f81d",
+      "date": "2026-10-23T09:06:03+01:00",
+      "subject": "docs: simplify guides and verify receiver gaps (#3694)"
+    },
+    {
+      "sha": "bbbc1b49e3427c467b8ac83a112f7793109e279b",
+      "date": "2026-10-23T00:05:10Z",
+      "subject": "test(bench): type the JS, Ruby and PHP receiver shapes; mark C dispatch N/A (#3498) (#3663)"
+    },
+    {
+      "sha": "09b7a5b1744913f62bd860d5ee288617bd3d62cc",
+      "date": "2026-10-22T23:33:50Z",
+      "subject": "fix(ingestion): read more receiver-chain spellings (#3498) (#3667)"
+    },
+    {
+      "sha": "cc0b5d54f795b458a8ab38d009b0a8044f335d87",
+      "date": "2026-10-22T22:52:11Z",
+      "subject": "fix(swift,dart): type chained receivers through hoisted return types (#3498) (#3666)"
+    },
+    {
+      "sha": "673dc6968ec723a8fd137ebadfa003e0a46a7a5b",
+      "date": "2026-10-22T21:19:27Z",
+      "subject": "fix(rust): see through Box, Rc and Arc on struct field types (#3498) (#3665)"
+    },
+    {
+      "sha": "af5fd9665cd9e7204ef435c47b408f9ed7101e64",
+      "date": "2026-10-22T20:05:33Z",
+      "subject": "fix(csharp): bind nullable field types for receiver resolution (#3498) (#3664)"
+    },
+    {
+      "sha": "36e16434ea6c5bb134ad1ae7607911a42ef82147",
+      "date": "2026-10-22T18:55:04Z",
+      "subject": "fix(php): type locals from namespaced-function factory calls (#3498) (#3662)"
+    },
+    {
+      "sha": "e7ef82dfcb3c794710ef902b292d5e36ddbab977",
+      "date": "2026-10-22T16:49:06Z",
+      "subject": "fix(kotlin): type locals from package-qualified factory calls (#3660)"
+    },
+    {
+      "sha": "c30449394be3d6d65b65a32e4d7da14bd50d0c15",
+      "date": "2026-10-22T12:45:11Z",
+      "subject": "fix(scope): bind same-package inheritance bases when the simple name is reused elsewhere (#3659)"
+    },
+    {
+      "sha": "169aa5d960c88966463cd8d95c1f1ffd01df4290",
+      "date": "2026-10-22T12:14:28+01:00",
+      "subject": "fix(scope): label library-rooted receiver drops as external from provider evidence (#3658)"
+    },
+    {
+      "sha": "65b101407ea5a89e9d9c8145e7e343d90dadbc96",
+      "date": "2026-10-22T09:05:48Z",
+      "subject": "fix(rust): type locals from module-qualified factory calls (#3657)"
+    },
+    {
+      "sha": "a09f76be39cd8b106b21d815074ad032e272984d",
+      "date": "2026-10-22T08:21:37Z",
+      "subject": "fix(cpp): type receivers declared or produced through qualified names (#3656)"
+    },
+    {
+      "sha": "caacc3bac2d0c714f34fa4efd3abaa6ce3089ac6",
+      "date": "2026-10-22T06:35:08Z",
+      "subject": "fix(csharp): rank global-namespace types below the file's own namespaces (#3655)"
+    },
+    {
+      "sha": "2b44565534d470df27030bd6f5a41507f0d41f35",
+      "date": "2026-10-22T05:59:59+01:00",
+      "subject": "fix(resolution): correct receiver drops and property ownership (#3653)"
+    },
+    {
+      "sha": "d57f570dffcc2b8e5455c691f5c2f6c655991aec",
+      "date": "2026-10-22T03:49:35Z",
+      "subject": "refactor(ingestion): colocate import resolution rules (#3670)"
+    },
+    {
+      "sha": "f6e42092b3c3038189e4726c40999182dd62ff64",
+      "date": "2026-10-22T01:24:26Z",
+      "subject": "fix(zig): resolve import-alias, forwarding-constructor, anonymous-container and type-application receivers (#3652)"
+    },
+    {
+      "sha": "2b6542737ad5dfb63b720695c77643282bd6932a",
+      "date": "2026-10-21T18:24:18Z",
+      "subject": "fix(go): resolve imports within selected modules (#3654)"
+    },
+    {
+      "sha": "2b111f4488ed5f94e79e529a3c94bc96202d1700",
+      "date": "2026-10-21T17:27:30Z",
+      "subject": "fix(docker): verify bundled FTS artifacts (#3669)"
+    },
+    {
+      "sha": "ab0b03846da74f1b17ff245246570febfe743559",
+      "date": "2026-10-21T12:37:02Z",
+      "subject": "fix(go): type receivers through package-qualified declared types (#3651)"
+    },
+    {
+      "sha": "278863068fc4bc905abf4552774e6ae057a1185e",
+      "date": "2026-10-21T10:24:26Z",
+      "subject": "fix(scope): follow namespace factory return types and record untyped drops (#3648)"
+    },
+    {
+      "sha": "04427e03c8314be4c2a2ab74a99b53b7222c0514",
+      "date": "2026-10-20T20:51:26+01:00",
+      "subject": "fix(ci): avoid RC tag collisions during npm processing (#3649)"
+    },
+    {
+      "sha": "163056af5831fd1a1465dbcd1159e0f7c45176c9",
+      "date": "2026-10-20T19:11:15+01:00",
+      "subject": "fix(staleness): point index hints to the CLI (#3641)"
+    },
+    {
+      "sha": "7090ac80f72590be7d7edd7e8cf8152de1f3d31f",
+      "date": "2026-10-20T17:44:38+01:00",
+      "subject": "chore(deps): consolidate pending Dependabot updates (#3647)"
+    },
+    {
+      "sha": "9df1e98350f9e6b0dd40938c3e01411c7924dc69",
+      "date": "2026-10-20T17:44:08+01:00",
+      "subject": "fix(routes): scope inline Express handlers and report api_impact lower bound (#3643)"
+    },
+    {
+      "sha": "faa453c528c6b7fb954d717cd701a7cb94aea225",
+      "date": "2026-10-20T16:04:10+01:00",
+      "subject": "fix: reduce MCP token overhead and correct cost comparisons (#3645)"
+    },
+    {
+      "sha": "01af833875cad5d2374ed988a39b77ff5f9e716e",
+      "date": "2026-10-20T11:36:06+01:00",
+      "subject": "fix(scope): preserve lexical bindings in HTTP wrapper detection (#3632)"
+    },
+    {
+      "sha": "0e7b3d6fad9ba57e05c1af90874374586953c489",
+      "date": "2026-10-20T08:54:52+01:00",
+      "subject": "fix(mcp): report cross-function explain lines 1-based (#3635)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/gitnexus-debugging/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/gitnexus-exploring/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/gitnexus-guide/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/gitnexus-refactoring/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/gitnexus-review/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/gitnexus/gitnexus-taint-analysis/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/bootstrap-native.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/dependencies.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/dependencies.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/dev-test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/devcontainer.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/doctor.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/install-deps.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/post-create.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/profile.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/profiles.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/resources.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/resources.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/seed-codex.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/seed-codex.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/tune-9p.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/tune-9p.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/verify-git-hooks.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".devcontainer/verify-git-hooks.test.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/ec2-runner/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/require-agent-release-evidence/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/dependabot.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-tree-sitter-upgrade-readiness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-workflow-concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/evolution-runner-ready.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/evolution-runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/test_check_tree_sitter_upgrade_readiness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/update-vendored-grammars.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/vendored-grammars.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-tree-sitter-prebuilds.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-devcontainer.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-quality.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/commit-fork-prebuilds.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/devcontainer-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gitnexus-review-agent.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/gitnexus-skill-evolution.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/grammar-update-monitor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/impact-pdg-mutation-report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-autofix-apply.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-autofix-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-autofix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-cost-evaluation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-labeler.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-evaluation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skill-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tree-sitter-upgrade-readiness.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/trivy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/workflow-lint.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/zizmor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".prettierignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile.cli",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "GUARDRAILS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MIGRATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RUNBOOK.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "TESTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-server.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/cli-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/editor-setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/c-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/cobol-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/cpp-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/csharp-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/dart-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/go-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/java-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/javascript-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/kotlin-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/local-import-scoping.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/objective-c-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/php-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/python-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/receiver-resolution-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/ruby-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/rust-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/swift-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/typescript-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/vue-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/languages/zig-ingestion-gaps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/mcp-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/plans/2026-10-18-2259-fix-lexical-binding-provenance-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/wiki-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/check_test_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_baseline_guidance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_ce_plugin_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_check_test_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_ec2_workflows.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_evolution_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_evolution_runner_ready.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_evolve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_offline_sweep_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_oracle_assets.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_pr_evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_process_control.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_proposer_sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_release_build.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_release_evaluation_smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_release_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_release_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_release_preflight.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/tests/test_release_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_runner_hardening.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_task_assets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_workflow_bench.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/tests/test_workflow_bench_sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/baseline_guidance.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/measure_mcp_serialization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/oracles/cross-module-parse-retry.oracle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "eval/workflow_bench/oracles/inv-bug-c-system-include.oracle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/inv-feature-c-include-provenance.oracle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/oracles/inv-feature-list-repos-filter.oracle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/cross-module-parse-retry-pool-startup-only.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/cross-module-parse-retry-pool.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/cross-module-parse-retry-startup-only.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/cross-module-parse-retry.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/inv-feature-c-include-provenance-delimiter.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/inv-feature-c-include-provenance-flag.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/inv-feature-list-repos-filter.patch",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/oracles/reference/trivial-status-json-alias.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/oracles/trivial-status-json-alias.oracle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/oracles/vitest.config.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/pr_evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/proposer_sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/release_build.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/release_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/release_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/release_preflight.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "eval/workflow_bench/release_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/runner_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/runner_sessions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/runtime_mounts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/task_assets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "eval/workflow_bench/tasks.scenarios.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus-claude-plugin/skills/gitnexus-debugging/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus-claude-plugin/skills/gitnexus-exploring/SKILL.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

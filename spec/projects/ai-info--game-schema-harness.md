@@ -25,3 +25,7 @@ Adopt as an experimental decision and memory pattern, not as a dependency or a g
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [game-schema-harness](https://github.com/schema-harness/schema-harness.github.io); analyzed commit `62dd126bc0f6329f789e484a74dc05ff8ab19ed7`; commit date 2026-09-30T21:30:29-04:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-info--game-schema-harness.md).
+<!-- teamagent-analysis:end -->

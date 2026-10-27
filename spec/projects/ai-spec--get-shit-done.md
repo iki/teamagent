@@ -23,3 +23,7 @@ Curate the wave-planning and compact-coordinator techniques into a coding workfl
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [get-shit-done](https://github.com/gsd-build/get-shit-done); analyzed commit `bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815`; commit date 2026-05-31T08:34:35-05:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-spec--get-shit-done.md).
+<!-- teamagent-analysis:end -->

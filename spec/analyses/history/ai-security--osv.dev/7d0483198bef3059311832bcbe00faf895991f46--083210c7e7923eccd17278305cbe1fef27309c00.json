@@ -1,0 +1,984 @@
+{
+  "id": "ai-security--osv.dev",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/google/osv.dev",
+  "report": "spec/projects/ai-security--osv.dev.md",
+  "analyzedSha": "7d0483198bef3059311832bcbe00faf895991f46",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T04:17:35Z",
+  "observedSha": "083210c7e7923eccd17278305cbe1fef27309c00",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "083210c7e7923eccd17278305cbe1fef27309c00",
+      "date": "2026-10-27T07:04:44Z",
+      "subject": "fix(alpine): ingest community.json in addition to main.json (#6224)"
+    },
+    {
+      "sha": "c72ac9467ac9d47e667689c72184254f4339b87b",
+      "date": "2026-10-27T05:56:52Z",
+      "subject": "feat: start postgres shadow reading on prod at 20% (#6238)"
+    },
+    {
+      "sha": "e915082f64d5e0526aed95bfffc74c66b9f7b4e0",
+      "date": "2026-10-27T14:52:25+11:00",
+      "subject": "docs: add Red Hat Lightwell data source to docs/data.md (#6225)"
+    },
+    {
+      "sha": "62e18e6942ec1a66bda437e4720aae51f0f9f9b7",
+      "date": "2026-10-27T14:51:27+11:00",
+      "subject": "feat(sources): Add Red Hat Lightwell data source (production import) (#6207)"
+    },
+    {
+      "sha": "969f47af15d739d284ffde734d30214a94f6ec63",
+      "date": "2026-10-27T14:31:30+11:00",
+      "subject": "feat: set `OSV_NORMALIZE_MATCH_NAMES` on prod (#6237)"
+    },
+    {
+      "sha": "65d4ac6dfd5e40c664d37b08aae6a9539b378163",
+      "date": "2026-10-27T12:04:32+11:00",
+      "subject": "chore(deps): bump filelock from 3.32.7 to 4.2.4 (#6236)"
+    },
+    {
+      "sha": "d9e67363f51c507fe67037ddc4b9048016303627",
+      "date": "2026-10-27T11:42:06+11:00",
+      "subject": "test: update apitester snapshots (#6234)"
+    },
+    {
+      "sha": "70d80c5e380f7fba5930af5398e7b2d2bcd95914",
+      "date": "2026-10-27T11:34:27+11:00",
+      "subject": "chore(deps): update dependencies in frontend3 (#6235)"
+    },
+    {
+      "sha": "958a3633d1f0d2cd772f6ab4abe428fb60db69ad",
+      "date": "2026-10-27T10:32:07+11:00",
+      "subject": "chore(deps): bump virtualenv from 21.7.13 to 21.14.13 in /docker/poetry in the pip group across 1 directory (#6228)"
+    },
+    {
+      "sha": "3bba50cdd2eadef676397fcea761a1bf344decdf",
+      "date": "2026-10-26T05:46:37Z",
+      "subject": "feat: add env vars for prod prostgres dual reads (#6232)"
+    },
+    {
+      "sha": "3792aef3187cd6c5e5b867ab3b935cf864bb5e97",
+      "date": "2026-10-26T15:58:06+11:00",
+      "subject": "chore: speed up Go tests and fix Datastore emulator leaks (#6231)"
+    },
+    {
+      "sha": "769be2d2950df0a8079dbcfea80aa4bd9a9f4512",
+      "date": "2026-10-26T03:28:22Z",
+      "subject": "fix: normalize matching on local dev API (#6230)"
+    },
+    {
+      "sha": "33bd906d7e5e80cb24d86fd660203e67d621ce99",
+      "date": "2026-10-26T14:04:56+11:00",
+      "subject": "feat: improve batching of postgres get queries (#6229)"
+    },
+    {
+      "sha": "4f4c6aace49457f81aed840e1dd7bb92c0a00a8d",
+      "date": "2026-10-26T13:51:51+11:00",
+      "subject": "test: update apitester snapshots (#6226)"
+    },
+    {
+      "sha": "a41aaa122c65e8e90ed9f7f438136a476961e2e1",
+      "date": "2026-10-23T17:13:55+11:00",
+      "subject": "chore: Lay the ground work for automated repo allowlist sync (#6141)"
+    },
+    {
+      "sha": "f3587068a556471d5bfc94c96159f86f9dccd7a0",
+      "date": "2026-10-23T05:12:41Z",
+      "subject": "feat: enable crates.io/nuget normalziation on test, add to postgres (#6222)"
+    },
+    {
+      "sha": "9290eb48b8c78302380e6dfbf1d88ded98c251f7",
+      "date": "2026-10-23T15:24:54+11:00",
+      "subject": "fix: match NuGet and crates.io package names case-insensitively (#6112)"
+    },
+    {
+      "sha": "4e1e1acf73d5e0b9445b98c824aa4302e36f466e",
+      "date": "2026-10-23T13:35:52+11:00",
+      "subject": "docs: datasource licenses and licenses requirements (#6220)"
+    },
+    {
+      "sha": "aa4abbb60d69e2343ef9ba842efc9869ed27269a",
+      "date": "2026-10-23T09:57:50+11:00",
+      "subject": "test: update apitester snapshots (#6219)"
+    },
+    {
+      "sha": "54c2dc6b59449beb006d901900217cbdf251c2fb",
+      "date": "2026-10-22T05:19:07Z",
+      "subject": "fix: API scaling with network interfaces (#6214)"
+    },
+    {
+      "sha": "36baa3312cc9ee0e6692c2ec5ff78e8d1eaebb97",
+      "date": "2026-10-22T15:57:09+11:00",
+      "subject": "feat: set up Postgres API dual-read testing on test instance (#6183)"
+    },
+    {
+      "sha": "913434d7ff8c606ad1b63d8d57275a1d06b56f37",
+      "date": "2026-10-22T15:39:15+11:00",
+      "subject": "test: update apitester snapshots (#6212)"
+    },
+    {
+      "sha": "d0f14f51a766a54d3befb93f65601a5c9ff78c1a",
+      "date": "2026-10-22T10:51:16+11:00",
+      "subject": "chore: regenerate go files (#6210)"
+    },
+    {
+      "sha": "b4b8220f2edc12c217e9819bb8fb900f94e78524",
+      "date": "2026-10-21T23:31:34Z",
+      "subject": "fix(deps): update osv-schema (#6208)"
+    },
+    {
+      "sha": "6b9e6f197c08526646475136444d59b1a458be93",
+      "date": "2026-10-21T23:17:01Z",
+      "subject": "chore(renovate): unblock osv-schema and timestamp-less updates (#6209)"
+    },
+    {
+      "sha": "902dd4b5c50e0323fe49942d810ac7e21b342c0c",
+      "date": "2026-10-21T16:12:08+11:00",
+      "subject": "fix: bump up custommetrics memory/CPU a bit (#6206)"
+    },
+    {
+      "sha": "34a309976521584016144c7079822c65e94949d7",
+      "date": "2026-10-21T15:37:25+11:00",
+      "subject": "chore(deps): update terraform to v8 (#5956)"
+    },
+    {
+      "sha": "2f06988f26cff14493c8c3815e83735233e5feb5",
+      "date": "2026-10-21T04:35:54Z",
+      "subject": "fix(deps): update go-libraries (#6191)"
+    },
+    {
+      "sha": "e7dd0c36c4d8f69535dde77373393fb2929b46ad",
+      "date": "2026-10-21T06:30:26+02:00",
+      "subject": "feat(monitoring): implement Dashboard 2 (pipeline ops) and Dashboard 3 (data quality & drift) (#6175)"
+    },
+    {
+      "sha": "2f9c0f978df7590926f37b1669f79ba7fea1e694",
+      "date": "2026-10-21T04:20:26Z",
+      "subject": "fix(deps): update module github.com/yuin/goldmark to v2 (#5957)"
+    },
+    {
+      "sha": "efe3c3aabb36f97f5684c820a9f9688e6d31940f",
+      "date": "2026-10-21T14:50:03+11:00",
+      "subject": "chore(deps): bump the pip group across 1 directory with 1 update (#6202)"
+    },
+    {
+      "sha": "11d938eab431b0952fb4533ac3fbbc5e5a15bb8b",
+      "date": "2026-10-21T14:42:56+11:00",
+      "subject": "chore(renovate): enable pip-compile for docker/poetry (#6205)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/new_datasource.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/codeql-analysis.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-deploy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/links.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecards.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/go/api/osv_service_v1.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/go/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/go/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/go/osvdev/osvdev.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/go/osvdev/osvdev_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "db_test/20261001064316_test.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/base/core/gitter.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/base/core/recoverer.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/base/extra/custommetrics.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/combine-to-osv.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/custommetrics.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/configmaps/grafana_datasources.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/dashboards/data-quality-drift.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/dashboards/executive-overview.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/dashboards/pipeline-ingestion-ops.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/grafana_deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/grafana_service_account.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/kustomization.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb-test/monitoring/worker_pod_monitoring.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/gke-workers/environments/oss-vdb/custommetrics.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/osv-api/run-prod.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/clouddeploy/osv-api/run-staging.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/environments/oss-vdb-test/.terraform.lock.hcl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/environments/oss-vdb-test/main.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/environments/oss-vdb/.terraform.lock.hcl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/environments/oss-vdb/main.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/environments/private-osv/.terraform.lock.hcl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/environments/private-osv/main.tf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deployment/terraform/environments/temp/.terraform.lock.hcl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deployment/terraform/environments/temp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deployment/terraform/environments/temp/main.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/modules/osv/website.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/modules/osv_pipeline/iam.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deployment/terraform/modules/osv_pipeline/outputs.tf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/ci/install_go.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/deployment/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/poetry/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/worker-base/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/Gemfile.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/post-v1-query.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/api/post-v1-ubuntu-binary-to-source.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/data.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs.Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/new_source.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/osv_service_v1.swagger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rest-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "external/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "external/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/functions/pypi/poetry.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/functions/pypi/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/indexer/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/indexer/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/cron/make_bugs_public/make_bugs_public.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_importer/importer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_importer/importer_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_importer/testdata/ImporterTest_diff_basic.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_importer/testdata/ImporterTest_expected.json.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_worker/oss_fuzz.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_worker/poetry.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_worker/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "gcp/workers/oss_fuzz_worker/testdata/UpdateTest_normalized_pypi_pubsub_calls.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "gcp/workers/oss_fuzz_worker/testdata/UpdateTest_pypi_pubsub_calls.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_worker/worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/oss_fuzz_worker/worker_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/worker/poetry.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gcp/workers/worker/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cloudbuild.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/api-devserver/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/api/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/custommetrics/collector.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/custommetrics/collector_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/custommetrics/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/gitter/gitter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/gitter/gitter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/gitter/repository.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/importer/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/osv-linter-worker/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/recoverer/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/relations/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/relations/upstream_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/tools/reimport-tui/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "go/cmd/tools/reimport-tui/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "go/cmd/tools/reimport-tui/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "go/cmd/tools/reimport-tui/osv-scanner.toml",
+      "previousPath": null
+    },
+    {
+      "status": "R073",
+      "path": "go/cmd/tools/repo-allowlist-sync/README.md",
+      "previousPath": "tools/repo-allowlist-sync/README.md"
+    },
+    {
+      "status": "R098",
+      "path": "go/cmd/tools/repo-allowlist-sync/main.go",
+      "previousPath": "tools/repo-allowlist-sync/main.go"
+    },
+    {
+      "status": "R098",
+      "path": "go/cmd/tools/repo-allowlist-sync/main_test.go",
+      "previousPath": "tools/repo-allowlist-sync/main_test.go"
+    },
+    {
+      "status": "R100",
+      "path": "go/cmd/tools/repo-allowlist-sync/repo_allowlist.yaml",
+      "previousPath": "tools/repo-allowlist-sync/repo_allowlist.yaml"
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/tools/repo-allowlist-sync/repo_allowlist_build.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "go/cmd/tools/repo-allowlist-sync/repo_allowlist_test.yaml",
+      "previousPath": "tools/repo-allowlist-sync/repo_allowlist_test.yaml"
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/tools/repo-allowlist-sync/run_update.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/cmd/tools/repo-allowlist-sync/run_validate.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/ubuntubinarymapper/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/ubuntubinarymapper/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/vanir_signatures/osv/poetry.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/cmd/vanir_signatures/poetry.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/api/ubuntu_package_mapping.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/api/ubuntu_package_mapping_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/affected_versions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/affected_versions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/import_finding.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/job_data.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/listed_vulnerability.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/listed_vulnerability_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/datastore/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/ubuntu_package_mapping.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/ubuntu_package_mapping_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/vulnerability.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/vulnerability_matching.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/datastore/vulnerability_matching_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/dualread/vulnerability.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/dualread/vulnerability_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/jsonstore/jsonstore.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/database/jsonstore/jsonstore_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/affected_versions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/batch.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/connect.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/db.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/models.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/queries.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/queries.sql.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/sqlc.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/vulnerability.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/vulnerability_matching.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/database/postgres/vulnerability_matching_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/importer/bucket.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/importer/importer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/importer/rest.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/metrics/metrics.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/metrics/metrics_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/metrics/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/models/import_finding.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/models/job_data.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/models/ubuntu_package_mapping.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/internal/models/ubuntu_package_mapping_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/osvutil/schema/schema_generated.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/recoverer/recoverer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/recoverer/recoverer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "go/internal/repos/repos.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/website/vulnerability_helpers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/website/vulnerability_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/worker/engine.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/worker/pipeline/namenormalize/namenormalize_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/internal/worker/subscriber.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/osv/clients/cloudstorage.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/osv/clients/gcs_client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "go/osv/ecosystem/cratesio.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go/osv/ecosystem/dhi.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

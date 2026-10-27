@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--gemini-cli",
+    "category": "ai-agents",
+    "name": "gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--gemini-cli.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "fb972b2f87fe7d5b06d37eac711490162d98de2c",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T05:49:39Z",
+    "reportSha256": "c3722d2fd12722b89230e09b18cff16c87567ff2282895f3493cdbbcddbf90fd",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--gemini-cli",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/google-gemini/gemini-cli",
+    "report": "spec/projects/ai-agents--gemini-cli.md",
+    "analyzedSha": "fb972b2f87fe7d5b06d37eac711490162d98de2c",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T05:49:39Z",
+    "observedSha": "7e6227a09cabcbc691fa59486cb108855131e8ad",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "7e6227a09cabcbc691fa59486cb108855131e8ad",
+        "date": "2026-10-27T17:35:15Z",
+        "subject": "fix(core): allow trusted system paths on Android (Termux) for ripgrep resolution (#21836) (#29884)"
+      },
+      {
+        "sha": "363a13119a57354f469732577518b9d6b319d1d6",
+        "date": "2026-10-26T20:12:43Z",
+        "subject": "fix(cli): validate finite numbers in numeric settings editor (#29968)"
+      },
+      {
+        "sha": "d137efd2f61b5b610fe646facbdd35d424e380bd",
+        "date": "2026-10-26T19:57:13Z",
+        "subject": "fix(cli): prevent parent command name insertion on /chat list autocomplete (#29967)"
+      },
+      {
+        "sha": "33dce9518957587ce894cc3ad4f9e63981056f4b",
+        "date": "2026-10-26T19:10:53Z",
+        "subject": "fix(acp): include MCP server and tool metadata in permission requests (#29910)"
+      },
+      {
+        "sha": "a2e7ef025792619b450fab177b2c71f4e8efaa87",
+        "date": "2026-10-26T18:08:41Z",
+        "subject": "fix(core): classify project spending cap errors as terminal quota errors (#29961)"
+      },
+      {
+        "sha": "cd1b45c2db0a5ea7b7fc3b67c1ba5879601d6005",
+        "date": "2026-10-23T20:43:47Z",
+        "subject": "feat(cli): add models command and --list-models flag for model discovery (#29880)"
+      },
+      {
+        "sha": "5b36aacf5bf3d044badc881063f7671598c27c9d",
+        "date": "2026-10-23T20:19:13Z",
+        "subject": "fix(cli): convert Claude hook timeout from seconds to milliseconds during migration (#29899)"
+      },
+      {
+        "sha": "d968ea0a247b4709e23fc03b782eaa05ce1bf4d4",
+        "date": "2026-10-23T17:14:46Z",
+        "subject": "fix(core): resolve relative file paths against active IDE workspace root (#29838)"
+      },
+      {
+        "sha": "dbd6c91681ab0aca44e606277833e383e01114f5",
+        "date": "2026-10-23T16:26:40Z",
+        "subject": "fix(cli): correct Thai and Lao SARA AM display width (#29883)"
+      },
+      {
+        "sha": "a3dd9f8c7bcb495a46d0b505b6f179996ccd8332",
+        "date": "2026-10-23T16:14:18Z",
+        "subject": "fix(cli): stop continuation stream processing and auto-nudge after request cancellation (#29868)"
+      },
+      {
+        "sha": "a713410aba5d594594e20d5c822e3aab8f822089",
+        "date": "2026-10-22T22:14:36Z",
+        "subject": "fix(cli): preserve ${VAR} placeholders during deprecated settings migration (#29867)"
+      },
+      {
+        "sha": "451a02ff03f1d2a8fe870c120fd5342cfd6f9fd1",
+        "date": "2026-10-22T19:07:09Z",
+        "subject": "fix(cli): handle termination signals and prevent tool execution after cancellation in non-interactive mode (#29849)"
+      },
+      {
+        "sha": "c690b9df153f74202c0c5b13cc197790f3c7f92f",
+        "date": "2026-10-22T18:12:24Z",
+        "subject": "fix(core): ensure all model turns with function calls receive thought signatures (#29828)"
+      },
+      {
+        "sha": "dbc73408840332c7faa0f40a4286641d7cdfc7a8",
+        "date": "2026-10-22T17:57:21Z",
+        "subject": "fix(a2a-server,core): preserve extended token usage metadata and align per-turn reporting (#29834)"
+      },
+      {
+        "sha": "09d81bf116b6f0ef084731dc996aa9d56438bb70",
+        "date": "2026-10-21T22:03:27Z",
+        "subject": "fix(core): respect read-only files and hard links in atomic writeTextFile (#29749)"
+      },
+      {
+        "sha": "578f03324eb2753523217e75a41fd4b5db019277",
+        "date": "2026-10-21T19:03:39Z",
+        "subject": "fix(core): adhere to RFC 9110 token rules when splitting custom headers (#29865)"
+      },
+      {
+        "sha": "04366efb052573a8b4cf074e5973b027ae071eda",
+        "date": "2026-10-21T18:09:55Z",
+        "subject": "fix(a2a-server): mount express.json() before A2A SDK route registration (#29850)"
+      },
+      {
+        "sha": "120a39ded6ad7b82e45b574ab54baba451d65fe9",
+        "date": "2026-10-21T17:39:10Z",
+        "subject": "fix(core): scope untrusted flag checks to external output and remember approved flags (#29833)"
+      },
+      {
+        "sha": "04e54d05c4f2a16808db9abd8cb3ee1210dca9a9",
+        "date": "2026-10-21T17:38:54Z",
+        "subject": "fix(core): prevent duplicate agent loading when workspace is home directory (#27692) (#29847)"
+      },
+      {
+        "sha": "7cb39b75e4770805d6b750487d5950e58cc646c5",
+        "date": "2026-10-21T17:19:29Z",
+        "subject": "fix(ide): exclude IDE settings and GEMINI.md files from open file con text (#29848)"
+      },
+      {
+        "sha": "5e7b42d76afc90567443ee2a14c8c565c43bdee4",
+        "date": "2026-10-21T16:51:54Z",
+        "subject": "feat(cli): bridge the IDE companion into container sandboxes over exec stdio (#29858)"
+      },
+      {
+        "sha": "c1740d29301a73a47dc3501c1aecc7eb00c0ee58",
+        "date": "2026-10-21T02:59:45Z",
+        "subject": "Changelog for v0.66.0-preview.0 (#29852)"
+      },
+      {
+        "sha": "d00859d6b142f794827f8a9365961333cebac96d",
+        "date": "2026-10-20T22:04:03Z",
+        "subject": "chore(release): bump version to 0.67.0-nightly.20261020.gb041de017 (#29854)"
+      },
+      {
+        "sha": "b9f19a8c33e4ef25ad97b1c86c9d5ab4bb6bdcf0",
+        "date": "2026-10-20T21:56:06Z",
+        "subject": "Changelog for v0.65.0 (#29853)"
+      },
+      {
+        "sha": "b041de0171144b3dc7d31822196bc21761817ad0",
+        "date": "2026-10-20T18:46:00Z",
+        "subject": "fix(core): support opt-in private network endpoints for MCP OAuth flows (#29844)"
+      },
+      {
+        "sha": "ac223e84e73784e6fc00a152b1fabe7ceb969d9b",
+        "date": "2026-10-20T18:27:17Z",
+        "subject": "fix(core): prevent false positive matches in isAuthenticationError (#29835)"
+      },
+      {
+        "sha": "5534eeac330570eb2d0e71846eb42a8bef346a41",
+        "date": "2026-10-20T17:21:51Z",
+        "subject": "fix(core): preserve user-level ~/.gitconfig in shell and git environments (#29832)"
+      },
+      {
+        "sha": "afd56de1f61198b876a81fa1410c7d039b717a5d",
+        "date": "2026-10-20T16:25:28Z",
+        "subject": "chore: migrate gsutil usage to gcloud storage (#29839)"
+      },
+      {
+        "sha": "76e4d7c046c7dab5727787da378b9c06bf0948cf",
+        "date": "2026-10-19T19:45:53Z",
+        "subject": "fix(cli): decode streamed Node HTTP activity chunks with StringDecoder (#29827)"
+      },
+      {
+        "sha": "3be3d4424b3c8a760d793ae1bea6cb5180adf27d",
+        "date": "2026-10-19T17:19:24Z",
+        "subject": "fix(ui): preserve terminal scrollback during viewport refreshes (#29792)"
+      },
+      {
+        "sha": "ed96faedfd5571f055c44f2c9509d62321d1138d",
+        "date": "2026-10-16T19:58:52Z",
+        "subject": "fix(cli): forward termination signals from bootstrap parent to child process (#29790)"
+      },
+      {
+        "sha": "b792f21edfe76ead81918374133c19dd1e5cc79a",
+        "date": "2026-10-16T17:41:17Z",
+        "subject": "fix(cli): support 'keys' array in keybindings.json (#29773)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".github/workflows/unassign-inactive-assignees.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "ROADMAP.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/changelogs/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/changelogs/latest.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/changelogs/preview.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli/acp-mode.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli/plan-mode.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli/sandbox.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli/telemetry.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/ide-integration/index.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/commands.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/configuration.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/reference/keyboard-shortcuts.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/tools/mcp-server.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integration-tests/utf-bom-encoding.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/agent/executor.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/agent/executor.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/agent/task-event-driven.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/agent/task.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/agent/task.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/config/config.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/config/config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/http/app.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/http/app.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/a2a-server/src/http/endpoints.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/acp/acpSession.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/acp/acpSession.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/acp/acpUtils.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/commands/hooks/migrate.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/commands/hooks/migrate.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/commands/mcp/add.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/commands/mcp/add.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/commands/mcp/remove.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/commands/mcp/remove.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/cli/src/commands/models.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/cli/src/commands/models.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/cli/src/commands/models/list.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/cli/src/commands/models/list.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/extension-manager.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/extension.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/extensions/github.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/extensions/github_fetch.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/extensions/github_fetch.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/settings.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/settings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/config/settingsSchema.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/gemini.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/gemini.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/interactiveCli.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/nonInteractiveCli.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/nonInteractiveCli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/nonInteractiveCliAgentSession.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/nonInteractiveCliAgentSession.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/services/CommandService.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/services/CommandService.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/services/SlashCommandConflictHandler.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/services/SlashCommandConflictHandler.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/test-utils/render.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/test-utils/render.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/AppContainer.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/AppContainer.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/auth/AuthDialog.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/auth/AuthDialog.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/auth/useAuth.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/auth/useAuth.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/CliSpinner.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/CliSpinner.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/Composer.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/Composer.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/DetailedMessagesDisplay.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/DetailedMessagesDisplay.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/Footer.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/GeminiRespondingSpinner.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/GeminiSpinner.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/HistoryItemDisplay.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/HistoryItemDisplay.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/InputPrompt.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/LoadingIndicator.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/MainContent.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/MainContent.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/MemoryUsageDisplay.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/RewindViewer.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/RewindViewer.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/StatusRow.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/ValidationDialog.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/ValidationDialog.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/messages/DenseToolMessage.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/messages/DenseToolMessage.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/messages/ToolConfirmationMessage.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/messages/ToolConfirmationMessage.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/messages/ToolResultDisplay.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/messages/ToolResultDisplay.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/shared/MaxSizedBox.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/components/shared/MaxSizedBox.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/contexts/ToolActionsContext.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/contexts/ToolActionsContext.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/atCommandProcessor.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/atCommandProcessor.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useAgentStream.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useAgentStream.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useGeminiStream.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useGeminiStream.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useLoadingIndicator.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useLoadingIndicator.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useQuotaAndFallback.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useQuotaAndFallback.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useReverseSearchCompletion.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useReverseSearchCompletion.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useSlashCompletion.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/hooks/useSlashCompletion.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/key/keyBindings.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/key/keyBindings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/utils/formatters.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/utils/formatters.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/utils/rewindFileOps.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/utils/rewindFileOps.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/utils/textUtils.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/ui/utils/textUtils.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/activityLogger.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/activityLogger.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/cleanup.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/cleanup.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/errors.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/handleAutoUpdate.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/handleAutoUpdate.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/cli/src/utils/ideBridge.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/cli/src/utils/ideBridge.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/cli/src/utils/ideBridgeHelper.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/processUtils.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/processUtils.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/relaunch.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/relaunch.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/sandbox.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/sandbox.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/settingsUtils.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/src/utils/settingsUtils.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/cli/test-setup.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/agent/legacy-agent-session.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/agents/auth-provider/oauth2-provider.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/agents/auth-provider/oauth2-provider.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/agents/registry.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/agents/registry.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/code_assist/converter.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/code_assist/converter.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/code_assist/setup.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/code_assist/setup.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/config/config.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/config/config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/core/client.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/core/client.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/core/geminiChat.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/core/geminiChat.ts",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

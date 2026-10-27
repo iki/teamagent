@@ -1,0 +1,916 @@
+{
+  "metadata": {
+    "id": "ai-agents-mem--llm-wiki-compiler",
+    "category": "ai-agents-mem",
+    "name": "llm-wiki-compiler",
+    "url": "https://github.com/atomicmemory/llm-wiki-compiler",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-mem--llm-wiki-compiler.md",
+    "topics": [
+      "memory",
+      "evolution",
+      "skills",
+      "import-generation"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "605461febe8206e6f78e987bb57f75fa1c5817c5",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-10-02T16:58:40-07:00",
+    "reportSha256": "6affb799a5072369a2d611c48e77350de6efa00acb47ba46ad131164d3472ebd",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-mem--llm-wiki-compiler",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/atomicmemory/llm-wiki-compiler",
+    "report": "spec/projects/ai-agents-mem--llm-wiki-compiler.md",
+    "analyzedSha": "605461febe8206e6f78e987bb57f75fa1c5817c5",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-10-02T16:58:40-07:00",
+    "observedSha": "c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "c9c8734be8a0b854c1547cfa3ee97f0b8c6bfa5f",
+        "date": "2026-10-19T12:40:59-07:00",
+        "subject": "release: ship llmwiki 1.5.0 (#289)"
+      },
+      {
+        "sha": "50380af5558af6f5e828b041fa7bafdf4dbbf41f",
+        "date": "2026-10-15T03:05:15-07:00",
+        "subject": "release: prepare llmwiki 1.5.0-rc.1 for early testing"
+      },
+      {
+        "sha": "2de2c8f5a30e1ae35c22927a73e08e28ad396940",
+        "date": "2026-10-15T02:18:20-07:00",
+        "subject": "refactor(storage): separate wiki behavior from local filesystem I/O (#287)"
+      },
+      {
+        "sha": "e3885a107abb6ceee865e575147c6f5503a6595c",
+        "date": "2026-10-15T01:12:06-07:00",
+        "subject": "feat(providers): support bearer-authenticated Converse endpoints (#282)"
+      },
+      {
+        "sha": "47769971ca8e1196ab727fd52ea104d2bbc3330c",
+        "date": "2026-10-13T22:52:12-07:00",
+        "subject": "docs(changelog): credit Lorenzo Gentile's three contributions (#286)"
+      },
+      {
+        "sha": "6e77d23d47738a6b15b32b6174e3b2d6ad596435",
+        "date": "2026-10-13T22:17:50-07:00",
+        "subject": "feat(compile): Add opt-in --no-pages-limit extraction mode (#285)"
+      },
+      {
+        "sha": "f7df886ceb68178b8983066d737a323e59012d17",
+        "date": "2026-10-13T21:06:49-07:00",
+        "subject": "fix(compiler): Normalize extracted wikilink titles (#278)"
+      },
+      {
+        "sha": "8a1d764cf45d335357089292f1791fae26d1a317",
+        "date": "2026-10-13T20:39:07-07:00",
+        "subject": "fix(openai): Support GPT-6 Luna request parameters (#279)"
+      },
+      {
+        "sha": "a3eb4473b0b2d2aa747d2f4a7f683d35efe16521",
+        "date": "2026-10-09T23:41:03-07:00",
+        "subject": "fix(freshness): hash sources without blocking on a named pipe (#280)"
+      },
+      {
+        "sha": "3df33070479d7cc0834753c5f81578ba4f775027",
+        "date": "2026-10-09T00:53:41-07:00",
+        "subject": "fix(viewer): stop snapshot refresh when the viewer closes (#276)"
+      },
+      {
+        "sha": "b86a31f88464a83083e4db8b74ed11fc833bc8f5",
+        "date": "2026-10-08T13:02:37-07:00",
+        "subject": "feat(view): add LLMWIKI_VIEW_PORT environment variable support (#274)"
+      },
+      {
+        "sha": "ab589068d1060a37c2f4de8dbfbe6f9b8a450cd6",
+        "date": "2026-10-08T12:40:28-07:00",
+        "subject": "feat(viewer): add throttled on-request dynamic snapshot refresh (#275)"
+      },
+      {
+        "sha": "0e084836fd3fb827336217e2369732b9bedcb3b0",
+        "date": "2026-10-06T22:06:58-07:00",
+        "subject": "fix(mcp): run the whole stdio server in quiet mode (#273)"
+      },
+      {
+        "sha": "4dee5958ac6b49b4027d172932e9ab4ca20c5a64",
+        "date": "2026-10-06T21:05:54-07:00",
+        "subject": "fix(mcp): keep the wiki tools' progress output off stdout (#270)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": "ARCHITECTURE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli/compile.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli/view.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/configuration/environment-variables.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/configuration/providers.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/sdk-upgrade.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/guides/sdk.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/installation.mdx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/llmwiki-core/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/llmwiki-dev-backend/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/llmwiki-limited-isolation-backend/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/llmwiki-local-workflows/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/apply-guards.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/apply-members.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/apply.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/capture-member.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/discover.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/enforce-precondition.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/execution-provenance.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/read-verified.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/resolve-members.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/resolve.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/artifacts/store.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/capability-providers/packages/paths.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/citations/answer-index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/citations/answer-publication.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/citations/frontmatter-reader.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/citations/generic-publication.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/cli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/cli/view-port.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/compile.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/eval.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/export.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/ingest-session.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/ingest.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/lint-fix-propose.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/lint.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/operation/cancel.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/operation/drive.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/operation/inspect.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/operation/list.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/operation/resolve.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/product/init.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/product/status.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/query-citation-report.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/query-proposal.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/query-publication.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/commands/query-reads.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/query-save.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/query-selection.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/query.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/refresh.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/reset-plan.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-approve-batch.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-approve.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-batch-gates.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-batch-plan.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-embedding-intent.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-finalize.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-publication.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-reject.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/review-target-precondition.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/rm.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/rules.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/schema.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/state-reset.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/view.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/visualize.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/commands/watch.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler-cli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidate-custody.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidate-paths.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidate-publication.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidate-read.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidate-rejection.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidate-selection.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidate-store-paths.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/candidates.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/compiler/compile-access.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/compiler/compile-finalize.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/compiler/compile-phases.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/compile-report.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/compile-state-draft.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/compile-write-ids.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/compile-write.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/compiler/concept-title.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/confined-wiki-read.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/deps.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/extraction-phase.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/extraction-snapshot.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/hasher.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/indexgen.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/link-repair.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/link-targets.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/obsidian.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/orphan.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/page-renderer.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/prompt-modifiers.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/prompts.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/refresh-plan.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/resolver.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/review-pipeline.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/rule-candidates.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/rule-extractor.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/rule-state.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/seed-pages.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/compiler/source-state.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/connectors/candidate-supersession.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/connectors/config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/connectors/rate-limit.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/connectors/run.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/connectors/stage-candidate.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/connectors/stage-draft.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/context/build-reads.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/context/build.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/context/pack-warnings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/context/provenance.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/context/retrieval.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/context/typed-pages.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/cache.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/candidate-evidence.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/candidates.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/citation-coverage.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/citation-depth.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/citation-support.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/eval/file-reads.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/eval/file-writes.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/graph-health.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/health.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/page-health-distribution.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/source-path.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/source-utilization.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/stats.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/eval/thresholds.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/events/operation-events.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/events/store-read.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/events/store-version.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/events/store.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/events/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/collect.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/okf/bundle-block.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/okf/bundle.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/okf/profile-docs.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/okf/references.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/okf/run.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/profile-block.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/export/rule-candidates-json.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/freshness/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/import/bundle-block-read.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/import/okf-collision.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/import/okf-import.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/import/okf-read.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/import/okf-refresh.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/import/profile-import.ts",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

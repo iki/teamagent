@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--fokosdb",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/lambrospetrou/fokosdb",
+  "report": "spec/projects/ai-agents-mem--fokosdb.md",
+  "analyzedSha": "01c82a26189c545a7ef75d07ebdf35f20d074a55",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T21:35:09+01:00",
+  "observedSha": "3e1f1517aaafd09fddde3c229b04c019524f59dd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3e1f1517aaafd09fddde3c229b04c019524f59dd",
+      "date": "2026-10-23T22:04:33+01:00",
+      "subject": "spec encoded topology and auto admin DO"
+    },
+    {
+      "sha": "f16c6772b35828efbe6afe47a420bddf6eebf1f3",
+      "date": "2026-10-22T19:32:25+01:00",
+      "subject": "gsi spec switch approaches to cursor based"
+    },
+    {
+      "sha": "69b7cd9a448c28ef6952d3efb1e1e57de9a73fe2",
+      "date": "2026-10-22T13:06:29+01:00",
+      "subject": "spec gsi"
+    },
+    {
+      "sha": "d4bac88f05968e2edec17f4faeacb6e76b237907",
+      "date": "2026-10-22T00:47:37+01:00",
+      "subject": "readme"
+    },
+    {
+      "sha": "60c761e4e32bcb3ca5e731c15132bd369bc63eca",
+      "date": "2026-10-22T00:45:42+01:00",
+      "subject": "more gsi spec edits with some ideas doc for API improvements"
+    },
+    {
+      "sha": "8425b3e4729e371fea6764f7bdac2275cc5530c0",
+      "date": "2026-10-21T23:46:09+01:00",
+      "subject": "gsi spec optimization for less row writes"
+    },
+    {
+      "sha": "beed39a12aea5c90df8043756a135a964c34c2a1",
+      "date": "2026-10-21T00:19:33+01:00",
+      "subject": "add tests for batch operations at the FokosDB client level"
+    },
+    {
+      "sha": "7d32adc67ea90514ba39c9b7b892155834b1e5ae",
+      "date": "2026-10-19T18:44:57+01:00",
+      "subject": "gsi option"
+    },
+    {
+      "sha": "3a985565d4005eda1f0308bf35e2a0f0c77d35b2",
+      "date": "2026-10-19T13:54:44+01:00",
+      "subject": "exploration for SQLite pages space reclaim and databaseSize after deletions"
+    },
+    {
+      "sha": "42d9e703d68780f1b4e2298b56eca42dabb73868",
+      "date": "2026-10-19T01:24:49+01:00",
+      "subject": "spec for gsi alternative option and reformat"
+    },
+    {
+      "sha": "893ed33f86396e593f761a6d51097457a3874146",
+      "date": "2026-10-19T00:36:09+01:00",
+      "subject": "spec for GSIs"
+    },
+    {
+      "sha": "b47882e60b316fb8e3ae4f92f39358778dc11397",
+      "date": "2026-10-18T22:19:23+01:00",
+      "subject": "increase the max_deleted_v to deleted_item.v + 1 instead of just v"
+    },
+    {
+      "sha": "488d203714ed8c0eed0e4178cb0aab8e61afe159",
+      "date": "2026-10-18T16:49:44+01:00",
+      "subject": "expand tests to use batch operations"
+    },
+    {
+      "sha": "23a99d1760eaeaef9031fd30d1158899a0c5b7c5",
+      "date": "2026-10-18T16:09:13+01:00",
+      "subject": "implement operations batchGetItems and batchWriteItems"
+    },
+    {
+      "sha": "e62da74f9d13e553936c1440ccfda4ef726b71e9",
+      "date": "2026-10-18T01:57:46+01:00",
+      "subject": "spec for batch item operations"
+    },
+    {
+      "sha": "479b94fa5882d2d40255d657b23299d82b91cf0c",
+      "date": "2026-10-17T20:50:08+01:00",
+      "subject": "idea reword"
+    },
+    {
+      "sha": "8f4cce98acf76019ac43c596554906d6439e4176",
+      "date": "2026-10-17T13:54:32+01:00",
+      "subject": "add research markdown from claude - good info for splits across distributed databases"
+    },
+    {
+      "sha": "400c46eaba228936e3ef62f0fd886ff501aa79d0",
+      "date": "2026-10-17T12:58:06+01:00",
+      "subject": "mark spec for meta as done"
+    },
+    {
+      "sha": "915ad4c4149dc9464c41b9335eaf2cdf0e331510",
+      "date": "2026-10-17T12:47:09+01:00",
+      "subject": "idea doc"
+    },
+    {
+      "sha": "eba509ad17f7257f6ebdefb8873a8ee249e05368",
+      "date": "2026-10-17T12:42:53+01:00",
+      "subject": "Run SQLite PRAGMA optimize after a split migrated its data"
+    },
+    {
+      "sha": "cd5a06f8f54d817aae9fa804c57738e39bdb29b9",
+      "date": "2026-10-17T12:39:17+01:00",
+      "subject": "idea: Replace the hash key promotion flow with mixed key range partitions"
+    },
+    {
+      "sha": "bfe16abc53ac52ea9fd7741c1857cdc22dfe5067",
+      "date": "2026-10-16T22:52:12+01:00",
+      "subject": "tests: reduce flakiness"
+    },
+    {
+      "sha": "50e755e2e47831c226645b7965366a484986306e",
+      "date": "2026-10-16T21:48:02+01:00",
+      "subject": "rename #rangeDepthStamp to #hashDepthStampForRangeNodes"
+    },
+    {
+      "sha": "afeb5f9aaf9a755d15746cdf2dd809e529fce5a7",
+      "date": "2026-10-16T21:44:13+01:00",
+      "subject": "Remove hashDepth stamping and leaking that into the sharding host"
+    },
+    {
+      "sha": "859669e43cc1ffa56522e47b97afd1a32fcf141c",
+      "date": "2026-10-16T21:20:38+01:00",
+      "subject": "unify all the responses to return meta.partitions"
+    },
+    {
+      "sha": "7c88e88a98434791b8e4947d19d6fbc336a412d4",
+      "date": "2026-10-16T13:16:35+01:00",
+      "subject": "spec for response meta refactoring"
+    },
+    {
+      "sha": "3b414f54470e4f76570937035cdb8b8fcb41615e",
+      "date": "2026-10-16T09:35:18+01:00",
+      "subject": "test: fix some error message"
+    },
+    {
+      "sha": "8193d45a76a7eeb8a617f894debf5135701f417d",
+      "date": "2026-10-16T09:33:50+01:00",
+      "subject": "Improve FokosError.toWire and FokosError.fromWire"
+    },
+    {
+      "sha": "521cdd2c34eea35c06461e7ade55f34e82c4202c",
+      "date": "2026-10-15T21:16:04+01:00",
+      "subject": "refactor meta on errors thrown to always be FokosDBError"
+    },
+    {
+      "sha": "bec49759ffde420691829868f61fcad9501d0d9f",
+      "date": "2026-10-15T20:33:01+01:00",
+      "subject": "improve response types for non transaction ops"
+    },
+    {
+      "sha": "fa9e6aee08299a0c16ef94df6b85822b21acadc6",
+      "date": "2026-10-14T11:19:33+01:00",
+      "subject": "tests: Add ability to replay easily property based failures and the errors report the command itself"
+    },
+    {
+      "sha": "7f069c4683a8ab0579a8aa78d179123b5078fe8e",
+      "date": "2026-10-14T10:43:43+01:00",
+      "subject": "tests: consider sharding library unavailable error codes"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/spec-review/references/review-checklist.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".prettierignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-08-29-typed-expression-engine-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-09-02-update-expressions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-09-05-item-order-timestamps-and-read-revisions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-09-14-read-projections-and-query-filters.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-09-27-range-do-name-text-encoding.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-09-30-item-size-facts-and-range-split.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-10-03-max-deleted-version.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-10-03-ordered-per-item-transact-write.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-09-condition-after-write.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-09-condition-arrays.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-10-expression-compile-cost.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-10-expression-trees-over-rpc.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-11-absent-check-raises-delete-watermark.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-16-unified-operation-meta.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-17-batch-get-and-write-items.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-17-coalesced-materialization-and-gsis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/agent-plans/2026-10-23-encoded-topology-auto-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/ideas/2026-09-17-coalesced-materialization-and-gsis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ideas/2026-10-09-p-model-of-fokosdb-transactions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ideas/2026-10-09-quint-model-of-the-transaction-coordinator.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ideas/2026-10-10-api-boundary-freeze.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ideas/2026-10-19-exploration-sqlite-space-reclamation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ideas/2026-10-21-idempotent-sink-writes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ideas/range-partitions-mixed-keys.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/research/claude-hashing_and_splits_across_distributed_databases.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/http-api/public/demo/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/http-api/src/rpc/routes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/http-api/src/rpc/schemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/http-api/src/rpc/serialize.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/http-api/test/hurl/sanity.hurl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/http-api/test/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/FokosDB.pproj",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/Answers.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/Atomicity.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/Authority.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/Copies.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/Liveness.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/Locks.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/ReadSerializable.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/Versions.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSpec/WriteSerializable.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/Client.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/Coordinator.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/Environment.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/Operator.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/Partition.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/RpcCall.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/Topology.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PSrc/Types.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PTst/TestCases.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/PTst/TestDriver.p",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/formal/p/check.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/client/db.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/client/db.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/client/fokos-std.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/client/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/fokosdb/src/client/partition-info.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/do-partition.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/do-transaction-coordinator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/do-transaction-coordinator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/batch-scan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/index-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/key-codec.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/key-codec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/repartition-flow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/repartition-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/sharding/rpc-limits.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/runtime-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/runtime-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/sharding-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/batch-api-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/batch-failure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/batch-failure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/batch-response.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/batch-response.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/errors-operations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/errors-operations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/errors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/bindings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/compiler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/compiler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/expressions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/limits.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/operation-registry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/operation-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/projection-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/projection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/expression/request-plans.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/semantic.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/semantic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/expression/sql-join.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/expression/sql-join.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/test-fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/expression/utf8.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/utf8.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/partition-meta.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition/fokos-migration-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition/partition-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition/partition-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/src/shared/partition/transaction-participant-ordered.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition/transaction-participant.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition/transaction-participant.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/query/page-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/query/page-budget.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/transaction-api-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/transaction-idempotency.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/transaction-idempotency.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/transaction-limits.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/transaction-limits.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/transaction-wire-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/controlled-partition-do.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/destroy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/expression-bench/expression-alloc.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/expression-bench/expression-cases.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/expression-bench/expression.workerd-bench.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/item-conditions-return-values.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/item-errors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/partition-do/batch-get-items.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/partition-do/batch-write-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/partition-do/batch-write-items.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/error-meta.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/partition-do/expression-sqlite-limits.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/partition-do/expression-trees.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/hash-split.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/import-page-guards.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/item-conditions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/item-crud.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/migration-timestamps.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/partition-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/promotion.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/query-items.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/range-split.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/read-through.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/partition-do/tx-ordered-routing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/tx-participant.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/tx-promotion-transfer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/tx-stale-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-errors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/fokosdb/test/property-based/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/property-based/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/property-based/item-crud.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

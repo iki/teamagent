@@ -1,0 +1,214 @@
+{
+  "id": "ai-agents-proxy--llm-observer-proxy-go",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/xxyyue/llm-observer-proxy-go",
+  "report": "spec/projects/ai-agents-proxy--llm-observer-proxy-go.md",
+  "analyzedSha": "dd809dfe1fd411f7eb3852353a8ac1d280643bad",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-08-04T15:48:59+08:00",
+  "observedSha": "f07e370c78d4d6efc482e366edb6368bdcf292d6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f07e370c78d4d6efc482e366edb6368bdcf292d6",
+      "date": "2026-10-25T21:20:15+08:00",
+      "subject": "Remove raw source payload duplication from ATIF exports"
+    },
+    {
+      "sha": "bbfe76fd1bcc19f54e855f538ee8d179da4cebe0",
+      "date": "2026-10-25T19:34:57+08:00",
+      "subject": "Preserve ATIF input checkpoints and portable image assets"
+    },
+    {
+      "sha": "c006e44f0f09dff937fb5b8ab962ca4420585af6",
+      "date": "2026-10-25T17:05:38+08:00",
+      "subject": "Handle legacy buffered and repeated trajectory records"
+    },
+    {
+      "sha": "fdf0903e4906ca587f9b1d34a06972f3a36ab4cb",
+      "date": "2026-10-25T16:52:18+08:00",
+      "subject": "Add ATIF trajectory export via HTTP and CLI"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/llm-observer-proxy/export.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/llm-observer-proxy/export_assets_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/llm-observer-proxy/export_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/llm-observer-proxy/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/control-plane-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/trajectory-export.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/control/integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/control/server.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/control/trajectory_assets_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/control/trajectory_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/observer/normalize.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/observer/observer.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/proxy/capture_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/proxy/dataplane.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/proxy/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/assets.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/assets_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/build.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/compact_extra_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/content.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/content_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/context.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/context_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/metrics.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/parse.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/read.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/trajectory_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/trajectory/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/validate_atif.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

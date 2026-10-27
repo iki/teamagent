@@ -28,3 +28,7 @@ Use as an optional video workflow blueprint. The inspected pipeline does not pro
 ## Related directions
 
 [Generation](../generation.md) · [Memory](../memory.md) · [Agents](../agents.md) · [Decisions](../decisions.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [vimax](https://github.com/HKUDS/ViMax); analyzed commit `fd4b72e7731be6e5f88486206d25ea59849b0285`; commit date 2026-09-30T22:35:04+08:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--vimax.md).
+<!-- teamagent-analysis:end -->

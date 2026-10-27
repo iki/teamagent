@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--openmausbot",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/milind-soni/OpenMausBot",
+  "report": "spec/projects/ai-agents--openmausbot.md",
+  "analyzedSha": "c2fc677ff2a6d4cf3527ce6c0df111632eff5b1d",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-04T01:26:48+05:30",
+  "observedSha": "d6eefb1a4abadf4f81fb91e5e38e393dd3a124d4",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d6eefb1a4abadf4f81fb91e5e38e393dd3a124d4",
+      "date": "2026-10-24T10:36:19+05:30",
+      "subject": "Merge pull request #3422 from milind-soni/perf/cloud-listen-first"
+    },
+    {
+      "sha": "4bd8518e75ae0929345e8ac06722e3267dac90a1",
+      "date": "2026-10-24T10:36:09+05:30",
+      "subject": "Merge pull request #3420 from milind-soni/perf/cloud-lazy-engine-probes"
+    },
+    {
+      "sha": "42bb823f900bd8b6b0ce52f6ddb4fe2fa49f489d",
+      "date": "2026-10-24T07:24:29+05:30",
+      "subject": "Merge pull request #3421 from milind-soni/feat/usage-meter"
+    },
+    {
+      "sha": "b7db3798ebf7bb39745155f5783d258cb65a3e0c",
+      "date": "2026-10-24T06:36:29+05:30",
+      "subject": "test(proactive): the brief's e2e no longer fails when run from 23:52 UTC"
+    },
+    {
+      "sha": "596158e265942fc7dde2422a336f06baf1310883",
+      "date": "2026-10-24T05:51:15+05:30",
+      "subject": "fix(engines): hold a later start's model-list refresh only behind a saved list"
+    },
+    {
+      "sha": "3bf8b67bc46e062d532cd09bfdc698548c838cf8",
+      "date": "2026-10-24T05:11:42+05:30",
+      "subject": "fix(cloud): the upgrade price needs a click on every page; a gateway's error on the change is unconfirmed, not failed"
+    },
+    {
+      "sha": "d8e49ff680e2a44872807f067ab4f13d0f4269b6",
+      "date": "2026-10-24T04:51:32+05:30",
+      "subject": "perf(cloud): answer sooner after a wake: upkeep after listen, a 50 ms edge retry"
+    },
+    {
+      "sha": "46bdb06d81703ba1f591ca290bdcb286d73b5985",
+      "date": "2026-10-24T04:48:55+05:30",
+      "subject": "feat(cloud): usage meter in the sidebar and Settings, with Upgrade that changes the plan"
+    },
+    {
+      "sha": "2268bd4789a7d8cbd2ab77fae429f548a499d06d",
+      "date": "2026-10-24T04:36:05+05:30",
+      "subject": "perf(engines): on a later start, a turn waits only for its own engine's probe"
+    },
+    {
+      "sha": "f2f3a6298562dce47c572cb870ee78deca2f51ab",
+      "date": "2026-10-24T03:48:58+05:30",
+      "subject": "Merge pull request #3419 from milind-soni/fix/ratchet-pi-0126"
+    },
+    {
+      "sha": "561e13ceaaa70e3a54469287cca718e3c6bd8187",
+      "date": "2026-10-24T03:47:43+05:30",
+      "subject": "Merge pull request #3418 from milind-soni/fix/provider-413-retry"
+    },
+    {
+      "sha": "7de2da5453f45ed7dfee21ce5033750d7bf93678",
+      "date": "2026-10-24T03:29:02+05:30",
+      "subject": "Size ratchet: pi.ts back under its pin; claude.ts and codex.ts pins lowered"
+    },
+    {
+      "sha": "33f1345f0960a8b724a7708cdeecabd68406060b",
+      "date": "2026-10-24T03:13:40+05:30",
+      "subject": "Polish: refresh four strings whose English changed, and add the too-large line"
+    },
+    {
+      "sha": "f9ee4edea427a43cd40c4cf12f8fbdad5cab9654",
+      "date": "2026-10-24T03:12:56+05:30",
+      "subject": "Resend once smaller when an OpenAI-compatible provider refuses a turn as too large"
+    },
+    {
+      "sha": "8919b00e9350394d7c24640f62900cdcefe7198a",
+      "date": "2026-10-24T03:06:32+05:30",
+      "subject": "Merge pull request #3390 from ozz1ee-dev/feat/i18n-polish"
+    },
+    {
+      "sha": "22a00077bad9f5d44cd5c3643015c852594818be",
+      "date": "2026-10-24T02:59:44+05:30",
+      "subject": "Merge pull request #3402 from NatanPimentel/NatanPimentel/dev-sandberg-openmausbot-cartao-de-pergunta-e-de-apro"
+    },
+    {
+      "sha": "e6e2dc443a40a5eb4331db6d1b25b4e1ffe6e335",
+      "date": "2026-10-24T02:59:31+05:30",
+      "subject": "Merge pull request #3408 from miya2300-jpg/i18n/ja-fill"
+    },
+    {
+      "sha": "422822055de6d721ebdd1ba3d29767b3e0ce9265",
+      "date": "2026-10-24T02:57:51+05:30",
+      "subject": "Merge pull request #3417 from milind-soni/fix/codex-background-chatgpt-model"
+    },
+    {
+      "sha": "878e32cb9b3e74a253db0cd58923584298a0e33b",
+      "date": "2026-10-24T02:55:42+05:30",
+      "subject": "Keep Codex background text off small models a ChatGPT account refuses"
+    },
+    {
+      "sha": "da07cbb0af329aaea949c27708f0f92da48eef96",
+      "date": "2026-10-24T02:53:08+05:30",
+      "subject": "Merge pull request #3415 from milind-soni/fix/box-engine-tools"
+    },
+    {
+      "sha": "0011279cbf1f82276adbef527a404f232ae10d6f",
+      "date": "2026-10-24T02:51:06+05:30",
+      "subject": "fix(bot-box): engines installed on a Cloud run inside the bot box"
+    },
+    {
+      "sha": "262100b7035b491b978dbacf9129a880f148563b",
+      "date": "2026-10-24T02:46:54+05:30",
+      "subject": "Merge pull request #3414 from milind-soni/feat/cloud-check-wake-hourly"
+    },
+    {
+      "sha": "a895b3de96fb6aec926f902f72a366035983f32c",
+      "date": "2026-10-24T02:45:18+05:30",
+      "subject": "Cloud: wake a sleeping home for its checks at least hourly"
+    },
+    {
+      "sha": "34f3956ac072952bcb47ae1fc4f8ba2733910d2c",
+      "date": "2026-10-24T02:24:33+05:30",
+      "subject": "Merge pull request #3409 from milind-soni/perf/cloud-home-compile-cache"
+    },
+    {
+      "sha": "211397e5db59abb31be658d4eb18abd2da7a54f4",
+      "date": "2026-10-24T02:21:40+05:30",
+      "subject": "Merge remote-tracking branch 'origin/main' into perf/cloud-home-compile-cache"
+    },
+    {
+      "sha": "c9a6887911bed850db2ae01705b55a86ceeec74b",
+      "date": "2026-10-24T02:19:01+05:30",
+      "subject": "Merge pull request #3412 from milind-soni/fix/cloud-home-test-windows"
+    },
+    {
+      "sha": "f8e75dc003989de17ea532800f76cd5ba1d36e1b",
+      "date": "2026-10-24T00:37:32+05:30",
+      "subject": "Cloud home test: compare the data dir by its place under the home, not by separator"
+    },
+    {
+      "sha": "d507df15118a51c5bea965f95da0cb783d420890",
+      "date": "2026-10-24T00:30:43+05:30",
+      "subject": "Merge remote-tracking branch 'origin/main' into perf/cloud-home-compile-cache"
+    },
+    {
+      "sha": "359bbabc688cacd89331c2686d8dc39712827791",
+      "date": "2026-10-24T00:19:21+05:30",
+      "subject": "Merge pull request #3411 from milind-soni/fix/cloud-stale-lease"
+    },
+    {
+      "sha": "d61397da3fa990585071030d2576b4289be244f6",
+      "date": "2026-10-24T00:17:44+05:30",
+      "subject": "Cloud home: clear the data-directory lease the previous machine left on its volume"
+    },
+    {
+      "sha": "09a770cc113f8e12114c053e544cacc75475e252",
+      "date": "2026-10-24T00:05:38+05:30",
+      "subject": "Merge pull request #3403 from milind-soni/fix/codex-images-quick-model"
+    },
+    {
+      "sha": "4d1551432dac044072f3009a1a0db79c5e21d98d",
+      "date": "2026-10-24T00:05:27+05:30",
+      "subject": "Merge pull request #3407 from milind-soni/fix/main-green-decider"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/browser-vendor-windows.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/ios-thread-ui.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/npm-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/package-win.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".oss-scanner/threat_model.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".well-known/funding-manifest-urls",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LICENSING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "NOTICE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/CHECKLIST.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/app-icon-source.svg",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/feature-graphic-1024x500.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/feature-graphic.html",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/play-icon-512.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/play-icon.html",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/screenshots/01-threads.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/screenshots/02-chat.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/screenshots/03-call.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/screenshots/04-pairing.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/PlayStore/assets/screenshots/05-updates.png",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/build.gradle.kts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/MainActivity.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/OpenMausApp.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/PairingLinkActivity.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ShareReceiveActivity.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/LiveCallApi.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/LiveCallAudioRoute.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/LiveCallManager.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/LiveCallPreferences.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/LiveCallSnapshot.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/LiveCallTransport.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/LiveCaptions.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/TransportCloseGuard.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/VoiceNotePlayer.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/VoicePreviewPlayer.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/audio/WebRtcLiveCallTransport.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/avatar/AvatarImagePicker.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/avatar/AvatarImageRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/avatar/AvatarImageStore.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/avatar/DecodedAvatar.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/browser/CloudDesktopBrowser.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/dictation/SpeechDictation.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/discovery/NsdDiscovery.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/lifecycle/AlwaysOnBootReceiver.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/lifecycle/AlwaysOnConnectionService.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/lifecycle/AlwaysOnConnectionState.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/lifecycle/ServiceProcessAnchor.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/lifecycle/SessionLingerController.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/lifecycle/SessionLingerService.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/notifications/LocalNotificationPoster.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/notifications/NotificationIntents.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/notifications/NotificationMapping.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/notifications/NotificationText.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/permissions/CompanionPermissions.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/sharing/ShareHandoff.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/sharing/ShareInbox.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/sharing/ShareItemLoader.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/sharing/ShareSheetSession.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/sharing/TranscriptSharing.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/storage/AlwaysOnPreferences.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/storage/ChatPreferences.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/storage/DataStoreConnectionStore.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/storage/KeystoreTokenStore.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/storage/OnboardingPreferences.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/AgentProfileSheet.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/AppearanceSkin.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/AttentionInbox.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/BackSwipe.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/BotAvatar.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/BotOverviewScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/BotThreadRow.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/BotThreadTree.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/BrowserControlScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/BrowserTouchSurface.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ChatComposerDraft.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ChatDraftHolder.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ChatPolicy.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ChatScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/Chrome.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ClaudeUpdateCard.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/CommandHud.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/CompactRoster.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/CompanionEnvironment.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/CompanionTheme.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ComposerAttachments.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ComposerReturn.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ComputerPolicy.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ComputerScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ConnectedAppsScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ExecutionFeedback.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/FilePreview.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/Haptics.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/InlineMarkdown.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/LiveCallBanner.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/LiveCallBar.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/LiveCallRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/LiveCallSettingsSheet.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/LocalizedCopy.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/LocalizedSemantics.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MarkdownText.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MascotState.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MausAvatar.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MausBodies.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MausComets.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MausFaceData.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MausFaceEngine.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MausPalette.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MausSilhouette.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/MessageRow.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ModelRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/Navigation.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/NewGroupSheet.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/NewSectionSheet.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/NotificationOpen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/NotificationTapCoordinator.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/OnboardingScreens.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/OverviewRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/PairingHandoff.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/PairingScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/PendingPairing.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/PendingThreadNavigation.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/PermissionRequests.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ProfileRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/QrScannerScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/QuestionCard.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/QueuedSendRow.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/QuickRepliesEditor.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/RelativeStamp.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/RootScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/RosterScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/RoutineCalendarScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/RoutineEditorSheet.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/RoutineRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/RoutineRunCardView.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/SettingsPolicy.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/SettingsScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/SharePayload.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/SharePolicy.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/ShareSheet.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/SnoozeRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/SpeechBubble.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/TaskRules.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/TaskSheet.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/TasksRoutinesScreen.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/TranscriptCardViews.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/TranscriptPresentation.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/Updates.kt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "android/app/src/main/kotlin/com/openmausbot/companion/ui/UpdatesSheet.kt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

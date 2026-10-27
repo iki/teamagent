@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--cognee",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/topoteretes/cognee",
+  "report": "spec/projects/ai-agents-mem--cognee.md",
+  "analyzedSha": "b32d8afc59e1064d9291b9828a8a147be9cc8bab",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-01T17:50:04+02:00",
+  "observedSha": "37f788bd287750e10d7610173e5332b3843f6ebd",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": true,
+  "commits": [
+    {
+      "sha": "37f788bd287750e10d7610173e5332b3843f6ebd",
+      "date": "2026-10-16T22:07:34+02:00",
+      "subject": "chore: Release v1.6.5 (#5963)"
+    },
+    {
+      "sha": "eec6f55cd0ed1db6734553e0cbf42bc7fc54cc43",
+      "date": "2026-10-16T21:02:03+02:00",
+      "subject": "chore: Release v1.6.5"
+    },
+    {
+      "sha": "da82558ebe67d9aa2bae5c84db3a0bb0b86002e2",
+      "date": "2026-10-16T20:12:22+02:00",
+      "subject": "feat(code-graph): store docstrings as graph documents linked to code symbols (SDK-1142) (#5958)"
+    },
+    {
+      "sha": "8a38d4ee89ebc8dcc0635a49dee67c6a294b67ad",
+      "date": "2026-10-16T19:40:35+02:00",
+      "subject": "perf: Persist a session's trace backlog as one document (#5961)"
+    },
+    {
+      "sha": "652da18ef08ccf518ecc16bdf845b132ddcc1c10",
+      "date": "2026-10-16T17:11:17+02:00",
+      "subject": "perf: Build a trace pass's windows in one cognify run (#5955)"
+    },
+    {
+      "sha": "8106f8fef11a4588fa25e1e0813e1fabd4d29fa0",
+      "date": "2026-10-16T16:33:36+02:00",
+      "subject": "feat: Request base64 embeddings where supported (#5898)"
+    },
+    {
+      "sha": "32c4f26bfda1db93465ee131670914bc54705d66",
+      "date": "2026-10-16T16:29:58+02:00",
+      "subject": "fix: Drain the trace backlog per run (SDK-1139) (#5938)"
+    },
+    {
+      "sha": "dc5b2f1f76b5491a6ead6c3649bf9738397538f1",
+      "date": "2026-10-16T15:25:03+02:00",
+      "subject": "fix: break loop on payment error (SDK-1140) (#5949)"
+    },
+    {
+      "sha": "0b4ed8005228baf957be12c8fa4689da723bb540",
+      "date": "2026-10-16T15:22:11+02:00",
+      "subject": "fix: break loop on payment error"
+    },
+    {
+      "sha": "51599e4338d934072949fa23ab93fd1f4fbacbc9",
+      "date": "2026-10-16T15:22:10+02:00",
+      "subject": "fix: Read only the needed QA turns for distillation"
+    },
+    {
+      "sha": "b063aea88ef8fad6e9afd76e45e8a8edf139e56d",
+      "date": "2026-10-16T15:22:05+02:00",
+      "subject": "fix: Curate every new entry per distill run by default (SDK-1140) (#5935)"
+    },
+    {
+      "sha": "5d2b7f3f1272af08dc1fa8dd91beec13d1bedc62",
+      "date": "2026-10-16T15:19:31+02:00",
+      "subject": "Merge branch 'dev' into fix/distill-curate-all-new-entries"
+    },
+    {
+      "sha": "619a7d033f46ac8b6a954c79fca709d71cf82759",
+      "date": "2026-10-16T14:36:02+02:00",
+      "subject": "fix: Bind typed memory entries to their session's dataset (#5750)"
+    },
+    {
+      "sha": "5606006c2e7d987266f5204f9545f2f2f026ecbe",
+      "date": "2026-10-16T14:25:23+02:00",
+      "subject": "Fix/remember entry dataset followups (#5951)"
+    },
+    {
+      "sha": "95cc00387b6ae62c2e0b27ee7ed67cdf3a9d4046",
+      "date": "2026-10-16T14:23:41+02:00",
+      "subject": "fix: Refuse a stale session binding like a forbidden id"
+    },
+    {
+      "sha": "4bfac04e510e450d2528b4c745eba4201ebcb294",
+      "date": "2026-10-16T14:20:33+02:00",
+      "subject": "refactor: Share the ownership-agnostic dataset lookup"
+    },
+    {
+      "sha": "c471af7c9c630b37df04c1e00b3138389adffc5b",
+      "date": "2026-10-16T13:25:19+02:00",
+      "subject": "refactor: Drop unreachable permission error branch"
+    },
+    {
+      "sha": "784931f96f834f3bf80e7f1d9576d4352aac816f",
+      "date": "2026-10-16T13:16:33+02:00",
+      "subject": "fix: Let dataset_id override name on bound session"
+    },
+    {
+      "sha": "bc2bac8f6713240b9e64c6ca1ca517ce1b068e8c",
+      "date": "2026-10-16T13:07:29+02:00",
+      "subject": "fix: Raise DatasetNotFoundError for stale binding"
+    },
+    {
+      "sha": "abca45d2d4beea60691f6a08b2e1bf8004481a6d",
+      "date": "2026-10-16T12:49:33+02:00",
+      "subject": "perf: Skip binding re-read on a bound session"
+    },
+    {
+      "sha": "b7e37b41b0da9adf4ecaf93fe4ac84cdd64284bd",
+      "date": "2026-10-16T12:38:46+02:00",
+      "subject": "fix: Accept a string dataset_id on typed entries"
+    },
+    {
+      "sha": "cb8217767ba06473955a9e89a52dddc112a99647",
+      "date": "2026-10-16T12:28:56+02:00",
+      "subject": "fix: Route session skill runs to the bound dataset"
+    },
+    {
+      "sha": "2ad7954553125b090b8365da22e499d5e34b74f0",
+      "date": "2026-10-16T09:46:12+02:00",
+      "subject": "feat: Add OAuth integration for Google Calendar (SDK-1126) (#5926)"
+    },
+    {
+      "sha": "be29db19a4b39ec009b4c37eaea8674439404625",
+      "date": "2026-10-16T09:23:17+02:00",
+      "subject": "Merge branch 'feature/sdk-1126-google-calendar-oauth-integration-module-in-core-adapter' of github.com:topoteretes/cognee into feature/sdk-1126-google-calendar-oauth-integration-module-in-core-adapter"
+    },
+    {
+      "sha": "ac73a5ccf0b64b38e5bafaf305f7fa5600a29d23",
+      "date": "2026-10-16T09:22:51+02:00",
+      "subject": "refactor: Share Google OAuth adapter (SDK-1126)"
+    },
+    {
+      "sha": "42b3423b9447a0b523517a17172049f448b896ce",
+      "date": "2026-10-16T03:20:36+02:00",
+      "subject": "fix: Seal distilled entries per curator batch"
+    },
+    {
+      "sha": "b390695c8fb8cbd50139439de598b6c844fefd59",
+      "date": "2026-10-16T03:20:36+02:00",
+      "subject": "fix: Curate every new entry per distill run by default"
+    },
+    {
+      "sha": "00b93fb426c5c9d63060accaa304be16b5cfec3c",
+      "date": "2026-10-16T03:18:22+02:00",
+      "subject": "ci: Test the keyless flow on the newest dependency releases (SDK-1021) (#5490)"
+    },
+    {
+      "sha": "e9610f1caaa03a90ae1b60d5fe7e1feaadc45a02",
+      "date": "2026-10-16T02:38:22+02:00",
+      "subject": "fix: Take dataset_id on remember_skill_run_entry"
+    },
+    {
+      "sha": "f3d72a496ed540b44b87b4160b97e4c5b8fb32e4",
+      "date": "2026-10-16T02:38:22+02:00",
+      "subject": "fix: Bind typed entries to the session's dataset"
+    },
+    {
+      "sha": "8671317be57d841921d7b219c33262c8ce7e10fa",
+      "date": "2026-10-16T01:56:11+02:00",
+      "subject": "chore: Drop inline comment on EMBEDDING_BATCH_SIZE (SDK-1122) (#5934)"
+    },
+    {
+      "sha": "4c6157a7b39e22e3e37c6086ef5bc3219b8ead85",
+      "date": "2026-10-16T01:55:41+02:00",
+      "subject": "chore: Drop inline comment on EMBEDDING_BATCH_SIZE"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-cli/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-custom-graph-models/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-custom-pipelines/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-improve-sessions/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-ingestion/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-install/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-migrations/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-performance/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-permissions/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-recall/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/cognee-server/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/company-brain-company-qa/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/company-brain-follow-up-agent/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/personalized-email/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/self-hosted-companion/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/install_cognee/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/cve_alert.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/telemetry_aggregate_extract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/telemetry_insights_prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/adapter_caching_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/approve_dco.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/backend_docker_build_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/basic_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/catalog.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/clean_stale_pr.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cli_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/community_greetings.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/community_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cve_alert.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dev_canary_release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dev_previous_day_commits.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker_compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker_validation_nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dockerhub-mcp.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dockerhub-ui.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dockerhub.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs_issue_triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/examples_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/frontend_docker_build_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/graph_db_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/helm-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/integration_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/journey_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/label-core-team.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/latest_libraries.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/load_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mirror-images.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly_scheduler.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/performance_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/performance_report_cloud.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/performance_report_rust.yml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".github/workflows/pr_lint.yml",
+      "previousPath": ".github/workflows/pr_lint"
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pre_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/relational_db_migration_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release_discord_action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release_mcp.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release_test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/reusable_notebook.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/router_docstring_sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scorecard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/search_db_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skills_link_check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/slow_e2e_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/spec_extras_sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sync_mintlify_docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/telemetry-insights.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/temporal_graph_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_deployment_mcp.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_different_operating_systems.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_llamacpp.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_llms.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_mcp.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_ollama.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_s3_file_storage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test_suites.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-contributors.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/vector_db_tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/weekly-ticket-proposals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "catalog/entries/use-cases/temporal-reasoning.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/modules/business/__tests__/useBrainGraph.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/modules/business/getBrainGraph.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-frontend/src/modules/datasets/getDatasetGraphSummary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/src/cognee_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/src/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-mcp/tests/test_code_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/tests/test_mcp_improve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/tests/test_mcp_server_hardening.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-mcp/tests/test_recall_code_query.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee-mcp/tests/test_remember_node_set.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/tests/test_tool_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee-mcp/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/alembic/env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/alembic/versions/c3d5e7f9a1b2_dedupe_session_context_add_unique_index.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee/alembic/versions/d4a8e2f6b1c9_add_embedding_token_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee/alembic/versions/f6b8d0a2c4e6_add_capability_layer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/DTO.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/exception_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/activity/routers/get_activity_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/add/add.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/add/routers/get_add_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/agents/agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/agents/routers/get_agents_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/cognify/cognify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/config/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/datasets/routers/get_datasets_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/improve/improve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/improve/routers/get_improve_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/integrations/routers/get_integrations_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/memify/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cognee/api/v1/memify/memify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/memify/routers/get_memify_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/permissions/routers/get_permissions_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/recall/query_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/recall/recall.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/recall/routers/get_recall_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/recall/skill_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/remember/remember.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/responses/default_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/responses/dispatch_function.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/responses/routers/default_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/responses/routers/get_responses_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/search/routers/get_search_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/search/search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/serve/cloud_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/tools/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/tools/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/update/incremental.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/update/result.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/update/routers/get_update_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/update/update.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/users/routers/get_configuration_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/users/routers/get_visualize_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/visualize/memory_provenance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/visualize/routers/get_schema_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/api/v1/visualize/visualize.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/cli/api_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/cli/api_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/cli/code_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/cli/commands/improve_command.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/cli/commands/memify_command.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cognee/cli/commands/recall_command.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

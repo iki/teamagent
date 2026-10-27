@@ -29,3 +29,7 @@ This review inspected the configuration contract, not a full recovery implementa
 Kill the process during a model call, tool call, approval suspension and stream disconnect. Verify configured storage, replay retention and idempotent recovery rather than relying on type names. No tests, live inference, installation, or production operation were performed for this review. License indicator: Apache-2.0; verify the exact files and dependencies before reuse.
 
 Related directions: [agents](../agents.md) · [memory](../memory.md) · [channels](../channels.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [mastra](https://github.com/mastra-ai/mastra); analyzed commit `b2433eb8d90597295de0327c3756d7a2b83a65ff`; commit date 2026-10-03T13:48:39-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mastra.md).
+<!-- teamagent-analysis:end -->

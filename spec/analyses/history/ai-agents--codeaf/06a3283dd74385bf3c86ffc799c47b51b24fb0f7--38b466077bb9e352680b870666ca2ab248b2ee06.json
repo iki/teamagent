@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--codeaf",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/Agent-Field/CodeAF",
+  "report": "spec/projects/ai-agents--codeaf.md",
+  "analyzedSha": "06a3283dd74385bf3c86ffc799c47b51b24fb0f7",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T14:23:42-04:00",
+  "observedSha": "38b466077bb9e352680b870666ca2ab248b2ee06",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "38b466077bb9e352680b870666ca2ab248b2ee06",
+      "date": "2026-10-23T23:04:41-04:00",
+      "subject": "notices: say Windows builds embed the furrow engine too (#1917)"
+    },
+    {
+      "sha": "414276f6a57bcc86e87448aae4c81b45c443bb2a",
+      "date": "2026-10-23T21:58:54-04:00",
+      "subject": "Wormhole: your codeaf follows you between computers, on by default (#1888)"
+    },
+    {
+      "sha": "d049b13406dc9179f2265608bafca3255f3c5f3a",
+      "date": "2026-10-23T11:59:32-04:00",
+      "subject": "Restate the DeepSWE comparison around codeaf (#1913)"
+    },
+    {
+      "sha": "360ee867cc0d16eb9c0cd68f840b81bf9c62ca58",
+      "date": "2026-10-23T11:19:10-04:00",
+      "subject": "Merge the v0.8.2 roll-up back into dev"
+    },
+    {
+      "sha": "2c9e7b6f236546cb97a04b4eb4d11ffc1c925277",
+      "date": "2026-10-23T11:19:03-04:00",
+      "subject": "Merge the v0.8.2 roll-up into staging"
+    },
+    {
+      "sha": "e3f7822d6bb9373d29eb6a206c6ab0a2401502ba",
+      "date": "2026-10-23T11:18:53-04:00",
+      "subject": "changelog: roll up v0.8.2"
+    },
+    {
+      "sha": "b14ddcdcd09527cf378e947106677d62297e858b",
+      "date": "2026-10-23T01:26:14-04:00",
+      "subject": "fix: recover completed plan work through explicit acceptance (#1911)"
+    },
+    {
+      "sha": "a18155a749da1978f255f34468e111356ef79186",
+      "date": "2026-10-23T00:41:15-04:00",
+      "subject": "fix: open plans beside writers and preserve literal database paths (#1910)"
+    },
+    {
+      "sha": "39fdbea6f73c6b891f363d541bf9764995967886",
+      "date": "2026-10-22T23:21:59-04:00",
+      "subject": "fix: stop delegated work and helpers at conversation limits (#1907)"
+    },
+    {
+      "sha": "4f8cb57bd2e452cd0063dd7249f642cf57f0bca4",
+      "date": "2026-10-22T22:27:50-04:00",
+      "subject": "test: verify scoped project instructions reach plan workers (#1906)"
+    },
+    {
+      "sha": "0aa5339c3024347851f1f3b94efe8b29c9a1c706",
+      "date": "2026-10-22T21:49:54-04:00",
+      "subject": "fix: honor free-route opt-out throughout credit recovery (#1905)"
+    },
+    {
+      "sha": "7f173fd6d3fa68725bbefdec164cc659848fbce9",
+      "date": "2026-10-22T21:28:23-04:00",
+      "subject": "fix: confine provider credentials to their configured origin (#1904)"
+    },
+    {
+      "sha": "e8cacad4c6c77e157ec3b737c2c1e229309fa8bf",
+      "date": "2026-10-22T20:30:20-04:00",
+      "subject": "Recover unavailable memory helpers and clarify engine upgrades (#1903)"
+    },
+    {
+      "sha": "47a3f803cdc32d8169995ce9ac321620468aafd1",
+      "date": "2026-10-22T19:06:20-04:00",
+      "subject": "Show first messages immediately and refresh Home in the background (#1902)"
+    },
+    {
+      "sha": "ed7fe43d58a65d1b3ab4424bb41d56049316e540",
+      "date": "2026-10-22T18:29:12-04:00",
+      "subject": "Recover background memory updates after transient timeouts (#1901)"
+    },
+    {
+      "sha": "7cdcba036bbc6f01e54cb66d1363957b5509bca7",
+      "date": "2026-10-22T18:00:45-04:00",
+      "subject": "Add one-click chat model switching and saved rotations (#1900)"
+    },
+    {
+      "sha": "c740a5417230dcabe074c7a7919c3403a44ebc79",
+      "date": "2026-10-22T16:36:17-04:00",
+      "subject": "Show saved task models consistently across run tabs (#1898)"
+    },
+    {
+      "sha": "2a5a77bbced133f8ed36db10dc6abf29bcf657aa",
+      "date": "2026-10-22T15:23:58-04:00",
+      "subject": "fix(tui): close task tabs without trapping or replacing their chat (#1897)"
+    },
+    {
+      "sha": "a6b4f97d85892862c35a2b7ccea89702865a87dd",
+      "date": "2026-10-22T14:37:13-04:00",
+      "subject": "feat: automatic contextual memory across conversations and workers"
+    },
+    {
+      "sha": "d4cef55fa595747c75b8358217a228ededc093f2",
+      "date": "2026-10-22T12:24:44-04:00",
+      "subject": "Group task and process completions under collapsed work (#1893)"
+    },
+    {
+      "sha": "bc37d446cf7163ab886144aeda0455b523557f18",
+      "date": "2026-10-22T12:02:29-04:00",
+      "subject": "fix(provider): keep direct-service keys off receipt lookups (#1894)"
+    },
+    {
+      "sha": "0a344cd30580113c411dc71efb3576aba4270f1c",
+      "date": "2026-10-22T11:59:00-04:00",
+      "subject": "Merge the #1890 installer hotfix back into dev"
+    },
+    {
+      "sha": "9d3d7e824dfea20afb680e9a96b253e1c60f2025",
+      "date": "2026-10-22T11:58:19-04:00",
+      "subject": "installer: name why GitHub's API refused, and retry a refused token once without it (#1890)"
+    },
+    {
+      "sha": "6a384ec25da37fe165210959df1e000c766cb4b8",
+      "date": "2026-10-22T11:45:42-04:00",
+      "subject": "Merge the #1890 installer hotfix into staging"
+    },
+    {
+      "sha": "371d7f106f17b413a8b5fe3540844b97c65ddaa1",
+      "date": "2026-10-22T11:45:21-04:00",
+      "subject": "installer: name why GitHub's API refused, and retry a refused token once without it (#1890)"
+    },
+    {
+      "sha": "d0af920bc8a35d3c482dfdac9c1c71b24cb977d8",
+      "date": "2026-10-22T10:57:41-04:00",
+      "subject": "selector: fitted crew selection behind a snapshot config (#1891)"
+    },
+    {
+      "sha": "4eb6cadee5897bcc3692512253aa2de07694e763",
+      "date": "2026-10-21T18:47:07-04:00",
+      "subject": "Merge the v0.8.1 hotfix back into dev"
+    },
+    {
+      "sha": "63aa4bba9e868f48496f63976c63c9d3c58f8693",
+      "date": "2026-10-21T18:46:34-04:00",
+      "subject": "Merge the v0.8.1 hotfix (#1887) into staging"
+    },
+    {
+      "sha": "663dfbf02256ee7158fc61286ef4aa0162552be1",
+      "date": "2026-10-21T18:46:10-04:00",
+      "subject": "Improve model usage accounting across providers (#1887)"
+    },
+    {
+      "sha": "92df156082ab0a6d1cc729fedd10d25453f92783",
+      "date": "2026-10-21T18:14:53-04:00",
+      "subject": "changelog: roll up v0.8.1"
+    },
+    {
+      "sha": "88709c549f6a844a3136312ea72891263a5fbfd1",
+      "date": "2026-10-21T18:09:15-04:00",
+      "subject": "Improve model usage accounting across providers (#1887)"
+    },
+    {
+      "sha": "428baa65fc07760d0282375d1ea15be01d4ddd60",
+      "date": "2026-10-20T18:56:50-04:00",
+      "subject": "tui3: make a team from this chat — + New from this session, then /helpers (#1881)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CLAUDE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "PERF.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "SIZE-BUDGET",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD-PARTY-NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "assets/readme/screens/standing.webp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bench/bashloop/door.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bench/bashloop/door_uri_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf-census/demandedlanes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-census/report.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/seed.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf-demo-home/seed_automations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/seed_memory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/seed_room.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/seed_spend.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cmd/codeaf-demo-home/seed_standing.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/seed_talk.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf-demo-home/seed_teams.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/seed_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-demo-home/seed_work.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-notices/notices.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf-replay/request.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/answer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/approvalrecord.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/approvals.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/approvals_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/atlas.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/atlas_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/beltdoors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/c10_selfhost_pair_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/c10_sync_host_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/c18_resident_seat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/c1_link_key_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/carried.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/carried_child_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/carried_folder_fixture_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/carried_folder_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/carried_fresh_profile_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/carried_model_flags_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/carried_price_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/carried_seniordev_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/carried_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_branch.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_branch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_gc.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_gc_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_list.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_list_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_report.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_report_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cell_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cells_default_smoke_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cells_platform_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/cells_windows_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_approvalfloor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_at.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_at_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_beside.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_beside_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_budget.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_cells_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_clock.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_clock_env_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_clock_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_credits_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_crew_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_exchange.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_guard_class_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_host.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_host_automations_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_host_duty.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_host_duty_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_host_teams.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_host_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_interrupted_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_layout.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_layout_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_local.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_local_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_media.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_media_exact_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_media_pins.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_memory_maintenance.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_memory_maintenance_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_memory_upgrade_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_modelshelf.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_modelshelf_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_pair.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_pair_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_process.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_process_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_roles_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_servicenotice_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_session_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_skills_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cmd/codeaf/chatv3_standing.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "cmd/codeaf/chatv3_standing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_surface.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_surface_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_sweep.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/chatv3_sweep_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/chatv3_window_law_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/collections.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/collections_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/continuation_work_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/crew_refresh.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/crew_refresh_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devices.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devices_revoked_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devices_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devices_unavailable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devrename.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/devrename_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/do.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_cell.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_cell_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_continue.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_continue_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_memory.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/do_residenthost_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/do_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/doctor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/doctor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/emptiness_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/engine.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/engine_cells_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/engine_environment_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/engine_keyrefresh_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/engine_stale_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/engine_takeover_law_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/exec.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/exec_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/helpwidth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/hostlatest_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/hostseat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/identity.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/identity_rotate.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/identity_rotate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/identity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/jobplans_journal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/keys_contract_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/lanepin_doors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/launchlaws_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/lifecycle_binding_seam_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/logs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/codeaf/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/olderchats.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/olderchats_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/pair.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/codeaf/pair_help_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

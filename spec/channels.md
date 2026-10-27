@@ -1,5 +1,7 @@
 # Channels, local/cloud operation and fast clients
 
+The detailed [channel input and speech analysis](channel-input.md) defines authenticated envelopes, audio sequence ownership, endpointing, barge-in and transport acceptance boundaries. [Media processing](media-processing.md) compares provisioned local and hosted speech backends.
+
 [Home](README.md) · [Architecture](architecture.md) · [Contracts](contracts.md)
 
 ## One task service, many clients
@@ -55,6 +57,10 @@ Avoid split-brain local/cloud stores claiming authority over the same task. Mult
 ## Tests that matter
 
 Exercise duplicate webhooks, event reordering, device revocation, expired approval actions, lost acknowledgments, large attachments, host sleep and server restart. Verify tenant/conversation isolation with identical external thread IDs in two workspaces. Measure reconnect catch-up, mobile rendering and cancellation while a media job is running. Test that a replica losing its lease cannot continue publishing accepted task state or repeat a channel effect.
+
+## October source refresh: responsive discovery and reconnects
+
+The refreshed [Paseo report](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) exposes named pending provider-refresh phases and abort signals. Surface bounded discovery progress in web/desktop/mobile clients while the daemon owns work. A client deadline or disconnect is not evidence that the runtime was stopped; report cancellation completion only after the owning adapter confirms cleanup. This is a protocol recommendation, not a measured UI-speed result.
 
 <!-- coverage:start -->
 ## Project coverage
@@ -249,3 +255,28 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [artemis](https://github.com/google/artemis) | [Report](projects/ai-operate--artemis.md) | source-reviewed |
 | [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | [Report](projects/ai-query--jev-ultrafast.md) | source-reviewed |
 <!-- coverage:end -->
+
+
+## Source refresh: 2026-10-27 — client lifetime and observable progress
+
+The [Paseo refresh](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) provides an ownership pattern for keeping durable agent sessions independent of client connections. Idle collection checks pending permissions, active descendants and provider background work, then revalidates before shutdown. Retain a resumable session reference and expose whether closure completed or failed; a disconnected mobile or web client does not prove that its worker is idle.
+
+The [Pi refresh](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) makes visible progress and stored checkpoints separate states. Clients may receive coalesced ephemeral progress, but must not describe it as crash-safe until stored. The [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) reinforces the separation of host conversation IDs and provider session IDs and of launch acknowledgment from completed work. These findings supplement the existing [speech input](channel-input.md) analysis; no fresh microphone, voice-provider or cross-device acceptance test was performed.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [claude-code](analyses/unreviewed/ai-agents--claude-code.md) ([source](https://github.com/anthropics/claude-code)).
+- [hanzo-cli](analyses/unreviewed/ai-agents--hanzo-cli.md) ([source](https://github.com/hanzoai/cli)).
+- [hanzo-dev](analyses/unreviewed/ai-agents--hanzo-dev.md) ([source](https://github.com/hanzoai/dev)).
+- [hanzo-hips](analyses/unreviewed/ai-agents--hanzo-hips.md) ([source](https://github.com/hanzoai/hips)).
+- [hanzo-sdk](analyses/unreviewed/ai-agents--hanzo-sdk.md) ([source](https://github.com/hanzoai/sdk)).
+- [hanzo-sdk-ts](analyses/unreviewed/ai-agents--hanzo-sdk-ts.md) ([source](https://github.com/hanzoai/js-sdk)).
+- [harness2](analyses/unreviewed/ai-agents--harness2.md) ([source](https://github.com/google-research/harness2)).
+- [murage](analyses/unreviewed/ai-agents--murage.md) ([source](https://github.com/ferroxlabs/murage)).
+- [openrig](analyses/unreviewed/ai-agents--openrig.md) ([source](https://github.com/mvschwarz/openrig)).
+- [trellis](analyses/unreviewed/ai-agents--trellis.md) ([source](https://github.com/mindfold-ai/trellis)).
+- [yoagent](analyses/unreviewed/ai-agents--yoagent.md) ([source](https://github.com/yologdev/yoagent)).
+<!-- analysis-additions:end -->

@@ -23,3 +23,7 @@ This entry was catalogued under **ai-prompts**. Its category places it in the ca
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools); analyzed commit `1e4203a7d88873c1b37ab2d1c07074fea498c274`; commit date 2026-08-11T15:01:09+02:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-prompts--system-prompts-and-models-of-ai-tools.md).
+<!-- teamagent-analysis:end -->

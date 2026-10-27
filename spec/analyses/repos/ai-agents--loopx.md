@@ -1,0 +1,207 @@
+# loopx: change evidence
+
+Source: [loopx](https://github.com/huangruiteng/loopx) · [Analysis](../../projects/ai-agents--loopx.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `99839aeb8fed5fae38a5d319391cd050672a6508`; commit date: 2026-10-04T01:14:41+08:00; review date: unknown; observed SHA: `fff09ead9b17190d9cc8385f0c4da70669a4f272`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/huangruiteng/loopx/compare/99839aeb8fed5fae38a5d319391cd050672a6508...fff09ead9b17190d9cc8385f0c4da70669a4f272). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [fff09ead9b17](https://github.com/huangruiteng/loopx/commit/fff09ead9b17190d9cc8385f0c4da70669a4f272) 2026-10-28T01:50:26+08:00: Merge pull request #7511 from loopx-project/codex/release220-versioned-guide-20261028
+- [06afed92bad7](https://github.com/huangruiteng/loopx/commit/06afed92bad799fba6437ed353f797c7c26d384c) 2026-10-28T01:43:51+08:00: docs(release): document 2.2.0 upgrade and optional capabilities
+- [dd30e694a0c3](https://github.com/huangruiteng/loopx/commit/dd30e694a0c3db80e59600c781d67647a73d0bc9) 2026-10-28T01:36:35+08:00: Merge pull request #7411 from loopx-project/codex/ts-bridge-retire-20261026
+- [dab1edafcebe](https://github.com/huangruiteng/loopx/commit/dab1edafcebe22939f1e14aeaa405f4d4026ef6b) 2026-10-28T01:34:27+08:00: fix(context): restore large native reads and recognize mixed stdout (#7509)
+- [4b8741763712](https://github.com/huangruiteng/loopx/commit/4b87417637126856ff23b5230c215201d278875a) 2026-10-28T01:08:30+08:00: Merge pull request #7507 from loopx-project/codex/pr7499-audit-repair-20261028
+- [1c4fa2b25a47](https://github.com/huangruiteng/loopx/commit/1c4fa2b25a4723d2f58851a2a8bfb1b251e63cd1) 2026-10-28T00:59:36+08:00: Merge pull request #7504 from loopx-project/codex/chat-recovery-route-fence-20261027
+- [1b6dd6a42ab7](https://github.com/huangruiteng/loopx/commit/1b6dd6a42ab7f9620a4655061952adb58038a65b) 2026-10-28T00:50:02+08:00: Merge pull request #7506 from loopx-project/codex/release220-native-checkpoint-assertion-20261028
+- [ebc398cc6472](https://github.com/huangruiteng/loopx/commit/ebc398cc6472280976a2a15b1bfb78caa1a704d3) 2026-10-28T00:49:07+08:00: test: stabilize canonical smoke clocks and fixture paths
+- [4d7082a1c991](https://github.com/huangruiteng/loopx/commit/4d7082a1c991fb977297d56c0f901c9e93533ac8) 2026-10-28T00:44:20+08:00: test: verify native checkpoint binding refusal at sealing boundary
+- [787f15e82283](https://github.com/huangruiteng/loopx/commit/787f15e82283ae4cd590dc0ec91d88b09db4e122) 2026-10-28T00:41:27+08:00: Merge pull request #7493 from loopx-project/codex/machine-guard-context-contract
+- [2d8f2f58b6dd](https://github.com/huangruiteng/loopx/commit/2d8f2f58b6ddb766711e0bc53eb57016a3f30153) 2026-10-28T00:39:35+08:00: fix(chat): retain exact admitted recovery correlation
+- [085d9a7fa6ef](https://github.com/huangruiteng/loopx/commit/085d9a7fa6ef743c4df67e5f2c66510204df7a41) 2026-10-28T00:36:54+08:00: Merge pull request #7505 from loopx-project/codex/release220-chat-stop-integration-20261028
+- [a89b8e19e82d](https://github.com/huangruiteng/loopx/commit/a89b8e19e82d5579b1f8b60eb8f769c56a1cdb82) 2026-10-28T00:36:17+08:00: test(chat): keep independent sources out of recovery fences
+- [c184163f8cf9](https://github.com/huangruiteng/loopx/commit/c184163f8cf9534c24f8e5be2a13f153f98e59b5) 2026-10-28T00:31:55+08:00: Merge commit 'b7bd894bf6772d492d486c641888e01b7608cff1' into codex/release220-chat-stop-integration-20261028
+- [41229956e61f](https://github.com/huangruiteng/loopx/commit/41229956e61f83e479aafe9f9db0693636a26c95) 2026-10-28T00:31:45+08:00: fix(chat): recheck recovery state after source verification
+- [407a7d6c4916](https://github.com/huangruiteng/loopx/commit/407a7d6c4916f3ce033727e287f03188c956ce1f) 2026-10-28T00:24:44+08:00: fix(chat): release source route during native recovery reads
+- [eecde92ee960](https://github.com/huangruiteng/loopx/commit/eecde92ee960f8995adbafdac0ff18f863594116) 2026-10-28T00:23:26+08:00: Merge pull request #7501 from loopx-project/codex/research-history-return-context-20261027
+- [89b6fe0eb0b4](https://github.com/huangruiteng/loopx/commit/89b6fe0eb0b4f81919b646e9a10934374a009429) 2026-10-28T00:21:37+08:00: Merge pull request #7502 from loopx-project/codex/release220-canonical-followthrough-20261027
+- [b7bd894bf677](https://github.com/huangruiteng/loopx/commit/b7bd894bf6772d492d486c641888e01b7608cff1) 2026-10-28T00:18:03+08:00: test: preserve expired queue outcomes when stop arrives later
+- [318ccc1b9067](https://github.com/huangruiteng/loopx/commit/318ccc1b90676ca1a5722b073a5560eeb0c33bb5) 2026-10-28T00:09:28+08:00: fix(chat): serialize queued expiry and acceptance settlement with stops
+- [a8c1690484c6](https://github.com/huangruiteng/loopx/commit/a8c1690484c6d647dad8893bceb3a1cac232bb29) 2026-10-28T00:09:08+08:00: Merge current main into PR 7411 and reconcile qualification checkpoints
+- [cc5c7d91909e](https://github.com/huangruiteng/loopx/commit/cc5c7d91909e82aee9736959565062adcc434a26) 2026-10-28T00:07:20+08:00: docs: correct followthrough projection sentence
+- [e2f56af15110](https://github.com/huangruiteng/loopx/commit/e2f56af15110e0761a54d1c9b1809f54b4706112) 2026-10-28T00:07:19+08:00: Merge remote-tracking branch 'refs/remotes/release-canonical-final/main' into codex/release220-canonical-followthrough-20261027
+- [7fdf3cade6dd](https://github.com/huangruiteng/loopx/commit/7fdf3cade6dd51900bcfa6f43cdb60d76bc73447) 2026-10-28T00:07:16+08:00: test: expose queued expiry racing an accepted stop
+- [01dc6b9b8e3f](https://github.com/huangruiteng/loopx/commit/01dc6b9b8e3f6e59bcb8549e404e4b4e50b68fd2) 2026-10-28T00:06:35+08:00: Merge remote-tracking branch 'refs/remotes/release7477-final/main' into codex/review-chat-interrupt-7477-20261027
+- [47576fd81b52](https://github.com/huangruiteng/loopx/commit/47576fd81b52984f24360c31c78ad627b92c7373) 2026-10-28T00:04:36+08:00: Merge pull request #7499 from loopx-project/codex/release220-public-smoke-fixtures-20261027
+- [5b93e17b6bfa](https://github.com/huangruiteng/loopx/commit/5b93e17b6bfa0069b30e027a403b78225c802a48) 2026-10-27T23:59:09+08:00: test: observe Host recovery and forward quota transport options
+- [f7a1ad73fec0](https://github.com/huangruiteng/loopx/commit/f7a1ad73fec0c9058fe9feecfdff66438be37476) 2026-10-27T23:57:11+08:00: Merge pull request #7222 from loopx-project/codex/windows-rollout-rotation-20261024
+- [203590e5b755](https://github.com/huangruiteng/loopx/commit/203590e5b75530c9f0df403566683927623df764) 2026-10-27T23:56:24+08:00: test: qualify claim-first and crash-safe interrupt transitions
+- [6dba65d4b688](https://github.com/huangruiteng/loopx/commit/6dba65d4b688df91ec7cd158a849f32082306afb) 2026-10-27T23:55:41+08:00: Merge pull request #7473 from JasonBuildAI/codex/agent-m8k4
+- [d736fba854ed](https://github.com/huangruiteng/loopx/commit/d736fba854ed329e4a4ff4ed4fc7ecb141bedd73) 2026-10-27T23:55:36+08:00: test: qualify durable completion and fresh Lark authority boundaries
+- [dde32de52797](https://github.com/huangruiteng/loopx/commit/dde32de52797f922d22c21caebefcadc8539ca46) 2026-10-27T23:55:36+08:00: fix: include appointed Windows reviewer in SLA responders
+
+## Changed paths (truncated)
+
+- M: `.gitattributes`
+- M: `.github/CODEOWNERS`
+- M: `.github/GOVERNANCE.md`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- M: `.github/workflows/ark-turn.yml`
+- A: `.github/workflows/ci-maintenance.yml`
+- M: `.github/workflows/dco.yml`
+- M: `.github/workflows/desktop-release-artifacts.yml`
+- M: `.github/workflows/desktop-updater.yml`
+- A: `.github/workflows/dsh-plugin-publish.yml`
+- A: `.github/workflows/dsh-plugin.yml`
+- M: `.github/workflows/frontstage-pages.yml`
+- M: `.github/workflows/full-public-smokes.yml`
+- A: `.github/workflows/memt-turn.yml`
+- M: `.github/workflows/package-smoke.yml`
+- M: `.github/workflows/python-tests.yml`
+- M: `.github/workflows/release-artifacts.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- A: `CLAUDE.md`
+- A: `CONTEXT.md`
+- M: `CONTRIBUTING.md`
+- M: `MANIFEST.in`
+- M: `NOTICE`
+- M: `README.md`
+- M: `README.zh-CN.md`
+- M: `apps/desktop/loopx-control-plane/README.md`
+- A: `apps/desktop/loopx-control-plane/docs/assets/background-update-desktop.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/background-update-mobile.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/chat-listener-after.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/chat-listener-before.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/chat-process-after.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/chat-process-before.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/chat-process-followup.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/manual-check-after-desktop.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/manual-check-after-narrow.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/manual-check-before-desktop.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/manual-check-pending-desktop.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/manual-update-check-after.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/manual-update-check-before.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/native-ancestry-qa.jpg`
+- A: `apps/desktop/loopx-control-plane/docs/assets/native-prepared-activation.jpg`
+- A: `apps/desktop/loopx-control-plane/docs/assets/native-service-lifetime-desktop.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/native-service-lifetime-narrow.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/native-service-recovery-qa.jpg`
+- A: `apps/desktop/loopx-control-plane/docs/assets/research-reopen-qa.jpg`
+- A: `apps/desktop/loopx-control-plane/docs/assets/startup-download-timeout.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-channel-selection-desktop.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-channel-selection-mobile.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-failure-before.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-ready-after.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-ready-before.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-ready-mobile.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-ready-native.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-signature-failure-desktop.png`
+- A: `apps/desktop/loopx-control-plane/docs/assets/update-timeout-mobile.png`
+- A: `apps/desktop/loopx-control-plane/docs/recovery-after.png`
+- A: `apps/desktop/loopx-control-plane/docs/recovery-before.png`
+- M: `apps/desktop/loopx-control-plane/scripts/dashboard.sh`
+- M: `apps/desktop/loopx-control-plane/src-tauri/Cargo.lock`
+- M: `apps/desktop/loopx-control-plane/src-tauri/Cargo.toml`
+- M: `apps/desktop/loopx-control-plane/src-tauri/build.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/examples/webcontent_recovery.rs`
+- M: `apps/desktop/loopx-control-plane/src-tauri/src/bundled_runtime.rs`
+- M: `apps/desktop/loopx-control-plane/src-tauri/src/lib.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/macos_update.rs`
+- M: `apps/desktop/loopx-control-plane/src-tauri/src/maintenance.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/maintenance_check_tests.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/maintenance_transfer_tests.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/prepared_update.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/runtime_ancestry.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/runtime_selection.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/service_endpoints.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/service_lifecycle.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/service_lifecycle_windows_update_tests.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/service_lifetime.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/service_lifetime_tests.rs`
+- M: `apps/desktop/loopx-control-plane/src-tauri/src/services.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/services_real_runtime_tests.rs`
+- M: `apps/desktop/loopx-control-plane/src-tauri/src/services_tests.rs`
+- M: `apps/desktop/loopx-control-plane/src-tauri/src/update_backup.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/upgrade_request.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/workspace_handoff.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/src/workspace_location.rs`
+- A: `apps/desktop/loopx-control-plane/src-tauri/webcontent-recovery.tauri.conf.json`
+- M: `apps/desktop/loopx-control-plane/static/boot.css`
+- M: `apps/desktop/loopx-control-plane/static/boot.js`
+- M: `apps/desktop/loopx-control-plane/static/index.html`
+- M: `apps/presentation/dashboard/README.md`
+- A: `apps/presentation/dashboard/docs/assets/goal-hierarchy/after-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-hierarchy/after-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-hierarchy/before-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-hierarchy/before-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-hierarchy/invalid-root-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-hierarchy/invalid-root-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-hierarchy/unavailable-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-map-readback/current-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-map-readback/stale-mobile.png`
+- A: `apps/presentation/dashboard/docs/assets/goal-map-readback/unavailable-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/manager-host-defaults/after-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/manager-host-defaults/after-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/manager-host-defaults/before-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/manager-host-defaults/runtime-settings-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/research-native-results/after-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/research-native-results/after-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/research-native-results/before-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/research-native-results/before-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/research-native-results/first-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/research-native-results/first-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-comparison/after-1440.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-comparison/after-390.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-comparison/before-1440.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-comparison/before-390.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-comparison/compare-1440.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-comparison/compare-390.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-export/after-1440.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-export/after-390.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-export/before-1440.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-export/before-390.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-export/download-error.png`
+- A: `apps/presentation/dashboard/docs/assets/research-record-export/stale.png`
+- A: `apps/presentation/dashboard/docs/assets/status-only-after-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/status-only-after-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/status-only-before-desktop.png`
+- A: `apps/presentation/dashboard/docs/assets/status-only-before-phone.png`
+- A: `apps/presentation/dashboard/docs/assets/status-only-goal-en-phone.png`
+- M: `apps/presentation/dashboard/package-lock.json`
+- M: `apps/presentation/dashboard/package.json`
+- A: `apps/presentation/dashboard/smoke/app-steward-smoke.ts`
+- A: `apps/presentation/dashboard/smoke/assets/delegation-lane/after-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/delegation-lane/after-narrow.png`
+- A: `apps/presentation/dashboard/smoke/assets/delegation-lane/before-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/delegation-lane/before-narrow.png`
+- A: `apps/presentation/dashboard/smoke/assets/goal-workspace-craft/after-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/goal-workspace-craft/after-details.png`
+- A: `apps/presentation/dashboard/smoke/assets/goal-workspace-craft/after-phone.png`
+- A: `apps/presentation/dashboard/smoke/assets/goal-workspace-craft/before-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/goal-workspace-craft/before-details.png`
+- A: `apps/presentation/dashboard/smoke/assets/linked-goal-source/after-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/linked-goal-source/after-narrow.png`
+- A: `apps/presentation/dashboard/smoke/assets/linked-goal-source/before-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/linked-goal-source/source-unavailable.png`
+- A: `apps/presentation/dashboard/smoke/assets/task-inspector-route/after-1512.png`
+- A: `apps/presentation/dashboard/smoke/assets/task-inspector-route/after-390.png`
+- A: `apps/presentation/dashboard/smoke/assets/task-inspector-route/before-1512.png`
+- A: `apps/presentation/dashboard/smoke/assets/task-inspector-route/before-390.png`
+- A: `apps/presentation/dashboard/smoke/assets/team-source-chain/before.png`
+- A: `apps/presentation/dashboard/smoke/assets/team-source-chain/withdrawn-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/team-source-chain/withdrawn-mobile.png`
+- A: `apps/presentation/dashboard/smoke/assets/todo-lifecycle/after-deferred.png`
+- A: `apps/presentation/dashboard/smoke/assets/todo-lifecycle/before-deferred.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/README.md`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/after-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/after-low.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/after-narrow.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/after-restriction-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/after-restriction-narrow.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/before-desktop.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/before-narrow.png`
+- A: `apps/presentation/dashboard/smoke/assets/workspace-navigation/glyph-default-desktop.png`

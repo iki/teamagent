@@ -1,0 +1,207 @@
+# adk-python: change evidence
+
+Source: [adk-python](https://github.com/google/adk-python) · [Analysis](../../projects/ai-agents--adk-python.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `63aed55113d4fe78245d3d6667b6e87569888bf5`; commit date: 2026-10-03T06:13:21-07:00; review date: unknown; observed SHA: `0e5d6c963cb6935ff1c28535f167c96a96746ad4`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/adk-python/compare/63aed55113d4fe78245d3d6667b6e87569888bf5...0e5d6c963cb6935ff1c28535f167c96a96746ad4). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [0e5d6c963cb6](https://github.com/google/adk-python/commit/0e5d6c963cb6935ff1c28535f167c96a96746ad4) 2026-10-27T10:54:12-07:00: fix: skip the MCP mTLS probe unless google-auth would use a client cert
+- [329933f755d5](https://github.com/google/adk-python/commit/329933f755d5f987d7e25d8348548dc718b21a0a) 2026-10-27T10:47:23-07:00: fix: take final input and cache counts from Anthropic message_delta
+- [7a64c7c552d3](https://github.com/google/adk-python/commit/7a64c7c552d369a03c644317df7eb1a133acc75d) 2026-10-27T10:24:53-07:00: docs: say ContainerCodeExecutor runs as the image's user, not non-root
+- [c54b253eba33](https://github.com/google/adk-python/commit/c54b253eba3359264a5f86805051aeb6cd93034d) 2026-10-27T09:51:49-07:00: feat(features): graduate 26 auth, environment, app, cli, and cache modules from experimental
+- [2084efbe1b9f](https://github.com/google/adk-python/commit/2084efbe1b9fd51c24f214fa9e2d818081a549c9) 2026-10-27T00:00:27-07:00: feat: expose active lifecycle hook metadata
+- [5e52b21a8cf0](https://github.com/google/adk-python/commit/5e52b21a8cf0b82805283a3f77f3fcfcda4811e7) 2026-10-26T23:53:11-07:00: fix: leave no-usage turns out of the token_usage_v1 average
+- [047815043ca5](https://github.com/google/adk-python/commit/047815043ca57dae1abfec263768c3fca4130659) 2026-10-26T22:57:39-07:00: fix: list built-in tools in the rubric multi-turn trajectory evaluator
+- [7394fba39042](https://github.com/google/adk-python/commit/7394fba39042d8ec7b7a12217128eaa45614d8c5) 2026-10-26T22:39:50-07:00: fix: validate skill_id path segments before GCS blob lookup
+- [b13fa19ad61a](https://github.com/google/adk-python/commit/b13fa19ad61ad857690758e6a440a7b7de3f9128) 2026-10-26T21:52:28-07:00: fix: report long-running AgentEngineEnvironment commands as timed out
+- [4c880408b546](https://github.com/google/adk-python/commit/4c880408b5468afb9196a4701cf6cb2a34c6b545) 2026-10-26T19:04:17-07:00: feat: read large files from AgentEngineEnvironment in chunks
+- [5843c582f15a](https://github.com/google/adk-python/commit/5843c582f15a89627bf379accea4ca182bcf706c) 2026-10-26T18:48:25-07:00: feat: support large file writes in AgentEngineEnvironment
+- [25105b40ed9f](https://github.com/google/adk-python/commit/25105b40ed9f84769ae368edc35e821df2a19e69) 2026-10-26T16:33:09-07:00: fix: match SKILL.md frontmatter delimiters as whole lines
+- [d3a199d4c47d](https://github.com/google/adk-python/commit/d3a199d4c47d4c01bab91aee3cd36af1277fd510) 2026-10-26T16:30:53-07:00: docs(samples): add an AgentEngineEnvironment sample agent
+- [27cdf7fb5017](https://github.com/google/adk-python/commit/27cdf7fb5017e2bc220049bcf9db74d0a995a2fd) 2026-10-26T15:56:26-07:00: fix: keep in-memory artifact scopes separate when identifiers contain /
+- [8038bd7f4365](https://github.com/google/adk-python/commit/8038bd7f43657d7bf5330cbc9cae0b8da95ee6f4) 2026-10-26T15:54:35-07:00: fix: classify compaction failures with error.type
+- [0c053dd5a6ae](https://github.com/google/adk-python/commit/0c053dd5a6ae208a8ef262eced276137a7a7b441) 2026-10-26T15:46:59-07:00: fix: filter hidden artifacts from LLM context
+- [c4b2640d3e4a](https://github.com/google/adk-python/commit/c4b2640d3e4aa1e34954d48b43780a5c909fbf31) 2026-10-26T14:40:16-07:00: fix(workflow): never retry configuration or invariant errors and add policy helpers
+- [a81df0ef9785](https://github.com/google/adk-python/commit/a81df0ef978502dd0e9e144d3630a87d14476e27) 2026-10-26T14:07:19-07:00: fix: use the continue URI and scopes from Agent Registry bindings
+- [de34d8dc53e6](https://github.com/google/adk-python/commit/de34d8dc53e6165db59aad37f32e8259d66f2765) 2026-10-26T14:01:34-07:00: fix: exclude thought parts from SQLite memory search results
+- [799fc9459eb9](https://github.com/google/adk-python/commit/799fc9459eb9443a63db11a179d6422b7e1dc1c0) 2026-10-26T13:50:39-07:00: feat(features): promote 16 toolset and integration features to stable
+- [cec52fc005a2](https://github.com/google/adk-python/commit/cec52fc005a2c76963feb0a424647ca9576ebb2d) 2026-10-26T11:46:39-07:00: fix: copy initial state in InMemorySessionService.create_session
+- [a96fc11b58a9](https://github.com/google/adk-python/commit/a96fc11b58a92187ad6cdaba0059d6999964fbe8) 2026-10-26T11:38:33-07:00: fix: set error.type on spans that end in an error
+- [3cd87427ac9c](https://github.com/google/adk-python/commit/3cd87427ac9c016b0cf335459a90c9902b0737d9) 2026-10-26T11:36:31-07:00: feat(live): save image frames when save_live_blob is set
+- [584976271887](https://github.com/google/adk-python/commit/5849762718871e206b7745f0318f8399a5dd5f52) 2026-10-26T11:35:24-07:00: fix(bigquery): improve error messages when write_mode is BLOCKED
+- [4496bef70166](https://github.com/google/adk-python/commit/4496bef701661b48221df56f75a89ff70449bcdc) 2026-10-26T10:54:14-07:00: fix: export all shipped plugins from google.adk.plugins
+- [3b227d6ec824](https://github.com/google/adk-python/commit/3b227d6ec82490dae6473f681dcc825b1ac31679) 2026-10-26T10:33:43-07:00: fix!: close malformed live WebSockets instead of wedging them
+- [960cd5ddfff1](https://github.com/google/adk-python/commit/960cd5ddfff135c39cf8dbe185f0f08a309c927c) 2026-10-26T07:23:25-07:00: fix: align gen_ai.choice system name with request model for LiteLLM
+- [bf6739723c1b](https://github.com/google/adk-python/commit/bf6739723c1b8b03bff8bb1e6ffada4d88098fcf) 2026-10-25T10:53:40-07:00: ci: limit the PR triage job token to read-only
+- [da35ca77d71f](https://github.com/google/adk-python/commit/da35ca77d71f7d74c8b7d7550f6e1b591a6690e0) 2026-10-24T23:03:03-07:00: fix: harden callable type hint resolution and FunctionNode TypeAdapter handling
+- [12c7bed7661c](https://github.com/google/adk-python/commit/12c7bed7661ccf942f0f6d3b62bed22a23ea0a85) 2026-10-24T04:27:28-07:00: fix: pass the caller's temp: state to an AgentTool's wrapped agent
+- [25d191710985](https://github.com/google/adk-python/commit/25d191710985371dfb93a131f2fa797734850952) 2026-10-23T20:28:20-07:00: fix: mark failed A2A tasks as error events
+- [b98125006644](https://github.com/google/adk-python/commit/b98125006644d8fee70606dab71d350ab674daf0) 2026-10-23T19:02:42-07:00: fix: stop list_sessions(user_id="") from listing every user in Firestore
+
+## Changed paths (truncated)
+
+- M: `.agents/skills/adk-agent-builder/references/callbacks-and-plugins.md`
+- M: `.agents/skills/adk-agent-builder/references/function-nodes.md`
+- M: `.agents/skills/adk-agent-builder/references/getting-started.md`
+- M: `.agents/skills/adk-agent-builder/references/human-in-the-loop.md`
+- M: `.agents/skills/adk-agent-builder/references/llm-agent-nodes.md`
+- M: `.agents/skills/adk-agent-builder/references/multi-agent.md`
+- M: `.agents/skills/adk-agent-builder/references/task-mode.md`
+- M: `.agents/skills/adk-architecture/references/api-principles.md`
+- M: `.agents/skills/adk-architecture/references/architecture-node-runner.md`
+- M: `.agents/skills/adk-architecture/references/interface-workflow.md`
+- M: `.agents/skills/adk-debug/references/failure-modes.md`
+- M: `.agents/skills/adk-review/SKILL.md`
+- M: `.agents/skills/adk-setup/SKILL.md`
+- M: `.agents/skills/adk-style/SKILL.md`
+- M: `.agents/skills/adk-style/references/pydantic.md`
+- M: `.agents/skills/adk-style/references/testing.md`
+- M: `.agents/skills/adk-style/references/typing.md`
+- M: `.agents/skills/adk-style/references/visibility.md`
+- M: `.agents/skills/adk-unit-guide/SKILL.md`
+- M: `.github/.release-please-manifest.json`
+- M: `.github/ISSUE_TEMPLATE/bug_report.md`
+- M: `.github/ISSUE_TEMPLATE/feature_request.md`
+- M: `.github/release-please-config.json`
+- A: `.github/scripts/constant.js`
+- A: `.github/scripts/csat.js`
+- M: `.github/workflows/continuous-integration.yml`
+- M: `.github/workflows/copybara-pr-handler.yml`
+- A: `.github/workflows/csat.yml`
+- M: `.github/workflows/pr-triage.yml`
+- M: `.github/workflows/release-artifact-check.yml`
+- M: `.github/workflows/release-cut.yml`
+- M: `.github/workflows/release-finalize.yml`
+- M: `.github/workflows/release-publish.yml`
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `constraints-3.11.txt`
+- M: `constraints-3.12.txt`
+- M: `constraints-3.13.txt`
+- M: `constraints-3.14.txt`
+- R059: `constraints-3.15.txt` (from `constraints-3.10.txt`)
+- M: `contributing/README.md`
+- M: `contributing/adk_project_overview_and_architecture.md`
+- M: `contributing/samples/adk_team/adk_issue_monitoring_agent/PROMPT_INSTRUCTION.txt`
+- M: `contributing/samples/adk_team/adk_issue_monitoring_agent/agent.py`
+- M: `contributing/samples/adk_team/adk_pr_triaging_agent/README.md`
+- M: `contributing/samples/adk_team/adk_pr_triaging_agent/agent.py`
+- M: `contributing/samples/adk_team/adk_stale_agent/agent.py`
+- D: `contributing/samples/adk_team/adk_triaging_agent/agent.py`
+- M: `contributing/samples/adk_team/component_owners.py`
+- M: `contributing/samples/core/hello_world/tests/roll_and_check.json`
+- A: `contributing/samples/environment_and_skills/agent_engine_environment/README.md`
+- A: `contributing/samples/environment_and_skills/agent_engine_environment/__init__.py`
+- A: `contributing/samples/environment_and_skills/agent_engine_environment/agent.py`
+- A: `contributing/samples/environment_and_skills/opensandbox_environment/README.md`
+- A: `contributing/samples/environment_and_skills/opensandbox_environment/__init__.py`
+- A: `contributing/samples/environment_and_skills/opensandbox_environment/agent.py`
+- A: `contributing/samples/hitl/classifier_tool_gate/README.md`
+- A: `contributing/samples/hitl/classifier_tool_gate/__init__.py`
+- A: `contributing/samples/hitl/classifier_tool_gate/agent.py`
+- A: `contributing/samples/hitl/classifier_tool_gate/tool_gate.py`
+- M: `contributing/samples/hitl/human_in_loop/tests/reimburse_dinner.json`
+- A: `contributing/samples/hitl/human_tool_confirmation/tests/request_time_off_approved.json`
+- M: `contributing/samples/integrations/authn-adk-all-in-one/adk_agents/agent_openapi_tools/agent.py`
+- M: `contributing/samples/integrations/authn-adk-all-in-one/requirements.txt`
+- M: `contributing/samples/integrations/gcp_auth/client/main.py`
+- M: `contributing/samples/integrations/gcp_auth/client/requirements.txt`
+- M: `contributing/samples/integrations/gepa/README.md`
+- M: `contributing/samples/integrations/gepa/gepa_tau_bench.ipynb`
+- M: `contributing/samples/integrations/gepa/voter_agent/gepa.ipynb`
+- A: `contributing/samples/integrations/parameter_manager/README.md`
+- A: `contributing/samples/integrations/parameter_manager/__init__.py`
+- A: `contributing/samples/integrations/parameter_manager/agent.py`
+- M: `contributing/samples/integrations/rag_agent/agent.py`
+- A: `contributing/samples/integrations/secret_manager/README.md`
+- A: `contributing/samples/integrations/secret_manager/__init__.py`
+- A: `contributing/samples/integrations/secret_manager/agent.py`
+- A: `contributing/samples/integrations/teams_notification_agent/README.md`
+- A: `contributing/samples/integrations/teams_notification_agent/__init__.py`
+- A: `contributing/samples/integrations/teams_notification_agent/agent.py`
+- A: `contributing/samples/live/cascade/README.md`
+- A: `contributing/samples/live/cascade/README_elevenlabs.md`
+- A: `contributing/samples/live/cascade/README_gemini.md`
+- A: `contributing/samples/live/cascade/__init__.py`
+- A: `contributing/samples/live/cascade/agent.py`
+- M: `contributing/samples/live/non_blocking_tool_agent/README.md`
+- M: `contributing/samples/live/non_blocking_tool_agent/agent.py`
+- M: `contributing/samples/mcp/mcp_server_side_sampling/README.md`
+- M: `contributing/samples/models/hello_world_nvidia/README.md`
+- M: `contributing/samples/multi_agent/task_sub_agent/tests/10_burgers.json`
+- M: `contributing/samples/multimodal/computer_use/playwright.py`
+- M: `contributing/samples/tools/model_consult/README.md`
+- M: `contributing/samples/workflows/auth_api_key/tests/go.json`
+- A: `contributing/samples/workflows/classifier_node/README.md`
+- A: `contributing/samples/workflows/classifier_node/agent.py`
+- M: `contributing/samples/workflows/request_input_rerun/README.md`
+- M: `contributing/samples/workflows/request_input_rerun/agent.py`
+- M: `docs/guides/README.md`
+- M: `docs/guides/agents/invocation_context/index.md`
+- M: `docs/guides/agents/llm_agent/index.md`
+- M: `docs/guides/agents/remote_a2a_agent/task.md`
+- A: `docs/guides/agents/run_config/index.md`
+- M: `docs/guides/apps/app/index.md`
+- A: `docs/guides/apps/events_compaction/index.md`
+- A: `docs/guides/apps/resumability/index.md`
+- M: `docs/guides/artifacts/artifact_service/index.md`
+- A: `docs/guides/auth/kms_encryptor/index.md`
+- M: `docs/guides/auth/tool_auth/index.md`
+- M: `docs/guides/code_executors/code_executor/index.md`
+- M: `docs/guides/environment/base_environment/index.md`
+- M: `docs/guides/evaluation/agent_evaluator/index.md`
+- M: `docs/guides/evaluation/efficiency_evaluators/index.md`
+- M: `docs/guides/evaluation/eval_config/index.md`
+- M: `docs/guides/evaluation/eval_service/index.md`
+- M: `docs/guides/evaluation/evaluator/index.md`
+- M: `docs/guides/events/event/index.md`
+- A: `docs/guides/events/event_actions/index.md`
+- A: `docs/guides/events/internal_metadata/index.md`
+- M: `docs/guides/events/request_input/index.md`
+- M: `docs/guides/examples/example/index.md`
+- M: `docs/guides/features/feature_registry/index.md`
+- M: `docs/guides/integrations/daytona/daytona_environment/index.md`
+- M: `docs/guides/integrations/firestore/firestore_session_service/index.md`
+- M: `docs/guides/integrations/model_armor/index.md`
+- A: `docs/guides/integrations/mongodb/memory_service/index.md`
+- M: `docs/guides/integrations/mongodb/mongodb_toolset/index.md`
+- A: `docs/guides/integrations/mongodb/session_service/index.md`
+- M: `docs/guides/integrations/redis/redis_session_service/index.md`
+- A: `docs/guides/integrations/typesafe/typesafe_classifier/index.md`
+- A: `docs/guides/integrations/vmaas/agent_engine_environment/index.md`
+- A: `docs/guides/labs/classifiers/classifier_node/index.md`
+- A: `docs/guides/labs/classifiers/llm_classifier/index.md`
+- A: `docs/guides/live/cascade_live/index.md`
+- A: `docs/guides/live/gemini_stt/index.md`
+- A: `docs/guides/live/gemini_tts/index.md`
+- M: `docs/guides/live/live_request_queue/index.md`
+- M: `docs/guides/memory/memory_service/index.md`
+- M: `docs/guides/models/llm_registry/index.md`
+- A: `docs/guides/plugins/tool_call_integrity_plugin/index.md`
+- M: `docs/guides/runners/runner/abort.md`
+- M: `docs/guides/runners/runner/index.md`
+- M: `docs/guides/runners/runner/live.md`
+- A: `docs/guides/runners/runner/rewind.md`
+- M: `docs/guides/sessions/session/index.md`
+- M: `docs/guides/sessions/state/index.md`
+- M: `docs/guides/skills/skill/index.md`
+- M: `docs/guides/telemetry/telemetry_config/index.md`
+- A: `docs/guides/tools/agent_tool/index.md`
+- A: `docs/guides/tools/base_tool/index.md`
+- A: `docs/guides/tools/base_toolset/index.md`
+- A: `docs/guides/tools/long_running_tool/index.md`
+- M: `docs/guides/tools/mcp_tool/agent_to_mcp/index.md`
+- A: `docs/guides/tools/mcp_tool/mcp_toolset/index.md`
+- A: `docs/guides/tools/model_consult/force_escalation_plugin/index.md`
+- A: `docs/guides/tools/model_consult/observability_plugin/index.md`
+- M: `docs/guides/tools/node_tool/index.md`
+- A: `docs/guides/tools/skill_toolset/index.md`
+- A: `docs/guides/tools/tool_args_matcher/tool_args_matcher/index.md`
+- A: `docs/guides/tools/tool_confirmation/index.md`

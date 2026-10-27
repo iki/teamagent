@@ -1,0 +1,25 @@
+# playwright
+
+Source: [playwright](https://github.com/microsoft/playwright) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8`; commit timestamp `2026-10-03T07:57:47+01:00`; 3,110 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/microsoft/playwright/blob/7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8/README.md)):
+
+> [](https://www.npmjs.com/package/playwright)  [](https://www.chromium.org/Home)   [](https://www.mozilla.org/en-US/firefox/new/)   [](https://webkit.org/)  [](https://aka.ms/playwright/discord) Playwright is a framework for web automation and testing. It drives Chromium, Firefox, and WebKit with a single API — in your tests, in your scripts, and as a tool for AI agents.
+
+Build/package evidence: [examples/github-api/package.json](https://github.com/microsoft/playwright/blob/7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8/examples/github-api/package.json); [examples/mock-battery/package.json](https://github.com/microsoft/playwright/blob/7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8/examples/mock-battery/package.json); [examples/mock-filesystem/package.json](https://github.com/microsoft/playwright/blob/7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8/examples/mock-filesystem/package.json); [examples/svgomg/package.json](https://github.com/microsoft/playwright/blob/7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8/examples/svgomg/package.json); [examples/todomvc/package.json](https://github.com/microsoft/playwright/blob/7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8/examples/todomvc/package.json)
+
+License evidence: [LICENSE](https://github.com/microsoft/playwright/blob/7ad3fba1aad9471c7e46d67a11b0e710a5d77ea8/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

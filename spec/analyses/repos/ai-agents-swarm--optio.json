@@ -1,0 +1,1007 @@
+{
+  "metadata": {
+    "id": "ai-agents-swarm--optio",
+    "category": "ai-agents-swarm",
+    "name": "optio",
+    "url": "https://github.com/jonwiggins/optio",
+    "aliases": [
+      "https://github.com/jonwiggins/optio",
+      "ai-agents--optio"
+    ],
+    "report": "spec/projects/ai-agents-swarm--optio.md",
+    "topics": [
+      "agents",
+      "decisions"
+    ],
+    "depth": "screened",
+    "analyzedSha": "d1bc561661257bd03a031a8c49561de5eb5963d7",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-01T09:57:03-06:00",
+    "reportSha256": "82ca09d622bfe4119407e339935c81c1ec192f2a216ebc1dc384d0ad7dc20541",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-swarm--optio",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/jonwiggins/optio",
+    "report": "spec/projects/ai-agents-swarm--optio.md",
+    "analyzedSha": "d1bc561661257bd03a031a8c49561de5eb5963d7",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-01T09:57:03-06:00",
+    "observedSha": "f2c557d476125429eb327019254fa5a2237902cf",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "f2c557d476125429eb327019254fa5a2237902cf",
+        "date": "2026-10-26T20:58:35-06:00",
+        "subject": "Merge pull request #693 from jonwiggins/security/image-platform-matrix-2026-10-26"
+      },
+      {
+        "sha": "b571f81fa8a95bcb744796e6000294ce04e25910",
+        "date": "2026-10-26T20:19:12-06:00",
+        "subject": "fix(ci): build every agent preset for both architectures"
+      },
+      {
+        "sha": "a65b522c492fa75abb7eb81e6e18e4fe8aa721cc",
+        "date": "2026-10-26T20:02:01-06:00",
+        "subject": "Merge pull request #692 from jonwiggins/security/audit-followup-2026-10-26"
+      },
+      {
+        "sha": "8b1234b6292e34aa30659e056a0fcb61ed0b32e6",
+        "date": "2026-10-26T19:26:40-06:00",
+        "subject": "fix(runtime): release attachment leases with the database clock"
+      },
+      {
+        "sha": "ef57c5fd606d07cdfc436270c083c878c5dfc34f",
+        "date": "2026-10-26T19:19:42-06:00",
+        "subject": "test(web): drain session sharing routes before teardown"
+      },
+      {
+        "sha": "b3d4875becfef0dd9a17a285515ae56cffb3119a",
+        "date": "2026-10-26T18:41:52-06:00",
+        "subject": "test(security): enforce coverage across authorization and transport boundaries"
+      },
+      {
+        "sha": "10c2cb7a12a9f6bfc2e7ddfec595a2959271689e",
+        "date": "2026-10-26T18:20:19-06:00",
+        "subject": "fix(ci): scope dependency regression coverage"
+      },
+      {
+        "sha": "7f3378a56e77f516a1979f9b1f5c7a8a1d02770b",
+        "date": "2026-10-26T17:59:05-06:00",
+        "subject": "fix(security): close remaining isolation and credential boundaries"
+      },
+      {
+        "sha": "8c58f679930d1d60476005352f0d592a2d3714f3",
+        "date": "2026-10-26T14:36:45-06:00",
+        "subject": "Merge pull request #690 from jonwiggins/security/audit-2026-10"
+      },
+      {
+        "sha": "8c236ba5156192c385c518b9d9337c08586cd3b9",
+        "date": "2026-10-26T13:51:32-06:00",
+        "subject": "Merge remote-tracking branch 'origin/main' into security/audit-2026-10"
+      },
+      {
+        "sha": "221b98869e69bdacdb0062b0b9e868a6b5d84270",
+        "date": "2026-10-26T12:46:56-06:00",
+        "subject": "test(e2e): seed deployment admins for global secrets; a self-made workspace's admin is refused"
+      },
+      {
+        "sha": "46ce41b621eafd77130a0f6a8ec204d38809dcec",
+        "date": "2026-10-26T12:36:47-06:00",
+        "subject": "test(api): pass-through requireDeploymentAdmin in the input-validation route mock"
+      },
+      {
+        "sha": "09e42d1d7697ba2306d98ff460ee7c36cd488395",
+        "date": "2026-10-26T12:34:35-06:00",
+        "subject": "docs(security): audit report for 2026-10-26 and an accurate SECURITY.md"
+      },
+      {
+        "sha": "fd5bf5ae6c0825aaa8f5b22b0b811359049099a6",
+        "date": "2026-10-26T12:32:42-06:00",
+        "subject": "fix(security): skill sources clone over https/ssh/git only"
+      },
+      {
+        "sha": "545adb51ac702a20590af8b6367c5e82e20ffe32",
+        "date": "2026-10-26T12:31:50-06:00",
+        "subject": "fix(security): deployment-wide state takes a deployment admin, not any workspace's admin"
+      },
+      {
+        "sha": "3e1a6d8f958141d96068834a4fa074925baaf7ec",
+        "date": "2026-10-26T12:26:58-06:00",
+        "subject": "Merge branch 'worktree-agent-a2738224f306d323e' into security/audit-2026-10"
+      },
+      {
+        "sha": "211a18f6a7385759bdf7032c996b73486fc9717b",
+        "date": "2026-10-26T12:26:32-06:00",
+        "subject": "Merge branch 'worktree-agent-a2a54dba013bb143b' into security/audit-2026-10"
+      },
+      {
+        "sha": "fb9d466485eb0ab6e2222584928d308b130b5e53",
+        "date": "2026-10-26T12:26:31-06:00",
+        "subject": "Merge branch 'worktree-agent-a51e9937917203fb4' into security/audit-2026-10"
+      },
+      {
+        "sha": "fe5e725fa8f3034aebdd23813fff59204e4021d9",
+        "date": "2026-10-26T12:26:31-06:00",
+        "subject": "Merge branch 'worktree-agent-a17a8b30aa5e66860' into security/audit-2026-10"
+      },
+      {
+        "sha": "c0b2c3e4735ad56d0f913e7090c673b4c8ccd9e7",
+        "date": "2026-10-26T12:26:31-06:00",
+        "subject": "Merge branch 'worktree-agent-ad389a035128ffd62' into security/audit-2026-10"
+      },
+      {
+        "sha": "02ead184afce31c7f4c88a1f8afb483b60cac100",
+        "date": "2026-10-26T12:26:18-06:00",
+        "subject": "Merge branch 'worktree-agent-aac71cf19e9a33eab' into security/audit-2026-10"
+      },
+      {
+        "sha": "9c8689745147b117f3d2435a59eeb4bbbe6ca0b6",
+        "date": "2026-10-26T12:25:05-06:00",
+        "subject": "fix(security): only a private task's owner adds subtasks to it"
+      },
+      {
+        "sha": "c3171bbdb75b34cb4c15942d71e2a615e6092b11",
+        "date": "2026-10-26T12:24:43-06:00",
+        "subject": "fix(security): limit pods' GitHub App installation tokens to their repo"
+      },
+      {
+        "sha": "848645f158f9f1cb060b8b05c972381647b33871",
+        "date": "2026-10-26T12:20:54-06:00",
+        "subject": "fix(security): task dependencies come from the task's own workspace"
+      },
+      {
+        "sha": "ee7081d46039c0273b9943ee9aaf6b4071776891",
+        "date": "2026-10-26T12:19:50-06:00",
+        "subject": "fix(security): quote attacker-reachable strings on their way to a shell or a path"
+      },
+      {
+        "sha": "e1d7c76090f83b64f45b90613fb4532473c20494",
+        "date": "2026-10-26T12:19:47-06:00",
+        "subject": "fix(deps): patch vulnerable runtime and dev dependencies"
+      },
+      {
+        "sha": "27a538595c14b46c8dc928227ad6d99550834ae0",
+        "date": "2026-10-26T12:18:39-06:00",
+        "subject": "fix(security): keep marketplace skill sync from running or reading anything in the API pod"
+      },
+      {
+        "sha": "1ba51292e7f012534bd1401d869bc647dc485342",
+        "date": "2026-10-26T12:17:33-06:00",
+        "subject": "fix(security): rolling the deployment's image needs a deployment admin"
+      },
+      {
+        "sha": "daa8b10a0b65baf5f801d48e4405a0f7d1885754",
+        "date": "2026-10-26T12:16:36-06:00",
+        "subject": "fix(security): keep git tokens on trusted hosts, bound webhook raw bodies, scope ticket triggers"
+      },
+      {
+        "sha": "4cfe418cfc7004f2feff83d93b4fffd9cb63e4d4",
+        "date": "2026-10-26T12:15:12-06:00",
+        "subject": "fix(security): ignore the session cookie on WebSocket upgrades from foreign origins"
+      },
+      {
+        "sha": "4367e3b9b06dbeb933d62774f3591ff8765fb940",
+        "date": "2026-10-26T12:14:58-06:00",
+        "subject": "fix(security): only a deployment admin claims another domain for auto-join"
+      },
+      {
+        "sha": "3e4438c4ddf0bf79a6048a4bf4bab470a9eab000",
+        "date": "2026-10-26T12:10:28-06:00",
+        "subject": "fix(security): apply the agent NetworkPolicy to Job and persistent-agent pods"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".dockerignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".env.example",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build-images.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/deploy-site.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".husky/pre-push",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".node-version",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile.agent",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile.api",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile.optio",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Dockerfile.web",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/kotlin/dev/optio/app/shell/HubScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/kotlin/dev/optio/app/shell/MainShell.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_blueprint.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_chip.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_midnight.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_retro.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_sticker.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_sunrise.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable-nodpi/ic_launcher_alt_terminal.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/app/src/test/kotlin/dev/optio/app/shell/MainShellTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/data/src/main/kotlin/dev/optio/core/data/SessionStore.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/data/src/test/kotlin/dev/optio/core/data/SessionStoreTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/glance/src/main/kotlin/dev/optio/core/glance/GlanceItem.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/model/src/main/kotlin/dev/optio/core/model/SharedTypes.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/model/src/test/kotlin/dev/optio/core/model/LocalDecodeTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/model/src/test/resources/fixtures/local-terminals.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/AppRouter.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/Navigator.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/Tab.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/navigation/src/main/kotlin/dev/optio/core/navigation/routes/AgentRoutes.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/navigation/src/test/kotlin/dev/optio/core/navigation/AppRouterTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/network/src/main/kotlin/dev/optio/core/network/AgentCredentials.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/network/src/main/kotlin/dev/optio/core/network/ModelProviders.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/network/src/test/kotlin/dev/optio/core/network/AgentCredentialsTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/agent/AgentModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Badges.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/BrandMarks.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Detail.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/OptioGlyph.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/OptioMarkPaths.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Pickers.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Rows.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/SessionIdentityHeader.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/SessionLinks.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Stats.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/components/Surfaces.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/form/FormNotes.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/scope/Scope.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/OptioTheme.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/Palette.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/Tokens.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/theme/Tone.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/triggers/TriggerEditor.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/triggers/TriggerModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/main/kotlin/dev/optio/core/ui/usage/ProviderLimits.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/components/BrandMarksTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/scope/ScopeTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/theme/ToneTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/ui/src/test/kotlin/dev/optio/core/ui/triggers/TriggerModelTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/workfeed/build.gradle.kts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/workfeed/src/main/kotlin/dev/optio/core/workfeed/WorkFeed.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/core/workfeed/src/main/kotlin/dev/optio/core/workfeed/ui/WorkRowCard.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/core/workfeed/src/test/kotlin/dev/optio/core/workfeed/WorkFeedTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/e2e/launch-api.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentDetailViewModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentFormDraft.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTriggerSheet.kt",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTriggers.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTriggersSection.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentTurns.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentsApi.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/AgentsEntries.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/OptioAssistantScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/feature/agents/src/main/kotlin/dev/optio/feature/agents/OptioAssistantViewModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentDetailUiTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentDetailViewModelTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentScreenshotsTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentTriggersTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentsDecodeTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/AgentsLiveTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/OptioAssistantScreenshotsTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/OptioAssistantTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/feature/agents/src/test/kotlin/dev/optio/feature/agents/OptioAssistantUiTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/glance/src/main/kotlin/dev/optio/feature/glance/watch/WatchNotifier.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/insights/src/main/kotlin/dev/optio/feature/insights/ActivitySection.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/insights/src/main/kotlin/dev/optio/feature/insights/ClusterSection.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/insights/src/main/kotlin/dev/optio/feature/insights/CostsSection.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/insights/src/test/kotlin/dev/optio/feature/insights/InsightsDecodeTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/insights/src/test/kotlin/dev/optio/feature/insights/InsightsWiringTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/LibraryApi.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/LibrarySupport.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/connections/ConnectionDetail.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/connections/ConnectionsList.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/library/src/main/kotlin/dev/optio/feature/library/connections/NewConnection.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/library/src/test/kotlin/dev/optio/feature/library/ConnectionScreensTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/library/src/test/kotlin/dev/optio/feature/library/LibrarySamples.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/MachinesSection.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/api/LocalApi.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/automations/AddTriggerSheet.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/automations/AutomationScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/automations/AutomationViewModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/machines/LocalHostScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/machines/MachineViews.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/model/LocalPresentation.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/model/Triggers.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/terminal/LocalTerminalScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/terminal/LocalTerminalViewModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/terminal/TerminalFaces.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/main/kotlin/dev/optio/feature/local/ui/LocalComponents.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/api/LocalApiTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/live/LocalLiveTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/machines/HostTerminalsTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/machines/LocalHostViewModelTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/model/LocalPresentationTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/model/TriggersTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/local/src/test/kotlin/dev/optio/feature/local/terminal/LocalTerminalViewModelTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/MoreScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/api/MoreApi.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/providers/ModelProvidersScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/secrets/SecretsScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/secrets/SecretsViewModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/settings/OptioAgentSettings.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/kotlin/dev/optio/feature/more/ui/MoreSupport.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_blueprint.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_chip.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_default.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_midnight.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_retro.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_sticker.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_sunrise.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/main/res/drawable-nodpi/app_icon_terminal.webp",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/MoreLogicTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/MoreSamples.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/MoreScreenshotsTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/RoleGatingTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/more/src/test/kotlin/dev/optio/feature/more/SecretsAndWebhooksViewModelTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/ClusterSummaryCard.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/Grouped.kt",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/LocalPresentation.kt",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/LocalTerminalRow.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/OverviewContent.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/OverviewViewModel.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/Servers.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/WorkBoard.kt",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "apps/android/feature/overview/src/main/kotlin/dev/optio/feature/overview/WorkRowView.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/reviews/src/main/kotlin/dev/optio/feature/reviews/ReviewFormat.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/reviews/src/test/kotlin/dev/optio/feature/reviews/ReviewFormatTest.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/sessions/src/main/kotlin/dev/optio/feature/sessions/SessionChatView.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/sessions/src/main/kotlin/dev/optio/feature/sessions/SessionDetailScreen.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/sessions/src/main/kotlin/dev/optio/feature/sessions/SessionTerminalView.kt",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/android/feature/tasks/src/main/kotlin/dev/optio/feature/tasks/data/RunModels.kt",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

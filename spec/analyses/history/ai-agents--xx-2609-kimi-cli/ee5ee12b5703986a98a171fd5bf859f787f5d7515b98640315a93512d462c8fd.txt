@@ -1,0 +1,25 @@
+# xx-2609-kimi-cli
+
+Source: [xx-2609-kimi-cli](https://github.com/MoonshotAI/kimi-cli) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82`; commit timestamp `2026-09-22T09:29:17Z`; 991 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/MoonshotAI/kimi-cli/blob/9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82/README.md)):
+
+> This project has been archived and is no longer maintained.** Kimi CLI (Python) has been replaced by **Kimi Code CLI**, the next-generation terminal AI agent from the same team. - This repository is read-only. There will be no further releases, bug fixes, or security updates.
+
+Build/package evidence: [docs/package.json](https://github.com/MoonshotAI/kimi-cli/blob/9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82/docs/package.json); [examples/custom-echo-soul/pyproject.toml](https://github.com/MoonshotAI/kimi-cli/blob/9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82/examples/custom-echo-soul/pyproject.toml); [examples/custom-kimi-soul/pyproject.toml](https://github.com/MoonshotAI/kimi-cli/blob/9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82/examples/custom-kimi-soul/pyproject.toml); [examples/custom-tools/pyproject.toml](https://github.com/MoonshotAI/kimi-cli/blob/9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82/examples/custom-tools/pyproject.toml); [examples/kimi-cli-stream-json/pyproject.toml](https://github.com/MoonshotAI/kimi-cli/blob/9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82/examples/kimi-cli-stream-json/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/MoonshotAI/kimi-cli/blob/9ab1286b8fe4e6bcd116949a27ce5e0ac3389c82/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

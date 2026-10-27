@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--onyx",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/onyx-dot-app/onyx",
+  "report": "spec/projects/ai-agents--onyx.md",
+  "analyzedSha": "f1fbc7a135eb844e21e13f29eaa8acfd83a608e9",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T04:38:47Z",
+  "observedSha": "616a4b1a9c75cc07e9645069c672f3e8fb029ca8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "616a4b1a9c75cc07e9645069c672f3e8fb029ca8",
+      "date": "2026-10-23T23:42:16Z",
+      "subject": "docs: fix dead Onyx Cloud signup link in README (#16679)"
+    },
+    {
+      "sha": "d6e8d7a1e976e079f1cdee10f71f9bc6e15f9528",
+      "date": "2026-10-23T23:41:53Z",
+      "subject": "fix(craft): isolate cleanup retries for distinct runtime resources (#16405)"
+    },
+    {
+      "sha": "19021d97d2f5b0684eaed1cdc71faf6f7458d8e5",
+      "date": "2026-10-23T23:41:53Z",
+      "subject": "fix(craft): reclaim failed runtimes from durable checkpoints (#16404)"
+    },
+    {
+      "sha": "407695ec054a4def3a61669c92ad7c705db39d88",
+      "date": "2026-10-23T23:41:52Z",
+      "subject": "fix(craft): bound cleanup sweeps and fence idle runtime deletion (#16403)"
+    },
+    {
+      "sha": "4bd29a8b9967bb3ce2b477525aef8c6ff58c4d4c",
+      "date": "2026-10-23T23:41:39Z",
+      "subject": "feat(admin): reskin the groups page (#16673)"
+    },
+    {
+      "sha": "556f83e488221ac30befb16ea032b7fb94501852",
+      "date": "2026-10-23T23:20:48Z",
+      "subject": "chore(ci): move CI, tests, and defaults off gpt-4o/gpt-5 to gpt-6 models (#16643)"
+    },
+    {
+      "sha": "d53d7a49d5aa582299402eecc1416ed01a62e370",
+      "date": "2026-10-23T23:16:14Z",
+      "subject": "test(e2e): check the edit groups modal for a joined group, not the overflowing groups cell (#16674)"
+    },
+    {
+      "sha": "d1bfaad22f839872e75f1b9e0dcca482e6e90d1b",
+      "date": "2026-10-23T22:51:35Z",
+      "subject": "fix(search): pass searched sources to scope decision so BACKOFF advances (#16670)"
+    },
+    {
+      "sha": "670e2dcd9921f26f42e63fe654ebb344c8385b27",
+      "date": "2026-10-23T21:42:29Z",
+      "subject": "chore(deps): update node base image digests (#16665)"
+    },
+    {
+      "sha": "4a750ae3170bc7551ee5a0386efafa695f82eab8",
+      "date": "2026-10-23T21:37:55Z",
+      "subject": "fix(connectors): discovery rows name the failed check and n/a checks drop out (#16488)"
+    },
+    {
+      "sha": "7e0c83a53112f81ea005f6c9f9055052d3327805",
+      "date": "2026-10-23T21:36:25Z",
+      "subject": "fix(web): classify connector validation errors by HTTP status code (#16669)"
+    },
+    {
+      "sha": "2b2ef5e671eb5c47a7d4853ea8ad9d070024ac2e",
+      "date": "2026-10-23T21:33:29Z",
+      "subject": "fix(craft): commit snapshot references before cleanup prunes archives (#16402)"
+    },
+    {
+      "sha": "b0ed8e23be0821ec9f20c06b2e772573cebc521e",
+      "date": "2026-10-23T21:33:28Z",
+      "subject": "fix(craft): reconcile orphaned resources and expire abandoned provisioning (#16401)"
+    },
+    {
+      "sha": "7c4691eae593ac243ac138a6d6fc9d11b8db22c2",
+      "date": "2026-10-23T21:30:17Z",
+      "subject": "perf(api): remove per-chunk middleware relays (#16652)"
+    },
+    {
+      "sha": "1c61c1447fe7b7da8b93ffb9829410d8453e8f04",
+      "date": "2026-10-23T21:03:18Z",
+      "subject": "chore(deps): update python base image digests (#16666)"
+    },
+    {
+      "sha": "b33ecbfb35f2f5ca0c0cabf9a37f05d5d18be06c",
+      "date": "2026-10-23T20:53:23Z",
+      "subject": "chore(ods): stop hard-coding the internal infra repo name (#16642)"
+    },
+    {
+      "sha": "d106cf146b072ff6bc941c0f93952db0f0d0f7d3",
+      "date": "2026-10-23T20:52:46Z",
+      "subject": "fix(connectors): stored check runs expire at a renewed deadline (#16489)"
+    },
+    {
+      "sha": "d7f88d08161d613d5ae5dbf2f4262518bc3500ec",
+      "date": "2026-10-23T20:52:45Z",
+      "subject": "fix(web): checks cards show why a run failed, can stop a run, and offer only usable accounts (#16487)"
+    },
+    {
+      "sha": "f2d36810927f57dd04aa7291269d490a9ddaa75c",
+      "date": "2026-10-23T20:52:45Z",
+      "subject": "fix(web): check rows and header follow the checks copy guide (#16486)"
+    },
+    {
+      "sha": "3b40ea04d6560e9207c98400906225a70891e772",
+      "date": "2026-10-23T20:52:44Z",
+      "subject": "fix(web): say why the connector form's Review button does nothing (#16484)"
+    },
+    {
+      "sha": "8ff0a08e3190319057264ae9693caeba8836ce9f",
+      "date": "2026-10-23T20:52:43Z",
+      "subject": "fix(web): label backfill index attempts as backfills (#16483)"
+    },
+    {
+      "sha": "c55fcbe01bb0dbee3c4ecb85676756b266b63bb7",
+      "date": "2026-10-23T20:52:42Z",
+      "subject": "fix(web): hide the account and checks for connectors with no credential (#16482)"
+    },
+    {
+      "sha": "2064ea8ead4b30a33dcee5a07b8d9ab5d5735e22",
+      "date": "2026-10-23T20:52:42Z",
+      "subject": "fix(connectors): normalize shared credential site URLs and report the use rule's refusal (#16481)"
+    },
+    {
+      "sha": "d3f4ed3e07d2c8806c5a6c0526dfd3f20069db6f",
+      "date": "2026-10-23T20:52:41Z",
+      "subject": "fix(connectors): let a shared credential of an unbound source be used without a pair (#16480)"
+    },
+    {
+      "sha": "0cfba5cfa75662cab08dd195f59e37d3d10e3294",
+      "date": "2026-10-23T20:52:40Z",
+      "subject": "fix(indexing): count only document and hierarchy batches as fetch events (#16479)"
+    },
+    {
+      "sha": "0dfd892fbd2809935aff620991a5f507b60136fc",
+      "date": "2026-10-23T20:52:39Z",
+      "subject": "fix(onedrive): skip drive-less users within one checkpoint step (#16478)"
+    },
+    {
+      "sha": "e5967972647f1a130d351f26cae0bf6cc42c86e0",
+      "date": "2026-10-23T20:52:38Z",
+      "subject": "fix(pruning): cancel an abandoned prune's sync record and keep a pause's stop signal (#16477)"
+    },
+    {
+      "sha": "29d2d1109eefda2b828c2c01907e0b09e31bb7f5",
+      "date": "2026-10-23T20:31:43Z",
+      "subject": "feat(connectors): owner-only account actions, and account card fixes (#16619)"
+    },
+    {
+      "sha": "30e7711e9ee0e3b1fd14f07ee095a4d3c24e01ee",
+      "date": "2026-10-23T20:31:42Z",
+      "subject": "refactor(opal): split Tag into a plain Tag and an interactive Chip (#16649)"
+    },
+    {
+      "sha": "a2188752317fdffb4e50bc97eab89dae837c3b1b",
+      "date": "2026-10-23T20:31:42Z",
+      "subject": "feat(credentials): only the owner edits, shares, renames or deletes a credential (#16648)"
+    },
+    {
+      "sha": "07a33cce20f6305fa0346c8f4f10f30a982b047e",
+      "date": "2026-10-23T20:13:45Z",
+      "subject": "fix(image-gen): warn on retired GPT Image 1 and make the image gen seed migration a no-op (#16644)"
+    },
+    {
+      "sha": "1e706232aa5d8544e393017f80566e62896fc32a",
+      "date": "2026-10-23T20:06:09Z",
+      "subject": "feat(auth): delete SSO providers and hand their users to the remaining ones (#16640)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".agents/feature-map/GLOSSARY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/PATHS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/VERIFYING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/check_feature_map.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/access-control.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/agents-personas.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/auth-and-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/background-jobs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/billing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/cc-pairs-and-credentials.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/chat-frontend.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/chat-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/chat-preferences.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/citations.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/code-execution.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/context-assembly.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/core-chat-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-external-apps.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-sandboxes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-scheduled-tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-streaming.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/craft-webapp-proxy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/desktop-widget-extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/discord-bot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/document-index.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/editions-and-gating.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/federated-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/file-store-and-user-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/image-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/indexing-pipeline.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/internal-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/llm-gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/llm-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/mcp-and-custom-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/mcp-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/mobile-app.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/multi-tenancy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/onyx-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/permission-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/projects.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/rate-and-usage-limits.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/slack-bot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/standard-answers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/streaming-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/tools-framework.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/voice.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/web-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/whitelabelling-and-theme.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/path-allowlist.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/stale_docs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/hooks/agent_hook_io.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/hooks/ensure_latest_main.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/hooks/opal_migrate_on_edit.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/hooks/pre_commit_on_stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/check-pr",
+      "previousPath": ".cursor/skills/check-pr"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/cli-review",
+      "previousPath": ".cursor/skills/cli-review"
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/feature-map/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greploop",
+      "previousPath": ".cursor/skills/greploop"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/LICENSE",
+      "previousPath": ".cursor/skills/greptile/LICENSE"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/README.md",
+      "previousPath": ".cursor/skills/greptile/README.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/check-pr/SKILL.md",
+      "previousPath": ".cursor/skills/greptile/check-pr/SKILL.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/check-pr/references/gitlab-api.md",
+      "previousPath": ".cursor/skills/greptile/check-pr/references/gitlab-api.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/check-pr/references/graphql-queries.md",
+      "previousPath": ".cursor/skills/greptile/check-pr/references/graphql-queries.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/cli-review/SKILL.md",
+      "previousPath": ".cursor/skills/greptile/cli-review/SKILL.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/greploop/SKILL.md",
+      "previousPath": ".cursor/skills/greptile/greploop/SKILL.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/greploop/references/gitlab-api.md",
+      "previousPath": ".cursor/skills/greptile/greploop/references/gitlab-api.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/greptile/greploop/references/graphql-queries.md",
+      "previousPath": ".cursor/skills/greptile/greploop/references/graphql-queries.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/merge-dependabot-prs/SKILL.md",
+      "previousPath": ".cursor/skills/merge-dependabot-prs/SKILL.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/merge-dependabot-prs/references/graphql-queries.md",
+      "previousPath": ".cursor/skills/merge-dependabot-prs/references/graphql-queries.md"
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/onyx-cli/SKILL.md",
+      "previousPath": ".cursor/skills/onyx-cli/SKILL.md"
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/onyx-craft-dev/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/onyx-dev-stack/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/skills/onyx-dev-stack/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": ".agents/skills/playwright/SKILL.md",
+      "previousPath": ".cursor/skills/playwright/SKILL.md"
+    },
+    {
+      "status": "R093",
+      "path": ".agents/skills/sync-vendored-skills.sh",
+      "previousPath": ".cursor/skills/sync-vendored-skills.sh"
+    },
+    {
+      "status": "M",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".coderabbit.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codex/hooks.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codex/skills",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".cursor/skills",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devcontainer/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/build-backend-image/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/build-devcontainer-image/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/build-model-server-image/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/check-tested-base/check-tested-base.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/dhi-base-images/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/install-python-deps/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/run-nightly-provider-chat-test/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/slack-post-message/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/prompts/cve-fix.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/base-image-ref.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/check-mcp-compatibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/cve-check-manifests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/run-cve-alerts.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/audit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cve-alerts-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cve-alerts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cve-tracking.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/deployment.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/mcp-compatibility.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/post-merge-beta-cherry-pick.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-craft-compose-integration.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-craft-compose-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-craft-k8s-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-desktop-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-external-dependency-unit-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-golang-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-helm-chart-testing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-helm-chart-version.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-integration-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".github/workflows/pr-linear-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-playwright-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-python-connector-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-python-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-quality-checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-storybook-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-terraform-provider-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/preview.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-opal.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/reusable-agent-task-pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-base-image-digests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-recommended-models.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/update-vendored-skills.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/weekly-models-dev-price-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/config.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/files.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".greptile/rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vscode/.env.k8s.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vscode/env.web_template.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vscode/env_template.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vscode/launch.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vscode/tasks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".zed/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".zed/alembic_step.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".zed/debug.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".zed/process-compose.k8s.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".zed/run-all-k8s.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".zed/tasks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/Dockerfile.model_server",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/alembic/env.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/alembic/versions/0140c82e8a7f_add_allow_connector_check_findings_to_.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/alembic/versions/078171a436f9_add_pending_backfills_to_cc_pair.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

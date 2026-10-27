@@ -1,0 +1,25 @@
+# deploy-cloudflare
+
+Source: [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs) · Category: [ai-skills](../categories/ai-skills.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `e43015cd6cddad3ee1c0fa087c4d5022e65e7c98`; commit timestamp `2026-10-03T15:34:24-04:00`; 13,801 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/README.md)):
+
+> Welcome to the open-source repository for all Cloudflare's Documentation. Except as otherwise noted, Cloudflare and any contributors grant you a license to the Cloudflare Developer Documentation and other content in this repository under the Creative Commons Attribution 4.0 International Public License, see the LICENSE file, and grant you a license to any code in the repository under the MIT License, see the LICENSE-CODE file.
+
+Build/package evidence: [.flue/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.flue/package.json); [.github/actions/check-codeowner/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.github/actions/check-codeowner/package.json); [.github/actions/issue-label-assign/package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/.github/actions/issue-label-assign/package.json); [package.json](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/package.json); [tools/go.mod](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/tools/go.mod)
+
+License evidence: [LICENSE](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/LICENSE); [LICENSE-CODE](https://github.com/cloudflare/cloudflare-docs/blob/e43015cd6cddad3ee1c0fa087c4d5022e65e7c98/LICENSE-CODE) Classification hint: not classified; inspect source. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

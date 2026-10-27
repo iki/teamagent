@@ -1,0 +1,207 @@
+# glados: change evidence
+
+Source: [glados](https://github.com/dnhkng/GLaDOS) · [Analysis](../../projects/ai-agents--glados.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `fde319cfb8ceb965e512800b2ffc5b9c0d1574b1`; commit date: 2026-09-17T16:39:32+02:00; review date: unknown; observed SHA: `ea018f57fac8bbdde5057b65e372ddf9ac0758a8`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/dnhkng/GLaDOS/compare/fde319cfb8ceb965e512800b2ffc5b9c0d1574b1...ea018f57fac8bbdde5057b65e372ddf9ac0758a8). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [ea018f57fac8](https://github.com/dnhkng/GLaDOS/commit/ea018f57fac8bbdde5057b65e372ddf9ac0758a8) 2026-10-10T15:11:19+02:00: Merge pull request #224 from dnhkng/feat/webui-themes
+- [2dfb76d4c8f7](https://github.com/dnhkng/GLaDOS/commit/2dfb76d4c8f7df1fb667612ad215c3f78291ab6a) 2026-10-10T15:08:45+02:00: Finish timing cards when input has no turn identifier
+- [8dc2ecb3135b](https://github.com/dnhkng/GLaDOS/commit/8dc2ecb3135baf95137da7e849722c23864451e0) 2026-10-10T15:07:11+02:00: Merge pull request #225 from dnhkng/refactor/mind-scheduler
+- [34c3fa487034](https://github.com/dnhkng/GLaDOS/commit/34c3fa487034c75819974d88623b3a99a9dcd5e7) 2026-10-10T15:02:52+02:00: Isolate resume policy failures and preserve vision telemetry
+- [00327832e0ef](https://github.com/dnhkng/GLaDOS/commit/00327832e0ef01318346dbf67129724fc210da5a) 2026-10-10T14:07:18+02:00: Document mind interfaces and scheduling policies
+- [e5687ed90319](https://github.com/dnhkng/GLaDOS/commit/e5687ed903190374fbd646322e30b2f8e555be54) 2026-10-10T14:07:18+02:00: Centralize background mind timing and execution
+- [4de8f7dadc34](https://github.com/dnhkng/GLaDOS/commit/4de8f7dadc34b2fa9622f6f4b8f03e0a7fcb5ca0) 2026-10-07T16:51:35+02:00: Document Jev-style speech routing with a Mermaid diagram
+- [acfc149f3353](https://github.com/dnhkng/GLaDOS/commit/acfc149f33534628f9926727ea7574cb15f83fe0) 2026-10-07T16:12:36+02:00: Restore Portal quotes in the README
+- [f749b08b4708](https://github.com/dnhkng/GLaDOS/commit/f749b08b4708f4272aeddf6bd7b96840f5201d6e) 2026-10-07T15:39:17+02:00: Integrate themed web console and presence screen
+- [32d519aac9d3](https://github.com/dnhkng/GLaDOS/commit/32d519aac9d342280423aa4e7695024757b2a1c7) 2026-10-07T15:36:13+02:00: Add turn identities to response telemetry
+- [892d78c9fb9d](https://github.com/dnhkng/GLaDOS/commit/892d78c9fb9d579107d6e68bd4fe57782ea67092) 2026-10-07T13:13:09+02:00: Merge pull request #223 from dnhkng/cleanup/remove-fastvlm
+- [91af936b433b](https://github.com/dnhkng/GLaDOS/commit/91af936b433b426950f324bd6a99f5c9d52bbd3e) 2026-10-07T13:06:49+02:00: Validate AMD wheel interpreter before replacing runtime packages
+- [ea3cfd0b5072](https://github.com/dnhkng/GLaDOS/commit/ea3cfd0b50728e516471b410cd55f32af5319132) 2026-10-07T12:26:21+02:00: Rewrite README for current console, profiles and installation
+- [c0eaaeb710bd](https://github.com/dnhkng/GLaDOS/commit/c0eaaeb710bdd7817cea2f4b803e69ed052843d9) 2026-10-07T12:15:41+02:00: Preserve existing environments and OpenVINO audio acceleration
+- [857a1f5820d3](https://github.com/dnhkng/GLaDOS/commit/857a1f5820d344b64ddd154c36345d8aa8ee9fa7) 2026-10-07T11:59:56+02:00: Remove stale FastVLM assets and unused phoneme dictionary backup
+- [58f04cf05260](https://github.com/dnhkng/GLaDOS/commit/58f04cf0526070329870eed57b41e91961ecbc58) 2026-10-07T11:45:35+02:00: Install ROCm-matched MIGraphX wheels and verify AMD sessions
+- [4547bbd1399c](https://github.com/dnhkng/GLaDOS/commit/4547bbd1399cbb3d83b640d405d66152a2bb8bd8) 2026-10-07T11:45:35+02:00: Select AMD ONNX providers for local audio models
+- [bae24ec54333](https://github.com/dnhkng/GLaDOS/commit/bae24ec54333e28f780da9d5ccaecc8caa0eb9e0) 2026-10-07T11:39:25+02:00: Merge remote-tracking branch 'origin/main' into cleanup/remove-fastvlm
+- [4a8d6ea2fd39](https://github.com/dnhkng/GLaDOS/commit/4a8d6ea2fd39f9c01b398e29d6b34491e833dbc7) 2026-10-07T11:37:53+02:00: Merge pull request #222 from dnhkng/feat/websocket-audio
+- [6537599c1d49](https://github.com/dnhkng/GLaDOS/commit/6537599c1d490f551135cd9e3df74cc3b584ec6a) 2026-10-07T11:07:30+02:00: Remove unused FastVLM backend and smoke test
+- [e66436a24005](https://github.com/dnhkng/GLaDOS/commit/e66436a240059a03e0015eee7d3031867bfa3f07) 2026-10-07T11:05:09+02:00: Retain standalone FastVLM artifacts for separate cleanup PR
+- [d6acb947a05c](https://github.com/dnhkng/GLaDOS/commit/d6acb947a05c36ffe40e80bf7efa69338ba0aa56) 2026-10-07T11:02:11+02:00: Apply webapp host and port overrides independently of enable flag
+- [83d014df2118](https://github.com/dnhkng/GLaDOS/commit/83d014df211878be2a851c7f84f13861c4575dba) 2026-10-07T10:43:09+02:00: Validate console hosts and clean up failed webapp startup
+- [a734272859fb](https://github.com/dnhkng/GLaDOS/commit/a734272859fb62afc6629b9dbce4ad4233961fe9) 2026-10-07T10:42:37+02:00: Use the configured conversation backend when vision is disabled
+- [7315beee4582](https://github.com/dnhkng/GLaDOS/commit/7315beee458225b1325950dc50a9c9412b8666bc) 2026-10-07T10:42:36+02:00: Drain final speculative deltas when the producer finishes
+- [50a2713657d2](https://github.com/dnhkng/GLaDOS/commit/50a2713657d261ece1c409903d5f5027dfb92547) 2026-10-07T10:42:36+02:00: Make memory record locking portable on Windows
+- [9545add16a33](https://github.com/dnhkng/GLaDOS/commit/9545add16a33744fba5b39a197d39493183946d1) 2026-10-07T10:42:36+02:00: Correct context-size documentation and review hygiene
+- [8333fbeed7d3](https://github.com/dnhkng/GLaDOS/commit/8333fbeed7d307adc9b2a9383b8bc125cb77e1e9) 2026-10-07T09:49:16+02:00: Merge main and preserve phonemizer pronunciation fixes
+- [d0d46558f341](https://github.com/dnhkng/GLaDOS/commit/d0d46558f341d19ecd41d3fa21031bd16be9ee5d) 2026-10-07T09:43:02+02:00: Ignore empty transcripts during wake-word detection
+- [9d947e42efdb](https://github.com/dnhkng/GLaDOS/commit/9d947e42efdb25c11ec0d71af9e430b75cfa5e95) 2026-10-07T09:37:41+02:00: Use neutral attribution in architecture review documentation
+- [50ea229f50b8](https://github.com/dnhkng/GLaDOS/commit/50ea229f50b893bde63e15ce0ac67111c4aad427) 2026-10-07T09:29:52+02:00: Document architecture review, validated findings and refactor roadmap
+- [1faddb0e89b9](https://github.com/dnhkng/GLaDOS/commit/1faddb0e89b942010e9afef0ac769b7e0f757a95) 2026-10-07T09:29:52+02:00: Normalize spoken text and preserve contraction and acronym pronunciation
+
+## Changed paths (truncated)
+
+- M: `.gitignore`
+- M: `README.md`
+- M: `configs/glados_config.yaml`
+- A: `configs/glados_extended_config.yaml`
+- A: `configs/glados_gemma4_llamacpp.yaml`
+- M: `configs/glados_vision_config.yaml`
+- A: `configs/glados_webapp_config.yaml`
+- M: `configs/glados_websocket_config.yaml`
+- M: `configs/minimax_config.yaml`
+- M: `docker-compose.yml`
+- A: `docs/amd.md`
+- M: `docs/autonomy.md`
+- A: `docs/benchmarks/audio-paths-cold-warm-2026-10-06.json`
+- A: `docs/benchmarks/autonomy-core-2026-10-06.json`
+- A: `docs/benchmarks/autonomy-handoff-2026-10-06.json`
+- A: `docs/benchmarks/autonomy-handoff-thinking-2026-10-06.json`
+- A: `docs/benchmarks/autonomy-live-review-2026-10-06.json`
+- A: `docs/benchmarks/cache-2026-10-05.json`
+- A: `docs/benchmarks/clock-conversation-routing-2026-10-06.json`
+- A: `docs/benchmarks/command-time-2026-10-05.json`
+- A: `docs/benchmarks/core-coordination-2026-10-06.json`
+- A: `docs/benchmarks/core-publication-2026-10-06.json`
+- A: `docs/benchmarks/deferred-transcripts-2026-10-06.json`
+- A: `docs/benchmarks/gemma4-2026-10-04.json`
+- A: `docs/benchmarks/gemma4-context-capacity.md`
+- A: `docs/benchmarks/gemma4-embedded-server-687e7789-2026-10-06.json`
+- A: `docs/benchmarks/gemma4-four-slot-capacity.json`
+- A: `docs/benchmarks/gemma4-four-slot-capacity.md`
+- A: `docs/benchmarks/gemma4-native-2026-10-04.json`
+- A: `docs/benchmarks/gemma4-parallel-logits-2026-10-06.json`
+- A: `docs/benchmarks/gemma4-prompt-positions-2026-10-06.details.json.gz`
+- A: `docs/benchmarks/gemma4-prompt-positions-2026-10-06.json`
+- A: `docs/benchmarks/gemma4-prompt-positions-2026-10-06.png`
+- A: `docs/benchmarks/gemma4-prompt-positions-2026-10-06.svg`
+- A: `docs/benchmarks/interaction-hold-2026-10-06.json`
+- A: `docs/benchmarks/latency-2026-10-05.json`
+- A: `docs/benchmarks/llamacpp-embedding-assessment-2026-10-06.json`
+- A: `docs/benchmarks/llamacpp-functional-2026-10-06.json`
+- A: `docs/benchmarks/llamacpp-live-2026-10-06.json`
+- A: `docs/benchmarks/llamacpp-tuning-2026-10-06.json`
+- A: `docs/benchmarks/parakeet-2026-10-04.json`
+- A: `docs/benchmarks/quiet-emotion-compaction-2026-10-05.json`
+- A: `docs/benchmarks/routing-assist-2026-10-05.json`
+- A: `docs/benchmarks/routing-assist-fallback-2026-10-05.json`
+- A: `docs/benchmarks/routing-concurrency-2026-10-04.json`
+- A: `docs/benchmarks/routing-hierarchy-2026-10-05.json`
+- A: `docs/benchmarks/sonora-aec-2026-10-06.json`
+- A: `docs/benchmarks/sonora-aec-live-2026-10-06.json`
+- A: `docs/benchmarks/sonora-aec-live-first-2026-10-06.json`
+- A: `docs/benchmarks/spoken-text-converter-2026-10-07.json`
+- A: `docs/benchmarks/streaming-latency-2026-10-06.json`
+- A: `docs/benchmarks/vision-face-e4b-2026-10-05.json`
+- A: `docs/benchmarks/vision-face-yunet-2026-10-05.json`
+- A: `docs/benchmarks/vision-gaze-stream-2026-10-05.json`
+- A: `docs/benchmarks/voice-continuation-2026-10-06.json`
+- A: `docs/benchmarks/voice-latency-2026-10-06.json`
+- A: `docs/gemma4.md`
+- M: `docs/mcp.md`
+- A: `docs/native-inference.md`
+- M: `docs/roadmap.md`
+- A: `docs/rust-migration.md`
+- M: `docs/vision.md`
+- A: `docs/webapp.md`
+- A: `examples/benchmark_autonomy_handoff.py`
+- A: `examples/benchmark_core_coordination.py`
+- A: `examples/benchmark_gemma4.py`
+- A: `examples/benchmark_llamacpp.py`
+- A: `examples/benchmark_parallel_logits.py`
+- A: `examples/benchmark_prompt_positions.py`
+- A: `examples/benchmark_sonora_aec.py`
+- A: `examples/benchmark_spoken_text_converter.py`
+- A: `examples/plot_prompt_positions.py`
+- A: `examples/probe_embedded_server.cpp`
+- A: `examples/probe_parallel_logits.cpp`
+- A: `examples/probe_prompt_logits.cpp`
+- A: `examples/sonora_aec_probe/.gitignore`
+- A: `examples/sonora_aec_probe/Cargo.lock`
+- A: `examples/sonora_aec_probe/Cargo.toml`
+- A: `examples/sonora_aec_probe/README.md`
+- A: `examples/sonora_aec_probe/src/main.rs`
+- A: `examples/webapp/index.html`
+- D: `models/TTS/lang_phoneme_dict_old.pkl`
+- D: `models/Vision/config.json`
+- D: `models/Vision/preprocessor_config.json`
+- D: `models/Vision/tokenizer.json`
+- D: `models/Vision/tokenizer_config.json`
+- A: `plans/architecture-refactor-progress.md`
+- A: `plans/architecture-simplification-review.md`
+- A: `plans/architecture-simplification-validation.md`
+- A: `plans/fluttering-skipping-deer.md`
+- A: `plans/webapp-architecture.md`
+- M: `pyproject.toml`
+- M: `scripts/install.py`
+- A: `scripts/run_llamacpp.sh`
+- A: `scripts/run_with_logs.py`
+- M: `src/glados/ASR/ctc_asr.py`
+- M: `src/glados/ASR/tdt_asr.py`
+- M: `src/glados/TTS/phonemizer.py`
+- M: `src/glados/TTS/tts_glados.py`
+- M: `src/glados/TTS/tts_kokoro.py`
+- M: `src/glados/audio_io/__init__.py`
+- M: `src/glados/audio_io/sounddevice_io.py`
+- M: `src/glados/audio_io/vad.py`
+- M: `src/glados/audio_io/websocket_io.py`
+- M: `src/glados/autonomy/__init__.py`
+- M: `src/glados/autonomy/agents/__init__.py`
+- M: `src/glados/autonomy/agents/compaction_agent.py`
+- M: `src/glados/autonomy/agents/emotion_agent.py`
+- M: `src/glados/autonomy/agents/hacker_news.py`
+- A: `src/glados/autonomy/agents/health_agent.py`
+- M: `src/glados/autonomy/agents/observer_agent.py`
+- A: `src/glados/autonomy/agents/search_agent.py`
+- M: `src/glados/autonomy/agents/weather.py`
+- M: `src/glados/autonomy/config.py`
+- M: `src/glados/autonomy/constitution.py`
+- A: `src/glados/autonomy/context.py`
+- A: `src/glados/autonomy/decision.py`
+- M: `src/glados/autonomy/emotion_state.py`
+- M: `src/glados/autonomy/events.py`
+- D: `src/glados/autonomy/jobs.py`
+- M: `src/glados/autonomy/llm_client.py`
+- M: `src/glados/autonomy/loop.py`
+- A: `src/glados/autonomy/mind_runtime.py`
+- A: `src/glados/autonomy/mind_schedule.py`
+- A: `src/glados/autonomy/mind_scheduler.py`
+- M: `src/glados/autonomy/slots.py`
+- M: `src/glados/autonomy/subagent.py`
+- M: `src/glados/autonomy/subagent_manager.py`
+- M: `src/glados/autonomy/subagent_memory.py`
+- M: `src/glados/autonomy/summarization.py`
+- M: `src/glados/autonomy/task_manager.py`
+- M: `src/glados/autonomy/token_estimator.py`
+- M: `src/glados/cli.py`
+- M: `src/glados/core/audio_data.py`
+- A: `src/glados/core/clock.py`
+- M: `src/glados/core/context.py`
+- A: `src/glados/core/context_budget.py`
+- A: `src/glados/core/context_inspection.py`
+- M: `src/glados/core/conversation_store.py`
+- A: `src/glados/core/decision_lists.py`
+- M: `src/glados/core/engine.py`
+- A: `src/glados/core/inference.py`
+- M: `src/glados/core/llm_decision.py`
+- M: `src/glados/core/llm_processor.py`
+- D: `src/glados/core/memory_context.py`
+- A: `src/glados/core/memory_recall.py`
+- A: `src/glados/core/memory_records.py`
+- A: `src/glados/core/native_audio.py`
+- A: `src/glados/core/news_pages.py`
+- A: `src/glados/core/operator_state.py`
+- A: `src/glados/core/option_scores.py`
+- A: `src/glados/core/processor_turn.py`
+- A: `src/glados/core/prompts.py`
+- A: `src/glados/core/routing.py`
+- A: `src/glados/core/routing_tree.py`
+- A: `src/glados/core/search_preferences.py`
+- A: `src/glados/core/settings_files.py`
+- M: `src/glados/core/shutdown.py`
+- A: `src/glados/core/speculative.py`
+- A: `src/glados/core/speech_animation.py`

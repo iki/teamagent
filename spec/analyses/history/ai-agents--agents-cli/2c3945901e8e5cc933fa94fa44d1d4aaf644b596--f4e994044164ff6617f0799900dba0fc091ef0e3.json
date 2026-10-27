@@ -1,0 +1,844 @@
+{
+  "id": "ai-agents--agents-cli",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/google/agents-cli",
+  "report": "spec/projects/ai-agents--agents-cli.md",
+  "analyzedSha": "2c3945901e8e5cc933fa94fa44d1d4aaf644b596",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-30T11:14:13Z",
+  "observedSha": "f4e994044164ff6617f0799900dba0fc091ef0e3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f4e994044164ff6617f0799900dba0fc091ef0e3",
+      "date": "2026-10-27T11:23:25+01:00",
+      "subject": "release v1.12.0 at 2026-10-27 10:23:25 UTC"
+    },
+    {
+      "sha": "bea5875e38afd84c5513ff14a9bc739286efe533",
+      "date": "2026-10-20T12:57:14Z",
+      "subject": "release v1.11.0 at 2026-10-20 12:57:14 UTC"
+    },
+    {
+      "sha": "d445570c61fd446487ea6623c5635b23aded237f",
+      "date": "2026-10-12T19:37:41Z",
+      "subject": "release v1.10.0 at 2026-10-12 19:37:40 UTC"
+    },
+    {
+      "sha": "4b1189172dc8be0be53d52812e580148c9ad888e",
+      "date": "2026-10-06T14:00:40Z",
+      "subject": "release v1.9.0 at 2026-10-06 14:00:40 UTC"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASE_NOTES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/cli/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/authentication.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/cicd.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/development.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/evaluation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/extensions/authoring.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/extensions/first-party.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/extensions/using.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/getting-started.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/hands-on-tutorial.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/observability/bq-agent-analytics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/quickstart-tutorial.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/guide/use-cases.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/javascripts/lifecycle.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/reference/eval-dataset-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/src/reference/from-agent-starter-pack.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.agents/skills/agents-cli-claude/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.agents/skills/agents-cli-claude/references/claude.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.agents/skills/agents-cli-claude/references/migrate-claude-agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.agents/skills/agents-cli-claude/references/migrate-from-aws.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.env",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/.template/templateconfig.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/agent_config/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/agents-cli-extension.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/a2a.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/bq_analytics/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/bq_analytics/recorder.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/bq_analytics/redaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/bq_analytics/schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/bq_analytics/tables.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/bq_analytics/uploader.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/claude.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/completions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/project_settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/reasoning_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/remote_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/remote_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/replies.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/session_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/call_counts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/cli_relay.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/logs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/metrics.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/request_flush.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/subagent_spans.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/telemetry/traces.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/turn_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/turn_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/app_utils/workspaces.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/app/fast_api_app.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/scripts/eval_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/scripts/publish.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/scripts/run.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/scripts/unsupported.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/eval/datasets/basic-dataset.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/eval/eval_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/eval/response_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/integration/test_server_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/load_test/.results/.placeholder",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/load_test/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/load_test/load_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_a2a.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_bq_analytics.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_bq_redaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_claude.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_completions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_reasoning_engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_remote_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/template/tests/unit/test_turn_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "R057",
+      "path": "extensions/claude/template/uv.lock",
+      "previousPath": "src/google/agents/cli/scaffold/resources/locks/uv-adk-agent_runtime.lock"
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/tests/test_claude_bq_analytics_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/tests/test_claude_eval_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/tests/test_claude_extension.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/tests/test_claude_publish.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "extensions/claude/tests/test_claude_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.agents/skills/agents-cli-langchain/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.agents/skills/agents-cli-langchain/references/langchain.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.agents/skills/agents-cli-langchain/references/samples.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/.template/templateconfig.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/agents-cli-extension.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/app/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/app/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/app/app_utils/a2a.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/app/app_utils/telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/scripts/eval_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/scripts/publish.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/tests/eval/eval_config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/tests/eval/response_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/template/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/langchain/tests/test_eval_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "schemas/agents-cli-extension-v1alpha1.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/references/adk-go.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/references/adk-python-live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-adk-code/references/adk-python.md",
+      "previousPath": null
+    },
+    {
+      "status": "R077",
+      "path": "skills/google-agents-cli-adk-code/references/recipes.md",
+      "previousPath": "skills/google-agents-cli-adk-code/references/samples.md"
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/agent-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/cloud-run.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/google-agents-cli-deploy/references/cmek.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/gke.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-deploy/references/testing-deployed-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/advanced-commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/dataset_schema.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/live-eval.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/metrics-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-eval/references/user-simulation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-observability/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-observability/references/bigquery-agent-analytics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-observability/references/cloud-trace-and-logging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-publish/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-scaffold/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-scaffold/references/flags.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/brainstorming.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/extension.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/internals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/spec-template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/google-agents-cli-workflow/references/terminology.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_agent_platform.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_agent_platform_types.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_click.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_experiments.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_fs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_git.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_output.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_project.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_remote.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_sdk_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_skills_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/agents/cli/_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/google/agents/cli/_uv_index.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

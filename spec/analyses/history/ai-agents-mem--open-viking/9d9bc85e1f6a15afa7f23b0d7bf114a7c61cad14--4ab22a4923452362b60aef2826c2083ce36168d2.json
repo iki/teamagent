@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--open-viking",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/volcengine/OpenViking",
+  "report": "spec/projects/ai-agents-mem--open-viking.md",
+  "analyzedSha": "9d9bc85e1f6a15afa7f23b0d7bf114a7c61cad14",
+  "analyzedAt": "2026-10-04",
+  "analyzedCommitDate": "2026-10-03T19:10:51+08:00",
+  "observedSha": "4ab22a4923452362b60aef2826c2083ce36168d2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4ab22a4923452362b60aef2826c2083ce36168d2",
+      "date": "2026-10-24T00:17:08+08:00",
+      "subject": "fix(release): pin wheel and CLI versions to release tag (#6488)"
+    },
+    {
+      "sha": "2260f6899e882a8d7f693cca4dd8559dfc66b8cf",
+      "date": "2026-10-23T18:22:49+08:00",
+      "subject": "fix(langchain): isolate session commits and report reset failures (#6479)"
+    },
+    {
+      "sha": "d164def87a2a376df6653eab5c206e00109777b1",
+      "date": "2026-10-23T01:43:27-07:00",
+      "subject": "Revert \"feat(plugins): redact secrets in captured transcripts before sending …\" (#6475)"
+    },
+    {
+      "sha": "b4d6d11fdff747f4d835209282a506468c1561aa",
+      "date": "2026-10-23T01:35:05-07:00",
+      "subject": "feat(plugins): redact secrets in captured transcripts before sending (#6455)"
+    },
+    {
+      "sha": "d5022f57559fef83b14c63789ca75a0b2dc7a9c9",
+      "date": "2026-10-23T16:19:07+08:00",
+      "subject": "fix(langchain): honor nested filters and index field selectors (#6404)"
+    },
+    {
+      "sha": "0d546854b4be4b24a277c1b3ca7cf06c02d61a14",
+      "date": "2026-10-23T11:51:09+08:00",
+      "subject": "feat(privacy): support automatic privacy extraction and restore for sessions (#6278)"
+    },
+    {
+      "sha": "078199e37224f4376fab7411fb3029ee059b63a4",
+      "date": "2026-10-23T11:45:37+08:00",
+      "subject": "fix(studio): restore internal Markdown images and navigation (#6388)"
+    },
+    {
+      "sha": "07c84bf7474a49749e23a0161619853afd964dff",
+      "date": "2026-10-23T11:41:13+08:00",
+      "subject": "feat(studio): align filesystem CLI commands and task interactions (#6463)"
+    },
+    {
+      "sha": "824e9c7ff5e7cebbc36f55257c39f8bbe75d5a24",
+      "date": "2026-10-22T23:00:08+08:00",
+      "subject": "feat(connector): support oauth refs for document imports (#6447)"
+    },
+    {
+      "sha": "4c29ed7ff0859c991f1184f0af30973f3d679840",
+      "date": "2026-10-22T19:57:49+08:00",
+      "subject": "feat(system): 建立 Account 级 system 目录与资产同步 (#6374)"
+    },
+    {
+      "sha": "3266cd865e32eabcf4956f4ab388b9d40409cf65",
+      "date": "2026-10-22T18:01:04+08:00",
+      "subject": "fix(memory): skip unfixable event resolution retries (#6429)"
+    },
+    {
+      "sha": "c973ad1c4f0f69e6e26e0483f5c9e575c5a843dd",
+      "date": "2026-10-22T17:31:36+08:00",
+      "subject": "fix(session): respect configured thinking in patch merge and repair budget-exhausted extraction (#6104)"
+    },
+    {
+      "sha": "d7b32ac5b41325a8980ae18056c314e5f1903524",
+      "date": "2026-10-22T16:35:01+08:00",
+      "subject": "fix(claude-plugin): replay pending writes on Stop (#6394)"
+    },
+    {
+      "sha": "e2966201c1c3da60bc8d926c9f7d3f13a26de47f",
+      "date": "2026-10-22T16:27:30+08:00",
+      "subject": "fix(claude-plugin): capture only new turns when a subagent stops again (#6323)"
+    },
+    {
+      "sha": "e63eb0d84d243b146da5f43b3b111a5a9ea02490",
+      "date": "2026-10-22T16:17:27+08:00",
+      "subject": "fix(hermes-plugin): stop list recall from repeating the session-start profile (#6397)"
+    },
+    {
+      "sha": "15c9a339aa185bf6b6b9d81b7eadc11937f33fdd",
+      "date": "2026-10-22T16:16:50+08:00",
+      "subject": "fix(codex-plugin): stop injecting PreToolUse context between a tool call and its output (#6296)"
+    },
+    {
+      "sha": "97c0ceb7720c7d14e988a6d322f020c0024e800b",
+      "date": "2026-10-22T14:42:04+08:00",
+      "subject": "fix(memory): allow omitting optional supersedes field (#6421)"
+    },
+    {
+      "sha": "65e86ccb8fda3d3eae9d68837b7ffe856ca46f0e",
+      "date": "2026-10-22T11:17:15+08:00",
+      "subject": "feat(compile): add incremental updates, scheduling, and version history (#6304)"
+    },
+    {
+      "sha": "2e4936b7aa3600ccb82f68191c6caecf52f34d48",
+      "date": "2026-10-22T10:52:20+08:00",
+      "subject": "fix(pathlock): 调整 pathlock release 顺序，先执行内存 Registry lease 的移除，再删除 pathlock 文件 (#6424)"
+    },
+    {
+      "sha": "6227af5102b3874d162d65a0503bfeef849686c2",
+      "date": "2026-10-21T20:28:59+08:00",
+      "subject": "fix(studio): preserve calendar date ranges across daylight saving (#6419)"
+    },
+    {
+      "sha": "ee07304d974d55787a3b473cf9c2a8754e575dd1",
+      "date": "2026-10-21T20:05:12+08:00",
+      "subject": "feat(studio): improve filesystem management and Markdown previews (#6413)"
+    },
+    {
+      "sha": "f754fa90fdccb06581ec60b8d63c38fe93234849",
+      "date": "2026-10-21T19:57:26+08:00",
+      "subject": "fix(session): accept string edits in replace mode (#6286)"
+    },
+    {
+      "sha": "cffe101ca20b74e59eefd0bb77d82f3ab6c46ec0",
+      "date": "2026-10-21T19:40:17+08:00",
+      "subject": "fix(memory): render existing objects as context records (#6347)"
+    },
+    {
+      "sha": "8540d3209e91c415fe9389c94cb9430646f33fd9",
+      "date": "2026-10-21T19:12:36+08:00",
+      "subject": "feat(storage): add durable content write task workflow (#6352)"
+    },
+    {
+      "sha": "401c1f7ef1e42388c4326a293081b786db4cc162",
+      "date": "2026-10-21T15:51:36+08:00",
+      "subject": "fix(pi): capture divergent sibling branches (#6381)"
+    },
+    {
+      "sha": "b5a3892456618ec5d4c3413bbb9812dfdb4e68de",
+      "date": "2026-10-21T15:51:16+08:00",
+      "subject": "fix(embedding): support stable Gemini Embedding 2 (#6383)"
+    },
+    {
+      "sha": "3edc0b7f7bff84acbbb06b537ea854664d62f074",
+      "date": "2026-10-21T15:36:52+08:00",
+      "subject": "feat(plugins): forward an event time-decay window from recall config (#6390)"
+    },
+    {
+      "sha": "f8d36722ab4caa38e482210e8d98ec802536901c",
+      "date": "2026-10-21T14:26:44+08:00",
+      "subject": "fix(plugins): refresh pending replay claim timestamps (#5689)"
+    },
+    {
+      "sha": "82882c26e09d2e2235a5fedb57b37213bcb4c137",
+      "date": "2026-10-21T14:00:11+08:00",
+      "subject": "fix(ci): preserve resource failure details and update import tests (#6340)"
+    },
+    {
+      "sha": "7355b926e6fa04286ca7c400fde7495ac988c954",
+      "date": "2026-10-21T13:54:27+08:00",
+      "subject": "fix(codex-plugin): preserve canonical PreCompact session identity (#5660)"
+    },
+    {
+      "sha": "d9db19ab6402a532e2905f8472df6739bf0d3791",
+      "date": "2026-10-21T13:49:57+08:00",
+      "subject": "fix(gateway): tolerate non-string \"type\" values in client history (#6306)"
+    },
+    {
+      "sha": "6ec6116b7beb83d99cc87303076613cfabc47731",
+      "date": "2026-10-21T13:48:28+08:00",
+      "subject": "fix(langchain): preserve Store reads and namespace discovery (#6342)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/host-compat.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/build-plugin-downloads.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-marketplace-archive.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-plugin-version-bumps.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/host-compat.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/_build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/_docs-deploy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs-tos.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/framework-layout.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/gateway.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/hermes-plugin-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/host-compat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/python-agent-framework.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/python-langchain-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Caddyfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "MANIFEST.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/servers/shared/mcp-proxy-core.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/servers/shared/ov-http.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-plugins/skills/openviking-memory/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agent-plugins/skills/ov-resources/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/aml/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/aml/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/custom/session_contention_benchmark.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/locomo/vikingbot/run_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/README_CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_agent_loop_outcome.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_bot_provider_thinking.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_bot_vlm_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_bot_vlm_streaming.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/tests/test_compile.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/tests/test_compile_readtrace.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/tests/test_direct_windows_posix.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_exec_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openapi_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_opensandbox_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openviking_api_key_type.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openviking_peer_identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_openviking_session_retention.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/tests/test_sandbox_file_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_stream_tool_calls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_studio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/tests/test_subagent_skills_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/tests/test_web_fetch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/subagent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/compile.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/filesystem.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/ov_file.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/spawn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/agent/tools/web.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/bus/events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/bus/queue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/mochat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/openapi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/openapi_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/channels/single_turn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/cli/commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/entry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/file_ops.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/hashing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/compile/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/common.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/finalize.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/map.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/reduce.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/ops/shuffle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/pipeline_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/pipeline_io.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/plan.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/vikingbot/compile/readlist.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/vikingbot/compile/readtrace/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "bot/vikingbot/compile/readtrace/sitecustomize.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/compile/renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/results.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/review.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/sandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/compile/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/skill_resources.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/vikingbot/compile/sources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/config/loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/config/schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/hooks/builtins/openviking_hooks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/openviking_mount/ov_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/providers/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/providers/vlm_adapter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/backends/aiosandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/backends/direct.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/backends/opensandbox.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/managed_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/sandbox/manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/providers/feishu/channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/providers/feishu/icon.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/providers/feishu/provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/studio/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/README_CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/content.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/filesystem.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/privacy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/resources.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/search.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/skills.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/snapshot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/commands/system.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/error_ui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/handlers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/help_ui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/openviking_assets.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/tui/app.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs-python/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs-python/src/git.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs-python/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs-python/src/privacy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs-python/src/privacy_extractor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/cache/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/cache/wrapper.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/cache_runtime/memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/core/builder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/core/errors.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/core/internal_names.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/core/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/core/mountable.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/core/multibackend_wrapper.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/ragfs/src/core/multibackend_wrapper/retry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/ragfs/src/core/multibackend_wrapper/routing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/ragfs/src/core/multibackend_wrapper/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/core/types.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/git/enumerate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/git/service.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/git/tree_builder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/lock/cache_provder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/lock/manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/ragfs/src/multibackend/admin.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs/src/multibackend/catch_up.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs/src/multibackend/checkpoint.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs/src/multibackend/codec.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

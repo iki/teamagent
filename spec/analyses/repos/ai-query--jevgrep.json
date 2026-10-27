@@ -1,0 +1,741 @@
+{
+  "metadata": {
+    "id": "ai-query--jevgrep",
+    "category": "ai-query",
+    "name": "jevgrep",
+    "url": "https://github.com/dzhng/jevgrep",
+    "aliases": [],
+    "report": "spec/projects/ai-query--jevgrep.md",
+    "topics": [
+      "decisions",
+      "memory",
+      "agents",
+      "models"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "703aba1a36a3b854be405244ea748f607cd630c0",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-10-02T12:02:25-07:00",
+    "reportSha256": "696f4058b69f536bf2a55b68eb7aecd72c849e2d4340e9489bd97aa0b29bfff0",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-query--jevgrep",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/dzhng/jevgrep",
+    "report": "spec/projects/ai-query--jevgrep.md",
+    "analyzedSha": "703aba1a36a3b854be405244ea748f607cd630c0",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-10-02T12:02:25-07:00",
+    "observedSha": "28cf384d444e1f4bf5571142ec32357cb84973ae",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "28cf384d444e1f4bf5571142ec32357cb84973ae",
+        "date": "2026-10-21T23:34:38+04:00",
+        "subject": "skills: catch regressions end to end; unit tests only where they speed iteration"
+      },
+      {
+        "sha": "5a50fedceb24e691c15d90c8585d7957a95f8c8a",
+        "date": "2026-10-21T14:02:28+04:00",
+        "subject": "test: use a Windows-compatible inventory fixture"
+      },
+      {
+        "sha": "7970cc6c096c48dd31ab1c740e6f41ee6df2aebc",
+        "date": "2026-10-20T11:30:58+04:00",
+        "subject": "codex skill: fix the screenshot-critique link for the flat skills layout"
+      },
+      {
+        "sha": "ee4fb1de3343f005d1d2933725f159f43051689c",
+        "date": "2026-10-20T11:20:20+04:00",
+        "subject": "Install ratchet-files skill and hook"
+      },
+      {
+        "sha": "2377c4956518b32560e4a3d8620fc73f08d7866e",
+        "date": "2026-10-18T20:40:23-07:00",
+        "subject": "test: create Windows fixture parent directories safely"
+      },
+      {
+        "sha": "2d9bce074f9c5f4423e2e33e146fddb5fe117d2d",
+        "date": "2026-10-18T02:25:04-07:00",
+        "subject": "chore: release 0.8.5"
+      },
+      {
+        "sha": "157715f88d3974bdbf0c91c5922b51a9847a1c3c",
+        "date": "2026-10-18T01:59:24-07:00",
+        "subject": "fix(cli): treat resource limits as partial success"
+      },
+      {
+        "sha": "2e4be714bb1ed9e1a2908e1db7e272948b2f11a0",
+        "date": "2026-10-18T01:29:38-07:00",
+        "subject": "feat(cli): show terminal search progress"
+      },
+      {
+        "sha": "88d4f3a814a5d9f56f501c600ae6a4f1bd0ab7af",
+        "date": "2026-10-18T00:27:55-07:00",
+        "subject": "chore: release 0.8.4"
+      },
+      {
+        "sha": "5e4bcdce209f091a78588e90c0b9d9ef9f4307dd",
+        "date": "2026-10-18T00:03:42-07:00",
+        "subject": "fix: retain scored navigation on probe cancellation"
+      },
+      {
+        "sha": "da5c05674c91e38f1b1c5641301eb8f3bc5d1aaa",
+        "date": "2026-10-18T00:03:42-07:00",
+        "subject": "fix: preserve discovery evidence on cancellation"
+      },
+      {
+        "sha": "c20dcddea3019624fac47394d0f1541e5d91b06c",
+        "date": "2026-10-18T00:03:42-07:00",
+        "subject": "fix: emit expanded discovery chunks once per level"
+      },
+      {
+        "sha": "14f08be812b40fbead2816fceb0b61ffe7c2df6a",
+        "date": "2026-10-18T00:03:42-07:00",
+        "subject": "fix: drain streamed discovery results on stop"
+      },
+      {
+        "sha": "481e7df5cf903cf7040d4bddaddc96dbdb775ef0",
+        "date": "2026-10-18T00:03:42-07:00",
+        "subject": "fix: stream discovery scoring with bounded backpressure"
+      },
+      {
+        "sha": "6c2e6332a55ad42e8a1d25d1bd2e797ff25b73a4",
+        "date": "2026-10-18T00:03:42-07:00",
+        "subject": "perf(parser): reuse encoded source snapshots"
+      },
+      {
+        "sha": "b9d24fca0eee72a8177cf107bf09bd0aa9a83097",
+        "date": "2026-10-17T21:54:43-07:00",
+        "subject": "docs: define contribution and PR review policy"
+      },
+      {
+        "sha": "0411789112746a678d8918cd500243f006073c48",
+        "date": "2026-10-17T18:59:26-07:00",
+        "subject": "chore: release 0.8.3"
+      },
+      {
+        "sha": "59e9471367eebd703df476f044fb82b549eca825",
+        "date": "2026-10-17T18:53:49-07:00",
+        "subject": "Merge pull request #58: Add --no-locations output control"
+      },
+      {
+        "sha": "c2498aa9ea984c86f27d0d11152bb0145ca5bb5e",
+        "date": "2026-10-17T18:53:35-07:00",
+        "subject": "Merge pull request #42: Remove retrieval cliffs and make repeated searches reproducible"
+      },
+      {
+        "sha": "54ab869d791213041ef053972adfe1f80b81412d",
+        "date": "2026-10-17T18:22:29-07:00",
+        "subject": "fix: tighten retrieval review coverage"
+      },
+      {
+        "sha": "308803651305efc561c537dd5ed91167b26ea7be",
+        "date": "2026-10-17T18:20:27-07:00",
+        "subject": "fix(cli): keep no-locations output honest"
+      },
+      {
+        "sha": "a809db6a33a7f3362967e6c5898228dfa789d5e1",
+        "date": "2026-10-18T09:02:41+08:00",
+        "subject": "feat(cli): add --no-locations flag to omit Declaration locations section"
+      },
+      {
+        "sha": "b8ff61d0715a8a02836b75d736a9d1a2185206f5",
+        "date": "2026-10-17T18:02:34-07:00",
+        "subject": "fix: reconcile retrieval rebase"
+      },
+      {
+        "sha": "7ae428799fcd542a11973d376ae61af02d091e91",
+        "date": "2026-10-17T17:55:45-07:00",
+        "subject": "Record upstream measurements in the ported ledger entries"
+      },
+      {
+        "sha": "0414b8e260e6f973d0822c84da1fa5001251218e",
+        "date": "2026-10-17T17:55:45-07:00",
+        "subject": "Find Rust attribute starts without quadratic sibling walks"
+      },
+      {
+        "sha": "d325ee80c1371580dbdf1f0fbc5774a7f694973c",
+        "date": "2026-10-17T17:55:45-07:00",
+        "subject": "Remove superlinear work on comment windows and declaration indexes"
+      },
+      {
+        "sha": "f0715412704c6f8758598218cf2b29d628c5fcec",
+        "date": "2026-10-17T17:55:45-07:00",
+        "subject": "Parse long Python comment runs in linear time"
+      },
+      {
+        "sha": "2cd0fbd4214eec6d849105032554b418f598a980",
+        "date": "2026-10-17T17:55:45-07:00",
+        "subject": "Mark class context structurally instead of by name"
+      },
+      {
+        "sha": "ea708e5f78637ee0e55993e0cabf18822322ea9a",
+        "date": "2026-10-17T17:55:45-07:00",
+        "subject": "Reuse a snapshot while its file identity is unchanged"
+      },
+      {
+        "sha": "5e0dc9ec6d9175d5939c6c609099ae0af0350efa",
+        "date": "2026-10-17T17:53:32-07:00",
+        "subject": "Overlap declaration groups within a file"
+      },
+      {
+        "sha": "7a7e27dd829c2d1cf96de339b3e056284939a148",
+        "date": "2026-10-17T17:52:34-07:00",
+        "subject": "Order cross-file evidence deterministically"
+      },
+      {
+        "sha": "71dd9af740aaabbaed3c7c3a74a7d71ed07410c3",
+        "date": "2026-10-17T17:52:08-07:00",
+        "subject": "Use navigation decisions in item order, not completion order"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".agents/skills/audit-agents/assets/example-agents.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/claude/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/code-review/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/codex/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/compare-screenshots/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/compare-screenshots/references/subagent-visual-review.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/compare-screenshots/scripts/visual-parity-diff.eval.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/compare-screenshots/scripts/visual-parity-diff.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/test/fixtures/target-without-helper-packages/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/test/fixtures/target-without-helper-packages/candidate/fixture.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/test/fixtures/target-without-helper-packages/reference/fixture.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/test/visual-parity-diff.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pixelmatch/LICENSE",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pixelmatch/index.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pixelmatch/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/LICENSE",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/bitmapper.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/bitpacker.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/chunkstream.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/constants.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/crc.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/filter-pack.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/filter-parse-async.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/filter-parse-sync.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/filter-parse.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/format-normaliser.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/interlace.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/packer-async.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/packer-sync.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/packer.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/paeth-predictor.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/parser-async.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/parser-sync.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/parser.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/png-sync.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/png.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/sync-inflate.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/lib/sync-reader.js",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/compare-screenshots/vendor/pngjs/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/implement-spec/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/jevgrep/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/ratchet-files/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/refactor-clean/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/screenshot-critique/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/screenshot-critique/scripts/receipts.eval.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".agents/skills/screenshot-critique/scripts/receipts.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/write-skills/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".agents/skills/write-tests/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".husky/pre-commit",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/src/args.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/src/auth.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/cli/src/exit-code.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/cli/src/progress.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/src/render.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/src/skill.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/test/args.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/test/auth.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/test/cli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/cli/test/exit-code.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/cli/test/progress.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/cli/test/render.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/cli/test/skill.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "bun.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/architecture.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/cache.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/call-context.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/filesystem.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/inventory.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/parser-declarations.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/parser-helpers.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/retrieve.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/src/secrets.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/selection.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/source.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/storage.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/test-body-selection.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/src/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/test/cache.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/test/filesystem.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/test/inventory-list.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/core/test/secrets.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/test/selection.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/core/test/storage.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/build-cli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "scripts/check-file-size.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "scripts/test-native.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/jevgrep/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "specs/done/jevgrep/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "specs/done/jevgrep/choices.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "specs/done/jevgrep/contracts.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/discovery.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/installed.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/parser/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/parser/languages.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/parser/parity.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/parser/source.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/retrieval.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "test/skill.test.mjs",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": false,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

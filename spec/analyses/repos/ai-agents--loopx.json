@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--loopx",
+    "category": "ai-agents",
+    "name": "loopx",
+    "url": "https://github.com/huangruiteng/loopx",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--loopx.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "99839aeb8fed5fae38a5d319391cd050672a6508",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-04T01:14:41+08:00",
+    "reportSha256": "d7c39e0d27788c41cabef984dd89a8cc71ab98c6d5765d4cddbdbff5de9d97d4",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--loopx",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/huangruiteng/loopx",
+    "report": "spec/projects/ai-agents--loopx.md",
+    "analyzedSha": "99839aeb8fed5fae38a5d319391cd050672a6508",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-04T01:14:41+08:00",
+    "observedSha": "fff09ead9b17190d9cc8385f0c4da70669a4f272",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "fff09ead9b17190d9cc8385f0c4da70669a4f272",
+        "date": "2026-10-28T01:50:26+08:00",
+        "subject": "Merge pull request #7511 from loopx-project/codex/release220-versioned-guide-20261028"
+      },
+      {
+        "sha": "06afed92bad799fba6437ed353f797c7c26d384c",
+        "date": "2026-10-28T01:43:51+08:00",
+        "subject": "docs(release): document 2.2.0 upgrade and optional capabilities"
+      },
+      {
+        "sha": "dd30e694a0c3db80e59600c781d67647a73d0bc9",
+        "date": "2026-10-28T01:36:35+08:00",
+        "subject": "Merge pull request #7411 from loopx-project/codex/ts-bridge-retire-20261026"
+      },
+      {
+        "sha": "dab1edafcebe22939f1e14aeaa405f4d4026ef6b",
+        "date": "2026-10-28T01:34:27+08:00",
+        "subject": "fix(context): restore large native reads and recognize mixed stdout (#7509)"
+      },
+      {
+        "sha": "4b87417637126856ff23b5230c215201d278875a",
+        "date": "2026-10-28T01:08:30+08:00",
+        "subject": "Merge pull request #7507 from loopx-project/codex/pr7499-audit-repair-20261028"
+      },
+      {
+        "sha": "1c4fa2b25a4723d2f58851a2a8bfb1b251e63cd1",
+        "date": "2026-10-28T00:59:36+08:00",
+        "subject": "Merge pull request #7504 from loopx-project/codex/chat-recovery-route-fence-20261027"
+      },
+      {
+        "sha": "1b6dd6a42ab7f9620a4655061952adb58038a65b",
+        "date": "2026-10-28T00:50:02+08:00",
+        "subject": "Merge pull request #7506 from loopx-project/codex/release220-native-checkpoint-assertion-20261028"
+      },
+      {
+        "sha": "ebc398cc6472280976a2a15b1bfb78caa1a704d3",
+        "date": "2026-10-28T00:49:07+08:00",
+        "subject": "test: stabilize canonical smoke clocks and fixture paths"
+      },
+      {
+        "sha": "4d7082a1c991fb977297d56c0f901c9e93533ac8",
+        "date": "2026-10-28T00:44:20+08:00",
+        "subject": "test: verify native checkpoint binding refusal at sealing boundary"
+      },
+      {
+        "sha": "787f15e82283ae4cd590dc0ec91d88b09db4e122",
+        "date": "2026-10-28T00:41:27+08:00",
+        "subject": "Merge pull request #7493 from loopx-project/codex/machine-guard-context-contract"
+      },
+      {
+        "sha": "2d8f2f58b6ddb766711e0bc53eb57016a3f30153",
+        "date": "2026-10-28T00:39:35+08:00",
+        "subject": "fix(chat): retain exact admitted recovery correlation"
+      },
+      {
+        "sha": "085d9a7fa6ef743c4df67e5f2c66510204df7a41",
+        "date": "2026-10-28T00:36:54+08:00",
+        "subject": "Merge pull request #7505 from loopx-project/codex/release220-chat-stop-integration-20261028"
+      },
+      {
+        "sha": "a89b8e19e82d5579b1f8b60eb8f769c56a1cdb82",
+        "date": "2026-10-28T00:36:17+08:00",
+        "subject": "test(chat): keep independent sources out of recovery fences"
+      },
+      {
+        "sha": "c184163f8cf9534c24f8e5be2a13f153f98e59b5",
+        "date": "2026-10-28T00:31:55+08:00",
+        "subject": "Merge commit 'b7bd894bf6772d492d486c641888e01b7608cff1' into codex/release220-chat-stop-integration-20261028"
+      },
+      {
+        "sha": "41229956e61f83e479aafe9f9db0693636a26c95",
+        "date": "2026-10-28T00:31:45+08:00",
+        "subject": "fix(chat): recheck recovery state after source verification"
+      },
+      {
+        "sha": "407a7d6c4916f3ce033727e287f03188c956ce1f",
+        "date": "2026-10-28T00:24:44+08:00",
+        "subject": "fix(chat): release source route during native recovery reads"
+      },
+      {
+        "sha": "eecde92ee960f8995adbafdac0ff18f863594116",
+        "date": "2026-10-28T00:23:26+08:00",
+        "subject": "Merge pull request #7501 from loopx-project/codex/research-history-return-context-20261027"
+      },
+      {
+        "sha": "89b6fe0eb0b4f81919b646e9a10934374a009429",
+        "date": "2026-10-28T00:21:37+08:00",
+        "subject": "Merge pull request #7502 from loopx-project/codex/release220-canonical-followthrough-20261027"
+      },
+      {
+        "sha": "b7bd894bf6772d492d486c641888e01b7608cff1",
+        "date": "2026-10-28T00:18:03+08:00",
+        "subject": "test: preserve expired queue outcomes when stop arrives later"
+      },
+      {
+        "sha": "318ccc1b90676ca1a5722b073a5560eeb0c33bb5",
+        "date": "2026-10-28T00:09:28+08:00",
+        "subject": "fix(chat): serialize queued expiry and acceptance settlement with stops"
+      },
+      {
+        "sha": "a8c1690484c6d647dad8893bceb3a1cac232bb29",
+        "date": "2026-10-28T00:09:08+08:00",
+        "subject": "Merge current main into PR 7411 and reconcile qualification checkpoints"
+      },
+      {
+        "sha": "cc5c7d91909e82aee9736959565062adcc434a26",
+        "date": "2026-10-28T00:07:20+08:00",
+        "subject": "docs: correct followthrough projection sentence"
+      },
+      {
+        "sha": "e2f56af15110e0761a54d1c9b1809f54b4706112",
+        "date": "2026-10-28T00:07:19+08:00",
+        "subject": "Merge remote-tracking branch 'refs/remotes/release-canonical-final/main' into codex/release220-canonical-followthrough-20261027"
+      },
+      {
+        "sha": "7fdf3cade6dd51900bcfa6f43cdb60d76bc73447",
+        "date": "2026-10-28T00:07:16+08:00",
+        "subject": "test: expose queued expiry racing an accepted stop"
+      },
+      {
+        "sha": "01dc6b9b8e3f6e59bcb8549e404e4b4e50b68fd2",
+        "date": "2026-10-28T00:06:35+08:00",
+        "subject": "Merge remote-tracking branch 'refs/remotes/release7477-final/main' into codex/review-chat-interrupt-7477-20261027"
+      },
+      {
+        "sha": "47576fd81b52984f24360c31c78ad627b92c7373",
+        "date": "2026-10-28T00:04:36+08:00",
+        "subject": "Merge pull request #7499 from loopx-project/codex/release220-public-smoke-fixtures-20261027"
+      },
+      {
+        "sha": "5b93e17b6bfa0069b30e027a403b78225c802a48",
+        "date": "2026-10-27T23:59:09+08:00",
+        "subject": "test: observe Host recovery and forward quota transport options"
+      },
+      {
+        "sha": "f7a1ad73fec0c9058fe9feecfdff66438be37476",
+        "date": "2026-10-27T23:57:11+08:00",
+        "subject": "Merge pull request #7222 from loopx-project/codex/windows-rollout-rotation-20261024"
+      },
+      {
+        "sha": "203590e5b75530c9f0df403566683927623df764",
+        "date": "2026-10-27T23:56:24+08:00",
+        "subject": "test: qualify claim-first and crash-safe interrupt transitions"
+      },
+      {
+        "sha": "6dba65d4b688df91ec7cd158a849f32082306afb",
+        "date": "2026-10-27T23:55:41+08:00",
+        "subject": "Merge pull request #7473 from JasonBuildAI/codex/agent-m8k4"
+      },
+      {
+        "sha": "d736fba854ed329e4a4ff4ed4fc7ecb141bedd73",
+        "date": "2026-10-27T23:55:36+08:00",
+        "subject": "test: qualify durable completion and fresh Lark authority boundaries"
+      },
+      {
+        "sha": "dde32de52797f922d22c21caebefcadc8539ca46",
+        "date": "2026-10-27T23:55:36+08:00",
+        "subject": "fix: include appointed Windows reviewer in SLA responders"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/CODEOWNERS",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/GOVERNANCE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/PULL_REQUEST_TEMPLATE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ark-turn.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/ci-maintenance.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/dco.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/desktop-release-artifacts.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/desktop-updater.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/dsh-plugin-publish.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/dsh-plugin.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/frontstage-pages.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/full-public-smokes.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/memt-turn.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/package-smoke.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/python-tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-artifacts.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CONTEXT.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "MANIFEST.in",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "NOTICE",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.zh-CN.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/background-update-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/background-update-mobile.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/chat-listener-after.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/chat-listener-before.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/chat-process-after.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/chat-process-before.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/chat-process-followup.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/manual-check-after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/manual-check-after-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/manual-check-before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/manual-check-pending-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/manual-update-check-after.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/manual-update-check-before.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/native-ancestry-qa.jpg",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/native-prepared-activation.jpg",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/native-service-lifetime-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/native-service-lifetime-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/native-service-recovery-qa.jpg",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/research-reopen-qa.jpg",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/startup-download-timeout.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-channel-selection-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-channel-selection-mobile.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-failure-before.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-ready-after.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-ready-before.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-ready-mobile.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-ready-native.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-signature-failure-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/assets/update-timeout-mobile.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/recovery-after.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/docs/recovery-before.png",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/scripts/dashboard.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/Cargo.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/build.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/examples/webcontent_recovery.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/bundled_runtime.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/lib.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/macos_update.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/maintenance.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/maintenance_check_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/maintenance_transfer_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/prepared_update.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/runtime_ancestry.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/runtime_selection.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/service_endpoints.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/service_lifecycle.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/service_lifecycle_windows_update_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/service_lifetime.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/service_lifetime_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/services.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/services_real_runtime_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/services_tests.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/update_backup.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/upgrade_request.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/workspace_handoff.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/src/workspace_location.rs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/desktop/loopx-control-plane/src-tauri/webcontent-recovery.tauri.conf.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/static/boot.css",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/static/boot.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/desktop/loopx-control-plane/static/index.html",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/presentation/dashboard/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-hierarchy/after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-hierarchy/after-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-hierarchy/before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-hierarchy/before-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-hierarchy/invalid-root-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-hierarchy/invalid-root-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-hierarchy/unavailable-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-map-readback/current-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-map-readback/stale-mobile.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/goal-map-readback/unavailable-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/manager-host-defaults/after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/manager-host-defaults/after-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/manager-host-defaults/before-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/manager-host-defaults/runtime-settings-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-native-results/after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-native-results/after-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-native-results/before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-native-results/before-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-native-results/first-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-native-results/first-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-comparison/after-1440.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-comparison/after-390.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-comparison/before-1440.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-comparison/before-390.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-comparison/compare-1440.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-comparison/compare-390.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-export/after-1440.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-export/after-390.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-export/before-1440.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-export/before-390.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-export/download-error.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/research-record-export/stale.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/status-only-after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/status-only-after-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/status-only-before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/status-only-before-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/docs/assets/status-only-goal-en-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/presentation/dashboard/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "apps/presentation/dashboard/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/app-steward-smoke.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/delegation-lane/after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/delegation-lane/after-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/delegation-lane/before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/delegation-lane/before-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/goal-workspace-craft/after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/goal-workspace-craft/after-details.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/goal-workspace-craft/after-phone.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/goal-workspace-craft/before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/goal-workspace-craft/before-details.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/linked-goal-source/after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/linked-goal-source/after-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/linked-goal-source/before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/linked-goal-source/source-unavailable.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/task-inspector-route/after-1512.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/task-inspector-route/after-390.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/task-inspector-route/before-1512.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/task-inspector-route/before-390.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/team-source-chain/before.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/team-source-chain/withdrawn-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/team-source-chain/withdrawn-mobile.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/todo-lifecycle/after-deferred.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/todo-lifecycle/before-deferred.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/after-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/after-low.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/after-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/after-restriction-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/after-restriction-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/before-desktop.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/before-narrow.png",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "apps/presentation/dashboard/smoke/assets/workspace-navigation/glyph-default-desktop.png",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

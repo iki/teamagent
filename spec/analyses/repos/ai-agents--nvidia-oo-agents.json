@@ -1,0 +1,1005 @@
+{
+  "metadata": {
+    "id": "ai-agents--nvidia-oo-agents",
+    "category": "ai-agents",
+    "name": "nvidia-oo-agents",
+    "url": "https://github.com/nvidia-nemo/labs-OO-Agents",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--nvidia-oo-agents.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "564a34014a354f11009cf7dda44a81b039a04273",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T17:03:43+02:00",
+    "reportSha256": "ad585e089e5ad8e8189b265d8d8f4a903b0a8f60baa74514ac684af7c0c822f0",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--nvidia-oo-agents",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/nvidia-nemo/labs-OO-Agents",
+    "report": "spec/projects/ai-agents--nvidia-oo-agents.md",
+    "analyzedSha": "564a34014a354f11009cf7dda44a81b039a04273",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-02T17:03:43+02:00",
+    "observedSha": "bff0ef449f9bd74ddbb19486489f95c0edc73831",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "bff0ef449f9bd74ddbb19486489f95c0edc73831",
+        "date": "2026-10-22T16:06:28+02:00",
+        "subject": "Restore discovery guidance for the exposed events API"
+      },
+      {
+        "sha": "76a55b1e0f82c7d424ea5aafce8106b8470f7366",
+        "date": "2026-10-22T15:54:31+02:00",
+        "subject": "Omit events guidance block when the API is hidden"
+      },
+      {
+        "sha": "46b71bf196d3373df82d01649459ca5b020912a9",
+        "date": "2026-10-22T15:54:31+02:00",
+        "subject": "Keep events prompt close to original discovery guidance"
+      },
+      {
+        "sha": "42832816b63077c594004b82e8e49d5fbc4a1794",
+        "date": "2026-10-22T15:54:30+02:00",
+        "subject": "Restore prompt guidance when the events API is visible"
+      },
+      {
+        "sha": "54fe49c1d2360643439c287e9a25d9bf3178df2e",
+        "date": "2026-10-22T11:07:50+02:00",
+        "subject": "Merge pull request #227 from NVIDIA-NeMo/fix/parameter-truncation"
+      },
+      {
+        "sha": "7ebda00459e8b69b35ffd6ca192bd17c8459b4f3",
+        "date": "2026-10-21T16:47:08+02:00",
+        "subject": "test: document prefill regression cases"
+      },
+      {
+        "sha": "c90574013a2e16358cdf51172f24a033264497d8",
+        "date": "2026-10-21T16:46:32+02:00",
+        "subject": "chore: remove temporary prefill diagnostic quickstart"
+      },
+      {
+        "sha": "8f48d0afe3d5c80306331c1d14621c1218002a79",
+        "date": "2026-10-21T14:54:24+02:00",
+        "subject": "example: demonstrate prefill truncation with a real LLM"
+      },
+      {
+        "sha": "1a286aa3788da165969b229d7bbbb52ef4aa5ddd",
+        "date": "2026-10-21T14:42:47+02:00",
+        "subject": "fix(runtime): honor prefill overrides and warn on omitted inputs"
+      },
+      {
+        "sha": "bdb999ac87be28e64221dc815d0fe995c5ff9f11",
+        "date": "2026-10-21T13:56:03+02:00",
+        "subject": "fix(prompts): align inspection with runtime truncation settings"
+      },
+      {
+        "sha": "6cec15a1679104548220dd3638dba00e1a6b70c2",
+        "date": "2026-10-21T09:39:12+02:00",
+        "subject": "Merge pull request #471 from NVIDIA-NeMo/fix/shellresult-repr"
+      },
+      {
+        "sha": "5113fa1fdb8f4b130f817bc9808fc0af6839dfe4",
+        "date": "2026-10-21T07:01:39Z",
+        "subject": "nooa-bench: expect default_timeout in the ShellTools repr"
+      },
+      {
+        "sha": "e3aab09bda89a6ced4711b9c72c7aee21c40d0a9",
+        "date": "2026-10-21T06:48:54Z",
+        "subject": "ShellResult prints its real class name and always the return code"
+      },
+      {
+        "sha": "a7ce6abf0bfde00856e848f1819c75ebbedf78dd",
+        "date": "2026-10-21T06:41:51Z",
+        "subject": "Make shell timeouts configurable and visible in tool documentation"
+      },
+      {
+        "sha": "90ce8bc3adfa701ac0053313a949ec20263268c7",
+        "date": "2026-10-21T06:41:51Z",
+        "subject": "fix: align shell result display with returncode attribute"
+      },
+      {
+        "sha": "0bc07c6a3b57d408d38b5559c3a15019ffee49fd",
+        "date": "2026-10-20T16:51:58+02:00",
+        "subject": "Merge pull request #466 from NVIDIA-NeMo/docs/release-connect-media"
+      },
+      {
+        "sha": "44fe789a8b5b33c732b5c4a0977d80e114c19d76",
+        "date": "2026-10-20T13:58:35Z",
+        "subject": "docs: move media example to quickstart and address review feedback 🤖🤖🤖"
+      },
+      {
+        "sha": "99a327a3f4865266cda5b8edb1eaff8afdaaaada",
+        "date": "2026-10-20T14:38:34+02:00",
+        "subject": "Merge pull request #465 from furgalep/fix/connect-discovery-tokens-quiet-otel"
+      },
+      {
+        "sha": "ce908f3e3c6f36ab1de7c7bddb7036d914b4432e",
+        "date": "2026-10-20T11:57:01Z",
+        "subject": "docs: simplify media and setup guidance in plain English 🤖🤖🤖"
+      },
+      {
+        "sha": "43b1f34fb9e93b4d8e22876a326f08f2fe4ce2c8",
+        "date": "2026-10-20T09:22:42Z",
+        "subject": "docs: prepare Connect onboarding and media API for release 🤖🤖🤖"
+      },
+      {
+        "sha": "e6864f830cfe84855115a6314d0e2dd69047a216",
+        "date": "2026-10-20T08:46:25Z",
+        "subject": "tracing: keep quiet_trace_target() per execution context"
+      },
+      {
+        "sha": "7c518333382e1d37309deef02cb53bd223212bc7",
+        "date": "2026-10-20T08:46:25Z",
+        "subject": "connect: give --output-tokens and diagnostic_context a real default"
+      },
+      {
+        "sha": "bdd25f180baac821f731aeecbb19034675622c85",
+        "date": "2026-10-20T08:46:25Z",
+        "subject": "connect: raise interface discovery cap to 2048; keep OTel banner quiet"
+      },
+      {
+        "sha": "a6cf62db816e990259de4ddb2ad3731e46e5dc6c",
+        "date": "2026-10-20T05:19:46+02:00",
+        "subject": "Merge pull request #445 from NVIDIA-NeMo/feat/explicit-model-media-inputs-main"
+      },
+      {
+        "sha": "a53a7bbfaa0d6a005770c13b38e4bf14fba11458",
+        "date": "2026-10-19T09:17:22-07:00",
+        "subject": "Make harness-driven compaction blocking"
+      },
+      {
+        "sha": "119662d89499aa5ed87856ba59d8c5e2f4e2004c",
+        "date": "2026-10-19T17:37:03+02:00",
+        "subject": "test: handle blocking compaction in benchmark shutdown checks"
+      },
+      {
+        "sha": "0789f9b038ee4c3d2b770afa35f7ef3bb0607a32",
+        "date": "2026-10-19T15:46:59+02:00",
+        "subject": "fix: scope compaction change to blocking harness summaries"
+      },
+      {
+        "sha": "7bb6b5cb202a587d471a79accc8eb3da21dae11d",
+        "date": "2026-10-19T15:38:23+02:00",
+        "subject": "fix: skip redundant compaction after context shrinks"
+      },
+      {
+        "sha": "8fa62225bf0ac46b42d06cbe45ae6d0be49e6410",
+        "date": "2026-10-19T15:31:40+02:00",
+        "subject": "refactor: compact prepared requests and report history changes"
+      },
+      {
+        "sha": "a9d92076a698596d956bbf9f1d654ab929acda79",
+        "date": "2026-10-19T15:14:44+02:00",
+        "subject": "refactor: await compaction before building model requests"
+      },
+      {
+        "sha": "eb0c6cf11a99f8b00c4b0399199a533799d81754",
+        "date": "2026-10-19T13:02:31Z",
+        "subject": "Address CodeRabbit on #445; move the tracing-banner change out of this PR"
+      },
+      {
+        "sha": "928ac8a087198dcb421a52885dd22103a8abd2b4",
+        "date": "2026-10-19T14:52:21+02:00",
+        "subject": "fix: compact history before the next model request"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": "AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cache-sharing-summaries.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/concepts/decisions.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/concepts/prompts-and-context.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/concepts/strategies.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/media.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/model-configuration.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/model-connect.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/shell-service-lifecycle.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/tour.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/quickstart/13_multimodal.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "examples/quickstart/16_decisions.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-bench/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-bench/src/nooa_bench/bench_agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-bench/src/nooa_bench/rlm_bench_agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-bench/tests/test_bench_agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-bench/tests/test_runner.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-bench/tests/test_summarizer_cleanup.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/AGENTS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/coding/activity.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/commands/_connect_prompts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/commands/_connect_registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/commands/_connect_stages.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/commands/_connect_view.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/commands/_connect_wizard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/src/nooa_cli/commands/connect.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_coding_activity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/nooa-cli/tests/test_connect_baseline_safety.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/nooa-cli/tests/test_connect_coderabbit_budget.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_command.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_diagnostic.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_edit.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_encrypted_reasoning.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/nooa-cli/tests/test_connect_media_inputs.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/nooa-cli/tests/test_connect_media_onboarding.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/nooa-cli/tests/test_connect_media_review.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_prompts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_reply_budget.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_review_followups.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_review_readiness.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_stages.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "packages/nooa-cli/tests/test_connect_ux.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "packages/nooa-cli/tests/test_connect_view.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/nooa-agent-authoring/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/nooa-codeact-advanced/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "skills/nooa-media/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/nooa-model-configuration/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "skills/nooa-tools-and-skills/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/agent.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/agentdoc/_format_observation.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/agentdoc/_pformat.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/agents/summarization.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/config/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/config/model_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/config/resolved.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/config/strategy_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/context_blocks/scoped.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/_openai_wire.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/client.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/llm_adapter.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/provenance.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/resolution.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/schema.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/state.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/decisions/types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/decorators.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/errors/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/events.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/mcp/tool.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/media_inputs.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/method_llm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/prompts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/actor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/channels.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/code_validator.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/event_manager.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/events.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/harness_metrics.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/media_capture.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/method_wrapper.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/middleware.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/sandbox/cell_core.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/runtime/sandbox/serialization.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/standalone.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/storage/sqlite.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/strategies/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/strategies/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/strategies/codeact.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/strategies/decide.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/strategies/loop_guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/strategies/prefill.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/strategies/pure_python.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/tools/_bash_session.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/tools/shell_lifecycle.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/tools/shell_tools.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/tracing/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/tracing/_hooks_impl.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/chat_parts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/connect/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/unifiedllm/connect/_baseline.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/unifiedllm/connect/_media.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/connect/_records.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/unifiedllm/connect/_typed_media.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/unifiedllm/connect/_video_fixture.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/fake.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/http_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "src/nooa/unifiedllm/media_inputs.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/reasoning.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/replay_state.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/response_parts.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/retry.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "src/nooa/unifiedllm/unifiedllm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/agents/test_forked_summarizer.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/agents/test_forked_summarizer_wire.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/config/test_resolved_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/decisions/test_client.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/decisions/test_llm_adapter.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/decisions/test_openai_api_style.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/decisions/test_provenance.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/decisions/test_raw_response.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/decisions/test_schema.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/integration/test_agent_summary_cache_live.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/integration/test_summarizer_live.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/runtime/sandbox/test_error_serialization.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/runtime/test_code_validator.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/runtime/test_execute_code.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/runtime/test_llm_routing_observability.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/runtime/test_queue_status_cheat_sheet.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/runtime/test_show_media_filtering.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/runtime/test_truncation_config_integration.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/strategies/test_codeact_loop_guard.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/strategies/test_codeact_tool_call_feedback.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/strategies/test_decide.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/strategies/test_param_spec_override.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/strategies/test_prefill_truncation_e2e.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/strategies/test_prefill_truncation_parity.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/strategies/test_prefill_truncation_warnings.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/strategies/test_skills_section_context_events.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_event_backend_roundtrip.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_mcp/test_call_tool_refresh.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/test_method_llm_callable.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/test_quickstart_multimodal.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/tools/test_bash_session_background.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/tools/test_builtin_libs.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/tools/test_shell_lifecycle.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/tools/test_shell_timeout_contract.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/tools/test_shell_tools_modern_behavior.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/tools/test_shell_tools_stale_match.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "tests/tracing/test_quiet_trace_target.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/tracing/test_viewer_plugin_attr.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "tests/unifiedllm/connect/connect_http.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

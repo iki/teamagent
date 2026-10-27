@@ -1,0 +1,334 @@
+{
+  "id": "ai-agents-mem--socrati-code",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/giancarloerra/SocratiCode",
+  "report": "spec/projects/ai-agents-mem--socrati-code.md",
+  "analyzedSha": "1e829bf7ddf1e34c4cc6713227f00422cee791cc",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T17:37:55+01:00",
+  "observedSha": "dae6d3a073f9b2df08b52921b08640ceb4e1330a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "dae6d3a073f9b2df08b52921b08640ceb4e1330a",
+      "date": "2026-10-24T00:34:57+01:00",
+      "subject": "Merge pull request #210 from gnyan-zadara/fix/issue-207-search-filter-no-match-hint"
+    },
+    {
+      "sha": "2bb842c57c6efd2f5a49ec97f80f66a4f64f7739",
+      "date": "2026-10-24T00:34:19+01:00",
+      "subject": "Merge pull request #209 from pcherkashin/fix/csharp-symbol-graph"
+    },
+    {
+      "sha": "5f42476526f89c8c0851446602955eb6cb66d557",
+      "date": "2026-10-21T13:48:42+05:30",
+      "subject": "fix(search): name the filter when a filtered codebase_search finds nothing"
+    },
+    {
+      "sha": "4dbfc01f08e7744b3496da099ca174f0465f3bf9",
+      "date": "2026-10-20T07:47:37+01:00",
+      "subject": "fix(graph): record a C# record struct as a struct"
+    },
+    {
+      "sha": "d9b870028b950f562090389eecca55f677791576",
+      "date": "2026-10-20T05:30:31+01:00",
+      "subject": "fix(graph): bind C# aliases where declared, and type-named values by type identity"
+    },
+    {
+      "sha": "5c907d315dd54bda47dcd6baa6374ddbf6bea371",
+      "date": "2026-10-19T16:12:17+01:00",
+      "subject": "fix(graph): read a C# receiver that names a value as an instance call"
+    },
+    {
+      "sha": "e38dca37b0bb68626b2f7f1266434f7c0b9e5992",
+      "date": "2026-10-19T15:52:49+01:00",
+      "subject": "fix(graph): consult each C# import at its own namespace level"
+    },
+    {
+      "sha": "87e2d66774a02ce71737098e9d7e0f43ae570fb9",
+      "date": "2026-10-19T15:49:11+01:00",
+      "subject": "fix(graph): narrow C# framework paths, skip tuple labels, keep global usings to their file"
+    },
+    {
+      "sha": "59943a5ce503271e6bfa748e077584b642983228",
+      "date": "2026-10-19T13:14:28+01:00",
+      "subject": "test(graph): pin a C# call through a lowercase namespace"
+    },
+    {
+      "sha": "74189a3c7f1e6eeb9d718e647b78b3213c45edbc",
+      "date": "2026-10-19T13:12:17+01:00",
+      "subject": "fix(graph): look each C# base up once"
+    },
+    {
+      "sha": "692963c274d3133a1483e7251a1ee58c551adcad",
+      "date": "2026-10-19T12:54:16+01:00",
+      "subject": "fix(graph): resolve C# names only through the scopes and imports C# uses"
+    },
+    {
+      "sha": "4041e70befa625b47a5b162dea97f2be927d1a9a",
+      "date": "2026-10-19T12:14:41+01:00",
+      "subject": "fix(graph): keep the written C# path and look names up as C# does"
+    },
+    {
+      "sha": "d0aac8d4ca9a44433a6579bacf66fbf799c99aa6",
+      "date": "2026-10-19T12:14:41+01:00",
+      "subject": "fix(graph): name C# declarations by their name field and capture type, creation and qualified-call edges"
+    },
+    {
+      "sha": "eb94e073cb8aa80d08fd56c8aecfe7f2fa065be8",
+      "date": "2026-10-15T23:21:05+01:00",
+      "subject": "chore: release v1.16.1"
+    },
+    {
+      "sha": "520247be3d78c0a79715be419821c12f7f0d22eb",
+      "date": "2026-10-15T23:13:27+01:00",
+      "subject": "Merge pull request #206 from pma1999/fix/php-attributed-declaration-names"
+    },
+    {
+      "sha": "3ca6659e387adcb47408246efa159b09e8148fab",
+      "date": "2026-10-15T23:14:47+02:00",
+      "subject": "test(graph): cover first incremental update after upgrade"
+    },
+    {
+      "sha": "3b74ab65c6913a1846213730f8ae55541c65b65a",
+      "date": "2026-10-15T21:35:37+02:00",
+      "subject": "fix(graph): name attributed PHP declarations by their name field"
+    },
+    {
+      "sha": "f99283a214f1dd1114e06d6ba643fb73d0930d52",
+      "date": "2026-10-10T22:23:44+01:00",
+      "subject": "Merge pull request #204 from shaitourchin/feat/symbol-limit"
+    },
+    {
+      "sha": "0f48a191e42ccf5451507f8c84fb562925058aef",
+      "date": "2026-10-10T18:27:36+03:00",
+      "subject": "feat(graph): add limit to codebase_symbol, codebase_impact and codebase_flow"
+    },
+    {
+      "sha": "e5bf916120dfc0f85dd09ea97052df98f9e8fc56",
+      "date": "2026-10-07T23:24:22+01:00",
+      "subject": "Merge pull request #200 from megadoom99/fix/jvm-kmp-source-sets"
+    },
+    {
+      "sha": "7502a75da87b96d4a29016e21d7be58d2d1d3dc0",
+      "date": "2026-10-07T23:12:51+01:00",
+      "subject": "Merge pull request #202 from shaitourchin/fix/symbol-graph-stale-socket"
+    },
+    {
+      "sha": "413e47d15a94874fd15b48f2e674bc53b179d42b",
+      "date": "2026-10-07T19:01:50+01:00",
+      "subject": "fix(graph): select KMP imports by caller source set"
+    },
+    {
+      "sha": "7ec029718e18937ccbe7aed68f36f8ec831625bc",
+      "date": "2026-10-07T16:02:25+01:00",
+      "subject": "fix(graph): preserve classic JVM precedence with KMP source sets"
+    },
+    {
+      "sha": "0418bd971152025d7cd9d5fb71d857b4fade693b",
+      "date": "2026-10-07T17:38:55+03:00",
+      "subject": "fix(symbol-graph): retry Qdrant requests once on a closed connection"
+    },
+    {
+      "sha": "a9d5eb1c24971061fd6dba2c1d157e1980bd6232",
+      "date": "2026-10-02T18:26:47+01:00",
+      "subject": "fix(graph): resolve JVM imports in Kotlin Multiplatform / Gradle source sets"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DEVELOPER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/codebase-exploration/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/codebase-exploration/references/tool-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/constants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/graph-impact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/graph-resolution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/graph-symbol-resolution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/graph-symbols.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/qdrant.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/services/symbol-graph-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/graph-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/query-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/helpers/idle-closing-qdrant-server.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/integration/tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/code-graph-php-symbol-edges.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/graph-impact.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/graph-resolution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/graph-symbol-resolution-csharp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/graph-symbols-php-qualifiers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/graph-symbols.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/query-tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/symbol-graph-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/symbol-graph-stale-socket.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

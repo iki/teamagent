@@ -1,0 +1,207 @@
+# graft: change evidence
+
+Source: [graft](https://github.com/NanoNets/Graft) · [Analysis](../../projects/ai-agents-mem--graft.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad`; commit date: 2026-09-30T12:57:02+05:30; review date: unknown; observed SHA: `25ea4c7488b6f931f39ec8b95de0070ef954f5a8`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NanoNets/Graft/compare/fe30ead39d5e6f0c921018d364da2bdbc9d4b3ad...25ea4c7488b6f931f39ec8b95de0070ef954f5a8). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [25ea4c7488b6](https://github.com/NanoNets/Graft/commit/25ea4c7488b6f931f39ec8b95de0070ef954f5a8) 2026-10-27T21:15:11+05:30: Release 0.28.0: Anirudh's #708, and agents get Trail's tools after an npx sign-in (#709)
+- [961a9e8f7861](https://github.com/NanoNets/Graft/commit/961a9e8f7861901aef37f223b1b54dbf2c4d48d5) 2026-10-27T20:00:01+05:30: Connect to Trail Cloud at the moments trail is used (#708)
+- [bc9544d058ae](https://github.com/NanoNets/Graft/commit/bc9544d058ae2e92ac32dd6dbd829610db53fdd9) 2026-10-27T19:53:19+05:30: Sign in from your coding agent with a one-time code; release 0.27.0 (#706)
+- [48ae88e40f38](https://github.com/NanoNets/Graft/commit/48ae88e40f3892912632b6e4f8698fc4e87defe4) 2026-10-27T17:00:45+05:30: init: show each learning the moment Claude writes it (#703)
+- [4067db5d2e08](https://github.com/NanoNets/Graft/commit/4067db5d2e0801d822d43e183e15a596a1c1c077) 2026-10-27T16:49:16+05:30: Build a missing code map on the first trail query (#704)
+- [a298b4c88805](https://github.com/NanoNets/Graft/commit/a298b4c88805aac85704350af8ef605661640e8d) 2026-10-27T12:57:23+05:30: init: learnings worth reading, from past sessions and the PRs (#701)
+- [d878681b83ad](https://github.com/NanoNets/Graft/commit/d878681b83adbefb1b9b2cd7c2c338440ab59f9b) 2026-10-26T16:58:42+05:30: chore(release): 0.26.0 (#694)
+- [f174fe3d073f](https://github.com/NanoNets/Graft/commit/f174fe3d073f53aad7594f277f342ac48807c929) 2026-10-26T16:49:44+05:30: Windows CI: allow for slow process start in the connector boot test (#700)
+- [7edcff09abbe](https://github.com/NanoNets/Graft/commit/7edcff09abbefce816f6ee400e093168bb1bbdb2) 2026-10-26T16:31:38+05:30: A paired setup connected late is finished by the next trail command (#699)
+- [f258838b2d8a](https://github.com/NanoNets/Graft/commit/f258838b2d8a7d10300eddd77455ae2dc9f092e1) 2026-10-26T16:31:33+05:30: init --pair stops when it can't reach Trail (#698)
+- [549b370e3676](https://github.com/NanoNets/Graft/commit/549b370e367601a10df375f9b5dd2ebc5eed4996) 2026-10-26T16:01:33+05:30: init --pair: a run that stops tells Trail's page why (#697)
+- [b7e7616f8213](https://github.com/NanoNets/Graft/commit/b7e7616f8213cc94ebe3e18ef8e75bac3a2c0bc1) 2026-10-26T15:20:57+05:30: init --pair: read PR reviews when an agent runs it, and always run as trail (#696)
+- [bfe8b1f258a6](https://github.com/NanoNets/Graft/commit/bfe8b1f258a6da0c56250f0e41058543ba50dbfb) 2026-10-26T14:12:06+05:30: init --agents auto: repo files for the main agents only (#695)
+- [0adc78bd2d61](https://github.com/NanoNets/Graft/commit/0adc78bd2d615395a505f888b94607a3051594a4) 2026-10-26T13:27:36+05:30: init --agents auto: every agent's repo files, laptop settings for the ones installed (#693)
+- [7a3dda18083d](https://github.com/NanoNets/Graft/commit/7a3dda18083d519bd687649de400c5503cdba31d) 2026-10-26T12:21:30+05:30: Claude Code gets the workspace connector; learnings, always follow and skills everywhere (#691)
+- [4e7d0f59a31e](https://github.com/NanoNets/Graft/commit/4e7d0f59a31eaedfb815f3f3cd45a20173911188) 2026-10-24T17:23:32+05:30: Merge pull request #685 from trailhq/fix/review-keeps-description
+- [53c201be8938](https://github.com/NanoNets/Graft/commit/53c201be89381f33a2e4aea7c57014beb30b536a) 2026-10-24T16:43:49+05:30: Send a repo skill's description to the onboarding review
+- [257672ae8bb4](https://github.com/NanoNets/Graft/commit/257672ae8bb404e55af16a6d0076741ee2d7a6f8) 2026-10-23T18:41:10+05:30: Merge pull request #676 from trailhq/release/0.25.0
+- [c6ff0424f3bb](https://github.com/NanoNets/Graft/commit/c6ff0424f3bb722ed3f68edbb451a539d9f9cc86) 2026-10-23T18:22:57+05:30: chore(release): 0.25.0
+- [c62f0ee881cf](https://github.com/NanoNets/Graft/commit/c62f0ee881cf271354ec8905d94a8caa3c9247a9) 2026-10-23T18:22:53+05:30: Merge pull request #674 from trailhq/fix/safe-learning-sync
+- [a2499267efff](https://github.com/NanoNets/Graft/commit/a2499267efffa28c0d5b5f03b0b7aca32c1a87ee) 2026-10-23T18:03:22+05:30: Wait for a Windows lock that is being let go
+- [42691931c46d](https://github.com/NanoNets/Graft/commit/42691931c46d8c57a8347531bfd42f7ad826d30a) 2026-10-23T17:05:30+05:30: Take down learnings deleted at HEAD, and sync each turn
+- [3c947531019b](https://github.com/NanoNets/Graft/commit/3c947531019bbcefc8a0a0e7318e704dd84b7300) 2026-10-23T15:49:10+05:30: Merge pull request #680 from trailhq/feat/skill-runs-from-code
+- [1a891c18518b](https://github.com/NanoNets/Graft/commit/1a891c18518b99edcb25efbac621f9609e0de878) 2026-10-23T12:05:29+05:30: Report a coding agent's use of a repo skill to the workspace
+- [ddbc44be782e](https://github.com/NanoNets/Graft/commit/ddbc44be782e73c9fa14aba7fde4c45253048fa3) 2026-10-23T11:53:28+05:30: Merge pull request #679 from trailhq/feat/skill-folders
+- [befa0d5421ef](https://github.com/NanoNets/Graft/commit/befa0d5421ef023c5e3bd4fad1279ab58c47287d) 2026-10-23T11:36:49+05:30: test: the executable bit is POSIX-only
+- [0fc3ba3f727a](https://github.com/NanoNets/Graft/commit/0fc3ba3f727a9e39c8b4b1951e2c8c55e1f879d9) 2026-10-23T11:19:00+05:30: feat: a repo's skill goes up with its whole folder
+- [ae391588d519](https://github.com/NanoNets/Graft/commit/ae391588d5196d3dd237305e402aa186894eb273) 2026-10-23T11:15:03+05:30: Merge pull request #678 from trailhq/feat/pick-repos
+- [e17f37611886](https://github.com/NanoNets/Graft/commit/e17f37611886bb42434da0fff0896add51c08670) 2026-10-23T10:54:18+05:30: feat: one install sets up the laptop's other repos
+- [5da54417cf93](https://github.com/NanoNets/Graft/commit/5da54417cf93f6713a23a70fb07e29d2a50d2508) 2026-10-23T10:31:35+05:30: Merge pull request #677 from trailhq/feat/last-pr-tokens
+- [ae79acbcd8ba](https://github.com/NanoNets/Graft/commit/ae79acbcd8ba3fea2b4164f2bdd7186e89c1fb44) 2026-10-23T10:14:44+05:30: feat(pair): measure tokens on the last merged PR
+- [0a36f3d6dad4](https://github.com/NanoNets/Graft/commit/0a36f3d6dad4e7415158fcfc672cca0c77e34903) 2026-10-23T09:34:39+05:30: Merge pull request #671 from trailhq/release/0.24.1
+
+## Changed paths (truncated)
+
+- M: `.claude/helpers/graft-hooks.cjs`
+- M: `.claude/helpers/graft-statusline.cjs`
+- M: `.github/workflows/codeql.yml`
+- M: `.github/workflows/scorecard.yml`
+- M: `.gitignore`
+- A: `.npmrc`
+- A: `.trail/learnings/2026-10-19-interview-bug-fixes-and-npm-test-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-19-trail-check-flags-a-branch-against-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-21-save-ask-signals-shell-edits-count-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-22-learning-replaces-holds-ids-and-reading-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-22-npm-install-g-peer-warnings-tree-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-22-quieting-npm-install-audit-warnings-and-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-26-a-paired-init-that-can-t-shrish.md`
+- A: `.trail/learnings/2026-10-26-a-paired-setup-connected-late-is-shrish.md`
+- A: `.trail/learnings/2026-10-26-init-pair-refuses-a-non-git-shrish.md`
+- A: `.trail/learnings/2026-10-26-rebuilding-after-npm-ci-ships-the-shrish.md`
+- A: `.trail/learnings/2026-10-26-setup-reads-past-sessions-with-the-shrish.md`
+- A: `.trail/learnings/2026-10-26-trail-init-pair-reads-pr-reviews-shrish.md`
+- A: `.trail/learnings/2026-10-27-a-laptop-links-each-repo-to-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-27-a-repo-on-trail-with-no-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-27-a-sandbox-s-trail-hooks-stand-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-27-an-agent-seeing-no-trail-tools-shrish.md`
+- A: `.trail/learnings/2026-10-27-claude-code-s-hooks-never-run-shrish.md`
+- A: `.trail/learnings/2026-10-27-measure-init-s-cost-cold-back-shrish.md`
+- A: `.trail/learnings/2026-10-27-testing-init-as-a-person-at-shrish.md`
+- A: `.trail/learnings/2026-10-27-testing-the-cloud-nudge-locally-rebuild-anirudhkumar.md`
+- A: `.trail/learnings/2026-10-27-tests-of-lines-that-name-the-shrish.md`
+- A: `.trail/learnings/2026-10-27-under-npx-trail-is-on-path-shrish.md`
+- M: `CHANGELOG.md`
+- M: `CREDITS.md`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `TELEMETRY.md`
+- D: `assets/graft-cold-vs-graft-dark.png`
+- D: `assets/graft-cold-vs-graft.png`
+- D: `assets/graft-comparison-demo.gif`
+- D: `assets/graft-hero.png`
+- D: `assets/graft-hooks-demo.gif`
+- D: `assets/graft-site-act-demo.gif`
+- D: `assets/graft-terminal.png`
+- A: `assets/trail-code-banner-dark.png`
+- A: `assets/trail-code-banner.png`
+- A: `assets/trail-code-how-it-works-dark.webp`
+- A: `assets/trail-code-how-it-works.webp`
+- M: `docs/github-app.md`
+- A: `docs/superpowers/plans/2026-10-27-valuable-learnings.md`
+- A: `docs/superpowers/specs/2026-10-27-valuable-learnings-design.md`
+- M: `package-lock.json`
+- M: `package.json`
+- A: `scripts/pack-trail.mjs`
+- M: `scripts/postinstall.mjs`
+- M: `scripts/run-tests.mjs`
+- M: `scripts/stamp-telemetry-key.mjs`
+- A: `scripts/vendor-grammars.mjs`
+- M: `src/ai/crux.ts`
+- M: `src/ai/llm/openai.ts`
+- M: `src/ai/llm/recover-tool.ts`
+- M: `src/ai/synthesize.ts`
+- D: `src/app/brain-build-process.ts`
+- D: `src/app/brain-build-worker.ts`
+- D: `src/app/brain-build.ts`
+- M: `src/app/checkout.ts`
+- D: `src/app/history.ts`
+- M: `src/app/identity.ts`
+- M: `src/app/main.ts`
+- M: `src/app/review-process.ts`
+- M: `src/app/server.ts`
+- D: `src/app/sources.ts`
+- M: `src/ask/ask.ts`
+- A: `src/bin/graft.ts`
+- A: `src/bin/trail.ts`
+- M: `src/blast/blast-cli.ts`
+- M: `src/blast/render.ts`
+- D: `src/brain/attach.ts`
+- D: `src/brain/autopush.ts`
+- D: `src/brain/claude-md.ts`
+- D: `src/brain/connect.ts`
+- D: `src/brain/context-files.ts`
+- D: `src/brain/link.ts`
+- D: `src/brain/pull.ts`
+- D: `src/brain/push.ts`
+- D: `src/brain/signup.ts`
+- D: `src/brain/upload.ts`
+- D: `src/brain/watch-trail.ts`
+- D: `src/brain/watch.ts`
+- D: `src/brain/wire.ts`
+- A: `src/brand.ts`
+- A: `src/check/learning-edits.ts`
+- A: `src/check/local-check.ts`
+- A: `src/check/types.ts`
+- M: `src/claude/format.ts`
+- A: `src/claude/hook-io.ts`
+- A: `src/claude/hook-layers.ts`
+- M: `src/claude/hooks.ts`
+- M: `src/claude/init.ts`
+- A: `src/claude/note-signals.ts`
+- A: `src/claude/post-bash.ts`
+- A: `src/claude/pre-bash-check.ts`
+- A: `src/claude/pre-bash-skills.ts`
+- A: `src/claude/pre-bash.ts`
+- A: `src/claude/prompt-consent.ts`
+- A: `src/claude/prompt-hook.ts`
+- A: `src/claude/prompt-skills.ts`
+- M: `src/claude/session-metrics.ts`
+- M: `src/claude/settings-merge.ts`
+- M: `src/claude/shim-template.ts`
+- M: `src/claude/skill-template.ts`
+- A: `src/claude/skill-use.ts`
+- A: `src/claude/skills-hook-util.ts`
+- A: `src/claude/skills-wiring.ts`
+- A: `src/claude/start-init.ts`
+- A: `src/claude/start-skills.ts`
+- M: `src/claude/state.ts`
+- M: `src/claude/statusline.ts`
+- A: `src/claude/stop-skills.ts`
+- A: `src/claude/stop.ts`
+- M: `src/claude/sync-run.ts`
+- M: `src/claude/tally.ts`
+- A: `src/claude/walls-hook.ts`
+- M: `src/cli-epilogue.ts`
+- M: `src/cli-meta.ts`
+- M: `src/cli-picker.ts`
+- M: `src/cli.ts`
+- A: `src/cloud/diff.ts`
+- A: `src/cloud/head-learnings.ts`
+- A: `src/cloud/lookup-activity.ts`
+- A: `src/cloud/nudge.ts`
+- A: `src/cloud/onboarding.ts`
+- A: `src/cloud/other-repos.ts`
+- A: `src/cloud/pair.ts`
+- A: `src/cloud/team-file.ts`
+- A: `src/cloud/workspace-sync.ts`
+- A: `src/cloud/workspace.ts`
+- A: `src/context/batches.ts`
+- M: `src/context/build.ts`
+- M: `src/context/check.ts`
+- A: `src/context/map-dir.ts`
+- M: `src/context/node-file.ts`
+- M: `src/context/savings.ts`
+- M: `src/engine.ts`
+- M: `src/graph/build.ts`
+- M: `src/graph/cards.ts`
+- M: `src/graph/check.ts`
+- M: `src/graph/container.ts`
+- M: `src/graph/enrich.ts`
+- M: `src/graph/extract-cache.ts`
+- M: `src/graph/extract.ts`
+- M: `src/graph/generic.ts`
+- M: `src/graph/lsp/client.ts`
+- M: `src/graph/lsp/enrich.ts`
+- M: `src/graph/lsp/registry.ts`
+- A: `src/graph/native.ts`
+- A: `src/graph/queries/gleam.scm`
+- M: `src/graph/refresh.ts`
+- M: `src/graph/resolve.ts`
+- M: `src/graph/traverse-cli.ts`
+- M: `src/graph/workspace-cli.ts`
+- M: `src/graph/workspace.ts`
+- M: `src/hosts/antigravity.ts`
+- A: `src/hosts/auto.ts`

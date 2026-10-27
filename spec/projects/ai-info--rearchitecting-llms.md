@@ -24,3 +24,7 @@ Keep as a research reference for a later specialized-local-model program. Separa
 ## Verification boundary
 
 No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [rearchitecting-llms](https://github.com/peremartra/Rearchitecting-LLMs); analyzed commit `fa7027b6be9f68e8689dd0d561735a72f347eb33`; commit date 2026-10-01T17:55:13+02:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-info--rearchitecting-llms.md).
+<!-- teamagent-analysis:end -->

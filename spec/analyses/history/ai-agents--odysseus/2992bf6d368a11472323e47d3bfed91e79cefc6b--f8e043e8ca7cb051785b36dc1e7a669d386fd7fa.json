@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--odysseus",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/pewdiepie-archdaemon/odysseus",
+  "report": "spec/projects/ai-agents--odysseus.md",
+  "analyzedSha": "2992bf6d368a11472323e47d3bfed91e79cefc6b",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-01T20:18:33-06:00",
+  "observedSha": "f8e043e8ca7cb051785b36dc1e7a669d386fd7fa",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f8e043e8ca7cb051785b36dc1e7a669d386fd7fa",
+      "date": "2026-10-23T13:19:04-06:00",
+      "subject": "fix(approvals): seal approved bash/python and file writes in the agent workspace when no workspace is set (#6705)"
+    },
+    {
+      "sha": "98a16242c675b13da13248fb06a0d123f67344f5",
+      "date": "2026-10-23T13:18:59-06:00",
+      "subject": "fix(security): add SSRF validation to manage_endpoints agent tool (#6327)"
+    },
+    {
+      "sha": "0dbf457c004cd96553d8c96e7ef70d049fd46317",
+      "date": "2026-10-23T13:18:54-06:00",
+      "subject": "fix(security): block SSRF via user-supplied model endpoint URLs (#6316)"
+    },
+    {
+      "sha": "b4ae7ebcc43daa6207de0ef614ef336d7707d20f",
+      "date": "2026-10-23T13:18:49-06:00",
+      "subject": "feat(agent): expose chat history with existing chat scope (#6443)"
+    },
+    {
+      "sha": "01566b158e627748f70ac402571f2f78241fb6f9",
+      "date": "2026-10-22T17:08:05+01:00",
+      "subject": "fix(ci): lowercase container image repository names (#6802)"
+    },
+    {
+      "sha": "a98013dd33cb57d3d4af5155701ed9e7117e2ef3",
+      "date": "2026-10-22T11:18:07+01:00",
+      "subject": "Merge pull request #6785 from RaresKeY/fix/emudhra-ca-trust"
+    },
+    {
+      "sha": "77a02c30ffd3f86a34f1bc9e2843589acad76e67",
+      "date": "2026-10-21T21:40:05Z",
+      "subject": "fix(security): verify deployed trust before dependency work"
+    },
+    {
+      "sha": "cd9f1f734fc12d3479de3039558902cf421c5454",
+      "date": "2026-10-21T20:48:34Z",
+      "subject": "fix(security): detect incident CAs in custom trust stores"
+    },
+    {
+      "sha": "5d0a219edee63039f48cb7e2c98188a17d7571ec",
+      "date": "2026-10-21T20:09:54Z",
+      "subject": "fix: distrust incident certificates in Chromium and gRPC"
+    },
+    {
+      "sha": "c4fdaf59b3d74377b191938b028a710ee5aad5c7",
+      "date": "2026-10-21T18:59:02Z",
+      "subject": "fix(tls): accept hashed non-CA certificates during trust checks"
+    },
+    {
+      "sha": "df1c2c8b192f693fdbcad5020df4b1545db99910",
+      "date": "2026-10-21T18:27:05Z",
+      "subject": "fix: refresh outbound HTTPS trust and installer bootstrap"
+    },
+    {
+      "sha": "8877273e195a90d51bc6a37f3a1b60dc3414c431",
+      "date": "2026-10-20T16:37:53+01:00",
+      "subject": "Merge pull request #6742 from odysseus-dev/codex/review-7011-email-export-20261015"
+    },
+    {
+      "sha": "377070ab7951d161b10542a62c02740408bba2d3",
+      "date": "2026-10-20T15:36:16+01:00",
+      "subject": "fix(email): propagate preflight safety failure across all mailbox groups"
+    },
+    {
+      "sha": "f06ec5d91ffb5bc5fa6292f79a96737c59a82fca",
+      "date": "2026-10-20T15:01:55+01:00",
+      "subject": "Merge branch 'upstream/dev' into fix/pr-6742-email-export"
+    },
+    {
+      "sha": "057ae92c17d0c01e9988a9baa89e06c8622aecc0",
+      "date": "2026-10-20T15:00:13+01:00",
+      "subject": "fix(email): support case-insensitive IMAP atoms and portable browser discovery"
+    },
+    {
+      "sha": "75df766358c2e6e04368c6416dbc8c5d1a500412",
+      "date": "2026-10-20T14:09:47+01:00",
+      "subject": "fix(email): harden RFC822.SIZE preflight validation and ignore duplicate IMAP records"
+    },
+    {
+      "sha": "c7d1555eea99c388d60a0d0c3ae9a12d4e63ba43",
+      "date": "2026-10-20T11:38:12+01:00",
+      "subject": "fix(email): resolve memory safety, print rendering, and accounting defects"
+    },
+    {
+      "sha": "550ac015eb88e5eec8c538cffa49fda55bfbe14b",
+      "date": "2026-10-20T10:35:30+01:00",
+      "subject": "fix(email): enforce account ownership and correct partial failure accounting"
+    },
+    {
+      "sha": "8eaf742b431e3771b811bbae3dfbc63fe082defe",
+      "date": "2026-10-20T10:14:55+01:00",
+      "subject": "fix(email): replace html2pdf with Print / save PDF and harden EML export"
+    },
+    {
+      "sha": "8363919aeca6fe5bef011760e849fef2a7658727",
+      "date": "2026-10-20T09:58:01+01:00",
+      "subject": "Merge pull request #6736 from alteixeira20/docs/maintainer-handbook-governance-v1"
+    },
+    {
+      "sha": "ae238b737f0cd4022a4bec5186547c5190fb07b7",
+      "date": "2026-10-20T01:12:33+01:00",
+      "subject": "Merge pull request #6396 from Gr33ndev/dev"
+    },
+    {
+      "sha": "63e18a46c72b17e25fd716a49967dc2071e593ab",
+      "date": "2026-10-20T01:01:35+01:00",
+      "subject": "test(css): update snapshots for iOS safe-area layout"
+    },
+    {
+      "sha": "268636c9aa73f83a615fe0c5ad8e66154e211524",
+      "date": "2026-10-19T23:44:18+01:00",
+      "subject": "Merge pull request #6473 from ShahabAhmed01/fix/scheduler-research-settings-guard-5049"
+    },
+    {
+      "sha": "b2613b21064e9e8654ffb90848c9e708e8d9f4ac",
+      "date": "2026-10-19T19:43:53+02:00",
+      "subject": "fix(ui): respect iOS safe areas, screen height and landscape layout"
+    },
+    {
+      "sha": "c1d90beeffa94c25a4363a77c00f17ee82109e17",
+      "date": "2026-10-19T14:40:27+01:00",
+      "subject": "fix(scheduler): catch OverflowError on non-finite research settings"
+    },
+    {
+      "sha": "8946100695d73d90b2e4db9b8c70c034ce0c9df7",
+      "date": "2026-10-19T14:40:26+01:00",
+      "subject": "Merge current dev into PR #6473"
+    },
+    {
+      "sha": "88772b3278183949413e9da7d57e741057302e5e",
+      "date": "2026-10-19T14:04:10+01:00",
+      "subject": "fix(tasks): apply the admin-only action policy in manage_tasks (#6358)"
+    },
+    {
+      "sha": "9712a5400175f8beacb215cefed1dad6935627df",
+      "date": "2026-10-16T22:05:31+03:00",
+      "subject": "Merge pull request #6434 from PrinceThummar011/fix/5598-oauth-expired-state"
+    },
+    {
+      "sha": "15099ebabbd824c2235f9f81eb8e1d436d0686e2",
+      "date": "2026-10-16T17:16:15+05:30",
+      "subject": "refactor(mcp): unify OAuth flow resolution and distinguish missing params from expired state (#5598)"
+    },
+    {
+      "sha": "0590edd4f2e9a9eeb294d67864bdc8d9699876ac",
+      "date": "2026-10-16T08:00:46+02:00",
+      "subject": "Merge pull request #6744 from RaresKeY/docs/specs-bootstrap"
+    },
+    {
+      "sha": "bead6a6797ff466005220002616953334a737db3",
+      "date": "2026-10-15T16:52:16Z",
+      "subject": "docs(specs): routine specifications update"
+    },
+    {
+      "sha": "55b5b7f496887a345c4b1f380a3585672c6ebae9",
+      "date": "2026-10-15T18:09:36+02:00",
+      "subject": "docs(maintainers): list website/ in the docs map and align CONTRIBUTING"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/pull_request_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/check-pr-description.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/container-trivy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dependency-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/workflow-security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ACKNOWLEDGMENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "HARNESS_VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Odysseus.spec",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "PUBLICATION_ASSET_DECISIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "THIRD_PARTY_PROVENANCE.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THREAT_MODEL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build-macos-app.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build-windows-portable.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/atomic_io.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/database.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/platform_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/session_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.gpu-amd.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.gpu-nvidia.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/chromium-ca-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/chromium-emudhra.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/host-network.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/host-workspace.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/AGENT_TURN_CONTRACT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/BACKGROUND_TOOL_JOBS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/CODE_REVIEW_2026-09-16.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/HISTORICAL_ODYSSEUS_QA_QUEUE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ODYSSEUS_FIX_WORKSTREAMS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ODYSSEUS_SFT_ALEX_CORPUS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ODYSSEUS_TOOL_INSTRUCTIONS_EXAMPLE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/REVIEW_FIX_PROGRESS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/TYPO_ROUTING_AUDIT_20260909.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/chromadb-volume-migration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/ADR-001-source-and-deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/assessment.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/notes/implementation.sha256",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/notes/native-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/evidence/notes/native-mobile.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/handbook.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/notes-case-study.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/notes-changed-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/notes-module-inventory.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/notes-roadmap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/notes-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/frontend-architecture/validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/changes-and-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/documentation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/product-and-features.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/review-playbook.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/roles-and-access.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/testing-and-releases.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/maintainers/triage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/ref-parity-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/COMPARISON_PROTOCOL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/WAVE_1_1_RECONCILIATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/validation/wave-1-1-reconciliation-gates.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/validation/wave-3-browser-final-results.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/validation/wave-3-closure-focused-tests.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/validation/wave-3-corrective-pass.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/validation/wave-3-corrective-results.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/validation/wave-3-s-failed-nodes.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/validation/wave-3-s-node-environment.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-2-request-authority.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-2-validation-full.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-3-browser-authority.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-3-checkpoint-a-tests.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-3-checkpoint-a.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-3-final-tests.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-3-independent-adapters.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-3-resource-identity.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-3-s-delivery-2026-10-01.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-4-effects-provenance-integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/runtime-decomposition/wave-5a-browser-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/search-quality-audit-20260917.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/skills-audit-architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/skills-audit-second-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/skills-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/tls-trust.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/modules.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/agentActions.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/cardOperations.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/checklistOperations.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/deletion.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/drafts.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/queries.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/reminders.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/selection.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/state.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/submission.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/application/workflows.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/domain/noteRules.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/domain/recurrence.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/infrastructure/http.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/infrastructure/notifications.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/infrastructure/storage.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/cardChecklist.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/cardInteractions.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/cardRendering.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/cardReorder.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/checklist.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/checklistReorder.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/clipboard.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/colors.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/draftEditor.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/drawing.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/editor.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/filters.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/layout.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/lifecycle.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/mobileEditor.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/mobileReorder.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/panel.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/quickAdd.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/reminderDisplay.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/reminderPicker.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/selection.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/text.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/toolbar.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/features/notes/ui/windowLayout.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/shared/actionMenuOrder.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/shared/ui/confetti.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/claude/skills/odysseus/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/claude/skills/odysseus/scripts/odysseus_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/codex/skills/odysseus/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "launch-windows.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "launcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "licenses/FiraCode-OFL-1.1.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "licenses/Inter-OFL-1.1.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "licenses/SheetJS-Apache-2.0.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "licenses/docx-8.5.0-NOTICES.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "licenses/highlightjs-BSD-3-Clause.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "licenses/mammoth-1.8.0-NOTICES.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp_servers/email_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp_servers/image_gen_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/ODYSSEUS_TOOL_HARDENING_PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/photo-editor-interaction-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/photo-editor-professional-roadmap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plans/photo-editor-remaining-scope.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "requirements-bootstrap.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "requirements-dev.txt",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

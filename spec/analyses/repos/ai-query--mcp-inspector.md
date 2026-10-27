@@ -1,0 +1,207 @@
+# mcp-inspector: change evidence
+
+Source: [mcp-inspector](https://github.com/modelcontextprotocol/inspector) · [Analysis](../../projects/ai-query--mcp-inspector.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `ae865a19178ddf6f375780a02e9c77c4cf4da184`; commit date: 2026-09-30T18:23:03-04:00; review date: unknown; observed SHA: `0cac110a809e93753fa353810b9b4c91e89810fc`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/modelcontextprotocol/inspector/compare/ae865a19178ddf6f375780a02e9c77c4cf4da184...0cac110a809e93753fa353810b9b4c91e89810fc). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [0cac110a809e](https://github.com/modelcontextprotocol/inspector/commit/0cac110a809e93753fa353810b9b4c91e89810fc) 2026-10-21T14:10:36-04:00: Merge pull request #2769 from modelcontextprotocol/v2/chore/milestone-merge-v2.12.0
+- [50c0b252abf4](https://github.com/modelcontextprotocol/inspector/commit/50c0b252abf4787cafb433908620e53dabb6b8de) 2026-10-21T13:59:38-04:00: chore: merge v2/main into the v2.12.0 milestone merge (#2776)
+- [3cdde6c20c4d](https://github.com/modelcontextprotocol/inspector/commit/3cdde6c20c4d969b56ef352a16d53508fb9ab9aa) 2026-10-21T13:58:55-04:00: Merge pull request #2777 from modelcontextprotocol/v2/fix/2776-listen-refusal-node-onerror
+- [6b108c3dfae0](https://github.com/modelcontextprotocol/inspector/commit/6b108c3dfae0b11ec5e752cd43f2fe759698cd72) 2026-10-21T13:45:36-04:00: fix(core): keep the connection up when a request POST is HTTP-refused
+- [c2834cbb0123](https://github.com/modelcontextprotocol/inspector/commit/c2834cbb012346efc2a3264da84ad460f6e96111) 2026-10-21T13:22:27-04:00: chore: merge v2/main into the v2.12.0 milestone merge (#2767)
+- [63c5a06cf4c0](https://github.com/modelcontextprotocol/inspector/commit/63c5a06cf4c0373b5d044f2018bb6e1987c77f29) 2026-10-21T13:21:36-04:00: Merge pull request #2775 from modelcontextprotocol/v2/fix/2767-mcpdo-directory-read-uri
+- [3a174cb03826](https://github.com/modelcontextprotocol/inspector/commit/3a174cb0382613821fc7e82c06e4f99a48f0b43d) 2026-10-21T13:06:31-04:00: fix(mcpdo): give resources/directory/read a URI and a cursor
+- [bd7e9c7ef774](https://github.com/modelcontextprotocol/inspector/commit/bd7e9c7ef7742bddf04c84ddceb0abc590f4350b) 2026-10-21T12:43:56-04:00: chore: merge v2/main into the v2.12.0 milestone merge (#2770, #2771)
+- [360f3c648116](https://github.com/modelcontextprotocol/inspector/commit/360f3c648116f29cb12fd92d75396e0782210cae) 2026-10-21T12:42:57-04:00: Merge pull request #2774 from modelcontextprotocol/v2/fix/2771-oversize-error-framing-headers
+- [20287a6a1fff](https://github.com/modelcontextprotocol/inspector/commit/20287a6a1ffff8cd268e0dab5b422cb120e4af1f) 2026-10-21T12:31:18-04:00: Merge pull request #2773 from modelcontextprotocol/v2/fix/2770-handoff-tls-scheme
+- [cbb3c6566980](https://github.com/modelcontextprotocol/inspector/commit/cbb3c656698049c353e1c23c6b6da8a38482a29c) 2026-10-21T12:29:10-04:00: fix(web): drop the dropped body's framing headers from an oversize error relay
+- [9edc173bacaf](https://github.com/modelcontextprotocol/inspector/commit/9edc173bacafb4d12471997a156c54f884b9018e) 2026-10-21T12:11:52-04:00: fix(cli): link https in --print-handoff when the web UI is served over TLS
+- [b861af25c586](https://github.com/modelcontextprotocol/inspector/commit/b861af25c5867e595a92c41f416ca6cd67f32102) 2026-10-21T10:37:51-04:00: chore: merge v2/main into main for the v2.12.0 release
+- [7e20e38d50c6](https://github.com/modelcontextprotocol/inspector/commit/7e20e38d50c6c7bb14b7be630b5afbaf455d7159) 2026-10-21T10:36:36-04:00: Merge pull request #2763 from modelcontextprotocol/v2/chore/2762-bump-2-12-0
+- [51c7ffec7fd4](https://github.com/modelcontextprotocol/inspector/commit/51c7ffec7fd4e7d47c3815bc73c4ea90deac15e6) 2026-10-21T03:17:20-04:00: chore: bump version to 2.12.0
+- [4862b746095b](https://github.com/modelcontextprotocol/inspector/commit/4862b746095bcf07419fe1fb329ea02fd27979b7) 2026-10-21T01:45:17-04:00: Merge commit from fork
+- [8d74f7a9d54c](https://github.com/modelcontextprotocol/inspector/commit/8d74f7a9d54cb5d0c2fb8da98be5c61916472411) 2026-10-21T01:45:02-04:00: Merge commit from fork
+- [73f3cf8e23f6](https://github.com/modelcontextprotocol/inspector/commit/73f3cf8e23f60e7180f0872937da2a9b051f313b) 2026-10-21T01:44:45-04:00: Merge commit from fork
+- [28eda4cb343d](https://github.com/modelcontextprotocol/inspector/commit/28eda4cb343de2d06f007dfa253ceccd133dfb63) 2026-10-21T00:54:04-04:00: docs(web): state the IP forms the Host allow-list accepts
+- [53d1c62ef816](https://github.com/modelcontextprotocol/inspector/commit/53d1c62ef816f7f5c0dfc5b236fcb8ae4b551f2c) 2026-10-21T00:52:31-04:00: fix(web): relay an error status whose /api/fetch body is over the cap
+- [3d701a0baa5c](https://github.com/modelcontextprotocol/inspector/commit/3d701a0baa5c9954c0717a4ad5c5425ae3cf566d) 2026-10-20T23:44:56-04:00: fix(web): cap the /api/fetch response body
+- [4c31c6b7eb0d](https://github.com/modelcontextprotocol/inspector/commit/4c31c6b7eb0d6215ef41384de57ce357cdd8e017) 2026-10-20T23:39:58-04:00: fix(web): restrict Host names to hostname characters, punycode allowed-host entries
+- [123998321d7d](https://github.com/modelcontextprotocol/inspector/commit/123998321d7da6583b09c972fb1525a7ab8ad55d) 2026-10-20T23:32:51-04:00: fix(web): validate the Host header on the production web server
+- [fefe0743e6d8](https://github.com/modelcontextprotocol/inspector/commit/fefe0743e6d88cdbd1aefc897622d01570c63374) 2026-10-20T07:41:31-07:00: Merge pull request #2747 from modelcontextprotocol/v2/fix/2740-directory-read-cacheable
+- [3e06c0c2c2d0](https://github.com/modelcontextprotocol/inspector/commit/3e06c0c2c2d0dd12618f6d6508df04dd4156ed81) 2026-10-20T09:50:02-04:00: Merge pull request #2743 from modelcontextprotocol/v2/feat/2439-cli-load-test
+- [721d31426d80](https://github.com/modelcontextprotocol/inspector/commit/721d31426d80adabd0ec9843597944e8b610df97) 2026-10-20T05:58:11-07:00: fix(skills): require ttlMs and cacheScope on modern resources/directory/read results (#2740)
+- [4e13034d3a1f](https://github.com/modelcontextprotocol/inspector/commit/4e13034d3a1f6a9b30b3d1aa1c2d683105d14498) 2026-10-20T02:11:58-04:00: fix(cli): one timer per --load-rate slot, and hold the average rate
+- [bc6db3e1e98a](https://github.com/modelcontextprotocol/inspector/commit/bc6db3e1e98acbeaf4c597779759e26bb680a949) 2026-10-20T01:57:09-04:00: fix(cli): claim a --load-rate slot only after waking
+- [1b4d4ec742c0](https://github.com/modelcontextprotocol/inspector/commit/1b4d4ec742c0484da97af41ffb901f824ab5c5b5) 2026-10-20T01:52:27-04:00: Merge pull request #2739 from modelcontextprotocol/v2/fix/2734-handoff-owner-provenance
+- [9649799a7379](https://github.com/modelcontextprotocol/inspector/commit/9649799a7379e5497bc67988bcadda1b9ee0fb83) 2026-10-20T01:43:43-04:00: fix(cli): drop missed --load-rate slots and recheck the deadline after a wait
+- [c1365148776a](https://github.com/modelcontextprotocol/inspector/commit/c1365148776a3f9adf503936d5959c488b5fe4b9) 2026-10-20T01:33:56-04:00: Merge pull request #2742 from modelcontextprotocol/v2/fix/2726-per-flow-pkce-verifier
+- [25e5a2661d1d](https://github.com/modelcontextprotocol/inspector/commit/25e5a2661d1d8907c834c88c8019e9601cd5935d) 2026-10-20T01:27:54-04:00: feat(cli): add --load mode for load-testing a tool
+
+## Changed paths (truncated)
+
+- M: `.claude/skills/board-ops/SKILL.md`
+- M: `.claude/skills/issue-triage/SKILL.md`
+- M: `.claude/skills/local-dev/SKILL.md`
+- M: `.claude/skills/pr-flow/SKILL.md`
+- M: `.claude/skills/pre-push-gate/SKILL.md`
+- M: `.claude/skills/project-structure/SKILL.md`
+- M: `.claude/skills/release/SKILL.md`
+- M: `.claude/skills/security-advisory/SKILL.md`
+- M: `.claude/skills/test-servers/SKILL.md`
+- M: `.claude/skills/testing/SKILL.md`
+- A: `.github/workflows/codeql.yml`
+- A: `.github/workflows/dco.yml`
+- M: `.github/workflows/dependency-refresh.yml`
+- M: `.github/workflows/main.yml`
+- M: `.github/workflows/sdk-watch.yml`
+- M: `AGENTS.md`
+- M: `README.md`
+- M: `clients/cli/README.md`
+- M: `clients/cli/__tests__/README.md`
+- A: `clients/cli/__tests__/arg-order.test.ts`
+- M: `clients/cli/__tests__/clear-stored-auth-for-relogin.test.ts`
+- M: `clients/cli/__tests__/cli-oauth-navigation.test.ts`
+- M: `clients/cli/__tests__/cli.test.ts`
+- M: `clients/cli/__tests__/cliOAuth.test.ts`
+- A: `clients/cli/__tests__/completion.test.ts`
+- M: `clients/cli/__tests__/consume-outcome-stream.test.ts`
+- M: `clients/cli/__tests__/e2e.test.ts`
+- M: `clients/cli/__tests__/emit-result.test.ts`
+- M: `clients/cli/__tests__/error-handler.test.ts`
+- M: `clients/cli/__tests__/format-output.test.ts`
+- M: `clients/cli/__tests__/helpers/cli-runner.ts`
+- M: `clients/cli/__tests__/helpers/mock-open-url.ts`
+- A: `clients/cli/__tests__/helpers/oauth-state-isolation.ts`
+- M: `clients/cli/__tests__/helpers/oauth-test-fakes.ts`
+- A: `clients/cli/__tests__/load-test.test.ts`
+- M: `clients/cli/__tests__/method-types.test.ts`
+- M: `clients/cli/__tests__/oauth-interactive.test.ts`
+- D: `clients/cli/__tests__/open-url.test.ts`
+- A: `clients/cli/__tests__/output-file.test.ts`
+- M: `clients/cli/__tests__/programmatic-ergonomics.test.ts`
+- M: `clients/cli/__tests__/relogin-revocation.test.ts`
+- M: `clients/cli/__tests__/run-method-mocks.test.ts`
+- M: `clients/cli/__tests__/run-method-skills.test.ts`
+- M: `clients/cli/__tests__/run-method.test.ts`
+- M: `clients/cli/__tests__/schema-lint-report.test.ts`
+- M: `clients/cli/__tests__/servers-list.test.ts`
+- A: `clients/cli/__tests__/servers-write.test.ts`
+- M: `clients/cli/__tests__/skills-verify-cli.test.ts`
+- M: `clients/cli/__tests__/stored-auth.test.ts`
+- M: `clients/cli/__tests__/style.test.ts`
+- M: `clients/cli/__tests__/tools.test.ts`
+- M: `clients/cli/package-lock.json`
+- M: `clients/cli/package.json`
+- M: `clients/cli/src/cli.ts`
+- A: `clients/cli/src/completion.ts`
+- M: `clients/cli/src/handlers/consume-outcome.ts`
+- M: `clients/cli/src/handlers/emit-result.ts`
+- M: `clients/cli/src/handlers/schema-lint-report.ts`
+- A: `clients/cli/src/handlers/servers-write.ts`
+- M: `clients/cli/src/index.ts`
+- D: `clients/cli/src/open-url.ts`
+- M: `clients/cli/tsup.config.ts`
+- M: `clients/cli/vitest.config.ts`
+- M: `clients/launcher/README.md`
+- M: `clients/launcher/src/index.ts`
+- A: `clients/mcpdo/README.md`
+- A: `clients/mcpdo/__tests__/agent-help.test.ts`
+- A: `clients/mcpdo/__tests__/auth-helper.test.ts`
+- A: `clients/mcpdo/__tests__/auth-names-commands.test.ts`
+- A: `clients/mcpdo/__tests__/auth-names.test.ts`
+- A: `clients/mcpdo/__tests__/authorize.test.ts`
+- A: `clients/mcpdo/__tests__/connect-secret-storage.test.ts`
+- A: `clients/mcpdo/__tests__/connection-stored-auth.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-connections.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-coverage.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-elicitation-park.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-ipc-glue.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-paths.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-private.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-proxy.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-rpc-abort.test.ts`
+- A: `clients/mcpdo/__tests__/daemon-stream.test.ts`
+- A: `clients/mcpdo/__tests__/directory-read.test.ts`
+- A: `clients/mcpdo/__tests__/disconnect-clear-auth.test.ts`
+- A: `clients/mcpdo/__tests__/dispatch.test.ts`
+- A: `clients/mcpdo/__tests__/elicitation-bridge.test.ts`
+- A: `clients/mcpdo/__tests__/elicitation-client.test.ts`
+- A: `clients/mcpdo/__tests__/elicitation-prompt.test.ts`
+- A: `clients/mcpdo/__tests__/ema-commands.test.ts`
+- A: `clients/mcpdo/__tests__/ema-login-helper.test.ts`
+- A: `clients/mcpdo/__tests__/ema.test.ts`
+- A: `clients/mcpdo/__tests__/form-prompt.test.ts`
+- A: `clients/mcpdo/__tests__/form-schema.test.ts`
+- A: `clients/mcpdo/__tests__/format-connection.test.ts`
+- A: `clients/mcpdo/__tests__/helpers/mcp-runner.ts`
+- A: `clients/mcpdo/__tests__/hoist-connection.test.ts`
+- A: `clients/mcpdo/__tests__/mcp-auth-coverage.test.ts`
+- A: `clients/mcpdo/__tests__/mcp-connection.test.ts`
+- A: `clients/mcpdo/__tests__/mcp-coverage.test.ts`
+- A: `clients/mcpdo/__tests__/mcp-elicitation.test.ts`
+- A: `clients/mcpdo/__tests__/parse-tool-args.test.ts`
+- A: `clients/mcpdo/__tests__/pin-stdio-config.test.ts`
+- A: `clients/mcpdo/__tests__/prompt-reader.test.ts`
+- A: `clients/mcpdo/__tests__/resolve-command.test.ts`
+- A: `clients/mcpdo/__tests__/sanitize.test.ts`
+- A: `clients/mcpdo/__tests__/skills-budget-hint.test.ts`
+- A: `clients/mcpdo/eslint.config.js`
+- A: `clients/mcpdo/evals/evals.json`
+- A: `clients/mcpdo/package-lock.json`
+- A: `clients/mcpdo/package.json`
+- A: `clients/mcpdo/scripts/stop-dev-daemon.mjs`
+- A: `clients/mcpdo/src/connection/auth-helper.ts`
+- A: `clients/mcpdo/src/connection/auth-names.ts`
+- A: `clients/mcpdo/src/connection/authorize.ts`
+- A: `clients/mcpdo/src/connection/dispatch.ts`
+- A: `clients/mcpdo/src/connection/elicitation-prompt.ts`
+- A: `clients/mcpdo/src/connection/ema-login-helper.ts`
+- A: `clients/mcpdo/src/connection/ema.ts`
+- A: `clients/mcpdo/src/connection/form-prompt.ts`
+- A: `clients/mcpdo/src/connection/form-schema.ts`
+- A: `clients/mcpdo/src/connection/format-connection.ts`
+- A: `clients/mcpdo/src/connection/format-human.ts`
+- A: `clients/mcpdo/src/connection/mcp.ts`
+- A: `clients/mcpdo/src/connection/parse-tool-args.ts`
+- A: `clients/mcpdo/src/connection/private-env.ts`
+- A: `clients/mcpdo/src/connection/prompt-reader.ts`
+- A: `clients/mcpdo/src/connection/resolve-command.ts`
+- A: `clients/mcpdo/src/connection/sanitize.ts`
+- A: `clients/mcpdo/src/connection/stored-auth.ts`
+- A: `clients/mcpdo/src/daemon/auth.ts`
+- A: `clients/mcpdo/src/daemon/client.ts`
+- A: `clients/mcpdo/src/daemon/connections.ts`
+- A: `clients/mcpdo/src/daemon/elicitation-bridge.ts`
+- A: `clients/mcpdo/src/daemon/elicitation-park.ts`
+- A: `clients/mcpdo/src/daemon/ensure.ts`
+- A: `clients/mcpdo/src/daemon/framing.ts`
+- A: `clients/mcpdo/src/daemon/index.ts`
+- A: `clients/mcpdo/src/daemon/ipc-glue.ts`
+- A: `clients/mcpdo/src/daemon/paths.ts`
+- A: `clients/mcpdo/src/daemon/protocol.ts`
+- A: `clients/mcpdo/src/daemon/run.ts`
+- A: `clients/mcpdo/src/daemon/server.ts`
+- A: `clients/mcpdo/src/daemon/stream-client.ts`
+- A: `clients/mcpdo/src/mcp-bin.ts`
+- A: `clients/mcpdo/tsconfig.json`
+- A: `clients/mcpdo/tsconfig.test.json`
+- A: `clients/mcpdo/tsup.config.ts`
+- A: `clients/mcpdo/vitest.config.ts`
+- M: `clients/tui/README.md`
+- M: `clients/tui/__tests__/App.test.tsx`
+- M: `clients/tui/__tests__/AuthTab.test.tsx`
+- M: `clients/tui/__tests__/DetailsModal.test.tsx`
+- A: `clients/tui/__tests__/HelpOverlay.test.tsx`
+- M: `clients/tui/__tests__/HistoryTab.test.tsx`
+- M: `clients/tui/__tests__/InfoTab.test.tsx`
+- A: `clients/tui/__tests__/ListFilterBar.test.tsx`
+- M: `clients/tui/__tests__/PromptsTab.test.tsx`
+- M: `clients/tui/__tests__/ResourcesTab.test.tsx`
+- A: `clients/tui/__tests__/RootsModal.test.tsx`
+- A: `clients/tui/__tests__/SaveResultBar.test.tsx`

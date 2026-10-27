@@ -30,3 +30,7 @@ High validation scores selected repeatedly during search are not unbiased genera
 Test on held-out repositories and later time slices; report paired success/cost deltas and confidence intervals. Record proposer/judge models and prevent them from reading hidden answers. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
 
 Related directions: [evolution](../evolution.md) · [skills](../skills.md) · [models](../models.md) · [decisions](../decisions.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [dspy](https://github.com/stanfordnlp/dspy); analyzed commit `ba3f9198efe5d125c7c1a2b40b1f1e6166209bd2`; commit date 2026-10-02T01:15:23-04:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--dspy.md).
+<!-- teamagent-analysis:end -->

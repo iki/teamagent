@@ -1,0 +1,1000 @@
+{
+  "metadata": {
+    "id": "ai-agents--mateclaw",
+    "category": "ai-agents",
+    "name": "mateclaw",
+    "url": "https://github.com/mateaix/mateclaw",
+    "aliases": [],
+    "report": "spec/projects/ai-agents--mateclaw.md",
+    "topics": [
+      "agents",
+      "models",
+      "channels"
+    ],
+    "depth": "screened",
+    "analyzedSha": "9f49637ac96bf7dd36dcd859ae519a39783a1502",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T17:55:16+08:00",
+    "reportSha256": "f74de4abb710bf2426bd1cf8a217c65a32ab40023a19fe10f6aeb96f523e0bf1",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents--mateclaw",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/mateaix/mateclaw",
+    "report": "spec/projects/ai-agents--mateclaw.md",
+    "analyzedSha": "9f49637ac96bf7dd36dcd859ae519a39783a1502",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T17:55:16+08:00",
+    "observedSha": "cf1fd92c6d8a6faf572c378155aeb6fcacc0564b",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "cf1fd92c6d8a6faf572c378155aeb6fcacc0564b",
+        "date": "2026-10-27T03:41:20-05:00",
+        "subject": "fix(desktop): harden multi-platform packaging and macOS notarization"
+      },
+      {
+        "sha": "e99da0a2576274d121c7acc6662bc85ad600e78a",
+        "date": "2026-10-26T21:42:02-04:00",
+        "subject": "release: v3.0.0"
+      },
+      {
+        "sha": "c326e98fd23a913478d9325e4daab6a77a3efce4",
+        "date": "2026-10-26T06:54:13-04:00",
+        "subject": "fix(llm): apply thinking controls to deepseek-flash (#672)"
+      },
+      {
+        "sha": "f023b6685ab8219b1d7ead83817b0d47d4bceae4",
+        "date": "2026-10-23T04:29:00-04:00",
+        "subject": "fix(agent): retry finalization after reasoning exhausts output budget (#672)"
+      },
+      {
+        "sha": "ccf33f8357988161d3539294346b380b8c89f768",
+        "date": "2026-10-22T22:59:00-04:00",
+        "subject": "fix(agent): wait for user input before action continuation (#668)"
+      },
+      {
+        "sha": "c9c08b86fe09bdc7df6667474874cd99969d9f94",
+        "date": "2026-10-22T05:38:08-05:00",
+        "subject": "fix(dsh): pin runtime Node to 22 and include bubblewrap (#671)"
+      },
+      {
+        "sha": "f449fb229ef19e2c07b4369c097849f4e4726c8c",
+        "date": "2026-10-22T05:44:01-04:00",
+        "subject": "fix(team): ground worker progress and preserve runtime failure causes"
+      },
+      {
+        "sha": "a9b4dfd12453334d68755894c88fcef65781a4a5",
+        "date": "2026-10-22T04:33:16-04:00",
+        "subject": "fix(team): synthesize run summaries before publishing completion"
+      },
+      {
+        "sha": "6922614148ff1003f5ac91a9d3d3277316201df0",
+        "date": "2026-10-22T03:55:04-04:00",
+        "subject": "fix(ui): apply theme surfaces to team run details"
+      },
+      {
+        "sha": "945ce609988818064ec066d47321e1d541d8b540",
+        "date": "2026-10-22T03:51:49-04:00",
+        "subject": "fix(team): improve worker lifecycle and full-result handoff"
+      },
+      {
+        "sha": "3eb488fa8a5853b5652a4a5a8e14d26f8fb993d5",
+        "date": "2026-10-21T05:33:55-04:00",
+        "subject": "fix(agent): harden long-task finalization and code failure accounting"
+      },
+      {
+        "sha": "9aaf53dbf35bbbc2ab40c0d88585e4feb969faf8",
+        "date": "2026-10-21T04:35:54-04:00",
+        "subject": "feat(dsh): add optional Docker supervision and shared workspace acceptance"
+      },
+      {
+        "sha": "bdc5087f7062053dd849d69e0fa6eca602773bc0",
+        "date": "2026-10-20T06:17:17-04:00",
+        "subject": "feat: add pinned DSH candidate and harden runtime recovery"
+      },
+      {
+        "sha": "e2335232052c5c9fe679aafa5db98d924babfdf3",
+        "date": "2026-10-20T04:44:44-04:00",
+        "subject": "docs: improve bilingual 3.0.0 documentation and READMEs"
+      },
+      {
+        "sha": "ddbd37b51b3b60087cf9b0a68438cd749b720fa1",
+        "date": "2026-10-20T04:03:19-04:00",
+        "subject": "fix: unify prompt budgets on AgentScope 2.0.4"
+      },
+      {
+        "sha": "576eb8055afe080c881dcfb1a81cd4c2d678f296",
+        "date": "2026-10-19T04:26:06-05:00",
+        "subject": "fix(auth): require secure JWT configuration and persist desktop secret (#666)"
+      },
+      {
+        "sha": "614740459a4210eaa6850058684233c9044eb34b",
+        "date": "2026-10-16T04:05:25-04:00",
+        "subject": "fix(agent): respect explicit MCP tool selection with skills disabled"
+      },
+      {
+        "sha": "da67c5e8b9a60baf96dcc79e67b8a0bba97b10b3",
+        "date": "2026-10-15T04:31:14-04:00",
+        "subject": "fix(agent): continue unfinished work after finalization review"
+      },
+      {
+        "sha": "2efd519904251bd5a0dc132ab5c0fe216d232fbd",
+        "date": "2026-10-15T02:01:17-04:00",
+        "subject": "fix(agent): verify final answers and bound long-task continuation"
+      },
+      {
+        "sha": "507fceb2d0ccef1e1274a679ec0c0f2ffb1fcd8f",
+        "date": "2026-10-14T02:16:21-04:00",
+        "subject": "feat(agent): strengthen decision facts and long-task context budgets"
+      },
+      {
+        "sha": "4bcc106eb0c1464587ef1d763d95ca1302a5e66a",
+        "date": "2026-10-13T22:50:22-04:00",
+        "subject": "fix(runtime): reduce long-task context and ground execution summaries (#660)"
+      },
+      {
+        "sha": "5642c5b1fbe478dd4326928f55e069996a0520f7",
+        "date": "2026-10-13T21:16:12-04:00",
+        "subject": "fix(runtime): update Edge TTS handshake and preserve extended reasoning (#660)"
+      },
+      {
+        "sha": "bd882038937d80ee5782469d1c18aecd0ddc4f7d",
+        "date": "2026-10-12T21:40:11-04:00",
+        "subject": "docs: correct member isolation and DSH SDK guidance after review"
+      },
+      {
+        "sha": "77c79a9ed01f58a3e42f4a83c08371fbc08aa9ab",
+        "date": "2026-10-12T21:30:50-04:00",
+        "subject": "docs(release): upgrade to 3.0.0 snapshot with cumulative changelog and architecture documentation"
+      },
+      {
+        "sha": "93ba4258e5056b3bcd872d803f6f94bd40c8b528",
+        "date": "2026-10-12T05:41:24-04:00",
+        "subject": "feat(runtime): migrate to Spring Boot 4, Spring AI 2 and AgentScope 2 (#660)"
+      },
+      {
+        "sha": "10aad3be6c45afca65b572dc6d9d8808957e9a68",
+        "date": "2026-10-09T03:54:12-04:00",
+        "subject": "fix(chat): keep ordinary MCP results out of final answers (#661)"
+      },
+      {
+        "sha": "61b7f56bca7e81fcdc4da3190233c595964d1f95",
+        "date": "2026-10-09T03:53:46-04:00",
+        "subject": "fix(feishu): own WebSocket readiness and resource lifecycle (#659)"
+      },
+      {
+        "sha": "6365f0af8ab3e31faad5e8646252c19ad27d863a",
+        "date": "2026-10-09T03:53:21-04:00",
+        "subject": "fix(llm): validate completed model probe responses (#658)"
+      },
+      {
+        "sha": "0394ba2803690f96a768d95ed75e36162f1920b5",
+        "date": "2026-10-09T03:52:30-04:00",
+        "subject": "fix(db): require explicit opt-in for Flyway history repair (#657)"
+      },
+      {
+        "sha": "3b5f7de119f617aedac2e5d1fe29595f8a765a36",
+        "date": "2026-10-05T17:20:30+08:00",
+        "subject": "fix(chat): display structured tool results below final answers (#656)"
+      },
+      {
+        "sha": "a504ae168758246cdd4d479d8da372b9c45dd2a0",
+        "date": "2026-10-04T17:07:35+08:00",
+        "subject": "feat(tts): add provider voice selection and preview (#646)"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".env.example",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README_zh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "assets/architecture-biz-en.svg",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "assets/architecture-biz-zh.svg",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "assets/architecture-tech-en.svg",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "assets/architecture-tech-zh.svg",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docker-compose.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/compatibility/feishu-websocket-lifecycle.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/electron-builder.cjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/electron/main/index.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-desktop/electron/main/jwtSecret.d.mts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-desktop/electron/main/jwtSecret.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-desktop/scripts/__tests__/jwt-secret.test.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-desktop/scripts/__tests__/sign-jar-natives.test.cjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-desktop/scripts/after-pack.cjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/scripts/build-all-platforms.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/scripts/build.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/scripts/download-jre.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/scripts/publish-github.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-desktop/scripts/sign-jar-natives.cjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-desktop/vite.config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/pom.xml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/MateClawApplication.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/AgentGraphBuilder.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/AgentService.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/GraphEventPublisher.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/binding/service/AgentBindingService.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/context/BudgetedCompactionModel.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/context/ConversationWindowManager.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/context/LoopBudgetConfig.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/context/LoopMessageBudgeter.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/context/PromptBudget.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/context/TokenEstimator.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/ModelToolOptions.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/NodeStreamingChatHelper.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/PayloadReduction.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/StateGraphReActAgent.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/edge/GoalEvaluationDispatcher.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/edge/ObservationDispatcher.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/edge/ReasoningDispatcher.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolCallDeadline.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolExecutionCheckpoint.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolExecutionCheckpointRejectedException.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolExecutionExecutor.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolResultProperties.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/ActionCompletionPolicy.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinator.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationGate.java",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/lifecycle/ReActLifecycleListener.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/ActionNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/FinalAnswerNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/GoalEvaluationNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/LimitExceededNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/ObservationNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/ReasoningNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/SummarizingNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/StateGraphPlanExecuteAgent.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/edge/PlanGenerationDispatcher.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/edge/StepProgressDispatcher.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/DirectAnswerNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/PlanGenerationNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/PlanSummaryNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/node/StepExecutionNode.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/plan/state/PlanStateAccessor.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/state/ActionExecutionLedger.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/state/MateClawStateAccessor.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/state/MateClawStateKeys.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/progress/ProgressLedger.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/progress/ProgressLedgerProjection.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/AgentRuntime.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/ApplicationGuardedToolkit.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/GuardedToolBatchExecutor.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/GuardedToolBatchResult.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/NativePolicyDriver.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/SpringToolSchemaAdapter.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/agentscope/ToolBatchResultAdapter.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshDockerProcess.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshLaunchSpec.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshProcessSupervisor.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshRuntimeService.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshSdkProcess.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/DshSdkTurn.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/management/DshManagementController.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/management/DshManagementService.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/dsh/management/DshPinnedInstaller.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/plan/ExplicitPlanRuntime.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/state/EdgeAction.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/state/NodeAction.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/state/RunState.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/state/RunStep.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/agent/runtime/state/RuntimeExecutionScope.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/auth/service/AuthService.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/auth/service/JwtSecretValidator.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/auth/sso/SsoStateService.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/AbstractChannelAdapter.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/ChannelAdapter.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/ChannelHealthMonitor.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/feishu/FeishuChannelAdapter.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/feishu/FeishuWebSocketClient.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/health/ChannelsHealthIndicator.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/web/ChatStreamTracker.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/channel/webchat/WebChatController.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/config/FlywayRepairConfig.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/config/JacksonConfig.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/config/PausedShutdownTaskScheduler.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/config/PrefixBudgetProperties.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/config/ProviderRetryConfig.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/config/SchedulingConfig.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/config/SecurityStartupValidator.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/decision/provider/RuleDecisionProvider.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/execution/evidence/service/ExecutionObservationSink.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/goal/model/GoalEntity.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/goal/service/GoalDecisionAdapter.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/goal/service/GoalDecisionFacts.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/goal/service/GoalEvaluationService.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/goal/service/GoalRunCoordinator.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/goal/service/GoalSegmentRunner.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/goal/service/GoalToolExecutionCheckpoint.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/ProviderHttpError.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/cache/AnthropicCacheOptionsFactory.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/cache/CacheUsageExtractor.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatgpt/ChatGPTChatModel.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicChatModelBuilder.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicSdkChatModel.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicSdkWireInterceptor.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/AnthropicThinkingScope.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ChatModelDefaults.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ClaudeCodeChatModelBuilder.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ClaudeCodeIdentityChatModelDecorator.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/DashScopeChatModelBuilder.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/DeepSeekV4ThinkingDecorator.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiCompatibleChatModelBuilder.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiCompatibleHttpInterceptor.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiReasoningResponseBody.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiRequestRewriter.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/OpenAiWirePolicyChatModel.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/PinnedOpenAiHttpClient.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/ProviderCallCancellation.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/chatmodel/VllmThinkingDecorator.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeChatModel.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeChatOptions.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeConnectionProperties.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeEmbeddingModel.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeException.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeTransport.java",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/dashscope/NativeDashScopeUsage.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/embedding/EmbeddingModelFactory.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/gemini/GeminiChatModel.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/model/ModelFamily.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/llm/service/ModelDiscoveryService.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/skill/service/SkillFileService.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/skill/workspace/BundledSkillSyncer.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/skill/workspace/SkillFileSyncer.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/skill/workspace/bundle/SkillBundleFiles.java",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mateclaw-server/src/main/java/vip/mate/team/service/TeamAnnounceService.java",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": false,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

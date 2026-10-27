@@ -1,0 +1,644 @@
+{
+  "id": "ai-agents--ai.cloudflare",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/cloudflare/ai",
+  "report": "spec/projects/ai-agents--ai.cloudflare.md",
+  "analyzedSha": "0e5bc3b2f489e4b8215905812a36fe69d37afb8d",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-09-11T16:53:10+01:00",
+  "observedSha": "34a8f4c00c0871883215a7114e9a7f3e7747ee1b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "34a8f4c00c0871883215a7114e9a7f3e7747ee1b",
+      "date": "2026-10-27T10:39:32Z",
+      "subject": "Merge pull request #681 from cloudflare/mcp-demos-oauth-provider-1x"
+    },
+    {
+      "sha": "899512185ddbc0e06c73d963c1c5a2065f4975f2",
+      "date": "2026-10-22T18:07:07+01:00",
+      "subject": "chore: allow workers-oauth-provider 1.2.4 past the release-age gate"
+    },
+    {
+      "sha": "aa68bcf4c451626453bed259aff7fe5ae057e1ff",
+      "date": "2026-10-22T18:03:40+01:00",
+      "subject": "feat(mcp demos): set the OAuth resource from an MCP_RESOURCE var"
+    },
+    {
+      "sha": "dfc0dbab6092fd4480973d39d6a9a7609fca927f",
+      "date": "2026-10-22T18:03:40+01:00",
+      "subject": "feat(mcp demos): move OAuth demos to workers-oauth-provider 1.2.4"
+    },
+    {
+      "sha": "e64009349c9af37cd3820a16ff4448103148b0f1",
+      "date": "2026-10-22T16:39:55+01:00",
+      "subject": "Merge pull request #680 from cloudflare/mcp-demos-create-mcp-handler"
+    },
+    {
+      "sha": "e1ff49d21cdc3ae6b0c4a3ee947998e18b0d92fe",
+      "date": "2026-10-21T19:32:41+01:00",
+      "subject": "feat(mcp demos): move every McpAgent demo to createMcpHandler"
+    },
+    {
+      "sha": "971c1ae25e4a627a17ef750d82229979a0e3e937",
+      "date": "2026-10-21T19:21:40+01:00",
+      "subject": "feat(remote-mcp): update OAuth demos to MCP SDK v2"
+    },
+    {
+      "sha": "f451cc88a2124940fcb08e4b2145b64f884edd43",
+      "date": "2026-10-20T16:20:17+01:00",
+      "subject": "Merge pull request #677 from cloudflare/changeset-release/main"
+    },
+    {
+      "sha": "70b5fa49dea0d7d05d67061df85b3e39640c9649",
+      "date": "2026-10-20T15:19:01Z",
+      "subject": "Version Packages"
+    },
+    {
+      "sha": "56c548a2ff96add9cd9dee55eda9e595ae4bb39c",
+      "date": "2026-10-20T16:18:06+01:00",
+      "subject": "Merge pull request #675 from cloudflare/deprecate-providers-for-agents"
+    },
+    {
+      "sha": "b7fa22e28113713114f1dc49026128802a5e7164",
+      "date": "2026-10-20T15:11:28+01:00",
+      "subject": "chore: deprecate workers-ai-provider's AI Search in favour of ai-search-provider"
+    },
+    {
+      "sha": "216177b6b25e9f73a544c5c0cbaff252fe6dedc3",
+      "date": "2026-10-20T15:04:07+01:00",
+      "subject": "chore: deprecate the credentials and REST modes too, now createAI takes an account id and API token"
+    },
+    {
+      "sha": "acd2dbd10f4392fef5d8d4335c2054bf25fd5c93",
+      "date": "2026-10-14T15:10:05+02:00",
+      "subject": "chore: deprecation notes match createAI's catalog ids, BYOK options and resume"
+    },
+    {
+      "sha": "014629613e0193cb4f969ee75ffba460e0982189",
+      "date": "2026-10-12T13:16:46+01:00",
+      "subject": "chore: deprecate binding paths superseded by createAI from agents/models/ai-sdk"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "demos/mcp-server-bearer-auth/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-server-bearer-auth/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-server-bearer-auth/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-server-bearer-auth/static/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-server-bearer-auth/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-server-bearer-auth/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-slack-oauth/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-slack-oauth/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-slack-oauth/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-slack-oauth/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-slack-oauth/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-b2b-okr-manager/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-b2b-okr-manager/api/OKRManagerMCP.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-b2b-okr-manager/api/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-b2b-okr-manager/api/lib/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-b2b-okr-manager/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-b2b-okr-manager/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-b2b-okr-manager/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-consumer-todo-list/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-consumer-todo-list/api/TodoMCP.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-consumer-todo-list/api/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-consumer-todo-list/api/lib/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-consumer-todo-list/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-consumer-todo-list/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/mcp-stytch-consumer-todo-list/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-auth0/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-auth0/mcp-auth0-oidc/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-auth0/mcp-auth0-oidc/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-auth0/mcp-auth0-oidc/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-auth0/mcp-auth0-oidc/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-auth0/mcp-auth0-oidc/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-authkit/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-authkit/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-authkit/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-authkit/src/props.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-authkit/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-authkit/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-authless/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access-self-hosted/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access-self-hosted/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access-self-hosted/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access-self-hosted/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access/src/access-handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-cf-access/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-github-oauth/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-github-oauth/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-github-oauth/src/github-handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-github-oauth/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-github-oauth/src/utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-github-oauth/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-github-oauth/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-google-oauth/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-google-oauth/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-google-oauth/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-google-oauth/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-google-oauth/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-logto/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-logto/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-logto/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-logto/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-logto/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server-autorag/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server-autorag/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server-autorag/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server-autorag/static/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server-autorag/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server-autorag/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server/static/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "demos/remote-mcp-server/wrangler.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/amazon-bedrock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/anthropic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/azure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/cerebras.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/cohere.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/deepgram.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/deepseek.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/elevenlabs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/fireworks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/google-vertex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/google.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/groq.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/mistral.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/openrouter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/perplexity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/unified.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai-gateway-provider/src/providers/xai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/src/anthropic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/src/client-fallback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/src/gateway-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/src/google.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/workers-ai-provider/src/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-workspace.yaml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

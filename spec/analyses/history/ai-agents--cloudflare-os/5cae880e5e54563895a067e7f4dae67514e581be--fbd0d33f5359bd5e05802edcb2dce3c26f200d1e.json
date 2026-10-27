@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--cloudflare-os",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/cloudflare/cloudflare-os",
+  "report": "spec/projects/ai-agents--cloudflare-os.md",
+  "analyzedSha": "5cae880e5e54563895a067e7f4dae67514e581be",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T19:01:46-05:00",
+  "observedSha": "fbd0d33f5359bd5e05802edcb2dce3c26f200d1e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "fbd0d33f5359bd5e05802edcb2dce3c26f200d1e",
+      "date": "2026-10-27T10:46:48-05:00",
+      "subject": "Bump @modelcontextprotocol/client, zod and dompurify (#907)"
+    },
+    {
+      "sha": "fd624bcdddbb071b1244edea055cb1c033f8ba80",
+      "date": "2026-10-26T18:02:54-05:00",
+      "subject": "Draw the Drive picker's icons as Drive does (#898)"
+    },
+    {
+      "sha": "05691f4bd1fd2bc2a2d48936c796300898df0b93",
+      "date": "2026-10-26T12:25:56-05:00",
+      "subject": "Let Google Calendar connections check availability (#777)"
+    },
+    {
+      "sha": "539fafa8e99951e134f8c9a47fdb4ff9dd2e61e2",
+      "date": "2026-10-26T12:07:12-05:00",
+      "subject": "Name the AuthenticatedApi workspace methods after workspaces (#895)"
+    },
+    {
+      "sha": "b712eb1f8933030107a30be0f0ed737b415a4646",
+      "date": "2026-10-26T12:05:10-05:00",
+      "subject": "Show invalid SKILL.md manifests in the skills navigator (#840)"
+    },
+    {
+      "sha": "fa9e17aefdbe37c5ccf0ddb8b080f75a5aade485",
+      "date": "2026-10-26T11:22:19-05:00",
+      "subject": "Split root AGENTS.md into children (#891)"
+    },
+    {
+      "sha": "cc90c2df60a8cd8093efd8d59fa7313996a176cd",
+      "date": "2026-10-26T21:26:29+05:30",
+      "subject": "Teach the agent to write keyword search queries (#876)"
+    },
+    {
+      "sha": "a8fab70fc73890378b7954058663310f63842265",
+      "date": "2026-10-26T06:47:32-05:00",
+      "subject": "Make conversation list rows keyboard-operable (#675)"
+    },
+    {
+      "sha": "bd10b0ece6842b8f486b3467eab6cc3b9c920920",
+      "date": "2026-10-24T20:49:50-07:00",
+      "subject": "Slides: better editor, more faithful PowerPoint export, and natural zoom (#883)"
+    },
+    {
+      "sha": "835de9e8776429fc16781edbe66367d879a64b87",
+      "date": "2026-10-23T17:45:14-05:00",
+      "subject": "Deny always withdraws a gatekeeper action (#857)"
+    },
+    {
+      "sha": "03cf8766ecebd6e6b59b7bdd1902eeefc45643eb",
+      "date": "2026-10-23T13:44:42-05:00",
+      "subject": "Let desktop browsers show native notifications when in-app goes unacknowledged (#812)"
+    },
+    {
+      "sha": "ec22b002661fc53b6e2424bfec689452a7bdea47",
+      "date": "2026-10-22T19:20:05-07:00",
+      "subject": "Fix blank lines between list items in user messages and the composer caret drifting from its text in long messages. (#868)"
+    },
+    {
+      "sha": "cb4e17f9007cb450f91744c7d962a3e4b554864f",
+      "date": "2026-10-22T21:17:23-05:00",
+      "subject": "Reconnect open Workshop tabs after a deploy, and offer a reload (#818)"
+    },
+    {
+      "sha": "ca9ff40c912c6bbaa44029fd418493c3951c80af",
+      "date": "2026-10-23T06:38:42+05:30",
+      "subject": "Log how long a viewed chat waits for its next turn (#856)"
+    },
+    {
+      "sha": "5ba9d4f9a893ea627f22dcc844ebbb2861360eee",
+      "date": "2026-10-23T06:36:39+05:30",
+      "subject": "Let the agent ask the user for an agent spawner (#808)"
+    },
+    {
+      "sha": "3d284e8128870b2de6e9aea60b6430fb08fd0cd2",
+      "date": "2026-10-23T06:16:25+05:30",
+      "subject": "Keep an open chat's prompt cache warm between turns (#738)"
+    },
+    {
+      "sha": "b0b4f507e6de7ed90e8157191ec9d4f63e291fdc",
+      "date": "2026-10-22T14:39:42-07:00",
+      "subject": "allow gadgets to specify exported file names (#865)"
+    },
+    {
+      "sha": "a6794421279057cb8813d3e5d0710754f5d41618",
+      "date": "2026-10-20T10:26:46-05:00",
+      "subject": "Read PDF's from Google Drive (#843)"
+    },
+    {
+      "sha": "a3343fa6021c1f105e466c690c354d3bd63d302f",
+      "date": "2026-10-20T09:06:58-05:00",
+      "subject": "Choose the whole of Google Drive, a folder or a file in one picker (#836)"
+    },
+    {
+      "sha": "d1ff6d8d3db0968673fceb6ba18546dc1d6f9b3e",
+      "date": "2026-10-19T16:42:23-07:00",
+      "subject": "add auto-approval support to github and gitlab (#844)"
+    },
+    {
+      "sha": "3174aace2a4f39bca8018773ba269b75d5f84bba",
+      "date": "2026-10-19T18:13:06-05:00",
+      "subject": "Group a vendor's resource types under one connect card (#835)"
+    },
+    {
+      "sha": "d2c5a99eb586460c34e5b5e61c9f94e3c467c026",
+      "date": "2026-10-19T18:28:38-04:00",
+      "subject": "Let users steer a running agent (#809)"
+    },
+    {
+      "sha": "c0ecb12623ead7e3ab5e50583f08168dac2ebdc4",
+      "date": "2026-10-19T17:16:26-05:00",
+      "subject": "Add PWA manifest and icons for desktop installation (#814)"
+    },
+    {
+      "sha": "9ee0564bb1ce556a477e4574a420b2e14521bc9b",
+      "date": "2026-10-19T16:57:01-05:00",
+      "subject": "Give configurator checkbox lists the full field width (#839)"
+    },
+    {
+      "sha": "40eb50bf3f2bc2ebf47bc2de3f361394c457b7ba",
+      "date": "2026-10-19T12:37:47-07:00",
+      "subject": "add workshop UI for #741 and implement context collection sharing (#744)"
+    },
+    {
+      "sha": "6b8a3410d6ab66957164f9dddcb77515e0da8aa6",
+      "date": "2026-10-19T14:23:55-05:00",
+      "subject": "Render gatekeeper configurators with Kumo on Preact (#775)"
+    },
+    {
+      "sha": "5843c08b7d0b7f72a9ce538ece41c1aec293ab6f",
+      "date": "2026-10-19T13:06:27-04:00",
+      "subject": "Have Anthropic write compaction summaries on models that support it (#806)"
+    },
+    {
+      "sha": "6e3be2f9e19513fab4608b88fc4a8467ac9463ac",
+      "date": "2026-10-19T13:06:19-04:00",
+      "subject": "Retain at most 20k tokens when a chat compacts (#805)"
+    },
+    {
+      "sha": "b5b47d0bb5fcfa9f242373c5d91afd2dbb38dfb4",
+      "date": "2026-10-19T12:45:24-04:00",
+      "subject": "Add a compaction eval to the Workshop eval suite (#804)"
+    },
+    {
+      "sha": "308439865bee1a22f3ac70cfe200f9707e3f8b1c",
+      "date": "2026-10-19T11:14:53-05:00",
+      "subject": "Tell admins when a newer Cloudflare OS release is available (#688)"
+    },
+    {
+      "sha": "6e3c35a80202cf5704bdc596b32c9c440e233e55",
+      "date": "2026-10-19T10:52:34-04:00",
+      "subject": "Give eval checks the turn's chat messages (#807)"
+    },
+    {
+      "sha": "67cd6b4554a6c49175003ba19c51ac2e82706db6",
+      "date": "2026-10-19T10:49:34-04:00",
+      "subject": "Let eval runs set models and trials per task (#801)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/write-gatekeeper/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bonk-pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bonk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/github-contract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/preview.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/workshop-evals-pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/workshop-evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "REVIEW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ai-gateway-billing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blueprints.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/build-system.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/chat-scratch-worktree.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/connect-handoff.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/google-chat-capabilities.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/web-search-flow.svg",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/images/web-search-providers.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/integration-testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/oauth-signin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/observers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/public-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/testing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/__tests__/archives.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/__tests__/files.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-docs/__tests__/markdown.server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-docs/files/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-docs/files/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-docs/files/lib/markdown.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-docs/files/lib/protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-docs/files/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-sheets/__tests__/xlsx.server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-sheets/files/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-sheets/files/lib/xlsx.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/__tests__/client.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/__tests__/fixtures/workspace1-storage.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/__tests__/lib.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/__tests__/pptx.server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/__tests__/server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/__tests__/svg.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/blueprint.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/brand-rasters.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/branding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/highlight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/layouts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/logo.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/pptx.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/svg.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/lib/zoom.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/blueprints/workspace-slides/files/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/libraries/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/libraries/pptx/__tests__/pptx.server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/libraries/pptx/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/libraries/pptx/src/pptx.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/libraries/ui/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/libraries/ui/__tests__/toolbar.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/libraries/ui/src/toolbar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/bundled-blueprints/libraries/zip/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "packages/bundled-blueprints/libraries/zip/src/zip.ts",
+      "previousPath": "packages/bundled-blueprints/blueprints/workspace-sheets/files/lib/zip.ts"
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/src/files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/src/generate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/src/manifest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/tsconfig.client.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/tsconfig.server-tests.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/tsconfig.server.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/tsconfig.tests.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bundled-blueprints/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/aliases.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/frame.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/html.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/html.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/module.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/module.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/build/sourceTrailer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/Autocomplete.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/Button.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/CheckboxList.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/ConfiguratorRoot.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/ConfiguratorRoot.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/Field.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/FilterInput.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/HierarchyPicker.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/HierarchyPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/Notice.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/RadioCards.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/Section.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/TextInput.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/frame.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/main.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/moduleGlobal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/prefill.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/prefill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/reporting.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/scrollForwarding.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/scrollForwarding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/storeContext.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/styles.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/theme.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/useKeepFocusInForm.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/src/runtime/workers-types.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/tsconfig.validate.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/configurator-ui/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/configurator-ui/vitest.browser.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/error-reporting/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-cloudflare/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-cloudflare/__tests__/configurator-fields.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-cloudflare/__tests__/env.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-cloudflare/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-cloudflare/src/cloudflare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-cloudflare/vitest.worker.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-cloudflare/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/src/confluence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-confluence/worker-configuration.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-context/__tests__/agent-skill.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/__tests__/app-stub.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/__tests__/collection-sharing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-context/__tests__/context-observers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/__tests__/library-read.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/__tests__/skill-manifest-errors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/__tests__/worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-context/app/ContextLibraryPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-context/app/bridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/components/CollectionIconPicker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gatekeeper-context/app/main.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/AddSkillDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/CollectionDialogs.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/CreateCollectionDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/DeleteNavigatorNodeDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/EditCollectionDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/GitTokenCredentials.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/LeaveCollectionDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/RenameInput.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/RenameInput.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/ShareCollectionDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/ShareCollectionDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/SkillsNavigatorPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/gatekeeper-context/app/skills/SkillsNavigatorTree.test.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

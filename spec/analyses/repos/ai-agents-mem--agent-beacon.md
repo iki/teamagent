@@ -1,0 +1,207 @@
+# agent-beacon: change evidence
+
+Source: [agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) · [Analysis](../../projects/ai-agents-mem--agent-beacon.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `5937da1cd812660d256c367374b9752316f51cbc`; commit date: 2026-10-02T22:06:57-07:00; review date: unknown; observed SHA: `90b19ae0626fd6fd060c62ddbc70827a23242f4e`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Asymptote-Labs/agent-beacon/compare/5937da1cd812660d256c367374b9752316f51cbc...90b19ae0626fd6fd060c62ddbc70827a23242f4e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [90b19ae0626f](https://github.com/Asymptote-Labs/agent-beacon/commit/90b19ae0626fd6fd060c62ddbc70827a23242f4e) 2026-10-27T04:47:59+01:00: feat(hooks): add neutral Cursor and Codex hook extension points (#1097)
+- [b5cdbeec350b](https://github.com/Asymptote-Labs/agent-beacon/commit/b5cdbeec350bbb97a65bb3aadff8bf83c1e74015) 2026-10-27T04:32:18+01:00: test(hooks): pin the Cursor and Codex hook files Beacon writes (#1096)
+- [647a5395416f](https://github.com/Asymptote-Labs/agent-beacon/commit/647a5395416fb89705f78966438cb3953ff3c9cc) 2026-10-26T15:17:48-04:00: fix(inventory): redact auth-scheme credentials and secrets inside definition strings (#1076)
+- [a2cf26cc9587](https://github.com/Asymptote-Labs/agent-beacon/commit/a2cf26cc958717390e5c3d2c0563ee974ba2dabd) 2026-10-26T15:05:52-04:00: fix(harness): keep codex config sections whose header has a comment (#1070)
+- [edde3ea2f805](https://github.com/Asymptote-Labs/agent-beacon/commit/edde3ea2f805d3db0baf8b522080870f08d126ae) 2026-10-26T15:03:03-04:00: fix(gitlink): read commits correctly when log.showSignature is set (#1073)
+- [ee9d3ae14acd](https://github.com/Asymptote-Labs/agent-beacon/commit/ee9d3ae14acd2f4a67b8258792b2b085ac1ee89b) 2026-10-26T14:59:57-04:00: fix(onboarding): stop modified arrow keys from picking an option (#1077)
+- [b95de429ddfb](https://github.com/Asymptote-Labs/agent-beacon/commit/b95de429ddfb856685ba8a4ade535d322f47bbd2) 2026-10-26T14:53:56-04:00: hooks: keep quotes that belong to a tool argument (#1094)
+- [7291792fd8d5](https://github.com/Asymptote-Labs/agent-beacon/commit/7291792fd8d5e8692a3fffdbbaedf64c3387dc67) 2026-10-26T14:51:27-04:00: fix(hooks): recognize --platform= hooks in shared settings files (#1059)
+- [f001a241445f](https://github.com/Asymptote-Labs/agent-beacon/commit/f001a241445f9fa6fed5abfc90bd64735cc3e758) 2026-10-26T14:51:11-04:00: fix(telemetry): read the command of codex shell and shell_command tool results (#1071)
+- [781a977f89dd](https://github.com/Asymptote-Labs/agent-beacon/commit/781a977f89ddbce5ff5ad85d2e259076f1e54641) 2026-10-26T14:44:19-04:00: fix(inventory): list skills named build, dist, vendor, tmp or temp (#1074)
+- [b14d151ca2b9](https://github.com/Asymptote-Labs/agent-beacon/commit/b14d151ca2b90d771510aa5b1030e5e0a45d5679) 2026-10-26T14:40:44-04:00: fix(hooks): keep the platform of hooks installed under a path with an apostrophe (#1075)
+- [e4bf0dd521a4](https://github.com/Asymptote-Labs/agent-beacon/commit/e4bf0dd521a477de48334a2064d907cb83a80ac0) 2026-10-26T14:37:57-04:00: fix(telemetry): drop the uri slash before a windows drive in mcp file paths (#1072)
+- [093d8d927e88](https://github.com/Asymptote-Labs/agent-beacon/commit/093d8d927e88d079f4ed5a66c8feda8e0f56d9cd) 2026-10-26T14:34:00-04:00: fix(redaction): redact google oauth access tokens (#1058)
+- [6681a860d776](https://github.com/Asymptote-Labs/agent-beacon/commit/6681a860d7769d1c8cdfa6e03993f7aecf6f585a) 2026-10-26T14:32:59-04:00: hooks: remove the unused GetRemoteInfo and its helpers (#1093)
+- [6247ce4e439a](https://github.com/Asymptote-Labs/agent-beacon/commit/6247ce4e439ae0d3706a721d54fada16a2ff1775) 2026-10-26T14:30:54-04:00: fix(redaction): redact url passwords that have no user name (#1068)
+- [6d045a41bc74](https://github.com/Asymptote-Labs/agent-beacon/commit/6d045a41bc7416fb64eff5ae95739da23f263fe1) 2026-10-26T14:27:18-04:00: fix(sdk): accept the default-export anthropic class in instrumentmodules (#1064)
+- [3761a8780f77](https://github.com/Asymptote-Labs/agent-beacon/commit/3761a8780f77225f6287ab580cc4cff678a1e1df) 2026-10-26T14:26:40-04:00: fix(harness): read commented vs code settings in telemetry status (#1061)
+- [68bd91aaf612](https://github.com/Asymptote-Labs/agent-beacon/commit/68bd91aaf612e25886b51d661a61a984084e0bd5) 2026-10-26T14:25:12-04:00: fix(harness): stop claude configure from wiping unparseable settings (#1063)
+- [33b751acd263](https://github.com/Asymptote-Labs/agent-beacon/commit/33b751acd263ef78362b0c7b2a583bee282ab11a) 2026-10-26T14:23:08-04:00: fix(selfupdate): find format-qualified linux packages in update check (#1065)
+- [cff7076181c0](https://github.com/Asymptote-Labs/agent-beacon/commit/cff7076181c0f096de2cc7a5d456fadefd0e4ee8) 2026-10-26T14:18:32-04:00: fix(inventory): keep the snapshot digest stable across identical scans (#1062)
+- [0cbc3a271496](https://github.com/Asymptote-Labs/agent-beacon/commit/0cbc3a271496483e63b0d808bee9fc7bded0c428) 2026-10-26T14:16:27-04:00: fix(dashboard): stop shortened labels from splitting emoji (#1060)
+- [f4e37561f302](https://github.com/Asymptote-Labs/agent-beacon/commit/f4e37561f302344d8f1c3390f4e78fad5e8bc768) 2026-10-26T14:12:45-04:00: fix(rules): stop flagging .env.example templates as credential reads (#1057)
+- [69b5d21db044](https://github.com/Asymptote-Labs/agent-beacon/commit/69b5d21db044efc48f41c939a38c32469349448d) 2026-10-26T12:52:59-04:00: fix(opencode): record every path a shell rm deletes (#1056)
+- [a7682f0b1d05](https://github.com/Asymptote-Labs/agent-beacon/commit/a7682f0b1d053d455148e91590130d8033995473) 2026-10-26T12:50:39-04:00: fix(cli): stop beacon scan from cutting characters in half (#1055)
+- [75d3b038a656](https://github.com/Asymptote-Labs/agent-beacon/commit/75d3b038a6565eeda2269f5a2f7f3a72c94880b3) 2026-10-26T12:49:06-04:00: fix(rules): match env-prefixed git commands in git-history-rewrite (#1053)
+- [b9bd3c5ee7bd](https://github.com/Asymptote-Labs/agent-beacon/commit/b9bd3c5ee7bdf8f776a35de88c41bcc8a06f6c81) 2026-10-26T12:45:56-04:00: fix(sdk): treat empty environment variables as unset (#1052)
+- [71ef441cf58e](https://github.com/Asymptote-Labs/agent-beacon/commit/71ef441cf58ea70c27a8fa4f9c82efe393451ba4) 2026-10-26T12:39:47-04:00: fix(tokens): match dotted claude versions in the context window table (#1051)
+- [1fce3e6d0f25](https://github.com/Asymptote-Labs/agent-beacon/commit/1fce3e6d0f25044354e24dfeae5871a6f482b17e) 2026-10-26T12:37:11-04:00: fix(rules): match ssh-add -l after other options in ssh-agent-key-enumeration (#1050)
+- [888fb8ff2d7c](https://github.com/Asymptote-Labs/agent-beacon/commit/888fb8ff2d7c42527163606dd7e3da900565ba8e) 2026-10-26T12:33:05-04:00: fix(rules): match curl --json uploads in env-dump-piped-to-network (#1049)
+- [347008517b35](https://github.com/Asymptote-Labs/agent-beacon/commit/347008517b354cf0228148630076803d41e136da) 2026-10-26T12:29:15-04:00: fix(rules): match curl -F and --data stdin uploads in archive-then-upload (#1046)
+- [e3250c64675f](https://github.com/Asymptote-Labs/agent-beacon/commit/e3250c64675f94f2f55a40c8f4653f00b79442b4) 2026-10-26T12:28:31-04:00: fix(rules): match crontab file loads followed by another command (#1048)
+- [e9a2d8df4c83](https://github.com/Asymptote-Labs/agent-beacon/commit/e9a2d8df4c83fe8f4023f44ea9031651f79df263) 2026-10-26T12:28:24-04:00: fix(rules): match PATH lines piped through tee into a login file (#1045)
+
+## Changed paths (truncated)
+
+- M: `.claude-plugin/marketplace.json`
+- M: `.cursor-plugin/marketplace.json`
+- M: `.cursor/install.sh`
+- M: `.cursor/start.sh`
+- A: `.github/FUNDING.yml`
+- A: `.github/dependabot.yml`
+- M: `.github/workflows/ci.yml`
+- A: `.github/workflows/claude-code-review.yml`
+- A: `.github/workflows/claude-security-review.yml`
+- M: `.github/workflows/npm-publish-sdk.yml`
+- M: `.github/workflows/release-extension.yml`
+- M: `.github/workflows/release.yml`
+- M: `.gitignore`
+- M: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `agent-skills/.claude-plugin/plugin.json`
+- M: `agent-skills/.cursor-plugin/plugin.json`
+- M: `agent-skills/README.md`
+- M: `agent-skills/gemini-extension.json`
+- M: `agent-skills/kimi.plugin.json`
+- M: `agent-skills/plugin.json`
+- A: `agent-skills/skills/beacon-lens-create/SKILL.md`
+- M: `agent-skills/skills/beacon-memory-distill/SKILL.md`
+- M: `agent-skills/skills/beacon-memory-promote/SKILL.md`
+- M: `agent-skills/skills/beacon-memory-recall/SKILL.md`
+- A: `agent-skills/skills/beacon-session-handoff/SKILL.md`
+- A: `agent-skills/skills/beacon-trace-share/SKILL.md`
+- M: `beacon-sandbox/check/check_test.go`
+- M: `beacon-sandbox/check/fingerprint.go`
+- A: `beacon-sandbox/check/fingerprint_inconclusive_test.go`
+- M: `beacon-sandbox/check/invariants.go`
+- M: `beacon-sandbox/check/safety_test.go`
+- M: `beacon-sandbox/check/uninstall.go`
+- A: `beacon-sandbox/check/uninstall_status_test.go`
+- M: `beacon-sandbox/check/uninstall_test.go`
+- M: `beacon-sandbox/cmd/beacon-sandbox/doctor.go`
+- M: `beacon-sandbox/cmd/beacon-sandbox/doctor_github_test.go`
+- M: `beacon-sandbox/cmd/beacon-sandbox/doctor_test.go`
+- M: `beacon-sandbox/cmd/beacon-sandbox/main.go`
+- M: `beacon-sandbox/credentials/credentials_test.go`
+- M: `beacon-sandbox/dispatch/dispatch_test.go`
+- M: `beacon-sandbox/dispatch/run_test.go`
+- M: `beacon-sandbox/go.mod`
+- M: `beacon-sandbox/go.sum`
+- M: `beacon-sandbox/hostguard/hostguard_test.go`
+- M: `beacon-sandbox/image/image_test.go`
+- M: `beacon-sandbox/runner/forward.go`
+- M: `beacon-sandbox/runner/runner.go`
+- M: `beacon-sandbox/runner/runner_test.go`
+- A: `beacon-sandbox/runner/uninstall_test.go`
+- M: `beacon-sandbox/sandbox/localexec_test.go`
+- M: `beacon-sandbox/scenario/scenario.go`
+- M: `beacon-sandbox/scenario/scenario_test.go`
+- M: `browser-extension/README.md`
+- D: `browser-extension/e2e/browser-identity.spec.ts`
+- M: `browser-extension/e2e/chatgpt.replay.spec.ts`
+- M: `browser-extension/e2e/claude.replay.spec.ts`
+- A: `browser-extension/e2e/forgery.spec.ts`
+- M: `browser-extension/e2e/helpers/sse-replay-server.ts`
+- M: `browser-extension/e2e/permissions.spec.ts`
+- A: `browser-extension/e2e/settings-concurrent.spec.ts`
+- A: `browser-extension/e2e/settings.spec.ts`
+- M: `browser-extension/esbuild.config.mjs`
+- A: `browser-extension/fixtures/chatgpt/web-search-split.sse`
+- A: `browser-extension/fixtures/claude/web-search.sse`
+- A: `browser-extension/fixtures/claude/with-cache-ttl.sse`
+- M: `browser-extension/package-lock.json`
+- M: `browser-extension/package.json`
+- M: `browser-extension/src/adapters/adapter.ts`
+- M: `browser-extension/src/adapters/chatgpt.ts`
+- M: `browser-extension/src/adapters/claude.ts`
+- M: `browser-extension/src/background/assembler.ts`
+- M: `browser-extension/src/background/delivery.ts`
+- A: `browser-extension/src/background/sender.ts`
+- M: `browser-extension/src/background/settings.ts`
+- M: `browser-extension/src/background/sw.ts`
+- M: `browser-extension/src/content/content.ts`
+- M: `browser-extension/src/interceptor/interceptor.ts`
+- A: `browser-extension/src/interceptor/request-body.ts`
+- M: `browser-extension/src/manifest.json`
+- M: `browser-extension/src/options/options.html`
+- M: `browser-extension/src/options/options.ts`
+- M: `browser-extension/src/shared/browser.ts`
+- A: `browser-extension/src/shared/channel.ts`
+- M: `browser-extension/src/shared/normalize.ts`
+- M: `browser-extension/src/shared/permissions.ts`
+- A: `browser-extension/src/shared/serial.ts`
+- M: `browser-extension/src/shared/types.ts`
+- A: `browser-extension/src/shared/validate.ts`
+- A: `browser-extension/test/unit/assembler.test.ts`
+- M: `browser-extension/test/unit/browser-identity.test.ts`
+- M: `browser-extension/test/unit/build.test.ts`
+- A: `browser-extension/test/unit/channel.test.ts`
+- M: `browser-extension/test/unit/chatgpt.adapter.test.ts`
+- M: `browser-extension/test/unit/claude.adapter.test.ts`
+- A: `browser-extension/test/unit/delivery-outage.test.ts`
+- A: `browser-extension/test/unit/message-contract.test.ts`
+- M: `browser-extension/test/unit/no-direct-chrome.test.ts`
+- M: `browser-extension/test/unit/normalize.test.ts`
+- D: `browser-extension/test/unit/options.test.ts`
+- M: `browser-extension/test/unit/permissions.test.ts`
+- A: `browser-extension/test/unit/request-body.test.ts`
+- A: `browser-extension/test/unit/retry-backoff.test.ts`
+- A: `browser-extension/test/unit/sender.test.ts`
+- A: `browser-extension/test/unit/settings-write.test.ts`
+- M: `browser-extension/test/unit/targets.test.ts`
+- A: `browser-extension/test/unit/tool-truncation.test.ts`
+- A: `browser-extension/test/unit/unicode-prefix.test.ts`
+- A: `browser-extension/test/unit/validate.test.ts`
+- M: `browser-extension/tools/targets.mjs`
+- A: `cli/beacon-hooks/cmd/active_session_test.go`
+- A: `cli/beacon-hooks/cmd/agent_response.go`
+- A: `cli/beacon-hooks/cmd/agent_response_test.go`
+- A: `cli/beacon-hooks/cmd/assistant_response.go`
+- A: `cli/beacon-hooks/cmd/assistant_response_test.go`
+- A: `cli/beacon-hooks/cmd/cascade_response.go`
+- A: `cli/beacon-hooks/cmd/cascade_response_test.go`
+- M: `cli/beacon-hooks/cmd/cline_event.go`
+- M: `cli/beacon-hooks/cmd/cline_event_test.go`
+- A: `cli/beacon-hooks/cmd/codex_assistant_response.go`
+- A: `cli/beacon-hooks/cmd/codex_assistant_response_test.go`
+- A: `cli/beacon-hooks/cmd/devin_permission_test.go`
+- M: `cli/beacon-hooks/cmd/dsh.go`
+- M: `cli/beacon-hooks/cmd/dsh_hooks_test.go`
+- M: `cli/beacon-hooks/cmd/endpoint_events.go`
+- M: `cli/beacon-hooks/cmd/endpoint_events_test.go`
+- A: `cli/beacon-hooks/cmd/factory_reply.go`
+- A: `cli/beacon-hooks/cmd/factory_reply_test.go`
+- M: `cli/beacon-hooks/cmd/goose_hooks_test.go`
+- M: `cli/beacon-hooks/cmd/grok_hooks_test.go`
+- M: `cli/beacon-hooks/cmd/handoff_link_test.go`
+- M: `cli/beacon-hooks/cmd/helpers.go`
+- M: `cli/beacon-hooks/cmd/helpers_test.go`
+- A: `cli/beacon-hooks/cmd/hook_bench_test.go`
+- M: `cli/beacon-hooks/cmd/inventory_heartbeat_test.go`
+- M: `cli/beacon-hooks/cmd/kimi.go`
+- M: `cli/beacon-hooks/cmd/kimi_hooks_test.go`
+- M: `cli/beacon-hooks/cmd/kiro.go`
+- M: `cli/beacon-hooks/cmd/kiro_hooks_test.go`
+- A: `cli/beacon-hooks/cmd/main_test.go`
+- M: `cli/beacon-hooks/cmd/muse_hooks_test.go`
+- M: `cli/beacon-hooks/cmd/omo_event_test.go`
+- M: `cli/beacon-hooks/cmd/omp_approval_test.go`
+- A: `cli/beacon-hooks/cmd/omp_device_test.go`
+- M: `cli/beacon-hooks/cmd/omp_event.go`
+- M: `cli/beacon-hooks/cmd/omp_event_test.go`
+- A: `cli/beacon-hooks/cmd/omp_paths_test.go`
+- M: `cli/beacon-hooks/cmd/openclaw_event_test.go`
+- M: `cli/beacon-hooks/cmd/opencode_event.go`
+- M: `cli/beacon-hooks/cmd/opencode_event_test.go`
+- M: `cli/beacon-hooks/cmd/openhands_hooks_test.go`
+- A: `cli/beacon-hooks/cmd/perf_ratchet_test.go`
+- M: `cli/beacon-hooks/cmd/permission_request.go`
+- A: `cli/beacon-hooks/cmd/pi_assistant_response_test.go`
+- M: `cli/beacon-hooks/cmd/pi_event.go`
+- M: `cli/beacon-hooks/cmd/pi_event_test.go`
+- M: `cli/beacon-hooks/cmd/pi_family.go`
+- M: `cli/beacon-hooks/cmd/pi_family_test.go`
+- M: `cli/beacon-hooks/cmd/policy.go`

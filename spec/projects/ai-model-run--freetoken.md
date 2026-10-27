@@ -28,3 +28,7 @@ Prototype under workload measurements. Hardware support, quantization correctnes
 ## Related directions
 
 [Models](../models.md) · [Decisions](../decisions.md) · [Memory](../memory.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [freetoken](https://github.com/FlashML-org/FreeToken); analyzed commit `d3512b43affe981465e03ee28cbd88f49c39b9aa`; commit date 2026-10-01T16:59:45-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--freetoken.md).
+<!-- teamagent-analysis:end -->

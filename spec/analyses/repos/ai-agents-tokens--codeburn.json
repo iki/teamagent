@@ -1,0 +1,1007 @@
+{
+  "metadata": {
+    "id": "ai-agents-tokens--codeburn",
+    "category": "ai-agents-tokens",
+    "name": "codeburn",
+    "url": "https://github.com/getagentseal/codeburn",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-tokens--codeburn.md",
+    "topics": [
+      "evolution",
+      "models",
+      "skills",
+      "agents",
+      "decisions"
+    ],
+    "depth": "source-reviewed",
+    "analyzedSha": "aded4c232622b82284f22d172cecb137354e3071",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-10-02T16:43:15+02:00",
+    "reportSha256": "0563b510fdeeb81c98bfd2ac0480eb228e5ec1330a43cbecf5e3ec155072dcf4",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-tokens--codeburn",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/getagentseal/codeburn",
+    "report": "spec/projects/ai-agents-tokens--codeburn.md",
+    "analyzedSha": "aded4c232622b82284f22d172cecb137354e3071",
+    "analyzedAt": "2026-10-04",
+    "analyzedCommitDate": "2026-10-02T16:43:15+02:00",
+    "observedSha": "07c0ee601fd8e104afb814154d879a80aeed432b",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "07c0ee601fd8e104afb814154d879a80aeed432b",
+        "date": "2026-10-27T17:52:18+01:00",
+        "subject": "fix(tui): keep provider totals through the background refresh (#1784)"
+      },
+      {
+        "sha": "e34143824de246804c1cff773487912597f70b22",
+        "date": "2026-10-27T16:57:09+01:00",
+        "subject": "fix(claude): keep every parallel tool call of a streamed message (#1791)"
+      },
+      {
+        "sha": "6489d5e4e52e86a2897b48b4a8ec56e392ed7072",
+        "date": "2026-10-26T22:53:08+01:00",
+        "subject": "fix: exact Today session counts and the Overview estimate-marker crash (#1794)"
+      },
+      {
+        "sha": "cef7c17621583571002a817a63e4b33ee0a957d8",
+        "date": "2026-10-26T13:30:21+01:00",
+        "subject": "fix(warp): price conversations from total_billed_cost_in_cents (#1787)"
+      },
+      {
+        "sha": "de08cee8e1ac82985b33d5aab096737f90ce7ea2",
+        "date": "2026-10-26T03:59:47+01:00",
+        "subject": "fix(daily-cache): stop token-only slices inflating day totals on merge (#1788)"
+      },
+      {
+        "sha": "b4974351dc9593d4cea5e4da4d68bb939fe10bdb",
+        "date": "2026-10-26T02:40:29+01:00",
+        "subject": "fix(codex): read Zstandard-compressed rollouts (#1786)"
+      },
+      {
+        "sha": "1a3ce74af8842d1d3946d5329a0d93e497d61583",
+        "date": "2026-10-20T21:32:49+02:00",
+        "subject": "docs: link the privacy page from the README and the plugin (#1783)"
+      },
+      {
+        "sha": "aeb143260eeb18f8583443af55362c233462cd83",
+        "date": "2026-10-20T21:31:56+02:00",
+        "subject": "chore(deps-dev): bump vite from 6.4.3 to 6.4.4 in /app (#1781)"
+      },
+      {
+        "sha": "8561d09340c1ecdbab18f4b9dd3ff4a49fdd4dd6",
+        "date": "2026-10-20T21:31:52+02:00",
+        "subject": "chore(deps-dev): bump vite from 7.3.6 to 7.3.7 (#1782)"
+      },
+      {
+        "sha": "5ff58dc3880cd6e814df75d985f3ef108ebe122b",
+        "date": "2026-10-20T21:31:49+02:00",
+        "subject": "chore(deps-dev): bump vite from 6.4.3 to 6.4.4 in /windows (#1778)"
+      },
+      {
+        "sha": "85f4338f6596375b4ccf950d753af5232de26087",
+        "date": "2026-10-20T21:31:45+02:00",
+        "subject": "chore(deps-dev): bump vite from 6.4.3 to 6.4.4 in /dash (#1780)"
+      },
+      {
+        "sha": "c5ab5e2cc4ccc412ce72672beccc3d2e568b8d62",
+        "date": "2026-10-20T21:31:40+02:00",
+        "subject": "chore(deps-dev): bump follow-redirects from 1.16.0 to 1.16.1 in /app (#1779)"
+      },
+      {
+        "sha": "03caf688d58c4d219efa912b0c878f4fade9b0c5",
+        "date": "2026-10-20T21:31:33+02:00",
+        "subject": "chore(deps): bump @modelcontextprotocol/sdk from 1.31.0 to 1.32.0 (#1777)"
+      },
+      {
+        "sha": "1992d70226d7a9ea8e5a8a2943a0e10e1bbb341a",
+        "date": "2026-10-20T21:03:08+02:00",
+        "subject": "ci: gate signing jobs behind a release environment and pin actions to commits (#1776)"
+      },
+      {
+        "sha": "9a36ee593b1895abc2a041136052071f81eb8b63",
+        "date": "2026-10-20T19:39:50+02:00",
+        "subject": "fix(deps): bump hono to 4.13.13 (GHSA-5r4p-p66f-jhc7) (#1775)"
+      },
+      {
+        "sha": "cd2a60c570c59a5edb5c06c0413f93c456a38817",
+        "date": "2026-10-20T19:27:48+02:00",
+        "subject": "fix: pin the plugin's CodeBurn version and add its icon (#1774)"
+      },
+      {
+        "sha": "360a9e2b9694a12a6ed3b14acd906758edaf5f14",
+        "date": "2026-10-20T18:59:11+02:00",
+        "subject": "feat: Claude Code plugin and MCP Registry listing (#1772)"
+      },
+      {
+        "sha": "c71ee8e26e73f3b1b193a95572df87f73ca9bafe",
+        "date": "2026-10-20T18:48:59+02:00",
+        "subject": "test: cap parse-worker requests at the machine's core count (#1771)"
+      },
+      {
+        "sha": "b8eead8442fcb5c23d6241c76b4ccb419af75628",
+        "date": "2026-10-20T18:02:22+02:00",
+        "subject": "Add security email and OSS Scanner build files (#1770)"
+      },
+      {
+        "sha": "0322472db34af9f05217b10bea68ee0b17224b67",
+        "date": "2026-10-17T17:32:53+02:00",
+        "subject": "test: keep the dashboard exit fixture outside the 6 Months window (#1765)"
+      },
+      {
+        "sha": "87444adc8fe20404435be1f5d4f8e9f5962293d8",
+        "date": "2026-10-17T15:07:41+02:00",
+        "subject": "optimize: stop counting new-file writes in the read/edit ratio (#1761)"
+      },
+      {
+        "sha": "9a40cc603fcd194caca9daa8c5134a61ea7e0e2b",
+        "date": "2026-10-13T10:10:38+02:00",
+        "subject": "Windows tray: fall back past a broken managed CLI to Volta and PATH installs (#1753)"
+      },
+      {
+        "sha": "354492e5002841978f1a283bc3095ee34327d00b",
+        "date": "2026-10-13T01:02:04+02:00",
+        "subject": "Copilot: count every agent round and bill exact credits in VS Code chat sessions (#1752)"
+      },
+      {
+        "sha": "3ebcfb1cefbed0343f3125769a39368aa1f48b48",
+        "date": "2026-10-11T15:17:38+02:00",
+        "subject": "fix: say the desktop update restarts on its own, and that a multi-PR turn is split evenly (#1749)"
+      },
+      {
+        "sha": "3af46cfe873ec63b57107e3c256d3b0c6936d678",
+        "date": "2026-10-11T14:31:15+02:00",
+        "subject": "chore(vscode): release extension 1.0.2 with CLI 0.9.27 (#1748)"
+      },
+      {
+        "sha": "bde62e360ce202fe20b18d65cca85e250839560d",
+        "date": "2026-10-11T10:32:35+02:00",
+        "subject": "chore: Flathub hash for desktop-v0.9.27 (#1747)"
+      },
+      {
+        "sha": "7ecc87f8adb2719482cf4a382605761102b34870",
+        "date": "2026-10-11T09:37:44+02:00",
+        "subject": "chore: release 0.9.27 (#1746)"
+      },
+      {
+        "sha": "666a690464b3e4960821658975e675e2bbfeed58",
+        "date": "2026-10-11T08:55:16+02:00",
+        "subject": "fix(menubar): read the download whole so Electron's Node cannot crash mid-update (#1745)"
+      },
+      {
+        "sha": "4c1d524b85951ca34b86bdc5defbf89b1ecaf39a",
+        "date": "2026-10-11T04:36:20+02:00",
+        "subject": "feat(update): Windows tray updates the CLI through the engine (#1743)"
+      },
+      {
+        "sha": "517058c1179902bc9a19bc6a5eb572b547a9ce30",
+        "date": "2026-10-11T04:35:30+02:00",
+        "subject": "feat(update): menubar pill checks and updates through the engine (#1742)"
+      },
+      {
+        "sha": "290d1c7c74202853ba390b3f8ea042b05af1fa29",
+        "date": "2026-10-11T04:34:34+02:00",
+        "subject": "feat(update): desktop updates its companions and itself in one click (#1741)"
+      },
+      {
+        "sha": "679d2f715b3db551cce34d0f91026e0363310f95",
+        "date": "2026-10-11T04:33:57+02:00",
+        "subject": "feat(update): one codeburn update command for CLI, menu bar and desktop (#1740)"
+      }
+    ],
+    "files": [
+      {
+        "status": "A",
+        "path": ".claude-plugin/marketplace.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/block-claude-coauthor.yml",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/workflows/build-desktop-mac.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build-snap.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build-windows-installer.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/build-windows-store.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/mac-menubar-ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/pr-limit.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-menubar-windows.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/release-menubar.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/tests.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/upgrade-path.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/windows-menubar-ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".gitignore",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".oss-scanner/Dockerfile",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".oss-scanner/threat_model.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "RELEASING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/DISTRIBUTION.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/build/entitlements.mac.plist",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/demo-bridge.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/electron/auto-update.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/electron/auto-update.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/electron/bridge-handlers.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/cli.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/cli.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/electron/companion-update.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/electron/companion-update.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/main.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/main.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/menubar.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/menubar.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/preload.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/quota/antigravity.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/telemetry.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/telemetry.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/electron/updates.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/flathub/org.agentseal.CodeBurn.metainfo.xml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/flathub/org.agentseal.CodeBurn.yaml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/App.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/App.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/AboutModal.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/components/CliErrorPanel.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/CliErrorPanel.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/components/CursorSyncLine.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/components/CursorSyncLine.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/Dropdown.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/components/IdeScopePicker.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/Onboarding.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/components/ProjectScopePicker.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/components/ProjectScopePicker.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/SessionDrawer.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/Sidebar.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/Splash.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/TopBar.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/components/TruncTip.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/UpdateBanner.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/UpdateBanner.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/components/Usd.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/hooks/usePolled.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/hooks/useUpdateStatus.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalog.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/common.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/i18n/catalogs/ide.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/models.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/plans.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/pullRequests.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/i18n/catalogs/sessionView.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/sessions.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/settings.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/shared.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/shell.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/i18n/catalogs/spend.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/format.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/investigation.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/investigation.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/ipc.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/menubarProviders.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/platform.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/projectMatch.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/providers.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/lib/types.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Compare.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Compare.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Models.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Models.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Overview.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Overview.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Plans.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Plans.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/PullRequests.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/PullRequests.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/sections/SessionView.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/sections/SessionView.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Sessions.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Sessions.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Settings.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Settings.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Spend.test.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/sections/Spend.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/renderer/styles/plain.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/bridge.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/bridge.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/channels.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/dashboard.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/install.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/sidebar.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/sidebar.tsx",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/summary.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/renderer/vscode/vscode.css",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/scripts/update-feed.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/scripts/update-feed.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/scripts/verify-windows-installer.mjs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "app/scripts/verify-windows-installer.test.ts",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "app/vite.vscode.config.ts",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dash/package-lock.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "dash/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/architecture.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/plans-and-quota.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/antigravity.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/claude.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/codex.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/providers/command-code.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/copilot.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/cursor-agent.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/cursor.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/dsh.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/hermes.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/providers/mistral-vibe.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/vscode.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "gnome/indicator.js",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Scripts/package-app.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/AppStore.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/CodeBurnApp.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/AntigravitySubscriptionService.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mac/Sources/CodeBurnMenubar/Data/CLICursorSyncConfig.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/CapacityDockPreferences.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/CapacityDockProviderQuotaService.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/ClinePassSubscriptionService.swift",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mac/Sources/CodeBurnMenubar/Data/CommandCodeSubscriptionService.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/CopilotExplicitDisconnect.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/MenubarPayload.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/ProviderConnectionCatalog.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/Telemetry.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/UpdateChecker.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Data/UsageDataChangeGuard.swift",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Resources/en.lproj/Localizable.strings",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Resources/fr.lproj/Localizable.strings",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Resources/ja.lproj/Localizable.strings",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Resources/ko.lproj/Localizable.strings",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Resources/zh-Hans.lproj/Localizable.strings",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mac/Sources/CodeBurnMenubar/Resources/zh-Hant.lproj/Localizable.strings",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: updated; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

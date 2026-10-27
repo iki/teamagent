@@ -1,0 +1,42 @@
+# pi
+
+Source: [pi](https://github.com/earendil-works/pi) · Category: [ai-agents](../categories/ai-agents.md)
+
+Review depth: **focused source review**. Snapshot `83692682f095528f8b71652ddacff7075e36e893` (2026-10-03T15:23:44+02:00). Reviewed 2026-10-04. This assessment covers the cited implementation/contract, not every subsystem or runtime behavior.
+
+## Finding
+
+A composable event-driven agent loop and a concrete Jev model-routing example; useful as an embedded runtime candidate.
+
+## Source evidence inspected
+
+- [packages/agent/src/agent-loop.ts, lines 34–180](https://github.com/earendil-works/pi/blob/83692682f095528f8b71652ddacff7075e36e893/packages/agent/src/agent-loop.ts#L34-L180)
+- [packages/coding-agent/examples/extensions/jev-router.ts, lines 25–112](https://github.com/earendil-works/pi/blob/83692682f095528f8b71652ddacff7075e36e893/packages/coding-agent/examples/extensions/jev-router.ts#L25-L112)
+
+## Observed design and algorithms
+
+The loop preserves AgentMessage values until the model boundary and publishes agent, turn, and message events through an event sink. Continuations reject empty context and a final assistant message. The router classifies the initial task, persists a planning/implementation phase on the session branch, and switches to a cheaper model after a successful edit/write tool result. It uses a probability threshold of 0.5 for the complex-work branch and a fixed fallback if the classifier is absent.
+
+## Harness decision
+
+Evaluate Pi as the native TypeScript worker behind the common AgentAdapter, alongside external installed-agent adapters. Reuse the explicit event stream and phase state pattern. Keep router model IDs in a capability-aware configuration rather than copying the example identifiers.
+
+## Limits and tradeoffs
+
+The first successful edit is only a heuristic for completion of planning. Difficult implementation or later user requests may require escalation again. The example threshold has no demonstrated calibration here. Its subscription-backed provider code does not independently establish account entitlement or permitted third-party use.
+
+## Validation before adoption
+
+Replay interrupted turns; test steering, failed tools, compaction and branch restoration. Compare fixed-model and routed runs at equal task success, total latency and total cost, including cache misses. No tests, live inference, installation, or production operation were performed for this review. License indicator: MIT; verify the exact files and dependencies before reuse.
+
+Related directions: [agents](../agents.md) · [models](../models.md) · [decisions](../decisions.md) · [skills](../skills.md).
+
+## Refresh: 2026-10-24
+
+Inspected revision [`136b87e8a7f5a3e5186de0289523ba327dc592fc`](https://github.com/earendil-works/pi/commit/136b87e8a7f5a3e5186de0289523ba327dc592fc). This refresh covers the agent loop and the existing Jev example; it is not a full audit of the new MCP, UI or other packages.
+
+The current [loop preparation boundary](https://github.com/earendil-works/pi/blob/136b87e8a7f5a3e5186de0289523ba327dc592fc/packages/agent/src/agent-loop.ts#L184-L251) permits context/model/thinking changes before the next request, then rechecks steering after potentially long preparation. It avoids consuming a second steering message when the first poll already returned work. Transfer this ordering to the harness context compiler: a compaction or retrieval operation must not hide a newly arrived user correction, and context/model selection needs a recorded request boundary.
+
+The [tool-batch branch](https://github.com/earendil-works/pi/blob/136b87e8a7f5a3e5186de0289523ba327dc592fc/packages/agent/src/agent-loop.ts#L254-L302) treats a length-limited assistant response as potentially truncated tool arguments and fails its calls instead of executing them. Preserve this completion-reason gate in addition to schema validation. Valid-looking JSON alone is insufficient evidence that a tool call was completely emitted. `finishTurn` and emitted completion events still represent loop lifecycle, not independent task correctness.
+
+The [Jev example](https://github.com/earendil-works/pi/blob/136b87e8a7f5a3e5186de0289523ba327dc592fc/packages/coding-agent/examples/extensions/jev-router.ts#L67-L113) retains the 0.5 complexity threshold, initial planning selection and first-successful-edit transition. Its earlier calibration and re-escalation limitations remain. No new accuracy, latency or subscription-entitlement claim follows from the refreshed source inspection. Upstream tests were read selectively as coverage leads, not executed in this checkout.

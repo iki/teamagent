@@ -28,3 +28,7 @@ Adopt as a baseline dependency scanner. Database freshness and package resolutio
 ## Related directions
 
 [Security](../security.md) · [Agents](../agents.md) · [Import Generation](../import-generation.md) · [Evolution](../evolution.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [osv-scanner](https://github.com/google/osv-scanner); analyzed commit `1b86129be1f0285c403616cb362ac188de676c6e`; commit date 2026-10-02T15:16:32+10:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--osv-scanner.md).
+<!-- teamagent-analysis:end -->

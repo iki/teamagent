@@ -1,0 +1,414 @@
+{
+  "id": "ai-query--docling",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/docling-project/docling",
+  "report": "spec/projects/ai-query--docling.md",
+  "analyzedSha": "53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4",
+  "analyzedAt": "2026-10-24T06:36:54.441Z",
+  "analyzedCommitDate": "2026-10-23T17:00:16+02:00",
+  "observedSha": "b361d7863fd264369486a1fcbda96c9fe4b58b57",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b361d7863fd264369486a1fcbda96c9fe4b58b57",
+      "date": "2026-10-27T17:11:46Z",
+      "subject": "chore: bump version to 2.143.1 [skip ci]"
+    },
+    {
+      "sha": "103edefc99a3696227773993e951833c5e3af71e",
+      "date": "2026-10-27T16:04:00+01:00",
+      "subject": "perf(table): skip spatial indexes for empty token inputs"
+    },
+    {
+      "sha": "886e6c3bbedaa39b6b32a82709c158e99226b768",
+      "date": "2026-10-27T16:04:00+01:00",
+      "subject": "test(table): move OCR integration tests to the PDF model lane"
+    },
+    {
+      "sha": "affa54ce1fcb4a7e9df4900b1b9e16b9290a50ad",
+      "date": "2026-10-27T16:04:00+01:00",
+      "subject": "fix(table): keep OCR word cells in table tokens"
+    },
+    {
+      "sha": "ce6690b67e9dc6f028cfe42f80b508900d027f28",
+      "date": "2026-10-27T16:04:00+01:00",
+      "subject": "fix(table): add OCR cells to table tokens next to native words"
+    },
+    {
+      "sha": "a65b29e004ccbffaaa4fda8c40c0426a034b874d",
+      "date": "2026-10-27T16:04:00+01:00",
+      "subject": "fix(table): read the page's parsed_page for table tokens in full-page OCR"
+    },
+    {
+      "sha": "733106766a67c0804d2f52eed253648fb427fe74",
+      "date": "2026-10-27T12:20:36+01:00",
+      "subject": "fix(pptx): count the header row against the chart table cell cap (#5030)"
+    },
+    {
+      "sha": "481883301e364d021e589ddeaef7927532dafb9a",
+      "date": "2026-10-27T12:19:07+01:00",
+      "subject": "fix(ocr): pass render resolution to Tesseract CLI (#5031)"
+    },
+    {
+      "sha": "af66cbf86fe5123e96a3efe10d435494b85fde85",
+      "date": "2026-10-27T12:18:54+01:00",
+      "subject": "fix(pptx): skip shapes whose text is only whitespace (#5028)"
+    },
+    {
+      "sha": "1bab0690252c7695a2d92f5692c4167d8ee263be",
+      "date": "2026-10-27T10:54:06+01:00",
+      "subject": "fix: widen dependency ranges to allow latest versions"
+    },
+    {
+      "sha": "7bc06ef8b059922170d3444171157d5038fc09b9",
+      "date": "2026-10-26T23:59:01Z",
+      "subject": "chore: bump version to 2.143.0 [skip ci]"
+    },
+    {
+      "sha": "2eaca3af55af653689f34e71274bb3fe36e58750",
+      "date": "2026-10-26T12:54:23+01:00",
+      "subject": "fix(vlm): defer optional local provider imports (#4967)"
+    },
+    {
+      "sha": "6ddd22ee49d5f4af830392d5e82e15a82120859b",
+      "date": "2026-10-26T12:46:52+01:00",
+      "subject": "fix(utils): retain BOM decoding error diagnostics (#4949)"
+    },
+    {
+      "sha": "821526e73bdc8059799fd532dec520d41a730570",
+      "date": "2026-10-26T10:57:43+01:00",
+      "subject": "fix(asciidoc): keep a block title separate from the paragraph it titles (#4391)"
+    },
+    {
+      "sha": "4ad544a59f4bdcf12f0ec6639544ac83feb3022b",
+      "date": "2026-10-26T10:56:02+01:00",
+      "subject": "fix(pptx): extract the picture of a picture-filled shape (#4989)"
+    },
+    {
+      "sha": "90234a71b16785d08fd2f46ec62668dd2396db76",
+      "date": "2026-10-25T18:46:59+08:00",
+      "subject": "fix(pptx): read the series of every chart plot (#4811)"
+    },
+    {
+      "sha": "7b729c61f6b5bd86a4534b5acee63ec13ae2fc24",
+      "date": "2026-10-25T09:58:55+01:00",
+      "subject": "fix(asciidoc): drop the closing marks of symmetric section titles (#4938)"
+    },
+    {
+      "sha": "a6adad43ae9a35577ac24786ee90604e50f3ee91",
+      "date": "2026-10-25T09:55:09+01:00",
+      "subject": "ci: run the core test suite in parallel with pytest-xdist (#4884)"
+    },
+    {
+      "sha": "87de795692189b3699c1246205c3988cb806bd4e",
+      "date": "2026-10-25T09:54:02+01:00",
+      "subject": "feat(service): add optional filename to ZipArchiveResult (#4996)"
+    },
+    {
+      "sha": "90661c43532eda3e6718d61cbb061160cd2f2b56",
+      "date": "2026-10-25T09:51:46+01:00",
+      "subject": "fix(ods): do not join tables across a blank merged separator row (#4992)"
+    },
+    {
+      "sha": "15c67d8c7c42d8551eed73c66277f3f39b661c8e",
+      "date": "2026-10-25T09:48:59+01:00",
+      "subject": "fix(utils): split a tuple or range into chunks only once in chunkify (#5001)"
+    },
+    {
+      "sha": "59acbb63c2b0438fbbd59eb09ec7790206bb1e8c",
+      "date": "2026-10-25T09:47:43+01:00",
+      "subject": "fix: accept file URI bases for image resources (#4912)"
+    },
+    {
+      "sha": "aff98aa7d34956819a89695f79ecbd910276e170",
+      "date": "2026-10-25T09:46:52+01:00",
+      "subject": "feat: support mixed-format ZIP inputs (#4865)"
+    },
+    {
+      "sha": "9ccf6072ac74caa677359e3ac42a186aacad1b7e",
+      "date": "2026-10-25T09:41:47+01:00",
+      "subject": "fix(asciidoc): keep /// as text and support longer comment delimiters (#4394)"
+    },
+    {
+      "sha": "0dbf5009e1dde8a421982528ca60d3503ab2a042",
+      "date": "2026-10-25T09:37:06+01:00",
+      "subject": "feat(asr): run the WhisperS2T presets offline from --artifacts-path (#4898)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/dprint.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pre-commit-config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/extraction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/python-sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/rag.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/service-client.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/asciidoc_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/md_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/mspowerpoint_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/opendocument_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/utils/charts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/utils/image_resource_loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/asr_model_specs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/service/responses.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/document_converter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/tesseract_ocr_cli_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/table_structure/table_structure_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/asr_transcriber.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/vlm_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/model_downloader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/text_decoding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/advanced_options.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/supported_formats.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/docling-client/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/docling/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/pptx/groundtruth/pptx_chart.pptx.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/pptx/groundtruth/pptx_chart.pptx.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_asr_whisper_s2t.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_asciidoc.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_html.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_markdown.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_opendocument.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_pptx.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_pptx_charts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_backend_pptx_picture_fill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_text_encoding.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_chunkify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_cli_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_e2e_table_structure_ocr.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_image_resource_loader.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_service_datamodels.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_table_structure_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_tesseract_ocr_cli_dpi.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vlm_pipeline_optional_dependencies.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_zip_batch_input.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

@@ -27,3 +27,7 @@ Adopt where supported language extraction and distribution terms fit the deploym
 ## Related directions
 
 [Security](../security.md) · [Agents](../agents.md) · [Evolution](../evolution.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [codeql](https://github.com/github/codeql); analyzed commit `f7617abe602d4763cd08c6a57b6a6bc347e7e325`; commit date 2026-10-02T16:57:06+01:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--codeql.md).
+<!-- teamagent-analysis:end -->

@@ -23,3 +23,7 @@ This entry was catalogued under **ai-query**. Its category places it in the cand
 **Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [understand-anything](https://github.com/Lum1104/Understand-Anything); analyzed commit `1d7418b8abfa543744ae029e63a482aee03f9022`; commit date 2026-10-02T11:34:38+08:00; review date unknown; depth screened. [Maintenance record](../analyses/repos/ai-query--understand-anything.md).
+<!-- teamagent-analysis:end -->

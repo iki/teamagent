@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents--deer-flow",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/bytedance/deer-flow",
+  "report": "spec/projects/ai-agents--deer-flow.md",
+  "analyzedSha": "9eb01b371a478d9be477476eb19bc8381433b2ba",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T23:11:48+08:00",
+  "observedSha": "fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7",
+      "date": "2026-10-27T22:19:33+08:00",
+      "subject": "fix(scripts): read the checkout .env as data in serve.sh (#7606)"
+    },
+    {
+      "sha": "7feaf051a2960cd071b5b53a80c4d44be1acd6b5",
+      "date": "2026-10-27T21:29:21+08:00",
+      "subject": "feat(plugins): add redacted administrator diagnostics (#7612)"
+    },
+    {
+      "sha": "fca086403df797769b24c520906776c2ac644145",
+      "date": "2026-10-27T21:27:14+08:00",
+      "subject": "feat(extensions): add durable team public state (#7611)"
+    },
+    {
+      "sha": "dbd72df40558f5f2d352885349ba1d7f2b7dbd7e",
+      "date": "2026-10-27T17:51:11+08:00",
+      "subject": "test(channels): await artifact replies between sequential turns (#7616)"
+    },
+    {
+      "sha": "03afd0591774d55caa2ad1998b7afc82ae871ca7",
+      "date": "2026-10-27T16:59:19+08:00",
+      "subject": "fix(artifacts): authorize shared image reads and offload MIME lookup (#7604)"
+    },
+    {
+      "sha": "24f15cc4790f5b0a50f55332f77f4a2eeb35fdf1",
+      "date": "2026-10-27T15:26:16+08:00",
+      "subject": "docs(zh): fix 5 cross-language anchor links pointing to English pages (#7603)"
+    },
+    {
+      "sha": "f443f107a3919872346a12ed6a31f35b1e407dae",
+      "date": "2026-10-27T15:19:16+08:00",
+      "subject": "ci(skills): propose evaluator hash required by PR 7043 (#7602)"
+    },
+    {
+      "sha": "612140f183b6f4f592690696a8b83a12c4adcae5",
+      "date": "2026-10-27T14:57:29+08:00",
+      "subject": "feat(models): add managed Kimi K3.1 Pro capabilities (#7566)"
+    },
+    {
+      "sha": "77d0fc9d69e07926de5fc87eedcc39cebfe388cf",
+      "date": "2026-10-27T14:55:19+08:00",
+      "subject": "fix(channels): resolve reply artifacts off the event loop (#7594)"
+    },
+    {
+      "sha": "fd2d1de424c0f4871480132c206ce580d0b0847a",
+      "date": "2026-10-27T14:44:27+08:00",
+      "subject": "fix(skills): parse optimizer metadata as YAML (#7049)"
+    },
+    {
+      "sha": "e2e8ba7aecaed6a485380d715df7551de5008476",
+      "date": "2026-10-27T14:21:42+08:00",
+      "subject": "fix(artifacts): resolve viewed images from shared blobs (#6329)"
+    },
+    {
+      "sha": "68c9fce5c424b0e96986a0ca365db73a1eef8196",
+      "date": "2026-10-27T11:47:28+08:00",
+      "subject": "fix(persistence): discard the staged temp when the write itself fails (#7504)"
+    },
+    {
+      "sha": "bfd599e840efa897db8108ab9e93fe18bd5d43dc",
+      "date": "2026-10-27T11:22:50+08:00",
+      "subject": "ci(skills): propose exact hashes needed by PR 7049 (#7596)"
+    },
+    {
+      "sha": "137c721d2b14f4d3de17bf67898cfcd4ca271423",
+      "date": "2026-10-27T10:56:31+08:00",
+      "subject": "fix(channels): write each Feishu thread alias once per streamed reply (#7593)"
+    },
+    {
+      "sha": "a3208079048ec703f05d9a6956b74e666b99bace",
+      "date": "2026-10-27T10:54:44+08:00",
+      "subject": "fix(agents): preserve verbatim XML through input sanitization (#7556)"
+    },
+    {
+      "sha": "caafac04526d9c2c4ad89f0974da626ec764a927",
+      "date": "2026-10-27T10:38:03+08:00",
+      "subject": "fix(wizard): replace retired Claude Sonnet 4 default with claude-sonnet-5-5 (#7585)"
+    },
+    {
+      "sha": "c48447a4aee5c69d6e0d796f5790e9d2fe9759de",
+      "date": "2026-10-27T10:34:34+08:00",
+      "subject": "fix(runtime): present outputs before a loop wrap-up and explain step-limit stops (#7588)"
+    },
+    {
+      "sha": "51d59a1cdff92626bd9f03f1b2254f34a824ca3e",
+      "date": "2026-10-27T10:11:56+08:00",
+      "subject": "fix(safety): handle native Responses content-filter termination (#6965)"
+    },
+    {
+      "sha": "3c482e0f58a4a90cd883cebf1cbe145b39a2559d",
+      "date": "2026-10-27T10:10:26+08:00",
+      "subject": "feat(jina): add bounded crawl completion diagnostics (#6504)"
+    },
+    {
+      "sha": "89acf51caa2c52f423cfb6dfc4fd9d4646f767f8",
+      "date": "2026-10-27T10:09:03+08:00",
+      "subject": "fix(tool-output): preserve prompt prefixes by default (#7455)"
+    },
+    {
+      "sha": "52f6ff078cb81e5316d3c00984f03a669a4cbfc9",
+      "date": "2026-10-27T09:47:24+08:00",
+      "subject": "fix(api): survive a malformed CSRF cookie (#7589)"
+    },
+    {
+      "sha": "ab8cd4e10f6f60138f2cc5fa0a8bea274a8afaad",
+      "date": "2026-10-27T09:46:58+08:00",
+      "subject": "fix(channels): keep IM binding codes on screen and report goal state in replies (#7591)"
+    },
+    {
+      "sha": "83f2dc5da4ffe1d0be007188f29a44d4fd428d30",
+      "date": "2026-10-27T09:45:26+08:00",
+      "subject": "docs(tools): fix dead ACP protocol link and protocol name (#7479)"
+    },
+    {
+      "sha": "0ac6cfaf35c30af2bf6d9db21bcbf01dfe8dddb3",
+      "date": "2026-10-27T09:01:11+08:00",
+      "subject": "fix(skills): keep a failed discard from replacing the publish outcome (#7586)"
+    },
+    {
+      "sha": "797e093ddc65d512df4eb7ef044497c43ef7758e",
+      "date": "2026-10-27T08:44:29+08:00",
+      "subject": "fix(sandbox): require a path start before translating virtual and host roots (#7582)"
+    },
+    {
+      "sha": "f7d02a75151e2cdb8222805124d430b815e53e35",
+      "date": "2026-10-27T00:28:03+08:00",
+      "subject": "fix(checkpoints): validate cached delta history before replay (#7548)"
+    },
+    {
+      "sha": "c5193d26c7cfcd27ebf5fc5f6410ca5af54fc285",
+      "date": "2026-10-27T00:19:23+08:00",
+      "subject": "fix(docker): bundle Lark broker runtime helpers (#7542)"
+    },
+    {
+      "sha": "aabfdeebc9880e2b7fa3b8bd443d48cc72dca8fd",
+      "date": "2026-10-27T00:16:53+08:00",
+      "subject": "fix(streaming): make Redis stream END publication idempotent (#7572)"
+    },
+    {
+      "sha": "c46906aa41870564ee107d4d2f456f323839812b",
+      "date": "2026-10-26T23:40:32+08:00",
+      "subject": "fix(community): resolve async tool config off the event loop (#7580)"
+    },
+    {
+      "sha": "a2fd094b404d5e3f0538471612a63f18370a3930",
+      "date": "2026-10-26T23:37:38+08:00",
+      "subject": "fix(i18n): survive a malformed locale cookie (#7553)"
+    },
+    {
+      "sha": "19768d73cc236e73f8e039fe6a1213c78ab6b56f",
+      "date": "2026-10-26T23:33:49+08:00",
+      "subject": "fix(setup-agent): keep a failed discard from replacing the publish outcome (#7564)"
+    },
+    {
+      "sha": "6e4bcc16aab72fac1d3042d88f0a22bd6039486b",
+      "date": "2026-10-26T23:04:45+08:00",
+      "subject": "fix(subagents): drain final cleanup across caller cancellation (#7546)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agent/skills/smoke-test/templates/report.docker.template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/labels.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/skill-review-waivers.v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/backend-unit-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/backend-windows-live-policy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/container.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/extension-package-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/lint-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/skill-review-ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/verify-versions.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_fr.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "README_ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "README_pt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_ru.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/.test_durations",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/README_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/allowed_users.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/buzz.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/buzz_seen_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/commands.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/connection_identity.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/credential_staging.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/dedupe_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/dingtalk.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/discord.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/feishu.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/feishu_card_interaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/goal_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/inbound_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/leadership.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/message_bus.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/notification_groups.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/qq.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/channels/reply_locale.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/run_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/runtime_config_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/slack.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/telegram.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/wechat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/wechat_qr_login.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/wecom.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/jwt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/local_provider.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/auth/login_throttle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/oidc.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/oidc_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/password.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/pat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/repositories/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/repositories/sqlite.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth/user_provisioning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/auth_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/authz.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/checkpoint_lineage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/checkpoint_retention.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/conversation_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/deps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/extension_agent_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/extension_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/github/run_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/health.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/knowledge_scope_admission.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/langgraph_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/mcp_oauth_tokens.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/routers/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/routers/admin_users.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/browser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/channel_connections.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/channels.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/console.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/features.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/routers/im_notification_preferences.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/integrations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/knowledge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/managed_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/mcp_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/personal_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/plugins.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/project_documents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/scheduled_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/routers/skill_mutations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/subagent_batches.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/routers/thread_activity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/thread_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/threads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/uploads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/routers/user_preferences.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/run_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/run_origin.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/scheduled_task_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/scheduled_task_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/scheduled_task_validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/services.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/gateway/sse_headers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/gateway/upload_ingestion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/mcp_tasks/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/scheduler/notification_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/app/scheduler/notification_text.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/scheduler/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/API.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/APPLE_CONTAINER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/AUTH_DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/CONFIGURATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/FILE_UPLOAD.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/GUARDRAILS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/IM_CHANNEL_CONNECTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/docs/KNOWLEDGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/MCP_SERVER.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/MEMORY_SETTINGS_REVIEW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/RUN_EVENT_STREAM.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/SETUP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/SSO.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/STREAMING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/TUI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/blob-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/checkpoint-retention-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/extension-agent-runs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/docs/mcp-control-leases.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/runtime-guidance-details.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/docs/summarization.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/extension_test_fixtures/agent_teams_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/extension-api/deerflow_extension_api/__init__.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

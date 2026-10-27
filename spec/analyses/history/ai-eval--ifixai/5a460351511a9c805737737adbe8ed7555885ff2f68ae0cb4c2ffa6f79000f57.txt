@@ -1,0 +1,25 @@
+# ifixai
+
+Source: [ifixai](https://github.com/ifixai-ai/iFixAi) · Category: [ai-eval](../categories/ai-eval.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5b9b12764614950e11208f45fca96ffe5e183c8c`; commit timestamp `2026-10-02T19:36:20Z`; 587 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/ifixai-ai/iFixAi/blob/5b9b12764614950e11208f45fca96ffe5e183c8c/README.md)):
+
+> Catch your agent's mistakes and blind spots before the shit hits the fan. One  ifixai run , end to end: guided setup picks the system, judge, and suite; the run verifies the connection and saves your config; 32 inspections execute across five pillars; and the result lands as an A–F grade with a scored core-pillar scorecard.
+
+Build/package evidence: [plugin/requirements.txt](https://github.com/ifixai-ai/iFixAi/blob/5b9b12764614950e11208f45fca96ffe5e183c8c/plugin/requirements.txt); [pyproject.toml](https://github.com/ifixai-ai/iFixAi/blob/5b9b12764614950e11208f45fca96ffe5e183c8c/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/ifixai-ai/iFixAi/blob/5b9b12764614950e11208f45fca96ffe5e183c8c/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-eval**. Its category places it in the candidate set for evolution, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [evolution](../evolution.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.

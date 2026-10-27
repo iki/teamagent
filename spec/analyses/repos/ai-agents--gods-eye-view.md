@@ -1,0 +1,207 @@
+# gods-eye-view: change evidence
+
+Source: [gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view) · [Analysis](../../projects/ai-agents--gods-eye-view.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `aa16b7c3b0166a89d8c7a6089e0aff53a22faaee`; commit date: 2026-10-02T22:36:12-07:00; review date: unknown; observed SHA: `15de9d738c4a85be1a96726c6114181caef87eeb`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/bilawalsidhu/gods-eye-view/compare/aa16b7c3b0166a89d8c7a6089e0aff53a22faaee...15de9d738c4a85be1a96726c6114181caef87eeb). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [15de9d738c4a](https://github.com/bilawalsidhu/gods-eye-view/commit/15de9d738c4a85be1a96726c6114181caef87eeb) 2026-10-26T16:54:01-07:00: fix(i18n): mark style labels without loading the catalogs (#1421)
+- [6152f9f3110a](https://github.com/bilawalsidhu/gods-eye-view/commit/6152f9f3110a91d2198d2d3fd642b51855b91561) 2026-10-26T16:44:34-07:00: fix(search): keep a missed location query in the field so it can be corrected (#1420)
+- [3d9f153bc055](https://github.com/bilawalsidhu/gods-eye-view/commit/3d9f153bc055acc58d18c6a4b329f044816409a7) 2026-10-26T16:20:23-07:00: feat(share): export the share-view codec and link-path helpers (#1419)
+- [da02fd8645db](https://github.com/bilawalsidhu/gods-eye-view/commit/da02fd8645dbc2604e49bde8b4b174fcc3bcba35) 2026-10-26T15:31:51-07:00: feat(share): short /share/<code> links with a compact versioned view format (#1418)
+- [fefd5cdcf14b](https://github.com/bilawalsidhu/gods-eye-view/commit/fefd5cdcf14b80cfb8ac3c7c60f9a489aa2b3c8e) 2026-10-26T14:07:58-07:00: fix(layers): make Clear All clear the saved and shared layer selection (#1417)
+- [b7ece1d4d13b](https://github.com/bilawalsidhu/gods-eye-view/commit/b7ece1d4d13b551f635a9a5653380b4f40f26d1f) 2026-10-26T13:56:19-07:00: fix(share): restore a share link opened in an already-open tab (#1416)
+- [301bc2e0b301](https://github.com/bilawalsidhu/gods-eye-view/commit/301bc2e0b301600d1bd57c9ab89cdf1e181a304c) 2026-10-26T09:03:04-07:00: feat(voice): add preview and settings panel (#1299)
+- [c533b1994ce7](https://github.com/bilawalsidhu/gods-eye-view/commit/c533b1994ce78a5b513fa5adcb5a7cdb73791d6f) 2026-10-26T08:52:03-07:00: Merge main and preserve voice panel and GhostMaps schema coverage
+- [ddbcd2053b36](https://github.com/bilawalsidhu/gods-eye-view/commit/ddbcd2053b360a472e522b8c95304b05df165307) 2026-10-26T08:47:54-07:00: fix(voice): preserve idle evidence through recoverable response errors
+- [42e68352e855](https://github.com/bilawalsidhu/gods-eye-view/commit/42e68352e855d20a451de915d22a47642e3b77da) 2026-10-26T16:46:47+01:00: Merge pull request #1297 from GPTmadeit/feat/s2-ghostmaps-layer
+- [074e2723564f](https://github.com/bilawalsidhu/gods-eye-view/commit/074e2723564f8ad6a57f68bacb0166d41e5c240c) 2026-10-26T08:42:41-07:00: fix(voice): recover idle timers and retire panel audio observers
+- [aeee3652ce8b](https://github.com/bilawalsidhu/gods-eye-view/commit/aeee3652ce8b6022537254d31c5eb6f262a8b490) 2026-10-26T08:39:16-07:00: Merge PR #1299 with current main for validation
+- [9496ee4d64d7](https://github.com/bilawalsidhu/gods-eye-view/commit/9496ee4d64d771c64cfb555f13350a75c156ac93) 2026-10-26T16:29:48+01:00: fix: complete GhostMaps locale and voice integration with current main
+- [4da002bd4278](https://github.com/bilawalsidhu/gods-eye-view/commit/4da002bd42785e34505c7b878f9887a416ed75e0) 2026-10-26T16:25:49+01:00: Merge current main into S2 GhostMaps and preserve updated import and voice behavior
+- [4a18af54267a](https://github.com/bilawalsidhu/gods-eye-view/commit/4a18af54267a39484c9f01a5f352b81362a48f9b) 2026-10-26T16:24:34+01:00: fix: address GhostMaps resource and source ownership review findings
+- [a3a19883b4f9](https://github.com/bilawalsidhu/gods-eye-view/commit/a3a19883b4f9ebb879040e2a6969c689355c3008) 2026-10-26T00:24:27-05:00: feat: add Scope controls and conditional HUD text backplates (#1410)
+- [a7fcb3c2322f](https://github.com/bilawalsidhu/gods-eye-view/commit/a7fcb3c2322fbffdbc24b81f98b45ef9fafe8339) 2026-10-25T19:13:38-07:00: fix(maps): avoid 404 on keyless Google tiles-token probe (#1066)
+- [06c51d3438cb](https://github.com/bilawalsidhu/gods-eye-view/commit/06c51d3438cbcdc0367220ae997b62583a8b0527) 2026-10-25T19:07:12-07:00: perf(weather): wake a staged frame on a 150 ms timer, not every render (#1345)
+- [2b2dad5bbe18](https://github.com/bilawalsidhu/gods-eye-view/commit/2b2dad5bbe1812280b437cccf3f6daa3abca6c5a) 2026-10-25T19:00:20-07:00: Harden Vite fs.deny for local logs and cache (#948)
+- [292a7a9d084c](https://github.com/bilawalsidhu/gods-eye-view/commit/292a7a9d084c390904e1681d90e85040055ae27b) 2026-10-25T18:53:39-07:00: Merge main into PR #948
+- [3a724f055abe](https://github.com/bilawalsidhu/gods-eye-view/commit/3a724f055abece7a33005363b60eac183a5b35ee) 2026-10-25T18:53:32-07:00: fix(pinokio): open the app in the system browser (#1222)
+- [1663733b58a3](https://github.com/bilawalsidhu/gods-eye-view/commit/1663733b58a33bfe1cdd9b233879ccebdcd9445e) 2026-10-25T18:49:31-07:00: style: format Vite deny-list test imports
+- [0dce2f8d04dc](https://github.com/bilawalsidhu/gods-eye-view/commit/0dce2f8d04dc2048cf080d2e8894596f2ff5976a) 2026-10-25T18:47:57-07:00: fix: complete PR #948 integration and documentation
+- [80449af6bd43](https://github.com/bilawalsidhu/gods-eye-view/commit/80449af6bd43cefadb69372c8ed2caecd6d66f11) 2026-10-25T18:47:57-07:00: Merge main into PR #948
+- [a15fdd313408](https://github.com/bilawalsidhu/gods-eye-view/commit/a15fdd31340872a32e84453d1e59b48eb519b720) 2026-10-25T17:59:09-07:00: fix(hud): carry rounded DMS seconds into the minutes (#1339)
+- [2a17491c8bd5](https://github.com/bilawalsidhu/gods-eye-view/commit/2a17491c8bd5afe0e7cf01ac9137361941329713) 2026-10-25T17:54:16-07:00: fix(docker): let SELinux hosts read the bind-mounted checkout (#1391)
+- [76311e36d455](https://github.com/bilawalsidhu/gods-eye-view/commit/76311e36d455c9dc10e87580fe2b0e9996bb80b3) 2026-10-25T17:46:52-07:00: feat(docker): add a HEALTHCHECK to the image (#1394)
+- [3a28dcab0775](https://github.com/bilawalsidhu/gods-eye-view/commit/3a28dcab0775388af2c42ae1dbd8fdb8c1d1f5e8) 2026-10-25T17:32:15-07:00: fix(docker): align health probe port parsing and document health status
+- [e03e58135dfc](https://github.com/bilawalsidhu/gods-eye-view/commit/e03e58135dfc03763dfb22a92b74d93fca39d76d) 2026-10-25T17:32:15-07:00: Merge main into PR #1394
+- [2006c035d9e1](https://github.com/bilawalsidhu/gods-eye-view/commit/2006c035d9e14e63f8a3942c3d2694988a08f316) 2026-10-25T17:21:41-07:00: chore: remove four modules nothing in the app uses (#1403)
+- [a43ff8619ea2](https://github.com/bilawalsidhu/gods-eye-view/commit/a43ff8619ea2966cd4ab51382f6d77b0f9e7379f) 2026-10-25T17:04:43-07:00: fix(search): normalize geocoder bias across the antimeridian (#1272)
+- [ba292ce47554](https://github.com/bilawalsidhu/gods-eye-view/commit/ba292ce47554a38b07dec513db5779d67aeae17f) 2026-10-25T16:58:14-07:00: fix(flights): keep ground-snap sampling after the clock steps back (#1399)
+
+## Changed paths (truncated)
+
+- M: `.agents/skills/community-pr/SKILL.md`
+- A: `.dockerignore`
+- M: `.env.example`
+- A: `.github/pull_request_template.md`
+- M: `.github/workflows/ci.yml`
+- M: `.gitignore`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `DATA_SOURCES.md`
+- A: `Dockerfile`
+- M: `README.md`
+- M: `SECURITY.md`
+- M: `THIRD_PARTY_NOTICES.md`
+- M: `build/vite.js`
+- A: `changelog.d/1056-area-tool-breakdowns.md`
+- A: `changelog.d/1057-windows-npm-dep0190.md`
+- A: `changelog.d/1066-keyless-google-token.md`
+- A: `changelog.d/1071-geo-uri-search.md`
+- A: `changelog.d/1094-dependency-security-patches.md`
+- A: `changelog.d/1096-military-hold-track-speed.md`
+- A: `changelog.d/1097-overpass-remark-failure-phrases.md`
+- A: `changelog.d/1101-tle-catalog-number-match.md`
+- A: `changelog.d/1111-map-fallback-retry.md`
+- A: `changelog.d/1115-aircraft-altitude-band-unknown.md`
+- A: `changelog.d/1117-google-viewer-lifecycle.md`
+- A: `changelog.d/1118-cctv-snapshot-fallback-provenance.md`
+- A: `changelog.d/1135-director-save-status-run-results.md`
+- A: `changelog.d/1142-antimeridian-fire-perimeters.md`
+- A: `changelog.d/1171-director-goto-shot.md`
+- A: `changelog.d/1172-cctv-missing-numbers.md`
+- A: `changelog.d/1173-antimeridian-ground-floor.md`
+- A: `changelog.d/1186-launch-unknown-coordinates.md`
+- A: `changelog.d/1190-bikeshare-spain-cities.md`
+- A: `changelog.d/1197-launch-library-provider-guidance.md`
+- A: `changelog.d/1199-launch-cache-provenance.md`
+- A: `changelog.d/1200-cctv-live-icon-color.md`
+- A: `changelog.d/1201-cctv-stills-aspect.md`
+- A: `changelog.d/1205-cctv-tool-routing.md`
+- A: `changelog.d/1207-voice-entity-labels-english.md`
+- A: `changelog.d/1220-openai-typed-send.md`
+- A: `changelog.d/1222-pinokio-open-in-browser.md`
+- A: `changelog.d/1225-globe-rotation.md`
+- A: `changelog.d/1226-first-run-touch-dismiss.md`
+- A: `changelog.d/1228-cctv-ontario-511-key.md`
+- A: `changelog.d/1229-opensky-oauth-only.md`
+- A: `changelog.d/1232-gbfs-invalid-coordinates.md`
+- A: `changelog.d/1233-tarktee-datex-catalog-hardening.md`
+- A: `changelog.d/1234-cctv-catalog-background-refresh.md`
+- A: `changelog.d/1235-location-resolution.md`
+- A: `changelog.d/1237-taiwan-freeway-cctv.md`
+- A: `changelog.d/1239-traffic-stale-flow.md`
+- A: `changelog.d/1243-starfield-sky.md`
+- A: `changelog.d/1244-terrain-test-cache-isolation.md`
+- A: `changelog.d/1264-overpass-request-admission.md`
+- A: `changelog.d/1265-docker-trusted-peers.md`
+- A: `changelog.d/1268-radio-issue-fix.md`
+- A: `changelog.d/1269-aircraft-issue-fix.md`
+- A: `changelog.d/1270-space-issue-fix.md`
+- A: `changelog.d/1271-share-issue-fix.md`
+- A: `changelog.d/1272-search-issue-fix.md`
+- A: `changelog.d/1273-history-issue-fix.md`
+- A: `changelog.d/1274-import-issue-fix.md`
+- A: `changelog.d/1275-forecast-issue-fix.md`
+- A: `changelog.d/1276-terrain-issue-fix.md`
+- A: `changelog.d/1278-overpass-issue-fix.md`
+- A: `changelog.d/1279-launch-issue-fix.md`
+- A: `changelog.d/1281-traffic-issue-fix.md`
+- A: `changelog.d/1282-polling-issue-fix.md`
+- A: `changelog.d/1283-satellite-cache-provenance.md`
+- A: `changelog.d/1284-route-plausibility-segment.md`
+- A: `changelog.d/1286-since-note-inline.md`
+- A: `changelog.d/1287-shared-sliders.md`
+- A: `changelog.d/1288-zoomfor-legacy-shape.md`
+- A: `changelog.d/1297-s2-ghostmaps-layer.md`
+- A: `changelog.d/1298-simplified-chinese.md`
+- A: `changelog.d/1299-voice-panel-settings.md`
+- A: `changelog.d/1301-shared-segmented-selectors.md`
+- A: `changelog.d/1302-shared-action-buttons.md`
+- A: `changelog.d/1303-wind-stale.md`
+- A: `changelog.d/1304-antimeridian-distances.md`
+- A: `changelog.d/1305-shared-native-form-fields.md`
+- A: `changelog.d/1306-shared-status-badges.md`
+- A: `changelog.d/1309-shared-field-css-ownership.md`
+- A: `changelog.d/1317-provider-response-hardening.md`
+- A: `changelog.d/1321-dead-code-cleanup.md`
+- A: `changelog.d/1324-street-level-provider-exports.md`
+- A: `changelog.d/1325-phone-layout.md`
+- A: `changelog.d/1326-terrain-cache-eviction.md`
+- A: `changelog.d/1338-mobile-contact-context.md`
+- A: `changelog.d/1339-hud-dms-carry.md`
+- A: `changelog.d/1340-search-separated-hemisphere.md`
+- A: `changelog.d/1341-kartaview-impossible-timestamps.md`
+- A: `changelog.d/1342-firms-acquisition-calendar.md`
+- A: `changelog.d/1343-route-ramp-lane-wording.md`
+- A: `changelog.d/1345-weather-staging-wake.md`
+- A: `changelog.d/1349-cyclone-classification-codes.md`
+- A: `changelog.d/1350-cyclone-movement-knots.md`
+- A: `changelog.d/1351-ais-static-keeps-motion.md`
+- A: `changelog.d/1352-cockpit-destination-heading.md`
+- A: `changelog.d/1353-transit-ninety-second-age.md`
+- A: `changelog.d/1354-firms-frp-ten-megawatts.md`
+- A: `changelog.d/1366-aircraft-models-no-environment-map.md`
+- A: `changelog.d/1367-turned-off-layer-memory.md`
+- A: `changelog.d/1378-touch-zoom-aircraft-updates.md`
+- A: `changelog.d/1379-aircraft-label-candidates.md`
+- A: `changelog.d/1384-hud-summary-moving.md`
+- A: `changelog.d/1385-route-duration-minute.md`
+- A: `changelog.d/1386-route-distance-kilometre.md`
+- A: `changelog.d/1387-awareness-distance-kilometre.md`
+- A: `changelog.d/1388-draw-line-kilometre.md`
+- A: `changelog.d/1389-cockpit-wind-north.md`
+- A: `changelog.d/1390-awareness-bearing-north.md`
+- A: `changelog.d/1391-docker-selinux.md`
+- A: `changelog.d/1394-docker-healthcheck.md`
+- A: `changelog.d/1395-fires-tool-acquired-time.md`
+- A: `changelog.d/1396-local-adsb-track-north.md`
+- A: `changelog.d/1398-sharpen-zero-off.md`
+- A: `changelog.d/1399-ground-snap-clock-step.md`
+- A: `changelog.d/1403-remove-unused-modules.md`
+- A: `changelog.d/1410-scope-controls-hud-readability.md`
+- A: `changelog.d/1416-share-hash-navigation.md`
+- A: `changelog.d/1417-clear-all-saved-layers.md`
+- A: `changelog.d/1418-short-share-links.md`
+- A: `changelog.d/1419-share-view-codec-export.md`
+- A: `changelog.d/1420-keep-missed-location-query.md`
+- A: `changelog.d/1421-style-modules-skip-catalogs.md`
+- A: `changelog.d/287-shared-great-circle-distance.md`
+- A: `changelog.d/605-fl511-florida-cameras.md`
+- A: `changelog.d/686-terrain-heights-bounds.md`
+- A: `changelog.d/761-dev-unwatched-runtime-dirs.md`
+- A: `changelog.d/767-alpha5-catalog-numbers.md`
+- A: `changelog.d/787-changelog-fragments.md`
+- A: `changelog.d/816-radio-owner-restoration.md`
+- A: `changelog.d/872-gemini-live-voice.md`
+- A: `changelog.d/880-world-packet-boundary.md`
+- A: `changelog.d/945-cctv-vegvesen-kartverket-heights.md`
+- A: `changelog.d/948-vite-fs-deny.md`
+- A: `changelog.d/970-recent-imagery-details-scroll.md`
+- A: `changelog.d/973-tomtom-cross-site-gate.md`
+- A: `changelog.d/974-street-level-slim.md`
+- A: `changelog.d/975-terrain-cross-site-gate.md`
+- A: `changelog.d/990-hong-kong-cctv.md`
+- A: `changelog.d/README.md`
+- A: `compose.yaml`
+- M: `docs/APPLICATION.md`
+- M: `docs/CODE-BOUNDARIES.md`
+- M: `docs/CURRENT-STATE.md`
+- A: `docs/I18N.md`
+- M: `docs/INFRASTRUCTURE-LAYERS.md`
+- M: `docs/KNOWN-ISSUES.md`
+- M: `docs/MAINTAINER_WORKFLOW.md`
+- M: `docs/MCP_SETUP.md`
+- M: `docs/PERFORMANCE.md`
+- A: `docs/PR_REVIEW_SANDBOX.md`
+- A: `docs/SHARE-LINK-FORMAT.md`
+- M: `docs/TOOLS.md`
+- A: `docs/TRANSLATORS.md`
+- M: `docs/VOICE-OWNERSHIP.md`
+- M: `docs/opensky-auth.md`
+- A: `docs/translations/es.md`

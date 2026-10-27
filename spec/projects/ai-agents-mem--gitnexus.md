@@ -26,3 +26,7 @@ A code graph is an approximation of actual execution: reflection, dynamic import
 Pilot as an optional code-intelligence adapter, with plain file search and language-server references as controls. Use it to suggest impact neighborhoods, then read authoritative source before editing. Acceptance tasks should include renamed symbols, stale commits, multi-language workspaces, generated files, dynamic calls and unavailable FTS. Measure patch success and missed affected tests, not just search relevance.
 
 Related directions: [memory](../memory.md) · [import-generation](../import-generation.md) · [agents](../agents.md).
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `5f9f95f22454b1f878ca549bc38b4c2ef5066b9a`; commit date 2026-10-03T18:22:21+01:00; review date 2026-10-04; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
+<!-- teamagent-analysis:end -->

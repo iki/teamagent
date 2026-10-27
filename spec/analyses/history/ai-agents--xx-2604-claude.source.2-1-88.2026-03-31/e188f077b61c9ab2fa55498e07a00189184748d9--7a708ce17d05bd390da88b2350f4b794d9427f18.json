@@ -1,0 +1,944 @@
+{
+  "id": "ai-agents--xx-2604-claude.source.2-1-88.2026-03-31",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/chatgptprojects/claude-code",
+  "report": "spec/projects/ai-agents--xx-2604-claude.source.2-1-88.2026-03-31.md",
+  "analyzedSha": "e188f077b61c9ab2fa55498e07a00189184748d9",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-04-03T14:50:47+08:00",
+  "observedSha": "7a708ce17d05bd390da88b2350f4b794d9427f18",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7a708ce17d05bd390da88b2350f4b794d9427f18",
+      "date": "2026-10-07T12:04:08-04:00",
+      "subject": "added new skills and updated with README.md"
+    },
+    {
+      "sha": "9f463017142a0039bfe80885be43b4914531aef5",
+      "date": "2026-05-22T02:40:43-04:00",
+      "subject": "feat(skills): add posthog-adblock-bypass skill"
+    },
+    {
+      "sha": "d0428a4b452884919c0ac05d2df1bb2887714b92",
+      "date": "2026-05-20T04:07:55-04:00",
+      "subject": "feat(skills): add godot-city-game-3d skill"
+    },
+    {
+      "sha": "a1bf1eff076938be299e55e9d17f202e59467ece",
+      "date": "2026-05-18T02:08:21-04:00",
+      "subject": "feat(skills): add ios-bootstrap-testflight skill"
+    },
+    {
+      "sha": "7a4d57c7a020c2a4ac030e5db45b9e627eeb4e20",
+      "date": "2026-05-17T11:55:52-04:00",
+      "subject": "feat(skills): add publicity-distribution skill"
+    },
+    {
+      "sha": "68a2c81c757abc18d4356f01fea2fed749816fe2",
+      "date": "2026-05-16T13:19:31-04:00",
+      "subject": "feat(skills): add research-paper-integrity skill"
+    },
+    {
+      "sha": "b51faf8076bfd13eb9d707ef0a1b05da6fd76143",
+      "date": "2026-05-15T04:40:51-04:00",
+      "subject": "feat(skills): add translate-explanation skill"
+    },
+    {
+      "sha": "136d1d707a28329efcf99141fbc0cb4be2948845",
+      "date": "2026-05-14T12:17:52-04:00",
+      "subject": "feat(skills): add code-explanation skill"
+    },
+    {
+      "sha": "d6faf0343509b2cbdd051753e252fa4dbb2536dd",
+      "date": "2026-05-12T16:01:47-04:00",
+      "subject": "feat(skills): add vuln-repro skill"
+    },
+    {
+      "sha": "78137b2f78e816b56e10c0a3ddcc81cd34340b6d",
+      "date": "2026-05-11T06:24:04-04:00",
+      "subject": "feat(skills): add security-repro skill"
+    },
+    {
+      "sha": "bcb3d60d6f09c3a9f8f30749159b1c88b43018b3",
+      "date": "2026-05-09T19:58:00-04:00",
+      "subject": "feat(skills): add analyze-exports skill"
+    },
+    {
+      "sha": "e4babdfe4edd8f6d61b1bf75ad25571c65823e20",
+      "date": "2026-05-08T11:19:36-04:00",
+      "subject": "feat(skills): add research-observability skill"
+    },
+    {
+      "sha": "74908279f629738bdf6f7c8b02526e335adaf071",
+      "date": "2026-05-07T15:08:42-04:00",
+      "subject": "feat(skills): add tinker-training-inference skill"
+    },
+    {
+      "sha": "11a4915c34eccfcd4b422c71068e6891400b7145",
+      "date": "2026-05-05T13:20:31-04:00",
+      "subject": "feat(skills): add fireworks-inference skill"
+    },
+    {
+      "sha": "14c7c70198e4cf7e2cd686de8a5ff0f8e916c2c1",
+      "date": "2026-05-03T22:40:24-04:00",
+      "subject": "feat(skills): add mcp-builder skill"
+    },
+    {
+      "sha": "d01fc9a6a892f2c711ce88e2abf119c34b42d1e8",
+      "date": "2026-05-02T19:29:02-04:00",
+      "subject": "feat(skills): add mcp-apps-builder skill"
+    },
+    {
+      "sha": "f0ee75833ca6034a43063b159df23081c25f0255",
+      "date": "2026-05-02T00:53:03-04:00",
+      "subject": "feat(skills): add leanmcp-builder skill"
+    },
+    {
+      "sha": "8a0ae2a0724ed211542ab21659f1291adf664670",
+      "date": "2026-04-30T19:03:12-04:00",
+      "subject": "docs(skills): add skills index"
+    },
+    {
+      "sha": "c5c1bd2c3ca53ac1bd67c06cad27efde0da63f2f",
+      "date": "2026-04-29T16:50:55-04:00",
+      "subject": "chore: ignore local workspace and .DS_Store"
+    },
+    {
+      "sha": "246db70a0d0f32f4f68b9bed8841a70d3f3b5f6f",
+      "date": "2026-04-29T00:21:27-04:00",
+      "subject": "chore: add issue and PR templates"
+    },
+    {
+      "sha": "4021aa860bf750b140a9b4b5a6a9a2678f3ae17b",
+      "date": "2026-04-28T01:08:05-04:00",
+      "subject": "docs: add contributing guide"
+    },
+    {
+      "sha": "59cc28917734f5330241efb3c3cda4b2ae381b1d",
+      "date": "2026-04-24T23:20:14-04:00",
+      "subject": "docs: add security policy"
+    },
+    {
+      "sha": "6889ebd394bec36a2914a7247d4bc8275c9d12ba",
+      "date": "2026-04-23T15:21:13-04:00",
+      "subject": "chore: update MIT license copyright to LeanMCP"
+    },
+    {
+      "sha": "63d2944b8fe19f5197d418e6e43dcb79de553fb5",
+      "date": "2026-04-21T19:36:16Z",
+      "subject": "docs: rebrand README to LeanMCP AI Gateway"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "SECURITY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/analyze-exports/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/analyze-exports/references/common_failures.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/analyze-exports/references/export_format.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/analyze-exports/scripts/analyze_failures.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/analyze-exports/scripts/parse_export.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/code-explanation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/assets/run_fireworks.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/gateway.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/load-and-concurrency.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/models.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/reasoning-models.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/reference-implementation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/routes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/runner-scripts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/references/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/scripts/fw_hammer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/scripts/fw_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/scripts/fw_ready.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/fireworks-inference/scripts/fw_smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/references/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/references/assets.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/references/city-generation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/references/deploy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/references/real-map-data.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/references/setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/references/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/bootstrap_project.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/build_assets.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/check_project.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/cloud/deploy_game.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/cloud/provision_gcp.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/cloud/setup_host.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/cloud/stop.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/ensure_export_presets.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/export_web.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/import_assets.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/install_godot.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/lib.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/run.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/serve_web.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/project.godot",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scenes/main.tscn",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scripts/city/city_config_{{CITY}}.gd",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scripts/city/city_generator.gd",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scripts/city/terrain.gd",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scripts/city/typology.gd",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scripts/game_input.gd",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scripts/main.gd",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/scripts/player.gd",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/godot-city-game-3d/scripts/templates/shaders/facade.gdshader",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/references/appstore.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/references/bootstrap.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/references/caveats.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/references/testflight.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/scripts/make_icon.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/scripts/run.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/scripts/screenshots.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/ios-bootstrap-testflight/scripts/upload_testflight.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/leanmcp-builder/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/leanmcp-builder/assets/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/leanmcp-builder/assets/mcp-example-index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/leanmcp-builder/assets/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/leanmcp-builder/assets/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/leanmcp-builder/references/decorators.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-apps-builder/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-apps-builder/assets/Dashboard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-apps-builder/assets/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-apps-builder/assets/mcp-dashboard-index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-apps-builder/assets/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-apps-builder/assets/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-apps-builder/references/ui-components.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-builder/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-builder/assets/mcp-server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-builder/assets/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-builder/assets/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-builder/references/patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/posthog-adblock-bypass/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/posthog-adblock-bypass/posthog-adblock-bypass.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/posthog-adblock-bypass/skills-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/examples/discord-soft-share.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/examples/paper-launch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/examples/product-launch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/platforms/discord.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/platforms/instagram.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/platforms/linkedin.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/platforms/medium.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/platforms/substack.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/platforms/twitter-x.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/platforms/youtube.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/references/anti-ai-tells.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/references/asset-specs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/references/campaign-playbooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/styles/builder-technical.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/styles/professional.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/publicity-distribution/styles/whatsapp-lowercase.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/assets/_common_eval.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/references/data-model.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/references/integration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/references/platforms.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/references/reference-implementation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/references/runner-scripts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/references/viewers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/scripts/obs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/scripts/obs_adapters.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/scripts/obs_import.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/scripts/obs_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/scripts/view_trace.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-observability/scripts/view_trace_tui.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-paper-integrity/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-paper-integrity/references/ai-writing-policy.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-paper-integrity/references/conference-writing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-paper-integrity/references/hallucination-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-paper-integrity/references/writing-style.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/research-paper-integrity/scripts/check_prose.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/security-repro/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/security-repro/references/harness-pattern.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/security-repro/scripts/check_patched.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/security-repro/scripts/fetch_cve.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/security-repro/scripts/fetch_nvd.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/assets/TINKER_PRICING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/agentic-rl.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/chat-templates.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/checkpoints.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/hyperparameters.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/inference.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/pricing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/reference-implementation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/training-rl.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/training-sft.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/references/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/scripts/tinker_infer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/scripts/tinker_pricing.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/scripts/tinker_rl.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/tinker-training-inference/scripts/tinker_sft.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/translate-explanation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/assets/harness_template.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/references/harness-pattern.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/references/patching.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/references/sourcing.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/references/writeup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/scripts/check_patched.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/scripts/fetch_cve.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/vuln-repro/scripts/fetch_nvd.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

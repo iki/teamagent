@@ -1,0 +1,207 @@
+# diagram-design: change evidence
+
+Source: [diagram-design](https://github.com/cathrynlavery/diagram-design) · [Analysis](../../projects/ai-gen--diagram-design.md) · [import-generation](../../import-generation.md), [channels](../../channels.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `f903933a534ba92cde1c85a28186267b3a317bb2`; commit date: 2026-10-01T17:03:05Z; review date: unknown; observed SHA: `c7588454ee986827ec0321cf006616ce9f89c3c2`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cathrynlavery/diagram-design/compare/f903933a534ba92cde1c85a28186267b3a317bb2...c7588454ee986827ec0321cf006616ce9f89c3c2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [c7588454ee98](https://github.com/cathrynlavery/diagram-design/commit/c7588454ee986827ec0321cf006616ce9f89c3c2) 2026-10-27T15:02:25Z: chore(release): bump plugin manifests to 2.6.132
+- [7bf9445418ff](https://github.com/cathrynlavery/diagram-design/commit/7bf9445418ff343927e8cf4d150216e9f07dcd53) 2026-10-27T10:02:01-05:00: feat(scatter): add box plot variant for five-number summaries (#435)
+- [97d795138448](https://github.com/cathrynlavery/diagram-design/commit/97d795138448f6a739a0cebc3d9beb37a42077f1) 2026-10-26T21:42:17Z: chore(release): bump plugin manifests to 2.6.131
+- [17686b948d1d](https://github.com/cathrynlavery/diagram-design/commit/17686b948d1db9df02288919cf2c1a22e65a6e24) 2026-10-26T16:41:56-05:00: fix(import): keep angle brackets in draw.io labels (#468)
+- [0c02056494e6](https://github.com/cathrynlavery/diagram-design/commit/0c02056494e6a92df132ba4b1d56611f512e4e7f) 2026-10-26T21:37:09Z: chore(release): bump plugin manifests to 2.6.130
+- [84886ebcc163](https://github.com/cathrynlavery/diagram-design/commit/84886ebcc1630c6fb093f23a619aca1c342ea0f8) 2026-10-26T16:36:49-05:00: fix(import): report an outer Excalidraw group (#469)
+- [b8f36171da6e](https://github.com/cathrynlavery/diagram-design/commit/b8f36171da6e1bce05c3eb984969e5d4e7cb3a20) 2026-10-26T08:34:56Z: chore(release): bump plugin manifests to 2.6.129
+- [3fdf8c25185e](https://github.com/cathrynlavery/diagram-design/commit/3fdf8c25185ef2b3919c470f61307f9e835fc3c2) 2026-10-26T03:34:34-05:00: fix(assets): reword the comment that blocked Hermes Agent installs (#483)
+- [10cfad6a7be7](https://github.com/cathrynlavery/diagram-design/commit/10cfad6a7be7f734a92d3d628e5fa344685d4f01) 2026-10-25T21:10:33Z: chore(release): bump plugin manifests to 2.6.128
+- [d26eb2c0d9c3](https://github.com/cathrynlavery/diagram-design/commit/d26eb2c0d9c3626e9f2fb8819ab2a29e7b28d173) 2026-10-25T16:10:09-05:00: fix(mermaid-import): keep sequence autonumber directives (#472)
+- [a0a6bcc6ef88](https://github.com/cathrynlavery/diagram-design/commit/a0a6bcc6ef888b04c63b4295bfec5d7660689251) 2026-10-25T20:53:10Z: chore(release): bump plugin manifests to 2.6.127
+- [d35ae86caa69](https://github.com/cathrynlavery/diagram-design/commit/d35ae86caa6938eb416b350cbf7d52c4d8173aab) 2026-10-25T15:52:44-05:00: fix(self-check): reject a document that stopped early (#440)
+- [97e2c31bb404](https://github.com/cathrynlavery/diagram-design/commit/97e2c31bb4044f3077de44437a52f6e190cc8e99) 2026-10-25T20:37:35Z: chore(release): bump plugin manifests to 2.6.126
+- [d0e57dc943ce](https://github.com/cathrynlavery/diagram-design/commit/d0e57dc943cec9f0829dd695799367157838c9da) 2026-10-25T15:37:14-05:00: docs: fix export defaults and the label mask colour (#480)
+- [4a5fe680e856](https://github.com/cathrynlavery/diagram-design/commit/4a5fe680e8560651958b18e08766a67bbadd43bb) 2026-10-25T19:53:58Z: chore(release): bump plugin manifests to 2.6.125
+- [d3add5fef2b4](https://github.com/cathrynlavery/diagram-design/commit/d3add5fef2b450c7f4ffc14652ea1996f71a2df8) 2026-10-25T14:53:33-05:00: fix(heatmap): read a quoted greater-than in markup (#470)
+- [9b672cea0ec4](https://github.com/cathrynlavery/diagram-design/commit/9b672cea0ec48d2e9863c9920a114b68582f4eab) 2026-10-25T19:38:39Z: chore(release): bump plugin manifests to 2.6.124
+- [c31c2f1c2a2e](https://github.com/cathrynlavery/diagram-design/commit/c31c2f1c2a2e5dfdd1e6830dfd5ac06afadd9c4c) 2026-10-25T14:38:16-05:00: fix(import): accept Mermaid edge IDs in flowcharts (#458)
+- [0c90140b877a](https://github.com/cathrynlavery/diagram-design/commit/0c90140b877a10df98690234e849e842d6340e52) 2026-10-25T19:04:11Z: chore(release): bump plugin manifests to 2.6.123
+- [f234b851706c](https://github.com/cathrynlavery/diagram-design/commit/f234b851706cfef0000800a51f88968bdfdf9d8c) 2026-10-25T14:03:45-05:00: docs(style-guide): fix three stale lines (#464)
+- [989575075fd6](https://github.com/cathrynlavery/diagram-design/commit/989575075fd67a9f3e4cde3bc6f3269bd0dc2cd9) 2026-10-25T18:31:29Z: chore(release): bump plugin manifests to 2.6.122
+- [b4bcb1cd6e91](https://github.com/cathrynlavery/diagram-design/commit/b4bcb1cd6e91e3e4058047ff9130c66fab468842) 2026-10-25T13:31:09-05:00: ci: name the exact setup-python release in its pin comments (#477)
+- [d3819c79640e](https://github.com/cathrynlavery/diagram-design/commit/d3819c79640e9007593bcadf2b6dfd4dc6a63e40) 2026-10-25T18:11:11Z: chore(release): bump plugin manifests to 2.6.121
+- [98b1721f9fa5](https://github.com/cathrynlavery/diagram-design/commit/98b1721f9fa577c4bba0580bf298597f0ec49fad) 2026-10-25T13:10:50-05:00: fix(mermaid-import): count discarded config directives (#471)
+- [0b9b10cab3db](https://github.com/cathrynlavery/diagram-design/commit/0b9b10cab3dbf695642fa1a6c4b4f60df9083689) 2026-10-24T00:49:52Z: chore(release): bump plugin manifests to 2.6.120
+- [f8d14c7c21b7](https://github.com/cathrynlavery/diagram-design/commit/f8d14c7c21b7475317195c7ea2c1fe7fa354cb43) 2026-10-23T19:49:30-05:00: fix(mermaid-import): list else/and/option regions in the digest (#466)
+- [7a12007b5a42](https://github.com/cathrynlavery/diagram-design/commit/7a12007b5a4246894f342a2e52e78facbc62eca3) 2026-10-21T17:46:10Z: chore(release): bump plugin manifests to 2.6.119
+- [1c8a664551fc](https://github.com/cathrynlavery/diagram-design/commit/1c8a664551fce30a042cdc235f4d5346af0b81b2) 2026-10-21T12:45:42-05:00: docs(agents): add the new-type checklist agents keep missing (#462)
+- [69e6138de162](https://github.com/cathrynlavery/diagram-design/commit/69e6138de1627bca669258f51fc28c4d25a9a21b) 2026-10-21T17:00:55Z: chore(release): bump plugin manifests to 2.6.118
+- [c2b1f7aeb613](https://github.com/cathrynlavery/diagram-design/commit/c2b1f7aeb61367dd70ded0aced21ebca875b0abf) 2026-10-21T12:00:30-05:00: fix(service-blueprint): accept Japanese two-line printed labels (#439)
+- [5be899efaabc](https://github.com/cathrynlavery/diagram-design/commit/5be899efaabc3667f5cfe7cbffc764fd2f9e820e) 2026-10-21T16:42:15Z: chore(release): bump plugin manifests to 2.6.117
+- [4f4489a294a7](https://github.com/cathrynlavery/diagram-design/commit/4f4489a294a794be60d8db1c212052cd2b18a4b1) 2026-10-21T11:41:51-05:00: fix(export): restore the svg-only/png-only exclusion rule in commands (#449)
+
+## Changed paths (truncated)
+
+- M: `.claude-plugin/marketplace.json`
+- M: `.claude-plugin/plugin.json`
+- M: `.codex-plugin/plugin.json`
+- M: `.factory-plugin/plugin.json`
+- A: `.github/CODEOWNERS`
+- A: `.github/FUNDING.yml`
+- M: `.github/PULL_REQUEST_TEMPLATE.md`
+- A: `.github/ci/node/.gitignore`
+- A: `.github/ci/node/package-lock.json`
+- A: `.github/ci/node/package.json`
+- A: `.github/ci/python/pyproject.toml`
+- A: `.github/ci/python/uv.lock`
+- A: `.github/dependabot.yml`
+- A: `.github/pr-visual-proof/279/animations.png`
+- A: `.github/pr-visual-proof/279/architecture.png`
+- A: `.github/pr-visual-proof/279/datalake.png`
+- A: `.github/pr-visual-proof/279/db-schema.png`
+- A: `.github/pr-visual-proof/279/high-level-vertical.png`
+- A: `.github/pr-visual-proof/279/high-level.png`
+- A: `.github/pr-visual-proof/279/swimlane.png`
+- A: `.github/pr-visual-proof/369/dark.png`
+- A: `.github/pr-visual-proof/369/full.png`
+- A: `.github/pr-visual-proof/369/light.png`
+- A: `.github/pr-visual-proof/readme-header/demo-contact.png`
+- A: `.github/pr-visual-proof/readme-header/hero-dark-graphite.png`
+- A: `.github/pr-visual-proof/readme-header/readme-top-dark.png`
+- A: `.github/pr-visual-proof/readme-header/readme-top-light.png`
+- M: `.github/workflows/auto-bump.yml`
+- A: `.github/workflows/ci-configuration.yml`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/pages.yml`
+- A: `.github/zizmor.yml`
+- M: `.maintainer-policy.json`
+- A: `.qoder-plugin/plugin.json`
+- A: `AGENTS.md`
+- A: `CHANGELOG.md`
+- A: `CLAUDE.md`
+- M: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `commands/export-diagram.md`
+- M: `commands/import-mermaid.md`
+- M: `docs/adr/0002-semantic-patterns-do-not-expand-the-taxonomy.md`
+- M: `docs/adr/0008-native-host-manifests-share-one-plugin-root.md`
+- M: `docs/adr/0009-versions-are-bumped-on-main-after-merge.md`
+- A: `docs/adr/0013-exploded-axonometric.md`
+- A: `docs/adr/0014-axonometric-plan.md`
+- A: `docs/adr/0015-service-blueprint-is-a-visibility-line-grammar.md`
+- A: `docs/adr/0015-state-note-termination.md`
+- A: `docs/adr/0016-merges-need-a-same-head-greptile-score.md`
+- M: `docs/cookbook.md`
+- A: `docs/hero/demo-light.gif`
+- A: `docs/hero/demo.gif`
+- M: `docs/hero/hero-dark.webp`
+- A: `docs/pr-previews/architecture-containment/architecture-containment-dark.png`
+- A: `docs/pr-previews/architecture-containment/architecture-containment-full.png`
+- A: `docs/pr-previews/architecture-containment/architecture-containment-light.png`
+- A: `docs/pr-previews/box-plot/box-plot-dark.png`
+- A: `docs/pr-previews/box-plot/box-plot-full.png`
+- A: `docs/pr-previews/box-plot/box-plot-light.png`
+- A: `docs/pr-previews/service-blueprint/service-blueprint-dark.png`
+- A: `docs/pr-previews/service-blueprint/service-blueprint-full.png`
+- A: `docs/pr-previews/service-blueprint/service-blueprint-light.png`
+- A: `docs/pr-previews/waterfall/plausible-wrong.md`
+- A: `docs/pr-previews/waterfall/plausible-wrong.png`
+- M: `docs/screenshots/architecture-delta.png`
+- M: `docs/screenshots/architecture.png`
+- A: `docs/screenshots/axonometric-plan.png`
+- M: `docs/screenshots/bar.png`
+- M: `docs/screenshots/data-flow.png`
+- M: `docs/screenshots/db-schema.png`
+- M: `docs/screenshots/dependency.png`
+- M: `docs/screenshots/deployment.png`
+- M: `docs/screenshots/dp-integration.png`
+- M: `docs/screenshots/dp-security-matrix.png`
+- M: `docs/screenshots/er.png`
+- A: `docs/screenshots/exploded.png`
+- M: `docs/screenshots/fishbone.png`
+- M: `docs/screenshots/flowchart.png`
+- M: `docs/screenshots/gantt.png`
+- M: `docs/screenshots/heatmap.png`
+- M: `docs/screenshots/high-level.png`
+- M: `docs/screenshots/it-state.png`
+- M: `docs/screenshots/journey.png`
+- M: `docs/screenshots/kanban.png`
+- M: `docs/screenshots/layers.png`
+- M: `docs/screenshots/line.png`
+- M: `docs/screenshots/loop.png`
+- M: `docs/screenshots/manifest.json`
+- M: `docs/screenshots/medallion.png`
+- M: `docs/screenshots/nested.png`
+- M: `docs/screenshots/org-chart.png`
+- M: `docs/screenshots/polar.png`
+- M: `docs/screenshots/process.png`
+- M: `docs/screenshots/pyramid.png`
+- M: `docs/screenshots/quadrant.png`
+- M: `docs/screenshots/radar.png`
+- M: `docs/screenshots/sankey.png`
+- M: `docs/screenshots/scatter.png`
+- M: `docs/screenshots/sequence.png`
+- A: `docs/screenshots/service-blueprint.png`
+- M: `docs/screenshots/state.png`
+- M: `docs/screenshots/story-map.png`
+- M: `docs/screenshots/swimlane.png`
+- M: `docs/screenshots/thumbs/architecture-delta.webp`
+- M: `docs/screenshots/thumbs/architecture.webp`
+- A: `docs/screenshots/thumbs/axonometric-plan.webp`
+- M: `docs/screenshots/thumbs/bar.webp`
+- M: `docs/screenshots/thumbs/data-flow.webp`
+- M: `docs/screenshots/thumbs/db-schema.webp`
+- M: `docs/screenshots/thumbs/dependency.webp`
+- M: `docs/screenshots/thumbs/deployment.webp`
+- M: `docs/screenshots/thumbs/dp-integration.webp`
+- M: `docs/screenshots/thumbs/dp-security-matrix.webp`
+- M: `docs/screenshots/thumbs/er.webp`
+- A: `docs/screenshots/thumbs/exploded.webp`
+- M: `docs/screenshots/thumbs/fishbone.webp`
+- M: `docs/screenshots/thumbs/flowchart.webp`
+- M: `docs/screenshots/thumbs/gantt.webp`
+- A: `docs/screenshots/thumbs/heatmap.webp`
+- M: `docs/screenshots/thumbs/high-level.webp`
+- M: `docs/screenshots/thumbs/it-state.webp`
+- M: `docs/screenshots/thumbs/journey.webp`
+- M: `docs/screenshots/thumbs/kanban.webp`
+- M: `docs/screenshots/thumbs/layers.webp`
+- M: `docs/screenshots/thumbs/line.webp`
+- M: `docs/screenshots/thumbs/loop.webp`
+- M: `docs/screenshots/thumbs/manifest.json`
+- M: `docs/screenshots/thumbs/medallion.webp`
+- M: `docs/screenshots/thumbs/nested.webp`
+- M: `docs/screenshots/thumbs/org-chart.webp`
+- M: `docs/screenshots/thumbs/polar.webp`
+- M: `docs/screenshots/thumbs/process.webp`
+- M: `docs/screenshots/thumbs/pyramid.webp`
+- M: `docs/screenshots/thumbs/quadrant.webp`
+- M: `docs/screenshots/thumbs/radar.webp`
+- M: `docs/screenshots/thumbs/sankey.webp`
+- M: `docs/screenshots/thumbs/scatter.webp`
+- M: `docs/screenshots/thumbs/sequence.webp`
+- A: `docs/screenshots/thumbs/service-blueprint.webp`
+- M: `docs/screenshots/thumbs/state.webp`
+- M: `docs/screenshots/thumbs/story-map.webp`
+- M: `docs/screenshots/thumbs/swimlane.webp`
+- M: `docs/screenshots/thumbs/timeline.webp`
+- M: `docs/screenshots/thumbs/tree.webp`
+- M: `docs/screenshots/thumbs/treemap.webp`
+- M: `docs/screenshots/thumbs/uml-class.webp`
+- M: `docs/screenshots/thumbs/venn.webp`
+- M: `docs/screenshots/thumbs/wardley.webp`
+- M: `docs/screenshots/thumbs/waterfall.webp`
+- M: `docs/screenshots/timeline.png`
+- M: `docs/screenshots/tree.png`
+- M: `docs/screenshots/treemap.png`
+- M: `docs/screenshots/uml-class.png`
+- M: `docs/screenshots/venn.png`
+- M: `docs/screenshots/wardley.png`
+- M: `docs/screenshots/waterfall.png`
+- M: `prompts/export-diagram.md`
+- A: `scripts/axonometry.py`
+- A: `scripts/build-axonometric-plan-examples.py`
+- A: `scripts/build-exploded-examples.py`

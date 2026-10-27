@@ -1,0 +1,207 @@
+# agentmemory: change evidence
+
+Source: [agentmemory](https://github.com/rohitg00/agentmemory) · [Analysis](../../projects/ai-agents-mem--agentmemory.md) · [memory](../../memory.md), [evolution](../../evolution.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `2a00e7b38fc4ae4e38af4134586be0bbe9612706`; commit date: 2026-10-03T13:30:09+05:30; review date: unknown; observed SHA: `c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/rohitg00/agentmemory/compare/2a00e7b38fc4ae4e38af4134586be0bbe9612706...c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [c5b8ebfb32eb](https://github.com/rohitg00/agentmemory/commit/c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8) 2026-10-26T19:06:20+05:30: fix(doctor): judge the LLM provider the way the daemon does (#1575)
+- [fa1171d28222](https://github.com/rohitg00/agentmemory/commit/fa1171d282225ae198cb1d79e4388f5292413fb5) 2026-10-25T17:44:34+05:30: fix(cli): show the embedding provider the server reports in agentmemory status (#1499)
+- [bb8f0508cdc0](https://github.com/rohitg00/agentmemory/commit/bb8f0508cdc028c1ccbfdb31766e723de6b8217c) 2026-10-25T17:10:27+05:30: chore: prepare 0.9.31 (#1612)
+- [36bdbe9d3ac3](https://github.com/rohitg00/agentmemory/commit/36bdbe9d3ac3c2bc011eb3ea50ad23c05da320ca) 2026-10-25T16:25:15+05:30: Upgrade to iii 0.25.0 with Worker Compose (#1592)
+- [3a6758ac8d21](https://github.com/rohitg00/agentmemory/commit/3a6758ac8d21172e727f97910800865d3d07cb28) 2026-10-25T15:01:01+05:30: fix(release): verify gated npm artifacts and provenance (#1561)
+- [22dc07ce3498](https://github.com/rohitg00/agentmemory/commit/22dc07ce3498fb1c78ed2b00bd59493e34ee3ada) 2026-10-25T14:59:15+05:30: feat(cursor): workspace adapter on top of the marketplace plugin (#1112)
+- [de0c036b0f8b](https://github.com/rohitg00/agentmemory/commit/de0c036b0f8be26cdf73cc32c36f8c83221a9909) 2026-10-25T14:19:12+05:30: feat(pi): make the native extension installable as a package (#1607)
+- [2755916a1092](https://github.com/rohitg00/agentmemory/commit/2755916a1092cd4e369eb9af6feda1b6bf1d4b9e) 2026-10-25T13:23:12+05:30: feat(omp): add Oh My Pi extension plugin (#1099)
+- [a56ce901b401](https://github.com/rohitg00/agentmemory/commit/a56ce901b4010c6ca69a3c2570a63500fcfa6a87) 2026-10-25T12:49:18+05:30: feat(dsh): bundle native capture with AgentMemory (#1609)
+- [70517d2bdf30](https://github.com/rohitg00/agentmemory/commit/70517d2bdf302a0aed11ca470151ee854e74c678) 2026-10-23T18:58:13+05:30: fix(dsh): preserve config and forward daemon credentials (#1606)
+- [1c995081c45d](https://github.com/rohitg00/agentmemory/commit/1c995081c45dd465877c4f6ecbf313490baa8820) 2026-10-21T15:46:57+05:30: fix(import): reject malformed sections and rows before a replace import deletes the store (#1576)
+- [14dfd6e133c0](https://github.com/rohitg00/agentmemory/commit/14dfd6e133c03f482311dd32150696be4b9dbaca) 2026-10-20T17:28:58+05:30: feat(website): research citations, live stats and a scrolling featured strip (#1595)
+- [6961ea577c84](https://github.com/rohitg00/agentmemory/commit/6961ea577c84d53c6f73566681b879b91c1263ba) 2026-10-20T15:56:31+05:30: fix(reflect): report clustering strategy (#1523)
+- [b3164b582601](https://github.com/rohitg00/agentmemory/commit/b3164b5826010523ae22c5e27101fe6fbfe42c70) 2026-10-20T12:49:49+05:30: fix(import-jsonl): ignore timestampless entries for session times and make re-import idempotent (#1526)
+- [a79fe1df833a](https://github.com/rohitg00/agentmemory/commit/a79fe1df833af2132da9d58d722eb65d207f369a) 2026-10-20T12:48:57+05:30: fix: decouple import per-session obs ceiling from MAX_OBS_PER_SESSION env (#1556)
+- [8a81e1d85bf3](https://github.com/rohitg00/agentmemory/commit/8a81e1d85bf3a1d08fa4950d2d6e10b4630d6a59) 2026-10-20T12:46:31+05:30: fix: load actions beyond the first page (#1524)
+- [e6d5136ee7cf](https://github.com/rohitg00/agentmemory/commit/e6d5136ee7cfa7ea4c1afb4689c1d1b35b180aec) 2026-10-20T12:45:25+05:30: fix: keep routine logs off MCP stdout (#1522)
+- [4b95a629a575](https://github.com/rohitg00/agentmemory/commit/4b95a629a5750dda414e56461eded4959b3e00bf) 2026-10-20T12:43:49+05:30: feat(export): paginate the non-session collections the frame guard's hint calls out (#1143)
+- [85dc30fb22dd](https://github.com/rohitg00/agentmemory/commit/85dc30fb22dd1ac8f6a804daf45bdf90ef73378a) 2026-10-20T12:42:40+05:30: feat(hooks): capture the assistant's final reply from the Stop hook (#1510)
+- [72e126676ba3](https://github.com/rohitg00/agentmemory/commit/72e126676ba3e0428300daf6edb6938f1cccda35) 2026-10-20T12:41:12+05:30: fix(hooks): stop collapsing distinct subagent, task and notification events (#1513)
+- [4ab436e717e3](https://github.com/rohitg00/agentmemory/commit/4ab436e717e3dde7cf32d2d4579002c5c3002425) 2026-10-20T12:40:27+05:30: fix(facets): cascade facet deletion on memory delete (#1591)
+- [3188d88259db](https://github.com/rohitg00/agentmemory/commit/3188d88259db40220d95e46f9109298be5958d78) 2026-10-20T12:39:07+05:30: fix(cli): count a relative iii-exec worker entry only when it exists in the engine's working directory (#1578)
+- [5f440859c966](https://github.com/rohitg00/agentmemory/commit/5f440859c966da6650cde58dc852cfa1efe52595) 2026-10-20T12:38:22+05:30: fix(mcp): say when a write only reached the local fallback store (#1563)
+- [34b790c2623b](https://github.com/rohitg00/agentmemory/commit/34b790c2623b7fc412c2e638a2cb5cfed78ccd66) 2026-10-20T12:37:54+05:30: fix(connect): make --with-hooks work when a hook handler has no command (#1574)
+- [e01540ec187e](https://github.com/rohitg00/agentmemory/commit/e01540ec187ec06f2e94ff73891e0e370d144484) 2026-10-18T10:46:09+05:30: fix(config): drop the development iii-exec worker from the bundled iii-config.yaml (#1581)
+- [6a182c410ed3](https://github.com/rohitg00/agentmemory/commit/6a182c410ed3858adacd57af141591d913d00aba) 2026-10-16T18:44:49+05:30: fix(graph): keep each observation's best graph score (#1560)
+- [ec28162bb3f6](https://github.com/rohitg00/agentmemory/commit/ec28162bb3f6731d5c71b288146852b091150017) 2026-10-16T18:43:57+05:30: fix(devin): capture sessions from the Devin plugin and prepare it for the marketplace (#1570)
+- [ea2f629f04d7](https://github.com/rohitg00/agentmemory/commit/ea2f629f04d7d340c16b4966e34e31ad593dbbf6) 2026-10-16T15:58:01+05:30: fix: preserve structured capture redaction (#1569)
+- [7bf9c53e4c85](https://github.com/rohitg00/agentmemory/commit/7bf9c53e4c855e2896820e7e540c8edc42b26605) 2026-10-16T15:17:38+05:30: fix: preserve vector recovery across checkpoints and restarts (#1562)
+- [d9a20dafafc5](https://github.com/rohitg00/agentmemory/commit/d9a20dafafc58a8ea8b0c423fc046de92c3b9e61) 2026-10-16T14:13:09+05:30: fix: retain and recover failed observation compression (#1546)
+- [857cf1babf5b](https://github.com/rohitg00/agentmemory/commit/857cf1babf5bf0f5142af89bd5a91c57e7cdfe52) 2026-10-16T13:13:49+05:30: fix(graph): bound retrieval reads and resume explicit index migrations (#1559)
+- [062159c52f3f](https://github.com/rohitg00/agentmemory/commit/062159c52f3f7be4b04f5b356e9465b879ef7b4d) 2026-10-16T12:57:04+05:30: fix: serialize Redis state mutations per key (#1568)
+
+## Changed paths (truncated)
+
+- M: `.cursor-plugin/plugin.json`
+- A: `.dockerignore`
+- M: `.env.example`
+- M: `.github/workflows/ci.yml`
+- M: `.github/workflows/publish.yml`
+- M: `.github/workflows/release-gate.yml`
+- M: `.gitignore`
+- M: `AGENTS.md`
+- M: `CHANGELOG.md`
+- M: `CONTRIBUTING.md`
+- M: `INSTALL_FOR_AGENTS.md`
+- M: `README.md`
+- A: `READMEs/README.ar-SA.md`
+- A: `READMEs/README.bn-BD.md`
+- A: `READMEs/README.cs-CZ.md`
+- A: `READMEs/README.da-DK.md`
+- M: `READMEs/README.de-DE.md`
+- A: `READMEs/README.el-GR.md`
+- M: `READMEs/README.es-ES.md`
+- A: `READMEs/README.fi-FI.md`
+- M: `READMEs/README.fr-FR.md`
+- A: `READMEs/README.he-IL.md`
+- M: `READMEs/README.hi-IN.md`
+- A: `READMEs/README.hu-HU.md`
+- A: `READMEs/README.id-ID.md`
+- A: `READMEs/README.it-IT.md`
+- M: `READMEs/README.ja-JP.md`
+- M: `READMEs/README.ko-KR.md`
+- A: `READMEs/README.nb-NO.md`
+- A: `READMEs/README.nl-NL.md`
+- A: `READMEs/README.pl-PL.md`
+- M: `READMEs/README.pt-BR.md`
+- A: `READMEs/README.pt-PT.md`
+- A: `READMEs/README.ro-RO.md`
+- M: `READMEs/README.ru-RU.md`
+- A: `READMEs/README.sv-SE.md`
+- A: `READMEs/README.th-TH.md`
+- A: `READMEs/README.tl-PH.md`
+- M: `READMEs/README.tr-TR.md`
+- A: `READMEs/README.uk-UA.md`
+- A: `READMEs/README.ur-PK.md`
+- A: `READMEs/README.vi-VN.md`
+- M: `READMEs/README.zh-CN.md`
+- M: `READMEs/README.zh-TW.md`
+- D: `assets/iii-console/states.png`
+- D: `assets/iii-console/traces-waterfall.png`
+- D: `assets/iii-console/workers.png`
+- M: `assets/tags/light/section-agents.svg`
+- M: `assets/tags/light/stat-tests.svg`
+- M: `assets/tags/section-agents.svg`
+- M: `assets/tags/stat-tests.svg`
+- M: `benchmark/capture-costs.ts`
+- A: `deploy/Dockerfile`
+- M: `deploy/README.md`
+- D: `deploy/coolify/Dockerfile`
+- M: `deploy/coolify/README.md`
+- M: `deploy/coolify/docker-compose.yml`
+- D: `deploy/coolify/entrypoint.sh`
+- D: `deploy/fly/Dockerfile`
+- M: `deploy/fly/README.md`
+- D: `deploy/fly/entrypoint.sh`
+- M: `deploy/fly/fly.toml`
+- D: `deploy/railway/Dockerfile`
+- M: `deploy/railway/README.md`
+- D: `deploy/railway/entrypoint.sh`
+- M: `deploy/railway/railway.json`
+- D: `deploy/render/Dockerfile`
+- M: `deploy/render/README.md`
+- D: `deploy/render/entrypoint.sh`
+- M: `deploy/render/render.yaml`
+- A: `deploy/runtime/agentmemory.worker.yaml`
+- A: `deploy/runtime/entrypoint.sh`
+- A: `deploy/runtime/worker-compose.yaml`
+- M: `docker-compose.yml`
+- A: `docs/benchmarks/2026-10-09-evaluation-baseline.md`
+- A: `docs/benchmarks/data/2026-10-09/coding-prefix-fix/evidence.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/coding-prefix-fix/manifest.json`
+- A: `docs/benchmarks/data/2026-10-09/coding-prefix-fix/scores.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/coding-prefix-fix/summary.json`
+- A: `docs/benchmarks/data/2026-10-09/lifecycle-prefix-fix/checks.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/lifecycle-prefix-fix/manifest.json`
+- A: `docs/benchmarks/data/2026-10-09/lifecycle-prefix-fix/summary.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-final/evidence.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-final/manifest.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-final/scores.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-final/summary.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/evidence.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/manifest.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/scores.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-http-prefix-fix/summary.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-local-final/evidence.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-local-final/manifest.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-local-final/scores.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-local-final/summary.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/evidence.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/manifest.json`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/scores.ndjson`
+- A: `docs/benchmarks/data/2026-10-09/longmemeval-prefix-fix/summary.json`
+- A: `docs/dsh.md`
+- A: `docs/graph-search.md`
+- A: `docs/native-integration-tests.md`
+- A: `docs/plugins/antigravity.md`
+- M: `docs/plugins/codex-local.md`
+- A: `docs/plugins/copilot.md`
+- A: `docs/recall.md`
+- A: `docs/reflection-evidence.md`
+- A: `docs/reliability/compression-recovery.md`
+- A: `docs/reliability/graph-index-migration.md`
+- A: `docs/reliability/graph-search-budget.md`
+- M: `docs/reliability/source-and-vector-recovery.md`
+- A: `docs/reliability/state-storage.md`
+- A: `docs/reliability/summary-recovery.md`
+- A: `docs/reranking.md`
+- A: `docs/upgrades/iii-0.25.md`
+- M: `eval/README.md`
+- M: `eval/runner/adapters/agentmemory.ts`
+- A: `eval/runner/adapters/bm25.ts`
+- M: `eval/runner/adapters/grep.ts`
+- M: `eval/runner/adapters/vector.ts`
+- A: `eval/runner/cli.ts`
+- M: `eval/runner/coding-life.ts`
+- A: `eval/runner/fingerprint.ts`
+- A: `eval/runner/input.ts`
+- A: `eval/runner/lifecycle-fixture.ts`
+- A: `eval/runner/lifecycle.ts`
+- M: `eval/runner/load.ts`
+- M: `eval/runner/longmemeval.ts`
+- A: `eval/runner/recall-quality.ts`
+- A: `eval/runner/run.ts`
+- A: `eval/runner/sandbox.ts`
+- M: `eval/runner/score.ts`
+- M: `eval/runner/types.ts`
+- M: `eval/scripts/sandbox.sh`
+- M: `examples/python/README.md`
+- M: `examples/python/observe_and_recall.py`
+- M: `examples/python/quickstart.py`
+- D: `iii-config.docker.yaml`
+- D: `iii-config.yaml`
+- A: `integrations/cursor/README.md`
+- A: `integrations/cursor/_env.mjs`
+- A: `integrations/cursor/close-stale-am-sessions.mjs`
+- A: `integrations/cursor/install-local.mjs`
+- A: `integrations/cursor/verify-flow.mjs`
+- M: `integrations/filesystem-watcher/watcher.mjs`
+- A: `integrations/hermes/.npmignore`
+- M: `integrations/hermes/README.md`
+- M: `integrations/hermes/__init__.py`
+- M: `integrations/hermes/plugin.yaml`
+- A: `integrations/omp/README.md`
+- A: `integrations/omp/capture.ts`
+- A: `integrations/omp/index.ts`
+- A: `integrations/omp/package.json`
+- A: `integrations/omp/security.ts`
+- M: `integrations/openclaw/README.md`
+- M: `integrations/openclaw/openclaw.plugin.json`
+- M: `integrations/openclaw/package.json`
+- M: `integrations/openclaw/plugin.mjs`
+- M: `integrations/openclaw/plugin.yaml`
+- A: `integrations/pi/LICENSE`
+- M: `integrations/pi/README.md`

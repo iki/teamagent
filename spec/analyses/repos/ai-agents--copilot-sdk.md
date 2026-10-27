@@ -1,0 +1,207 @@
+# copilot-sdk: change evidence
+
+Source: [copilot-sdk](https://github.com/github/copilot-sdk) · [Analysis](../../projects/ai-agents--copilot-sdk.md) · [agents](../../agents.md), [models](../../models.md)
+
+Generated: 2026-10-27T18:19:07.717Z. Status: **changed**. Reviewed SHA: `ef04633cc84e4ba8e79888a39259ca276f5de732`; commit date: 2026-10-02T22:14:56Z; review date: unknown; observed SHA: `26536883459ba4cb23c735db8cb3de2c7b899d88`.
+
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/github/copilot-sdk/compare/ef04633cc84e4ba8e79888a39259ca276f5de732...26536883459ba4cb23c735db8cb3de2c7b899d88). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+
+- Git discovery: updated; source lifecycle: active; upstream availability: available.
+
+## Recent commits (truncated)
+
+- [26536883459b](https://github.com/github/copilot-sdk/commit/26536883459ba4cb23c735db8cb3de2c7b899d88) 2026-10-26T22:46:23Z: Update SDK snapshot for Copilot CLI 1.0.104-4
+- [c57638f4a7ce](https://github.com/github/copilot-sdk/commit/c57638f4a7ce2255a34192d5035932d0e109bbdd) 2026-10-24T15:38:54Z: Update SDK snapshot for Copilot CLI 1.0.104-3
+- [be9764fe7c10](https://github.com/github/copilot-sdk/commit/be9764fe7c10e48e17b37bf6a3198b1f26f7e9e8) 2026-10-24T01:15:02Z: Update SDK snapshot for Copilot CLI 1.0.104-2
+- [538675843887](https://github.com/github/copilot-sdk/commit/538675843887643ce471c874a3a9870ebda3f6f4) 2026-10-23T21:38:42Z: Update SDK snapshot for Copilot CLI 1.0.104-1
+- [ca1103fb47dd](https://github.com/github/copilot-sdk/commit/ca1103fb47dda263f34d13c489986c423598c74a) 2026-10-23T18:58:55Z: Update SDK snapshot for Copilot CLI 1.0.104-0
+- [f2b720c8ec36](https://github.com/github/copilot-sdk/commit/f2b720c8ec368e035a4d5c72b012fd41b0d533e4) 2026-10-22T03:48:44Z: Update SDK snapshot for Copilot CLI 1.0.103-0
+- [bb8a5c3a3247](https://github.com/github/copilot-sdk/commit/bb8a5c3a32478cc69b36d905688b7abbdaeda7c0) 2026-10-21T04:56:47Z: Update SDK snapshot for Copilot CLI 1.0.102-1
+- [15fe467548d0](https://github.com/github/copilot-sdk/commit/15fe467548d077978ae4040f1621db8bd515608f) 2026-10-21T02:56:41Z: Update SDK snapshot for Copilot CLI 1.0.102-0
+- [51e9556d2607](https://github.com/github/copilot-sdk/commit/51e9556d2607f00f9f72038fa16accfe2f5d150d) 2026-10-20T15:13:07Z: Update SDK snapshot for Copilot CLI 1.0.101-1
+- [374b77380700](https://github.com/github/copilot-sdk/commit/374b77380700e550a39847445656369412f4005f) 2026-10-19T21:24:30Z: Update SDK snapshot for Copilot CLI 1.0.101-0
+- [b96cd2b54f7e](https://github.com/github/copilot-sdk/commit/b96cd2b54f7eb87458fd50f485a751c712e88f62) 2026-10-16T22:49:07Z: Update SDK snapshot for Copilot CLI 1.0.100-1
+- [18f0730b6d79](https://github.com/github/copilot-sdk/commit/18f0730b6d7976c6fb774785a03df87269564a9f) 2026-10-16T20:19:35Z: Update SDK snapshot for Copilot CLI 1.0.100-0
+- [b04171f698fd](https://github.com/github/copilot-sdk/commit/b04171f698fd80bfd5988505fd93d4a9b80a3934) 2026-10-16T15:17:17Z: Update SDK snapshot for Copilot CLI 1.0.99-3
+- [404304416ac5](https://github.com/github/copilot-sdk/commit/404304416ac5358651e3877a33bc9e8f4e482162) 2026-10-16T00:56:55Z: Update SDK snapshot for Copilot CLI 1.0.99-2
+- [206b49eee92f](https://github.com/github/copilot-sdk/commit/206b49eee92f37a6d5a69eeba16fa5b123b1ddd0) 2026-10-15T17:31:00Z: Update SDK snapshot for Copilot CLI 1.0.99-1
+- [5817ec0e0961](https://github.com/github/copilot-sdk/commit/5817ec0e09618badb923cc37df4a783648ca5f96) 2026-10-15T01:12:01Z: Update SDK snapshot for Copilot CLI 1.0.99-0
+- [ad20f9f4319d](https://github.com/github/copilot-sdk/commit/ad20f9f4319d48000b895c9c4180242c2232e1ab) 2026-10-14T04:34:34Z: Update SDK snapshot for Copilot CLI 1.0.98-2
+- [810c483ae426](https://github.com/github/copilot-sdk/commit/810c483ae426344c2a5fee61025f9e3bd457cca9) 2026-10-14T00:58:16Z: Update SDK snapshot for Copilot CLI 1.0.98-1
+- [508247d16fd9](https://github.com/github/copilot-sdk/commit/508247d16fd9c64f64c439ffac0d9f0216e76005) 2026-10-13T21:52:24Z: Update SDK snapshot for Copilot CLI 1.0.98-0
+- [9782624309a2](https://github.com/github/copilot-sdk/commit/9782624309a2366f6cbe2141ee7b2289b5d94136) 2026-10-13T16:34:20Z: Update SDK snapshot for Copilot CLI 1.0.97-3
+- [b19d3ef043eb](https://github.com/github/copilot-sdk/commit/b19d3ef043ebfeaeb794339173c39ad6c8eb29ca) 2026-10-13T01:16:18Z: Update SDK snapshot for Copilot CLI 1.0.97-2
+- [0a3643feb05e](https://github.com/github/copilot-sdk/commit/0a3643feb05e6a666c5b02c0727988dc9ad7bbad) 2026-10-12T23:03:16Z: Update SDK snapshot for Copilot CLI 1.0.97-1
+- [a72e9dda2b12](https://github.com/github/copilot-sdk/commit/a72e9dda2b1269e6d684bdb7a1de43f5c0c539df) 2026-10-12T20:56:33Z: Update SDK snapshot for Copilot CLI 1.0.97-0
+- [6be623b01b19](https://github.com/github/copilot-sdk/commit/6be623b01b194a61466385e3f708639ec98ce8ac) 2026-10-10T02:20:03Z: Update SDK snapshot for Copilot CLI 1.0.96-2
+- [0f7ab2dc70d2](https://github.com/github/copilot-sdk/commit/0f7ab2dc70d23b51379a159176e6c833a30c0e57) 2026-10-10T00:19:04Z: Update SDK snapshot for Copilot CLI 1.0.96-1
+- [24e9638db1bf](https://github.com/github/copilot-sdk/commit/24e9638db1bf292beb02efd375ce51e535c3d066) 2026-10-09T19:29:09Z: Update SDK snapshot for Copilot CLI 1.0.96-0
+- [24f386ae7b5c](https://github.com/github/copilot-sdk/commit/24f386ae7b5ce63e601eed3f0f669aca4e05fb2f) 2026-10-09T10:53:31Z: Update SDK snapshot for Copilot CLI 1.0.95-3
+- [341a526b26cc](https://github.com/github/copilot-sdk/commit/341a526b26ccc170f6a1c6c5651b51f4ba9d3691) 2026-10-09T02:43:18Z: Update SDK snapshot for Copilot CLI 1.0.95-2
+- [e1cd5bd9ffc6](https://github.com/github/copilot-sdk/commit/e1cd5bd9ffc6baf66e81741c4a3a8f21cd2acfcd) 2026-10-09T00:45:12Z: Update SDK snapshot for Copilot CLI 1.0.95-1
+- [03d7aadb8b76](https://github.com/github/copilot-sdk/commit/03d7aadb8b76c876bc5b66bc8c4f657d0118277b) 2026-10-08T22:27:19Z: Update SDK snapshot for Copilot CLI 1.0.95-0
+- [f84b4fdc6a2b](https://github.com/github/copilot-sdk/commit/f84b4fdc6a2baceb2d4ea0edc2b75de342aeee78) 2026-10-08T18:01:15Z: Update SDK snapshot for Copilot CLI 1.0.94-5
+- [2d5bbe1958ff](https://github.com/github/copilot-sdk/commit/2d5bbe1958ff3693f4e476258f13eac073c670b3) 2026-10-08T12:40:15Z: Update SDK snapshot for Copilot CLI 1.0.94-4
+
+## Changed paths (truncated)
+
+- D: `.github/actions/java-test-report/action.yml`
+- D: `.github/actions/run-alpine-tests/action.yml`
+- D: `.github/actions/setup-copilot/action.yml`
+- D: `.github/agents/agentic-workflows.md`
+- D: `.github/agents/sdk-docs-maintenance.agent.md`
+- D: `.github/skills/agentic-workflows/SKILL.md`
+- D: `.github/skills/sdk-java-e2e-test/SKILL.md`
+- D: `.github/skills/sdk-java-e2e-test/examples.md`
+- D: `.github/workflows/block-remove-before-merge.yml`
+- D: `.github/workflows/codeql.yml`
+- D: `.github/workflows/collect-corrections.yml`
+- D: `.github/workflows/copilot-setup-steps.yml`
+- D: `.github/workflows/cross-repo-issue-analysis.lock.yml`
+- D: `.github/workflows/cross-repo-issue-analysis.md`
+- D: `.github/workflows/handle-bug.lock.yml`
+- D: `.github/workflows/handle-bug.md`
+- D: `.github/workflows/handle-documentation.lock.yml`
+- D: `.github/workflows/handle-documentation.md`
+- D: `.github/workflows/handle-enhancement.lock.yml`
+- D: `.github/workflows/handle-enhancement.md`
+- D: `.github/workflows/handle-question.lock.yml`
+- D: `.github/workflows/handle-question.md`
+- D: `.github/workflows/issue-classification.lock.yml`
+- D: `.github/workflows/issue-classification.md`
+- D: `.github/workflows/issue-triage.lock.yml`
+- D: `.github/workflows/issue-triage.md`
+- D: `.github/workflows/java-adapt-handwritten-code-to-accept-upgrade-changes.lock.yml`
+- D: `.github/workflows/java-adapt-handwritten-code-to-accept-upgrade-changes.md`
+- D: `.github/workflows/java-codegen-fix.lock.yml`
+- D: `.github/workflows/java-codegen-fix.md`
+- M: `.github/workflows/java-publish-snapshot.yml`
+- D: `.github/workflows/java-smoke-test.yml`
+- D: `.github/workflows/sdk-dotnet.yml`
+- D: `.github/workflows/sdk-go.yml`
+- D: `.github/workflows/sdk-java.yml`
+- D: `.github/workflows/sdk-nodejs.yml`
+- D: `.github/workflows/sdk-platform.yml`
+- D: `.github/workflows/sdk-python.yml`
+- D: `.github/workflows/sdk-runtime-artifact.yml`
+- D: `.github/workflows/sdk-rust.yml`
+- D: `.github/workflows/sdk.yml`
+- D: `.github/workflows/verify-compiled.yml`
+- M: `.gitignore`
+- D: `AGENTS.md`
+- M: `BUILD.bazel`
+- D: `CONTRIBUTING.md`
+- M: `README.md`
+- M: `docs/auth/README.md`
+- M: `docs/auth/authenticate.md`
+- M: `docs/auth/byok.md`
+- M: `docs/auth/server-to-server-tokens.md`
+- M: `docs/developer-docs/secrets.md`
+- M: `docs/features/custom-agents.md`
+- A: `docs/features/customization-locations.md`
+- M: `docs/features/fleet-mode.md`
+- M: `docs/features/hooks.md`
+- M: `docs/features/mcp.md`
+- M: `docs/features/plugin-directories.md`
+- M: `docs/features/remote-sessions.md`
+- M: `docs/features/session-persistence.md`
+- M: `docs/features/skills.md`
+- M: `docs/features/streaming-events.md`
+- M: `docs/features/usage-and-billing.md`
+- M: `docs/getting-started.md`
+- M: `docs/hooks/hooks-overview.md`
+- M: `docs/hooks/session-lifecycle.md`
+- M: `docs/hooks/user-prompt-submitted.md`
+- M: `docs/observability/opentelemetry.md`
+- M: `docs/runtime-supervised-host.md`
+- M: `docs/setup/multi-tenancy.md`
+- M: `docs/troubleshooting/compatibility.md`
+- M: `dotnet/README.md`
+- M: `dotnet/src/Canvas.cs`
+- M: `dotnet/src/Client.cs`
+- M: `dotnet/src/CopilotRequestHandler.cs`
+- M: `dotnet/src/CopilotTool.cs`
+- M: `dotnet/src/FfiRuntimeHost.cs`
+- M: `dotnet/src/Generated/Rpc.cs`
+- M: `dotnet/src/Generated/SessionEvents.cs`
+- A: `dotnet/src/HookErrorTextConverter.cs`
+- M: `dotnet/src/Host.cs`
+- M: `dotnet/src/JsonRpc.cs`
+- M: `dotnet/src/PermissionHandlers.cs`
+- M: `dotnet/src/Session.StructuredOutput.cs`
+- M: `dotnet/src/Session.cs`
+- M: `dotnet/src/SessionFsProvider.cs`
+- M: `dotnet/src/Types.cs`
+- M: `dotnet/src/build/GitHub.Copilot.SDK.targets`
+- M: `dotnet/test/E2E/ClientOptionsE2ETests.cs`
+- M: `dotnet/test/E2E/CommandsE2ETests.cs`
+- M: `dotnet/test/E2E/CompactionE2ETests.cs`
+- M: `dotnet/test/E2E/CopilotRequestCancelErrorE2ETests.cs`
+- M: `dotnet/test/E2E/CopilotRequestWebSocketE2ETests.cs`
+- M: `dotnet/test/E2E/GitHubTelemetryForwardingE2ETests.cs`
+- M: `dotnet/test/E2E/HookLifecycleAndOutputE2ETests.cs`
+- A: `dotnet/test/E2E/HostAuthenticationE2ETests.cs`
+- M: `dotnet/test/E2E/PendingWorkResumeE2ETests.cs`
+- M: `dotnet/test/E2E/PerSessionAuthE2ETests.cs`
+- M: `dotnet/test/E2E/PermissionE2ETests.cs`
+- M: `dotnet/test/E2E/RpcShellAndFleetE2ETests.cs`
+- M: `dotnet/test/E2E/RuntimeHostE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingCallbacksE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingCanvasE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingCompositionE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingEventSubscriptionsE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingJsExtensionBridgeE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingProvidersE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingRuntimeE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingSendsE2ETests.cs`
+- M: `dotnet/test/E2E/ScenarioTestingSessionSetupE2ETests.cs`
+- M: `dotnet/test/E2E/SessionE2ETests.cs`
+- M: `dotnet/test/E2E/SessionFsE2ETests.cs`
+- A: `dotnet/test/E2E/SkillProviderE2ETests.cs`
+- M: `dotnet/test/E2E/StructuredOutputE2ETests.cs`
+- M: `dotnet/test/E2E/SubagentHooksE2ETests.cs`
+- M: `dotnet/test/E2E/ToolsE2ETests.cs`
+- M: `dotnet/test/GitHub.Copilot.SDK.Test.csproj`
+- M: `dotnet/test/Harness/AhpTestClient.cs`
+- A: `dotnet/test/Harness/AsyncTestSignal.cs`
+- M: `dotnet/test/Harness/E2ETestBase.cs`
+- M: `dotnet/test/Harness/E2ETestContext.cs`
+- M: `dotnet/test/Harness/E2ETestFixture.cs`
+- M: `dotnet/test/Harness/ReplayProxy.cs`
+- M: `dotnet/test/Harness/TestHelper.cs`
+- A: `dotnet/test/Unit/AsyncTestSignalTests.cs`
+- A: `dotnet/test/Unit/AutoTierIdentityTests.cs`
+- A: `dotnet/test/Unit/ClientSessionLifetimeTests.AhpAuthentication.cs`
+- M: `dotnet/test/Unit/ClientSessionLifetimeTests.AhpHost.cs`
+- A: `dotnet/test/Unit/ClientSessionLifetimeTests.CustomizationDirectories.cs`
+- M: `dotnet/test/Unit/ClientSessionLifetimeTests.cs`
+- A: `dotnet/test/Unit/ClientSessionSkillProviderTests.cs`
+- M: `dotnet/test/Unit/CloneTests.cs`
+- M: `dotnet/test/Unit/CopilotRequestHandlerProtocolTests.cs`
+- M: `dotnet/test/Unit/CopilotToolTests.cs`
+- M: `dotnet/test/Unit/E2ETestFixtureTests.cs`
+- M: `dotnet/test/Unit/ExtensionLaunchDiagnosticsTests.cs`
+- A: `dotnet/test/Unit/FakeCopilotUpstreamTests.cs`
+- M: `dotnet/test/Unit/FfiRuntimeHostLifetimeTests.cs`
+- M: `dotnet/test/Unit/GitHubTelemetryTests.cs`
+- A: `dotnet/test/Unit/InProcessRuntimeArgumentsTests.cs`
+- M: `dotnet/test/Unit/JsonRpcTests.cs`
+- M: `dotnet/test/Unit/MSBuildTargetsTests.cs`
+- M: `dotnet/test/Unit/PublicDtoTests.cs`
+- A: `dotnet/test/Unit/ReplayProxyTests.cs`
+- A: `dotnet/test/Unit/RpcMcpListTests.cs`
+- A: `dotnet/test/Unit/RpcModelCompatibilityTests.cs`
+- A: `dotnet/test/Unit/RpcSubagentSettingsTests.cs`
+- A: `dotnet/test/Unit/RpcWorkspacesCompatibilityTests.cs`
+- M: `dotnet/test/Unit/RuntimeWrapperTests.cs`
+- A: `dotnet/test/Unit/SendCompletionTests.cs`
+- M: `dotnet/test/Unit/SerializationTests.cs`
+- M: `dotnet/test/Unit/SetToolsTests.cs`
+- M: `dotnet/test/Unit/StructuredOutputTests.cs`
+- M: `go/README.md`
+- M: `go/canvas.go`
+- M: `go/client.go`
+- M: `go/client_test.go`
+- M: `go/cmd/bundler/main.go`
+- M: `go/cmd/bundler/main_test.go`
+- M: `go/copilot_request_handler.go`

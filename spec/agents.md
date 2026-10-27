@@ -77,6 +77,12 @@ The runtime must distinguish a recoverable stream from a recoverable in-flight c
 - A user can switch agent implementations through a cited handoff package and see which capabilities change.
 - Every worker output has a source revision, agent/model identity, policy digest, trace reference and independent outcome check.
 
+## October source refresh: request and completion boundaries
+
+The refreshed [Pi report](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) supports an explicit context/model preparation boundary and a second steering check after long preparation. Keep newly arrived user corrections visible before the next request. Fail tool calls emitted in a length-truncated response even when their partial arguments happen to decode; completion reason is part of the execution gate.
+
+The refreshed [Paseo report](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) retains capability-specific provider contracts and named refresh activities. Distinguish deadline notification, cooperative abort, and process cleanup. A discovered provider or a resolved Promise does not independently establish equivalent policy enforcement or task correctness.
+
 <!-- coverage:start -->
 ## Project coverage
 
@@ -335,3 +341,33 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [openspec](https://github.com/Fission-AI/OpenSpec) | [Report](projects/ai-spec--openspec.md) | source-reviewed |
 | [spec-kit](https://github.com/github/spec-kit) | [Report](projects/ai-spec--spec-kit.md) | source-reviewed |
 <!-- coverage:end -->
+
+
+## Source refresh: 2026-10-27 — ownership and completion
+
+The focused [Emdash review](analyses/unreviewed/ai-agents--emdash.md) ([source](https://github.com/generalaction/emdash)) adds a host-owned conversation/workspace pattern and a concrete warning: its automation executor records success when the session is launched. Teamagent must retain distinct accepted, launched, completed and verified states, and distinguish host task IDs from provider continuation tokens. Worktree ownership checks do not establish process or network isolation.
+
+The refreshed [Pi report](projects/ai-agents--pi.md) ([source](https://github.com/earendil-works/pi)) separates loss-tolerant streamed progress from durable state, makes handoff ordering explicit and retains known deferred provider jobs across interrupted polling. The [Paseo report](projects/ai-agents--paseo.md) ([source](https://github.com/getpaseo/paseo)) shows idle collection revalidating an entire agent family and retaining ownership until shutdown succeeds. Use these as conformance cases for the adopted adapter contract; they are not evidence of a new Teamagent runtime integration or measured advantage.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [claude-code](analyses/unreviewed/ai-agents--claude-code.md) ([source](https://github.com/anthropics/claude-code)).
+- [hanzo-cli](analyses/unreviewed/ai-agents--hanzo-cli.md) ([source](https://github.com/hanzoai/cli)).
+- [hanzo-dev](analyses/unreviewed/ai-agents--hanzo-dev.md) ([source](https://github.com/hanzoai/dev)).
+- [hanzo-hips](analyses/unreviewed/ai-agents--hanzo-hips.md) ([source](https://github.com/hanzoai/hips)).
+- [hanzo-sdk](analyses/unreviewed/ai-agents--hanzo-sdk.md) ([source](https://github.com/hanzoai/sdk)).
+- [hanzo-sdk-ts](analyses/unreviewed/ai-agents--hanzo-sdk-ts.md) ([source](https://github.com/hanzoai/js-sdk)).
+- [harness2](analyses/unreviewed/ai-agents--harness2.md) ([source](https://github.com/google-research/harness2)).
+- [murage](analyses/unreviewed/ai-agents--murage.md) ([source](https://github.com/ferroxlabs/murage)).
+- [openrig](analyses/unreviewed/ai-agents--openrig.md) ([source](https://github.com/mvschwarz/openrig)).
+- [trellis](analyses/unreviewed/ai-agents--trellis.md) ([source](https://github.com/mindfold-ai/trellis)).
+- [yoagent](analyses/unreviewed/ai-agents--yoagent.md) ([source](https://github.com/yologdev/yoagent)).
+- [deepinfer](analyses/unreviewed/ai-model-run--deepinfer.md) ([source](https://github.com/deepseek-ai/deepinfer)).
+- [hanzo-engine](analyses/unreviewed/ai-model-run--hanzo-engine.md) ([source](https://github.com/hanzoai/engine)).
+- [rea](analyses/unreviewed/ai-security--rea.md) ([source](https://github.com/morluto/rea)).
+- [assets-icons.better](analyses/unreviewed/ai-skills--assets-icons.better.md) ([source](https://github.com/better-auth/better-icons)).
+- [render-anatomy](analyses/unreviewed/ai-skills--render-anatomy.md) ([source](https://github.com/wheresryan22/anatomy)).
+<!-- analysis-additions:end -->

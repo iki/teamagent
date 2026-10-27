@@ -1,5 +1,7 @@
 # Resource import and media generation
 
+For speech and audiovisual input, see [channel input](channel-input.md) and [media processing](media-processing.md): preserve original recordings, transcript revisions, timing and speaker-method provenance, while generated voices remain distinct from imported evidence.
+
 [Home](README.md) · [Import pipeline](import-pipeline.md) · [Generation](generation.md) · [Memory](memory.md) · [Security](security.md)
 
 ## Shared architecture, different jobs
@@ -56,6 +58,12 @@ Image, audio, video, vector and 3D capabilities are independently advertised; a 
 ## Success measures
 
 Measure supported-format coverage, extraction fidelity, citation/location fidelity, ingest freshness, invalid-file rejection and cost per usable source. For generation, measure accepted artifacts, reference adherence, time/cost to accepted output, cancellation/recovery and provenance completeness. A larger tool catalog is useful only if selection and failure handling remain predictable.
+
+## October source refresh: conversion results and cache identity
+
+The refreshed [Docling report](projects/ai-query--docling.md) ([source](https://github.com/docling-project/docling)) requires adapters to inspect result status even when exception-on-error is enabled: partial conversion can still return a result. Include concrete parser/backend subtype and options in cache identity, and retain a separate content-integrity hash.
+
+The implemented [text synchronization workflow](research-sync.md) uses this distinction for web, PDF and explicitly selected social posts. Store originals, Markdown and images with source-version provenance; report unsupported article shapes, access shells, failed images and parser limits. The same principle applies to generated media: receiving a file is not evidence of complete or visually correct output.
 
 <!-- coverage:start -->
 ## Project coverage
@@ -143,3 +151,21 @@ Every associated project has its own report. Source-reviewed associations reflec
 | [agent-codex](https://github.com/openai/skills) | [Report](projects/ai-skills--agent-codex.md) | source-reviewed |
 | [context-hub.andrewyng](https://github.com/andrewyng/context-hub) | [Report](projects/ai-skills--context-hub.andrewyng.md) | source-reviewed |
 <!-- coverage:end -->
+
+## Hosted and local voice comparisons
+
+The [voice backend expansion](media-processing.md#voice-backend-expansion-and-astra-provenance) compares direct services, managed hosts and local checkpoints, with individual reports, dated pricing, license distinctions and the confirmed Astra analysis's partial-retrieval provenance. The [comparative evaluation](media-processing.md#comparative-voice-evaluation) defines speaker-fidelity, pronunciation, latency and cost checks; [runtime documentation](media-runtime.md) records what is actually implemented.
+
+<!-- analysis-additions:start -->
+## Newly catalogued sources
+
+These category-based links are discovery records, not reviewed capability or adoption claims. See [analysis maintenance](analyses/README.md).
+
+- [gittifacts](analyses/unreviewed/ai-agents-mem--gittifacts.md) ([source](https://github.com/jovidecroock/gittifacts)).
+- [helix-foundry](analyses/unreviewed/ai-agents-mem--helix-foundry.md) ([source](https://github.com/helixdb/helix-foundry)).
+- [xerj](analyses/unreviewed/ai-agents-mem--xerj.md) ([source](https://github.com/xerj-org/xerj)).
+- [jantt](analyses/unreviewed/ai-gen--jantt.md) ([source](https://github.com/ahmadhassan-bted/jantt)).
+- [better-icons](analyses/unreviewed/ai-query--better-icons.md) ([source](https://github.com/better-auth/better-icons)).
+- [dbx](analyses/unreviewed/ai-query--dbx.md) ([source](https://github.com/t8y2/dbx)).
+- [yt-dlp](analyses/unreviewed/ai-query--yt-dlp.md) ([source](https://github.com/yt-dlp/yt-dlp)).
+<!-- analysis-additions:end -->

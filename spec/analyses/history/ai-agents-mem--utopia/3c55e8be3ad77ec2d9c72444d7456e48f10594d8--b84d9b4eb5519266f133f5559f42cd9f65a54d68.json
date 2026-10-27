@@ -1,0 +1,984 @@
+{
+  "id": "ai-agents-mem--utopia",
+  "generatedAt": "2026-10-24T06:12:22.454Z",
+  "observedAt": "2026-10-24T06:12:13.1803701+00:00",
+  "source": "https://github.com/deeplethe/utopia",
+  "report": "spec/projects/ai-agents-mem--utopia.md",
+  "analyzedSha": "3c55e8be3ad77ec2d9c72444d7456e48f10594d8",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-03T16:50:45+08:00",
+  "observedSha": "b84d9b4eb5519266f133f5559f42cd9f65a54d68",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b84d9b4eb5519266f133f5559f42cd9f65a54d68",
+      "date": "2026-10-24T11:53:13+08:00",
+      "subject": "A base can start from a scenario pack: the classes, attributes and competency questions one kind of corpus is read for (#1369)"
+    },
+    {
+      "sha": "9ec06a3aa3c0c839f2929cf311a5baebb4c6fd1e",
+      "date": "2026-10-24T11:47:51+08:00",
+      "subject": "An attribute declared on a class reaches the typed graph: a late entity gets its bound class, a dated statement reads as its period, a text attribute takes a named object, an unreadable value is a drop row (#1370)"
+    },
+    {
+      "sha": "292aa66ebc7f80a9ef8a4a6d5d03e3527c0756e6",
+      "date": "2026-10-24T11:43:31+08:00",
+      "subject": "changes and entity_facts take an offset and say how to fetch the next page, and find_entities reports its match count in MCP output (#1396)"
+    },
+    {
+      "sha": "00f1172edff8ebec9362eab4524c337c0a0b431a",
+      "date": "2026-10-24T11:38:06+08:00",
+      "subject": "An identity source's names get no vectors from the backfill, and turning the flag on drops the ones already stored (#1390)"
+    },
+    {
+      "sha": "2402938061540677063c2be6ac398cdec74aec80",
+      "date": "2026-10-23T19:07:28+08:00",
+      "subject": "Chat tests that make an answer fail to save share one trigger installed once, so no test locks the messages table while another holds a row lock and reads it (#1391)"
+    },
+    {
+      "sha": "63b8fd3019c42e77689ccee29f9fd590506ca9f1",
+      "date": "2026-10-23T19:01:57+08:00",
+      "subject": "GitHub and Jira tickets render through one Ticket document, byte for byte as before, so GitLab issues can use it too (#1327) (#1378)"
+    },
+    {
+      "sha": "a742eee6c1bab63a1b16de54376d1c1d51d81bc4",
+      "date": "2026-10-23T18:56:30+08:00",
+      "subject": "A settings probe that runs out of time reads as timed out, not refused (#1354) (#1373)"
+    },
+    {
+      "sha": "7eff6ad5e839e8b8c226a575c4af37e87b64d460",
+      "date": "2026-10-23T18:51:03+08:00",
+      "subject": "An empty balance during phrase and kind-word alignment fails the run once instead of re-queueing it every few seconds (#1381)"
+    },
+    {
+      "sha": "8ea0612e1e95e11e3badf85e5fa47f8a7a50a8e4",
+      "date": "2026-10-23T18:12:40+08:00",
+      "subject": "A deployment can ask its identity provider for only the scopes its admin approved, so sign-in no longer stops at a consent page (#1355) (#1362)"
+    },
+    {
+      "sha": "50904e9fdf2e6aef6eae07d6aa17e599da715f8c",
+      "date": "2026-10-23T18:06:44+08:00",
+      "subject": "A statements source that declares its names identities attaches them by exact name and computes no name vectors for them (#1333)"
+    },
+    {
+      "sha": "47894659d2fc7353a74c24f8a7b17132257c5cc4",
+      "date": "2026-10-23T18:01:50+08:00",
+      "subject": "A regression case can expect no binding while a person's binding remains authoritative (#1334)"
+    },
+    {
+      "sha": "b39d9283f7e1cb8e82313f083d9197a67da3c5ed",
+      "date": "2026-10-23T17:56:25+08:00",
+      "subject": "A base can follow a gitlab.com project's markdown files, fetching only the files that changed (#1327) (#1365)"
+    },
+    {
+      "sha": "5669717db7d6f0938d3ac16d8b11ea2366dc61d3",
+      "date": "2026-10-23T17:51:33+08:00",
+      "subject": "A token reads a document's extractions and exports its base (#1266)"
+    },
+    {
+      "sha": "791a85d6e448dd7609f305a0506a85b43fce5d14",
+      "date": "2026-10-23T16:37:29+08:00",
+      "subject": "Containment pairs a Latin name only at a word edge, so `area` no longer meets `AreaScorecard` (#1357)"
+    },
+    {
+      "sha": "c9659b9b2b8cb986d4b0ddb3f19f35a28729e8e8",
+      "date": "2026-10-23T16:31:05+08:00",
+      "subject": "The shipped Postgres gets 1 GB of shared memory, so parallel queries on a larger base no longer fail (#1385)"
+    },
+    {
+      "sha": "091a154c1894c8f968621793cb77a27ac1e0da44",
+      "date": "2026-10-23T16:18:33+08:00",
+      "subject": "Rejecting a statement queues the typed recompute, so its typed row retires at once instead of at the next alignment (#1366) (#1371)"
+    },
+    {
+      "sha": "02611ae7bf9fb54237c10fa532fc8d06e52506c2",
+      "date": "2026-10-22T20:55:45+08:00",
+      "subject": "The model settings test sends the request shapes the jobs send, so a model that refuses streaming or tools no longer passes it (#1354) (#1363)"
+    },
+    {
+      "sha": "e1a0346a0bc7cbd7f2cdfef8b8bf31f2af65fb37",
+      "date": "2026-10-22T20:49:52+08:00",
+      "subject": "Prefer grounded subject evidence before namesake profile scores (#1251)"
+    },
+    {
+      "sha": "9942c0591a3f2a4e4e9ce450e928e13f5b5033e4",
+      "date": "2026-10-22T20:42:52+08:00",
+      "subject": "Three issue trackers share one ticket document and keep their own fetch, so GitLab issues need no third copy of the shape (#1327) (#1367)"
+    },
+    {
+      "sha": "43fb1589397de93db140cf41799fb7d1cc978178",
+      "date": "2026-10-22T20:21:16+08:00",
+      "subject": "A same verdict that touches an identity entity waits for a person, so a small model cannot merge a source's identities (#1248) (#1364)"
+    },
+    {
+      "sha": "c92908303fa9dbbfc9ef11a536cff31673a5cdf7",
+      "date": "2026-10-22T20:15:23+08:00",
+      "subject": "A tool request refused for its reasoning effort is retried with none and the client remembers it, so chat and the second look work on reasoning deployments (#1353) (#1368)"
+    },
+    {
+      "sha": "3cb51af7a8989af4e57fcbb4e510180308f6fed4",
+      "date": "2026-10-22T20:09:59+08:00",
+      "subject": "A token reads a base's ontology and a class's instances (#1265)"
+    },
+    {
+      "sha": "8a9979fa41748c8cdd08adec5e18734c2f2ddddf",
+      "date": "2026-10-22T20:03:37+08:00",
+      "subject": "A base with no properties still queues the ontology agent once enough signatures are unbound (#1336)"
+    },
+    {
+      "sha": "ffc1e8d557998c1ab03026f2490f42daa0e9560f",
+      "date": "2026-10-21T23:59:43+08:00",
+      "subject": "Record why source syncs stop at timestamp boundaries (#1213)"
+    },
+    {
+      "sha": "ab09b4a1c75c795fa82b03dcb24e8acdf207e859",
+      "date": "2026-10-21T14:07:52+08:00",
+      "subject": "A GitHub or Jira source cannot be saved without the repository or project its sync needs (#1328)"
+    },
+    {
+      "sha": "b0c3c43698dfc74a9c48a97228870b5b0d771341",
+      "date": "2026-10-21T14:01:42+08:00",
+      "subject": "A GitHub repository source skips empty files, and its repository, token and globs can be changed after it is created (#1326)"
+    },
+    {
+      "sha": "efb326dd1774636caace89093c192a6b47b449ed",
+      "date": "2026-10-21T13:56:37+08:00",
+      "subject": "Containment recall reads the base's name facts through the predicate index instead of probing every entity's facts (#1331)"
+    },
+    {
+      "sha": "94124df1dd5037e4e7d2c16a1194b724e89b2006",
+      "date": "2026-10-21T13:52:03+08:00",
+      "subject": "A client reads a document back by the external_id it pushed it under (#1280)"
+    },
+    {
+      "sha": "f2d2997fcf82e024c6b0b482a0b361eaadd0b701",
+      "date": "2026-10-21T13:44:48+08:00",
+      "subject": "Two worker slots stay free for jobs that make no model call, so a sync runs even while model work holds every other slot (#1349)"
+    },
+    {
+      "sha": "f2e2a47a2b6d0508aab88dc1b3689a6fee44c606",
+      "date": "2026-10-20T13:13:53+08:00",
+      "subject": "Merge pull request #1330 from deeplethe/chore/main-into-dev"
+    },
+    {
+      "sha": "7ecf9915545a56ad485c16fc658ed6bdb41889b2",
+      "date": "2026-10-20T13:06:52+08:00",
+      "subject": "Merge pull request #1329 from deeplethe/dev"
+    },
+    {
+      "sha": "d62e880b15ba80de983c83abff056c4107aef9ec",
+      "date": "2026-10-20T03:06:09+08:00",
+      "subject": "A base can follow a GitHub repository's markdown files, fetching only the files that changed since the last sync (#1325)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/checks.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "assets/banner.webp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-core/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-core/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-core/src/models.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-extract/src/align.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-extract/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-extract/src/open.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-extract/src/phrase_align.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-extract/src/time.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/src/chunker.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/src/html.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/src/ontology_rdf.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/src/parsers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/src/table.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-ingest/tests/fixtures/calamine/LICENSE-MIT.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-ingest/tests/fixtures/calamine/date_east_asian.xls",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/tests/pptx_breaks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/tests/pptx_order.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/tests/pptx_tables.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/tests/spreadsheet_dates.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-ingest/tests/spreadsheet_truncation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-llm/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-llm/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-reason/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-reason/src/derive.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-reason/src/expressions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-reason/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-reason/src/rules.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-search/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/packs/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/packs/scenarios/contract-chain.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/packs/scenarios/enterprise-profile.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/packs/scenarios/personnel-records.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/adjudication.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/admin_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/alerts_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/auth_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_empty_reply_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_error_code_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_finalization.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_generation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_graph_citation_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_history_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_persistence_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_registry_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/chat_retry_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/datasource_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/documents_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/documents_routes_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/events_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/export_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/graph_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/graph_routes_time_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/kbs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/mcp_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/oidc_exchange_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/oidc_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/ontology_regression_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/ontology_regression_routes_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/ontology_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/question_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/review_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/rig_model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/rule_expression_input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/rule_expression_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/rule_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/settings_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/sources_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/sources_statements_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/system_admin_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/token_read_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/token_routes.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/token_routes_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/api/token_setup_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/api/tools_graph.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/utopia-server/src/bootstrap_ontology.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/extraction.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/extraction_open.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/extraction_open_identity_names_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/extraction_open_out_of_credit_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/github_issues.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/github_repo.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/github_repo_sync_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/gitlab_repo.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/gitlab_repo_sync_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/ingest_sources.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/jira_issues.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/llm_util.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/llm_util_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/namesake_scripted_cases.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/notion.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/notion_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/object_storage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/ontology_agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/ontology_agent_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/owl_import.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/phrase_alignment.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/phrase_alignment_declared_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/phrase_alignment_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/pipeline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/pipeline_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "crates/utopia-server/src/predicate_match.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/query_engine/clickhouse.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/query_engine/conn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/query_engine/databricks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/query_engine/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/query_engine/snowflake.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/query_engine/trino.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/rdf.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/readers/ark_ocr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/scenario_packs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/search_recovery.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/ticket.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/ticket_golden_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/time_resolution.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/src/time_resolution_pushed_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/type_alignment.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/type_alignment_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-server/src/webdav.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/tests/fixtures/github_repo.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/tests/fixtures/gitlab_repo.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-server/tests/fixtures/ticket_render_golden.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/access.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/accounts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/audit.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/business_rules.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/conversations.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/documents.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/errata.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/export_provenance_integrity.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/extraction_drops.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/governance.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/graph.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/jobs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-store/src/jobs_claim_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-store/src/jobs_writeback_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/materialize.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/utopia-store/src/materialize_delivery_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/utopia-store/src/materialize_period_tests.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+  ]
+}

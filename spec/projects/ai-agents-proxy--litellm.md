@@ -28,3 +28,7 @@ The inspected file is large and composes many changing strategies; adoption need
 ## Related directions
 
 [Models](../models.md) · [Decisions](../decisions.md) · [Generation](../generation.md) · [Security](../security.md)
+
+<!-- teamagent-analysis:start -->
+Analysis metadata: source [litellm](https://github.com/BerriAI/litellm); analyzed commit `252c71c0b22197d5dd99eac730696f28032796af`; commit date 2026-09-15T12:40:19-07:00; review date unknown; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--litellm.md).
+<!-- teamagent-analysis:end -->

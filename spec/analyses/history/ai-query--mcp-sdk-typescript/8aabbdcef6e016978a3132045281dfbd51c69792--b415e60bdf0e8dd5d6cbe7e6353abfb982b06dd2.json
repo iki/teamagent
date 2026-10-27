@@ -1,0 +1,944 @@
+{
+  "id": "ai-query--mcp-sdk-typescript",
+  "generatedAt": "2026-10-27T18:02:41.253Z",
+  "observedAt": "2026-10-27T17:54:52.4110285+00:00",
+  "source": "https://github.com/modelcontextprotocol/typescript-sdk",
+  "report": "spec/projects/ai-query--mcp-sdk-typescript.md",
+  "analyzedSha": "8aabbdcef6e016978a3132045281dfbd51c69792",
+  "analyzedAt": null,
+  "analyzedCommitDate": "2026-10-02T18:43:19Z",
+  "observedSha": "b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2",
+      "date": "2026-10-26T14:29:44Z",
+      "subject": "fix(client/auth): allow opting out of prompt=consent for offline_access (#2877)"
+    },
+    {
+      "sha": "951fe5603a7ec0b2dcb6a0b95d92cd86f93ad9e5",
+      "date": "2026-10-23T19:16:23+01:00",
+      "subject": "Version Packages (#2959)"
+    },
+    {
+      "sha": "895007fe728b9c57fbe3ed45fe279ddc51f731f7",
+      "date": "2026-10-23T17:58:00Z",
+      "subject": "fix(server): set Allow: POST on stateless legacy 405 responses (#3002)"
+    },
+    {
+      "sha": "28124dbb57594be1ca25e85122066d1e5d4535b5",
+      "date": "2026-10-23T17:33:50Z",
+      "subject": "fix(docs): use relative POSIX package entry globs (#3016)"
+    },
+    {
+      "sha": "f7289b3531cdd7d8487663ca437496c1dfe0fe05",
+      "date": "2026-10-23T17:29:29Z",
+      "subject": "docs: say that a spec handler's params drop members the spec does not define (#3087)"
+    },
+    {
+      "sha": "a63375661399956a744ff8b34d03d36e3d09e98a",
+      "date": "2026-10-23T17:25:12Z",
+      "subject": "feat(client): add an opt-in for sending scope on token refresh (#3085)"
+    },
+    {
+      "sha": "10c26b00cb9c6d12332a92ea02f75530452450e4",
+      "date": "2026-10-23T17:20:56Z",
+      "subject": "chore(node): accept @hono/node-server 1.x or 2.x (#3084)"
+    },
+    {
+      "sha": "ef38c6765a15ee29030340dfea28b013893fa0a2",
+      "date": "2026-10-23T17:16:35Z",
+      "subject": "chore(deps): build the bundled ajv with fast-uri 3.1.8 (#3083)"
+    },
+    {
+      "sha": "5820f796a48ae6b8e756a7fbfd627e7e2e1ac891",
+      "date": "2026-10-23T17:11:57Z",
+      "subject": "fix(server): treat an outputSchema root $ref to an object definition as an object schema (#3081)"
+    },
+    {
+      "sha": "a513cfecff33d6a34469854d331fa0cc84e208d4",
+      "date": "2026-10-23T17:07:34Z",
+      "subject": "docs: close the v1 to v2 quick path with the 2026-07-28 serving decision (#3086)"
+    },
+    {
+      "sha": "c822443f270fbec2f15d36dcced45bd7e8556f2e",
+      "date": "2026-10-23T18:00:09+01:00",
+      "subject": "docs(server): mark SkillsExtension.attach as experimental (#3080)"
+    },
+    {
+      "sha": "9adb8d5e5b2032d75a8362cd21e018e871e5144f",
+      "date": "2026-10-22T17:04:52+01:00",
+      "subject": "docs: publish the Skills over MCP guides as an agent skill (#3068)"
+    },
+    {
+      "sha": "b5bd4dc13d5cc0f3ea0cdd185186875adebc6957",
+      "date": "2026-10-22T16:58:19+01:00",
+      "subject": "test(e2e): cover the Skills extension (SEP-2640) (#3065)"
+    },
+    {
+      "sha": "c05225a636c679870b65f8ca4fe83a76ea1cf113",
+      "date": "2026-10-21T01:09:57+03:00",
+      "subject": "fix(server): preserve forwarded params and support modern low-level connections (#3057)"
+    },
+    {
+      "sha": "46d9c9921b6542e813c1ecc5f9fc964085e8e3bb",
+      "date": "2026-10-20T15:31:27+01:00",
+      "subject": "feat: Skills extension (SEP-2640) for server and client (#3047)"
+    },
+    {
+      "sha": "9bc40e903fde15534ec06ff4c1347d47000dbe16",
+      "date": "2026-10-13T13:11:15+01:00",
+      "subject": "Docs/migration skill (#2968)"
+    },
+    {
+      "sha": "43c45f4941d824e7251a7d1266823a84af90fab3",
+      "date": "2026-10-12T17:10:44+01:00",
+      "subject": "fix(server): keep the Mcp-Param check on a tool with a number-typed header (#2960)"
+    },
+    {
+      "sha": "b381559edc0dbe25ab8324cada345b49bd1d2fc4",
+      "date": "2026-10-12T10:54:16+01:00",
+      "subject": "fix(server): reflect resource title updates in list responses (#3005)"
+    },
+    {
+      "sha": "b022522089a0c8b632595c6e7b536453945ed5a9",
+      "date": "2026-10-05T15:38:02+01:00",
+      "subject": "fix(core): reject x-mcp-header on number-typed parameters (#2762)"
+    },
+    {
+      "sha": "324299b22ce5d4c95f6fc266ad2033c89e4363d6",
+      "date": "2026-10-05T13:19:05+01:00",
+      "subject": "ci: skip the Publish job when every version is already on npm (#2956)"
+    },
+    {
+      "sha": "fcef852f6cdafea07f36cf6fae69b37c8adf85be",
+      "date": "2026-10-05T12:46:43+01:00",
+      "subject": "Version Packages (#2953)"
+    },
+    {
+      "sha": "e8b7f05f5b9e4204510289dc0596531265e9ddcb",
+      "date": "2026-10-05T12:40:24+01:00",
+      "subject": "docs: one opening note in the server and client package READMEs (#2955)"
+    },
+    {
+      "sha": "5a1867390b91b8836f49af76c45427279f513325",
+      "date": "2026-10-05T12:22:31+01:00",
+      "subject": "feat(server-legacy): add expectedResource to requireBearerAuth (#2952)"
+    },
+    {
+      "sha": "3ab61c61f5ff1cd6b67eec6222247c66635495fd",
+      "date": "2026-10-05T11:14:51+01:00",
+      "subject": "docs: update the README banners (#2940)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/skip-offline-access-consent-prompt.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/conformance.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DEPENDENCY_POLICY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/.vitepress/config.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/.vitepress/llms.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/.vitepress/nav.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/.vitepress/skill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/_meta/CONVENTIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/advanced/low-level-server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/behavior-surface-pins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/clients/oauth.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/clients/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/migration/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/migration/support-2026-07-28.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/migration/upgrade-to-v2.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/servers/notifications.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/servers/skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/client-quickstart/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/guides/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/guides/clients/oauth.examples.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/guides/clients/skills.examples.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/guides/servers/skills.examples.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/guides/servers/skills/acme/billing/refunds/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/guides/servers/skills/git-workflow/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/guides/servers/skills/git-workflow/references/REVIEW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/server-quickstart/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/shared/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/skills/acme/billing/refunds/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/skills/acme/billing/refunds/escalation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/skills/acme/billing/refunds/templates/refund-email.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/skills/git-workflow/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/skills/skills/git-workflow/references/REVIEW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/src/client/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/src/client/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/src/ext/skills/entries.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/src/ext/skills/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/src/ext/skills/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/src/ext/skills/pageSchemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/src/ext/skills/skillsClient.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/src/ext/skills/verify.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/test/client/auth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/test/client/barrelClean.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/test/client/errorBrandConformance.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/test/client/mcpParamMirroring.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/test/ext/skills/fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/test/ext/skills/read.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/test/ext/skills/scripted.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/test/ext/skills/skillsClient.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/client/test/ext/skills/verify.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/client/tsdown.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemod/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemod/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/src/ext/skills/bytes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/src/ext/skills/entry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/src/ext/skills/frontmatter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/src/ext/skills/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/src/ext/skills/mime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/src/ext/skills/uri.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/src/shared/mcpParamHeaders.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/src/util/standardSchema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/src/validators/fastUriShim.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/test/ext/skills/bytes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/test/ext/skills/entry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/test/ext/skills/frontmatter.differential.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/test/ext/skills/frontmatter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/test/ext/skills/mime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core-internal/test/ext/skills/uri.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/test/packageTopologyPins.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/test/shared/mcpParamHeaders.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core-internal/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/ext/skills/capability.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/ext/skills/constants.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/ext/skills/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/ext/skills/schemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/src/ext/skills/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/core/test/ext/skills/schemas.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/tsdown.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/middleware/express/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/middleware/fastify/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/middleware/hono/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/middleware/node/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/middleware/node/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/middleware/node/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server-legacy/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server-legacy/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server-legacy/src/auth/middleware/bearerAuth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server-legacy/test/auth/middleware/bearerAuth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server-legacy/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/catalogBuild.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/catalogSource.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/extension.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/fsPath.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/internal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/node.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/paging.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/skillEntry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/src/ext/skills/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/createMcpHandler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/mcp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/perRequestTransport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/serverEventBus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/test/ext/skills/catalog.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/test/ext/skills/catalogBuild.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/test/ext/skills/extension.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/test/ext/skills/fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/test/ext/skills/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/test/ext/skills/node.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/server/test/ext/skills/paging.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/test/server/barrelClean.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/test/server/createMcpHandler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/test/server/errorBrandConformance.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/test/server/legacyStatelessFallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/test/server/mcpParamValidation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/tsdown.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-workspace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-unpublished.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/sync-snippets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-skills/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-skills/references/client.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-skills/references/server.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/auth.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/behavioral-changes.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/enhancements.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/errors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/http-headers.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/imports-transports.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/packaging-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/protocol-ctx.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/server-registration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "skills/mcp-typescript-sdk-upgrade-to-v2/references/types-schemas.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: updated; source lifecycle: active; upstream availability: available."
+  ]
+}

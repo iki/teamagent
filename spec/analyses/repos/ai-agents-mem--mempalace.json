@@ -1,0 +1,1004 @@
+{
+  "metadata": {
+    "id": "ai-agents-mem--mempalace",
+    "category": "ai-agents-mem",
+    "name": "mempalace",
+    "url": "https://github.com/milla-jovovich/mempalace",
+    "aliases": [],
+    "report": "spec/projects/ai-agents-mem--mempalace.md",
+    "topics": [
+      "memory",
+      "evolution"
+    ],
+    "depth": "screened",
+    "analyzedSha": "43122aefb8ed58e9fa4e1953e15ce70026339ec2",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T11:07:52-03:00",
+    "reportSha256": "c02d9696631cd1e5cf861690fd004fb0f27a1960c318c6c2c78c38800081c43a",
+    "lifecycle": "active"
+  },
+  "changes": {
+    "id": "ai-agents-mem--mempalace",
+    "generatedAt": "2026-10-27T18:19:07.717Z",
+    "observedAt": "2026-10-27T18:18:39.3637600+00:00",
+    "source": "https://github.com/milla-jovovich/mempalace",
+    "report": "spec/projects/ai-agents-mem--mempalace.md",
+    "analyzedSha": "43122aefb8ed58e9fa4e1953e15ce70026339ec2",
+    "analyzedAt": null,
+    "analyzedCommitDate": "2026-10-03T11:07:52-03:00",
+    "observedSha": "84582fb055a6429261f9c779da86c0561ec80adc",
+    "status": "changed",
+    "shallow": false,
+    "dirty": false,
+    "reportModified": false,
+    "commits": [
+      {
+        "sha": "84582fb055a6429261f9c779da86c0561ec80adc",
+        "date": "2026-10-25T01:41:28-03:00",
+        "subject": "Merge pull request #2895 from MemPalace/perf/hallways-sqlite-store"
+      },
+      {
+        "sha": "b2781d454d007254d5a13513fd3aa80a30cde6fe",
+        "date": "2026-10-25T01:33:18-03:00",
+        "subject": "Merge pull request #2894 from MemPalace/fix/windows-exclusive-hub-port"
+      },
+      {
+        "sha": "5ffa138ad283c913c27711ea80bc03dc7de5b251",
+        "date": "2026-10-25T01:17:34-03:00",
+        "subject": "perf(hallways): store hallways in SQLite so a mine touches only its wing"
+      },
+      {
+        "sha": "9a377de8dac1884b22409327036eeb608fe77a75",
+        "date": "2026-10-25T00:39:30-03:00",
+        "subject": "fix(http): keep the hub's port exclusive on Windows"
+      },
+      {
+        "sha": "f41e8e75ddaadf5588d5127715fa531d79eadb45",
+        "date": "2026-10-20T20:16:07-03:00",
+        "subject": "Merge pull request #2866 from MemPalace/astra/pr2860-revision-import-fixes"
+      },
+      {
+        "sha": "07f928eb8812b81bec1144e29d5bbfe25e503ad3",
+        "date": "2026-10-20T01:52:48-07:00",
+        "subject": "fix: preserve revisions and report graph imports accurately"
+      },
+      {
+        "sha": "f884dd4c08244278fc11bf9ccc154d6b6f63ad66",
+        "date": "2026-10-18T11:20:54-03:00",
+        "subject": "Merge pull request #2861 from MemPalace/fix/daemon-adapter-mine-palace-flag"
+      },
+      {
+        "sha": "f74451af6d979ee3428ba28f16408460cff7317c",
+        "date": "2026-10-18T10:50:53-03:00",
+        "subject": "docs(changelog): list #2861 in 3.12.0"
+      },
+      {
+        "sha": "779992a93339ad734da4c9b85fc12dcf6dce7147",
+        "date": "2026-10-18T10:50:25-03:00",
+        "subject": "fix(mine): keep --palace and media options on daemon-routed adapter mines"
+      },
+      {
+        "sha": "4e7eab04d8e9d90887eb62e51dd8a821463421dc",
+        "date": "2026-10-18T05:51:04-03:00",
+        "subject": "Merge pull request #2859 from MemPalace/chore/release-3.12.0"
+      },
+      {
+        "sha": "534dd99b31ee7bbc84d030b8c87222ef7d1a9dc4",
+        "date": "2026-10-18T05:25:35-03:00",
+        "subject": "docs(changelog): list the 3.12.0 release PR"
+      },
+      {
+        "sha": "37b07e8b34123c7b6e1a78714435b4247d7fbe2e",
+        "date": "2026-10-18T05:25:08-03:00",
+        "subject": "chore(release): 3.12.0"
+      },
+      {
+        "sha": "2a96e4e026cc3ef4a468c2c393940735d9f308b2",
+        "date": "2026-10-18T05:23:12-03:00",
+        "subject": "Merge pull request #2858 from MemPalace/fix/redact-endpoint-credentials"
+      },
+      {
+        "sha": "49baf5162ec6e5ff5eab06e0e359d67aacad9461",
+        "date": "2026-10-18T04:46:48-03:00",
+        "subject": "Merge remote-tracking branch 'origin/develop' into fix/redact-endpoint-credentials"
+      },
+      {
+        "sha": "38f7c78fd334fdf58e71caaae957af6b139d75c2",
+        "date": "2026-10-18T04:46:22-03:00",
+        "subject": "Merge pull request #2857 from MemPalace/docs/changelog-3.12.0-coverage"
+      },
+      {
+        "sha": "857fbec4697838dfd8bd19958b7b5dfd2b44f4c4",
+        "date": "2026-10-18T04:41:03-03:00",
+        "subject": "fix(security): mask endpoint credentials in embedding and LLM errors"
+      },
+      {
+        "sha": "f90cc8b2072f6c6fb2fa3e304ede502dafa5fe88",
+        "date": "2026-10-18T04:22:28-03:00",
+        "subject": "docs(changelog): drop in-cycle fixes and correct entry claims after review"
+      },
+      {
+        "sha": "3b6061fd9510e7ca340a3db2efbe9f5c33e16b00",
+        "date": "2026-10-18T04:15:36-03:00",
+        "subject": "Merge pull request #2855 from MemPalace/chore/require-python-3.10"
+      },
+      {
+        "sha": "ee37474dacd77bf8afdc6010a86fb35414b8c5ba",
+        "date": "2026-10-18T04:15:23-03:00",
+        "subject": "Merge pull request #2856 from MemPalace/chore/sync-main-into-develop-3.12.0"
+      },
+      {
+        "sha": "ef4a22dfb1ee41a53cdfdb31a11e455483e1b5ed",
+        "date": "2026-10-18T04:07:58-03:00",
+        "subject": "docs(changelog): cover every user-visible change since 3.11.0"
+      },
+      {
+        "sha": "03a0918d883dc5008a50c8c9adad2fa12b4407dd",
+        "date": "2026-10-18T03:49:33-03:00",
+        "subject": "Merge main into develop for 3.12.0"
+      },
+      {
+        "sha": "ee8313db8aef0cd622d8d7271bebb4fcf2945f36",
+        "date": "2026-10-18T03:49:12-03:00",
+        "subject": "chore: require Python 3.10 (D-20)"
+      },
+      {
+        "sha": "3ec047e8fb3633f76a8967de6b7a96d0cb7658c7",
+        "date": "2026-10-18T01:47:34-03:00",
+        "subject": "Merge pull request #2853 from MemPalace/refactor/w3-logger-sweep"
+      },
+      {
+        "sha": "3fe52ef1220eccc8be7dc633a96e4b4e489aa5b6",
+        "date": "2026-10-18T01:45:27-03:00",
+        "subject": "Merge pull request #2852 from MemPalace/perf/sqlite-exact-recency-index"
+      },
+      {
+        "sha": "1cd72d266b7a24c4073a0be67f9f2de153edafa4",
+        "date": "2026-10-18T01:24:59-03:00",
+        "subject": "refactor(logging): name module loggers by __name__ and share one warn-once helper"
+      },
+      {
+        "sha": "1f768ccf67f8af79f67c8b7f5a1ceafc3123bd41",
+        "date": "2026-10-18T01:19:34-03:00",
+        "subject": "perf(sqlite_exact): push $in/$eq filters and index filed_at for get_recent"
+      },
+      {
+        "sha": "b5a13ce688e4933018b52c6b738e23dd63fbffe0",
+        "date": "2026-10-18T00:50:47-03:00",
+        "subject": "Merge pull request #2851 from MemPalace/refactor/w3-10-timeutil"
+      },
+      {
+        "sha": "d24767230e5a1ed555d115c6c48d0dcf365bcac9",
+        "date": "2026-10-18T00:25:04-03:00",
+        "subject": "fix(dynamics): read naive created_at/last_activated as local time"
+      },
+      {
+        "sha": "85498c06ce2f00ed5fc1ef3ff4041c1a24d7881f",
+        "date": "2026-10-18T00:25:03-03:00",
+        "subject": "fix(recency): order newest-first reads by instant across naive-local and UTC values"
+      },
+      {
+        "sha": "8693e7ce17044b189475d933c4e3e1ef9c1d713c",
+        "date": "2026-10-17T23:48:12-03:00",
+        "subject": "refactor(timeutil): route persisted timestamp producers through timeutil"
+      },
+      {
+        "sha": "25f6f37367b79830455400d4bb3e6a68018a0a2c",
+        "date": "2026-10-17T23:47:57-03:00",
+        "subject": "fix(date_window): compare filed_at as instants across naive-local and UTC values"
+      },
+      {
+        "sha": "8970bfe6a72d0da22ad5c685e8bfd959a93a27da",
+        "date": "2026-10-17T23:18:04-03:00",
+        "subject": "Merge pull request #2850 from MemPalace/refactor/w3-04-kg-path"
+      }
+    ],
+    "files": [
+      {
+        "status": "M",
+        "path": ".claude-plugin/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude-plugin/hooks/mempal-precompact-hook.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude-plugin/hooks/mempal-session-end-hook.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude-plugin/hooks/mempal-stop-hook.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".claude-plugin/hooks/mempal_hook_run.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude-plugin/marketplace.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".claude-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".codex-plugin/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".codex-plugin/hooks/mempal-hook.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".codex-plugin/hooks/mempal_hook_run.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".codex-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".cursor-plugin/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".cursor-plugin/marketplace.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".cursor-plugin/plugin.json",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".dsh-plugin/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".dsh-plugin/cordis.patch.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".dsh-plugin/package.json",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".gitattributes",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": ".github/coverage-milvus.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": ".github/workflows/ci.yml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CHANGELOG.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CLAUDE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "CONTRIBUTING.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Cargo.lock",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "SECURITY.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "benchmarks/search_benchmark.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/mempalace-cli/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/mempalace-cli/src/main.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/mempalace-core/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/mempalace-core/src/lib.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/mempalace-py/Cargo.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/mempalace-py/pyproject.toml",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "crates/mempalace-py/src/lib.rs",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/CLOSETS.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/cli-write-routing.md",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "docs/embeddinggemma2.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "docs/rfcs/002-source-adapter-plugin-spec.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/cursor/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "examples/gemini_cli_setup.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/antigravity/STDIN_SHAPE.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/antigravity/lib/common.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/cursor/lib/common.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/cursor/mempal_precompact_hook_cursor.sh",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "hooks/mempal_hook_run.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/mempal_precompact_hook.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/mempal_save_hook.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "hooks/mempal_session_end_hook.sh",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "integrations/openclaw/SKILL.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/README.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/_env.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/_once.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/_proc.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/backends/_filters.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/_magic.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/backends/_remote_common.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/_sidecar.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/base.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/chroma.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/backends/chroma_sqlite.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/embedding_wrapper.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/milvus.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/pgvector.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/qdrant.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/rust_exact.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backends/sqlite_exact.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/backups.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/_common.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/_hub.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_coord.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_init.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_kg.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_mine.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_query.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_repair.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_rooms.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_serve.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_sync.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/cmd_wings.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli/parser.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/cli_write_routing.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/closet_llm.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/collision_scan.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/convo_miner.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/convo_scanner.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/corpus_origin.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/daemon.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/date_window.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "mempalace/dedup.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/dialect.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/diary_ingest.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/dynamics.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/embedding.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/embeddinggemma2.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/encoding_repair.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/entity_detector.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/entity_registry.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/exporter.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/fact_checker.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/format_miner.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/fsio.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/general_extractor.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/hallways.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "mempalace/hook_shell.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/hooks_cli.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/hub_client.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/instructions/init.md",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/integrations/hermes/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/kg_normalize.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/knowledge_graph.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/layers.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/lexical.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/llm_client.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/llm_refine.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/logstream.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/logsync.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_light_server.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_proxy.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/_guards.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/_logging.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/_session.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/http.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/protocol.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/runtime.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/schemas.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/tools_coord.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/tools_diary.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/tools_kg.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/tools_read.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/mcp_server/tools_write.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/media.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/metadata_types.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/migrate.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/miner.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/normalize.py",
+        "previousPath": null
+      },
+      {
+        "status": "D",
+        "path": "mempalace/onboarding.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/onnx_graph.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace/__init__.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace/backend.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace/closets.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace/collection.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace/mine_lock.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace/mined.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace/palace_lock.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/palace/writes.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace_audit.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/palace_graph.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/paths.py",
+        "previousPath": null
+      },
+      {
+        "status": "A",
+        "path": "mempalace/project_config.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/project_scanner.py",
+        "previousPath": null
+      },
+      {
+        "status": "M",
+        "path": "mempalace/query_parser.py",
+        "previousPath": null
+      }
+    ],
+    "commitsTruncated": true,
+    "filesTruncated": true,
+    "notes": [
+      "Git discovery: unchanged; source lifecycle: active; upstream availability: available."
+    ]
+  }
+}

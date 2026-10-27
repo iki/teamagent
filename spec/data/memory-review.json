@@ -24,20 +24,37 @@
       "evolution"
     ],
     "depth": "source-reviewed",
-    "summary": "Episode-grounded temporal entity relationships with explicit invalidation and entity resolution.",
+    "summary": "Episode-grounded temporal relationships and byte-bounded incremental saga summaries with separate ingestion and event-time watermarks.",
     "evidence_kind": "implementation",
     "inspected_files": [
       {
         "path": "graphiti_core/edges.py",
         "start": 263,
-        "end": 285
+        "end": 287
       },
       {
         "path": "graphiti_core/graphiti.py",
-        "start": 1150,
-        "end": 1251
+        "start": 590,
+        "end": 608
+      },
+      {
+        "path": "graphiti_core/graphiti.py",
+        "start": 727,
+        "end": 799
+      },
+      {
+        "path": "graphiti_core/graphiti.py",
+        "start": 1140,
+        "end": 1248
+      },
+      {
+        "path": "graphiti_core/graphiti.py",
+        "start": 1747,
+        "end": 1783
       }
-    ]
+    ],
+    "revision": "8ce6d633bdcd3d178b3a47bc25b105dce106a754",
+    "review_date": "2026-10-24"
   },
   {
     "id": "ai-agents-mem--hindsight",
@@ -88,15 +105,37 @@
       "evolution"
     ],
     "depth": "source-reviewed",
-    "summary": "Composable document-to-knowledge pipeline with optional provenance and contradiction stages.",
+    "summary": "Versioned document-to-knowledge pipelines and a separately gated improvement loop; functional_relationships removed from cognify.",
     "evidence_kind": "implementation",
     "inspected_files": [
       {
         "path": "cognee/api/v1/cognify/cognify.py",
-        "start": 565,
-        "end": 643
+        "start": 57,
+        "end": 82
+      },
+      {
+        "path": "cognee/api/v1/cognify/cognify.py",
+        "start": 339,
+        "end": 354
+      },
+      {
+        "path": "cognee/api/v1/cognify/cognify.py",
+        "start": 590,
+        "end": 694
+      },
+      {
+        "path": "cognee/api/v1/improve/improve.py",
+        "start": 238,
+        "end": 318
+      },
+      {
+        "path": "cognee/modules/improve/stages.py",
+        "start": 525,
+        "end": 631
       }
-    ]
+    ],
+    "revision": "37f788bd287750e10d7610173e5332b3843f6ebd",
+    "review_date": "2026-10-24"
   },
   {
     "id": "ai-agents-mem--open-viking",
@@ -241,20 +280,37 @@
       "models"
     ],
     "depth": "source-reviewed",
-    "summary": "Format-dispatched structured document conversion with bounded inputs and explicit conversion outcomes.",
+    "summary": "Structured document conversion with explicit partial outcomes, concrete pipeline-option identity and input-backend cleanup.",
     "evidence_kind": "implementation",
     "inspected_files": [
       {
         "path": "docling/document_converter.py",
-        "start": 611,
-        "end": 697
+        "start": 630,
+        "end": 667
       },
       {
         "path": "docling/document_converter.py",
-        "start": 810,
-        "end": 846
+        "start": 752,
+        "end": 796
+      },
+      {
+        "path": "docling/document_converter.py",
+        "start": 878,
+        "end": 948
+      },
+      {
+        "path": "docling/document_converter.py",
+        "start": 1005,
+        "end": 1054
+      },
+      {
+        "path": "docling/utils/pipeline_cache.py",
+        "start": 15,
+        "end": 60
       }
-    ]
+    ],
+    "revision": "53c11a20a5dd6ac0d85fe88cc257ca3b4b3a72d4",
+    "review_date": "2026-10-24"
   },
   {
     "id": "ai-query--markitdown",
