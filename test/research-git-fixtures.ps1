@@ -322,6 +322,121 @@ $fresh=Read-ResearchCurrentStatus $statePath $settings 15 $now
 Assert-That ($fresh.repositories[0].dirty -eq $true -and $fresh.repositories[0].status -eq 'dirty') 'status inspects fresh untracked files'
 [IO.File]::Delete((Join-Path $checkout 'fresh-untracked.txt'))
 
+# Observation publishes fresh local revisions without executing synchronization or consulting sources/accounts.
+$observationPath=Join-Path $root '.cache/research/git-state.json'
+$observationRow=$diverged.Clone();$observationRow.head=$row.head
+$priorRemoteAt=$observationRow.checkedAt
+# Prior state deliberately has no config; the active nondefault cache comes from settings.
+$expectedObservationCache=Get-ResearchRelativePath $settings.ProjectRoot $settings.GitCache
+Write-ResearchJson $observationPath @{schemaVersion=1;generatedAt=$now.ToString('o');discoveryComplete=$true;repositories=@($observationRow)}
+$beforeObservation=Read-ResearchText $observationPath
+$beforeCheckoutHead=Git $checkout @('rev-parse','HEAD')
+$beforeCheckoutBranch=Git $checkout @('symbolic-ref','--quiet','HEAD')
+$beforeCheckoutStashes=Git $checkout @('stash','list','--format=%H')
+$observeConfigPath=Join-Path $checkout '.git/config'
+$observeConfigBytes=[IO.File]::ReadAllBytes($observeConfigPath)
+$observeMonitor=Join-Path $checkout '.git/observe-fsmonitor.sh'
+$observeMonitorSentinel=Join-Path $checkout '.git/observe-fsmonitor-invoked'
+Put $observeMonitor "#!/bin/sh`nprintf invoked > .git/observe-fsmonitor-invoked`nprintf 'fixture-token\0'`n"
+if (-not $IsWindows) { [IO.File]::SetUnixFileMode($observeMonitor,[IO.UnixFileMode]::UserRead -bor [IO.UnixFileMode]::UserWrite -bor [IO.UnixFileMode]::UserExecute) }
+[void](Git $checkout @('config','core.fsmonitor',$observeMonitor.Replace('\','/')))
+# Positive control: the fixture hook must actually execute without read-only protection.
+[void](Git $checkout @('status','--porcelain=v1','--untracked-files=normal'))
+Assert-That (Test-Path -LiteralPath $observeMonitorSentinel) 'configured fsmonitor sentinel is executable in ordinary Git status'
+[IO.File]::Delete($observeMonitorSentinel)
+$observeTrackedPath=Join-Path $checkout 'readme.txt'
+$observeTrackedTime=[IO.File]::GetLastWriteTimeUtc($observeTrackedPath)
+# Same bytes with a different stat entry make an optional index refresh observable.
+[IO.File]::SetLastWriteTimeUtc($observeTrackedPath,$observeTrackedTime.AddMinutes(-5))
+$observeIndexPath=Join-Path $checkout '.git/index'
+$beforeObserveIndex=[Convert]::ToBase64String([IO.File]::ReadAllBytes($observeIndexPath))
+$beforeObserveIndexTime=[IO.File]::GetLastWriteTimeUtc($observeIndexPath)
+$remoteReceipt=Join-Path $root '.cache/research/git-sync.json'
+Put $remoteReceipt '{"retainedRemoteReceipt":true}'
+$oldObserveSources=${function:Read-ResearchSourceList};$oldObserveCredential=${function:Get-ResearchGitHubCredential};$oldObserveRepository=${function:Invoke-ResearchRepository}
+$oldObserveCheckout=${function:Read-ResearchCheckout}
+function Read-ResearchSourceList { throw 'observation_must_not_read_sources' }
+function Get-ResearchGitHubCredential { throw 'observation_must_not_read_credentials' }
+function Invoke-ResearchRepository { throw 'observation_must_not_update_checkout' }
+try {
+    # Publication-only assertions do not need repeated real Git subprocesses.
+    function Read-ResearchCheckout([string]$Path,[string]$ExpectedUrl,[int]$TimeoutSeconds,[switch]$ReadOnly) {
+        Assert-That $ReadOnly.IsPresent 'status requests explicitly read-only inspection'
+        return @{dirty=$true;head=$beforeCheckoutHead;shallow=$false}
+    }
+    [void](Invoke-ResearchGitSync -ProjectRoot $root -Action status -Now $now.AddHours(1))
+    Assert-That ((Read-ResearchText $observationPath) -ceq $beforeObservation) 'status remains nonpublishing'
+    Set-Item function:Read-ResearchCheckout $oldObserveCheckout
+    Put (Join-Path $checkout 'observe-local.txt') 'local evidence'
+    $observation=Invoke-ResearchGitSync -ProjectRoot $root -Action observe -Now $now.AddHours(1)
+    $publishedObservation=ConvertFrom-Json (Read-ResearchText $observationPath) -AsHashtable
+    Assert-That ($observation.inspectionComplete -and -not $observation.discoveryComplete -and -not $observation.sourceListComplete -and $observation.status -eq 'partial') 'observation reports local-only and dirty coverage truthfully'
+    Assert-That ($publishedObservation.repositories[0].head -eq $beforeCheckoutHead -and $publishedObservation.repositories[0].dirty -and $publishedObservation.repositories[0].checkedAt -eq $priorRemoteAt) 'observation records current HEAD while retaining remote observation time'
+    Assert-That ($expectedObservationCache -ne '.cache/git' -and $observation.config.gitCache -ceq $expectedObservationCache -and $publishedObservation.config.gitCache -ceq $expectedObservationCache -and $publishedObservation.config.Count -eq 1) 'observation publishes the current nondefault cache root when prior config is missing'
+    Assert-That ((Git $checkout @('rev-parse','HEAD')) -eq $beforeCheckoutHead -and (Git $checkout @('symbolic-ref','--quiet','HEAD')) -eq $beforeCheckoutBranch -and (Git $checkout @('stash','list','--format=%H')) -eq $beforeCheckoutStashes -and (Read-ResearchText (Join-Path $checkout 'observe-local.txt')) -eq 'local evidence') 'observation leaves branch, HEAD, stashes and local content unchanged'
+    Assert-That (-not (Test-Path -LiteralPath $observeMonitorSentinel)) 'observation never executes configured fsmonitor'
+    Assert-That ([Convert]::ToBase64String([IO.File]::ReadAllBytes($observeIndexPath)) -ceq $beforeObserveIndex -and [IO.File]::GetLastWriteTimeUtc($observeIndexPath) -eq $beforeObserveIndexTime) 'observation preserves exact index bytes and write time despite changed tracked-file stat'
+    Assert-That ((Read-ResearchText $remoteReceipt) -ceq '{"retainedRemoteReceipt":true}' -and (Read-ResearchText (Join-Path $root '.cache/research/git-observation.json')) -ceq (Read-ResearchText $observationPath)) 'observation preserves remote receipt and publishes matching local evidence'
+    Rejects { Invoke-ResearchGitSync -ProjectRoot $root -Action observe -Limit 1 } 'observation rejects partial selection'
+    Rejects { Invoke-ResearchGitSync -ProjectRoot $root -Action observe -UsePrimaryBranch } 'observation rejects checkout mutation flags'
+    $observeLock=[IO.File]::Open((Join-Path $root '.cache/research/git-sync.lock'),[IO.FileMode]::OpenOrCreate,[IO.FileAccess]::Write,[IO.FileShare]::None)
+    try { Rejects { Invoke-ResearchGitSync -ProjectRoot $root -Action observe } 'observation respects the shared maintenance lock' } finally { $observeLock.Dispose() }
+    # Exercise the real checkout reader with only its HEAD subprocess failing.
+    # Other Git responses are deterministic, so these boundary cases launch no Git processes.
+    $oldHeadFailureGit=${function:Invoke-ResearchGit}
+    function Invoke-ResearchGit([string]$Directory,[string[]]$Arguments,[string]$InputText='',[int]$TimeoutSeconds=120,[switch]$ReadOnly) {
+        if (-not $ReadOnly) { throw 'fixture_inspection_must_be_read_only' }
+        $script:observeQueryCalls++
+        switch ($Arguments -join ' ') {
+            'remote get-url origin' { return @{exitCode=0;stdout=$observationRow.url;stderr='';error=''} }
+            'status --porcelain=v1 --untracked-files=normal --ignore-submodules=none' { return @{exitCode=0;stdout='';stderr='';error=''} }
+            'rev-parse --is-shallow-repository' { return @{exitCode=0;stdout='false';stderr='';error=''} }
+            'rev-parse --verify HEAD' { $script:observeHeadQueryCalls++;return $script:observeHeadResponse }
+            default { throw 'fixture_unexpected_inspection_query' }
+        }
+    }
+    try {
+        foreach ($headFailure in @(
+            @{name='nonzero exit with stale-looking output';response=@{exitCode=1;stdout=$beforeCheckoutHead;stderr='fixture failure';error=''}},
+            @{name='timeout';response=@{exitCode=-1;stdout='';stderr='';error='process_timeout_or_launch_failure'}},
+            @{name='malformed successful response';response=@{exitCode=0;stdout='not-a-commit';stderr='';error=''}}
+        )) {
+            $script:observeQueryCalls=0;$script:observeHeadQueryCalls=0;$script:observeHeadResponse=$headFailure.response
+            $headFailureObservation=Invoke-ResearchGitSync -ProjectRoot $root -Action observe -Now $now.AddHours(2)
+            $headFailurePublished=ConvertFrom-Json (Read-ResearchText $observationPath) -AsHashtable
+            Assert-That ($script:observeQueryCalls -eq 4 -and $script:observeHeadQueryCalls -eq 1 -and $headFailureObservation.status -eq 'partial' -and $headFailurePublished.status -eq 'partial' -and $headFailurePublished.repositories[0].status -eq 'inspection_failed' -and $null -eq $headFailurePublished.repositories[0].head -and $null -eq $headFailurePublished.repositories[0].dirty -and $null -eq $headFailurePublished.repositories[0].shallow) ('HEAD '+$headFailure.name+' publishes incomplete inspection without a stale revision')
+        }
+    } finally { Set-Item function:Invoke-ResearchGit $oldHeadFailureGit }
+    function Read-ResearchCheckout { throw 'injected_local_inspection_failure' }
+    $failedObservation=Invoke-ResearchGitSync -ProjectRoot $root -Action observe -Now $now.AddHours(2)
+    Assert-That ($failedObservation.repositories[0].status -eq 'inspection_failed' -and $null -eq $failedObservation.repositories[0].head -and $null -eq $failedObservation.repositories[0].dirty -and $null -eq $failedObservation.repositories[0].shallow) 'failed inspection cannot reuse an older verified HEAD'
+    function Read-ResearchCheckout([string]$Path,[string]$ExpectedUrl,[int]$TimeoutSeconds,[switch]$ReadOnly) {
+        Assert-That $ReadOnly.IsPresent 'publication retry requests explicitly read-only inspection'
+        return @{dirty=$true;head=$beforeCheckoutHead;shallow=$false}
+    }
+    Write-ResearchJson $observationPath @{schemaVersion=1;generatedAt=$now.ToString('o');discoveryComplete=$true;config=@{gitCache='stale-cache';usePrimaryBranch=$true};repositories=@($observationRow)}
+    $configuredObservation=Invoke-ResearchGitSync -ProjectRoot $root -Action observe -Now $now.AddHours(3)
+    $configuredPublished=ConvertFrom-Json (Read-ResearchText $observationPath) -AsHashtable
+    Assert-That ($configuredObservation.config.gitCache -ceq $expectedObservationCache -and $configuredPublished.config.gitCache -ceq $expectedObservationCache -and $configuredPublished.config.Count -eq 1 -and -not $configuredPublished.discoveryComplete -and -not $configuredPublished.sourceListComplete -and $configuredPublished.repositories[0].checkedAt -eq $priorRemoteAt) 'observation replaces stale cache metadata with active settings without carrying old sync options or refreshing remote evidence'
+    $oldObserveWriter=${function:Write-ResearchJson};$beforeFailedPublication=Read-ResearchText $observationPath
+    function Write-ResearchJson([string]$Path,[object]$Value) {
+        if ($Path -eq $observationPath) { throw 'injected_observation_publication_failure' }
+        & $oldObserveWriter $Path $Value
+    }
+    try { Rejects { Invoke-ResearchGitSync -ProjectRoot $root -Action observe } 'observation publication errors are explicit' } finally { Set-Item function:Write-ResearchJson $oldObserveWriter }
+    Assert-That ((Read-ResearchText $observationPath) -ceq $beforeFailedPublication) 'failed publication retains prior analysis input'
+} finally {
+    Set-Item function:Read-ResearchSourceList $oldObserveSources
+    Set-Item function:Get-ResearchGitHubCredential $oldObserveCredential
+    Set-Item function:Invoke-ResearchRepository $oldObserveRepository
+    Set-Item function:Read-ResearchCheckout $oldObserveCheckout
+    [IO.File]::WriteAllBytes($observeConfigPath,$observeConfigBytes)
+    [IO.File]::SetLastWriteTimeUtc($observeTrackedPath,$observeTrackedTime)
+    [IO.File]::Delete((Join-Path $checkout 'observe-local.txt'))
+    [IO.File]::Delete($observeMonitor)
+    [IO.File]::Delete($observeMonitorSentinel)
+}
+
 $first=Get-ResearchMissingEvidence $null 'not_found_or_inaccessible' $now
 $early=Get-ResearchMissingEvidence @{availabilityEvidence=$first} 'not_found_or_inaccessible' $now.AddHours(23)
 $confirmed=Get-ResearchMissingEvidence @{availabilityEvidence=$first} 'not_found_or_inaccessible' $now.AddHours(25)

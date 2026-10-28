@@ -262,13 +262,19 @@ public static class TeamagentResearchProcess {
 "@
 }
 function Invoke-ResearchGit {
-    param([string]$Directory,[string[]]$Arguments,[string]$InputText='',[int]$TimeoutSeconds=120)
+    param([string]$Directory,[string[]]$Arguments,[string]$InputText='',[int]$TimeoutSeconds=120,[switch]$ReadOnly)
     $command=Get-Command git -CommandType Application -ErrorAction Stop | Select-Object -First 1
     $info=[Diagnostics.ProcessStartInfo]::new(); $info.FileName=$command.Source
     $info.UseShellExecute=$false; $info.CreateNoWindow=$true
     $info.RedirectStandardInput=$true; $info.RedirectStandardOutput=$true; $info.RedirectStandardError=$true
     $info.StandardOutputEncoding=[Text.UTF8Encoding]::new($false,$true); $info.StandardErrorEncoding=[Text.UTF8Encoding]::new($false,$true)
     $info.WorkingDirectory=$Directory
+    if ($ReadOnly) {
+        # Status can otherwise refresh the index or execute a repository-configured monitor.
+        # The environment also carries the no-optional-writes policy to Git child processes.
+        $info.Environment['GIT_OPTIONAL_LOCKS']='0'
+        foreach ($value in @('--no-optional-locks','-c','core.fsmonitor=false')) { $info.ArgumentList.Add($value) }
+    }
     foreach ($value in @('-c',('safe.directory='+$Directory.Replace('\','/')),'-c','core.hooksPath=/dev/null','-c','submodule.recurse=false','-c','credential.interactive=false')+$Arguments) { $info.ArgumentList.Add($value) }
     $info.Environment['GIT_TERMINAL_PROMPT']='0'; $info.Environment['GCM_INTERACTIVE']='Never'
     $info.Environment['GIT_SSH_COMMAND']='ssh -oBatchMode=yes -oConnectTimeout=15'

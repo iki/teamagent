@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('lists','sync','status')][string]$Action='sync',
+    [ValidateSet('lists','sync','status','observe')][string]$Action='sync',
     [string]$ProjectRoot=([IO.Path]::GetFullPath('../..',$PSScriptRoot)),
     [ValidateRange(0,10000)][int]$Limit=0,
     [string]$Category='',
@@ -162,16 +162,16 @@ function Find-ResearchRepository {
     return Get-ResearchSafePath $Settings.GitCache ($Entry.category+'/'+$Entry.name)
 }
 function Read-ResearchCheckout {
-    param([string]$Path,[string]$ExpectedUrl,[int]$TimeoutSeconds)
+    param([string]$Path,[string]$ExpectedUrl,[int]$TimeoutSeconds,[switch]$ReadOnly)
     if (-not (Test-Path -LiteralPath (Join-Path $Path '.git') -PathType Container)) { throw 'repository_not_standalone_checkout' }
     if ((Get-Item -LiteralPath (Join-Path $Path '.git') -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'reparse_path_rejected' }
-    $origin=Invoke-ResearchGit $Path @('remote','get-url','origin') '' $TimeoutSeconds
+    $origin=Invoke-ResearchGit $Path @('remote','get-url','origin') '' $TimeoutSeconds -ReadOnly:$ReadOnly
     if ($origin.exitCode -ne 0 -or (Get-ResearchCanonicalUrl $origin.stdout.Trim()) -ne $ExpectedUrl) { throw 'repository_origin_mismatch' }
-    $status=Invoke-ResearchGit $Path @('status','--porcelain=v1','--untracked-files=normal','--ignore-submodules=none') '' $TimeoutSeconds
-    $head=Invoke-ResearchGit $Path @('rev-parse','--verify','HEAD') '' $TimeoutSeconds
-    $shallow=Invoke-ResearchGit $Path @('rev-parse','--is-shallow-repository') '' $TimeoutSeconds
-    if ($status.exitCode -ne 0 -or $shallow.exitCode -ne 0) { throw 'repository_inspection_failed' }
-    $sha=if ($head.exitCode -eq 0 -and $head.stdout.Trim() -match '^(?:[a-f0-9]{40}|[a-f0-9]{64})$') { $head.stdout.Trim() } else { $null }
+    $status=Invoke-ResearchGit $Path @('status','--porcelain=v1','--untracked-files=normal','--ignore-submodules=none') '' $TimeoutSeconds -ReadOnly:$ReadOnly
+    $head=Invoke-ResearchGit $Path @('rev-parse','--verify','HEAD') '' $TimeoutSeconds -ReadOnly:$ReadOnly
+    $shallow=Invoke-ResearchGit $Path @('rev-parse','--is-shallow-repository') '' $TimeoutSeconds -ReadOnly:$ReadOnly
+    if ($status.exitCode -ne 0 -or $shallow.exitCode -ne 0 -or $head.exitCode -ne 0 -or $head.stdout.Trim() -notmatch '^(?:[a-f0-9]{40}|[a-f0-9]{64})$') { throw 'repository_inspection_failed' }
+    $sha=$head.stdout.Trim()
     return @{dirty=($status.stdout.Length -gt 0);head=$sha;shallow=($shallow.stdout.Trim() -eq 'true')}
 }
 function Get-ResearchAvailability {
@@ -397,13 +397,19 @@ function Read-ResearchCurrentStatus {
         try {
             $path=[IO.Path]::GetFullPath($row.path,$Settings.ProjectRoot)
             if (-not (Test-Path -LiteralPath $path)) { $row.status='local_missing';$row.dirty=$null;$row.head=$null;$row.shallow=$null;$partial=$true;continue }
-            $observed=Read-ResearchCheckout $path $row.url $TimeoutSeconds
+            $observed=Read-ResearchCheckout $path $row.url $TimeoutSeconds -ReadOnly
             $row.dirty=$observed.dirty;$row.head=$observed.head;$row.shallow=$observed.shallow
             $row.status=if ($observed.dirty) {'dirty'} else {'inspected'}
             if ($observed.dirty) { $partial=$true }
-        } catch { $row.status='inspection_failed';$row.errors=@('current_checkout_unverified');$partial=$true }
+        } catch {
+            $row.status='inspection_failed';$row.head=$null;$row.dirty=$null;$row.shallow=$null
+            $row.errors=@('current_checkout_unverified');$partial=$true
+        }
     }
-    return @{schemaVersion=1;generatedAt=$Now.ToString('o');discoveryComplete=$false;sourceListComplete=$false;inspectionComplete=$true;status=if ($partial) {'partial'} else {'complete'};repositories=@($rows)}
+    # Consumers need the active containment root even when prior machine state omitted it.
+    # This is current local configuration, not a refreshed remote synchronization receipt.
+    $config=@{gitCache=Get-ResearchRelativePath $Settings.ProjectRoot $Settings.GitCache}
+    return @{schemaVersion=1;generatedAt=$Now.ToString('o');discoveryComplete=$false;sourceListComplete=$false;inspectionComplete=$true;status=if ($partial) {'partial'} else {'complete'};config=$config;repositories=@($rows)}
 }
 
 function Invoke-ResearchGitSync {
@@ -423,6 +429,16 @@ function Invoke-ResearchGitSync {
     $lock=$null
     try {
         $lock=[IO.File]::Open($lockPath,[IO.FileMode]::OpenOrCreate,[IO.FileAccess]::Write,[IO.FileShare]::None)
+        if ($Action -eq 'observe') {
+            if ($Limit -ne 0 -or $Category -ne '' -or $Repository -ne '' -or $NoAutoStash -or $UsePrimaryBranch) { throw 'observation_options_invalid' }
+            if (-not (Test-Path -LiteralPath $statePath)) { throw 'git_state_missing' }
+            # Inspect known identities without importing lists, fetching, or invoking backup APIs.
+            # checkedAt/upstreamHead/availability evidence retain their earlier remote meaning.
+            $observation=Read-ResearchCurrentStatus $statePath $settings $TimeoutSeconds $Now
+            Write-ResearchJson (Join-Path $directory 'git-observation.json') $observation
+            Write-ResearchJson $statePath $observation
+            return $observation
+        }
         $entries=Read-ResearchSourceList $settings -Import:($Action -eq 'lists')
         if ($Action -eq 'lists') {
             Write-ResearchSourceConfiguration $settings $entries
@@ -486,6 +502,7 @@ if ($MyInvocation.InvocationName -ne '.') {
         if ($result.status -eq 'partial') { exit 1 }
     } catch {
         $known=@('source_config_missing_run_sources_import','source_config_invalid','repository_url_invalid','repository_protocol_unsupported','research_input_invalid_or_oversized','source_list_limit','source_lists_disagree','source_loader_unverified','source_executable_line_rejected','source_lists_copy_failed_rolled_back','source_lists_rollback_failed','source_list_empty','clone_declaration_invalid','repository_path_collision','repository_path_invalid','category_invalid','repository_filter_invalid','auto_stash_invalid','git_state_missing','git_state_invalid','dotenv_unknown_teamagent_key','dotenv_invalid_assignment','dotenv_duplicate_key','dotenv_invalid_value','dotenv_unclosed_quote','dotenv_nested_quote_unsupported','dotenv_invalid_quote','cache_path_required','outdated_threshold_invalid','rename_prefix_invalid','rename_prefix_collision','backup_account_invalid','reparse_path_rejected','reparse_cache_rejected','path_outside_cache')
+        $known+='observation_options_invalid'
         $message=if ($_.Exception.Message -in $known) { $_.Exception.Message } else { 'git_maintenance_failed_or_locked' }
         [Console]::Error.Write($message+"`n"); exit 1
     }

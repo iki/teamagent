@@ -30,6 +30,7 @@ Use the pinned Bun/Aube runtime described in [the stack](architecture/stack.md).
 aube run --no-install sources:sync
 aube run --no-install repos:sync
 aube run --no-install repos:status
+aube run --no-install repos:observe
 aube run --no-install analysis:sync
 aube run --no-install resources:sync
 aube run --no-install research:sync
@@ -37,7 +38,11 @@ aube run --no-install research:sync
 
 `sources:sync` imports the configured external exports into `git-sources.json` and records a local import receipt. It does not publish shell-script copies. `repos:sync` consumes the owned JSON inventory, without rereading external exports. `research:sync` runs those stages, analysis evidence preparation, and text-resource synchronization in that order. It continues independent evidence stages after a partially failed repository sync and exits nonzero for incomplete execution. A failed list publication stops dependent updates. `--root`, `--limit`, `--category`, `--repository`, `--no-auto-stash`, `--use-primary-branch`, `--timeout-seconds` and `--concurrency` are available through the launcher; use each underlying script's help for its more specific options. A limit is explicitly partial coverage, never a full scan.
 
-The standalone Git entry point is `pwsh -NoProfile -File app/research/git-sync.ps1 -Action sync -ProjectRoot .`. Actions are `lists`, `sync`, and `status`. Run `status` to detect staged, unstaged, untracked and submodule changes without merging them. The output manifests are `.cache/research/git-state.json` and `.cache/research/git-sync.json`; their local paths are project-relative. These caches are machine state, not portable source citations.
+The standalone Git entry point is `pwsh -NoProfile -File app/research/git-sync.ps1 -Action sync -ProjectRoot .`. Actions are `lists`, `sync`, `status` and `observe`. Run `status` to detect staged, unstaged, untracked and submodule changes without merging them. The output manifests are `.cache/research/git-state.json` and `.cache/research/git-sync.json`; their local paths are project-relative. These caches are machine state, not portable source citations.
+
+Use `repos:observe` before `analysis:sync` when local checkouts have advanced and only their committed revisions need review. It inspects every known checkout under the maintenance lock, publishes `.cache/research/git-observation.json`, then updates the analysis input `.cache/research/git-state.json`. It does not import source lists, fetch, switch branches, stash edits or contact backup services. `repos:status` remains nonpublishing. Both local inspection actions disable Git optional writes/index refresh and repository-configured filesystem monitors. Observation rejects selection/update flags, records dirty or unavailable checkouts explicitly, and clears unverified HEAD values on inspection failure. Review remains pinned to committed objects, excluding local edits.
+
+An observation has `inspectionComplete=true` and `discoveryComplete=false`: it covers known local identities, not fresh upstream discovery. Earlier `checkedAt`, upstream revisions and availability evidence retain their original remote meaning; the new `inspectedAt` identifies the local check. Its `config.gitCache` comes from the current validated project settings as a project-relative path, so downstream citation containment works with nondefault caches; stale sync options are not copied. The last remote synchronization receipt in `.cache/research/git-sync.json` is preserved. Individual manifest replacements are atomic, not a transaction across all checkouts; external Git clients can still advance a repository, and analysis rechecks those HEADs. A failed observation publication preserves the prior analysis input. If the second replacement fails, `git-observation.json` may be newer; it is not authoritative analysis input until `git-state.json` is successfully published.
 
 ## Repository lifecycle
 

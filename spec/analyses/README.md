@@ -44,7 +44,7 @@ bun app/research/analysis-sync.ts --root .
 bun app/research/analysis-sync.ts --root . --write
 ```
 
-The default is a read-only preview. The writer consumes `.cache/research/git-state.json`, emitted by Git discovery, and resolves cache paths through the shared research settings. It loads root `.env`, then `.env.local`; it does not inherit ambient research path overrides. `TEAMAGENT_GIT_CACHE` defaults to `.cache/git`, and `TEAMAGENT_REPOMIX_CACHE` to `.cache/git.repomix`. This machine's local Git cache override points at `..`. Source links in reports always use upstream URLs; cache locations stay outside source citations.
+The default is a read-only preview. The writer consumes `.cache/research/git-state.json`, emitted by Git discovery or explicit local observation, and resolves cache paths through the shared research settings. Run `aube run --no-install repos:observe` to publish current local HEAD/dirty observations for already known checkouts before analysis synchronization. This does not fetch, read regenerated source lists, refresh upstream availability or advance any analyzed baseline; failed local inspections remain incomplete. See the [observation contract](../research-sync.md). The writer loads root `.env`, then `.env.local`; it does not inherit ambient research path overrides. `TEAMAGENT_GIT_CACHE` defaults to `.cache/git`, and `TEAMAGENT_REPOMIX_CACHE` to `.cache/git.repomix`. This machine's local Git cache override points at `..`. Source links in reports always use upstream URLs; cache locations stay outside source citations.
 
 After reading changed source, update the report with full-SHA source links, what changed, the review scope, limitations and adoption consequence. Then acknowledge that exact review explicitly:
 

@@ -36,7 +36,7 @@ const parsed = cli({
   help: {
     version,
     description:
-      "Maintain source lists, Git checkouts, analysis evidence and text resources.\nActions: sources imports external lists into owned git-sources.json; repos uses that owned inventory; status inspects checkouts; analysis prepares evidence; texts captures uncaptured resources and checks captured static snapshots locally unless marked refresh=true; sync runs all stages.",
+      "Maintain source lists, Git checkouts, analysis evidence and text resources.\nActions: sources imports external lists into owned git-sources.json; repos uses that owned inventory; status inspects checkouts without publishing; observe records all known local checkout revisions for analysis without fetching; analysis prepares evidence; texts captures uncaptured resources and checks captured static snapshots locally unless marked refresh=true; sync runs all stages.",
   },
 });
 const logger = createConsola({
@@ -82,9 +82,21 @@ async function main(): Promise<void> {
     return;
   }
   const action = parsed._.action ?? "";
-  if (!["sources", "repos", "status", "analysis", "texts", "sync"].includes(action))
+  if (!["sources", "repos", "status", "observe", "analysis", "texts", "sync"].includes(action))
     throw new Error("Unknown research action; use --help.");
   if (parsed._["--"].length) throw new Error("Unexpected positional arguments.");
+  if (
+    action === "observe" &&
+    (parsed.flags.limit !== undefined ||
+      parsed.flags.category !== undefined ||
+      parsed.flags.repository !== undefined ||
+      parsed.flags.noAutoStash ||
+      parsed.flags.usePrimaryBranch ||
+      parsed.flags.xApi)
+  )
+    throw new Error(
+      "Observe inspects all known checkouts and does not accept update or source-selection options.",
+    );
   for (const value of [parsed.flags.limit, parsed.flags.timeoutSeconds, parsed.flags.concurrency])
     if (value !== undefined && (!Number.isSafeInteger(value) || value < 1))
       throw new Error("Limits, timeouts and concurrency must be positive integers.");
@@ -113,14 +125,10 @@ async function main(): Promise<void> {
   for (const stage of stages) {
     logger.info(`Starting ${stage}.`);
     let status: number;
-    if (stage === "sources" || stage === "repos" || stage === "status") {
+    if (stage === "sources" || stage === "repos" || stage === "status" || stage === "observe") {
       status = await run(
         shell,
-        [
-          ...gitArgs,
-          "-Action",
-          stage === "sources" ? "lists" : stage === "repos" ? "sync" : "status",
-        ],
+        [...gitArgs, "-Action", stage === "sources" ? "lists" : stage === "repos" ? "sync" : stage],
         root,
       );
     } else {
