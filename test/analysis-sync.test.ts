@@ -1,6 +1,7 @@
 import { expect, test } from "bun:test";
 import { rejects } from "node:assert/strict";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { mkdtemp, mkdir, readFile, rename, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -15,6 +16,7 @@ import {
   readReviewRequests,
   replaceEvidenceFile,
   syncAnalyses,
+  verifyReviewPublication,
 } from "../app/research/analysis-sync.ts";
 import {
   AnalysisStateSchema,
@@ -156,6 +158,72 @@ test("migration and fetch preserve reviewed SHA/date/body and create bounded cha
   }
 });
 
+test("CRLF metadata repair preserves old digest evidence and source review dates without accepting prose edits", async () => {
+  const { root, first } = await fixture();
+  try {
+    await syncAnalyses(options(root));
+    const before = await state(root);
+    const record = before.records[0];
+    if (record === undefined) throw new Error("Missing fixture record");
+    const prose = `# Original\r\nSource: ${source}\r\nReviewed revision: ${first}. Review date: 2026-10-04.\r\n`;
+    const metadata =
+      "\r\n<!-- teamagent-analysis:start -->\r\nLegacy managed metadata.\r\n<!-- teamagent-analysis:end -->\r\n";
+    // The blocks share one CRLF separator; consuming it hides the second marker.
+    const legacyBody = prose + metadata + metadata.slice(2);
+    const oldDigest = createHash("sha256").update(legacyBody).digest("hex");
+    const cleanDigest = createHash("sha256").update(prose).digest("hex");
+    const legacyState = { ...before, records: [{ ...record, reportSha256: oldDigest }] };
+    const reportPath = join(root, record.report);
+    const statePath = join(root, "spec/analyses/state.json");
+    await writeFile(reportPath, legacyBody);
+    await writeFile(statePath, JSON.stringify(legacyState));
+    await syncAnalyses(options(root));
+    const repaired = await state(root);
+    expect(repaired.records[0]).toEqual({ ...record, reportSha256: cleanDigest });
+    expect(repaired.events.at(-1)?.action).toBe("metadata-normalized");
+    expect(repaired.events.at(-1)?.previousSha).toBe(first);
+    expect(repaired.events.at(-1)?.sha).toBe(first);
+    expect(
+      await readFile(join(root, `spec/analyses/history/${record.id}/${oldDigest}.txt`), "utf8"),
+    ).toBe(legacyBody);
+    expect(
+      await readFile(join(root, `spec/analyses/history/${record.id}/${cleanDigest}.txt`), "utf8"),
+    ).toBe(prose);
+    const published = await readFile(reportPath, "utf8");
+    expect(published.startsWith(prose)).toBe(true);
+    expect(published.match(/<!-- teamagent-analysis:start -->/gu)).toHaveLength(1);
+    await syncAnalyses(options(root));
+    expect((await state(root)).events).toEqual(repaired.events);
+
+    // A stopped publication can leave the clean report ahead of the old ledger.
+    await writeFile(statePath, JSON.stringify(legacyState));
+    await syncAnalyses(options(root));
+    expect((await state(root)).records[0]).toEqual(repaired.records[0]);
+    expect((await state(root)).events).toEqual(repaired.events);
+    expect(await readFile(reportPath, "utf8")).toBe(published);
+
+    await writeFile(statePath, JSON.stringify(legacyState));
+    await writeFile(
+      reportPath,
+      legacyBody.replace("Reviewed revision", "Unreviewed changed prose"),
+    );
+    await syncAnalyses(options(root));
+    expect((await state(root)).records[0]?.reportSha256).toBe(oldDigest);
+    expect((await state(root)).events).toEqual(before.events);
+    expect(await readFile(join(root, "spec/analyses/pending.md"), "utf8")).toContain(
+      "report changed since recorded review",
+    );
+    await writeFile(
+      join(root, `spec/analyses/history/${record.id}/${oldDigest}.txt`),
+      "Corrupted history",
+    );
+    await rejects(syncAnalyses(options(root)), /history failed digest verification/);
+    expect((await state(root)).records[0]?.reportSha256).toBe(oldDigest);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
 test("review promotion refuses unchanged reports and preserves previous review evidence", async () => {
   const { root, first, second } = await fixture();
   try {
@@ -191,7 +259,7 @@ test("review promotion refuses unchanged reports and preserves previous review e
 });
 
 test("identity ambiguity is refused and a renamed checkout needs full analyzed ancestry", async () => {
-  const { root, first, observed } = await fixture();
+  const { root, repo, first, observed } = await fixture();
   try {
     const baseline = (await migrateAnalysis(root, timestamp)).records[0];
     if (baseline === undefined) throw new Error("Missing fixture baseline");
@@ -218,6 +286,33 @@ test("identity ambiguity is refused and a renamed checkout needs full analyzed a
     expect(updated.records[0]?.analyzedSha).toBe(first);
     expect(updated.records[0]?.url).toBe(changedRemote.url);
     expect(updated.records[0]?.aliases).toContain(renamed.id);
+    await writeFile(join(repo, "entry.ts"), "export const value = 3;\n");
+    git(repo, ["add", "."]);
+    git(repo, ["commit", "--quiet", "-m", "Later change after verified rename"]);
+    const stale = await syncAnalyses(options(root));
+    expect(stale.statuses["observation-stale"]).toBe(1);
+    expect((await state(root)).events).toEqual(updated.events);
+    expect((await state(root)).records[0]?.analyzedSha).toBe(first);
+    await writeFile(
+      join(root, "git-state.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        generatedAt: timestamp,
+        discoveryComplete: true,
+        repositories: [{ ...changedRemote, url: "https://github.com/example/unverified-owner" }],
+      }),
+    );
+    await rejects(
+      syncAnalyses({ ...options(root), rename: new Map([[baseline.id, renamed.id]]) }),
+      /cannot establish full baseline ancestry/,
+    );
+    const foreign = await syncAnalyses(options(root));
+    // Canonical identity matching withholds the old report from the foreign URL.
+    expect(foreign.statuses.unavailable).toBe(1);
+    expect(
+      (await state(root)).records.find((row) => row.id === renamed.id)?.analyzedSha,
+    ).toBeNull();
+    expect((await state(root)).records[0]?.url).toBe(changedRemote.url);
   } finally {
     await rm(root, { recursive: true, force: true });
   }
@@ -242,6 +337,88 @@ test("missing shallow baseline is explicit, never substituted with checkout HEAD
     );
     expect(packet.status).toBe("shallow-baseline-missing");
     expect(packet.analyzedSha).toBe(record.analyzedSha);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("same-source identical trees reconcile rewritten history only after explicit report review", async () => {
+  const { root, repo, first, second, observed } = await fixture();
+  try {
+    const baseline = (await migrateAnalysis(root, timestamp)).records[0];
+    if (baseline === undefined) throw new Error("Missing fixture baseline");
+    const tree = git(repo, ["rev-parse", `${first}^{tree}`]);
+    const rewritten = git(repo, ["commit-tree", tree, "-m", "Rewritten identical source tree"]);
+    await writeFile(join(repo, "entry.ts"), "export const value = 1;\n");
+    git(repo, ["add", "entry.ts"]);
+    git(repo, ["update-ref", "HEAD", rewritten]);
+    const renamed = { ...observed, id: "ai-agents--renamed", head: rewritten };
+    await writeFile(
+      join(root, "git-state.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        generatedAt: timestamp,
+        discoveryComplete: true,
+        repositories: [renamed],
+      }),
+    );
+    const packetOptions = {
+      now: timestamp,
+      observedAt: timestamp,
+      root,
+      cache: join(root, "cache"),
+      git: gitReader(new AbortController().signal),
+    };
+    const packet = await buildChangePacket(baseline, renamed, packetOptions);
+    expect(packet.status).toBe("changed");
+    expect(packet.files).toHaveLength(0);
+    expect(packet.notes.join(" ")).toContain(`identical complete Git trees (${tree})`);
+    expect(packet.notes.join(" ")).toContain("not ancestry");
+    await syncAnalyses(options(root));
+    expect((await state(root)).records[0]?.analyzedSha).toBe(first);
+    await rejects(
+      syncAnalyses({
+        ...options(root),
+        review: { id: baseline.id, sha: rewritten, reason: "Same complete tree" },
+      }),
+      /Updated report/,
+    );
+    await writeFile(
+      join(root, baseline.report),
+      `# Original\nSource: ${source}\nReviewed ${rewritten}; full tree ${tree} unchanged despite history rewrite.\n`,
+    );
+    await syncAnalyses({
+      ...options(root),
+      review: {
+        id: baseline.id,
+        sha: rewritten,
+        reason: "Reviewed identical committed tree and retained historical pin",
+      },
+    });
+    expect((await state(root)).records[0]?.analyzedSha).toBe(rewritten);
+    expect((await state(root)).records[0]?.aliases).toContain(renamed.id);
+    expect(
+      await readFile(
+        join(root, `spec/analyses/history/${baseline.id}/${first}--${rewritten}.json`),
+        "utf8",
+      ),
+    ).toContain("not ancestry");
+    const foreign = await buildChangePacket(
+      baseline,
+      { ...renamed, url: "https://github.com/other/copied" },
+      packetOptions,
+    );
+    expect(foreign.status).toBe("history-diverged");
+    const different = git(repo, [
+      "commit-tree",
+      git(repo, ["rev-parse", `${second}^{tree}`]),
+      "-m",
+      "Unrelated changed tree",
+    ]);
+    git(repo, ["update-ref", "HEAD", different]);
+    expect(
+      (await buildChangePacket(baseline, { ...renamed, head: different }, packetOptions)).status,
+    ).toBe("history-diverged");
   } finally {
     await rm(root, { recursive: true, force: true });
   }
@@ -477,6 +654,266 @@ test("unchanged commit is validated without a redundant ancestry process", async
     );
     expect(packet.status).toBe("current");
     expect(operations).toEqual(["rev-parse", "cat-file"]);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("explicit snapshot reviews retain newer changes as pending and require exact descendant evidence", async () => {
+  const { root, repo, first, second, observed } = await fixture();
+  try {
+    await syncAnalyses(options(root));
+    const before = await readFile(join(root, "spec/analyses/state.json"), "utf8");
+    await writeFile(join(repo, "entry.ts"), "export const value = 3;\n");
+    git(repo, ["add", "."]);
+    git(repo, ["commit", "--quiet", "-m", "Unreviewed later change"]);
+    const third = git(repo, ["rev-parse", "HEAD"]);
+    await writeFile(
+      join(root, "spec/projects/ai-agents--original.md"),
+      `# Original\nSource ${source}. Reviewed ${second}: value is 2. Later changes were not reviewed.\n`,
+    );
+    const review = { id: observed.id, sha: second, reason: "Read the immutable value=2 snapshot" };
+    await rejects(syncAnalyses({ ...options(root), review }), /observation-stale/);
+    await rejects(
+      syncAnalyses({ ...options(root), review: { ...review, checkoutSha: first } }),
+      /observation-stale/,
+    );
+    await rejects(
+      syncAnalyses({ ...options(root), review: { ...review, checkoutSha: "short" } }),
+      /full SHA/,
+    );
+    expect(await readFile(join(root, "spec/analyses/state.json"), "utf8")).toBe(before);
+    git(repo, ["checkout", "--quiet", "--orphan", "unrelated"]);
+    await writeFile(join(repo, "entry.ts"), "export const value = 4;\n");
+    git(repo, ["add", "."]);
+    git(repo, ["commit", "--quiet", "-m", "Unrelated history"]);
+    const unrelated = git(repo, ["rev-parse", "HEAD"]);
+    await rejects(
+      syncAnalyses({ ...options(root), review: { ...review, checkoutSha: unrelated } }),
+      /observation-stale/,
+    );
+    git(repo, ["checkout", "--quiet", "--detach", third]);
+    const manifest = await readFile(join(root, "git-state.json"), "utf8");
+    await writeFile(
+      join(root, "git-state.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        generatedAt: timestamp,
+        discoveryComplete: true,
+        repositories: [{ ...observed, url: "https://github.com/other/source" }],
+      }),
+    );
+    await rejects(
+      syncAnalyses({ ...options(root), review: { ...review, checkoutSha: third } }),
+      /unavailable/,
+    );
+    await writeFile(join(root, "git-state.json"), manifest);
+    expect(await readFile(join(root, "spec/analyses/state.json"), "utf8")).toBe(before);
+    await writeFile(
+      join(root, "reviews.json"),
+      JSON.stringify([{ ...review, checkoutSha: third }]),
+    );
+    const reviews = await readReviewRequests(root, "reviews.json");
+    const result = await syncAnalyses({ ...options(root), reviews });
+    expect(result.statuses["observation-stale"]).toBe(1);
+    expect(result.statuses.current).toBeUndefined();
+    const saved = await state(root);
+    expect(saved.records[0]?.analyzedSha).toBe(second);
+    expect(saved.events.at(-1)?.reason).toContain(third);
+    expect(await readFile(join(root, "spec/analyses/pending.md"), "utf8")).toContain(
+      "observation-stale",
+    );
+    expect(
+      await readFile(
+        join(root, `spec/analyses/history/${observed.id}/${first}--${second}.json`),
+        "utf8",
+      ),
+    ).toContain(second);
+    expect(await readFile(join(root, `spec/analyses/repos/${observed.id}.md`), "utf8")).toContain(
+      "newer checkout",
+    );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("divergent-history promotion requires an explicit exact prior baseline and preserves both trees", async () => {
+  const { root, repo, first, second, observed } = await fixture();
+  try {
+    await syncAnalyses(options(root));
+    const original = await readFile(join(root, "spec/analyses/state.json"), "utf8");
+    await rejects(
+      syncAnalyses({
+        ...options(root),
+        review: {
+          id: observed.id,
+          sha: second,
+          reconcileFrom: first,
+          reason: "Not actually divergent",
+        },
+      }),
+      /Divergent-history acknowledgment/,
+    );
+    git(repo, ["checkout", "--quiet", "--orphan", "rewritten"]);
+    await writeFile(join(repo, "entry.ts"), "export const value = 42;\n");
+    git(repo, ["add", "."]);
+    git(repo, ["commit", "--quiet", "-m", "Explicitly reviewed rewritten source"]);
+    const rewritten = git(repo, ["rev-parse", "HEAD"]);
+    const oldTree = git(repo, ["rev-parse", `${first}^{tree}`]);
+    const newTree = git(repo, ["rev-parse", `${rewritten}^{tree}`]);
+    await writeFile(
+      join(root, "git-state.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        generatedAt: timestamp,
+        discoveryComplete: true,
+        repositories: [{ ...observed, head: rewritten }],
+      }),
+    );
+    await writeFile(
+      join(root, "spec/projects/ai-agents--original.md"),
+      `# Original\nSource ${source}. Prior baseline ${first}. Reviewed rewritten ${rewritten}: value is 42. Ancestry is not established.\n`,
+    );
+    const review = {
+      id: observed.id,
+      sha: rewritten,
+      reason: "Read rewritten entry and retain prior findings",
+    };
+    await rejects(syncAnalyses({ ...options(root), review }), /history-diverged/);
+    await rejects(
+      syncAnalyses({ ...options(root), review: { ...review, reconcileFrom: second } }),
+      /exact preserved baseline/,
+    );
+    await rejects(
+      syncAnalyses({ ...options(root), review: { ...review, reconcileFrom: "short" } }),
+      /full baseline SHA/,
+    );
+    expect(await readFile(join(root, "spec/analyses/state.json"), "utf8")).toBe(original);
+    await writeFile(
+      join(root, "reviews.json"),
+      JSON.stringify([{ ...review, reconcileFrom: first }]),
+    );
+    const result = await syncAnalyses({
+      ...options(root),
+      reviews: await readReviewRequests(root, "reviews.json"),
+    });
+    expect(result.statuses.current).toBe(1);
+    const saved = await state(root);
+    expect(saved.records[0]?.analyzedSha).toBe(rewritten);
+    expect(saved.events.at(-1)?.previousSha).toBe(first);
+    expect(saved.events.at(-1)?.reason).toContain("ancestry is not established");
+    const history = await readFile(
+      join(root, `spec/analyses/history/${observed.id}/${first}--${rewritten}.json`),
+      "utf8",
+    );
+    expect(history).toContain(oldTree);
+    expect(history).toContain(newTree);
+    expect(history).toContain("history-diverged");
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("an ancestry command failure is not classified as reviewed divergent history", async () => {
+  const { root, second, observed } = await fixture();
+  try {
+    const record = (await migrateAnalysis(root, timestamp)).records[0];
+    if (record === undefined) throw new Error("Missing fixture record");
+    const packet = await buildChangePacket(record, observed, {
+      root,
+      cache: join(root, "cache"),
+      now: timestamp,
+      observedAt: timestamp,
+      git: async (_path, args) => ({
+        code: args[0] === "merge-base" ? 2 : 0,
+        text: args[0] === "rev-parse" ? second : "",
+      }),
+    });
+    expect(packet.status).toBe("evidence-unavailable");
+    expect(packet.notes.join(" ")).toContain("divergence was not established");
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("review publication rejects changed prose and checkout HEAD after preparation", async () => {
+  const { root, repo, second, observed } = await fixture();
+  try {
+    await syncAnalyses(options(root));
+    const record = (await state(root)).records[0];
+    if (record === undefined) throw new Error("Missing fixture record");
+    const reader = gitReader(new AbortController().signal);
+    const original = await verifyReviewPublication(
+      root,
+      join(root, "cache"),
+      record,
+      observed,
+      second,
+      reader,
+    );
+    await writeFile(
+      join(root, record.report),
+      original.replace("Reviewed revision", "Concurrent changed review"),
+    );
+    await rejects(
+      verifyReviewPublication(root, join(root, "cache"), record, observed, second, reader),
+      /report changed/,
+    );
+    await writeFile(join(root, record.report), original);
+    await writeFile(join(repo, "entry.ts"), "export const value = 9;\n");
+    git(repo, ["add", "."]);
+    git(repo, ["commit", "--quiet", "-m", "Concurrent checkout advance"]);
+    await rejects(
+      verifyReviewPublication(root, join(root, "cache"), record, observed, second, reader),
+      /checkout changed/,
+    );
+    expect(await readFile(join(root, record.report), "utf8")).toBe(original);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("large committed path inventories retain bounded evidence without raising ordinary Git output limits", async () => {
+  const { root, repo, second, observed } = await fixture();
+  try {
+    const message = "Large committed source inventory\n";
+    const paths = Array.from(
+      { length: 33_000 },
+      (_, index) => `sources/${String(index).padStart(5, "0")}-${"component".repeat(9)}.ts`,
+    );
+    const stream =
+      `blob\nmark :1\ndata 1\nx\ncommit refs/heads/large-inventory\n` +
+      `committer Fixture <fixture@example.invalid> 1792836000 +0000\n` +
+      `data ${Buffer.byteLength(message)}\n${message}from ${second}\n` +
+      paths.map((path) => `M 100644 :1 ${path}\n`).join("") +
+      "\ndone\n";
+    execFileSync("git", ["-C", repo, "fast-import", "--quiet"], {
+      input: stream,
+      windowsHide: true,
+      timeout: 30_000,
+      maxBuffer: 1024 * 1024,
+    });
+    git(repo, ["symbolic-ref", "HEAD", "refs/heads/large-inventory"]);
+    const head = git(repo, ["rev-parse", "HEAD"]);
+    const baseline = (await migrateAnalysis(root, timestamp)).records[0];
+    if (baseline === undefined) throw new Error("Missing fixture baseline");
+    const reader = gitReader(new AbortController().signal);
+    const packet = await buildChangePacket(
+      baseline,
+      { ...observed, head },
+      {
+        now: timestamp,
+        observedAt: timestamp,
+        root,
+        cache: join(root, "cache"),
+        git: reader,
+      },
+    );
+    expect(packet.status).toBe("changed");
+    expect(packet.files).toHaveLength(160);
+    expect(packet.filesTruncated).toBe(true);
+    expect(packet.notes.some((note) => note.includes("1,000 candidates"))).toBe(true);
+    await rejects(reader(repo, ["ls-tree", "-r", "--name-only", head]), GitInspectionError);
   } finally {
     await rm(root, { recursive: true, force: true });
   }

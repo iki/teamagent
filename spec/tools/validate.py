@@ -11,6 +11,8 @@ from pathlib import Path
 import re
 import subprocess
 from urllib.parse import unquote, urlparse
+from external_sources import registry as external_registry, check_cache as check_external_cache, git_environment
+from text_output import configure_output, write_utf8_lf
 
 EXCLUDED = ("spec/archive/", "spec/analyses/history/", "spec/conversations/", "spec/conversation-archive/", "spec/.conversations/")
 FULL_SHA = re.compile(r"(?:[0-9a-f]{40}|[0-9a-f]{64})", re.I)
@@ -37,7 +39,7 @@ def git(repo: Path, *args: str) -> subprocess.CompletedProcess:
     return subprocess.run(
         ["git", "--no-replace-objects", "-c", "safe.directory=" + repo.as_posix(),
          "-c", "core.hooksPath=/dev/null", "-C", str(repo), *args],
-        capture_output=True, timeout=30,
+        capture_output=True, timeout=30, env=git_environment(),
     )
 
 
@@ -97,10 +99,13 @@ def validate(root: Path, links_only: bool = False):
     if len(inventory) > 10000 or len(observed["repositories"]) > 10000:
         raise ValueError("Repository census exceeds limit")
     cache = (root / observed.get("config", {}).get("gitCache", ".cache/git")).resolve()
+    external = {row["location"]: row for row in external_registry(root)}
     by_id = {row["id"]: row for row in state["records"]}
     candidates = collections.defaultdict(set)
     rows_by_identity = collections.defaultdict(list)
     rows_by_id = {row["id"]: row for row in observed["repositories"]}
+    for location, source in external.items():
+        candidates[identity(source["url"])].add(location)
     for row in observed["repositories"]:
         rows_by_identity[identity(row["url"])].append(row)
         candidates[identity(row["url"])].add(row["path"])
@@ -167,10 +172,16 @@ def validate(root: Path, links_only: bool = False):
         errors = []
         for location in sorted(candidates[key]):
             repo = (root / location).resolve()
-            if not repo.is_relative_to(cache):
+            if location not in external and not repo.is_relative_to(cache):
                 errors.append("observed cache path escapes configured root")
                 continue
             try:
+                if location in external:
+                    source = external[location]
+                    if revision not in source["revisions"]:
+                        errors.append("revision is not registered for this external source")
+                        continue
+                    repo = check_external_cache(root, source)
                 if git(repo, "cat-file", "-e", revision + "^{commit}").returncode:
                     errors.append("pinned commit is unavailable; shallow or missing history requires explicit fetch")
                     continue
@@ -202,9 +213,12 @@ def validate(root: Path, links_only: bool = False):
                 invalid = [f"{document}: invalid pinned lines {target} (blob {count} lines)"
                            for document, target, start, end in references
                            if start and not 1 <= int(start) <= int(end or start) <= count]
+                # This digest proves original Git bytes, not a normalized display artifact.
                 return {"source": key, "revision": revision, "path": file,
                         "sha256": hashlib.sha256(content.stdout).hexdigest(), "lines": count,
                         "references": len(references)}, invalid
+            except ValueError as error:
+                errors.append(str(error))
             except (OSError, UnicodeError, subprocess.TimeoutExpired):
                 errors.append("Git inspection failed or exceeded 30-second deadline")
         return None, [f'{references[0][0]}: {key}@{revision}/{requested}: {"; ".join(sorted(set(errors)))}']
@@ -223,6 +237,7 @@ def validate(root: Path, links_only: bool = False):
         "pinnedSourceLinksChecked": sum(blob["references"] for blob in blobs),
         "uniquePinnedBlobsChecked": len(blobs), "blobs": sorted(blobs, key=lambda row: (row["source"], row["revision"], row["path"])),
         "unmappedExternalSourceLinks": sorted(unknown), "issues": sorted(set(issues)),
+        "registeredExternalSources": len(external),
         "excludedImmutablePrefixes": EXCLUDED,
         "bounds": {"sourceBlobBytes": MAX_BLOB, "jsonBytes": MAX_JSON, "gitTimeoutSeconds": 30, "concurrency": 8},
         "limits": ["Exact historical Git objects are checked; current working-tree equality is neither required nor inferred.",
@@ -233,6 +248,7 @@ def validate(root: Path, links_only: bool = False):
 
 
 def main():
+    configure_output()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--links-only", action="store_true")
@@ -241,7 +257,7 @@ def main():
     result = validate(root, args.links_only)
     output = root / "spec/analyses/validation.json"
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_utf8_lf(output, json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({key: value for key, value in result.items() if key != "blobs"}, ensure_ascii=False, indent=2))
     raise SystemExit(bool(result["issues"]))
 

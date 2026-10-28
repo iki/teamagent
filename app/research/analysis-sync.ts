@@ -28,6 +28,7 @@ const limits = {
   jsonBytes: 16_000_000,
   reportBytes: 1_000_000,
   gitBytes: 2_000_000,
+  diffBytes: 8_388_608,
   commits: 32,
   files: 160,
   reviews: 100,
@@ -36,12 +37,31 @@ const limits = {
 const shaPattern = /^(?:[a-f0-9]{40}|[a-f0-9]{64})$/u;
 const idPattern = /^[a-z0-9][a-z0-9._-]{0,180}$/u;
 const digest = (value: string): string => createHash("sha256").update(value).digest("hex");
-const reportContent = (value: string): string =>
+const legacyReportContent = (value: string): string =>
   value.replace(
     /\n<!-- teamagent-analysis:start -->\n[\s\S]*?<!-- teamagent-analysis:end -->\n?/gu,
     "",
   );
+const reportContent = (value: string): string =>
+  value.replace(
+    /\r?\n<!-- teamagent-analysis:start -->\r?\n[\s\S]*?<!-- teamagent-analysis:end -->(?:\r?\n(?!<!-- teamagent-analysis:start -->))?/gu,
+    "",
+  );
 const reportDigest = (value: string): string => digest(reportContent(value));
+function metadataRepairHistory(
+  body: string,
+  previous: string,
+  previousDigest: string,
+  currentDigest: string | null,
+): string {
+  if (
+    digest(previous) !== previousDigest ||
+    reportDigest(previous) !== currentDigest ||
+    reportDigest(body) !== currentDigest
+  )
+    throw new Error("Report changed during metadata-only normalization; baseline preserved");
+  return previous;
+}
 const slash = (value: string): string => value.replaceAll("\\", "/");
 const escapeCell = (value: string): string =>
   value.replaceAll("|", "\\|").replaceAll(/\r?\n/gu, " ");
@@ -203,7 +223,7 @@ export function gitReader(signal: AbortSignal): GitReader {
           encoding: "utf8",
           windowsHide: true,
           timeout: 30_000,
-          maxBuffer: limits.gitBytes,
+          maxBuffer: args[0] === "diff" ? limits.diffBytes : limits.gitBytes,
           signal,
         },
         (error, stdout) => {
@@ -330,6 +350,7 @@ async function readChangePacket(
     cache: string;
     git: GitReader;
     problem?: string;
+    checkoutSha?: string;
   },
 ): Promise<ChangePacket> {
   const reportPath = await safeProjectPath(options.root, record.report);
@@ -365,12 +386,30 @@ async function readChangePacket(
   if (repository === null || repository.head === null) return { ...packet, notes };
   const path = await repositoryPath(options.root, options.cache, repository);
   const current = await options.git(path, ["rev-parse", "HEAD"]);
-  if (current.code !== 0 || current.text.trim() !== repository.head)
+  const expectedHead = options.checkoutSha ?? repository.head;
+  if (current.code !== 0 || !shaPattern.test(expectedHead) || current.text.trim() !== expectedHead)
     return {
       ...packet,
       status: "observation-stale",
       notes: [...notes, "Checkout HEAD differs from discovery manifest; rerun discovery."],
     };
+  if (expectedHead !== repository.head) {
+    const descendant = await options.git(path, [
+      "merge-base",
+      "--is-ancestor",
+      repository.head,
+      expectedHead,
+    ]);
+    if (canonicalRemote(record.url) !== canonicalRemote(repository.url) || descendant.code !== 0)
+      return {
+        ...packet,
+        status: "observation-stale",
+        notes: [...notes, "Explicit checkout acknowledgment lacks same-source snapshot ancestry."],
+      };
+    notes.push(
+      `Explicit review of discovery snapshot ${repository.head}; checkout ${expectedHead} is a verified descendant whose later changes remain unreviewed.`,
+    );
+  }
   if (repository.dirty)
     notes.push("Working-tree modifications are excluded from committed change evidence.");
   if (record.analyzedSha === null) return { ...packet, status: "unreviewed", notes };
@@ -392,13 +431,36 @@ async function readChangePacket(
     record.analyzedSha,
     repository.head,
   ]);
+  if (ancestor.code === 1 && canonicalRemote(record.url) === canonicalRemote(repository.url)) {
+    const [before, after] = await Promise.all([
+      options.git(path, ["rev-parse", `${record.analyzedSha}^{tree}`]),
+      options.git(path, ["rev-parse", `${repository.head}^{tree}`]),
+    ]);
+    const tree = before.text.trim();
+    if (
+      before.code === 0 &&
+      after.code === 0 &&
+      shaPattern.test(tree) &&
+      tree === after.text.trim()
+    )
+      return {
+        ...packet,
+        status: record.lifecycle === "archived" ? "archived-changed" : "changed",
+        notes: [
+          ...notes,
+          `History diverged, but the same canonical source has identical complete Git trees (${tree}). This proves committed-tree equivalence, not ancestry; explicit report review is still required.`,
+        ],
+      };
+  }
   if (ancestor.code !== 0)
     return {
       ...packet,
-      status: "history-diverged",
+      status: ancestor.code === 1 ? "history-diverged" : "evidence-unavailable",
       notes: [
         ...notes,
-        "Analyzed SHA is not an ancestor of observed HEAD; inspect rewritten or unrelated history.",
+        ancestor.code === 1
+          ? "Analyzed SHA is not an ancestor of observed HEAD; inspect rewritten or unrelated history."
+          : "Git ancestry inspection failed; divergence was not established.",
       ],
     };
 
@@ -414,6 +476,7 @@ async function readChangePacket(
     "--name-status",
     "-z",
     "--find-renames=50%",
+    "-l1000",
     "--no-ext-diff",
     "--no-textconv",
     record.analyzedSha,
@@ -448,7 +511,10 @@ async function readChangePacket(
   return {
     ...packet,
     status: record.lifecycle === "archived" ? "archived-changed" : "changed",
-    notes,
+    notes: [
+      ...notes,
+      "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions.",
+    ],
     commits: commitRows,
     files: files.slice(0, limits.files),
     commitsTruncated: rows.length > limits.commits,
@@ -465,6 +531,7 @@ export async function buildChangePacket(
     cache: string;
     git: GitReader;
     problem?: string;
+    checkoutSha?: string;
   },
 ): Promise<ChangePacket> {
   try {
@@ -564,6 +631,10 @@ function validateReviews(reviews: readonly ReviewRequest[]): void {
   for (const review of reviews) {
     if (!idPattern.test(review.id) || !shaPattern.test(review.sha))
       throw new Error("Review requires a valid analysis ID and full SHA");
+    if (review.checkoutSha !== undefined && !shaPattern.test(review.checkoutSha))
+      throw new Error("Checkout acknowledgment requires a full SHA");
+    if (review.reconcileFrom !== undefined && !shaPattern.test(review.reconcileFrom))
+      throw new Error("Divergent-history acknowledgment requires a full baseline SHA");
     if (review.reason.trim().length === 0 || review.reason.length > 2_000)
       throw new Error("Review reason must contain 1-2000 characters");
     if (ids.has(review.id)) throw new Error("Duplicate review ID");
@@ -580,6 +651,22 @@ export async function readReviewRequests(
   );
   validateReviews(reviews);
   return reviews;
+}
+export async function verifyReviewPublication(
+  root: string,
+  cache: string,
+  record: AnalysisRecord,
+  repository: ObservedRepository,
+  expectedHead: string,
+  git: GitReader,
+): Promise<string> {
+  const body = await boundedText(await safeProjectPath(root, record.report), limits.reportBytes);
+  if (record.reportSha256 === null || reportDigest(body) !== record.reportSha256)
+    throw new Error(`Reviewed report changed before publication (${record.id})`);
+  const current = await git(await repositoryPath(root, cache, repository), ["rev-parse", "HEAD"]);
+  if (!shaPattern.test(expectedHead) || current.code !== 0 || current.text.trim() !== expectedHead)
+    throw new Error(`Reviewed checkout changed before publication (${record.id})`);
+  return body;
 }
 export interface SyncOptions {
   readonly root: string;
@@ -643,11 +730,53 @@ async function syncUnlocked(
   const records: AnalysisRecord[] = [];
   const packets: ChangePacket[] = [];
   const reviewHistory: ChangePacket[] = [];
+  const publicationChecks = new Map<
+    string,
+    { repository: ObservedRepository; expectedHead: string }
+  >();
   const events: ReviewEvent[] = [...state.events];
+  const metadataRepairs = new Map<string, { previousDigest: string; previous: string }>();
   const used = new Set<string>();
   for (const baseline of state.records) {
     options.signal.throwIfAborted();
     let record = baseline;
+    if (record.reportSha256 !== null) {
+      const path = await safeProjectPath(options.root, record.report);
+      if (await exists(path)) {
+        const body = await boundedText(path, limits.reportBytes);
+        const normalized = reportDigest(body);
+        let previous = legacyReportContent(body);
+        if (normalized !== record.reportSha256 && digest(previous) !== record.reportSha256) {
+          const historyPath = await safeProjectPath(
+            options.root,
+            `spec/analyses/history/${record.id}/${record.reportSha256}.txt`,
+          );
+          if (await exists(historyPath)) {
+            previous = await boundedText(historyPath, limits.reportBytes);
+            if (digest(previous) !== record.reportSha256)
+              throw new Error("Preserved report history failed digest verification");
+          }
+        }
+        if (
+          normalized !== record.reportSha256 &&
+          digest(previous) === record.reportSha256 &&
+          reportDigest(previous) === normalized
+        ) {
+          const previousDigest = record.reportSha256;
+          metadataRepairs.set(record.id, { previousDigest, previous });
+          record = { ...record, reportSha256: normalized };
+          events.push({
+            at: now,
+            id: record.id,
+            action: "metadata-normalized",
+            previousSha: record.analyzedSha,
+            sha: record.analyzedSha,
+            reason: `Excluded CRLF managed metadata from the report digest (${previousDigest} → ${normalized}); preserved source SHA, commit/review dates and the original hash-addressed snapshot. No source review was inferred.`,
+          });
+        }
+      }
+    }
+    const review = reviews.get(record.id);
     const mapping = options.rename?.get(record.id);
     let match = matchRepository(record, observed, mapping);
     if (
@@ -669,13 +798,16 @@ async function syncUnlocked(
       cache: options.cache,
       git,
       ...(match.problem === null ? {} : { problem: match.problem }),
+      ...(review?.checkoutSha === undefined ? {} : { checkoutSha: review.checkoutSha }),
     });
     if (mapping !== undefined) {
       if (
         repository === null ||
         !["current", "changed", "archived", "archived-changed"].includes(packet.status)
       )
-        throw new Error(`Rename ${record.id} cannot establish full baseline ancestry`);
+        throw new Error(
+          `Rename ${record.id} cannot establish full baseline ancestry or same-source tree equivalence`,
+        );
       if (
         state.records.some(
           (other) =>
@@ -691,16 +823,22 @@ async function syncUnlocked(
         repository.id !== record.id ||
         canonicalRemote(repository.url) !== canonicalRemote(record.url)
       ) {
-        if (!["current", "changed", "archived", "archived-changed"].includes(packet.status))
+        const knownAlias =
+          record.aliases.includes(repository.id) &&
+          canonicalRemote(repository.url) === canonicalRemote(record.url);
+        if (
+          !knownAlias &&
+          !["current", "changed", "archived", "archived-changed"].includes(packet.status)
+        )
           packet = {
             ...packet,
             status: "rename-unverified",
-            notes: [...packet.notes, "Rename requires available analyzed SHA and ancestry proof."],
+            notes: [
+              ...packet.notes,
+              "Rename requires available analyzed SHA and ancestry or same-source identical-tree proof.",
+            ],
           };
-        else if (
-          !record.aliases.includes(repository.id) ||
-          canonicalRemote(repository.url) !== canonicalRemote(record.url)
-        ) {
+        else if (!knownAlias) {
           record = {
             ...record,
             url: repository.url,
@@ -714,22 +852,32 @@ async function syncUnlocked(
             previousSha: record.analyzedSha,
             sha: record.analyzedSha,
             reason:
-              "Canonical remote or explicit mapping plus full analyzed SHA ancestry; stable report ID retained.",
+              "Source identity and baseline continuity verified; retained change evidence distinguishes ancestry from same-source identical trees. Stable report ID retained.",
           });
           packet = { ...packet, source: record.url };
         }
       }
     }
-    const review = reviews.get(record.id);
     if (review !== undefined) {
+      const reconcile = review.reconcileFrom !== undefined;
+      if (
+        reconcile &&
+        (repository === null ||
+          packet.status !== "history-diverged" ||
+          review.reconcileFrom !== record.analyzedSha ||
+          canonicalRemote(record.url) !== canonicalRemote(repository.url))
+      )
+        throw new Error(
+          "Divergent-history acknowledgment requires the exact preserved baseline and same canonical source",
+        );
       if (
         repository === null ||
         !shaPattern.test(review.sha) ||
         review.sha !== repository.head ||
-        !["current", "changed", "unreviewed"].includes(packet.status)
+        (!reconcile && !["current", "changed", "unreviewed"].includes(packet.status))
       )
         throw new Error(
-          "Review promotion requires an available full observed HEAD with compatible ancestry",
+          `Review promotion requires an available full observed HEAD with compatible ancestry (${record.id}: ${packet.status})`,
         );
       const body = await boundedText(
         await safeProjectPath(options.root, record.report),
@@ -739,13 +887,41 @@ async function syncUnlocked(
         throw new Error("Updated report must cite the reviewed SHA and source URL");
       if (record.analyzedSha !== review.sha && reportDigest(body) === record.reportSha256)
         throw new Error("Changed source review requires an updated report");
+      let reason = review.reason;
+      if (review.reconcileFrom !== undefined) {
+        if (!body.includes(review.reconcileFrom))
+          throw new Error("Reconciled report must preserve the prior analyzed SHA");
+        const path = await repositoryPath(options.root, options.cache, repository);
+        const [before, after] = await Promise.all([
+          git(path, ["rev-parse", `${review.reconcileFrom}^{tree}`]),
+          git(path, ["rev-parse", `${review.sha}^{tree}`]),
+        ]);
+        const oldTree = before.text.trim();
+        const newTree = after.text.trim();
+        if (
+          before.code !== 0 ||
+          after.code !== 0 ||
+          !shaPattern.test(oldTree) ||
+          !shaPattern.test(newTree) ||
+          oldTree === newTree
+        )
+          throw new Error(
+            "Divergent-history reconciliation requires two available different complete trees",
+          );
+        const evidence = `Explicit same-source history reconciliation from ${review.reconcileFrom} (tree ${oldTree}) to ${review.sha} (tree ${newTree}); ancestry is not established. Original baseline and review scope remain in history.`;
+        packet = { ...packet, notes: [...packet.notes, evidence] };
+        reason = `${evidence} ${reason}`;
+      }
       events.push({
         at: now,
         id: record.id,
         action: "reviewed",
         previousSha: record.analyzedSha,
         sha: review.sha,
-        reason: review.reason,
+        reason:
+          review.checkoutSha === undefined || review.checkoutSha === review.sha
+            ? reason
+            : `${reason} Reviewed discovery snapshot only; acknowledged descendant checkout ${review.checkoutSha} remains pending.`,
       });
       const commit = await git(await repositoryPath(options.root, options.cache, repository), [
         "show",
@@ -764,6 +940,10 @@ async function syncUnlocked(
         analyzedCommitDate: commit.text.trim(),
         reportSha256: reportDigest(body),
       };
+      publicationChecks.set(record.id, {
+        repository,
+        expectedHead: review.checkoutSha ?? review.sha,
+      });
       reviewHistory.push(packet);
 
       packet = await buildChangePacket(record, repository, {
@@ -773,8 +953,33 @@ async function syncUnlocked(
         cache: options.cache,
         git,
       });
+      if (review.checkoutSha !== undefined) {
+        const current = await git(await repositoryPath(options.root, options.cache, repository), [
+          "rev-parse",
+          "HEAD",
+        ]);
+        if (current.code !== 0 || current.text.trim() !== review.checkoutSha)
+          throw new Error(
+            "Checkout changed while recording the pinned review; refresh its acknowledgment",
+          );
+        if (review.checkoutSha !== review.sha)
+          packet = {
+            ...packet,
+            notes: [
+              ...packet.notes,
+              `Reviewed snapshot ${review.sha}; newer checkout ${review.checkoutSha} still requires discovery and review.`,
+            ],
+          };
+      }
     }
-    if (review !== undefined && (packet.status !== "current" || packet.reportModified))
+    const acknowledgedSnapshot =
+      review?.checkoutSha !== undefined &&
+      review.checkoutSha !== review.sha &&
+      packet.status === "observation-stale";
+    if (
+      review !== undefined &&
+      ((!acknowledgedSnapshot && packet.status !== "current") || packet.reportModified)
+    )
       throw new Error(
         "Reviewed source or report changed while preparing the review; retry with fresh evidence",
       );
@@ -839,6 +1044,40 @@ async function syncUnlocked(
   for (const packet of packets) statuses[packet.status] = (statuses[packet.status] ?? 0) + 1;
   if (options.write) {
     const next: AnalysisState = { ...state, records, events };
+    for (const record of records) {
+      const check = publicationChecks.get(record.id);
+      if (check !== undefined)
+        await verifyReviewPublication(
+          options.root,
+          options.cache,
+          record,
+          check.repository,
+          check.expectedHead,
+          git,
+        );
+      const repair = metadataRepairs.get(record.id);
+      if (repair !== undefined)
+        metadataRepairHistory(
+          await boundedText(await safeProjectPath(options.root, record.report), limits.reportBytes),
+          repair.previous,
+          repair.previousDigest,
+          record.reportSha256,
+        );
+    }
+    for (const record of records) {
+      const repair = metadataRepairs.get(record.id);
+      if (repair !== undefined) {
+        const body = await boundedText(
+          await safeProjectPath(options.root, record.report),
+          limits.reportBytes,
+        );
+        await immutableWrite(
+          options.root,
+          resolve(directory, `history/${record.id}/${repair.previousDigest}.txt`),
+          metadataRepairHistory(body, repair.previous, repair.previousDigest, record.reportSha256),
+        );
+      }
+    }
     for (const packet of reviewHistory)
       await immutableWrite(
         options.root,
@@ -878,7 +1117,21 @@ async function syncUnlocked(
         );
       const reportPath = await safeProjectPath(options.root, record.report);
       if (await exists(reportPath)) {
-        const body = await boundedText(reportPath, limits.reportBytes);
+        const check = publicationChecks.get(record.id);
+        const body =
+          check === undefined
+            ? await boundedText(reportPath, limits.reportBytes)
+            : await verifyReviewPublication(
+                options.root,
+                options.cache,
+                record,
+                check.repository,
+                check.expectedHead,
+                git,
+              );
+        const repair = metadataRepairs.get(record.id);
+        if (repair !== undefined)
+          metadataRepairHistory(body, repair.previous, repair.previousDigest, record.reportSha256);
         if (record.reportSha256 !== null && reportDigest(body) === record.reportSha256)
           await immutableWrite(
             options.root,
@@ -978,6 +1231,16 @@ if (import.meta.main) {
         description: "Project-relative JSON array of up to 100 {id, sha, reason} reviews",
       },
       sha: String,
+      checkoutSha: {
+        type: String,
+        description:
+          "Exact newer checkout SHA acknowledging an older discovery-snapshot review; later changes stay pending",
+      },
+      reconcileFrom: {
+        type: String,
+        description:
+          "Exact prior analyzed SHA explicitly acknowledging reviewed divergent history of the same source",
+      },
       reason: String,
       archive: String,
     },
@@ -993,7 +1256,12 @@ if (import.meta.main) {
         throw new Error("Unexpected positional arguments");
       if (
         args.flags.reviews &&
-        (args.flags.review || args.flags.archive || args.flags.sha || args.flags.reason)
+        (args.flags.review ||
+          args.flags.archive ||
+          args.flags.sha ||
+          args.flags.reason ||
+          args.flags.checkoutSha ||
+          args.flags.reconcileFrom)
       )
         throw new Error("--reviews cannot be mixed with singular review/archive flags");
       if (args.flags.reviews && !args.flags.write) throw new Error("--reviews requires --write");
@@ -1003,6 +1271,10 @@ if (import.meta.main) {
         throw new Error("Review/archive requires --write and --reason");
       if (args.flags.review && !args.flags.sha) throw new Error("Review requires --sha");
       if (args.flags.sha && !args.flags.review) throw new Error("--sha requires --review");
+      if (args.flags.checkoutSha && !args.flags.review)
+        throw new Error("--checkout-sha requires --review");
+      if (args.flags.reconcileFrom && !args.flags.review)
+        throw new Error("--reconcile-from requires --review");
       const mappings = new Map<string, string>();
       for (const mapping of args.flags.rename) {
         const [from, to, extra] = mapping.split("=");
@@ -1025,7 +1297,19 @@ if (import.meta.main) {
           rename: mappings,
           ...(reviews === undefined ? {} : { reviews }),
           ...(args.flags.review && args.flags.sha && args.flags.reason
-            ? { review: { id: args.flags.review, sha: args.flags.sha, reason: args.flags.reason } }
+            ? {
+                review: {
+                  id: args.flags.review,
+                  sha: args.flags.sha,
+                  reason: args.flags.reason,
+                  ...(args.flags.checkoutSha === undefined
+                    ? {}
+                    : { checkoutSha: args.flags.checkoutSha }),
+                  ...(args.flags.reconcileFrom === undefined
+                    ? {}
+                    : { reconcileFrom: args.flags.reconcileFrom }),
+                },
+              }
             : {}),
           ...(args.flags.archive && args.flags.reason
             ? { archive: { id: args.flags.archive, reason: args.flags.reason } }

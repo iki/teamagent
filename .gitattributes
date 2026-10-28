@@ -1,0 +1,86 @@
+# Maintained text, generated text and active evidence use LF on every platform.
+* text=auto eol=lf
+
+# Known binary containers stay exact even when their bytes happen to be ASCII.
+# Bracket pairs cover uppercase and lowercase extensions on every host.
+*.[bB][iI][nN] -text
+*.[pP][nN][gG] -text
+*.[jJ][pP][gG] -text
+*.[jJ][pP][eE][gG] -text
+*.[gG][iI][fF] -text
+*.[wW][eE][bB][pP] -text
+*.[bB][mM][pP] -text
+*.[tT][iI][fF] -text
+*.[tT][iI][fF][fF] -text
+*.[iI][cC][oO] -text
+*.[iI][cC][nN][sS] -text
+*.[pP][dD][fF] -text
+*.[dD][oO][cC] -text
+*.[dD][oO][cC][xX] -text
+*.[pP][pP][tT] -text
+*.[pP][pP][tT][xX] -text
+*.[xX][lL][sS] -text
+*.[xX][lL][sS][xX] -text
+*.[oO][dD][tT] -text
+*.[oO][dD][sS] -text
+*.[oO][dD][pP] -text
+*.[zZ][iI][pP] -text
+*.[gG][zZ] -text
+*.[bB][zZ]2 -text
+*.[xX][zZ] -text
+*.[tT][aA][rR] -text
+*.7[zZ] -text
+*.[wW][aA][sS][mM] -text
+*.[wW][oO][fF][fF] -text
+*.[wW][oO][fF][fF]2 -text
+*.[tT][tT][fF] -text
+*.[oO][tT][fF] -text
+*.[mM][pP]3 -text
+*.[mM][pP]4 -text
+*.[mM]4[aA] -text
+*.[mM]4[vV] -text
+*.[wW][aA][vV] -text
+*.[fF][lL][aA][cC] -text
+*.[aA][aA][cC] -text
+*.[oO][gG][gG] -text
+*.[oO][pP][uU][sS] -text
+*.[wW][eE][bB][mM] -text
+*.[mM][oO][vV] -text
+*.[aA][vV][iI] -text
+*.[sS][qQ][lL][iI][tT][eE] -text
+*.[sS][qQ][lL][iI][tT][eE]3 -text
+*.[sS][qQ][lL][iI][tT][eE]-[wW][aA][lL] -text
+*.[sS][qQ][lL][iI][tT][eE]-[sS][hH][mM] -text
+*.[sS][qQ][lL][iI][tT][eE]3-[wW][aA][lL] -text
+*.[sS][qQ][lL][iI][tT][eE]3-[sS][hH][mM] -text
+*.[dD][bB] -text
+*.[dD][bB]-[wW][aA][lL] -text
+*.[dD][bB]-[sS][hH][mM] -text
+*.[eE][xX][eE] -text
+*.[dD][lL][lL] -text
+*.[pP][yY][dD] -text
+*.[pP][yY][cC] -text
+*.[sS][oO] -text
+*.[dD][yY][lL][iI][bB] -text
+*.[aA] -text
+*.[oO] -text
+*.[oO][bB][jJ] -text
+*.[lL][iI][bB] -text
+*.[sS][aA][fF][eE][tT][eE][nN][sS][oO][rR][sS] -text
+*.[gG][gG][uU][fF] -text
+*.[pP][tT] -text
+*.[pP][tT][hH] -text
+*.[oO][nN][nN][xX] -text
+*.[tT][fF][lL][iI][tT][eE] -text
+*.[nN][pP][yY] -text
+*.[nN][pP][zZ] -text
+*.[pP][aA][rR][qQ][uU][eE][tT] -text
+*.[aA][rR][rR][oO][wW] -text
+*.[jJ][pP]2 -text
+*.[pP][iI][cC][kK][lL][eE] -text
+
+# Immutable originals preserve exact bytes. History exceptions are hash-verified
+# against spec/analyses/line-endings.json by the LF gate, not blanket review waivers.
+/spec/analyses/history/** -text
+/spec/archive/line-endings/originals/** -text
+/.cache/line-endings/originals/** -text

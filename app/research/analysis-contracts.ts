@@ -51,13 +51,27 @@ export const AnalysisRecordSchema = Schema.Struct({
   lifecycle: Schema.Literals(["active", "archived"]),
 });
 export type AnalysisRecord = typeof AnalysisRecordSchema.Type;
-export const ReviewRequestSchema = Schema.Struct({ id: text, sha: text, reason: text });
+export const ReviewRequestSchema = Schema.Struct({
+  id: text,
+  sha: text,
+  reason: text,
+  checkoutSha: Schema.optional(text),
+  reconcileFrom: Schema.optional(text),
+});
 export type ReviewRequest = typeof ReviewRequestSchema.Type;
 export const ReviewRequestsSchema = Schema.Array(ReviewRequestSchema);
 export const ReviewEventSchema = Schema.Struct({
   at: text,
   id: text,
-  action: Schema.Literals(["migrated", "added", "reviewed", "renamed", "archived"]),
+  action: Schema.Literals([
+    "migrated",
+    "added",
+    "reviewed",
+    "renamed",
+    "archived",
+    "metadata-normalized",
+    "line-endings-normalized",
+  ]),
   previousSha: Schema.NullOr(text),
   sha: Schema.NullOr(text),
   reason: text,
