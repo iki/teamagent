@@ -38,6 +38,14 @@ The [desktop build composition](https://github.com/mateaix/mateclaw/blob/cf1fd92
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `cf1fd92c6d8a6faf572c378155aeb6fcacc0564b` to `ffd35950dbda00b987bf154e43402d1e4b2c629a`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinator.java](https://github.com/mateaix/mateclaw/blob/ffd35950dbda00b987bf154e43402d1e4b2c629a/mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinator.java#L116-L154), Finalization now reconstructs retained successful outputs for multiple tool calls instead of considering only the latest successful call. It starts with canonical retained output, then accepts a display/runtime candidate only when its call ID, name, succeeded/substantive receipt, recorded length and 512-character prefix agree. Conflicting distinct candidates for one call are not promoted over canonical data.
+
+**Harness implication and limits:** Task verification should consider the complete relevant effect history rather than only the newest tool response. Preserve canonical output precedence and explicitly reject conflicting evidence. Length plus a prefix is not a content hash and does not authenticate the remaining body; Teamagent should bind full output hashes and completeness flags in receipts. The final model judgment, token-budget packing and ledger writer were not audited. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mateclaw](https://github.com/mateaix/mateclaw); analyzed commit `cf1fd92c6d8a6faf572c378155aeb6fcacc0564b`; commit date 2026-10-27T03:41:20-05:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mateclaw.md).
+Analysis metadata: source [mateclaw](https://github.com/mateaix/mateclaw); analyzed commit `ffd35950dbda00b987bf154e43402d1e4b2c629a`; commit date 2026-10-28T05:10:24-04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mateclaw.md).
 <!-- teamagent-analysis:end -->

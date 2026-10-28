@@ -19,6 +19,18 @@ Evidence: [apps/desktop/src/stores/transferTaskStore.ts:50-243](https://github.c
 
 **Scope and limits:** Initial scoped static review of selected implementation files and renderer fixtures from the enumerated 7,928-path snapshot. Database drivers, SQL execution/authorization, backend persistence, release packaging, license/dependency suitability and native application behavior remain outside this review. No database connection, binary, generated code or upstream test was executed; README capability and size claims are not validated here.
 
+## Follow-up change review — 2026-10-28
+
+**Comparison queries inherit explicit connection timeout settings.** Reviewed commit `a382bd25a4a8eb9371d1330cd251810743e9a1e9` (commit date `2026-10-28T17:46:30+08:00`), compared with `6ea903e33904f479bc7cd626e8d2d6320dd84fa2`. The complete no-rename Git path inventory contains 150 changed paths.
+
+The new compare-query option helper reads the connection's effective timeout while preserving max_rows. The fixture checks explicit zero as unlimited, a configured 120-second value and a missing connection as None for the historical default. This removes a hidden default from comparison operations but does not supply a safe universal task deadline.
+
+Evidence: [crates/dbx-core/src/data/data_compare.rs:29-42](https://github.com/t8y2/dbx/blob/a382bd25a4a8eb9371d1330cd251810743e9a1e9/crates/dbx-core/src/data/data_compare.rs#L29-L42) · [crates/dbx-core/src/data/data_compare.rs:2197-2230](https://github.com/t8y2/dbx/blob/a382bd25a4a8eb9371d1330cd251810743e9a1e9/crates/dbx-core/src/data/data_compare.rs#L2197-L2230).
+
+**Harness consequence:** Propagate intentional query limits consistently across interactive and background operations. At the harness boundary, retain a finite outer task budget and cancellation even when a database connection explicitly permits unlimited execution.
+
+**Scope and limits:** Reviewed the helper and its complete timeout fixture; database drivers, synchronization writes and large-table behavior were not executed or certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dbx](https://github.com/t8y2/dbx); analyzed commit `6ea903e33904f479bc7cd626e8d2d6320dd84fa2`; commit date 2026-10-28T01:14:18+08:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-query--dbx.md).
+Analysis metadata: source [dbx](https://github.com/t8y2/dbx); analyzed commit `a382bd25a4a8eb9371d1330cd251810743e9a1e9`; commit date 2026-10-28T17:46:30+08:00; review date 2026-10-28T14:52:35.205Z; depth reviewed. [Maintenance record](../repos/ai-query--dbx.md).
 <!-- teamagent-analysis:end -->

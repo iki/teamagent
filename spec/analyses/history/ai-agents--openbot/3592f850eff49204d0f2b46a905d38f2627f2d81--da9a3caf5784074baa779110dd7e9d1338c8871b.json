@@ -1,0 +1,210 @@
+{
+  "id": "ai-agents--openbot",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/CopilotKit/openbot",
+  "report": "spec/projects/ai-agents--openbot.md",
+  "analyzedSha": "3592f850eff49204d0f2b46a905d38f2627f2d81",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-26T16:48:09-03:00",
+  "observedSha": "da9a3caf5784074baa779110dd7e9d1338c8871b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "da9a3caf5784074baa779110dd7e9d1338c8871b",
+      "date": "2026-10-27T19:15:10-07:00",
+      "subject": "Call OpenBot beta in the README, not alpha (#864)"
+    },
+    {
+      "sha": "50ba17a0a155d3642037fc456cda2fbae95b1fc9",
+      "date": "2026-10-27T19:12:05-07:00",
+      "subject": "Add Dusty and Sam Julien as code owners (#857)"
+    },
+    {
+      "sha": "f58ae7e0827028e3256faca9c6d350f34bc19ec2",
+      "date": "2026-10-27T19:11:41-07:00",
+      "subject": "Ask about a page visit an approval rule covers instead of refusing it (#855)"
+    },
+    {
+      "sha": "e5694c7e0d69c63694ac87361f6fe0119e0522dc",
+      "date": "2026-10-27T16:25:12-07:00",
+      "subject": "fix(computer): install only the Chromium build the computer launches (#829)"
+    },
+    {
+      "sha": "022fc2dd14f569ab92de32a862b803185540161c",
+      "date": "2026-10-27T15:43:14-07:00",
+      "subject": "Run OpenBot's server, app and worker from the published server image (#851)"
+    },
+    {
+      "sha": "bb2fb434c5472f983ea37d74bb56809acb3df3a0",
+      "date": "2026-10-27T15:39:09-07:00",
+      "subject": "fix(desktop): a download fails only when it stalls, not when it takes longer than 30 seconds (#830)"
+    },
+    {
+      "sha": "16014be5edda275a3ab3b2853707bb041ecbe66a",
+      "date": "2026-10-27T15:32:26-07:00",
+      "subject": "fix(desktop): keep the window responsive while installation holds the startup lock (#822)"
+    },
+    {
+      "sha": "d5f65d966efb471e421aaf5e1baff3e67946cbda",
+      "date": "2026-10-27T10:57:49-07:00",
+      "subject": "Update GitHub Actions (#816)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop-signing.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/desktop.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security_zizmor.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-ag2/tests/test_main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent-computer/tests/sign-in.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/computers/call.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/lib/copilot/approval-tools.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/tests/approval-tools.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src-tauri/src/deployment.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/src-tauri/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/approvals/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/computer/routes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/src/copilot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/tests/approval-needs-conversation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/tests/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/compose.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "toolkit/src/copilotkit/agents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "toolkit/tests/intelligence-browser-gateway.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

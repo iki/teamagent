@@ -36,6 +36,18 @@ Cleanup awaits hook shutdown, stop and disposal while swallowing their errors, w
 
 The [CLI defaults](https://github.com/cline/cline/blob/943d6284ccc43521637a6d5bf9d51d052c36e1fc/apps/cli/src/runtime/defaults.ts#L1-L24) enable loop detection and checkpoints even though the core defaults differ. These constants and host configuration do not prove checkpoint recoverability or OS isolation. Usage display can zero cost through a provider-specific helper; that helper's eligibility and billing semantics were not audited. No CLI, provider, checkpoint, subprocess or upstream test was executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `f817e59f698f01487920c00ede2dbecad5c0fa50` (commit date `2026-10-27T17:34:58-07:00`), compared with `943d6284ccc43521637a6d5bf9d51d052c36e1fc`. Earlier findings remain historical evidence.
+
+**Scope:** Cloud handoff admission, account-sensitive publication joining and rejected-credential handling. The complete changed-path inventory contains 19 paths; the assessment below is limited to the cited branches.
+
+Local Git handoff inputs are strict and bind repository, branch, workspace, organization and request identity. Before publication the service validates media, checks the current organization and available model, applies and verifies Git publication, and rechecks account generation between stages. Concurrent identical requests share a promise keyed by scope generation/request ID. See [sdk/packages/core/src/hub/server/cloud-session-service.ts](https://github.com/cline/cline/blob/f817e59f698f01487920c00ede2dbecad5c0fa50/sdk/packages/core/src/hub/server/cloud-session-service.ts#L496-L548) and [sdk/packages/core/src/hub/server/cloud-session-service.ts](https://github.com/cline/cline/blob/f817e59f698f01487920c00ede2dbecad5c0fa50/sdk/packages/core/src/hub/server/cloud-session-service.ts#L31-L124). The promise is removed in finally, so this is in-flight joining rather than durable effect deduplication.
+
+Definitively rejected credentials are remembered privately until credential contents change, avoiding repeated refresh attempts; the fingerprint contains credentials and must remain memory-only as documented. See [sdk/packages/core/src/hub/server/cloud-session-service.ts](https://github.com/cline/cline/blob/f817e59f698f01487920c00ede2dbecad5c0fa50/sdk/packages/core/src/hub/server/cloud-session-service.ts#L178-L198) and [sdk/packages/core/src/hub/server/cloud-session-service.ts](https://github.com/cline/cline/blob/f817e59f698f01487920c00ede2dbecad5c0fa50/sdk/packages/core/src/hub/server/cloud-session-service.ts#L331-L371). Teamagent needs durable publication receipts and reconciliation after uncertain completion, and must distinguish listed model availability from policy/cost permission. Git helper internals and provider-side idempotency were not verified.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cline](https://github.com/cline/cline); analyzed commit `943d6284ccc43521637a6d5bf9d51d052c36e1fc`; commit date 2026-10-27T11:57:10-05:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cline.md).
+Analysis metadata: source [cline](https://github.com/cline/cline); analyzed commit `f817e59f698f01487920c00ede2dbecad5c0fa50`; commit date 2026-10-27T17:34:58-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cline.md).
 <!-- teamagent-analysis:end -->

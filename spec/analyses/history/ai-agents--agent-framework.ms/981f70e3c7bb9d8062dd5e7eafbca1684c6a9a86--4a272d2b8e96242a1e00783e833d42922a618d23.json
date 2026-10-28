@@ -1,0 +1,215 @@
+{
+  "id": "ai-agents--agent-framework.ms",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/microsoft/agent-framework",
+  "report": "spec/projects/ai-agents--agent-framework.ms.md",
+  "analyzedSha": "981f70e3c7bb9d8062dd5e7eafbca1684c6a9a86",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T15:46:45Z",
+  "observedSha": "4a272d2b8e96242a1e00783e833d42922a618d23",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4a272d2b8e96242a1e00783e833d42922a618d23",
+      "date": "2026-10-28T06:27:42Z",
+      "subject": "Python: Fix Anthropic server-tool continuation and replay (#9718)"
+    },
+    {
+      "sha": "20458faef1e56e4cdd5e8f24ab5fcffccba08a41",
+      "date": "2026-10-28T06:27:11Z",
+      "subject": "Python: Add async context managers to chat clients (#9748)"
+    },
+    {
+      "sha": "6afcecd428dd5c50166552171ca58afc455f7084",
+      "date": "2026-10-27T21:06:16Z",
+      "subject": "Python: Preserve Responses message identity in streaming (#9768)"
+    },
+    {
+      "sha": "5a950ad5d3eadbd61c017e06b3ed6b9668d3674d",
+      "date": "2026-10-27T18:45:16Z",
+      "subject": "Update CODEOWNERS maintainer assignments (#9734)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CODEOWNERS",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/004-python-function-calling-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/anthropic/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/anthropic/agent_framework_anthropic/_bedrock_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/anthropic/agent_framework_anthropic/_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/anthropic/agent_framework_anthropic/_foundry_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/anthropic/agent_framework_anthropic/_vertex_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/anthropic/tests/test_anthropic_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/anthropic/tests/test_anthropic_provider_clients.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/bedrock/agent_framework_bedrock/_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/bedrock/tests/test_bedrock_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/core/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/core/agent_framework/_clients.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/core/tests/core/test_agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/core/tests/core/test_clients.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/foundry/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/foundry/agent_framework_foundry/_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/foundry/agent_framework_foundry/_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/foundry/tests/foundry/test_foundry_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/foundry_hosting/tests/test_responses.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/foundry_local/agent_framework_foundry_local/_foundry_local_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/foundry_local/tests/test_foundry_local_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/gemini/agent_framework_gemini/_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/gemini/tests/test_gemini_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/mistral/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/mistral/agent_framework_mistral/_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/mistral/tests/mistral/test_mistral_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/ollama/agent_framework_ollama/_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/ollama/tests/test_ollama_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/openai/agent_framework_openai/_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/openai/agent_framework_openai/_chat_completion_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/packages/openai/tests/openai/test_openai_chat_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/agent-framework-builder-python/references/integrations.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -12,6 +12,14 @@ The [machine-readable overview](https://github.com/wh000wh000/awesome-jev-live/b
 
 The [license note](https://github.com/wh000wh000/awesome-jev-live/blob/9be6cd868a2ab84b1b025af4935a5ebc9d4dee14/LICENSE) distinguishes the repository's compilation from third-party media. The sampled [README](https://github.com/wh000wh000/awesome-jev-live/blob/9be6cd868a2ab84b1b025af4935a5ebc9d4dee14/README.md#L1) further labels featured picks as rankings rather than endorsements, but contains image alt text that does not match the adjacent project names, illustrating why generated presentation needs consistency checks. Adapt provenance grades and independent media-rights tracking. This is discovery evidence only: no listed project's safety, model accuracy, pricing, source freshness or outcome improvement was verified, and no provider call or media download occurred.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `9be6cd868a2ab84b1b025af4935a5ebc9d4dee14` to `c17bba461c343b6e8473153bb33e6c196860129c`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [data/stats.json](https://github.com/wh000wh000/awesome-jev-live/blob/c17bba461c343b6e8473153bb33e6c196860129c/data/stats.json#L1-L25), The refreshed index reports812 entries:18 labelled official,227 observed,496 inferred and71 unverified. The README ranks featured entries using evidence grade and stars and explicitly describes this as a ranking rather than endorsement. These are the index's own labels and counts, not independently verified classifications.
+
+**Harness implication and limits:** Use a live catalog for candidate discovery, then follow each claim to versioned primary evidence. Popularity and inferred relevance cannot choose a decision backend, set calibration thresholds or satisfy a privacy/authorization gate. No catalog entries were independently benchmarked or promoted, and this data refresh does not change Teamagent's Jev runtime contract. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live); analyzed commit `9be6cd868a2ab84b1b025af4935a5ebc9d4dee14`; commit date 2026-10-28T00:20:22+08:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-info--awesome-jev-live.md).
+Analysis metadata: source [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live); analyzed commit `c17bba461c343b6e8473153bb33e6c196860129c`; commit date 2026-10-28T17:22:17+08:00; review date 2026-10-28T14:29:27.414Z; depth reviewed. [Maintenance record](../repos/ai-info--awesome-jev-live.md).
 <!-- teamagent-analysis:end -->

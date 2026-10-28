@@ -1,0 +1,480 @@
+{
+  "id": "ai-security--aisoc",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/beenuar/AiSOC",
+  "report": "spec/projects/ai-security--aisoc.md",
+  "analyzedSha": "3164fb54343f341de87eff4f42792690a3fb308d",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T10:09:11-07:00",
+  "observedSha": "2af4d0ba9b2b347df5f17cfd67924a2862530bd1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "2af4d0ba9b2b347df5f17cfd67924a2862530bd1",
+      "date": "2026-10-28T00:16:09-07:00",
+      "subject": "chore(release): v20.2.0 (#1539)"
+    },
+    {
+      "sha": "dd866be1ad95a244dabc9a57a0cb78446ddf8a02",
+      "date": "2026-10-27T23:29:10-07:00",
+      "subject": "fix(deps): move qs to 6.17.0 for the arrayFormat 'comma' advisory (#1538)"
+    },
+    {
+      "sha": "56504986c93877b3b62bc70f439f8b8c9c729ea0",
+      "date": "2026-10-27T19:52:24-07:00",
+      "subject": "fix(closure): one authorization chokepoint for every automatic alert closure (#1525)"
+    },
+    {
+      "sha": "dbaf88a4c59ab9f0b03a612365f783143227bb3d",
+      "date": "2026-10-27T17:06:07-07:00",
+      "subject": "docs: the kill switch stops dispatch now, so stop saying it does not (#1537)"
+    },
+    {
+      "sha": "e85fa638b5ace5bbd34cde8221612c126c4463d6",
+      "date": "2026-10-27T16:20:45-07:00",
+      "subject": "fix(kill-switch): the stop button now stops action dispatch, and stops claiming an MCP write surface (#1535)"
+    },
+    {
+      "sha": "c3c0cffe228cc02c901f5c09b4eb0233a38942cb",
+      "date": "2026-10-27T15:20:47-07:00",
+      "subject": "Phase 7/8: repair the eval harness, ground decisive claims, and gate autonomy on measured performance (#1527)"
+    },
+    {
+      "sha": "ba9774d5cfab8c1d4a52cf9e534709f6fe776829",
+      "date": "2026-10-27T15:18:52-07:00",
+      "subject": "fix(connectors): heal array-shaped connector_config at checkpoint write (#1536)"
+    },
+    {
+      "sha": "1f86648d99126f78ebc53e6775211d6537f83d13",
+      "date": "2026-10-27T15:07:29-07:00",
+      "subject": "fix(kill-switch): make the platform-wide stop engageable, and give it a product surface (#1534)"
+    },
+    {
+      "sha": "2a5ce8404aa9cfd2adf487ff7859b7be163f5be0",
+      "date": "2026-10-27T13:53:36-07:00",
+      "subject": "chore(mcp): add registry descriptors and a GitHub social preview card (#1533)"
+    },
+    {
+      "sha": "3bc86508b003925bb36409522735a43efebec0fe",
+      "date": "2026-10-27T13:53:16-07:00",
+      "subject": "fix(gates): detect duplicate migration numbers, and stop crediting a tenant token that constrains nothing (#1530)"
+    },
+    {
+      "sha": "3802d0dc7dfce118906eb8b407e708d08595cd27",
+      "date": "2026-10-27T11:48:06-07:00",
+      "subject": "fix(deps): move dnspython to 2.9.0 for CVE-2026-114605 (#1531)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/action-durability-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/agent-auth-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/kill-switch-live.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/migration-numbering.yml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".pr-body.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/compliance/evidence-pack.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/docs/integrations/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/data/scoreboard.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/static/img/aisoc-github-social-preview.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/static/img/aisoc-github-social-preview.svg",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/llms-full.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/static/llms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/audit/CLAIM_TO_GATE_MATRIX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/remediation/discoverability-descriptors.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/remediation/gate-hardening.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/remediation/kill-switch-enforcement-reach.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/remediation/kill-switch-reachability.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/remediation/phase-1-closure-authorization.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/remediation/phase-7-8-evaluation-grounding.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "glama.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "infra/helm/aisoc/Chart.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_closure_authorization.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_migration_numbering.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/check_tenant_query_predicates.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/measure_triage_reliability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/run_verdict_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/actions/app/live_actions/dispatcher.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/actions/app/services/kill_switch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/actions/app/services/tenant_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/actions/tests/test_kill_switch_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/actions/tests/test_tenant_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/agents/auto_triage_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/closure/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/app/closure/authorization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/closure/policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/confidence/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/app/confidence/autonomy_performance.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/app/confidence/claim_support.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/app/confidence/eligibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/app/confidence/signals.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/confidence/verdict_gate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/investigator/ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/investigator/orchestrator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/app/memory/institutional.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/adversarial/test_authorization_under_compromise.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_auto_triage_autonomy_eligibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_auto_triage_claim_support.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_auto_triage_dispositions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_auto_triage_injection.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_autonomy_eligibility.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_claim_support.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_closure_authorization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_closure_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/agents/tests/test_tool_result_channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/agents/tests/test_triage_reliability_harness_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/api/v1/endpoints/kill_switch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/app/core/rbac_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/migrations/122_closure_authorization_default_deny.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "services/api/migrations/123_kill_switch_global_engageable.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/poetry.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/api/tests/test_kill_switch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/connectors/app/db/connector_repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/mcp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/isolation/test_checkpoint_array_heal_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/isolation/test_closure_authorization_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/isolation/test_kill_switch_closure_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/isolation/test_kill_switch_endpoint_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/isolation/test_kill_switch_global_live.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_triage_reliability_harness.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

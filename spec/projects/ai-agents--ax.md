@@ -38,6 +38,18 @@ The inspected [fixtures](https://github.com/google/ax/blob/41ec50c6398376fa51034
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `4b7bf6f84cac7eb12f21b87a76c8dc85155dce38` (commit date `2026-10-27T21:23:10-07:00`), compared with `41ec50c6398376fa510349b2089237540739d935`. Earlier findings remain historical evidence.
+
+**Scope:** Guest-client TLS selection and CLI router connection fallback. The complete changed-path inventory contains 31 paths; the assessment below is limited to the cited branches.
+
+The new guest dialer uses TLS only when supplied a non-null TLS configuration; the legacy wrapper explicitly passes null. The CLI first attempts router credentials and port 443, then falls back to the plaintext port-80 route when no client was created. See [internal/guest/client.go](https://github.com/google/ax/blob/4b7bf6f84cac7eb12f21b87a76c8dc85155dce38/internal/guest/client.go#L47-L79) and [cmd/ax/main.go](https://github.com/google/ax/blob/4b7bf6f84cac7eb12f21b87a76c8dc85155dce38/cmd/ax/main.go#L1078-L1118). Prefix stripping of https:// does not itself select TLS in the guest helper.
+
+For Teamagent, disclose requested versus effective transport protection and require policy approval before a downgrade. Kubernetes port forwarding may have its own protection, but this inspected branch does not establish end-to-end TLS or authenticated service identity. Credential loading and the router TLS configuration implementation were not reviewed; previous lifecycle findings remain applicable.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ax](https://github.com/google/ax); analyzed commit `41ec50c6398376fa510349b2089237540739d935`; commit date 2026-10-27T10:46:26-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ax.md).
+Analysis metadata: source [ax](https://github.com/google/ax); analyzed commit `4b7bf6f84cac7eb12f21b87a76c8dc85155dce38`; commit date 2026-10-27T21:23:10-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ax.md).
 <!-- teamagent-analysis:end -->

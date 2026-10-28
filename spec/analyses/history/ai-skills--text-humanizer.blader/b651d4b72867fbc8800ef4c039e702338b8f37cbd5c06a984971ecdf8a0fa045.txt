@@ -1,0 +1,41 @@
+# text-humanizer.blader
+
+Source: [text-humanizer.blader](https://github.com/blader/humanizer) · Category: [ai-skills](../categories/ai-skills.md)
+
+Original review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8`; commit timestamp `2026-09-27T22:54:38-07:00`; 14 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/blader/humanizer/blob/225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8/README.md)):
+
+> Humanizer makes AI-written text sound like a person wrote it, without changing what it says. It is built on Wikipedia's Signs of AI writing, the guide Wikipedia editors use to catch AI-generated text, and it works in Claude Code, Codex, and any other agent that supports skills. I'm thrilled to announce that shared drafts are finally here! 🚀 For months, our own team was drowning in files named final_v7.docx — and we knew there had to be a better way. Now two people can edit the same doc at once, with every change appearing live for both of them.
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE](https://github.com/blader/humanizer/blob/225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-skills**. Its category places it in the candidate set for skills; those associations are navigational and have not been individually validated as implemented capabilities. See [skills](../skills.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-27
+
+Reviewed commit `8c307f367c91bd974002f10f2be2965d642c13df` (commit date `2026-10-16T12:12:03-07:00`). Complete README-only sponsorship/badge delta.
+
+The [README](https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/README.md) adds a sponsor and moves badges. Skill instructions and executable content are unchanged. Sponsorship/install counts provide no effectiveness evidence; retain the previous comparison-candidate disposition. Factual preservation, linguistic quality and model-specific effectiveness remain untested.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0` (commit date `2026-10-28T00:17:33-07:00`), compared with `8c307f367c91bd974002f10f2be2965d642c13df`. Earlier findings remain historical evidence.
+
+**Scope:** Complete one-file plugin-manifest delta. The complete changed-path inventory contains 1 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The only change removes the manifest's external schema declaration; the shown identity, description and version remain. It establishes no change to rewriting behavior or evaluation quality. Teamagent should validate imported manifests against its own versioned boundary schema instead of interpreting the presence or absence of a publisher's schema URL as validation. Existing findings about wording preservation remain historical evidence; this packet does not re-test them. [.claude-plugin/plugin.json](https://github.com/blader/humanizer/blob/0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0/.claude-plugin/plugin.json#L1-L5).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.

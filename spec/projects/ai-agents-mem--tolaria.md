@@ -39,6 +39,18 @@ Evidence: [apps/server/src/searchIndex.ts:1-365](https://github.com/refactoringh
 
 **Scope and limits:** Scoped static review of the complete cached search-index and storage files in the 2,545-path comparison; neither the full application nor the guarded DNS helper was audited. No upstream code, network service, deployment or tests were run.
 
+## Follow-up change review — 2026-10-28
+
+**Block formatting resolves schema marks dynamically and preserves selection.** Reviewed commit `f0b9b04927e870a5beaaf3a56028de68ed5c12d9` (commit date `2026-10-28T02:22:18Z`), compared with `ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f`. The complete no-rename Git path inventory contains 21 changed paths.
+
+The editor adds command-key formatting for bold, italic, underline, strike and code. It resolves marks by their actual schema names, ignores composition/Alt events, computes a bounded document range and toggles the mark based on whether all selected text already carries it. Fixtures cover single/multiple blocks, unchanged selection, equivalent Markdown output and one-step undo. The separate lint-diff parser also changes, but it is not evidence of a stronger memory or retrieval architecture.
+
+Evidence: [src/components/richEditorBlockSelectionExtension.ts:287-363](https://github.com/refactoringhq/tolaria/blob/f0b9b04927e870a5beaaf3a56028de68ed5c12d9/src/components/richEditorBlockSelectionExtension.ts#L287-L363) · [src/components/richEditorBlockSelectionExtension.test.ts:302-365](https://github.com/refactoringhq/tolaria/blob/f0b9b04927e870a5beaaf3a56028de68ed5c12d9/src/components/richEditorBlockSelectionExtension.test.ts#L302-L365).
+
+**Harness consequence:** Keep source-document edit semantics explicit and undoable. Verify both structured selection and serialized text when editing knowledge documents; a visual formatting action must not silently change approved wording.
+
+**Scope and limits:** Reviewed block-selection formatting and its new fixtures; site build changes and the rewritten lint gate were not certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f`; commit date 2026-10-27T15:46:31Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
+Analysis metadata: source [tolaria](https://github.com/refactoringhq/tolaria); analyzed commit `f0b9b04927e870a5beaaf3a56028de68ed5c12d9`; commit date 2026-10-28T02:22:18Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tolaria.md).
 <!-- teamagent-analysis:end -->

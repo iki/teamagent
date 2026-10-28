@@ -30,6 +30,14 @@ Reviewed commit `71eb0ded012c95da8cebee3fb0cd64b726526fea` (commit date `2026-10
 
 The [catalog](https://github.com/EthicalML/awesome-production-machine-learning/blob/71eb0ded012c95da8cebee3fb0cd64b726526fea/README.md) adds serving, kernel/compiler, post-training and model-optimization candidates, including evaluator-driven OpenEvolve, versioned-feedback Reef, Weave Router and multimodal/on-device serving. These remain directory descriptions. Require individual implementation reviews before adoption; keep serving optimization, weight changes and skill evolution distinct. The listed Heym license condition reinforces artifact-specific license checks. No performance, isolation or deployment claim was reproduced.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `71eb0ded012c95da8cebee3fb0cd64b726526fea` to `58d84392e7ba54abc6088b39f3ef6cba8ce1b22a`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [README.md](https://github.com/EthicalML/awesome-production-machine-learning/blob/58d84392e7ba54abc6088b39f3ef6cba8ce1b22a/README.md#L406-L415), The complete changed-file comparison revises Lightly's catalog description from self-supervised image representations to self-supervised learning and latent world models on images. It does not modify executable code or provide evaluation results.
+
+**Harness implication and limits:** Catalog wording can identify a research candidate but cannot establish model quality, a production-serving feature or compatibility with Teamagent. Preserve prior architectural recommendations and inspect the referenced project's pinned implementation before adoption. No training, deployment or linked-project benchmark was performed. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning); analyzed commit `71eb0ded012c95da8cebee3fb0cd64b726526fea`; commit date 2026-10-24T14:10:21-04:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-production-machine-learning.md).
+Analysis metadata: source [awesome-production-machine-learning](https://github.com/EthicalML/awesome-production-machine-learning); analyzed commit `58d84392e7ba54abc6088b39f3ef6cba8ce1b22a`; commit date 2026-10-28T16:14:26+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-production-machine-learning.md).
 <!-- teamagent-analysis:end -->

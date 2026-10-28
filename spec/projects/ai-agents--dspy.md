@@ -45,6 +45,18 @@ A separate [ToolCall.execute path](https://github.com/stanfordnlp/dspy/blob/1598
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `39dd3e5df9ede98578e6d9d7f53d3c7ee388c6c0` (commit date `2026-10-27T18:33:52-04:00`), compared with `159898accc7ae83c2847309aad295468ea4da31c`. Earlier findings remain historical evidence.
+
+**Scope:** Documentation publication/indexing changes; the eight-path inventory is documentation/build/test material. The complete changed-path inventory contains 8 paths; the assessment below is limited to the cited branches.
+
+The documentation publisher now redirects the root to current at the host, applies noindex to versioned snapshots and emits a current-only sitemap declaration. Release builds remove their sitemap files. See [docs/scripts/publish_versioned_docs.py](https://github.com/stanfordnlp/dspy/blob/39dd3e5df9ede98578e6d9d7f53d3c7ee388c6c0/docs/scripts/publish_versioned_docs.py#L17-L61) and [docs/scripts/build_docs.py](https://github.com/stanfordnlp/dspy/blob/39dd3e5df9ede98578e6d9d7f53d3c7ee388c6c0/docs/scripts/build_docs.py#L220-L235). This is documentation discoverability behavior, not a change to DSPy's optimizer or execution contracts.
+
+For Teamagent's research memory, retain exact version/commit citations even when a search engine prefers current documentation. Noindex is crawler guidance, not access control, deletion or evidence that historical snapshots are unavailable. The hosting configuration and upstream documentation tests were inspected as source only; publication was not run.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dspy](https://github.com/stanfordnlp/dspy); analyzed commit `159898accc7ae83c2847309aad295468ea4da31c`; commit date 2026-10-27T12:02:11-04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--dspy.md).
+Analysis metadata: source [dspy](https://github.com/stanfordnlp/dspy); analyzed commit `39dd3e5df9ede98578e6d9d7f53d3c7ee388c6c0`; commit date 2026-10-27T18:33:52-04:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--dspy.md).
 <!-- teamagent-analysis:end -->

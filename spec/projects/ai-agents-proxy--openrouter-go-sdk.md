@@ -32,6 +32,18 @@ The [deferred-tool model](https://github.com/OpenRouterTeam/go-sdk/blob/1817a54d
 
 The [computer-use model](https://github.com/OpenRouterTeam/go-sdk/blob/1817a54ddc2a43786412bf0fb7802868f19d35e1/models/components/computeruseservertool.go) preserves unknown environment strings via an explicit IsExact check, but stores dimensions as unconstrained int64 values and delegates JSON handling to an unread utility. Nil getters return zero/empty values, which must not collapse missing configuration into a valid display. Adapt explicit unsupported-enum handling and missing-value semantics; do not select the SDK or trust provider capability based on generated fields. No network, computer-use action, SDK example or tests were executed.
 
+## Follow-up change review — 2026-10-28
+
+**Generated route options describe transport shape, not route eligibility.** Reviewed commit `3b873ba1a1286a8c604b36ec0e409e4e7e257b57` (commit date `2026-10-28T08:58:35Z`), compared with `1817a54ddc2a43786412bf0fb7802868f19d35e1`. The complete no-rename Git path inventory contains 1,282 changed paths. The aggregate diff exceeded the 8 MiB capture bound; the selected files were expanded separately, and no completeness claim is made for that diff.
+
+The target revision's image-generation preferences include a permissive Primalabs map and generated getter. The same generated schema documents fallback as enabled by default and represents account-merged allow/ignore lists and arbitrary provider options. These are serialized provider preferences, not authenticated evidence of model access, non-training coverage or commercial terms. The changed-path inventory confirms this generated file changed; the capped aggregate diff does not establish that every contextual field was newly introduced.
+
+Evidence: [models/components/imagegenerationproviderpreferences.go:285-310](https://github.com/OpenRouterTeam/go-sdk/blob/3b873ba1a1286a8c604b36ec0e409e4e7e257b57/models/components/imagegenerationproviderpreferences.go#L285-L310) · [models/components/imagegenerationproviderpreferences.go:1089-1094](https://github.com/OpenRouterTeam/go-sdk/blob/3b873ba1a1286a8c604b36ec0e409e4e7e257b57/models/components/imagegenerationproviderpreferences.go#L1089-L1094) · [models/components/imagegenerationproviderpreferences.go:1576-1595](https://github.com/OpenRouterTeam/go-sdk/blob/3b873ba1a1286a8c604b36ec0e409e4e7e257b57/models/components/imagegenerationproviderpreferences.go#L1576-L1595).
+
+**Harness consequence:** Evaluate effective account/model/host policy before constructing SDK preferences. Explicitly constrain fallback to eligible routes and retain unknown policy as blocked; generated provider enumeration cannot substitute for a reviewed policy record.
+
+**Scope and limits:** Reviewed complete target-revision preference fields/getter and fallback context in the generated SDK; no network call or full generated release audit was performed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk); analyzed commit `1817a54ddc2a43786412bf0fb7802868f19d35e1`; commit date 2026-10-27T17:50:19Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-go-sdk.md).
+Analysis metadata: source [openrouter-go-sdk](https://github.com/OpenRouterTeam/go-sdk); analyzed commit `3b873ba1a1286a8c604b36ec0e409e4e7e257b57`; commit date 2026-10-28T08:58:35Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-go-sdk.md).
 <!-- teamagent-analysis:end -->

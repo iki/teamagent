@@ -39,6 +39,18 @@ Evidence: [src/commonplace/lib/note_parser.py:1-200](https://github.com/zby/comm
 
 **Scope and limits:** Static scoped review of note parsing and directory-index generation plus their cached fixtures within a 5,147-path comparison dominated by broader content/workflow changes. Frontmatter, quote matching, filesystem visibility/containment helpers and publication execution were not fully audited or run. This reviews original snapshot 0c22a313f5b043b494d622e40cb00058f53dfe9e; the later checkout HEAD is a separate unreviewed delta.
 
+## Follow-up change review — 2026-10-28
+
+**Quotation-claim classification distinguishes near-verbatim language from an exact-copy assertion.** Reviewed commit `ba51536f8e143d0ed200662302c5f5e7eb2347bb` (commit date `2026-10-28T09:13:58+01:00`), compared with `0c22a313f5b043b494d622e40cb00058f53dfe9e`. The complete no-rename Git path inventory contains 22 changed paths.
+
+The quote-verification predicate now recognizes hedges such as near, nearly, almost, quasi and close to before verbatim. Added fixtures classify near-verbatim corroboration and nearly-verbatim wording as non-candidates for exact quote verification. This change prevents a claim classifier from conflating resemblance with an exact quotation; it is not evidence that paraphrases are accurate. Most other changed paths concern Windows installation and recorded field observations, which were not executed here.
+
+Evidence: [src/commonplace/lib/quote_verification.py:44-58](https://github.com/zby/commonplace/blob/ba51536f8e143d0ed200662302c5f5e7eb2347bb/src/commonplace/lib/quote_verification.py#L44-L58) · [tests/commonplace/sources/test_quote_verification.py:126-144](https://github.com/zby/commonplace/blob/ba51536f8e143d0ed200662302c5f5e7eb2347bb/tests/commonplace/sources/test_quote_verification.py#L126-L144).
+
+**Harness consequence:** Store exact quotation, paraphrase and unsupported attribution as different claim kinds. Do not mark a source verified merely because a statement falls outside the verbatim checker.
+
+**Scope and limits:** Reviewed the changed quotation regex and two regression cases; Windows installation behavior was not reproduced. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `0c22a313f5b043b494d622e40cb00058f53dfe9e`; commit date 2026-10-27T18:12:26+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
+Analysis metadata: source [commonplace](https://github.com/zby/commonplace); analyzed commit `ba51536f8e143d0ed200662302c5f5e7eb2347bb`; commit date 2026-10-28T09:13:58+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--commonplace.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,515 @@
+{
+  "id": "ai-agents--agent-manager",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/YoanWai/agent-manager",
+  "report": "spec/projects/ai-agents--agent-manager.md",
+  "analyzedSha": "e6d9ec6c3324cb67348d2c3a5114923c950acbcd",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T19:17:58+02:00",
+  "observedSha": "6a2827bc37ee7a427e7feb34dc6b9da69d2ce239",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6a2827bc37ee7a427e7feb34dc6b9da69d2ce239",
+      "date": "2026-10-28T00:24:10+02:00",
+      "subject": "Merge pull request #905 from nirtuttnauer/am/quick-prompt-exit"
+    },
+    {
+      "sha": "7462ca4f50272cd6a93e66fc80b0248d441fad2e",
+      "date": "2026-10-27T23:42:11+02:00",
+      "subject": "Merge branch 'main' into am/quick-prompt-exit"
+    },
+    {
+      "sha": "fa01d6fe7f2cdeb2cc74db8a2e6af20fd5d7e50a",
+      "date": "2026-10-27T23:40:46+02:00",
+      "subject": "docs(usage): note empty enter closes quick prompt"
+    },
+    {
+      "sha": "9f3de54c5ec8656f7df9eb9a3e06badf2e157e66",
+      "date": "2026-10-27T20:58:00+02:00",
+      "subject": "fix(ui): respect archive state in session actions"
+    },
+    {
+      "sha": "15d6efa8e718f8dbcbf2aca970fd895521ba9a33",
+      "date": "2026-10-27T20:47:45+02:00",
+      "subject": "ci: run the install scripts on every pull request (#916)"
+    },
+    {
+      "sha": "3e71c006d53cc48a01d2e2c1499c4b4eb330deaa",
+      "date": "2026-10-27T20:10:41+02:00",
+      "subject": "fix(launch): name the manager by the link it was started through (#913)"
+    },
+    {
+      "sha": "6f5a89959bd341da025d931694eb5da5d425a2ab",
+      "date": "2026-10-27T03:30:33+02:00",
+      "subject": "fix(ui): exit empty quick prompt mode with Enter"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/launch/launch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/launch/launch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/sessioncmd/lifecycle_placement.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/sessioncmd/lifecycle_placement_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/sessioncmd/lifecycle_restore_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/lifecycle_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/session_lifecycle_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/sessioncmd/spawn.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/groups.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/groups_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/store/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/store/sessions_creation.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/store/sessions_creation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/launchhint.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs/launchhint_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs_adapter_move_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs_fork_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/dialogs_fork_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/focus_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/focus_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/frame_footer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help/catalog.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help/catalog_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help/content.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help/state.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help/test_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help_adapter_keys_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/help_adapter_view_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/launchhint_install_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/launchhint_install_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/launchhint_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/mouse_keys_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/notices/panel.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/notices/panel_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/notices_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/notices_adapter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/quick/bar.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/quick/bar_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/quick_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/quick_adapter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/quick_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/quick_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/legend.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/legend_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/menu.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/menu_policy_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/model.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/model_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/policy.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail/policy_filter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/rail_adapter_view_terminal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/review/keys.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/review/keys_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/review/render.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/review/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/review_adapter.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ui/review_adapter_help_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/review_adapter_view.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/review_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/review_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_archive.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_archive_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_attach.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_attach_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_attach_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_attach_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_kill.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_kill_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_lifecycle_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_lifecycle_effect_partial_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_restart.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_revive.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/session_revive_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/spawn_effect.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/spawn_effect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/spawn_groups.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/terminal.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/terminal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/testdata/help/global.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/testdata/help/narrow_error.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ui/testdata/help/review.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/architecture/check-ui-boundaries/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/architecture/check-ui-boundaries/main_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/e2e/smoke.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

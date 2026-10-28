@@ -41,6 +41,18 @@ Evidence: [src/core/ai/query-embed-cache.ts:1-50](https://github.com/garrytan/gb
 
 **Scope and limits:** Static scoped cache identity/read path and search-cost review within the 7,848-path comparison. Gateway invalidation call sites, semantic-cache availability callers, generation-gate SQL, provider pricing and full retrieval/authentication were not audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Trust promotion binds approval to the metadata that will actually be promoted.** Reviewed commit `82b7ef601fdfc449b0d242f7e61a4604aa2c8a8e` (commit date `2026-10-28T08:33:05Z`), compared with `75c64150d725c0aeceb70446131ff036746959e2`. The complete no-rename Git path inventory contains 146 changed paths.
+
+An index-existing release now previews and hashes cell fields such as confidence, notability, validity and attribution, alongside existing checks for claim/source/context. The digest travels with the admitted intent and is compared again during preparation. A changed or removed cell produces preview_changed; successfully released rows record fields_previewed. Fixtures check edits before admission and between admission and preparation, requiring the fact to remain held with no published row. The approval callback is optional in the helper signature, so complete authorization still depends on its callers and coordinator.
+
+Evidence: [src/core/trust/release-publish.ts:173-229](https://github.com/garrytan/gbrain/blob/82b7ef601fdfc449b0d242f7e61a4604aa2c8a8e/src/core/trust/release-publish.ts#L173-L229) · [test/trust-release-preview-binding.test.ts:120-168](https://github.com/garrytan/gbrain/blob/82b7ef601fdfc449b0d242f7e61a4604aa2c8a8e/test/trust-release-preview-binding.test.ts#L120-L168).
+
+**Harness consequence:** Bind memory promotion to the entire reviewed claim and metadata snapshot, then revalidate at publication. Record what was actually approved and keep stale approvals from silently promoting newer content.
+
+**Scope and limits:** Reviewed release-publish changes and selected preview-binding fixtures; the full persistence coordinator and all callers were not re-audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gbrain](https://github.com/garrytan/gbrain); analyzed commit `75c64150d725c0aeceb70446131ff036746959e2`; commit date 2026-10-27T16:34:53Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--gbrain.md).
+Analysis metadata: source [gbrain](https://github.com/garrytan/gbrain); analyzed commit `82b7ef601fdfc449b0d242f7e61a4604aa2c8a8e`; commit date 2026-10-28T08:33:05Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--gbrain.md).
 <!-- teamagent-analysis:end -->

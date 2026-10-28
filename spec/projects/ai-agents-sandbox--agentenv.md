@@ -32,6 +32,14 @@ The [launch contract](https://github.com/kvcache-ai/AgentEnv/blob/abc027b2994736
 
 Rollback errors are logged, and cancellation during an await is not visibly covered by a scoped cleanup guard in this function; successful ownership transfer also requires the caller to release returned handles. Adapt phase-specific resource semantics with cancellation-safe ownership and explicit residual-artifact reporting. The [image fixture](https://github.com/kvcache-ai/AgentEnv/blob/abc027b29947366d33b3f65b7018cd096840612d/src/image/test_support.rs) retains layer digests/sizes in configuration, but a fixture does not prove production validation. No VM, device, filesystem cleanup or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `abc027b29947366d33b3f65b7018cd096840612d` to `dcfb72f0a74430b5f01ae4c6928512a744d3c90a`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [services/compose/plan.go](https://github.com/kvcache-ai/AgentEnv/blob/dcfb72f0a74430b5f01ae4c6928512a744d3c90a/services/compose/plan.go#L105-L167), The new Compose planner validates the raw parsed tree before loading it, reuses that exact tree, disables include/extends/path/environment resolution, and supplies only the caller's environment map. It separately bounds source size, expansion/rendered plan size and service count before validating supported guest options. Its documented isolation boundary is the VM, not guest Docker.
+
+**Harness implication and limits:** Validate dangerous source directives before a convenience loader can read host files or environment, and budget post-expansion values separately from source bytes. This review covers planner composition and selected validation branches, not YAML parser internals, image trust, VM enforcement or the orchestrator. No Compose project or sandbox was launched. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentenv](https://github.com/kvcache-ai/AgentEnv); analyzed commit `abc027b29947366d33b3f65b7018cd096840612d`; commit date 2026-10-27T09:56:43+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agentenv.md).
+Analysis metadata: source [agentenv](https://github.com/kvcache-ai/AgentEnv); analyzed commit `dcfb72f0a74430b5f01ae4c6928512a744d3c90a`; commit date 2026-10-28T13:50:32+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agentenv.md).
 <!-- teamagent-analysis:end -->

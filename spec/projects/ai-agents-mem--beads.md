@@ -39,6 +39,18 @@ Evidence: [internal/httpclient/servercontext.go:15-70](https://github.com/gastow
 
 **Scope and limits:** Static scoped HTTP context/policy cache and remote-clone lifecycle review within the 2,364-path comparison. HTTP authorization, wire validation, lockfile platform implementations, embedded memory/search and Dolt SQL behavior were not fully audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Retired identities survive retention sweeps without making deletion equivalent to permission to replay.** Reviewed commit `93531223bb96262627c864cdbab4a6bc8be7c53d` (commit date `2026-10-28T10:00:15Z`), compared with `43f41374a34d82ecf40903451eea277fbb4f1e75`. The complete no-rename Git path inventory contains 278 changed paths.
+
+The new ID-retention layer stores only ID and closed_at in separate durable and clone-local tombstone tables. A single UNION ALL occupancy query avoids a gap between live-row and tombstone reads; live rows take precedence. The upsert guard coordinates the ID before probing and returns a typed idempotency-expired error for retired identities. Tombstone insertion is chunked, deterministic and rejects missing facts. Its contract requires insertion in the same transaction as deletion; this file alone does not prove every caller honors that requirement. Mocked tests distinguish free, live and retired outcomes.
+
+Evidence: [internal/storage/issueops/id_retention.go:13-85](https://github.com/gastownhall/beads/blob/93531223bb96262627c864cdbab4a6bc8be7c53d/internal/storage/issueops/id_retention.go#L13-L85) · [internal/storage/issueops/id_retention.go:122-146](https://github.com/gastownhall/beads/blob/93531223bb96262627c864cdbab4a6bc8be7c53d/internal/storage/issueops/id_retention.go#L122-L146) · [internal/storage/issueops/id_retention.go:186-228](https://github.com/gastownhall/beads/blob/93531223bb96262627c864cdbab4a6bc8be7c53d/internal/storage/issueops/id_retention.go#L186-L228) · [internal/storage/issueops/id_retention_test.go:35-80](https://github.com/gastownhall/beads/blob/93531223bb96262627c864cdbab4a6bc8be7c53d/internal/storage/issueops/id_retention_test.go#L35-L80).
+
+**Harness consequence:** Keep a minimal durable replay barrier when pruning job or memory payloads. Preserve the original ownership/durability plane, transact tombstones with deletion, and expose expired idempotency separately from an ordinary conflict.
+
+**Scope and limits:** Reviewed the new retention helper and occupancy fixtures; the other storage backends, migrations and broader 278-path change were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `43f41374a34d82ecf40903451eea277fbb4f1e75`; commit date 2026-10-27T09:51:28Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
+Analysis metadata: source [beads](https://github.com/gastownhall/beads); analyzed commit `93531223bb96262627c864cdbab4a6bc8be7c53d`; commit date 2026-10-28T10:00:15Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--beads.md).
 <!-- teamagent-analysis:end -->

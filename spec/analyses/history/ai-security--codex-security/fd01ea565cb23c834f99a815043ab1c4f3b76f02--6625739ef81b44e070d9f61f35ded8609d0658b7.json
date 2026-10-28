@@ -1,0 +1,500 @@
+{
+  "id": "ai-security--codex-security",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/openai/codex-security",
+  "report": "spec/projects/ai-security--codex-security.md",
+  "analyzedSha": "fd01ea565cb23c834f99a815043ab1c4f3b76f02",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-27T20:29:37+05:30",
+  "observedSha": "6625739ef81b44e070d9f61f35ded8609d0658b7",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6625739ef81b44e070d9f61f35ded8609d0658b7",
+      "date": "2026-10-27T23:35:27-07:00",
+      "subject": "feat: add ServiceNow AVIT CSV export (#2103)"
+    },
+    {
+      "sha": "de4d17f547d8f16cbc28748e40c5d85543a2134d",
+      "date": "2026-10-27T22:37:48-07:00",
+      "subject": "fix: preserve hyphens in scan directory names (#2102)"
+    },
+    {
+      "sha": "71bd7ae0e9bc859fb8fe9bc4b590b8f8998b19aa",
+      "date": "2026-10-27T19:14:19-07:00",
+      "subject": "chore(release): 0.8.0 (#2030)"
+    },
+    {
+      "sha": "5523afdec0bee4574f76b81d890d469ac6613f4c",
+      "date": "2026-10-27T16:53:31-07:00",
+      "subject": "feat(imports): support OpenGrep reports locally and in Cloud (#1872)"
+    },
+    {
+      "sha": "6114d53d232ddf293893cc7cc7752a565b75a8b0",
+      "date": "2026-10-27T16:53:20-07:00",
+      "subject": "docs(imports): distinguish Snyk evidence changes from finding edits (#2081)"
+    },
+    {
+      "sha": "0efc652b8a8581eba1717eccafae67777e7fc15f",
+      "date": "2026-10-27T16:53:04-07:00",
+      "subject": "docs(imports): map scanner evidence and test cross-provider replay (#2080)"
+    },
+    {
+      "sha": "f780c75286b0bd04a920e3be5d58a0fb43a7ff58",
+      "date": "2026-10-27T16:52:48-07:00",
+      "subject": "perf(imports): avoid redundant SQLite reads and parsing on replay (#2083)"
+    },
+    {
+      "sha": "f5113e876adb0fb3a665577620bb0be96fcdc2cb",
+      "date": "2026-10-27T16:52:32-07:00",
+      "subject": "perf(imports): count Cloud request bytes without reserializing batches (#2079)"
+    },
+    {
+      "sha": "0fb953b0f54234888a3514160efe26de2cc801fe",
+      "date": "2026-10-27T14:33:04-07:00",
+      "subject": "fix(dedupe): continue hosted reviews after a missing submission (#2090)"
+    },
+    {
+      "sha": "1c98d9556fa3fbece5a019a77463850b28f4d554",
+      "date": "2026-10-27T16:10:08-05:00",
+      "subject": "feat(container): add a local Wolfi build for Linux amd64 (#2053)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-notes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/release-pr-state.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/apko.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/build-inputs.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/build.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/builder.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/melange.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/CODEX-NOTICE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/BUBBLEWRAP-COPYING",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/CFWORKER-LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/JS-TIKTOKEN-LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/RIPGREP-LICENSE-MIT",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/SAXES-LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/SCALAR-LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/YOGA-LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/notices/sources.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/payload/stage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/snapshot-builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/tests/offline-melange.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/tests/runtime.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/tests/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/tests/test_snapshot_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/verify-public.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/wolfi/wolfi-signing.rsa.pub",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/endor.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/opengrep.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/scanner-imports/schema-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/semgrep.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/scanner-imports/snyk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/github-actions/codex-security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/servicenow-avit-template.csv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "github-action/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/src/workbench/external-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/mcp-app/tests/test_external_findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/plugin-files.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/finalize_scan_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/codex-security/scripts/servicenow_avit.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/scripts/workbench_scan_start.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/skills/publish-findings/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/tests/test_finalize_scan_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/codex-security/tests/test_workbench_prompt_only_scan.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/docs/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/docs/dedupe-records.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/scripts/fixtures/package-consumer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/scripts/package-dist-files.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/scripts/smoke-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/artifact-export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/cli-help.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/deduplication/codex-review.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/deduplication/deduplication-prompts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/deduplication/records-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-findings-local.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-findings-publish.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-findings-read.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/external-import-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/host-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/src/native-json-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/src/opengrep-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/record.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/src/semgrep-findings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/cli-export.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/cli-help.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/cli-local-import.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/dedupe-records.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/external-findings-local.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/typescript/tests-ts/external-findings-publish.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/tests-ts/opengrep-findings-local.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/tests-ts/opengrep-findings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/tests-ts/scanner-import-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/tests-ts/snyk-collection-evidence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdk/typescript/tests-ts/support/opengrep-import-fixtures.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

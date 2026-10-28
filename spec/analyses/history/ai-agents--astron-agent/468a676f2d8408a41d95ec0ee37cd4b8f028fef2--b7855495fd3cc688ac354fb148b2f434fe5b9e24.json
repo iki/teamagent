@@ -1,0 +1,295 @@
+{
+  "id": "ai-agents--astron-agent",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/iflytek/astron-agent",
+  "report": "spec/projects/ai-agents--astron-agent.md",
+  "analyzedSha": "468a676f2d8408a41d95ec0ee37cd4b8f028fef2",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-21T11:06:13+08:00",
+  "observedSha": "b7855495fd3cc688ac354fb148b2f434fe5b9e24",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b7855495fd3cc688ac354fb148b2f434fe5b9e24",
+      "date": "2026-10-28T10:24:54+08:00",
+      "subject": "Merge pull request #1733 from yjlu666/bugfix/superteam"
+    },
+    {
+      "sha": "b98d5d8afb79efe6bcc0d1e6e22b1b0db891ffb2",
+      "date": "2026-10-23T14:51:39+08:00",
+      "subject": "fix(ci): resolve agent SDK types from locked dependencies"
+    },
+    {
+      "sha": "9ccd09b6280f7b5a4b59b21189707abd54bb3aea",
+      "date": "2026-10-23T09:39:55+08:00",
+      "subject": "refactor(agent): split harness stream and tool result handling"
+    },
+    {
+      "sha": "93f2e2b42a9f1a17be32cab36cdfe7df7a2332fc",
+      "date": "2026-10-22T15:48:00+08:00",
+      "subject": "fix(workflow): preserve native Agent tool result payloads"
+    },
+    {
+      "sha": "6cee1921a3b1d9bc1ce21d180b08533494f18627",
+      "date": "2026-10-22T10:19:44+08:00",
+      "subject": "fix(deploy): pin Debian nginx for legacy host compatibility"
+    },
+    {
+      "sha": "4deb3dabe3ec74f8e68716806fa3cb6aec100a87",
+      "date": "2026-10-21T17:36:41+08:00",
+      "subject": "fix(deploy): remove local Casdoor password helper services"
+    },
+    {
+      "sha": "bd93edd61e73f714a973a29aa9c5c5d1488339ba",
+      "date": "2026-10-21T16:50:45+08:00",
+      "subject": "refactor(agent): replace custom execution engine with Deep Agents"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/casdoor-password-storage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent/.flake8",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/api/schemas/agent_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/api/schemas/llm_message.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/api/schemas/workflow_agent_inputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/domain/models/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent/domain/models/providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent/engine/deepagents_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/chat/chat_prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/chat/chat_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/cot/cot_prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/cot/cot_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/cot_process/cot_process_prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/engine/nodes/cot_process/cot_process_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent/engine/plugin_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/exceptions/codes.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/exceptions/cot_exc.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/service/builder/base_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/service/builder/workflow_agent_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/service/runner/workflow_agent_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/tests/test_base_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/tests/test_base_llm_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/agent/tests/test_deepagents_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/tests/test_langfuse_observability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/tests/test_router_and_schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/agent/tests/test_runner_base_and_chat_cot.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/tests/test_workflow_agent_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/tests/test_workflow_agent_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/agent/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/workflow/engine/nodes/util/frame_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/workflow/tests/engine/nodes/util/test_frame_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docker/astronAgent/casdoor/password-storage/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docker/astronAgent/casdoor/password-storage/test_compose.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/astronAgent/casdoor/password-storage/test_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/astronAgent/docker-compose-auth.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CASDOOR_PASSWORD_STORAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/DEPLOYMENT_GUIDE_WITH_AUTH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/CASDOOR_PASSWORD_STORAGE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/DEPLOYMENT_GUIDE_WITH_AUTH.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "makefiles/check_agent_mypy.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "makefiles/python.mk",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,950 @@
+{
+  "id": "ai-agents--agent-orchestrator",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/ComposioHQ/agent-orchestrator",
+  "report": "spec/projects/ai-agents--agent-orchestrator.md",
+  "analyzedSha": "f2ef7e90192c5afae069fc99b079726d9666b3dc",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T22:54:40+05:30",
+  "observedSha": "c8be3cbd452eccabdc7001536b917e0572cf5b89",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c8be3cbd452eccabdc7001536b917e0572cf5b89",
+      "date": "2026-10-28T13:18:15+05:30",
+      "subject": "fix(codex): find node for npm Codex during login and auth probe (#6371)"
+    },
+    {
+      "sha": "1e478c51f0d31ea84f2636e38bab2de2cd61ef2c",
+      "date": "2026-10-28T13:09:27+05:30",
+      "subject": "feat: list other open targets in the editor row submenu (#7374)"
+    },
+    {
+      "sha": "8c269417876ee3effa41b58224d22d2dfbcec603",
+      "date": "2026-10-28T12:58:23+05:30",
+      "subject": "fix(mobile): keep the model picker on chats that were hibernated (#7339)"
+    },
+    {
+      "sha": "927bfe7fa439ff5677fa4a05e056a2010deff214",
+      "date": "2026-10-28T12:35:32+05:30",
+      "subject": "feat: pick the default editor in settings (#7373)"
+    },
+    {
+      "sha": "ad553ec6d4d03aea9fd0c5f18cdb4f65792e92d7",
+      "date": "2026-10-28T12:26:00+05:30",
+      "subject": "feat: add more sidebar and board context menu actions (#7372)"
+    },
+    {
+      "sha": "49951ca73e431bc79fd6e4b4c5ce3ba9414c86c0",
+      "date": "2026-10-28T11:29:11+05:30",
+      "subject": "perf(frontend): use Pierre's WASM highlighter and skip layout for hidden file tabs (#7369)"
+    },
+    {
+      "sha": "dfe2d752a1da6711ea42c0cd852a993fa40ada56",
+      "date": "2026-10-28T11:27:13+05:30",
+      "subject": "feat(ui): swipe or drag notification panel rows right to clear them (#7368)"
+    },
+    {
+      "sha": "70e92a80c67a16e0dcfac6716177b362d718152f",
+      "date": "2026-10-28T10:45:54+05:30",
+      "subject": "fix: make side-chat handoffs and close recovery reliable (#7088)"
+    },
+    {
+      "sha": "36beb12e823bd4e1494f7f69e178e77234c8888b",
+      "date": "2026-10-28T10:37:40+05:30",
+      "subject": "feat: navigate file annotations with safe relocation and fallbacks (#6940)"
+    },
+    {
+      "sha": "de13bd2397fcf0d1c11d942dc398ebe6d17c338a",
+      "date": "2026-10-28T10:03:39+05:30",
+      "subject": "feat: unify Add to chat annotations and source status (#6939)"
+    },
+    {
+      "sha": "eb7aa6253e4ce4e2a138e1afe4013c39dda9bf9c",
+      "date": "2026-10-28T08:43:46+05:30",
+      "subject": "fix(desktop): mouse-drag dismiss and fade-out for harness update notice (#7367)"
+    },
+    {
+      "sha": "d20217661668cd2887ab0e893fe30be11fbc61e9",
+      "date": "2026-10-28T08:31:05+05:30",
+      "subject": "feat(desktop): give the dev app its own DEV dock icon (#7366)"
+    },
+    {
+      "sha": "418b0227aa60fe42f35ae45f1344b8e8c94a10c8",
+      "date": "2026-10-28T04:33:33+05:30",
+      "subject": "feat(artifacts): unify Markdown rendering and themed text previews (#7104)"
+    },
+    {
+      "sha": "5f0dc5e0a98005c85a6bf1620fba61f7fc33a343",
+      "date": "2026-10-28T03:18:33+05:30",
+      "subject": "fix(daemon): find Homebrew tmux when a macOS daemon's PATH omits it (#7345)"
+    },
+    {
+      "sha": "b05f69be9849e62a1011e141581934d5f166f682",
+      "date": "2026-10-28T03:14:17+05:30",
+      "subject": "fix: remember sidebar section open state across launches (#7360)"
+    },
+    {
+      "sha": "c3d4cfcaf2e07ea43462fc62d279f5ca199c385f",
+      "date": "2026-10-28T02:16:14+05:30",
+      "subject": "fix(cloud): load cloud artifact media without a CORS request (#7354)"
+    },
+    {
+      "sha": "7c31f3ad065f2b7bca3d45a7434b034658db6176",
+      "date": "2026-10-28T02:16:10+05:30",
+      "subject": "fix(cloud): serve artifact byte ranges so video and audio can seek (#7353)"
+    },
+    {
+      "sha": "161462f0750be3a7454c7d4ad8c8c155fc6e2c4a",
+      "date": "2026-10-28T02:15:09+05:30",
+      "subject": "fix(updater): keep checking after a disk-space refusal and show the offered build's notes (#6609)"
+    },
+    {
+      "sha": "0b7d96c67bffc1a3b6d5c78e797102b2eb5e2712",
+      "date": "2026-10-28T01:40:59+05:30",
+      "subject": "feat(integrations): install and onboard Orchestrator.inc from Orchestrator Bot (#7351)"
+    },
+    {
+      "sha": "121fc2712611572461a18a0ba797e30888ef10e8",
+      "date": "2026-10-28T01:34:35+05:30",
+      "subject": "feat(mobile): draw AO's automation messages and worker reports as desktop does (#7331)"
+    },
+    {
+      "sha": "289ea750e3be9c551a68ad5fbc0d5ec89c18fcab",
+      "date": "2026-10-28T01:16:09+05:30",
+      "subject": "feat(mobile): tell a bad phone connection apart from an unreachable machine (#7336)"
+    },
+    {
+      "sha": "82894fcf9bd1903433feaec71d551b548c0ce3b0",
+      "date": "2026-10-28T00:59:14+05:30",
+      "subject": "fix(new-chat): stop the Scratchpad composer showing a project-ID validation error (#7321)"
+    },
+    {
+      "sha": "136d240756a3fc3021fada12d655ed42af194a9f",
+      "date": "2026-10-28T00:48:35+05:30",
+      "subject": "feat(chat): give turns one ending, follow live work, redesign the plan panel (#6884)"
+    },
+    {
+      "sha": "83bb06c741177ad63152170f7285ebb8c5496134",
+      "date": "2026-10-27T23:54:52+05:30",
+      "subject": "docs(integrations): link the public Orchestrator Bot template and use the Orchestrator name (#7343)"
+    },
+    {
+      "sha": "9416ed3f9b8fa9f4567a6adf8fcfd07916edf7bc",
+      "date": "2026-10-27T23:36:58+05:30",
+      "subject": "fix(chat): stop showing Claude compaction summaries as user messages (#7328)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/ao-desktop-dev/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/codex.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/agent/codex/codex_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/claudeacp/checkpoint.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/adapters/chatdriver/claudeacp/checkpoint_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/agentlaunch/env.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/agentlaunch/env_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/codex_login.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/codex_login_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/cli/doctor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/apispec/openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/apispec/specgen/build.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversation_provider_switch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversation_provider_switch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversations.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/conversations_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/dto.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/httpd/controllers/file_reference.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/httpd/controllers/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/ports/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/ports/chat_file_reference.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/client_payload.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/client_payload_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/chat/file_reference.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/chat/file_reference_native_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/chat/file_reference_steer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/chat/file_reference_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/history.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/history_replay_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/history_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/provider_switch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/chat/side_recovery_regression_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/service/chat/steer.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/session/file_reference.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/session/file_reference_diff.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/session/file_reference_diff_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/session/file_reference_navigation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/internal/service/session/file_reference_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/session_manager/manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/tmuxbin/resolve.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/internal/tmuxbin/resolve_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/internal/artifactstore/artifactstore.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/internal/artifactstore/s3fake/s3fake.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/internal/httpapi/artifact_handlers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cloud/internal/httpapi/artifact_handlers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/daemon-environment.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/screenshots/add-to-chat/annotation-preview-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/screenshots/add-to-chat/selected-lines-dark.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/side-chat-6564-reliability.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/assets/icon-dev.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/e2e/files-ask-in-chat.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/e2e/support/electron-shell.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/e2e/support/fake-bridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/api/schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/auto-updater.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/auto-updater.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/editor-handoff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/editor-handoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/main/side-close.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/main/side-close.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/main/side-launch-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/main/side-launch-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/main/update-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/preload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ArtifactFileView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ArtifactGalleryCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ArtifactThumbnail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ConfirmDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/FileContentPane.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/FileContentPane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/FileMediaPreview.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/FileMediaPreview.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/GlobalSettingsForm.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/NotificationCenter.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/NotificationCenter.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ReadOnlyFileView.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ReadOnlyFileView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/RestartToUpdateDialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/RestartToUpdateDialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionArtifactsView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/SessionContextMenuItems.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionFileWorkspace.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionView.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionsBoard.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/SessionsBoardAdapters.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/Sidebar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/Sidebar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/TaskComposer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/TaskComposer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/TopbarOpenEditorButton.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/artifact-document.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/CapturedFileAnnotation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/CapturedFileAnnotation.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatAnnotationSummary.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatAnnotationSummary.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatComposer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatComposer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatTimelineItems.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatTimelineItems.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatWorkspace.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatWorkspace.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatWorkspaceAccountSwitch.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/ChatWorkspaceContinue.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/CloudSessionChatSurface.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/CloudSessionChatSurface.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/FileAnnotationPreview.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/FileAnnotationPreview.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/IndependentSideChatDelivery.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/IndependentSideChats.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/LatticeLoader.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/LatticeLoader.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/LiveActivityWindow.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/LiveActivityWindow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/MermaidBlock.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/SessionChatSurface.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/SessionStartup.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/SideCloseRecovery.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/SideCommandHandoff.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/TurnPlan.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/TurnPlan.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/TurnWorkSummary.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/chat/edge-fade.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/chat/sideChatDraft.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/cloud-workspace/CloudDiffFile.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/diffs/AoDiffFile.annotations.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/diffs/AoDiffFile.hydration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/AoDiffFile.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/AoDiffFile.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/SelectionAskButton.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/SelectionAskButton.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/WorkspaceReviewPane.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/WorkspaceReviewPane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/pierreTheme.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/useCodeSelection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/diffs/useCodeSelection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/diffs/useFileAnnotationReveal.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/diffs/useFileAnnotationReveal.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/diffs/useFileAnnotationReveal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/markdown/MarkdownFileView.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/markdown/MarkdownFileView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/components/markdown/markdown-file.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/settings/GeneralSettingsSection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/settings/UpdatesSection.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/settings/UpdatesSection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ui/context-menu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/components/ui/dropdown-menu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useConversation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useEditorHandoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/hooks/useMarkdownFontsReady.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/usePierreFileHighlight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useRememberProjectPermissions.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/renderer/hooks/useRememberProjectPermissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/renderer/hooks/useSwipeToDismiss.test.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

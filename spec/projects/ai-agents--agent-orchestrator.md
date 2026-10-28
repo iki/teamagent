@@ -44,6 +44,18 @@ Retired password hashes avoid locking out newly paired clients when stale client
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `c8be3cbd452eccabdc7001536b917e0572cf5b89` (commit date `2026-10-28T13:18:15+05:30`), compared with `f2ef7e90192c5afae069fc99b079726d9666b3dc`. Earlier findings remain historical evidence.
+
+**Scope:** Mobile uncertain message edits, bounded session lookup and child launch environment changes. The complete changed-path inventory contains 253 paths; the assessment below is limited to the cited branches.
+
+The mobile edit hook retains the exact payload and delivery identifier after an uncertain result; only a classified definitive refusal creates a new identifier. An unresolved edit stays visible even if its original prompt disappears, and late completions are fenced by delivery ID. See [packages/mobile/lib/chat/useMessageEdit.ts](https://github.com/ComposioHQ/agent-orchestrator/blob/c8be3cbd452eccabdc7001536b917e0572cf5b89/packages/mobile/lib/chat/useMessageEdit.ts#L40-L80). Session lookup deduplicates requests and caps entries at 200, but its key contains host/session identity rather than credential generation, and failed reads become null. See [packages/mobile/lib/chat/sessionLookup.ts](https://github.com/ComposioHQ/agent-orchestrator/blob/c8be3cbd452eccabdc7001536b917e0572cf5b89/packages/mobile/lib/chat/sessionLookup.ts#L4-L28).
+
+For Teamagent, persist uncertain edits beyond a component lifetime and reconcile before replay; this hook alone does not prove server idempotency. Cache identity needs the effective account/credential generation and explicit unavailable results. The launch-environment delta also copies the process environment while augmenting PATH: this is compatibility handling, not credential isolation. See [backend/internal/agentlaunch/env.go](https://github.com/ComposioHQ/agent-orchestrator/blob/c8be3cbd452eccabdc7001536b917e0572cf5b89/backend/internal/agentlaunch/env.go#L163-L181).
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator); analyzed commit `f2ef7e90192c5afae069fc99b079726d9666b3dc`; commit date 2026-10-27T22:54:40+05:30; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agent-orchestrator.md).
+Analysis metadata: source [agent-orchestrator](https://github.com/ComposioHQ/agent-orchestrator); analyzed commit `c8be3cbd452eccabdc7001536b917e0572cf5b89`; commit date 2026-10-28T13:18:15+05:30; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--agent-orchestrator.md).
 <!-- teamagent-analysis:end -->

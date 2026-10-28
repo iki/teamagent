@@ -1,0 +1,985 @@
+{
+  "id": "ai-media--voicestudio",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/debpalash/VoiceStudio",
+  "report": "spec/projects/ai-media--voicestudio.md",
+  "analyzedSha": "331879da16f2d04088a58fc43a6e1cc7ae1efef3",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T22:45:02+05:30",
+  "observedSha": "f7203feb76383c2afd29fde4bc826fea6e601c24",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f7203feb76383c2afd29fde4bc826fea6e601c24",
+      "date": "2026-10-28T15:34:04+05:30",
+      "subject": "Merge pull request #3621 from debpalash/fix/env-startup-decoding"
+    },
+    {
+      "sha": "dd57e6de375ab3d91066d5b15ce34d2caeba5763",
+      "date": "2026-10-28T15:33:53+05:30",
+      "subject": "Merge branch 'main' into fix/env-startup-decoding"
+    },
+    {
+      "sha": "e7af92468ec713378c49a388d6d7a36b5301befa",
+      "date": "2026-10-28T15:33:40+05:30",
+      "subject": "Merge pull request #3618 from debpalash/feat/cla-reminder"
+    },
+    {
+      "sha": "5a03d59490e128cdac26bceeb55242d702cf8c99",
+      "date": "2026-10-28T15:19:32+05:30",
+      "subject": "Add startup fix changelog"
+    },
+    {
+      "sha": "b5ceba6b43302ebef721dd87fc1cd9d3530a37ab",
+      "date": "2026-10-28T15:19:07+05:30",
+      "subject": "Handle encoded environment files during startup"
+    },
+    {
+      "sha": "06a5f4fd1095fb30e45bc4d20f6bcc7b53c0d6b4",
+      "date": "2026-10-28T15:09:17+05:30",
+      "subject": "Merge remote-tracking branch 'origin/main' into feat/cla-reminder"
+    },
+    {
+      "sha": "7a46cfda94e104b0b5e7336e073d59a7e7984df6",
+      "date": "2026-10-28T15:09:14+05:30",
+      "subject": "Preserve CLA deadlines during other check failures"
+    },
+    {
+      "sha": "28c2c99fb8602aad3936e681f62e62eaabcbbfa9",
+      "date": "2026-10-28T15:08:09+05:30",
+      "subject": "Merge pull request #3619 from debpalash/fix/longform-stop-overflow"
+    },
+    {
+      "sha": "5ade11ee903221bc23d2ec47e26de5dd6bd4854e",
+      "date": "2026-10-28T15:03:56+05:30",
+      "subject": "fix(longform): keep Stop inside the compact setup pane during a render"
+    },
+    {
+      "sha": "c72cd4980ee6af1eedbe4fedf788b0176e3aac9a",
+      "date": "2026-10-28T15:03:42+05:30",
+      "subject": "Merge remote-tracking branch 'origin/main' into feat/cla-reminder"
+    },
+    {
+      "sha": "3f6bac17f610cb288ee0e876199febe1a6934b03",
+      "date": "2026-10-28T15:03:37+05:30",
+      "subject": "Add CLA waiting period reminders"
+    },
+    {
+      "sha": "6f40ff7339fc40b81eda40552beabd308883387e",
+      "date": "2026-10-28T13:44:08+05:30",
+      "subject": "Merge pull request #3617 from debpalash/cla/rewrite-W11-residue"
+    },
+    {
+      "sha": "ad1c96daecee5499df5a58600d06e6c1249bee71",
+      "date": "2026-10-28T13:26:12+05:30",
+      "subject": "feat(provenance): clean-room reimplementation of the residue-scan sections"
+    },
+    {
+      "sha": "8c535daf67f45ad8288c1dafffac629bf9d52f83",
+      "date": "2026-10-28T13:02:16+05:30",
+      "subject": "chore(provenance): remove remaining contributor code found by the residue scan pending clean-room reimplementation"
+    },
+    {
+      "sha": "8a65b404b29e2d6e901824b94b9e303e0b7f7b30",
+      "date": "2026-10-28T09:13:45+05:30",
+      "subject": "Merge pull request #3615 from debpalash/batch/oct28c"
+    },
+    {
+      "sha": "bbe55b78d78305fa828bf26c08122871faa27e96",
+      "date": "2026-10-28T08:24:47+05:30",
+      "subject": "fix: segment gap keys see the lexicon; text-mode checker covers encoding/errors"
+    },
+    {
+      "sha": "8ada6648415bcf56b9f7db3ae464a278cc170def",
+      "date": "2026-10-28T07:46:29+05:30",
+      "subject": "fix: CodeRabbit follow-ups on pause fill, test ids and the GPU offer"
+    },
+    {
+      "sha": "400ef5403abeccbc6bae1952f4c28d2bb9272e9a",
+      "date": "2026-10-28T07:45:39+05:30",
+      "subject": "fix(audiobook): one pause-fill read per chapter; re-key only segments with paragraph gaps"
+    },
+    {
+      "sha": "18ce637a84418ecac89893a6ae18dd53ba420bc2",
+      "date": "2026-10-28T07:44:10+05:30",
+      "subject": "fix(backend): send prompt text to native engines as UTF-8"
+    },
+    {
+      "sha": "53b3e73b717358f4eea56426d46f4aaf56fa6295",
+      "date": "2026-10-28T05:24:47+05:30",
+      "subject": "fix: address Greptile findings on the GPU offer and pause fill"
+    },
+    {
+      "sha": "964d14cb7ac04d16dba5b7616625b760d7001cc9",
+      "date": "2026-10-28T05:16:55+05:30",
+      "subject": "test(desktop-ui): serve the pause-fill setting from the fake backend"
+    },
+    {
+      "sha": "7a3708ce53a82f7d9c907f4ee12546ddcffbd6df",
+      "date": "2026-10-28T05:12:03+05:30",
+      "subject": "changelog: fragments for batch #3615"
+    },
+    {
+      "sha": "da225ab090fb8da6efe1b2fb68f72056d0010ad5",
+      "date": "2026-10-28T05:11:02+05:30",
+      "subject": "feat(audio): fill pauses with room tone instead of digital silence (#3611)"
+    },
+    {
+      "sha": "a2c27fbcd0cdf8b759d3fb83cab4a6e5c4763001",
+      "date": "2026-10-28T05:00:21+05:30",
+      "subject": "fix(backend): never lose subprocess output to a decode error (#3612)"
+    },
+    {
+      "sha": "b0302993062629d486e9321b7f2a33cf8fac1683",
+      "date": "2026-10-28T04:56:05+05:30",
+      "subject": "fix(mobile): refuse non-443 model redirects on Android like iOS"
+    },
+    {
+      "sha": "3b9e2773973eede00bb2a1f81a422442389deb13",
+      "date": "2026-10-28T04:55:38+05:30",
+      "subject": "fix(omnivoice-gguf): review fixes for the Vulkan GPU offer and quant picker"
+    },
+    {
+      "sha": "8f541eb0e915c81e0670e446c1564cc0d70f6334",
+      "date": "2026-10-28T04:53:35+05:30",
+      "subject": "feat(omnivoice-gguf): use Vulkan GPUs automatically and offer GPU acceleration (#3599)"
+    },
+    {
+      "sha": "7b0478df3fddd41b845da11911508e62751b7504",
+      "date": "2026-10-28T04:51:08+05:30",
+      "subject": "test: keep long parametrize values out of test ids"
+    },
+    {
+      "sha": "1e814d0f8dc73bee16ffee858904f29243914376",
+      "date": "2026-10-28T04:48:53+05:30",
+      "subject": "fix(cosyvoice): bump the managed install revision for hydra-core 1.3.8"
+    },
+    {
+      "sha": "67049aa8ec410393e52254057bf4c1b253efa561",
+      "date": "2026-10-28T04:48:23+05:30",
+      "subject": "chore(deps): bump rustls in /native/desktop-bridge"
+    },
+    {
+      "sha": "6a3ad8cff705dc4a4831ff65cecf94d6e8b03189",
+      "date": "2026-10-28T04:48:23+05:30",
+      "subject": "chore(deps): bump hydra-core in /backend/engines/cosyvoice_subprocess"
+    },
+    {
+      "sha": "589822ec39bb5338d9ddb18ab39e6a7da0164f93",
+      "date": "2026-10-28T04:48:23+05:30",
+      "subject": "fix(mobile): accept hf-mirror.com subdomain redirects on Android model downloads"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/cla_reminders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-omnivoice-tts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/cla-reminders.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/audiobook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/dictation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/dub_core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/dub_generate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/dub_translate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/engines.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/generation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/model_licenses.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/profiles.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/setup/download.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/setup/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/setup/wizard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/system.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/tts_stream.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/routers/voice_convert.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/config/model_licenses.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/config/models.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/core/device_caps.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/core/env_startup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/core/execstack.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/core/fs_retry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/core/gatekeeper_detect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/core/version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/core/windows_rocm/smoke.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/core/windows_rocm/verify.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/_asr_sidecar/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/audiocpp/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/audiocpp/bootstrap.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/cosyvoice_gguf/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/cosyvoice_gguf/bootstrap.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/cosyvoice_gguf/prompt_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/cosyvoice_subprocess/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/cosyvoice_subprocess/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/cosyvoice_subprocess/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/dots_tts/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/indextts/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/omnivoice_gguf/backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/omnivoice_gguf/compute.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/engines/omnivoice_gguf/gpu_offer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/omnivoice_gguf/quant_map.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/engines/omnivoice_gguf/quants.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/engines/omnivoice_gguf/vulkan_auto.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/omnivoice_subprocess/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/engines/voxcpm2_subprocess/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/migrations/versions/0013_generation_history_design_recipe.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/migrations/versions/0015_voice_sync_prep.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/schemas/requests.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/audio_dsp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/audiobook.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/audiocpp_runtime_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/dub_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/engine_disk_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/engine_memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/expression.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/ffmpeg_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/llm_providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/longform_import.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/longform_render.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/media_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/model_acceptance.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/model_catalogue.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/model_licenses.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/model_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/model_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/number_words_ml.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/number_words_ur.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/onset_align.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/prosody_mirror.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/pyannote_audio_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/reference_transcript.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/sidecar_install.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/subprocess_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/tailscale.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/text_normalization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/tts_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/voice_conversion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/speech_client/__main__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_lock_ref_text.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_longform_import_epub_matter.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3422.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3573-b.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3573.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3574.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3575.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3593.docs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3594-b.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3594-c.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3594-d.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3594.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3595-b.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3595-c.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3595-d.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3595-e.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3595.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3596.license.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3600.ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3601.license.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3602-b.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3602-c.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3602.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3604.docs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3606.license.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3607.license.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3608.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3610.docs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3613.license.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3615-b.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3615-b.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3615-c.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3615.added.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3615.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/3621.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/docker-compose.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/dockerhub-overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/STRUCTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/competitive-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/electron-dubbing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/electron-playback.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/electron-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/electron-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/engines/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/engines/audio-cpp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/engines/dots-tts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/engines/indextts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/engines/omnivoice-gguf.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/engines/sherpa-onnx.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/expressive-speech.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/feature-catalog.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/features/dictation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install/agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install/docker.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install/linux.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install/macos.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install/windows-rocm.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/install/wsl-amd-rocm.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/licensing/model-license-data.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_JA.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_KO.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/readme/README_RU.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/longform/23-transcriptions-import.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/speech-platform.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/scripts/mac-dev-cache.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/account/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/backend-launch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/blank-window-guard.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/src/main/blank-window-guard.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

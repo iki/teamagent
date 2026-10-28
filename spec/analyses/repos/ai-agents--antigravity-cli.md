@@ -2,12 +2,11 @@
 
 Source: [antigravity-cli](https://github.com/google-antigravity/antigravity-cli) · [Analysis](../../projects/ai-agents--antigravity-cli.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `1a0d892bf71df1b14b59f4146dbdfad46c4d4c69`; commit date: 2026-10-27T07:10:39Z; review date: 2026-10-28T08:26:04.502Z; observed SHA: `1a0d892bf71df1b14b59f4146dbdfad46c4d4c69`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `a6b3429ebabafd6efd129c6d2f6161b02f061f22`; commit date: 2026-10-28T05:59:44Z; review date: 2026-10-28T14:29:27.414Z; observed SHA: `a6b3429ebabafd6efd129c6d2f6161b02f061f22`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google-antigravity/antigravity-cli/compare/1a0d892bf71df1b14b59f4146dbdfad46c4d4c69...1a0d892bf71df1b14b59f4146dbdfad46c4d4c69). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google-antigravity/antigravity-cli/compare/a6b3429ebabafd6efd129c6d2f6161b02f061f22...a6b3429ebabafd6efd129c6d2f6161b02f061f22). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

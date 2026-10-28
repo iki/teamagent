@@ -1,0 +1,120 @@
+{
+  "id": "ai-agents-mem--gitnexus",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/abhigyanpatwari/GitNexus",
+  "report": "spec/projects/ai-agents-mem--gitnexus.md",
+  "analyzedSha": "bad2422aa1bd6473e4cbb4da15873090944b67d6",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T16:46:58Z",
+  "observedSha": "51ce19d77abe86978e34d89dd77188c4dba3ba53",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "51ce19d77abe86978e34d89dd77188c4dba3ba53",
+      "date": "2026-10-28T08:09:10Z",
+      "subject": "fix(impact): avoid upstream file seeds for private types (#3740)"
+    },
+    {
+      "sha": "70e226f9c614d1e7b4cf5dfdcb80247ed019608b",
+      "date": "2026-10-28T06:36:14Z",
+      "subject": "chore(deps): consolidate Dependabot updates (#3742)"
+    },
+    {
+      "sha": "42d97802ea6a8ea4cdef6ca06e2b7d989409edee",
+      "date": "2026-10-27T19:38:00Z",
+      "subject": "feat(logger): let a host route GitNexus records into its own sink (#3729)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "eval/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/scripts/cross-platform-tests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/src/core/ingestion/language-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/src/core/ingestion/languages/swift.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/src/core/ingestion/languages/typescript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "gitnexus/src/core/ingestion/languages/typescript/file-private-exports.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/src/core/ingestion/languages/zig.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/src/core/logger.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/src/mcp/local/local-backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "gitnexus/test/integration/impact-private-type-file-seed.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "gitnexus/test/integration/impact-private-type-source.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "gitnexus/test/unit/file-private-exports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/test/unit/logger.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gitnexus/vitest.config.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

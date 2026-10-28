@@ -44,6 +44,18 @@ The [Dolt environment wrapper](https://github.com/gastownhall/gascity/blob/e73eb
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `28bf3f3a778d28f2a4d29d0d2c49bde66a933651` (commit date `2026-10-28T09:59:03Z`), compared with `e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6`. Earlier findings remain historical evidence.
+
+**Scope:** Provider cache applicability, recorded transport identity and mail-store configuration failure. The complete changed-path inventory contains 404 paths; the assessment below is limited to the cited branches.
+
+Provider-cache reuse is skipped when a workspace start command overrides the effective launch; session transport detection prefers recorded transport. Mail-provider startup now refuses a configuration-read failure when the city may route data into separate stores, rather than guessing a default store. See [cmd/gc/providers.go](https://github.com/gastownhall/gascity/blob/28bf3f3a778d28f2a4d29d0d2c49bde66a933651/cmd/gc/providers.go#L344-L366), [cmd/gc/providers.go](https://github.com/gastownhall/gascity/blob/28bf3f3a778d28f2a4d29d0d2c49bde66a933651/cmd/gc/providers.go#L420-L444), [cmd/gc/providers.go](https://github.com/gastownhall/gascity/blob/28bf3f3a778d28f2a4d29d0d2c49bde66a933651/cmd/gc/providers.go#L523-L542) and [cmd/gc/providers.go](https://github.com/gastownhall/gascity/blob/28bf3f3a778d28f2a4d29d0d2c49bde66a933651/cmd/gc/providers.go#L936-L957). The refusal path attempts to close the opened store but ignores that close result.
+
+For Teamagent, bind cached capabilities to the complete effective launch configuration and refuse unknown routing before a write. A fallback is acceptable only when its equivalence is established; the single-store determination helper itself was not reviewed here. Retain cleanup uncertainty separately. Session-hash composition, runtime reconciliation and actual provider starts were not fully audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6`; commit date 2026-10-27T14:24:46Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
+Analysis metadata: source [gascity](https://github.com/gastownhall/gascity); analyzed commit `28bf3f3a778d28f2a4d29d0d2c49bde66a933651`; commit date 2026-10-28T09:59:03Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--gascity.md).
 <!-- teamagent-analysis:end -->

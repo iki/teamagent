@@ -1,0 +1,580 @@
+{
+  "id": "ai-agents--buzz",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/block/buzz",
+  "report": "spec/projects/ai-agents--buzz.md",
+  "analyzedSha": "ff9eb8f4dc56c312983287321ea8748b93c62145",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T16:32:04Z",
+  "observedSha": "24a370606044c0c7be787cc2fd98ec0bfe1d606b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "24a370606044c0c7be787cc2fd98ec0bfe1d606b",
+      "date": "2026-10-28T00:22:45Z",
+      "subject": "feat(relay): log who and why for NIP-FI shadow would-deny (#8634)"
+    },
+    {
+      "sha": "5c2ea2e507a6f79132edf7eb9e5be0e90aee5166",
+      "date": "2026-10-27T22:47:35Z",
+      "subject": "feat(mobile): add full-screen profile setup with inline avatar editing (#8628)"
+    },
+    {
+      "sha": "5a8102ee5b50da94588368b8d2ccb3def64033ca",
+      "date": "2026-10-27T16:31:31-06:00",
+      "subject": "fix(mobile): preserve invite onboarding and offer identity setup (#8617)"
+    },
+    {
+      "sha": "f33ebaafa15626e0f8bc3e23341835e08ebf4a33",
+      "date": "2026-10-28T09:26:41+11:00",
+      "subject": "refactor(schema): stop auto-fencing new tables in desired-state bootstrap (#8620)"
+    },
+    {
+      "sha": "d4a07063c8b816124e27e00720e5b47f0a5ae1ce",
+      "date": "2026-10-27T14:05:44-07:00",
+      "subject": "feat(mobile): manage Builderlab remote agents (#8626)"
+    },
+    {
+      "sha": "b929b2cf84f76f804a750839a885d74090e629e5",
+      "date": "2026-10-27T13:59:47-07:00",
+      "subject": "fix(mobile): replace a push enrollment the gateway rejected (#8629)"
+    },
+    {
+      "sha": "403855d7884971b4103ba094e3d24ba28bbf093a",
+      "date": "2026-10-27T16:55:51-04:00",
+      "subject": "test(relay): give group-state Postgres tests a normal acquire timeout (#8564)"
+    },
+    {
+      "sha": "c477663211142cabd82329c97346b7f64f827a97",
+      "date": "2026-10-27T12:59:44-07:00",
+      "subject": "fix(push-gateway): log which App Attest check rejected a device (#8630)"
+    },
+    {
+      "sha": "3ce3a2e2df815924f2519e08d5626a8f8bd8587b",
+      "date": "2026-10-27T12:11:24-07:00",
+      "subject": "docs(nip-ap): define agenttype on agent settings (#8631)"
+    },
+    {
+      "sha": "f167c4c3e10469f4f75b5ecad83af50bb3d5de2c",
+      "date": "2026-10-27T11:12:33-07:00",
+      "subject": "fix(push): accept canonical channel UUIDs across versions (#8609)"
+    },
+    {
+      "sha": "b77ad2ed10a00e869e4e64d06d70300d23616b7f",
+      "date": "2026-10-27T11:05:46-07:00",
+      "subject": "fix(mobile): align Solo agent policy and labels with the owner's inventory (#8616)"
+    },
+    {
+      "sha": "a4e83dfb508b259a2f128b8268d7f7a9c8de00f5",
+      "date": "2026-10-27T14:01:12-04:00",
+      "subject": "fix(mobile): open message links to public channels the user has not joined (#8518)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/_ci-clients.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-db/src/runtime/migration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/buzz-db/src/runtime/tests/schema_fence_bootstrap_postgres_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-push-gateway/src/app_attest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-push-gateway/src/app_attest/error.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-push-gateway/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/buzz-push-gateway/tests/app_attest_rejection_logs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/audio/handler.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/connection.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/handlers/auth.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/handlers/group_state_postgres_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/nip_fi_http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/nip_fi_resolver/tests/router_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/nip_fi_shadow.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/nip_fi_shadow_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/nip_fi_upgrade.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/router.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/buzz-relay/src/state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/buzz-push.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/database.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/nips/NIP-AP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/BuzzPushKit/Sources/BuzzPushKit/BuzzDevPushEnrollmentDriver.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/BuzzPushKit/Sources/BuzzPushKit/BuzzPushPendingEnrollmentRecord.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/BuzzPushKit/Tests/BuzzPushKitTests/BuzzDevPushEnrollmentDriverTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/Runner/JumpToLatestGlassButton.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/Runner/NativeProfileSetup.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/Runner/NativeTabler.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/Runner/SceneDelegate.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/RunnerTests/ProfileSetupRecoveryTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/ios/RunnerTests/RunnerTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/features/agents/agents_sheet.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/features/agents/create_agent_sheet.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/features/agents/delete_agent_action.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channel_detail_page/app_bar.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_page.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_page/channel_tile.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_page/header_actions.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/channels_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/deep_link_dispatcher.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/me/me_chat_assistant.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/me/native_new_me_chat.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/me/new_me_chat.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/channels/mentions/mention_candidates_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/onboarding/hosted_connect_sheet.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/animated_avatar_capture.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/emoji_avatar_tile.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/presence_cache_provider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/profile_avatar_crop_page.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/profile_avatar_editor.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/profile_avatar_editor/emoji_avatar_picker.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/profile_avatar_sheet_app.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/profile_setup_avatar_editor.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/profile_setup_empty_avatar.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/profile_setup_page.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/features/profile/user_profile_sheet.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/hosted_app_gate.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/onboarding_app_entry.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/lib/shared/agents/remote_agents.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/hosted/builderlab_account.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/hosted/hosted_communities.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/hosted/hosted_flow.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/hosted/hosted_identity_service.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/identity_transfer/nsec_import_sheet.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/me/me_agent_inventory.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/push/dev_push_lease.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/push/push_bootstrap.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/push/push_subscription.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/lib/shared/relay/signed_event_relay.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/agents/agents_harness.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/agents/agents_sheet_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/agents/create_agent_sheet_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/agents/delete_agent_action_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/deep_link_dispatcher_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/me/me_chat_assistant_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/channels/me/me_page_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/onboarding/hosted_communities_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/onboarding/hosted_journeys_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/onboarding/onboarding_entry_routes_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/profile/profile_avatar_sheet_theme_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/profile/profile_edit_page_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/profile/profile_edit_page_test/image_selection_tests.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/profile/profile_setup_avatar_editor_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/features/profile/profile_setup_fallback_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/features/profile/profile_setup_native_name_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/helpers/hosted_communities_fixture.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/helpers/hosted_journey_fixture.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/helpers/remote_agents_fixture.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mobile/test/shared/agents/remote_agents_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/hosted/hosted_communities_flow_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/hosted/hosted_environment_flow_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/hosted/hosted_multi_backup_recovery_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/me/me_assistants_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/push/dev_push_lease_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/push/push_bootstrap_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mobile/test/shared/push/push_subscription_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "schema/community_write_fence.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "schema/functions/attach_community_write_fence.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "schema/schema.sql",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

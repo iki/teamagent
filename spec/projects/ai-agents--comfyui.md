@@ -44,6 +44,18 @@ The inspected [fixtures](https://github.com/comfy-org/comfyui/blob/426f5eea52a7e
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `79cf64c21a1dba50749945ba9fe2e3a692f45438` (commit date `2026-10-28T00:43:04-07:00`), compared with `426f5eea52a7ece1dd599fff4cb6cd1f352ddd24`. Earlier findings remain historical evidence.
+
+**Scope:** Linux anonymous-file creation and exact frontend-release lookup. The complete changed-path inventory contains 9 paths; the assessment below is limited to the cited branches.
+
+Linux anonymous storage now calls libc memfd_create with close-on-exec, checks a negative return and preserves errno as an OSError. Unsupported platforms remain explicit. See [comfy/anonymous_file.py](https://github.com/comfy-org/comfyui/blob/79cf64c21a1dba50749945ba9fe2e3a692f45438/comfy/anonymous_file.py#L19-L53). Explicit frontend versions are fetched through exact release-tag endpoints, trying the v-prefixed spelling and treating only 404 as a missing tag; other HTTP failures propagate. See [app/frontend_management.py](https://github.com/comfy-org/comfyui/blob/79cf64c21a1dba50749945ba9fe2e3a692f45438/app/frontend_management.py#L162-L181).
+
+For Teamagent, preserve exact artifact identity and failure classes, but do not equate an anonymous file with a sandbox or encrypted storage. A release lookup timeout is not a complete download/body/decompression bound; parsed release metadata and downloaded asset integrity need separate validation. Native compatibility, asset extraction and VEED generation changes were not exercised.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `426f5eea52a7ece1dd599fff4cb6cd1f352ddd24`; commit date 2026-10-26T21:12:41-04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
+Analysis metadata: source [comfyui](https://github.com/comfy-org/comfyui); analyzed commit `79cf64c21a1dba50749945ba9fe2e3a692f45438`; commit date 2026-10-28T00:43:04-07:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--comfyui.md).
 <!-- teamagent-analysis:end -->

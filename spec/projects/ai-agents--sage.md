@@ -36,6 +36,14 @@ The [agent response adapters](https://github.com/ZHangZHengEric/Sage/blob/358f92
 
 The reviewed [model configuration boundary](https://github.com/ZHangZHengEric/Sage/blob/358f925822e07035c35e610af19bea14de3e01df/app/v1/common/services/model_invocation_service.py#L1-L240) resolves providers by IDs, excludes known provider credentials/config fields from ordinary request passthrough and keeps fast-provider settings separate. _resolve_runtime_user_id prefers a nonempty body user_id over the configured value. That is an attribution boundary requiring a trusted upstream check; this limited inspection is not evidence of an exploitable authorization bypass or proof that such a check exists. Teamagent should bind effective identity and provider grants at the authenticated boundary, before request extras or model routing are considered.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `358f925822e07035c35e610af19bea14de3e01df` to `5e66cbc8cc931155802c84e29d1cfd32d68a2c30`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [sagents/v2/agent/factory.py](https://github.com/ZHangZHengEric/Sage/blob/5e66cbc8cc931155802c84e29d1cfd32d68a2c30/sagents/v2/agent/factory.py#L252-L296), Context construction derives the input budget from the minimum of the model route's context window and the agent ceiling, with a fallback when neither exists. Output reserve follows request/model/ceiling precedence. The delta removes separately injected system-token and protected-recent defaults from this composition point while retaining explicit provider order, reducer and authoritative history reader.
+
+**Harness implication and limits:** Budget the assembled context against the effective model route and keep host prompt policy separate from retrieval providers. Removing defaults here does not prove that the underlying assembler enforces the desired segment protections; inspect its new behavior before adopting. Invalid limits, reserve-versus-input overflow and token-estimation accuracy were not tested. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [sage](https://github.com/ZHangZHengEric/Sage); analyzed commit `358f925822e07035c35e610af19bea14de3e01df`; commit date 2026-10-27T17:41:30+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--sage.md).
+Analysis metadata: source [sage](https://github.com/ZHangZHengEric/Sage); analyzed commit `5e66cbc8cc931155802c84e29d1cfd32d68a2c30`; commit date 2026-10-28T16:48:46+09:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--sage.md).
 <!-- teamagent-analysis:end -->

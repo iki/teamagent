@@ -39,6 +39,18 @@ Evidence: [crates/tracedecay-store-runtime/src/session_registry/memory_graph_rec
 
 **Scope and limits:** Scoped static review of two complete implementation files and the embedded argument-hash fixture within the 4,525-path comparison. Runtime-owner internals, graph publication, database migrations and the full application were not audited; no upstream tests or services were executed.
 
+## Follow-up change review — 2026-10-28
+
+**Resumed JSONL reads retain a proof of the original first complete frame.** Reviewed commit `1003abc0590394675941d1060b8e3027a3ad61ff` (commit date `2026-10-28T01:38:17-07:00`), compared with `950f37db306a12bc3503a290ebfedf22b46f0bd3`. The complete no-rename Git path inventory contains 259 changed paths.
+
+The new ResumeDigest preserves a domain-separated SHA-256 prefix and first-frame witness across chunk boundaries and resumed clones. The durable fingerprint is only a 64-bit digest prefix with a position, explicitly not resumable SHA mid-state; rebuilding after durable resume requires rereading the prefix. Fixtures preserve earlier fingerprint bytes, wait for a terminating newline, compare cold/resumed witnesses and detect header changes beyond an initial 1,024-byte identity window.
+
+Evidence: [crates/tracedecay-sessions/src/runtime/source/jsonl/resume_digest.rs:1-88](https://github.com/ScriptedAlchemy/tracedecay/blob/1003abc0590394675941d1060b8e3027a3ad61ff/crates/tracedecay-sessions/src/runtime/source/jsonl/resume_digest.rs#L1-L88) · [crates/tracedecay-sessions/src/runtime/source/jsonl/resume_digest.rs:95-169](https://github.com/ScriptedAlchemy/tracedecay/blob/1003abc0590394675941d1060b8e3027a3ad61ff/crates/tracedecay-sessions/src/runtime/source/jsonl/resume_digest.rs#L95-L169).
+
+**Harness consequence:** Bind incremental imports to both file generation and complete-prefix/header evidence. Distinguish compact change detectors from full cryptographic provenance, and do not reuse a cursor after source rewriting or text normalization without a migration record.
+
+**Scope and limits:** Reviewed the complete new digest helper and its in-file fixtures; surrounding JSONL admission, daemon, privacy and automation changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `950f37db306a12bc3503a290ebfedf22b46f0bd3`; commit date 2026-10-27T10:31:27-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
+Analysis metadata: source [tracedecay](https://github.com/ScriptedAlchemy/tracedecay); analyzed commit `1003abc0590394675941d1060b8e3027a3ad61ff`; commit date 2026-10-28T01:38:17-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--tracedecay.md).
 <!-- teamagent-analysis:end -->

@@ -39,6 +39,18 @@ Evidence: [reef/sandbox/e2b.py:46-64](https://github.com/Human-Agent-Society/ree
 
 **Scope and limits:** Static scoped review of new E2B reconnect/lifecycle, relay and lease code within the 1,041-path comparison. Remote helpers, upload/pull containment, cloud provider APIs, training stages and sandbox tests were not fully audited or executed; no remote resource was created.
 
+## Follow-up change review — 2026-10-28
+
+**Artifact production and activation become separate lifecycle decisions.** Reviewed commit `95a84466936f1cdffcb2a9264aadbeb91c5aa34a` (commit date `2026-10-28T09:59:36Z`), compared with `5d4174bbebafd98d94cbad407d464cd2468309a6`. The complete no-rename Git path inventory contains 455 changed paths.
+
+The new ActivationRule contract receives a validated MadeArtifact descriptor and distinguishes immediate activation from activation after an evaluation. Its base evaluated method returns false. The fixture suite specifies always, never and score-gated policies, with always as the default, while native-loop changes require review and missing evaluation scores activate nothing. Custom rule classes are executable plugins rather than inert configuration. This review establishes the contract and expected fixtures, not that every publishing path enforces it.
+
+Evidence: [reef/core/activation.py:19-60](https://github.com/Human-Agent-Society/reef/blob/95a84466936f1cdffcb2a9264aadbeb91c5aa34a/reef/core/activation.py#L19-L60) · [tests/evaluation/test_activation_rules.py:24-88](https://github.com/Human-Agent-Society/reef/blob/95a84466936f1cdffcb2a9264aadbeb91c5aa34a/tests/evaluation/test_activation_rules.py#L24-L88).
+
+**Harness consequence:** Keep candidate production, evaluation and active deployment as separate states for learned skills or models. Teamagent should require its own authorization/regression policy instead of inheriting an upstream always-activate default.
+
+**Scope and limits:** Reviewed the new activation contract and its rule/configuration fixtures; the full training committer, serving rollout and plugin loader were not audited or executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `5d4174bbebafd98d94cbad407d464cd2468309a6`; commit date 2026-10-27T20:25:24+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
+Analysis metadata: source [reef](https://github.com/Human-Agent-Society/reef); analyzed commit `95a84466936f1cdffcb2a9264aadbeb91c5aa34a`; commit date 2026-10-28T09:59:36Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--reef.md).
 <!-- teamagent-analysis:end -->

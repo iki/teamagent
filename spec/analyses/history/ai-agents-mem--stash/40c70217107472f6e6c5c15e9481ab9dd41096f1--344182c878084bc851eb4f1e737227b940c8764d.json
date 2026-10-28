@@ -1,0 +1,280 @@
+{
+  "id": "ai-agents-mem--stash",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/fergana-labs/stash",
+  "report": "spec/projects/ai-agents-mem--stash.md",
+  "analyzedSha": "40c70217107472f6e6c5c15e9481ab9dd41096f1",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T17:03:05Z",
+  "observedSha": "344182c878084bc851eb4f1e737227b940c8764d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "344182c878084bc851eb4f1e737227b940c8764d",
+      "date": "2026-10-27T21:04:23Z",
+      "subject": "chore: bump stash release to 0.1.485 and plugin to 0.1.554"
+    },
+    {
+      "sha": "70bca329b0e225b7bccf77586d02bfaa1d2833ec",
+      "date": "2026-10-27T14:04:09-07:00",
+      "subject": "Retrieve scoped wiki candidates through a title and body index (#1282)"
+    },
+    {
+      "sha": "418335507ba1f2df7f376cb7a55ab9075f53ebef",
+      "date": "2026-10-27T20:49:27Z",
+      "subject": "chore: bump stash release to 0.1.484 and plugin to 0.1.553"
+    },
+    {
+      "sha": "e4949c6665e61222f940f2147fdc50e5047051a4",
+      "date": "2026-10-27T13:49:14-07:00",
+      "subject": "Expose partial VFS search coverage and bounded continuation (#1281)"
+    },
+    {
+      "sha": "b0107c5d7f38da23838775cb51fc045d29a7d645",
+      "date": "2026-10-27T20:11:31Z",
+      "subject": "chore: bump stash release to 0.1.483 and plugin to 0.1.552"
+    },
+    {
+      "sha": "dc550c0832f027cb5ea6e72458bbab1f245a4935",
+      "date": "2026-10-27T13:11:18-07:00",
+      "subject": "Repair eval migration identity after shared wiki rollout (#1280)"
+    },
+    {
+      "sha": "30a3cae292b82494c8ddac43ab24bcbdd1712084",
+      "date": "2026-10-27T18:26:37Z",
+      "subject": "chore: bump stash release to 0.1.482 and plugin to 0.1.551"
+    },
+    {
+      "sha": "8bde1f44ca4b79106b99e3feab863155137d5991",
+      "date": "2026-10-27T11:26:24-07:00",
+      "subject": "Eval channel: drop in examples, and the rubric keeps revising itself from them (#1278)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/celery_app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/migrations/versions/0255_eval_channels.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/migrations/versions/0256_customer_wiki_search_index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/routers/evals.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/routers/vfs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/customer_wiki_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/evals/build.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/evals/channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/evals/judge.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/evals/revise.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/evals/robustness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/evals/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/services/evals/versions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/services/vfs_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tasks/evals.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_customer_wiki_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_eval_channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_evals.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_migration_chain.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_vfs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_app_vfs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/tests/test_mount_vfs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/tests/test_wiki_search_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker-compose.prod.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vfs-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/app/(app)/reward-models/evals/new/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/app/(app)/reward-models/evals/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/components/evals/judge/EvalChannel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/components/evals/judge/EvalChannel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/components/evals/judge/EvalDetail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/components/evals/judge/NewEvalChannel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "frontend/src/components/evals/judge/NewEvalUpload.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/components/evals/judge/RubricPanel.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/components/evals/judge/RubricPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/lib/evals-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/claude-plugin/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "stashvfs/client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "stashvfs/model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "stashvfs/shell.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

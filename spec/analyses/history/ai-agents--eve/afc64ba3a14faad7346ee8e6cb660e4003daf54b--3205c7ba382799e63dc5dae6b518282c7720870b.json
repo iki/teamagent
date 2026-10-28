@@ -1,0 +1,960 @@
+{
+  "id": "ai-agents--eve",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/vercel/eve",
+  "report": "spec/projects/ai-agents--eve.md",
+  "analyzedSha": "afc64ba3a14faad7346ee8e6cb660e4003daf54b",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T10:13:21-07:00",
+  "observedSha": "3205c7ba382799e63dc5dae6b518282c7720870b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3205c7ba382799e63dc5dae6b518282c7720870b",
+      "date": "2026-10-28T04:27:43Z",
+      "subject": "fix(eve): degrade a tool-result file to a note when the sandbox rejects its write (#4843)"
+    },
+    {
+      "sha": "6b3b5f30271cdca4881ba88e7103a0b1bda7891a",
+      "date": "2026-10-28T00:00:50-04:00",
+      "subject": "test(eve): reproduce tool-result media staging throwing when the sandbox rejects its write (#4842)"
+    },
+    {
+      "sha": "c9b54c55cdd06d258b05473999599dbeb1faf318",
+      "date": "2026-10-27T23:29:17-04:00",
+      "subject": "fix(eve): keep a turn's principal fixed for typed ctx.ask answers (#4925)"
+    },
+    {
+      "sha": "ea8aa985ba52305ac73107f99aa93df96da7f7ad",
+      "date": "2026-10-27T23:29:17-04:00",
+      "subject": "test(eve): reproduce a typed ctx.ask answer running under the asking request's auth (#4924)"
+    },
+    {
+      "sha": "1f8d3b49ae0f526e9478c4bb04c7157b4b2ce389",
+      "date": "2026-10-28T02:51:22Z",
+      "subject": "fix(benchmarks): stop the new authoring graders failing valid solutions (#5493)"
+    },
+    {
+      "sha": "0c80a7a12c04b0b1688dfd439f82a87d8144b02b",
+      "date": "2026-10-27T22:47:03-04:00",
+      "subject": "ci(release): move latest sandbox image tags with buildx instead of skopeo (#5496)"
+    },
+    {
+      "sha": "5ab4442f9bca21ad84993825dc5d420879681fbe",
+      "date": "2026-10-27T22:46:46-04:00",
+      "subject": "Version Packages (#5455)"
+    },
+    {
+      "sha": "5cfec0e37b7385c6143b610614c7a42e0a996a23",
+      "date": "2026-10-27T22:34:34-04:00",
+      "subject": "feat(slack)!: add interactionCard renderer hook and session-driven request cards (#5463)"
+    },
+    {
+      "sha": "4f290a75d2398a2b1a752536f50258886e6fdb38",
+      "date": "2026-10-27T22:33:33-04:00",
+      "subject": "fix(eve): compact pre-v27 sessions to hand them off to v27 deployments (#5469)"
+    },
+    {
+      "sha": "b3cc22cfe3ca3c6ba38f4988b08d06df015aa43e",
+      "date": "2026-10-28T00:32:15Z",
+      "subject": "feat(benchmarks): set a category for each authoring case (#5476)"
+    },
+    {
+      "sha": "e73297b0b0959ec6f77265789012914de3cce483",
+      "date": "2026-10-27T17:16:46-07:00",
+      "subject": "ci(benchmarks): run Haiku 5.5 on every authoring case nightly (#5484)"
+    },
+    {
+      "sha": "dc3182feee13523cb1a41d5c1994e613dae3c567",
+      "date": "2026-10-28T00:09:24Z",
+      "subject": "test(benchmarks): add extension authoring cases (#5488)"
+    },
+    {
+      "sha": "d7f4922c82923d7d33c7a7fc6434df1ac6e59e48",
+      "date": "2026-10-27T22:38:17Z",
+      "subject": "test(benchmarks): add invoice assistant authoring case for an existing Next.js app (#5468)"
+    },
+    {
+      "sha": "6d2d75ef3d0ac1630497b7452b00398adb597e5f",
+      "date": "2026-10-27T15:26:55-07:00",
+      "subject": "test(benchmarks): add CI triage authoring case (#5461)"
+    },
+    {
+      "sha": "c8328f831daebb9df010e29c3a3bc8de02b24a20",
+      "date": "2026-10-27T17:07:00-04:00",
+      "subject": "fix(eve): scope remote callback transport credentials (#5449)"
+    },
+    {
+      "sha": "f20a7a195a0ce63b2989d7e7607f26071fd5021b",
+      "date": "2026-10-27T16:58:05-04:00",
+      "subject": "fix(teams): bind connector destinations to verified activities (#5450)"
+    },
+    {
+      "sha": "24c6b9f6fa62e1d7ffa63c4e52ba507090bbdfdd",
+      "date": "2026-10-27T20:43:34Z",
+      "subject": "fix(client): reject redirects by default (#5444)"
+    },
+    {
+      "sha": "c18dc59b2034084c74cb81ae89dcb70df47c7156",
+      "date": "2026-10-27T13:40:08-07:00",
+      "subject": "fix(eval-benchmark): measure v27 session facts under metrics v4 (#5454)"
+    },
+    {
+      "sha": "0553a67af88d0f1fb12ebdd00fb8c6b85daca274",
+      "date": "2026-10-27T16:36:19-04:00",
+      "subject": "fix(eve): redact continuation capabilities from failure logs (#5445)"
+    },
+    {
+      "sha": "cb14c325c6c8928562719cee4ea35d7c47c8f4f8",
+      "date": "2026-10-27T16:36:10-04:00",
+      "subject": "fix(channels): preserve trusted attachment boundaries (#5443)"
+    },
+    {
+      "sha": "e54f078f82453fed96bcd342328e7cfeef90b261",
+      "date": "2026-10-27T16:36:00-04:00",
+      "subject": "fix(teams): render mention labels as literal text (#5442)"
+    },
+    {
+      "sha": "2764e1e95e779d0b737ce5bdcd88b9b2cc532d80",
+      "date": "2026-10-27T13:31:53-07:00",
+      "subject": "[4/5] feat(eve): open Slack code channels from tools with openCodeChannel() (#5126)"
+    },
+    {
+      "sha": "6ea94da44b554b0642ccdcfaa88510a172d4b87b",
+      "date": "2026-10-27T13:31:52-07:00",
+      "subject": "[3/5] feat(eve): add support for code channels to `slackChannel` (#5114)"
+    },
+    {
+      "sha": "412b077638b5472fa435130b9bda17fa1238875a",
+      "date": "2026-10-27T13:31:52-07:00",
+      "subject": "[2/5] feat(eve): give tools ctx.to() and ctx.channel (#5096)"
+    },
+    {
+      "sha": "5b8a34b579362a3e5eb1c6df7a966285b02de248",
+      "date": "2026-10-27T13:31:51-07:00",
+      "subject": "[1/5] feat(eve): give every server-side send the same options (#5372)"
+    },
+    {
+      "sha": "38e53fcf5348f4d3d20ee670b05b922a77120a82",
+      "date": "2026-10-27T11:33:25-07:00",
+      "subject": "ci(benchmarks): publish PR authoring benchmark results to Blob (#5452)"
+    },
+    {
+      "sha": "ba52da4605c9126ae64062071f567cf786c6aa13",
+      "date": "2026-10-27T14:20:00-04:00",
+      "subject": "refactor(setup): remove deprecated RunPnpmOptions alias (#5453)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/tool-result-media-sandbox-resume.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/typed-answer-caller-auth.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/resolve-authoring-benchmark.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/resolve-authoring-benchmark.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/authoring-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mirror-stress-artifacts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-000-imessage/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-001-weather-tool/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-002-new-project/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-003-deploy-new-project/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-003-openapi-connection/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-004-packaged-skill/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-005-conditional-approval/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-006-custom-channel/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-007-digest-schedule/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-009-company-brain/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/evals/author-010-ops-agent/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-011-ci-triage/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-011-ci-triage/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-012-invoice-assistant/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-012-invoice-assistant/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-013-crm-extension/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-013-crm-extension/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-014-helpdesk-extension/CASE.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/evals/author-014-helpdesk-extension/EVAL.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/(dashboard)/invoices/[id]/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/(dashboard)/invoices/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/(dashboard)/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/globals.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/login/actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/login/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/logout/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/app/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/lib/current-user.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/lib/format.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/lib/invoices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/lib/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/lib/users.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/next.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/fixtures/tally/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/authoring-case.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/experiment-files.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/load-authoring-case.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/native-authoring-setup.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/lib/native-authoring-setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/lib/setups/crm-local-env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/lib/setups/helpdesk-extension.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/lib/setups/tally-app.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/benchmarks/lib/setups/tally-app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/scripts/publish-results.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/benchmarks/scripts/publish-results.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/custom.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/eve.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/linq.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/slack.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/channels/teams.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/security-model.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/upgrade-to-v27-events.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/experimental/dynamic-schedules.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/auth-and-route-protection.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/client/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/hooks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/remote-agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/patterns/fork-conversations-into-new-threads.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/patterns/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/schedules.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tools/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tools/workflows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/fixtures/agent-channels/agent/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/fixtures/agent-channels/agent/channels/target.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/fixtures/agent-channels/agent/lib/hand-off.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/fixtures/agent-channels/agent/lib/mock-responder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/fixtures/agent-channels/agent/tools/hand_off.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/fixtures/agent-channels/agent/tools/hand_off_workflow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/fixtures/agent-channels/evals/custom-channels/tool-hand-off.eval.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "e2e/fixtures/agent-channels/evals/http-attachment-markers.eval.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/public-api/eve/channels/slack.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/channel/channel-operations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/channel/compiled-channel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/channel/cross-channel-receive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/channel/cross-channel-receive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/channel/schedule.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/channel/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/client/client.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/client/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/client/open-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/client/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/context/keys.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/eve-channel/request.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/eve-channel/request.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/agent-sessions/context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/agent-sessions/remote.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/legacy-session/snapshot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/legacy-session/snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/proxied-deliver-step.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/public-destination.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session-callback-request.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session-callback-request.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session-inbox/pre-v27.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/answer-caller.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/approval-caller.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/checkpoint-migrations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/checkpoint-migrations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/session/checkpoint-refusal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/delivery-idempotency.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/edge-cases.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/entry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/handoff-steps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/session/imported-conversation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/session/pre-v27-checkpoint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/session/pre-v27-handoff.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/session/principal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/principal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/program.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/turn-step.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/turn.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/session/turn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tool-auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/tools/channel-to.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/tools/channel-to.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/execution/tools/channel-to.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tools/workflow/body.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tools/workflow/body.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tools/workflow/hook-cancellation.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tools/workflow/step-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tools/workflow/step-execution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tools/workflow/step-execution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/tools/workflow/step.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/workflow-callback-url.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/workflow-callback-url.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/workflow-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/execution/workflow-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/harness/attachment-staging.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/harness/attachment-staging.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/harness/tool-result-media.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/internal/attachments/limited-read.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/internal/attachments/url-refs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/internal/capability-error.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/internal/capability-error.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/internal/testing/channel-conformance/MATRIX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/internal/testing/channel-conformance/conformance.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/internal/testing/channel-conformance/slack-driver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/internal/testing/workflow-tool-fixtures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/chat-sdk/chatSdkChannel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/discord/discordChannel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/failure-notices.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/github/githubChannel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/linear/linearChannel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/linq/inboundContent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/linq/inboundContent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/eve/src/public/channels/receive-send-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/slack/answers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/eve/src/public/channels/slack/api.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

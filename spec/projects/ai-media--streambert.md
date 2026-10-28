@@ -56,6 +56,18 @@ Evidence: [index.js:10-38](https://github.com/truelockmc/streambert/blob/1a4bf7e
 
 **Scope and limits:** Static review of changed session/pop-out/cleanup/preload paths within the 20-path comparison. HiAnime resolution, site-specific injected code, download manager and full TV UI changes were not audited; no streaming services, media downloads or Electron runtime executed.
 
+## Follow-up change review — 2026-10-28
+
+**Cast and crew loading is a UI metadata change with ambiguous empty results.** Reviewed commit `2ffba661397392b83fd8c84dc8383d842b9f802f` (commit date `2026-10-27T19:28:04+01:00`), compared with `1a4bf7e665a7fd54c6107d62e258346c24ccd66f`. The complete no-rename Git path inventory contains 6 changed paths.
+
+The new hook requests TV aggregate credits or movie credits, clears prior results on selection changes, and uses an effect-local mounted flag to avoid applying stale responses. Errors collapse to empty cast/crew arrays. The flag suppresses state updates but does not cancel the underlying request, and an empty result cannot distinguish missing metadata from failed retrieval.
+
+Evidence: [src/utils/useCredits.js:1-34](https://github.com/truelockmc/streambert/blob/2ffba661397392b83fd8c84dc8383d842b9f802f/src/utils/useCredits.js#L1-L34).
+
+**Harness consequence:** Use explicit loading/error/empty states and cancellation for media metadata adapters. This UI change supplies no new evidence for safe playback permissions, provider policy or media-generation capability.
+
+**Scope and limits:** Reviewed the complete new credits hook in the six-path UI change; existing security and playback caveats remain unresolved by this delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [streambert](https://github.com/truelockmc/streambert); analyzed commit `1a4bf7e665a7fd54c6107d62e258346c24ccd66f`; commit date 2026-10-25T17:34:39+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-media--streambert.md).
+Analysis metadata: source [streambert](https://github.com/truelockmc/streambert); analyzed commit `2ffba661397392b83fd8c84dc8383d842b9f802f`; commit date 2026-10-27T19:28:04+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-media--streambert.md).
 <!-- teamagent-analysis:end -->

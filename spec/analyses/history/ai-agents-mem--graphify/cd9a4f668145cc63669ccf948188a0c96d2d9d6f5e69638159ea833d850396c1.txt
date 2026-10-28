@@ -1,0 +1,52 @@
+# graphify
+
+Source: [graphify](https://github.com/safishamsi/graphify) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `0b60d47e6cd9338c51143f39f35b6c45c8453385`; commit timestamp `2026-10-02T23:12:01+01:00`; 956 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/safishamsi/graphify/blob/0b60d47e6cd9338c51143f39f35b6c45c8453385/README.md)):
+
+> 🇺🇸  English  | 🇨🇳  简体中文  | 🇯🇵  日本語  | 🇰🇷  한국어  | 🇩🇪  Deutsch  | 🇫🇷  Français  | 🇪🇸  Español  | 🇮🇳  हिन्दी  | 🇧🇷  Português  | 🇷🇺  Русский  | 🇸🇦  العربية  | 🇮🇷  فارسی  | 🇮🇹  Italiano  | 🇵🇱  Polski  | 🇳🇱  Nederlands  | 🇹🇷  Türkçe  | 🇺🇦  Українська  | 🇻🇳  Tiếng Việt  | 🇮🇩  Bahasa Indonesia  | 🇸🇪  Svenska  | 🇬🇷  Ελληνικά  | 🇷🇴  Română  | 🇨🇿  Čeština  | 🇫🇮  Suomi  | 🇩🇰  Dansk  | 🇳🇴  Norsk  | 🇭🇺  Magyar  | 🇹🇭  ภาษาไทย  | 🇺🇿  Oʻzbekcha  | 🇹🇼  繁體中文  | 🇵🇭  Filipino  | 🇮🇱  עברית Type `/graphify` in your AI coding assistant and it maps your entire project
+
+Build/package evidence: [pyproject.toml](https://github.com/safishamsi/graphify/blob/0b60d47e6cd9338c51143f39f35b6c45c8453385/pyproject.toml); [tests/fixtures/crate_a/Cargo.toml](https://github.com/safishamsi/graphify/blob/0b60d47e6cd9338c51143f39f35b6c45c8453385/tests/fixtures/crate_a/Cargo.toml); [tests/fixtures/crate_b/Cargo.toml](https://github.com/safishamsi/graphify/blob/0b60d47e6cd9338c51143f39f35b6c45c8453385/tests/fixtures/crate_b/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/safishamsi/graphify/blob/0b60d47e6cd9338c51143f39f35b6c45c8453385/LICENSE); [LICENSE-MIT](https://github.com/safishamsi/graphify/blob/0b60d47e6cd9338c51143f39f35b6c45c8453385/LICENSE-MIT) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Deterministic manifest edges remain approximations and global graph persistence needs coordinated recovery.** Reviewed commit `dac063456bc1f5d92354ec3936fd9dd1513a83f3` (commit date `2026-10-26T12:50:53Z`). Compared with `0b60d47e6cd9338c51143f39f35b6c45c8453385`; the complete Git comparison contains 539 changed paths.
+
+Manifest ingestion recognizes selected package filenames, checks a two-megabyte stat limit and returns explicit parse/read errors; missing TOML support no longer silently resembles an empty workspace. Cargo virtual roots are marked skipped and target runtime dependencies are included, while build/dev dependencies are intentionally excluded. Canonical IDs are based on package name alone across ecosystems, dependency version/alias semantics are simplified and source locations are all L1. Extracted confidence 1.0 therefore means parser output, not a resolved versioned dependency graph or exact evidence span. Replacement decoding and a separate stat/read also preserve neither exact bytes nor an atomic size snapshot.
+
+Global graph merge prefixes project nodes, remaps deduplicated external endpoints and direction markers, then recomputes cross-project calls. Its source hash reads the whole file before the graph-size check and truncates SHA-256 to 16 hex characters. The graph and manifest are saved separately, with no shared transaction/lock in this module. A corrupt manifest is backed up when possible and processing starts fresh; if backup rename fails it still starts fresh, allowing a later save to replace the unrecovered manifest. A hash hit can skip based on manifest state without checking graph consistency.
+
+Evidence: [graphify/manifest_ingest.py:1-340](https://github.com/safishamsi/graphify/blob/dac063456bc1f5d92354ec3936fd9dd1513a83f3/graphify/manifest_ingest.py#L1-L340) · [graphify/global_graph.py:1-201](https://github.com/safishamsi/graphify/blob/dac063456bc1f5d92354ec3936fd9dd1513a83f3/graphify/global_graph.py#L1-L201).
+
+**Harness consequence:** Use deterministic parsing for dependency hints but key package identity by ecosystem/resolved identity and preserve exact source bytes/ranges with declared coverage gaps. Stream/hash under admission limits, keep full digests and coordinate graph/manifest generations with recoverable commit receipts. Refuse overwrite when corruption cannot be preserved, and reconcile the graph before trusting a manifest-only unchanged result.
+
+**Scope and limits:** Static scoped review of manifest ingestion and global graph maintenance within the 539-path comparison. Large extractor entry points were not cached and were not inspected; graph security/path/atomic-write helpers, dependency resolution and graph tests were not fully audited or executed.
+
+## Follow-up change review — 2026-10-28
+
+**Case-only renames must preserve the fresh article on both filesystem case models.** Reviewed commit `0a8cd4e1e342235fe53e881fb5d591bf0460071f` (commit date `2026-10-27T18:08:07Z`), compared with `dac063456bc1f5d92354ec3936fd9dd1513a83f3`. The complete no-rename Git path inventory contains 51 changed paths.
+
+Wiki cleanup now matches produced names by casefold. If the old spelling and target are distinct files, it deletes the stale twin; if they identify the same file, a two-step rename updates its stored case. Fixtures check article count, spelling, link resolution, fresh body content and unrelated orphan cleanup. This addresses a portability bug where cleanup could delete the freshly written article or restore stale content.
+
+Evidence: [graphify/wiki.py:450-480](https://github.com/safishamsi/graphify/blob/0a8cd4e1e342235fe53e881fb5d591bf0460071f/graphify/wiki.py#L450-L480) · [tests/test_wiki_case_only_relabel.py:36-102](https://github.com/safishamsi/graphify/blob/0a8cd4e1e342235fe53e881fb5d591bf0460071f/tests/test_wiki_case_only_relabel.py#L36-L102).
+
+**Harness consequence:** Use content identity and filesystem identity when reconciling renamed derived artifacts. Test case-only renames on case-sensitive and case-insensitive hosts, including content checks rather than existence alone.
+
+**Scope and limits:** Reviewed wiki orphan/case reconciliation and its five fixtures; parser changes and other export surfaces were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

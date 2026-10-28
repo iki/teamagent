@@ -34,6 +34,14 @@ The [abort helper](https://github.com/PrimeIntellect-ai/prime-agent/blob/c13415b
 
 Dropping a future is only the local ownership mechanism: it does not prove a spawned task, subprocess or remote effect stopped. The select is not biased toward cancellation when both branches are ready, and the inspected tests do not assert external cleanup or ambiguous-effect reconciliation. Adapt typed cancellation with scoped resources and adapter-specific acceptance tests; do not infer every await point is covered from the module comment. No Rust build, provider call or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `c13415b44239c1333b2c8503070310182e0d4b2d` to `ea9d9602ec0938d9e454e8963107cd85af1565c6`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [crates/pa-core/src/session_engine/refine.rs](https://github.com/PrimeIntellect-ai/prime-agent/blob/ea9d9602ec0938d9e454e8963107cd85af1565c6/crates/pa-core/src/session_engine/refine.rs#L490-L514), Refinement calls now resolve the auxiliary model's credential and merged request headers through the session's routing context before constructing the refiner closure. The call retains the session ID; the delta passes those headers into the one-off streaming options instead of sending only an API key.
+
+**Harness implication and limits:** Treat summarization/refinement as real model traffic with the same account, tenant, privacy and budget routing as the main task. Auxiliary calls must not silently drop organization/team scope. The resolver, endpoint restrictions, redaction, billing and promotion policy were not inspected; header propagation alone does not establish safe evolution or credential confinement. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); analyzed commit `c13415b44239c1333b2c8503070310182e0d4b2d`; commit date 2026-10-27T12:20:00+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--prime-agent.md).
+Analysis metadata: source [prime-agent](https://github.com/PrimeIntellect-ai/prime-agent); analyzed commit `ea9d9602ec0938d9e454e8963107cd85af1565c6`; commit date 2026-10-28T00:30:39-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--prime-agent.md).
 <!-- teamagent-analysis:end -->

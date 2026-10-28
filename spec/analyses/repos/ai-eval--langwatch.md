@@ -2,12 +2,11 @@
 
 Source: [langwatch](https://github.com/langwatch/langwatch) · [Analysis](../../projects/ai-eval--langwatch.md) · [evolution](../../evolution.md), [memory](../../memory.md), [decisions](../../decisions.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `81135c1fa9f1b83580e7967eedeb972603180b35`; commit date: 2026-10-27T17:38:54Z; review date: 2026-10-28T08:26:04.502Z; observed SHA: `81135c1fa9f1b83580e7967eedeb972603180b35`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `7aeb146c2b2ebe4e6d866177e365ceca44a5124b`; commit date: 2026-10-28T11:19:16+01:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `7aeb146c2b2ebe4e6d866177e365ceca44a5124b`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/langwatch/langwatch/compare/81135c1fa9f1b83580e7967eedeb972603180b35...81135c1fa9f1b83580e7967eedeb972603180b35). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/langwatch/langwatch/compare/7aeb146c2b2ebe4e6d866177e365ceca44a5124b...7aeb146c2b2ebe4e6d866177e365ceca44a5124b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

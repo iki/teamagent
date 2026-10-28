@@ -41,6 +41,18 @@ Evidence: [graphiti_core/graphiti.py:727-799](https://github.com/getzep/graphiti
 
 **Scope and limits:** Metadata-only source reconciliation; contributor identities were not used as architectural evidence. No extraction model, graph service or summary correctness benchmark was run.
 
+## Follow-up change review — 2026-10-28
+
+**A model registry update is configuration evidence, not proof of provider availability or limits.** Reviewed commit `b1c609f185107dc40e1ec8bad467be72c42dfe15` (commit date `2026-10-28T09:01:42Z`), compared with `2b5db9e139b2627c3ba18ff55f9181569b0d8224`. The complete no-rename Git path inventory contains 10 changed paths.
+
+The Anthropic adapter replaces its literal model set, changes its default and assigns 128000 to the listed models' output limits. Fixtures require the literal set and limit table to agree and retain an 8192 fallback for an unknown model. Runtime examples also change selected names. These are source-maintained declarations; no official model availability, actual entitlement, price, training policy or effective token limit was independently verified by this review.
+
+Evidence: [graphiti_core/llm_client/anthropic_client.py:49-67](https://github.com/getzep/graphiti/blob/b1c609f185107dc40e1ec8bad467be72c42dfe15/graphiti_core/llm_client/anthropic_client.py#L49-L67) · [graphiti_core/llm_client/llm_runtime.py:71-91](https://github.com/getzep/graphiti/blob/b1c609f185107dc40e1ec8bad467be72c42dfe15/graphiti_core/llm_client/llm_runtime.py#L71-L91) · [tests/llm_client/test_anthropic_client.py:85-118](https://github.com/getzep/graphiti/blob/b1c609f185107dc40e1ec8bad467be72c42dfe15/tests/llm_client/test_anthropic_client.py#L85-L118).
+
+**Harness consequence:** Version model metadata independently of provider readiness. Keep an explicit unknown capability state and authenticate/validate the requested account and route before execution; never use an upstream constant as policy evidence.
+
+**Scope and limits:** Reviewed the adapter's model/default tables, associated fixtures and changed routing example, not provider behavior. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graphiti](https://github.com/getzep/graphiti); analyzed commit `2b5db9e139b2627c3ba18ff55f9181569b0d8224`; commit date 2026-10-26T23:29:53Z; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphiti.md).
+Analysis metadata: source [graphiti](https://github.com/getzep/graphiti); analyzed commit `b1c609f185107dc40e1ec8bad467be72c42dfe15`; commit date 2026-10-28T09:01:42Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--graphiti.md).
 <!-- teamagent-analysis:end -->

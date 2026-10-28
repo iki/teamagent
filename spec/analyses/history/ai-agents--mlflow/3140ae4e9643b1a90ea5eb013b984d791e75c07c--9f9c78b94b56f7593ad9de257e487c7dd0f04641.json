@@ -1,0 +1,490 @@
+{
+  "id": "ai-agents--mlflow",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/mlflow/mlflow",
+  "report": "spec/projects/ai-agents--mlflow.md",
+  "analyzedSha": "3140ae4e9643b1a90ea5eb013b984d791e75c07c",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T15:55:28Z",
+  "observedSha": "9f9c78b94b56f7593ad9de257e487c7dd0f04641",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "9f9c78b94b56f7593ad9de257e487c7dd0f04641",
+      "date": "2026-10-28T09:19:35Z",
+      "subject": "Refresh `EvaluationDataset` profile after `delete_records()` (#27247)"
+    },
+    {
+      "sha": "02e03f8d7e8bfee1d185537fdd9f7bedc78b64cc",
+      "date": "2026-10-28T09:16:01Z",
+      "subject": "Filter `search_logged_models` metrics by their latest value on SQL stores (#27215)"
+    },
+    {
+      "sha": "28343b24925583c36fa6d45fa468e9d985b5343a",
+      "date": "2026-10-28T08:43:53Z",
+      "subject": "Skip trial runs in `MlflowStorage.get_all_studies` (#27205)"
+    },
+    {
+      "sha": "555bed066ccda5fe61a81ec66966132f322fc947",
+      "date": "2026-10-28T08:39:05Z",
+      "subject": "Stop writing `registered_model_meta` into downloaded `models:/` artifacts (#27173)"
+    },
+    {
+      "sha": "fbdf4bb8d22b7e89d0ec98e967577b9c1645f086",
+      "date": "2026-10-28T08:16:59Z",
+      "subject": "Use the basename of `path` in proxied multipart upload handlers (#27194)"
+    },
+    {
+      "sha": "6acb299a1704748a81647b9df617ad10e724c016",
+      "date": "2026-10-28T08:10:00Z",
+      "subject": "Bump NaiLaOpus orchestrator revision (#27235)"
+    },
+    {
+      "sha": "641046ed6d5114763703bf91d29b543d882a3f3d",
+      "date": "2026-10-28T07:44:15Z",
+      "subject": "Raise from `register_model` when Databricks Model Serving can't serve the model (#27161)"
+    },
+    {
+      "sha": "6f2db8564b784b816702684d9ee75b0f91b81aa0",
+      "date": "2026-10-28T07:26:32Z",
+      "subject": "Drop `thinking` content chunks from Mistral reasoning model responses in AI Gateway (#27145)"
+    },
+    {
+      "sha": "3acae42a9b0772a11aa272378d3b5db23f3b6953",
+      "date": "2026-10-28T07:17:07Z",
+      "subject": "Validate `roles/list` and `create_role` workspaces; use `sender_is_admin` in GraphQL (#27171)"
+    },
+    {
+      "sha": "8d4703192554fe427a639836bdb50200181b3dc7",
+      "date": "2026-10-28T06:59:07Z",
+      "subject": "Don't log the backend store URI after a `CASCADE` workspace delete (#27175)"
+    },
+    {
+      "sha": "248877b3cd24f57becf5fac3e88417a96d0b89dd",
+      "date": "2026-10-28T06:49:10Z",
+      "subject": "Add a seekable leading bound to the `spans` keyset in trace analytics migration `75868b020152` (#26710)"
+    },
+    {
+      "sha": "e4d6a0ac57e1959c7286424cdc3e4a2c88b52e9f",
+      "date": "2026-10-28T06:15:24Z",
+      "subject": "Fix `HttpArtifactRepository.list_artifacts` dropping a file named like its directory (#27191)"
+    },
+    {
+      "sha": "0b13a03edea2f656b92ec778513ca72bbe480ef4",
+      "date": "2026-10-28T06:12:46Z",
+      "subject": "Fix release-note label detection for `rn/none` (#27232)"
+    },
+    {
+      "sha": "30701e72f91754f660af29b1a87bedf4aa9ba0e7",
+      "date": "2026-10-28T05:52:26Z",
+      "subject": "Stop pinning the Issues-tab evidence card's \"Open trace\", and drop a count it cannot know (#27226)"
+    },
+    {
+      "sha": "f76db04befb172118c48f970b7fa25699f93dbb9",
+      "date": "2026-10-28T05:01:02Z",
+      "subject": "Guard `backoff_max` behind urllib3 >= 2.0 in webhook delivery and skip session creation without webhooks (#27221)"
+    },
+    {
+      "sha": "ba3631374a0691fa0b15e2dcb908d6576f7d4d9e",
+      "date": "2026-10-28T13:55:49+09:00",
+      "subject": "Align `nightly.yml` environment handling with triage (#27211)"
+    },
+    {
+      "sha": "3fe7578e998e05d955b0391b0f48900a8854c107",
+      "date": "2026-10-28T03:52:12Z",
+      "subject": "Make `mlflow.openai.autolog()` and other flavor autologging work on mlflow-skinny without numpy and pandas (#27038)"
+    },
+    {
+      "sha": "18991c81c6e59b81457ea588e2b8ac8ecafbbd66",
+      "date": "2026-10-28T12:54:18+09:00",
+      "subject": "Link Nightly issues to their generating workflow runs (#27224)"
+    },
+    {
+      "sha": "ad8419718140a5d9957722d8196ced9a1d77c14a",
+      "date": "2026-10-28T12:03:12+09:00",
+      "subject": "Require permalinks in nightly issue evidence (#27223)"
+    },
+    {
+      "sha": "b4531163bbb666288591ab617b2b8bf2aa89b8ff",
+      "date": "2026-10-28T12:03:01+09:00",
+      "subject": "Use ubuntu-24.04 for nightly publish job (#27222)"
+    },
+    {
+      "sha": "7b923d1fcf81eeb6effbbb1fc3246087e1e31d37",
+      "date": "2026-10-28T11:29:33+09:00",
+      "subject": "Allow `pyarrow` 26 in core dependencies (#27216)"
+    },
+    {
+      "sha": "8abbd3e192fd74360f5b5771703951cb44119207",
+      "date": "2026-10-28T11:25:09+09:00",
+      "subject": "Raise core test timeout to 150 minutes in `test-requirements.yml` (#27217)"
+    },
+    {
+      "sha": "6398f639150791aa2052bda938f97a4c193e202f",
+      "date": "2026-10-28T11:24:16+09:00",
+      "subject": "Fix canonical GitHub Actions job URLs in `fetch_logs.py` (#27218)"
+    },
+    {
+      "sha": "ba268fe2f87ceb1bb87e36062373ae94b9e40151",
+      "date": "2026-10-28T01:17:11Z",
+      "subject": "Update model catalog from upstream sources (#27214)"
+    },
+    {
+      "sha": "23f0766061d3f9559d9c2ca5d786386388f2bb1a",
+      "date": "2026-10-28T00:20:57Z",
+      "subject": "Bump required uv version to 0.13.6 (#27197)"
+    },
+    {
+      "sha": "2dc412fcb9a608f88a4a3aa35146eadc799ae784",
+      "date": "2026-10-27T21:13:14Z",
+      "subject": "Refresh Docker base image to remove compromised CA trust (#27199)"
+    },
+    {
+      "sha": "beb5ab56a909626aaf9a070e762c7eca931a0984",
+      "date": "2026-10-27T19:35:33Z",
+      "subject": "Reject `*` as a registered model or prompt name when auth is enabled (#27202)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/nightly/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/nightly/output.schema.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/nightly/scripts/publish.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/src/skills/commands/fetch_logs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".claude/skills/tests/test_fetch_logs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nailaopus.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-note.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-requirements.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/run-python-skinny-tests.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/Dockerfile.full",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/Dockerfile.full.dev",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs/classic-ml/model/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/dspy/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/dspy/callback.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/entities/evaluation_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/gateway/providers/mistral.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/langchain/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/langchain/langchain_tracer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/llama_index/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/openai/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/optuna/storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/auth/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/handlers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/IssueEvidenceCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/IssueEvidenceSection.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/experiment-tracking/pages/experiment-issues/IssueEvidenceSection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/server/js/src/lang/default/en.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/store/artifact/http_artifact_repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/store/artifact/models_artifact_repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/store/db/trace_analytics_prepopulation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/store/db_migrations/versions/75868b020152_add_sql_trace_analytics_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/store/tracking/sqlalchemy_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/store/workspace/sqlalchemy_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/tracking/_model_registry/fluent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/utils/databricks_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/utils/model_catalog/bedrock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/utils/model_catalog/bedrock_mantle.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/utils/model_catalog/together_ai.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/utils/model_catalog/vertex_ai.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mlflow/webhooks/delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.release.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "requirements/core-requirements.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/db/test_trace_analytics_migration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/db/test_trace_analytics_prepopulation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/entities/test_evaluation_dataset.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/gateway/providers/test_mistral.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/genai/datasets/test_fluent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/optuna/test_storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/auth/test_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/auth/test_auth_workspace.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/test_handlers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/store/artifact/test_http_artifact_repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/store/artifact/test_models_artifact_repo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/store/tracking/sqlalchemy_store/test_sqlalchemy_store_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/store/tracking/sqlalchemy_store/test_sqlalchemy_workspace_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/store/workspace/test_sqlalchemy_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_skinny_client_flavor_autolog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tracking/_model_registry/test_model_registry_fluent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/tracking/test_mlflow_artifacts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/utils/test_databricks_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/webhooks/test_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -39,6 +39,18 @@ Evidence: [src/extraction/parse-worker.ts:25-155](https://github.com/colbymchenr
 
 **Scope and limits:** Static scoped worker transport, ordered dispatch/retry and CFML fixture review within the 626-path comparison. Parse-pool and bounded-read helper internals, complete grammar extraction and all fallback recovery paths were not audited; no indexing run, Node worker or fixture was executed.
 
+## Follow-up change review — 2026-10-28
+
+**Wildcard resolution must not invent graph edges by overlapping prefix and suffix characters.** Reviewed commit `01e0ac3aa7419a7ab75583963e8a95359f3af1d3` (commit date `2026-10-28T02:14:52Z`), compared with `f93e89a82d415408f46f5ee5887506df66478b02`. The complete no-rename Git path inventory contains 50 changed paths.
+
+Alias matching now rejects a wildcard pattern when the import is shorter than its prefix plus suffix. The resolver continues to the next candidate instead of fabricating an empty match. The fixture distinguishes an overlapping @x/index from a legitimate zero-length capture in @x//index and checks both import edges and call edges, so the fix is about compiler-compatible binding rather than banning all empty wildcard captures.
+
+Evidence: [src/resolution/path-aliases.ts:348-370](https://github.com/colbymchenry/codegraph/blob/01e0ac3aa7419a7ab75583963e8a95359f3af1d3/src/resolution/path-aliases.ts#L348-L370) · [__tests__/path-alias-overlap.test.ts:39-96](https://github.com/colbymchenry/codegraph/blob/01e0ac3aa7419a7ab75583963e8a95359f3af1d3/__tests__/path-alias-overlap.test.ts#L39-L96).
+
+**Harness consequence:** Treat parser/resolver semantics as part of index identity. Regression fixtures should assert that invalid bindings create no graph evidence, while preserving legitimate language behavior.
+
+**Scope and limits:** Reviewed the alias matcher change and complete overlap regression fixture; Java/Kotlin and other resolver changes remain outside this focused check. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codegraph](https://github.com/colbymchenry/codegraph); analyzed commit `f93e89a82d415408f46f5ee5887506df66478b02`; commit date 2026-10-27T17:47:28Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--codegraph.md).
+Analysis metadata: source [codegraph](https://github.com/colbymchenry/codegraph); analyzed commit `01e0ac3aa7419a7ab75583963e8a95359f3af1d3`; commit date 2026-10-28T02:14:52Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--codegraph.md).
 <!-- teamagent-analysis:end -->

@@ -43,6 +43,18 @@ The [MCP conversion helper](https://github.com/github/copilot-sdk/blob/265368834
 
 Teamagent should preserve deterministic tool descriptions and typed handler boundaries, while returning explicit unsupported/partial results, validating binary payloads, and enforcing permissions/cancellation at dispatch. SDK type declarations do not prove cross-language parity or remote idempotency. No SDK, CLI, provider or upstream test was executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409` (commit date `2026-10-27T22:50:27Z`), compared with `26536883459ba4cb23c735db8cb3de2c7b899d88`. Earlier findings remain historical evidence.
+
+**Scope:** Elicitation-source display-name propagation in Node, Go and Python sessions. The complete changed-path inventory contains 22 paths; the assessment below is limited to the cited branches.
+
+All three inspected language adapters now forward elicitationSourceDisplayName alongside the machine source, session ID, request ID, mode and URL. The Python type describes it as a trusted connector-owned display label. See [nodejs/src/session.ts](https://github.com/github/copilot-sdk/blob/9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409/nodejs/src/session.ts#L1543-L1570), [go/session.go](https://github.com/github/copilot-sdk/blob/9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409/go/session.go#L2064-L2082) [python/copilot/session.py](https://github.com/github/copilot-sdk/blob/9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409/python/copilot/session.py#L838-L852) and [python/copilot/session.py](https://github.com/github/copilot-sdk/blob/9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409/python/copilot/session.py#L2983-L3000). These adapters forward that field; this delta does not show how the remote producer establishes its trust.
+
+For Teamagent, retain a user-readable label separately from the authenticated connector identity and bind any approval to the exact request and destination. A display name cannot authorize a URL or prove account scope. The added schema/event generation and all downstream elicitation validation were outside this bounded review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [copilot-sdk](https://github.com/github/copilot-sdk); analyzed commit `26536883459ba4cb23c735db8cb3de2c7b899d88`; commit date 2026-10-26T22:46:23Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--copilot-sdk.md).
+Analysis metadata: source [copilot-sdk](https://github.com/github/copilot-sdk); analyzed commit `9bc718cb608c4cd3b63e0e71c637dcf1ebfd5409`; commit date 2026-10-27T22:50:27Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--copilot-sdk.md).
 <!-- teamagent-analysis:end -->

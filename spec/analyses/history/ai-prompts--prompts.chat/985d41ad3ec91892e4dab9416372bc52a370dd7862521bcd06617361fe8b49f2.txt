@@ -1,0 +1,41 @@
+# prompts.chat
+
+Source: [f/prompts.chat](https://github.com/f/prompts.chat) · Reviewed revision: `7d3f248962d1dca209d59e033524bcb86c2b26b8` · Review date: 2026-10-04.
+
+Depth: **source-reviewed** (static source/content inspection; repository-wide audit not claimed). Related directions: [skills](../skills.md) · [import-generation](../import-generation.md) · [evolution](../evolution.md).
+
+## Evidence inspected
+
+- [`src/pages/api/mcp.ts` lines 272–341](https://github.com/f/prompts.chat/blob/7d3f248962d1dca209d59e033524bcb86c2b26b8/src/pages/api/mcp.ts#L272-L341)
+
+## Observed architecture and behavior
+
+The inspected MCP endpoint exposes prompt search with a query, bounded result count, prompt type, category, and tag filters. The database query checks public visibility or ownership of private prompts, excludes deleted/unlisted records, and searches title, description, and content. Results include prompt content and attribution metadata. Ordering is by creation time in this path, rather than a measured task-specific quality score. Text, structured, image, video, and audio prompts share the discovery interface.
+
+## Implications and tradeoffs for Teamagent
+
+This is a useful source of candidate prompts and media-generation recipes, with an API shape that can join Teamagent's resource catalog. Discovery must not make returned prompt text authoritative instructions. Store source attribution, license status, version/digest, and the query that found it, then evaluate a candidate under the actual model and toolchain. A popular or recent prompt may have poor trigger precision, unsupported assumptions, or misleading claims. Private prompt access must follow the connector identity and remain scoped in the knowledge store; a later search should not reveal another user's imported private content.
+
+## Adoption decision
+
+Integrate as an optional search/import source, not as a trusted skill registry or optimizer. Convert selected prompts into versioned candidates with explicit input/output contracts and test examples. Use media recipes only through the generation-tool registry and its model capability checks. Preserve the original prompt separately from tuned variants and compare against a concise baseline. Add near-miss trigger tests before promoting any general prompt into an automatically selected skill.
+
+## Verification boundary
+
+No project code, models, installers, or benchmarks were executed during this review. Tests and documentation show intended contracts; they do not establish measured performance, production readiness, or a complete security assessment. Recommendations above are design inferences from the cited snapshot. Verify current APIs, licensing, and deployment requirements before integration.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit: [`c785a7a1796afec709f8e857d5496df8cab617e9`](https://github.com/f/prompts.chat/commit/c785a7a1796afec709f8e857d5496df8cab617e9). Scope: Full admin-auth helper, proxy rewrites and bot-install component read. Authentication provider, API-key storage, bot-data validation, MCP implementation and route-level call coverage were not audited.
+
+The [admin helper](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/lib/admin-auth.ts) rechecks the current database role for both session and API-key users, distinguishing unauthenticated from insufficient-role responses. An existing session takes precedence; a nonadmin session does not fall back to a different supplied admin key. Multiple key headers have precedence rather than ambiguity rejection, and the selected key is looked up directly by the apiKey field; storage protection was not established by this helper.
+
+The [proxy](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/proxy.ts) exposes machine-readable bot and prompt aliases by rewriting to APIs; routing itself supplies no authorization. The [install UI](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/components/bots/bot-install.tsx) separates copyable commands/prompts from external install links and tracks each interaction, but consumes prebuilt URLs without validation in this component. A copy event is not installation success, and machine-readable packaging does not make content trusted. Adapt current-role checks and explicit install stages while validating URLs, credentials and telemetry at their actual boundaries. No accounts, installs, MCP calls or tests were exercised.
+
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `c785a7a1796afec709f8e857d5496df8cab617e9` to `54deb4298a6e88f586a392a5700e47b9a2040602`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [src/lib/listing-pagination.ts](https://github.com/f/prompts.chat/blob/54deb4298a6e88f586a392a5700e47b9a2040602/src/lib/listing-pagination.ts#L9-L99), Listing helpers centralize pagination and separate public category/tag queries from owner-visible private prompts and profile listings. Page parsing uses parseInt with a minimum of one; date filtering accepts a formatted date if JavaScript can parse it. The request-search helper trusts an x-search header supplied by the proxy.
+
+**Harness implication and limits:** Apply visibility filters consistently to both counts and page contents, and validate pagination before streaming a successful response. The parser accepts numeric prefixes such as 2junk, and parseable calendar rollover is not strict date validation; server timezone and the end-of-day second also need explicit semantics. Caller ownership checks, trusted header replacement and route behavior were not audited or executed. No upstream code or live service was executed for this review.

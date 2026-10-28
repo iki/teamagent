@@ -1,0 +1,245 @@
+{
+  "id": "ai-model-run--freetoken",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/FlashML-org/FreeToken",
+  "report": "spec/projects/ai-model-run--freetoken.md",
+  "analyzedSha": "9221fd7fc2b923813d7f9563c6c08f0a38497590",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-26T22:38:53-07:00",
+  "observedSha": "a2ce636083a0137571ba505768ad36be5f7a393b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a2ce636083a0137571ba505768ad36be5f7a393b",
+      "date": "2026-10-27T23:56:59-07:00",
+      "subject": "refactor(attention): move linear-attention metadata into a LinearAttnBackend (#837)"
+    },
+    {
+      "sha": "e328cf638181b9cdb809f2161367606255938bf0",
+      "date": "2026-10-27T16:03:01-07:00",
+      "subject": "refactor: add engine and scheduler seams for multi-row decode steps (#833)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/dsa.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/dsa_indexer_kpool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/dsv41_sparse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/dsv4_sparse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/fa.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/fi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/linear.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/m3_sparse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/qsa_sparse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/triton.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/trtllm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/attention/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/engine/config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/engine/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/engine/graph.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/layers/embedding.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/llm/llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/message/tokenizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/models/blocks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/models/qwen4_exp/ple.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/moe/offload_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/decode.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/prefill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/scheduler/status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/tokenizer/detokenize.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/freetoken/tokenizer/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/attention/test_capture_rows_per_req.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/engine/test_cache_budget.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/kvcache/test_kv_cache_rebuild.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/models/qwen4_exp/test_gdn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/models/qwen4_exp/test_ple.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/models/qwen4_exp/test_ple_disk.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/moe/test_offload.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scheduler/test_abort_inflight_prefill.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/scheduler/test_cost_accounting_core.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/scheduler/test_rollback_tail.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/test_message_wire.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

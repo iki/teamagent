@@ -32,6 +32,18 @@ The [proof reader](https://github.com/cobusgreyling/loop-engineering/blob/9fb753
 
 The [verifier](https://github.com/cobusgreyling/loop-engineering/blob/9fb7538bb4c858b3b00dd8d14fc701a20c1e1483/skills/loop-verifier/SKILL.md) separates maker and checker and reports unavailable verification; [minimal-fix](https://github.com/cobusgreyling/loop-engineering/blob/9fb7538bb4c858b3b00dd8d14fc701a20c1e1483/skills/minimal-fix/SKILL.md) constrains the proposal and keeps untrusted issue/log content as data. A worktree alone does not isolate test execution, and skill prose does not enforce denylisted paths. Adapt two-direction fixtures and content-bound receipts with complete executable provenance and host authorization. No drill, verifier, agent or tests were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e` (commit date `2026-10-28T08:02:11Z`), compared with `9fb7538bb4c858b3b00dd8d14fc701a20c1e1483`. Earlier findings remain historical evidence.
+
+**Scope:** Generated state and last-run badge delta, with the changed-path inventory identifying accompanying log/visual updates; no decision-engine implementation changed in this packet. The complete changed-path inventory contains 5 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The dated triage snapshot changes several pull-request entries from conflict/green descriptions to UNKNOWN and keeps its readiness score explicitly informational. Issue titles are labelled untrusted data. This preserves uncertainty in a generated status view; it does not prove that checks became worse or that the named proposed features were merged. [STATE.md](https://github.com/cobusgreyling/loop-engineering/blob/d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e/STATE.md#L1-L30).
+
+The badge records the latest reported triage date, not source coverage, a successful evaluation, or verified task completion. Teamagent evolution should retain the observation time and evidence identity behind each status and avoid deriving a permission to act from a readiness score or daily refresh alone. In particular, a listed JEV proposal is not evidence that its decision model is implemented. [docs/last-run.json](https://github.com/cobusgreyling/loop-engineering/blob/d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e/docs/last-run.json#L1-L6).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [plan.loop-engineering](https://github.com/cobusgreyling/loop-engineering); analyzed commit `9fb7538bb4c858b3b00dd8d14fc701a20c1e1483`; commit date 2026-10-27T08:02:05Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.loop-engineering.md).
+Analysis metadata: source [plan.loop-engineering](https://github.com/cobusgreyling/loop-engineering); analyzed commit `d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e`; commit date 2026-10-28T08:02:11Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--plan.loop-engineering.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,47 @@
+# kilocode
+
+Source: [kilocode](https://github.com/Kilo-Org/kilocode) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `76bcfd40be616a72f4697b3041565f322245b462`; commit timestamp `2026-10-02T12:24:46-07:00`; 10,677 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Kilo-Org/kilocode/blob/76bcfd40be616a72f4697b3041565f322245b462/README.md)):
+
+> English |  简体中文  |  繁體中文  |  한국어  |  Deutsch  |  Español  |  Français  |  Italiano  |  Dansk  |  日本語  |  Polski  |  Русский  |  Bosanski  |  العربية  |  Norsk  |  Português (Brasil)  |  ไทย  |  Türkçe  |  Українська  |  বাংলা  |  Ελληνικά  |  Tiếng Việt The open source coding agent for building with AI in VS Code, JetBrains, or the CLI.
+
+Build/package evidence: [artifacts/glm52-rise-video/package.json](https://github.com/Kilo-Org/kilocode/blob/76bcfd40be616a72f4697b3041565f322245b462/artifacts/glm52-rise-video/package.json); [package.json](https://github.com/Kilo-Org/kilocode/blob/76bcfd40be616a72f4697b3041565f322245b462/package.json); [packages/client/package.json](https://github.com/Kilo-Org/kilocode/blob/76bcfd40be616a72f4697b3041565f322245b462/packages/client/package.json); [packages/codemode/package.json](https://github.com/Kilo-Org/kilocode/blob/76bcfd40be616a72f4697b3041565f322245b462/packages/codemode/package.json); [packages/core/package.json](https://github.com/Kilo-Org/kilocode/blob/76bcfd40be616a72f4697b3041565f322245b462/packages/core/package.json)
+
+License evidence: [LICENSE](https://github.com/Kilo-Org/kilocode/blob/76bcfd40be616a72f4697b3041565f322245b462/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `6ee79bf99c49994c6d952d7f437af1abffadf3fe` (commit date `2026-10-27T16:41:03Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete MCP authentication store, glob adapter and provider-error classifier with their available glob/classifier fixtures; task-tool delta only. Storage/lock primitives, invalidation matching helper, permission engine and child-permission refresh implementation were not reviewed.
+
+The [MCP credential store](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/opencode/src/mcp/auth.ts#L75-L183) performs conditional invalidation inside one lock-protected read/modify/write operation and returns missing, superseded or cleared outcomes. It also offers an exact server-URL retrieval path and preserves issuer fields. These are useful rotation-safe seams, but the actual comparison/clear helper and filesystem lock/atomicity were not inspected. Malformed JSON/schema or read errors are converted to an empty store, so a later update may overwrite previously inaccessible credentials rather than preserve a distinct unavailable state. A generic get operation remains separate from URL-bound lookup.
+
+The [glob adapter](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/opencode/src/tool/glob.ts#L48-L108) asks permission, normalizes the search directory, calls an external-directory check and forwards cancellation plus a 100-item limit to search. It retains a truncation flag, but its partial-read warning is emitted only when at least one result exists, and partial status is absent from structured metadata. An empty partial result can therefore be presented as no files found. The [fixture](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/opencode/test/tool/glob.test.ts#L37-L122) uses a no-op permission callback and skips directory/absolute-path cases on Windows; it cannot establish real permission enforcement or Windows behavior.
+
+The [provider-error classifier](https://github.com/Kilo-Org/kilocode/blob/6ee79bf99c49994c6d952d7f437af1abffadf3fe/packages/llm/src/provider-error.ts#L40-L56) excludes explicit rate-limit/retry wording before applying context-overflow patterns, and its fixture documents those examples. This avoids confusing some throttles with oversized context, but text patterns and a bare 400/413 fallback remain heuristics. The task delta changes resumed child permission handling from merge to refresh; without its helper implementation, this review does not certify monotonic child authority or effective sandbox inheritance.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `6ee79bf99c49994c6d952d7f437af1abffadf3fe` to `8bade462c6f39d790cb6699631314c2ba08671a8`. Earlier findings above remain historical evidence; this is a focused review of the cited boundary, not a whole-repository audit.
+
+In [packages/opencode/src/kilocode/session-hosting/native-routes.ts](https://github.com/Kilo-Org/kilocode/blob/8bade462c6f39d790cb6699631314c2ba08671a8/packages/opencode/src/kilocode/session-hosting/native-routes.ts#L29-L147), Native hosted-session routing uses explicit method/path tables, including a separate cloud system-event feed. Session routes decode and compare the requested session ID against the attached identity; a mismatch is returned explicitly. Collection routes replace caller directory/workspace selectors with a directory derived from the attachment. Transcript requests retain only pagination keys, while other ID-scoped routes receive no query selectors.
+
+**Harness implication and limits:** Bind a remote attachment to its provider/session identity and classify routes before forwarding. Keep environment-preparation events distinct from agent transcript events. This helper is not the whole authorization boundary: collection routes still forward non-selector query fields, and transport authentication, remote identifier validation, origin restrictions and server-side ownership need independent checks. No upstream tests, agent execution or provider requests were run.

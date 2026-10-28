@@ -2,12 +2,11 @@
 
 Source: [beads](https://github.com/gastownhall/beads) · [Analysis](../../projects/ai-agents-mem--beads.md) · [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `43f41374a34d82ecf40903451eea277fbb4f1e75`; commit date: 2026-10-27T09:51:28Z; review date: 2026-10-28T09:27:32.685Z; observed SHA: `43f41374a34d82ecf40903451eea277fbb4f1e75`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `93531223bb96262627c864cdbab4a6bc8be7c53d`; commit date: 2026-10-28T10:00:15Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `93531223bb96262627c864cdbab4a6bc8be7c53d`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/beads/compare/43f41374a34d82ecf40903451eea277fbb4f1e75...43f41374a34d82ecf40903451eea277fbb4f1e75). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/beads/compare/93531223bb96262627c864cdbab4a6bc8be7c53d...93531223bb96262627c864cdbab4a6bc8be7c53d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

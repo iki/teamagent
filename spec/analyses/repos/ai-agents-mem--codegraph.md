@@ -2,12 +2,11 @@
 
 Source: [codegraph](https://github.com/colbymchenry/codegraph) · [Analysis](../../projects/ai-agents-mem--codegraph.md) · [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `f93e89a82d415408f46f5ee5887506df66478b02`; commit date: 2026-10-27T17:47:28Z; review date: 2026-10-28T09:27:32.685Z; observed SHA: `f93e89a82d415408f46f5ee5887506df66478b02`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `01e0ac3aa7419a7ab75583963e8a95359f3af1d3`; commit date: 2026-10-28T02:14:52Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `01e0ac3aa7419a7ab75583963e8a95359f3af1d3`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/colbymchenry/codegraph/compare/f93e89a82d415408f46f5ee5887506df66478b02...f93e89a82d415408f46f5ee5887506df66478b02). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/colbymchenry/codegraph/compare/01e0ac3aa7419a7ab75583963e8a95359f3af1d3...01e0ac3aa7419a7ab75583963e8a95359f3af1d3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -38,6 +38,18 @@ The [image persistence path](https://github.com/garrytan/gstack/blob/703b0049ebb
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `219f7488bbbfc33e5199ea4a5f3d31f188a7369d` (commit date `2026-10-28T09:59:40Z`), compared with `703b0049ebbef6be23e687a2ae9b18d24c5798fc`. Earlier findings remain historical evidence.
+
+**Scope:** Release-stamp ownership detection and host skill metadata documentation. The complete changed-path inventory contains 244 paths; the assessment below is limited to the cited branches.
+
+Restamping now compares both branch and base additions, excludes base-added text from candidate branch lines, and refuses a failed Git diff instead of treating it as no changes. Its report records excluded base lines. See [lib/restamp.ts](https://github.com/garrytan/gstack/blob/219f7488bbbfc33e5199ea4a5f3d31f188a7369d/lib/restamp.ts#L269-L305) and [lib/restamp.ts](https://github.com/garrytan/gstack/blob/219f7488bbbfc33e5199ea4a5f3d31f188a7369d/lib/restamp.ts#L523-L535). This is a useful preservation pattern, but text-set subtraction is conservative: an identical independently added line can also be excluded, so it is not exact semantic authorship proof.
+
+The Codex host comment now documents a template-supplied default prompt with a fallback; the generator implementing that metadata was not audited. See [hosts/codex.ts](https://github.com/garrytan/gstack/blob/219f7488bbbfc33e5199ea4a5f3d31f188a7369d/hosts/codex.ts#L19-L31). For Teamagent, keep generated skill metadata separate from execution trust and preserve failed/missing source comparisons as explicit refusals. No update, restamp, installer or host agent was executed.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gstack.claude.garrytan](https://github.com/garrytan/gstack); analyzed commit `703b0049ebbef6be23e687a2ae9b18d24c5798fc`; commit date 2026-10-27T17:39:03Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gstack.claude.garrytan.md).
+Analysis metadata: source [gstack.claude.garrytan](https://github.com/garrytan/gstack); analyzed commit `219f7488bbbfc33e5199ea4a5f3d31f188a7369d`; commit date 2026-10-28T09:59:40Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gstack.claude.garrytan.md).
 <!-- teamagent-analysis:end -->

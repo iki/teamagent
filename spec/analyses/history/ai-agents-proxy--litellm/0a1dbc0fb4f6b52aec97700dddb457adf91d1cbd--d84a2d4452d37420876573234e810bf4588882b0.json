@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-proxy--litellm",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/BerriAI/litellm",
+  "report": "spec/projects/ai-agents-proxy--litellm.md",
+  "analyzedSha": "0a1dbc0fb4f6b52aec97700dddb457adf91d1cbd",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T17:47:50Z",
+  "observedSha": "d84a2d4452d37420876573234e810bf4588882b0",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d84a2d4452d37420876573234e810bf4588882b0",
+      "date": "2026-10-28T03:04:11-07:00",
+      "subject": "test(spend): audit #47815 (#48774)"
+    },
+    {
+      "sha": "4b0aa0f44679e3aa1dd58f8208ff5ccfcbdc1c27",
+      "date": "2026-10-28T03:01:40-07:00",
+      "subject": "fix(cost-map): drop the gpt-5-nano priority input price OpenAI does not sell (#48763)"
+    },
+    {
+      "sha": "94e4ebd63d9384efd933812d4e8a786d1c2f9652",
+      "date": "2026-10-28T02:47:27-07:00",
+      "subject": "test(proxy): pin the max_parallel_requests slot release when a streamed /v1/messages MCP auto-execute ends (#47788)"
+    },
+    {
+      "sha": "d8a43a7cd31e6bf7ee6bfd192249513497c39ce0",
+      "date": "2026-10-28T02:42:45-07:00",
+      "subject": "test(gemini): audit #47542 (#48758)"
+    },
+    {
+      "sha": "000d4f6bb3c8d3cf0e2bb9540a61ccd77ffcd5b9",
+      "date": "2026-10-28T02:40:45-07:00",
+      "subject": "test(sagemaker): audit #47495 (#48767)"
+    },
+    {
+      "sha": "1176e608b199c4a6572c22490839147a9f134ece",
+      "date": "2026-10-28T01:57:41-07:00",
+      "subject": "test(harness): audit #47530 (#48751)"
+    },
+    {
+      "sha": "220a70653e5b57d2ca75815e1ad71632edea726e",
+      "date": "2026-10-28T01:38:07-07:00",
+      "subject": "docs(readme): link the LiteLLM OSS Champions program from Contributing (#48734)"
+    },
+    {
+      "sha": "f1795e6d447a4e5a3660de0d2fde5e1f44f52929",
+      "date": "2026-10-28T00:51:10-07:00",
+      "subject": "fix(responses): keep every MCP tool round in streaming follow-up input (#47698)"
+    },
+    {
+      "sha": "6fe02637617ea4b684f5107b84818359a1142249",
+      "date": "2026-10-28T00:26:56-07:00",
+      "subject": "fix(ui): prefill the key edit Organization picker from org_id (#39535)"
+    },
+    {
+      "sha": "e32d8a4d03f62ca0ec123e0a9377f6be32653bc0",
+      "date": "2026-10-28T07:11:55Z",
+      "subject": "fix(responses): reject or drop Responses params the chat completions bridge cannot translate (#48655)"
+    },
+    {
+      "sha": "df9091deb666f0d689c7df01056374569019c03e",
+      "date": "2026-10-28T06:47:42Z",
+      "subject": "fix(responses): skip failed spend-log turns when rebuilding a session from previous_response_id (#48647)"
+    },
+    {
+      "sha": "c7c895db456eda349a7be9661b4b21f578f9b589",
+      "date": "2026-10-27T19:46:06-07:00",
+      "subject": "fix(proxy)!: paginate customer lists and usage filters (#48700)"
+    },
+    {
+      "sha": "7acdf9f00d4abc6a72400bea80b93ce4dd7d7132",
+      "date": "2026-10-28T02:33:38Z",
+      "subject": "fix(anthropic): count search results and reject unsupported token-count blocks (#48699)"
+    },
+    {
+      "sha": "e4832c5d06c0ee275e6ab1f630b125a1bad9a38f",
+      "date": "2026-10-27T19:01:54-07:00",
+      "subject": "fix(cohere): map string stop parameter to list of strings for stop_sequences (#47091)"
+    },
+    {
+      "sha": "1171273511ca844cb8abdfccd8276650be5cbe9f",
+      "date": "2026-10-27T18:54:10-07:00",
+      "subject": "fix(langfuse otel): emit request metadata under langfuse.observation.metadata and langfuse.trace.metadata on the OTEL v2 Langfuse mapper (#42697)"
+    },
+    {
+      "sha": "bfec81d411ab1d255569b2b277d4e8e1d878ada1",
+      "date": "2026-10-28T01:53:43Z",
+      "subject": "fix(ui): keep guardrail wizard navigation within the dialog (#48688)"
+    },
+    {
+      "sha": "86dd7187fa44073446cc0d2259bb98a369d02aa8",
+      "date": "2026-10-27T18:52:06-07:00",
+      "subject": "fix(tavily): return raw_content, score, favicon and the response envelope from Tavily search (#48684)"
+    },
+    {
+      "sha": "017e08aba3e112cf89a545ca2991413c436e8542",
+      "date": "2026-10-27T18:49:16-07:00",
+      "subject": "fix(databricks): price the openjev decision model at its published 0.6 DBU per 1M input tokens (#48694)"
+    },
+    {
+      "sha": "b9e3587721858a09b3a81e816429cc984219065e",
+      "date": "2026-10-27T18:34:11-07:00",
+      "subject": "fix(embeddings): forward Gemini and Vertex request timeouts (#48690)"
+    },
+    {
+      "sha": "cd01c73dd9249937ce151c730eab221ca97ca276",
+      "date": "2026-10-27T18:33:39-07:00",
+      "subject": "fix(responses): preserve typed parts when logprobs is omitted (#48686)"
+    },
+    {
+      "sha": "4bdeb1378bb19a453cd3c49d383ebe76f057d2c6",
+      "date": "2026-10-27T18:29:35-07:00",
+      "subject": "chore: bump litellm-enterprise 0.1.79 -> 0.1.80, litellm 1.108.0 -> 1.109.0 (#48673)"
+    },
+    {
+      "sha": "b5fb898d03632615b4c64ecd82179bade5369a54",
+      "date": "2026-10-27T18:28:54-07:00",
+      "subject": "feat(passthrough): let upstreams report the model name via x-litellm-upstream-model (#48275)"
+    },
+    {
+      "sha": "8d30009b780969b51bda468b25ba7488e36896c5",
+      "date": "2026-10-28T01:25:36Z",
+      "subject": "chore: update Next.js build artifacts (2026-10-28 01:11 UTC, node v24.19.0) (#48692)"
+    },
+    {
+      "sha": "8ced2cf4333421cfb3c50e1e87614374e1eeacf7",
+      "date": "2026-10-27T18:22:39-07:00",
+      "subject": "fix(router): keep session tier pins coherent across workers (#48645)"
+    },
+    {
+      "sha": "e101449816f2e399a4cd693f84d436c5e9d17cce",
+      "date": "2026-10-27T18:19:09-07:00",
+      "subject": "feat(helm): route extra ingress paths to custom services (#48674)"
+    },
+    {
+      "sha": "21ab2cb87befb4994e569271d13e9ae100552c69",
+      "date": "2026-10-28T01:11:25Z",
+      "subject": "test: update stale integration and guardrail e2e tests to intended behavior (#48665)"
+    },
+    {
+      "sha": "15eca24fc2be26b142270df04a3369aee12a2f28",
+      "date": "2026-10-27T18:11:03-07:00",
+      "subject": "fix(guardrails)!: redact secrets in tool traffic and system prompts (#47122)"
+    },
+    {
+      "sha": "b9e42985061e96800af8164334747d3816885822",
+      "date": "2026-10-27T18:07:10-07:00",
+      "subject": "fix: preserve media across Responses and Gemini conversions (#48484)"
+    },
+    {
+      "sha": "696ff615d4def0d1e291383280d9849dcb1164ae",
+      "date": "2026-10-27T18:06:14-07:00",
+      "subject": "feat(morph): support open models and cached input pricing (#48676)"
+    },
+    {
+      "sha": "e5fe716d692cf10fbe5451c4a9feaa2700938806",
+      "date": "2026-10-27T18:00:40-07:00",
+      "subject": "test(cost): cover unpriced provider slugs and explicit zero rates (#42467)"
+    },
+    {
+      "sha": "7a23e497bd3a5ecfc7276f2ccba2b4a8b3d3f8cc",
+      "date": "2026-10-28T00:56:45Z",
+      "subject": "fix: honor empty mock completion responses (#48162) (#48266)"
+    },
+    {
+      "sha": "f277f1e26074e845ed8a3a67883b7c542be2139d",
+      "date": "2026-10-27T17:52:31-07:00",
+      "subject": "fix(bedrock): add token_count_model to three Mantle-native Claude rows (#48682)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".circleci/config.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cost-map-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/spend-logs-guard.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-linting.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-unit.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ARCHITECTURE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "ci_cd/spend_logs_guard.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/litellm_enterprise/enterprise_callbacks/secret_detection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "enterprise/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/templates/ingress.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "helm/litellm/tests/ingress_extra_paths_tests.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/migration_data_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/request_log_indexes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm-proxy-extras/litellm_proxy_extras/utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/_logging.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/anthropic_interface/readme.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/caching/affinity_cache.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/constants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/google_genai/adapters/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/gcs_bucket/gcs_bucket_base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/otel/emitter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/otel/logger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/otel/mappers/langfuse.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/otel/mappers/openinference.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/otel/model/metadata.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/otel/model/payloads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/integrations/otel/plumbing/providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/interactions/background_cost_polling.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/deprecated_package.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/litellm_logging.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/llm_cost_calc/guardrail_cost.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/prompt_templates/common_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/prompt_templates/factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/redact_messages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/streaming_chunk_builder_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/streaming_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/litellm_core_utils/token_counter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/anthropic/messages/adapters/handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/anthropic/messages/adapters/streaming_iterator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/anthropic/messages/adapters/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/azure/search/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/base_llm/decisions/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/llms/base_llm/search/responses.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/bedrock/chat/converse_transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/bedrock/chat/invoke_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/bedrock/chat/invoke_transformations/anthropic_claude_transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/bedrock/common_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/bedrock/messages/invoke_transformations/anthropic_claude_transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/chatgpt/responses/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/cohere/chat/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/cohere/chat/v2_transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/custom_httpx/aiohttp_transport.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/custom_httpx/llm_http_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/hosted_vllm/decisions/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/morph/chat/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/openai/chat/gpt_transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/tavily/search/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/vertex_ai/gemini/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/llms/vertex_ai/gemini_embeddings/batch_embed_content_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/llms/xai/search/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/llms/xai/search/transformation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/model_prices_and_context_window_backup.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/provider_endpoints_support_backup.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/proxy/_experimental/out/404.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/proxy/_experimental/out/404/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/proxy/_experimental/out/__next.!KGRhc2hib2FyZCk.__PAGE__.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/proxy/_experimental/out/__next._full.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "litellm/proxy/_experimental/out/__next._tree.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0-i21ejarohtj.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0-p31wd20yje5.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0-xrvklzr286n.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/00dfa0iob1t3d.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/00yeofxb9isqy.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0148urme4t9rt.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/01cjt3b43zsyy.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/01msi0ehnlc7g.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/02amelzul5rif.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/03kp2as6u_s_6.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/03q-w6h_lqdi1.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/03u3lpl7tn2_t.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/03xe17cve4b5k.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/04u1qvblwwxnq.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0598zsj78ni2h.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/05cei057fcv33.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/05evi9aern8_5.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/05p3egzpg0fru.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0677cowehlx_9.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/06el5-9ee247i.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/06kch0qp21l9j.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/06yuul4yvgbd0.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/07ifwp0wdqloz.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/085r5ieqhajig.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/08x62apceyttf.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/08x8fsl2hzbmq.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/095t3bxug2-v_.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/09tfr__sbh796.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0_3cn33of_ju9.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0_50gw2o6ba0j.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0_6jqgnorqxl2.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0_dzx_0_fhddm.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0a-rekt06v0sv.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0akoqbua14jao.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0aoel7yrv88fp.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0ayyip3c-drm1.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0b4fzenokhuae.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0bhhnflodjdhp.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0bl98f8jm71jn.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0blpz77qmgyho.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0ca8wd799xeut.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0csaxmztgrx3b.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0d-myyz3fnj3y.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0dq7c9glnronx.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0dvgjd47fte1d.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0eb5pnsj84q-z.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0eclgobdwjfbw.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0eew1yget6ldk.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0el1dng5997zf.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0ev0y17rt0bzh.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0ezoifm91cgpr.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0f4daktg2mnzj.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0f74g4_7j-4ju.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0g3hfgh2z8the.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0gjxeo9f--vzt.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0hmmhpno46ulu.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0hukc5zl2txhg.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0iad0mpbdl5k9.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0icwvr3xvxvlx.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0if-vqkhyn-zc.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0j0877r_j866g.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0jau1crjcgz3m.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0jil3rk4nihh_.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0jodjixl6-lwk.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0jvkab8jtdz86.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0jx_o8s4d27jy.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0lailfp2ddas6.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0lwp6btjdlmlz.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0m_xa-hzoyjbp.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0mv33eliigmqu.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0nqgb35_9l922.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0o0w-zlajn03j.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0o2yjrr5g_tdw.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0och7iysqbm0w.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0phbsd86moc_6.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0q6x33fc-tn6m.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0qp40esvpfq3c.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0r8bcbns1_gw5.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0refy__7v6-qb.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0rgp8d4pvt399.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0rikpyrajcg7f.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0svv6cnxs4pbi.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0tx19jeq-wskb.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0ucu5tumma10r.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0uhs9fff23cqo.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0w-7k3irqo_46.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "litellm/proxy/_experimental/out/_next/static/chunks/0w5e2qyxu1sj4.js",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

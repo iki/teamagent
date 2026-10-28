@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-28T15:28:56.506888+00:00",
+  "previousRun": "review-completion-2026-10-28.json",
+  "frozenPending": 169,
+  "reviewReceiptsVerified": 169,
+  "reportsVerified": 533,
+  "modifiedReports": 0,
+  "statuses": {
+    "current": 532,
+    "archived": 1
+  },
+  "historySnapshotsVerified": 2096,
+  "reviewBatches": [
+    {
+      "requests": 92,
+      "sha256": "db5e2fece5f2e4d3dc7a2c173a3b37a12d31066913d4bd98edddc5508ba3ec87"
+    },
+    {
+      "requests": 77,
+      "sha256": "65423b1dcc1009a244026e27a0f81c462ec892e3e9ab21703b24182056e603c4"
+    }
+  ],
+  "captureEvidence": {
+    "mappingsVerified": 1602,
+    "normalizedMappings": 1,
+    "opaqueOriginals": 0
+  },
+  "localObservation": {
+    "generatedAt": "2026-10-28T15:19:59.8369236+00:00",
+    "status": "partial",
+    "knownCheckouts": 532,
+    "dirty": 2,
+    "unavailable": 0,
+    "discoveryComplete": false,
+    "sourceListComplete": false,
+    "remoteChecksRefreshed": false,
+    "sourceCheckoutMutation": false
+  },
+  "textResources": {
+    "active": 42,
+    "usable": 31,
+    "partial": 11,
+    "failedActive": 0,
+    "initialRecoveryCaptureCalls": 2,
+    "repeatCaptureCalls": 0,
+    "recoveryFiles": 6,
+    "recoveryBytes": 457303,
+    "verifiedExports": 78,
+    "verifiedExportFiles": 933,
+    "removedHistoricalFailuresRetained": 3
+  },
+  "verification": {
+    "status": "passed",
+    "runtime": {
+      "bun": "1.4.2",
+      "aube": "2.5.1",
+      "python": "3.12.16"
+    },
+    "checks": {
+      "step": {
+        "passed": true,
+        "tests": 359,
+        "assertions": 1321,
+        "files": 48,
+        "testSeconds": 199.78,
+        "logSha256": "dcf113b30986a71b4a689af34aca155ef70d7243729e0a88a7cad772d45513e9"
+      },
+      "review": {
+        "passed": true,
+        "tests": 359,
+        "assertions": 1321,
+        "files": 48,
+        "testSeconds": 190.66,
+        "logSha256": "94f526d0932bf73a89f61dbcd9c02a512f619d9dd715e053a23581c8914783d8"
+      }
+    },
+    "activeLinks": {
+      "validatedAt": "2026-10-28T15:25:14.085333+00:00",
+      "markdownDocuments": 1213,
+      "relativeLinksChecked": 11517,
+      "pinnedSourceLinksChecked": 4223,
+      "uniquePinnedBlobsChecked": 3675,
+      "registeredExternalSources": 7,
+      "issues": [],
+      "unmappedExternalSourceLinks": []
+    },
+    "liveProviderTests": false,
+    "reviewedSourceCheckoutExecution": false,
+    "installedDependencyAndFixtureExecution": true
+  },
+  "limits": [
+    "Scoped static reviews and documentary screens do not establish whole-project correctness.",
+    "Local observation does not recheck remote availability; the retained Vasily upstream failure remains unresolved.",
+    "Recovered articles retain partial representation and image coverage; historical HTTP failures are preserved.",
+    "Two earlier assembled gates exceeded the unchanged test deadline before final serial verification; failed logs remain retained.",
+    "No live model/media provider test, package release, Trigon integration or remote publication occurred."
+  ]
+}

@@ -1,0 +1,905 @@
+{
+  "id": "ai-agents--paseo",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/getpaseo/paseo",
+  "report": "spec/projects/ai-agents--paseo.md",
+  "analyzedSha": "de50243885ff47e0dc9c26233327fe066befa684",
+  "analyzedAt": "2026-10-27T18:19:07.717Z",
+  "analyzedCommitDate": "2026-10-27T15:59:03Z",
+  "observedSha": "986687b8fd46c996df8c561af40e005667555508",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "986687b8fd46c996df8c561af40e005667555508",
+      "date": "2026-10-28T17:04:52+07:00",
+      "subject": "feat(plugins): unify lifecycle hooks and await worktree initialization (#8081)"
+    },
+    {
+      "sha": "eee70e7fef6f4ba9cdf7623fec4cf6c43260c89b",
+      "date": "2026-10-28T16:34:58+07:00",
+      "subject": "Show a lone tool call as itself and group from the second call (#8109)"
+    },
+    {
+      "sha": "d5a27e0164ad4a0e0a533b39fb4e8b12715fa44a",
+      "date": "2026-10-28T09:29:36Z",
+      "subject": "fix(server): wait for native watcher delivery before declaring it silent (#8107)"
+    },
+    {
+      "sha": "8e7e8cce21bc8fa0b92b36001d3aaf14a387c429",
+      "date": "2026-10-28T15:55:32+07:00",
+      "subject": "fix(app): retain plugin state across host disconnects (#8105)"
+    },
+    {
+      "sha": "36fc4f0b4390f3e5f46675fb0ca72a17061ca8f1",
+      "date": "2026-10-28T14:54:25+07:00",
+      "subject": "chore(ci): remove Android module tests from ordinary CI (#8102)"
+    },
+    {
+      "sha": "4dae66eb8cfaed7e079d52fe8481402f9a7f6f59",
+      "date": "2026-10-28T14:26:20+07:00",
+      "subject": "docs(hub): document reviews when pull requests leave draft (#8104)"
+    },
+    {
+      "sha": "d6d5a266adb793d34e0edab25f414cfb4a8b52ac",
+      "date": "2026-10-28T13:55:41+07:00",
+      "subject": "Open a subagent in place of the subagents list on mobile (#8093)"
+    },
+    {
+      "sha": "460ba8e8a30d15bec8b2e6de4dd9a51be349ddf9",
+      "date": "2026-10-28T13:55:36+07:00",
+      "subject": "chore(store): add phone and tablet store screenshots (#8099)"
+    },
+    {
+      "sha": "7a0c6fbd8249bb22d624d858fad1870ff38598be",
+      "date": "2026-10-28T13:51:41+07:00",
+      "subject": "fix(app): remove blank space above Android turn footers (#8088)"
+    },
+    {
+      "sha": "bede2b90edaeeb9f032c72ebfc267b3c0b5027b0",
+      "date": "2026-10-28T13:50:16+07:00",
+      "subject": "fix(app): truncate agent sender attribution to one line (#8092)"
+    },
+    {
+      "sha": "befc3d5663dee4f9c9b092da1338c7f58a09e006",
+      "date": "2026-10-28T13:46:43+07:00",
+      "subject": "fix(app): restore expansion of long native user messages (#8089)"
+    },
+    {
+      "sha": "53bbd7522d8d30e64a8d45f1374f840bc2ddeeda",
+      "date": "2026-10-28T06:13:41Z",
+      "subject": "test(server): wait for pending watchers before testing disposal (#8091)"
+    },
+    {
+      "sha": "ce412d04c34289acf2e4266b685a5c80220c1849",
+      "date": "2026-10-28T06:07:57Z",
+      "subject": "Keep docked navigation sizes consistent in narrow windows (#8052)"
+    },
+    {
+      "sha": "de45902652b7ceb7338f4ecab6542d33395c5809",
+      "date": "2026-10-28T04:55:10Z",
+      "subject": "fix(server): show reused plugin children as running again (#8080)"
+    },
+    {
+      "sha": "abc23d77214f4bd690f67a45fe41a71e42aa97bc",
+      "date": "2026-10-28T09:50:29+07:00",
+      "subject": "perf(plugins): minify client bundles while preserving interop and notices (#8076)"
+    },
+    {
+      "sha": "2c23cd4927185ffedd07cab4ebecb782dbf54a5a",
+      "date": "2026-10-27T21:27:30Z",
+      "subject": "test(cli): let test daemons allocate their listening ports (#8058)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".claude/skills/store-screenshots/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/change/apply.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/change/reconnect-delay.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/change/reconnect-delay.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/preview-deploys/index.client.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/preview-deploys/paseo-plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/scripted-agents.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/stage.mts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/demo/terminal-rc.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple-ipad/01-sidebar.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple-ipad/02-chat.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple-ipad/03-plugins.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple-ipad/04-review.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple-ipad/05-terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple/01-sidebar.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple/02-chat.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple/03-plugins.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple/04-review.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/apple/05-terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google-tablet/01-sidebar.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google-tablet/02-chat.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google-tablet/03-plugins.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google-tablet/04-review.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google-tablet/05-terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google/01-sidebar.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google/02-chat.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google/03-plugins.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google/04-review.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/output/google/05-terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/ipad/chat.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/ipad/diff.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/ipad/plugin-sheet.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/ipad/plugin.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/ipad/sidebar.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/ipad/terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/iphone/chat.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/iphone/diff.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/iphone/files.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/iphone/plugin-sheet.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/iphone/plugin.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/iphone/sidebar.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/raw/iphone/terminal.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/store-screenshots/render.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-lifecycle.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/android.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/explorer-sidebar.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/floating-panels.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/glossary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/menus.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/plugins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/compact-workspace-sheet.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/plugin-host-ui.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/settings-navigation.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/tool-call-overview-sheet.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/tool-call-shimmer.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/browser/turn-collapse.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/agent-device/native-user-message-preview-preconditions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/agent-device/native-user-message-preview.android.ad",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/agent-device/native-user-message-preview.ios.ad",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/mobile/markdown-formatting/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/mobile/markdown-formatting/android.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/mobile/markdown-formatting/native.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/support/helpers/plugin-reconnect.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/support/helpers/react-renders.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/sheet.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/support/helpers/subagents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/e2e/support/helpers/tool-call-gate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/agent-stream/view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/components/adaptive-modal-sheet.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/adaptive-modal-sheet.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/attachment-lightbox.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/attachment-lightbox.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/message.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/button.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/combobox.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/isolated-bottom-sheet-modal/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/isolated-bottom-sheet-modal/visibility-tracker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/isolated-bottom-sheet-modal/visibility-tracker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/menu-context.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/menu-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/menu-navigation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/menu-navigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/ui/menu/menu-surface.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/components/user-message/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/draft/workspace-tab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/tracks.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/constants/layout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/ar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/en.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/es.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/fr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/ja.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/ko.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/pt-BR.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/ru.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/i18n/resources/zh-CN.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/panels/agent-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/panels/agent-tracks.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/panels/provider-subagent-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/panels/retained-chat-content.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/plugins/catalog-sync-model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/plugins/catalog-sync-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/plugins/catalog-sync.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/plugins/registry-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/plugins/registry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/plugins/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/plugins/settings/query.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/plugins/settings/use-settings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/settings-screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/screens/workspace/sheet-pane/host.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/screens/workspace/sheet-pane/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/screens/workspace/sheet-pane/page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/screens/workspace/sheet-pane/sheet-pane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/workspace/sheet-tabs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/workspace/visible-agent-ids.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/workspace/visible-agent-ids.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/workspace/workspace-pane-content.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/workspace/workspace-pane-content.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/workspace/workspace-screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/app/src/screens/workspace/workspace-sheet-environment.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/screens/workspace/workspace-tab-presentation.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/stores/workspace-layout-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/stores/workspace-layout-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/styles/unistyles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/subagents/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/app/src/subagents/opens-in-sheet.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/subagents/parent/callout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/subagents/parent/use-parent-agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R080",
+      "path": "packages/app/src/subagents/sheet-tab.test.tsx",
+      "previousPath": "packages/app/src/subagents/opens-in-sheet.test.tsx"
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/subagents/sheet-tab.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/subagents/track.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/tool-calls/detail-level/grouping.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/tool-calls/detail-level/overview/sheet.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/tool-calls/detail-level/projection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/tool-calls/expansion-context.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/tool-calls/expansion.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/app/src/tool-calls/expansion.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/workspace-tabs/launcher/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/workspace-tabs/open-beside.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/test-stubs/gorhom-bottom-sheet.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/test-stubs/react-native-safe-area-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/vitest.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/tests/42-test-daemon-ephemeral-port.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/tests/helpers/test-daemon.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/plugin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/plugin/src/boundaries.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/plugin/src/server/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/plugin/src/server/lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/agent/agent-manager.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/agent/agent-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/agent/plugin-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/agent/plugin-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/src/server/bootstrap.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

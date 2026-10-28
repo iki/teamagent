@@ -36,6 +36,18 @@ The [delivery tests](https://github.com/Mintplex-Labs/anything-llm/blob/9b1fcab1
 
 Agent events are parsed without a structural schema here, and generated files are delivered by delegated storage lookup rather than a visible owner-bound handle. Teamagent should retain final-versus-preview reconciliation with bounded queues, explicit delivery states and owned cancellation, then separately validate source events, sender authority and attachment access. No agent, bot, chart renderer, filesystem export or upstream test was executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `0941fb03596862899f7df2bdeb022eb68d4216a7` (commit date `2026-10-27T16:04:07-07:00`), compared with `9b1fcab141000eaba9f78ed131151de04904454b`. Earlier findings remain historical evidence.
+
+**Scope:** Agent-history projection and default-model changes in persistent/ephemeral agent paths. The complete changed-path inventory contains 69 paths; the assessment below is limited to the cited branches.
+
+History reconstruction now skips an entire prompt/response pair when the parsed response has no truthy text, avoiding a blank assistant message for providers that reject one. Remaining pairs are projected with success states; a history-read exception returns an empty history. See [server/utils/agents/index.js](https://github.com/Mintplex-Labs/anything-llm/blob/0941fb03596862899f7df2bdeb022eb68d4216a7/server/utils/agents/index.js#L105-L132). Several defaults also change to gpt-5.6-luna in persistent, ephemeral and channel construction. See [server/utils/agents/index.js](https://github.com/Mintplex-Labs/anything-llm/blob/0941fb03596862899f7df2bdeb022eb68d4216a7/server/utils/agents/index.js#L329-L341) and [server/utils/agents/ephemeral.js](https://github.com/Mintplex-Labs/anything-llm/blob/0941fb03596862899f7df2bdeb022eb68d4216a7/server/utils/agents/ephemeral.js#L533-L546).
+
+For Teamagent, retain the durable original conversation separately from each provider-compatible projection, including unanswered prompts and missing-history evidence. A filtered projection must not rewrite an uncertain turn as absent or successful. Default-model changes require route, policy and cost evaluation; a string in source is not proof of account access or model quality. Other flow/network changes were not audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [anything-llm](https://github.com/Mintplex-Labs/anything-llm); analyzed commit `9b1fcab141000eaba9f78ed131151de04904454b`; commit date 2026-10-25T11:20:42-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--anything-llm.md).
+Analysis metadata: source [anything-llm](https://github.com/Mintplex-Labs/anything-llm); analyzed commit `0941fb03596862899f7df2bdeb022eb68d4216a7`; commit date 2026-10-27T16:04:07-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--anything-llm.md).
 <!-- teamagent-analysis:end -->

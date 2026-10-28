@@ -1,0 +1,930 @@
+{
+  "id": "ai-agents--multica",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/multica-ai/multica",
+  "report": "spec/projects/ai-agents--multica.md",
+  "analyzedSha": "d7d1831fcf39b874911aae1e48b2fbf804bd068e",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T18:18:32+08:00",
+  "observedSha": "9af15b1446f9d91f90ea97b65c504a7aa49da714",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "9af15b1446f9d91f90ea97b65c504a7aa49da714",
+      "date": "2026-10-28T17:21:45+08:00",
+      "subject": "feat(issues): show Jump to latest on mobile only (MUL-8324) (#9638)"
+    },
+    {
+      "sha": "1223524b5e7b39e2b93bf309b3489853831e4e54",
+      "date": "2026-10-28T17:10:58+08:00",
+      "subject": "feat(issues): hide Jump to latest once the reader scrolls past the top fifth (MUL-8324) (#9634)"
+    },
+    {
+      "sha": "bb3747186ed2950956268646c7343d6adc0b0fcf",
+      "date": "2026-10-28T17:09:59+08:00",
+      "subject": "feat: let agents steer running turns they could start (MUL-8285) (#9630)"
+    },
+    {
+      "sha": "4a0c147c5020db450fd24459a0da6014fbb9a3d2",
+      "date": "2026-10-28T17:02:10+08:00",
+      "subject": "fix(storage): support GCS S3 XML API signing (MUL-8232) (#9513)"
+    },
+    {
+      "sha": "4fae904f89aef478b5200c23dc4d4336a37fe1c3",
+      "date": "2026-10-28T17:00:54+08:00",
+      "subject": "fix(issues): give Jump to latest an opaque background in dark mode (MUL-8324) (#9631)"
+    },
+    {
+      "sha": "87647b8ff47dd336838cf30aca33f2fc0cba2f97",
+      "date": "2026-10-28T16:57:03+08:00",
+      "subject": "feat(issues): MUL-8324 add Jump to latest button to issue timeline (#9627)"
+    },
+    {
+      "sha": "002b2dcbcabf247b1e97d09198b79c883d2c1753",
+      "date": "2026-10-28T16:14:47+08:00",
+      "subject": "MUL-8308: feat(mobile): open historical run transcripts (#9613)"
+    },
+    {
+      "sha": "1eb4b5d1f8c9b8243808809c02f45f5f1403dab6",
+      "date": "2026-10-28T15:30:58+08:00",
+      "subject": "MUL-8203: record permission-blocked mentions as system replies (#9624)"
+    },
+    {
+      "sha": "b20cea33ad1afd46b534f3ab9a29cf967ec2e134",
+      "date": "2026-10-28T15:29:05+08:00",
+      "subject": "fix(desktop): wait for daemon shutdown before quitting (MUL-8290) (#9590)"
+    },
+    {
+      "sha": "7d02596fc3626b8fab5d0a5e6fe2db090c8b02d9",
+      "date": "2026-10-28T15:11:27+08:00",
+      "subject": "fix(agent): MUL-8307 drive OpenCode over ACP so long tools and subagents are not force-stopped (#9619)"
+    },
+    {
+      "sha": "207a4bf4e9b46158cf01eadee1cdaec11b341e7d",
+      "date": "2026-10-28T15:09:56+08:00",
+      "subject": "feat(ui): raise tooltip open delay to 500ms with instant hand-off (MUL-8313) (#9623)"
+    },
+    {
+      "sha": "55be334864e1f144ea2eae9456b7a69046deb2c8",
+      "date": "2026-10-28T15:01:37+08:00",
+      "subject": "fix(taskfailure): classify Kiro dispatch failure as retryable provider_network (MUL-8314) (#9621)"
+    },
+    {
+      "sha": "3647fd22457609d7625a8a06e11ff324398833b6",
+      "date": "2026-10-28T14:25:41+08:00",
+      "subject": "feat(ui): use TruncatedTooltip for truncated labels across the app (MUL-8313) (#9618)"
+    },
+    {
+      "sha": "a8e75614212a277c89495ae29c68f9419f95185a",
+      "date": "2026-10-28T14:06:16+08:00",
+      "subject": "[MUL-8300] fix(lark): resolve outbound references to workspace links (#9604)"
+    },
+    {
+      "sha": "d51665feb6a94f3d62a503cc4711fb759de02fa5",
+      "date": "2026-10-28T13:47:36+08:00",
+      "subject": "feat(ui): show project picker name tooltip only when truncated (MUL-8313) (#9617)"
+    },
+    {
+      "sha": "ca593b31037c04e500513d178aa61ca3e329bf0d",
+      "date": "2026-10-28T13:45:15+08:00",
+      "subject": "MUL-8302: fix(daemon): preserve task environment in Hermes tool shells (#9607)"
+    },
+    {
+      "sha": "d9f5dee413ae31d1e0cd74fdc28bed24ce0d0ae6",
+      "date": "2026-10-28T13:35:13+08:00",
+      "subject": "fix(projects): reveal full project names in the picker (MUL-8291) (#9591)"
+    },
+    {
+      "sha": "3e4dcef95f35fdc2d453ea14a5f7d6163e401adf",
+      "date": "2026-10-28T13:31:53+08:00",
+      "subject": "MUL-8312: fix(i18n): unify Chinese review copy across clients (#9615)"
+    },
+    {
+      "sha": "84e56b6b00c4cf20894f56a5bd84658cc315a365",
+      "date": "2026-10-28T13:08:35+08:00",
+      "subject": "MUL-8256 fix(runtime): recover stalled HTTP/2 connections (#9551)"
+    },
+    {
+      "sha": "8ffcc88dbdf13d8b1c7f6c9779920d0bb04ea663",
+      "date": "2026-10-28T10:10:14+08:00",
+      "subject": "fix(desktop): show spelling suggestions in right-click menu (#9608)"
+    },
+    {
+      "sha": "6388272a8a6faf82d9238a605e4bcf5e68e4808f",
+      "date": "2026-10-28T10:04:38+08:00",
+      "subject": "fix(github): skip PR merge status move when the project workflow lacks the target (#9598)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CLI_AND_DAEMON.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/context-menu.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/context-menu.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/daemon-manager-quit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/daemon-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/daemon-quit-dialogs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/daemon-quit-dialogs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/daemon-quit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/main/daemon-quit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/update-install-lifecycle.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/daemon-settings-tab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/renderer/src/components/window-toolbar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/cli.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.fr.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.ja.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.ko.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/environment-variables.zh.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/app/(app)/[workspace]/_layout.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/app/(app)/[workspace]/issue/[id]/run/[taskId].tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/app/(app)/[workspace]/issue/[id]/runs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/components/issue/run-row.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/components/issue/run-transcript.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/data/queries/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/data/realtime/chat-ws-updaters.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/data/realtime/use-run-transcript-realtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/data/realtime/use-run-transcript-realtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/data/schemas.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/data/schemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/lib/run-transcript.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/mobile/lib/run-transcript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/en/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/en/navigation.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/zh-Hans/inbox.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/zh-Hans/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/zh-Hans/navigation.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/zh-Hant/inbox.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/zh-Hant/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/mobile/locales/zh-Hant/navigation.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "packages/core/security/redact-secrets.test.ts",
+      "previousPath": "packages/views/common/task-transcript/redact.test.ts"
+    },
+    {
+      "status": "A",
+      "path": "packages/core/security/redact-secrets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/types/github.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ui/components/common/__tests__/icon-button.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ui/components/common/__tests__/truncated-tooltip.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ui/components/common/deferred-tooltip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ui/components/common/theme-provider.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ui/components/common/truncated-tooltip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ui/components/ui/tooltip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/agents/components/agent-live-peek-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/agents/components/agent-profile-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/agents/components/agents-page.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/agents/components/agents-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/autopilots/components/webhook-deliveries-section.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/common/task-transcript/redact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/dashboard/components/dashboard-page.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/dashboard/components/leaderboard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/editor/table-preview.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/board-column.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/inline-comment-run.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/inline-comment-run.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/issue-detail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/issue-runs-dialog.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/issue-runs-dialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/pickers/property-picker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/pull-request-list.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/issues/components/system-wakeup-row.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/views/issues/hooks/use-jump-to-latest.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/views/issues/hooks/use-jump-to-latest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/labels/label-chip.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/en/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/fr/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/ja/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/ko/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/zh-Hans/inbox.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/zh-Hans/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/zh-Hant/inbox.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/zh-Hant/issues.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/locales/zh-Hant/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/modals/create-issue.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/projects/components/project-picker.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/projects/components/project-picker.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/runtimes/components/runtime-detail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/runtimes/components/runtime-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/settings/components/members-tab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/views/settings/components/repositories-section.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/cmd/multica/cmd_daemon.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/cmd/multica/cmd_daemon_port_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/cmd/multica/cmd_daemon_shutdown_result.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/cmd/multica/cmd_daemon_stop.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/cmd/multica/cmd_daemon_stop_completion_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/cmd/multica/cmd_daemon_stop_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/cmd/multica/cmd_daemon_stop_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/cmd/multica/cmd_issue.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/cmd/multica/cmd_issue_comment_steer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/cmd/multica/cmd_issue_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/cmd/server/router.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/daemon/client_http2_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/daemon.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/daemon_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/execenv/hermes_home.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/execenv/hermes_home_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/opencode_clock_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/opencode_v2_mcp_wiring_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/pi_cleanup_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/daemon/shutdown.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/daemon/shutdown_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/task_supplement.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/daemon/task_supplement_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/comment.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/handler/comment_agent_steer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/handler/comment_invocation_notice.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/handler/comment_invocation_notice_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/comment_reconcile_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/daemon.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/github_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/pr_auto_complete.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/quick_action.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/runtime_unusable_notice.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/squad_briefing.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/squad_briefing_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/squad_parent_status_contract_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/task_supplement.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/task_supplement_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/handler/trigger_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/integrations/channel/issue_link.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/integrations/channel/reference_links.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/integrations/channel/reference_links_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/integrations/lark/outbound.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/integrations/lark/outbound_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/integrations/lark/reference_links.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/internal/integrations/lark/reference_links_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/integrations/wecom/relay_publish_state_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/qoderruntime/bridge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/qoderruntime/http.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/service/builtin_skills/multica-platform/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/service/builtin_skills/multica-platform/references/mentions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/storage/s3.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/storage/s3_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/internal/testutil/http.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/agent/hermes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/agent/opencode.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/pkg/agent/opencode_acp.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/pkg/agent/opencode_acp_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/pkg/agent/opencode_acp_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/agent/opencode_usage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/agent/opencode_v2.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/agent/opencode_v2_terminal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/agent/opencode_v2_terminal_unix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/agent/opencode_v2_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/db/generated/comment.sql.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/db/generated/supplement.sql.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/pkg/db/queries/comment.sql",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

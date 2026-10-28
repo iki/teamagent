@@ -2,11 +2,11 @@
 
 Source: [paper.2604.security.many-ih](https://github.com/JHU-CLSP/ManyIH) · [Analysis](../../projects/ai-security--paper.2604.security.many-ih.md) · [agents](../../agents.md), [skills](../../skills.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `3287f82436fff86d7506b7737dbd3b5e2e524d01`; commit date: 2026-04-13T02:39:01Z; review date: unknown; observed SHA: `3287f82436fff86d7506b7737dbd3b5e2e524d01`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `3287f82436fff86d7506b7737dbd3b5e2e524d01`; commit date: 2026-04-13T02:39:01Z; review date: unknown; observed SHA: `3287f82436fff86d7506b7737dbd3b5e2e524d01`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/JHU-CLSP/ManyIH/compare/3287f82436fff86d7506b7737dbd3b5e2e524d01...3287f82436fff86d7506b7737dbd3b5e2e524d01). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: outdated; upstream availability: available.
+- Git discovery: inspected; source lifecycle: outdated; upstream availability: available.
 
 ## Recent commits
 

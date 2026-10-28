@@ -32,6 +32,18 @@ The [source sync script](https://github.com/google/osv.dev/blob/083210c7e7923ecc
 
 The [storage contract](https://github.com/google/osv.dev/blob/083210c7e7923eccd17278305cbe1fef27309c00/go/osv/clients/cloudstorage.go) exposes generation preconditions, object metadata and streamed writes. The [GCS adapter](https://github.com/google/osv.dev/blob/083210c7e7923eccd17278305cbe1fef27309c00/go/osv/clients/gcs_client.go) translates generation zero into create-only semantics and bounds retries to three attempts. Its streamed retry only rewinds io.Seeker values: a transient failure can otherwise retry from a partially consumed non-seekable reader. Backoff sleeps are not context-selectable, reads use unbounded ReadAll, and bucket wrappers close a shared client. Teamagent should require replayable input or a fresh-reader factory, bounded reads, cancellable waits and explicit client ownership. No cloud access, synchronization or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `2550f6d61565de3a813e19f64a24b04b8af0ce39` (commit date `2026-10-28T05:44:09Z`), compared with `083210c7e7923eccd17278305cbe1fef27309c00`. Earlier findings remain historical evidence.
+
+**Scope:** Dual-read shadow admission/lifecycle and Git tag synchronization flags; other backend and website changes remain outside scope. The complete changed-path inventory contains 58 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+Shadow comparisons use non-blocking semaphore admission: a full pool drops a shadow with a warning instead of queueing it. Admitted work detaches from caller cancellation and receives a separate timeout; deferred cleanup releases capacity and accounts for completion. This protects foreground latency but means a shadow sample can be missing, and the timeout still depends on the worker honoring its context. Comparison coverage and dropped samples must accompany any agreement metric. Panic logs include a stack and value, so diagnostic confidentiality needs a separate policy. [go/internal/database/dualread/vulnerability.go](https://github.com/google/osv.dev/blob/2550f6d61565de3a813e19f64a24b04b8af0ce39/go/internal/database/dualread/vulnerability.go#L121-L145).
+
+The Git synchronization branch now fetches/prunes/forces tags explicitly. Mutable tag names therefore cannot serve as durable evidence identities. Teamagent retains immutable reviewed commit/object evidence independently and does not transplant these force-update semantics into a user's dirty checkout. No fetch or shadow workload was run here. [go/cmd/gitter/git.go](https://github.com/google/osv.dev/blob/2550f6d61565de3a813e19f64a24b04b8af0ce39/go/cmd/gitter/git.go#L117-L125).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [osv.dev](https://github.com/google/osv.dev); analyzed commit `083210c7e7923eccd17278305cbe1fef27309c00`; commit date 2026-10-27T07:04:44Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-security--osv.dev.md).
+Analysis metadata: source [osv.dev](https://github.com/google/osv.dev); analyzed commit `2550f6d61565de3a813e19f64a24b04b8af0ce39`; commit date 2026-10-28T05:44:09Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-security--osv.dev.md).
 <!-- teamagent-analysis:end -->

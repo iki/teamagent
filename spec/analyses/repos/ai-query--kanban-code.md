@@ -2,12 +2,11 @@
 
 Source: [kanban-code](https://github.com/langwatch/kanban-code) · [Analysis](../../projects/ai-query--kanban-code.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `1bfc15db18c3b899cf5e6cb67391318297775431`; commit date: 2026-10-26T14:25:59Z; review date: 2026-10-28T09:27:32.685Z; observed SHA: `1bfc15db18c3b899cf5e6cb67391318297775431`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `ff9c751124216bea3e38844e273b272faa4fede2`; commit date: 2026-10-27T22:34:49+01:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `ff9c751124216bea3e38844e273b272faa4fede2`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/langwatch/kanban-code/compare/1bfc15db18c3b899cf5e6cb67391318297775431...1bfc15db18c3b899cf5e6cb67391318297775431). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/langwatch/kanban-code/compare/ff9c751124216bea3e38844e273b272faa4fede2...ff9c751124216bea3e38844e273b272faa4fede2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

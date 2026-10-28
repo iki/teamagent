@@ -41,7 +41,7 @@ Extracted heading sample (up to 20; source text, not an endorsed analysis):
 
 [Original source](<https://raw.githubusercontent.com/microsoft/memento/d8c10e66ff313844b4b5f063dd4c075d3ea56aab/docs/memento.pdf>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **created**. Content validation: **partial**.
+Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-10-28T14:56:36.677Z. Import: **pinned**. Content validation: **partial**.
 
 First captured: 2026-10-28T07:07:45.485Z. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
 
@@ -55,6 +55,7 @@ Memory source: `34f46bf9-6b55-49fb-89f9-5dc6eb598d44`. Version: `60c06d9f-d037-4
 
 - original&#47;memento&#46;pdf&#58; PDF text stream and physical page boundaries retained&#59; reading order&#44; table layout&#44; equations&#44; vector artwork and OCR are not reconstructed&#59; original PDF retained
 - Image count is measured&#59; visual fidelity and completeness are unverified&#46;
+- Static snapshot checked locally&#59; no remote freshness check&#44; conversion or export rewrite was performed&#46;
 
 Extracted heading sample (up to 20; source text, not an endorsed analysis):
 

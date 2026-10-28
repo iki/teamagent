@@ -1,0 +1,245 @@
+{
+  "id": "ai-query--docling",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/docling-project/docling",
+  "report": "spec/projects/ai-query--docling.md",
+  "analyzedSha": "b361d7863fd264369486a1fcbda96c9fe4b58b57",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-27T17:11:46Z",
+  "observedSha": "26ef35ac26ae9a3f959ce3e9de26e46c82ca1194",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "26ef35ac26ae9a3f959ce3e9de26e46c82ca1194",
+      "date": "2026-10-28T10:52:44+01:00",
+      "subject": "fix: recognise Symbol and Wingdings private-use bullets as list markers (#5043)"
+    },
+    {
+      "sha": "da9e9472ce977f18ad450ac4399bda0704805905",
+      "date": "2026-10-28T10:51:12+01:00",
+      "subject": "fix: skip macOS metadata members in ZIP inputs (#5026)"
+    },
+    {
+      "sha": "2fa79ef5f980365ffe45d15048aa19af3dd36dcb",
+      "date": "2026-10-28T10:50:25+01:00",
+      "subject": "fix(vlm): ignore whitespace between Chandra list paragraphs (#5049)"
+    },
+    {
+      "sha": "4119d9b7fb20fd8d8d05bf2dd81e8abab6ad1e9f",
+      "date": "2026-10-28T10:28:26+01:00",
+      "subject": "refactor(pdf): share extracted-text normalization across text, child and table paths (#5069)"
+    },
+    {
+      "sha": "2a55ea62b7c206160bd25cd5dde7eaeedad9bfd3",
+      "date": "2026-10-28T09:51:26+01:00",
+      "subject": "fix(image): treat zero DPI metadata as missing (#4915)"
+    },
+    {
+      "sha": "00352a1ff7308c2c0fd86eec426311ea0e36f37d",
+      "date": "2026-10-28T09:23:37+01:00",
+      "subject": "fix(pdf): normalize Arabic presentation forms in extracted text (#3929)"
+    },
+    {
+      "sha": "ecdba6756d4164ab49234dc574d1644cb77a8efb",
+      "date": "2026-10-28T09:22:02+01:00",
+      "subject": "fix(reading-order): read heads split by a spanning block top-down (#4438)"
+    },
+    {
+      "sha": "868768fe2cf92086f04c3fb080aa3ded8dbba914",
+      "date": "2026-10-28T08:58:45+01:00",
+      "subject": "fix(ocr): stop concurrent conversions from crashing the tesserocr engine (#4941)"
+    },
+    {
+      "sha": "b3b2cd976c5a0db3c82738a0297a838e73818acb",
+      "date": "2026-10-27T21:21:52+01:00",
+      "subject": "feat(ocr): replace broken PDF text layers with OCR (#4654)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/.agents/skills/docling/references/python-sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/backend/image_backend.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/cli/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/base_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/document.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/datamodel/pipeline_options.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/base_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/postprocessing/list_marker_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/postprocessing/reading_order_rb.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/auto_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/ocr/tesseract_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/page_assemble/page_assemble_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/page_preprocessing/page_preprocessing_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/reading_order/readingorder_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/table_structure/table_structure_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/models/stages/table_structure/table_structure_model_v2.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/pipeline/standard_pdf_pipeline.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docling/utils/chandra_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/utils/text_normalization.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docling/utils/text_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/concepts/OCR.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/usage/advanced_options.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/data/pdf/groundtruth/2206.01062.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_backend_image_native.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_chandra_vlm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_cli.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_listitem_marker_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_page_assemble_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_reading_order.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_readingorder_container_children.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_replace_broken_text_layer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_tesseract_ocr_model.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_text_quality.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_zip_batch_input.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

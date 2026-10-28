@@ -38,6 +38,14 @@ The [provider-error classifier](https://github.com/Kilo-Org/kilocode/blob/6ee79b
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `6ee79bf99c49994c6d952d7f437af1abffadf3fe` to `8bade462c6f39d790cb6699631314c2ba08671a8`. Earlier findings above remain historical evidence; this is a focused review of the cited boundary, not a whole-repository audit.
+
+In [packages/opencode/src/kilocode/session-hosting/native-routes.ts](https://github.com/Kilo-Org/kilocode/blob/8bade462c6f39d790cb6699631314c2ba08671a8/packages/opencode/src/kilocode/session-hosting/native-routes.ts#L29-L147), Native hosted-session routing uses explicit method/path tables, including a separate cloud system-event feed. Session routes decode and compare the requested session ID against the attached identity; a mismatch is returned explicitly. Collection routes replace caller directory/workspace selectors with a directory derived from the attachment. Transcript requests retain only pagination keys, while other ID-scoped routes receive no query selectors.
+
+**Harness implication and limits:** Bind a remote attachment to its provider/session identity and classify routes before forwarding. Keep environment-preparation events distinct from agent transcript events. This helper is not the whole authorization boundary: collection routes still forward non-selector query fields, and transport authentication, remote identifier validation, origin restrictions and server-side ownership need independent checks. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [kilocode](https://github.com/Kilo-Org/kilocode); analyzed commit `6ee79bf99c49994c6d952d7f437af1abffadf3fe`; commit date 2026-10-27T16:41:03Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kilocode.md).
+Analysis metadata: source [kilocode](https://github.com/Kilo-Org/kilocode); analyzed commit `8bade462c6f39d790cb6699631314c2ba08671a8`; commit date 2026-10-28T09:54:57Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kilocode.md).
 <!-- teamagent-analysis:end -->

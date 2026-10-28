@@ -36,6 +36,14 @@ The [replay path](https://github.com/pewdiepie-archdaemon/odysseus/blob/339c6886
 
 The [tool tag registry](https://github.com/pewdiepie-archdaemon/odysseus/blob/339c6886cbbb2f5cf897b2b6795da448c02c8f20/src/tool_types.py#L1-L33) keeps parser names separate from the tool facade. A registered name establishes syntax availability, not authorization or execution containment. No source was executed and no run-restart, provider cancellation or end-to-end persistence test was performed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `339c6886cbbb2f5cf897b2b6795da448c02c8f20` to `57a1859f081f5877373e4aaf96435eb3ed513793`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [src/tools/system.py](https://github.com/pewdiepie-archdaemon/odysseus/blob/57a1859f081f5877373e4aaf96435eb3ed513793/src/tools/system.py#L769-L785), The app-API helper adds method/path restrictions for global tool-policy replacement and MCP server/tool-policy changes. Its rejection branch directs the user to settings, while the tool description now permits chat-driven disable/list operations and leaves re-enabling to the user. The reviewed delta aligns the alternate app-API route with that intended authority split.
+
+**Harness implication and limits:** An agent may narrow its available tools without acquiring the right to re-enable them. Enforce this at every effect entry point, including generic HTTP/app bridges, rather than only in a tool description. A prefix denylist is not a complete authorization model; endpoint aliases, method variants, direct calls and the actual settings handler were not audited. The oversized core loop was not captured. This review is static and does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [odysseus](https://github.com/pewdiepie-archdaemon/odysseus); analyzed commit `339c6886cbbb2f5cf897b2b6795da448c02c8f20`; commit date 2026-10-27T16:35:16Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--odysseus.md).
+Analysis metadata: source [odysseus](https://github.com/pewdiepie-archdaemon/odysseus); analyzed commit `57a1859f081f5877373e4aaf96435eb3ed513793`; commit date 2026-10-27T22:50:35-06:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--odysseus.md).
 <!-- teamagent-analysis:end -->

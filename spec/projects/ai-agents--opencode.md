@@ -42,6 +42,14 @@ The [core agent service](https://github.com/anomalyco/opencode/blob/432d870b0268
 
 Teamagent can borrow the separation of tool description, boundary codecs, structured receipts and model presentation. Preserve its stricter unknown-value boundary rules rather than copying broad `any` types or treating raw JSON Schema as an executable validator. This scoped review did not execute upstream code or establish provider behavior, dispatch cancellation, policy enforcement or current test results.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `432d870b02683d2e40e895ddc70d437189b25276` to `d6867f221061f7688a9b784b840ec6b7e3c9d40a`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [packages/core/src/permission.ts](https://github.com/anomalyco/opencode/blob/d6867f221061f7688a9b784b840ec6b7e3c9d40a/packages/core/src/permission.ts#L224-L267), The permission service adds assertNotDenied, which evaluates rules and fails only for deny. Unlike assert, it does not create or wait for an approval when the result is ask. The original assert path still waits on a deferred approval and removes the pending entry during cleanup.
+
+**Harness implication and limits:** A denial precheck is not authorization. Name and type preliminary policy checks so a caller cannot accidentally use successful preflight as permission to perform an effect. This function also lacks the adjacent assert path's explicit closed check; call-site lifecycle enforcement and rule evaluation were not reviewed. No effect-policy or cancellation test was run. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `432d870b02683d2e40e895ddc70d437189b25276`; commit date 2026-10-27T17:40:04Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
+Analysis metadata: source [opencode](https://github.com/anomalyco/opencode); analyzed commit `d6867f221061f7688a9b784b840ec6b7e3c9d40a`; commit date 2026-10-28T05:06:39-05:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--opencode.md).
 <!-- teamagent-analysis:end -->

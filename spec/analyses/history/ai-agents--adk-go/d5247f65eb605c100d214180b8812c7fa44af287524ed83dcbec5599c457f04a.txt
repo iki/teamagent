@@ -1,0 +1,51 @@
+# adk-go
+
+Source: [adk-go](https://github.com/google/adk-go) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `33377de49cf24da7cda478250708460f5e6479fe`; commit timestamp `2026-10-03T15:56:25+02:00`; 1,074 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/google/adk-go/blob/33377de49cf24da7cda478250708460f5e6479fe/README.md)):
+
+> [](https://github.com/google/adk-go/actions/workflows/nightly.yml) An open-source, code-first Go toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.
+
+Build/package evidence: [go.mod](https://github.com/google/adk-go/blob/33377de49cf24da7cda478250708460f5e6479fe/go.mod); [plugin/agentanalytics/go.mod](https://github.com/google/adk-go/blob/33377de49cf24da7cda478250708460f5e6479fe/plugin/agentanalytics/go.mod)
+
+License evidence: [LICENSE](https://github.com/google/adk-go/blob/33377de49cf24da7cda478250708460f5e6479fe/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `19707a2660a8dd7b8ffb32837027253ed2f29dd1` (commit date `2026-10-27T13:06:04+01:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete in-memory credential-store and provider implementations; GCP cache-key construction, HTTP transport replay, consent response handler and the wider runner were not audited.
+
+The [credential store](https://github.com/google/adk-go/blob/19707a2660a8dd7b8ffb32837027253ed2f29dd1/auth/store.go#L41-L150) keys on application, user and producer-defined slot and explicitly warns that ADK does not authenticate the first two fields. Its contract requires every credential-changing input to enter an unambiguous key and treats both keys and credentials as sensitive. The implementation uses a comparable struct key, requires nonzero expiry and applies a ten-second skew before serving a value. Teamagent must bind these fields to the authenticated principal and grant, rather than accepting caller-supplied identity as cache isolation.
+
+The [in-memory implementation](https://github.com/google/adk-go/blob/19707a2660a8dd7b8ffb32837027253ed2f29dd1/auth/store.go#L160-L278) protects map operations with a mutex, but has no size cap and only sweeps on calls. It returns the same credential object, placing immutability/concurrent-use obligations on producers. Delete removes the current entry without fencing an in-flight retrieval that may write it back; the contract documents this revocation race. Teamagent needs credential generations or equivalent conditional publication, bounded retention/admission and an explicit distinction between local cache invalidation and issuer revocation.
+
+The [lazy provider](https://github.com/google/adk-go/blob/19707a2660a8dd7b8ffb32837027253ed2f29dd1/auth/providers.go#L226-L291) shares one initialization attempt and lets each caller stop waiting on its own context. A timer cancels the detached initializer's context, but clearing the in-flight attempt and notifying waiters still occurs only after init returns; a noncooperative initializer can outlive the advertised bound. The consent error deliberately keeps its URL out of Error(), yet exported fields can still be serialized, so error-string redaction is not a complete confidentiality boundary. No credential discovery, token request, upstream fixture or network replay was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `4bd9638d01cfe49df79c196d3322b2b451e34ed8` (commit date `2026-10-28T10:19:21+01:00`), compared with `19707a2660a8dd7b8ffb32837027253ed2f29dd1`. Earlier findings remain historical evidence.
+
+**Scope:** Analytics upload deadline, cooldown and deferred-upload ownership changes. The complete changed-path inventory contains 30 paths; the assessment below is limited to the cited branches.
+
+The upload path records its own timeout cause separately from an inherited caller deadline, measures stall time after a concurrency slot is obtained, and pauses later uploads for a shared cooldown. Failed uploads are retained for a later batch only under the explicit caller-cut-short/defer conditions; successful non-GCS locations are not treated as retained failures. See [plugin/agentanalytics/gcs_offloader.go](https://github.com/google/adk-go/blob/4bd9638d01cfe49df79c196d3322b2b451e34ed8/plugin/agentanalytics/gcs_offloader.go#L459-L563).
+
+For Teamagent, preserve phase-specific failure causes and explicit ownership of deferred work. The semaphore acquisition and wait group still depend on the offloader returning: a context deadline is not proof that a non-cooperative upload has stopped. These telemetry retry rules must not be transferred to ambiguous billable or enrollment operations. New model support and terminal trace reporting are outside this review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.

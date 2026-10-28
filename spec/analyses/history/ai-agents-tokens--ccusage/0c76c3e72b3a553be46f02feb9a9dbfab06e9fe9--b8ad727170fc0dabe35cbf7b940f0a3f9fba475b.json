@@ -1,0 +1,295 @@
+{
+  "id": "ai-agents-tokens--ccusage",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/ryoppippi/ccusage",
+  "report": "spec/projects/ai-agents-tokens--ccusage.md",
+  "analyzedSha": "0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T04:47:23Z",
+  "observedSha": "b8ad727170fc0dabe35cbf7b940f0a3f9fba475b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b8ad727170fc0dabe35cbf7b940f0a3f9fba475b",
+      "date": "2026-10-28T03:27:51Z",
+      "subject": "chore(pricing): update models.dev snapshot"
+    },
+    {
+      "sha": "a943e81f7819c69921f76ab9732420228c942e99",
+      "date": "2026-10-28T03:25:44Z",
+      "subject": "chore(pricing): update LiteLLM snapshot"
+    },
+    {
+      "sha": "03ca2efa69163b6ce0eaa197a141f472a250535a",
+      "date": "2026-10-28T01:42:53Z",
+      "subject": "chore(pricing): update models.dev snapshot"
+    },
+    {
+      "sha": "a2108519abff4acd79ae70e93d98802caca8a423",
+      "date": "2026-10-28T01:41:07Z",
+      "subject": "chore(pricing): update LiteLLM snapshot"
+    },
+    {
+      "sha": "0bd3d19a49d8ee9b1581f61db6d8a85fbf08767e",
+      "date": "2026-10-28T02:39:53+01:00",
+      "subject": "refactor(rust): move binary-only report helpers out of ccusage-core (#1985)"
+    },
+    {
+      "sha": "4f1f470cb56fc17d1cfe3e145212dfe576d7baf7",
+      "date": "2026-10-28T02:39:35+01:00",
+      "subject": "perf: speed up CI and local builds (#1984)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/scripts/update-litellm-lock.nu",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/ccusage/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "justfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/checks.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/darwin-x64-package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/dev-shell.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/static-package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "nix/test-artifacts.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/tests.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-cli-parser/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-cli-parser/src/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "rust/crates/ccusage-cli/src/home.rs",
+      "previousPath": "rust/crates/ccusage-core/src/home.rs"
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-cli/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-config/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-config/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-config/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-core/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-core/src/date_utils.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-core/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-core/src/output.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-core/src/summary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-pricing-snapshots/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage-pricing-snapshots/src/models-dev-pricing.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/crates/ccusage-report/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/crates/ccusage-report/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/crates/ccusage-report/src/date_utils.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R098",
+      "path": "rust/crates/ccusage-report/src/last_window.rs",
+      "previousPath": "rust/crates/ccusage-core/src/last_window.rs"
+    },
+    {
+      "status": "A",
+      "path": "rust/crates/ccusage-report/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/crates/ccusage-report/src/output.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R100",
+      "path": "rust/crates/ccusage-report/src/snapshots/ccusage_report__output__tests__snapshots_group_project_output_orders_named_projects_and_unknown_bucket.snap",
+      "previousPath": "rust/crates/ccusage-core/src/snapshots/ccusage_core__output__tests__snapshots_group_project_output_orders_named_projects_and_unknown_bucket.snap"
+    },
+    {
+      "status": "R100",
+      "path": "rust/crates/ccusage-report/src/snapshots/ccusage_report__output__tests__snapshots_session_summary_json_with_present_and_missing_options.snap",
+      "previousPath": "rust/crates/ccusage-core/src/snapshots/ccusage_core__output__tests__snapshots_session_summary_json_with_present_and_missing_options.snap"
+    },
+    {
+      "status": "R100",
+      "path": "rust/crates/ccusage-report/src/snapshots/ccusage_report__output__tests__snapshots_summary_json_with_optional_fields_and_model_breakdowns.snap",
+      "previousPath": "rust/crates/ccusage-core/src/snapshots/ccusage_core__output__tests__snapshots_summary_json_with_optional_fields_and_model_breakdowns.snap"
+    },
+    {
+      "status": "R100",
+      "path": "rust/crates/ccusage-report/src/snapshots/ccusage_report__summary__tests__snapshots_filter_and_sort_summaries_since_until_inclusive.snap",
+      "previousPath": "rust/crates/ccusage-core/src/snapshots/ccusage_core__summary__tests__snapshots_filter_and_sort_summaries_since_until_inclusive.snap"
+    },
+    {
+      "status": "A",
+      "path": "rust/crates/ccusage-report/src/summary.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage/src/cli/last_window.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage/src/cli/sources.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage/src/cli/timezone.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/crates/ccusage/tests/copilot_cli.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

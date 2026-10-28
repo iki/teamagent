@@ -38,6 +38,18 @@ The [observation wrapper](https://github.com/vercel-labs/fx/blob/404b5ed7b7da357
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e` (commit date `2026-10-27T23:35:02-04:00`), compared with `404b5ed7b7da357b889996bf2446846bb906f1a9`. Earlier findings remain historical evidence.
+
+**Scope:** Neutral stream event callbacks and provider HTTP failure classification. The complete changed-path inventory contains 25 paths; the assessment below is limited to the cited branches.
+
+The stream provider now maps selected HTTP statuses into invalid-request, authentication/authorization, size, rate-limit and server classes, keeping an explicit generic provider-error fallback. Its event sink adapters preserve content, reasoning, tool-input and tool-start distinctions. See [src/core/agent/stream_provider.zig](https://github.com/vercel-labs/fx/blob/fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e/src/core/agent/stream_provider.zig#L305-L350) and [src/core/agent/stream_provider.zig](https://github.com/vercel-labs/fx/blob/fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e/src/core/agent/stream_provider.zig#L43-L78). Added fixtures inspect status mappings and callback projections; they were not executed. See [src/core/agent/stream_provider.zig](https://github.com/vercel-labs/fx/blob/fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e/src/core/agent/stream_provider.zig#L635-L691).
+
+For Teamagent, retain the original bounded/redacted HTTP evidence alongside any normalized class, and keep transport uncertainty distinct from a confirmed response. This classifier alone is not an idempotency or retry policy; even its fixture maps an unexpected successful status to generic provider_error. Callbacks do not establish durable delivery or settled execution. Gateway/catalog/context changes were not fully audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `404b5ed7b7da357b889996bf2446846bb906f1a9`; commit date 2026-10-27T13:53:54-04:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
+Analysis metadata: source [fx](https://github.com/vercel-labs/fx); analyzed commit `fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e`; commit date 2026-10-27T23:35:02-04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--fx.md).
 <!-- teamagent-analysis:end -->

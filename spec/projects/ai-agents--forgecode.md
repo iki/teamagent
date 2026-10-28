@@ -36,6 +36,18 @@ The material change is dependency exposure: the [workspace manifest](https://git
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `8e5dcf36b38a3f3023132437cbf61245e5eacee5` (commit date `2026-10-28T07:06:42Z`), compared with `df1fdf6ff22f9c4b6d9bbf3735eadf1c5f4e87f9`. Earlier findings remain historical evidence.
+
+**Scope:** Both changed files are dependency lockfiles; complete deltas inspected. The complete changed-path inventory contains 2 paths; the assessment below is limited to the cited branches.
+
+The Rust lockfile updates Smithy HTTP/runtime components and ignore, and changes selected transitive Windows/hashbrown resolutions. The JavaScript lockfile updates AI SDK provider packages and ai from 7.0.154 to 7.0.155 with new integrity values. See [Cargo.lock](https://github.com/antinomyhq/forgecode/blob/8e5dcf36b38a3f3023132437cbf61245e5eacee5/Cargo.lock#L492-L642), [package-lock.json](https://github.com/antinomyhq/forgecode/blob/8e5dcf36b38a3f3023132437cbf61245e5eacee5/package-lock.json#L31-L143) and [package-lock.json](https://github.com/antinomyhq/forgecode/blob/8e5dcf36b38a3f3023132437cbf61245e5eacee5/package-lock.json#L959-L981). No executable application source appears in this two-path delta.
+
+Preserve prior runtime findings without calling the dependency change behavior-free, tested or a verified security fix. Exact resolved versions and integrity values are part of reproducible adapter evidence; source and runtime acceptance must be checked separately before adoption. No dependencies were installed or executed.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [forgecode](https://github.com/antinomyhq/forgecode); analyzed commit `df1fdf6ff22f9c4b6d9bbf3735eadf1c5f4e87f9`; commit date 2026-10-27T06:27:54Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--forgecode.md).
+Analysis metadata: source [forgecode](https://github.com/antinomyhq/forgecode); analyzed commit `8e5dcf36b38a3f3023132437cbf61245e5eacee5`; commit date 2026-10-28T07:06:42Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--forgecode.md).
 <!-- teamagent-analysis:end -->

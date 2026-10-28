@@ -2,11 +2,11 @@
 
 Source: [reframe](https://github.com/resultkitchen/reframe) · [Analysis](../../projects/ai-agents--reframe.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `13082b88b432d8e77ed9d8938352610980ab2652`; commit date: 2026-06-12T00:43:09-07:00; review date: unknown; observed SHA: `13082b88b432d8e77ed9d8938352610980ab2652`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `13082b88b432d8e77ed9d8938352610980ab2652`; commit date: 2026-06-12T00:43:09-07:00; review date: unknown; observed SHA: `13082b88b432d8e77ed9d8938352610980ab2652`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/resultkitchen/reframe/compare/13082b88b432d8e77ed9d8938352610980ab2652...13082b88b432d8e77ed9d8938352610980ab2652). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: outdated; upstream availability: available.
+- Git discovery: inspected; source lifecycle: outdated; upstream availability: available.
 
 ## Recent commits
 

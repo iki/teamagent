@@ -39,6 +39,18 @@ Evidence: [src/officecli/ResidentClient.cs:14-92](https://github.com/iOfficeAI/O
 
 **Scope and limits:** Static scoped review of resident-version retirement, batch serialization and marker-size validation within the 71-path comparison. Full named-pipe trust/timeouts, batch execution parity, chart renderer changes, affected package writers and regression tests were not audited or executed; no Office application or document mutation.
 
+## Follow-up change review — 2026-10-28
+
+**CLI and resident document viewing share validation semantics.** Reviewed commit `89905744ed6dbb87fb6807a0d9fda6ed3da1c18d` (commit date `2026-10-28T13:49:46+08:00`), compared with `585c0dc283311a47c37578d1189fb96133e437f5`. The complete no-rename Git path inventory contains 5 changed paths.
+
+The extracted RunView implementation is shared by the front end and resident. It rejects nonpositive or inverted line windows, nonpositive limits/dimensions and page/grid options that have no meaning for Excel HTML/screenshots. Native render ownership is represented by release/reopen callbacks rather than pretending the editable document handle can coexist with every renderer. Only the shared entry and preflight were inspected here.
+
+Evidence: [src/officecli/CommandBuilder.ViewCore.cs:8-34](https://github.com/iOfficeAI/OfficeCLI/blob/89905744ed6dbb87fb6807a0d9fda6ed3da1c18d/src/officecli/CommandBuilder.ViewCore.cs#L8-L34) · [src/officecli/CommandBuilder.ViewCore.cs:43-74](https://github.com/iOfficeAI/OfficeCLI/blob/89905744ed6dbb87fb6807a0d9fda6ed3da1c18d/src/officecli/CommandBuilder.ViewCore.cs#L43-L74).
+
+**Harness consequence:** Use one operation contract across long-lived services and one-shot CLI calls. Reject ignored options before expensive work and model temporary ownership transfer explicitly; this does not establish native rendering fidelity or no-overwrite publication.
+
+**Scope and limits:** Reviewed shared view entry/preflight and declared native-lock boundary; the large moved implementation and resident execution were not exhaustively tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [officecli](https://github.com/iOfficeAI/OfficeCLI); analyzed commit `585c0dc283311a47c37578d1189fb96133e437f5`; commit date 2026-10-27T18:32:40+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--officecli.md).
+Analysis metadata: source [officecli](https://github.com/iOfficeAI/OfficeCLI); analyzed commit `89905744ed6dbb87fb6807a0d9fda6ed3da1c18d`; commit date 2026-10-28T13:49:46+08:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--officecli.md).
 <!-- teamagent-analysis:end -->

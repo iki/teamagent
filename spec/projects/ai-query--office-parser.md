@@ -39,6 +39,18 @@ Evidence: [src/parsers/CsvParser.ts:1-167](https://github.com/harshankur/officeP
 
 **Scope and limits:** Static scoped CSV parser and PDF work-budget review within the 639-path comparison. Other format parsers, PDF process implementation, complete layout/OCR pipeline and integration fixtures were not audited or executed; no extraction-quality or resource benchmark is claimed.
 
+## Follow-up change review — 2026-10-28
+
+**Auxiliary PDF assets have shared wait budgets and visible missing-asset outcomes.** Reviewed commit `15f1f22d668f631859440f916b252b4879edcf3b` (commit date `2026-10-28T08:24:38+01:00`), compared with `57f2d144916191ef0cca8677f40cf169195a66d7`. The complete no-rename Git path inventory contains 329 changed paths. The aggregate diff exceeded the 8 MiB capture bound; the selected files were expanded separately, and no completeness claim is made for that diff.
+
+The target asset loader restricts names to configured CMaps/decoders, shares in-flight reads, caches unavailable assets and enforces a 15-second cumulative waiting budget per folder per document. Local and streamed remote assets have a 4 MiB byte check, and parse cancellation/end aborts waits. However the inspected remote fetch uses default redirect behavior, and local containment is lexical rather than a verified no-symlink boundary. These limits do not by themselves satisfy Teamagent's network/path policy.
+
+Evidence: [src/parsers/pdf/pdfAssets.ts:31-42](https://github.com/harshankur/officeParser/blob/15f1f22d668f631859440f916b252b4879edcf3b/src/parsers/pdf/pdfAssets.ts#L31-L42) · [src/parsers/pdf/pdfAssets.ts:201-255](https://github.com/harshankur/officeParser/blob/15f1f22d668f631859440f916b252b4879edcf3b/src/parsers/pdf/pdfAssets.ts#L201-L255) · [src/parsers/pdf/pdfAssets.ts:328-408](https://github.com/harshankur/officeParser/blob/15f1f22d668f631859440f916b252b4879edcf3b/src/parsers/pdf/pdfAssets.ts#L328-L408).
+
+**Harness consequence:** Provision trusted parser resources, reject unapproved egress/redirects and retain explicit partial-extraction warnings. Bound shared auxiliary work as well as document bytes; an exhausted asset budget must not look like complete successful extraction.
+
+**Scope and limits:** Reviewed complete selected target-revision asset code after the capped aggregate diff; worker isolation, every parser and network containment were not certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [office-parser](https://github.com/harshankur/officeParser); analyzed commit `57f2d144916191ef0cca8677f40cf169195a66d7`; commit date 2026-10-26T23:11:44+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--office-parser.md).
+Analysis metadata: source [office-parser](https://github.com/harshankur/officeParser); analyzed commit `15f1f22d668f631859440f916b252b4879edcf3b`; commit date 2026-10-28T08:24:38+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--office-parser.md).
 <!-- teamagent-analysis:end -->

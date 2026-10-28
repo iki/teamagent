@@ -36,6 +36,14 @@ The full analyzed commit 08c7152ab6e576951b33c2991ed2dedca4333096 is an ancestor
 
 The [tests](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/acp/acp-permission-requests.test.ts#L101-L169) distinguish prompt cancellation from the owner of an autonomous permission: session/cancel alone intentionally leaves that handler signal active. Do not advertise universal cancellation enforcement from a session cancel method. [Authority retirement/restoration](https://github.com/stablyai/orca/blob/ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c/src/main/agent-hooks/server/server-authority-fences.ts#L11-L126) removes aliases, cached observations and hydrated grants, then restores only matching fences that have not been superseded or closed. Persistence is scheduled rather than established as an atomic durable transaction in this slice. Adopt explicit ownership/epoch checks and negotiate cancellation capability; no distributed fencing or complete isolation guarantee was verified.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c` to `478743dbbaba368b9795463f6770966bc0baf341`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [src/main/skills/skill-install-discovery-verification.ts](https://github.com/stablyai/orca/blob/478743dbbaba368b9795463f6770966bc0baf341/src/main/skills/skill-install-discovery-verification.ts#L128-L194), Install verification performs a fresh discovery and downgrades missing placements to failed, requires a discovered canonical copy, and preserves partial status when placements fail or skip. The helper excludes roots marked unavailable from proving a placement and targets the requested skill name for WSL discovery, while checking distro/path normalization.
+
+**Harness implication and limits:** Installed bytes and discoverable provider placement are separate acceptance checks. Retained pre-install scans must not certify new writes, and a partial multi-agent installation must stay partial. This is discoverability evidence rather than content-hash verification or proof the agent can execute the skill. The broad repository diff was truncated; only this captured module and focused test contract were reviewed. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [orca](https://github.com/stablyai/orca); analyzed commit `ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c`; commit date 2026-10-27T10:36:03-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--orca.md).
+Analysis metadata: source [orca](https://github.com/stablyai/orca); analyzed commit `478743dbbaba368b9795463f6770966bc0baf341`; commit date 2026-10-28T03:17:25-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--orca.md).
 <!-- teamagent-analysis:end -->

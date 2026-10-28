@@ -1,0 +1,200 @@
+{
+  "id": "ai-agents--openrig",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/mvschwarz/openrig",
+  "report": "spec/analyses/unreviewed/ai-agents--openrig.md",
+  "analyzedSha": "84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T10:12:52-07:00",
+  "observedSha": "6957751f5e39af15a3ccf04a579a8477d2744d88",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6957751f5e39af15a3ccf04a579a8477d2744d88",
+      "date": "2026-10-27T14:13:32-07:00",
+      "subject": "feat(terminal): follow task membership in one workspace (#2199)"
+    },
+    {
+      "sha": "ae59c4287a404e2199805d3adaa95f40df3fea40",
+      "date": "2026-10-27T13:29:33-07:00",
+      "subject": "fix(cli): wait for slow send results before reporting uncertainty (#2198)"
+    },
+    {
+      "sha": "0c44b23ae90fa8dce41c3e8c64a40f9f24760be9",
+      "date": "2026-10-27T11:49:36-07:00",
+      "subject": "fix(scope): accept slice folders numbered 100 and above in the audit route (#2194)"
+    },
+    {
+      "sha": "e5f8a8eee735449631dd1ca45462de265a7384f0",
+      "date": "2026-10-27T11:49:06-07:00",
+      "subject": "docs(roadmap): mark 0.7.4 released (#2197)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "ROADMAP.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/sdlc-conventions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/terminal-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/scope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/send.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/terminal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/lib/scope/scope-audit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/terminal-window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/cross-host-http.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/send.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal-window-reuse.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/test/terminal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/scope/scope-audit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/terminal/herdr-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/terminal/herdr-follow-view.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/terminal/herdr-sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/terminal/herdr-viewer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/terminal/terminal-follow-policy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/src/domain/terminal/terminal-following.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/terminal/terminal-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/domain/terminal/terminal-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/scope-audit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/routes/terminal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/src/startup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/herdr-follow-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/herdr-viewer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/daemon/test/scope-audit-routes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/terminal-follow-policy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/terminal-follow-route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/daemon/test/terminal-following.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

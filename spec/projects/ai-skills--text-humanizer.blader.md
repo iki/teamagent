@@ -30,6 +30,16 @@ Reviewed commit `8c307f367c91bd974002f10f2be2965d642c13df` (commit date `2026-10
 
 The [README](https://github.com/blader/humanizer/blob/8c307f367c91bd974002f10f2be2965d642c13df/README.md) adds a sponsor and moves badges. Skill instructions and executable content are unchanged. Sponsorship/install counts provide no effectiveness evidence; retain the previous comparison-candidate disposition. Factual preservation, linguistic quality and model-specific effectiveness remain untested.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0` (commit date `2026-10-28T00:17:33-07:00`), compared with `8c307f367c91bd974002f10f2be2965d642c13df`. Earlier findings remain historical evidence.
+
+**Scope:** Complete one-file plugin-manifest delta. The complete changed-path inventory contains 1 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The only change removes the manifest's external schema declaration; the shown identity, description and version remain. It establishes no change to rewriting behavior or evaluation quality. Teamagent should validate imported manifests against its own versioned boundary schema instead of interpreting the presence or absence of a publisher's schema URL as validation. Existing findings about wording preservation remain historical evidence; this packet does not re-test them. [.claude-plugin/plugin.json](https://github.com/blader/humanizer/blob/0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0/.claude-plugin/plugin.json#L1-L5).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [text-humanizer.blader](https://github.com/blader/humanizer); analyzed commit `8c307f367c91bd974002f10f2be2965d642c13df`; commit date 2026-10-16T12:12:03-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--text-humanizer.blader.md).
+Analysis metadata: source [text-humanizer.blader](https://github.com/blader/humanizer); analyzed commit `0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0`; commit date 2026-10-28T00:17:33-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--text-humanizer.blader.md).
 <!-- teamagent-analysis:end -->

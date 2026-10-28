@@ -2,12 +2,11 @@
 
 Source: [context-mode](https://github.com/mksglu/context-mode) · [Analysis](../../projects/ai-agents-mem--context-mode.md) · [memory](../../memory.md), [agents](../../agents.md), [models](../../models.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `da399d384f03ae9c28d955c2e56c834c56d6ea93`; commit date: 2026-10-27T12:07:01Z; review date: 2026-10-28T08:26:04.502Z; observed SHA: `da399d384f03ae9c28d955c2e56c834c56d6ea93`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `b77ba447f51ff193962d6f0fb78c061c76ae871c`; commit date: 2026-10-27T18:04:03Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `b77ba447f51ff193962d6f0fb78c061c76ae871c`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mksglu/context-mode/compare/da399d384f03ae9c28d955c2e56c834c56d6ea93...da399d384f03ae9c28d955c2e56c834c56d6ea93). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/mksglu/context-mode/compare/b77ba447f51ff193962d6f0fb78c061c76ae871c...b77ba447f51ff193962d6f0fb78c061c76ae871c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

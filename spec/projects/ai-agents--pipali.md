@@ -38,6 +38,14 @@ The [command wrappers](https://github.com/khoj-ai/pipali/blob/4d347b0b7450508f71
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `4d347b0b7450508f717d49d727b1ef2215ef757d` to `140a91509eb1aeb5f67ef09f8292e86f6eb3c122`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [src/server/events/run-executor.ts](https://github.com/khoj-ai/pipali/blob/140a91509eb1aeb5f67ef09f8292e86f6eb3c122/src/server/events/run-executor.ts#L161-L170), The executor captures ownership as bus.activeRun === runHandle after attachment. The delta guards stream publication, loop result handling and errors with that ownership predicate; a stopped old generator is still drained but no longer writes to the new run's presentation. stopConversationRun now publishes run_stopped and releases bus ownership immediately.
+
+**Harness implication and limits:** Separate visible run ownership from physical cleanup: a replacement run may begin while the stopped attempt unwinds. Fence old callbacks and terminal events by attempt identity. This in-memory predicate does not fence external side effects or cross-process writers, and draining still depends on iterator cooperation. No concurrency or cancellation fixture was executed. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pipali](https://github.com/khoj-ai/pipali); analyzed commit `4d347b0b7450508f717d49d727b1ef2215ef757d`; commit date 2026-10-26T23:29:16-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pipali.md).
+Analysis metadata: source [pipali](https://github.com/khoj-ai/pipali); analyzed commit `140a91509eb1aeb5f67ef09f8292e86f6eb3c122`; commit date 2026-10-27T18:03:58-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pipali.md).
 <!-- teamagent-analysis:end -->

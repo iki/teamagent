@@ -1,0 +1,125 @@
+{
+  "id": "ai-agents--mateclaw",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/mateaix/mateclaw",
+  "report": "spec/projects/ai-agents--mateclaw.md",
+  "analyzedSha": "cf1fd92c6d8a6faf572c378155aeb6fcacc0564b",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T03:41:20-05:00",
+  "observedSha": "ffd35950dbda00b987bf154e43402d1e4b2c629a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ffd35950dbda00b987bf154e43402d1e4b2c629a",
+      "date": "2026-10-28T05:10:24-04:00",
+      "subject": "fix(agent): bound skill overviews and enforce execution budgets (#672)"
+    },
+    {
+      "sha": "17a0cf89c6e292ef2e0ed92c80e5a12085b75803",
+      "date": "2026-10-28T03:18:13-04:00",
+      "subject": "fix(agent): bound skill discovery and retain verification evidence (#672)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolResultProperties.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/executor/ToolResultStorage.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/CodeExecutionBudget.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/SkillOverviewAnswer.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinator.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/guard/ToolLoopGuard.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/ActionNode.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/node/ReasoningNode.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/agent/graph/state/ActionExecutionLedger.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/main/java/vip/mate/tool/builtin/SkillFileTool.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/executor/ToolResultStoragePreviewTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/guard/CodeExecutionBudgetTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/guard/TaskFinalizationCoordinatorTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/guard/ToolLoopGuardTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/node/ActionNodeSkillOverviewTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/node/ReasoningNodeExecutionBudgetTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/agent/graph/state/ActionExecutionLedgerTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mateclaw-server/src/test/java/vip/mate/tool/builtin/SkillFileToolTest.java",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

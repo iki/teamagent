@@ -1,0 +1,970 @@
+{
+  "id": "ai-security--rea",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/morluto/rea",
+  "report": "spec/analyses/unreviewed/ai-security--rea.md",
+  "analyzedSha": "0cd7ef456bf960da265e04b341e82a24b1e377d5",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-27T17:13:17Z",
+  "observedSha": "df7119aeede60f9f81a74f29d6606c49adb79d8e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "df7119aeede60f9f81a74f29d6606c49adb79d8e",
+      "date": "2026-10-28T18:17:45+08:00",
+      "subject": "fix(mcp): distinguish validation from connection loss (#7761)"
+    },
+    {
+      "sha": "60bad9ed06474f5e4f2c09dce19f00f78591950e",
+      "date": "2026-10-28T09:12:30Z",
+      "subject": "fix(hopper)!: admit macOS arguments before application handoff (#7732)"
+    },
+    {
+      "sha": "3b242491a430b3807853436bfeb9568d606169ac",
+      "date": "2026-10-28T16:48:20+08:00",
+      "subject": "fix(cli): attribute keyed archive errors to archive argument (#7731)"
+    },
+    {
+      "sha": "e78ac1a55b4a4902efb6074412227c29eba9ad00",
+      "date": "2026-10-28T16:47:39+08:00",
+      "subject": "feat(artifacts): read UnityFS AssetBundle containers (#7699)"
+    },
+    {
+      "sha": "6a226bd09263776b080e7e25c218ed738b2fd068",
+      "date": "2026-10-28T16:01:17+08:00",
+      "subject": "fix(apple): validate keyed archive selectors consistently (#7728)"
+    },
+    {
+      "sha": "2b8fb387b6d1204f6c6e8abb89d075b7d95ba402",
+      "date": "2026-10-28T07:27:48Z",
+      "subject": "fix(windows): resolve default tools before process launch (#7725)"
+    },
+    {
+      "sha": "0e4b806db14f2cbdf4a31a6268fe1a3514401677",
+      "date": "2026-10-28T15:23:00+08:00",
+      "subject": "fix(cli): preserve missing-selection Markdown token windows (#7726)"
+    },
+    {
+      "sha": "a0a1962e06e47b641d1cf6afbeb60d1d00da2b70",
+      "date": "2026-10-28T15:00:01+08:00",
+      "subject": "fix(cli): validate byte queries before opening targets (#7723)"
+    },
+    {
+      "sha": "b0fb51cb4c54a73da130087c3f3875ecdf1ea43e",
+      "date": "2026-10-28T06:48:26Z",
+      "subject": "fix(environment): share inline state byte admission (#7721)"
+    },
+    {
+      "sha": "5ae77656e7c4b9c40e84566a445660af34a23ad4",
+      "date": "2026-10-28T14:12:39+08:00",
+      "subject": "feat(workflows): expose guided prompts through CLI and MCP (#6995)"
+    },
+    {
+      "sha": "b594fbc3e739ade1fbb9ce38846ed1c3a991273e",
+      "date": "2026-10-28T13:28:03+08:00",
+      "subject": "fix(apple): scope application roots to the inventory format (#7714)"
+    },
+    {
+      "sha": "8397a0c9eb1d845e548ca1f31b8c63b78d485239",
+      "date": "2026-10-28T05:16:41Z",
+      "subject": "fix(plugins): align listing metadata with REA branding (#7711)"
+    },
+    {
+      "sha": "fbb0e79354d8cc138026d01de393652913f821bf",
+      "date": "2026-10-28T12:57:14+08:00",
+      "subject": "fix(cli): reject empty observation duration selections (#7710)"
+    },
+    {
+      "sha": "c36971953c3c867e4f3a1f149dbf0022a8e10a73",
+      "date": "2026-10-28T12:35:55+08:00",
+      "subject": "feat(artifacts): inventory and extract Intel HEX and Motorola S-record regions (#7136)"
+    },
+    {
+      "sha": "ad7d4c1f4dd9cbd93229ee330e66c7a522e723e6",
+      "date": "2026-10-28T12:19:25+08:00",
+      "subject": "docs(errors): align MCP validation status and verification columns (#7708)"
+    },
+    {
+      "sha": "b69d8c54678f2c6f9217c1609a5e9d64880e5392",
+      "date": "2026-10-28T12:12:42+08:00",
+      "subject": "docs(changelog): repair historical release heading links (#7707)"
+    },
+    {
+      "sha": "c01ed783ac970a47546d664b6792f69cacc2fca9",
+      "date": "2026-10-28T12:08:25+08:00",
+      "subject": "fix(elf): share section-table presence validation with notes (#7706)"
+    },
+    {
+      "sha": "d3b31a0e29a67c8d3a2b756ec46744c27f70ea8f",
+      "date": "2026-10-28T11:53:29+08:00",
+      "subject": "feat(cli): report opt-in command timings (#7042)"
+    },
+    {
+      "sha": "3d5c73f35c1d089807bf70e74da0e3002e08e52d",
+      "date": "2026-10-28T11:48:31+08:00",
+      "subject": "fix(cli): retain JSONL parser diagnostics under token counting (#7705)"
+    },
+    {
+      "sha": "e556134302f055936c0295838d72ebcd5454bc96",
+      "date": "2026-10-28T03:34:36Z",
+      "subject": "fix(deps): patch fast-uri, qs and HTTP/3 certifi (#7704)"
+    },
+    {
+      "sha": "aa6f6436c9cb211d913e0b65b150e977d13b7164",
+      "date": "2026-10-28T11:27:40+08:00",
+      "subject": "feat(cli): add CSV and TSV analysis views (#7254)"
+    },
+    {
+      "sha": "40b9c03f996270e944ff07cafb63be15ce903708",
+      "date": "2026-10-28T07:51:03+08:00",
+      "subject": "feat(environment): serve query numbers, counted values and made objects (#7332)"
+    },
+    {
+      "sha": "baec375c347f129cb109823cff31831e906039f0",
+      "date": "2026-10-28T05:16:49+08:00",
+      "subject": "fix(cli): validate outline-depth before numeric coercion (#7505)"
+    },
+    {
+      "sha": "423d190026a48a94aef70c90eb6970f54b75d7ca",
+      "date": "2026-10-28T05:16:28+08:00",
+      "subject": "fix(cli): preserve Markdown table edge spaces (#7506)"
+    },
+    {
+      "sha": "6efb384261ea462064d83b692a9524d1700c7124",
+      "date": "2026-10-28T05:16:13+08:00",
+      "subject": "docs(uninstall): clarify malformed shared config retention (#7507)"
+    },
+    {
+      "sha": "5fcf0d2dcc2bf69143b5faece047aa4fadf639f3",
+      "date": "2026-10-28T05:08:27+08:00",
+      "subject": "fix(browser): save from gzip, deflate and cached responses within a bound (#7361)"
+    },
+    {
+      "sha": "7bc6c5bf61deee59c93e3398d4726a9cb5df981c",
+      "date": "2026-10-28T05:07:28+08:00",
+      "subject": "feat(environment): serve the writes callers make without recorded form fields (#7260)"
+    },
+    {
+      "sha": "aa210b7ccc40599a357f74cfefcdd7dac215c11e",
+      "date": "2026-10-28T05:05:21+08:00",
+      "subject": "feat(environment): serve the writes that later reads explain (#7274)"
+    },
+    {
+      "sha": "ef11f77836ccf85d4458aa18398c36ba592616a5",
+      "date": "2026-10-28T03:41:26+08:00",
+      "subject": "fix(evidence): Reject non-file destinations before overwrite advice (#7495)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/reverse-engineer-anything/references/native-and-artifacts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "assets/rea-plugin.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/browser-scenario-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/client-configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/firmware-analysis.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/hex-records.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/http3-capture-lab.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp-prompts.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-call-values/plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-call-values/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-call-values/tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-call-values/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-form-calls/plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-form-calls/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-form-calls/tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-form-calls/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-later-reads/plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-later-reads/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-later-reads/tasks.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/specs/agent-environments/write-later-reads/verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/unityfs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-visible-errors.csv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/web-network-captures.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "licenses/npm-dependencies.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "licenses/npm-runtime-notices.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/plan.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/scopes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fixtures/http3-lab-requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/rea.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-package-pack.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adb/AdbConfiguration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adb/AdbConfiguration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/adb/AdbProvider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/apktool/ApktoolConfiguration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/apktool/ApktoolConfiguration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/BinaryTargetResolver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/application/GuidedWorkflowAccess.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/JsonFiles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/UpdateCommandRunner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/application/environment/environmentQueryText.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/environment/environmentStateAnswer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/environment/environmentStateBulkAnswer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/application/environment/environmentStateFormAnswer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/application/environment/environmentStateLaterReadsAnswer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/application/environment/environmentStateMadeValuesAnswer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/environment/environmentStateStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/environment/environmentStateWriteAnswer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/environment/environmentToolAnswer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/environment/environmentTools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/application/environment/environmentTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/ArtifactFileRange.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/ArtifactReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/AsarArtifactReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/DesktopApplicationReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/DesktopFileInspection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/GodotPckArtifactReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/GodotPckLocation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/HexRecordArtifactReader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/HexRecordArtifactReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/UnityFsArtifactReader.boundaries.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/UnityFsArtifactReader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/UnityFsArtifactReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/UnityFsStructures.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/apple/KeyedArchiveReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/createArtifactReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/extraction/ArtifactExtraction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/inventory/ArtifactGraphConstruction.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/inventory/ArtifactGraphConstruction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/inventory/classify.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/inventory/reader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/artifacts/inventory/scanReader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/artifacts/inventory/scanReader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/BrowserScenarioResponseValues.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/PlaywrightScenarioRequest.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/browser/network/PlaywrightScenarioNetwork.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/catalogIdentity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/artifactCommands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/cliOutputFormatter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/cliResultOutput.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/completions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/coreNativeCommands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cli/guidedWorkflowCommands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/projectCliAnalysisResult.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cli/utilityCommands.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cliBuiltinArguments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cliCommandNames.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/cliObservationOptions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cliObservationOptions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/cliOutput.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/composition/resolveWindowsProviderExecutable.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/applicationToolContracts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/contracts/guidedWorkflowSchemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/promptContracts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/contracts/promptToolFamilyScope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/toolEffects.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/contracts/toolEffects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisSnapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/EnvironmentStateExtraction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/EnvironmentStateWriteSimulation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/artifactInventorySummaryProjection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/artifactInventoryView.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateCreateCalls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/analysisView/environmentStateFormWrites.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateGate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/analysisView/environmentStateLaterReads.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateListFacts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateListQuery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/analysisView/environmentStateMadeValues.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStatePaging.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateRules.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateView.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteAdoption.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteApply.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteApply.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteBulk.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteChecks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteCreate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteCreateCalls.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteEffects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteExplain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteLinks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteObserve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteOrder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteRules.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteStamps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteValues.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/analysisView/environmentStateWriteVerdict.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/apple/appleApplication.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/apple/appleBundleAnatomy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/apple/keyedArchive.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/artifactFormatMetadata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/artifactGraph.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/artifactInspection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/binaryTargetTypes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/desktopApplication.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/desktopApplicationProjection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/elfDeclaredRanges.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/evidenceSubject.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/firmware/hexRecordSyntax.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/firmware/hexRecords.fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/firmware/hexRecords.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/firmware/hexRecords.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/hopperErrors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/domain/liveBinaryTargetSummary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/domain/unityfsFormat.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

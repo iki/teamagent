@@ -1,0 +1,185 @@
+{
+  "id": "ai-query--magika",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/google/magika",
+  "report": "spec/projects/ai-query--magika.md",
+  "analyzedSha": "8d3d3b9b9452a65a6aa7752e061a67bf4a6b3c9b",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-23T14:03:59Z",
+  "observedSha": "3627c158bcfb146bee4747b0589e80ac2faa4d7f",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3627c158bcfb146bee4747b0589e80ac2faa4d7f",
+      "date": "2026-10-28T10:17:42+01:00",
+      "subject": "Merge pull request #1553 from corkamig/native-cascade"
+    },
+    {
+      "sha": "16300a323bd6fcbba173d3be18334e25314f40da",
+      "date": "2026-10-23T18:22:01Z",
+      "subject": "lib: remove builtin rules in favor of native resolvers"
+    },
+    {
+      "sha": "eae03754cd9b9aaa7ad502904ee8980c692a89fd",
+      "date": "2026-10-23T18:21:53Z",
+      "subject": "resolvers: move native magic cascade into rust/lib/src/resolvers"
+    },
+    {
+      "sha": "0c3ff5e67df0418acc804297191495ce334f2101",
+      "date": "2026-10-21T03:27:13Z",
+      "subject": "cli: scale reader threads and skip model init on --rules=only"
+    },
+    {
+      "sha": "2941b9fef6bfc0cc93c877f5c73b654f7b47ee10",
+      "date": "2026-10-21T03:27:13Z",
+      "subject": "rules: add zero-allocation scan_one and Rayon batch scanning"
+    },
+    {
+      "sha": "6d2bc15d742de6ff23d2a274fb4170dea0449f3f",
+      "date": "2026-10-21T03:27:13Z",
+      "subject": "rules: optimize and clean up native ZIP parser"
+    },
+    {
+      "sha": "34f6e953088be6a06cf4870637289f63eef575ca",
+      "date": "2026-10-20T19:57:04Z",
+      "subject": "rules: optimize and clean up native PE header parser"
+    },
+    {
+      "sha": "395f02117cd201d16daa19eea4e8adbcd487dad1",
+      "date": "2026-10-20T19:54:49Z",
+      "subject": "rules: replace YARA engine with native magic cascade"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "python/src/magika/_magika.pyi",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/cli/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/cli/test.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/ffi/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/ffi/include/magika.h",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/ffi/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/ffi/test.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/file.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/input.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/options.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/resolvers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/lib/src/resolvers/facts/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/lib/src/resolvers/facts/pe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/lib/src/resolvers/facts/zip.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/lib/src/resolvers/magic/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "rust/lib/src/resolvers/magic/notworking.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/rules.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/lib/src/tests/gpu.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/pyo3/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "rust/pyo3/src/lib.rs",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

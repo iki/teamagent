@@ -39,6 +39,18 @@ Evidence: [packages/extension/clients/cacheClient.ts:1-214](https://github.com/b
 
 **Scope and limits:** Scoped static review of the extension cache client, its direct fixtures and one extraction benchmark in the 928-path comparison. Server Redis keys, consumer fallback decisions, transport implementation and other benchmarks were not audited; no extension, browser, model, server or upstream tests were executed.
 
+## Follow-up change review — 2026-10-28
+
+**Schema metadata behavior is adjusted alongside centralized dependency versions.** Reviewed commit `737480022acbf5ec3450885f120fc33ee561a9b4` (commit date `2026-10-27T15:45:29-07:00`), compared with `63078cf85ddfe189da88204539ec30d41959378b`. The complete no-rename Git path inventory contains 69 changed paths.
+
+The Zod update is accompanied by two concrete schema-generation changes: the protocol document root loses its metadata id to remain inline, and the standalone default extraction schema uses a fresh metadata registry. Cookbook dependencies move to the workspace catalog, while the path inventory also removes CrewAI examples/docs and some Go cookbook implementations. These removals must not be advertised as current integrations merely because older reports mention them.
+
+Evidence: [packages/protocol/json-rpc/build-json-rpc-schema.ts:63-72](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/packages/protocol/json-rpc/build-json-rpc-schema.ts#L63-L72) · [packages/protocol/schemas.ts:1559-1570](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/packages/protocol/schemas.ts#L1559-L1570) · [pnpm-workspace.yaml:1-8](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/pnpm-workspace.yaml#L1-L8) · [pnpm-workspace.yaml:33-41](https://github.com/browserbase/stagehand/blob/737480022acbf5ec3450885f120fc33ee561a9b4/pnpm-workspace.yaml#L33-L41).
+
+**Harness consequence:** Treat schema-generator upgrades as wire-format changes until fixtures establish compatibility. Pin generated contract provenance and distinguish historical examples from maintained adapters in capability lists.
+
+**Scope and limits:** Reviewed the schema-generation deltas, workspace catalog update and complete path inventory; generated protocol equivalence and removed integration behavior were not executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [stagehand](https://github.com/browserbase/stagehand); analyzed commit `63078cf85ddfe189da88204539ec30d41959378b`; commit date 2026-10-26T19:30:30-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--stagehand.md).
+Analysis metadata: source [stagehand](https://github.com/browserbase/stagehand); analyzed commit `737480022acbf5ec3450885f120fc33ee561a9b4`; commit date 2026-10-27T15:45:29-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--stagehand.md).
 <!-- teamagent-analysis:end -->

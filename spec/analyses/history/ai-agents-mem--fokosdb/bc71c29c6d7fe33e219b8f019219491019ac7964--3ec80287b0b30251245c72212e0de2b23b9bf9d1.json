@@ -1,0 +1,180 @@
+{
+  "id": "ai-agents-mem--fokosdb",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/lambrospetrou/fokosdb",
+  "report": "spec/projects/ai-agents-mem--fokosdb.md",
+  "analyzedSha": "bc71c29c6d7fe33e219b8f019219491019ac7964",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-26T14:57:46Z",
+  "observedSha": "3ec80287b0b30251245c72212e0de2b23b9bf9d1",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3ec80287b0b30251245c72212e0de2b23b9bf9d1",
+      "date": "2026-10-27T23:06:49Z",
+      "subject": "The isolate topology cache now separates entries by the admin DO address to match Workers Cache keys"
+    },
+    {
+      "sha": "9f369e0c3ddbc6aa69fc286b8be5c44a82fb8627",
+      "date": "2026-10-27T22:42:50Z",
+      "subject": "Add the table name and the target ID to each push batch"
+    },
+    {
+      "sha": "df7629e428a5ba6487b19db0e68950342446fd7d",
+      "date": "2026-10-27T21:41:43Z",
+      "subject": "tests: use cloudflare:workers for importing env"
+    },
+    {
+      "sha": "e3d9d8e0e6efc515da2a3acba64f594a08d49781",
+      "date": "2026-10-27T21:13:21Z",
+      "subject": "Stop epoch raises for push calls that do not reach the target, and refuse bytes in a GSI projection"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-10-17-coalesced-materialization-and-gsis.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/agent-plans/2026-10-23-encoded-topology-auto-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/do-materialization.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/gsi-target.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/materialization-migration-host.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/materialization-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/target-runner.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/target-runner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/server/materialization/targets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/topology-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/sharding/topology-cache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/do-stubs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/expression/semantic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/partition-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/src/shared/topology-hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/gsi-cost-bench/gsi-cost.workerd-bench.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/apply-latest-images.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/gsi-query.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/gsi-targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/push-target-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/push-targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/split.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/materialization-do/stored-targets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/materialization-export.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fokosdb/test/partition-do/tx-promotion-transfer.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

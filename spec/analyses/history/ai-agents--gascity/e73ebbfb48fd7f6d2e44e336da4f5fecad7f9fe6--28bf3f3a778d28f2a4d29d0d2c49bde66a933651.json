@@ -1,0 +1,955 @@
+{
+  "id": "ai-agents--gascity",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/gastownhall/gascity",
+  "report": "spec/projects/ai-agents--gascity.md",
+  "analyzedSha": "e73ebbfb48fd7f6d2e44e336da4f5fecad7f9fe6",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T14:24:46Z",
+  "observedSha": "28bf3f3a778d28f2a4d29d0d2c49bde66a933651",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "28bf3f3a778d28f2a4d29d0d2c49bde66a933651",
+      "date": "2026-10-28T09:59:03Z",
+      "subject": "test(cmd/gc): the lane-inject lint sees control and content in cmd/gc and internal/api (#8395)"
+    },
+    {
+      "sha": "c00e6793662db9a8b6df690dab653166ae65065c",
+      "date": "2026-10-28T08:13:20Z",
+      "subject": "feat(opjournal): let [ops] authoritative list interrupt (ga-6plx6a) (#8394)"
+    },
+    {
+      "sha": "b25b49f33e371c6a999fe9b608eb7af26da9e51e",
+      "date": "2026-10-28T07:47:32Z",
+      "subject": "test(bd): require the watchdog sleep to stop under command substitution (#8434)"
+    },
+    {
+      "sha": "816466e3863b4d87323b6522ae0199130432da8b",
+      "date": "2026-10-28T07:02:24Z",
+      "subject": "fix(validation): resolve provider family before skill collision checks (#7632)"
+    },
+    {
+      "sha": "660d2eacd85fc7c1eb317b9c7bcd51eefb3b9948",
+      "date": "2026-10-28T07:02:20Z",
+      "subject": "fix(session): stop pool_slot flapping on numbered named sessions (#6871)"
+    },
+    {
+      "sha": "77c1fbc7accf2e651572f7ae5be0b86119a4b64c",
+      "date": "2026-10-28T07:02:16Z",
+      "subject": "fix: reload rig stores after direct suspension changes (#6847)"
+    },
+    {
+      "sha": "2454a5303a0b9e22c577b6a7273856c1f338f591",
+      "date": "2026-10-28T07:02:11Z",
+      "subject": "fix(worktrees): honor configured root during cleanup (#6732)"
+    },
+    {
+      "sha": "4bce6df88506b469a6647627f8d765b508a575d0",
+      "date": "2026-10-28T06:56:29Z",
+      "subject": "fix(cli): stamp gc formula cook --meta on the graph.v2 attach root (#8343)"
+    },
+    {
+      "sha": "d70da5dce671a85487474c6baafcd1bae4018c1c",
+      "date": "2026-10-28T06:29:32Z",
+      "subject": "fix(beads): restore journal-corrupt databases from bd's default backup (#1980) (#8415)"
+    },
+    {
+      "sha": "82d345dfbe962bf4cfa8aad11c80a132a48dd062",
+      "date": "2026-10-28T06:25:57Z",
+      "subject": "fix(beads): let long-lived sessions follow a moved managed Dolt port (#8414)"
+    },
+    {
+      "sha": "3990925c181e061ac034ee4dd98cc7b7ce1bdee7",
+      "date": "2026-10-28T06:13:07Z",
+      "subject": "test(tmux): register the stage-named deadline tests in the runtime-tmux manifest (#8192)"
+    },
+    {
+      "sha": "9481d0a38ac3fce00559af15fb3f6561a42d0bd7",
+      "date": "2026-10-28T05:55:11Z",
+      "subject": "fix(reconciler): hold a pending-create rollback over a live incarnation of its own session (#8420)"
+    },
+    {
+      "sha": "84b7d0481af149430132556abb6c6ac14a805d46",
+      "date": "2026-10-28T05:54:35Z",
+      "subject": "fix(gc): federate city-scoped agents' prompt discovery queries across rig stores (#8407)"
+    },
+    {
+      "sha": "320b482fc0e707847bfa8e5e1df8d5fb3bcb1575",
+      "date": "2026-10-28T05:51:36Z",
+      "subject": "fix(cmd/gc): route supervisor-hosted cities to the supervisor API client (#8331)"
+    },
+    {
+      "sha": "9bbe50107698854f11ad4a3154f4727cfac4c7d3",
+      "date": "2026-10-28T05:46:53Z",
+      "subject": "test(dispatch): crash-inject the drain gate's write window (#8391)"
+    },
+    {
+      "sha": "45941642f9530fad50c1ebaa2590f2e1d446371b",
+      "date": "2026-10-28T05:43:37Z",
+      "subject": "fix(reconciler): report a finished interrupted close (#8405)"
+    },
+    {
+      "sha": "f1d339d60afb59fcb018a0e6ef5915876f9a3464",
+      "date": "2026-10-28T05:41:58Z",
+      "subject": "fix(cmd/gc): do not mint a session_key for a row whose provider process may be running (#5439) (#8388)"
+    },
+    {
+      "sha": "822dd74ec3b942acab37aaf32da6f1428d3132c4",
+      "date": "2026-10-28T05:38:40Z",
+      "subject": "fix(config): gc rig remove preserves city.toml comments via surgical removal (#7955)"
+    },
+    {
+      "sha": "3fbfeb8d0e260c0c9e9dff44e2ade68d576d0c69",
+      "date": "2026-10-28T05:38:11Z",
+      "subject": "test(api): partial and peek agent lists are never served from the cache (#7149) (#8344)"
+    },
+    {
+      "sha": "65aad9b4a8eeb04ffc0929c31fb767d9283dddbb",
+      "date": "2026-10-28T05:37:43Z",
+      "subject": "test(cmd/gc): keep gc's own overlay rewrite covered under skip-write (#3862) (#8385)"
+    },
+    {
+      "sha": "dd9a8860efc3a58d07b88e15c71b7440b5c16220",
+      "date": "2026-10-28T05:33:59Z",
+      "subject": "fix(storage): split-store fail-closed guards (S1) (#8332)"
+    },
+    {
+      "sha": "221b1476dc1089db74e3093fdb487d9a6131b85f",
+      "date": "2026-10-28T04:25:28Z",
+      "subject": "fix(storage): graph, molecule and order routing on split cities (S3a) (#8341)"
+    },
+    {
+      "sha": "1080d0bc5b79bf296105ea16518b2401ddb2e27b",
+      "date": "2026-10-28T02:56:43Z",
+      "subject": "fix(storage): one guard so a mutation never flips a bead's storage class (S2) (#8333)"
+    },
+    {
+      "sha": "80d08c647e959c64f0a470ab2f6e0f229a9ff507",
+      "date": "2026-10-27T23:51:02Z",
+      "subject": "fix(export): pack JSONL archives after snapshot delivery (#8301)"
+    },
+    {
+      "sha": "f11f48825520b8ac47474b48bc2b36ebdeded030",
+      "date": "2026-10-27T21:12:15Z",
+      "subject": "feat(opjournal): restart ops for request-restart and handoff (OJ-6) (#8404)"
+    },
+    {
+      "sha": "a86d05bd73e05329e6173cd1b470a23bb927bc91",
+      "date": "2026-10-27T19:52:30Z",
+      "subject": "feat(session): request-restart and handoff write the session row first (SG-3) (#8397)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/agent_home_worktree_cleanup.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/agent_home_worktree_cleanup_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/allocator_pending_create_keep_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/api_state.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/apiroute.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/apiroute_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/attachment_metadata.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/autoclose_sweep.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/autoclose_sweep_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_buildinfo.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_buildinfo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_inventory_trust.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_inventory_trust_round5_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_inventory_trust_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_inventory_vouch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_passthrough_parity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_relocated_classes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bd_relocated_classes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_allowlist.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_allowlist_realbd_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_judges.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bd_split_judges_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/bead_event_relic_residence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bead_policy_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bead_worktree_reaper.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/bead_worktree_reaper_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/by_id_funnel_skip_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/by_id_relic_proof.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/by_id_relic_proof_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/city_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/city_runtime_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/claim_class_route.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_bd_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_cas_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_cook_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_review_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_round3_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_round4_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_shipped_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/class_flip_guard_verbs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/class_store.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cli_storage_config_failure.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cli_storage_routes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/cli_storage_routes_config_failure_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_bd.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_bd_by_id.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_bd_by_id_rig_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_bd_single_exec_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_beads_metadata_cas.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_citystatus_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_convoy_dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_convoy_dispatch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_doctor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_formula.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_formula_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_handoff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_handoff_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_hook_claim.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_init.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_prime.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_ready.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_ready_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_rig.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_rig_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_runtime_drain.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_runtime_drain_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_session_logs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_session_reset.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_sling.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_sling_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_start.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_storage.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_supervisor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_supervisor_city.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/cmd_supervisor_city_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/controller.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_cli.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/conversation_lane_cli_control_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_interrupt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/conversation_lane_interrupt_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/demand_serve_agreement_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dispatch_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/doctor_bd_inventory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/dolt_standalone_conflict_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/drain_ack_release_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/drain_fence_unavailable.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/event_authorship.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/explicit_restart_signal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/frontdoor_di_guard_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/gc_beads_bd_journal_recovery_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/hook_budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/hook_claim_done_workflow_split_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/hook_drain_fence_refusal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/infra_class_clear.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/infra_class_clear_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/infra_class_migrate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/infra_class_migrate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/infra_class_recover.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/infra_class_recover_held.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/infra_class_recover_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/infra_class_recover_topology_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/infra_copy_manifest.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/infra_copy_manifest_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/legacy_raw_session_writes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/mcp_adoption_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/metrics_census_gen.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/molecule_autoclose.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/molecule_autoclose_split_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/oneshot_class_routes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/only_lanes_inject_input_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/op_record.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/op_record_content_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/op_record_verbs_matrix_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/op_record_verbs_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/order_dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/order_dispatch_graph_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/order_dispatch_orders_store_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/order_dispatch_work_class_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/order_gate_budget_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/pack_switch_control_dispatcher_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/pending_create_live_incarnation.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/pending_create_live_incarnation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/prime_session_key_capture_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/productmetrics_command_census.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/prompt_query_topology.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/prompt_query_topology_pins_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/prompt_query_topology_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/provider_factory_census_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/providers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/ready_federation_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/ready_work_api_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_admit.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_drain.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_metadata.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_metadata_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_arms_start.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_abandon.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_abandon_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_fence.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_launch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_launch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_metadata_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effect_start_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_effects_registry.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_identity.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_sim_invariants_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/reconcile_sim_pending_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/restart_ops.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/restart_ops_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/restart_request.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/gc/restart_request_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/rig_anywhere_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_beads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/gc/session_beads_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

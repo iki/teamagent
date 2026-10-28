@@ -36,6 +36,18 @@ Reviewed commit: [`659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975`](https://github.com
 The [agent transport](https://github.com/maximhq/bifrost/blob/659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975/core/agent/networkpolicy.go) snapshots a validated private-target allowlist, fingerprints the sorted policy, separates direct/proxy pools, replaces the proxy pool when configuration changes, and bounds extra credential origins to 32 canonical HTTP(S) origins without path/query/userinfo. Public-only context deliberately cannot inherit private-network permissions. Adapt immutable policy identity per pool and explicit credential destination binding, but verify call sites actually recheck policyCurrent and how in-flight operations behave after revocation; this file closes idle connections without interrupting existing calls. The [passthrough policy](https://github.com/maximhq/bifrost/blob/659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975/core/passthroughpolicy.go) allows nil policies and host-backed upstream routes, relying on a separate fixed-route/credential contract. Those are explicit trust boundaries to audit, not proof of complete mediation. The injected authorization wrapper delegates to an unread internal package. No gateway, DNS-rebinding, proxy, tenant-isolation or revocation test was executed; broad security correctness is unestablished.
 
 
+## Follow-up change review — 2026-10-28
+
+**Tool-catalog notifications are fenced to the connection that observed them.** Reviewed commit `a7eba970798df6c1f90923109d83cd9fd578964d` (commit date `2026-10-28T15:36:10+05:30`), compared with `659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975`. The complete no-rename Git path inventory contains 409 changed paths.
+
+The new tools/list_changed listener records notifications arriving during discovery, activates only after connection binding, and triggers the serialized refresh path. Modern listening retries with a bounded backoff and checks manager cancellation. A connection is current only when both its pointer and generation match; the fixture rejects a removed/re-added client even when its generation number repeats. This prevents an obsolete connection from refreshing the replacement client's tool list.
+
+Evidence: [core/mcp/toolslistchanged.go:81-177](https://github.com/maximhq/bifrost/blob/a7eba970798df6c1f90923109d83cd9fd578964d/core/mcp/toolslistchanged.go#L81-L177) · [core/mcp/toolslistchanged_test.go:176-208](https://github.com/maximhq/bifrost/blob/a7eba970798df6c1f90923109d83cd9fd578964d/core/mcp/toolslistchanged_test.go#L176-L208).
+
+**Harness consequence:** Version dynamic tool catalogs by connection identity and generation, coalesce refresh work, and keep tool discovery separate from authorization to execute discovered tools.
+
+**Scope and limits:** Reviewed the complete new listener and selected stale-connection fixtures; other gateway/provider changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975`; commit date 2026-10-27T23:17:14+05:30; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
+Analysis metadata: source [bifrost](https://github.com/maximhq/bifrost); analyzed commit `a7eba970798df6c1f90923109d83cd9fd578964d`; commit date 2026-10-28T15:36:10+05:30; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-proxy--bifrost.md).
 <!-- teamagent-analysis:end -->

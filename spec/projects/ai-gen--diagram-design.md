@@ -39,6 +39,18 @@ Evidence: [skills/diagram-design/scripts/drawio_extract.py:43-209](https://githu
 
 **Scope and limits:** Scoped static inspection of extraction bounds, XML/page handling, cycle traversal and render-linter launch/error paths in the 479-path comparison. Slope/streamgraph validators, the entire drawing toolkit and browser isolation behavior were not audited; no upstream scripts or fixtures were run.
 
+## Follow-up change review — 2026-10-28
+
+**Geometry checks parse actual quoted attributes and reject transformed exploded figures.** Reviewed commit `0cf73c3fcc56667ad91a9a04c439ac6ccfabc9d1` (commit date `2026-10-27T20:01:34Z`), compared with `c7588454ee986827ec0321cf006616ce9f89c3c2`. The complete no-rename Git path inventory contains 15 changed paths.
+
+The geometry attribute reader now tokenizes single- and double-quoted attributes by exact name rather than finding a coordinate-looking substring inside another attribute. Its fixtures include single-quoted masks and embedded attribute-like text. The exploded-figure checker also recognizes inline CSS transform properties after comments, escapes, strings and nested custom-property blocks, and rejects these or SVG transform attributes on that figure. This is a targeted source validator, not a full browser CSS cascade or rendered-geometry proof.
+
+Evidence: [scripts/verify-geometry.py:128-156](https://github.com/cathrynlavery/diagram-design/blob/0cf73c3fcc56667ad91a9a04c439ac6ccfabc9d1/scripts/verify-geometry.py#L128-L156) · [scripts/test-verify-geometry.py:90-107](https://github.com/cathrynlavery/diagram-design/blob/0cf73c3fcc56667ad91a9a04c439ac6ccfabc9d1/scripts/test-verify-geometry.py#L90-L107) · [scripts/verify-exploded.py:36-103](https://github.com/cathrynlavery/diagram-design/blob/0cf73c3fcc56667ad91a9a04c439ac6ccfabc9d1/scripts/verify-exploded.py#L36-L103) · [scripts/verify-exploded.py:438-447](https://github.com/cathrynlavery/diagram-design/blob/0cf73c3fcc56667ad91a9a04c439ac6ccfabc9d1/scripts/verify-exploded.py#L438-L447).
+
+**Harness consequence:** Validate the same syntax variants the renderer accepts and reject unsupported transforms explicitly. Pair source checks with actual visual inspection when delivery depends on rendered geometry.
+
+**Scope and limits:** Reviewed quote handling, selected fixtures and the complete changed inline-transform detector hunks; no renderer or upstream verification script was executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [diagram-design](https://github.com/cathrynlavery/diagram-design); analyzed commit `c7588454ee986827ec0321cf006616ce9f89c3c2`; commit date 2026-10-27T15:02:25Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-gen--diagram-design.md).
+Analysis metadata: source [diagram-design](https://github.com/cathrynlavery/diagram-design); analyzed commit `0cf73c3fcc56667ad91a9a04c439ac6ccfabc9d1`; commit date 2026-10-27T20:01:34Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-gen--diagram-design.md).
 <!-- teamagent-analysis:end -->

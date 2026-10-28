@@ -43,6 +43,18 @@ The [ignore helper](https://github.com/github/spec-kit/blob/ce8592390a88c6bbc229
 
 The [bundle validator](https://github.com/github/spec-kit/blob/ce8592390a88c6bbc229e9720ef45cc1f6cff46a/src/specify_cli/bundles/validator.py) separates structural checks from optional reference resolution and can validate an expanded component selection with origin-chain diagnostics. Its [tests](https://github.com/github/spec-kit/blob/ce8592390a88c6bbc229e9720ef45cc1f6cff46a/tests/specify_cli/bundles/test_validator.py) cover duplicate versions, expanded references and propagation of unexpected parser failures. report.ok means no recorded errors; without a reference checker it does not prove that dependencies resolve, and parsing a version constraint does not prove installed-version compatibility. Adapt explicit validation phases and preserve which phases ran in the receipt. No install, source resolution or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `222a973f8b8794366680c043fb935a31f71902af` (commit date `2026-10-27T15:01:21-05:00`), compared with `ce8592390a88c6bbc229e9720ef45cc1f6cff46a`. Earlier findings remain historical evidence.
+
+**Scope:** Vibe managed-hook TOML scanner delta; related fixtures were identified but not executed, and the extension catalogue remains discovery evidence. The complete changed-path inventory contains 7 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+Managed-hook span detection now ends after the last TOML value and its immediate blank lines, preserving a standalone following comment for the next user-owned block. Multiline-string/array contents remain part of the managed span even when they resemble comments. The surrounding branch parses TOML first and returns no spans for malformed or ambiguous state. [src/specify_cli/integrations/vibe/__init__.py](https://github.com/github/spec-kit/blob/222a973f8b8794366680c043fb935a31f71902af/src/specify_cli/integrations/vibe/__init__.py#L394-L415); [src/specify_cli/integrations/vibe/__init__.py](https://github.com/github/spec-kit/blob/222a973f8b8794366680c043fb935a31f71902af/src/specify_cli/integrations/vibe/__init__.py#L491-L499); [src/specify_cli/integrations/vibe/__init__.py](https://github.com/github/spec-kit/blob/222a973f8b8794366680c043fb935a31f71902af/src/specify_cli/integrations/vibe/__init__.py#L520-L540).
+
+This supports a general configuration ownership rule: validate the full format, identify an exact managed region, and leave adjacent user text intact when rewriting or uninstalling. Teamagent should retain explicit no-change/ambiguous outcomes rather than regenerate the whole file. This scoped scanner review does not establish atomic writing, concurrency safety or byte preservation across every caller.
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [spec-kit](https://github.com/github/spec-kit); analyzed commit `ce8592390a88c6bbc229e9720ef45cc1f6cff46a`; commit date 2026-10-27T12:59:12-05:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-spec--spec-kit.md).
+Analysis metadata: source [spec-kit](https://github.com/github/spec-kit); analyzed commit `222a973f8b8794366680c043fb935a31f71902af`; commit date 2026-10-27T15:01:21-05:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-spec--spec-kit.md).
 <!-- teamagent-analysis:end -->

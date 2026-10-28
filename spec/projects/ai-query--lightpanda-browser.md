@@ -39,6 +39,18 @@ Evidence: [src/agent/auth/auth.zig:1-296](https://github.com/lightpanda-io/brows
 
 **Scope and limits:** Scoped static review of three complete cached auth/catalog/WebMCP files and their embedded fixtures in the 1,079-path comparison. OAuth provider implementation, actual invocation policy, browser compatibility, network cache and platform permission behavior were not audited or run. No login, model or network request was made.
 
+## Follow-up change review — 2026-10-28
+
+**Selector changes affect both matching cost and semantic compatibility.** Reviewed commit `c1869f404889bd8f1037f25f533e010cba69d96c` (commit date `2026-10-28T16:47:36+08:00`), compared with `92eb451400b589e5bcd2c0fa362504c14afc0db2`. The complete no-rename Git path inventory contains 92 changed paths.
+
+The subsequent-sibling matcher now stops after the first qualifying sibling when the preceding combinator does not require testing each candidate's own neighbor. Required/optional pseudo-classes no longer reduce to raw attribute presence: required checks applicable input types or select/textarea, and optional excludes unrelated elements. These source changes do not establish broad Chromium parity.
+
+Evidence: [src/browser/webapi/selector/List.zig:303-343](https://github.com/lightpanda-io/browser/blob/c1869f404889bd8f1037f25f533e010cba69d96c/src/browser/webapi/selector/List.zig#L303-L343) · [src/browser/webapi/selector/List.zig:580-605](https://github.com/lightpanda-io/browser/blob/c1869f404889bd8f1037f25f533e010cba69d96c/src/browser/webapi/selector/List.zig#L580-L605) · [src/browser/webapi/selector/List.zig:642-651](https://github.com/lightpanda-io/browser/blob/c1869f404889bd8f1037f25f533e010cba69d96c/src/browser/webapi/selector/List.zig#L642-L651).
+
+**Harness consequence:** Treat browser backend compatibility as fixture-specific. Exercise the exact selectors a task uses, and keep semantic regressions separate from performance claims when choosing a fast headless backend.
+
+**Scope and limits:** Reviewed the complete changed selector hunks against the target blob; no browser, conformance suite or performance benchmark was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [lightpanda-browser](https://github.com/lightpanda-io/browser); analyzed commit `92eb451400b589e5bcd2c0fa362504c14afc0db2`; commit date 2026-10-27T16:52:13+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--lightpanda-browser.md).
+Analysis metadata: source [lightpanda-browser](https://github.com/lightpanda-io/browser); analyzed commit `c1869f404889bd8f1037f25f533e010cba69d96c`; commit date 2026-10-28T16:47:36+08:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--lightpanda-browser.md).
 <!-- teamagent-analysis:end -->

@@ -36,6 +36,14 @@ The [type test](https://github.com/Gitlawb/openclaude/blob/20a50493c775f151b61e1
 
 Teamagent can borrow deterministic pool assembly and separate input/output type contracts, while enforcing deny rules again at dispatch and keeping dynamic registry data unknown until decoded. No compiler, upstream tests, model calls or tool executions were run. This review does not attribute this fork's behavior to an unrelated upstream product.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `20a50493c775f151b61e1fabd5fa678ad1fbdaae` to `ffa79d9cbb7f3ca9589601f1657803bae6847722`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [scripts/provider-launch.ts](https://github.com/Gitlawb/openclaude/blob/ffa79d9cbb7f3ca9589601f1657803bae6847722/scripts/provider-launch.ts#L37-L73), Launcher parsing stops at the first downstream CLI argument and forwards the entire remaining suffix, consuming an explicit -- delimiter. This prevents later option values or prompt words that resemble provider names from being reinterpreted as launcher settings.
+
+**Harness implication and limits:** Separate launcher control syntax from opaque downstream arguments. Fixture coverage should include prompts named after providers, option/value pairs, explicit delimiters and missing launcher values. The shown --goal branch still consumes the next argument before downstream parsing; provider discovery, credential routing and process launch were not inspected or executed. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `20a50493c775f151b61e1fabd5fa678ad1fbdaae`; commit date 2026-10-27T10:47:34-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openclaude.md).
+Analysis metadata: source [openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `ffa79d9cbb7f3ca9589601f1657803bae6847722`; commit date 2026-10-27T15:36:29-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openclaude.md).
 <!-- teamagent-analysis:end -->

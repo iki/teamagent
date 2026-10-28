@@ -38,6 +38,14 @@ The runner invokes environment teardown in `finally`, including failed setup, bu
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `726f16fcc5080540430574377090a80d7df5eda0` to `745f0966c2c163e3a13ac1b72fc5f12deceb70b3`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [molt/trainer/algorithm/advantage.py](https://github.com/NVIDIA-NeMo/labs-molt/blob/745f0966c2c163e3a13ac1b72fc5f12deceb70b3/molt/trainer/algorithm/advantage.py#L287-L332), The GAE implementation pre-unbinds reward, value and mask tensors before reverse recursion. Masked observation/padding positions carry the next value and running advantage through the gap; returned advantages and value targets are masked, and only advantages are normalized. The delta changes access organization while retaining the stated recurrence.
+
+**Harness implication and limits:** Training-trace algorithms must distinguish action tokens from observations and test gaps, empty action spans and lambda below one. This source inspection is not a numerical-equivalence or performance benchmark; tensor shapes, normalization implementation and optimizer integration were outside scope. These are offline training mechanics, not authority to evolve a production harness automatically. This review is static and does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [nvidia-nemo-labs-molt](https://github.com/NVIDIA-NeMo/labs-molt); analyzed commit `726f16fcc5080540430574377090a80d7df5eda0`; commit date 2026-10-24T10:23:37+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--nvidia-nemo-labs-molt.md).
+Analysis metadata: source [nvidia-nemo-labs-molt](https://github.com/NVIDIA-NeMo/labs-molt); analyzed commit `745f0966c2c163e3a13ac1b72fc5f12deceb70b3`; commit date 2026-10-28T07:30:19+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--nvidia-nemo-labs-molt.md).
 <!-- teamagent-analysis:end -->

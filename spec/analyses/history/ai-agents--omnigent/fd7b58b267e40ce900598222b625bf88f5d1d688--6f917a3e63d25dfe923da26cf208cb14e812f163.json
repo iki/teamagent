@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--omnigent",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/omnigent-ai/omnigent",
+  "report": "spec/projects/ai-agents--omnigent.md",
+  "analyzedSha": "fd7b58b267e40ce900598222b625bf88f5d1d688",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T10:48:40-07:00",
+  "observedSha": "6f917a3e63d25dfe923da26cf208cb14e812f163",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "6f917a3e63d25dfe923da26cf208cb14e812f163",
+      "date": "2026-10-28T10:07:29Z",
+      "subject": "test: wait for Claude status error observation (#12005)"
+    },
+    {
+      "sha": "ff8112e014118af14a8fc8a824f93a8a573d171e",
+      "date": "2026-10-28T17:06:10+07:00",
+      "subject": "fix(pi): persist Pi compaction so restarted sessions resume compacted (#11937)"
+    },
+    {
+      "sha": "da19d866a8cf88ebd2d3458fe44055dd0fa1c72b",
+      "date": "2026-10-28T09:46:42Z",
+      "subject": "ci: run CI-tooling tests in their own shard, only when tooling changes (#11998)"
+    },
+    {
+      "sha": "b4d46bbf54b96d639c2b6f358c48a8751e300433",
+      "date": "2026-10-28T17:45:34+08:00",
+      "subject": "Let a deployment turn automations off per request (#11997)"
+    },
+    {
+      "sha": "8a2a7f898cb32afff833d01d34ff3af07df39cda",
+      "date": "2026-10-28T17:07:15+08:00",
+      "subject": "feat: model and effort controls for generic side chats (#11959)"
+    },
+    {
+      "sha": "6f984419889aa93fd5b32fc48cb21c02cd72b17b",
+      "date": "2026-10-28T09:01:28Z",
+      "subject": "fix(automations): follow-ups to automation project filing (#11990)"
+    },
+    {
+      "sha": "eb5bb9aea90d673ee82fb7c94c06888070b72aaa",
+      "date": "2026-10-28T15:54:16+07:00",
+      "subject": "feat(web): polish the expanded tool-call view (#11799)"
+    },
+    {
+      "sha": "f4b249e23909b3b22f19b847830cf4bb9f018bc5",
+      "date": "2026-10-28T09:50:20+01:00",
+      "subject": "feat(web): keyboard shortcuts for grid cells and split terminal panes (#11368)"
+    },
+    {
+      "sha": "7943dd7fd5390d870b3d971a618edf0cd131b55e",
+      "date": "2026-10-28T08:24:32Z",
+      "subject": "Keep session skill discovery available when a host symlink disappears (#11935)"
+    },
+    {
+      "sha": "03dd5ee5272fcf8c4f10ca17bd649cca50df16e8",
+      "date": "2026-10-28T08:24:24Z",
+      "subject": "chore(deps): bump prettier from 3.9.5 to 3.9.10 (#11626)"
+    },
+    {
+      "sha": "2d85284d5574ab9d896f7f4966ce6ded6fa3c3b3",
+      "date": "2026-10-28T08:22:48Z",
+      "subject": "fix(pi): accept bounded large tool requests and report overflow (#11686)"
+    },
+    {
+      "sha": "78f713667e04329cfc6274bc4c1c1c231a0db832",
+      "date": "2026-10-28T08:20:08Z",
+      "subject": "chore(ci): upgrade Claude Code CLI pin to 2.1.295 (#11852)"
+    },
+    {
+      "sha": "900b9d65c7060ea39d275bf6ef1c4f252ad58fc0",
+      "date": "2026-10-28T15:54:22+08:00",
+      "subject": "feat(automations): file fired sessions into a project (#11833)"
+    },
+    {
+      "sha": "ac1737e1cb2c87d5160a94e47655876ec570f9ff",
+      "date": "2026-10-28T07:29:29Z",
+      "subject": "fix(claude-native): persist turn settlement before acknowledging its hook (#11816)"
+    },
+    {
+      "sha": "6637cbb429d8be2c4329c025b83d1d9c0ee9f213",
+      "date": "2026-10-28T16:18:44+09:00",
+      "subject": "feat(automations): add the scheduled-task session mode schema (#11832)"
+    },
+    {
+      "sha": "c12efa720c870023ada770cfa37acab97e7ddba0",
+      "date": "2026-10-28T07:13:53Z",
+      "subject": "fix(server): reject provisional session IDs before store access (#11666)"
+    },
+    {
+      "sha": "811974822e134a0aed5c8c2f7340d75fbb1f2054",
+      "date": "2026-10-28T00:11:30-07:00",
+      "subject": "feat(web): open Reconfigure from New Chat's harness setup (#11842)"
+    },
+    {
+      "sha": "3a8cc3c96ffa9a91314c5282c444fb059cd491a1",
+      "date": "2026-10-28T16:03:52+09:00",
+      "subject": "feat(orchestration): let automation runs message and start sessions (#11851)"
+    },
+    {
+      "sha": "5ae512f06ab3dfd754f5fe2a94be0c4ad2c36c31",
+      "date": "2026-10-28T06:58:33Z",
+      "subject": "fix(runner): keep terminal-only native work alive until settlement (#11883)"
+    },
+    {
+      "sha": "e5aa927da4a14f9ae8e7ac685fd4a6f82411d870",
+      "date": "2026-10-28T06:52:37Z",
+      "subject": "fix(routing): decline non-object judge verdicts (#11951)"
+    },
+    {
+      "sha": "96d0733b283670e4df0e0f13363133b95018f523",
+      "date": "2026-10-28T06:52:17Z",
+      "subject": "fix(native): retain delivery uncertainty when restoring queued inputs (#11867)"
+    },
+    {
+      "sha": "2f52aedeb18783cabc9f374a6020f5c36e7614a4",
+      "date": "2026-10-28T06:51:13Z",
+      "subject": "fix(claude-native): offer recovery when a response stops arriving (#11955)"
+    },
+    {
+      "sha": "cf83dd0dfe336f8d93f5b71ca49fef0433c8bcda",
+      "date": "2026-10-27T23:45:45-07:00",
+      "subject": "fix(codex-native): read idle-reaped goals without waking Codex (#11948)"
+    },
+    {
+      "sha": "981da5000116ad4d0038acacde1c10881892992a",
+      "date": "2026-10-27T23:33:52-07:00",
+      "subject": "fix(server): preserve offline host holds through reconnect flaps (#11769)"
+    },
+    {
+      "sha": "9cab5b9a91eb30a6e4c72328aaec51ffcb6aa828",
+      "date": "2026-10-27T23:25:00-07:00",
+      "subject": "fix(server): preserve unreadable runner mutation failures (#11953)"
+    },
+    {
+      "sha": "424e96b1cd74598ab0c41240e401207ae6c0cc9c",
+      "date": "2026-10-28T05:59:41Z",
+      "subject": "feat(web): keep a session's pull requests visible while its host is offline (#11575)"
+    },
+    {
+      "sha": "bf8a629e190a1669450928523ab56cdfb74508d0",
+      "date": "2026-10-27T22:45:48-07:00",
+      "subject": "fix(web): apply Archived sessions filter to the Projects section (#11810)"
+    },
+    {
+      "sha": "78f119a4299c1cdf95d5e1163b7a91ee2d7d4c7c",
+      "date": "2026-10-28T05:04:16Z",
+      "subject": "fix(codex-native): bound tool arguments in compacted replay (#11315)"
+    },
+    {
+      "sha": "c3725972749805dbab99331921d256c3dd4b4f05",
+      "date": "2026-10-28T05:01:27Z",
+      "subject": "chore(claude-native): observe errors deferred to StopFailure (#11787)"
+    },
+    {
+      "sha": "f33fb718de0b77a93fcef970f95091e033450f89",
+      "date": "2026-10-28T04:24:23Z",
+      "subject": "test(scheduled): wait for the committed heartbeat deadline (#11930)"
+    },
+    {
+      "sha": "774c692cb03ecb8f8e7daccb10a64ae235f0fff9",
+      "date": "2026-10-27T20:52:54-07:00",
+      "subject": "test(host): exercise session delivery and fatal exit with closed console pipes (#11926)"
+    },
+    {
+      "sha": "45891a990be04edbb132224b9775aaeafc12515d",
+      "date": "2026-10-27T20:51:50-07:00",
+      "subject": "fix(runner): own fallback Claude skills in bridge directory (#11931)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/actions/compat-smoke-run/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/e2e-run/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/integration-run/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/run-omnigent-agent/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-agy/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-harness-cli/locks/claude/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-harness-cli/locks/claude/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/setup-harness-cli/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/ci-deps/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci/dependency_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/ci/python-matrix.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/sync_pr_priority.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/sync_pr_priority_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/triage_v2/tests/test_bundle_configuration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/doc-sync.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e-ui.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flake-stress-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flake-stress-ui.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/issue-prioritization-v2.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/issue-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/needs-info-response.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/polly-review.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/security-triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/sync-pr-priority-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sync-pr-priority.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/lint/session_list_visibility.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/AUTOMATIONS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/NATIVE_INPUT_DELIVERY_DIAGNOSTICS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/harness-diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/network-resilience.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/composer.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/harness-acceptance.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/native-harnesses.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/session-orchestration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/terminals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "feature-map/tool-calls.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/slack/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/db/db_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/db/enum_codecs.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "omnigent/db/migrations/versions/d0a1f879a01d_add_scheduled_task_session_mode.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/forwarder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/claude_native/program_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/forwarder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/harnesses/codex_native/main.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/connect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/frames.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/git_worktree.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/host/local_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/openai_agents_sdk_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/inner/pi_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/policies/builtins/safety.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/codex/goal.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/launch_failure.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/native/orchestration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/resource_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/session_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runner/tool_dispatch.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runtime/harnesses/process_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/runtime/pending_inputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/API.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/feature_flags.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/host_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/_auth_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/_host_worktree.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/scheduled_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/sessions/routes_core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/routes/sessions/routes_resources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/scheduled/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/scheduled/fire.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/session_orchestration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/server/smart_routing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/spec/skill_sources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/stores/scheduled_task_store/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/stores/scheduled_task_store/sqlalchemy_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/tools/builtins/scheduled_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "omnigent/version.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openapi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-workspace.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python-client/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/ui/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/_helpers/runner_lifecycle_controls.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/browser_ui/chat/test_arclet_skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/browser_ui/chat/test_composer_acceptance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/browser_ui/chat/test_model_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/browser_ui/chat/test_session_grid.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/browser_ui/chat/test_transcript_rendering.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/browser_ui/test_settings_harness_sign_in.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/cli/test_host_daemon_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/db/test_enum_codecs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/db/test_migration_scheduled_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/omnigent/test_repl_ctrl_l_clear.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_bundled_agent_nonutf8_locale_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_codex_native_supported_efforts_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_host_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_local_server_lifecycle_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/test_pi_compact_restart_resume.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_private_session_orchestration.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e/test_runner_bundle_heartbeat_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/test_subagent_status_compat_e2e.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/azure_devops/test_azure_devops_tab.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/browser/test_chat_link_opens_in_app_browser.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e_ui/chat/_databricks_gemini_gateway_mock.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/chat/test_claude_model_picker.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/e2e_ui/chat/test_openai_agents_databricks_gemini_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/chat/test_side_chat_entrypoints.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/chat/test_tool_output_long_line_wrap.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/github/test_github_tab.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/github/test_session_pr_selection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/gitlab/test_gitlab_panel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/messages/test_native_claude_render_parity.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/sessions/test_canvas_page.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/sessions/test_sidebar_pinned_projects_filter_independence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/start_session/test_harness_credential_old_host.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/visual/snapshots/test_storybook_snapshot/test_story_matches_baseline/test_story_matches_baseline[chromium-components-blocks-toolcard--long-output-preview][linux].png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/visual/snapshots/test_storybook_snapshot/test_story_matches_baseline/test_story_matches_baseline[chromium-components-blocks-toolcard--mcp-json-result-expanded][linux].png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e_ui/visual/snapshots/test_storybook_snapshot/test_story_matches_baseline/test_story_matches_baseline[chromium-components-blocks-toolcard--scheduled-task-expanded][linux].png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/forwarder/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/forwarder/test_failure_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/forwarder/test_settlement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/forwarder/test_transport.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/test_claude_native.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/test_claude_native_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/test_claude_native_program_status.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/test_claude_native_shell_mode_draft.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/claude_native/test_claude_native_slow_ready.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/forwarder/_support.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/forwarder/test_replay_order.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/forwarder/test_turn_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/forwarder/test_usage.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/session/test_resume_rollouts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/session/test_subagents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/session/test_subscription.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/harnesses/codex_native/test_codex_native_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/host/test_connect.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/host/test_databricks_credential.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/host/test_frames.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/host/test_git_worktree.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/host/test_harness_startup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/host/test_local_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/host/test_skills.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/inner/test_openai_agents_sdk_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/inner/test_openai_agents_sdk_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/inner/test_pi_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/policies/builtins/test_safety.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_app_claude_native_launch_args.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_app_sessions_native_terminals_autocreate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_app_sessions_native_workflow_init.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/runner/test_codex_goal_runner.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

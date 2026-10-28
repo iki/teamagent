@@ -38,6 +38,14 @@ The [cache](https://github.com/MoonshotAI/kimi-code/blob/68a283894163204e93b072c
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `68a283894163204e93b072cef20db164015a5cad` to `62399b32a79d49e8c0bf481b14475ed181a4cec8`. Earlier findings above remain historical evidence; this is a focused review of the cited boundary, not a whole-repository audit.
+
+In [packages/klient/src/core/facade/agent.ts](https://github.com/MoonshotAI/kimi-code/blob/62399b32a79d49e8c0bf481b14475ed181a4cec8/packages/klient/src/core/facade/agent.ts#L168-L200), The client facade now converts core context messages through the compatibility representation while explicitly preserving IDs, origin, error/partial flags, tool display metadata, usage and timing. It omits undefined fields, and command dispatch omits an absent argument instead of sending an undefined array entry that JSON would convert to null.
+
+**Harness implication and limits:** Treat transcript migration as a versioned wire contract: preserve identity, provenance and accounting fields independently of provider message conversion, and test absent/null distinctions. The shown facade uses type assertions around remote results; this review does not establish runtime validation or losslessness inside the conversion functions. The broader core refactor and append-log recovery were not certified. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [kimi-code](https://github.com/MoonshotAI/kimi-code); analyzed commit `68a283894163204e93b072cef20db164015a5cad`; commit date 2026-10-27T18:59:19+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kimi-code.md).
+Analysis metadata: source [kimi-code](https://github.com/MoonshotAI/kimi-code); analyzed commit `62399b32a79d49e8c0bf481b14475ed181a4cec8`; commit date 2026-10-28T16:08:43+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--kimi-code.md).
 <!-- teamagent-analysis:end -->

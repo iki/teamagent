@@ -2,12 +2,11 @@
 
 Source: [ccusage](https://github.com/ryoppippi/ccusage) · [Analysis](../../projects/ai-agents-tokens--ccusage.md) · [evolution](../../evolution.md), [models](../../models.md), [agents](../../agents.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9`; commit date: 2026-10-27T04:47:23Z; review date: 2026-10-28T09:45:33.667Z; observed SHA: `0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `b8ad727170fc0dabe35cbf7b940f0a3f9fba475b`; commit date: 2026-10-28T03:27:51Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `b8ad727170fc0dabe35cbf7b940f0a3f9fba475b`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ryoppippi/ccusage/compare/0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9...0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ryoppippi/ccusage/compare/b8ad727170fc0dabe35cbf7b940f0a3f9fba475b...b8ad727170fc0dabe35cbf7b940f0a3f9fba475b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

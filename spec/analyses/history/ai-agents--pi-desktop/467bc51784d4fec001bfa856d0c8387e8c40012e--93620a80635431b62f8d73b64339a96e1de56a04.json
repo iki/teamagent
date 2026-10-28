@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--pi-desktop",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/vastsa/PI-Desktop",
+  "report": "spec/projects/ai-agents--pi-desktop.md",
+  "analyzedSha": "467bc51784d4fec001bfa856d0c8387e8c40012e",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-28T01:45:34+08:00",
+  "observedSha": "93620a80635431b62f8d73b64339a96e1de56a04",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "93620a80635431b62f8d73b64339a96e1de56a04",
+      "date": "2026-10-28T13:18:35+08:00",
+      "subject": "Merge pull request #1947 from vastsa/chore/sync-pi-upstream-1-4"
+    },
+    {
+      "sha": "da6df143bd657ab98b1e2d103b233954b70a3272",
+      "date": "2026-10-28T13:08:59+08:00",
+      "subject": "docs(project): record Pi 1.4 candidate validation"
+    },
+    {
+      "sha": "b460e75806f433085c4915c6da4ceb57a60dd466",
+      "date": "2026-10-28T13:07:28+08:00",
+      "subject": "chore(deps): sync Pi runtime to 1.4.0"
+    },
+    {
+      "sha": "c014b32060ca2dc7ace4c83f181685a6e0140c78",
+      "date": "2026-10-28T11:59:49+08:00",
+      "subject": "fix(storage): persist tool images losslessly and bound history mutations"
+    },
+    {
+      "sha": "d74aa0b3e0327130dd418e75341286e6ebb67fc1",
+      "date": "2026-10-28T11:45:27+08:00",
+      "subject": "Merge remote-tracking branch 'refs/remotes/pr1907/head' into codex/review-pr-1907"
+    },
+    {
+      "sha": "1fa7d166125653314a183d4a5eca54068235bb67",
+      "date": "2026-10-28T11:43:55+08:00",
+      "subject": "Merge pull request #1867 from zszz3/perf/gen-ui-kit-helpers"
+    },
+    {
+      "sha": "55dc8f13878909fdd522379cc01bcb3fe7b167ec",
+      "date": "2026-10-28T11:42:37+08:00",
+      "subject": "fix(storage): sync latest work-panel updates"
+    },
+    {
+      "sha": "55985391f43a2dc9ca3eadd41054fe4522d5ebd9",
+      "date": "2026-10-28T11:42:19+08:00",
+      "subject": "fix(storage): merge latest main updates"
+    },
+    {
+      "sha": "c246a6368536b2c49f3c1cb2131de73cd6c67de8",
+      "date": "2026-10-28T11:38:08+08:00",
+      "subject": "Merge PR 1867 onto current main"
+    },
+    {
+      "sha": "24b7f4ee6b6232a361ecc1961f9923b54c42c6dc",
+      "date": "2026-10-28T11:33:31+08:00",
+      "subject": "Merge pull request #1924 from vastsa/fix/work-panel-native-tab-menu-publish"
+    },
+    {
+      "sha": "b12288359f44300c8922f484237ff120f6df35a1",
+      "date": "2026-10-28T11:31:21+08:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into codex/review-pr-1924"
+    },
+    {
+      "sha": "de56e1384f1dec0fd1c8a69bee6bb01f4265328e",
+      "date": "2026-10-28T11:31:01+08:00",
+      "subject": "fix(work-panel): align native tab menus across lifecycle"
+    },
+    {
+      "sha": "7ab8b2c8a85d7fda8f4f8b80b7ad31299ed4e5de",
+      "date": "2026-10-28T11:29:52+08:00",
+      "subject": "fix(work-panel): integrate native tab menu PR"
+    },
+    {
+      "sha": "78cbc8ea0d2bff92b69ee66a6151cc5dd84e5df0",
+      "date": "2026-10-28T11:28:57+08:00",
+      "subject": "fix(storage): merge latest main into image persistence"
+    },
+    {
+      "sha": "fe31fa13da3815fb6a08a56fcf167ba54ba46d86",
+      "date": "2026-10-28T11:18:58+08:00",
+      "subject": "fix(agent-runtime): keep real DeepSeek reasoning in the field relays read"
+    },
+    {
+      "sha": "494223b2c60290d245310604b2a55bb6188471de",
+      "date": "2026-10-28T11:18:51+08:00",
+      "subject": "Merge pull request #1925 from liujinsheng0616/fix/plugin-view-orphan-on-reload"
+    },
+    {
+      "sha": "68dd8ffef72d773c9a394b58fe12efa5cdaf92d8",
+      "date": "2026-10-28T11:18:12+08:00",
+      "subject": "fix(work-panel): cover plugin view reload cleanup"
+    },
+    {
+      "sha": "0b69204686feb354368adc2a7d8c2df53d069dcd",
+      "date": "2026-10-28T11:10:45+08:00",
+      "subject": "Merge remote-tracking branch 'refs/remotes/pr1925/head' into codex/review-pr-1925"
+    },
+    {
+      "sha": "77c2b7ce64a959d68845bfd09024deedd6e1e86d",
+      "date": "2026-10-28T11:09:42+08:00",
+      "subject": "Merge pull request #1916 from new-Beginner/fix/live-transcript-bookmark"
+    },
+    {
+      "sha": "9f703565fb830738b924cd8413f715f1c2f836c3",
+      "date": "2026-10-28T11:08:48+08:00",
+      "subject": "fix(chat): persist follow intent before navigation"
+    },
+    {
+      "sha": "2bdd8c86843ed6fdd08b75ca85e2abf90f7fdd2c",
+      "date": "2026-10-28T11:04:17+08:00",
+      "subject": "Merge pull request #1944 from Linuxdazhao/codex/malformed-tool-recovery-upstream-20261028"
+    },
+    {
+      "sha": "0d63c83e0c50ef39bf89de80236a0b7f9c737d18",
+      "date": "2026-10-28T11:03:25+08:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into codex/review-pr-1944"
+    },
+    {
+      "sha": "c764d8ab75feebbb28457f2b02518a8e0c3304c2",
+      "date": "2026-10-28T10:59:32+08:00",
+      "subject": "feat(chat): scroll a completed turn's prompt to the top"
+    },
+    {
+      "sha": "09cd451b841f205d49c388de3a0a0b8fa3109d87",
+      "date": "2026-10-28T10:57:32+08:00",
+      "subject": "Merge remote-tracking branch 'refs/remotes/pr1944/head' into codex/review-pr-1944"
+    },
+    {
+      "sha": "072068dbd2e9ca4a4fed716d4331fcac02eb1808",
+      "date": "2026-10-28T10:55:54+08:00",
+      "subject": "Merge pull request #1876 from xpeng5278-web/fix/quota-billing-misclassify"
+    },
+    {
+      "sha": "e8f413bcaf802146cc689b5c9e8b6e78f9aefbf3",
+      "date": "2026-10-28T10:54:30+08:00",
+      "subject": "fix(agent-runtime): stop retrying exhausted billing quotas"
+    },
+    {
+      "sha": "c8b030581d27008afa29221a89220b06174687cb",
+      "date": "2026-10-28T10:52:19+08:00",
+      "subject": "docs(runtime): synchronize recovery scenario mirrors"
+    },
+    {
+      "sha": "3b0d0e1e5f394222641171c4024de5f1e1bda40f",
+      "date": "2026-10-28T10:51:31+08:00",
+      "subject": "chore(sync): incorporate latest upstream main"
+    },
+    {
+      "sha": "1438d60b18a8a0a3ed498815847283781b6589ac",
+      "date": "2026-10-28T10:48:11+08:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into codex/review-pr-1876"
+    },
+    {
+      "sha": "49f23668d7c770446f1783422d3e9a15cf22079b",
+      "date": "2026-10-28T10:45:19+08:00",
+      "subject": "fix(agent-runtime): admit inline images by pixel size, not only bytes"
+    },
+    {
+      "sha": "051aceff7e25a39e43073d64c298a9179e806fa2",
+      "date": "2026-10-28T10:45:08+08:00",
+      "subject": "fix(agent-runtime): recover sessions after malformed tool calls"
+    },
+    {
+      "sha": "d0e110f2e18090796e440bd7f5a5442045e8a490",
+      "date": "2026-10-28T10:44:36+08:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into codex/review-pr-1876"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/app-lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/startup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/bootstrap/window.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/browser-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/gen-ui-document.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/gen-ui-kit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/session-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/settings-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/ipc/window-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/persistence-outbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/plugin-view-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/plugin-view-navigation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/plugin-view-scale.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/prompt-attachments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main/runtime/event-persistence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/main/work-panel-tab-menu.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/gen-ui/NOTICE.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/resources/gen-ui/visualize-helpers.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/gen-ui/visualize.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/resources/skills/visualize.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/capture/capture-rig.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/capture/renderer-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/Composer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/ReviewChangeCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/TaskDock.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/settings/ModelConfigPage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/settings/ServiceList.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/workpanel/ReviewTab.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/workpanel/WorkPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/chat/background-tasks/useBackgroundTasks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/chat/composer/hooks/useComposerSubmit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/chat/gen-ui/GenUiCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/chat/gen-ui/GenUiFrame.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/chat/gen-ui/gen-ui-frames.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/chat/transcript/AssistantTurn.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/features/chat/transcript/TurnChangesCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/chat/transcript/hooks/useTranscriptScroll.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/features/chat/transcript/hooks/useTurnCompletionScroll.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/plugins/InstalledPluginsPanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/plugins/MarketplacePanel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/plugins/PluginDetailSheet.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/plugins/PluginDialogs.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/features/plugins/usePluginsPage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/assistant-turns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/queued-prompts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/remote-ipc-safety.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/review-focus-request.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/turn-changed-files.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/turn-completion-scroll.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/stores/app-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/stores/slices/events-slice.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/stores/slices/transcript-slice.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/styles/gen-ui.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/styles/turn-changes.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/anthropic-oauth-retry.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/assistant-turns.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/background-tasks-dock-render.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/bounded-history-mutations.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/browser-guest-hole-scale.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/composer-deep-file-search-user-path.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/composer-paste-files.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/composer-queued-send-now-shortcut.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/gen-ui-file-safety.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/gen-ui-protocol.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/gen-ui-runtime.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/helpers/background-tasks-hook.stub.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/helpers/session-running-fixture.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/helpers/transcript-rewrite-harness.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/persistence-outbox.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/plugin-runtime-risk.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/plugin-view-navigation.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/plugin-view-scale.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/plugin-work-panel-views.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/prompt-inline-attachments.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/regenerate-root-projection.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/row-busy-pages.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/session-list-runtime.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/session-running-bootstrap.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/sidecar-history-restore.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/transcript-style.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/turn-changes-card.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/turn-completion-scroll.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/visualize-skill.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/window-menu.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/test/work-panel-tab-menu.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/test/work-panel.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/data_relocation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/data_relocation/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/db.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/db/repositories.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/db/tool_image_storage_migration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/plugins/providers/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/rpc/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/sessions/history_mutations.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/sessions/history_mutations/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/tools/image_dimensions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/tools/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/transcripts.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/transcripts/binary_integrity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/transcripts/binary_integrity_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/transcripts/binary_migration.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/transcripts/binary_storage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/host-core/src/transcripts/binary_storage_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/transcripts/layout.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/host-core/src/turn_queue.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adr/0091-rate-limit-same-turn-retry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adr/0256-deepseek-reasoning-across-compaction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adr/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/adr/gen-ui-inline-visualization.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/adr/lossless-tool-image-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/project/pi-140-adoption.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/project/unreleased.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/02-architecture/02-tech-stack.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/02-architecture/06-pi-runtime-dependency-boundary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/03-runtime/01-ipc-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/03-runtime/02-agent-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/03-runtime/03-tools-and-permissions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/03-runtime/04-data-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/03-runtime/06-host-rpc-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/03-runtime/08-error-codes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/03-runtime/11-provider-model-system.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/04-ux/08-component-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/04-ux/09-interaction-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/06-delivery/04-e2e-test-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/07-plugins/03-plugin-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/spec/08-meta/decisions-log.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/02-architecture/02-tech-stack.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/02-architecture/06-pi-runtime-dependency-boundary.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/03-runtime/01-ipc-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/03-runtime/02-agent-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/03-runtime/03-tools-and-permissions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/03-runtime/04-data-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/03-runtime/06-host-rpc-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/03-runtime/08-error-codes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/03-runtime/11-provider-model-system.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/04-ux/08-component-spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/04-ux/09-interaction-patterns.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/06-delivery/04-e2e-test-plan.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/07-plugins/03-plugin-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh-CN/spec/08-meta/decisions-log.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/agent-errors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/agent-errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent-runtime/src/agent-identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/attachment-history.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/attachment-history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/compaction-tail.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/delegation-history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent-runtime/src/gen-ui-fragment-check-runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent-runtime/src/gen-ui-fragment-check.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent-runtime/src/gen-ui-fragment-check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent-runtime/src/image-admission.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent-runtime/src/image-admission.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/agent-runtime/src/malformed-tool-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/native-pi-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-runtime/src/path-lock.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

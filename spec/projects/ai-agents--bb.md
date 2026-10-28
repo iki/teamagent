@@ -38,6 +38,18 @@ The [fixture suite](https://github.com/get-bb/bb/blob/f15275b83134efcbb94623a068
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `f8c0701e94ba74a09bf48b1dcc4f49aa22ce81b7` (commit date `2026-10-27T22:42:15-07:00`), compared with `f15275b83134efcbb94623a0689c9b07a24e0a7d`. Earlier findings remain historical evidence.
+
+**Scope:** Pi bridge prompt handling while manual compaction is active. The complete changed-path inventory contains 338 paths; the assessment below is limited to the cited branches.
+
+The bridge waits for manual compaction, releases those waiters on close/child exit, and retries only the recognized prompt-rejection message up to eight retries. Other failures propagate. See [plugins/provider-pi/src/bridge/rpc-session.ts](https://github.com/get-bb/bb/blob/f8c0701e94ba74a09bf48b1dcc4f49aa22ce81b7/plugins/provider-pi/src/bridge/rpc-session.ts#L119-L133), [plugins/provider-pi/src/bridge/rpc-session.ts](https://github.com/get-bb/bb/blob/f8c0701e94ba74a09bf48b1dcc4f49aa22ce81b7/plugins/provider-pi/src/bridge/rpc-session.ts#L589-L641) and [plugins/provider-pi/src/bridge/rpc-session.ts](https://github.com/get-bb/bb/blob/f8c0701e94ba74a09bf48b1dcc4f49aa22ce81b7/plugins/provider-pi/src/bridge/rpc-session.ts#L1120-L1157). This distinguishes a known refusal before prompt acceptance from generic uncertain transport errors.
+
+For Teamagent, preserve queued input and exact operation identity while context maintenance runs. A retry count does not bound the compaction waiter, whose array and wait lifetime have no local limit in these methods; dispatch uses NO_REQUEST_TIMEOUT. Resolving input-consumption tracking before dispatch is not provider acceptance. The Codex bridge, network preparation helper and full delivery settlement were outside this review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [bb](https://github.com/get-bb/bb); analyzed commit `f15275b83134efcbb94623a0689c9b07a24e0a7d`; commit date 2026-10-27T10:43:13-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--bb.md).
+Analysis metadata: source [bb](https://github.com/get-bb/bb); analyzed commit `f8c0701e94ba74a09bf48b1dcc4f49aa22ce81b7`; commit date 2026-10-27T22:42:15-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--bb.md).
 <!-- teamagent-analysis:end -->

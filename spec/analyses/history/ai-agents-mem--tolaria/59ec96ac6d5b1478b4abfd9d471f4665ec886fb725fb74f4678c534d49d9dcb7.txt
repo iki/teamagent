@@ -1,0 +1,52 @@
+# tolaria
+
+Source: [tolaria](https://github.com/refactoringhq/tolaria) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `04030c3e0a23ce93f39a83d821b1b87ec03aec4e`; commit timestamp `2026-09-26T00:28:02+02:00`; 2,420 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/README.md)):
+
+> Tolaria is a desktop app for macOS, Windows, and Linux for managing **markdown knowledge bases**. People use it for a variety of use cases: Personally, I use it to **run my life** (hey 👋 Luca here). I have a massive workspace of 10,000+ notes, which are the result of my Refactoring work + a ton of personal journaling and *second braining*.
+
+Build/package evidence: [mcp-server/package.json](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/mcp-server/package.json); [package.json](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/package.json); [src-tauri/Cargo.toml](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/src-tauri/Cargo.toml); [src-tauri/gen/apple/assets/mcp-server/package.json](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/src-tauri/gen/apple/assets/mcp-server/package.json)
+
+License evidence: [LICENSE](https://github.com/refactoringhq/tolaria/blob/04030c3e0a23ce93f39a83d821b1b87ec03aec4e/LICENSE) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Search freshness needs a coverage manifest and a source-coordinate map.** Reviewed commit `ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f` (commit date `2026-10-27T15:46:31Z`). Compared with `04030c3e0a23ce93f39a83d821b1b87ec03aec4e`; the complete Git comparison contains 2545 changed paths.
+
+The server search index removes front matter and backtick-fenced code, lowercases the remaining content and calculates match positions there. It then slices snippets from the original content using those transformed positions. Removed regions therefore shift snippets and reported lines away from the original source; there is no offset map. The saved-index parser checks the index version, head and notes array, but does not validate each note. Reusing an equal-head index consequently establishes neither entry integrity nor complete source coverage.
+
+A rebuild reads the repository head and then enumerates and reads mutable files without a pinned content snapshot. Unreadable notes are skipped. Incremental application advances the head before individual reads; a failed update removes the note while retaining the advanced head. LocalDiskStore validates lexical key syntax and writes through a temporary rename, but does not resolve symlink containment or establish crash durability. R2 requests buffer the entire response, and the inspected listing performs one request with regex XML extraction and no continuation loop.
+
+Evidence: [apps/server/src/searchIndex.ts:1-365](https://github.com/refactoringhq/tolaria/blob/ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f/apps/server/src/searchIndex.ts#L1-L365) · [apps/server/src/store.ts:1-243](https://github.com/refactoringhq/tolaria/blob/ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f/apps/server/src/store.ts#L1-L243).
+
+**Harness consequence:** Keep exact source offsets through normalization and return coverage failures independently from revision freshness. Publish an index only after its complete immutable source manifest is checked, with missing files explicitly reported. Retain temporary-file publication as an adapter pattern, adding resolved containment, bounded bodies, paginated object listing, cleanup and durability semantics appropriate to the host.
+
+**Scope and limits:** Scoped static review of the complete cached search-index and storage files in the 2,545-path comparison; neither the full application nor the guarded DNS helper was audited. No upstream code, network service, deployment or tests were run.
+
+## Follow-up change review — 2026-10-28
+
+**Block formatting resolves schema marks dynamically and preserves selection.** Reviewed commit `f0b9b04927e870a5beaaf3a56028de68ed5c12d9` (commit date `2026-10-28T02:22:18Z`), compared with `ed1e73bc5133536c05dbde3d7fbe2a2dfba1f79f`. The complete no-rename Git path inventory contains 21 changed paths.
+
+The editor adds command-key formatting for bold, italic, underline, strike and code. It resolves marks by their actual schema names, ignores composition/Alt events, computes a bounded document range and toggles the mark based on whether all selected text already carries it. Fixtures cover single/multiple blocks, unchanged selection, equivalent Markdown output and one-step undo. The separate lint-diff parser also changes, but it is not evidence of a stronger memory or retrieval architecture.
+
+Evidence: [src/components/richEditorBlockSelectionExtension.ts:287-363](https://github.com/refactoringhq/tolaria/blob/f0b9b04927e870a5beaaf3a56028de68ed5c12d9/src/components/richEditorBlockSelectionExtension.ts#L287-L363) · [src/components/richEditorBlockSelectionExtension.test.ts:302-365](https://github.com/refactoringhq/tolaria/blob/f0b9b04927e870a5beaaf3a56028de68ed5c12d9/src/components/richEditorBlockSelectionExtension.test.ts#L302-L365).
+
+**Harness consequence:** Keep source-document edit semantics explicit and undoable. Verify both structured selection and serialized text when editing knowledge documents; a visual formatting action must not silently change approved wording.
+
+**Scope and limits:** Reviewed block-selection formatting and its new fixtures; site build changes and the rewritten lint gate were not certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

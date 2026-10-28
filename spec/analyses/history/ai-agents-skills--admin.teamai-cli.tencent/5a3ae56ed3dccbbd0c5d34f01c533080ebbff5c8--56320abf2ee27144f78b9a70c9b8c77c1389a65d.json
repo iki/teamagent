@@ -1,0 +1,980 @@
+{
+  "id": "ai-agents-skills--admin.teamai-cli.tencent",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/Tencent/teamai-cli",
+  "report": "spec/projects/ai-agents-skills--admin.teamai-cli.tencent.md",
+  "analyzedSha": "5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T17:56:04+01:00",
+  "observedSha": "56320abf2ee27144f78b9a70c9b8c77c1389a65d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "56320abf2ee27144f78b9a70c9b8c77c1389a65d",
+      "date": "2026-10-28T11:00:27+01:00",
+      "subject": "fix(init): keep the settings that validate when --force replaces an invalid config (#1510)"
+    },
+    {
+      "sha": "829d5f008ac7c5c0893aa49e7875d4999960c3f1",
+      "date": "2026-10-28T10:23:19+01:00",
+      "subject": "fix(pull): exit 1 when the team repo fetch fails in a pull a person runs (#1512)"
+    },
+    {
+      "sha": "564b1a3f6ca2eacc1cd2acbb50cfaf73527a8c43",
+      "date": "2026-10-28T10:22:31+01:00",
+      "subject": "fix(init): refuse to initialize a single-repo team URL as a standalone team repo (#1509)"
+    },
+    {
+      "sha": "3a583cd18193f55054afe81b3e60b69ca8391f77",
+      "date": "2026-10-28T09:55:39+01:00",
+      "subject": "feat(hooks): run project team hooks on OpenCode and OMP (#1497)"
+    },
+    {
+      "sha": "831f9635574ed5496b07d477116b01ec54e2fb8e",
+      "date": "2026-10-28T09:44:23+01:00",
+      "subject": "fix(workflow): resume --next leaves the runs it cannot finish (#1508)"
+    },
+    {
+      "sha": "f841709fc01e1e43cc83946f4e5a493d3d55dc7b",
+      "date": "2026-10-28T16:19:43+08:00",
+      "subject": "ci(lint): enable oxlint suspicious and perf categories (#1414)"
+    },
+    {
+      "sha": "541f07eb916871cebdbcd3195ffff6be8ff369e7",
+      "date": "2026-10-28T09:19:31+01:00",
+      "subject": "fix(session): mask env secrets with quotes or backslashes in scrubbed tool arguments (#1506)"
+    },
+    {
+      "sha": "299ce8ed4d3dfe8e6d9547776be4f31ff1766376",
+      "date": "2026-10-28T07:51:44+01:00",
+      "subject": "feat(workflow): a CI runner takes the runs members hand it, with resume --next (#1490)"
+    },
+    {
+      "sha": "a484299112c3f7e596e05dd657aa60c892f9009f",
+      "date": "2026-10-28T06:26:59+01:00",
+      "subject": "fix(hooks): make CodeBuddy IDE project gates work on Windows (#1494)"
+    },
+    {
+      "sha": "f2eb4b8516619d36ff1c395982668506a9a35592",
+      "date": "2026-10-28T05:01:09+01:00",
+      "subject": "fix(update): skip self-update for a Volta-managed install (#1493)"
+    },
+    {
+      "sha": "ce5dbee14a475e608da221a26a7bc593ef0767ea",
+      "date": "2026-10-28T04:50:05+01:00",
+      "subject": "feat(worktree): one side-branch checkout per self-mode repo (#1465)"
+    },
+    {
+      "sha": "8c03c3f3df0aa3abab91748e0cb8e78c8dc8e601",
+      "date": "2026-10-28T03:56:15+01:00",
+      "subject": "feat(config): AI calls, stop pricing, workflow policy and doctor follow every member setting level (#1477)"
+    },
+    {
+      "sha": "4d3d1f155a389ddc23c968911a6c8fda0be503d6",
+      "date": "2026-10-28T03:22:35+01:00",
+      "subject": "test(doctor): use native temp paths in Copilot fixtures (#1491)"
+    },
+    {
+      "sha": "b3e93c5d2957b54a7d8f12a38c0cc22e248afbd7",
+      "date": "2026-10-28T03:19:21+01:00",
+      "subject": "feat(score): label sessions by hand and see how often the judge agrees with members (#1489)"
+    },
+    {
+      "sha": "a6fd4a03392fbe80d9f0ceda2fe540467edd4fa0",
+      "date": "2026-10-28T03:09:49+01:00",
+      "subject": "feat(config): show member setting provenance (#1474)"
+    },
+    {
+      "sha": "12c34edcfe6a2cfe5bd915ab76221433830e14f1",
+      "date": "2026-10-28T02:22:28+01:00",
+      "subject": "fix(session): keep a tool call's arguments masked when masking leaves no JSON to parse (#1482)"
+    },
+    {
+      "sha": "28d47a917adeac07507914b982c6140022c564c8",
+      "date": "2026-10-28T02:06:50+01:00",
+      "subject": "fix(workflow): a session with no tool is asked for it, and a resume's --tools replaces the run's (#1481)"
+    },
+    {
+      "sha": "2750ca93983033ed1134b6b3e1b584f81132b91e",
+      "date": "2026-10-28T02:06:02+01:00",
+      "subject": "fix(gitlab): include reviewer lookups in MR creation deadline (#1488)"
+    },
+    {
+      "sha": "55838d1b03e52875627d328b13f840bcb314b4f2",
+      "date": "2026-10-28T02:04:32+01:00",
+      "subject": "fix(locate): every command finds a tool where pull wrote it, also when its home moved (#1486)"
+    },
+    {
+      "sha": "2faf53d00893fff6239d334bec82d86c8eb9100e",
+      "date": "2026-10-28T01:15:03+01:00",
+      "subject": "fix(init): stop user-scope init from trusting Codex hooks when the machine file turns trust off (#1487)"
+    },
+    {
+      "sha": "e0d17c4c0550b7c4564131d13419a49e0b1e87be",
+      "date": "2026-10-28T01:13:35+01:00",
+      "subject": "feat(reporting): count what unattended sessions delivered at the drain that ends their job (#1485)"
+    },
+    {
+      "sha": "632d180a1f29ea4be01f2ee6f707e2e51bafcfad",
+      "date": "2026-10-28T00:09:02+01:00",
+      "subject": "fix(config): treat sessions as a member setting so a workspace sees the machine value (#1483)"
+    },
+    {
+      "sha": "993984de010cabdd1a7614dda37f53793da31227",
+      "date": "2026-10-27T23:08:13+01:00",
+      "subject": "test: wait for teamai's detached children before a teardown gives up on ENOTEMPTY (#1467)"
+    },
+    {
+      "sha": "4db9761c3adf7533caa43b2c5d1182592deba50e",
+      "date": "2026-10-27T22:43:09+01:00",
+      "subject": "fix(recall): honour TEAMAI_RECALL_DISABLED in pull and recall status (#1464)"
+    },
+    {
+      "sha": "292e2afee5c6c5a69ddbd1e78f69bf67c5e5e0e6",
+      "date": "2026-10-27T22:28:38+01:00",
+      "subject": "feat(config): accept settings-only machine files and overlay member settings across workspace scopes (#1473)"
+    },
+    {
+      "sha": "59b2c07c5bc16b0b55a438e61b7865a8118c03f1",
+      "date": "2026-10-27T22:24:16+01:00",
+      "subject": "feat(session): publish and score sessions per run mode, and drain what an unattended run leaves (#1478)"
+    },
+    {
+      "sha": "00317581b05bbe11a0edab5cdbf747d4357390b4",
+      "date": "2026-10-27T22:03:46+01:00",
+      "subject": "feat(workflow): sessions in hosts teamai cannot detect name their tool with --tools (#1480)"
+    },
+    {
+      "sha": "bd3adf9bc5d037ba3f26ee9fd5d07a9c1cd0d62d",
+      "date": "2026-10-27T21:29:58+01:00",
+      "subject": "feat(reporting): record what sessions and workflow steps delivered, and count it per run mode (#1471)"
+    },
+    {
+      "sha": "40b0093b2cf9edce19bb713a3c10fff300141733",
+      "date": "2026-10-27T21:17:20+01:00",
+      "subject": "fix(init): keep the member's own settings on init --force (#1476)"
+    },
+    {
+      "sha": "3d253e4514cd7d91ea40720607752fe99c5e4a10",
+      "date": "2026-10-27T20:48:16+01:00",
+      "subject": "feat(dashboard): show scorer pass rates, what drives them, and labels by value (#1466)"
+    },
+    {
+      "sha": "a873f973a1b9d83e77a3054013a1a41235b8ec7a",
+      "date": "2026-10-27T20:38:41+01:00",
+      "subject": "fix(update,pull): let one scope decide auto-update and auto-compact, the user scope when there is one (#1475)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ja.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.ko.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.th.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/data-directory-layout.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/model-profiles.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/session-user-repo-sync.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dev/agent-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dev/tool-launch.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dev/workflow-engine.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/knowledge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/member-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/scorers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/tool-support.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/workflow-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/dashboard.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/diagnostics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/knowledge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/member-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/scorers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/sharing.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/tool-support.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/workflow-advanced.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/zh-CN/workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/backfill-contributors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/core/references/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/manage-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/setup-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/setup/references/uninstall.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/share/references/doc-template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/workflow-local/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/workflow-local/references/ci.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/workflow/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/workflow/references/hosts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill-data/workflow/references/judging.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-session-copy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/agent-session-subagents.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/branch-home-1443.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/branch-worktree-failure-reason.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/codebase-extract-fallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/config-not-initialized.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/contribute-outcomes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/contribute-reminder-record.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/conversation-token-metrics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-collector.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-handoff-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-outcomes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-report-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-scorers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-session-sharing-view.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/dashboard-session-sharing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-ui.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-workflow-runs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/dashboard-workspaces.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/digest-outcomes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-agents-delivery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-delivery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-hermes-soul-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/doctor-moved-home.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-openclaw-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor-scorers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/autocompact-pull.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/claude-mcp-local-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/codebuddy-mcp-local-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/codebuddy-user-mcp-993.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/codex-team-hook-dispatcher-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/copilot-global-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/cursor-tool-roots-1138.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/dashboard-session-sharing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/dashboard-workflow-runs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/deleted-worktree-scope-810.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/doctor-hermes-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/doctor-openclaw-budget.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/dsh-clean-stdout.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/git-exclude-delivered-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/git-exclude-doctor-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/git-exclude-uninstall-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/git-exclude-worktrees-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/git-hook-new-worktree.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/gitlab-mr-reviewer-timeout.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/hermes-installed-launcher.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/hooks-project-isolation-issue373.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/init-agent-validation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/init-ends-with-pull.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/init-invalid-config-1500.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/init-keeps-member-settings-1458.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/init-registration-result.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/init-self-agent-filter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/init-single-repo-refusal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/init-user-codex-trust-1484.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/live-checkouts-993.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/local-agent-delivered-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/local-agent-mcp-local-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/local-agent-model-key-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/local-agent-teardown-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/machine-state-993.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/mcp-git-info-993.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/mcp-linked-config-993.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/models-omp-cli.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/muse-support.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/new-checkout-trigger.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/omp-installed-launcher.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/opencode-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/opencode-relocated-hooks.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/opencode-versions-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/pi-installed-launcher.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/pi-relocated-extensions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/pull-fetch-failure-exit-1500.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/pull-team-ref-1183.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/push-sync-followups-823.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/report-timeout.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/score-external-driver.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/score-hand-label.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/score-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/self-mode-git-exclude-915.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/self-mode-worktrees-808.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/__tests__/e2e/single-side-branch-1443.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/submodule-checkout-1041.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/user-uninstall-keeps-projects-1025.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-command-utf8.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-command.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-delivery-drivers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-inline.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-inputs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-loop-fan-out.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-nested-start.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-pr-delivery-1090.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-prompt.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-publish-resume.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-safety-1082.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-session-1086.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-signals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-skill-claim.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-subworkflow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-utf8-output.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workflow-workspaces.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/workspace-children-913.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/e2e/zcode-clean-stdout.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/env-commands.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/env-exec.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/env-handler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/env-loader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/__tests__/git-exclude-delivered.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

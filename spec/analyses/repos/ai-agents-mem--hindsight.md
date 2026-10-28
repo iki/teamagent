@@ -2,12 +2,11 @@
 
 Source: [hindsight](https://github.com/vectorize-io/hindsight) · [Analysis](../../projects/ai-agents-mem--hindsight.md) · [memory](../../memory.md), [evolution](../../evolution.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf`; commit date: 2026-10-27T13:37:18-04:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2`; commit date: 2026-10-28T10:59:34+01:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vectorize-io/hindsight/compare/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf...1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/vectorize-io/hindsight/compare/14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2...14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

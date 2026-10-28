@@ -1,0 +1,835 @@
+{
+  "id": "ai-agents-mem--pai-personal-ai-infrastructure",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
+  "report": "spec/projects/ai-agents-mem--pai-personal-ai-infrastructure.md",
+  "analyzedSha": "5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-09-03T18:07:21-07:00",
+  "observedSha": "b7efec97d8c3885feee285bee468c35602fb0606",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b7efec97d8c3885feee285bee468c35602fb0606",
+      "date": "2026-10-27T21:20:03-07:00",
+      "subject": "README: replace intro video with the 8.761.0 release film"
+    },
+    {
+      "sha": "fb9aef4640a73feae4c2e6483b26f58491ce2665",
+      "date": "2026-10-27T15:01:37-07:00",
+      "subject": "release 8.761.0: The One Loop"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/scripts/leak-scan.allowlist.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/leak-scan.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/leak-scan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".gitleaks.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/GETTING-STARTED.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/INSTALL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Intents/Interview.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Intents/Report.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Intents/Setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Intents/Uninstall.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Intents/Update.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/References/HermesSidecar.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/ActivateImports.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/Attest.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/DeployComponents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/DeployCore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/DetectEnv.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/DetectInference.help.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/DetectInference.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/ImportPrevious.help.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/ImportPrevious.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/InstallAll.help.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/InstallAll.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/InstallEngine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/InstallHooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/InstallSettings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/LinkUser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/Migrate.help.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/Migrate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/OverlaySystem.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/PulseHealth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/Redact.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/RenderIdentity.help.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/RenderIdentity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/Report.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/ScaffoldUser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/ScanConflicts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/SeedPulse.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/SystemTrees.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/Uninstall.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Tools/lib/atomic-write.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/lib/claude-dir.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/lib/env-expand.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/lib/exec-allow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/lib/migrations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/Tools/lib/skill-config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "LifeOS/Workflows/Interview.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "LifeOS/Workflows/Setup.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "LifeOS/Workflows/Uninstall.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/Workflows/Update.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/CLAUDE.template.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/AlgorithmReference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/LATEST",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/mode-detection.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/modes/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/modes/ideate.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/modes/iterate.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/modes/loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/modes/native.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/modes/optimize.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/archive/target-types.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/changelog.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/eval-guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/ideate-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/optimize-loop.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/v8.20.2.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ALGORITHM/v8.45.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/AS3/Probes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/AgenticJudge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Assay.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Calibrate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Chain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Cut.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Engine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/EngineBakeoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/EngineJudge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Extract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Fingerprint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/HaikuSwap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/JudgeCall.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Panel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/QuestionSystem.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/QuestionSystemBakeoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/Report.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/ReviewEntry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/UseCaseBakeoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/UseCaseCorpus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/VideoJudge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/fixtures/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/fixtures/engine-canary.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/fixtures/question-system-v2.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/fixtures/question-system.example.cases.jsonl",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ASSAY/fixtures/question-system.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/Atlas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/InstallAtlas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ATLAS/ModelsView.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ATLAS/Observe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/Store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Cloudflare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Docker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/InfraInventory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Injection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Projects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/Systemd.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ATLAS/collectors/injection-surfaces.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.path.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.service.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/ATLAS/com.lifeos.atlas.timer.template",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/Censvs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/genera.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/ids.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/live/atlas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/live/isa.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/live/proposal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/live/run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/res.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/resolve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/situation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/achilles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/atlas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/common.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/errata.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/isa.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/people.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/socrates.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/upgrades.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/sources/workflows.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CENSVS/tools/seed-proposals.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CODEX/Bridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CODEX/Mount.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CODEX/Render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CODEX/SessionTitle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CODEX/SkillCatalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/CODEX/bunker.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/DICTATION/Dictation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/ARCHITECTURE_SUMMARY.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Achilles/AchillesSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Agents/AgentSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Algorithm/AlgorithmSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Algorithm/AscentStates.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Arbol/ArbolSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Assay/AssaySystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Assay/Records.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Atlas/AtlasSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/BrandAssets.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Bunker/BunkerSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Censvs/CensvsSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Codex/CodexFrontDoor.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Conduit/ConduitSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Config/ConfigSystem.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/CoreComponents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "LifeOS/install/LIFEOS/DOCUMENTATION/Delegation/DelegationSystem.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

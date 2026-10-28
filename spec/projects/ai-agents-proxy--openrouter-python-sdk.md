@@ -32,6 +32,18 @@ The [deferred-tool shape](https://github.com/OpenRouterTeam/python-sdk/blob/0608
 
 The [computer-use model](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/src/openrouter/components/computeruseservertool.py) declares integer display dimensions without visible positive/maximum bounds. The [namespace tests](https://github.com/OpenRouterTeam/python-sdk/blob/06088198aa7ff3de169115abba13e03983a97396/tests/test_responses_namespace.py) check that Responses is top-level with a beta alias and Analytics exists; they do not call a service or validate provider behavior. Adapt compatibility tests and protocol records, not a claim that every advertised tool is available or authorized. No Python SDK, OAuth, network request or tests were executed.
 
+## Follow-up change review — 2026-10-28
+
+**Generated provider option names expand without establishing route eligibility.** Reviewed commit `0305e470a6aa7a082d478386b0f0303493501264` (commit date `2026-10-28T08:52:46Z`), compared with `06088198aa7ff3de169115abba13e03983a97396`. The complete no-rename Git path inventory contains 32 changed paths.
+
+The image-generation preferences type adds primalabs to the typed-dict, Pydantic model and serialized field list. The option's value remains an unconstrained string-keyed dictionary. This is generated wire-shape evidence, not proof that an account may use the provider or that its route satisfies retention, training, licensing or cost requirements.
+
+Evidence: [src/openrouter/components/imagegenerationproviderpreferences.py:140-153](https://github.com/OpenRouterTeam/python-sdk/blob/0305e470a6aa7a082d478386b0f0303493501264/src/openrouter/components/imagegenerationproviderpreferences.py#L140-L153) · [src/openrouter/components/imagegenerationproviderpreferences.py:439-452](https://github.com/OpenRouterTeam/python-sdk/blob/0305e470a6aa7a082d478386b0f0303493501264/src/openrouter/components/imagegenerationproviderpreferences.py#L439-L452) · [src/openrouter/components/imagegenerationproviderpreferences.py:649-661](https://github.com/OpenRouterTeam/python-sdk/blob/0305e470a6aa7a082d478386b0f0303493501264/src/openrouter/components/imagegenerationproviderpreferences.py#L649-L661).
+
+**Harness consequence:** Apply Teamagent's validated provider options and effective route policy before SDK serialization. Newly enumerated providers remain unknown/blocked until reviewed; generated permissive dictionaries must not bypass a typed boundary.
+
+**Scope and limits:** Reviewed the provider-option delta within the broader generated SDK update; no account, model, response schema or live request was tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk); analyzed commit `06088198aa7ff3de169115abba13e03983a97396`; commit date 2026-10-27T17:48:23Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-python-sdk.md).
+Analysis metadata: source [openrouter-python-sdk](https://github.com/OpenRouterTeam/python-sdk); analyzed commit `0305e470a6aa7a082d478386b0f0303493501264`; commit date 2026-10-28T08:52:46Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-python-sdk.md).
 <!-- teamagent-analysis:end -->

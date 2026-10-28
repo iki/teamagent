@@ -1,0 +1,870 @@
+{
+  "id": "ai-agents-proxy--openrouter-go-sdk",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/OpenRouterTeam/go-sdk",
+  "report": "spec/projects/ai-agents-proxy--openrouter-go-sdk.md",
+  "analyzedSha": "1817a54ddc2a43786412bf0fb7802868f19d35e1",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T17:50:19Z",
+  "observedSha": "3b873ba1a1286a8c604b36ec0e409e4e7e257b57",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3b873ba1a1286a8c604b36ec0e409e4e7e257b57",
+      "date": "2026-10-28T08:58:35Z",
+      "subject": "chore: bump examples to SDK v0.9.84"
+    },
+    {
+      "sha": "dd08310410f16f29f561904ad729c7d84443672a",
+      "date": "2026-10-28T08:55:44Z",
+      "subject": "chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.84 (#1055)"
+    },
+    {
+      "sha": "a2cc78fb36741a389c5e5f59511ba0bc5a98510a",
+      "date": "2026-10-28T08:46:33Z",
+      "subject": "chore: update OpenAPI spec [sdk-bot] (#1054)"
+    },
+    {
+      "sha": "d0b189773c46e0f3292c36b5c40ec85f0c2a5894",
+      "date": "2026-10-28T00:27:36Z",
+      "subject": "chore: bump examples to SDK v0.9.83"
+    },
+    {
+      "sha": "1ae078915baa78ddeb78567532ec890e5fe302ff",
+      "date": "2026-10-28T00:25:01Z",
+      "subject": "chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.83 (#1053)"
+    },
+    {
+      "sha": "28b7ec64d6ca335872dca979b85e81035e48b352",
+      "date": "2026-10-28T00:18:12Z",
+      "subject": "chore: update OpenAPI spec [sdk-bot] (#1052)"
+    },
+    {
+      "sha": "e61687ad4e0136c63dde41b8d96abecaac8d70a0",
+      "date": "2026-10-27T19:59:21Z",
+      "subject": "chore: bump examples to SDK v0.9.82"
+    },
+    {
+      "sha": "1c5c47f01d7807283357427e2f144d9e4c15152d",
+      "date": "2026-10-27T19:57:04Z",
+      "subject": "chore: 🐝 Update SDK - Generate SDK (spec change merged) 0.9.82 (#1051)"
+    },
+    {
+      "sha": "594db524950ead642e1b82d7418e8df1b058d2cc",
+      "date": "2026-10-27T19:49:29Z",
+      "subject": "chore: update OpenAPI spec [sdk-bot] (#1050)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".speakeasy/gen.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/gen.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/in.openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/out.openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".speakeasy/workflow.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "OVERVIEW.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "RELEASES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/aabenchmarkentry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/activityitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/activityresponse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/additionaltoolsitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/additionaltoolsitemtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/additionaltoolsitemtoolfunction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/advisorreasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/advisorservertoolconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/advisorservertoolopenrouter.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/agentmessageitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/agentmessageitemcontentinputimage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignment.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentallowedcallrecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentblockedcallrecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentchataudio.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentchatimage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentchatimageimageurl.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentchatrejected.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentchattoolcall.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentchattoolcallfunction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentrule.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentrulerecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/alignmentunavailablecallrecord.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/allowedtools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/always.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/annotationaddedevent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/annotationfile.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/annotationurlcitation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/annotationwebsearchcitation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicadvisormessageusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicadvisortoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicbase64imagesource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicbase64pdfsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicbashcodeexecutionoutput.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicbashcodeexecutionresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicbashcodeexecutiontoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicbashcodeexecutiontoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccachecontroldirective.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccachecreation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationcharlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationcharlocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationcontentblocklocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationcontentblocklocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationpagelocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationpagelocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationsconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationsearchresultlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationsearchresultlocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationwebsearchresultlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccitationwebsearchresultlocationparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccodeexecution20250825caller.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccodeexecution20260120caller.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccodeexecutionoutput.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccodeexecutionresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccodeexecutiontoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccodeexecutiontoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccompactionblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccompactionusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccontainer.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccontainerskill.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiccontainerupload.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicdirectcaller.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicdocumentblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicdocumentblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicdocumentblockparamcitations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicencryptedcodeexecutionresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicfile.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicfiledeleted.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicfiledocumentsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicfilelist.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicimageblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicinputtokensclearatleast.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicinputtokenstrigger.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicinputtransformation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropiciterationcachecreation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicmessageoutputconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicmessageusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicoutputtokensdetails.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicplaintextsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicredactedthinkingblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicrefusalstopdetails.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicsafeguard.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicsearchresultblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicsearchresultblockparamcitations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicservertoolusage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictextblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictextblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictexteditorcodeexecutioncreateresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictexteditorcodeexecutionstrreplaceresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictexteditorcodeexecutiontoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictexteditorcodeexecutiontoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictexteditorcodeexecutionviewresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicthinkingblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicthinkingblockbinding.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicthinkingturns.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolreference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolsearchresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolsearchresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolsearchtoolbm25.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolsearchtoolregex.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolsearchtoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolunionbash20250124.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolunioncustom.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolunioninputschema.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictooluniontexteditor20250124.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolunionwebsearch20250305.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolunionwebsearch20260209.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictooluseblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictooluseskeep.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropictoolusestrigger.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicunknownusageiteration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicurlimagesource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicurlpdfsource.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebfetchblock.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebfetchtoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebfetchtoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebsearchresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebsearchresultblockparam.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebsearchtoolresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebsearchtoolresulterror.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/anthropicwebsearchtooluserlocation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchcallitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchcalloperationdiffdeltaevent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchcalloperationdiffdoneevent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchcalloutputitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchcreatefileoperation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchdeletefileoperation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchservertool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchservertoolconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchservertoolopenrouter.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/applypatchupdatefileoperation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/apprankingsitem.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/apprankingsresponse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/architecture.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/armorautomode.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/armorcontext.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/armorenvironmententry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/armorplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/armorrule.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/armorsafeguardresult.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/armorsafeguardresultstatus.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/audiourl.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/autobetarouterplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/autorouterplugin.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/badgatewayresponseerrordata.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/badrequestresponseerrordata.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/baseinputsmessage.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/basereasoningconfig.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/models/components/bashservertool.mdx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

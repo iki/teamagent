@@ -36,6 +36,18 @@ The [credential resolver](https://github.com/Gitlawb/openclaude/blob/20a50493c77
 
 Default ADC results are cached for five minutes using selected environment/path hints, without token expiry or credential-file content in this helper's key. The default GoogleAuth constructor uses its ambient SDK chain rather than receiving the caller-supplied environment as an isolated credential context; project hints alone do not bind the resulting account. Transport authorization, destination policy, actual expiry refresh and memoizer invalidation remain outside scope. Teamagent should use typed unavailable states and account-bound credential services rather than interpreting these discovery helpers as entitlement or training-policy evidence. No optional module, credential file, Google service or test was accessed or executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `ffa79d9cbb7f3ca9589601f1657803bae6847722` (commit date `2026-10-27T15:36:29-07:00`), compared with `20a50493c775f151b61e1fabd5fa678ad1fbdaae`. Earlier findings remain historical evidence.
+
+**Scope:** Session-search confidentiality and launcher argument-boundary changes. The complete changed-path inventory contains 29 paths; the assessment below is limited to the cited branches.
+
+Search no longer logs the raw query, prompt excerpt or model response. Transcript loading disables parse-content logging; model-output parsing starts from unknown and accepts only integer indices within the selected-log bounds. Parser/provider errors become a generic failure instead of logging private excerpts. See [src/utils/agenticSessionSearch.ts](https://github.com/Gitlawb/openclaude/blob/ffa79d9cbb7f3ca9589601f1657803bae6847722/src/utils/agenticSessionSearch.ts#L171-L190) and [src/utils/agenticSessionSearch.ts](https://github.com/Gitlawb/openclaude/blob/ffa79d9cbb7f3ca9589601f1657803bae6847722/src/utils/agenticSessionSearch.ts#L247-L302). The launcher stops interpreting its own options at the first CLI argument and forwards the remaining arguments together, preventing prompt words from being interpreted as provider selection. See [scripts/provider-launch.ts](https://github.com/Gitlawb/openclaude/blob/ffa79d9cbb7f3ca9589601f1657803bae6847722/scripts/provider-launch.ts#L57-L74).
+
+For Teamagent, apply confidentiality at diagnostic boundaries as well as ordinary output, and retain explicit parse/unavailable states: some invalid search shapes still return an empty result in this branch. These changes do not establish local-only semantic search, server privacy policy or complete session parser validation.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude.fork.openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `20a50493c775f151b61e1fabd5fa678ad1fbdaae`; commit date 2026-10-27T10:47:34-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.fork.openclaude.md).
+Analysis metadata: source [claude.fork.openclaude](https://github.com/Gitlawb/openclaude); analyzed commit `ffa79d9cbb7f3ca9589601f1657803bae6847722`; commit date 2026-10-27T15:36:29-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.fork.openclaude.md).
 <!-- teamagent-analysis:end -->

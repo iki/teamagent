@@ -39,6 +39,18 @@ Evidence: [src/gflow_cli/auth/renew.py:64-233](https://github.com/ffroliva/gflow
 
 **Scope and limits:** Static scoped review of renewal result/lifecycle and MCP drain call sites within the 374-path comparison. Browser/session verifier, profile lease internals, detached drain, full API/auth remediation and provider terms were not audited or executed. Upstream comments about live observations remain attributed source claims, not measurements reproduced here.
 
+## Follow-up change review — 2026-10-28
+
+**Lost generation replies trigger readback rather than another paid submission.** Reviewed commit `31d6226a169fca96c4ed497285111e6f5484477a` (commit date `2026-10-28T07:46:30Z`), compared with `7b6b9054ba419761e3b610d1fd5ca0137b1d0a51`. The complete no-rename Git path inventory contains 29 changed paths.
+
+The image recovery path captures a baseline grid, waits for the requested count of new tiles and performs a settle read. Missing baseline, extra tiles or missing source URLs remain a non-retryable unknown outcome with an explicit billing warning. Fixtures verify one submission and refusal of extra/late tiles. The implementation compares counts and nonempty URLs after settling, not equality of the two tile-ID sets; a matching count alone cannot prove attribution under concurrent writers.
+
+Evidence: [src/gflow_cli/api/transports/migrated_composer.py:791-865](https://github.com/ffroliva/gflow-cli/blob/31d6226a169fca96c4ed497285111e6f5484477a/src/gflow_cli/api/transports/migrated_composer.py#L791-L865) · [tests/api/transports/test_migrated_composer.py:3552-3621](https://github.com/ffroliva/gflow-cli/blob/31d6226a169fca96c4ed497285111e6f5484477a/tests/api/transports/test_migrated_composer.py#L3552-L3621).
+
+**Harness consequence:** Persist request intent and provider IDs before download, reconcile ambiguous submissions without repeating them, and require stronger request/result identity than a UI count when available. Keep unsupported attribution unknown rather than claiming idempotency.
+
+**Scope and limits:** Reviewed image lost-body recovery and selected fixture behavior; video recovery, private service protocol stability and live billing were not verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gflow-cli](https://github.com/ffroliva/gflow-cli); analyzed commit `7b6b9054ba419761e3b610d1fd5ca0137b1d0a51`; commit date 2026-10-26T09:16:55Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--gflow-cli.md).
+Analysis metadata: source [gflow-cli](https://github.com/ffroliva/gflow-cli); analyzed commit `31d6226a169fca96c4ed497285111e6f5484477a`; commit date 2026-10-28T07:46:30Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--gflow-cli.md).
 <!-- teamagent-analysis:end -->

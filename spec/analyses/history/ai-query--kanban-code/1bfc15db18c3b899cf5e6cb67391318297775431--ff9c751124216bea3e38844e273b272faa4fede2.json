@@ -1,0 +1,465 @@
+{
+  "id": "ai-query--kanban-code",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/langwatch/kanban-code",
+  "report": "spec/projects/ai-query--kanban-code.md",
+  "analyzedSha": "1bfc15db18c3b899cf5e6cb67391318297775431",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-26T14:25:59Z",
+  "observedSha": "ff9c751124216bea3e38844e273b272faa4fede2",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ff9c751124216bea3e38844e273b272faa4fede2",
+      "date": "2026-10-27T22:34:49+01:00",
+      "subject": "fix(boxd): a CLI deployed from source stays on the machine until the app carries a bundle built after it"
+    },
+    {
+      "sha": "7c28911d01f0a52808dc755c2545e37e68af4ea1",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "fix(remote-agent): read transcripts only as fast as the wire drains, so a slow Mac no longer makes the agent buffer gigabytes"
+    },
+    {
+      "sha": "ae73fa6b91e1c64946c9cdc67ec74e9caf0a1a95",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(ios): Main chat shows sent images as thumbnails that open full screen, sharing the conversation image views"
+    },
+    {
+      "sha": "84fb396e5aaf385b3d1559a32ce428b839713bb2",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(remote): transcript user messages carry their image count and serve each image to the phone"
+    },
+    {
+      "sha": "4957642939b8b160b5a64ceeaae4bed906f0e599",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(ios): conversation images load as thumbnails from the master and open full screen on tap"
+    },
+    {
+      "sha": "681d553a22e201675b79c67343bd25e99fdc189a",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(conversations): images in conversation messages preview on hover and open on click, loaded from the transcript when the paths are on another machine, and served to phones by the owning master"
+    },
+    {
+      "sha": "8b8bb021d890d3c4c8787d41a769b3d468e4c490",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "fix(ios): a conversation opened from the board goes back to the board, not the card's Main chat"
+    },
+    {
+      "sha": "f95400201632f13ba492c912a4e94bef55673f29",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(ios): rename a conversation by holding its board row or tapping its title"
+    },
+    {
+      "sha": "637bc68658f8a32656449c21ef5126cb35afaa6a",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(conversations): rename a conversation from its sidebar menu, and a title the user gives is kept over the agent's later titles"
+    },
+    {
+      "sha": "d06cfe594392632e518e19df9e1f7f7493a099c0",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(ios): press and hold your own message to continue it in a new conversation, quoted with the agent's reply, composer focused"
+    },
+    {
+      "sha": "01c147dd5e71bcee44767bf285fbab23c438ac9b",
+      "date": "2026-10-27T22:27:30+01:00",
+      "subject": "feat(conversations): continue the user's own message in a new conversation, from the right-click menu or a hover button, with a header naming the message and the agent's reply"
+    },
+    {
+      "sha": "958ca9a9983e02b0a99564d9be99b10005098ef5",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(ios): conversations use the Main composer with images, stashes, the vault offer and its pending and failed states, and unread is bold only"
+    },
+    {
+      "sha": "4cf0cc85597b259d50a59a8a4676ce8d3f3a4edf",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "test(mac): snapshot commands send, drop, paste, chatview and state for driving a second instance"
+    },
+    {
+      "sha": "541ca33c9d51b393e71bed553c9a1e1b074fca05",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(mac): a sent conversation message shows at once and faded until logged, failed sends stay in their conversation, images paste and drop into the open conversation, only the open view is highlighted and unread is bold only"
+    },
+    {
+      "sha": "11b694f532318593c2afe4257bf647a09394026c",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "test(mac): window snapshots draw scroll views over the layer render, and a snapshot test draws the sidebar conversation rows"
+    },
+    {
+      "sha": "3d606575c7f8b69056829ed4503378e11d51d61e",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "fix(conversations): a log on disk loads once its card reaches the board, so conversations show after a restart"
+    },
+    {
+      "sha": "65081a528196924660751a9522842451c5923141",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(ios): conversations nest under their card, a compose button opens one, holding an agent message continues it in a new conversation, and the demo server serves them"
+    },
+    {
+      "sha": "c231b312fb6e37cfa638e64a5097dd3ded8813c1",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(mac): KANBAN_CODE_SNAPSHOT_DIR lets an agent select cards and write PNGs of the app's windows without screen recording rights"
+    },
+    {
+      "sha": "c31ead2003c984bff3be098e4e7f5a6a12a5d703",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(mac): New Conversation sits next to Queue Prompt, the strip over the chat is gone, and a click on the card row goes back to Main"
+    },
+    {
+      "sha": "54b2e6444126034166b9188288738a61e2a44577",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "fix(send): prompts to one session are pasted one after the other, so two sent at once no longer merge into one message"
+    },
+    {
+      "sha": "3c3ba66ff9ef78dc81f911b03b890e4c3a550c92",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(mac): conversations nest under their card in the sidebar, a strip with a compose button tops the chat, and an agent message continues in a new conversation"
+    },
+    {
+      "sha": "84493b3c5ce04aedd6640eb63751e1c873358887",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(cli): kanban reply and kanban conversation list|new|show|title write and read a card's conversation log"
+    },
+    {
+      "sha": "1443ddc9d0b33f650d28b301d3b4ac5de8af95fd",
+      "date": "2026-10-27T22:27:29+01:00",
+      "subject": "feat(conversations): one card's session splits into conversations, each with its own log, header, title and remote API"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/kanban-code/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Apps/iOS/KanbanCodeMobile/Model/ConversationModel.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Preview/PreviewData.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/BoardScreen.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/CardScreen.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/ChatPane.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/ConversationScreen.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/PromptComposer.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/RemoteImageViews.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobile/Views/SelectableText.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobileUITests/ChatAndTerminalTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Apps/iOS/KanbanCodeMobileUITests/ConversationTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Apps/iOS/KanbanCodeMobileUITests/UITestSupport.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Scripts/kanban-code-server/deploy.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/AppComposition.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/CardDetailHelpers.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/CardDetailView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ChatContentCards.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ChatMessageView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ChatView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ContentView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCode/ConversationViews.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/ListBoardView.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCode/PromptEditor.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCode/WindowSnapshots.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/MasterRemoteControlHost.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteBoardMapper.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlHost.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteControlServer.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteOpenAPI.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemotePromptImages.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteScopePolicy.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Adapters/RemoteControl/RemoteTranscriptMapper.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/Domain/Entities/Link.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeCore/Infrastructure/ConversationStore.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/BoardStore.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/BoxdMachineSupervisor.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeCore/UseCases/ConversationOutbox.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeCore/UseCases/ConversationTranscriptImages.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/EffectHandler.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Conversations.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine+Peers.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Master/MasterEngine.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeCore/UseCases/Master/PeerTranscriptMirror.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeRemoteDemo/main.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeRemoteKit/ConversationWords.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Sources/KanbanCodeRemoteKit/Conversations.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeRemoteKit/RemoteClient.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeRemoteKit/RemoteHandover.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeRemoteKit/RemoteModels.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Sources/KanbanCodeServer/ServerMaster.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Tests/KanbanCodeCoreTests/Boxd/BoxdMachineSupervisorTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Tests/KanbanCodeCoreTests/ConversationsTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Tests/KanbanCodeCoreTests/RemotePeerScopeTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Tests/KanbanCodeTests/ComposerPasteRoutingTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "Tests/KanbanCodeTests/ConversationSidebarSnapshotTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/conversation-words.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/conversations.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/conversations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/kanban.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/remote-agent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/remote-agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/conversations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/remote-control.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "specs/chat/conversations.feature",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

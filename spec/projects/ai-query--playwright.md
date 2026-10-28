@@ -39,6 +39,18 @@ Evidence: [packages/playwright-core/src/server/cookieStore.ts:120-215](https://g
 
 **Scope and limits:** Static scoped cookie, proxy-credential, route-lifecycle and selected WebAuthn fixture review within the 725-path comparison. Relocated cookie matching, full transport/decorator internals and other changes were not audited; no browser, proxy or upstream test was executed.
 
+## Follow-up change review — 2026-10-28
+
+**Tool side-effect declarations and trace-frame selection are corrected independently.** Reviewed commit `f9a841f968dd9a4e315df2ec2930da1952971667` (commit date `2026-10-27T16:11:56-07:00`), compared with `a169686c61af856cd1434b4994ef9c3222ee1041`. The complete no-rename Git path inventory contains 23 changed paths.
+
+Test setup and generated-test writing change from readOnly to action descriptors. The snapshot nearest-frame helper also scans all supplied frames, choosing the last equal-distance match, instead of assuming monotonic frame times. This addresses out-of-order screencast observations without claiming frames themselves are complete or trustworthy.
+
+Evidence: [packages/playwright/src/mcp/test/generatorTools.ts:25-40](https://github.com/microsoft/playwright/blob/f9a841f968dd9a4e315df2ec2930da1952971667/packages/playwright/src/mcp/test/generatorTools.ts#L25-L40) · [packages/playwright/src/mcp/test/generatorTools.ts:65-80](https://github.com/microsoft/playwright/blob/f9a841f968dd9a4e315df2ec2930da1952971667/packages/playwright/src/mcp/test/generatorTools.ts#L65-L80) · [packages/isomorphic/trace/snapshotRenderer.ts:22-39](https://github.com/microsoft/playwright/blob/f9a841f968dd9a4e315df2ec2930da1952971667/packages/isomorphic/trace/snapshotRenderer.ts#L22-L39).
+
+**Harness consequence:** Classify tools by their actual writes, even when their purpose is testing. Reconcile timing evidence by explicit timestamps rather than arrival order and preserve trace gaps instead of asserting perfect synchronization.
+
+**Scope and limits:** Reviewed the complete two changed hunks against their target blobs; no browser/test generation or full trace pipeline was executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [playwright](https://github.com/microsoft/playwright); analyzed commit `a169686c61af856cd1434b4994ef9c3222ee1041`; commit date 2026-10-27T13:19:01Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--playwright.md).
+Analysis metadata: source [playwright](https://github.com/microsoft/playwright); analyzed commit `f9a841f968dd9a4e315df2ec2930da1952971667`; commit date 2026-10-27T16:11:56-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--playwright.md).
 <!-- teamagent-analysis:end -->

@@ -36,6 +36,14 @@ Suppression is explicitly a routing heuristic: forced claims can pass an open ci
 
 The [credential override-name helper](https://github.com/experientiallabs/world-model-optimizer/blob/5f4348efd714894d8def5a498117e9b830598350/exp/common/auth/env_names.py) retains known provider names but sanitizes, uppercases and truncates punctuation distinctions in custom connection IDs. Distinct IDs such as a-b and a_b therefore share an override name unless callers reject collisions. Adapt separate content-free health, policy identity and credential namespaces with explicit collision checks; no gateway, credentials, model calls or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `5f4348efd714894d8def5a498117e9b830598350` to `5e53609b1a67accb8f01487488e02da6ee451a28`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [exp/runtime/router/application.py](https://github.com/experientiallabs/world-model-optimizer/blob/5e53609b1a67accb8f01487488e02da6ee451a28/exp/runtime/router/application.py#L133-L166), Gateway shutdown now waits for serving and accounting recovery before releasing workers, ledger and key. If either stage exceeds the join budget it raises while retaining ownership, so a caller can retry close. Startup failure uses a separate helper that retries this cleanup until it succeeds.
+
+**Harness implication and limits:** Preserve ownership when cleanup is incomplete and report that state separately from closed. The startup cleanup loop is unbounded, so the nominal startup timeout does not bound total failure-return latency; later worker shutdown also has no visible timeout here. A robust host needs cancellable recovery ownership and a documented hard-stop strategy. No server, accounting workload or shutdown test was run. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer); analyzed commit `5f4348efd714894d8def5a498117e9b830598350`; commit date 2026-10-27T09:41:38-04:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--world-model-optimizer.md).
+Analysis metadata: source [world-model-optimizer](https://github.com/experientiallabs/world-model-optimizer); analyzed commit `5e53609b1a67accb8f01487488e02da6ee451a28`; commit date 2026-10-27T15:17:31-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--world-model-optimizer.md).
 <!-- teamagent-analysis:end -->

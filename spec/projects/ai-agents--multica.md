@@ -45,6 +45,14 @@ The [common execution contract](https://github.com/multica-ai/multica/blob/d7d18
 
 The [runtime-sharing test](https://github.com/multica-ai/multica/blob/d7d1831fcf39b874911aae1e48b2fbf804bd068e/e2e/runtime-sharing.spec.ts#L4-L60) checks owner-side draft/save/reload behavior, revocation to private, member removal and re-addition remaining private. Although it creates a member client, it does not attempt member-side execution or access after revocation. Thus it supports a UI persistence scenario, not comprehensive runtime authorization evidence. Teamagent should carry explicit capability and cleanup receipts into adapter conformance tests and separately test denied use after revocation. This review read test source but ran no browser, provider or subprocess.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `d7d1831fcf39b874911aae1e48b2fbf804bd068e` to `9af15b1446f9d91f90ea97b65c504a7aa49da714`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [server/pkg/agent/opencode.go](https://github.com/multica-ai/multica/blob/9af15b1446f9d91f90ea97b65c504a7aa49da714/server/pkg/agent/opencode.go#L145-L158), OpenCode execution now chooses ACP through an explicit transport decision and reports why the run-format transport remains selected otherwise. The same delta normalizes version-dependent tool-call identity: legacy callID wins, while a tool part can use its id when callID is absent (lines850–866). This repairs correlation between tool starts/results across wire versions.
+
+**Harness implication and limits:** Negotiate capabilities per runtime version and transport, not per product name alone. Tool-start visibility matters to hang detection, while an output-only transport has a different observability contract. The ACP implementation and selector were not captured here; comments about MCP support are not proof that it works. Preserve native IDs and avoid treating transport fallback as equivalent permission or cancellation enforcement. This review is static and does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `d7d1831fcf39b874911aae1e48b2fbf804bd068e`; commit date 2026-10-27T18:18:32+08:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
+Analysis metadata: source [multica](https://github.com/multica-ai/multica); analyzed commit `9af15b1446f9d91f90ea97b65c504a7aa49da714`; commit date 2026-10-28T17:21:45+08:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--multica.md).
 <!-- teamagent-analysis:end -->

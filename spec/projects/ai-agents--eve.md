@@ -38,6 +38,18 @@ The [authentication descriptor](https://github.com/vercel/eve/blob/afc64ba3a14fa
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `3205c7ba382799e63dc5dae6b518282c7720870b` (commit date `2026-10-28T04:27:43Z`), compared with `afc64ba3a14faad7346ee8e6cb660e4003daf54b`. Earlier findings remain historical evidence.
+
+**Scope:** Cross-channel send-option projection and scheduled-session identity. The complete changed-path inventory contains 231 paths; the assessment below is limited to the cited branches.
+
+A field allowlist now copies only public send options across channel boundaries and validates the delivery key, preventing a wider object from carrying internal callback fields. Scheduled sends derive their own continuation token from schedule ID, target token and caller key, while unkeyed sends receive a fresh token. They overwrite auth with schedule authority and disable interactive input. See [packages/eve/src/channel/session.ts](https://github.com/vercel/eve/blob/3205c7ba382799e63dc5dae6b518282c7720870b/packages/eve/src/channel/session.ts#L82-L140) and [packages/eve/src/channel/schedule.ts](https://github.com/vercel/eve/blob/3205c7ba382799e63dc5dae6b518282c7720870b/packages/eve/src/channel/schedule.ts#L141-L193).
+
+For Teamagent, keep unattended authority distinct from the conversation being addressed and namespace deduplication keys across senders and intended occurrences. The documented recent-key window is not unlimited exactly-once delivery; reusing a key across schedule occurrences has semantics the caller must choose deliberately. Field picking and a typed assertion are not complete external schema validation. Runtime deduplication storage and firing-time revocation were not re-audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [eve](https://github.com/vercel/eve); analyzed commit `afc64ba3a14faad7346ee8e6cb660e4003daf54b`; commit date 2026-10-27T10:13:21-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--eve.md).
+Analysis metadata: source [eve](https://github.com/vercel/eve); analyzed commit `3205c7ba382799e63dc5dae6b518282c7720870b`; commit date 2026-10-28T04:27:43Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--eve.md).
 <!-- teamagent-analysis:end -->

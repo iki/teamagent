@@ -2,12 +2,11 @@
 
 Source: [codewhale](https://github.com/codewhale-hq/codewhale) · [Analysis](../../projects/ai-agents--deepseek-tui.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `eaff21a8b8e62e4693c69e71faa03db866820b9c`; commit date: 2026-10-27T09:08:28-07:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `eaff21a8b8e62e4693c69e71faa03db866820b9c`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1`; commit date: 2026-10-28T03:14:12-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/codewhale-hq/codewhale/compare/eaff21a8b8e62e4693c69e71faa03db866820b9c...eaff21a8b8e62e4693c69e71faa03db866820b9c). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/codewhale-hq/codewhale/compare/687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1...687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

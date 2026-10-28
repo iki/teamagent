@@ -42,6 +42,18 @@ Evidence: [gitnexus/src/storage/parse-cache.ts:180-306](https://github.com/abhig
 
 **Scope and limits:** Static scoped parser-cache identity/publication and hybrid-search failure-lifetime review within the 2,873-path comparison. Parser-identity resolver, V8 sidecar integrity, full generation orchestrator, embeddings and graph correctness were not audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Unknown export semantics preserve conservative impact coverage.** Reviewed commit `51ce19d77abe86978e34d89dd77188c4dba3ba53` (commit date `2026-10-28T08:09:10Z`), compared with `bad2422aa1bd6473e4cbb4da15873090944b67d6`. The complete no-rename Git path inventory contains 16 changed paths.
+
+The new file-private classifier declines certification for missing/truncated source, flattened line comments, declaration files, parse errors, CommonJS, ambient declarations, alias exports and type aliases. It only certifies visible module semantics; a parsing exception returns false. The fixture matrix covers those cases plus JS/TS/JSX/TSX modules. Thus a failed proof of privacy can retain the wider file seed instead of removing possibly affected code from impact analysis.
+
+Evidence: [gitnexus/src/core/ingestion/languages/typescript/file-private-exports.ts:1-45](https://github.com/abhigyanpatwari/GitNexus/blob/51ce19d77abe86978e34d89dd77188c4dba3ba53/gitnexus/src/core/ingestion/languages/typescript/file-private-exports.ts#L1-L45) · [gitnexus/test/unit/file-private-exports.test.ts:4-53](https://github.com/abhigyanpatwari/GitNexus/blob/51ce19d77abe86978e34d89dd77188c4dba3ba53/gitnexus/test/unit/file-private-exports.test.ts#L4-L53).
+
+**Harness consequence:** Narrow graph traversal only on positive semantic evidence. Retain conservative candidates when extraction is incomplete, and expose the reason for widened impact scope.
+
+**Scope and limits:** Reviewed the new classifier and its fixture matrix; overall impact traversal, dependency updates and logger changes were not re-audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `bad2422aa1bd6473e4cbb4da15873090944b67d6`; commit date 2026-10-27T16:46:58Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
+Analysis metadata: source [gitnexus](https://github.com/abhigyanpatwari/GitNexus); analyzed commit `51ce19d77abe86978e34d89dd77188c4dba3ba53`; commit date 2026-10-28T08:09:10Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--gitnexus.md).
 <!-- teamagent-analysis:end -->

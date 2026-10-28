@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-proxy--bifrost",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/maximhq/bifrost",
+  "report": "spec/projects/ai-agents-proxy--bifrost.md",
+  "analyzedSha": "659f4ce1e7201e28d4db1fe1a21e4dfa92bcb975",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-27T23:17:14+05:30",
+  "observedSha": "a7eba970798df6c1f90923109d83cd9fd578964d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a7eba970798df6c1f90923109d83cd9fd578964d",
+      "date": "2026-10-28T15:36:10+05:30",
+      "subject": "docs: update x-bf-lh docs into request options (#8907)"
+    },
+    {
+      "sha": "a2fc0f63b8b8f3b28d9b54d26027b75ed674177a",
+      "date": "2026-10-28T15:33:02+05:30",
+      "subject": "fix: bifrost_overhead_latency_microseconds not showing up in Prometheus (#8906)"
+    },
+    {
+      "sha": "dc50a6c3e407ab3bacdab62c2610432cdca0f47d",
+      "date": "2026-10-28T15:29:07+05:30",
+      "subject": "fix: narrow MCP gateway tools/list with a hook instead of a tool filter with mcp-go update (#9218)"
+    },
+    {
+      "sha": "62f734e6515879c698a9f4a7c5879aab0a2ef027",
+      "date": "2026-10-28T15:25:08+05:30",
+      "subject": "fix: fix auth required checks to use the helper ,ethod from mcp-go (#9217)"
+    },
+    {
+      "sha": "28aa884ecede84acc4c75c63b0bbce36f517e385",
+      "date": "2026-10-28T00:14:10-07:00",
+      "subject": "fix(modelcatalog): store one deterministic price when datasheet rows fold onto one key (#8492)"
+    },
+    {
+      "sha": "f8540e3042f1aa2b7758bc488aa2ea8cd0d824fa",
+      "date": "2026-10-27T22:48:08-07:00",
+      "subject": "feat(relay): allow route header matchers on any header name (#9206)"
+    },
+    {
+      "sha": "1786d7a56ceed8be16754be0f3ed1754d7ddf836",
+      "date": "2026-10-27T22:44:09-07:00",
+      "subject": "feat(relay): detail-sheet header parity and table-row wording fixes (#9204)"
+    },
+    {
+      "sha": "659da8acfec9b204748c06423227fe9a83e95600",
+      "date": "2026-10-27T22:40:20-07:00",
+      "subject": "feat(relay): capture streamed response bodies for relay logs when content logging is enabled (#9202)"
+    },
+    {
+      "sha": "51fc825ab0cfc5690c2699e71ef200d1c3b8c70c",
+      "date": "2026-10-27T22:36:13-07:00",
+      "subject": "test(e2e): relay access, governance and pricing end to end (#9185)"
+    },
+    {
+      "sha": "b1da572b7c82e30e9444eb256b3e707f8ddbbcf2",
+      "date": "2026-10-27T20:30:20-07:00",
+      "subject": "[fix]: OpenAI provider - keep id and status of a native web_search_call in Responses input (#8776)"
+    },
+    {
+      "sha": "4d1b793490a5038426f231089cfdcac4e98aa121",
+      "date": "2026-10-27T20:24:13-07:00",
+      "subject": "[fix]: anthropic - render the required message_delta frame and report only the usage the upstream sent (#7896)"
+    },
+    {
+      "sha": "14cdeebb01a4c6975cd641b8e1cf502d6ca92a40",
+      "date": "2026-10-27T17:16:07-07:00",
+      "subject": "feat(relay): log metadata and route-matched headers on relay logs instead of all headers (#9200)"
+    },
+    {
+      "sha": "05ed6253f939650ab7a4fcae4c892418fe791e1a",
+      "date": "2026-10-27T17:12:09-07:00",
+      "subject": "feat(ui): dashboard relays page, access changes and docs (#9174)"
+    },
+    {
+      "sha": "484c95bff201ccb99bb428c107a671c589a51370",
+      "date": "2026-10-27T17:11:04-07:00",
+      "subject": "feat: add Relays for proxying non-LLM APIs with usage billing and virtual key grants (#9171)"
+    },
+    {
+      "sha": "391ede6d53823a58139ca8458db1ba8bf709463b",
+      "date": "2026-10-27T17:09:10-07:00",
+      "subject": "feat(governance): relay access grants, budgets, and logging for relay calls (#9170)"
+    },
+    {
+      "sha": "aeb660b411b97c8fe3ea6a86b9a7b0a44b8226c6",
+      "date": "2026-10-27T17:07:10-07:00",
+      "subject": "feat(framework): add relay config store, virtual key grants, relay logs, and async job settlement (#9169)"
+    },
+    {
+      "sha": "e4bfebb0657d6008f80e18daa19fe7fb308a7704",
+      "date": "2026-10-28T04:50:10+05:30",
+      "subject": "feat(core): relays to non-LLM APIs and the relay plugin hooks (#9168)"
+    },
+    {
+      "sha": "8ec724ae2ed342b329a271092ee74e3f99bf6637",
+      "date": "2026-10-28T04:47:10+05:30",
+      "subject": "feat: log MCP prompt and resource reads (#9071)"
+    },
+    {
+      "sha": "0650ecdea9792616f9ce6bda1eff316e4c295308",
+      "date": "2026-10-28T04:43:09+05:30",
+      "subject": "feat: support MCP tool output schemas, titles, icons and multimodal results (#9070)"
+    },
+    {
+      "sha": "583fe2a98af56dc3580b4f9aefd370e2e762fe9e",
+      "date": "2026-10-28T04:39:10+05:30",
+      "subject": "feat: validate the authorization server issuer for upstream MCP OAuth (#9069)"
+    },
+    {
+      "sha": "9c59360e40b58c1532aa7c45c06dc5a97a1a1611",
+      "date": "2026-10-28T04:35:09+05:30",
+      "subject": "feat: serve upstream MCP prompts and resources through MCP gateway (#9068)"
+    },
+    {
+      "sha": "d8af05ac79ea4130f101505febbe9722d73245d2",
+      "date": "2026-10-28T04:31:10+05:30",
+      "subject": "feat: discover MCP server resources and prompts (#9067)"
+    },
+    {
+      "sha": "3d4521051a272ce94e40af336ffd7e4bebc545c5",
+      "date": "2026-10-28T04:27:12+05:30",
+      "subject": "feat: add a global and per-server MCP max protocol version setting (#9066)"
+    },
+    {
+      "sha": "b69297b758f87060665c0fe9af43538c64d192dd",
+      "date": "2026-10-28T04:23:13+05:30",
+      "subject": "feat: support CIMD clients in the MCP OAuth server (#9065)"
+    },
+    {
+      "sha": "2b060ae2817461d009dc3d652fea53805a3efb2b",
+      "date": "2026-10-28T04:19:09+05:30",
+      "subject": "feat: support CIMD client registration for upstream MCP OAuth (#9064)"
+    },
+    {
+      "sha": "f8cccd3c4b4972984355ece6dc57c1bc03191239",
+      "date": "2026-10-28T04:15:09+05:30",
+      "subject": "fix: clear error when an upstream MCP server returns input_required (#9063)"
+    },
+    {
+      "sha": "1b240eb5e59acf0ae0e0f7e603fd3382b93d82d0",
+      "date": "2026-10-28T04:11:09+05:30",
+      "subject": "feat: add upstream notifications support in MCP servers (#9062)"
+    },
+    {
+      "sha": "ae8b09820c8382f92fa717838f42a2a6c1193437",
+      "date": "2026-10-28T04:07:07+05:30",
+      "subject": "fix: only treat a 404 as a dead MCP session on protocol revisions that have sessions (#9061)"
+    },
+    {
+      "sha": "d337a080d82f462aaa60a4d6625f48acbee52deb",
+      "date": "2026-10-28T04:03:12+05:30",
+      "subject": "perf: reuse HTTP connections and pin legacy protocol version for per-call MCP clients (#9060)"
+    },
+    {
+      "sha": "d97a957b6d47e82c178b9fc8eacca5d2eac9b73d",
+      "date": "2026-10-28T04:00:04+05:30",
+      "subject": "refactor: move MCP initialization handling to mcp-go (#9059)"
+    },
+    {
+      "sha": "e6f05bb85eda91ca4e38dfb11d7083f3e10c55ff",
+      "date": "2026-10-28T03:51:24+05:30",
+      "subject": "fix: remove endpoint checks for deployments (#9199)"
+    },
+    {
+      "sha": "3c81ae75fd738fb9baf887998908dfa19e45a4f4",
+      "date": "2026-10-27T15:14:19-07:00",
+      "subject": "adds created at field in model catalog (#9190)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/scripts/validate-helm-config-fields.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scripts/validate-helm-schema.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/scripts/validate-helm-templates.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/bifrost.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/bifrost_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/changelog.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/internal/mcptests/codemode_stdio_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/internal/mcptests/codemode_tools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/internal/mcptests/connect_ping_listtools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/internal/mcptests/extraheaders_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/addclient_discoveredtools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/admin_tool_discovery_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/agent_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/agentadaptors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/auth_retry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/clientmanager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/clientmanager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/codemode/starlark/executecode.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/codemode/starlark/starlark_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/codemode/starlark/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/connectionchecker.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/connectionchecker_reconnect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/connectionchecker_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/exec.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/instructions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/instructions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/interface.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/makebeforebreak_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/mcp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/pendingverification_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/protocolversion.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/protocolversion_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/reauth_state_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/refreshtools_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/resourcesandprompts.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/resourcesandprompts_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/sse_reconnect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/toolcall_recovery_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/toolerrormarker_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/toolmanager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/toolmanager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/toolresult.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/toolresult_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/toolschangecallback_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/toolschemaorder_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/toolshash_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/toolslistchanged.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/mcp/toolslistchanged_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/mcp/utils_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/network/ssrf.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/network/ssrf_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/anthropic/anthropic.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/anthropic/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/anthropic/chat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/anthropic/responses.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/providers/anthropic/streamdeltaframe.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/providers/anthropic/streamdeltaframe_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/providers/anthropic/streamdeltausage.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/providers/anthropic/streamdeltausage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/anthropic/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/bedrock/bedrock.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/bedrock/toolresultstatus_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/bedrock/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/cohere/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/providers/cohere/chat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/cohere/cohere_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/cohere/responses.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/gemini/chat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/gemini/gemini_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/gemini/responses.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/gemini/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/huggingface/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai/chat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai/responses.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai/responses_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai/responsesmarshal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai/toolresultiserror_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai/types.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/openai/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/perplexity/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/perplexity/perplexity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/replicate/chat.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/replicate/replicate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/providers/utils/sseframer.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/providers/utils/sseframer_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/utils/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/utils/utils_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/vertex/openai.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/vertex/utils_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/providers/vertex/vertex.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/endpoint.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/job.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/manager_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/preview.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/preview_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/routes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/routes_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/span.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/stream.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/usage.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/relay/usage_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/bifrost.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/chatcompletions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/errors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/grant.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/mcp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/modelcapabilities.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/modelcapabilities_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/modelcaps.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/mux.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/oauth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/plugin.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/schemas/relay.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/schemas/relay_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/schemas/relayhooks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/responses.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/responses_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/serialization_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/schemas/toolresultmedia.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/schemas/toolresultmedia_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/trace.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/schemas/utils.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/utils_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelogs/helm-v2.1.46.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deployment-guides/config-json/client.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deployment-guides/config-json/schema-reference.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deployment-guides/helm/client.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deployment-guides/how-to/security-best-practices.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/enterprise/data-access-control.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/enterprise/rbac.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/auth/oauth.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/auth/per-user-oauth.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/connecting-to-servers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/gateway-auth.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/mcp/tool-execution.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/openapi.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/openapi.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/paths/management/providers.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/openapi/paths/management/relays.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/schemas/management/config.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/schemas/management/governance.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/schemas/management/mcp.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/schemas/management/providers.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/openapi/schemas/management/relays.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/openapi/sync_mintlify_navigation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/providers/request-options.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/relays/access.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/relays/configuration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/relays/logs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/relays/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/relays/pricing.mdx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

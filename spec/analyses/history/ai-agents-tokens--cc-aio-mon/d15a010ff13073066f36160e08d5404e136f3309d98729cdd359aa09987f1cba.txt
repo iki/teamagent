@@ -1,0 +1,43 @@
+# cc-aio-mon
+
+Source: [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon) · Category: [ai-agents-tokens](../categories/ai-agents-tokens.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4dab1d7f9bddabf6529ff5392c8d512907f49918`; commit timestamp `2026-09-29T23:20:45+02:00`; 55 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/iM3SK/cc-aio-mon/blob/4dab1d7f9bddabf6529ff5392c8d512907f49918/README.md)):
+
+> Real-time terminal monitor for Claude Code CLI.** Track context window usage, API rate limits, session costs, burn rate, and cache performance — all in one compact TUI dashboard. Stdlib only (Python 3.8+), cross-platform. Independent community project. Not affiliated with or endorsed by Anthropic. See NOTICE for provenance & trademark attribution.
+
+Build/package evidence: No common build manifest identified.
+
+License evidence: [LICENSE.md](https://github.com/iM3SK/cc-aio-mon/blob/4dab1d7f9bddabf6529ff5392c8d512907f49918/LICENSE.md) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-tokens**. Its category places it in the candidate set for models, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [models](../models.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Source update reviewed 2026-10-28
+
+Reviewed commit `dbc6d73092132f21502ddc4b9c6b30fadeb83530` (commit date `2026-10-27T16:40:19+01:00`). Complete 16-file delta: runtime, regression tests, protocol documentation and pinned workflow updates; unchanged monitor/updater paths not re-audited.
+
+The [statusline](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/statusline.py) adds a prompt-cache countdown gated on observed caching and valid expiry, using the same injected instant for its label and threshold. Malformed/missing telemetry hides the segment rather than inventing a TTL. [Shared rules](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/shared.py) now mark five-hour/Fable fallback usage stale after 30 minutes or the longer refresh threshold; an older session can yield to a fresher snapshot. Source observations remain distinct from display-only fallbacks, and the [tests](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/tests/test_statusline.py) exercise malformed values, time boundaries, display fitting and preservation of the original IPC payload. Adapt explicit unknown/stale telemetry and deterministic clock fixtures. Account-scoped snapshot ownership still needs independent validation before reusing the cross-session selector. Background refresher compatibility, documented Claude versions, pricing, and upstream test counts were not reproduced; no runtime or provider was executed.
+
+## Follow-up change review — 2026-10-28
+
+**The interval changes a scanner dependency pin, not usage measurement.** Reviewed commit `90620f8929aa2fb6a9c096757b1282e3698e1ec2` (commit date `2026-10-28T00:39:22+01:00`), compared with `dbc6d73092132f21502ddc4b9c6b30fadeb83530`. The complete no-rename Git path inventory contains 1 changed paths.
+
+The complete one-file comparison updates the hash-pinned setuptools dependency used by the Bandit workflow from 83.0.0 to 84.1.0. No collector, token calculation, provider authentication or runtime reporting implementation changes in this interval. The package's behavior and supply-chain provenance were not independently audited.
+
+Evidence: [.github/workflows/requirements-bandit.txt:128-135](https://github.com/iM3SK/cc-aio-mon/blob/90620f8929aa2fb6a9c096757b1282e3698e1ec2/.github/workflows/requirements-bandit.txt#L128-L135).
+
+**Harness consequence:** Track tooling maintenance separately from measured accounting correctness. A scanner dependency update does not validate runtime telemetry or authentication.
+
+**Scope and limits:** Reviewed the complete dependency-lock delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

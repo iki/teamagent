@@ -32,6 +32,18 @@ The [deferred-tool model](https://github.com/OpenRouterTeam/typescript-sdk/blob/
 
 The generated Zod boundaries validate outer shapes, but parameters/output_schema use arbitrary values and computer-use dimensions in [the configuration model](https://github.com/OpenRouterTeam/typescript-sdk/blob/548648e6956bf80260cca35975a83f62e25c0f0d/src/models/computeruseservertool.ts) are integers without positive/max bounds. Open enums retain forward-compatible values, which Teamagent must explicitly classify as unsupported before executing capabilities. Adapt field-preserving translation and continuation identity behind our narrower Effect Schema plus authorization/size rules; do not infer server support or tool safety from schema availability. No SDK invocation, tool execution or tests were run.
 
+## Follow-up change review — 2026-10-28
+
+**Configuration updates and provider options remain transport contracts, not policy evidence.** Reviewed commit `85fb336750bdf75cece817ee5facc282bae2ea8d` (commit date `2026-10-28T08:52:57Z`), compared with `548648e6956bf80260cca35975a83f62e25c0f0d`. The complete no-rename Git path inventory contains 33 changed paths.
+
+The generated SDK adds a ConfigurationUpdate object with a required reasoning setting and outbound Zod serialization. Its comment claims a mid-conversation reasoning change can preserve preceding prompt cache entries; this review did not verify that service behavior. Image-generation options also add primalabs with arbitrary values. Neither declaration authenticates account eligibility or establishes a provider data-use exclusion.
+
+Evidence: [src/models/configurationupdate.ts:1-42](https://github.com/OpenRouterTeam/typescript-sdk/blob/85fb336750bdf75cece817ee5facc282bae2ea8d/src/models/configurationupdate.ts#L1-L42) · [src/models/imagegenerationproviderpreferences.ts:123-135](https://github.com/OpenRouterTeam/typescript-sdk/blob/85fb336750bdf75cece817ee5facc282bae2ea8d/src/models/imagegenerationproviderpreferences.ts#L123-L135) · [src/models/imagegenerationproviderpreferences.ts:513-527](https://github.com/OpenRouterTeam/typescript-sdk/blob/85fb336750bdf75cece817ee5facc282bae2ea8d/src/models/imagegenerationproviderpreferences.ts#L513-L527).
+
+**Harness consequence:** Keep per-turn reasoning configuration in trace provenance and evaluate effective policy for every selected provider/model route. Validate provider-specific option values before invoking permissive generated SDK schemas.
+
+**Scope and limits:** Reviewed the new configuration-update source and image-provider option delta; actual cache behavior and service support were not measured. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrouter-typescript-sdk](https://github.com/OpenRouterTeam/typescript-sdk); analyzed commit `548648e6956bf80260cca35975a83f62e25c0f0d`; commit date 2026-10-27T17:45:32Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-typescript-sdk.md).
+Analysis metadata: source [openrouter-typescript-sdk](https://github.com/OpenRouterTeam/typescript-sdk); analyzed commit `85fb336750bdf75cece817ee5facc282bae2ea8d`; commit date 2026-10-28T08:52:57Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--openrouter-typescript-sdk.md).
 <!-- teamagent-analysis:end -->

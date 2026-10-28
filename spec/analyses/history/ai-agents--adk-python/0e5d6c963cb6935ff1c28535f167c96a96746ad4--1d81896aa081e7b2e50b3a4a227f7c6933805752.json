@@ -1,0 +1,345 @@
+{
+  "id": "ai-agents--adk-python",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/google/adk-python",
+  "report": "spec/projects/ai-agents--adk-python.md",
+  "analyzedSha": "0e5d6c963cb6935ff1c28535f167c96a96746ad4",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T10:54:12-07:00",
+  "observedSha": "1d81896aa081e7b2e50b3a4a227f7c6933805752",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "1d81896aa081e7b2e50b3a4a227f7c6933805752",
+      "date": "2026-10-27T23:24:57-07:00",
+      "subject": "fix: honor query parameter style and explode"
+    },
+    {
+      "sha": "b9d2bc3d95487ecc4a437b813f9b8fa634e1be54",
+      "date": "2026-10-27T22:51:19-07:00",
+      "subject": "fix: stop running truncated Claude tool calls"
+    },
+    {
+      "sha": "ce92e924721e873afec74bdb393072eb32615f96",
+      "date": "2026-10-27T22:34:23-07:00",
+      "subject": "feat: let AgentEvaluator evaluate an agent built at runtime"
+    },
+    {
+      "sha": "42a8a87928a092be2c2138c619f4d15ad12c953a",
+      "date": "2026-10-27T22:00:15-07:00",
+      "subject": "fix: drop per-invocation retry counts when an invocation ends"
+    },
+    {
+      "sha": "571670d9f7e1760985d0bd41a009600ee14b6acd",
+      "date": "2026-10-27T16:45:40-07:00",
+      "subject": "fix: ignore thought parts when scoring response_match_score"
+    },
+    {
+      "sha": "2591397bba40f1d0899aca0ea37c162381d0a119",
+      "date": "2026-10-27T16:43:33-07:00",
+      "subject": "fix: keep turns a rewind took back out of long-term memory"
+    },
+    {
+      "sha": "3700f0d1b99fee5a0bda8dc48a92df15179b3730",
+      "date": "2026-10-27T14:57:56-07:00",
+      "subject": "fix: accept declared field names in set_model_response for aliased schemas"
+    },
+    {
+      "sha": "cbe7c5e529ae214c70e33b87cb8538f4cd4e3154",
+      "date": "2026-10-27T12:57:55-07:00",
+      "subject": "fix(flows): elide system instruction markers from relayed agent text"
+    },
+    {
+      "sha": "0ea43cc3986078699ef69a0437aca74bd7dfa520",
+      "date": "2026-10-27T12:42:57-07:00",
+      "subject": "perf: skip three event-history scans when nothing can match"
+    },
+    {
+      "sha": "d0c3af571faf71252a226bbcb4891cb08374d773",
+      "date": "2026-10-27T12:29:12-07:00",
+      "subject": "fix: stop rerunning a finished node when a later interrupt resumes"
+    },
+    {
+      "sha": "ae8323b6d3de2fa75181e80f510ca91b0a0da336",
+      "date": "2026-10-27T11:27:11-07:00",
+      "subject": "fix: compact AgentTool nested history at caller token threshold"
+    },
+    {
+      "sha": "bdb1cedf3a33d87c43f16da44a16dbde7f38008e",
+      "date": "2026-10-27T11:03:45-07:00",
+      "subject": "fix: store non-ASCII session JSON unescaped on SQLite"
+    },
+    {
+      "sha": "da786ed22d61415904a1ca0964d840c31a8f2c02",
+      "date": "2026-10-27T10:58:57-07:00",
+      "subject": "fix: honor tool_config function calling mode in AnthropicLlm"
+    },
+    {
+      "sha": "c9d2c48beac85f5343398bd970b0cbf6485f8e9c",
+      "date": "2026-10-27T10:56:44-07:00",
+      "subject": "fix: give ModelArmorPlugin its own client on each event loop"
+    },
+    {
+      "sha": "b8d69f8541f74cc690f4adf1d7ea7c4c1d508fa0",
+      "date": "2026-10-27T10:55:22-07:00",
+      "subject": "fix: stop a session id from replacing sessionless in-memory memories"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/skills/adk-architecture/references/interface-workflow.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/evaluation/agent_evaluator/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/plugins/reflect_retry_model_plugin/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/plugins/reflect_retry_tool_plugin/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/agent_evaluator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/evaluation/final_response_match_v1.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/events/_rewind_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/events/event.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/flows/llm_flows/context/_fencing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/firestore/firestore_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/integrations/model_armor/_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/memory/_sqlite_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/memory/in_memory_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/memory/vertex_ai_memory_bank_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/memory/vertex_ai_rag_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/models/anthropic_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/plugins/_reflect_retry_model_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/plugins/_reflect_retry_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/plugins/reflect_retry_tool_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/runners.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/sessions/schemas/shared.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/agent_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/openapi_tool/common/common.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/openapi_tool/openapi_spec_parser/operation_parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/openapi_tool/openapi_spec_parser/rest_api_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/tools/set_model_response_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/google/adk/workflow/utils/_replay_interceptor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/evaluation/test_agent_evaluator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/evaluation/test_final_response_match_v1.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/events/test_event.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/flows/llm_flows/context/test_fencing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/integrations/firestore/test_firestore_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/integrations/model_armor/test_model_armor_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/memory/test_in_memory_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/memory/test_sqlite_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/memory/test_vertex_ai_memory_bank_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/memory/test_vertex_ai_rag_memory_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/models/test_anthropic_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/plugins/test_reflect_retry_model_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/plugins/test_reflect_retry_tool_plugin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/plugins/test_reflect_retry_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/sessions/test_schemas_shared.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/tools/openapi_tool/common/test_common.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/tools/openapi_tool/openapi_spec_parser/test_operation_parser.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/tools/openapi_tool/openapi_spec_parser/test_rest_api_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/tools/test_agent_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/tools/test_set_model_response_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/workflow/test_workflow_hitl.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unittests/workflow/utils/test_replay_interceptor.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

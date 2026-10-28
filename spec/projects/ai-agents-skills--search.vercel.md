@@ -43,6 +43,16 @@ The [lock installer](https://github.com/vercel-labs/skills/blob/533c7df02f9b4d91
 
 The [telemetry client](https://github.com/vercel-labs/skills/blob/533c7df02f9b4d913fb8eba553aa99d86103d1d4/src/telemetry.ts) sends search queries, source/install URLs, skill names and optional metadata in GET query parameters unless an opt-out environment variable is present. Audit responses are asserted to a TypeScript shape without runtime validation and deliberately fail open; they are advisory, not an installation authorization gate. Audit timeout ends after response headers, while telemetry requests themselves are not cancelled by the bounded exit wait. Adapt source identity and explicit partial results; reject these privacy/validation defaults for private Teamagent inputs. No installation, telemetry, audit lookup or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `533c7df02f9b4d913fb8eba553aa99d86103d1d4` to `699d35b21bd3c97dbc0edeae062b2698898bb2e5`. This is a bounded static source review, not an upstream runtime or performance result.
+
+In [src/update.ts](https://github.com/vercel-labs/skills/blob/699d35b21bd3c97dbc0edeae062b2698898bb2e5/src/update.ts#L1091-L1157), The `check` mode installs a reporting callback, avoids prompts and counts outdated skills separately from successful updates. The inspected global path returns before installation (`src/update.ts:805-808`), the project path continues before `installToTargets` (`1032-1035`), and the well-known-source path does not queue changed skills for installation (`532-537`). This is a passive installation check, not an offline operation: discovery/fetch work remains and the function still emits the shared `update` telemetry event.
+
+[Inspected fixtures](https://github.com/vercel-labs/skills/blob/699d35b21bd3c97dbc0edeae062b2698898bb2e5/tests/check.test.ts#L48-L59): The deterministic local-Git fixture changes an upstream skill from v1 to v2, checks that installed content remains v1, and expects exit 1 plus an available-update message; a current install exits 0. Fixtures were inspected, not run. Their content-preservation assertion is stronger than only checking command naming or output.
+
+**Teamagent implication:** Separate inspect, plan and apply in Teamagent skill evolution. Check commands must preserve installed files and locks across Git, hosted and deletion paths, disclose any network/telemetry work, and distinguish 'updates available' from failed verification in structured status.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [search.vercel](https://github.com/vercel-labs/skills); analyzed commit `533c7df02f9b4d913fb8eba553aa99d86103d1d4`; commit date 2026-10-27T11:03:05+09:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--search.vercel.md).
+Analysis metadata: source [search.vercel](https://github.com/vercel-labs/skills); analyzed commit `699d35b21bd3c97dbc0edeae062b2698898bb2e5`; commit date 2026-10-28T13:18:51+09:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-skills--search.vercel.md).
 <!-- teamagent-analysis:end -->

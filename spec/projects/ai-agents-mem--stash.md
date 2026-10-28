@@ -39,6 +39,18 @@ Evidence: [backend/tasks/embeddings.py:25-252](https://github.com/fergana-labs/s
 
 **Scope and limits:** Static scoped review of Celery reconciliation/claims and task-completion display helpers within the 784-path comparison. Embedding transport, database triggers, remote reconciliation, evaluator quality and frontend rendering were not fully audited or executed; no inference or training task launched.
 
+## Follow-up change review — 2026-10-28
+
+**Publication eligibility is checked before wiki ranking and result limits.** Reviewed commit `344182c878084bc851eb4f1e737227b940c8764d` (commit date `2026-10-27T21:04:23Z`), compared with `40c70217107472f6e6c5c15e9481ab9dd41096f1`. The complete no-rename Git path inventory contains 43 changed paths.
+
+The new indexed search constrains folder ownership, workspace/customer scope and reviewed shared-page content before ranking. Shared approvals bind policy version, folder, name and body; metadata is excluded from the search vector. It fetches limit+1 to expose has_more and returns an explicit wiki-only coverage statement, warning that an empty candidate list does not establish absence. Tests check changed approval fields, another customer's content and metadata leakage. The function accepts its limit/query from callers, so input bounds still belong at the surrounding API boundary.
+
+Evidence: [backend/services/customer_wiki_search.py:12-93](https://github.com/fergana-labs/stash/blob/344182c878084bc851eb4f1e737227b940c8764d/backend/services/customer_wiki_search.py#L12-L93) · [backend/tests/test_customer_wiki_search.py:51-120](https://github.com/fergana-labs/stash/blob/344182c878084bc851eb4f1e737227b940c8764d/backend/tests/test_customer_wiki_search.py#L51-L120).
+
+**Harness consequence:** Authorize and bind source publication versions before retrieval/ranking. Preserve coverage, truncation and candidate-versus-evidence distinctions, and recheck access when opening a ranked result.
+
+**Scope and limits:** Reviewed the complete new search service and selected authorization/publication/limit fixtures; route validation and database query performance were not independently tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [stash](https://github.com/fergana-labs/stash); analyzed commit `40c70217107472f6e6c5c15e9481ab9dd41096f1`; commit date 2026-10-27T17:03:05Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--stash.md).
+Analysis metadata: source [stash](https://github.com/fergana-labs/stash); analyzed commit `344182c878084bc851eb4f1e737227b940c8764d`; commit date 2026-10-27T21:04:23Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--stash.md).
 <!-- teamagent-analysis:end -->

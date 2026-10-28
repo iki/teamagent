@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--opencode",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/anomalyco/opencode",
+  "report": "spec/projects/ai-agents--opencode.md",
+  "analyzedSha": "432d870b02683d2e40e895ddc70d437189b25276",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T17:40:04Z",
+  "observedSha": "d6867f221061f7688a9b784b840ec6b7e3c9d40a",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d6867f221061f7688a9b784b840ec6b7e3c9d40a",
+      "date": "2026-10-28T05:06:39-05:00",
+      "subject": "fix(stats): dismiss mobile chart tooltips on scroll-away and outside taps (#59865)"
+    },
+    {
+      "sha": "62ae125d943fce8d5fac6e72304d1b68d92becc8",
+      "date": "2026-10-28T04:38:10-05:00",
+      "subject": "fix(stats): ignore requests rejected before routing (#59773)"
+    },
+    {
+      "sha": "587f2cbb8245854fc5a2d5a231cf614b523beaf8",
+      "date": "2026-10-28T04:36:13-05:00",
+      "subject": "fix(stats): show the current language in the footer select (#59772)"
+    },
+    {
+      "sha": "fa1260d6ca484fe0fd868aa992ad81ab85343cf3",
+      "date": "2026-10-28T00:50:24-05:00",
+      "subject": "fix(tui): send pasted image and PDF paths to local servers (#59833)"
+    },
+    {
+      "sha": "9adc42b5534c202252b4b5175f8c65ebec14a5ab",
+      "date": "2026-10-28T00:01:24-05:00",
+      "subject": "chore(deps): bump zod to 4.6.7 (#59763)"
+    },
+    {
+      "sha": "fc6922f6b82c45a45f1a690a0ab38a0957a9556c",
+      "date": "2026-10-28T00:01:08-05:00",
+      "subject": "chore(core): remove bundled cohere, vercel and perplexity AI SDK packages (#59771)"
+    },
+    {
+      "sha": "0416987a6c0b41884f90e28ac3ed5c96396a26b2",
+      "date": "2026-10-28T00:01:04-05:00",
+      "subject": "feat(ai): make provider model() settings optional and rename configure inputs to Config (#59765)"
+    },
+    {
+      "sha": "86ce19d96eccbfb95af3ff3189c7071575f94339",
+      "date": "2026-10-27T21:16:17-04:00",
+      "subject": "fix(process-daemon): poll every 25 ms on Windows (#59702)"
+    },
+    {
+      "sha": "0610a81fc3208da6c7f5103f61dff6a2276371ac",
+      "date": "2026-10-27T21:09:39-04:00",
+      "subject": "fix(process-daemon): wait for readiness instead of polling (#59701)"
+    },
+    {
+      "sha": "f0160a12627fcf9107bcb5914bba2b012bd1d23e",
+      "date": "2026-10-27T20:50:56-04:00",
+      "subject": "refactor(process-daemon): route stop and ownership through Control (#59700)"
+    },
+    {
+      "sha": "891a020bcc935457a34585a6d6a0ea6fb5b92eec",
+      "date": "2026-10-27T19:44:06-04:00",
+      "subject": "fix(ci): import passwordless macOS signing certificate (#59768)"
+    },
+    {
+      "sha": "45b53fe6fee909dbf6a24e6ee067d420c27202ff",
+      "date": "2026-10-27T23:02:12Z",
+      "subject": "fix(changelog): keep line breaks in code blocks (#59762)"
+    },
+    {
+      "sha": "14e378b6799091f489b9694ec2df51970b9a8c48",
+      "date": "2026-10-27T18:59:58-04:00",
+      "subject": "fix(update): only apply minimum versions on stable channels (#59761)"
+    },
+    {
+      "sha": "426c7d8fa7d4cdff354c920cb695dc3dec2ec7be",
+      "date": "2026-10-27T18:55:37-04:00",
+      "subject": "fix(ci): sign macOS builds with release environment credentials (#59760)"
+    },
+    {
+      "sha": "6abf95b947cf6f452a3901ac8cbfe6efa670c7ca",
+      "date": "2026-10-27T22:36:08Z",
+      "subject": "chore: update nix node_modules hashes (#59728)"
+    },
+    {
+      "sha": "c250c272c53c8af4d9c204a49815442f10034b46",
+      "date": "2026-10-27T17:23:08-05:00",
+      "subject": "chore(deps): refresh source-map-js in lockfile (#59744)"
+    },
+    {
+      "sha": "f5cac1277c811b5906478ff9223853ce5771dfb5",
+      "date": "2026-10-27T18:20:10-04:00",
+      "subject": "fix(process-daemon): block subscriptions instead of polling (#59698)"
+    },
+    {
+      "sha": "5f394f64fc847d36f224c16dab0ffa241020ccf6",
+      "date": "2026-10-27T18:19:02-04:00",
+      "subject": "feat(process-daemon): support a private Unix socket directory (#59697)"
+    },
+    {
+      "sha": "f4ecbf31f3303df1703355ac93dee7a18ef29f24",
+      "date": "2026-10-27T18:15:38-04:00",
+      "subject": "chore(process-daemon): publish from the monorepo (#59695)"
+    },
+    {
+      "sha": "fd8268ea5a028755644a10d1b7fb74ac64580add",
+      "date": "2026-10-27T17:02:00-05:00",
+      "subject": "chore(deps): refresh smol-toml in lockfile (#59743)"
+    },
+    {
+      "sha": "6e978118c6ef9996be9ed7accf3a0def79b52797",
+      "date": "2026-10-27T17:01:33-05:00",
+      "subject": "chore(deps): refresh http-cache-semantics in lockfile (#59742)"
+    },
+    {
+      "sha": "f930aa8a1fc91a6289d48b310a81f39de983b360",
+      "date": "2026-10-27T17:01:06-05:00",
+      "subject": "chore(deps): refresh postcss-selector-parser in lockfile (#59741)"
+    },
+    {
+      "sha": "70ef02aec8990cc36c0b5da0e54f88afeb4c212a",
+      "date": "2026-10-27T17:00:39-05:00",
+      "subject": "chore(deps): refresh ip-address in lockfile (#59740)"
+    },
+    {
+      "sha": "581561caa65cde9764623cb709da1a49fd672b9e",
+      "date": "2026-10-27T17:00:11-05:00",
+      "subject": "chore(deps): refresh js-yaml in lockfile (#59739)"
+    },
+    {
+      "sha": "1d12835d99dc9eae1ec17bace23a3d50b1964845",
+      "date": "2026-10-27T16:59:44-05:00",
+      "subject": "chore(deps): refresh undici in lockfile (#59738)"
+    },
+    {
+      "sha": "f90e04c2aa39bf62d5c7662e5bf74924ad8a3fc8",
+      "date": "2026-10-27T16:59:38-05:00",
+      "subject": "chore(deps): refresh brace-expansion in lockfile (#59737)"
+    },
+    {
+      "sha": "5aeac4f79db4df9818872a26f7bec315ce6be12b",
+      "date": "2026-10-27T16:58:21-05:00",
+      "subject": "chore(deps): refresh devalue in lockfile (#59745)"
+    },
+    {
+      "sha": "427c27a67ccf164538b44e1db9e876c51605de16",
+      "date": "2026-10-27T16:58:07-05:00",
+      "subject": "chore(deps): refresh zod in lockfile (#59746)"
+    },
+    {
+      "sha": "17837a20d69fc514d337940506335afd75693cb3",
+      "date": "2026-10-27T16:57:53-05:00",
+      "subject": "fix(core): apply webfetch URL rules to redirect targets (#59748)"
+    },
+    {
+      "sha": "2ed57439da4718ad17d2ab3eaa642a29da2390e0",
+      "date": "2026-10-27T16:54:06-05:00",
+      "subject": "fix(codemode): explain a stalled program and point at the await that never settles (#59749)"
+    },
+    {
+      "sha": "3a409f42f538a316a076223e3c5c6c596790f824",
+      "date": "2026-10-27T22:48:27+01:00",
+      "subject": "fix(app): keep rendering when tool metadata is not an object (#59736)"
+    },
+    {
+      "sha": "f7d0ce133d7726cab0cb851c4a4b0d4795f5eeec",
+      "date": "2026-10-27T16:00:08-05:00",
+      "subject": "chore: remove unused root dependencies (#59712)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/release/sign-desktop-macos.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/check-process-daemon.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-dry-run.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/release-process-daemon.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "nix/hashes.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/provider-package.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/alibaba.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/amazon-bedrock-mantle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/amazon-bedrock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/anthropic-compatible.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/anthropic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/azure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/baseten.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cerebras.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cohere.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cohere/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/deepinfra.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/deepseek.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/digitalocean.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/fireworks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-vertex-chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-vertex-interactions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-vertex-messages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-vertex-mistral.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-vertex-responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-vertex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google/interactions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/groq.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/meta.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/minimax.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/minimax/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/minimax/responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/mistral.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/moonshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/moonshot/messages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/moonshot/responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-compatible-responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-compatible.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/opencode.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openrouter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/togetherai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/typesafe-ai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/venice.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/vercel-ai-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/xai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/zai-coding-plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/zai-coding-plan/messages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/zai-coding-plan/responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/zai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/provider-model.types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/performance/devex/desktop-startup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/regression/composer.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/regression/mobile-model-pickers.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/regression/new-session.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/e2e/regression/session-timeline-tool-projection.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/composer/composer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/new-session/view.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app/src/shell/commands/desktop-menu.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/handlers/default.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemode/src/interpreter/interpreter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemode/src/interpreter/runner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/codemode/test/promise.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/console/app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/console/app/src/component/footer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/console/app/src/routes/[...404].tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/console/app/src/routes/download/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/console/app/src/routes/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/codemode/tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/git.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/integration.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/permission.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/persistent-pty/pty-binding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/plugin/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/core/src/plugin/provider/cohere.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/core/src/plugin/provider/factory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/core/src/plugin/provider/perplexity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/core/src/plugin/provider/vercel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/src/tool/plugin/webfetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/test/git.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/test/permission.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/test/plugin/fixture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/test/plugin/permission-assert.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/core/test/plugin/provider-factory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/core/test/plugin/provider-vercel.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/test/tool-execute.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/core/test/tool-webfetch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gui-plugins/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/plugin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/posts/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/PLAN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/ghostty-revision",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/npm/bin/opencode-pty.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/npm/index.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/npm/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/npm/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/rust-toolchain.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/script/ghostty-bindings",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/script/npm-packages.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/script/release-bin/zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/daemon.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/daemon/control.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/daemon/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/daemon/sweep.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/daemon/unix.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/daemon/windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/ghostty/LICENSE",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/ghostty/effects.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/ghostty/ffi.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/ghostty/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/ghostty/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/musl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/ownership.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/service.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/service/windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/transport/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/transport/retained.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/transport/unix.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/transport/windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/src/transport/windows/security.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/ghostty-effects.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/ghostty-effects/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/ghostty-effects/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/ghostty-effects/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/ownership.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/playground.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/rows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/service.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/support/resize_fixture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/support/terminal_fixture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/transport-retained.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/transport-retained/.gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/transport-retained/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/transport-retained/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/process-daemon/tests/windows-daemon.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/server/test/persistent-pty.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/session-ui/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/session-ui/src/tools/tool-renderer.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

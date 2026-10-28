@@ -38,6 +38,14 @@ The local-tracking warning infers intent from runtime/configuration markers and 
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `3140ae4e9643b1a90ea5eb013b984d791e75c07c` to `9f9c78b94b56f7593ad9de257e487c7dd0f04641`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [mlflow/gateway/providers/mistral.py](https://github.com/mlflow/mlflow/blob/9f9c78b94b56f7593ad9de257e487c7dd0f04641/mlflow/gateway/providers/mistral.py#L15-L86), The Mistral gateway adapter now projects list-valued content into concatenated text chunks and omits thinking chunks that its output schema cannot represent. The same helper is used for completions, chat responses and streaming deltas. An empty textual projection becomes None, while completions convert that to an empty string.
+
+**Harness implication and limits:** Expose representation loss explicitly when translating provider responses; absence of visible text is not necessarily absence of provider work or usage. Validate chunk shapes before projection and retain usage/error semantics separately. The helper assumes mapping-shaped list entries, and this source review does not establish malformed-response behavior or streaming integration. Oversized authentication files and tests were not inspected. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mlflow](https://github.com/mlflow/mlflow); analyzed commit `3140ae4e9643b1a90ea5eb013b984d791e75c07c`; commit date 2026-10-27T15:55:28Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mlflow.md).
+Analysis metadata: source [mlflow](https://github.com/mlflow/mlflow); analyzed commit `9f9c78b94b56f7593ad9de257e487c7dd0f04641`; commit date 2026-10-28T09:19:35Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mlflow.md).
 <!-- teamagent-analysis:end -->

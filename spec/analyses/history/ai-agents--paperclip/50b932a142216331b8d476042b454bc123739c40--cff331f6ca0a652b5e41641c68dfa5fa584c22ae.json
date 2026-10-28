@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--paperclip",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/paperclipai/paperclip",
+  "report": "spec/projects/ai-agents--paperclip.md",
+  "analyzedSha": "50b932a142216331b8d476042b454bc123739c40",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T12:30:50-05:00",
+  "observedSha": "cff331f6ca0a652b5e41641c68dfa5fa584c22ae",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "cff331f6ca0a652b5e41641c68dfa5fa584c22ae",
+      "date": "2026-10-28T02:05:36-05:00",
+      "subject": "fix(evals): retain local controller cost origin (#17990)"
+    },
+    {
+      "sha": "40c1ab36cdac70c85dc8fe5e912431834fdb691b",
+      "date": "2026-10-28T00:54:04-05:00",
+      "subject": "feat(evals): register explicit Daytona feedback persistence (#17986)"
+    },
+    {
+      "sha": "d54f776ca0a00a9db457d6a6f14137414171e69c",
+      "date": "2026-10-27T23:52:52-05:00",
+      "subject": "fix(daytona): bound ephemeral eval lifetime at creation (#17980)"
+    },
+    {
+      "sha": "5bf0142d4599fce968dcb0fdb3e7dddd7007a972",
+      "date": "2026-10-27T23:32:24-05:00",
+      "subject": "fix(server): schedule Discord command registration from saved deadlines (#17557)"
+    },
+    {
+      "sha": "4c314117d218acc99b04ec9fcc0ece48dbf8c961",
+      "date": "2026-10-27T23:29:43-05:00",
+      "subject": "fix(evals): bind active image identity and isolate routing checks (#17978)"
+    },
+    {
+      "sha": "39279aa34f150df043882c0bf0d74b759936e2d9",
+      "date": "2026-10-27T21:22:07-07:00",
+      "subject": "feat(ui): shared error, connectivity and query foundation for disconnects (#15754)"
+    },
+    {
+      "sha": "9b7d5b35ebe8ac1a7c6c98c7bd3cb57e3b698a00",
+      "date": "2026-10-27T23:13:08-05:00",
+      "subject": "fix(evals): refresh forecasts from complete request receipts (#17975)"
+    },
+    {
+      "sha": "f8563d25077b17681ab6ef5949f7b07415a58ede",
+      "date": "2026-10-27T23:06:31-05:00",
+      "subject": "fix(server): remove chat endpoints before company agents (#17561)"
+    },
+    {
+      "sha": "70c864633744cd96c0dc7394d631fc7119cd17d2",
+      "date": "2026-10-27T20:42:28-07:00",
+      "subject": "fix(ui): drop top margin and border on first contextual sidebar section (#17412)"
+    },
+    {
+      "sha": "c9213d1be422a2597e268051986a73de144e1208",
+      "date": "2026-10-27T20:34:14-07:00",
+      "subject": "fix: send saved queued messages after Stop (#17959)"
+    },
+    {
+      "sha": "6102f8e82c5fe2feb11c7dbe0666dd3c30ce47bf",
+      "date": "2026-10-27T20:34:10-07:00",
+      "subject": "fix: pass healthy managed Runner connection tests (#17965)"
+    },
+    {
+      "sha": "6cc765bd814f6f6c422fc5cae9933cdf04a49457",
+      "date": "2026-10-27T22:23:30-05:00",
+      "subject": "feat(live): deliver recoverable transcripts to interested views (#17456)"
+    },
+    {
+      "sha": "f52da40f08adb82982fddf093a9956e0244ddc5e",
+      "date": "2026-10-27T22:20:03-05:00",
+      "subject": "fix: resume queued turns after maintenance (#17967)"
+    },
+    {
+      "sha": "6b9e5f3a806b7b0a51cfb33d00748d5e1596a159",
+      "date": "2026-10-27T21:59:20-05:00",
+      "subject": "fix(evals): enforce qualified ACPX profile admission before paid turns (#17964)"
+    },
+    {
+      "sha": "6987c2f20bf2978c84f9c69b9840586407dfad29",
+      "date": "2026-10-27T21:58:09-05:00",
+      "subject": "test(upgrades): qualify controller replacement with immutable artifacts and phase evidence (#17455)"
+    },
+    {
+      "sha": "09ad9adce2cf4742944353a3707a2f908e9bb35e",
+      "date": "2026-10-27T21:39:23-05:00",
+      "subject": "feat(server): adopt running remote agents through durable controller checkpoints (#17439)"
+    },
+    {
+      "sha": "94a780286fa3b9bafb4a60f705ea0465b928b3ce",
+      "date": "2026-10-27T21:37:50-05:00",
+      "subject": "fix(server): schedule tool health from committed changes and deadlines (#17554)"
+    },
+    {
+      "sha": "5cfa2bf26d3e27b765b30d6da4fc399de653e834",
+      "date": "2026-10-27T21:31:22-05:00",
+      "subject": "chore(lockfile): refresh pnpm-lock.yaml (#17811)"
+    },
+    {
+      "sha": "96727b3cfefb61f85ffe1fbc29a9b6dd6837efe8",
+      "date": "2026-10-27T21:07:10-05:00",
+      "subject": "fix(server): schedule plugin jobs from saved deadlines (#17518)"
+    },
+    {
+      "sha": "39e811c9c5226979fce42e052a27cfb28301018a",
+      "date": "2026-10-27T21:00:05-05:00",
+      "subject": "fix(runner): prepare diagnostic proxy and reduce bundled skill queries (#17941)"
+    },
+    {
+      "sha": "2cd747d1b6e4c118007fe3d60c757da440657f7d",
+      "date": "2026-10-27T20:59:01-05:00",
+      "subject": "perf(server): batch connection install capability checks (#17945)"
+    },
+    {
+      "sha": "38d08847b8d3d5a78bf864c355868d5420b8a2fb",
+      "date": "2026-10-27T20:57:19-05:00",
+      "subject": "fix(runner): keep OpenRouter upstream keys in the parent proxy (#17949)"
+    },
+    {
+      "sha": "e4b30163bba629914904b068511b45bafa21d93b",
+      "date": "2026-10-27T20:55:18-05:00",
+      "subject": "fix(evals): preserve the complete trusted controller artifact inventory (#17943)"
+    },
+    {
+      "sha": "a8bd012635dc0a7955ec45aae7479d0c1369b8ba",
+      "date": "2026-10-27T20:55:13-05:00",
+      "subject": "fix(evals): apply reviewed lock corrections to reports and qualification images (#17937)"
+    },
+    {
+      "sha": "0d22e27dc4a2e6e1fb75a6d8902e895b3c773284",
+      "date": "2026-10-27T20:53:02-05:00",
+      "subject": "fix(runner): preserve closed native startup diagnostics (#17962)"
+    },
+    {
+      "sha": "4e27a82a4265c01f3ab4f05aaecc010a0026de75",
+      "date": "2026-10-27T20:33:01-05:00",
+      "subject": "fix(server): wake approval queue seeding from committed changes (#17510)"
+    },
+    {
+      "sha": "8406047b4e9fdf473f90a19573c6f4575731bb5a",
+      "date": "2026-10-27T20:03:16-05:00",
+      "subject": "fix(server): schedule join request retention from durable deadlines (#17508)"
+    },
+    {
+      "sha": "d23dd19750a646a69340f5075a69c1b1b638d679",
+      "date": "2026-10-27T19:42:58-05:00",
+      "subject": "fix(server): preserve terminal workspace cursors and retry deadlines (#17505)"
+    },
+    {
+      "sha": "553a004926281e879b5823987fc057e544fa686a",
+      "date": "2026-10-27T19:23:24-05:00",
+      "subject": "fix(server): schedule approval retention from durable deadlines (#17497)"
+    },
+    {
+      "sha": "2adcde162e33fe5898f654f6955e7e7e016bbfa6",
+      "date": "2026-10-27T19:07:53-05:00",
+      "subject": "fix(server): wake Grok dispatch from committed reservations (#17490)"
+    },
+    {
+      "sha": "8dfed893d8d3a7d7f09f5beb6a80a07da2ae3f89",
+      "date": "2026-10-27T18:53:50-05:00",
+      "subject": "fix(server): wake decision target checks from committed changes (#17486)"
+    },
+    {
+      "sha": "e9e84bb8a16393543effd1d45f34a4aad535d394",
+      "date": "2026-10-27T18:24:55-05:00",
+      "subject": "fix(server): recover decision effects from saved claim deadlines (#17482)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".dockerignore",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/tests/runner-controller-artifact-transport.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docker-runner-check.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-trusted.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-full-stack-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/runner-protocol-live-evals.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DATABASE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/DEVELOPING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/PRODUCT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/SPEC-implementation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/company-chat-deletion.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/evals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/execution-semantics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/grok-native-runner.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-approval-queue-seeding.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-approval-retention.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-approved-tool-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-decision-archive-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-decision-continuations.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-decision-effect-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-decision-expiry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-decision-targets.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-discord-command-registration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/idle-environment-cleanup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-gateway-credential-expiry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-grok-dispatch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-interrupted-tool-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-join-request-retention.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/idle-login-cleanup.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-plugin-jobs.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-secret-proposal-expiry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-terminal-workspace-pagination.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-tool-connection-health.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-tool-review-expiry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/idle-tool-review-projection.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/live-transcript-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/observability.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plans/2026-10-08-instance-sleep-and-scheduler-inventory.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-21-daytona-hot-upgrades.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-22-hot-upgrade-qualification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-24-plugin-job-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-24-recurring-server-sleep-stack.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-24-tool-connection-health-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-configuration-worker-drain-repair.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-25-discord-command-registration-sleep-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-26-retained-workspace-slot-fairness.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-connection-grants-batch-verification.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-connection-grants-capability-batch.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/plans/2026-10-27-next-bottlenecks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/plugins/PLUGIN_RUNNER_EXECUTION.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "doc/run-identity-reads.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "doc/testing-native-remote-continuity.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/agent-access-map/agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/agent-access-map/execution-environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/agent-access-map/onboarding.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/agent-access-map/recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/agent-access-map/steering.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/feature-map/agent-chat.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/feature-map/agents.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/feature-map/execution-environments.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/feature-map/onboarding.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/feature-map/recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/feature-map/runs-adapters.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "maps/feature-map/steering.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adapter-utils/src/paperclip-runner-permissions.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/adapter-utils/src/paperclip-runner-permissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/checkpoint-pool.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/client-teardown-registry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0381_mean_scream.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0382_narrow_the_executioner.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0383_tool_review_company_expiry.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0384_funny_adam_warlock.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0385_open_madame_web.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0386_steady_epoch.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0387_boring_professor_monster.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0388_ambitious_micromax.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0389_brave_hulk.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0390_salty_killraven.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0391_third_roulette.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0392_small_frightful_four.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0393_open_grandmaster.sql",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/0394_conscious_whizzer.sql",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/db/src/migrations/meta/0375_snapshot.json",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "packages/db/src/migrations/meta/0390_snapshot.json",
+      "previousPath": "packages/db/src/migrations/meta/0380_snapshot.json"
+    },
+    {
+      "status": "R099",
+      "path": "packages/db/src/migrations/meta/0391_snapshot.json",
+      "previousPath": "packages/db/src/migrations/meta/0379_snapshot.json"
+    },
+    {
+      "status": "R099",
+      "path": "packages/db/src/migrations/meta/0392_snapshot.json",
+      "previousPath": "packages/db/src/migrations/meta/0376_snapshot.json"
+    },
+    {
+      "status": "R099",
+      "path": "packages/db/src/migrations/meta/0393_snapshot.json",
+      "previousPath": "packages/db/src/migrations/meta/0377_snapshot.json"
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/migrations/meta/0394_snapshot.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/migrations/meta/_journal.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/schema/approvals.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/schema/decision_queues.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/schema/decisions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/schema/grok_bot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/schema/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/schema/join_requests.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/db/src/schema/native_runner_checkpoints.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/schema/tool_access.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/work-signals.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/db/src/work-signals.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/acpx-profiles.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/docs/durable-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/docs/runner-protocol-live-evals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/protocol/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/protocol/schemas/provider-descriptor.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/examples/recovery-fixture.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/acpx_provider_backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/acpx_provider_checkpoint.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/acpx_provider_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/acpx_sidecar_transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/bin/fake-acpx-sidecar.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/bin/fake-codex-app-server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/codex_provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/durable/transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/generated_acpx_profiles.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/src/provider_events.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/tests/acpx_provider_checkpoint.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/tests/acpx_provider_resolutions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/tests/acpx_provider_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/tests/acpx_provider_suspend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/tests/acpx_provider_turns.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/tests/acpx_sidecar_transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/runner/crates/runner-core/tests/native_provider_backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/archive.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/controller-fixture.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/controller.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/hosted.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/hosted.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/manifest.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/portable.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/report.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/controlled-evals/run.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/scripts/copilot-profile-identity.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/backends/codex-acpx-native-backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/backends/codex-native-backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/backends/opencode-native-backend.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/backends/runtime-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/cli/acpx-runtime-sidecar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/cli/acpx-sidecar-input.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/cli/acpx-sidecar-input.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/cli/eval-session-contract.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/cli/opencode-app-server-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/contracts/harness-driver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/contracts/native-execution.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/contracts/native-execution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/paperclip-runner/src/contracts/provider-performance.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/control-plane/durable-prp-control-plane.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/control-plane/durable-prp-control-plane.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/control-plane/runner-execution-driver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/paperclip-runner/src/control-plane/runner-recovery-fixture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/paperclip-runner/src/drivers/acpx/admission-diagnostics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/drivers/acpx/codex-acpx-driver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/drivers/acpx/codex-runtime-adapter.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/drivers/acpx/codex-runtime-adapter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/drivers/acpx/copilot-installation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/paperclip-runner/src/drivers/acpx/generated-profiles.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/paperclip-runner/src/drivers/acpx/grok-effort.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

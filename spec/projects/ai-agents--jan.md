@@ -38,6 +38,14 @@ The [host-tool bridge](https://github.com/janhq/jan/blob/d15915c7114aee6c23568f6
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `d15915c7114aee6c23568f6e0b4d490b1b0d83a6` to `b8d58255baf6d9e870025d3f0c60a5b80a63143b`. Earlier findings above remain historical evidence; this is a focused review of the cited boundary, not a whole-repository audit.
+
+In [src-tauri/src/core/agent/memory.rs](https://github.com/janhq/jan/blob/b8d58255baf6d9e870025d3f0c60a5b80a63143b/src-tauri/src/core/agent/memory.rs#L56-L126), Project memory recall requests a bounded over-fetch, filters stored rows to assistant answers, excludes exact trimmed answers already present in the conversation, and returns at most three excerpts. Excerpts are whitespace-flattened, passed through a neutralizer and capped at a character/word boundary. The generated block labels the content as potentially outdated background.
+
+**Harness implication and limits:** Deduplicate retrieved conversation memory against current context before spending its token budget, and retain role/provenance distinctions when old stores contain user rows. Formatting and a reference-only label reduce prompt-shape confusion but do not establish resistance to semantic prompt injection. The neutralizer implementation, database search/ranking and indexing call sites were not audited or executed; large loop/subagent files exceeded the capture bound. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [jan](https://github.com/janhq/jan); analyzed commit `d15915c7114aee6c23568f6e0b4d490b1b0d83a6`; commit date 2026-10-27T11:08:15+05:30; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--jan.md).
+Analysis metadata: source [jan](https://github.com/janhq/jan); analyzed commit `b8d58255baf6d9e870025d3f0c60a5b80a63143b`; commit date 2026-10-28T15:17:12+05:30; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--jan.md).
 <!-- teamagent-analysis:end -->

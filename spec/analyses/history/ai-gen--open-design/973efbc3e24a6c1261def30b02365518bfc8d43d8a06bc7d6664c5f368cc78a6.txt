@@ -1,0 +1,55 @@
+# OpenDesign: heterogeneous agent workspace and media readiness
+
+Source: [open-design](https://github.com/nexu-io/open-design) · Category: `ai-gen`
+
+Review depth: **source-reviewed**. Snapshot `53231d40b778d88eba23f35547bf99485d3ae9fc`; assessed 2026-10-04. This is a focused static review of the listed files, not an audit of every code path or a reproduced benchmark. No repository code, model weights, paid endpoints, or installers were run.
+
+## Observed architecture
+
+The daemon registry assembles explicit adapters for many named agents and then appends local user profiles. Its code distinguishes the adapters shipped by a build from the set a particular machine can run, and rejects duplicate identifiers. This distinction directly addresses the user's requirement to detect and use installed agents: discovery is a machine-local capability result, while adapter support is a versioned product contract.
+
+The media readiness helper checks provider integration, credential requirements, and stored configuration. It specifically rejects an OpenAI entry containing only certain agent OAuth source markers when no usable media API fields are present. That is evidence against assuming successful agent authentication unlocks every image/audio/video endpoint.
+
+## Harness adoption
+
+Borrow the registry pattern: ship known adapters, allow declarative local profiles, identify executable versions safely, and probe session/cancellation/tool capabilities before enabling a route. Keep executable presence, authenticated status, entitlement, and health as separate states. Unknown agents may be registered as opaque subprocess tools but should not be advertised as fully resumable native adapters.
+
+For media, show ready/configuration-needed/unavailable states based on actual integration capabilities. Separate text-agent provider settings from image, audio, and video credentials even where the brand is shared. Retain native generated files and previews in a common artifact store.
+
+## Limitations and decision
+
+Use as a design reference rather than importing an entire application into the harness. This review did not exercise all runtime adapters, cloud services, billing, or collaboration behavior. Readiness checks show local product behavior and are not a definitive statement of current provider entitlements. The source's rapidly changing catalog requires versioned adapters and feature probes; do not hard-code a marketing list as permanent installed-agent detection.
+
+## Evidence read
+
+- [Shipped and local runtime registry](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/apps/daemon/src/runtimes/registry.ts#L1-L91)
+- [Media provider readiness checks](https://github.com/nexu-io/open-design/blob/53231d40b778d88eba23f35547bf99485d3ae9fc/apps/web/src/media/provider-readiness.ts#L1-L38)
+
+## Related directions
+
+[Agents](../agents.md) · [Models](../models.md) · [Skills](../skills.md) · [Generation](../generation.md) · [Channels](../channels.md)
+
+
+## Change review - 2026-10-28
+
+**Extraction origin snapshots and account-catalog waits improve attribution without durable evidence guarantees.** Reviewed commit `b7c5dd6d350bf54587a76bef1899bcbc183ea59d` (commit date `2026-10-27T09:51:29Z`). Compared with `53231d40b778d88eba23f35547bf99485d3ae9fc`; the complete Git comparison contains 1575 changed paths.
+
+Memory extraction captures project/conversation/run/message origin into a copied object before asynchronous configuration/provider work; the heuristic caller does so before its first await, and mocked LLM/annotation writer fixtures mutate caller options to verify stable attribution. Recent extraction records are a 20-entry in-memory UX buffer with bounded previews/errors and up to 12 written IDs, explicitly not a durable audit log. Source-less callers remain valid, and the heuristic chat-extraction-disabled branch still returns without a skip record. Model catalog loading separates remote account data from preset seeds, shares an in-flight refresh and budgets default-model waiting from refresh start rather than per caller. Fixtures cover never-resolving refresh, prior failure and timely response. The timeout only stops waiting: it does not cancel the remote fetch, cache keys have no eviction here, and returned arrays are shared references. UI provider readiness checks stored credential presence and excludes an OAuth-only OpenAI entry, but does not validate service entitlement or successful execution.
+
+Evidence: [apps/daemon/src/memory-extractions.ts:30-103](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/daemon/src/memory-extractions.ts#L30-L103) · [apps/daemon/src/memory-extractions.ts:130-210](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/daemon/src/memory-extractions.ts#L130-L210) · [apps/daemon/src/memory.ts:1080-1100](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/daemon/src/memory.ts#L1080-L1100) · [apps/daemon/tests/memory-extraction-origin.test.ts:33-70](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/daemon/tests/memory-extraction-origin.test.ts#L33-L70) · [apps/daemon/src/runtimes/amr-model-cache.ts:48-153](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/daemon/src/runtimes/amr-model-cache.ts#L48-L153) · [apps/daemon/src/runtimes/amr-model-cache.ts:158-181](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/daemon/src/runtimes/amr-model-cache.ts#L158-L181) · [apps/daemon/tests/runtimes/amr-model-cache.test.ts:7-64](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/daemon/tests/runtimes/amr-model-cache.test.ts#L7-L64) · [apps/web/src/media/provider-readiness.ts:1-38](https://github.com/nexu-io/open-design/blob/b7c5dd6d350bf54587a76bef1899bcbc183ea59d/apps/web/src/media/provider-readiness.ts#L1-L38).
+
+**Harness consequence:** Snapshot attribution before asynchronous boundaries, then persist immutable source/run receipts separately from temporary UI history. Keep configured/preset, cached remote, stale and verified execution states distinct. Bound account-key caches and own fetch cancellation/deadlines, validate catalog responses and enforce current provider authorization at execution rather than treating picker readiness as proof.
+
+**Scope and limits:** Scoped static review of extraction-origin records, heuristic call timing, model-catalog cache and picker readiness in the 1,575-path comparison. Large daemon server, complete LLM writer implementation, strategy persistence and all origin propagation call sites were not audited. Fixtures were read, not executed; no provider, memory extraction or UI operation was invoked.
+
+## Follow-up change review — 2026-10-28
+
+**A disconnected UI no longer treats a transport-only failure as a settled run outcome.** Reviewed commit `d297055b83b6226c2c5e40800bbb4287156c4025` (commit date `2026-10-28T09:35:01Z`), compared with `b7c5dd6d350bf54587a76bef1899bcbc183ea59d`. The complete no-rename Git path inventory contains 148 changed paths.
+
+The new helper recognizes the latest disconnect-specific error on a failed run, projects it as running without end time for reconnection, and removes the marker after authoritative run reconciliation. Fixtures keep a later genuine error terminal, preserve other terminal states and prevent settled records from being projected as running indefinitely. The UI projection itself cannot prove the underlying process remains alive.
+
+Evidence: [apps/web/src/runtime/chat/pending-disconnect.ts:1-79](https://github.com/nexu-io/open-design/blob/d297055b83b6226c2c5e40800bbb4287156c4025/apps/web/src/runtime/chat/pending-disconnect.ts#L1-L79) · [apps/web/tests/runtime/chat/pending-disconnect.test.ts:41-87](https://github.com/nexu-io/open-design/blob/d297055b83b6226c2c5e40800bbb4287156c4025/apps/web/tests/runtime/chat/pending-disconnect.test.ts#L41-L87).
+
+**Harness consequence:** Keep transport status separate from work outcome and retained partial artifacts. Prefer an explicit reconciling/unknown state and read authoritative state before inviting a retry of possibly completed work.
+
+**Scope and limits:** Reviewed the complete new projection helper and tests; process supervision and server reconciliation were not independently verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

@@ -2,12 +2,11 @@
 
 Source: [openhuman](https://github.com/tinyhumansai/openhuman) · [Analysis](../../projects/ai-agents--openhuman.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `9d5a06c7b0216d3a496f93f1030d491d734a6bd7`; commit date: 2026-10-27T23:06:39+05:30; review date: 2026-10-28T09:27:32.685Z; observed SHA: `9d5a06c7b0216d3a496f93f1030d491d734a6bd7`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `d12bab15be83c1d6a051c6f21cca9b3346ec3d89`; commit date: 2026-10-28T15:19:15+05:30; review date: 2026-10-28T14:29:27.414Z; observed SHA: `d12bab15be83c1d6a051c6f21cca9b3346ec3d89`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/tinyhumansai/openhuman/compare/9d5a06c7b0216d3a496f93f1030d491d734a6bd7...9d5a06c7b0216d3a496f93f1030d491d734a6bd7). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/tinyhumansai/openhuman/compare/d12bab15be83c1d6a051c6f21cca9b3346ec3d89...d12bab15be83c1d6a051c6f21cca9b3346ec3d89). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

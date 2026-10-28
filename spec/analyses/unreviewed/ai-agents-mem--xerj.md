@@ -17,6 +17,18 @@ Evidence: [engine/crates/xerj-engine/src/graph.rs:50-149](https://github.com/xer
 
 **Scope and limits:** Initial scoped source review within a 3,341-path tree, covering graph admission/column traversal, ephemeral-context sweeps, telemetry and selected fixtures. No Rust build, search-quality or token-savings benchmark, API authorization test or full ingestion-budget audit. The oversized index implementation was not retained/read; aggregation-budget fixture comments alone are not treated as verified implementation.
 
+## Follow-up change review — 2026-10-28
+
+**The new commit appends release telemetry only.** Reviewed commit `5b46a1427d5b69cff0e67749bf37495a63a4d933` (commit date `2026-10-28T06:30:07Z`), compared with `cb990c63de7eea1db084285c702c181ef57b7bc5`. The complete no-rename Git path inventory contains 1 changed paths.
+
+The full one-path comparison appends one JSONL observation containing date, collection timestamp, repository, totals, releases and traffic_14d. It does not change graph expansion, retrieval, caching, authorization or runtime resource limits. Download and traffic figures remain upstream observations with their own collection time, not independently reproduced performance or quality evidence.
+
+Evidence: [metrics/release-downloads.jsonl:77-81](https://github.com/xerj-org/xerj/blob/5b46a1427d5b69cff0e67749bf37495a63a4d933/metrics/release-downloads.jsonl#L77-L81).
+
+**Harness consequence:** Keep append-only popularity observations separate from source capability and benchmark records. Preserve prior code findings until an implementation delta warrants revisiting them.
+
+**Scope and limits:** Reviewed the complete changed-path inventory, JSONL append shape and row keys; no telemetry service was contacted. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [xerj](https://github.com/xerj-org/xerj); analyzed commit `cb990c63de7eea1db084285c702c181ef57b7bc5`; commit date 2026-10-27T09:11:11-05:00; review date 2026-10-28T09:45:33.667Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--xerj.md).
+Analysis metadata: source [xerj](https://github.com/xerj-org/xerj); analyzed commit `5b46a1427d5b69cff0e67749bf37495a63a4d933`; commit date 2026-10-28T06:30:07Z; review date 2026-10-28T14:52:35.205Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--xerj.md).
 <!-- teamagent-analysis:end -->

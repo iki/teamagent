@@ -39,6 +39,18 @@ Evidence: [provider-id-cache.mjs:1-115](https://github.com/santifer/career-ops/b
 
 **Scope and limits:** Scoped static review of provider-ID persistence, lookup freshness, DNS coalescing/pacing and the lock wrapper in the 1,916-path comparison. The directory-lock protocol, IP classification, ranking pipeline and real provider behavior were not audited; fixtures were read without executing upstream code or contacting providers.
 
+## Follow-up change review — 2026-10-28
+
+**This interval updates community presentation and signatures only.** Reviewed commit `ecca12b7bb78b74e87caae412a690bac8608a0e2` (commit date `2026-10-28T05:23:06+01:00`), compared with `3bc1d60c26505694816e66a2e40c59b68a873aa1`. The complete no-rename Git path inventory contains 22 changed paths.
+
+The complete path inventory contains localized README updates, contributor illustrations and signatures. The English README adds the contributor stack and a builders anchor. No speech, voice-cloning, image/video processing or provider-adapter implementation changes appear in this interval. Contributor counts are upstream presentation claims rather than independently verified adoption measurements.
+
+Evidence: [README.md:25-33](https://github.com/santifer/career-ops/blob/ecca12b7bb78b74e87caae412a690bac8608a0e2/README.md#L25-L33).
+
+**Harness consequence:** Do not infer media capability from directory classification, popularity or community artwork. Keep the project's prior functional assessment and separate documentation/community maintenance from runtime evidence.
+
+**Scope and limits:** Reviewed the complete path inventory and English README delta; localized wording and contributor identities were not individually verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `3bc1d60c26505694816e66a2e40c59b68a873aa1`; commit date 2026-10-27T17:19:00Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
+Analysis metadata: source [career-ops](https://github.com/santifer/career-ops); analyzed commit `ecca12b7bb78b74e87caae412a690bac8608a0e2`; commit date 2026-10-28T05:23:06+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-media--career-ops.md).
 <!-- teamagent-analysis:end -->

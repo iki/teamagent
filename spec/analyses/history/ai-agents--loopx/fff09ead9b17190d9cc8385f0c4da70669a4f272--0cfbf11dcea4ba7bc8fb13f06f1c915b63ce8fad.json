@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--loopx",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/huangruiteng/loopx",
+  "report": "spec/projects/ai-agents--loopx.md",
+  "analyzedSha": "fff09ead9b17190d9cc8385f0c4da70669a4f272",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-28T01:50:26+08:00",
+  "observedSha": "0cfbf11dcea4ba7bc8fb13f06f1c915b63ce8fad",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0cfbf11dcea4ba7bc8fb13f06f1c915b63ce8fad",
+      "date": "2026-10-28T18:01:55+08:00",
+      "subject": "fix(benchmark): preserve unknown Harbor usage metrics (#7543)"
+    },
+    {
+      "sha": "1ad00d895ddc8d4b0e30f554e1e78afcafbc0ee6",
+      "date": "2026-10-28T18:00:14+08:00",
+      "subject": "fix(dashboard): preserve grouped research reading context (#7534)"
+    },
+    {
+      "sha": "c179d20172d183f91fdad4956da073600fc95c62",
+      "date": "2026-10-28T17:59:40+08:00",
+      "subject": "fix(settlement): carry producing workspace into combined closeout (#7533)"
+    },
+    {
+      "sha": "a8a6be3b5efd67edd2e1b282ab7f9ff509207c8c",
+      "date": "2026-10-28T17:59:01+08:00",
+      "subject": "fix(collaboration): retain queued handoffs across native lane contention (#7531)"
+    },
+    {
+      "sha": "3d9e492690a2449fe548fd665ece9ab83d52e7d2",
+      "date": "2026-10-28T17:52:40+08:00",
+      "subject": "fix(context): overlay fresh controls on relocated evidence (#7528)"
+    },
+    {
+      "sha": "b41d1897d953d56379729e126e2ee56ecbcf55cc",
+      "date": "2026-10-28T17:51:31+08:00",
+      "subject": "test(chat): initialize source ownership in the delegation fixture (#7526)"
+    },
+    {
+      "sha": "f205c02a37d5a668c956733a721af911dcac7fab",
+      "date": "2026-10-28T17:50:52+08:00",
+      "subject": "fix(dashboard): lead research reading with findings and evidence (#7522)"
+    },
+    {
+      "sha": "5158307e003d140c20292cd5f001e8b72af8a0f3",
+      "date": "2026-10-28T17:50:16+08:00",
+      "subject": "test(benchmark): qualify native context through joint checkpoints (#7518)"
+    },
+    {
+      "sha": "6b454894e2fed8535b190de1e317611d219e14d8",
+      "date": "2026-10-28T17:49:54+08:00",
+      "subject": "docs(controller): define intelligent mediation and full-cycle tradeoffs (#7517)"
+    },
+    {
+      "sha": "2f6ab3d201c4e1e3422d0d542ad5c8d2188f4366",
+      "date": "2026-10-28T17:46:58+08:00",
+      "subject": "fix(edgebench): ship lossless native checkpoint compatibility (#7500)"
+    },
+    {
+      "sha": "4659bc38f0bde2e1aba405779ede6706bed2d43c",
+      "date": "2026-10-28T17:45:40+08:00",
+      "subject": "fix(context): reuse exact scoped preference prose (#7485)"
+    },
+    {
+      "sha": "adfcfb5a2760fe0b9b6d05e29938ac956a84ae16",
+      "date": "2026-10-28T17:43:39+08:00",
+      "subject": "fix(dashboard): readable Explore thirds and Goal empty states (#7478)"
+    },
+    {
+      "sha": "dbbaccf32aa192bf3e836d0b16e6da78fcb35c49",
+      "date": "2026-10-28T17:41:05+08:00",
+      "subject": "fix(benchmark): distinguish unknown terminal outcomes from zero failures (#7471)"
+    },
+    {
+      "sha": "c256cc086ed794d6bd615fffd581330adf9c2822",
+      "date": "2026-10-28T17:40:38+08:00",
+      "subject": "fix(quota): preserve authority recovery in observation failures (#7468)"
+    },
+    {
+      "sha": "19c213324fbb5990288bd374c1b79096f22bb152",
+      "date": "2026-10-28T16:49:37+08:00",
+      "subject": "Merge pull request #7555 from loopx-project/codex/private-return-recovery-20261028"
+    },
+    {
+      "sha": "f795a54ef48754422980993ccd56011aed67fa84",
+      "date": "2026-10-28T16:38:09+08:00",
+      "subject": "fix(lark): resolve original returns after recorded recovery"
+    },
+    {
+      "sha": "843be494266774b63b3de61d0adf5dd7f4f877a2",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): match glob tokens across folded aliases"
+    },
+    {
+      "sha": "e7e9afca86bc14fcc412b3c26bd62a01a106389d",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): compare fold classes so wide ranges stay exclusive"
+    },
+    {
+      "sha": "dee2a46294002a60bc29f301835d7285f0da2bdd",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): fold every member of a Unicode range in write scopes"
+    },
+    {
+      "sha": "6fe86d62a0af50835966b3a0e2e993dc6ccacc42",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): fold one-element ranges and keep negated class continuation"
+    },
+    {
+      "sha": "b824e348f25efbd01edcfc477f963427d4b29387",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): fold Unicode case aliases inside glob character classes"
+    },
+    {
+      "sha": "1423efc8c23fb592f787adc141e8e5347ad41fe3",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): fold Unicode case aliases in write scopes"
+    },
+    {
+      "sha": "0feb85934c0043d8891cdace44bdf594bdef6c79",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): fold case within glob character classes"
+    },
+    {
+      "sha": "b4d2d59fd23ae04dc88fa7c2bb3ff93d941be82a",
+      "date": "2026-10-28T12:01:44+08:00",
+      "subject": "fix(leases): treat case aliases as overlapping write scopes"
+    },
+    {
+      "sha": "5a65338faf53b182fcdd496c532a08bc07a8cf16",
+      "date": "2026-10-28T11:59:48+08:00",
+      "subject": "refactor(turn): share managed operation IO and fence session binding (#7515)"
+    },
+    {
+      "sha": "fbe6bb63f90c074c431c043155940fecf2906d92",
+      "date": "2026-10-28T11:59:08+08:00",
+      "subject": "fix(manager): resolve recipients from subject evidence before preserving a route (#7519)"
+    },
+    {
+      "sha": "a78f9772cc6bd7c27ef65797b9c3a2c8bcdc2f10",
+      "date": "2026-10-28T11:58:15+08:00",
+      "subject": "Merge pull request #7520 from loopx-project/codex/turn-route-owner"
+    },
+    {
+      "sha": "0c9d79298cbaf4d6e480c66b60878f5c339cea5c",
+      "date": "2026-10-28T11:56:31+08:00",
+      "subject": "fix(turn): block ambiguous dispatch and revoked recovery (#7456)"
+    },
+    {
+      "sha": "97d38f9a8786a571e04a2b97691bf28b8b69906a",
+      "date": "2026-10-28T11:56:00+08:00",
+      "subject": "refactor(quota): share context references across existing quota and Turn readers (#7457)"
+    },
+    {
+      "sha": "23bb8c89d6a01794faf75330170cfc19402bb6ab",
+      "date": "2026-10-28T11:46:15+08:00",
+      "subject": "docs(status): correct the registry claim in adapter_status_vocabulary (#7539)"
+    },
+    {
+      "sha": "1fe6134e0b0fd0df6dc671a9bce0ea29c9613891",
+      "date": "2026-10-28T09:11:12+08:00",
+      "subject": "Merge pull request #7542 from loopx-project/codex/conversation-reply-reader-20261028"
+    },
+    {
+      "sha": "42102e1e1f861c06f1232a6f82ea9f68416ef9b4",
+      "date": "2026-10-28T09:02:35+08:00",
+      "subject": "fix(chat): read original replies with source-backed quote context"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/bound-conversation-http-fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/conversation-reply-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/presentation/dashboard/smoke/delegation-media-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/delegation-search-browser-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/smoke/team-evidence-return-smoke.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/conversation-returns.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/data/conversation-returns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/channel-timeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/conversation-requests.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/conversation-requests.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-masthead.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-masthead.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-history.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-history.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-results.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/goal-research-timeline.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/i18n.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/manager-brief.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace-model.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/features/personal-workspace/personal-workspace-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/src/views/dashboard-page.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/presentation/dashboard/vite.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/checkpoint_controller.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/edgebench/compatibility/nonfinite-checkpoint-v1.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/source-default.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/edgebench/source.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/harbor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/runtime/worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/qualify_checkpoint_joint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_checkpoint_controller.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_checkpoint_joint_receiver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_edgebench_source.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/tests/test_harbor_usage_completeness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_native_checkpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_native_checkpoint_handoff.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "benchmark/tests/test_shared_codex_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/STATUS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/STATUS.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/controller-executor-unified-contract-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/controller-executor-unified-contract-v0.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/ledger/controller-executor-unified-contract-v0/2026-10-27-refactor-handoff.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/ledger/controller-executor-unified-contract-v0/2026-10-27-refactor-handoff.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/loopx-overall-roadmap-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/rfcs/loopx-overall-roadmap-v0.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/assets/personal-workspace/conversation-pagination/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/conversation-pagination/reply-default-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/conversation-pagination/reply-english-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/conversation-pagination/reply-expanded-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/before-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/default-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/default-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/image-unavailable.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/images-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/images-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/refresh-before.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/refresh-return-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/delegation-media/refresh-return-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/task-history-after-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/task-history-after-narrow.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/assets/personal-workspace/task-history-before-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/after-en-1440.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/after-en-390.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/after-zh-CN-1440.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/after-zh-CN-390.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/before-en-1440.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/before-en-390.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/before-zh-CN-1440.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/question-navigation/before-zh-CN-390.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/after-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/after-phone.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/before-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/before-phone.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/english-phone.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/expanded-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/expanded-phone.png",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/assets/runtime-source-analysis/reading-flow/long-default-desktop.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/development/design.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/development/frontend-delivery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/development/turn-interruption-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product/periodic-reports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product/release-readiness.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/product/releases/v2.1.1.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product/releases/v2.2.0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/product/use-cases/steward/golden-queries.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/benchmark-campaign-report.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/canonical-terminal-review.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/canonical-terminal-review.zh-CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/handoff-mode.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/local-delegation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/loopx-turn-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/model-behavior-qualification-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/quota-cli-hot-path-compaction-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/turn-controller-contract-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/protocols/turn-envelope-v0.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/required-work-context.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/evaluations/chat-intake.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/evaluations/chat-routing.public.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/operation_action_fixtures.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/conversation-activity.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/goal-masthead.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/goal-suggestions.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/goal-workspace-m2.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/managed_agent_fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/navigation-sorting.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/research-finding-reader.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/research-history.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/research-results.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/research-route-reading.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/personal-workspace-browser/steward_requests_fixture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/canary/module_metric_baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/manager_context/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/manager_context/execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/manager_context/roundtrip.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/manager_context/skills/loopx-manager/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/native_chat/external_conversations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/native_chat/steward_turn.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/capabilities/periodic_report/private_generation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_manager.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/chat_manager_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/project_lifecycle_inputs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/project_lifecycle_refresh_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/quota.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/quota_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/quota_failure_report.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/quota_registration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/refresh_settlement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/todo.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/todo_argument_validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/todo_registration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/turn_decision.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/cli_commands/turn_run_once.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/collaboration_mcp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/capabilities/agent_preferences.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/capability_hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/collaboration/delegation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/collaboration/delegation_validation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/collaboration/operation_wake.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/collaboration/source_grant_observation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/collaboration/steward_managed_mode.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "loopx/control_plane/coordination/claim_execution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/coordination/local_authority.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/coordination/local_authority_runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/coordination/todo_claim.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/coordination/todo_terminal_lifecycle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/coordination/todo_update.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/coordination/todo_update_intent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/effect_runtime_handlers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/presentation/explore_timeline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/cli_projection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/context_delivery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/settlement_plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/turn_envelope.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/quota/turn_envelope.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "loopx/control_plane/status/adapter_status_vocabulary.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

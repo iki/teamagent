@@ -38,6 +38,18 @@ The [configurator build](https://github.com/cloudflare/cloudflare-os/blob/fbd0d3
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `fe3ce9fc3dbd93be7f41795b07384b404a90076e` (commit date `2026-10-27T20:40:38-05:00`), compared with `fbd0d33f5359bd5e05802edcb2dce3c26f200d1e`. Earlier findings remain historical evidence.
+
+**Scope:** New Outlook reader's scope guard, pending-draft projection and bounded read behavior. The complete changed-path inventory contains 240 paths; the assessment below is limited to the cited branches.
+
+Named message reads resolve an ID, fetch current metadata and apply binding coverage before returning it; batch reads refuse the whole request when any target is absent/outside scope. Both cases share a refusal class to avoid exposing mailbox membership. See [packages/gatekeeper-microsoft/src/outlook-session.ts](https://github.com/cloudflare/cloudflare-os/blob/fe3ce9fc3dbd93be7f41795b07384b404a90076e/packages/gatekeeper-microsoft/src/outlook-session.ts#L327-L350). The reader separately presents pending drafts, reports encrypted content as unavailable, and exposes truncation/removal information after conversion and observation gating. See [packages/gatekeeper-microsoft/src/outlook-session.ts](https://github.com/cloudflare/cloudflare-os/blob/fe3ce9fc3dbd93be7f41795b07384b404a90076e/packages/gatekeeper-microsoft/src/outlook-session.ts#L748-L778).
+
+For Teamagent, retain proposed versus applied content and distinguish observation approval from effect approval. Fresh message metadata still relies on cached folder hierarchy and an external scope predicate ([packages/gatekeeper-microsoft/src/outlook-session.ts](https://github.com/cloudflare/cloudflare-os/blob/fe3ce9fc3dbd93be7f41795b07384b404a90076e/packages/gatekeeper-microsoft/src/outlook-session.ts#L151-L176)); this review does not prove apply-time revocation, Graph transport bounds or complete authorization. The calendar adapter and action-execution implementations were not audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cloudflare-os](https://github.com/cloudflare/cloudflare-os); analyzed commit `fbd0d33f5359bd5e05802edcb2dce3c26f200d1e`; commit date 2026-10-27T10:46:48-05:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cloudflare-os.md).
+Analysis metadata: source [cloudflare-os](https://github.com/cloudflare/cloudflare-os); analyzed commit `fe3ce9fc3dbd93be7f41795b07384b404a90076e`; commit date 2026-10-27T20:40:38-05:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cloudflare-os.md).
 <!-- teamagent-analysis:end -->

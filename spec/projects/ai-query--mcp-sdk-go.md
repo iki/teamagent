@@ -41,6 +41,18 @@ Evidence: [auth/auth.go:101-184](https://github.com/modelcontextprotocol/go-sdk/
 
 **Scope and limits:** Static scoped review of selected authorization and cache-lifetime changes within the 85-path comparison, plus context-cancellation/concurrency/redirect/issuer fixture bodies. No auth servers or tests executed; redirect utility, complete metadata/SSRF policy, callback handling, JWT verification and all protocol changes were not audited.
 
+## Follow-up change review — 2026-10-28
+
+**Contribution and reporting guidance changes without a protocol implementation delta.** Reviewed commit `2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa` (commit date `2026-10-28T10:00:57+01:00`), compared with `3a4636928357264e894e5e3ec96eb5c6be0bed33`. The complete no-rename Git path inventory contains 3 changed paths.
+
+The PR-intake script changes contributor-facing wording, while CONTRIBUTING and SECURITY clarify reporting expectations. The reviewed script hunk changes message construction rather than the gate predicate. No SDK transport, validation, authorization or resource-management source changes in the complete three-path inventory. An upstream security-reporting classification is not evidence that the same boundary is safe for Teamagent's threat model.
+
+Evidence: [.github/scripts/pr_intake_gate.js:142-164](https://github.com/modelcontextprotocol/go-sdk/blob/2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa/.github/scripts/pr_intake_gate.js#L142-L164) · [CONTRIBUTING.md:45-53](https://github.com/modelcontextprotocol/go-sdk/blob/2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa/CONTRIBUTING.md#L45-L53) · [SECURITY.md:10-25](https://github.com/modelcontextprotocol/go-sdk/blob/2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa/SECURITY.md#L10-L25).
+
+**Harness consequence:** Keep maintenance guidance distinct from runtime assurance. Continue enforcing independent transport and input bounds regardless of how an upstream project categorizes reports.
+
+**Scope and limits:** Reviewed all three changed-path deltas; no PR automation or SDK endpoint was executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-sdk-go](https://github.com/modelcontextprotocol/go-sdk); analyzed commit `3a4636928357264e894e5e3ec96eb5c6be0bed33`; commit date 2026-10-27T17:58:09+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-go.md).
+Analysis metadata: source [mcp-sdk-go](https://github.com/modelcontextprotocol/go-sdk); analyzed commit `2b2c53b02ec2b73f6a0605d68c4ea87fa9eb37aa`; commit date 2026-10-28T10:00:57+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-go.md).
 <!-- teamagent-analysis:end -->

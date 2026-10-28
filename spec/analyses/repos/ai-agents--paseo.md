@@ -2,12 +2,11 @@
 
 Source: [paseo](https://github.com/getpaseo/paseo) · [Analysis](../../projects/ai-agents--paseo.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `de50243885ff47e0dc9c26233327fe066befa684`; commit date: 2026-10-27T15:59:03Z; review date: 2026-10-27T18:19:07.717Z; observed SHA: `de50243885ff47e0dc9c26233327fe066befa684`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `986687b8fd46c996df8c561af40e005667555508`; commit date: 2026-10-28T17:04:52+07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `986687b8fd46c996df8c561af40e005667555508`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/getpaseo/paseo/compare/de50243885ff47e0dc9c26233327fe066befa684...de50243885ff47e0dc9c26233327fe066befa684). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/getpaseo/paseo/compare/986687b8fd46c996df8c561af40e005667555508...986687b8fd46c996df8c561af40e005667555508). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

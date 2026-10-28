@@ -2,12 +2,11 @@
 
 Source: [trivy](https://github.com/aquasecurity/trivy) · [Analysis](../../projects/ai-security--trivy.md) · [security](../../security.md), [agents](../../agents.md), [generation](../../generation.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `d18962e8f8177361e8397924f6aa6838c4a351aa`; commit date: 2026-10-27T13:22:50Z; review date: 2026-10-28T09:27:32.685Z; observed SHA: `d18962e8f8177361e8397924f6aa6838c4a351aa`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `8b5ad79cd35944ed96f825d0df23ffc84aa20ddd`; commit date: 2026-10-28T09:34:40Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `8b5ad79cd35944ed96f825d0df23ffc84aa20ddd`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/aquasecurity/trivy/compare/d18962e8f8177361e8397924f6aa6838c4a351aa...d18962e8f8177361e8397924f6aa6838c4a351aa). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/aquasecurity/trivy/compare/8b5ad79cd35944ed96f825d0df23ffc84aa20ddd...8b5ad79cd35944ed96f825d0df23ffc84aa20ddd). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -44,6 +44,18 @@ Evidence: [raganything/processor.py:54-128](https://github.com/HKUDS/RAG-Anythin
 
 **Scope and limits:** Static scoped review of text-queue coordination, page annotation, context isolation and cache identities within the 89-path comparison; stubbed converter/cache fixture bodies read. Full chunk replay, OMML/media parsing, model calls and pipeline races were not executed or exhaustively audited.
 
+## Follow-up change review — 2026-10-28
+
+**Rendered charts reach image processing without changing source document identity.** Reviewed commit `2cd2b3329c470ccb53923f8a6d320596b34e56c5` (commit date `2026-10-28T15:20:34+08:00`), compared with `5fec59b62dc7e2840e335bb13b9579907d50d79f`. The complete no-rename Git path inventory contains 10 changed paths.
+
+Query preprocessing normalizes chart items before processor dispatch. The new fixtures assert an unchanged original source/content-based document ID, retained chart provenance/page/bounds, captions and footnotes in the image prompt, image bytes passed to the VLM, generic processing for charts without images and rejection of disguised non-image files. These are fixture expectations, not measured chart-understanding accuracy.
+
+Evidence: [raganything/query.py:492-502](https://github.com/HKUDS/RAG-Anything/blob/2cd2b3329c470ccb53923f8a6d320596b34e56c5/raganything/query.py#L492-L502) · [tests/test_chart_image_routing.py:67-143](https://github.com/HKUDS/RAG-Anything/blob/2cd2b3329c470ccb53923f8a6d320596b34e56c5/tests/test_chart_image_routing.py#L67-L143).
+
+**Harness consequence:** Represent normalized media as a derived view with stable source provenance. Route by validated available modalities, retain text plus image context and apply egress/non-training policy before a chart image reaches a remote model.
+
+**Scope and limits:** Reviewed the query dispatch delta and complete chart-routing fixtures; normalization implementation and real VLM accuracy were not fully audited or executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [rag-anything](https://github.com/HKUDS/RAG-Anything); analyzed commit `5fec59b62dc7e2840e335bb13b9579907d50d79f`; commit date 2026-10-27T18:08:51+08:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--rag-anything.md).
+Analysis metadata: source [rag-anything](https://github.com/HKUDS/RAG-Anything); analyzed commit `2cd2b3329c470ccb53923f8a6d320596b34e56c5`; commit date 2026-10-28T15:20:34+08:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--rag-anything.md).
 <!-- teamagent-analysis:end -->

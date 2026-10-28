@@ -36,6 +36,18 @@ The [MCP dispatch](https://github.com/block/buzz/blob/ff9eb8f4dc56c312983287321e
 
 [Hook calls](https://github.com/block/buzz/blob/ff9eb8f4dc56c312983287321ea8748b93c62145/crates/buzz-agent/src/mcp.rs#L340-L444) run allowed servers concurrently, bound each call, restore configuration order and intentionally drop errors/empty output. The implementation kills on the second consecutive timeout, more narrowly than the nearby general comment. This fail-open hook contract is unsuitable as an authorization gate, and output caps do not bound the number of concurrent servers. Teamagent should distinguish optional context hooks, deterministic policy, remote cancellation acknowledgement and uncertain effects. No Rust build, relay, MCP process, provider or upstream test was executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `24a370606044c0c7be787cc2fd98ec0bfe1d606b` (commit date `2026-10-28T00:22:45Z`), compared with `ff9eb8f4dc56c312983287321ea8748b93c62145`. Earlier findings remain historical evidence.
+
+**Scope:** Relay authorization diagnostic attribution and denial-reason changes. The complete changed-path inventory contains 99 paths; the assessment below is limited to the cited branches.
+
+Owner admission diagnostics now distinguish banned owners, unavailable ban checks, owner-link conflicts and unavailable owner links. Successful AUTH records the proven key for the shadow line; added fixtures require pairing/upgrade diagnostics to name that proven key instead of the token's asserted key. See [crates/buzz-relay/src/handlers/auth.rs](https://github.com/block/buzz/blob/24a370606044c0c7be787cc2fd98ec0bfe1d606b/crates/buzz-relay/src/handlers/auth.rs#L128-L154), [crates/buzz-relay/src/handlers/auth.rs](https://github.com/block/buzz/blob/24a370606044c0c7be787cc2fd98ec0bfe1d606b/crates/buzz-relay/src/handlers/auth.rs#L1608-L1663) and [crates/buzz-relay/src/handlers/auth.rs](https://github.com/block/buzz/blob/24a370606044c0c7be787cc2fd98ec0bfe1d606b/crates/buzz-relay/src/handlers/auth.rs#L437-L450).
+
+For Teamagent, keep asserted identity, verified principal, denial reason and unavailable verification separate in audit records. Shadow-mode diagnostics do not themselves enforce admission, and recording a public key still needs the appropriate privacy policy. Fixtures were inspected only; relay membership enforcement, database migrations and native mobile behavior were not executed or re-audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [buzz](https://github.com/block/buzz); analyzed commit `ff9eb8f4dc56c312983287321ea8748b93c62145`; commit date 2026-10-27T16:32:04Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--buzz.md).
+Analysis metadata: source [buzz](https://github.com/block/buzz); analyzed commit `24a370606044c0c7be787cc2fd98ec0bfe1d606b`; commit date 2026-10-28T00:22:45Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--buzz.md).
 <!-- teamagent-analysis:end -->

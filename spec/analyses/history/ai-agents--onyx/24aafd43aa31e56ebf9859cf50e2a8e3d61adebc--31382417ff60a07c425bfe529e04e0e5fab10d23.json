@@ -1,0 +1,970 @@
+{
+  "id": "ai-agents--onyx",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/onyx-dot-app/onyx",
+  "report": "spec/projects/ai-agents--onyx.md",
+  "analyzedSha": "24aafd43aa31e56ebf9859cf50e2a8e3d61adebc",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T17:12:11Z",
+  "observedSha": "31382417ff60a07c425bfe529e04e0e5fab10d23",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "31382417ff60a07c425bfe529e04e0e5fab10d23",
+      "date": "2026-10-28T09:26:33Z",
+      "subject": "fix(reindex): run port tasks and FUTURE attempts at higher priority (#16753)"
+    },
+    {
+      "sha": "d3ab5d4b4b2886b3caf1c8e2b9e038f3142f6a10",
+      "date": "2026-10-28T04:27:56Z",
+      "subject": "fix(agents): scope stop checks to local turn changes (#16797)"
+    },
+    {
+      "sha": "40c1b80f7eae1c68f4be46e44990928da2d1fe13",
+      "date": "2026-10-28T03:48:54Z",
+      "subject": "refactor(index-settings): remove the unused max image size setting (#16754)"
+    },
+    {
+      "sha": "45d35c13402815292af5d9abd1c17beea81337c5",
+      "date": "2026-10-28T03:05:12Z",
+      "subject": "fix(ci): mock MCP server advertises the bare OAuth issuer (#16824)"
+    },
+    {
+      "sha": "cb6c6c2c3dfef5b3dbfb222208ecf4acce8c74d4",
+      "date": "2026-10-28T03:05:02Z",
+      "subject": "fix(web): send queued messages after an answer that arrives at once (#16818)"
+    },
+    {
+      "sha": "86867a69d5ea381da736c6a30dfa6f18fb2a39da",
+      "date": "2026-10-28T02:21:37Z",
+      "subject": "fix(telemetry): report finished index attempts once, at their end (#16672)"
+    },
+    {
+      "sha": "d2dd9498d9647c6a00f3fc30b61f4a268f60a559",
+      "date": "2026-10-28T02:03:30Z",
+      "subject": "fix(opal): Disabled keeps its children mounted when a tooltip is given (#16800)"
+    },
+    {
+      "sha": "32e0d86f600512c2b4b184b973c2e25d5cff594b",
+      "date": "2026-10-28T02:03:29Z",
+      "subject": "fix(web): Document Access keeps a picked option when the field remounts (#16799)"
+    },
+    {
+      "sha": "0a41edc04253be006670228b31b2e733806eeaa5",
+      "date": "2026-10-28T00:01:08Z",
+      "subject": "refactor(onboarding): Opal header card that follows the chat width (#16811)"
+    },
+    {
+      "sha": "73a46b0f4ac4f208312d168f7e4674eb7d403394",
+      "date": "2026-10-28T00:00:56Z",
+      "subject": "refactor(onboarding): move onboarding state, types and hooks into lib/onboarding (#16803)"
+    },
+    {
+      "sha": "e9a25404beee1a0ab3de267c91cabad33c3165b2",
+      "date": "2026-10-27T23:33:34Z",
+      "subject": "fix(llm): keep the configured Claude thinking on through the tool loop (#16805)"
+    },
+    {
+      "sha": "9c41bb08ae3c914952c7a6cb103a03332bcee138",
+      "date": "2026-10-27T23:10:52Z",
+      "subject": "feat(admin): max image size is a bounded number input the backend respects (#16796)"
+    },
+    {
+      "sha": "ce86acf5cd0d7225e2523faee42a91d96a41592b",
+      "date": "2026-10-27T22:48:08Z",
+      "subject": "feat(admin): remove the bring-your-own toggle from the model picker (#16794)"
+    },
+    {
+      "sha": "7d8dee804912747d9d9d39a49577f1356282c1fa",
+      "date": "2026-10-27T22:48:08Z",
+      "subject": "fix(admin): index settings sections use one 1.5rem gap (#16793)"
+    },
+    {
+      "sha": "637a65dd8bb2b5f9adccecb9ee0384d43ebdb316",
+      "date": "2026-10-27T22:48:07Z",
+      "subject": "feat(admin): clean up the connector access card in Advanced Options (#16792)"
+    },
+    {
+      "sha": "e07cce786f79ff39b59e67d8b56be77577c1f678",
+      "date": "2026-10-27T22:47:15Z",
+      "subject": "feat(chat): persist responses and restore child conversation history (#16714)"
+    },
+    {
+      "sha": "2f8c9bbb9da5c440f1b8d90748979b5a3830ac00",
+      "date": "2026-10-27T22:47:14Z",
+      "subject": "feat(chat): project and replay accepted runtime responses (#16713)"
+    },
+    {
+      "sha": "e6b4137f7b9f5a9b35d16512cb94e5117aa8d11c",
+      "date": "2026-10-27T22:47:13Z",
+      "subject": "refactor(chat): separate durable response and tool result contracts (#16712)"
+    },
+    {
+      "sha": "03a59816aca37d7f577c5930fb04ac5262ec277f",
+      "date": "2026-10-27T22:47:12Z",
+      "subject": "refactor(chat): share file preparation and runtime message formatting (#16711)"
+    },
+    {
+      "sha": "4483f19d988d305c642da2d89af10076906c3437",
+      "date": "2026-10-27T22:47:11Z",
+      "subject": "feat(agents): add the complete shared execution runtime (#16465)"
+    },
+    {
+      "sha": "7a097999bcd5a1154e2d18922be7e7bb703dfdba",
+      "date": "2026-10-27T22:29:03Z",
+      "subject": "feat(asana): named capability checks for the Asana connector (#16782)"
+    },
+    {
+      "sha": "2bbc34f2f1845af4bd9072ce3099e39026a4350c",
+      "date": "2026-10-27T22:28:18Z",
+      "subject": "feat(admin): embedding rate limit fields use InputNumber (#16791)"
+    },
+    {
+      "sha": "fe54abe78e6c0f3e79b1cafdf73c553fe1075b55",
+      "date": "2026-10-27T21:15:59Z",
+      "subject": "fix(embedding): bind a stored provider key to its saved URL (#16785)"
+    },
+    {
+      "sha": "98ff3f1ee2da35ff2dbe3b7ba68731325de11015",
+      "date": "2026-10-27T21:15:59Z",
+      "subject": "feat(embedding): support OpenAI-compatible embedding providers (#16783)"
+    },
+    {
+      "sha": "a1ecca93513d4cac21611b2db280358d2bb8f8c3",
+      "date": "2026-10-27T20:12:50Z",
+      "subject": "test(llm): use the naming setter in provider survival coverage (#16781)"
+    },
+    {
+      "sha": "b5807adf6628554e19bc180fa12ff7414697678a",
+      "date": "2026-10-27T20:08:12Z",
+      "subject": "fix(deps): bump litellm to 1.100.4 for GHSA-7hp6-4w63-5g45 (#16765)"
+    },
+    {
+      "sha": "2ec347d2cef688f59ffd665abb57d84688c0b2e1",
+      "date": "2026-10-27T19:54:57Z",
+      "subject": "chore(widget): bump widget to 1.1.0 and point docs at the 1.1 CDN build (#16779)"
+    },
+    {
+      "sha": "146f19ed12f8cbd340a0694c6020f9c4f537f4ad",
+      "date": "2026-10-27T19:44:15Z",
+      "subject": "chore(code-interpreter): bump to 0.4.10 (#16780)"
+    },
+    {
+      "sha": "24a0adaf48745a4b8a2f93cc682a3201becaeb9d",
+      "date": "2026-10-27T18:37:20Z",
+      "subject": "fix(deletion): revoke and wait for blocking tasks of a paused pair (#16671)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/feature-map/INDEX.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/PATHS.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/feature-map/components/agent-runtime.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/cc-pairs-and-credentials.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/chat-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/chat-preferences.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/citations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/connectors.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/context-assembly.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/document-index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/file-store-and-user-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/internal-search.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/llm-providers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/projects.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/streaming-protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/feature-map/components/tools-framework.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/hooks/pre_commit_on_stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-playwright-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/db/query_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ee/onyx/server/gateway/api.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/agent_coordination.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/compaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/agents/execution_records.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/tool_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/agents/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/background/celery/tasks/connector_deletion/tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/background/celery/tasks/docfetching/task_creation_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/background/celery/tasks/port/tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/background/indexing/run_docfetching.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/chat_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/chat_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/citation_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/citation_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/chat/files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/llm_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/chat/presentation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/process_message.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/chat/prompt_formatting.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/prompt_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/chat/renderer.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/chat/response.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/chat/response_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/chat/save_chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/coding_agent/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/configs/app_configs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/configs/llm_configs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/connectors/asana/asana_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/connectors/asana/capability_checks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/connectors/asana/connector.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/connectors/asana/scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/connectors/asana/source_operations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/connectors/capability_checks/registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/context/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/context/search/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/cc_pair_runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/chat.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/db/chat_display.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/db/chat_response.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/chat_search.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/db/chat_subagents.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/fleet_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/incognito.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/memory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/port_attempt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/db/pydantic_type.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/deep_research/dr_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/deep_research/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/file_processing/image_summarization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/file_store/constants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/file_store/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/llm/litellm_singleton/monkey_patches.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/llm/multi_llm.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/natural_language_processing/search_nlp_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/natural_language_processing/vertex_auth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/prompts/chat_prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/prompts/compression_prompts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/redis/redis_connector_stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/secondary_llm_flows/source_filter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/secondary_llm_flows/time_filter.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/documents/cc_pair.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/documents/cc_pair_throughput.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/documents/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/manage/administrative.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/manage/embedding/api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/manage/search_settings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/query_and_chat/session_loading.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/query_and_chat/streaming_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/server/settings/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/fake_tools/coding_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/fake_tools/research_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/tools/records.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/onyx/tools/results.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/tool_implementations/custom/custom_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/tool_implementations/images/image_generation_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/tool_implementations/images/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/tool_implementations/mcp/mcp_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/tool_implementations/python/python_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/tool_implementations/search/search_tool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/tools/tool_runner.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/utils/fleet_telemetry.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/utils/fleet_telemetry_collector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/onyx/utils/logger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/requirements/default.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/requirements/dev.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/requirements/ee.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/requirements/model_server.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/shared_configs/enums.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/evals/connector_filter_eval/scope_eval_cases.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/answer/test_deep_research_agent_failures.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/answer/test_stream_chat_message.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/celery/test_docprocessing_priority.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/celery/test_prune_cancel_on_pause_or_delete.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/chat/test_build_python_chat_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/chat/test_incognito_persistence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/chat/test_lazy_chat_file_loading.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/external_dependency_unit/db/test_child_session_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/db/test_embedding_provider_masked_key.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/db/test_index_attempt_time_finished.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/db/test_reindex_port.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/external_dependency_unit/db/test_response_storage.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/external_dependency_unit/llm/test_agent_runtime_http.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/external_dependency_unit/llm/test_harness_cancellation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/llm/test_llm_provider_default_model_protection.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/redis/test_incognito_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/external_dependency_unit/scripts/test_pre_commit_on_stop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/telemetry/test_fleet_collector.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/external_dependency_unit/tools/test_mcp_passthrough_oauth.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/integration/common_utils/test_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/integration/mock_services/mcp_test_server/run_mcp_server_oauth.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/integration/tests/search_settings/test_embedding_provider_key_binding.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/fakes.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_child_coordination.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_compaction.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_concurrency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/unit/onyx/agents/test_execution_records.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_lifecycle_guarantees.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_model_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_run_suspension.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_runtime_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_snapshot_consistency.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_state_ownership.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/unit/onyx/agents/test_tool_cancellation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/unit/onyx/chat/test_attachment_loading.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/unit/onyx/chat/test_build_file_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/unit/onyx/chat/test_chat_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/unit/onyx/chat/test_citation_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/unit/onyx/chat/test_citation_utils.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

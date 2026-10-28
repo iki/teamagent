@@ -39,6 +39,18 @@ Evidence: [python/opendataloader-pdf/src/opendataloader_pdf/hybrid_server.py:484
 
 **Scope and limits:** Static scoped review of error responses, result ownership wrapper and JVM launcher changes within the 122-path comparison; failure fixture bodies read. DocumentProcessor cleanup, extraction-close fixtures, model loading, Windows path behavior and actual JVM conversion were not fully inspected or executed; the documented dependency remedy was not independently reproduced.
 
+## Follow-up change review — 2026-10-28
+
+**Artifact-text removal requires positive operator evidence and preserves ambiguous content.** Reviewed commit `94a17ec03c7e902706a92a0bd4e8918e979c4967` (commit date `2026-10-28T12:10:01+03:00`), compared with `1652ba9bca5e7e9daa006a0b2a45df6b6a309638`. The complete no-rename Git path inventory contains 5 changed paths.
+
+The new scanner follows marked-content nesting and form invocations with cycle/depth bounds. A chunk counts as artifact only when every painted operator is known as such; unreadable/incomplete scans return an empty artifact map. Shared form names avoid unsafe attribution except when every invocation is in an artifact context. Fixtures remove known artifact text but preserve untagged content and separately retain headers when requested.
+
+Evidence: [java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/ArtifactOperators.java:43-180](https://github.com/opendataloader-project/opendataloader-pdf/blob/94a17ec03c7e902706a92a0bd4e8918e979c4967/java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/ArtifactOperators.java#L43-L180) · [java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/TaggedDocumentProcessor.java:94-126](https://github.com/opendataloader-project/opendataloader-pdf/blob/94a17ec03c7e902706a92a0bd4e8918e979c4967/java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/TaggedDocumentProcessor.java#L94-L126) · [java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue801StructTreeArtifactTextTest.java:66-158](https://github.com/opendataloader-project/opendataloader-pdf/blob/94a17ec03c7e902706a92a0bd4e8918e979c4967/java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue801StructTreeArtifactTextTest.java#L66-L158).
+
+**Harness consequence:** Clean extracted text using provenance-backed structural evidence and retain content when attribution is uncertain. Store filtered artifacts separately so layout headers remain available for appropriate queries without polluting ordinary body retrieval.
+
+**Scope and limits:** Reviewed the complete operator scanner, filtering call sites and selected issue fixtures; no PDF conversion or full tag-tree conformance run was performed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf); analyzed commit `1652ba9bca5e7e9daa006a0b2a45df6b6a309638`; commit date 2026-10-27T18:26:06+09:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--opendataloader-pdf.md).
+Analysis metadata: source [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf); analyzed commit `94a17ec03c7e902706a92a0bd4e8918e979c4967`; commit date 2026-10-28T12:10:01+03:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--opendataloader-pdf.md).
 <!-- teamagent-analysis:end -->

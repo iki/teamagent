@@ -1,0 +1,51 @@
+# cloudflare-os
+
+Source: [cloudflare-os](https://github.com/cloudflare/cloudflare-os) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5cae880e5e54563895a067e7f4dae67514e581be`; commit timestamp `2026-10-02T19:01:46-05:00`; 1,436 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/cloudflare/cloudflare-os/blob/5cae880e5e54563895a067e7f4dae67514e581be/README.md)):
+
+> Cloudflare OS is an "operating system" for AI productivity originally developed for use inside Cloudflare. A large portion of Cloudflare's workforce -- from engineering to sales and everything in between -- uses Cloudflare OS every day to help them do their jobs. This is not a traditional computer operating system. We use the term "operating system" in two senses:
+
+Build/package evidence: [package.json](https://github.com/cloudflare/cloudflare-os/blob/5cae880e5e54563895a067e7f4dae67514e581be/package.json); [packages/bundled-blueprints/package.json](https://github.com/cloudflare/cloudflare-os/blob/5cae880e5e54563895a067e7f4dae67514e581be/packages/bundled-blueprints/package.json); [packages/configurator-ui/package.json](https://github.com/cloudflare/cloudflare-os/blob/5cae880e5e54563895a067e7f4dae67514e581be/packages/configurator-ui/package.json); [packages/error-reporting/package.json](https://github.com/cloudflare/cloudflare-os/blob/5cae880e5e54563895a067e7f4dae67514e581be/packages/error-reporting/package.json); [packages/gatekeeper-cloudflare/package.json](https://github.com/cloudflare/cloudflare-os/blob/5cae880e5e54563895a067e7f4dae67514e581be/packages/gatekeeper-cloudflare/package.json)
+
+License evidence: [LICENSE](https://github.com/cloudflare/cloudflare-os/blob/5cae880e5e54563895a067e7f4dae67514e581be/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `fbd0d33f5359bd5e05802edcb2dce3c26f200d1e` (commit date `2026-10-27T10:46:48-05:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete frontend auth hook, configurator frame and runtime build/fixture; backend agent lines 3970–4219 and 4325–4404 plus symbol inventory. Persistence-hook implementation, gatekeeper authentication, generated RPC validators and native/browser enforcement were not audited.
+
+The [agent event sink](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/workshop-backend/src/agent.ts#L4075-L4198) records a completed model turn and its buffered effects through one awaited commit hook, including tool failures and tools pre-empted by cancellation. It drains the buffers before the hook and does not blindly replay them after a failed barrier. The [finish decision](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/workshop-backend/src/agent.ts#L4325-L4392) ends for cancellation, connection requests or pending action decisions before considering compaction. This is useful ordering evidence: cancellation preserves earlier completed steps rather than reverting them. The transaction implementation and all effect-producing tools were not reviewed, so the comments' effects-if-and-only-if-record guarantee is not established for every external effect. Missing tool results are labeled aborted under an assumed Pi contract; that assumption needs adapter conformance tests.
+
+The [auth hook](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/workshop-frontend/src/useAuth.ts#L33-L61) invalidates stale whoami callbacks when their stub is replaced and only attributes telemetry to a user principal, explicitly distinguishing a gadget author's owner ID. Yet the hook marks authentication complete and isAuthenticated true immediately upon creating a pipelined stub, before server acceptance. During Cloudflare Access logout it waits for push-release completion before navigation, without a local timeout or immediate stub clearing. A cancelled telemetry callback and a disposed RPC stub do not themselves revoke server authority. Keep pending, verified and revoked session states explicit; server token validation, notification revocation and diagnostics redaction remain separate evidence gaps.
+
+The [configurator build](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/configurator-ui/build/runtime.ts#L31-L65) wires a validator-generation plugin into the bundle and makes source-map/error reporting conditional. The [frame](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/configurator-ui/src/runtime/frame.ts#L9-L70) narrows its RPC surface, checks finite viewport values and coalesces resize reports, but installs observers without returning teardown and accepts negative/very large finite geometry. The [build test](https://github.com/cloudflare/cloudflare-os/blob/fbd0d33f5359bd5e05802edcb2dce3c26f200d1e/packages/configurator-ui/build/runtime.test.ts#L4-L12) checks ASCII output only. Generated validator correctness, iframe origin/sandbox enforcement, real worker behavior and native acceptance were not established, and no build or test ran.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `fe3ce9fc3dbd93be7f41795b07384b404a90076e` (commit date `2026-10-27T20:40:38-05:00`), compared with `fbd0d33f5359bd5e05802edcb2dce3c26f200d1e`. Earlier findings remain historical evidence.
+
+**Scope:** New Outlook reader's scope guard, pending-draft projection and bounded read behavior. The complete changed-path inventory contains 240 paths; the assessment below is limited to the cited branches.
+
+Named message reads resolve an ID, fetch current metadata and apply binding coverage before returning it; batch reads refuse the whole request when any target is absent/outside scope. Both cases share a refusal class to avoid exposing mailbox membership. See [packages/gatekeeper-microsoft/src/outlook-session.ts](https://github.com/cloudflare/cloudflare-os/blob/fe3ce9fc3dbd93be7f41795b07384b404a90076e/packages/gatekeeper-microsoft/src/outlook-session.ts#L327-L350). The reader separately presents pending drafts, reports encrypted content as unavailable, and exposes truncation/removal information after conversion and observation gating. See [packages/gatekeeper-microsoft/src/outlook-session.ts](https://github.com/cloudflare/cloudflare-os/blob/fe3ce9fc3dbd93be7f41795b07384b404a90076e/packages/gatekeeper-microsoft/src/outlook-session.ts#L748-L778).
+
+For Teamagent, retain proposed versus applied content and distinguish observation approval from effect approval. Fresh message metadata still relies on cached folder hierarchy and an external scope predicate ([packages/gatekeeper-microsoft/src/outlook-session.ts](https://github.com/cloudflare/cloudflare-os/blob/fe3ce9fc3dbd93be7f41795b07384b404a90076e/packages/gatekeeper-microsoft/src/outlook-session.ts#L151-L176)); this review does not prove apply-time revocation, Graph transport bounds or complete authorization. The calendar adapter and action-execution implementations were not audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.

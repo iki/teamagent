@@ -38,6 +38,18 @@ The [offer-trimming fixture](https://github.com/ruvnet/ruflo/blob/b49078cc40945d
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `5ae2d6527b24f1ae6d907a29b91d320cdc447d2d` (commit date `2026-10-28T06:08:24-04:00`), compared with `b49078cc40945d2a81ab1dd9d0faeccd04f827f5`. Earlier findings remain historical evidence.
+
+**Scope:** Claim redistribution planning and mixed-format session identity reads. The complete changed-path inventory contains 80 paths; the assessment below is limited to the cited branches.
+
+Redistribution now counts already suggested moves so a target cannot receive more than maxClaims within one plan. See [v3/@claude-flow/cli/src/mcp-tools/claims-tools.ts](https://github.com/ruvnet/ruflo/blob/5ae2d6527b24f1ae6d907a29b91d320cdc447d2d/v3/@claude-flow/cli/src/mcp-tools/claims-tools.ts#L864-L893). Session tools accept both save-record and hook-record identity/time fields, fall back to the filename and report absent stats as null. See [v3/@claude-flow/cli/src/mcp-tools/session-tools.ts](https://github.com/ruvnet/ruflo/blob/5ae2d6527b24f1ae6d907a29b91d320cdc447d2d/v3/@claude-flow/cli/src/mcp-tools/session-tools.ts#L84-L103).
+
+For Teamagent, reserve capacity transactionally when applying a plan; an in-memory planned count does not prevent concurrent schedulers from oversubscribing a worker. Legacy session-shape compatibility also needs explicit schema/version provenance. The inspected current-session path labels a readable newest record active, which is not evidence of a live process or ownership lease. See [v3/@claude-flow/cli/src/mcp-tools/session-tools.ts](https://github.com/ruvnet/ruflo/blob/5ae2d6527b24f1ae6d907a29b91d320cdc447d2d/v3/@claude-flow/cli/src/mcp-tools/session-tools.ts#L718-L739). Hook builds, model tooling and scheduler execution were not audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [claude.ruflo](https://github.com/ruvnet/ruflo); analyzed commit `b49078cc40945d2a81ab1dd9d0faeccd04f827f5`; commit date 2026-10-27T10:39:12-04:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.ruflo.md).
+Analysis metadata: source [claude.ruflo](https://github.com/ruvnet/ruflo); analyzed commit `5ae2d6527b24f1ae6d907a29b91d320cdc447d2d`; commit date 2026-10-28T06:08:24-04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--claude.ruflo.md).
 <!-- teamagent-analysis:end -->

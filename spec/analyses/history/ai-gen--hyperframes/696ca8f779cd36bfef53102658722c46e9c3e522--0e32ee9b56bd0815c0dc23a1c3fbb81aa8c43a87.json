@@ -1,0 +1,986 @@
+{
+  "id": "ai-gen--hyperframes",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/heygen-com/hyperframes",
+  "report": "spec/projects/ai-gen--hyperframes.md",
+  "analyzedSha": "696ca8f779cd36bfef53102658722c46e9c3e522",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T16:49:16Z",
+  "observedSha": "0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87",
+  "status": "changed",
+  "shallow": false,
+  "dirty": true,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87",
+      "date": "2026-10-28T09:52:07Z",
+      "subject": "ci: keep the bun cache warm and skip binary downloads in preflight (#6648)"
+    },
+    {
+      "sha": "5a0179b88eb3da0e10797288b0c3ce2435e33d66",
+      "date": "2026-10-28T09:44:32Z",
+      "subject": "fix(studio-server): the render route passes a MOV ProRes profile to the render (#6644)"
+    },
+    {
+      "sha": "7758d9b8fd507384573eb56ba84cc62fb20444c6",
+      "date": "2026-10-28T09:41:17Z",
+      "subject": "fix(engine): a Windows browser that will not start says where and why (#6647)"
+    },
+    {
+      "sha": "e2c91513203ec9be1833840bcfb35183a3dcee8d",
+      "date": "2026-10-28T09:39:06Z",
+      "subject": "fix(cli): add help [cmd], suggest the closest command or flag, and quiet the nags (#6621)"
+    },
+    {
+      "sha": "3d1c0764a018c5c0412c6273a54c87b6ce532ef7",
+      "date": "2026-10-28T09:37:17Z",
+      "subject": "fix(cli): check prints a progress line as each pass after overlap begins (#6646)"
+    },
+    {
+      "sha": "5ed694264e9a48aebca0a0f29b94dbd30c2e29d0",
+      "date": "2026-10-28T09:30:08Z",
+      "subject": "chore: release v0.8.211 (#6623)"
+    },
+    {
+      "sha": "6553b1f6ba75582c0a2d0830cf74a84c434548a0",
+      "date": "2026-10-28T09:24:27Z",
+      "subject": "perf(producer): --gpu renders encode while frames are captured (#6631)"
+    },
+    {
+      "sha": "fa137cdfef07943033931c2a27cb8d788e650fc3",
+      "date": "2026-10-28T09:18:55Z",
+      "subject": "fix(studio): a slow thumbnail job keeps a reader that other clips still decode from (#6643)"
+    },
+    {
+      "sha": "30df5a48af7bc263aa6d09ba19d44a3339338b07",
+      "date": "2026-10-28T09:12:54Z",
+      "subject": "fix(studio-server): undo and redo on Windows restore a file something holds open (#6628)"
+    },
+    {
+      "sha": "51f9fa7c541fa2a8f57ae700d4189396058bbd62",
+      "date": "2026-10-28T09:03:42Z",
+      "subject": "perf(aws-lambda): small-chunk cloud renders stitch their output in parallel (#6635)"
+    },
+    {
+      "sha": "8e63faf8462d677661fccd9f1f1661ba07575729",
+      "date": "2026-10-28T08:44:28Z",
+      "subject": "perf(engine): a --gpu render probes the GPU encoders once, not twice (#6638)"
+    },
+    {
+      "sha": "e6476c2cd57d8e605ca4d25f6c8b4fef6fdb322e",
+      "date": "2026-10-28T08:42:31Z",
+      "subject": "perf(engine): Macs with a hardware GPU render with more capture workers (#6636)"
+    },
+    {
+      "sha": "2ddf41eb7d0b3aa7a8ee7d267b5090e852bc215e",
+      "date": "2026-10-28T08:04:05Z",
+      "subject": "perf(producer): download a remote video once per render (#6637)"
+    },
+    {
+      "sha": "0bdc128cb589c99147c76a2e9a5eb4a66f4b1be2",
+      "date": "2026-10-28T07:56:20Z",
+      "subject": "fix(cli): never prompt or auto-install when nobody is at the terminal (#6617)"
+    },
+    {
+      "sha": "6cf4b5669703d9416d2ec276accff638d4a89ec6",
+      "date": "2026-10-28T07:48:40Z",
+      "subject": "fix(engine): a render on Windows opens no console windows (#6613)"
+    },
+    {
+      "sha": "1d97ed24c647553cefb251c59b1bccc48ff4f09c",
+      "date": "2026-10-28T07:36:32Z",
+      "subject": "perf(producer): the audio mix runs while capture starts its browsers (#6632)"
+    },
+    {
+      "sha": "3cc296845a5d02500c7e5f5f3b695e5d2e2b9b56",
+      "date": "2026-10-28T07:25:00Z",
+      "subject": "feat(core): name why a choppy preview window dropped frames (#6634)"
+    },
+    {
+      "sha": "7d83a3d219897cc99ba9a8067123523cdddf6eb4",
+      "date": "2026-10-28T07:24:46Z",
+      "subject": "perf(producer): drawElement films keep their parallel workers instead of dropping to one (#6633)"
+    },
+    {
+      "sha": "2b6d1764524528a26b8375d1d13be62f3e7767bf",
+      "date": "2026-10-28T07:24:34Z",
+      "subject": "perf(producer): worker sizing measures screenshot capture, one browser launch fewer (#6630)"
+    },
+    {
+      "sha": "dd7290ae8383a4161a7271b5702a8f65171ed4ab",
+      "date": "2026-10-28T06:58:39Z",
+      "subject": "fix(studio): the desktop card says the download opens hyperframes.studio (#6594)"
+    },
+    {
+      "sha": "b288ce01870a2b4cbae40706b5a04e55e6a2fb71",
+      "date": "2026-10-28T06:48:26Z",
+      "subject": "fix(cli): snapshot prints a progress line as each frame starts (#6618)"
+    },
+    {
+      "sha": "a54921e0f6c5115b38e83884fc0de21ca6916032",
+      "date": "2026-10-28T06:37:40Z",
+      "subject": "perf(studio): share video sources and keep frames for timeline thumbnails (#6629)"
+    },
+    {
+      "sha": "22e6da0233e905c39efc7a522e3a245f38decc2c",
+      "date": "2026-10-28T06:28:44Z",
+      "subject": "feat(cli): define every command through one factory and test them all as an agent (#6616)"
+    },
+    {
+      "sha": "815ff9ec8d755b52c050943765bf15c9c9b1e88e",
+      "date": "2026-10-28T06:25:14Z",
+      "subject": "perf(cli): check's craft pass skips clips the runtime has hidden (#6627)"
+    },
+    {
+      "sha": "bf7ebe961e522533fbbd9b94384198d662935ef5",
+      "date": "2026-10-28T05:16:42Z",
+      "subject": "fix(cli): local servers never bind a port Chromium refuses to load from (#6620)"
+    },
+    {
+      "sha": "310488b0501e17a6e92db646575cdef54251f880",
+      "date": "2026-10-28T05:15:06Z",
+      "subject": "fix(dx): unblock lint and the Claude pre-commit hook on Windows (#6619)"
+    },
+    {
+      "sha": "4f0bdfb520a7ccb54ca5a602936a3dd713089151",
+      "date": "2026-10-28T04:45:34Z",
+      "subject": "fix(cli): a new blank project starts on a black frame, not grey (#6614)"
+    },
+    {
+      "sha": "32e171ca91487c27f8d7c8b1f455b7c844a23e08",
+      "date": "2026-10-28T04:43:30Z",
+      "subject": "chore(codegen): resync cloud client from EF 354b4cf4 (#6608)"
+    },
+    {
+      "sha": "9eaf9efb69f37de0d6d98324bda1c65c9a924f2f",
+      "date": "2026-10-28T04:14:32Z",
+      "subject": "fix(core): a graded clip's canvas no longer comes out blank on a real GPU (#6615)"
+    },
+    {
+      "sha": "8b1f88b3c06175f43fbdbe1af6e53933847cb195",
+      "date": "2026-10-28T01:31:41Z",
+      "subject": "docs(audio): say the render sums tracks at unity and limits nothing (#5652)"
+    },
+    {
+      "sha": "c8052fbdae3416f9db93ebd33f873228ce8996b6",
+      "date": "2026-10-28T01:31:40Z",
+      "subject": "fix(producer): isPathInside accepts children whose names start with two dots (#5834)"
+    },
+    {
+      "sha": "e5b4f2bf78f57456ebbc415b0e047cde78eada72",
+      "date": "2026-10-28T00:49:27Z",
+      "subject": "chore: release v0.8.210 (#6600)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/actions/fetch-history/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/preflight/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/scripts/windows-window-probe.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/player-perf.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/regression.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-render.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/windows-window-probe.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/contributing/catalog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/custom.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/download-attribution.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/captions-and-recuts.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/motion-graphics.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/product-launch-video.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/rendering.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/voice-and-audio.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/packages/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/packages/engine.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/prompting/capstone.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/prompting/media-and-audio.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/prompting/motion.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/prompting/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/audio-effects.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/studio-app/edit-with-the-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/studio-app/export.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/studio-app/first-video.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/studio-app/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/aws-lambda/template.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/aws-lambda/video-function.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "gemini-extension.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/src/cdk/HyperframesRenderStack.snapshot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/src/cdk/HyperframesRenderStack.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/src/events.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/src/handler.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/src/handler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/src/s3Stitch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/aws-lambda/src/s3Stitch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/background-removal/coremlTemp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/background-removal/coremlTemp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/background-removal/inference.coremlTemp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/background-removal/inference.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/backgroundChecksWorker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/browser/ffmpeg.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/browser/ffmpeg.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/browser/launch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/capture/captureCompositionFrame.browserFallback.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/capture/captureCompositionFrame.pageCrash.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/capture/captureProxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/capture/localPage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/cli.agentMode.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/cloud/_gen/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/add.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/audio.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/auth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/auth/login.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/auth/logout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/auth/refresh.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/auth/status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/beats.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/benchmark.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/browser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/capture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/capture.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/catalog.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/catch-up.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/clean.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/cloud.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/cloud/delete.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/cloud/get.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/cloud/list.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/cloud/render.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/cloud/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/cloudrun.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/compare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/compositions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/docs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/doctor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/events.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/feedback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/figma.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/figma/asset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/figma/component.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/figma/tokens.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/grade-compare.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/info.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/init.interactive.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/init.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/keyframes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/lambda.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/lambda/policies.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/lambda/render-batch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/lambda/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/layout-audit.browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/layout-audit.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/layout-audit.chromium.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/layout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/lint.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/media-treatment.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/media-use.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/motion-signature.browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/normalize-audio.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/open.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/play.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/present.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/preview.startFailure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/preview.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/publish.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/remove-background.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/render/execute.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/render/plan.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/render/plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/skills.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/snapshot-contactSheet.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/commands/snapshot.progress.browser.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/telemetry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/timeline.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/transcribe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/tts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/upgrade.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/usage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/commands/validate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/fontLocalizeCli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/hangReport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/help.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/registry/publication.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/registry/publication.windowsRename.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/renderSetupWorker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/server/desktopRoutes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/telemetry/agent_runtime.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/telemetry/agent_runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/templates/blank.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/templates/blank/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/ui/colors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/ui/prompts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/ui/prompts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/cli/src/utils/attendedTerminal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/utils/attendedTerminal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/src/utils/autoUpdate.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: dirty; source lifecycle: active; upstream availability: available.",
+    "Working-tree modifications are excluded from committed change evidence.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

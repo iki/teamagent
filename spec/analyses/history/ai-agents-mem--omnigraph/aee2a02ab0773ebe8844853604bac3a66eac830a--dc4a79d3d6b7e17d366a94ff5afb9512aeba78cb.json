@@ -1,0 +1,185 @@
+{
+  "id": "ai-agents-mem--omnigraph",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/ModernRelay/omnigraph",
+  "report": "spec/projects/ai-agents-mem--omnigraph.md",
+  "analyzedSha": "aee2a02ab0773ebe8844853604bac3a66eac830a",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T14:20:32Z",
+  "observedSha": "dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb",
+      "date": "2026-10-28T02:58:11+01:00",
+      "subject": "fix(server): refuse an unadmitted OIDC subject without a sign-in challenge (#1185)"
+    },
+    {
+      "sha": "870060194c245d394a5c82a0e56e02d1fd26d60b",
+      "date": "2026-10-28T00:04:22Z",
+      "subject": "fix(load): admit a csv overwrite's memory once, one share per partition (#1187)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": "changelog.d/load-memory-admitted-once.changed.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changelog.d/oidc-not-admitted.fixed.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-api-types/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-cli/src/command_outcome.rs",
+      "previousPath": null
+    },
+    {
+      "status": "R088",
+      "path": "crates/omnigraph-gqt/cases/issue_1160_load_csv_integer_endpoint_memory.gqt",
+      "previousPath": "crates/omnigraph-gqt/cases/load_csv_integer_endpoint_memory.gqt"
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-gqt/cases/load_csv_keyed_overwrite_admits_at_the_smallest_limit.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph-gqt/cases/load_csv_memory_admission_refuses_before_the_parse.gqt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-server/src/handlers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-server/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-server/src/oidc_identity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-server/src/oidc_identity_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-server/tests/integration/auth_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-server/tests/integration/mcp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph-server/tests/integration/openapi.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph/src/engine/operators/csv_source.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph/src/engine/operators/fragment_sink.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph/src/engine/operators/hash_join.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/omnigraph/src/engine/operators/load_budget.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph/src/engine/operators/memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph/src/engine/operators/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph/src/engine/operators/validate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/omnigraph/src/validate/load.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dev/execution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/rfcs/0003-mcp-server-surface.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user/mutations/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user/operations/mcp.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user/operations/server.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user/operations/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user/queries/settings.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openapi.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

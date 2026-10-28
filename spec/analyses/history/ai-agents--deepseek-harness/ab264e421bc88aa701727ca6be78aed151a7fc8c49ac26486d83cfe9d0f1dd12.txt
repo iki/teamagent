@@ -1,0 +1,51 @@
+# deepseek-harness
+
+Source: [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `5badb15009ae1756c3afe0ae0cef1faafc290ccc`; commit timestamp `2026-10-03T11:48:13+08:00`; 14,208 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/README.md)):
+
+> DeepSeek Harness (`dsh`) is an open-source agent harness developed by DeepSeek AI. It is built on an **everything-is-a-plugin** architecture and powered by Cordis, whose design is described in _A Programming Paradigm for Spatiotemporal Composability_.
+
+Build/package evidence: [.github/review-ownership/requirements.txt](https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/.github/review-ownership/requirements.txt); [apps/cli/package.json](https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/apps/cli/package.json); [apps/desktop-host/package.json](https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/apps/desktop-host/package.json); [apps/desktop/package.json](https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/apps/desktop/package.json); [apps/web/package.json](https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/apps/web/package.json)
+
+License evidence: [LICENSE](https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `22ddee3792402c3e70ec5f86a63c3e3e895a2f60` (commit date `2026-10-23T19:48:59+08:00`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete persistence structural-review and format-archive/verification modules plus structural-review fixture; compatibility classifier, canonicalization/parser implementation, runtime replay and migration execution were not audited.
+
+The [persistence review helper](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-review.ts#L57-L179) keeps every root's classifier result intact while presenting deduplicated structural evidence by canonical type digest. Union variants are matched only through unique literal selectors, including unchanged alternatives in that uniqueness test; ambiguous matches remain additions/removals. Recursive pair tracking prevents a cycle from endlessly expanding without suppressing sibling evidence. The [fixture](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-review.spec.ts#L53-L136) describes ordinal/reordering independence, ambiguity, recursive/tuple cases and read-only command behavior. This is a useful separation between explanatory prose and deterministic compatibility policy; the underlying classifier and canonicalizer were not independently validated here.
+
+The [format loader](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-formats.ts#L41-L181) requires contiguous historical artifacts, one machine record, matching bilingual records, exact root digests and coverage of every reachable schema type. It rejects unknown record fields and distinguishes current-writer version requirements from legacy header allowances. The [archive path](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/scripts/persistence-formats.ts#L184-L220) permits only the current declared version, uses exclusive creation and removes obsolete source line metadata from the archived inventory. Its source reference is a tag or pull-request number rather than an immutable resolved commit, so Teamagent should additionally retain exact source identity when importing analogous history.
+
+These checks establish consistency of declared schema artifacts, not empirical compatibility of persisted records with a new reader/writer. Complete files are read into memory, the structural walk has no overall work budget, and refreshing multiple generated facts is a sequence of writes rather than an all-files transaction in this module. Teamagent should pair such structural evidence with bounded parsing, explicit migration/replay fixtures and atomic publication of the final versioned artifact set. No generator, classifier test or upstream runtime was executed.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed commit `f3803c96974ad4a94195fb97e5c637e9c2a3afe3` (commit date `2026-10-28T02:17:58+08:00`), compared with `22ddee3792402c3e70ec5f86a63c3e3e895a2f60`. Earlier findings remain historical evidence.
+
+**Scope:** Filesystem escalation argument handling and goal-update action dispatch. The complete changed-path inventory contains 2124 paths; the assessment below is limited to the cited branches.
+
+Filesystem calls repeating the standing mode return the existing policy without requesting a wider grant; different modes retain the explicit approval path and call/agent identity. Structured sandbox-denial codes survive error projection. See [packages/fs/tool-fs/src/sandbox.ts](https://github.com/deepseek-ai/deepseek-harness/blob/f3803c96974ad4a94195fb97e5c637e9c2a3afe3/packages/fs/tool-fs/src/sandbox.ts#L88-L134). Goal edit/pause/resume still require direct-human authority, while extraneous fields for other actions are now ignored and presentation selects fields by action. See [packages/goal/tool-goal/src/index.ts](https://github.com/deepseek-ai/deepseek-harness/blob/f3803c96974ad4a94195fb97e5c637e9c2a3afe3/packages/goal/tool-goal/src/index.ts#L255-L324).
+
+For Teamagent, compare requested authority against the current effective policy and preserve machine-readable denial causes. Ignored action fields should be explicitly normalized so approval previews cannot imply unused changes. These selected branches do not establish OS confinement, freshness at the eventual write, or independent correctness of a completed goal; the much larger runtime/UI delta remains outside scope.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.

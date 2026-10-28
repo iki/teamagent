@@ -1,0 +1,430 @@
+{
+  "id": "ai-agents--anything-llm",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/Mintplex-Labs/anything-llm",
+  "report": "spec/projects/ai-agents--anything-llm.md",
+  "analyzedSha": "9b1fcab141000eaba9f78ed131151de04904454b",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-25T11:20:42-07:00",
+  "observedSha": "0941fb03596862899f7df2bdeb022eb68d4216a7",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "0941fb03596862899f7df2bdeb022eb68d4216a7",
+      "date": "2026-10-27T16:04:07-07:00",
+      "subject": "Save chat prompt to thread before the AI responds (#6751)"
+    },
+    {
+      "sha": "e495cd26d2e310ec9365fb75eaecaa0207e68385",
+      "date": "2026-10-27T14:46:31-07:00",
+      "subject": "Stage hotdir uploads under unique names to prevent cross-request collisions (#6868)"
+    },
+    {
+      "sha": "2878ef1c64398a12bfbf3eb8174df76dd92c5ad7",
+      "date": "2026-10-27T14:34:27-07:00",
+      "subject": "feat(localai): read context window and capabilities from /v1/models/capabilities (#6872)"
+    },
+    {
+      "sha": "85c7b5235eee8e0ce87d5a234cbcb9d51f47bdbc",
+      "date": "2026-10-27T14:05:53-07:00",
+      "subject": "fix(embed): apply enabled/allowlist/session checks to history routes (#6870)"
+    },
+    {
+      "sha": "88ecba5fce7d54c5615eceb661e313cd8b4872c3",
+      "date": "2026-10-27T12:15:19-07:00",
+      "subject": "fix(frontend): toPercentString should respect decimals instead of rounding first (#6861)"
+    },
+    {
+      "sha": "f3ebec9c57e66f4a341870cefdea48eb062c32b0",
+      "date": "2026-10-27T12:01:11-07:00",
+      "subject": "fix: parse extensionless files when a parent folder name has a dot (#6857)"
+    },
+    {
+      "sha": "2247bfd7565955397f931634070ab766d36b329e",
+      "date": "2026-10-27T11:58:54-07:00",
+      "subject": "fix: retain individually selected document search results (#6829)"
+    },
+    {
+      "sha": "5edf32b96f06b507d8030c98da210ea1b3eee56f",
+      "date": "2026-10-27T11:28:41-07:00",
+      "subject": "Update OpenAI fallback models to gpt-5.6-luna (#6855)"
+    },
+    {
+      "sha": "575ffb19dba47eee9c9720cb56ece0154e7bdeda",
+      "date": "2026-10-27T11:19:59-07:00",
+      "subject": "fix: preserve Ollama and llmman images when compressing long prompts (#6840)"
+    },
+    {
+      "sha": "9a70c14efbe5c5033a3f68fd855a72d983f79e0f",
+      "date": "2026-10-27T11:17:39-07:00",
+      "subject": "fix: skip unnamed header rows in the agent flow API Call block (#6835)"
+    },
+    {
+      "sha": "36b0128c4238cfa503381ecd761d1c2ebb76efe8",
+      "date": "2026-10-27T11:16:39-07:00",
+      "subject": "fix: return the requested last lines in filesystem-read-text-file tail (#6833)"
+    },
+    {
+      "sha": "02db428d1538658910aff9c56f05d3fb99d3e555",
+      "date": "2026-10-27T11:03:50-07:00",
+      "subject": "fix: wrap markdown tables in a scroll container for narrow screens (#6852) (#6859)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "collector/processSingleFile/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/components/Modals/ManageWorkspace/Documents/hooks/useDocumentPicker.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/HistoricalMessage/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/components/WorkspaceChat/ChatContainer/ChatHistory/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/hooks/useTheme.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/ar/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/bg/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/ca/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/cs/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/da/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/de/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/en/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/es/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/et/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/fa/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/fr/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/he/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/hi/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/hr/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/hu/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/id/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/it/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/ja/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/ko/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/lo/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/lt/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/lv/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/nl/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/pl/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/pt_BR/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/ro/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/ru/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/sv/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/tr/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/vn/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/zh/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/locales/zh_TW/common.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/pages/WorkspaceSettings/ChatSettings/WorkspaceLLMSelection/index.jsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/utils/chat/markdown.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/utils/numbers.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/__tests__/utils/agentFlows/executors/api-call.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/__tests__/utils/helpers/chat/index.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/endpoints/api/document/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/endpoints/embed/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/endpoints/workspaces.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/endpoints/workspacesParsedFiles.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/models/systemSettings.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/AiProviders/localAi/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/AiProviders/openAi/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agentFlows/executors/api-call.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/example/websocket/websock-branding-collab.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/plugins/chat-history.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/plugins/filesystem/lib.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/providers/genericOpenAi.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/providers/localai.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/aibitat/providers/openai.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/ephemeral.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/agents/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/chats/apiChatHandler.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/chats/stream.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/collectorApi/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/files/multer.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/helpers/chat/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/helpers/chat/responses.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/helpers/customModels.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/utils/middleware/embedMiddleware.js",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

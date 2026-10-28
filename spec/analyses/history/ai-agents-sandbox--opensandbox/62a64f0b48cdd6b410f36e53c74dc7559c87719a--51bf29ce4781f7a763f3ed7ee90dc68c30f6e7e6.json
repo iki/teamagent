@@ -1,0 +1,125 @@
+{
+  "id": "ai-agents-sandbox--opensandbox",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/alibaba/OpenSandbox",
+  "report": "spec/projects/ai-agents-sandbox--opensandbox.md",
+  "analyzedSha": "62a64f0b48cdd6b410f36e53c74dc7559c87719a",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T20:35:47+08:00",
+  "observedSha": "51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6",
+      "date": "2026-10-28T14:54:32+08:00",
+      "subject": "Merge pull request #2454 from Pangjiping/fix/fsb-ublk-wedge-self-heal"
+    },
+    {
+      "sha": "67632510ca78940fcd59761b9cb43063e8dbc500",
+      "date": "2026-10-28T12:16:34+08:00",
+      "subject": "feat(fast-sandbox-env): attribute attached ublk devices to their owner in the failure dump"
+    },
+    {
+      "sha": "4abb6622602cf7c66ed4b1d6274a36424ab4a596",
+      "date": "2026-10-28T11:49:36+08:00",
+      "subject": "fix(fast-sandbox-env): address probe review findings on the heal re-probe and the del acknowledgement"
+    },
+    {
+      "sha": "67196d30250a444f8d7293fca335ba5d2d237f10",
+      "date": "2026-10-28T11:12:34+08:00",
+      "subject": "fix(fast-sandbox-env): retry the ublk module unload across the daemon restart window"
+    },
+    {
+      "sha": "7791d019edb9fc8e54b3a7b1f5842058a6734031",
+      "date": "2026-10-28T11:11:28+08:00",
+      "subject": "fix(fast-sandbox-env): classify the ublk probe on the body, heal around the module pin, detect char-node leaks"
+    },
+    {
+      "sha": "e14a2f490470a45fe034d3502dd472669f31e270",
+      "date": "2026-10-28T10:53:58+08:00",
+      "subject": "Merge pull request #2441 from hpliStartAgain/feat/osep-0023-vault-v2-safe-reader"
+    },
+    {
+      "sha": "b82dc2fa40e0a69e3c3f0483d06d349b53f37d1d",
+      "date": "2026-10-28T10:38:28+08:00",
+      "subject": "fix(fast-sandbox-env): probe the ublk add/del path before the overlaybd build and self-heal wedges"
+    },
+    {
+      "sha": "27e4fe6973ec0a479de6454e96dae93e0c4b6329",
+      "date": "2026-10-27T23:40:33+08:00",
+      "subject": "test(egress): apply gofmt to vault persistence tests"
+    },
+    {
+      "sha": "a3c5364738d90cb0d75ecace1c9e1b0fa18a4c74",
+      "date": "2026-10-27T21:06:15+08:00",
+      "subject": "fix(egress): protect lazy vault materialization after null bindings"
+    },
+    {
+      "sha": "eacf8176dae01173b8c3c47be9173d7c51b28b99",
+      "date": "2026-10-27T17:41:11+08:00",
+      "subject": "fix(egress): fail closed on Vault v2 state writes"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_actions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_vault.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_vault_persist.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_vault_persist_linux_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_vault_persist_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/fastsandbox_vault_snapshot.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "components/egress/fastsandbox_vault_v2_compat_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "components/egress/pkg/credentialvault/vaultfile.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/fast-sandbox-env/integration-env.sh",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

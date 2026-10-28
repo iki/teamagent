@@ -2,12 +2,11 @@
 
 Source: [gastown](https://github.com/gastownhall/gastown) · [Analysis](../../projects/ai-agents--gastown.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1`; commit date: 2026-10-25T21:39:22Z; review date: 2026-10-28T08:26:04.502Z; observed SHA: `de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `466aa41c83ee73b1fa0eb79eb9d172fb1eca9476`; commit date: 2026-10-28T05:20:19Z; review date: 2026-10-28T14:29:27.414Z; observed SHA: `466aa41c83ee73b1fa0eb79eb9d172fb1eca9476`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/gastown/compare/de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1...de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/gastownhall/gastown/compare/466aa41c83ee73b1fa0eb79eb9d172fb1eca9476...466aa41c83ee73b1fa0eb79eb9d172fb1eca9476). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

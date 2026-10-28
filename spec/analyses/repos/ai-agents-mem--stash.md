@@ -2,12 +2,11 @@
 
 Source: [stash](https://github.com/fergana-labs/stash) · [Analysis](../../projects/ai-agents-mem--stash.md) · [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `40c70217107472f6e6c5c15e9481ab9dd41096f1`; commit date: 2026-10-27T17:03:05Z; review date: 2026-10-28T08:47:42.123Z; observed SHA: `40c70217107472f6e6c5c15e9481ab9dd41096f1`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `344182c878084bc851eb4f1e737227b940c8764d`; commit date: 2026-10-27T21:04:23Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `344182c878084bc851eb4f1e737227b940c8764d`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/fergana-labs/stash/compare/40c70217107472f6e6c5c15e9481ab9dd41096f1...40c70217107472f6e6c5c15e9481ab9dd41096f1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/fergana-labs/stash/compare/344182c878084bc851eb4f1e737227b940c8764d...344182c878084bc851eb4f1e737227b940c8764d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

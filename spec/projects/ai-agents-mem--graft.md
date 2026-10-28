@@ -37,6 +37,18 @@ Evidence: [src/graph/extract-cache.ts:65-100](https://github.com/NanoNets/Graft/
 
 **Scope and limits:** Scoped static inspection of cache identity, LSP process/request handling and HTTP admission in the 810-path comparison. Full extraction/resolution, page-token implementation, queue/worker internals and relevant Windows fixtures were not audited in this pass. No server, language server, source checkout code or performance test was executed.
 
+## Follow-up change review — 2026-10-28
+
+**Portable parsers still require pinned grammar/runtime identity and explicit lifetime management.** Reviewed commit `19865ff4274dc77d977b5519c920dc71e1b54aa3` (commit date `2026-10-28T03:27:32+05:30`), compared with `25ea4c7488b6f931f39ec8b95de0070ef954f5a8`. The complete no-rename Git path inventory contains 35 changed paths.
+
+The depth parser defaults to provisioned WASM grammars, loads them once, supplies source in 16,384-code-unit chunks and frees each WASM tree in finally. A parser trap invalidates the shared parser so the next parse creates a new instance. Runtime initialization is memoized; depth pins a different tree-sitter core because grammar behavior depends on that core. Fixtures compare grammar hashes, package/source versions and vendored bytes/licenses. Their parity claims remain upstream claims until reproduced.
+
+Evidence: [src/graph/depth-parser.ts:106-170](https://github.com/NanoNets/Graft/blob/19865ff4274dc77d977b5519c920dc71e1b54aa3/src/graph/depth-parser.ts#L106-L170) · [src/graph/wasm-runtime.ts:1-58](https://github.com/NanoNets/Graft/blob/19865ff4274dc77d977b5519c920dc71e1b54aa3/src/graph/wasm-runtime.ts#L1-L58) · [test/depth-grammars.test.ts:32-87](https://github.com/NanoNets/Graft/blob/19865ff4274dc77d977b5519c920dc71e1b54aa3/test/depth-grammars.test.ts#L32-L87).
+
+**Harness consequence:** Include runtime and grammar hashes in extraction cache identity. Provision trusted parser artifacts separately, invalidate broken parser instances, and scope native/WASM tree ownership; portability alone does not establish semantic parity or isolation.
+
+**Scope and limits:** Reviewed depth parser/runtime and grammar-provisioning fixtures; no WASM/native parity or installation experiment was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graft](https://github.com/NanoNets/Graft); analyzed commit `25ea4c7488b6f931f39ec8b95de0070ef954f5a8`; commit date 2026-10-27T21:15:11+05:30; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graft.md).
+Analysis metadata: source [graft](https://github.com/NanoNets/Graft); analyzed commit `19865ff4274dc77d977b5519c920dc71e1b54aa3`; commit date 2026-10-28T03:27:32+05:30; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graft.md).
 <!-- teamagent-analysis:end -->

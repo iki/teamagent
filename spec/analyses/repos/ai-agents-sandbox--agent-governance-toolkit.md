@@ -2,12 +2,11 @@
 
 Source: [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit) · [Analysis](../../projects/ai-agents-sandbox--agent-governance-toolkit.md) · [agents](../../agents.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `9bfdd5f4ade7998ca3f0068e7b88764eab132911`; commit date: 2026-10-27T08:46:34-07:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `9bfdd5f4ade7998ca3f0068e7b88764eab132911`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `4eca1f5b44d30ebe5e9745ac36ca394f887e617b`; commit date: 2026-10-28T01:30:29-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `4eca1f5b44d30ebe5e9745ac36ca394f887e617b`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/microsoft/agent-governance-toolkit/compare/9bfdd5f4ade7998ca3f0068e7b88764eab132911...9bfdd5f4ade7998ca3f0068e7b88764eab132911). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/microsoft/agent-governance-toolkit/compare/4eca1f5b44d30ebe5e9745ac36ca394f887e617b...4eca1f5b44d30ebe5e9745ac36ca394f887e617b). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

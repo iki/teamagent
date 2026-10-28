@@ -2,12 +2,11 @@
 
 Source: [plan.loop-engineering](https://github.com/cobusgreyling/loop-engineering) · [Analysis](../../projects/ai-skills--plan.loop-engineering.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `9fb7538bb4c858b3b00dd8d14fc701a20c1e1483`; commit date: 2026-10-27T08:02:05Z; review date: 2026-10-28T09:45:33.667Z; observed SHA: `9fb7538bb4c858b3b00dd8d14fc701a20c1e1483`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e`; commit date: 2026-10-28T08:02:11Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cobusgreyling/loop-engineering/compare/9fb7538bb4c858b3b00dd8d14fc701a20c1e1483...9fb7538bb4c858b3b00dd8d14fc701a20c1e1483). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/cobusgreyling/loop-engineering/compare/d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e...d6d9ead4ce2ebc8b875f0bbc94fac4ff8611026e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

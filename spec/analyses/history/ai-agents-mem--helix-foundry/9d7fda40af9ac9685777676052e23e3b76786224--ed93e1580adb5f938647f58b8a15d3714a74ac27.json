@@ -1,0 +1,405 @@
+{
+  "id": "ai-agents-mem--helix-foundry",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/helixdb/helix-foundry",
+  "report": "spec/analyses/unreviewed/ai-agents-mem--helix-foundry.md",
+  "analyzedSha": "9d7fda40af9ac9685777676052e23e3b76786224",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T17:12:10Z",
+  "observedSha": "ed93e1580adb5f938647f58b8a15d3714a74ac27",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ed93e1580adb5f938647f58b8a15d3714a74ac27",
+      "date": "2026-10-27T20:44:25Z",
+      "subject": "Merge pull request #151 from HelixDB/dev"
+    },
+    {
+      "sha": "00b0b747071ca48986d2db207bd752691389b9e9",
+      "date": "2026-10-27T20:16:05Z",
+      "subject": "Merge pull request #150 from HelixDB/run-release-0.1.1"
+    },
+    {
+      "sha": "7d85b1ae010173897b9afd4fba26f91c485a1edb",
+      "date": "2026-10-27T20:07:26Z",
+      "subject": "Merge pull request #149 from HelixDB/dev"
+    },
+    {
+      "sha": "ce5bff17337f22b9de6993b580bff917a9daa360",
+      "date": "2026-10-27T19:34:55Z",
+      "subject": "Run Foundry's 0.1.1 site and foundry images by default, now they are published"
+    },
+    {
+      "sha": "120c6bcce85746998dfe229d6c2ecb9162ef9aa7",
+      "date": "2026-10-27T19:34:22Z",
+      "subject": "Merge pull request #148 from HelixDB/zero-config-local"
+    },
+    {
+      "sha": "4df97d1b3968fa9d14d710f2de7b3052d847d6fa",
+      "date": "2026-10-27T19:24:12Z",
+      "subject": "Build the image's workers in their test on loopback ports of the test's own"
+    },
+    {
+      "sha": "9323b79de082ee53cd40e89aeeca10b27f76fb91",
+      "date": "2026-10-27T18:39:38Z",
+      "subject": "Choose the stack test's Ollama model from the picker, and note the AI default's detection and the picker in AGENTS.md"
+    },
+    {
+      "sha": "1976964ee90d7ae0779628ac752caa44f95075f8",
+      "date": "2026-10-27T18:39:38Z",
+      "subject": "Read the local site's token from a file, and choose Ollama's model among the server's in Settings › AI models"
+    },
+    {
+      "sha": "5e776ca4b1ac8db2d73e6c48fa62d444dbfecd36",
+      "date": "2026-10-27T18:18:53Z",
+      "subject": "Format AGENTS.md and the compose test"
+    },
+    {
+      "sha": "1929bb729d6c75f99f405bd0ca91ba35ccce0b28",
+      "date": "2026-10-27T18:16:22Z",
+      "subject": "Run Foundry locally with docker compose up and nothing else"
+    },
+    {
+      "sha": "80f67f531dc05c253522339e82bfe2107ab88104",
+      "date": "2026-10-27T18:16:22Z",
+      "subject": "Format the AI default's detection, and check every part shares the one it stores into"
+    },
+    {
+      "sha": "e1761be8debf1196974eb58ccee15cfc58634be5",
+      "date": "2026-10-27T17:56:43Z",
+      "subject": "Write a local install's secrets once with foundry init-secrets, and read them from local.secrets_dir"
+    },
+    {
+      "sha": "1e8470e1d05c56ed6960c66afe552656c736f5d3",
+      "date": "2026-10-27T17:56:36Z",
+      "subject": "Find a local install's AI default on its machine when it names none"
+    },
+    {
+      "sha": "83ab403e321e1b4d597b8d710a121d24b651f538",
+      "date": "2026-10-27T17:56:36Z",
+      "subject": "Make the owner's first workspace, My workspace, as a local install first starts"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/foundry-image.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ai/deployment.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ai/deployment_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ai/detect/detect.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/ai/detect/detect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ai/resolve.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/ai/validate.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/ai.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/api/ai_detect_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/deps.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/api/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/foundry.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/front_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/run.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/cmd/foundry/run_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/cmd/foundry/secrets.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/cmd/foundry/secrets_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/local/directory/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/local/directory/service_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/local/directory/store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/local/methods.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/helix/foundry/v1/foundry.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/helix/foundry/v1/foundry.pb.gw.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/helix/foundry/v1/foundry_grpc.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/go/helix/foundry/v1/types.pb.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/gen/openapiv2/helix/foundry/v1/foundry.swagger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/helix/foundry/v1/foundry.proto",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/pb/proto/helix/foundry/v1/types.proto",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "contract/foundry.swagger.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "local/.env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "local/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "local/compose.gpu.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "local/compose.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "local/setup.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/routes/ai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mock/state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/server/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/server/papi-allowlist.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/shared/wfe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/web/areas/workspace/ai-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/web/areas/workspace/ai.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/web/main.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/e2e/local/local.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/stack/run.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/stack/stack.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/ai-mock.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/ai-render.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/ai-settings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/local-compose.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "tests/unit/local-setup.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

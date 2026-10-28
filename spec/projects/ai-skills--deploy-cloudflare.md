@@ -32,6 +32,18 @@ The [Gateway documentation](https://github.com/cloudflare/cloudflare-docs/blob/0
 
 The [renderer tests](https://github.com/cloudflare/cloudflare-docs/blob/021cca55c71563adc33f365f7cd1904e379a0d92/.flue/lib/github-repo-tools.test.ts) distinguish bounded line spans, continuation positions, invalid ranges and binary metadata without dumping binary content. These are useful evidence-reader fixtures, but omit an oversized single-line case in this inspected test file and do not prove upstream response-body bounds. Treat the documentation as revision-specific provider guidance, not verified account state. No cloud account, deployment, renderer or tests were exercised.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `998668d7590142a7db2737b48a0432e33cda9067` (commit date `2026-10-28T09:58:21Z`), compared with `021cca55c71563adc33f365f7cd1904e379a0d92`. Earlier findings remain historical evidence.
+
+**Scope:** Official documentation changes for MCP v2 dependency entry points and performance-timer environment differences; not a Cloudflare runtime source or deployment test. The complete changed-path inventory contains 25 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The migration guide distinguishes optional server/SDK peers from the required client and warns that a legacy agents/mcp import still loads v1 code even for client helpers. The narrow client entry point and the x402 v1 typing exception demonstrate why a skill's example must be matched to installed package versions and import surfaces before use. This is pinned vendor guidance, not independent verification of those packages. [src/content/docs/agents/model-context-protocol/guides/migrate-to-mcp-sdk-v2.mdx](https://github.com/cloudflare/cloudflare-docs/blob/998668d7590142a7db2737b48a0432e33cda9067/src/content/docs/agents/model-context-protocol/guides/migrate-to-mcp-sdk-v2.mdx#L46-L58).
+
+The performance guide explicitly distinguishes local timer behavior and deployed CPU profiling. Local elapsed measurements should not be promoted into production CPU claims. Teamagent should version compatible dependency examples and measure the relevant runtime; an installed deployment skill does not select or upgrade the project's dependencies. [src/content/docs/workers/runtime-apis/performance.mdx](https://github.com/cloudflare/cloudflare-docs/blob/998668d7590142a7db2737b48a0432e33cda9067/src/content/docs/workers/runtime-apis/performance.mdx#L37-L45).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `021cca55c71563adc33f365f7cd1904e379a0d92`; commit date 2026-10-27T17:40:19Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
+Analysis metadata: source [deploy-cloudflare](https://github.com/cloudflare/cloudflare-docs); analyzed commit `998668d7590142a7db2737b48a0432e33cda9067`; commit date 2026-10-28T09:58:21Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-cloudflare.md).
 <!-- teamagent-analysis:end -->

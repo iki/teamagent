@@ -42,6 +42,18 @@ Evidence: [python/freetoken/engine/cache_budget.py:1-140](https://github.com/Fla
 
 **Scope and limits:** Scoped source and arithmetic-fixture inspection within a 522-path comparison. No upstream tests, GPU allocation, model weights, kernels, runtime cache rebuild or throughput/quality benchmark ran; other changed engine/server/model code remains outside this slice.
 
+## Follow-up change review — 2026-10-28
+
+**Speculative decode rollback frees only pages beyond committed tokens.** Reviewed commit `a2ce636083a0137571ba505768ad36be5f7a393b` (commit date `2026-10-27T23:56:59-07:00`), compared with `9221fd7fc2b923813d7f9563c6c08f0a38497590`. The complete no-rename Git path inventory contains 42 changed paths.
+
+The new rollback_tail rounds the retained and dropped token boundaries up to whole pages, frees the discarded slice and applies the sliding-window allocator release when enabled. Its contract requires a lazy-free region after the producing forward has drained. The fixture repeats widened decode/partial commit twice over page sizes one/four and multiple cached lengths, asserting free capacity and no overlap with retained pages.
+
+Evidence: [python/freetoken/scheduler/cache.py:637-649](https://github.com/FlashML-org/FreeToken/blob/a2ce636083a0137571ba505768ad36be5f7a393b/python/freetoken/scheduler/cache.py#L637-L649) · [tests/scheduler/test_rollback_tail.py:1-36](https://github.com/FlashML-org/FreeToken/blob/a2ce636083a0137571ba505768ad36be5f7a393b/tests/scheduler/test_rollback_tail.py#L1-L36).
+
+**Harness consequence:** Model speculative work as provisional resource ownership. Cancellation/rollback must wait for in-flight device work and release only uncommitted pages; allocator reuse correctness is distinct from generation throughput.
+
+**Scope and limits:** Reviewed the new rollback method and complete focused fixture; GPU execution, sliding-window behavior and broader attention changes were not benchmarked. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [freetoken](https://github.com/FlashML-org/FreeToken); analyzed commit `9221fd7fc2b923813d7f9563c6c08f0a38497590`; commit date 2026-10-26T22:38:53-07:00; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--freetoken.md).
+Analysis metadata: source [freetoken](https://github.com/FlashML-org/FreeToken); analyzed commit `a2ce636083a0137571ba505768ad36be5f7a393b`; commit date 2026-10-27T23:56:59-07:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-run--freetoken.md).
 <!-- teamagent-analysis:end -->

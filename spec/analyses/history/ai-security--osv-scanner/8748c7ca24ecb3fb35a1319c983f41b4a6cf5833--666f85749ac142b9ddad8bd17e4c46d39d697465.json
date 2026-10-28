@@ -1,0 +1,180 @@
+{
+  "id": "ai-security--osv-scanner",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/google/osv-scanner",
+  "report": "spec/projects/ai-security--osv-scanner.md",
+  "analyzedSha": "8748c7ca24ecb3fb35a1319c983f41b4a6cf5833",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T03:45:34Z",
+  "observedSha": "666f85749ac142b9ddad8bd17e4c46d39d697465",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "666f85749ac142b9ddad8bd17e4c46d39d697465",
+      "date": "2026-10-28T15:01:14+11:00",
+      "subject": "refactor: clean up `internal/config` layout and function naming (#3180)"
+    },
+    {
+      "sha": "b23873715edabde7198f8422a23075a4b64ce681",
+      "date": "2026-10-28T15:00:21+11:00",
+      "subject": "fix(output): don't say \"no fix available\" for licence violations without vulnerabilities (#3156)"
+    },
+    {
+      "sha": "38e91d5b801a0e6fc0d805d6f0569e40079763e7",
+      "date": "2026-10-28T03:06:17Z",
+      "subject": "chore(deps): update module golang.org/x/net to v0.62.0 [security] (#3181)"
+    },
+    {
+      "sha": "f1db208c8cbb3167793c720716ec0b1244f99ad5",
+      "date": "2026-10-28T12:54:30+13:00",
+      "subject": "fix: restrict HTML report server to loopback (#3169)"
+    },
+    {
+      "sha": "9e89becd2c915847b34bde8fab1aee9d6477a9ee",
+      "date": "2026-10-28T12:11:55+13:00",
+      "subject": "feat: warn about unused overrides (#3173)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/internal/helper/getters.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/internal/helper/misc.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/internal/testcmd/testdata/vuln_severities.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/__snapshots__/command_test.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/osv-scanner/scan/source/command_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Config_UnusedOverrides_unexpired_license_overrides_usage_not_reported_by_default.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Config_UnusedOverrides_unused_license_overrides_reported_when_checking_licenses.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Config_UnusedOverrides_unused_license_overrides_reported_when_checking_licenses_grpc.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Config_UnusedOverrides_unused_license_overrides_reported_when_summarizing_licenses.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/cassettes/TestCommand_Config_UnusedOverrides_unused_license_overrides_reported_when_summarizing_licenses_grpc.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/osv-scanner/scan/source/testdata/osv-scanner-expired-overrides-config.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/config_internal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/ignores.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/config/manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/config/overrides.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/output/__snapshots__/table_test.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/output/table.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/scalibrannotator/filter/filter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/scalibrannotator/filter/filter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/osvscanner/filter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/osvscanner/osvscanner.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/osvscanner/vulnerability_result.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pkg/osvscanner/vulnerability_result_internal_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

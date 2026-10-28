@@ -1,0 +1,980 @@
+{
+  "id": "ai-agents-swarm--crewai",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/crewaiinc/crewai",
+  "report": "spec/projects/ai-agents-swarm--crewai.md",
+  "analyzedSha": "3adab2895836ddde6a2150867e2b998a0a1f5334",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T13:18:16-03:00",
+  "observedSha": "b95aa8bbdea6bc02b465a35fa8da54fecf82f528",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b95aa8bbdea6bc02b465a35fa8da54fecf82f528",
+      "date": "2026-10-28T08:21:48Z",
+      "subject": "fix(ci): respect maintainer PR reopen actions (#8701)"
+    },
+    {
+      "sha": "5048e25ad7b42f64ff0e7c160ae7f4254cd26556",
+      "date": "2026-10-28T04:49:05-03:00",
+      "subject": "feat(cli): add crewai skill search to list the organization's skills (#8604)"
+    },
+    {
+      "sha": "43e2963b3bec8c3de8a976b42f56caf0911edbd2",
+      "date": "2026-10-28T03:38:32-03:00",
+      "subject": "feat(cli): pass crewai run --inputs to a python flow (#8606)"
+    },
+    {
+      "sha": "a7852568bccbe91d24ad2ea0c2432d30c2930194",
+      "date": "2026-10-28T02:27:04-03:00",
+      "subject": "docs(concepts): document agent planning with planningconfig and migrate reasoning page (#8607)"
+    },
+    {
+      "sha": "a1be1275dee4ad824ca1fe300785ae82a1552a6f",
+      "date": "2026-10-28T02:10:32-03:00",
+      "subject": "feat(cli): add deploy create --zip and print the commit a zip is built from (#8602)"
+    },
+    {
+      "sha": "f3d0099d34929b5421468d9dbbb57dbd0e67a0ba",
+      "date": "2026-10-28T01:49:03-03:00",
+      "subject": "fix(events): stop rich live panel repainting into redirected logs (#8611)"
+    },
+    {
+      "sha": "eb68e0a313d939764baa880513ec98f3c8b414e6",
+      "date": "2026-10-28T01:47:47-03:00",
+      "subject": "fix(agent): load from_repository set inside an agent's config (#8610)"
+    },
+    {
+      "sha": "ed5ec2eb33a9a3999a13b7d9e5ceffb0dc65ac5d",
+      "date": "2026-10-28T01:45:26-03:00",
+      "subject": "fix(checkpoint): save unrestorable callbacks as null instead of breaking restore (#8596)"
+    },
+    {
+      "sha": "eb66d6207abb6d64e1114191458b6e4b1153a822",
+      "date": "2026-10-28T01:43:54-03:00",
+      "subject": "fix(cli): show amp's reason on a 401 and let the run app's deploy log in again (#8594)"
+    },
+    {
+      "sha": "c27922905bd7a026218cf6e7862f07381abe97ea",
+      "date": "2026-10-28T01:43:01-03:00",
+      "subject": "fix(cli): wait for the whole device-code lifetime at login and exit 1 on timeout (#8593)"
+    },
+    {
+      "sha": "67e37c1cc3dedef26ee28f255a56094106227e05",
+      "date": "2026-10-28T01:42:09-03:00",
+      "subject": "fix(flow): keep module identity when crewai rebuilds forward-ref namespaces (#8588)"
+    },
+    {
+      "sha": "8e3c92068870af0f028232f1a347532e14bfd37e",
+      "date": "2026-10-28T01:15:39-03:00",
+      "subject": "fix(cli): crewai update prints the upgrade commands instead of rewriting uv projects (#8592)"
+    },
+    {
+      "sha": "509b6ea7e37b0d4ca7d0c474e9def93a444ecea3",
+      "date": "2026-10-28T01:14:44-03:00",
+      "subject": "fix(cli): return the post from the flow scaffold's last step (#8591)"
+    },
+    {
+      "sha": "7483a67604eaac7a2e0b5c7687eafcfa4c114a1f",
+      "date": "2026-10-28T01:13:46-03:00",
+      "subject": "fix(cli): exit 1 when a crewai+ command needs a login (#8590)"
+    },
+    {
+      "sha": "69283d450784da9a0722d1598cc7623a3394597c",
+      "date": "2026-10-28T01:11:43-03:00",
+      "subject": "fix(cli): exit with guidance when a python conversational flow has no terminal (#8589)"
+    },
+    {
+      "sha": "d92b60d64ef0cf4e25d54e11f72b1dbf5d10da78",
+      "date": "2026-10-28T01:11:13-03:00",
+      "subject": "test: stop two tracing and telemetry fixtures leaking into later tests (#8698)"
+    },
+    {
+      "sha": "256a2d03be4e43b3e9e042fee4205efc5642533e",
+      "date": "2026-10-28T01:09:57-03:00",
+      "subject": "fix(flow): export persist from crewai.flow.flow (#8587)"
+    },
+    {
+      "sha": "a3f76f0af4a9a85f2c98a18265a2cdd955a7d75e",
+      "date": "2026-10-28T01:09:28-03:00",
+      "subject": "fix(cli): load json crews in crewai chat (#8586)"
+    },
+    {
+      "sha": "5f38c52834071f512e1ea822401fb39747d41398",
+      "date": "2026-10-28T00:04:30-03:00",
+      "subject": "fix(core): treat an env tracing false as off in is_tracing_enabled (#8608)"
+    },
+    {
+      "sha": "76784a02f9a7342866d80400ffe067d1b3a28843",
+      "date": "2026-10-27T23:59:24-03:00",
+      "subject": "ci: run the lib/cli, crewai-core and crewai-files tests in the pr matrix (#8603)"
+    },
+    {
+      "sha": "a71ff1f245117addd9f3bce26598390bd765bf9d",
+      "date": "2026-10-28T02:41:49Z",
+      "subject": "fix(cli): keep deeply nested json as text in the run tui on python 3.12 (#8696)"
+    },
+    {
+      "sha": "cf8af65d10aceb47a8d0b757c2bf423e16796345",
+      "date": "2026-10-27T22:19:19-03:00",
+      "subject": "test(cli): stop the memory-save drain and consent tests failing under load (#8612)"
+    },
+    {
+      "sha": "af9b35c446f114de053a7f943545a618fa53f1c6",
+      "date": "2026-10-27T22:10:03-03:00",
+      "subject": "fix(cli): let the json crew runner load against an older crewai-core (#8605)"
+    },
+    {
+      "sha": "6dd2a3a6cffb875fa516f5547c8d9c8d3a20a056",
+      "date": "2026-10-27T23:23:38Z",
+      "subject": "fix(llm): report token usage for LiteLLM tool-call and structured-output calls (#8678)"
+    },
+    {
+      "sha": "bc5728b8852ccb8ef768864fb6f8d640c4b9d9af",
+      "date": "2026-10-27T20:03:47-03:00",
+      "subject": "[docs-freeze] docs: snapshot and changelog for v1.15.32 (#8692)"
+    },
+    {
+      "sha": "e9efcde01662c31517ff7f9d915fbb7edc8f0e05",
+      "date": "2026-10-27T22:56:58Z",
+      "subject": "feat: bump versions to 1.15.32 (#8691)"
+    },
+    {
+      "sha": "ca3243d29be59306741a990eec2e618cc993dcd5",
+      "date": "2026-10-27T14:36:11-07:00",
+      "subject": "[docs-freeze] docs: snapshot and changelog for v1.15.31 (#8684)"
+    },
+    {
+      "sha": "25d91fd078cfc295e127f017de0a6c0f459a75a4",
+      "date": "2026-10-27T21:33:27Z",
+      "subject": "Lorenze/fix/failing flaky tests (#8686)"
+    },
+    {
+      "sha": "2733f8ee620e893bb02b7e28f5b6316dfa57e9d8",
+      "date": "2026-10-27T20:36:27Z",
+      "subject": "feat: bump versions to 1.15.31 (#8683)"
+    },
+    {
+      "sha": "2a404d5524f8399f46394099f6253ed90aa11e00",
+      "date": "2026-10-27T17:29:56-03:00",
+      "subject": "feat(flow): support conversational flow context compaction (#8627)"
+    },
+    {
+      "sha": "83b5288e5d322d2cb8260b5ecdebd11181a1c039",
+      "date": "2026-10-27T12:47:46-07:00",
+      "subject": "fix: update vulnerable audit dependencies (#8676)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/agents-md.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/first-contributor-welcome.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ftc-require-issue.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/docs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/checkpointing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/planning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/concepts/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/guides/flows/conversational-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ar/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/checkpointing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/planning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/concepts/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/guides/flows/conversational-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/en/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/checkpointing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/planning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/concepts/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/guides/flows/conversational-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/ko/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/checkpointing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/planning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/concepts/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/guides/flows/conversational-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/edge/pt-BR/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/api-reference/inputs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/api-reference/introduction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/api-reference/kickoff.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/api-reference/resume.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/api-reference/status.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/changelog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/agent-capabilities.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/checkpointing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/cli.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/collaboration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/crews.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/event-listener.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/files.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/knowledge.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/llms.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/memory.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/planning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/processes.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/production-architecture.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/reasoning.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/testing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/concepts/training.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/examples/cookbooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/examples/example.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/advanced/customizing-prompts.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/advanced/fingerprinting.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/agents/crafting-effective-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/coding-tools/agents-md.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/coding-tools/build-with-ai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/concepts/evaluating-use-cases.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/crews/first-crew.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/flows/conversational-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/flows/first-flow.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/flows/inputs-id-deprecation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/flows/mastering-flow-state.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/frontend/channels.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/frontend/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/migration/migrating-from-langgraph.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/migration/upgrading-crewai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/guides/tools/publish-custom-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/index.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/installation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/introduction.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/a2a-agent-delegation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/before-and-after-kickoff-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/bring-your-own-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/coding-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/conditional-tasks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/create-custom-tools.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/custom-llm.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/custom-manager-agent.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/customizing-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/dalle-image-generation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/execution-boundary-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/execution-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/force-tool-output-as-result.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/hierarchical-process.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/human-feedback-in-flows.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/human-in-the-loop.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/human-input-on-execution.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/kickoff-async.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/kickoff-for-each.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/litellm-removal-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/llm-connections.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/llm-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/llm-selection-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/multimodal-agents.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/replay-tasks-from-latest-crew-kickoff.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/sequential-process.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/streaming-crew-execution.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/streaming-flow-execution.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/streaming-runtime-contract.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/tool-hooks.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/learn/using-annotations.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/mcp/dsl-integration.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/mcp/multiple-servers.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/mcp/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/mcp/security.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/mcp/sse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/mcp/stdio.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/mcp/streamable-http.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/arize-phoenix.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/braintrust.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/datadog.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/galileo.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/langdb.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/langfuse.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/langtrace.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/maxim.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/mlflow.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/neatlogs.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/openlit.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/opik.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/patronus-evaluation.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/portkey.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/tracing.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/truefoundry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/observability/weave.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/quickstart.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/skills.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/snippets/snippet-intro.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/telemetry.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/aimindtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/codeinterpretertool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/dalletool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/daytona.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/langchaintool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/llamaindextool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/overview.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/ragtool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/ai-ml/visiontool.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/v1.15.31/ar/tools/automation/apifyactorstool.mdx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -32,6 +32,18 @@ The [trusted-proxy helper](https://github.com/beenuar/AiSOC/blob/3164fb54343f341
 
 The [realtime tests](https://github.com/beenuar/AiSOC/blob/3164fb54343f341de87eff4f42792690a3fb308d/services/realtime/test/auth.test.ts) cover audience/type/tenant/signature checks and refusal of missing or known placeholder secrets. Their tampering fixture proves that decoded signature bytes actually change, avoiding a base64 padding-bit false negative. A locally mirrored signer is not cross-language integration evidence, and the advisory identifier in comments was not independently verified. Adapt the adversarial fixture and explicit tenant contract; do not infer enforcement at unread call sites. No credentials, requests or tests were exercised.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `2af4d0ba9b2b347df5f17cfd67924a2862530bd1` (commit date `2026-10-28T00:16:09-07:00`), compared with `3164fb54343f341de87eff4f42792690a3fb308d`. Earlier findings remain historical evidence.
+
+**Scope:** Kill-switch state reader and distinct platform-write permission; dispatch integration and all other changed services remain outside this focused inspection. The complete changed-path inventory contains 80 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The new reader preserves an unreadable control as an engaged, unknown state and caches successful reads. A deliberately unconfigured DSN returns a released state; that is a separate deployment condition from a failed configured control. The database connection has a five-second connection timeout, but the inspected query and close awaits have no independently specified deadline. Cache identity uses tenant scope, not the DSN or credential generation. [services/actions/app/services/kill_switch.py](https://github.com/beenuar/AiSOC/blob/2af4d0ba9b2b347df5f17cfd67924a2862530bd1/services/actions/app/services/kill_switch.py#L131-L152); [services/actions/app/services/kill_switch.py](https://github.com/beenuar/AiSOC/blob/2af4d0ba9b2b347df5f17cfd67924a2862530bd1/services/actions/app/services/kill_switch.py#L165-L200).
+
+The permission catalogue separates platform-wide switch writes from tenant settings. Teamagent should retain both scope and unreadability in its stop-control contract, invalidate cached decisions when the control source changes, and bound each blocking phase. This reader alone does not prove that every execution path consults the switch. Its logged exception text is truncated, but truncation alone does not redact credentials. [services/api/app/core/rbac_catalog.py](https://github.com/beenuar/AiSOC/blob/2af4d0ba9b2b347df5f17cfd67924a2862530bd1/services/api/app/core/rbac_catalog.py#L98-L111).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `3164fb54343f341de87eff4f42792690a3fb308d`; commit date 2026-10-27T10:09:11-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
+Analysis metadata: source [aisoc](https://github.com/beenuar/AiSOC); analyzed commit `2af4d0ba9b2b347df5f17cfd67924a2862530bd1`; commit date 2026-10-28T00:16:09-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-security--aisoc.md).
 <!-- teamagent-analysis:end -->

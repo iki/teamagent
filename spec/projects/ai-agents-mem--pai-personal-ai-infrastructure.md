@@ -39,6 +39,18 @@ Evidence: [LifeOS/install/LIFEOS/TOOLS/MemoryGraph.ts:254-402](https://github.co
 
 **Scope and limits:** Static scoped graph inference/export and context-search orchestration within the 714-path comparison. Full source ingestion, graph algorithms, installer, mobile/UI behavior and all six search-channel implementations were not audited or executed; no generated bundle was treated as fresh runtime validation.
 
+## Follow-up change review — 2026-10-28
+
+**Deferred memory carries a source digest, but loading instructions and displayed caps are not enforcement.** Reviewed commit `b7efec97d8c3885feee285bee468c35602fb0606` (commit date `2026-10-27T21:20:03-07:00`), compared with `5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c`. The complete no-rename Git path inventory contains 4,631 changed paths. The aggregate diff exceeded the 8 MiB capture bound; the selected files were expanded separately, and no completeness claim is made for that diff.
+
+The new progressive-memory helper defers only NAME, ROLE, RELATION and PREFERENCE entries; RULE, unknown and malformed types remain resident. It emits a hash of the full entry list and tells the agent to reread the source after a changed hash, compaction or a new session. The capEntries/capChars arguments are rendered as statistics, not used to truncate or reject the entries in this helper. A separate metadata sidecar records first/last admission and curation survivals; its comments explicitly distinguish survivals from independent corroboration and acknowledge restore-age limitations.
+
+Evidence: [LifeOS/install/hooks/lib/progressive-memory.ts:1-52](https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/b7efec97d8c3885feee285bee468c35602fb0606/LifeOS/install/hooks/lib/progressive-memory.ts#L1-L52) · [LifeOS/install/LIFEOS/TOOLS/MemoryEntryMeta.ts:15-53](https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/b7efec97d8c3885feee285bee468c35602fb0606/LifeOS/install/LIFEOS/TOOLS/MemoryEntryMeta.ts#L15-L53) · [LifeOS/install/LIFEOS/TOOLS/MemoryEntryMeta.ts:97-153](https://github.com/danielmiessler/Personal_AI_Infrastructure/blob/b7efec97d8c3885feee285bee468c35602fb0606/LifeOS/install/LIFEOS/TOOLS/MemoryEntryMeta.ts#L97-L153).
+
+**Harness consequence:** Represent deferred content with versioned source references and invalidate loaded-context claims after compaction. Enforce budgets and source authorization in code, rather than relying on prompt instructions; keep repeated curation separate from independent evidence strength.
+
+**Scope and limits:** Reviewed the complete new progressive-memory helper and selected metadata identity/limitations in the 4,631-path no-rename inventory. The aggregate release was not audited and no claimed parity or end-to-end memory behavior was reproduced. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pai-personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure); analyzed commit `5e2f2e8c0abde612da0e99c16c0d07d4ec21b88c`; commit date 2026-09-03T18:07:21-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--pai-personal-ai-infrastructure.md).
+Analysis metadata: source [pai-personal-ai-infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure); analyzed commit `b7efec97d8c3885feee285bee468c35602fb0606`; commit date 2026-10-27T21:20:03-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--pai-personal-ai-infrastructure.md).
 <!-- teamagent-analysis:end -->

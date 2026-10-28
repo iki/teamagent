@@ -1,0 +1,750 @@
+{
+  "id": "ai-agents--openhuman",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/tinyhumansai/openhuman",
+  "report": "spec/projects/ai-agents--openhuman.md",
+  "analyzedSha": "9d5a06c7b0216d3a496f93f1030d491d734a6bd7",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T23:06:39+05:30",
+  "observedSha": "d12bab15be83c1d6a051c6f21cca9b3346ec3d89",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d12bab15be83c1d6a051c6f21cca9b3346ec3d89",
+      "date": "2026-10-28T15:19:15+05:30",
+      "subject": "Merge pull request #8480 from M3gA-Mind/fix/main57-module-guard-storage"
+    },
+    {
+      "sha": "55dea2fc262764127faa327ae50d392e79c4c24e",
+      "date": "2026-10-28T14:36:52+05:30",
+      "subject": "style(modules): rustfmt the backend choice in bind"
+    },
+    {
+      "sha": "01078bf5150e396c57c6bedffb85fb127b56cab4",
+      "date": "2026-10-28T14:33:49+05:30",
+      "subject": "Merge pull request #8481 from M3gA-Mind/fix/core-tool-rendering-reexport"
+    },
+    {
+      "sha": "1e1cafa84eff09a529ef55a886362005e9427e71",
+      "date": "2026-10-28T14:15:51+05:30",
+      "subject": "fix(modules): key the served test storage to the connector module"
+    },
+    {
+      "sha": "5ce47adfb42751b228ebf059fd0f0f35776e4cfe",
+      "date": "2026-10-28T13:54:54+05:30",
+      "subject": "refactor(modules): move the test module storage into its own file"
+    },
+    {
+      "sha": "d90552e2950a4e02decf29c24b2e33155fa5450e",
+      "date": "2026-10-28T13:15:50+05:30",
+      "subject": "style(config): rustfmt the config re-export order"
+    },
+    {
+      "sha": "5761ba298ffa0e4d6d0faecf61b3400aacd0fe83",
+      "date": "2026-10-28T13:00:31+05:30",
+      "subject": "fix(config): stop re-exporting TinyAgents' ToolRendering from the config API"
+    },
+    {
+      "sha": "775bec566d7ca3fe5f873468ae172fbecbce90c1",
+      "date": "2026-10-28T12:08:32+05:30",
+      "subject": "test(composio): withdraw the served module storage to simulate an outage"
+    },
+    {
+      "sha": "6b304a7456405e630708092d522e482f78d4a2e2",
+      "date": "2026-10-28T11:48:08+05:30",
+      "subject": "fix(composio): serve module_guard's module storage without the process slot"
+    },
+    {
+      "sha": "3e0c980be87762d1c47142330a1b49bd7e3d8575",
+      "date": "2026-10-28T06:17:45Z",
+      "subject": "chore(release): v0.64.20 [skip ci]"
+    },
+    {
+      "sha": "d080e14db003aeb5583e80ebf68f738379ab7d50",
+      "date": "2026-10-28T09:14:54+03:00",
+      "subject": "Merge pull request #8477 from senamakel/idle-compaction"
+    },
+    {
+      "sha": "45500aef6af41a2c2db6c822bab6f3c6fb72ed75",
+      "date": "2026-10-28T11:41:48+05:30",
+      "subject": "Merge pull request #8479 from M3gA-Mind/test/builder-chat-e2e-delivery-race"
+    },
+    {
+      "sha": "1df4f5dd7f7d0bed7c6aeff5804659ca90fd880f",
+      "date": "2026-10-28T11:41:14+05:30",
+      "subject": "Merge pull request #8478 from M3gA-Mind/fix/default-feature-lib-tests"
+    },
+    {
+      "sha": "8cd47257d5b1e5af3613fbcd8d18219c5b3801f8",
+      "date": "2026-10-28T11:41:02+05:30",
+      "subject": "Merge pull request #8473 from M3gA-Mind/fix/main57-test-owned-storage-slot"
+    },
+    {
+      "sha": "fb3bbeb94d10cfd93e0f1b0b8d0a9763bc1e7515",
+      "date": "2026-10-28T09:04:13+03:00",
+      "subject": "Move tinyagents to the merged summarizer change (tinyagents#587)"
+    },
+    {
+      "sha": "265ccf1b65251ed56b2ed9b2e659abdcc6ef2b4e",
+      "date": "2026-10-28T11:33:30+05:30",
+      "subject": "test(flows): let the builder result's delivery turn end before the save"
+    },
+    {
+      "sha": "96f41af18f1231a77e8a5c21e0c4adcd934ad21e",
+      "date": "2026-10-28T05:48:52+03:00",
+      "subject": "chore(vendor): bump tinyagents submodule"
+    },
+    {
+      "sha": "65436be15e979fc9c2ed218a7417b34bef07fb63",
+      "date": "2026-10-28T05:46:25+03:00",
+      "subject": "docs(embed): document compact_thread and new API types"
+    },
+    {
+      "sha": "6a46ecdf9cdefc065069f05a2707eb61ce950a73",
+      "date": "2026-10-28T05:42:49+03:00",
+      "subject": "docs(context): document ContextSettings and out-of-turn compaction"
+    },
+    {
+      "sha": "ad563be9dd4c0b0ebe6b665858e6c2309b0aa294",
+      "date": "2026-10-28T05:40:32+03:00",
+      "subject": "docs(embed): document compacting a thread while idle"
+    },
+    {
+      "sha": "f98bb2acd88637bb627cbf94b45574e550a5b3d1",
+      "date": "2026-10-28T05:31:42+03:00",
+      "subject": "test(embed): reformat compact thread assertions"
+    },
+    {
+      "sha": "2e0a9492ef7076b34c3ccba8dfb99e5ce379ddf4",
+      "date": "2026-10-28T05:29:40+03:00",
+      "subject": "fix(session_host): render fresh memory block when compacting"
+    },
+    {
+      "sha": "ebf6daadd4e81d4f690b62495263afed907464b7",
+      "date": "2026-10-28T05:26:58+03:00",
+      "subject": "test(compact_thread): cover memory block refresh across compaction"
+    },
+    {
+      "sha": "b38c9962bfec1461d4b0654086b4cd5daa05bdbe",
+      "date": "2026-10-28T05:21:48+03:00",
+      "subject": "chore: apply rustfmt formatting to compact thread code"
+    },
+    {
+      "sha": "8e3a77f4f14a33af184c97d7747705286054551a",
+      "date": "2026-10-28T05:20:14+03:00",
+      "subject": "test(embed): tighten compact thread assertions"
+    },
+    {
+      "sha": "548a5e80ba634fd8e003180b8a34279e41257ef1",
+      "date": "2026-10-28T05:20:01+03:00",
+      "subject": "test(compact_thread): dump messages after compaction for debugging"
+    },
+    {
+      "sha": "85b3e3961da9a7e75e14293f35514df282f79896",
+      "date": "2026-10-28T05:15:40+03:00",
+      "subject": "refactor(agent): extract per-call inference route into shared helper"
+    },
+    {
+      "sha": "05fdd000c026916565c721003e3b799e1fc44aa4",
+      "date": "2026-10-28T05:13:50+03:00",
+      "subject": "chore(agent_chat): drop stale clippy allow on compact_thread_for"
+    },
+    {
+      "sha": "d384c912f667f065291451b9012b543d5e4d72d3",
+      "date": "2026-10-28T05:13:39+03:00",
+      "subject": "fix(agent_chat): apply turn overrides when compacting a thread"
+    },
+    {
+      "sha": "4462f6e343a108d1ba40fa7ee7f14ca61e9c284c",
+      "date": "2026-10-28T05:13:10+03:00",
+      "subject": "test(embed): surface the error when skipped compaction fails"
+    },
+    {
+      "sha": "804d684bb476eb5fac8a9867ee55dfaf9bb17b09",
+      "date": "2026-10-28T05:07:26+03:00",
+      "subject": "feat(agent): add conversation compaction options and outcome types"
+    },
+    {
+      "sha": "32bf0f59b3772e2f29be55cb267febbe11a4d8bb",
+      "date": "2026-10-28T05:06:28+03:00",
+      "subject": "feat(agent_chat): add thread compaction entry point"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/chat/WorkflowProposalCard.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/src/components/chat/WorkflowProposalCard.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-app/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-app/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-app/tauri.conf.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/context/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/orchestration/tools/spawn_subagent_async_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/orchestration/tools/spawn_subagent_completion.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/orchestration/tools/spawn_subagent_host_impl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/orchestration/tools/spawn_subagent_proposal_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/orchestration/tools/spawn_subagent_surface.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/orchestration/tools/spawn_subagent_workflow.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/builder/factory/build_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session/compact.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session/memory_block.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session/memory_block_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/session_host/runtime_session/prompt_refresh.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/context_wiring.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/context_wiring_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/turn_exec/drive.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent/tinyagents/turn_middleware.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_registry/agents/orchestrator/prompt_tests_session_routing_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_registry/host_definition.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/agent_runs/agent_chat/compact.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_runs/agent_chat/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/agent_runs/agent_chat/session_turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/load/env_overlay/context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/load_env_overlay_context_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/memory_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/types/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/config/schema/types/defaults.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/flows/builder_tools_draft_id_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/flows/builder_tools_support.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/inference/provider/factory/access_gates.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/inference/provider/factory/chat_model.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/inference/provider/factory/routing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/inference/provider/factory_crate_native_cloud_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/inference/provider/factory_model_gate_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/inference/turn_models.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/inference/turn_models_summarizer_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/inference/turn_models_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/integrations/composio/module_client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/integrations/composio/tools/scope_gate_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/memory/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/memory/lifecycle/adapter_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/memory/lifecycle/memory_block.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/memory/lifecycle/memory_block_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/memory/lifecycle/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/memory/lifecycle/prefetch.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/memory/lifecycle/prefetch_recall_each_turn_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/memory/lifecycle/prefetch_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/memory/lifecycle/session_hooks.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/memory/schemas_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/modules/storage_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/modules/storage_host_backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/profiles/host_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/security/approval/gate_core_flow_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/skills/bundled/flow_authoring_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/storage/claim_bound.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-core/src/storage/claim_bound_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/documents.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/fenced_backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/fenced_backend_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/fenced_ports.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/import_state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/local.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/mod_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/storage/test_support.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/web_chat/surface.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/web_chat/turn_host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/web_chat/turn_host_progress.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-core/src/web_chat/turn_host_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/agent/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-embed/src/agent/compact.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/agent/definition.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/agent/definition_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/agent/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/agent/spec.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/agent/spec_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/src/turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/openhuman-embed/tests/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-embed/tests/compact_thread.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-embed/tests/memory_block.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/openhuman-embed/tests/memory_recall_each_turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/gitbooks/en/developing/architecture/agent-harness.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/gitbooks/en/developing/embed/api-index.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/gitbooks/en/developing/embed/api-index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/gitbooks/en/developing/embed/concepts/turns-sessions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "llms-full.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/__tests__/rust-product-enumeration.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/process-statics.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ci/saas-ambient-baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/test-rust-e2e.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/test-rust-with-mock.sh",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/json_rpc_flows_builder_chat_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "vendor/tinyagents",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

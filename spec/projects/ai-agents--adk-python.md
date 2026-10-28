@@ -38,6 +38,18 @@ A changed container with no equal JSON form is omitted from the delta; a previou
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `1d81896aa081e7b2e50b3a4a227f7c6933805752` (commit date `2026-10-27T23:24:57-07:00`), compared with `0e5d6c963cb6935ff1c28535f167c96a96746ad4`. Earlier findings remain historical evidence.
+
+**Scope:** Nested agent context-compaction configuration and the active-task fast path. The complete changed-path inventory contains 49 paths; the assessment below is limited to the cited branches.
+
+Nested agent tools copy only eligible token-threshold compaction settings and clear interval/overlap triggers. Their private runner installs that configuration but deliberately skips post-invocation compaction because its in-memory session will be discarded. Parent-owned inherited plugins are explicitly excluded from child close. See [src/google/adk/tools/agent_tool.py](https://github.com/google/adk-python/blob/1d81896aa081e7b2e50b3a4a227f7c6933805752/src/google/adk/tools/agent_tool.py#L54-L78) and [src/google/adk/tools/agent_tool.py](https://github.com/google/adk-python/blob/1d81896aa081e7b2e50b3a4a227f7c6933805752/src/google/adk/tools/agent_tool.py#L293-L344). The runner delta also avoids rewind work when no event has an isolation scope; it does not add a new task-isolation mechanism.
+
+For Teamagent, distinguish ephemeral child context from durable memory, preserve caller ownership of shared services, and make context-policy inheritance explicit. A configuration copy does not demonstrate deep isolation of every custom summarizer, nor does source inspection establish cost savings or summarization quality.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adk-python](https://github.com/google/adk-python); analyzed commit `0e5d6c963cb6935ff1c28535f167c96a96746ad4`; commit date 2026-10-27T10:54:12-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-python.md).
+Analysis metadata: source [adk-python](https://github.com/google/adk-python); analyzed commit `1d81896aa081e7b2e50b3a4a227f7c6933805752`; commit date 2026-10-27T23:24:57-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-python.md).
 <!-- teamagent-analysis:end -->

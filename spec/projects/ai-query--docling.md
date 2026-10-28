@@ -43,6 +43,18 @@ Evidence: [docling/document_converter.py:637-724](https://github.com/docling-pro
 
 **Scope and limits:** Scoped static review of conversion cardinality, table/OCR merge and optional-provider import changes with selected fixtures within a 53-path comparison. No archive conversion, OCR process, model download, provider request or upstream test ran. Service data-model, ASR catalog and dependency changes were not independently audited.
 
+## Follow-up change review — 2026-10-28
+
+**PDF text-quality detection is a conservative heuristic, not visual truth.** Reviewed commit `26ef35ac26ae9a3f959ce3e9de26e46c82ca1194` (commit date `2026-10-28T10:52:44+01:00`), compared with `b361d7863fd264369486a1fcbda96c9fe4b58b57`. The complete no-rename Git path inventory contains 35 changed paths.
+
+The new helper flags sufficient control/replacement/private-use characters, repeated damaged lines or specific Latin-letter distributions. It exempts short text, removes isolated junk bullets and excludes short variables/long encoded tokens from the vowel check. Fixtures retain code, tables, mathematical text and several scripts. Despite the helper's strong docstring, these are text-only heuristics and cannot establish that extracted words match the rendered page for every language or document.
+
+Evidence: [docling/utils/text_quality.py:15-122](https://github.com/docling-project/docling/blob/26ef35ac26ae9a3f959ce3e9de26e46c82ca1194/docling/utils/text_quality.py#L15-L122) · [tests/test_text_quality.py:30-60](https://github.com/docling-project/docling/blob/26ef35ac26ae9a3f959ce3e9de26e46c82ca1194/tests/test_text_quality.py#L30-L60) · [tests/test_text_quality.py:171-183](https://github.com/docling-project/docling/blob/26ef35ac26ae9a3f959ce3e9de26e46c82ca1194/tests/test_text_quality.py#L171-L183).
+
+**Harness consequence:** Preserve the original text layer and record why OCR was selected, with parser/model/version provenance. Validate language-sensitive thresholds and compare rendered-page evidence for consequential extraction; do not silently replace approved wording.
+
+**Scope and limits:** Reviewed the complete heuristic and selected ordinary/damaged-text fixtures; OCR selection integration and recognition accuracy were not executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [docling](https://github.com/docling-project/docling); analyzed commit `b361d7863fd264369486a1fcbda96c9fe4b58b57`; commit date 2026-10-27T17:11:46Z; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--docling.md).
+Analysis metadata: source [docling](https://github.com/docling-project/docling); analyzed commit `26ef35ac26ae9a3f959ce3e9de26e46c82ca1194`; commit date 2026-10-28T10:52:44+01:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--docling.md).
 <!-- teamagent-analysis:end -->

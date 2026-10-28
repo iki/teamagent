@@ -2,12 +2,11 @@
 
 Source: [mcp-sdk-typescript](https://github.com/modelcontextprotocol/typescript-sdk) · [Analysis](../../projects/ai-query--mcp-sdk-typescript.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2`; commit date: 2026-10-26T14:29:44Z; review date: 2026-10-28T08:47:42.123Z; observed SHA: `b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `39ae8e6192cf43273aaaf2de4169dfa9f7216e28`; commit date: 2026-10-27T18:05:49Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `39ae8e6192cf43273aaaf2de4169dfa9f7216e28`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/modelcontextprotocol/typescript-sdk/compare/b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2...b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/modelcontextprotocol/typescript-sdk/compare/39ae8e6192cf43273aaaf2de4169dfa9f7216e28...39ae8e6192cf43273aaaf2de4169dfa9f7216e28). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

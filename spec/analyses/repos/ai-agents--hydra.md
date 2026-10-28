@@ -2,11 +2,11 @@
 
 Source: [hydra](https://github.com/timtimeshock/Hydra) · [Analysis](../../projects/ai-agents--hydra.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `1a5158e7e96d82183269b7b613f41d77b8398193`; commit date: 2026-10-09T18:26:47+02:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `1a5158e7e96d82183269b7b613f41d77b8398193`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `1a5158e7e96d82183269b7b613f41d77b8398193`; commit date: 2026-10-09T18:26:47+02:00; review date: 2026-10-28T08:26:04.502Z; observed SHA: `1a5158e7e96d82183269b7b613f41d77b8398193`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/timtimeshock/Hydra/compare/1a5158e7e96d82183269b7b613f41d77b8398193...1a5158e7e96d82183269b7b613f41d77b8398193). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

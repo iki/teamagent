@@ -30,6 +30,14 @@ Reviewed commit `206a430fa27550d521bd6a5112b69e2de41c6780` (commit date `2026-10
 
 The [directory](https://github.com/EthicalML/awesome-artificial-intelligence-regulation/blob/206a430fa27550d521bd6a5112b69e2de41c6780/README.md) adds policy trackers, an AI Act classifier, governance comparison, provider-data-policy tracking and an assurance questionnaire. It replaces a fixed measurement count with a live-record description. Useful evidence-design ideas include checked dates, primary sources, explicit unknowns and separating measurement from certification. Directory inclusion is not legal authority or proof of an account's effective training exclusion. Linked tools, legal statements, counts and license/update claims remain unverified.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `206a430fa27550d521bd6a5112b69e2de41c6780` to `dc6061b6285bbfafb8de1549d40a369edf6ccaf6`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [README.md](https://github.com/EthicalML/awesome-artificial-intelligence-regulation/blob/dc6061b6285bbfafb8de1549d40a369edf6ccaf6/README.md#L222-L230), The complete one-file delta adds TrustHawk to a curated list of practical AI-governance tools. Its description claims publicly sourced company ratings; this is a catalog assertion rather than an inspection of the rating method or underlying policies.
+
+**Harness implication and limits:** Use the entry as a discovery pointer, not as legal advice, compliance certification or evidence of any provider's effective training policy. Verify dated primary terms and operation/account coverage before changing a runtime policy gate. No external service, rating, legal claim or vendor condition was authenticated in this reconciliation. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [awesome-artificial-intelligence-regulation](https://github.com/EthicalML/awesome-artificial-intelligence-regulation); analyzed commit `206a430fa27550d521bd6a5112b69e2de41c6780`; commit date 2026-10-26T12:37:36+08:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-artificial-intelligence-regulation.md).
+Analysis metadata: source [awesome-artificial-intelligence-regulation](https://github.com/EthicalML/awesome-artificial-intelligence-regulation); analyzed commit `dc6061b6285bbfafb8de1549d40a369edf6ccaf6`; commit date 2026-10-28T16:12:36+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-info--awesome-artificial-intelligence-regulation.md).
 <!-- teamagent-analysis:end -->

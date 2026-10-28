@@ -32,6 +32,14 @@ The [admin helper](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e8
 
 The [proxy](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/proxy.ts) exposes machine-readable bot and prompt aliases by rewriting to APIs; routing itself supplies no authorization. The [install UI](https://github.com/f/prompts.chat/blob/c785a7a1796afec709f8e857d5496df8cab617e9/src/components/bots/bot-install.tsx) separates copyable commands/prompts from external install links and tracks each interaction, but consumes prebuilt URLs without validation in this component. A copy event is not installation success, and machine-readable packaging does not make content trusted. Adapt current-role checks and explicit install stages while validating URLs, credentials and telemetry at their actual boundaries. No accounts, installs, MCP calls or tests were exercised.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `c785a7a1796afec709f8e857d5496df8cab617e9` to `54deb4298a6e88f586a392a5700e47b9a2040602`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [src/lib/listing-pagination.ts](https://github.com/f/prompts.chat/blob/54deb4298a6e88f586a392a5700e47b9a2040602/src/lib/listing-pagination.ts#L9-L99), Listing helpers centralize pagination and separate public category/tag queries from owner-visible private prompts and profile listings. Page parsing uses parseInt with a minimum of one; date filtering accepts a formatted date if JavaScript can parse it. The request-search helper trusts an x-search header supplied by the proxy.
+
+**Harness implication and limits:** Apply visibility filters consistently to both counts and page contents, and validate pagination before streaming a successful response. The parser accepts numeric prefixes such as 2junk, and parseable calendar rollover is not strict date validation; server timezone and the end-of-day second also need explicit semantics. Caller ownership checks, trusted header replacement and route behavior were not audited or executed. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `c785a7a1796afec709f8e857d5496df8cab617e9`; commit date 2026-10-27T10:26:25+03:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
+Analysis metadata: source [prompts.chat](https://github.com/f/prompts.chat); analyzed commit `54deb4298a6e88f586a392a5700e47b9a2040602`; commit date 2026-10-28T03:14:10Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-prompts--prompts.chat.md).
 <!-- teamagent-analysis:end -->

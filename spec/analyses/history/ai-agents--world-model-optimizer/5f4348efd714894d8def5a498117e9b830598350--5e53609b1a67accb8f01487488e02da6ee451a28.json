@@ -1,0 +1,515 @@
+{
+  "id": "ai-agents--world-model-optimizer",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/experientiallabs/world-model-optimizer",
+  "report": "spec/projects/ai-agents--world-model-optimizer.md",
+  "analyzedSha": "5f4348efd714894d8def5a498117e9b830598350",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T09:41:38-04:00",
+  "observedSha": "5e53609b1a67accb8f01487488e02da6ee451a28",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5e53609b1a67accb8f01487488e02da6ee451a28",
+      "date": "2026-10-27T15:17:31-07:00",
+      "subject": "Preserve execution ownership and accounting through cleanup (#1274)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".gitlab/ci/osv-scanner.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-architecture.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-failover-rules.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/gateway-media-surfaces.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/cli/gateway/serve.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/cli/gateway/serve_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/disconnect_estimate.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/bounded.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/bounded_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/guardrails/observation_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/ledger_reconciliation.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/ledger_reconciliation_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/ledger_requests_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/exp_gateway_native.pyi",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/admission.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/audio_upload.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/bridge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/capture/spill_test.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/chat_stream.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/dispatch_capacity.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/errors.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/execution_binding.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/execution_context.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/permit_queue.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/replay.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_audio.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_batches.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_chat.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_image_edits.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/route_image_edits_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_images.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_messages.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_responses.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/route_videos.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/server_usage_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/settlement.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/settlement_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/upstream.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native/src/upstream/retirement_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/waterfall/attempt.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/waterfall/ladder_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native/src/waterfall/repair_ladder_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_accounting.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_accounting_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_accounting_errors_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native_accounting_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/native_accounting_recovery_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_accounting_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_audio.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_audio_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_bridge.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_bridge_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_capture.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_capture_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_decisions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_embeddings.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_images.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_observability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_openai_decisions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_request_settlement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_request_settlement_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_rung_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_server_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_settlement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_settlement_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/native_videos_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/sqlite/cache_write_migration_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/sqlite/migrations.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/sqlite/migrations_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/sqlite/platform.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/sqlite/platform_records.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/stream_contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/stream_contracts_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/tests/native_embeddings_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/video/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/video/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/video/engine_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/video/providers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/gateway/video/providers_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/video/settlement.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "exp/runtime/gateway/video/settlement_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/router/application.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/runtime/router/application_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/tests/agents_prior_art_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "exp/tests/release_test.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

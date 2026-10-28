@@ -2,12 +2,11 @@
 
 Source: [graphify](https://github.com/safishamsi/graphify) · [Analysis](../../projects/ai-agents-mem--graphify.md) · [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `dac063456bc1f5d92354ec3936fd9dd1513a83f3`; commit date: 2026-10-26T12:50:53Z; review date: 2026-10-28T08:47:42.123Z; observed SHA: `dac063456bc1f5d92354ec3936fd9dd1513a83f3`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `0a8cd4e1e342235fe53e881fb5d591bf0460071f`; commit date: 2026-10-27T18:08:07Z; review date: 2026-10-28T14:52:35.205Z; observed SHA: `0a8cd4e1e342235fe53e881fb5d591bf0460071f`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/safishamsi/graphify/compare/dac063456bc1f5d92354ec3936fd9dd1513a83f3...dac063456bc1f5d92354ec3936fd9dd1513a83f3). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/safishamsi/graphify/compare/0a8cd4e1e342235fe53e881fb5d591bf0460071f...0a8cd4e1e342235fe53e881fb5d591bf0460071f). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

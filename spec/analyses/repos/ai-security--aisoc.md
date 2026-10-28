@@ -2,12 +2,11 @@
 
 Source: [aisoc](https://github.com/beenuar/AiSOC) · [Analysis](../../projects/ai-security--aisoc.md) · [agents](../../agents.md), [skills](../../skills.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `3164fb54343f341de87eff4f42792690a3fb308d`; commit date: 2026-10-27T10:09:11-07:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `3164fb54343f341de87eff4f42792690a3fb308d`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `2af4d0ba9b2b347df5f17cfd67924a2862530bd1`; commit date: 2026-10-28T00:16:09-07:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `2af4d0ba9b2b347df5f17cfd67924a2862530bd1`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/beenuar/AiSOC/compare/3164fb54343f341de87eff4f42792690a3fb308d...3164fb54343f341de87eff4f42792690a3fb308d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/beenuar/AiSOC/compare/2af4d0ba9b2b347df5f17cfd67924a2862530bd1...2af4d0ba9b2b347df5f17cfd67924a2862530bd1). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

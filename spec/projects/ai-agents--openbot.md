@@ -34,6 +34,14 @@ The [lease keeper](https://github.com/CopilotKit/openbot/blob/3592f850eff49204d0
 
 This helper does not establish execution fencing. Its interval can launch overlapping renewals, stop does not cancel pending requests, and the strict greater-than cutoff can detect loss at the actual expiry tick when lifetime and interval divide evenly. The [120-second lifetime and 15-second interval](https://github.com/CopilotKit/openbot/blob/3592f850eff49204d0f2b46a905d38f2627f2d81/toolkit/src/limits.ts#L22-L43) therefore do not by themselves guarantee a full interval of safety before expiry. The grace-period comment also explicitly distinguishes settling a promise from stopping an unfinished agent build. Adapt a monotonic deadline, bounded in-flight renewal, ownership fencing and independently observed cancellation; no upstream code or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `3592f850eff49204d0f2b46a905d38f2627f2d81` to `da9a3caf5784074baa779110dd7e9d1338c8871b`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [server/src/approvals/types.ts](https://github.com/CopilotKit/openbot/blob/da9a3caf5784074baa779110dd7e9d1338c8871b/server/src/approvals/types.ts#L317-L355), Approval construction now throws a distinct needs-conversation error when run/thread/tool-call continuation is absent. It checks required identity strings and hashes a canonical projection of actor, bot, tool, effect, scope, arguments and target before returning the action linked to the continuation.
+
+**Harness implication and limits:** Expose missing approval context as a recoverable pre-execution state rather than a generic refusal; a route may request the same unexecuted action through an authenticated conversation. Preserve the action digest and do not assume that a new conversation creates approval. This helper does not verify ownership or execute effects, and its preview redaction is heuristic; approval persistence, resume deduplication and transport authorization were not audited. No upstream runtime or live provider behavior was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openbot](https://github.com/CopilotKit/openbot); analyzed commit `3592f850eff49204d0f2b46a905d38f2627f2d81`; commit date 2026-10-26T16:48:09-03:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openbot.md).
+Analysis metadata: source [openbot](https://github.com/CopilotKit/openbot); analyzed commit `da9a3caf5784074baa779110dd7e9d1338c8871b`; commit date 2026-10-27T19:15:10-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openbot.md).
 <!-- teamagent-analysis:end -->

@@ -38,6 +38,18 @@ Writes call a separate ordering helper to mark pending changes, but that helper 
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `567b9a8f62d139081bc9c64428c292db13026285` (commit date `2026-10-28T01:51:58-07:00`), compared with `eed31475067c2392fcafeabf196d0fb3ca17718e`. Earlier findings remain historical evidence.
+
+**Scope:** MCP tool selection with missing context and loaded-tool shape handling. The complete changed-path inventory contains 86 paths; the assessment below is limited to the cited branches.
+
+MCP discovery now always passes each tool through the common selector, including when no context is supplied; a predicate receives that optional context instead of a previous warning-and-return-all branch. Empty filters still expose all tools. See [core/src/tools/base_toolset.ts](https://github.com/google/adk-js/blob/567b9a8f62d139081bc9c64428c292db13026285/core/src/tools/base_toolset.ts#L70-L95) and [core/src/tools/mcp/mcp_toolset.ts](https://github.com/google/adk-js/blob/567b9a8f62d139081bc9c64428c292db13026285/core/src/tools/mcp/mcp_toolset.ts#L85-L108). The inspected toolbox delta explicitly rejects unsupported loaded shapes instead of passing them through a LangChain wrapper, but its shallow checks and function assertions do not establish complete input-schema validation. See [core/src/tools/toolbox_toolset.ts](https://github.com/google/adk-js/blob/567b9a8f62d139081bc9c64428c292db13026285/core/src/tools/toolbox_toolset.ts#L204-L248).
+
+For Teamagent, define the missing-context policy and test it on every discovery path. Tool visibility remains separate from host-owned authorization and validation at dispatch. This review does not audit MCP transport, dynamic module loading or downstream effects.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adk-js](https://github.com/google/adk-js); analyzed commit `eed31475067c2392fcafeabf196d0fb3ca17718e`; commit date 2026-10-26T09:54:20-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-js.md).
+Analysis metadata: source [adk-js](https://github.com/google/adk-js); analyzed commit `567b9a8f62d139081bc9c64428c292db13026285`; commit date 2026-10-28T01:51:58-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-js.md).
 <!-- teamagent-analysis:end -->

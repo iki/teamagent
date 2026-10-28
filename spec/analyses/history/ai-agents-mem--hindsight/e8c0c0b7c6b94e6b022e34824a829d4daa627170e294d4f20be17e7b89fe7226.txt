@@ -1,0 +1,55 @@
+# hindsight
+
+Multi-arm recall and separate reflection with explicit failure handling for derived-memory refresh.
+
+Source: [hindsight](https://github.com/vectorize-io/hindsight) · Snapshot: `f7dd3f4fd7420f7beec60c32c965e5e5cf7be066` · Category: `ai-agents-mem`.
+
+Evidence level: **Source-reviewed; code was read, not executed or benchmarked.** Review date: 2026-10-04. Conclusions below apply to the inspected snapshot, not an unverified latest release. License and dependency compatibility require the separate catalog/license review before adoption.
+
+## Verified source evidence
+
+- [hindsight-api-slim/hindsight_api/engine/search/fusion.py:8-176](https://github.com/vectorize-io/hindsight/blob/f7dd3f4fd7420f7beec60c32c965e5e5cf7be066/hindsight-api-slim/hindsight_api/engine/search/fusion.py#L8-L176)
+- [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:170-215](https://github.com/vectorize-io/hindsight/blob/f7dd3f4fd7420f7beec60c32c965e5e5cf7be066/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L170-L215)
+
+Fusion supports per-source candidate caps and reciprocal-rank fusion over semantic, BM25, graph and temporal result lists. It keeps source ranks and raw arm scores so the merged result remains explainable. A second fusion strategy interleaves ranks across arms, ensuring each arm's strongest candidates appear early. The reflection module defines explicit failures for unusable tool calls and evidence-tool execution failures; its documentation explains why failed refreshes must not overwrite accumulated mental models with placeholder or no-information text.
+
+## Harness implications
+
+Use separate query-recall and consolidation-recall policies. Query answering benefits from agreement across retrieval arms; deduplication may need the best semantic twin even when graph and lexical arms do not find it. A background memory refresh must distinguish no evidence from unavailable evidence. Retain the previous approved summary until a new one is complete, source-backed and validated. Store retrieval status with the output so an empty result cannot masquerade as a successful complete search.
+
+## Limitations and tradeoffs
+
+The inspected fusion code verifies algorithm behavior, while comments about past refresh failures explain design intent rather than independently reproduced incidents. Reflection is a model-driven operation and can still synthesize mistaken beliefs from valid facts. More retrieval arms do not automatically increase usefulness: broad graph or temporal results can consume the reranker budget. Source caps and tool-call support vary by task/model and require explicit compatibility testing.
+
+## Adoption and validation
+
+Pilot as an optional richer memory service and borrow its retain/recall/reflect separation. Use a simpler local baseline as the control. Evaluate contradiction handling, temporal recall, cross-session preferences and consolidation duplication. Add chaos cases in which embeddings, storage or reranking fail during refresh; assert that old derived memory and watermarks survive unchanged and the run reports failure.
+
+Related directions: [memory](../memory.md) · [evolution](../evolution.md) · [decisions](../decisions.md).
+
+
+## Change review - 2026-10-28
+
+**Reflect distinguishes empty answers and completed JSON repair from cutoff output but citation membership is only a first check.** Reviewed commit `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf` (commit date `2026-10-27T13:37:18-04:00`). Compared with `f7dd3f4fd7420f7beec60c32c965e5e5cf7be066`; the complete Git comparison contains 2202 changed paths.
+
+Reflect divides a remaining context allowance across concurrent tool calls, but deliberately floors each request above zero, so the sum can still exceed the remainder. Parallel tool execution and split-synthesis map calls use gather over all tasks/chunks; the reviewed call sites have no local concurrency cap. Oversized history is split into claim summaries then reduced instead of silently dropping whole blocks, but summarization and the final reduce remain model transformations with separate coverage and resource needs.
+
+JSON repair is restricted to completed finish reasons, avoiding invented closing delimiters that make cutoff output look complete. Empty done/final answers raise explicit errors rather than storing placeholders. The done path filters listed IDs to retrieved IDs and strips unseen IDs after a length rewrite, yet malformed citation fields become empty lists and retrieved membership does not establish claim support. answer_found defaults to true unless explicitly false. These permissive cases and repaired structures must not be mistaken for independently verified completion.
+
+Evidence: [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:104-118](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L104-L118) · [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:1110-1196](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L1110-L1196) · [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:1881-1945](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L1881-L1945) · [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:2437-2655](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-api-slim/hindsight_api/engine/reflect/agent.py#L2437-L2655).
+
+**Harness consequence:** Keep finish reason, repair provenance, source manifest and incomplete citations visible. Use hard aggregate admission/concurrency bounds in addition to per-tool token requests, and validate claim-to-evidence support after every rewrite/reduce. Preserve no-answer failures and require typed completion fields instead of turning malformed/missing judgments into successful answers.
+
+**Scope and limits:** Static selected reflect budgeting, synthesis, JSON repair and done-result regions within the 2,202-path comparison. Full provider/transport limits, prompt splitter, citation presenter and storage write barriers were not audited or executed; upstream benchmark comments are not reproduced measurements.
+
+## Follow-up change review — 2026-10-28
+
+**Decision-model filtering has its own concurrency bound and preserves uncertain memories.** Reviewed commit `14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2` (commit date `2026-10-28T10:59:34+01:00`), compared with `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf`. The complete no-rename Git path inventory contains 7 changed paths.
+
+The delta gate now limits each refresh to eight concurrent questions and uses a configurable maximum memory count. Failure before any answer falls back to the existing search/reflect path; after some answers, a failed question conservatively keeps its memory. Fixtures assert late-failure inclusion and the concurrency bound. The source explicitly notes that decision calls are not included in the refresh's usage/llm_calls totals, so this optimization's cost is not fully represented there.
+
+Evidence: [hindsight-api-slim/hindsight_api/engine/memory_engine.py:1866-1877](https://github.com/vectorize-io/hindsight/blob/14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2/hindsight-api-slim/hindsight_api/engine/memory_engine.py#L1866-L1877) · [hindsight-api-slim/hindsight_api/engine/memory_engine.py:17790-17870](https://github.com/vectorize-io/hindsight/blob/14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2/hindsight-api-slim/hindsight_api/engine/memory_engine.py#L17790-L17870) · [hindsight-api-slim/tests/test_mental_model_delta_gate.py:161-200](https://github.com/vectorize-io/hindsight/blob/14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2/hindsight-api-slim/tests/test_mental_model_delta_gate.py#L161-L200).
+
+**Harness consequence:** Use decision models to reduce downstream context only with scoped budgets, explicit fallback and conservative uncertainty. Include classifier calls in cost/latency accounting and do not let a filtering failure erase evidence.
+
+**Scope and limits:** Reviewed delta-gate execution and failure/concurrency fixtures; model accuracy and provider-rate behavior were not measured. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

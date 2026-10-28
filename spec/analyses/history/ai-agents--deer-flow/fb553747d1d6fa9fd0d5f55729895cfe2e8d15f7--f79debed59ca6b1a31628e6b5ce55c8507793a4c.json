@@ -1,0 +1,185 @@
+{
+  "id": "ai-agents--deer-flow",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/bytedance/deer-flow",
+  "report": "spec/projects/ai-agents--deer-flow.md",
+  "analyzedSha": "fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T22:19:33+08:00",
+  "observedSha": "f79debed59ca6b1a31628e6b5ce55c8507793a4c",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f79debed59ca6b1a31628e6b5ce55c8507793a4c",
+      "date": "2026-10-28T14:00:34+08:00",
+      "subject": "fix(mcp): reject unsupported inline audio results (#7628)"
+    },
+    {
+      "sha": "1efc127df95b15e6523c839fc96ac50954f76a7a",
+      "date": "2026-10-28T11:37:58+08:00",
+      "subject": "fix(skills): drain completed trigger evaluator output (#7043)"
+    },
+    {
+      "sha": "d4ed40075f9101db6424b2331ea410934af146ac",
+      "date": "2026-10-28T10:53:51+08:00",
+      "subject": "ci(skills): preapprove combined evaluator digest for #7043 (#7630)"
+    },
+    {
+      "sha": "48949482c52d0ad3646a18ae05cbbf75bcec0b6a",
+      "date": "2026-10-28T10:50:30+08:00",
+      "subject": "fix(channels): give DingTalk AI cards the channel token, not the SDK fetch (#7597)"
+    },
+    {
+      "sha": "f0ba280365b29016223183b38f261694ce7db586",
+      "date": "2026-10-28T07:35:01+08:00",
+      "subject": "fix(artifacts): parse write-file URLs through the guarded helper (#7609)"
+    },
+    {
+      "sha": "54a09c467ed983a65f3898d7e72a427df0e97464",
+      "date": "2026-10-28T07:33:41+08:00",
+      "subject": "fix(readability): cache unavailable Node extraction (#7617)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/skill-review-waivers.v1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/app/channels/dingtalk.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/mcp/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/mcp/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/utils/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/packages/harness/deerflow/utils/readability.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/blocking_io/test_dingtalk_card_token.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/support/local_sockets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_dingtalk_channel.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/tests/test_mcp_audio_content.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_readability.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_skill_review_waivers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/tests/test_web_fetch_relative_links.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/components/workspace/artifacts/artifact-file-detail.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/core/artifacts/loader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/core/artifacts/preview.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/tests/unit/components/workspace/artifacts/artifact-file-detail.dom.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/tests/unit/core/artifacts/loader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "frontend/tests/unit/core/artifacts/preview.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/public/skill-creator/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/public/skill-creator/scripts/run_eval.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/skills/test_skill_creator_eval_output.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

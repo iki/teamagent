@@ -38,6 +38,18 @@ The [scratchpad entity](https://github.com/langgenius/dify/blob/60429fd39ff6f4fb
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `1f500e52cc30409959b08e19700b8521aaa80c63` (commit date `2026-10-28T03:26:06Z`), compared with `60429fd39ff6f4fb97ead5331c32d38b0d77c8a1`. Earlier findings remain historical evidence.
+
+**Scope:** Workflow stop-by-run admission and operation effect metadata. The complete changed-path inventory contains 86 paths; the assessment below is limited to the cited branches.
+
+Workflow stopping now returns stopped, not_found or not_stoppable and binds lookup to tenant, application and end-user ownership before resolving the task ID. The shared stop finisher treats a running task's stop signal as success, and logs resource-retirement failure without changing the returned success. See [api/services/app_task_service.py](https://github.com/langgenius/dify/blob/1f500e52cc30409959b08e19700b8521aaa80c63/api/services/app_task_service.py#L201-L240) and [api/services/app_task_service.py](https://github.com/langgenius/dify/blob/1f500e52cc30409959b08e19700b8521aaa80c63/api/services/app_task_service.py#L278-L331). The new catalog effect enum derives defaults from HTTP methods with explicit overrides; it is metadata that the router does not read. See [api/controllers/openapi/auth/spec.py](https://github.com/langgenius/dify/blob/1f500e52cc30409959b08e19700b8521aaa80c63/api/controllers/openapi/auth/spec.py#L34-L88).
+
+For Teamagent, retain distinct stop-requested, terminal and cleanup outcomes; do not translate this stopped label into confirmed resource release. Classify effects from actual operation semantics and enforce policy independently of a listing catalog. Repository transaction behavior, worker acknowledgement and route admission were not executed.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dify](https://github.com/langgenius/dify); analyzed commit `60429fd39ff6f4fb97ead5331c32d38b0d77c8a1`; commit date 2026-10-27T16:52:15Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--dify.md).
+Analysis metadata: source [dify](https://github.com/langgenius/dify); analyzed commit `1f500e52cc30409959b08e19700b8521aaa80c63`; commit date 2026-10-28T03:26:06Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--dify.md).
 <!-- teamagent-analysis:end -->

@@ -32,6 +32,18 @@ The [infrastructure contract](https://github.com/NVIDIA-NeMo/Switchyard/blob/b57
 
 The [test driver](https://github.com/NVIDIA-NeMo/Switchyard/blob/b57c5927f6d9e186df23697247a38a7b7fc7eb14/crates/libsy/src/core/testing.rs) routes model calls through asynchronous fakes that can block on barriers and uses production-shaped error mapping. This is a good basis for deterministic concurrency/fallback fixtures. Its default decision stub returns empty answers and zero-like usage, so the helper alone does not validate decision accuracy or billing. No algorithm, transport, model or tests were executed, and route-state ownership guarantees were not traced into runtime code.
 
+## Follow-up change review — 2026-10-28
+
+**Reasoning replay has an explicit provider-compatibility policy.** Reviewed commit `b0fa4fb201e5bb984ba7cc101bbe3252846a2ede` (commit date `2026-10-27T17:17:56-07:00`), compared with `b57c5927f6d9e186df23697247a38a7b7fc7eb14`. The complete no-rename Git path inventory contains 40 changed paths.
+
+The new normalization helper defaults to preserving encrypted reasoning. It retains an opaque encrypted item, or a stored item ID when store is enabled, but clears its content array; an Anthropic thinking envelope is rejected from this replay form. Drop policy removes reasoning items while retaining other inputs. The decision is explicit rather than guessed from the base URL.
+
+Evidence: [crates/libsy-llm-client/src/responses_reasoning.rs:1-62](https://github.com/NVIDIA-NeMo/Switchyard/blob/b0fa4fb201e5bb984ba7cc101bbe3252846a2ede/crates/libsy-llm-client/src/responses_reasoning.rs#L1-L62).
+
+**Harness consequence:** Treat opaque reasoning as provider-scoped continuation state. Keep replay compatibility separate from ordinary conversation content and do not infer that an encrypted item can be reused across providers or decrypted locally.
+
+**Scope and limits:** Reviewed the complete new reasoning-normalization helper; provider integration and request execution were not tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [switchyard](https://github.com/NVIDIA-NeMo/Switchyard); analyzed commit `b57c5927f6d9e186df23697247a38a7b7fc7eb14`; commit date 2026-10-27T10:03:30-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--switchyard.md).
+Analysis metadata: source [switchyard](https://github.com/NVIDIA-NeMo/Switchyard); analyzed commit `b0fa4fb201e5bb984ba7cc101bbe3252846a2ede`; commit date 2026-10-27T17:17:56-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-proxy--switchyard.md).
 <!-- teamagent-analysis:end -->

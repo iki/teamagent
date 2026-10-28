@@ -30,6 +30,18 @@ Reviewed commit `6ec269328bc400712ee225a173a14b6b29128df7` (commit date `2026-10
 
 The [skill](https://github.com/vercel-labs/agent-skills/blob/6ec269328bc400712ee225a173a14b6b29128df7/skills/react-view-transitions/SKILL.md) and [expanded guide](https://github.com/vercel-labs/agent-skills/blob/6ec269328bc400712ee225a173a14b6b29128df7/skills/react-view-transitions/AGENTS.md) replace non-Next.js canary installation with React/react-dom 19.3-or-newer guidance. This is upstream version guidance, not proof Teamagent's pinned packages expose the APIs or authorization to upgrade. Bind variants to installed-package capabilities and distinguish framework-bundled React from displayed package versions. Runtime code is unchanged; browser availability and migration behavior were not executed or independently validated.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62` (commit date `2026-10-27T14:40:02-07:00`), compared with `6ec269328bc400712ee225a173a14b6b29128df7`. Earlier findings remain historical evidence.
+
+**Scope:** Changed deployment skill procedure and changed-path removal inventory; no deployment CLI, temporary service or deleted uploader was executed. The complete changed-path inventory contains 6 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The updated procedure replaces the custom-upload fallback with a temporary Vercel CLI deployment, specifying a claim link, expiry and reuse of the same directory until expiry. It also calls for showing the expiry and keeping the claim URL private. Those are upstream workflow instructions; this review did not authenticate the service behavior, entitlement, retention or ownership transfer. A temporary unauthenticated deployment is still an external publication and needs the same authorized content scope as an authenticated one. [skills/deploy-to-vercel/SKILL.md](https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/deploy-to-vercel/SKILL.md#L162-L176).
+
+The skill's instruction not to fetch the deployed URL means the returned URL is a publication acknowledgement rather than a functional acceptance test. Teamagent should retain no-overwrite/recovery state and sensitive claim references separately, and adapt the upstream mutable npx/latest example to its adopted pinned Aube/Bun tool policy. No deployment or framework was selected by reading this skill. [skills/deploy-to-vercel/SKILL.md](https://github.com/vercel-labs/agent-skills/blob/1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62/skills/deploy-to-vercel/SKILL.md#L198-L200).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deploy-vercel](https://github.com/vercel-labs/agent-skills); analyzed commit `6ec269328bc400712ee225a173a14b6b29128df7`; commit date 2026-10-26T21:16:01-07:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-vercel.md).
+Analysis metadata: source [deploy-vercel](https://github.com/vercel-labs/agent-skills); analyzed commit `1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62`; commit date 2026-10-27T14:40:02-07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--deploy-vercel.md).
 <!-- teamagent-analysis:end -->

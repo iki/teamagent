@@ -36,6 +36,16 @@ The [asset identifier](https://github.com/aquasecurity/trivy/blob/d18962e8f81773
 
 The [CSAF adapter](https://github.com/aquasecurity/trivy/blob/d18962e8f8177361e8397924f6aa6838c4a351aa/pkg/vex/csaf.go) requires a subcomponent before matching a product relationship, preventing a relationship assertion from automatically applying to a standalone component. It recognizes selected relationship categories and preserves modification status, source and statement. Malformed PURLs are logged and skipped; conflicting fixed/not-affected statuses traverse a map without an explicit precedence rule. Adapt contextual applicability and retained suppression evidence, while validating advisory trust, ambiguity and complete coverage independently. No scan, registry request, advisory refresh or tests were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `8b5ad79cd35944ed96f825d0df23ffc84aa20ddd` (commit date `2026-10-28T09:34:40Z`), compared with `d18962e8f8177361e8397924f6aa6838c4a351aa`. Earlier findings remain historical evidence.
+
+**Scope:** Complete two-file dependency manifest/checksum delta (go.mod and go.sum). The complete changed-path inventory contains 2 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+This revision moves go-jose/v4 from 4.1.5 to 4.1.6 and updates its module content checksum. It does not change scanner implementation in the captured two-file delta. Keep this as dependency provenance and a trigger for the appropriate upstream release/security review, not a new vulnerability-detection capability or a verified fix for a specific advisory. No package was downloaded or scanner binary rebuilt. [go.mod](https://github.com/aquasecurity/trivy/blob/8b5ad79cd35944ed96f825d0df23ffc84aa20ddd/go.mod#L253-L261); [go.sum](https://github.com/aquasecurity/trivy/blob/8b5ad79cd35944ed96f825d0df23ffc84aa20ddd/go.sum#L413-L422).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [trivy](https://github.com/aquasecurity/trivy); analyzed commit `d18962e8f8177361e8397924f6aa6838c4a351aa`; commit date 2026-10-27T13:22:50Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--trivy.md).
+Analysis metadata: source [trivy](https://github.com/aquasecurity/trivy); analyzed commit `8b5ad79cd35944ed96f825d0df23ffc84aa20ddd`; commit date 2026-10-28T09:34:40Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--trivy.md).
 <!-- teamagent-analysis:end -->

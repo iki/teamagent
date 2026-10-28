@@ -2,12 +2,11 @@
 
 Source: [omnigraph](https://github.com/ModernRelay/omnigraph) · [Analysis](../../projects/ai-agents-mem--omnigraph.md) · [memory](../../memory.md), [evolution](../../evolution.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `aee2a02ab0773ebe8844853604bac3a66eac830a`; commit date: 2026-10-27T14:20:32Z; review date: 2026-10-28T09:27:32.685Z; observed SHA: `aee2a02ab0773ebe8844853604bac3a66eac830a`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb`; commit date: 2026-10-28T02:58:11+01:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ModernRelay/omnigraph/compare/aee2a02ab0773ebe8844853604bac3a66eac830a...aee2a02ab0773ebe8844853604bac3a66eac830a). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/ModernRelay/omnigraph/compare/dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb...dc4a79d3d6b7e17d366a94ff5afb9512aeba78cb). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

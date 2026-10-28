@@ -2,12 +2,11 @@
 
 Source: [pipali](https://github.com/khoj-ai/pipali) · [Analysis](../../projects/ai-agents--pipali.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `4d347b0b7450508f717d49d727b1ef2215ef757d`; commit date: 2026-10-26T23:29:16-07:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `4d347b0b7450508f717d49d727b1ef2215ef757d`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `140a91509eb1aeb5f67ef09f8292e86f6eb3c122`; commit date: 2026-10-27T18:03:58-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `140a91509eb1aeb5f67ef09f8292e86f6eb3c122`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/khoj-ai/pipali/compare/4d347b0b7450508f717d49d727b1ef2215ef757d...4d347b0b7450508f717d49d727b1ef2215ef757d). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/khoj-ai/pipali/compare/140a91509eb1aeb5f67ef09f8292e86f6eb3c122...140a91509eb1aeb5f67ef09f8292e86f6eb3c122). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

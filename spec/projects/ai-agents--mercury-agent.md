@@ -38,6 +38,14 @@ The [delivery path](https://github.com/cosmicstack-labs/mercury-agent/blob/2bdcc
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `2bdcca50d102221d2ed21cdb1aeb5acacd110704` to `7c92d37304262d9182dda940b9f8a06ef9cecd02`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [.github/badges/downloads-breakdown.json](https://github.com/cosmicstack-labs/mercury-agent/blob/7c92d37304262d9182dda940b9f8a06ef9cecd02/.github/badges/downloads-breakdown.json#L1-L6), The complete two-path update changes only download badge data. The breakdown records npm/binary totals and its update timestamp; the other changed file is the aggregate download badge. No runtime or evaluation source changed in this frozen delta.
+
+**Harness implication and limits:** Keep the prior runtime/channel findings and their limitations unchanged. Repository popularity counters are neither quality evaluations nor evidence that previous delivery, authorization or replay concerns were fixed. This is a complete changed-path reconciliation for this two-file delta, not a new runtime audit. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent); analyzed commit `2bdcca50d102221d2ed21cdb1aeb5acacd110704`; commit date 2026-10-27T12:21:51Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mercury-agent.md).
+Analysis metadata: source [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent); analyzed commit `7c92d37304262d9182dda940b9f8a06ef9cecd02`; commit date 2026-10-28T05:51:52Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--mercury-agent.md).
 <!-- teamagent-analysis:end -->

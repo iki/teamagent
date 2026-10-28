@@ -1,0 +1,830 @@
+{
+  "id": "ai-agents--murage",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/ferroxlabs/murage",
+  "report": "spec/analyses/unreviewed/ai-agents--murage.md",
+  "analyzedSha": "833c3a3c573c486833ed41281f4017c4da258e46",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T06:48:39+07:00",
+  "observedSha": "24ab901bc8bdd90685398df00be35a7627937992",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "24ab901bc8bdd90685398df00be35a7627937992",
+      "date": "2026-10-28T03:30:19+07:00",
+      "subject": "CI try 0f8670211670"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/actions/linux-cage/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/vitest-runtime/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/flux-contract-daily.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/memory-timing-nightly.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/package-linux.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "TRADEMARKS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/changelog/meta.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/docs/content/docs/changelog/v1-0-8.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/docs/content/docs/features/settings-guide.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "build/linux-apparmor-profile.tpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ci/extended-tests.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ci/gate-tests.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/designs/BOOT-SETTLE-HELD-SENDS-108.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/designs/OWNER-PIN-AUDIENCE-108.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/designs/S4-POWER-STRUCTURAL-108.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/linux-desktop.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/verification/full-access-windows-108-D.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/verification/full-access-windows-108.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/verification/log-sweep-108-check.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron-builder.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/backup-schedule-host.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/backup-schedule-host.node-test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/cloud-step-up-label.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/cloud-step-up-label.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/data-dir-lease.node-test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/main.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/recovery/messages.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/skill-recorder.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/skill-recording-store.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "electron/windows-native.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "native/engine-exclusion/exclusion.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "native/gepa/build-linux.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "native/power-seccomp/POWER-BPF-HASHES.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "native/power-seccomp/murage-power-seccomp.c",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "release-notes/1.0.8.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/after-pack.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/after-pack.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/after-pack.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/build-engine-exclusion.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/build-fuigo-probe.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/build-fuigo-probe.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/build-help-index.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/build-murage-cage.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/build-murage-cage.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/cage-apparmor.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/cage-apparmor.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-linux-glibc-floor.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check-linux-glibc-floor.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/control-murage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev-server.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/dev-server.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/engine-exclusion-build.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/engine-exclusion-resource.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/linux-after-install.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/linux-floor.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/linux-floor.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/power-seccomp.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/prepare-cloudflared.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/prepare-fuigo.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/prepare-fuigo.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/prepare-source-cage.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/release-workflows.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/scale/hz-vitest.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/always-ask.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/attachment-read-gate.inventory.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/auto-approve-reason-log.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/auto-approve.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/backup-coordinator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/boot-settle-108.crash.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/boot-settle-108.perf.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/boot-settle-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/box-error-text-route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/box-exec.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/box-exec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/box-provision.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/box.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/browser-floor-builtin.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/browser-unavailable-turn-api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/bwrap-process.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/bwrap-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/checkpoints-error-text.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/checkpoints.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/claude-update.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/claude-update.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/computer-proxy-exec.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/computer-proxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/computer-proxy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/connector-proxy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/container-computer.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/container-computer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/conversation-deletion-helper-unloadable.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/conversation-deletion.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/delegations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/direct-late-close-api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/acp/acp.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/drivers/acp/approval-delivery-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/drivers/acp/approval-delivery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/acp/core.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/antigravity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/claude-auth.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/claude.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/claude.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/cli-memory-learning.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/codex.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/codex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/drivers/engine-stderr-capture.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/drivers/helper-error-text.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/lifecycle-diagnostic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/pi-permission-gate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/pi.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/drivers/pi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-deletion-scopes.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/engine-env-win-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion-called-exports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion-r17.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion-r18.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion-r20-real.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion-r20.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion-r22.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion-win.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exclusion.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-exec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-history-foreign-106.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-history-run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/engine-plan-core.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/env-fence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/env-path.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/failed-turn-line.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/failed-turn-line.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/full-access-corpus-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/full-access-driver-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/full-access-env-probe-path-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/full-access-env-unchecked-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/full-access-env-win-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/full-access-launchers-win-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/full-access-unreadable-d-108.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/handoff-boundary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/host-power.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/host-power.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/image-auto-approval-api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/incident-diagnostics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/incident-diagnostics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/independent-threads-api.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/index-2.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/index-4.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/installation-database-snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/installation-restore-preparation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "server/io-budget-log-noise.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "server/io-budget.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

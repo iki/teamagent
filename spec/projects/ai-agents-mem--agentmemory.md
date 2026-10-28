@@ -37,6 +37,18 @@ Evidence: [src/state/graph-retrieval-index.ts:79-170](https://github.com/rohitg0
 
 **Scope and limits:** Scoped static review of graph index budgets/recovery, selected evidence-finalization and embedding guards in the 733-path comparison. The complete changed repository, underlying KV engine, all authorization call sites and migration implementation were not audited. Tests were read, not run; no model, storage-load or recovery experiment was performed.
 
+## Follow-up change review — 2026-10-28
+
+**Registered, connected and failed workers remain distinct in the health viewer.** Reviewed commit `76db6ac6c090efe9c1fa07bcde1618e816717c10` (commit date `2026-10-28T12:22:15+05:30`), compared with `c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8`. The complete no-rename Git path inventory contains 8 changed paths.
+
+The viewer now treats connected/running as healthy, starting/reconnecting as transitional, explicit failure states as problems, and unfamiliar or missing states as unknown. Engine services are grouped using runtime/isolation metadata (with a legacy compose fallback); the UI explicitly says that available means registered rather than enabled. Worker labels and status strings are escaped. The new fixtures exercise state classification, grouping and hostile label strings; they do not establish live worker readiness.
+
+Evidence: [src/types.ts:270-282](https://github.com/rohitg00/agentmemory/blob/76db6ac6c090efe9c1fa07bcde1618e816717c10/src/types.ts#L270-L282) · [src/viewer/index.html:7246-7269](https://github.com/rohitg00/agentmemory/blob/76db6ac6c090efe9c1fa07bcde1618e816717c10/src/viewer/index.html#L7246-L7269) · [test/viewer-workers.test.ts:18-66](https://github.com/rohitg00/agentmemory/blob/76db6ac6c090efe9c1fa07bcde1618e816717c10/test/viewer-workers.test.ts#L18-L66).
+
+**Harness consequence:** Expose capability registration, process connectivity, feature enablement and task readiness as separate facts. Preserve unknown states through adapters instead of converting them to failures or successful authentication.
+
+**Scope and limits:** Reviewed the health type change, worker-rendering functions and new viewer fixtures in the eight-path delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentmemory](https://github.com/rohitg00/agentmemory); analyzed commit `c5b8ebfb32eb6a08fe301d3bb75840f3597b66c8`; commit date 2026-10-26T19:06:20+05:30; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agentmemory.md).
+Analysis metadata: source [agentmemory](https://github.com/rohitg00/agentmemory); analyzed commit `76db6ac6c090efe9c1fa07bcde1618e816717c10`; commit date 2026-10-28T12:22:15+05:30; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--agentmemory.md).
 <!-- teamagent-analysis:end -->

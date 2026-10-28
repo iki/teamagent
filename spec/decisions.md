@@ -70,6 +70,16 @@ Decision-service outage leaves a functioning deterministic fallback. Malformed o
 
 The refreshed [OpenSpec report](projects/ai-spec--openspec.md) ([source](https://github.com/Fission-AI/OpenSpec)) distinguishes hard prerequisite identity checks from uncertain progress-display paths. Reject unknown dependencies, cycles and unsafe paths deterministically. Keep an unresolved display/progress observation visible without silently converting it into a hard authorization decision.
 
+## Follow-up control boundaries: 2026-10-28
+
+Keep decision, permission, acknowledgement and verified effect as separate records. [Onyx](https://github.com/onyx-dot-app/onyx) ([review](projects/ai-agents--onyx.md)) makes result, pending-human and child-wait decisions distinct in its examined protocol. [Hermes Agent](https://github.com/NousResearch/hermes-agent) ([review](projects/ai-agents--hermes-agent.md)) separates approval acknowledgement, withdrawal and settlement observers. Those source contracts motivate explicit state transitions; they do not prove that every executor enforces them. [OpenCode](https://github.com/anomalyco/opencode) ([review](projects/ai-agents--opencode.md)) also shows why a helper that rejects only `deny` must not be mistaken for permission to execute an `ask` action.
+
+Cache identity and execution freshness must include the effective state, not just a stable request name. [OpenBot](https://github.com/CopilotKit/openbot) ([review](projects/ai-agents--openbot.md)) binds an examined action digest to actor, bot, effect, scope, arguments and target. [Nanobot](https://github.com/HKUDS/nanobot) ([review](projects/ai-agents--nanobot.md)) caches native bindings while rechecking process identity. [Mastra](https://github.com/mastra-ai/mastra) ([review](projects/ai-agents--mastra.md)) ties examined cache reuse to effective configuration and thread scope. Apply these as design inputs for stale approvals, reused request IDs and changed routes; validate each actual executor independently.
+
+Discovery labels and status messages remain evidence with a limited scope. [awesome-jev-live](https://github.com/wh000wh000/awesome-jev-live) ([review](analyses/unreviewed/ai-info--awesome-jev-live.md)) distinguishes official, observed, inferred and unverified catalog entries, but those are publisher labels, not independent verification or calibrated routing scores. [Optio](https://github.com/jonwiggins/optio) ([review](projects/ai-agents-swarm--optio.md)) parses bounded process status messages; a valid status payload still cannot authorize an effect or prove completion. [E2B](https://github.com/e2b-dev/e2b) ([review](projects/ai-agents-sandbox--e2b.md)) motivates retaining whether a discovery list is complete before interpreting a missing candidate. Missing, unknown, denied, pending and completed states must remain distinct through deterministic eligibility, model ranking and user-visible plans.
+
+These refinements come from static source review. They are operational design and acceptance requirements, not a claim that Teamagent has implemented or benchmarked each pattern.
+
 ## Additional scoped review references
 
 These catalog associations provide navigation to scoped source reviews. Each report records its inspected revision, findings and exclusions; inclusion here does not establish a capability or an adoption decision.

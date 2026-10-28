@@ -1,0 +1,390 @@
+{
+  "id": "ai-agents--prime-agent",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/PrimeIntellect-ai/prime-agent",
+  "report": "spec/projects/ai-agents--prime-agent.md",
+  "analyzedSha": "c13415b44239c1333b2c8503070310182e0d4b2d",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T12:20:00+01:00",
+  "observedSha": "ea9d9602ec0938d9e454e8963107cd85af1565c6",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ea9d9602ec0938d9e454e8963107cd85af1565c6",
+      "date": "2026-10-28T00:30:39-07:00",
+      "subject": "release: v0.10.2 (#3789)"
+    },
+    {
+      "sha": "9f5fbd16b23cec00b4035bbf56bd8fcb7d601378",
+      "date": "2026-10-27T23:09:55-07:00",
+      "subject": "fix: match TS hyperlink label rendering (#3786)"
+    },
+    {
+      "sha": "1ee2598205d2b211b06a0a092c88350d06bf6404",
+      "date": "2026-10-27T22:36:42-07:00",
+      "subject": "fix: preserve team request headers in refinement calls (#3815)"
+    },
+    {
+      "sha": "815e64b51df86e6bebcbf80eb8e37b5305ae3642",
+      "date": "2026-10-27T20:00:08-07:00",
+      "subject": "fix idle parent child spawn prompt timing"
+    },
+    {
+      "sha": "fccecd04884d2523564fb1b0447e15e265f62200",
+      "date": "2026-10-27T19:56:27-07:00",
+      "subject": "fix saved subagent family publication on session open"
+    },
+    {
+      "sha": "8ebcb8e6c82cc3eefa865afb830c766881e87192",
+      "date": "2026-10-27T19:49:38-07:00",
+      "subject": "fix late grandchild usage attribution"
+    },
+    {
+      "sha": "e08c542f45e2fec7e34b0f0615cb293cddc305ba",
+      "date": "2026-10-27T19:37:59-07:00",
+      "subject": "allow optional inputs on factory entry states"
+    },
+    {
+      "sha": "9083398b3a1325a7fc942fc17946f144e27ee620",
+      "date": "2026-10-27T19:10:59-07:00",
+      "subject": "preserve the RLM namespace after importing the package"
+    },
+    {
+      "sha": "b1917c1a99d059848232432b47b79bb0854b8a29",
+      "date": "2026-10-27T19:03:02-07:00",
+      "subject": "remove unused legacy upgrade helpers and stale evidence"
+    },
+    {
+      "sha": "2b2a6b6184453276372985979faf5f6bf5da3b01",
+      "date": "2026-10-27T18:54:07-07:00",
+      "subject": "report Prime Inference model specification gaps"
+    },
+    {
+      "sha": "fc339e16f1662be16129823f4d009ee9e2ad32b7",
+      "date": "2026-10-27T18:48:10-07:00",
+      "subject": "document integrity-preserving MCP payload handling"
+    },
+    {
+      "sha": "6d4f79f4bb1921bab4aa846fc212aaa7627d6953",
+      "date": "2026-10-27T18:42:57-07:00",
+      "subject": "skip python-state rows in branch summaries"
+    }
+  ],
+  "files": [
+    {
+      "status": "D",
+      "path": ".changes/async-turn-contract.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changes/azure-responses-v1-route.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changes/fix-agents-view-return-focus.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changes/tool-execution-end-iserror.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changes/user-bash-signal-exit-code.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/prime-inference-specs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-cli/tests/daemon_commands_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/branch_summarization.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/compaction_arms.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/compaction_outcome_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/src/session_engine/refine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-core/tests/compaction_transport.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/agent_engine/session_engine_impl.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/engine.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/messaging.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/registry.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_child_usage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/host.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_children/watch_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_ledger.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_ledger/replay.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/rlm_ledger/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/stop_cleanup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/adoption.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/routing.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/sessions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/spawn_record_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor/worker_lifecycle.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor_roster.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/supervisor_roster_seed.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/turn.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/src/worker/turn_stream_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-daemon/tests/rlm_roster_walk_e2e.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-models/src/prime_inference.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-tui/src/chat/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-tui/src/markdown/inline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/pa-tui/src/markdown/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/legacy-upgrade-evidence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "prime-agent-runtime/src/rlm/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "prime-agent-runtime/src/rlm/factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "prime-agent-runtime/src/rlm/repl.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "prime-agent-runtime/test/test_factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "prime-agent-runtime/test/test_harness.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "prime-agent-runtime/test/test_subagent_registry.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_link_frames.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/check_refine_request_headers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/lifecycle_lib.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/prime_inference_specs.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "scripts/release/test_legacy_npm_fallback.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "scripts/release/test_legacy_npm_upgrade.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "scripts/release/test_legacy_runtime_restart.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "scripts/release/test_legacy_tui_upgrade.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/test_check_link_frames.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/mcp/SKILL.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

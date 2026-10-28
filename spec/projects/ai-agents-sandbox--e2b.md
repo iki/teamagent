@@ -37,6 +37,16 @@ The [retry wrapper](https://github.com/e2b-dev/e2b/blob/ee355b765ac0e884fbeaa69e
 
 The [input handle](https://github.com/e2b-dev/e2b/blob/ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1/packages/js-sdk/src/sandbox/commands/inputHandle.ts) copies binary input, preserves send order and makes close await service acknowledgement. Its documentation correctly says send means queued rather than delivered. The queue is unbounded and provides no producer backpressure; timeout zero can keep it alive indefinitely. Adapt explicit acknowledgement and uncertain-effect semantics with bounded queues, owned cancellation and tested transport deadlines. No sandbox, process input, provider or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1` to `a91e33a3014a7644a2d39e03501d25b21ad727c0`. This is a bounded static source review, not an upstream runtime or performance result.
+
+In [packages/cli/src/commands/template/list.ts](https://github.com/e2b-dev/e2b/blob/a91e33a3014a7644a2d39e03501d25b21ad727c0/packages/cli/src/commands/template/list.ts#L114-L157), Template discovery follows the provider's `x-next-token` cursor, requests pages of at most 100, and slices the collected results to the requested limit. Pretty output defaults to 1,000 templates and displays a truncation hint; JSON defaults to no limit and returns the array without the `hasMore` metadata. The loop has no independent page-count or repeated-cursor guard in this helper. A result limit is therefore a presentation bound, not a complete network/time budget.
+
+[Inspected fixtures](https://github.com/e2b-dev/e2b/blob/a91e33a3014a7644a2d39e03501d25b21ad727c0/packages/cli/tests/commands/template/list.test.ts#L48-L85): The inspected fixtures cover cross-page limits, the pretty-output hint and malformed-limit rejection. The pagination cases require credentials and can return early when the account lacks enough templates; they were read, not run. No provider API or sandbox was started.
+
+**Teamagent implication:** Teamagent should preserve pagination completeness in structured discovery results, enforce page/byte/time limits and repeated-cursor detection, and test those properties with deterministic multi-page fixtures. A partial listing must not establish that a resource is absent.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [e2b](https://github.com/e2b-dev/e2b); analyzed commit `ee355b765ac0e884fbeaa69e4b44f4c7c58ed6b1`; commit date 2026-10-26T16:23:01Z; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--e2b.md).
+Analysis metadata: source [e2b](https://github.com/e2b-dev/e2b); analyzed commit `a91e33a3014a7644a2d39e03501d25b21ad727c0`; commit date 2026-10-28T07:56:45Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--e2b.md).
 <!-- teamagent-analysis:end -->

@@ -39,6 +39,18 @@ Evidence: [crates/xberg/src/extractors/rtf/parser/text_extract.rs:193-290](https
 
 **Scope and limits:** Scoped static review of selected RTF parser paths and fidelity/fallback fixtures in the 2,075-path comparison. Parser helper internals, whole-engine security admission, PDF/OCR, other formats and the implementation behind strict-parse fixtures were not fully audited. No upstream tests, extraction binaries or benchmarks were run.
 
+## Follow-up change review — 2026-10-28
+
+**OCR script names are copied as borrowed native memory rather than freed.** Reviewed commit `2e7128df7deaeff75486d128817ccfb7ce3f979e` (commit date `2026-10-28T10:06:03+02:00`), compared with `92ec93de51dc8a8ea764b11c0424e429a3d14a59`. The complete no-rename Git path inventory contains 57 changed paths.
+
+The orientation/script binding changes the pointer to const and copies the NUL-terminated script name while the engine lock is held, removing TessDeleteText for this borrowed storage. The shim signature matches. Pure ownership fixtures retain the original CString and reject invalid UTF-8 without freeing it. A separately ignored native qualification requires local assets and repeats detection across engines while checking an independent recognizer survives detector destruction; that test's presence is not a result from this review.
+
+Evidence: [crates/xberg-tesseract/src/api.rs:746-754](https://github.com/xberg-io/xberg/blob/2e7128df7deaeff75486d128817ccfb7ce3f979e/crates/xberg-tesseract/src/api.rs#L746-L754) · [crates/xberg-tesseract/src/api.rs:772-783](https://github.com/xberg-io/xberg/blob/2e7128df7deaeff75486d128817ccfb7ce3f979e/crates/xberg-tesseract/src/api.rs#L772-L783) · [crates/xberg-tesseract/src/api.rs:2381-2406](https://github.com/xberg-io/xberg/blob/2e7128df7deaeff75486d128817ccfb7ce3f979e/crates/xberg-tesseract/src/api.rs#L2381-L2406) · [crates/xberg-tesseract/src/shim.cpp:41-51](https://github.com/xberg-io/xberg/blob/2e7128df7deaeff75486d128817ccfb7ce3f979e/crates/xberg-tesseract/src/shim.cpp#L41-L51) · [crates/xberg-tesseract/tests/osd_borrowed_script_lifetime.rs:40-103](https://github.com/xberg-io/xberg/blob/2e7128df7deaeff75486d128817ccfb7ce3f979e/crates/xberg-tesseract/tests/osd_borrowed_script_lifetime.rs#L40-L103).
+
+**Harness consequence:** Document native ownership per API, copy borrowed results before owner release, and separate pure boundary tests from explicitly provisioned native qualification. Parser adapters need scoped resource ownership as much as schema validation.
+
+**Scope and limits:** Reviewed changed binding/ownership hunks, complete shim and native qualification fixture; no native OCR, model-pack download or asset verification was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [xberg](https://github.com/xberg-io/xberg); analyzed commit `92ec93de51dc8a8ea764b11c0424e429a3d14a59`; commit date 2026-10-27T18:42:39+02:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--xberg.md).
+Analysis metadata: source [xberg](https://github.com/xberg-io/xberg); analyzed commit `2e7128df7deaeff75486d128817ccfb7ce3f979e`; commit date 2026-10-28T10:06:03+02:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--xberg.md).
 <!-- teamagent-analysis:end -->

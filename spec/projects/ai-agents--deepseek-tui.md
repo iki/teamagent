@@ -38,6 +38,18 @@ The [model resolver](https://github.com/codewhale-hq/codewhale/blob/eaff21a8b8e6
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1` (commit date `2026-10-28T03:14:12-07:00`), compared with `eaff21a8b8e62e4693c69e71faa03db866820b9c`. Earlier findings remain historical evidence.
+
+**Scope:** Codewhale's new REPL fence parser and selected Python-runtime startup/round-settlement branches; historical source ID retained. The complete changed-path inventory contains 720 paths; the assessment below is limited to the cited branches.
+
+The REPL parser requires an opening fence on its own line with at most three spaces and no extra info string, avoiding incidental prose and repl-output blocks. See [crates/repl/src/sandbox.rs](https://github.com/codewhale-hq/codewhale/blob/687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1/crates/repl/src/sandbox.rs#L10-L67). The runtime uses a session-specific readiness sentinel, a bounded startup wait and kill-on-drop; failed rounds mark the interpreter broken and request termination before reuse. Inline rounds have a timeout, while context/RLM rounds intentionally have none. See [crates/repl/src/runtime.rs](https://github.com/codewhale-hq/codewhale/blob/687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1/crates/repl/src/runtime.rs#L185-L289) and [crates/repl/src/runtime.rs](https://github.com/codewhale-hq/codewhale/blob/687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1/crates/repl/src/runtime.rs#L546-L573).
+
+For Teamagent, model-produced code remains executable untrusted input even when fence syntax is precise. These spawn branches launch Python without demonstrating OS sandbox attachment; environment filtering and process termination are separate controls. A requested kill is not a cleanup receipt, and timeout-free RLM rounds require a caller-owned total budget. No Python code or native confinement tests were run.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `eaff21a8b8e62e4693c69e71faa03db866820b9c`; commit date 2026-10-27T09:08:28-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
+Analysis metadata: source [codewhale](https://github.com/codewhale-hq/codewhale); analyzed commit `687a38c6ed889d9cc1c3ff0bc12eeb5b20c005a1`; commit date 2026-10-28T03:14:12-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-tui.md).
 <!-- teamagent-analysis:end -->

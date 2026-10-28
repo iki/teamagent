@@ -32,6 +32,16 @@ The [scoring driver](https://github.com/Tencent/teamai-cli/blob/5a3ae56ed3dccbbd
 
 Local logs still include a redacted prompt line, and the collector's redaction was not inspected. The outer ten-second timeout does not itself demonstrate cancellation of an uncertain publish. The [sharing skill](https://github.com/Tencent/teamai-cli/blob/5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8/skill-data/share/SKILL.md) proposes direct team-branch publication and a local language preference; neither grants authorization in Teamagent. Adapt independent scoring attempts, dry-run propagation and publication receipts, while keeping privacy, approval and durable recovery in enforced host code. No session, judge, upload or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8` to `56320abf2ee27144f78b9a70c9b8c77c1389a65d`. This is a bounded static source review, not an upstream runtime or performance result.
+
+In [src/init.ts](https://github.com/Tencent/teamai-cli/blob/56320abf2ee27144f78b9a70c9b8c77c1389a65d/src/init.ts#L89-L150), Re-initialization salvages only individually schema-valid settings from an otherwise invalid YAML mapping that still identifies a repository remote. It retains repository identity for deciding whether settings can carry forward, rather than treating unreadable configuration as an empty install. The salvage diagnostic includes `JSON.stringify(value)` for a rejected setting, so this formatting should not be copied into a general configuration boundary that may contain secrets.
+
+[Inspected fixtures](https://github.com/Tencent/teamai-cli/blob/56320abf2ee27144f78b9a70c9b8c77c1389a65d/src/__tests__/e2e/init-invalid-config-1500.test.ts#L109-L157): The inspected same-team fixtures preserve a valid false value, agents, user-scope inheritance and queued learnings while dropping an invalid boolean; the different-team case moves the old configuration aside. The call site at `src/init.ts:1792-1797` uses the salvaged file only when a live validated configuration is unavailable. These source fixtures were not run; broader initialization and final-schema enforcement were outside this focused review.
+
+**Teamagent implication:** Skill configuration repair should preserve valid user choices and queued work, bind carried settings to the same source identity, and record each rejected field without exposing its raw value. Partial salvage is a recovery input, not authorization to relax the final schema or inherit another repository's trust.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `5a3ae56ed3dccbbd0c5d34f01c533080ebbff5c8`; commit date 2026-10-27T17:56:04+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
+Analysis metadata: source [admin.teamai-cli.tencent](https://github.com/Tencent/teamai-cli); analyzed commit `56320abf2ee27144f78b9a70c9b8c77c1389a65d`; commit date 2026-10-28T11:00:27+01:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-skills--admin.teamai-cli.tencent.md).
 <!-- teamagent-analysis:end -->

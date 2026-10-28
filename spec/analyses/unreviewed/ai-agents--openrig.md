@@ -14,6 +14,14 @@ The [session-name contract](https://github.com/mvschwarz/openrig/blob/84d6bbdbd9
 
 The [provider-readiness helper](https://github.com/mvschwarz/openrig/blob/84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175/packages/cli/src/provider-auth.ts) distinguishes absent tools, local credential presence and unresolved configuration. An explicitly non-OpenAI provider can use a validated environment-variable name, and its success message correctly disclaims provider acceptance and propagation to managed seats. Other configuration layers remain unresolved. Raw caught error messages enter diagnostics, so the execution adapter needs redaction and bounds. The [agent CLI tests](https://github.com/mvschwarz/openrig/blob/84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175/packages/cli/test/agent.test.ts) exercise a fake daemon that accepts/rejects by an INVALID substring; they do not validate production schemas or authorization. Adapt honest readiness states and separate name parsing, identity and admission; no daemon, provider or tests were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175` to `6957751f5e39af15a3ccf04a579a8477d2744d88`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [packages/daemon/src/domain/terminal/terminal-provider.ts](https://github.com/mvschwarz/openrig/blob/6957751f5e39af15a3ccf04a579a8477d2744d88/packages/daemon/src/domain/terminal/terminal-provider.ts#L111-L153), The terminal-provider contract now returns a stable workspace identity and following status for explicitly followed tasks, and exposes an optional followView operation with a required stillCurrent callback. Existing result fields distinguish opened, absent and degraded seats from hard provider failure.
+
+**Harness implication and limits:** Negotiate live-follow support independently of ordinary view rendering, and recheck view generation before applying asynchronous updates. Optional interface members and a callback signature do not prove that a provider invokes the check or fences stale writes. Implementation, reconnection, cancellation and real terminal behavior were not audited; no provider was launched. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `84d6bbdbd92abdcfe818e7d3f8097b4cc31ac175`; commit date 2026-10-27T10:12:52-07:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-agents--openrig.md).
+Analysis metadata: source [openrig](https://github.com/mvschwarz/openrig); analyzed commit `6957751f5e39af15a3ccf04a579a8477d2744d88`; commit date 2026-10-27T14:13:32-07:00; review date 2026-10-28T14:29:27.414Z; depth reviewed. [Maintenance record](../repos/ai-agents--openrig.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,69 @@
+# streambert
+
+Source: [streambert](https://github.com/truelockmc/streambert) · Category: [ai-media](../categories/ai-media.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `4afe564e5ea2565c96d6f2e61679c00fad2d498c`; commit timestamp `2026-09-11T18:33:35+02:00`; 106 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/truelockmc/streambert/blob/4afe564e5ea2565c96d6f2e61679c00fad2d498c/README.md)):
+
+> [](https://github.com/truelockmc/streambert/issues?q=is%3Aissue+is%3Aclosed) A cross-platform Electron Desktop App to stream and download any Movie, TV Series or Anime in the World. Zero Ads and Tracking
+
+Build/package evidence: [package.json](https://github.com/truelockmc/streambert/blob/4afe564e5ea2565c96d6f2e61679c00fad2d498c/package.json)
+
+License evidence: [LICENSE](https://github.com/truelockmc/streambert/blob/4afe564e5ea2565c96d6f2e61679c00fad2d498c/LICENSE) Classification hint: GPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-media**. Its category places it in the candidate set for import-generation; those associations are navigational and have not been individually validated as implemented capabilities. See [import-generation](../import-generation.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## Speech review: 2026-10-25
+
+The newly cited source files match their exact upstream Git blobs; see [source validation](../data/media-source-validation.json).
+
+Focused snapshot: [`18207c43fc982d4a25ad8f061690cb6fda8b452e`](https://github.com/truelockmc/streambert/commit/18207c43fc982d4a25ad8f061690cb6fda8b452e), commit date 2026-10-17T15:57:47+02:00. Scope: source inspection of subtitle ingestion, not the entire Electron application. The earlier inventory baseline remains intact.
+
+The inspected [subtitle module](https://github.com/truelockmc/streambert/blob/18207c43fc982d4a25ad8f061690cb6fda8b452e/src/ipc/subtitles.js#L1-L87) searches/downloads subtitle assets and extracts supported subtitle extensions from ZIP entries. It imposes a decompressed-entry bound, uses a filename basename and caps inflation output. Its request helper has a timeout and clears the timer. These are concrete ingestion mechanisms, unlike a claim that the application can recognize or synthesize speech.
+
+The module is not evidence of STT, TTS, voice enrollment or conversational endpointing. Its useful role is playback and accompanying text artifacts. The [language-hint logic](https://github.com/truelockmc/streambert/blob/18207c43fc982d4a25ad8f061690cb6fda8b452e/src/ipc/subtitles.js#L89-L114) also illustrates that subtitle labels can be inferred from metadata rather than established by audio recognition. A harness should preserve the distinction between provider metadata, filename heuristics and model-detected language.
+
+For Teamagent, subtitles can be imported as timed evidence linked to the exact media artifact. Retain their source URL/license, retrieval time, language provenance and synchronization offset. Externally supplied subtitles are not an authoritative transcription of a recording until their alignment/content has been checked. A user correction becomes a versioned derivative instead of overwriting the original.
+
+Borrow the bounded extraction intent, but do not adopt a handwritten ZIP scanner as a general archive-security boundary without dedicated format validation and adversarial tests. Entry-size bounds alone do not cover total entry count, total expansion, repeated work, archive structure, network redirects or trust in external providers. The proposed importer must enforce these independently. Test malicious names, unsupported compression, truncated data and subtitle encoding before production reuse.
+
+Disposition: useful media/subtitle UX reference; exclude from automatic speech-backend candidates. No playback, network subtitle request, extraction fixture or security exploit was executed during this focused review.
+
+Related: [media processing](../media-processing.md) · [channel input](../channel-input.md) · [import and generation](../import-generation.md).
+
+## Change review - 2026-10-28
+
+**Player lifecycle setup improves first-load behavior, but relaxed browser protections are unsuitable for a trusted media adapter.** Reviewed commit `1a4bf7e665a7fd54c6107d62e258346c24ccd66f` (commit date `2026-10-25T17:34:39+01:00`). Compared with `4afe564e5ea2565c96d6f2e61679c00fad2d498c`; the complete Git comparison contains 20 changed paths.
+
+Session setup now runs before the first webview is attached, and browser-initiated downloads from player/trailer sessions are prevented. Pop-out reuse explicitly resets a prior custom user agent when the next source uses the default. Player-stop cleanup now mutes tracked web contents and relies on renderer removal for destruction, retaining HTTP/shader caches; a GC hint is not evidence that playback/network resources have terminated. Low-RAM mode becomes an environment-controlled default, combining a 256 MiB V8 heap option, disk-cache setting and renderer-process setting; these are configuration choices, not measured whole-process memory bounds.
+
+The same session configuration still removes CSP and X-Frame-Options on all matching network responses. Selected popup-origin hosts now receive a real hidden window that is stopped after creation and destroyed five seconds later. There is no popup-count bound or validation of the requested popup target in that handler. The pop-out IPC handler accepts any nonempty URL except about:blank, does not inspect the sender and loads it without awaiting success; contextIsolation and nodeIntegration=false alone do not validate this boundary. New synchronous playback getters check numeric types and duration but do not reject a NaN current time and report no recent user seek.
+
+Evidence: [index.js:10-38](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/index.js#L10-L38) · [index.js:302-399](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/index.js#L302-L399) · [index.js:501-544](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/index.js#L501-L544) · [index.js:599-638](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/index.js#L599-L638) · [index.js:649-717](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/index.js#L649-L717) · [preload.js:59-78](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/preload.js#L59-L78) · [preload.js:134-145](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/preload.js#L134-L145) · [src/ipc/player.js:659-691](https://github.com/truelockmc/streambert/blob/1a4bf7e665a7fd54c6107d62e258346c24ccd66f/src/ipc/player.js#L659-L691).
+
+**Harness consequence:** Reuse early session initialization, explicit user-agent reset and unsubscribe/lifecycle patterns only inside a capability-checked host adapter. Preserve site security headers, validate IPC senders/URLs and protocol schemes, deny unauthorized popups, and await navigation/teardown receipts. Verify media interruption and total memory on the packaged runtime rather than treating muted audio, GC or low-RAM flags as completed cleanup.
+
+**Scope and limits:** Static review of changed session/pop-out/cleanup/preload paths within the 20-path comparison. HiAnime resolution, site-specific injected code, download manager and full TV UI changes were not audited; no streaming services, media downloads or Electron runtime executed.
+
+## Follow-up change review — 2026-10-28
+
+**Cast and crew loading is a UI metadata change with ambiguous empty results.** Reviewed commit `2ffba661397392b83fd8c84dc8383d842b9f802f` (commit date `2026-10-27T19:28:04+01:00`), compared with `1a4bf7e665a7fd54c6107d62e258346c24ccd66f`. The complete no-rename Git path inventory contains 6 changed paths.
+
+The new hook requests TV aggregate credits or movie credits, clears prior results on selection changes, and uses an effect-local mounted flag to avoid applying stale responses. Errors collapse to empty cast/crew arrays. The flag suppresses state updates but does not cancel the underlying request, and an empty result cannot distinguish missing metadata from failed retrieval.
+
+Evidence: [src/utils/useCredits.js:1-34](https://github.com/truelockmc/streambert/blob/2ffba661397392b83fd8c84dc8383d842b9f802f/src/utils/useCredits.js#L1-L34).
+
+**Harness consequence:** Use explicit loading/error/empty states and cancellation for media metadata adapters. This UI change supplies no new evidence for safe playback permissions, provider policy or media-generation capability.
+
+**Scope and limits:** Reviewed the complete new credits hook in the six-path UI change; existing security and playback caveats remain unresolved by this delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

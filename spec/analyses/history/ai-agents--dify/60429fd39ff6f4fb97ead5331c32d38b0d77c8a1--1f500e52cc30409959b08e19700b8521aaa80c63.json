@@ -1,0 +1,490 @@
+{
+  "id": "ai-agents--dify",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/langgenius/dify",
+  "report": "spec/projects/ai-agents--dify.md",
+  "analyzedSha": "60429fd39ff6f4fb97ead5331c32d38b0d77c8a1",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T16:52:15Z",
+  "observedSha": "1f500e52cc30409959b08e19700b8521aaa80c63",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "1f500e52cc30409959b08e19700b8521aaa80c63",
+      "date": "2026-10-28T03:26:06Z",
+      "subject": "refactor(api): share conversation list queries (#43996)"
+    },
+    {
+      "sha": "85ae1eb16471abf9d906d97bcf2efcda3862d23c",
+      "date": "2026-10-28T03:21:34Z",
+      "subject": "fix: fix skill search not escape (#44922)"
+    },
+    {
+      "sha": "c01cb5d119a69532df73ec20da8daa18cf44e0fb",
+      "date": "2026-10-28T02:46:42Z",
+      "subject": "fix(openapi): stop runs by run id and publish each op's effect (#44587)"
+    },
+    {
+      "sha": "24e4037144d84c1f589d35a8c067e0e6581c361b",
+      "date": "2026-10-28T02:35:16Z",
+      "subject": "fix(api): inherit web app access mode when converting apps (#44857)"
+    },
+    {
+      "sha": "0e92c72ad9da9bfec1ec5fa43a67d28bf5c726a4",
+      "date": "2026-10-28T02:14:51Z",
+      "subject": "fix(api): escape LIKE wildcards in snippet keyword search (#44708)"
+    },
+    {
+      "sha": "2a99ac015e8fad691e276fd6714f214decc4eca2",
+      "date": "2026-10-28T02:12:05Z",
+      "subject": "fix(trigger): keep webhook form/query integers exact and reject non-finite numbers (#44706)"
+    },
+    {
+      "sha": "736b3a96a262d001d10f4da3692f4960547ca9aa",
+      "date": "2026-10-28T02:11:43Z",
+      "subject": "fix(deps): sync API lockfile with dify-agent Pillow constraint (#44917)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "api/.importlinter",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/common/errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_errors.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/_models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/app_dsl.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/app_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/app_webapp.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/app_workflow.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/auth/spec.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/human_input_form.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/openapi/workflow_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/service_api/app/conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/controllers/web/conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/extensions/application_services/installed_app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/extensions/ext_application_services.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/models/utils/file_input_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/openapi/markdown/openapi-openapi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/openapi/markdown/service-openapi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/openapi/markdown/web-openapi.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/repositories/conversation_repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/app/console_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/app_task_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/services/conversation_query_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/conversation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/enterprise/enterprise_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/entities/conversation_entities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/installed_app_conversation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/skill_management_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/snippet_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/trigger/webhook_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "api/services/web_conversation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/workflow/graph_check.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/services/workflow_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/e2e_tests/containers/controllers/openapi/test_app_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "api/tests/e2e_tests/containers/controllers/web/test_conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/e2e_tests/containers/pyrefly.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/e2e_tests/containers/services/test_conversation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/e2e_tests/containers/services/test_conversation_service_variables.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "api/tests/e2e_tests/containers/services/test_web_conversation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/tests/e2e_tests/contracts/controllers/service_api/app/test_conversation_list.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/tests/e2e_tests/contracts/controllers/web/test_conversation_list.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/console/explore/test_conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/openapi/auth/test_requirements.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/openapi/auth/test_resource_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/openapi/test__catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/openapi/test_app_run.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/openapi/test_human_input_form.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/openapi/test_workflow_events.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/controllers/service_api/app/test_conversation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/models/utils/test_file_input_compat.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/repositories/test_conversation_repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/app/test_console_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/enterprise/test_enterprise_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/test_app_task_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "api/tests/unit_tests/services/test_conversation_query_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/test_conversation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/test_installed_app_conversation_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/test_skill_management_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/test_snippet_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/test_workflow_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/tests/unit_tests/services/trigger/test_webhook_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "api/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/call/execute.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/plugins/catalog/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/plugins/commands/command.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/plugins/ops/command.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/plugins/ops/command.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fixtures/catalog-v2.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fixtures/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/fixtures/dify-mock/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/openapi/orpc.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/openapi/types.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/openapi/zod.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/service/errors.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/service/orpc.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/service/types.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/service/zod.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/web/errors.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/web/orpc.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/web/types.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/generated/api/web/zod.gen.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/non-json-openapi-responses.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/difyctl/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills/difyctl/references/operations.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

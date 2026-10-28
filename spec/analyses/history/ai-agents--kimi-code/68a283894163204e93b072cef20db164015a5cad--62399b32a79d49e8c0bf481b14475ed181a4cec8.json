@@ -1,0 +1,865 @@
+{
+  "id": "ai-agents--kimi-code",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/MoonshotAI/kimi-code",
+  "report": "spec/projects/ai-agents--kimi-code.md",
+  "analyzedSha": "68a283894163204e93b072cef20db164015a5cad",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T18:59:19+08:00",
+  "observedSha": "62399b32a79d49e8c0bf481b14475ed181a4cec8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "62399b32a79d49e8c0bf481b14475ed181a4cec8",
+      "date": "2026-10-28T16:08:43+08:00",
+      "subject": "chore: sync web dist from code-app (#4488)"
+    },
+    {
+      "sha": "88c3becefc56d3093009892bae6d7b7eab0d237b",
+      "date": "2026-10-28T16:07:06+08:00",
+      "subject": "fix(agent-core-v2): preserve llm reasoning and usage compatibility (#4485)"
+    },
+    {
+      "sha": "180b7f81e7b8ec0e5913d639d4df76c3b7f373fe",
+      "date": "2026-10-28T16:05:41+08:00",
+      "subject": "fix(agent-core-v2): recover append log writes after disk-full failures (#4486)"
+    },
+    {
+      "sha": "b12d13e53cf63ee37bc367793acaf6631312d4c3",
+      "date": "2026-10-28T15:38:04+08:00",
+      "subject": "refactor(agent-core-v2): port the agent-core llm core into human/llm (#4352)"
+    },
+    {
+      "sha": "093e8f46c4a44ff22f02fa5b8d7a4df4a7f47737",
+      "date": "2026-10-28T15:28:22+08:00",
+      "subject": "feat: multi-root workspace registry and source-folder management (#4336)"
+    },
+    {
+      "sha": "e3efbb9d3b2241412edfe9b704fc33b09a4c2054",
+      "date": "2026-10-28T13:33:24+08:00",
+      "subject": "feat(agent-core-v2): limit subagents to the configured model pool (#4418)"
+    },
+    {
+      "sha": "b9fa2b15c4969c53d809bb9515d059046fbc0bc3",
+      "date": "2026-10-28T13:16:46+08:00",
+      "subject": "fix(dev): avoid CI run response buffer overflow (#4469)"
+    },
+    {
+      "sha": "8535bd79b8d7a42f1c30221a4dc0fa1933e2e340",
+      "date": "2026-10-28T12:16:58+08:00",
+      "subject": "refactor(kap-server): merge WebSocket session subscriptions into subscribe_v2 (#4470)"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": ".changeset/merge-ws-session-subscriptions.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/remove-secondary-model-force.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/remove-subagent-primary-choice.md",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/CodeBlockNode-DN6tN-fd.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/CodeBlockNode-x8gR_NJ_.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/PreCodeBlock-CwnbxLyB.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/PreCodeBlock-D94rgfjG.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/Tooltip-CsVtTVYl.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/Tooltip-Ck3rGjEN.js"
+    },
+    {
+      "status": "R085",
+      "path": "apps/kimi-code/dist-web/assets/abnfDiagram-VRR7QNED-C0F_mbj1.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/abnfDiagram-VRR7QNED-D8ez8uim.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/arc-Bsib46yB.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/arc-CRRKlX-p.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/architectureDiagram-ZJ3FMSHR-nh3c_qTo.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/architectureDiagram-ZJ3FMSHR-ddPbJ_Dn.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/blockDiagram-677ZJIJ3-DWIUQjzE.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/blockDiagram-677ZJIJ3-BRka2cox.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/c4Diagram-LMCZKHZV-DubDU1Hh.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/c4Diagram-LMCZKHZV-BDG3tEBQ.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/channel-CZFkLeol.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/channel-CsfHBtue.js",
+      "previousPath": null
+    },
+    {
+      "status": "R067",
+      "path": "apps/kimi-code/dist-web/assets/chunk-2Q5K7J3B-BhqfYswo.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-2Q5K7J3B-Bj3vlj3y.js"
+    },
+    {
+      "status": "R096",
+      "path": "apps/kimi-code/dist-web/assets/chunk-32BRIVSS-DompFR0C.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-32BRIVSS-B8gSFtLK.js"
+    },
+    {
+      "status": "R083",
+      "path": "apps/kimi-code/dist-web/assets/chunk-5VM5RSS4-DactliZz.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-5VM5RSS4-CnrQ4AgJ.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-EX3LRPZG-DNGZpN35.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-EX3LRPZG-4ZFETIzN.js"
+    },
+    {
+      "status": "R071",
+      "path": "apps/kimi-code/dist-web/assets/chunk-JWPE2WC7-BlIxYDeZ.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-JWPE2WC7-CFaSk12U.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-MOJQB5TN-TDhzsKaU.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-MOJQB5TN-nz6Iv7r_.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-RYQCIY6F-Doiirtiw.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-RYQCIY6F-MtH8gVIz.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/chunk-V7JOEXUC-gc4j6mJE.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-V7JOEXUC-DUDFnGWS.js"
+    },
+    {
+      "status": "R087",
+      "path": "apps/kimi-code/dist-web/assets/chunk-VR4S4FIN-C0Aw3V2v.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-VR4S4FIN-DMqAUMdK.js"
+    },
+    {
+      "status": "R072",
+      "path": "apps/kimi-code/dist-web/assets/chunk-XXDRQBXY-h83Z76mT.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/chunk-XXDRQBXY-BRRtW_Of.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-OUVF2IWQ-Cf1m8L1F.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-OUVF2IWQ-JlVJZ-8K.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-v2-EOCWNBFH-Cf1m8L1F.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/classDiagram-v2-EOCWNBFH-JlVJZ-8K.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/cose-bilkent-JH36ORCC-NLouu6tm.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/cose-bilkent-JH36ORCC-D8ns0-Kn.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/cynefin-VYW2F7L2-KkOFmjEG.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/cynefin-VYW2F7L2-Bp-nxK3W.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/cynefinDiagram-TSTJHNR4-ClIEQzxH.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/cynefinDiagram-TSTJHNR4-PvbCPnDc.js"
+    },
+    {
+      "status": "R097",
+      "path": "apps/kimi-code/dist-web/assets/dagre-VKFMJZFB-ptq00KuZ.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/dagre-VKFMJZFB-BzVLGs_J.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/diagram-FQU43EPY-Dd0HSMZA.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-FQU43EPY-rDegz4b3.js"
+    },
+    {
+      "status": "R097",
+      "path": "apps/kimi-code/dist-web/assets/diagram-G47NLZAW-BihKArCL.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-G47NLZAW-D-K95T9W.js"
+    },
+    {
+      "status": "R093",
+      "path": "apps/kimi-code/dist-web/assets/diagram-NH7WQ7WH-DeFBJSVr.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-NH7WQ7WH-vAxkrrkL.js"
+    },
+    {
+      "status": "R096",
+      "path": "apps/kimi-code/dist-web/assets/diagram-OA4YK3LP-CsiOOqY1.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-OA4YK3LP-BnCNL17Z.js"
+    },
+    {
+      "status": "R095",
+      "path": "apps/kimi-code/dist-web/assets/diagram-WEI45ONY-CXBgtykE.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/diagram-WEI45ONY-Cq5_ZmJn.js"
+    },
+    {
+      "status": "R087",
+      "path": "apps/kimi-code/dist-web/assets/ebnfDiagram-CCIWWBDH-CPZtqNO1.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/ebnfDiagram-CCIWWBDH-ydUyyG4g.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/erDiagram-Q63AITRT-OXNvxKyl.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/erDiagram-Q63AITRT-1GF9mnaH.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/flowDiagram-23GEKE2U-Cpg_K1S0.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/flowDiagram-23GEKE2U-Dp3ubqO7.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/ganttDiagram-NO4QXBWP-CvsplL3l.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/ganttDiagram-NO4QXBWP-6TLLIXAF.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/gitGraphDiagram-IHSO6WYX-CkPzgGiM.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/gitGraphDiagram-IHSO6WYX-D3uFEC45.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/index-BvkSYG-C.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index-CM1IMrEN.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index-BzZ34GS1.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/index-CEWtXGqT.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index-CWMEBP78.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index-Cj6xJi2l.css",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/index-DF_eS9k-.css",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/index-Dnz6Zudc.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/index10-X5vZpglB.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index10-bV3Rt9BF.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/index5-DuOTUxfY.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index5-CjSUSUGm.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/index6-CoOgkfRu.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index6-DNCbjemX.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/index8-BkZ_nVKY.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index8-Cv4eRvXY.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/index9-tIE0Vojz.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/index9-BIqXoaM4.js"
+    },
+    {
+      "status": "R067",
+      "path": "apps/kimi-code/dist-web/assets/infoDiagram-FWYZ7A6U-BTsrmCcp.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/infoDiagram-FWYZ7A6U-CbULgfiG.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/ishikawaDiagram-FXEZZL3T-CG4SQ4h6.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/ishikawaDiagram-FXEZZL3T-CzOmYQGA.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/journeyDiagram-5HDEW3XC-69Mpdm1i.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/journeyDiagram-5HDEW3XC-Bn6UdTtP.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/kanban-definition-HUTT4EX6-vX5StZkg.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/kanban-definition-HUTT4EX6-D46M2hPT.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/linear-Cyvch2b1.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/linear-rQmBrEzK.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/markstream-Bi91cHW2.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/markstream-UDoFrbnV.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/mermaid.core-CPvYwC1W.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/mermaid.core-AN7v7N47.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/mindmap-definition-LN4V7U3C-CQgNs0q1.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/mindmap-definition-LN4V7U3C-D6hZ84pJ.js"
+    },
+    {
+      "status": "R086",
+      "path": "apps/kimi-code/dist-web/assets/pegDiagram-2B236MQR-rHOWnNl6.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/pegDiagram-2B236MQR-Dqj-SYF9.js"
+    },
+    {
+      "status": "R094",
+      "path": "apps/kimi-code/dist-web/assets/pieDiagram-ENE6RG2P-G7nomqX9.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/pieDiagram-ENE6RG2P-Bxrj0TDW.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/quadrantDiagram-ABIIQ3AL-BEvlLLL9.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/quadrantDiagram-ABIIQ3AL-CtlNm0IB.js"
+    },
+    {
+      "status": "R084",
+      "path": "apps/kimi-code/dist-web/assets/railroadDiagram-RFXS5EU6-C204BVeM.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/railroadDiagram-RFXS5EU6-ABT3be4u.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/requirementDiagram-TGXJPOKE-BwZTxUww.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/requirementDiagram-TGXJPOKE-DbHli6K8.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/sankeyDiagram-HTMAVEWB-BXKQrGMx.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/sankeyDiagram-HTMAVEWB-BFMFIBNb.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/sequenceDiagram-DBY2YBRQ-DpzxIYFA.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/sequenceDiagram-DBY2YBRQ-DVB5lIDi.js"
+    },
+    {
+      "status": "R086",
+      "path": "apps/kimi-code/dist-web/assets/sizeCapture-X5ZJPWSS-zaoKWXBh.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/sizeCapture-X5ZJPWSS-D1OKv4-0.js"
+    },
+    {
+      "status": "R096",
+      "path": "apps/kimi-code/dist-web/assets/stateDiagram-2N3HPSRC-BvSRgWBd.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/stateDiagram-2N3HPSRC-C1Huslxu.js"
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/stateDiagram-v2-6OUMAXLB-N7L4xW5-.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/stateDiagram-v2-6OUMAXLB-ui4kGWzh.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/swimlanes-5IMT3BWC-CzbmjPLM.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/swimlanes-5IMT3BWC-Dq3EyHqU.js"
+    },
+    {
+      "status": "D",
+      "path": "apps/kimi-code/dist-web/assets/swimlanesDiagram-G3AALYLV-CLWojsyT.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/kimi-code/dist-web/assets/swimlanesDiagram-G3AALYLV-CjoZ1h3N.js",
+      "previousPath": null
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/timeline-definition-FHXFAJF6-DAdAcwVP.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/timeline-definition-FHXFAJF6-Cmkj9bPT.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/vennDiagram-L72KCM5P-CPRS6YoG.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/vennDiagram-L72KCM5P-Bur71wRn.js"
+    },
+    {
+      "status": "R098",
+      "path": "apps/kimi-code/dist-web/assets/vue.runtime.esm-bundler-CSkTYLTh.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/vue.runtime.esm-bundler-CSen4mnJ.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/wardleyDiagram-EHGQE667-vztNr3wj.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/wardleyDiagram-EHGQE667-Ctr798MD.js"
+    },
+    {
+      "status": "R099",
+      "path": "apps/kimi-code/dist-web/assets/xychartDiagram-FW5EYKEG-MOZl_6XO.js",
+      "previousPath": "apps/kimi-code/dist-web/assets/xychartDiagram-FW5EYKEG-Dvaf_OjS.js"
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/dist-web/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/tui/commands/add-dir.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/tui/commands/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/src/tui/commands/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/test/tui/commands/add-dir.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-code/test/tui/commands/secondary-model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/kimi-inspect/src/components/ModelCatalogView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/server/src/lib/agent-record-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/server/src/lib/context-projector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/server/src/lib/wire-reader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/server/test/lib/context-projector.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/server/test/lib/wire-reader.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/server/test/routes/context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/web/src/components/context/MessageBubble.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/web/src/components/wire/parts.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/web/src/components/wire/renderers.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/web/src/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vis/web/test/renderers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/vscode/webview-ui/src/components/LoginScreen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/configuration/config-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/configuration/data-locations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/guides/tower.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/reference/server-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/reference/slash-commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/reference/tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/configuration/config-files.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/configuration/data-locations.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/guides/tower.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/reference/server-api.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/reference/slash-commands.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/reference/tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/acp-server/src/replay.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/acp-server/src/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/acp-server/test/_helpers/fakeModelConfig.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/acp-server/test/_helpers/scriptedProvider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/acp-server/test/e2e-turn.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/acp-server/test/replay.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/docs/config-manifest.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/docs/en/llm.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/docs/state-manifest.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/docs/wire-manifest.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/docs/zh/llm.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/scripts/check-import-boundaries.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/scripts/gen-wire-manifest.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/_base/utils/workdir-slug.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/blob/agentBlobServiceImpl.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/changeNotifier/changeNotifier.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/changeNotifier/changeNotifierOps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/changeNotifier/changeNotifierService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextMemory/compactionHandoff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextMemory/contextTranscript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextMemory/hookParts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextMemory/loopEventFold.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextMemory/openToolExchange.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextMemory/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextMemory/vacuousContent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextProjector/contextProjector.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextProjector/contextProjectorService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextProjector/mediaProjection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/contextProjector/projection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/fullCompaction/fullCompactionService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/fullCompaction/strategy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/llmRequester/llmRequestOps.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/llmRequester/llmRequester.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/llmRequester/llmRequesterService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/loop/loop.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/loop/loopService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/loop/machine/engine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/loop/machine/history.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/loop/machine/requester.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/loop/turnEvents.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/media/image-compress.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/media/image-format-policy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/media/mediaResolver.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/media/mediaResolverService.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/media/registerMediaTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/media/videoUpload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/profile/profile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent-core-v2/src/agent/profile/profileOps.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

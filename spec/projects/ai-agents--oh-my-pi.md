@@ -34,6 +34,14 @@ The [VFS runtime bridge](https://github.com/can1357/oh-my-pi/blob/e996e1c7ac476f
 
 The [close tracker](https://github.com/can1357/oh-my-pi/blob/e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e/crates/pi-vfs/src/runtime.rs#L108-L201) registers its notification before testing for idle, retains the first close failure, and uses a drop ticket to report a close abandoned by runtime shutdown exactly once. This is stronger evidence than treating a dropped task as successful cleanup. The drain consumes the stored first error; it is not an immutable history of all cleanup failures, and it has no deadline here. Cancellation can stop waiting on a guarded future, but spawned blocking I/O and remote effects still require their own ownership contracts. Adapt explicit close outcomes, bounded drains and platform acceptance tests; no runtime, filesystem operation or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e` to `c3b645cb275e03ac8a176fbfb0a877cfb3a2c2ef`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [packages/ai/src/providers/cowork-fetch.ts](https://github.com/can1357/oh-my-pi/blob/c3b645cb275e03ac8a176fbfb0a877cfb3a2c2ef/packages/ai/src/providers/cowork-fetch.ts#L185-L249), The HTTPS bridge now settles an aborted header-waiting request through the request error event rather than directly rejecting inside the abort callback. It removes the abort listener on request error or response close and retains non-2xx responses as Response objects while logging selected diagnostics without the query string.
+
+**Harness implication and limits:** Cancellation and settlement behavior must be tested on the pinned host runtime; removal of a compatibility workaround is not proof that every supported runtime emits the needed event. Preserve HTTP rejection separately from transport uncertainty. Response construction, stream cancellation and TLS/proxy helpers were not audited, and no request or cancellation test was executed. No upstream runtime or live provider behavior was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [oh-my-pi](https://github.com/can1357/oh-my-pi); analyzed commit `e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e`; commit date 2026-10-27T18:12:27+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-pi.md).
+Analysis metadata: source [oh-my-pi](https://github.com/can1357/oh-my-pi); analyzed commit `c3b645cb275e03ac8a176fbfb0a877cfb3a2c2ef`; commit date 2026-10-28T09:20:07+01:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-pi.md).
 <!-- teamagent-analysis:end -->

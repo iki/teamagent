@@ -37,6 +37,18 @@ The [alias grouper](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb3
 
 The [analysis dispatcher](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/sourceanalysis/sourceanalysis.go) only invokes selected Go/Rust analysis for the matching lockfile types. No analysis for another ecosystem must remain unknown rather than safe. The [formatter](https://github.com/google/osv-scanner/blob/8748c7ca24ecb3fb35a1319c983f41b4a6cf5833/internal/utility/results/results.go) safely shortens commits for display, while full identity still belongs in retained evidence. Adapt alias closure and explicit evidence categories; do not treat absence of displayed calls or a low ecosystem priority as proof of non-exploitability. No scans, language analyzers, advisory lookups or tests were run for this update.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `666f85749ac142b9ddad8bd17e4c46d39d697465` (commit date `2026-10-28T15:01:14+11:00`), compared with `8748c7ca24ecb3fb35a1319c983f41b4a6cf5833`. Earlier findings remain historical evidence.
+
+**Scope:** Package override representation/matching and selected configuration accounting; no scanner or dependency-resolution execution. The complete changed-path inventory contains 26 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+Override records now expose their selectors, rationale and usage state, and the description calls out blanket ignores. Matching includes package identity, version, ecosystem and group, with regular-expression anchors explicit. Configuration managers can report unused entries by source path; license-only active overrides are omitted from that unused list unless they also suppress vulnerabilities or everything. An unused-rule report must therefore disclose its mode-specific meaning. [internal/config/overrides.go](https://github.com/google/osv-scanner/blob/666f85749ac142b9ddad8bd17e4c46d39d697465/internal/config/overrides.go#L33-L89); [internal/config/overrides.go](https://github.com/google/osv-scanner/blob/666f85749ac142b9ddad8bd17e4c46d39d697465/internal/config/overrides.go#L100-L115); [internal/config/manager.go](https://github.com/google/osv-scanner/blob/666f85749ac142b9ddad8bd17e4c46d39d697465/internal/config/manager.go#L93-L113).
+
+The inspected resolution branch chooses the first matching override and then rejects it if expired; it does not continue to later matches in that branch. This is a policy-ordering behavior to preserve or deliberately change, not evidence that all later rules are evaluated. Teamagent should show effective suppression, reason, expiry, rule identity and matched scope separately from a clean scanner result. [internal/config/config.go](https://github.com/google/osv-scanner/blob/666f85749ac142b9ddad8bd17e4c46d39d697465/internal/config/config.go#L63-L76).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [osv-scanner](https://github.com/google/osv-scanner); analyzed commit `8748c7ca24ecb3fb35a1319c983f41b4a6cf5833`; commit date 2026-10-27T03:45:34Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--osv-scanner.md).
+Analysis metadata: source [osv-scanner](https://github.com/google/osv-scanner); analyzed commit `666f85749ac142b9ddad8bd17e4c46d39d697465`; commit date 2026-10-28T15:01:14+11:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-security--osv-scanner.md).
 <!-- teamagent-analysis:end -->

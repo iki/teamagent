@@ -37,6 +37,18 @@ Evidence: [badges/npm-downloads-monthly.svg:1-1](https://github.com/Nano-Collect
 
 **Scope and limits:** Badge/changed-path reconciliation only; the prior inventory/README screening remains a screening, not a source correctness audit or benchmark.
 
+## Follow-up change review — 2026-10-28
+
+**Only the monthly-download badge changes.** Reviewed commit `30e80f5d38d471985cbd7fd729f76ebfc99f58ac` (commit date `2026-10-28T03:00:56Z`), compared with `0678c564ed98ac2f706c1c495b1cb317888fcc51`. The complete no-rename Git path inventory contains 1 changed paths.
+
+The complete single-file diff changes a generated SVG's displayed monthly-download count and its matching geometry/accessibility label. No importer, request policy, parser or resource-refresh behavior changes. The badge is upstream popularity data and was not measured here.
+
+Evidence: [badges/npm-downloads-monthly.svg:1-1](https://github.com/Nano-Collective/get-md/blob/30e80f5d38d471985cbd7fd729f76ebfc99f58ac/badges/npm-downloads-monthly.svg#L1-L1).
+
+**Harness consequence:** Keep popularity metadata outside import-quality and safety evidence. Continue using the prior implementation review for extraction and network boundaries.
+
+**Scope and limits:** Reviewed the complete one-line SVG delta as text; the image was not rendered. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [get-md](https://github.com/Nano-Collective/get-md); analyzed commit `0678c564ed98ac2f706c1c495b1cb317888fcc51`; commit date 2026-10-27T02:52:48Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-query--get-md.md).
+Analysis metadata: source [get-md](https://github.com/Nano-Collective/get-md); analyzed commit `30e80f5d38d471985cbd7fd729f76ebfc99f58ac`; commit date 2026-10-28T03:00:56Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--get-md.md).
 <!-- teamagent-analysis:end -->

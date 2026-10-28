@@ -42,6 +42,18 @@ Evidence: [hindsight-api-slim/hindsight_api/engine/reflect/agent.py:104-118](htt
 
 **Scope and limits:** Static selected reflect budgeting, synthesis, JSON repair and done-result regions within the 2,202-path comparison. Full provider/transport limits, prompt splitter, citation presenter and storage write barriers were not audited or executed; upstream benchmark comments are not reproduced measurements.
 
+## Follow-up change review — 2026-10-28
+
+**Decision-model filtering has its own concurrency bound and preserves uncertain memories.** Reviewed commit `14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2` (commit date `2026-10-28T10:59:34+01:00`), compared with `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf`. The complete no-rename Git path inventory contains 7 changed paths.
+
+The delta gate now limits each refresh to eight concurrent questions and uses a configurable maximum memory count. Failure before any answer falls back to the existing search/reflect path; after some answers, a failed question conservatively keeps its memory. Fixtures assert late-failure inclusion and the concurrency bound. The source explicitly notes that decision calls are not included in the refresh's usage/llm_calls totals, so this optimization's cost is not fully represented there.
+
+Evidence: [hindsight-api-slim/hindsight_api/engine/memory_engine.py:1866-1877](https://github.com/vectorize-io/hindsight/blob/14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2/hindsight-api-slim/hindsight_api/engine/memory_engine.py#L1866-L1877) · [hindsight-api-slim/hindsight_api/engine/memory_engine.py:17790-17870](https://github.com/vectorize-io/hindsight/blob/14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2/hindsight-api-slim/hindsight_api/engine/memory_engine.py#L17790-L17870) · [hindsight-api-slim/tests/test_mental_model_delta_gate.py:161-200](https://github.com/vectorize-io/hindsight/blob/14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2/hindsight-api-slim/tests/test_mental_model_delta_gate.py#L161-L200).
+
+**Harness consequence:** Use decision models to reduce downstream context only with scoped budgets, explicit fallback and conservative uncertainty. Include classifier calls in cost/latency accounting and do not let a filtering failure erase evidence.
+
+**Scope and limits:** Reviewed delta-gate execution and failure/concurrency fixtures; model accuracy and provider-rate behavior were not measured. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hindsight](https://github.com/vectorize-io/hindsight); analyzed commit `1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf`; commit date 2026-10-27T13:37:18-04:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--hindsight.md).
+Analysis metadata: source [hindsight](https://github.com/vectorize-io/hindsight); analyzed commit `14e7306e27cdbd03ad5f17cf46f22a5f6d6ec5a2`; commit date 2026-10-28T10:59:34+01:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--hindsight.md).
 <!-- teamagent-analysis:end -->

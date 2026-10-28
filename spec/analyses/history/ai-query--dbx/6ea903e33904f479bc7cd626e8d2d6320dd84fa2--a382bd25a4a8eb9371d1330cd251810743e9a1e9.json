@@ -1,0 +1,845 @@
+{
+  "id": "ai-query--dbx",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/t8y2/dbx",
+  "report": "spec/analyses/unreviewed/ai-query--dbx.md",
+  "analyzedSha": "6ea903e33904f479bc7cd626e8d2d6320dd84fa2",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-28T01:14:18+08:00",
+  "observedSha": "a382bd25a4a8eb9371d1330cd251810743e9a1e9",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a382bd25a4a8eb9371d1330cd251810743e9a1e9",
+      "date": "2026-10-28T17:46:30+08:00",
+      "subject": "fix(compare): honor the connection query timeout for data compare (#13364)"
+    },
+    {
+      "sha": "8cfc83de867f651d620599bd639bb9c6710f5b4e",
+      "date": "2026-10-28T17:44:17+08:00",
+      "subject": "feat(grid): display column comments and types in transpose view by default (#13641) (#13705)"
+    },
+    {
+      "sha": "8c2bbe35b4b4cd67dd2276085f9340db656f96c4",
+      "date": "2026-10-28T16:55:51+08:00",
+      "subject": "fix(query): support selecting and copying server messages (#13777)"
+    },
+    {
+      "sha": "1911bd5930bee691e2b4332c5a7e6e674987449e",
+      "date": "2026-10-28T15:43:43+08:00",
+      "subject": "fix(oracle): provide connection info for native jobs (#13769)"
+    },
+    {
+      "sha": "cb49766810d49f5d62773fa0f837b878c67a02fe",
+      "date": "2026-10-28T15:18:35+08:00",
+      "subject": "fix(ci): add swap to arm linux runner for build memory peak"
+    },
+    {
+      "sha": "9629cc245a31e8bd7b72f698ff4e19e037a5bf78",
+      "date": "2026-10-28T14:43:44+08:00",
+      "subject": "chore(deps): update actions/setup-java action to v6"
+    },
+    {
+      "sha": "ee6fb66aa2bccc6232cb5e3d9d79a56ef13cac1b",
+      "date": "2026-10-28T12:46:23+08:00",
+      "subject": "fix(ci): serialize arm build and link with lld to cut peak memory"
+    },
+    {
+      "sha": "1766aca20fc9186be55c115d070af36c281b50d3",
+      "date": "2026-10-28T11:09:15+08:00",
+      "subject": "chore(renovate): stop updating flake.nix hashes"
+    },
+    {
+      "sha": "a6cec2fba0a7c7cdcabb26d9842f5067cf5fbd4e",
+      "date": "2026-10-28T11:05:36+08:00",
+      "subject": "fix(nix): correct pnpm deps hash drifted by renovate"
+    },
+    {
+      "sha": "33f3b593c6757ab5cd123446984184c3516bd775",
+      "date": "2026-10-28T11:04:27+08:00",
+      "subject": "fix(ci): limit arm linux build parallelism to avoid runner oom"
+    },
+    {
+      "sha": "3699fa053e9ab364454be63e2670f0f8329b451f",
+      "date": "2026-10-28T02:39:38+08:00",
+      "subject": "chore(release): prepare v0.6.59"
+    },
+    {
+      "sha": "feb7504f131811f364047d6c05f30720543944bf",
+      "date": "2026-10-27T18:35:02Z",
+      "subject": "chore(packages): release 0.4.134 [skip node-packages-release]"
+    },
+    {
+      "sha": "c2e196316829a80e9012e2c74fd80b01c74b26bd",
+      "date": "2026-10-28T02:08:22+08:00",
+      "subject": "feat(mcp): improve capability management and call safety"
+    },
+    {
+      "sha": "ce6062a65db60ec2ebdd40038303f68a202ef97c",
+      "date": "2026-10-27T18:06:06Z",
+      "subject": "chore: bump module versions [skip ci]"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/agents-release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sqlserver2000-windows-user-test.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/drivers/oracle-go/connection_info.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "agents/drivers/oracle-go/connection_info_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/drivers/oracle-go/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agents/versions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/App.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/EditorSettingsDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/QueryHistory.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/editor/__tests__/EditorSettingsDialog.mcpCapabilities.integration.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/editor/__tests__/EditorSettingsDialog.mcpHistory.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/editor/__tests__/EditorSettingsDialog.searchNavigation.integration.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/editor/__tests__/QueryHistory.mcpNavigation.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/DataGrid.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/grid/__tests__/DataGridTransposeSort.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/layout/QueryMessagesView.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/layout/__tests__/QueryMessagesView.selection.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/mcp/McpSqlApprovalDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/mcp/__tests__/McpSqlApprovalDialog.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/plugins/PluginAiAccessSection.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/plugins/PluginContributionsPanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/plugins/__tests__/PluginContributionsPanelBatch.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpAccessTree.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpCallSafetyPanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpCapabilitiesPanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpCapabilityBrowser.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpDatabaseAccessDialog.vue",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/desktop/src/components/settings/McpDatabaseScopePicker.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpDefaultAccessPanel.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpPluginCapabilities.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpPluginScopeEditor.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/McpPluginToolsModeSetting.vue",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/desktop/src/components/settings/McpResourceScopePicker.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpAccessTree.locale.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpAccessTree.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpCallSafetyPanel.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpCapabilitiesPanel.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpCapabilityBrowser.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpDatabaseAccessDialog.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/desktop/src/components/settings/__tests__/McpDatabaseScopePicker.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpDefaultAccessPanel.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpPluginCapabilities.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpPluginScopeEditor.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/settings/__tests__/McpPluginToolsModeSetting.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/desktop/src/components/settings/__tests__/McpResourceScopePicker.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/az.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/en.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/es.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/id.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/it.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/ja.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/ko.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/pl.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/pt-BR.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/ru.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/th.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/tr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/zh-CN.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/i18n/locales/zh-TW.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpAccessTree.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpCallHistory.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpCapabilitySearch.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpCapabilityViewLocales.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpDatabaseAccess.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpPermissionLocales.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpPolicySelection.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/mcpToolCatalog.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/__tests__/mcp/pluginMcpGrant.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/backend/api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/backend/http.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/backend/tauri.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/mcp/mcpAccessTree.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/mcp/mcpCallHistory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/mcp/mcpCapabilitySearch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/mcp/mcpDatabaseAccess.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/mcp/mcpPolicySelection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/mcp/mcpToolCatalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/mcp/pluginMcpGrant.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/plugins/__tests__/pluginMcpMark.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/lib/plugins/pluginMcpMark.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/settings/__tests__/settingsSearchCoverage.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/lib/settings/settingsSearch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/stores/__tests__/settingsStore.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/stores/settingsStore.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/types/database.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/types/mcpCatalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-cli/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/admin/consul/catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/admin/consul/health.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/admin/nacos/http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/dbx-core/src/ai/mcp_access.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/dbx-core/src/ai/mcp_catalog.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/ai/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/dbx-core/src/ai/plugin_mcp.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/data/data_compare.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-core/src/persistence/storage.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/dbx-mcp/src/approval.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/src/backend.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/src/http.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/src/plugin_tools.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/dbx-mcp/src/products.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/tests/plugin_tools_server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-mcp/tests/protocol.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-plugin-runtime/src/plugins.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-plugin-runtime/src/plugins/manifest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-plugin-runtime/src/plugins/marketplace.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-types/src/database_manifest.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-web/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-web/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-web/src/routes/app_settings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/dbx-web/src/routes/mcp_policy.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/mcp.cn.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/content/docs/mcp.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/mcp-capability-navigation-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/mcp-capability-platform-design.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/screenshots/query-messages-select-all.png",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "flake.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/app-tests/settingsStore.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli-darwin-arm64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli-darwin-x64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli-linux-arm64-gnu/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli-linux-x64-gnu/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli-win32-arm64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli-win32-x64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-darwin-arm64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-darwin-x64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-linux-arm64-gnu/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-linux-x64-gnu/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-server/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-server/server.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-win32-arm64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-win32-x64/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/manifest.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/marketplace.schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "renovate.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/app_settings.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/commands/mcp_bridge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/tauri.conf.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

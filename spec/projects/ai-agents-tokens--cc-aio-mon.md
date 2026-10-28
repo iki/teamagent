@@ -30,6 +30,18 @@ Reviewed commit `dbc6d73092132f21502ddc4b9c6b30fadeb83530` (commit date `2026-10
 
 The [statusline](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/statusline.py) adds a prompt-cache countdown gated on observed caching and valid expiry, using the same injected instant for its label and threshold. Malformed/missing telemetry hides the segment rather than inventing a TTL. [Shared rules](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/shared.py) now mark five-hour/Fable fallback usage stale after 30 minutes or the longer refresh threshold; an older session can yield to a fresher snapshot. Source observations remain distinct from display-only fallbacks, and the [tests](https://github.com/iM3SK/cc-aio-mon/blob/dbc6d73092132f21502ddc4b9c6b30fadeb83530/tests/test_statusline.py) exercise malformed values, time boundaries, display fitting and preservation of the original IPC payload. Adapt explicit unknown/stale telemetry and deterministic clock fixtures. Account-scoped snapshot ownership still needs independent validation before reusing the cross-session selector. Background refresher compatibility, documented Claude versions, pricing, and upstream test counts were not reproduced; no runtime or provider was executed.
 
+## Follow-up change review — 2026-10-28
+
+**The interval changes a scanner dependency pin, not usage measurement.** Reviewed commit `90620f8929aa2fb6a9c096757b1282e3698e1ec2` (commit date `2026-10-28T00:39:22+01:00`), compared with `dbc6d73092132f21502ddc4b9c6b30fadeb83530`. The complete no-rename Git path inventory contains 1 changed paths.
+
+The complete one-file comparison updates the hash-pinned setuptools dependency used by the Bandit workflow from 83.0.0 to 84.1.0. No collector, token calculation, provider authentication or runtime reporting implementation changes in this interval. The package's behavior and supply-chain provenance were not independently audited.
+
+Evidence: [.github/workflows/requirements-bandit.txt:128-135](https://github.com/iM3SK/cc-aio-mon/blob/90620f8929aa2fb6a9c096757b1282e3698e1ec2/.github/workflows/requirements-bandit.txt#L128-L135).
+
+**Harness consequence:** Track tooling maintenance separately from measured accounting correctness. A scanner dependency update does not validate runtime telemetry or authentication.
+
+**Scope and limits:** Reviewed the complete dependency-lock delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon); analyzed commit `dbc6d73092132f21502ddc4b9c6b30fadeb83530`; commit date 2026-10-27T16:40:19+01:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--cc-aio-mon.md).
+Analysis metadata: source [cc-aio-mon](https://github.com/iM3SK/cc-aio-mon); analyzed commit `90620f8929aa2fb6a9c096757b1282e3698e1ec2`; commit date 2026-10-28T00:39:22+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--cc-aio-mon.md).
 <!-- teamagent-analysis:end -->

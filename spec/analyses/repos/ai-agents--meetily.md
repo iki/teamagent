@@ -2,11 +2,11 @@
 
 Source: [meetily](https://github.com/Zackriya-Solutions/meetily) · [Analysis](../../projects/ai-agents--meetily.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `a2cb62e827da7ef59f65064c97233efb2313878e`; commit date: 2026-09-10T23:58:42+05:30; review date: unknown; observed SHA: `a2cb62e827da7ef59f65064c97233efb2313878e`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `a2cb62e827da7ef59f65064c97233efb2313878e`; commit date: 2026-09-10T23:58:42+05:30; review date: unknown; observed SHA: `a2cb62e827da7ef59f65064c97233efb2313878e`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/Zackriya-Solutions/meetily/compare/a2cb62e827da7ef59f65064c97233efb2313878e...a2cb62e827da7ef59f65064c97233efb2313878e). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

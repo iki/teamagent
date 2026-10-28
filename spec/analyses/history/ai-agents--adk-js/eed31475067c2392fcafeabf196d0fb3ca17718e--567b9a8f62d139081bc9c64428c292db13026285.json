@@ -1,0 +1,530 @@
+{
+  "id": "ai-agents--adk-js",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/google/adk-js",
+  "report": "spec/projects/ai-agents--adk-js.md",
+  "analyzedSha": "eed31475067c2392fcafeabf196d0fb3ca17718e",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-26T09:54:20-07:00",
+  "observedSha": "567b9a8f62d139081bc9c64428c292db13026285",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "567b9a8f62d139081bc9c64428c292db13026285",
+      "date": "2026-10-28T01:51:58-07:00",
+      "subject": "refactor(tools): one GoogleApiToolset, no toolset singletons, private internals in google_api_tool (#1176)"
+    },
+    {
+      "sha": "1b7d94f65622e01247c4cef6b8201037c4d1c1c4",
+      "date": "2026-10-28T01:26:04-07:00",
+      "subject": "fix(sessions): reject a stale session in appendEvent instead of reloading it (#1182)"
+    },
+    {
+      "sha": "9c1a7e9efa7959a6609a88ef3bdbbe5e2c46fab6",
+      "date": "2026-10-28T01:25:09-07:00",
+      "subject": "refactor(cli): remove logToStderr and the --log_to_tmp flag in favor of setupAdkLogger (#1180)"
+    },
+    {
+      "sha": "cf9701eaedc8c2864bcc4304e28ab0907f53e68b",
+      "date": "2026-10-28T01:17:47-07:00",
+      "subject": "refactor(tools): remove ToolboxTool and wrap Toolbox tools as function tools (#1179)"
+    },
+    {
+      "sha": "730b3e6830b24b1ed9030be15b8762097237e10c",
+      "date": "2026-10-28T01:11:15-07:00",
+      "subject": "refactor(agents): remove RemoteAgent, deleted in adk-python before v1.0.0 (#1178)"
+    },
+    {
+      "sha": "06073500f9fcaa1e3ab25478c41661431908bb5c",
+      "date": "2026-10-28T01:10:05-07:00",
+      "subject": "fix(tools): return full memory entries from LoadMemoryTool (#1177)"
+    },
+    {
+      "sha": "a5d71f2ff2a5138d3c5109e0d733320fd7972b96",
+      "date": "2026-10-28T00:49:13-07:00",
+      "subject": "refactor(tools): make the ToolPredicate context parameter optional (#1175)"
+    },
+    {
+      "sha": "8c62092fb23074e20d0d4dbac661e5b5f016fd75",
+      "date": "2026-10-28T00:45:18-07:00",
+      "subject": "refactor(tools): take triggers and toolNamePrefix only in ApplicationIntegrationToolset (#1174)"
+    },
+    {
+      "sha": "06f3b743fb75e5cff4ebd01975bcdf402fdb73a6",
+      "date": "2026-10-28T00:34:52-07:00",
+      "subject": "refactor(tools): drop APIHubToolset.getTool and make its resource name and lazy flag private (#1173)"
+    },
+    {
+      "sha": "3a7af47386512e17ec81b5d97c4794cb0c140717",
+      "date": "2026-10-27T16:24:16-07:00",
+      "subject": "fix(dev): stop logging request headers and bodies on /api/reasoning_engine (#1163)"
+    },
+    {
+      "sha": "2a65dc1478a349a66e94e9b8f10fc3bbb4ba107a",
+      "date": "2026-10-27T14:20:06-07:00",
+      "subject": "fix(dev): preserve workflow node names in bundled agents (#1149)"
+    },
+    {
+      "sha": "f79991927dd7116fcfa67e9e9c606f2a4a0edf67",
+      "date": "2026-10-27T14:10:17-07:00",
+      "subject": "fix(tools): send array query parameters as repeated keys in RestApiTool (#1135)"
+    },
+    {
+      "sha": "31b3500d4fe9b72d16ac02b9f381be889cd79da8",
+      "date": "2026-10-27T14:10:08-07:00",
+      "subject": "fix(models): fail over synchronous delegate initialization errors (#1153)"
+    },
+    {
+      "sha": "0515f7cda10964754a18a710be8ea682f3964bbd",
+      "date": "2026-10-27T13:45:52-07:00",
+      "subject": "fix: preserve server-managed deployment spec fields on agent_engine update (#1159)"
+    },
+    {
+      "sha": "cfb4764c1b51536ea39577abfe7dfd2e8df15a79",
+      "date": "2026-10-27T20:30:15Z",
+      "subject": "fix(integrations): honor maxOutputTokens, set finishReason and sanitize tool ids on Claude (#1139)"
+    },
+    {
+      "sha": "05739b59883c81599448632888cb21b65b60148e",
+      "date": "2026-10-27T11:06:32-07:00",
+      "subject": "fix(skills): require a line of exactly --- as the SKILL.md frontmatter delimiter (#1136)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "core/src/agents/processors/content_processor_utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/agents/processors/content_request_processor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/src/agents/remote_agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/cli/utils/logs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/common.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/integrations/agent_registry/agent_registry_mcp_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/sessions/database_session_service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/src/sessions/stale_session_error.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/skills/loader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/apihub_tool/apihub_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/application_integration_tool/application_integration_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/application_integration_tool/clients/integration_client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/base_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/google_api_tool/google_api_tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/src/tools/google_api_tool/google_api_tool_set.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/src/tools/google_api_tool/google_api_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R062",
+      "path": "core/src/tools/google_api_tool/google_api_toolsets.ts",
+      "previousPath": "core/src/tools/google_api_tool/google_api_tool_sets.ts"
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/google_api_tool/googleapi_to_openapi_converter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/google_api_tool/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/load_memory_tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/mcp/mcp_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/openapi_tool/openapi_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/openapi_tool/rest_api_tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/src/tools/toolbox_tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/toolbox_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/tools/webmcp/webmcp_toolset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/src/utils/failover_utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/agents/processors/content_processor_utils_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/agents/processors/content_request_processor_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/test/agents/remote_agent_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/cli/utils/logs_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/test/models/routed_llm_sync_failure_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/sessions/database_session_service_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/skills/loader_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/apihub_tool/apihub_toolset_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/application_integration_tool/application_integration_toolset_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/application_integration_tool/clients/integration_client_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/base_toolset_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/test/tools/google_api_tool/google_api_tool_set_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/test/tools/google_api_tool/google_api_tool_sets_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/google_api_tool/google_api_tool_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/test/tools/google_api_tool/google_api_toolset_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "core/test/tools/google_api_tool/google_api_toolsets_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/google_api_tool/googleapi_to_openapi_converter_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/load_memory_tool_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/mcp/mcp_toolset_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/openapi_tool/rest_api_tool_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "core/test/tools/toolbox_tool_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "core/test/tools/toolbox_toolset_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/src/cli/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/src/cli/cli_run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/src/cli/deploy/cli_deploy_agent_engine.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/src/server/adk_api_server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/src/utils/agent_loader.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/test/cli/cli_deploy_agent_engine_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/test/cli/cli_run_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/test/cli/cli_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/test/server/adk_api_server_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/test/utils/agent_loader_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/agents/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/cli/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/integrations/models/anthropic_llm/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/memory/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/sessions/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/apihub_tool/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/application_integration_tool/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/google_api_tool/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/mcp_tool/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/tools/openapi_tool/index.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/src/models/anthropic_llm.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/src/models/anthropic_utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/test/models/anthropic_llm_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/test/models/anthropic_utils_test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/agents/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/agents/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/tools/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/tools/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/tools/application_integration_tool/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/tools/application_integration_tool/agent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/tools/google_api_tool/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/tools/google_api_tool/agent.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

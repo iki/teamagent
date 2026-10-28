@@ -40,6 +40,18 @@ Evidence: [rust/lib/src/pipeline/engine.rs:69-196](https://github.com/google/mag
 
 **Scope and limits:** Scoped static inspection of engine/session/cache implementations, selected pipeline ownership/error/reordering paths and fixtures, plus Python API diff in the 99-path comparison. Native runtime internals and the complete rules scanner were not audited. No source execution, GPU experiment, throughput result or classification-quality measurement was performed.
 
+## Follow-up change review — 2026-10-28
+
+**Deterministic resolvers precede model inference and can veto incompatible predictions.** Reviewed commit `3627c158bcfb146bee4747b0589e80ac2faa4d7f` (commit date `2026-10-28T10:17:42+01:00`), compared with `8d3d3b9b9452a65a6aa7752e061a67bf4a6b3c9b`. The complete no-rename Git path inventory contains 24 changed paths.
+
+The resolver now reads a 4 KiB prefix, selectively inspects a ZIP tail and can extend it back to the central-directory start. It returns a deterministic candidate or abstains; a declared veto list suppresses incompatible model classes. Fixtures keep disabled ambiguous verifiers out of enforcement and test archive/executable cases. The FFI removes the built-in-rules boolean, changing its option layout. The prefix bound is not a whole-file I/O bound because central-directory expansion can read more.
+
+Evidence: [rust/lib/src/resolvers.rs:14-66](https://github.com/google/magika/blob/3627c158bcfb146bee4747b0589e80ac2faa4d7f/rust/lib/src/resolvers.rs#L14-L66) · [rust/lib/src/resolvers.rs:187-281](https://github.com/google/magika/blob/3627c158bcfb146bee4747b0589e80ac2faa4d7f/rust/lib/src/resolvers.rs#L187-L281) · [rust/ffi/src/lib.rs:100-143](https://github.com/google/magika/blob/3627c158bcfb146bee4747b0589e80ac2faa4d7f/rust/ffi/src/lib.rs#L100-L143).
+
+**Harness consequence:** Use content sniffing as layered evidence with abstention, not a license to trust file extensions or execute content. Enforce total input/I/O budgets outside the classifier and pin FFI headers with the matching binary.
+
+**Scope and limits:** Reviewed resolver orchestration, selected in-file fixtures and the FFI field removal; individual format verifiers and binary ABI compatibility were not exhaustively tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [magika](https://github.com/google/magika); analyzed commit `8d3d3b9b9452a65a6aa7752e061a67bf4a6b3c9b`; commit date 2026-10-23T14:03:59Z; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--magika.md).
+Analysis metadata: source [magika](https://github.com/google/magika); analyzed commit `3627c158bcfb146bee4747b0589e80ac2faa4d7f`; commit date 2026-10-28T10:17:42+01:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-query--magika.md).
 <!-- teamagent-analysis:end -->

@@ -38,6 +38,18 @@ Teamagent can reuse the separation between normalized origin policy, explicit de
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `b7855495fd3cc688ac354fb148b2f434fe5b9e24` (commit date `2026-10-28T10:24:54+08:00`), compared with `468a676f2d8408a41d95ec0ee37cd4b8f028fef2`. Earlier findings remain historical evidence.
+
+**Scope:** New platform-plugin to structured-tool bridge. The complete changed-path inventory contains 47 paths; the assessment below is limited to the cited branches.
+
+The bridge validates object parameter schemas, refuses empty/duplicate names, reserves harness tool names and derives deterministic aliases for invalid or colliding names. An empty reference registry prevents automatic remote JSON-schema resolution; arguments are validated before invoking a plugin. See [core/agent/engine/plugin_tools.py](https://github.com/iflytek/astron-agent/blob/b7855495fd3cc688ac354fb148b2f434fe5b9e24/core/agent/engine/plugin_tools.py#L22-L77). Async generators are closed with aclosing, error codes remain in returned content, and per-call snapshots prevent overwriting shared plugin results. See [core/agent/engine/plugin_tools.py](https://github.com/iflytek/astron-agent/blob/b7855495fd3cc688ac354fb148b2f434fe5b9e24/core/agent/engine/plugin_tools.py#L88-L155) and [core/agent/engine/plugin_tools.py](https://github.com/iflytek/astron-agent/blob/b7855495fd3cc688ac354fb148b2f434fe5b9e24/core/agent/engine/plugin_tools.py#L159-L196).
+
+For Teamagent, preserve these schema and ownership boundaries while keeping authorization independent. The inspected bridge accumulates streamed text without its own size/step/deadline bound and passes arguments/results to observation attributes; schema validity alone does not establish confidential telemetry or bounded effects. Plugin execution, observer redaction and host policy were not verified.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [astron-agent](https://github.com/iflytek/astron-agent); analyzed commit `468a676f2d8408a41d95ec0ee37cd4b8f028fef2`; commit date 2026-10-21T11:06:13+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--astron-agent.md).
+Analysis metadata: source [astron-agent](https://github.com/iflytek/astron-agent); analyzed commit `b7855495fd3cc688ac354fb148b2f434fe5b9e24`; commit date 2026-10-28T10:24:54+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--astron-agent.md).
 <!-- teamagent-analysis:end -->

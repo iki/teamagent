@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--oh-my-openagent",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/code-yeongyu/oh-my-openagent",
+  "report": "spec/projects/ai-agents--oh-my-openagent.md",
+  "analyzedSha": "43eec3ddaf64c52dceb14b3c7898195a7525e257",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-28T02:19:42+09:00",
+  "observedSha": "4c87d16a7393927afa3fbd22277e60f17ca2db81",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4c87d16a7393927afa3fbd22277e60f17ca2db81",
+      "date": "2026-10-28T18:55:35+09:00",
+      "subject": "Merge pull request #11572 from code-yeongyu/fix/telemetry-no-host-derived-ids"
+    },
+    {
+      "sha": "88a2b06e3fe503bc481a42e89249aa52b13bd03c",
+      "date": "2026-10-28T18:07:55+09:00",
+      "subject": "Merge pull request #11481 from code-yeongyu/chore/knip-dead-code-gate"
+    },
+    {
+      "sha": "6d5e0d81c1df82b881655720d5a6fdb6f065bf15",
+      "date": "2026-10-28T17:31:51+09:00",
+      "subject": "Merge pull request #11619 from code-yeongyu/fix/atlas-timer-seam"
+    },
+    {
+      "sha": "ae481df61a498abdde9feb22968c96b0f07dd25d",
+      "date": "2026-10-28T16:32:00+09:00",
+      "subject": "Merge pull request #11535 from code-yeongyu/feat/11466-cu-release-helper"
+    },
+    {
+      "sha": "237dadf76b7db7e4e90dc1b250a125ce44d10ac3",
+      "date": "2026-10-28T15:31:55+09:00",
+      "subject": "docs(changes): add fragment for #11619"
+    },
+    {
+      "sha": "ee18cf2b39f0cf3227830b7d85f878690d7dcb6c",
+      "date": "2026-10-28T15:30:18+09:00",
+      "subject": "fix(atlas): schedule the delayed retry through an injected scheduler so tests stop capturing global timers (#11617)"
+    },
+    {
+      "sha": "9e4443c92474fc99b1b7ce32d14f55882daf7c73",
+      "date": "2026-10-28T15:28:12+09:00",
+      "subject": "Merge pull request #11600 from code-yeongyu/ci/pr-concurrency-cancel"
+    },
+    {
+      "sha": "b76f02e6e13a5cc7017270407c84d25f2942a602",
+      "date": "2026-10-28T14:50:26+09:00",
+      "subject": "Merge pull request #11592 from code-yeongyu/fix/3364-mcp-abort-signal"
+    },
+    {
+      "sha": "b469db9cfef81dca3f178146938624fc87d6b450",
+      "date": "2026-10-28T14:16:36+09:00",
+      "subject": "Merge pull request #11587 from code-yeongyu/fix/web-prerender-revalidate"
+    },
+    {
+      "sha": "86f892178c6185919f77e67c75c8242a0615fbbc",
+      "date": "2026-10-28T13:54:46+09:00",
+      "subject": "Merge pull request #11536 from code-yeongyu/feat/frontend-designer-habits"
+    },
+    {
+      "sha": "8b4846e4042e2d9be4a1838820d40826e9a83b90",
+      "date": "2026-10-28T13:53:55+09:00",
+      "subject": "Merge remote-tracking branch 'origin/dev' into feat/11466-cu-release-helper"
+    },
+    {
+      "sha": "138ec3bfa52b22014f11e3d37771e433c43aa14c",
+      "date": "2026-10-28T13:52:13+09:00",
+      "subject": "test(knip): remove each repo-sized copy inside its test, under the test bound"
+    },
+    {
+      "sha": "aec03798d7f5e083f0541bf5ed2b2760eb489e2e",
+      "date": "2026-10-28T13:42:00+09:00",
+      "subject": "Merge pull request #11574 from code-yeongyu/fix/changelog-gate-release-merge-base"
+    },
+    {
+      "sha": "90d19f1ff0411c6586c13558fc5274ff6731dc01",
+      "date": "2026-10-28T13:22:30+09:00",
+      "subject": "ci(memory-takeover-trace): cancel the superseded pull-request matrix (#11596)"
+    },
+    {
+      "sha": "0b1ea8c5dfb01032580d195ed124d39de7123b50",
+      "date": "2026-10-28T13:18:21+09:00",
+      "subject": "Merge pull request #11544 from code-yeongyu/fix/11543-dag-runtime-idle-reclaimer"
+    },
+    {
+      "sha": "d402e6caa61be28707b54dfe2b1d4a6ec389b3b2",
+      "date": "2026-10-28T13:17:14+09:00",
+      "subject": "fix(knip): export-check every Next.js special file and the otlp-opt-out entry after the dev merge"
+    },
+    {
+      "sha": "168328b22c3093db9aa0ce7bdb460576be7c3468",
+      "date": "2026-10-28T13:04:47+09:00",
+      "subject": "Merge origin/dev into chore/knip-dead-code-gate"
+    },
+    {
+      "sha": "fb1392d662a86948886e1188461f78f834fa4304",
+      "date": "2026-10-28T13:03:13+09:00",
+      "subject": "docs(changes): add fragment for #11592 (#3364)"
+    },
+    {
+      "sha": "5414dd3ef79fc0329072a22a11769cd4db8a6fcc",
+      "date": "2026-10-28T12:56:54+09:00",
+      "subject": "fix(skill-mcp): propagate the session abort signal into MCP calls and close their HTTP stream (#3364)"
+    },
+    {
+      "sha": "2b5831715e9331ba8233ae8913aaa98315ef1412",
+      "date": "2026-10-28T12:35:11+09:00",
+      "subject": "Merge pull request #11562 from code-yeongyu/fix/audit-skip-unreleased-fragments"
+    },
+    {
+      "sha": "ce8ec7e1cdc6ab49c37d128419e6184a96a48e49",
+      "date": "2026-10-28T12:23:18+09:00",
+      "subject": "docs(changes): add the #11587 fragment"
+    },
+    {
+      "sha": "e7f59d651c83e41a72438f79af6fcaef94a0a967",
+      "date": "2026-10-28T12:22:23+09:00",
+      "subject": "fix(web): keep /design prerenders inside the expiry budget"
+    },
+    {
+      "sha": "fa866972d5f9f35a26bdfda8347ae242c2b00c43",
+      "date": "2026-10-28T12:04:02+09:00",
+      "subject": "Merge pull request #11498 from code-yeongyu/fix/web-document-shell-11468"
+    },
+    {
+      "sha": "b94e71ef7df53739d52d76e2634e38faf5a6b3dd",
+      "date": "2026-10-28T11:18:25+09:00",
+      "subject": "chore(changelog): name the fragment for #11574"
+    },
+    {
+      "sha": "8f67f74dcca22a26ba63d25a7038f4356500ff1b",
+      "date": "2026-10-28T11:15:25+09:00",
+      "subject": "chore(changes): name fragment after PR #11572"
+    },
+    {
+      "sha": "c9f52f625a380a0e5ea95fde0f34f2f14a3ba33a",
+      "date": "2026-10-28T11:14:52+09:00",
+      "subject": "fix(changelog-gate): release PRs only owe the fragments present at the merge base"
+    },
+    {
+      "sha": "344fe53a9831f9b86e7df6f4b9ee6f1f7893b178",
+      "date": "2026-10-28T11:13:11+09:00",
+      "subject": "chore(changes): add fragment for telemetry identifiers"
+    },
+    {
+      "sha": "5a9aaa1668024907b2e7110523c13a356bc2ad8b",
+      "date": "2026-10-28T11:13:10+09:00",
+      "subject": "docs(telemetry): describe telemetry ids as random local install ids"
+    },
+    {
+      "sha": "71adc253600c43ad258d90b69742bddf14f75cc2",
+      "date": "2026-10-28T11:12:59+09:00",
+      "subject": "fix(telemetry): derive every telemetry id from a random local install id"
+    },
+    {
+      "sha": "088b7393a2ab75b3657475200015287bf1e53e7f",
+      "date": "2026-10-28T10:33:19+09:00",
+      "subject": "fix(knip): bound each entry section at the next section header"
+    },
+    {
+      "sha": "d25c04fe7569a7876a7851c49bbe81112d985edf",
+      "date": "2026-10-28T10:16:59+09:00",
+      "subject": "fix(knip): read only an entry section's own paths array"
+    },
+    {
+      "sha": "13553df6cbe00bf693f3b2c66a921be13f0bdd4c",
+      "date": "2026-10-28T09:57:02+09:00",
+      "subject": "fix(knip): read every knip entry and link every package dir on Windows"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/memory-takeover-trace.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/publish-platform.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11287.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11290.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11410.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11456.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11481.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11488.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11490.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11492.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11498.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11524.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11525.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11535.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11536.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11562.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11572.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11574.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11587.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11592.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "changes/unreleased/11619.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-backend-macos/src/input/background.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-backend-macos/src/input/held.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-backend-macos/src/input/holds.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-backend-macos/src/input/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-backend-macos/src/input/release.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-backend-macos/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/guard.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/guard_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/holds.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/holds_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/observe.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/plan.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/plan_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/poster.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/process.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/process_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/run.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/run_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/signals.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/tap.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/wire.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-backend-macos/src/release_helper/wire_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-engine/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/senpi-desktop-engine/tests/launch_gate.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/senpi-desktop-engine/tests/release_helper.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/installation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guide/telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/codex-telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/senpi-telemetry.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "knip.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/boulder-state/index.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/boulder-state/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/boulder-state/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/boulder-state/src/storage/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/boulder-state/src/storage/review-artifacts.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/boulder-state/src/storage/review-artifacts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/mcp-client-core/src/skill-mcp-manager/abort-signal.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-client-core/src/skill-mcp-manager/http-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp-client-core/src/skill-mcp-manager/manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/mcp-client-core/src/skill-mcp-manager/request-abort-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/lcx/skills/lcx-contribute-bug-fix/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/lcx/skills/lcx-contribute-bug-fix/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/lcx/skills/lcx-report-bug/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/lcx/skills/lcx-report-bug/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/telemetry/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/telemetry/src/codex-hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/telemetry/src/posthog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/telemetry/src/product-identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/telemetry/test/codex-hook-diagnostics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/components/telemetry/test/codex-hook.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/plugin/test/payload-equivalence.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/scripts/install-dist/install-local.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/src/install/codex-install-telemetry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/src/telemetry/cross-package-equivalence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/src/telemetry/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/src/telemetry/posthog-diagnostics.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/src/telemetry/posthog.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/src/telemetry/posthog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-codex/src/telemetry/product-identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-native/account-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-native/bin/lib/service-auth.generated.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-native/test/account-logout-marker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/cli/cli-installer.telemetry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/cli/run/runner.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/cli/service-auth/session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/cli/service-auth/signed-out-marker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/config/schema/background-task.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/config/schema/hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/features/boulder-state/storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/features/boulder-state/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/atlas-lifecycle-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/atlas-lifecycle-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/background-task-retry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/idle-completion-nudge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/idle-continuation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/idle-continuation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/idle-event.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/idle-event.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/subagent-completion-reminder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/atlas/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/hooks/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/hooks/momus-review-persistence/hook.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/hooks/momus-review-persistence/hook.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/hooks/momus-review-persistence/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/hooks/momus-review-persistence/review-resolution.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/plugin/hooks/create-tool-guard-hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/plugin/tool-execute-after.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/plugin/tool-execute-before.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/plugin/tool-registry-core-tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/plugin/tool-registry-core-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/shared/posthog-activity-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/shared/posthog-plugin-load.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/shared/posthog.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/shared/posthog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/shared/telemetry-host-identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/shared/telemetry-parity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/shared/telemetry-product-identity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/shared/telemetry-product-identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/delegate-task/executor-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-cleanup-delay.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-continuation-deleted-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-continuation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-session-cleanup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-session-existence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-session-existence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-session-poller.deleted-session.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-session-poller.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/delegate-task/sync-task.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/delegate-task/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill-mcp/tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill-mcp/tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill/async-description-refresh.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/omo-opencode/src/tools/skill/description-formatter.core-overlap.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill/description-formatter.order.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill/description-formatter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill/tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill/zauc-mocks-skill-tools/dynamic-discovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-opencode/src/tools/skill/zauc-mocks-skill-tools/native-skills.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/bundle-inputs.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-device-account.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-feedback.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-init-deep-advisor.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-member.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-memory-commands.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-side-panel.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-task.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omo-senpi/plugin/extensions/omo-telemetry-otlp.js",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

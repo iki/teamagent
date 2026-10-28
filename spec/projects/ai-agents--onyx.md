@@ -34,6 +34,14 @@ The [environment command](https://github.com/onyx-dot-app/onyx/blob/24aafd43aa31
 
 Configuration publication is two steps: upsert first, then read/rewrite to remove exact legacy KEY= lines. The latter rewrite is not atomic in this helper, and a failure can leave the earlier update applied. It does not parse every valid dotenv spelling. Missing services are skipped with warnings, but any port-query error is described as a container not running, conflating absent infrastructure with inspection failures. The [log command](https://github.com/onyx-dot-app/onyx/blob/24aafd43aa31e56ebf9859cf50e2a8e3d61adebc/tools/ods/cmd/logs.go) follows logs by default without a local output bound or redaction and passes service arguments directly to Compose. Adapt explicit partial-state reporting, atomic owned configuration updates and a bounded diagnostic adapter; no Docker, configuration write, log streaming or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `24aafd43aa31e56ebf9859cf50e2a8e3d61adebc` to `31382417ff60a07c425bfe529e04e0e5fab10d23`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [backend/onyx/agents/tools.py](https://github.com/onyx-dot-app/onyx/blob/31382417ff60a07c425bfe529e04e0e5fab10d23/backend/onyx/agents/tools.py#L21-L108), The new agent-tool contract models completed results, pending human input and child-run waits as separate outcomes. Human answers carry the request ID and a validator requires a result payload exactly when the decision is result. Foreground/background lifetime and step/timeout parameters are explicit in the agent-control protocol.
+
+**Harness implication and limits:** Suspension should release execution capacity and resume against an identified request, without confusing supplied output with authorization to execute. These are model/protocol definitions, not proof that the scheduler persists waits or checks ownership. The changed tool-model file relocates result types; runtime dispatch, human principal validation, persistence and child cleanup remain outside this scope. No upstream runtime or live provider behavior was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [onyx](https://github.com/onyx-dot-app/onyx); analyzed commit `24aafd43aa31e56ebf9859cf50e2a8e3d61adebc`; commit date 2026-10-27T17:12:11Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--onyx.md).
+Analysis metadata: source [onyx](https://github.com/onyx-dot-app/onyx); analyzed commit `31382417ff60a07c425bfe529e04e0e5fab10d23`; commit date 2026-10-28T09:26:33Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--onyx.md).
 <!-- teamagent-analysis:end -->

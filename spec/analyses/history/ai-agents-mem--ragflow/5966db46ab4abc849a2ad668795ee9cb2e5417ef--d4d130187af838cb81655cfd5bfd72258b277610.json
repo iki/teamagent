@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-mem--ragflow",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/infiniflow/ragflow",
+  "report": "spec/projects/ai-agents-mem--ragflow.md",
+  "analyzedSha": "5966db46ab4abc849a2ad668795ee9cb2e5417ef",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T19:49:36+08:00",
+  "observedSha": "d4d130187af838cb81655cfd5bfd72258b277610",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d4d130187af838cb81655cfd5bfd72258b277610",
+      "date": "2026-10-28T18:08:51+08:00",
+      "subject": "Feat: Modify the alias of a published agent (#21620)"
+    },
+    {
+      "sha": "18157ce5f77c22f51fadd537cae3c9e98b1d7819",
+      "date": "2026-10-28T18:02:12+08:00",
+      "subject": "fix(dataset): report incomplete bulk document deletion (#21607)"
+    },
+    {
+      "sha": "4781a2a8ca23d569eb16b863e2b875b3c5067ce1",
+      "date": "2026-10-28T18:00:24+08:00",
+      "subject": "fix(chat): reject unsupported completion content (#21597)"
+    },
+    {
+      "sha": "af825c4020fd7c537ab250b1e86b321516d954cf",
+      "date": "2026-10-28T17:47:36+08:00",
+      "subject": "feat(web): place the Agent tab first in the agents page (#21621)"
+    },
+    {
+      "sha": "bf748a03f3fbf7be17d4bf005f56a3da442bc363",
+      "date": "2026-10-28T17:41:19+08:00",
+      "subject": "fix(dataset): restore previous embedding model after failed validation (#21602)"
+    },
+    {
+      "sha": "39ec4d59423cbd840690713f25f80b504f27c8af",
+      "date": "2026-10-28T17:34:43+08:00",
+      "subject": "fix(web): show session action menu only on the active conversation (#21617)"
+    },
+    {
+      "sha": "7121485e919ae87295445b1143f4c40c104ab13f",
+      "date": "2026-10-28T17:33:42+08:00",
+      "subject": "CI : web not run api tests (#21615)"
+    },
+    {
+      "sha": "31ddea42d094ef95a2711ac53aabb353bbace1db",
+      "date": "2026-10-28T17:13:15+08:00",
+      "subject": "Fix: use the Anthropic base URL placeholder for Anthropic (#21411)"
+    },
+    {
+      "sha": "d12048b6f5f977c5a1e89c7fc3a2757078110238",
+      "date": "2026-10-28T16:54:09+08:00",
+      "subject": "test(sdk): restore and relocate Python SDK tests (#21613)"
+    },
+    {
+      "sha": "0f6d0e9bd48fbff9fced071b8ec5fa6a69f594ae",
+      "date": "2026-10-28T16:52:42+08:00",
+      "subject": "Fix list chat/agent session paging (#21604)"
+    },
+    {
+      "sha": "8b4839c7451b05a4bf47cf3c4ff8cab8e103cd21",
+      "date": "2026-10-28T16:28:19+08:00",
+      "subject": "docs: Update documentation to match the latest UI and functionality (#21600)"
+    },
+    {
+      "sha": "6ddc90a095b291a26305da25049e3903a5feddbe",
+      "date": "2026-10-28T16:18:58+08:00",
+      "subject": "update admin UI (#21605)"
+    },
+    {
+      "sha": "f9ff41ebdd3ce231252f6184dba98d0a12253b35",
+      "date": "2026-10-28T16:14:30+08:00",
+      "subject": "fix(tokenizer): let the SSE2 loops in ToLower run (#21436)"
+    },
+    {
+      "sha": "2d37184d5b0d9228996265b872e866c335cb928b",
+      "date": "2026-10-28T15:53:40+08:00",
+      "subject": "Revert \"fix(web): restore auto-metadata checkbox in reparse dialog (#21346)\" (#21601)"
+    },
+    {
+      "sha": "de59ebf378fa76eb4c4126df812cd3d2a45f138a",
+      "date": "2026-10-28T15:52:16+08:00",
+      "subject": "fix(parser): honour the pipeline context in SoMark and Docling PDF calls (#21536)"
+    },
+    {
+      "sha": "d717d0c975227de70cb8abb080e9a7035989aa95",
+      "date": "2026-10-28T15:44:29+08:00",
+      "subject": "Refactor: delete agent browser (#21599)"
+    },
+    {
+      "sha": "9742be8b5bd9094119a3ae0176a925fa054792dd",
+      "date": "2026-10-28T15:30:36+08:00",
+      "subject": "refactor(server): collapse duplicate ingestor concurrency resolver and drop redundant Max prefix (#21588)"
+    },
+    {
+      "sha": "0c8af782cbe87b8c3240f42525d0aa9738ae4502",
+      "date": "2026-10-28T15:28:30+08:00",
+      "subject": "fix(parser): read PDF bookmarks into remote parse results (#21499)"
+    },
+    {
+      "sha": "77b81f2a360641ef46bc86b4c7dd4932adc4a9d0",
+      "date": "2026-10-28T15:25:50+08:00",
+      "subject": "fix(web): use ConfirmDeleteDialog for reparse and parser-config confirmations (#21606)"
+    },
+    {
+      "sha": "e0a52fc85618d48a383a448a68b068578d4194bb",
+      "date": "2026-10-28T15:20:33+08:00",
+      "subject": "feat: add WorldRouter model provider (#21603)"
+    },
+    {
+      "sha": "b22b250290a15b21ac59f74e5e9e4863dbc01123",
+      "date": "2026-10-28T15:04:24+08:00",
+      "subject": "fix(ingestion): scale MinerU content_list bboxes for PDF chunk highlights (#21498)"
+    },
+    {
+      "sha": "f7de7669ad2bba8eff8225a7ea08a6beea2a5bef",
+      "date": "2026-10-28T13:52:55+08:00",
+      "subject": "fix(tokenizer): fold Cyrillic before stemming so Russian keywords match (#21433)"
+    },
+    {
+      "sha": "1ab7dbf5a830274feb6d2f7ff0ec7bcc3019ae23",
+      "date": "2026-10-28T13:50:29+08:00",
+      "subject": "Apply datasets parser config to all documents (#21590)"
+    },
+    {
+      "sha": "ee7e30635dbc35b25b09eb4cf9d4e843ab62dfbc",
+      "date": "2026-10-28T13:48:09+08:00",
+      "subject": "update go.sum (#21596)"
+    },
+    {
+      "sha": "0732990426781f49e8cd7be958c9e462237a7549",
+      "date": "2026-10-28T13:47:43+08:00",
+      "subject": "build(deps): bump qs from 6.16.0 to 6.17.0 in /web (#21595)"
+    },
+    {
+      "sha": "95ffd344b48f916822eb599cf6deee1fc1ddb804",
+      "date": "2026-10-28T13:47:36+08:00",
+      "subject": "build(deps): bump github.com/go-jose/go-jose/v4 from 4.1.4 to 4.1.6 (#21594)"
+    },
+    {
+      "sha": "e7047b7a27d1d75f0357dc88590900f53e26bf37",
+      "date": "2026-10-28T13:33:44+08:00",
+      "subject": "i18n: translate new tr-TR keys and refresh outdated strings (#21496)"
+    },
+    {
+      "sha": "4ecd8bcb18894595b069b42f7f8c5f819a11d892",
+      "date": "2026-10-28T13:30:52+08:00",
+      "subject": "remove docs (#21598)"
+    },
+    {
+      "sha": "7c8a7f26a1483185b8359fcf2abccad6da0dfcbc",
+      "date": "2026-10-28T13:23:55+08:00",
+      "subject": "fix(retrieval): align pagerank and rank-feature scoring (#21542)"
+    },
+    {
+      "sha": "aea8be4777d6db560f1993da0aca1bd308fe5701",
+      "date": "2026-10-28T12:44:02+08:00",
+      "subject": "fix(parser): apply the OpenDataLoader request timeout (#21527)"
+    },
+    {
+      "sha": "61eea6e8b0ea1b30e7fbc1c5f9880e928b2b4fe0",
+      "date": "2026-10-28T12:11:47+08:00",
+      "subject": "Fix: remove sso related code (#21584)"
+    },
+    {
+      "sha": "1dd7ead7b5ca816c0454fa464bb756d861d9d02e",
+      "date": "2026-10-28T12:11:22+08:00",
+      "subject": "Fix: Click \"Apply\" to sync the parameters from the multi-model comparison page to the chat page. (#21564)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/sep-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Dockerfile_base",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/args_flag_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/ragflow_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/ragflow_server_deepdoc_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conf/llm_factories.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conf/model.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "conf/models/worldrouter.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conf/service_conf.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deps/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deps/download_deps.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/.env",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docker/service_conf.yaml.template",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/administrator/management/admin_ui/before_you_begin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/administrator/management/admin_ui/manage_user_accounts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/administrator/management/ragflow_cli.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/administrator/setup/admin_service.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/develop/launch_ragflow_from_source.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "docs/dsl-multi-version.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/agent/agent_workflow/tool_components.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/dataset/artifacts_knowledge_artifact_generation_and_management.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/dataset/notes_and_faqs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/knowledge_compilation/apply_knowledge_compilation_template.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/knowledge_compilation/faq.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/memory/configure_memory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/references/http_api_reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/release_notes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/admin/handler.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/admin/handler_variables_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/audio/model_provider_synthesizer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/canvas/parallel_subgraph.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/canvas/variable_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/agent_mcp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/begin.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/agent/component/browser.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/agent/component/browser_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/docs_generator.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/integer_params.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/llm.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/llm_credentials.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/message.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/agent/component/stagehand_model.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/agent/component/stagehand_runtime.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/agent/component/stagehand_runtime_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "internal/agent/component/stagehand_runtime_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/universe_a_wrappers.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/component/variable_assigner.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agent/component/variable_assigner_concurrency_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/retrievalbridge/memory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/runtime/state.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/tool/canvas_ctx.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/tool/email.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/tool/email_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/tool/retrieval.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/tool/retrieval_nlp.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agent/tool/retrieval_nlp_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentic_rag/claim_filter_live_manual_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentic_rag/compiled_evidence.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentic_rag/compiled_evidence_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/compiled_knowledge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/compiled_knowledge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentic_rag/compiled_serve.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentic_rag/compiled_serve_smoke_manual_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/agentic_rag/compiled_serve_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/decision_filter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/decision_filter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/helper.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/tool_list_chunks.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/tool_navigate_structure.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/agentic_rag/tool_navigate_structure_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/binding/cpp/CMakeLists.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/binding/cpp/Makefile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/binding/cpp/rag_analyzer.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/binding/cpp/rag_analyzer_c_api.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/binding/cpp/string_utils.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/binding/cpp/string_utils_test.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/binding/cpp/wordnet_lemmatizer.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/binding/cpp/wordnet_lemmatizer_test.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/common/environments.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/dao/chat_session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/deepdoc/parser/pdf/pdfium/pdfium.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/deepdoc/parser/pdf/pdfoxide_bridge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/development.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/engine/elasticsearch/chunk.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/engine/elasticsearch/chunk_helpers_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/engine/elasticsearch/chunk_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/engine/serenedb/client.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/engine/serenedb/serenedb_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/engine/serenedb/sql.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/entity/models/factory.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/entity/models/worldrouter.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/entity/models/worldrouter_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/agent_component.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/agent_component_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/auth.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/chat_session.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/dify_retrieval_handler.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/dify_retrieval_handler_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/document.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/handler/document_apply_parser_config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/handler/document_apply_parser_config_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/error.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/user.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/handler/user_auth_ee.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/harness/core/agent_handoff.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/harness/core/callback.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/harness/core/cancel_full_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/harness/core/interrupt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/harness/core/react_agent.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/harness/core/runner.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/harness/core/session.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/harness/core/session_values_concurrency_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/component/parser_dispatch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ingestion/component/pdf_outline_cgo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/component/pdf_vision_dispatch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/component/pdf_vision_dispatch_cgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/ingestion/component/pdf_vision_dispatch_mineru_cgo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/component/pdf_vision_dispatch_nocgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/component/pdf_vision_dispatch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/component/vision_source_admission_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/service/execute_memory_task_panic_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/task/indexdoc/process.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/task/indexdoc/process_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/ingestion/task/pipeline_executor.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_outline.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_outline_cgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_outline_cgo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_outline_nocgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_outline_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_common.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_docling.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_docling_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_opendataloader.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_parser_opendataloader_cgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_parser_opendataloader_cgo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_parser_opendataloader_nocgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_parser_opendataloader_nocgo_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_parser_opendataloader_positions_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_opendataloader_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_remote_common.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/parser/parser/pdf_parser_remote_ctx_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_somark.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_somark_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_parser_table_contract_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_result.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/parser/parser/pdf_table_no_html_text_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/router/router.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/router/router_ee.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/router/router_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

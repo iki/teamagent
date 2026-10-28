@@ -40,6 +40,18 @@ The [MCP bridge](https://github.com/HarnessRouter/harnessrouter/blob/20d73fe727c
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `b2091142cdca2f1d0cbaffc3e0e42c983dc88b24` (commit date `2026-10-27T13:12:25-07:00`), compared with `20d73fe727c82d13eff8f49b938acbb4d7ca294f`. Earlier findings remain historical evidence.
+
+**Scope:** Relay signature-maker lookup and the exact two harness/model exclusions; large source files were captured with a 2 MiB bound but only cited ranges and their deltas were reviewed. The complete changed-path inventory contains 8 paths; the assessment below is limited to the cited branches.
+
+The relay records the producing model under both tool-call IDs and a truncated SHA-256 digest of each signature, allowing lookup when a harness rewrites call IDs. The process-wide map evicts oldest entries above 50,000; a known other-model signature is replaced in the outgoing provider projection, while an unknown maker remains unknown unless the distrust path is selected. See [runner/server.py](https://github.com/HarnessRouter/harnessrouter/blob/b2091142cdca2f1d0cbaffc3e0e42c983dc88b24/runner/server.py#L4964-L5008) and [runner/server.py](https://github.com/HarnessRouter/harnessrouter/blob/b2091142cdca2f1d0cbaffc3e0e42c983dc88b24/runner/server.py#L5294-L5321). The added fixture covers rewritten IDs without storing raw signatures as map keys; it was inspected, not run. See [runner/tests/test_relay_signature_maker.py](https://github.com/HarnessRouter/harnessrouter/blob/b2091142cdca2f1d0cbaffc3e0e42c983dc88b24/runner/tests/test_relay_signature_maker.py#L161-L177).
+
+For Teamagent, retain producer/model/account/session provenance for opaque continuation material and preserve original history separately from transport repair. The process-wide call-ID map is not itself a tenant namespace or durable store. A provider-confirmed signature rejection and an ambiguous transport failure require different recovery rules; this helper does not establish idempotency for billable actions. The gateway also removes two specific harness/model pairs based on documented upstream observations, not a general model ranking; those observations were not reproduced here. See [gateway/app.py](https://github.com/HarnessRouter/harnessrouter/blob/b2091142cdca2f1d0cbaffc3e0e42c983dc88b24/gateway/app.py#L8396-L8427).
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `20d73fe727c82d13eff8f49b938acbb4d7ca294f`; commit date 2026-10-27T01:40:56-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
+Analysis metadata: source [harnessrouter](https://github.com/HarnessRouter/harnessrouter); analyzed commit `b2091142cdca2f1d0cbaffc3e0e42c983dc88b24`; commit date 2026-10-27T13:12:25-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--harnessrouter.md).
 <!-- teamagent-analysis:end -->

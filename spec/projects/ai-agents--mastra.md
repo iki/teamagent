@@ -44,6 +44,14 @@ The [finish helpers](https://github.com/mastra-ai/mastra/blob/cc9aff79025018752c
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `cc9aff79025018752c6efceefb10d9b02c1a5075` to `e84d8ed3d4d1d16c37d5684446d01269b4efe503`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [mastracode/sdk/src/agents/memory.ts](https://github.com/mastra-ai/mastra/blob/e84d8ed3d4d1d16c37d5684446d01269b4efe503/mastracode/sdk/src/agents/memory.ts#L325-L380), Factory runs force thread-scoped observational memory, read authoritative Factory settings per invocation, and clamp legacy thread thresholds to the supported minimum. Resource scope retains its saved threshold. Scope, thresholds, attachment mode and Factory/subconscious availability participate in the cached memory key. Retired instances remain tracked until settled, with startup failure rejection handled.
+
+**Harness implication and limits:** Derive memory cache identity from effective scope and configuration, and enforce scope-specific migration invariants on old saved settings. Thread-scoped observations still coexist with resource-wide recall; this is not an ACL guarantee. Storage authorization, the observation engine, threshold constants and concurrent retirement behavior remain unverified. The oversized main agent implementation was outside the bounded capture. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mastra](https://github.com/mastra-ai/mastra); analyzed commit `cc9aff79025018752c6efceefb10d9b02c1a5075`; commit date 2026-10-27T12:48:18-05:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mastra.md).
+Analysis metadata: source [mastra](https://github.com/mastra-ai/mastra); analyzed commit `e84d8ed3d4d1d16c37d5684446d01269b4efe503`; commit date 2026-10-28T11:03:37+01:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--mastra.md).
 <!-- teamagent-analysis:end -->

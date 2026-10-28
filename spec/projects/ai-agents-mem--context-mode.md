@@ -40,6 +40,18 @@ Evidence: [stats.json:1-8](https://github.com/mksglu/context-mode/blob/da399d384
 
 **Scope and limits:** Complete changed-path inventory and the counter diff were checked; only the cited existing implementation range was re-read. No runtime, migration or retrieval benchmark was executed.
 
+## Follow-up change review — 2026-10-28
+
+**The new revision updates usage counters only.** Reviewed commit `b77ba447f51ff193962d6f0fb78c061c76ae871c` (commit date `2026-10-27T18:04:03Z`), compared with `da399d384f03ae9c28d955c2e56c834c56d6ea93`. The complete no-rename Git path inventory contains 1 changed paths.
+
+The complete one-path comparison changes stats.json display counters. The retained file is an aggregate users/npm/marketplace badge payload, with no changed retrieval, compaction, authorization or runtime code in this interval. These values are upstream reporting data and were not independently measured.
+
+Evidence: [stats.json:1-8](https://github.com/mksglu/context-mode/blob/b77ba447f51ff193962d6f0fb78c061c76ae871c/stats.json#L1-L8).
+
+**Harness consequence:** Keep popularity telemetry out of architectural capability, quality and adoption evidence. Preserve the prior runtime assessment until implementation evidence changes.
+
+**Scope and limits:** Reviewed the complete single-file counter delta. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [context-mode](https://github.com/mksglu/context-mode); analyzed commit `da399d384f03ae9c28d955c2e56c834c56d6ea93`; commit date 2026-10-27T12:07:01Z; review date 2026-10-28T08:26:04.502Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--context-mode.md).
+Analysis metadata: source [context-mode](https://github.com/mksglu/context-mode); analyzed commit `b77ba447f51ff193962d6f0fb78c061c76ae871c`; commit date 2026-10-27T18:04:03Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-mem--context-mode.md).
 <!-- teamagent-analysis:end -->

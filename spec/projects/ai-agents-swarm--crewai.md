@@ -38,6 +38,16 @@ The [skill cache](https://github.com/crewaiinc/crewai/blob/3adab2895836ddde6a215
 
 The cache uses one organization/name directory and removes the previous version before extracting the replacement. Publication is not atomic, archive expansion has no byte/file-count bound here, and organization/name containment is not validated in this helper; upstream validation was not reviewed. Listing cached metadata also lacks structural schema checks. Adapt version-aware cache misses and adversarial archive fixtures, while retaining the old artifact until a bounded, verified replacement can be published atomically. No archives, registry operations or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `3adab2895836ddde6a2150867e2b998a0a1f5334` to `b95aa8bbdea6bc02b465a35fa8da54fecf82f528`. This is a bounded static source review, not an upstream runtime or performance result.
+
+In [lib/cli/src/crewai_cli/skills/main.py](https://github.com/crewaiinc/crewai/blob/b95aa8bbdea6bc02b465a35fa8da54fecf82f528/lib/cli/src/crewai_cli/skills/main.py#L380-L453), Registry skill search now walks advertised pages and prints full handle/version references without terminal-width truncation or interpreting publisher markup. It restricts scan labels to known values and marks public results whose owner may differ from the current organization. The source explicitly lacks an owner field for those public results, so the displayed current-organization attachment template cannot establish their identity. The inspected loop trusts the advertised page count and typed JSON shape; error handling prints provider response text.
+
+[Inspected fixtures](https://github.com/crewaiinc/crewai/blob/b95aa8bbdea6bc02b465a35fa8da54fecf82f528/lib/cli/tests/skills/test_main.py#L390-L470): Inspected fixtures cover multiple pages with the same query, full piped references, literal markup, flattened descriptions and public-owner ambiguity. The broad repository diff was truncated; this review is limited to the frozen skill CLI module and its captured tests. No authenticated registry request, install or publish action was performed.
+
+**Teamagent implication:** Treat registry discovery as untrusted metadata. Preserve complete identifiers and provider ownership separately, validate each response and page budget, and bound/redact provider errors. A scan label or visible public entry does not authorize installation or prove provenance.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `3adab2895836ddde6a2150867e2b998a0a1f5334`; commit date 2026-10-27T13:18:16-03:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
+Analysis metadata: source [crewai](https://github.com/crewaiinc/crewai); analyzed commit `b95aa8bbdea6bc02b465a35fa8da54fecf82f528`; commit date 2026-10-28T08:21:48Z; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-swarm--crewai.md).
 <!-- teamagent-analysis:end -->

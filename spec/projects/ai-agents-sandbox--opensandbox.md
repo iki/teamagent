@@ -37,6 +37,16 @@ The [PTY parser](https://github.com/alibaba/OpenSandbox/blob/62a64f0b48cdd6b410f
 
 The [ingress proxy](https://github.com/alibaba/OpenSandbox/blob/62a64f0b48cdd6b410f36e53c74dc7559c87719a/components/ingress/pkg/proxy/http.go) removes control headers before forwarding and avoids appending an error body to an already-streaming response. Its error log includes RequestURI and raw upstream errors, so private query values still need redaction. The reverse-proxy target is derived from the request URL at this layer; upstream routing/authorization must be traced elsewhere before claiming destination safety. No sandbox, WebSocket, proxy or tests were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `62a64f0b48cdd6b410f36e53c74dc7559c87719a` to `51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6`. This is a bounded static source review, not an upstream runtime or performance result.
+
+In [components/egress/fastsandbox_vault_persist.go](https://github.com/alibaba/OpenSandbox/blob/51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6/components/egress/fastsandbox_vault_persist.go#L315-L406), Lazy vault inspection distinguishes unreadable/unsupported or non-v1 persisted state from a missing file. It marks that state protected and unknown instead of creating an empty replacement. Lifecycle purge refuses unknown state with 503 and recognized v2 state with 409 until lineage-aware writes exist. The code deliberately retains the legacy cleanup behavior for corrupt v1 files; this is not a blanket guarantee that all corrupt bytes survive every lifecycle path.
+
+[Inspected fixtures](https://github.com/alibaba/OpenSandbox/blob/51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6/components/egress/fastsandbox_vault_v2_compat_test.go#L224-L304): The inspected table fixtures assert byte preservation and zero save/delete calls across active/deleted/empty/foreign/truncated v2, unknown schema and unreadable bytes during lazy access. Additional cases keep protection sticky when the file disappears or is replaced by legacy state, while allowing an initial transient I/O failure to recover. These fixtures were read, not executed; the complete vault/egress deployment was not audited.
+
+**Teamagent implication:** Versioned memory, credential and receipt stores need distinct absent, unreadable and unsupported states. Schema downgrade or cleanup must not erase state whose lineage cannot be interpreted. Test both sticky protection after known evidence and recoverable transient failure, including terminal cleanup writers.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [opensandbox](https://github.com/alibaba/OpenSandbox); analyzed commit `62a64f0b48cdd6b410f36e53c74dc7559c87719a`; commit date 2026-10-27T20:35:47+08:00; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--opensandbox.md).
+Analysis metadata: source [opensandbox](https://github.com/alibaba/OpenSandbox); analyzed commit `51bf29ce4781f7a763f3ed7ee90dc68c30f6e7e6`; commit date 2026-10-28T14:54:32+08:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-sandbox--opensandbox.md).
 <!-- teamagent-analysis:end -->

@@ -34,6 +34,14 @@ The [cron-authority helper](https://github.com/yc-software/qm/blob/614d7ac95ef12
 
 The [auth-gate fixtures](https://github.com/yc-software/qm/blob/614d7ac95ef121e7e69df53de076ae2c3660daf8/test/auth-gate.test.ts) cover missing startup secrets, unsigned/forged turns, invalid timestamps, route-bound signatures, replay rejection for mutation, permitted repeated reads and authenticated egress-audit ingest. A signed read still needs resource-level authorization; signature acceptance does not prove a sender's claimed principal or event is semantically correct. The blob fixture checks missing hashes and a valid upload, not a mismatched-body rejection case. Keep explicit test-server bypasses out of production wiring and redact upstream error details in grant refusals. No server, scheduled job, sandbox or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `614d7ac95ef121e7e69df53de076ae2c3660daf8` to `11b683774440fc1dd3c53198cec7ccca2ecce452`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [src/persistence/s3.ts](https://github.com/yc-software/qm/blob/11b683774440fc1dd3c53198cec7ccca2ecce452/src/persistence/s3.ts#L8-L33), S3 client construction now accepts a custom endpoint, path-style addressing and maximum attempts. Custom endpoints default to path style and request checksum calculation only when required. The response-body bridge accepts native Node streams or Web-stream-like objects and rejects an unreadable body.
+
+**Harness implication and limits:** Treat endpoint and retry configuration as explicit storage-adapter policy, with endpoint credential scope and trust validated before constructing the client. This helper forwards those values without such validation, and a falsey maxAttempts value is omitted. S3-compatible support is not evidence of equivalent consistency, checksum coverage or retention behavior; no remote storage operation was run. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [qm](https://github.com/yc-software/qm); analyzed commit `614d7ac95ef121e7e69df53de076ae2c3660daf8`; commit date 2026-10-27T10:14:01-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--qm.md).
+Analysis metadata: source [qm](https://github.com/yc-software/qm); analyzed commit `11b683774440fc1dd3c53198cec7ccca2ecce452`; commit date 2026-10-27T23:57:03-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--qm.md).
 <!-- teamagent-analysis:end -->

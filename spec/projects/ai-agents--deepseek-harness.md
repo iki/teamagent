@@ -38,6 +38,18 @@ These checks establish consistency of declared schema artifacts, not empirical c
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `f3803c96974ad4a94195fb97e5c637e9c2a3afe3` (commit date `2026-10-28T02:17:58+08:00`), compared with `22ddee3792402c3e70ec5f86a63c3e3e895a2f60`. Earlier findings remain historical evidence.
+
+**Scope:** Filesystem escalation argument handling and goal-update action dispatch. The complete changed-path inventory contains 2124 paths; the assessment below is limited to the cited branches.
+
+Filesystem calls repeating the standing mode return the existing policy without requesting a wider grant; different modes retain the explicit approval path and call/agent identity. Structured sandbox-denial codes survive error projection. See [packages/fs/tool-fs/src/sandbox.ts](https://github.com/deepseek-ai/deepseek-harness/blob/f3803c96974ad4a94195fb97e5c637e9c2a3afe3/packages/fs/tool-fs/src/sandbox.ts#L88-L134). Goal edit/pause/resume still require direct-human authority, while extraneous fields for other actions are now ignored and presentation selects fields by action. See [packages/goal/tool-goal/src/index.ts](https://github.com/deepseek-ai/deepseek-harness/blob/f3803c96974ad4a94195fb97e5c637e9c2a3afe3/packages/goal/tool-goal/src/index.ts#L255-L324).
+
+For Teamagent, compare requested authority against the current effective policy and preserve machine-readable denial causes. Ignored action fields should be explicitly normalized so approval previews cannot imply unused changes. These selected branches do not establish OS confinement, freshness at the eventual write, or independent correctness of a completed goal; the much larger runtime/UI delta remains outside scope.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness); analyzed commit `22ddee3792402c3e70ec5f86a63c3e3e895a2f60`; commit date 2026-10-23T19:48:59+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-harness.md).
+Analysis metadata: source [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness); analyzed commit `f3803c96974ad4a94195fb97e5c637e9c2a3afe3`; commit date 2026-10-28T02:17:58+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepseek-harness.md).
 <!-- teamagent-analysis:end -->

@@ -42,6 +42,18 @@ Evidence: [apps/daemon/src/memory-extractions.ts:30-103](https://github.com/nexu
 
 **Scope and limits:** Scoped static review of extraction-origin records, heuristic call timing, model-catalog cache and picker readiness in the 1,575-path comparison. Large daemon server, complete LLM writer implementation, strategy persistence and all origin propagation call sites were not audited. Fixtures were read, not executed; no provider, memory extraction or UI operation was invoked.
 
+## Follow-up change review — 2026-10-28
+
+**A disconnected UI no longer treats a transport-only failure as a settled run outcome.** Reviewed commit `d297055b83b6226c2c5e40800bbb4287156c4025` (commit date `2026-10-28T09:35:01Z`), compared with `b7c5dd6d350bf54587a76bef1899bcbc183ea59d`. The complete no-rename Git path inventory contains 148 changed paths.
+
+The new helper recognizes the latest disconnect-specific error on a failed run, projects it as running without end time for reconnection, and removes the marker after authoritative run reconciliation. Fixtures keep a later genuine error terminal, preserve other terminal states and prevent settled records from being projected as running indefinitely. The UI projection itself cannot prove the underlying process remains alive.
+
+Evidence: [apps/web/src/runtime/chat/pending-disconnect.ts:1-79](https://github.com/nexu-io/open-design/blob/d297055b83b6226c2c5e40800bbb4287156c4025/apps/web/src/runtime/chat/pending-disconnect.ts#L1-L79) · [apps/web/tests/runtime/chat/pending-disconnect.test.ts:41-87](https://github.com/nexu-io/open-design/blob/d297055b83b6226c2c5e40800bbb4287156c4025/apps/web/tests/runtime/chat/pending-disconnect.test.ts#L41-L87).
+
+**Harness consequence:** Keep transport status separate from work outcome and retained partial artifacts. Prefer an explicit reconciling/unknown state and read authoritative state before inviting a retry of possibly completed work.
+
+**Scope and limits:** Reviewed the complete new projection helper and tests; process supervision and server reconciliation were not independently verified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [open-design](https://github.com/nexu-io/open-design); analyzed commit `b7c5dd6d350bf54587a76bef1899bcbc183ea59d`; commit date 2026-10-27T09:51:29Z; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--open-design.md).
+Analysis metadata: source [open-design](https://github.com/nexu-io/open-design); analyzed commit `d297055b83b6226c2c5e40800bbb4287156c4025`; commit date 2026-10-28T09:35:01Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--open-design.md).
 <!-- teamagent-analysis:end -->

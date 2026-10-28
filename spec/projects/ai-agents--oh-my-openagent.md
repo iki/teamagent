@@ -34,6 +34,14 @@ The [runtime pruner](https://github.com/code-yeongyu/oh-my-openagent/blob/43eec3
 
 The [tool-name normalizer](https://github.com/code-yeongyu/oh-my-openagent/blob/43eec3ddaf64c52dceb14b3c7898195a7525e257/packages/utils/src/tool-name.ts#L15-L27) uses the in operator on an ordinary object: inherited names such as constructor can take the special-mapping branch and return a non-string despite the declared return type. Normalize display names separately from tool identity and use own-property lookup with validated output at dispatch boundaries. The [environment tests](https://github.com/code-yeongyu/oh-my-openagent/blob/43eec3ddaf64c52dceb14b3c7898195a7525e257/script/agent-env.test.ts) check pin consistency and script text, including credential-injection markers; they do not execute isolation or establish that secrets cannot escape. No pruning, bootstrap or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `43eec3ddaf64c52dceb14b3c7898195a7525e257` to `4c87d16a7393927afa3fbd22277e60f17ca2db81`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [packages/omo-opencode/src/cli/run/runner.ts](https://github.com/code-yeongyu/oh-my-openagent/blob/4c87d16a7393927afa3fbd22277e60f17ca2db81/packages/omo-opencode/src/cli/run/runner.ts#L47-L74), The CLI runner now passes only a run-started event to its telemetry wrapper instead of resolving and passing a distinct ID itself. Telemetry is constructed with the loaded configuration flag, and its synchronous tracking exception is isolated from subsequent server connection setup. This is a narrow telemetry-boundary change.
+
+**Harness implication and limits:** Keep reporting failures independent of task startup and own consent/identity policy in one host boundary. The wrapper implementation was not reviewed, so this call site does not establish what is transmitted, whether the configuration fully disables collection, or whether identifiers are retained. No inference, server launch, telemetry transmission or upstream tests were executed. This review is static and does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent); analyzed commit `43eec3ddaf64c52dceb14b3c7898195a7525e257`; commit date 2026-10-28T02:19:42+09:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-openagent.md).
+Analysis metadata: source [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent); analyzed commit `4c87d16a7393927afa3fbd22277e60f17ca2db81`; commit date 2026-10-28T18:55:35+09:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--oh-my-openagent.md).
 <!-- teamagent-analysis:end -->

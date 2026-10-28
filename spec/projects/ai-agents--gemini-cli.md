@@ -38,6 +38,18 @@ The [auth hook](https://github.com/google-gemini/gemini-cli/blob/7e6227a09cabcbc
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `b8fa817155731c783d47dc6eaeee63163c0ec723` (commit date `2026-10-28T01:27:48Z`), compared with `7e6227a09cabcbc691fa59486cb108855131e8ad`. Earlier findings remain historical evidence.
+
+**Scope:** Diff-context line-ending normalization and terminal wrapping setup/cleanup. The complete changed-path inventory contains 24 paths; the assessment below is limited to the cited branches.
+
+Diff-context calculation now compares CRLF-normalized strings while indexing the new content's logical lines. Terminal wrapping is disabled for either alternate-buffer mode or wide ambiguous characters, with re-enabling registered as cleanup. See [packages/core/src/tools/diff-utils.ts](https://github.com/google-gemini/gemini-cli/blob/b8fa817155731c783d47dc6eaeee63163c0ec723/packages/core/src/tools/diff-utils.ts#L12-L35), [packages/core/src/utils/terminal.ts](https://github.com/google-gemini/gemini-cli/blob/b8fa817155731c783d47dc6eaeee63163c0ec723/packages/core/src/utils/terminal.ts#L81-L97) and [packages/cli/src/interactiveCli.tsx](https://github.com/google-gemini/gemini-cli/blob/b8fa817155731c783d47dc6eaeee63163c0ec723/packages/cli/src/interactiveCli.tsx#L178-L194).
+
+For Teamagent, distinguish a normalized comparison view from source bytes and preserve explicit hash migration evidence when maintained text is rewritten. This helper handles CRLF for comparison; it is not a repository-wide LF gate and does not normalize lone CR. Terminal width detection and cleanup registration likewise do not prove native rendering or crash recovery. No terminal/native acceptance tests were executed.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gemini-cli](https://github.com/google-gemini/gemini-cli); analyzed commit `7e6227a09cabcbc691fa59486cb108855131e8ad`; commit date 2026-10-27T17:35:15Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gemini-cli.md).
+Analysis metadata: source [gemini-cli](https://github.com/google-gemini/gemini-cli); analyzed commit `b8fa817155731c783d47dc6eaeee63163c0ec723`; commit date 2026-10-28T01:27:48Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gemini-cli.md).
 <!-- teamagent-analysis:end -->

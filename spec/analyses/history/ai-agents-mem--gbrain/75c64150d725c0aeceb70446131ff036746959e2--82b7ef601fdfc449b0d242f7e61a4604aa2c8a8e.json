@@ -1,0 +1,915 @@
+{
+  "id": "ai-agents-mem--gbrain",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/garrytan/gbrain",
+  "report": "spec/projects/ai-agents-mem--gbrain.md",
+  "analyzedSha": "75c64150d725c0aeceb70446131ff036746959e2",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T16:34:53Z",
+  "observedSha": "82b7ef601fdfc449b0d242f7e61a4604aa2c8a8e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "82b7ef601fdfc449b0d242f7e61a4604aa2c8a8e",
+      "date": "2026-10-28T08:33:05Z",
+      "subject": "Merge pull request #7618 from garrytan/capy/gbra176-7617-batch-export-reads"
+    },
+    {
+      "sha": "10412ead269f7307338d10d9e6d238b5af04a7e7",
+      "date": "2026-10-28T07:23:52Z",
+      "subject": "fix(git-gap): the census report refuses a source with a path whose ignore status Git cannot read, as before #7617 (#7618)"
+    },
+    {
+      "sha": "59a0f177a4020a9324a6c5f1a99eca0522c055a4",
+      "date": "2026-10-28T07:11:36Z",
+      "subject": "docs: the census names paths with an unknown ignore status (#7618)"
+    },
+    {
+      "sha": "66f82f6e4bf857b00dda5497aeaf9284be104825",
+      "date": "2026-10-28T07:11:36Z",
+      "subject": "fix(git-gap): count a path whose ignore status Git cannot read as ignore_status_unknown and name it in git-gap and doctor (#7618)"
+    },
+    {
+      "sha": "52d979c3f4e2c59df651afcbf06f35e7a9339941",
+      "date": "2026-10-28T07:00:54Z",
+      "subject": "docs(design): the census reads a withheld page at its withheld path and tolerates one unknown ignore status (#7618)"
+    },
+    {
+      "sha": "12ef84237d30383910eba765587e68e350e9fe1a",
+      "date": "2026-10-28T06:58:00Z",
+      "subject": "docs(changelog): rewrite three mid-sentence colons in the #7618 entry (prose lint)"
+    },
+    {
+      "sha": "da0d87e1ad9896cfabc9bd94da2934682081a191",
+      "date": "2026-10-28T06:56:53Z",
+      "subject": "v0.60.480.0 chore(release): restamp onto master v0.60.479.0"
+    },
+    {
+      "sha": "03e883953a76d6b447c9953a68873f4a97a9fefa",
+      "date": "2026-10-28T06:56:41Z",
+      "subject": "chore: bump version and changelog (v0.60.480.0)"
+    },
+    {
+      "sha": "7e4b27b7260bf2e7e47f3df5eb5639d1e5928c3d",
+      "date": "2026-10-28T06:56:12Z",
+      "subject": "docs(changelog): keep the #7618 entry under Unreleased until the slot stamp"
+    },
+    {
+      "sha": "1577569d207155b420fde8bffa8c7143c617a68a",
+      "date": "2026-10-28T06:29:55Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into capy/gbra176-7617-batch-export-reads"
+    },
+    {
+      "sha": "1c488b19be57b99a499634dbe69938c584e9bee6",
+      "date": "2026-10-28T06:28:22Z",
+      "subject": "Merge pull request #7829 from garrytan/capy/upgrades-no-longer-stamp"
+    },
+    {
+      "sha": "d7de8264c44b72fcf01ab8e83132b1f72479e086",
+      "date": "2026-10-28T05:54:21Z",
+      "subject": "test: drop the stale grandfather.ts write-gate exemption (no longer a writer since #7814)"
+    },
+    {
+      "sha": "d22a3ae44fd3d6c7b5ffc7f18288b60d49a07d18",
+      "date": "2026-10-28T05:36:11Z",
+      "subject": "fix: drop grandfather.ts from the write-attribution inventory (0 direct writers since #7814)"
+    },
+    {
+      "sha": "55805257fd1260c3659fde9fca09a3444b9e9e98",
+      "date": "2026-10-28T05:15:38Z",
+      "subject": "v0.60.479.0 chore(release): restamp onto master v0.60.478.0"
+    },
+    {
+      "sha": "b967bc812a919ef9ccfbd6f1c65f1b7c992df6a3",
+      "date": "2026-10-28T05:15:24Z",
+      "subject": "chore: bump version and changelog (v0.60.479.0)"
+    },
+    {
+      "sha": "643991cf21646966e34e67d03efe7a7d2997cd42",
+      "date": "2026-10-28T05:14:44Z",
+      "subject": "fix: review findings: retire stale grandfather docs, narrow the notice wording; map deleted tests in pregate policy"
+    },
+    {
+      "sha": "329ab81866d5b4ddbced3ad20cc4b468e68cfb9d",
+      "date": "2026-10-28T04:55:32Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into capy/upgrades-no-longer-stamp"
+    },
+    {
+      "sha": "857a281b149bef8fcd40bb39474f88c3a51ef9bf",
+      "date": "2026-10-28T04:53:53Z",
+      "subject": "Merge pull request #7806 from garrytan/capy/a-page-purge-no"
+    },
+    {
+      "sha": "8cea10221353cda3bc83d4ad1a81b7374efc3838",
+      "date": "2026-10-28T03:50:05Z",
+      "subject": "fix(#7778): the insert guard spells out the outcome-marker predicate, so audit-sources.ts stays out of the PGLite snapshot inputs (workflow cache keys back to master's)"
+    },
+    {
+      "sha": "3f664eb0edf5a41cae9d7e154a4cbbe40ff84399",
+      "date": "2026-10-28T03:23:31Z",
+      "subject": "fix(#7778): pglite-snapshot cache keys hash audit-sources.ts (now a schema input); key-files entries"
+    },
+    {
+      "sha": "6b3d371b0a2bc39cb39a981724cff3b9d6cc214a",
+      "date": "2026-10-28T03:18:00Z",
+      "subject": "Revert docs(#7778): key-files entries (kept out so the tree stays stamp-only against the gated tree)"
+    },
+    {
+      "sha": "ec2f10d071e8978f180eefbda8fb345d67862194",
+      "date": "2026-10-28T03:17:29Z",
+      "subject": "docs(#7778): key-files entries for the outcome-marker exemption"
+    },
+    {
+      "sha": "dc58520cd0b814445b66bb4d3994a035d5a0e7fa",
+      "date": "2026-10-28T03:16:00Z",
+      "subject": "v0.60.478.0 chore(release): restamp onto master v0.60.477.0"
+    },
+    {
+      "sha": "4717e4018dd6f4155cf3490f6ce6ebbfe544fc42",
+      "date": "2026-10-28T03:15:36Z",
+      "subject": "chore: bump version and changelog (v0.60.478.0)"
+    },
+    {
+      "sha": "936e28abd00effb176a0803fd80b73bcfb6d9a4b",
+      "date": "2026-10-28T03:04:26Z",
+      "subject": "Merge remote-tracking branch 'origin/master' into capy/a-page-purge-no"
+    },
+    {
+      "sha": "8f2e6368915c8f625e59527668429e344d59729e",
+      "date": "2026-10-28T03:03:25Z",
+      "subject": "Merge pull request #7794 from garrytan/capy/gbra-trust-release-preview"
+    },
+    {
+      "sha": "b92d2ba75fecde4de797bfdf2f7ccdec6e3a19ed",
+      "date": "2026-10-28T02:55:06Z",
+      "subject": "fix(migrations): v0.13.1 no longer writes validate: false into pages on upgrade (#7814)"
+    },
+    {
+      "sha": "7917b17cfdc4aed6f1d7b82016bc7b5675c356f6",
+      "date": "2026-10-28T01:56:34Z",
+      "subject": "test: doctor Postgres goldens list trust_release_unpreviewed_fields"
+    },
+    {
+      "sha": "4de61239a157054bb2d09d82296b3bdf9ec35230",
+      "date": "2026-10-28T01:45:55Z",
+      "subject": "docs: trust release preview binds the cell fields and the database-only release re-checks the approval"
+    },
+    {
+      "sha": "cb47520f94c685dd8841b81360f1e0a762166ef3",
+      "date": "2026-10-28T01:43:38Z",
+      "subject": "docs: changelog covers the preview escaping"
+    },
+    {
+      "sha": "b13c5179920e14fa3f8e97f6ce56aa9bd7994442",
+      "date": "2026-10-28T01:42:56Z",
+      "subject": "v0.60.477.0 chore(release): restamp onto master v0.60.476.0"
+    },
+    {
+      "sha": "bad3fb188c9e21d3019aabf8a63a2efd69e7c0a6",
+      "date": "2026-10-28T01:42:44Z",
+      "subject": "chore: bump version and changelog (v0.60.477.0)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gstack/pregate.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "BOOTSTRAP_FOR_AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "VERSION",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bun.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/ENGINES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/canonical-writers.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/canonical-reconciliation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-3-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/commands-4.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence-continued.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence-facts.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/core-persistence.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/memory-purge.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/page-identity-and-administration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/security.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/shared-skills.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/key-files/workspace-push-and-backup.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/architecture/system-of-record.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/designs/GIT_CANONICAL_MEMORY.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/error-codes.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/memory-trust.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/multi-source-brains.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/repair.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/shared-checkout-git.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/troubleshooting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/guides/write-refusals.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "llms-full.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openclaw.plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-coding/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin-variants/gbrain-daily/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/bench/sync-pass-memory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/e2e-weights.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/module-size-limits.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/page-body-readers-baseline.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/stress/iteration-weights.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/structural-suites.tsv",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/test-weights.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/ubicloud/weights.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/book-mirror.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/commands/doctor/checks/outside-content-fences.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/commands/doctor/checks/trust-release-unpreviewed.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/doctor/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/migrations/v0_13_1.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/migrations/v0_28_0.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/sources-canonical.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/sources-git-gap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/commands/sync.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/behavior-change-notice.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/cli-flag-registry.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/doctor-categories.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/error-registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/export-snapshot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/facts/audit-sources.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/facts/conversation-publication.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/facts/insert-guard-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/facts/purge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/facts/withdrawal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/git-env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/git/commit-push.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/github-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/google/google-render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/memory-trace.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/outside-content.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/effect-git.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/fault-points.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/git-canonical-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/git-conversion.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/git-door.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/git-gap.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/grandfather.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/page-purge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/publication-failure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/persistence/writer-guard-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/pglite-schema.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/schema-embedded.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/schema-migrations/latest.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/schema-migrations/registry.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/schema-migrations/v278-writer-fence-fail-closed.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/schema-migrations/v279-outcome-markers-skip-purge-guard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/shared-skills/persistence-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/transcripts/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/trust/owner-actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/trust/release-publish.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/trust/tier.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/schema.sql",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "templates/bootstrap/template-repo/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/book-mirror.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/cli-socket.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/conversation-facts-outcome-marker-purge-7778.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/doctor-outside-content-fences.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/doctor-trust-release-unpreviewed-fields.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/bench-sync-pass-memory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "test/e2e/grandfather-projection-postgres.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/trust-release-preview-binding-postgres.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/upgrade-preserves-pages-7814-postgres.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/e2e/writer-fence-fail-closed-7636-postgres.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/export-snapshot.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/pglite-engine-init-default.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/pglite-engine-init-fts-portuguese.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/pglite-engine-init-high-dims.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/pglite-schema-blob-default.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/pglite-schema-blob-fts-portuguese.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/pglite-schema-blob-high-dims.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/postgres-db-initschema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/postgres-engine-init-default.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/postgres-engine-init-fts-portuguese.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/catalog/postgres-engine-init-high-dims.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/content-pglite-human.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/content-pglite-json.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/hot-checks-pglite-json.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/hot-checks-postgres-json.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/json-pglite-degraded.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/json-pglite-fresh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/json-postgres-fresh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/doctor/registry-build-checks.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/migrations/records.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/fixtures/goldens/pglite-upgrade-replay/catalog-after-boot.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/git-canonical-conversion-g8a.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/git-canonical-conversion-progress.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/git-gap-census.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/git-literal-pathspec-hooks-7759.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "test/grandfather-capacity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/grandfather-managed.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/managed-connector-job-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/helpers/managed-migration-chain-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/helpers/upgrade-preserves-pages-contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "test/migrations-v0_13_1-grandfather.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/migrations-v0_13_1.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/outside-content-fence-injection.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/persistence-connectors.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/persistence-git-coalescing-5530.slow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/postgres-unit-arms.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/trust-release-fence.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/trust-release-preview-binding.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/trust-write-gate-drift.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/upgrade-preserves-pages-7814.slow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "test/writer-fence-fail-closed-7636.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

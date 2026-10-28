@@ -2,12 +2,11 @@
 
 Source: [switchyard](https://github.com/NVIDIA-NeMo/Switchyard) · [Analysis](../../projects/ai-agents-proxy--switchyard.md) · [models](../../models.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `b57c5927f6d9e186df23697247a38a7b7fc7eb14`; commit date: 2026-10-27T10:03:30-07:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `b57c5927f6d9e186df23697247a38a7b7fc7eb14`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `b0fa4fb201e5bb984ba7cc101bbe3252846a2ede`; commit date: 2026-10-27T17:17:56-07:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `b0fa4fb201e5bb984ba7cc101bbe3252846a2ede`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NVIDIA-NeMo/Switchyard/compare/b57c5927f6d9e186df23697247a38a7b7fc7eb14...b57c5927f6d9e186df23697247a38a7b7fc7eb14). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/NVIDIA-NeMo/Switchyard/compare/b0fa4fb201e5bb984ba7cc101bbe3252846a2ede...b0fa4fb201e5bb984ba7cc101bbe3252846a2ede). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

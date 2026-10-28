@@ -1,0 +1,785 @@
+{
+  "id": "ai-gen--open-design",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/nexu-io/open-design",
+  "report": "spec/projects/ai-gen--open-design.md",
+  "analyzedSha": "b7c5dd6d350bf54587a76bef1899bcbc183ea59d",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T09:51:29Z",
+  "observedSha": "d297055b83b6226c2c5e40800bbb4287156c4025",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "d297055b83b6226c2c5e40800bbb4287156c4025",
+      "date": "2026-10-28T09:35:01Z",
+      "subject": "[OPEND-3504] fix: unify run status across sidebar, turn header and notifications (P0-24) (#8860)"
+    },
+    {
+      "sha": "bf5681a0513e2da3772daea293cb9c9a6a11321e",
+      "date": "2026-10-28T09:00:13Z",
+      "subject": "[OPEND-3221] fix(web): hide a queued send's card as soon as its drain starts (#8381)"
+    },
+    {
+      "sha": "42095ac60a90b49e588f1511828af69e31891251",
+      "date": "2026-10-28T08:25:52Z",
+      "subject": "[OPEND-3686] fix(daemon): keep the OD Next reply already streamed when a Run fails or is stopped (#8903)"
+    },
+    {
+      "sha": "6bf7fa79120f9da261be43a71d7ec1a28c2b2ef9",
+      "date": "2026-10-28T02:25:01Z",
+      "subject": "[OPEND-3302] fix(chat): stream large transcripts and clean up cancelled connections (#8771)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "apps/daemon/src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/daemon/src/http/message-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/src/routes/project/conversations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/src/routes/runs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/daemon/src/runtimes/run-notices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/src/runtimes/run-restart-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/src/runtimes/run-terminal-reconciliation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/src/runtimes/runs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/src/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/src/storage/amr-terminal-report-outbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/chat-route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/cli-startup.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/headless-runs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/daemon/tests/http/message-stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/od-next-automatic-simple-server.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/routes/conversation-oversized-run-events.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/routes/conversation-strategy-verdict-history.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/daemon/tests/run-notices.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/runs-list-awaiting-input.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/runtimes/amr-terminal-reports.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/daemon/tests/runtimes/run-restart-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/runtimes/run-terminal-reconciliation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/runtimes/runs.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/strategies/od-next/coordinator.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/daemon/tests/strategies/task-store.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/preload.cts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/main/runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/tests/main/window-show-host-boundary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/sidecar/server.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/App.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/AssistantMessage.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/ChatPane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/components/ProjectRunStatusIcon.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/ProjectRunStatusIcon.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/ProjectView.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/SiriOrb.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/SiriOrb.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/WorkspaceTabsBar.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/chat/ExecutionShell.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/chat/primitives/record.module.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/entry-nav-rail/RailRecentRow.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/components/pet/taskCenter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/hooks/useGlobalRunNotices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/hooks/useProjectRunStatuses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/ar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/de.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/en.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/es-ES.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/fa.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/fr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/hu.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/id.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/it.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/ja.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/ko.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/pl.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/pt-BR.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/ru.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/th.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/tr.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/uk.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/zh-CN.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/locales/zh-TW.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/i18n/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/providers/daemon.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/runtime/chat/build-turn-blocks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/runtime/chat/contract.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/runtime/chat/format.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/runtime/chat/group-thinking.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/runtime/chat/pending-disconnect.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/runtime/design-delivery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/runtime/global-run-notices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/state/load-conversation-transcript.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/state/projectRunStatus.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/state/projects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/src/state/read-message-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/src/utils/notifications.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/AssistantMessage.completion-row-last-only.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/AssistantMessage.partial-delivery.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/AssistantMessage.question-form-answered-status.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/web/tests/components/ChatPane.continue-owner.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ChatPane.error-card-ladder.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ChatPane.error-card-terminal-failure-fallback.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/web/tests/components/ChatPane.folded-done-completeness.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/components/ChatPane.folded-verdict.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "apps/web/tests/components/ChatPane.pending-question-continue.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ChatPane.streaming.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ChatPane.successor-boundary.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectGlyphs.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectRunStatusIcon.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.api-empty-response.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.blocked-history-hydration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.pendingPrompt.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/components/ProjectView.queued-drain-card.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.run-cleanup.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.run-isolation.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.run-workspace-identity.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.sharedTitleRefresh.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/ProjectView.transcript-authority-refresh.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/WorkspaceTabsBar.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/assistant-message-tool-status.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/assistant-message-unfinished-todos.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/canceled-turn-row.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/execution-shell.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/failed-turn-row.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/hidden-brand-browser-assist.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/hidden-verify-scorecard.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/live-timer.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/odnext-reload-run-boundaries.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/opend-2626-stopped-turn-history.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/opend-2745-host-card-not-a-run.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/rebound-run-clock.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/removed-undesigned-cards.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/s12-copy-revert.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/summary-slots-no-wrap.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/todo-recall.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/tool-input-delta-dead-wiring.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/w67-text-axes.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/w79-shell-head-type-scale.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/w83-turn-footer-time-and-mark.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/w93-2592-turn-boundary.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/chat/waiting-first-output.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/opend-2849-round4-surfaces.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/components/pet-task-center.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/hooks/useGlobalRunNotices.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/providers/daemon-sse-agent-retry.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/providers/daemon-sse-dead-daemon.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/providers/sse.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/runtime/chat/empty-shell.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/runtime/chat/opend-2823-2824-folded-run-timing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/runtime/chat/pending-disconnect.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/runtime/chat/shell-elapsed-p024.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/runtime/global-run-notices.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/sidecar-proxy-cancellation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/state/load-conversation-transcript.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/web/tests/state/message-stream.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/state/projectRunStatus.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/web/tests/utils/notifications.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/tests/dialog/leftover-agent-reap.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/ui/api-empty-response.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/ui/real-daemon-run.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/src/api/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/src/api/projects.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/contracts/src/api/run-notices.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/contracts/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/host/src/actions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/host/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/host/src/protocol.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -32,6 +32,14 @@ The [wire codec](https://github.com/cloudflare/computer/blob/d84f912b8c423138d8f
 
 The [exec fixtures](https://github.com/cloudflare/computer/blob/d84f912b8c423138d8fea64ca1974eb296ddfc8d/packages/computer/src/tools/core.test.ts) check backend-dependent object parsing without mutating the input and demonstrate an agent-library-independent interface. They do not establish execution isolation. The [proxy stub](https://github.com/cloudflare/computer/blob/d84f912b8c423138d8fea64ca1974eb296ddfc8d/packages/computer/src/proxy-stub.ts) deliberately throws outside workerd, correctly separating import compatibility from runtime availability. Adapt that platform distinction and richer adversarial wire fixtures. No command, Worker, container, RPC or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `d84f912b8c423138d8fea64ca1974eb296ddfc8d` to `b681446f0eaed8ad010bcd2f5e61b3680a6c02c4`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [packages/computer/src/backends/worker-javascript/module-graph.ts](https://github.com/cloudflare/computer/blob/b681446f0eaed8ad010bcd2f5e61b3680a6c02c4/packages/computer/src/backends/worker-javascript/module-graph.ts#L106-L154), Configured source modules may now use simple ws:* names, while built-in filesystem modules still cannot be replaced and malformed/reserved names are rejected. The import graph recognizes configured source and host modules under that namespace and rewrites their references into the module directory. Added fixtures inspect the generated module source with a mocked loader.
+
+**Harness implication and limits:** Keep trusted host capability functions separate from source facades even when they share a namespace; an object-exporting facade must not gain ambient host authority. The fixtures establish transformation intent, not real workerd isolation or filesystem race resistance. No worker or upstream test was executed, and host-module effect authorization remains outside this review. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cloudflare-computer](https://github.com/cloudflare/computer); analyzed commit `d84f912b8c423138d8fea64ca1974eb296ddfc8d`; commit date 2026-10-27T16:30:53Z; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--cloudflare-computer.md).
+Analysis metadata: source [cloudflare-computer](https://github.com/cloudflare/computer); analyzed commit `b681446f0eaed8ad010bcd2f5e61b3680a6c02c4`; commit date 2026-10-27T21:08:45Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--cloudflare-computer.md).
 <!-- teamagent-analysis:end -->

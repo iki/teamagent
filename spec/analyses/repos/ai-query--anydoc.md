@@ -2,11 +2,11 @@
 
 Source: [anydoc](https://github.com/firecrawl/anydoc) · [Analysis](../../projects/ai-query--anydoc.md) · [memory](../../memory.md), [import-generation](../../import-generation.md), [decisions](../../decisions.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `e7178e099b6bf9171e2c52b832cbdb4134b69112`; commit date: 2026-10-23T17:55:34-05:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `e7178e099b6bf9171e2c52b832cbdb4134b69112`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `e7178e099b6bf9171e2c52b832cbdb4134b69112`; commit date: 2026-10-23T17:55:34-05:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `e7178e099b6bf9171e2c52b832cbdb4134b69112`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/firecrawl/anydoc/compare/e7178e099b6bf9171e2c52b832cbdb4134b69112...e7178e099b6bf9171e2c52b832cbdb4134b69112). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

@@ -1,0 +1,890 @@
+{
+  "id": "ai-agents--qm",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/yc-software/qm",
+  "report": "spec/projects/ai-agents--qm.md",
+  "analyzedSha": "614d7ac95ef121e7e69df53de076ae2c3660daf8",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T10:14:01-07:00",
+  "observedSha": "11b683774440fc1dd3c53198cec7ccca2ecce452",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "11b683774440fc1dd3c53198cec7ccca2ecce452",
+      "date": "2026-10-27T23:57:03-07:00",
+      "subject": "web-ui: show one step at a time while a turn runs (re-land #2718 with fixes) (#2740)"
+    },
+    {
+      "sha": "6ead09f9c7bc10827dd6a8c438a25b73e60110a5",
+      "date": "2026-10-27T22:53:54-07:00",
+      "subject": "Cut per-tool-step database round trips (#2738)"
+    },
+    {
+      "sha": "008626aa01df934ca50a2b3585015209ab264f6c",
+      "date": "2026-10-27T22:33:06-07:00",
+      "subject": "Reuse verified document bytes across turns; skip per-step payload serialization under budget (#2732)"
+    },
+    {
+      "sha": "9eb5905509d69cb55f13faa92242057834651b97",
+      "date": "2026-10-27T22:32:57-07:00",
+      "subject": "Replace hand-rolled turn and step timing with Sentry spans (#2733)"
+    },
+    {
+      "sha": "000aecc2f578f9dafd32931ebf614ac067efd240",
+      "date": "2026-10-27T22:00:15-07:00",
+      "subject": "Revert \"web-ui: show one step at a time while a turn runs\" (#2718) (#2739)"
+    },
+    {
+      "sha": "393cd746e9dfa7c3ee363aa407343b504978f484",
+      "date": "2026-10-27T20:48:45-07:00",
+      "subject": "web-ui: give a steer the sticky prompt treatment (#2731)"
+    },
+    {
+      "sha": "1f383583508e5b35838615db02defe0c787bd0b1",
+      "date": "2026-10-27T19:28:04-07:00",
+      "subject": "web-ui: show one step at a time while a turn runs (#2718)"
+    },
+    {
+      "sha": "7e09044fafd2d2337a781494da73985508b79ea5",
+      "date": "2026-10-27T16:52:47-07:00",
+      "subject": "Add Render as a hosting target (#2704)"
+    },
+    {
+      "sha": "f910854f3ac71ec88df3b6a54e053e058d8b4c79",
+      "date": "2026-10-27T16:03:29-07:00",
+      "subject": "Keep catalog connector tools direct, list deferred tools by server and tool (#2710)"
+    },
+    {
+      "sha": "7a5da9389d611b448206b1675ff6b6ace2489fec",
+      "date": "2026-10-27T15:41:31-07:00",
+      "subject": "Desktop: Cmd+N opens a new session (#2711)"
+    },
+    {
+      "sha": "9432ce5b41a070503e286c0d167e4afd8f5f4bcb",
+      "date": "2026-10-27T13:12:06-07:00",
+      "subject": "Move per-turn environment inventories into the system block (#2698)"
+    },
+    {
+      "sha": "7795adaaa595befa25618ca4799123395e9e386b",
+      "date": "2026-10-27T12:50:07-07:00",
+      "subject": "Mount revisited sessions from a client transcript cache (#2272)"
+    },
+    {
+      "sha": "9fa4da1eeb866064835ae8aed2a782fd3e243dbd",
+      "date": "2026-10-27T11:23:37-07:00",
+      "subject": "Load MCP tools on demand through tool_search and mcp_call (#2697)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".codex/skills/deploy-qm/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".codex/skills/deploy-qm/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".codex/skills/deploy-qm/references/render.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cicd.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/aws.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/docker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/doctor.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/fly.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/registry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/backends/render.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/backends/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/check.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/init.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/commands/setup.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/provider-scaffold.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/providers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/render-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/render-domains.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/render-job-command.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/render-minio.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/render-services.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/render-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/src/render-state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/secrets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/src/target-env-defaults.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/deployment/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/deployment/agents/openai.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/templates/deployment/deployment.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/templates/deployment/references/render.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/cli-dispatch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/doctor.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/e2e/init.e2e.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/init.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/preflight.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/providers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/test/render-init.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/test/render-minio.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/test/render-services.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/test/render.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cli/test/secrets.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cli/test/state.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/core/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "deploy/egress-proxy/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/render-minio/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/render-runner/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/render-runner/sqlite.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "deploy/render-runner/start.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/main.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/test/main.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/test/workspace.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "desktop/workspace-preload.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/SPEC.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/deploy-directory.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/error-reporting.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "knip.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/chassis/src/error-reporting.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/onboarding/skills/onboarding/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/src/browser-errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/src/chat.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/src/conv-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/web-ui/src/live-step.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/src/sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/src/shell.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/src/shell.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/web-ui/src/transcript-cache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/src/transcript-viewport.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/test/browser-timing.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/web-ui/test/live-work-one-step.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/test/post-reply-recovery.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/web-ui/test/transcript-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/web-ui/test/transcript-viewport.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills-seed/admin/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills-seed/connect-apps/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills-seed/morning-digest/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skills-seed/request-access/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/agent-api-catalog.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/app-deployments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/app-turn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/app-types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/routes/admin/mcp-servers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/routes/connectors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/routes/deployment-live-smoke.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/api/routes/keychain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/connectors/oauth.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/attachments.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/document-inputs.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/environment-facts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/gateway-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/orchestrator.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/orchestrator/prompt-blocks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/orchestrator/sandboxes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/orchestrator/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/credentials/connector-status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/credentials/connector-token.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/credentials/keychain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/deploy/deploy-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/deploy/render-api.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/deploy/render-app-network.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/deploy/render-app-storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/deploy/render-deploy-artifacts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/deploy/render-deploy-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/deployment/secret-schema.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/files/artifact-data-cache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/harness/agent-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/harness/claude-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/harness/deferred-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/harness/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/harness/pi-harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/harness/replay-images.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/mcp-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/mcp-server-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/mcp/mcp-tool-service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/persistence/s3.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/render/start.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/resolution/turn-context.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/runs/memory-run-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/runs/postgres-run-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src/runs/tool-ledger.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/aws-cli.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/modal-image.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/render-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/render-limits.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/sandbox/render-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sandbox-resources.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sandbox-routing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sandbox/sprites-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sessions/memory-session-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sessions/postgres-session-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sessions/session-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/sessions/session-syscalls.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skills/materialize.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/skills/pack-fetcher.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/slack/conversation-view.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/slack/conversation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/slack/deploy-access.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/primitives.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/util/async.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/util/errors.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/util/ids.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/wiring.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/workspace/render-workspace-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/workspace/workspace-store.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/agent-tools.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/background-tool-context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/claude-harness-turn.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/config.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/connector-byo-route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/connector-status.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/control-tool-context.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/core-cli-import-closure.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/deploy-git-rw.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "test/deployment-broker-credentials.test.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

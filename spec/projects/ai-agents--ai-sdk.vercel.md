@@ -38,6 +38,18 @@ The callback path requires saved server information before exchanging a code, wh
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `3216f06d0d892b03ad607b4716bbf04056cbfe3d` (commit date `2026-10-27T21:52:49-07:00`), compared with `c3b6fef1ffcebd52a8fa1495b96785dc9d802880`. Earlier findings remain historical evidence.
+
+**Scope:** Codex bridge endpoint capability selection, Anthropic credential-header construction and JSON-schema normalization deltas. The complete changed-path inventory contains 239 paths; the assessment below is limited to the cited branches.
+
+The bridge enables standalone web search only for two exact base URLs after trimming trailing slashes, instead of assuming every Responses-compatible endpoint implements the route. See [packages/harness-codex/src/bridge/index.ts](https://github.com/vercel/ai/blob/3216f06d0d892b03ad607b4716bbf04056cbfe3d/packages/harness-codex/src/bridge/index.ts#L27-L35) and [packages/harness-codex/src/bridge/index.ts](https://github.com/vercel/ai/blob/3216f06d0d892b03ad607b4716bbf04056cbfe3d/packages/harness-codex/src/bridge/index.ts#L152-L178). The Anthropic header delta preserves synchronous credentials as synchronous values while still resolving asynchronous token suppliers. See [packages/anthropic/src/anthropic-provider.ts](https://github.com/vercel/ai/blob/3216f06d0d892b03ad607b4716bbf04056cbfe3d/packages/anthropic/src/anthropic-provider.ts#L163-L195). The schema normalizer accepts omitted propertyNames.type because JSON property names are strings; neither change authenticates a provider or validates every dynamic value. See [packages/openai/src/normalize-openai-json-schema.ts](https://github.com/vercel/ai/blob/3216f06d0d892b03ad607b4716bbf04056cbfe3d/packages/openai/src/normalize-openai-json-schema.ts#L57-L78).
+
+For Teamagent, capability evidence must be bound to the exact endpoint/operation and kept separate from entitlement, training policy and credential availability. These bridge flags are route knowledge, not verified account access. Batch web-search conversion now delegates to another helper; that helper and the other provider changes are outside this scoped review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ai-sdk.vercel](https://github.com/vercel/ai); analyzed commit `c3b6fef1ffcebd52a8fa1495b96785dc9d802880`; commit date 2026-10-27T09:26:11-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ai-sdk.vercel.md).
+Analysis metadata: source [ai-sdk.vercel](https://github.com/vercel/ai); analyzed commit `3216f06d0d892b03ad607b4716bbf04056cbfe3d`; commit date 2026-10-27T21:52:49-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--ai-sdk.vercel.md).
 <!-- teamagent-analysis:end -->

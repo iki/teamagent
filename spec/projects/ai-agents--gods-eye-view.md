@@ -38,6 +38,18 @@ The [schema subset](https://github.com/bilawalsidhu/gods-eye-view/blob/15de9d738
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `a4d3701c3cd62b46c90383973f38cfdbedf91889` (commit date `2026-10-28T12:14:29+04:00`), compared with `15de9d738c4a85be1a96726c6114181caef87eeb`. Earlier findings remain historical evidence.
+
+**Scope:** Locale normalization and localized HUD coordinate/unit formatting. The complete changed-path inventory contains 151 paths; the assessment below is limited to the cited branches.
+
+Locale normalization adds Traditional Chinese with explicit Hans taking precedence, and maps Hant/TW/HK/MO to the traditional bundle. The resolver retains explicit URL choice, stored preference, browser languages and English fallback in that order. HUD formatting keeps numeric/coordinate semantics separate from translated labels and uses hemisphere-specific translation context. See [src/i18n/locale.js](https://github.com/bilawalsidhu/gods-eye-view/blob/a4d3701c3cd62b46c90383973f38cfdbedf91889/src/i18n/locale.js#L25-L41), [src/i18n/locale.js](https://github.com/bilawalsidhu/gods-eye-view/blob/a4d3701c3cd62b46c90383973f38cfdbedf91889/src/i18n/locale.js#L73-L98) and [src/hudLocalityFormat.js](https://github.com/bilawalsidhu/gods-eye-view/blob/a4d3701c3cd62b46c90383973f38cfdbedf91889/src/hudLocalityFormat.js#L11-L53).
+
+For Teamagent channels, preserve language-sensitive source wording and machine numeric values independently of localized presentation. Script/locale selection is not speech-language detection or translation-quality evidence. Geographic accuracy, full bundle coverage and browser rendering were not tested; this change supplies presentation patterns only.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view); analyzed commit `15de9d738c4a85be1a96726c6114181caef87eeb`; commit date 2026-10-26T16:54:01-07:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gods-eye-view.md).
+Analysis metadata: source [gods-eye-view](https://github.com/bilawalsidhu/gods-eye-view); analyzed commit `a4d3701c3cd62b46c90383973f38cfdbedf91889`; commit date 2026-10-28T12:14:29+04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gods-eye-view.md).
 <!-- teamagent-analysis:end -->

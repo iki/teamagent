@@ -33,6 +33,18 @@ The [Rust entry](https://github.com/ryoppippi/ccusage/blob/0c76c3e72b3a553be46f0
 
 The [wrapper](https://github.com/ryoppippi/ccusage/blob/0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9/apps/ccusage/src/cli.js) chooses an explicit platform/architecture native package, reports unsupported or missing artifacts, forwards arguments/signals and removes handlers on child completion. It does not silently substitute a JavaScript implementation. The missing-package guidance recommends removing release-age restrictions, which must not become a Teamagent trust-policy change; artifact identity and compatibility still require locked provenance. Non-Windows executable repair sets 0755 rather than preserving all prior mode bits. Adapt explicit unavailable-platform errors and scoped signal cleanup only; keep Teamagent's Aube/Bun launcher contract. No binary, transcript parser, package install or tests were executed.
 
+## Follow-up change review — 2026-10-28
+
+**Reporting code is split from core, while pricing acquisition follows a locked URL.** Reviewed commit `b8ad727170fc0dabe35cbf7b940f0a3f9fba475b` (commit date `2026-10-28T03:27:51Z`), compared with `0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9`. The complete no-rename Git path inventory contains 54 changed paths.
+
+A new report-only crate exports date/window/output/summary helpers so report changes need not rebuild all core-dependent adapters. The optional LiteLLM pricing fetch now reads the url field from the locked entry instead of constructing a raw-GitHub path from owner/repo/revision. Other paths update bundled pricing and build configuration. This establishes packaging and acquisition changes, not the accuracy or currency of any price.
+
+Evidence: [rust/crates/ccusage-report/src/lib.rs:1-17](https://github.com/ryoppippi/ccusage/blob/b8ad727170fc0dabe35cbf7b940f0a3f9fba475b/rust/crates/ccusage-report/src/lib.rs#L1-L17) · [rust/crates/ccusage-pricing-snapshots/build.rs:113-135](https://github.com/ryoppippi/ccusage/blob/b8ad727170fc0dabe35cbf7b940f0a3f9fba475b/rust/crates/ccusage-pricing-snapshots/build.rs#L113-L135).
+
+**Harness consequence:** Separate accounting inputs and domain calculations from presentation. Retain a source version, digest and effective date for pricing snapshots, and treat a changed fetch URL as a source-validation boundary.
+
+**Scope and limits:** Reviewed report crate exports, pricing URL construction and the complete path inventory; moved reporting implementations and price values were not exhaustively revalidated. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `0c76c3e72b3a553be46f02feb9a9dbfab06e9fe9`; commit date 2026-10-27T04:47:23Z; review date 2026-10-28T09:45:33.667Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
+Analysis metadata: source [ccusage](https://github.com/ryoppippi/ccusage); analyzed commit `b8ad727170fc0dabe35cbf7b940f0a3f9fba475b`; commit date 2026-10-28T03:27:51Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents-tokens--ccusage.md).
 <!-- teamagent-analysis:end -->

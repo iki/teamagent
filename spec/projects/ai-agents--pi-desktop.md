@@ -36,6 +36,14 @@ The [shared tests](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001b
 
 The [host-runtime barrel](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001bfa856d0c8387e8c40012e/packages/host-runtime/src/index.ts#L1-L22) and [shared type facade](https://github.com/vastsa/PI-Desktop/blob/467bc51784d4fec001bfa856d0c8387e8c40012e/packages/shared/src/types.ts#L1-L27) expose module names, not their implementation guarantees. Teamagent should borrow inert rich-text projection and tests that reproduce real callback wiring, while validating request ownership and settlement at the host boundary. No renderer, native app, test, provider or upstream code was executed; the newer checkout revision is deliberately not covered.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `467bc51784d4fec001bfa856d0c8387e8c40012e` to `93620a80635431b62f8d73b64339a96e1de56a04`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [crates/host-core/src/tools/mod.rs](https://github.com/vastsa/PI-Desktop/blob/93620a80635431b62f8d73b64339a96e1de56a04/crates/host-core/src/tools/mod.rs#L1415-L1459), Image tool output checks byte size and format signatures before base64 publication, and now rejects images whose probed longest edge exceeds the configured pixel limit. The new fixture describes an over-height PNG and an exactly-at-limit case, addressing small files with dimensions unacceptable to later provider replay.
+
+**Harness implication and limits:** Bound decoded dimensions separately from compressed bytes before retaining media in a transcript. Here a failed dimension probe returns None and does not reject, while signature checks do not fully decode the image; the new guard is not full image-integrity validation. The dimension parser and oversized session/runtime files were not audited, and no native or provider replay test was run. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `467bc51784d4fec001bfa856d0c8387e8c40012e`; commit date 2026-10-28T01:45:34+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
+Analysis metadata: source [pi-desktop](https://github.com/vastsa/PI-Desktop); analyzed commit `93620a80635431b62f8d73b64339a96e1de56a04`; commit date 2026-10-28T13:18:35+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--pi-desktop.md).
 <!-- teamagent-analysis:end -->

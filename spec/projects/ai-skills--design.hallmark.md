@@ -32,6 +32,16 @@ The [capture helper](https://github.com/nutlope/hallmark/blob/6033bab2a8051b5454
 
 The [composition guidance](https://github.com/nutlope/hallmark/blob/6033bab2a8051b5454552d2e8e6cb8f27c483a42/skills/hallmark/references/comp.md) separates a visual proposal from compliance evidence and requires comparing the rendered result at matching dimensions. Its controlled one-axis comparison and explicit medium inventory can improve design review. A detected provider key is capability, not authorization for paid generation, and the local tool/provider choices are not adopted here. No browser, app, screenshot, image generation or tests were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `65b5e4090ed95ee3dc2ff7db55b69aef8c5ff7b5` (commit date `2026-10-28T08:48:29Z`), compared with `6033bab2a8051b5454552d2e8e6cb8f27c483a42`. Earlier findings remain historical evidence.
+
+**Scope:** Complete added NOTICE.md; no implementation changes are present in this captured delta. The complete changed-path inventory contains 1 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The notice records inspiration sources, the kinds of ideas borrowed and stated license categories, with photographs handled per asset. This improves attribution discovery, but is the author's provenance statement rather than an independently checked license chain. Teamagent's skill library should retain the notice and separately verify each adopted artifact's exact revision and license. The notice alone establishes no new design behavior or permission to redistribute unrelated assets. [NOTICE.md](https://github.com/nutlope/hallmark/blob/65b5e4090ed95ee3dc2ff7db55b69aef8c5ff7b5/NOTICE.md#L1-L17).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.hallmark](https://github.com/nutlope/hallmark); analyzed commit `6033bab2a8051b5454552d2e8e6cb8f27c483a42`; commit date 2026-10-27T16:05:53+01:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.hallmark.md).
+Analysis metadata: source [design.hallmark](https://github.com/nutlope/hallmark); analyzed commit `65b5e4090ed95ee3dc2ff7db55b69aef8c5ff7b5`; commit date 2026-10-28T08:48:29Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.hallmark.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,715 @@
+{
+  "id": "ai-eval--langwatch",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/langwatch/langwatch",
+  "report": "spec/projects/ai-eval--langwatch.md",
+  "analyzedSha": "81135c1fa9f1b83580e7967eedeb972603180b35",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-27T17:38:54Z",
+  "observedSha": "7aeb146c2b2ebe4e6d866177e365ceca44a5124b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "7aeb146c2b2ebe4e6d866177e365ceca44a5124b",
+      "date": "2026-10-28T11:19:16+01:00",
+      "subject": "refactor(api-key): move the legacy key revoked notice into a ui block (#9075)"
+    },
+    {
+      "sha": "9637bb163210e7e2ef7e20624bcb7d9589d2c50b",
+      "date": "2026-10-28T10:31:59+01:00",
+      "subject": "fix(chart): sleep 15s before the app's SIGTERM so the load balancer stops routing first (#9031)"
+    },
+    {
+      "sha": "6899309e2a1ca62362603b7b17d2a4221408a5e7",
+      "date": "2026-10-28T10:28:50+01:00",
+      "subject": "feat(chart): let the operator turn the heap ceiling off (#9127)"
+    },
+    {
+      "sha": "8bcffa29ee40bfa572e8fd29dfe981b416134033",
+      "date": "2026-10-28T09:22:18+01:00",
+      "subject": "fix(project): the legacy key nudge answers per project, not per remembered scope (#9113)"
+    },
+    {
+      "sha": "065c4cba900d8526858f6b49229a5bd2915e24af",
+      "date": "2026-10-28T16:07:38+08:00",
+      "subject": "chore(main): release typescript-sdk 2.0.0 (#8972)"
+    },
+    {
+      "sha": "5c3925185de670174b044de0fe80a7a574018e3d",
+      "date": "2026-10-28T15:25:11+08:00",
+      "subject": "feat(dashboards): widgets show loading and how to get their data (#9108)"
+    },
+    {
+      "sha": "fdac9b4ae47549c21b132bb3dd9e78c116a2b575",
+      "date": "2026-10-28T04:38:22+01:00",
+      "subject": "fix(trace): bound offloaded-field recall so large traces can't kill the worker (#9115)"
+    },
+    {
+      "sha": "828259f92eafec9a0d4e1c5ffecab87e4abd2257",
+      "date": "2026-10-28T04:32:40+01:00",
+      "subject": "fix(deps): raise authlib, litellm and dnspython for today's advisories (#9120)"
+    },
+    {
+      "sha": "0b1bad9b1887ec5a7e26955d917a4ddcaede0145",
+      "date": "2026-10-28T11:13:24+08:00",
+      "subject": "fix(cli): pin cloudflared 2026.10.5, verify it everywhere, drop the npm wrapper (#9086)"
+    },
+    {
+      "sha": "e3cd4dc9529964c1faeb37b66368e3876d8f18e2",
+      "date": "2026-10-28T10:23:48+08:00",
+      "subject": "fix(docker): bump cloudflared to 2026.10.5 in the server image (#9119)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/.release-please-manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/langwatch-chart.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/langwatch/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/langwatch/templates/_helpers.tpl",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/langwatch/templates/app/deployment.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/langwatch/tests/workers-shutdown.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "charts/langwatch/values.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/chartheap/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dev/docs/adr/098-agent-dev-tunnel.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "infra/docker/Dockerfile",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/typescript/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "mcp/typescript/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/behavior/__tests__/frame-bridge.session.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/behavior/frame-bridge.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/behavior/use-frame-diagnostic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/analytics/browser/src/features/dashboard-widget/behavior/use-slow-loading.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboard-widget/ui/sections/__tests__/dashboard-widget-frame.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboard-widget/ui/sections/__tests__/sandboxed-chart-frame.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboard-widget/ui/sections/dashboard-widget-frame.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboard-widget/ui/sections/sandboxed-chart-frame.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/WIDGET_STANDARD.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/analytics/browser/src/features/dashboards/__tests__/empty-widgets-setup.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/analytics/browser/src/features/dashboards/behavior/use-empty-widgets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/langy/__tests__/board-langy.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/langy/model/board-langy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/analytics/browser/src/features/dashboards/ui/blocks/empty-widgets-banner.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/ui/sections/board-widget-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/ui/sections/board-widgets-grid.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/ui/sections/curated-board.screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/ui/sections/curated-widget-card.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/ui/sections/curated-widgets-grid.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/features/dashboards/ui/sections/dashboard-board.screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/analytics/browser/src/model/__tests__/analytics-host.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/model/analytics-host.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/analytics/browser/src/model/dashboard-widget/__tests__/widget-guidance.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/model/dashboard-widget/widget-completeness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/model/dashboard-widget/widget-export.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/analytics/browser/src/model/dashboard-widget/widget-guidance.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/ui/elements/widget-state-face.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/browser/src/ui/sections/analytics/analytics-overview.screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/contract/src/features/chart-frame/__tests__/chart-frame-author-runtime.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/contract/src/features/chart-frame/__tests__/chart-frame-chart-query-hook.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/contract/src/features/chart-frame/chart-frame-author-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/contract/src/features/chart-frame/chart-frame-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/contract/src/features/chart-frame/chart-frame-shim-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/analytics/specs/dashboard-widget-frame-states.feature",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "modules/api-key/browser/src/behavior/use-legacy-key-status.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/api-key/browser/src/behavior/use-legacy-keys.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/api-key/browser/src/model/legacy-key-replacement.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/api-key/browser/src/ui/blocks/legacy-key-revoked-notice.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/api-key/browser/src/ui/blocks/legacy-project-key-banner.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/api-key/browser/src/ui/blocks/revoke-legacy-key-dialog.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/api-key/browser/src/ui/sections/__tests__/api-keys-screen.integration.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/api-key/browser/src/ui/sections/api-keys-screen.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/api-key/browser/src/ui/sections/create-api-key-drawer.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/dashboard/specs/dashboards-v2.feature",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/contract/src/project-trpc.schemas.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/contract/src/project.kinds.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/contract/src/project.responses.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/contract/src/project.trpc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/app/project.app.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/repositories/memory/__tests__/memory.project.repository.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/repositories/memory/memory.project.repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/repositories/prisma/prisma.project.repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/repositories/project.repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/services/__tests__/project-operations.service.new-project-key.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/services/__tests__/project-operations.service.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/project/process/src/services/__tests__/project-request.service.legacy-keys.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/services/__tests__/project.service.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/services/project-operations.service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/services/project-request.service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/services/project.service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/transport/__tests__/project.trpc.composition.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/transport/__tests__/project.trpc.declaration.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/transport/__tests__/project.trpc.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/project/process/src/transport/project.trpc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/__tests__/trace.adapter.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/features/media/services/trace-blob-store.service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/trace/process/src/repositories/__tests__/trace-payload-reader.recall.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/repositories/clickhouse/__tests__/trace-full-record.repository.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/repositories/clickhouse/trace-full-record.repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/repositories/eventing/__tests__/eventing.trace-event-payload.repository.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/repositories/eventing/eventing.trace-event-payload.repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/repositories/memory/memory.trace.repositories.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/repositories/trace-payload-reader.repository.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "modules/trace/process/src/rules/trace-offload-recall.rules.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/__tests__/support/trace-blob-store.support.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/__tests__/trace-summary-full-resolution.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/offload/__tests__/trace-blob-store.event-log.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/offload/__tests__/trace-offload-pipeline.integration.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/offload/__tests__/trace-offload-resolution-4888.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/offload/__tests__/trace-offload-resolution-batch.service.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/offload/__tests__/trace-offload-resolution.service.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/offload/__tests__/trace-span-storage-offload-resolution.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/trace-offload-resolution-batch.service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/process/src/services/trace-offload-resolution.service.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "modules/trace/specs/trace-offloaded-event-read.feature",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/architecture-enforcer/src/tools/check-feature-parity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/examples/agent-optimization/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/examples/agent-optimization/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/python/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/cli/commands/agents/__tests__/agent-tunnel.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/src/cli/commands/agents/__tests__/cloudflared-binary.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/src/cli/commands/agents/__tests__/cloudflared-process.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/src/cli/commands/agents/__tests__/quick-tunnel.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/cli/commands/agents/tunnel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/src/cli/commands/agents/tunnel/cloudflared-binary.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sdks/typescript/src/cli/commands/agents/tunnel/cloudflared-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/cli/commands/agents/tunnel/quick-tunnel.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/src/internal/http/__tests__/raw-fetch-guard.unit.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdks/typescript/tsup.config.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/langevals/pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/langevals/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specs/agents/agent-dev-tunnel.feature",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specs/api-keys/api-keys-v2.feature",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specs/background/worker-graceful-shutdown.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "specs/setup/helm-heap-ceiling.feature",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/chartheap/chartheap.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/chartheap/chartheap_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/chartheap/node.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tools/chartheap/node_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tools/featureparity/lists.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -1,0 +1,440 @@
+{
+  "id": "ai-agents--oh-my-pi",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/can1357/oh-my-pi",
+  "report": "spec/projects/ai-agents--oh-my-pi.md",
+  "analyzedSha": "e996e1c7ac476f60e02b8ed9764cf30fa8c00a8e",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T18:12:27+01:00",
+  "observedSha": "c3b645cb275e03ac8a176fbfb0a877cfb3a2c2ef",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "c3b645cb275e03ac8a176fbfb0a877cfb3a2c2ef",
+      "date": "2026-10-28T09:20:07+01:00",
+      "subject": "deps: bumped required Bun version to >=1.4.4"
+    },
+    {
+      "sha": "6f3fbc94c567c0ac619c013dd15d718356eecba1",
+      "date": "2026-10-27T22:48:30+01:00",
+      "subject": "Merge PR #16310: fix(review): pin PR diff URLs to the frozen cache generation (@tkossak)"
+    },
+    {
+      "sha": "1cde39f9e5d76728545c2193d4b21ba5deeab166",
+      "date": "2026-10-27T22:41:48+01:00",
+      "subject": "fix(review): count pinned diff retention from when /review saved it"
+    },
+    {
+      "sha": "6a6ed4b00c1c0d4b9e346551cb7f4f7a6d4cb2ee",
+      "date": "2026-10-27T22:39:58+01:00",
+      "subject": "Merge remote-tracking branch 'origin/main' into review/pr-16310"
+    },
+    {
+      "sha": "7440cec26f0730a88d6b789c6349a28f76b3f3f2",
+      "date": "2026-10-27T21:02:50+01:00",
+      "subject": "fix(review): retain diff snapshots only from /review"
+    },
+    {
+      "sha": "a70f001c43b5f318195410f8cae12c00ab1bff23",
+      "date": "2026-10-27T18:58:57+01:00",
+      "subject": "ci(nix): run only nightly, on dispatch, and on release tags"
+    },
+    {
+      "sha": "a1b9fe07c02803322c0fd2a3d1b2c5b2a313674d",
+      "date": "2026-10-27T18:58:07+01:00",
+      "subject": "ci(nix): only run PR evaluation when nix inputs change"
+    },
+    {
+      "sha": "495475bc45d2c8681811a8bc9425bd6503661849",
+      "date": "2026-10-23T14:09:42+02:00",
+      "subject": "fix(review): honor the cache kill switch when pinning a diff"
+    },
+    {
+      "sha": "2ac846c3fd71fef7127079d8dd556b8c2cc1e452",
+      "date": "2026-10-23T14:09:42+02:00",
+      "subject": "docs(changelog): keep the review pin note under Unreleased"
+    },
+    {
+      "sha": "a058ad4610a6c1097fcd39360f31a8c3f62cb8d5",
+      "date": "2026-10-23T14:09:42+02:00",
+      "subject": "style(review): format the pinned diff loader"
+    },
+    {
+      "sha": "d132f01964bf8b350a898ed9484ec3b0e4dc525c",
+      "date": "2026-10-23T14:09:42+02:00",
+      "subject": "fix(review): keep pinned diff generations immutable"
+    },
+    {
+      "sha": "b32e55a23b96cbb3759ad5b10483f6bf2580b13e",
+      "date": "2026-10-23T14:09:42+02:00",
+      "subject": "docs(changelog): credit #16310 for the review diff snapshot pin"
+    },
+    {
+      "sha": "0807525551f051d913c662b011bd30ad0211fcd8",
+      "date": "2026-10-23T14:09:42+02:00",
+      "subject": "docs(changelog): record the review diff snapshot pin"
+    },
+    {
+      "sha": "2883349d695e6f8280fa98a842f9d0faa55cd246",
+      "date": "2026-10-23T14:09:42+02:00",
+      "subject": "fix(review): pin PR diff URLs to the frozen cache generation"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/workflows/nix.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sdk.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/user-facing-packages.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/judgment/text.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cowork-fetch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/browser-relay/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/browser-relay/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/catalog/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/extensibility/custom-commands/bundled/review/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/extensibility/custom-commands/bundled/review/prompt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/extensibility/custom-commands/bundled/review/target.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/internal-urls/forge-diff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/internal-urls/issue-pr-protocol.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/modes/rpc/rpc-output.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/prompts/internal-urls/issue.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/prompts/review-request.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/prompts/tools/github.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/session/agent-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/session/session-storage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/subprocess/worker-client.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/tools/gh-pr-diff.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/tools/gh.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/tools/github-cache.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/extensibility/custom-commands/review.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/internal-urls/issue-pr-protocol.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/session-storage-fd-inheritance.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/tools/github-cache.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/collab-web/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/collab-web/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/metaharness/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mnemopi/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mnemopi/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/natives/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/natives/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/natives/scripts/gen-npm-packages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omptype/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omptype/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/omptype/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/snapcompact/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/snapcompact/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/snapcompact/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/stats/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/stats/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/tui/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/tui/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/typescript-edit-benchmark/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/utils/src/fs-open.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/src/logger/rotating-file.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/utils/test/fs-open.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/wire/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/wire/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/robomp/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/install.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/install.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/setup-npm-trust.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -34,6 +34,14 @@ The [CI wrapper](https://github.com/tinyhumansai/openhuman/blob/9d5a06c7b0216d3a
 
 The [local-session hook](https://github.com/tinyhumansai/openhuman/blob/9d5a06c7b0216d3a496f93f1030d491d734a6bd7/app/src/hooks/useLocalSession.ts) keeps offline sessions distinct from account-backed sessions, but managed inference availability is computed from token presence/shape, not a live entitlement or health check. Its context-free fallback does not subscribe to state changes and relies on an unread identity-change restart invariant. The [auth-state tests](https://github.com/tinyhumansai/openhuman/blob/9d5a06c7b0216d3a496f93f1030d491d734a6bd7/app/test/auth-state.test.ts) correctly reject unrecognized response shapes instead of reading them as signed out. The [browser-review launcher](https://github.com/tinyhumansai/openhuman/blob/9d5a06c7b0216d3a496f93f1030d491d734a6bd7/app/scripts/e2e-agent-review.sh) produces an artifact location and can reuse an existing build; neither artifact presence nor that launcher proves native packaging or task correctness. No CI API, processes, browser, native app or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `9d5a06c7b0216d3a496f93f1030d491d734a6bd7` to `d12bab15be83c1d6a051c6f21cca9b3346ec3d89`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [crates/openhuman-embed/src/agent/compact.rs](https://github.com/tinyhumansai/openhuman/blob/d12bab15be83c1d6a051c6f21cca9b3346ec3d89/crates/openhuman-embed/src/agent/compact.rs#L14-L95), The new compact_thread wrapper admits compaction through the agent lifecycle, checks that inference is available, derives the same route/model settings as a turn, and delegates to the core compactor. Its documented contract promises a sealed old generation, retained system/tool prefixes and a session turn lock; the wrapper itself does not implement those storage operations.
+
+**Harness implication and limits:** Expose idle compaction as an explicit lifecycle operation with source-generation provenance and independent usage accounting. Treat the documented locking and byte preservation as requirements to verify in the core storage implementation, not guarantees established by this wrapper. Compaction may invoke a summarizer despite having no user-facing model turn; no provider call or transcript mutation was executed here. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openhuman](https://github.com/tinyhumansai/openhuman); analyzed commit `9d5a06c7b0216d3a496f93f1030d491d734a6bd7`; commit date 2026-10-27T23:06:39+05:30; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openhuman.md).
+Analysis metadata: source [openhuman](https://github.com/tinyhumansai/openhuman); analyzed commit `d12bab15be83c1d6a051c6f21cca9b3346ec3d89`; commit date 2026-10-28T15:19:15+05:30; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openhuman.md).
 <!-- teamagent-analysis:end -->

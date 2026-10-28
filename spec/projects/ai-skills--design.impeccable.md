@@ -32,6 +32,18 @@ The [doctor reference](https://github.com/pbakaus/impeccable/blob/d34c87e1a00989
 
 The [hooks reference](https://github.com/pbakaus/impeccable/blob/d34c87e1a00989ae8dbdd7f6b30b70f23319e860/skill/reference/hooks.md) distinguishes per-edit reminders from completion passes, documents provider/platform gaps and explicitly says the engine runs with the agent's environment and network access. Its host lifecycle claims remain unverified here; a valid manifest or successful install is not proof that the host dispatched the event. The [entry module](https://github.com/pbakaus/impeccable/blob/d34c87e1a00989ae8dbdd7f6b30b70f23319e860/crates/skills/src/lib.rs) documents signed remote bundles and checksum-verified engines but leaves enforcement to unread modules, and describes unsigned local overrides as trusted development inputs. Adapt narrow, evidence-backed exceptions and explicit capability states without treating documentation as runtime isolation. No install, hook, native binary or tests were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `8409a564d1baee90b2dde4f7a8f06288838e3921` (commit date `2026-10-28T16:49:23+08:00`), compared with `d34c87e1a00989ae8dbdd7f6b30b70f23319e860`. Earlier findings remain historical evidence.
+
+**Scope:** Live manual-edit buffer removal/restoration branches and their changed fixture assertions; other generated skills and source apply paths remain outside scope. The complete changed-path inventory contains 120 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+Staging a remove over a copy edit retains the superseded operation, and removing staged operations by exact page URL plus element reference restores that prior operation while preserving other pages/references. The return value carries removed operations and count. Changed tests describe the restoration and isolation expectations; they were read, not run. [crates/live/src/manual_edits/buffer.rs](https://github.com/pbakaus/impeccable/blob/8409a564d1baee90b2dde4f7a8f06288838e3921/crates/live/src/manual_edits/buffer.rs#L124-L142); [crates/live/src/manual_edits/buffer.rs](https://github.com/pbakaus/impeccable/blob/8409a564d1baee90b2dde4f7a8f06288838e3921/crates/live/src/manual_edits/buffer.rs#L209-L251); [crates/live/src/manual_edits/buffer.rs](https://github.com/pbakaus/impeccable/blob/8409a564d1baee90b2dde4f7a8f06288838e3921/crates/live/src/manual_edits/buffer.rs#L304-L388).
+
+This is an undo contract for the staged buffer. It does not demonstrate that a DOM/source edit was applied or reverted. A reusable harness needs target generation/content identity in addition to URL/reference before later application, and separate evidence for persistence atomicity and concurrent writers. Preserve the difference between staged, applied and independently verified outcomes.
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [design.impeccable](https://github.com/pbakaus/impeccable); analyzed commit `d34c87e1a00989ae8dbdd7f6b30b70f23319e860`; commit date 2026-10-27T00:31:56-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.impeccable.md).
+Analysis metadata: source [design.impeccable](https://github.com/pbakaus/impeccable); analyzed commit `8409a564d1baee90b2dde4f7a8f06288838e3921`; commit date 2026-10-28T16:49:23+08:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--design.impeccable.md).
 <!-- teamagent-analysis:end -->

@@ -57,6 +57,18 @@ Evidence: [backend/api/routers/tts_stream.py:43-103](https://github.com/debpalas
 
 **Scope and limits:** Scoped static review of streaming engine selection, lease/dispatch/delivery and MCP audio-file boundaries in the 2,703-path comparison. GPU-pool internals, engine-cache eviction, global WebSocket authorization and native filesystem guarantees were not audited or executed; no model or provider call and no audio-quality benchmark was performed.
 
+## Follow-up change review — 2026-10-28
+
+**Startup configuration handles BOM encodings without overwriting launcher values.** Reviewed commit `f7203feb76383c2afd29fde4bc826fea6e601c24` (commit date `2026-10-28T15:34:04+05:30`), compared with `331879da16f2d04088a58fc43a6e1cc7ae1efef3`. The complete no-rename Git path inventory contains 385 changed paths.
+
+The new loader recognizes UTF-32 and UTF-16 BOMs, otherwise uses UTF-8 with optional BOM, and loads project files with override disabled. Encoding/I/O failures are warned and do not prevent independent saved-user settings from loading. Fixtures preserve malformed settings bytes and assert launcher precedence over project files. Saved settings have their own documented override behavior, so project-file precedence is not a claim about every configuration source.
+
+Evidence: [backend/core/env_startup.py:8-39](https://github.com/debpalash/VoiceStudio/blob/f7203feb76383c2afd29fde4bc826fea6e601c24/backend/core/env_startup.py#L8-L39) · [tests/test_env_startup_decoding.py:6-47](https://github.com/debpalash/VoiceStudio/blob/f7203feb76383c2afd29fde4bc826fea6e601c24/tests/test_env_startup_decoding.py#L6-L47).
+
+**Harness consequence:** Decode configuration deliberately, preserve malformed originals and report failure without logging values. Treat startup compatibility separately from credential authentication, backend readiness and voice-data policy.
+
+**Scope and limits:** Reviewed the complete startup loader and its encoding/precedence fixtures; the broader voice stack and saved-settings implementation were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [voicestudio](https://github.com/debpalash/VoiceStudio); analyzed commit `331879da16f2d04088a58fc43a6e1cc7ae1efef3`; commit date 2026-10-27T22:45:02+05:30; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--voicestudio.md).
+Analysis metadata: source [voicestudio](https://github.com/debpalash/VoiceStudio); analyzed commit `f7203feb76383c2afd29fde4bc826fea6e601c24`; commit date 2026-10-28T15:34:04+05:30; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-media--voicestudio.md).
 <!-- teamagent-analysis:end -->

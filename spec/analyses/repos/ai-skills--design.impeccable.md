@@ -2,12 +2,11 @@
 
 Source: [design.impeccable](https://github.com/pbakaus/impeccable) · [Analysis](../../projects/ai-skills--design.impeccable.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `d34c87e1a00989ae8dbdd7f6b30b70f23319e860`; commit date: 2026-10-27T00:31:56-07:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `d34c87e1a00989ae8dbdd7f6b30b70f23319e860`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `8409a564d1baee90b2dde4f7a8f06288838e3921`; commit date: 2026-10-28T16:49:23+08:00; review date: 2026-10-28T14:52:35.205Z; observed SHA: `8409a564d1baee90b2dde4f7a8f06288838e3921`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/pbakaus/impeccable/compare/d34c87e1a00989ae8dbdd7f6b30b70f23319e860...d34c87e1a00989ae8dbdd7f6b30b70f23319e860). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/pbakaus/impeccable/compare/8409a564d1baee90b2dde4f7a8f06288838e3921...8409a564d1baee90b2dde4f7a8f06288838e3921). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

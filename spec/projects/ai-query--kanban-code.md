@@ -39,6 +39,18 @@ Evidence: [Apps/iOS/KanbanCodeMobile/Model/CardSearchModel.swift:1-85](https://g
 
 **Scope and limits:** Scoped static review of mobile search state, CLI search/HTTP boundaries and selected distributed-search fixtures in the 224-path comparison. Server fan-out implementation, complete authentication middleware and packaged iOS/Windows behavior were not audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Peer transcript mirroring uses bounded incremental reads but offset alone is not provenance.** Reviewed commit `ff9c751124216bea3e38844e273b272faa4fede2` (commit date `2026-10-27T22:34:49+01:00`), compared with `1bfc15db18c3b899cf5e6cb67391318297775431`. The complete no-rename Git path inventory contains 65 changed paths.
+
+The mirror prioritizes selected/live cards and prevents duplicate in-flight reads. Each copy performs at most 32 slices, restarting once when the remote transcript shrinks. It appends bytes and advances the local offset; append failures are swallowed, and shrink detection does not identify a same-size rewrite. The reviewed code therefore supplies a useful synchronization pattern, not a verified durable transcript-replication contract.
+
+Evidence: [Sources/KanbanCodeCore/UseCases/Master/PeerTranscriptMirror.swift:38-65](https://github.com/langwatch/kanban-code/blob/ff9c751124216bea3e38844e273b272faa4fede2/Sources/KanbanCodeCore/UseCases/Master/PeerTranscriptMirror.swift#L38-L65) · [Sources/KanbanCodeCore/UseCases/Master/PeerTranscriptMirror.swift:81-115](https://github.com/langwatch/kanban-code/blob/ff9c751124216bea3e38844e273b272faa4fede2/Sources/KanbanCodeCore/UseCases/Master/PeerTranscriptMirror.swift#L81-L115).
+
+**Harness consequence:** Bind transcript cursors to source generation/hash, advance only after confirmed durable writes, and preserve partial state with explicit failures. LF normalization changes byte offsets and must invalidate or migrate the cursor with original-byte provenance.
+
+**Scope and limits:** Reviewed the complete mirror implementation; peer transport validation, path trust and distributed consistency were not certified. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [kanban-code](https://github.com/langwatch/kanban-code); analyzed commit `1bfc15db18c3b899cf5e6cb67391318297775431`; commit date 2026-10-26T14:25:59Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-query--kanban-code.md).
+Analysis metadata: source [kanban-code](https://github.com/langwatch/kanban-code); analyzed commit `ff9c751124216bea3e38844e273b272faa4fede2`; commit date 2026-10-27T22:34:49+01:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--kanban-code.md).
 <!-- teamagent-analysis:end -->

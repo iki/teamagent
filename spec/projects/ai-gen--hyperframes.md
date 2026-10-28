@@ -44,6 +44,18 @@ Evidence: [packages/engine/src/services/extractionCache.ts:65-291](https://githu
 
 **Scope and limits:** Scoped static review of extraction-cache identity/publication, selected render routes and the recovery fixture within the 4,603-path comparison. The full parser, producer cancellation, cache GC and authentication composition were not audited. The ffmpeg-gated recovery fixture was read, not executed; no rendering performance or output-quality claim is made.
 
+## Follow-up change review — 2026-10-28
+
+**Encoder controls are validated and participate in segment identity.** Reviewed commit `0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87` (commit date `2026-10-28T09:52:07Z`), compared with `696ca8f779cd36bfef53102658722c46e9c3e522`. The complete no-rename Git path inventory contains 316 changed paths.
+
+The delivery configuration accepts only listed ProRes profiles and requires MOV when a format is selected. It rejects nonpositive/nonfinite keyframe intervals, unsupported HLS overrides and non-MP4 rate caps. Shared option resolution bounds chunk GOP by chunk length. Fixtures cover unsupported combinations and verify that bitrate, buffer and keyframe settings change segment-plan hashes.
+
+Evidence: [packages/producer/src/services/render/deliveryEncoder.ts:30-87](https://github.com/heygen-com/hyperframes/blob/0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87/packages/producer/src/services/render/deliveryEncoder.ts#L30-L87) · [packages/producer/src/services/render/deliveryEncoder.test.ts:31-78](https://github.com/heygen-com/hyperframes/blob/0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87/packages/producer/src/services/render/deliveryEncoder.test.ts#L31-L78) · [packages/producer/src/services/render/deliveryEncoder.test.ts:148-157](https://github.com/heygen-com/hyperframes/blob/0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87/packages/producer/src/services/render/deliveryEncoder.test.ts#L148-L157).
+
+**Harness consequence:** Reject unsupported delivery controls before expensive generation/rendering. Include output-affecting encoder settings in resumable cache identity and measure the produced media independently of configuration acceptance.
+
+**Scope and limits:** Reviewed delivery-encoder configuration and fixtures; no FFmpeg/render run, timing measurement or visual-quality benchmark was performed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hyperframes](https://github.com/heygen-com/hyperframes); analyzed commit `696ca8f779cd36bfef53102658722c46e9c3e522`; commit date 2026-10-27T16:49:16Z; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--hyperframes.md).
+Analysis metadata: source [hyperframes](https://github.com/heygen-com/hyperframes); analyzed commit `0e32ee9b56bd0815c0dc23a1c3fbb81aa8c43a87`; commit date 2026-10-28T09:52:07Z; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--hyperframes.md).
 <!-- teamagent-analysis:end -->

@@ -38,6 +38,18 @@ Teamagent can reuse the case-insensitive replacement rule while binding the sele
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `4040b404b3e7ab8a34f6383c8d0a4f995861e977` (commit date `2026-10-27T19:02:52Z`), compared with `a5e5bc74b9c55dc6817d164ddf3d0055c7cc220e`. Earlier findings remain historical evidence.
+
+**Scope:** Startup port selection and the advertised local API origin. The complete changed-path inventory contains 15 paths; the assessment below is limited to the cited branches.
+
+Installed remote services keep their configured port, while interactive startup probes at most 50 candidate ports on the actual bind interface. The helper explicitly treats the later server bind as authoritative. Wildcard bind addresses are translated to loopback for agent dialing. See [packages/cezar/src/startup-port.ts](https://github.com/open-mercato/cezar/blob/4040b404b3e7ab8a34f6383c8d0a4f995861e977/packages/cezar/src/startup-port.ts#L3-L36) and [packages/cezar/src/api-origin.ts](https://github.com/open-mercato/cezar/blob/4040b404b3e7ab8a34f6383c8d0a4f995861e977/packages/cezar/src/api-origin.ts#L1-L10).
+
+For Teamagent, avoid silently changing a reverse proxy's intended upstream and distinguish bind address, dial address and public origin. A successful temporary probe is subject to a race and does not prove the final server is listening or authenticated. The probe count is bounded, but these methods do not impose an independent total time limit or TLS; workflow execution changes were outside this review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [cezar](https://github.com/open-mercato/cezar); analyzed commit `a5e5bc74b9c55dc6817d164ddf3d0055c7cc220e`; commit date 2026-10-27T11:46:04+01:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cezar.md).
+Analysis metadata: source [cezar](https://github.com/open-mercato/cezar); analyzed commit `4040b404b3e7ab8a34f6383c8d0a4f995861e977`; commit date 2026-10-27T19:02:52Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--cezar.md).
 <!-- teamagent-analysis:end -->

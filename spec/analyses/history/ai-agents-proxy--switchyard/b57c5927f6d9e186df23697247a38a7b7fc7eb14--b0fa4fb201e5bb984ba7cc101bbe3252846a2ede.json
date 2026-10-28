@@ -1,0 +1,280 @@
+{
+  "id": "ai-agents-proxy--switchyard",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/NVIDIA-NeMo/Switchyard",
+  "report": "spec/projects/ai-agents-proxy--switchyard.md",
+  "analyzedSha": "b57c5927f6d9e186df23697247a38a7b7fc7eb14",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T10:03:30-07:00",
+  "observedSha": "b0fa4fb201e5bb984ba7cc101bbe3252846a2ede",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b0fa4fb201e5bb984ba7cc101bbe3252846a2ede",
+      "date": "2026-10-27T17:17:56-07:00",
+      "subject": "feat(ffi): add asynchronous routing handles (#1077)"
+    },
+    {
+      "sha": "970b3dd2a6984223deb04662c7e9c86589419d2b",
+      "date": "2026-10-27T16:56:46-07:00",
+      "subject": "fix(client): sanitize Responses reasoning replay per client (#857)"
+    },
+    {
+      "sha": "4430a512779d71d8037e7050a349a22e55127a43",
+      "date": "2026-10-27T16:50:49-07:00",
+      "subject": "fix(llm-client): fall back when an upstream connect times out (#854)"
+    },
+    {
+      "sha": "0f945a2b9fc32ac72d215d36c7fa732861d1e0e0",
+      "date": "2026-10-27T23:15:42Z",
+      "subject": "refactor(desktop): organize terminal app actions by page and add review popups (#1093)"
+    },
+    {
+      "sha": "657870f321d89735e8f8c111d2fe26878bd058d0",
+      "date": "2026-10-27T16:09:12-07:00",
+      "subject": "fix(translation): report cache writes in Chat Completions as cache_write_tokens (#947)"
+    },
+    {
+      "sha": "9ed588b4d0a982e3d0f6a77f5ae5c274f37f3df3",
+      "date": "2026-10-27T16:02:32-07:00",
+      "subject": "fix(vgr): restore QA verifier and Responses compatibility (#1163)"
+    },
+    {
+      "sha": "56c538e2427cd447ab40f88f80ee82c378dae915",
+      "date": "2026-10-27T14:48:11-07:00",
+      "subject": "feat(ffi): expose request and response translation (#1076)"
+    },
+    {
+      "sha": "fd37aa762c0e34b27c1ea34e3f049aea99e5228b",
+      "date": "2026-10-27T20:29:20Z",
+      "subject": "feat(libsy): include session id in decision context (#1141)"
+    },
+    {
+      "sha": "bee12b4197898331b38244889970967a27e4a4cb",
+      "date": "2026-10-27T13:20:29-07:00",
+      "subject": "feat(desktop): add Settings forms, source update review, and action coverage test (#1092)"
+    },
+    {
+      "sha": "b2345e8741ba622d57e021611bcba3c8c5b1a944",
+      "date": "2026-10-27T19:35:33Z",
+      "subject": "feat(desktop): add the Settings page, server actions, and editor handoff (#1091)"
+    },
+    {
+      "sha": "da1e87aa0b8d9ebe94b90bc3f86ff430488ad128",
+      "date": "2026-10-27T12:28:18-07:00",
+      "subject": "feat(desktop): add the Calls page and live call filter to the terminal app (#1090)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bindings/typescript/test/composite.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/src/client.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/libsy-llm-client/src/responses_reasoning.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy-llm-client/src/run.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/llm_class.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/llm_class/decision.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/decide.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/readout.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/rungs.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/runtime.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/runtime/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/libsy/src/algorithms/vgr/text.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-desktop/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-desktop/src/controller.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-desktop/src/history.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-desktop/src/install/windows.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-desktop/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-desktop/src/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-desktop/src/tui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-ffi/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-ffi/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-ffi/include/switchyard.h",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-ffi/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/switchyard-ffi/src/tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/src/config.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-runner/tests/openai_decisions.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-server/CONFIGURATION.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-server/tests/server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/src/codecs/openai_chat/buffered.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/src/codecs/responses/buffered.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/tests/request_translation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/switchyard-translation/tests/response_translation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/toml_schema.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/routing_algorithms/vgr_routing.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

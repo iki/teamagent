@@ -1,0 +1,130 @@
+{
+  "id": "ai-agents--openai-agents-python",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/openai/openai-agents-python",
+  "report": "spec/projects/ai-agents--openai-agents-python.md",
+  "analyzedSha": "bc4c6e124d39626f9ad77c58cb136c67e66c4cf7",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T17:34:02Z",
+  "observedSha": "cd26bbbc52847845fde73b9952b51e62e2bcbdc0",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "cd26bbbc52847845fde73b9952b51e62e2bcbdc0",
+      "date": "2026-10-27T19:22:01Z",
+      "subject": "fix: stop native tool queues during function failure cleanup (#5446)"
+    },
+    {
+      "sha": "57027de5f00409443011a3b12c1a54533f8931ee",
+      "date": "2026-10-27T19:02:12Z",
+      "subject": "fix(deps): require pymongo 4.18.3 or later (#5445)"
+    },
+    {
+      "sha": "b6966fa4b8741fe13c3659f0fb16c1a6afcce4da",
+      "date": "2026-10-27T19:02:00Z",
+      "subject": "fix(deps): update starlette requirement from >=1.7.0 to >=1.9.0 in /examples/realtime/twilio_sip (#5437)"
+    },
+    {
+      "sha": "41346438f42276f78fc186fb76ecddb6d03ca5a0",
+      "date": "2026-10-27T19:01:00Z",
+      "subject": "fix(deps): update httpx2 requirement from >=2.13.1 to >=2.15.1 in /examples/realtime/twilio (#5432)"
+    },
+    {
+      "sha": "6295010c7568d3f95e0f6e0e19b625bae65d9f01",
+      "date": "2026-10-27T18:59:53Z",
+      "subject": "fix(deps): require certifi 2026.10.19 or later (#5429)"
+    },
+    {
+      "sha": "a91f0bfe013a63ce0ad8935c8c2d25047d249002",
+      "date": "2026-10-27T11:42:21-07:00",
+      "subject": "fix(deps): update httpx2 requirement from >=2.13.1 to >=2.15.1 in /examples/realtime/twilio_sip (#5436)"
+    },
+    {
+      "sha": "26c762a5baf49bcd1b23d28c99979422553e96c7",
+      "date": "2026-10-27T11:42:16-07:00",
+      "subject": "fix(deps): update starlette requirement from >=1.7.0 to >=1.9.0 in /examples/realtime/twilio (#5433)"
+    },
+    {
+      "sha": "2964f772a72f2c14186bbd4203cd10723f81aeb2",
+      "date": "2026-10-27T11:27:58-07:00",
+      "subject": "fix(deps): bump opentelemetry-api from 1.40.0 to 1.45.1 (#5410)"
+    },
+    {
+      "sha": "0c55458f03127b2506119544bfebe18b8a867a55",
+      "date": "2026-10-27T11:26:50-07:00",
+      "subject": "fix(deps): bump httpx2 from 2.12.0 to 2.14.0 (#5438)"
+    },
+    {
+      "sha": "2350082ccc13d411ccdd1c8fef3f2f0cd3df8141",
+      "date": "2026-10-27T11:26:19-07:00",
+      "subject": "fix(deps): update openai requirement from <4,>=3.29.0 to >=3.35.1,<4 in /examples/realtime/twilio_sip (#5434)"
+    },
+    {
+      "sha": "56df6b418c7b089ecdbc4cf9afe98fabd409795a",
+      "date": "2026-10-27T11:26:11-07:00",
+      "subject": "fix(deps): update fastapi requirement from >=0.143.0 to >=0.150.0 in /examples/realtime/twilio_sip (#5435)"
+    },
+    {
+      "sha": "5bb6fb727a67bb4da21f8d04d0b8d3e7a65f463a",
+      "date": "2026-10-27T11:23:18-07:00",
+      "subject": "fix(deps-dev): bump ruff from 0.16.8 to 0.17.1 (#5439)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "examples/realtime/twilio/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/realtime/twilio_sip/requirements.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/tool_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/run_internal/tool_planning.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agents/util/_asyncio_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_asyncio_tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_native_tool_failure_history.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "uv.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

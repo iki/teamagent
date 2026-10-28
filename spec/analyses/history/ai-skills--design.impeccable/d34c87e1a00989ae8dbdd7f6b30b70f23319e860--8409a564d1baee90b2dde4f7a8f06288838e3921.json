@@ -1,0 +1,640 @@
+{
+  "id": "ai-skills--design.impeccable",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/pbakaus/impeccable",
+  "report": "spec/projects/ai-skills--design.impeccable.md",
+  "analyzedSha": "d34c87e1a00989ae8dbdd7f6b30b70f23319e860",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T00:31:56-07:00",
+  "observedSha": "8409a564d1baee90b2dde4f7a8f06288838e3921",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8409a564d1baee90b2dde4f7a8f06288838e3921",
+      "date": "2026-10-28T16:49:23+08:00",
+      "subject": "Fix: design hook stops re-reporting unchanged findings (#1202) (#1207)"
+    },
+    {
+      "sha": "3e3a9179e01a60265000ce239c0a99803ec1e60d",
+      "date": "2026-10-28T06:05:26Z",
+      "subject": "Sync generated provider output"
+    },
+    {
+      "sha": "8f2b1870c501fb20e9cbb84a1cc412348d1f051d",
+      "date": "2026-10-28T14:04:36+08:00",
+      "subject": "Add a Remove badge to live mode that stages element removals as edits (#1184)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agent/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agent/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agent/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/impeccable/agents/impeccable_manual_edit_applier.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/agents/impeccable-manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/agents/impeccable-manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".cursor/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devin/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devin/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".devin/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dsh/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dsh/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".dsh/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gemini/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gemini/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gemini/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/agents/impeccable-manual-edit-applier.agent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".grok/agents/impeccable-manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".grok/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".grok/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".grok/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".hermes/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".hermes/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".hermes/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".kiro/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".kiro/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".kiro/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".omp/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".omp/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".omp/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".opencode/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".opencode/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".opencode/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".pi/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".qoder/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".qoder/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".qoder/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".rovodev/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".rovodev/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".rovodev/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trae-cn/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trae-cn/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trae-cn/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trae/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trae/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".trae/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".veto/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".veto/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".veto/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vibe/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vibe/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".vibe/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/hook/src/hook.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/hook/src/hook_lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/hook/src/stop_baseline.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/hook/tests/hook_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/live/src/copy_edit_agent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/live/src/event_validation.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/live/src/live_server.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/live/src/manual_edits/apply.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/live/src/manual_edits/buffer.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/live/src/manual_edits/evidence.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/live/src/server_state.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cursor-plugin/agents/impeccable-manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cursor-plugin/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cursor-plugin/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cursor-plugin/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/CLI-CONTRACT.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agents/impeccable-manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/impeccable/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/skills/impeccable/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill/agents/impeccable-manual-edit-applier.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill/reference/live.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "skill/scripts/live-browser.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/live-browser-source.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/live-svelte-adapter-deepseek.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/DELTAS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/cases/live-manual.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-audit-log.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-config-max-findings-1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-config-per-edit-all.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-duplicate-event-scans-once.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-edit-css-fresh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-edit-html-fresh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-edit-multiedit.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-edit-tsx-fresh.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-edit-write-tool.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-env-quiet.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-harness-codex-apply-patch.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-harness-cursor-post-tool-use.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-harness-cursor-shaped.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-harness-forced-github.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-harness-github-apply-patch.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-harness-github-edit.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-linked-sheet.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-session-codex-stop-decision.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-session-fresh-then-pending-then-stop.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-session-grok-edit-then-stop.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-session-stop-active.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-session-suppression-after-6.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-session-two-sessions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-stop-baseline-import-only.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-stop-baseline-new-finding.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-stop-purple-heading-design-none.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/oracle/golden/hook-stop-umbrella-cwd.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/oracle/golden/live-commit-mock-remove-element.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

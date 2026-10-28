@@ -2,12 +2,11 @@
 
 Source: [kimi-code](https://github.com/MoonshotAI/kimi-code) · [Analysis](../../projects/ai-agents--kimi-code.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `68a283894163204e93b072cef20db164015a5cad`; commit date: 2026-10-27T18:59:19+08:00; review date: 2026-10-28T09:27:32.685Z; observed SHA: `68a283894163204e93b072cef20db164015a5cad`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `62399b32a79d49e8c0bf481b14475ed181a4cec8`; commit date: 2026-10-28T16:08:43+08:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `62399b32a79d49e8c0bf481b14475ed181a4cec8`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/MoonshotAI/kimi-code/compare/68a283894163204e93b072cef20db164015a5cad...68a283894163204e93b072cef20db164015a5cad). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/MoonshotAI/kimi-code/compare/62399b32a79d49e8c0bf481b14475ed181a4cec8...62399b32a79d49e8c0bf481b14475ed181a4cec8). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

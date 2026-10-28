@@ -1,0 +1,760 @@
+{
+  "id": "ai-agents-mem--open-viking",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/volcengine/OpenViking",
+  "report": "spec/projects/ai-agents-mem--open-viking.md",
+  "analyzedSha": "54d4c0fac91fae976325ebed618d7278ff9b5c77",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T22:31:53+08:00",
+  "observedSha": "a8e334c31c9df168983e6bd72422a3c8431715b3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "a8e334c31c9df168983e6bd72422a3c8431715b3",
+      "date": "2026-10-28T17:53:09+08:00",
+      "subject": "fix(embedding): 在线检索绕过入库并发限制 (#6730)"
+    },
+    {
+      "sha": "eb8ae9491453f31f7c2bdd470da9621a648c73d4",
+      "date": "2026-10-28T17:38:56+08:00",
+      "subject": "fix(gateway): relay a null \"tools\" in Responses replies instead of failing (#6309)"
+    },
+    {
+      "sha": "8d7c6615d37f73eeec60d2444d31539a64fb2def",
+      "date": "2026-10-28T17:38:22+08:00",
+      "subject": "fix(session): keep links whose endpoint probe fails transiently (#6666)"
+    },
+    {
+      "sha": "e3768cccfd08bf7c8fdb4ae6cc683808a680e891",
+      "date": "2026-10-28T17:37:05+08:00",
+      "subject": "feat(pathlock): observe Redis acquisition latency and slow calls (#6722)"
+    },
+    {
+      "sha": "76ae604142ee32d20c1ecca1aa46370c23b66fd0",
+      "date": "2026-10-28T17:36:06+08:00",
+      "subject": "rerank: add optional candidate isolation for Jev (#6724)"
+    },
+    {
+      "sha": "196e58201a6535b06d02a1f35ec2a34be628d6cf",
+      "date": "2026-10-28T17:35:44+08:00",
+      "subject": "fix(plugins): read profile and memory listings from peer scope (#5246)"
+    },
+    {
+      "sha": "c493dfc68ba6a85d5b6b860f8e18afa6cc890fa8",
+      "date": "2026-10-28T17:34:17+08:00",
+      "subject": "fix(memory): preserve role and peer in event chatlogs (#5113)"
+    },
+    {
+      "sha": "a586e73146e17bb498ed61f7e211fc4c15e16fb5",
+      "date": "2026-10-28T17:20:16+08:00",
+      "subject": "fix(sdk/go): omit unset write and session options (#6725)"
+    },
+    {
+      "sha": "e93f5fd3e74d3ac222280dadd09c3de35556d240",
+      "date": "2026-10-28T17:13:11+08:00",
+      "subject": "fix(studio): open settings when saved credentials are rejected (#6689)"
+    },
+    {
+      "sha": "6b92f9f691eae9353c021114d9cf044f2fc81e5c",
+      "date": "2026-10-28T17:11:53+08:00",
+      "subject": "fix(compile): accept preserve_complete in child preview hook (#6696)"
+    },
+    {
+      "sha": "a1ae099393ae5eaa27ca539e4a76b181f9cb03d4",
+      "date": "2026-10-28T17:08:48+08:00",
+      "subject": "fix(ollama): bracket IPv6 hosts in tags requests (#6700)"
+    },
+    {
+      "sha": "e5aae34111e3df5e9de3ea939d6030b5dcab1c38",
+      "date": "2026-10-28T17:02:19+08:00",
+      "subject": "fix(opencode): skip child-session capture and commit under skipSubagentSessions (#6027) (#6032)"
+    },
+    {
+      "sha": "716fcf220e10b416c5d9c1368ae363c249d0179a",
+      "date": "2026-10-28T16:25:39+08:00",
+      "subject": "perf(system-assets): 避免重复执行启动同步 (#6701)"
+    },
+    {
+      "sha": "f3660180d64244b61ad4d7cdb0d60dbc237a264d",
+      "date": "2026-10-28T15:28:09+08:00",
+      "subject": "fix(storage): surface LevelDB exec_op failures (#6716)"
+    },
+    {
+      "sha": "96ae3cef929fbe84fdbe54e14fae88a4280f67e6",
+      "date": "2026-10-28T15:27:10+08:00",
+      "subject": "fix(studio): preserve session list failures and retry state (#6709)"
+    },
+    {
+      "sha": "f048ad080b372c3ac58e40334dfeaef8ea2249cd",
+      "date": "2026-10-28T15:21:43+08:00",
+      "subject": "fix(studio): adapt session panes to the available width (#6706) (#6710)"
+    },
+    {
+      "sha": "f5457afbe9608f4514da6bd87f0dd837d447cf99",
+      "date": "2026-10-28T15:19:18+08:00",
+      "subject": "fix(studio): fit dashboard metrics to their container (#6707) (#6711)"
+    },
+    {
+      "sha": "9163513e187b7041939be245fcde16f28ccbef38",
+      "date": "2026-10-28T15:15:09+08:00",
+      "subject": "fix(studio): contain long skill metadata (#6708) (#6712)"
+    },
+    {
+      "sha": "7192600efab4931a78dff83d0ffef9c0e04b45bb",
+      "date": "2026-10-28T14:49:14+08:00",
+      "subject": "fix(admin): allow role demotion and case-insensitive role input (#6714)"
+    },
+    {
+      "sha": "5e0ed4305a190253f68c44d823b5b6b1f3caf925",
+      "date": "2026-10-28T13:59:32+08:00",
+      "subject": "Feat/l2 chunk size (#6660)"
+    },
+    {
+      "sha": "4adcab74984896ced40c32cbaa1a656463946fe7",
+      "date": "2026-10-28T13:25:55+08:00",
+      "subject": "fix(pathlock): revoke lease authorization after token loss (#6704)"
+    },
+    {
+      "sha": "7cfa8fbe10423b746ab3fea528035d925451af62",
+      "date": "2026-10-28T13:20:57+08:00",
+      "subject": "docs: add RAG and memory evaluation guide (#6702)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "MANIFEST.in",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "benchmark/README_zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "bot/tests/test_compile_preview_hook_signature.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "bot/vikingbot/compile/pipeline_agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ov_cli/src/main.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs-python/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/lock/cache_provder.rs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "crates/ragfs/src/lock/lost_lease_tests.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/lock/manager.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/lock/metrics.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/lock/provider.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "crates/ragfs/src/metrics/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/agent-integrations/16-capability-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/api/01-overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/api/08-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/concepts/03-context-layers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/concepts/06-extraction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/concepts/09-transaction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/concepts/12-metrics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/guides/01-configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/guides/04-authentication.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/repository/README_CN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/agent-integrations/16-capability-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/api/01-overview.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/api/08-admin.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/concepts/03-context-layers.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/concepts/06-extraction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/concepts/09-transaction.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/concepts/12-metrics.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/guides/01-configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/guides/04-authentication.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-hook-plugin/hosts/codebuddy/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-hook-plugin/hosts/cursor/openviking.integration.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-hook-plugin/hosts/kimicode/kimi.plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-hook-plugin/hosts/kimicode/openviking.integration.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-hook-plugin/hosts/trae/openviking.integration.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-hook-plugin/hosts/zcode/openviking.integration.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/agent-hook-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/claude-code-memory-plugin/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/claude-code-memory-plugin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/claude-code-memory-plugin/scripts/shared/profile-inject.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codex-memory-plugin/.codex-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codex-memory-plugin/scripts/session-start-commit.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/codex-memory-plugin/scripts/shared/profile-inject.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/dsh-memory-plugin/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/dsh-memory-plugin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/memory-plugin-shared/lib/profile-inject.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/memory-plugin-shared/profile-inject.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/opencode-plugin/lib/memory-session.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/opencode-plugin/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/opencode-plugin/tests/memory-session.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/pi-coding-agent-extension/package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/pi-coding-agent-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "openviking/core/namespace_constants.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/core/namespace_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/base.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/cohere_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/dashscope_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/gemini_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/jina_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/litellm_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/minimax_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/openai_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/vikingdb_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/volcengine_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/embedder/voyage_embedders.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/models/rerank/jev_rerank.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/parse/parsers/markdown.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/parse/understanding_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/server/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/server/routers/admin.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/service/core.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/session/memory/memory_updater.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/session/memory/streaming_memory_updater.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/storage/queuefs/semantic_executor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/storage/queuefs/semantic_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "openviking/system_assets/manifest.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/system_assets/reconcile.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking/system_assets/sync.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking_cli/utils/config/embedding_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking_cli/utils/config/open_viking_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking_cli/utils/config/parser_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking_cli/utils/config/rerank_config.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking_cli/utils/ollama.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "openviking_gateway/tool_protocols/responses.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/build_support/system_assets_manifest.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/go/client_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/go/filesystem.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/go/resources.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sdk/go/sessions.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "setup.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/store/persist_store.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/engine/test_index_engine.cpp",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/gateway/test_native_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/parse/test_markdown_split_token_budget.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/parse/test_understanding_api_artifact_images.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/test_admin_api.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/server/test_server_health.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/session/memory/test_memory_updater.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/session/memory/test_streaming_memory_updater.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/storage/test_semantic_executor_incremental.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/storage/test_semantic_executor_skip_files.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/storage/test_semantic_executor_stats.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/storage/test_semantic_processor_overview_batching.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/models/rerank/test_jev_rerank.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_dashscope_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/unit/test_ollama_http_urls.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_openai_embedder_http_pool.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_retry_embedder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_system_asset_reconcile.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/unit/test_system_asset_sync.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/hooks/use-app-connection.bootstrap.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/hooks/use-app-connection.host.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/hooks/use-app-connection.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/hooks/use-connection-profiles.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/i18n/locales/en/activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/i18n/locales/zh-CN/activity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/lib/sessions/use-sessions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/routes/home/-components/metric-panels.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/routes/home/route.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/routes/sessions/-components/thread-list.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/routes/sessions/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-studio/src/routes/skills/route.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

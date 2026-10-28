@@ -36,6 +36,14 @@ The [authentication flow](https://github.com/warpdotdev/warp/blob/65229eb524f978
 
 The [tests](https://github.com/warpdotdev/warp/blob/65229eb524f978cd006c54424fad3a98a35c39c7/crates/mcp/src/oauth_tests.rs#L52-L268) define a local fake OAuth server and matching/mismatched loopback-state cases; [credential tests](https://github.com/warpdotdev/warp/blob/65229eb524f978cd006c54424fad3a98a35c39c7/crates/mcp/src/oauth_tests.rs#L287-L424) inspect channel payloads, legacy timestamp compatibility and refresh-token carry-forward. They do not establish crash-safe storage, failed-write recovery or platform keychain behavior, and were not executed. Teamagent should retain token-rotation semantics with bounded, awaited persistence and explicit deletion receipts.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `65229eb524f978cd006c54424fad3a98a35c39c7` to `eafc6d18d18bea8c6cf78dc21a4e0eab59f4c6c6`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [app/src/ai/blocklist/block/status_bar.rs](https://github.com/warpdotdev/warp/blob/eafc6d18d18bea8c6cf78dc21a4e0eab59f4c6c6/app/src/ai/blocklist/block/status_bar.rs#L151-L178), The status bar now subscribes to history-level streaming and usage events. Matching the active exchange triggers an output update; another exchange in the same conversation triggers a redraw, and usage metadata also invalidates the view. The previous per-exchange callback registration is removed in the delta.
+
+**Harness implication and limits:** Drive channel/UI status from shared, identified events rather than a callback bound only to the currently visible exchange. Keep exchange, conversation and surface identity explicit to avoid stale usage displays. This is presentation invalidation, not evidence that accounting values or task completion are correct. Rendering frequency, subscriptions and native acceptance were not exercised. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [warp](https://github.com/warpdotdev/warp); analyzed commit `65229eb524f978cd006c54424fad3a98a35c39c7`; commit date 2026-10-27T10:52:43-04:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--warp.md).
+Analysis metadata: source [warp](https://github.com/warpdotdev/warp); analyzed commit `eafc6d18d18bea8c6cf78dc21a4e0eab59f4c6c6`; commit date 2026-10-27T14:31:32-04:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--warp.md).
 <!-- teamagent-analysis:end -->

@@ -16,6 +16,14 @@ The [overflow cache](https://github.com/ferroxlabs/murage/blob/833c3a3c573c48683
 
 The [plan normalizer and tests](https://github.com/ferroxlabs/murage/blob/833c3a3c573c486833ed41281f4017c4da258e46/shared/agent-plan.ts) distinguish malformed updates from an intentionally empty plan, cap output entries/text and conservatively map unknown statuses to pending. They silently discard invalid entries and do not report truncation; output limits also do not bound processing a very large invalid input array. Keep these states visible in Teamagent and treat agent-reported completion as a claim, not independently verified task success. No app, native prompt, network or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `833c3a3c573c486833ed41281f4017c4da258e46` to `24ab901bc8bdd90685398df00be35a7627937992`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [server/drivers/pi-permission-gate.ts](https://github.com/ferroxlabs/murage/blob/24ab901bc8bdd90685398df00be35a7627937992/server/drivers/pi-permission-gate.ts#L91-L110), Sensitive-path policy adds credentials.bin and provider-key patterns by basename because desktop user data can move during profile restoration. The row supplies separate regex, read-glob and shell-pattern forms instead of assuming only the default application directory.
+
+**Harness implication and limits:** Credential protection must follow actual relocated storage roots as well as conventional filenames. Pattern matching is a defense-in-depth heuristic; renamed files, indirection, shell expansion and alternate effect routes require resolved-path authorization and OS boundaries. The permission evaluator and restore implementation were not inspected, and no credentials or shell actions were accessed. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [murage](https://github.com/ferroxlabs/murage); analyzed commit `833c3a3c573c486833ed41281f4017c4da258e46`; commit date 2026-10-27T06:48:39+07:00; review date 2026-10-28T09:27:32.685Z; depth reviewed. [Maintenance record](../repos/ai-agents--murage.md).
+Analysis metadata: source [murage](https://github.com/ferroxlabs/murage); analyzed commit `24ab901bc8bdd90685398df00be35a7627937992`; commit date 2026-10-28T03:30:19+07:00; review date 2026-10-28T14:29:27.414Z; depth reviewed. [Maintenance record](../repos/ai-agents--murage.md).
 <!-- teamagent-analysis:end -->

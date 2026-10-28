@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--deepseek-harness",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/deepseek-ai/deepseek-harness",
+  "report": "spec/projects/ai-agents--deepseek-harness.md",
+  "analyzedSha": "22ddee3792402c3e70ec5f86a63c3e3e895a2f60",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-23T19:48:59+08:00",
+  "observedSha": "f3803c96974ad4a94195fb97e5c637e9c2a3afe3",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f3803c96974ad4a94195fb97e5c637e9c2a3afe3",
+      "date": "2026-10-28T02:17:58+08:00",
+      "subject": "release(dsh): 0.2.2-alpha.2 (#7437)"
+    },
+    {
+      "sha": "00d541438b9beabb4d876a14371aea69f58c397a",
+      "date": "2026-10-28T02:03:15+08:00",
+      "subject": "release(dsh): 0.2.2-alpha.2"
+    },
+    {
+      "sha": "7509c174d98396a932f20ca7a379556c86c43d0f",
+      "date": "2026-10-28T01:58:28+08:00",
+      "subject": "fix(build): serialize release builds and give Client checks 8 GiB (#7435)"
+    },
+    {
+      "sha": "635d9c88f6abd6c0c36861abee7cd6c1aa8bd7f5",
+      "date": "2026-10-28T01:44:19+08:00",
+      "subject": "feat(liveshare): add the host, viewer, and client share surfaces (#6749)"
+    },
+    {
+      "sha": "5106da3bb71788ae57eb86b4848a7405f19c7df3",
+      "date": "2026-10-28T00:17:25+08:00",
+      "subject": "Merge pull request #7434 from deepseek-harness/worktree/release-dsh-0.2.2-alpha.1"
+    },
+    {
+      "sha": "69c389ae1113264b6d2f0d7b6f1db6de6450d450",
+      "date": "2026-10-28T00:00:58+08:00",
+      "subject": "release(dsh): 0.2.2-alpha.1"
+    },
+    {
+      "sha": "a4c9c208cdc88496cbc742373e91be24140ee254",
+      "date": "2026-10-27T23:51:40+08:00",
+      "subject": "Merge pull request #7431 from deepseek-harness/release/vendor-alpha-for-0.2.2-alpha.1"
+    },
+    {
+      "sha": "656c740669f76a9135a6992aeb5c07282fc76418",
+      "date": "2026-10-27T23:39:36+08:00",
+      "subject": "release(vendor): cordis 4.0.6-alpha.1, cosmokit 1.8.7-alpha.1, group 1.0.6-alpha.1, hmr 1.0.21-alpha.1, include 1.0.11-alpha.1, loader 1.0.7-alpha.1, logger-console 1.0.6-alpha.1, schemastery 3.18.6-alpha.1, timer 1.1.8-alpha.1"
+    },
+    {
+      "sha": "c232e618fda43d2d6fdc6af220ec7cec8f090a55",
+      "date": "2026-10-27T23:27:45+08:00",
+      "subject": "Merge pull request #7430 from deepseek-harness/revert-7413-perf/web-startup-assets"
+    },
+    {
+      "sha": "3ddab34194f3431c6d444d7f80816be26c12c8c1",
+      "date": "2026-10-27T23:25:57+08:00",
+      "subject": "Revert \"perf(web): 压缩动态插件资源以加快冷启动\""
+    },
+    {
+      "sha": "873c68c15b6792d177f7e95965f5e63c70698182",
+      "date": "2026-10-27T23:18:07+08:00",
+      "subject": "feat(models): show model selector badges from the /models listing (#7027)"
+    },
+    {
+      "sha": "6a6e88754df27484df1cf925ecdf729a2e6f9d17",
+      "date": "2026-10-27T23:09:35+08:00",
+      "subject": "Merge pull request #7429 from deepseek-harness/fix/ci-premerge-depth-window"
+    },
+    {
+      "sha": "18a559e7dd74bbce8d8408837b3c611ad0640d56",
+      "date": "2026-10-27T23:01:19+08:00",
+      "subject": "fix(ci): deepen the pre-merge fetch when the time window strands the merge base"
+    },
+    {
+      "sha": "2de3029cc66d246ac425eb4b02f7fb3a4442e3c7",
+      "date": "2026-10-27T22:16:47+08:00",
+      "subject": "Merge pull request #7427 from deepseek-harness/fix/chat-landing"
+    },
+    {
+      "sha": "a1659120a380d326d8a3f2c0f3fc54f4570ceb42",
+      "date": "2026-10-27T21:36:10+08:00",
+      "subject": "fix(session-controller): retire a queued echo when its Inbox row is canceled"
+    },
+    {
+      "sha": "ae07093132dfa690e97e9ba523fbf752d9d14b79",
+      "date": "2026-10-27T20:44:52+08:00",
+      "subject": "fix(chat): keep the transcript steady at Turn end and when steering lands"
+    },
+    {
+      "sha": "1d4b80f04ea4c1505a3621d8781adc0f777924f5",
+      "date": "2026-10-27T18:11:41+08:00",
+      "subject": "Merge pull request #7413 from deepseek-harness/perf/web-startup-assets"
+    },
+    {
+      "sha": "72a84b24bd6c2c4b501270107139fa069437c436",
+      "date": "2026-10-27T18:06:38+08:00",
+      "subject": "perf(web): 合并 Web Search 设置刷新中的重复凭据查询 (#7419)"
+    },
+    {
+      "sha": "0bfa572080ec1395e1ee700b5e7a48d9c52473c7",
+      "date": "2026-10-27T17:55:51+08:00",
+      "subject": "test(web): retain minified bundles in real-host smoke coverage"
+    },
+    {
+      "sha": "fcca5408411d661c7273e7348a23a68352de2dcd",
+      "date": "2026-10-27T09:50:22Z",
+      "subject": "refactor(session): unify runtime projection reads (#7347)"
+    },
+    {
+      "sha": "9890d095bbdad90c06b051829162829de212a743",
+      "date": "2026-10-27T16:36:55+08:00",
+      "subject": "test(models): cover account listing automatic badge removal"
+    },
+    {
+      "sha": "825945fd40beefc39251c147ae1a401fd281ac9d",
+      "date": "2026-10-27T16:17:36+08:00",
+      "subject": "fix(models): validate badge text and preserve tags beside long names"
+    },
+    {
+      "sha": "4f851948a57d862c49c136db9d77f35b38445434",
+      "date": "2026-10-27T15:42:21+08:00",
+      "subject": "perf(web): minify dynamic client bundles"
+    },
+    {
+      "sha": "67af01533ebad2e0ae3bd5615ec14698a12fa09b",
+      "date": "2026-10-27T15:26:08+08:00",
+      "subject": "fix(models): retain badges when listing refresh fails"
+    },
+    {
+      "sha": "049621b98b23f6cd8f7bb6fc5e6f606682df1f0b",
+      "date": "2026-10-27T15:09:53+08:00",
+      "subject": "docs(models): refresh listing event producer catalog"
+    },
+    {
+      "sha": "a36745f6ee268ba5901a686c09cb462ecc7260e2",
+      "date": "2026-10-27T15:01:54+08:00",
+      "subject": "refactor(models): share listing cache lifecycle wiring"
+    },
+    {
+      "sha": "6e7fae82abf173e33f3e09f826587983c4c2739a",
+      "date": "2026-10-27T14:57:06+08:00",
+      "subject": "Merge pull request #7407 from deepseek-harness/fix/ask-multi-recommended"
+    },
+    {
+      "sha": "8394a200b911f08b92e3dd93fa08f78475ca3ecd",
+      "date": "2026-10-27T14:53:23+08:00",
+      "subject": "fix(models): refresh listed badges in open selectors"
+    },
+    {
+      "sha": "af086ad37705b45fe7fc72f13056244294eba9bc",
+      "date": "2026-10-27T14:38:36+08:00",
+      "subject": "Merge remote-tracking branch 'origin/master' into worktree/pr-7027-badge-refresh"
+    },
+    {
+      "sha": "185eb56a2b54a40d839c60ad4086a2c007b44e46",
+      "date": "2026-10-27T14:31:56+08:00",
+      "subject": "test(web): 新增多选题多推荐项预选的 Web snapshot 场景"
+    },
+    {
+      "sha": "07c3c10d2c6247173baa2f4b2e87b62d0ea5e82b",
+      "date": "2026-10-27T13:47:34+08:00",
+      "subject": "test(ui-user-questions): 覆盖多选预选的计时与回看卡片"
+    },
+    {
+      "sha": "bf8d8494bac1db26c130065829508b2208d22bfe",
+      "date": "2026-10-27T13:43:39+08:00",
+      "subject": "fix(ui-user-questions): 多选题预选所有推荐选项"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-07-10-single-file-executable-sdk-runtime-distribution.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-07-10-single-file-executable-sdk-runtime-distribution.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-07-10-single-file-executable-sdk-runtime-distribution.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-18-session-history-and-event-transport.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-18-session-history-and-event-transport.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-18-session-history-and-event-transport.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-23-client-derived-tool-presentation.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-23-client-derived-tool-presentation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-23-client-derived-tool-presentation.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-25-session-observations-and-projection-owned-client-state.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-25-session-observations-and-projection-owned-client-state.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-08-25-session-observations-and-projection-owned-client-state.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-05-read-only-session-migration-preparation.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-05-read-only-session-migration-preparation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-05-read-only-session-migration-preparation.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-05-workspace-files-service.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-05-workspace-files-service.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-05-workspace-files-service.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-09-awaited-agent-creation.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-09-awaited-agent-creation.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-09-awaited-agent-creation.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-22-fatal-diagnostics-and-crash-reports.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-22-fatal-diagnostics-and-crash-reports.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-22-fatal-diagnostics-and-crash-reports.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-23-best-effort-persistent-ptc.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-23-best-effort-persistent-ptc.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-23-best-effort-persistent-ptc.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-26-cua-application-consent.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-26-cua-application-consent.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-09-26-cua-application-consent.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-10-12-peer-principal-and-remote-access.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-10-12-peer-principal-and-remote-access.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/architecture/2026-10-12-peer-principal-and-remote-access.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-19-cua-profile-consent-storage.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-19-cua-profile-consent-storage.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-19-cua-profile-consent-storage.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-20-ptc-script-evaluation-and-retention.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-20-ptc-script-evaluation-and-retention.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-20-ptc-script-evaluation-and-retention.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-session-history-stream-and-snapshot.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-session-history-stream-and-snapshot.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-21-session-history-stream-and-snapshot.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-23-store-scoped-image-reads.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-23-store-scoped-image-reads.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-23-store-scoped-image-reads.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-25-cua-bundle-id-consent.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-25-cua-bundle-id-consent.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/architecture/2026-10-25-cua-bundle-id-consent.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-09-20-unambiguous-tool-arguments.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-09-20-unambiguous-tool-arguments.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-09-20-unambiguous-tool-arguments.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-25-shared-preset-delegation-tools.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-25-shared-preset-delegation-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-25-shared-preset-delegation-tools.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-26-malformed-charset-declaration.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-26-malformed-charset-declaration.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/bug-fix/2026-10-26-malformed-charset-declaration.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-07-19-model-facing-goal-tools.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-07-19-model-facing-goal-tools.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-07-19-model-facing-goal-tools.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-08-08-windows-acl-restricted-token-sandbox.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-08-08-windows-acl-restricted-token-sandbox.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/feature/2026-08-08-windows-acl-restricted-token-sandbox.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-09-13-liveshare-protocol-and-owner-surfaces.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-09-13-liveshare-protocol-and-owner-surfaces.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-09-13-liveshare-protocol-and-owner-surfaces.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-09-forge-panel.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-09-forge-panel.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-09-forge-panel.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-09-session-change-request-bindings.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-09-session-change-request-bindings.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-09-session-change-request-bindings.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-20-forge-session-list.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-20-forge-session-list.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-20-forge-session-list.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-21-floating-window-edge-recovery.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-21-floating-window-edge-recovery.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-21-floating-window-edge-recovery.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-22-listed-model-badges.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-22-listed-model-badges.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".agents/notes/implemented/feature/2026-10-22-listed-model-badges.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/process/2026-09-28-dual-release-install-layout-work-budget.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/process/2026-09-28-dual-release-install-layout-work-budget.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/process/2026-09-28-dual-release-install-layout-work-budget.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/process/2026-10-05-pr-artifact-typechecks.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/process/2026-10-05-pr-artifact-typechecks.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/process/2026-10-05-pr-artifact-typechecks.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-10-11-user-text-credential-matching.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-10-11-user-text-credential-matching.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/implemented/testing/2026-10-11-user-text-credential-matching.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/notes/proposed/architecture/2026-07-24-domain-kv-storage-and-workspace.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/dsh-client-ui-ux/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".agents/skills/dsh-session-projection/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitattributes",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-exe-for-python-sdk.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/build-preview-cloudflare.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/macos-intel-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/macos-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-check-after-approve.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-check-on-base-branch.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/pr-check-on-head-branch.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-package.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/tests/desktop-host.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/tests/profiles/acp/tests/stdout.expected.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/cli/tests/profiles/subagent-preset-switch.overlay.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/cli/tests/web-agent-presets.e2e.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop-host/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop-host/src/fatal-diagnostic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop-host/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop-host/src/operation-diagnostics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop-host/tests/fatal-diagnostic.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop-host/tests/operation-diagnostics.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop-host/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/.env.macos.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/.env.windows.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/docs/diagnostics/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/docs/diagnostics/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/docs/diagnostics/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/packaging/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/packaging/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/packaging/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/ci/README.i18n.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/ci/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/publishing/ci/README.zh.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/desktop-auto-update-environment.d.mts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/desktop-auto-update-environment.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/desktop-build-paths.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/desktop-edgeone.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/desktop-package-environment.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/desktop-publish-route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/scripts/desktop-publish-targets.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/desktop-upload-plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/electron-builder-config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/preflight-desktop-publish.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/prepare-macos-ci.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/publish-desktop-ci.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/resolve-desktop-publish-ci.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/runtime-patch-policy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/upload-target.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/scripts/upload-with-credentials.ps1",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/crash-report.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/fatal-recovery.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/host-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/locale-cache.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -45,6 +45,18 @@ Evidence: [obliteratus/models/snapshot.py:1-280](https://github.com/elder-pliniu
 
 **Scope and limits:** Static scoped review of snapshot/restore resource handling and placement validation within the 535-path comparison. Numerical-update/offload helpers, full model loader, concept-edit algorithms and accelerator/failure fixtures were not fully audited or executed; no model loaded or edited.
 
+## Follow-up change review — 2026-10-28
+
+**Checkpoint continuation verifies candidate, layout and shard bytes before reuse.** Reviewed commit `1263570ae631a5a7f8008073d01e501f976f5dda` (commit date `2026-10-27T18:02:41-04:00`), compared with `7e8cf557053f7e1a756c37d86e6a68682b9f7421`. The complete no-rename Git path inventory contains 68 changed paths.
+
+Continuation receipts bind candidate and plan digests, unique safe filenames, size and SHA-256. Restoring refuses existing targets/temporary paths, requires a regular nonsymlink file, checks size/hash/tensor layout and observes cancellation before replacement. Fresh shards still require host-capacity admission; receipt publication follows tensor release. Fixtures corrupt payload, layout, shape and dtype, or supply missing/directory/symlink restoration, and expect atomic staging rollback. Candidate identity remains a caller attestation to the live weights, as the contract states.
+
+Evidence: [obliteratus/models/checkpoint_export.py:78-110](https://github.com/elder-plinius/OBLITERATUS/blob/1263570ae631a5a7f8008073d01e501f976f5dda/obliteratus/models/checkpoint_export.py#L78-L110) · [obliteratus/models/checkpoint_export.py:150-185](https://github.com/elder-plinius/OBLITERATUS/blob/1263570ae631a5a7f8008073d01e501f976f5dda/obliteratus/models/checkpoint_export.py#L150-L185) · [obliteratus/models/checkpoint_export.py:445-558](https://github.com/elder-plinius/OBLITERATUS/blob/1263570ae631a5a7f8008073d01e501f976f5dda/obliteratus/models/checkpoint_export.py#L445-L558) · [tests/test_checkpoint_export_continuation.py:190-231](https://github.com/elder-plinius/OBLITERATUS/blob/1263570ae631a5a7f8008073d01e501f976f5dda/tests/test_checkpoint_export_continuation.py#L190-L231).
+
+**Harness consequence:** Resume expensive artifacts only from version-bound, byte-verified receipts; separate artifact integrity from claims about model quality or the meaning of its weights. Keep destination publication and trusted receipt ownership explicit.
+
+**Scope and limits:** Reviewed continuation validation, restore/publication paths and malformed-restoration fixtures; no model weights were loaded or modified and the whole export pipeline was not executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [obliteratus](https://github.com/elder-plinius/OBLITERATUS); analyzed commit `7e8cf557053f7e1a756c37d86e6a68682b9f7421`; commit date 2026-10-24T15:19:02-04:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-edit--obliteratus.md).
+Analysis metadata: source [obliteratus](https://github.com/elder-plinius/OBLITERATUS); analyzed commit `1263570ae631a5a7f8008073d01e501f976f5dda`; commit date 2026-10-27T18:02:41-04:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-model-edit--obliteratus.md).
 <!-- teamagent-analysis:end -->

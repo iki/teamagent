@@ -32,6 +32,18 @@ The [HTTP proxy adapter](https://github.com/nesszer/Win-CodexBar/blob/31b10ce429
 
 The [session discovery helper](https://github.com/nesszer/Win-CodexBar/blob/31b10ce42993d3be2f041e169e82ef174d24c7ec/rust/src/codex_sessions.rs) respects explicit roots and searches WSL distro home/root directories, deduplicating paths by lowercased spelling. That is discovery rather than authorization and can conflate case-sensitive paths; reading another discovered user's data still needs scope/ownership checks. The [host helper](https://github.com/nesszer/Win-CodexBar/blob/31b10ce42993d3be2f041e169e82ef174d24c7ec/rust/src/host/session.rs) keeps unsupported GUI-session reasons explicit and provides CLI guidance, but does not prove packaged desktop behavior. No credentials, session directories, proxy, native app or tests were accessed/executed.
 
+## Follow-up change review — 2026-10-28
+
+**Compact quota rendering retains estimate and unknown-state distinctions.** Reviewed commit `86ed0ae1b9ee97306b80daebd75666d29fe8c5f9` (commit date `2026-10-28T14:48:46+07:00`), compared with `31b10ce42993d3be2f041e169e82ef174d24c7ec`. The complete no-rename Git path inventory contains 1 changed paths.
+
+The tray renderer replaces a filled square with outlined glyphs and chooses the largest fitting text scale. NaN still uses an unknown marker, estimated values retain their tilde, and error outlines use different alpha. Pixel fixtures check full-scale percentage rows, transparent background, outline boundaries and estimated-versus-exact output. The change concerns display legibility; it does not alter provider quota collection or prove real taskbar accessibility.
+
+Evidence: [rust/src/tray/render.rs:375-466](https://github.com/nesszer/Win-CodexBar/blob/86ed0ae1b9ee97306b80daebd75666d29fe8c5f9/rust/src/tray/render.rs#L375-L466) · [rust/src/tray/render.rs:619-668](https://github.com/nesszer/Win-CodexBar/blob/86ed0ae1b9ee97306b80daebd75666d29fe8c5f9/rust/src/tray/render.rs#L619-L668).
+
+**Harness consequence:** Preserve measured, estimated and unavailable status when compressing telemetry into small surfaces. Validate rendering separately from the provenance and freshness of the values displayed.
+
+**Scope and limits:** Reviewed the complete one-file renderer delta and its pixel fixtures; no native tray session was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [codexbar-win](https://github.com/nesszer/Win-CodexBar); analyzed commit `31b10ce42993d3be2f041e169e82ef174d24c7ec`; commit date 2026-10-27T02:02:46+07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--codexbar-win.md).
+Analysis metadata: source [codexbar-win](https://github.com/nesszer/Win-CodexBar); analyzed commit `86ed0ae1b9ee97306b80daebd75666d29fe8c5f9`; commit date 2026-10-28T14:48:46+07:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-tokens--codexbar-win.md).
 <!-- teamagent-analysis:end -->

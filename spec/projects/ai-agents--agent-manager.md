@@ -38,6 +38,18 @@ The [wait implementation](https://github.com/yoanwai/agent-manager/blob/e6d9ec6c
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `6a2827bc37ee7a427e7feb34dc6b9da69d2ce239` (commit date `2026-10-28T00:24:10+02:00`), compared with `e6d9ec6c3324cb67348d2c3a5114923c950acbcd`. Earlier findings remain historical evidence.
+
+**Scope:** Terminal-session kill target selection and the associated archived/filtered-view regression fixtures. The complete changed-path inventory contains 91 paths; the assessment below is limited to the cited branches.
+
+Kill-selected and kill-all are now inert in the archived view. Confirmation records contain the selected live targets; kill-all derives them from the currently listed sessions, while a selected family preserves its member snapshot. Labels identify the actual live target set. See [internal/ui/session_kill.go](https://github.com/YoanWai/agent-manager/blob/6a2827bc37ee7a427e7feb34dc6b9da69d2ce239/internal/ui/session_kill.go#L9-L75). Added fixtures cover filtered views excluding other sessions, archived rows refusing kill actions, and root/descendant labels; these were inspected, not executed. See [internal/ui/session_kill_test.go](https://github.com/YoanWai/agent-manager/blob/6a2827bc37ee7a427e7feb34dc6b9da69d2ce239/internal/ui/session_kill_test.go#L231-L310).
+
+For Teamagent, bind approval presentation to an exact target snapshot and revalidate it at the lifecycle worker before the effect. A filtered or archived UI must not silently expand a destructive operation. This source branch does not establish authenticated backend authority or confirmed operating-system process termination.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-manager](https://github.com/YoanWai/agent-manager); analyzed commit `e6d9ec6c3324cb67348d2c3a5114923c950acbcd`; commit date 2026-10-27T19:17:58+02:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-manager.md).
+Analysis metadata: source [agent-manager](https://github.com/YoanWai/agent-manager); analyzed commit `6a2827bc37ee7a427e7feb34dc6b9da69d2ce239`; commit date 2026-10-28T00:24:10+02:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-manager.md).
 <!-- teamagent-analysis:end -->

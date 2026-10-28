@@ -39,6 +39,18 @@ Evidence: [graphify/manifest_ingest.py:1-340](https://github.com/safishamsi/grap
 
 **Scope and limits:** Static scoped review of manifest ingestion and global graph maintenance within the 539-path comparison. Large extractor entry points were not cached and were not inspected; graph security/path/atomic-write helpers, dependency resolution and graph tests were not fully audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Case-only renames must preserve the fresh article on both filesystem case models.** Reviewed commit `0a8cd4e1e342235fe53e881fb5d591bf0460071f` (commit date `2026-10-27T18:08:07Z`), compared with `dac063456bc1f5d92354ec3936fd9dd1513a83f3`. The complete no-rename Git path inventory contains 51 changed paths.
+
+Wiki cleanup now matches produced names by casefold. If the old spelling and target are distinct files, it deletes the stale twin; if they identify the same file, a two-step rename updates its stored case. Fixtures check article count, spelling, link resolution, fresh body content and unrelated orphan cleanup. This addresses a portability bug where cleanup could delete the freshly written article or restore stale content.
+
+Evidence: [graphify/wiki.py:450-480](https://github.com/safishamsi/graphify/blob/0a8cd4e1e342235fe53e881fb5d591bf0460071f/graphify/wiki.py#L450-L480) · [tests/test_wiki_case_only_relabel.py:36-102](https://github.com/safishamsi/graphify/blob/0a8cd4e1e342235fe53e881fb5d591bf0460071f/tests/test_wiki_case_only_relabel.py#L36-L102).
+
+**Harness consequence:** Use content identity and filesystem identity when reconciling renamed derived artifacts. Test case-only renames on case-sensitive and case-insensitive hosts, including content checks rather than existence alone.
+
+**Scope and limits:** Reviewed wiki orphan/case reconciliation and its five fixtures; parser changes and other export surfaces were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `dac063456bc1f5d92354ec3936fd9dd1513a83f3`; commit date 2026-10-26T12:50:53Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
+Analysis metadata: source [graphify](https://github.com/safishamsi/graphify); analyzed commit `0a8cd4e1e342235fe53e881fb5d591bf0460071f`; commit date 2026-10-27T18:08:07Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--graphify.md).
 <!-- teamagent-analysis:end -->

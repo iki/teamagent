@@ -38,6 +38,14 @@ The [tool-name helper](https://github.com/milind-soni/OpenMausBot/blob/1908b9290
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `1908b929057150ff621262bb13a2183787f6c66f` to `ae1aada6b67b68d03921f910f4b4b97a66cea1a7`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [server/browser/tools.ts](https://github.com/milind-soni/OpenMausBot/blob/ae1aada6b67b68d03921f910f4b4b97a66cea1a7/server/browser/tools.ts#L12-L18), Browser tool descriptions now tie coordinate actions to the current viewport and the latest screenshot's CSS-pixel mapping. Screenshot help explicitly acknowledges that resizing the browser panel changes that mapping. The existing schema bounds coordinate values and tool timeout, but this delta changes the explanatory contract rather than implementing a freshness check.
+
+**Harness implication and limits:** Carry screenshot dimensions, coordinate transform and navigation/viewport generation in action evidence; reject stale coordinate actions after resize or navigation. A numeric range and prompt guidance do not enforce freshness. The request-auth delta also adds a helper-followup route with a comment about owner checks; its handler and browser runtime enforcement were not audited or executed. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `1908b929057150ff621262bb13a2183787f6c66f`; commit date 2026-10-27T21:36:33+05:30; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
+Analysis metadata: source [openmausbot](https://github.com/milind-soni/OpenMausBot); analyzed commit `ae1aada6b67b68d03921f910f4b4b97a66cea1a7`; commit date 2026-10-28T15:18:44+05:30; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openmausbot.md).
 <!-- teamagent-analysis:end -->

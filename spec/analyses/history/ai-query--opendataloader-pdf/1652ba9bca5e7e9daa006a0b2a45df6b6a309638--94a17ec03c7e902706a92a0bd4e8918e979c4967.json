@@ -1,0 +1,65 @@
+{
+  "id": "ai-query--opendataloader-pdf",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/opendataloader-project/opendataloader-pdf",
+  "report": "spec/projects/ai-query--opendataloader-pdf.md",
+  "analyzedSha": "1652ba9bca5e7e9daa006a0b2a45df6b6a309638",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T18:26:06+09:00",
+  "observedSha": "94a17ec03c7e902706a92a0bd4e8918e979c4967",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "94a17ec03c7e902706a92a0bd4e8918e979c4967",
+      "date": "2026-10-28T12:10:01+03:00",
+      "subject": "Add createIDTree method to build IDTree for StructTree in AutoTagging (#832)"
+    },
+    {
+      "sha": "24ae48555fad3754802b3b8d12bbb6ddd88c79c0",
+      "date": "2026-10-28T17:59:36+09:00",
+      "subject": "fix(struct-tree): read a form again for each name that draws it"
+    },
+    {
+      "sha": "fa2770232b9be0f6d24b223a319b231e254621b1",
+      "date": "2026-10-28T17:59:36+09:00",
+      "subject": "fix(struct-tree): leave out text in /Artifact sequences"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/ArtifactOperators.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/AutoTaggingProcessor.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/opendataloader-pdf-core/src/main/java/org/opendataloader/pdf/processors/TaggedDocumentProcessor.java",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "java/opendataloader-pdf-core/src/test/java/org/opendataloader/pdf/issues/Issue801StructTreeArtifactTextTest.java",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "java/pom.xml",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

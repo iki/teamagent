@@ -1,0 +1,410 @@
+{
+  "id": "ai-agents--jan",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/janhq/jan",
+  "report": "spec/projects/ai-agents--jan.md",
+  "analyzedSha": "d15915c7114aee6c23568f6e0b4d490b1b0d83a6",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T11:08:15+05:30",
+  "observedSha": "b8d58255baf6d9e870025d3f0c60a5b80a63143b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "b8d58255baf6d9e870025d3f0c60a5b80a63143b",
+      "date": "2026-10-28T15:17:12+05:30",
+      "subject": "fix(agent-tui): edit diff order, memory recall, cache wording, idle subagents, live /shells, shell grouping (#9485)"
+    },
+    {
+      "sha": "9559292b9b879bef8d0e2c864a14f6848b350252",
+      "date": "2026-10-28T15:55:00+07:00",
+      "subject": "chore(deps): bump vitest, seroval, tar, next and others to patched versions (#9450)"
+    },
+    {
+      "sha": "171c02fa3e619363799ee2cb2448f84a70897045",
+      "date": "2026-10-28T14:24:01+05:30",
+      "subject": "feat(agent): let a subagent message the main agent with message_main_agent (#9454)"
+    },
+    {
+      "sha": "65488c9d48667c36dfb4315099aade6173cf67bc",
+      "date": "2026-10-28T14:49:52+07:00",
+      "subject": "fix(build): load the Windows executable's imports from System32 only (#9482)"
+    },
+    {
+      "sha": "6f509fef9f3e062fd62c1a1f43f35b9c42c954fa",
+      "date": "2026-10-28T10:34:08+07:00",
+      "subject": "docs(changelog): add the v0.8.8 entry (#9456)"
+    },
+    {
+      "sha": "913e7db74bea1ec95cf8f7da854e91f4b70c9b10",
+      "date": "2026-10-28T03:08:43Z",
+      "subject": "fix(desktop): run factory reset off the main thread (#9461)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "core/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/src/pages/changelog/2026-10-28-jan-v0.8.8.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/yarn.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "e2e/yarn.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/assistant-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/conversational-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/download-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/llamacpp-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/mlx-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/rag-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "extensions/vector-db-extension/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/download-bin.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/Cargo.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/build.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/jan-cli/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/handlers.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-agent-tools/src/tools/proc.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/tauri-plugin-llamacpp/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/plugins/yarn.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/agent/genai_bridge.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/agent/loop.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/agent/memory.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/agent/subagent.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/app/settings_store.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/mod.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/perf.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshot.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/agents_inspector_detail.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/agents_inspector_detail_rich.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/agents_inspector_list.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/grouped_shell_commands_narrow.snap",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/header_parked_waiting.snap",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/header_parked_watching.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/header_running_working_with_turn_and_cache.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/header_zero_cache_hit_ansi16.snap",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/parked_waiting_on_agents.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/shells_inspector_detail.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/shells_inspector_list.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/subagent_dock_cache_rates.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/subagent_dock_overflow.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/subagents_idle_frame.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/subagents_idle_narrow.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/subagents_idle_one_finished.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/subagents_idle_running.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/todo_panel_split_with_agents.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/todo_panel_stacked_narrow.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/transcript_backgrounded_shell_command.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/transcript_backgrounded_shell_command_open.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/transcript_folded_worked_summary.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/transcript_grouped_shell_commands.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/transcript_grouped_shell_commands_open.snap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src-tauri/src/core/cli/tui/tests/snapshots/transcript_grouped_shell_commands_running.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/cli/usage_view.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/server/converters.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/setup.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/core/system/commands.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/src/lib.rs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src-tauri/utils/Cargo.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-app/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-app/src/locales/en/settings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-app/src/routes/settings/__tests__/general.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-app/src/routes/settings/general.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-app/src/services/app/__tests__/tauri.coverage.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "web-app/src/services/app/tauri.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "yarn.lock",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

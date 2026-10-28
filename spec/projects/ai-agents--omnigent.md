@@ -36,6 +36,14 @@ The [MCP invocation path](https://github.com/omnigent-ai/omnigent/blob/fd7b58b26
 
 Teamagent should retain explicit session binding and failure classification, while requiring effect-specific retry policy and uncertain-effect receipts rather than automatic replay of arbitrary tools. The [formatter](https://github.com/omnigent-ai/omnigent/blob/fd7b58b267e40ce900598222b625bf88f5d1d688/omnigent/tools/mcp.py#L1731-L1796) preserves image envelopes and otherwise joins/serializes content without local output bounds. Schema enforcement, observer privacy, cache ownership, transport cancellation and remote idempotency remain unverified. No upstream code or tests were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `fd7b58b267e40ce900598222b625bf88f5d1d688` to `6f917a3e63d25dfe923da26cf208cb14e812f163`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [web/src/lib/toolValue.ts](https://github.com/omnigent-ai/omnigent/blob/6f917a3e63d25dfe923da26cf208cb14e812f163/web/src/lib/toolValue.ts#L267-L331), Tool-value rendering adds a conservative prose classifier: only description/body/comment/note/summary-like keys qualify, code/data-like key words take precedence, and JSON/XML/document-looking content is rejected as prose. Singular/plural normalization supports compound field names.
+
+**Harness implication and limits:** Render command, patch and output evidence literally instead of accidentally treating it as Markdown. This classifier is a display heuristic, not validation, sanitization or an authorization boundary; a benign field name cannot make arbitrary HTML safe. The rendering component, sanitizer and tool payload redaction were not reviewed, and no browser acceptance test was run. No upstream runtime or live provider behavior was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `fd7b58b267e40ce900598222b625bf88f5d1d688`; commit date 2026-10-27T10:48:40-07:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
+Analysis metadata: source [omnigent](https://github.com/omnigent-ai/omnigent); analyzed commit `6f917a3e63d25dfe923da26cf208cb14e812f163`; commit date 2026-10-28T10:07:29Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--omnigent.md).
 <!-- teamagent-analysis:end -->

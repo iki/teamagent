@@ -74,6 +74,14 @@ Validation: read pinned source and the cited fixture bodies; did not execute ups
 
 Related: [agents](../agents.md), [channels](../channels.md), [decisions](../decisions.md), [models](../models.md), [evolution](../evolution.md).
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `de50243885ff47e0dc9c26233327fe066befa684` to `986687b8fd46c996df8c561af40e005667555508`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [packages/server/src/server/agent/agent-manager.ts](https://github.com/getpaseo/paseo/blob/986687b8fd46c996df8c561af40e005667555508/packages/server/src/server/agent/agent-manager.ts#L1358-L1410), Lifecycle hook names now encode phase explicitly: agent.create.before and agent.create.after replace the previous mixed naming. The same delta renames archive/close notifications to after events and session opening to agent.open.before. Separately, subagent sheets carry concrete sheet-tab identity rather than a boolean presentation hint.
+
+**Harness implication and limits:** Version extension event names and distinguish a hook that may transform a proposed operation from a notification about recorded state. Migration requires compatibility tests for subscribers, not just producer renaming. The dispatcher, hook authorization, async error policy and UI back-navigation were not audited or executed; the oversized session implementation was outside capture. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [paseo](https://github.com/getpaseo/paseo); analyzed commit `de50243885ff47e0dc9c26233327fe066befa684`; commit date 2026-10-27T15:59:03Z; review date 2026-10-27T18:19:07.717Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paseo.md).
+Analysis metadata: source [paseo](https://github.com/getpaseo/paseo); analyzed commit `986687b8fd46c996df8c561af40e005667555508`; commit date 2026-10-28T17:04:52+07:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paseo.md).
 <!-- teamagent-analysis:end -->

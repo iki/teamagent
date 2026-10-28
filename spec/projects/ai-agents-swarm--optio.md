@@ -32,6 +32,14 @@ The [WebSocket authentication helper](https://github.com/jonwiggins/optio/blob/f
 
 The [authorization helper](https://github.com/jonwiggins/optio/blob/f2c557d476125429eb327019254fa5a2237902cf/apps/api/src/ws/ws-authz.ts) separates workspace equality, private ownership visibility and mutating-role requirements. Null workspace matching is explicitly a local-development case, and auth-disabled mode bypasses role enforcement. Adapt resource authorization for each WebSocket route and current membership checks; connection establishment does not establish per-message authorization or revocation of a long-lived stream. The separate raw-cookie extraction helper must not be mistaken for proof the cookie authenticated. No sessions, tokens, sockets or tests were exercised.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `f2c557d476125429eb327019254fa5a2237902cf` to `ec97d4e00326f61efbc01712ea4ae6df8038c4a4`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [apps/cli/src/local/program-status.ts](https://github.com/jonwiggins/optio/blob/ec97d4e00326f61efbc01712ea4ae6df8038c4a4/apps/cli/src/local/program-status.ts#L71-L162), The new terminal status parser accepts a bounded OSC payload, validates state/app/record-path fields, limits nesting, and decodes bounded base64 message/title values while rejecting control characters. Unknown keys are ignored, malformed pairs are skipped and repeated keys use their last value. Progress outside the recognized integer range remains indeterminate.
+
+**Harness implication and limits:** Structured terminal status is stronger display evidence than silence or text matching, but it remains untrusted process output. A reported done or permission-blocked state cannot establish task correctness or authorize a tool. Runtime identity, protocol-version compatibility and attention precedence need separate tests; no terminal integration was exercised. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [optio](https://github.com/jonwiggins/optio); analyzed commit `f2c557d476125429eb327019254fa5a2237902cf`; commit date 2026-10-26T20:58:35-06:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--optio.md).
+Analysis metadata: source [optio](https://github.com/jonwiggins/optio); analyzed commit `ec97d4e00326f61efbc01712ea4ae6df8038c4a4`; commit date 2026-10-27T16:32:23-06:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-swarm--optio.md).
 <!-- teamagent-analysis:end -->

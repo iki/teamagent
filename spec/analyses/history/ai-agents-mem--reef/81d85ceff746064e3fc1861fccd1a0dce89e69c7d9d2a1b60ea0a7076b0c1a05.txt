@@ -1,0 +1,52 @@
+# reef
+
+Source: [reef](https://github.com/Human-Agent-Society/reef) · Category: [ai-agents-mem](../categories/ai-agents-mem.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `297af97ab0483d0e52169b364c1be70a239453e8`; commit timestamp `2026-10-02T08:11:44Z`; 1,910 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/Human-Agent-Society/reef/blob/297af97ab0483d0e52169b364c1be70a239453e8/README.md)):
+
+> [](https://github.com/Human-Agent-Society/reef/actions/workflows/ci.yml) Reef is the first open-source infrastructure for continual self-improving agents.
+
+Build/package evidence: [docs/site/package.json](https://github.com/Human-Agent-Society/reef/blob/297af97ab0483d0e52169b364c1be70a239453e8/docs/site/package.json); [pyproject.toml](https://github.com/Human-Agent-Society/reef/blob/297af97ab0483d0e52169b364c1be70a239453e8/pyproject.toml); [recipes/basic/pyproject.toml](https://github.com/Human-Agent-Society/reef/blob/297af97ab0483d0e52169b364c1be70a239453e8/recipes/basic/pyproject.toml); [recipes/beta/coral/examples/coral_demo/pyproject.toml](https://github.com/Human-Agent-Society/reef/blob/297af97ab0483d0e52169b364c1be70a239453e8/recipes/beta/coral/examples/coral_demo/pyproject.toml); [recipes/beta/coral/examples/coral_demo/task/grader/pyproject.toml](https://github.com/Human-Agent-Society/reef/blob/297af97ab0483d0e52169b364c1be70a239453e8/recipes/beta/coral/examples/coral_demo/task/grader/pyproject.toml)
+
+License evidence: [LICENSE](https://github.com/Human-Agent-Society/reef/blob/297af97ab0483d0e52169b364c1be70a239453e8/LICENSE) Classification hint: Apache-2.0. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents-mem**. Its category places it in the candidate set for memory, evolution; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [evolution](../evolution.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**Remote execution reconnects to the same process, but relay admission and timeout cleanup need hard bounds.** Reviewed commit `5d4174bbebafd98d94cbad407d464cd2468309a6` (commit date `2026-10-27T20:25:24+08:00`). Compared with `297af97ab0483d0e52169b364c1be70a239453e8`; the complete Git comparison contains 1041 changed paths.
+
+The E2B adapter retries selected connection failures by reconnecting to the same process ID, avoiding side-effect replay. Its monotonic command deadline constrains reconnect attempts, and finally attempts process termination and result pullback; failed pullback after a finished command becomes a launch error. Upload happens before the command deadline, so this is not an end-to-end job budget. The session keeper extends sandbox life and stops on extension refusal; alias-based image reuse does not by itself verify immutable image contents.
+
+The relay authenticates tunnel operations with a shared secret, sequences response pieces and distinguishes interrupted chunked responses from a completed stream. However it reads the entire POST body before checking that secret, uses unbounded thread/queue/open-request structures and allows each response-piece wait up to an hour. A timeout waiting for the first piece returns before the later cleanup finally, leaving that request in open; waiting entries can also outlive their callers. The local lease watcher kills its own process group after owner-pipe closure only if still group leader, correctly documenting that this is lifecycle protection rather than a containment boundary. PipelineContext separately validates mode and positive non-boolean sample counts.
+
+Evidence: [reef/sandbox/e2b.py:46-64](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/e2b.py#L46-L64) · [reef/sandbox/e2b.py:173-194](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/e2b.py#L173-L194) · [reef/sandbox/e2b.py:236-307](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/e2b.py#L236-L307) · [reef/sandbox/relay.py:27-206](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/relay.py#L27-L206) · [reef/sandbox/lease.py:1-35](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/sandbox/lease.py#L1-L35) · [reef/pipeline_context.py:17-52](https://github.com/Human-Agent-Society/reef/blob/5d4174bbebafd98d94cbad407d464cd2468309a6/reef/pipeline_context.py#L17-L52).
+
+**Harness consequence:** Reuse same-process reconnect and explicit incomplete-stream semantics, with durable process identity, artifact receipts and uncertain-effect states. Authenticate before body admission, cap bytes/concurrency/queue depth and use one absolute request deadline with cleanup covering the initial wait. Budget staging and pullback independently, pin image digests and verify process-group/remote cancellation under real platform failure tests before adopting remote worker guarantees.
+
+**Scope and limits:** Static scoped review of new E2B reconnect/lifecycle, relay and lease code within the 1,041-path comparison. Remote helpers, upload/pull containment, cloud provider APIs, training stages and sandbox tests were not fully audited or executed; no remote resource was created.
+
+## Follow-up change review — 2026-10-28
+
+**Artifact production and activation become separate lifecycle decisions.** Reviewed commit `95a84466936f1cdffcb2a9264aadbeb91c5aa34a` (commit date `2026-10-28T09:59:36Z`), compared with `5d4174bbebafd98d94cbad407d464cd2468309a6`. The complete no-rename Git path inventory contains 455 changed paths.
+
+The new ActivationRule contract receives a validated MadeArtifact descriptor and distinguishes immediate activation from activation after an evaluation. Its base evaluated method returns false. The fixture suite specifies always, never and score-gated policies, with always as the default, while native-loop changes require review and missing evaluation scores activate nothing. Custom rule classes are executable plugins rather than inert configuration. This review establishes the contract and expected fixtures, not that every publishing path enforces it.
+
+Evidence: [reef/core/activation.py:19-60](https://github.com/Human-Agent-Society/reef/blob/95a84466936f1cdffcb2a9264aadbeb91c5aa34a/reef/core/activation.py#L19-L60) · [tests/evaluation/test_activation_rules.py:24-88](https://github.com/Human-Agent-Society/reef/blob/95a84466936f1cdffcb2a9264aadbeb91c5aa34a/tests/evaluation/test_activation_rules.py#L24-L88).
+
+**Harness consequence:** Keep candidate production, evaluation and active deployment as separate states for learned skills or models. Teamagent should require its own authorization/regression policy instead of inheriting an upstream always-activate default.
+
+**Scope and limits:** Reviewed the new activation contract and its rule/configuration fixtures; the full training committer, serving rollout and plugin loader were not audited or executed. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

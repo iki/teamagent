@@ -40,6 +40,18 @@ The [tool retry loop](https://github.com/microsoft/agent-framework/blob/981f70e3
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `4a272d2b8e96242a1e00783e833d42922a618d23` (commit date `2026-10-28T06:27:42Z`), compared with `981f70e3c7bb9d8062dd5e7eafbca1684c6a9a86`. Earlier findings remain historical evidence.
+
+**Scope:** Python chat-client context management and owned Gemini/Ollama transport cleanup. The complete changed-path inventory contains 34 paths; the assessment below is limited to the cited branches.
+
+The base chat client now exposes async context management, awaits asynchronous close implementations and permits legacy synchronous close hooks without suppressing exceptions. Its default close is a no-op and explicitly leaves caller-supplied resources open. The Gemini adapter records whether it created the client, closes both asynchronous and synchronous transports, and marks completion only after cleanup returns. See [python/packages/core/agent_framework/_clients.py](https://github.com/microsoft/agent-framework/blob/4a272d2b8e96242a1e00783e833d42922a618d23/python/packages/core/agent_framework/_clients.py#L319-L343) and [python/packages/gemini/agent_framework_gemini/_chat_client.py](https://github.com/microsoft/agent-framework/blob/4a272d2b8e96242a1e00783e833d42922a618d23/python/packages/gemini/agent_framework_gemini/_chat_client.py#L344-L361). The inspected Ollama delta applies the same ownership distinction to its underlying HTTP client.
+
+For Teamagent, express transport ownership in scoped services and preserve cleanup failures separately from task completion. These boolean closed flags are not concurrency locks and supply no independent deadline for an uncooperative SDK. Other provider adapters, concurrent requests and real transport release were not exercised.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-framework.ms](https://github.com/microsoft/agent-framework); analyzed commit `981f70e3c7bb9d8062dd5e7eafbca1684c6a9a86`; commit date 2026-10-27T15:46:45Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-framework.ms.md).
+Analysis metadata: source [agent-framework.ms](https://github.com/microsoft/agent-framework); analyzed commit `4a272d2b8e96242a1e00783e833d42922a618d23`; commit date 2026-10-28T06:27:42Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agent-framework.ms.md).
 <!-- teamagent-analysis:end -->

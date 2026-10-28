@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents--hermes-agent",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/NousResearch/hermes-agent",
+  "report": "spec/projects/ai-agents--hermes-agent.md",
+  "analyzedSha": "e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T08:02:46-07:00",
+  "observedSha": "8acb7f65801fa7548b223244dee57465adfda8ec",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "8acb7f65801fa7548b223244dee57465adfda8ec",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: an approval leader publishes its timeout before a follower can find it"
+    },
+    {
+      "sha": "aecf04f3d8a7d5753ac5990258d267e780502e7c",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: an answered Discord approval whose click edit fails still retires its card"
+    },
+    {
+      "sha": "e0e3349ed332f366ba2d91c98482e94778c86943",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "refactor: move the Discord exec-approval view into a sibling module"
+    },
+    {
+      "sha": "50f57a131fdd74d135cf790e1cbcaeec6ed91e4b",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: a stale Discord approval click leaves the card to the request's observer"
+    },
+    {
+      "sha": "e776cdff1899d5cfc31ab5942f4e39c3e1391469",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: coalesced approval followers wait the leader's captured timeout"
+    },
+    {
+      "sha": "8654f1a68417fca1463381ee8b21a031be06d5f9",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: answered Discord prompts release their view"
+    },
+    {
+      "sha": "b5caaf7b449e939cda14f5da6fe6612c5f93fe9d",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: a Discord approval card that settles mid-send shows how it ended"
+    },
+    {
+      "sha": "cfed2ca71ff20723929b3e73259a1d7cefee3450",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "refactor: pass the approval request id explicitly, not through platform metadata"
+    },
+    {
+      "sha": "ac50e08b54d290d82c65676ab950a4eae3c5c6c5",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: preserve resolved Discord observer after stale click"
+    },
+    {
+      "sha": "83653830e531023e29d1a8a3134150104fcbe6bb",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "test: expect expired Discord approval controls to be removed"
+    },
+    {
+      "sha": "39b2158afc6163db999fb423b44460eadc0f5f41",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: preserve configured Discord timeouts and retire approval views"
+    },
+    {
+      "sha": "4f86e97791f9e15ad1ce37281d6f163341e08b30",
+      "date": "2026-10-28T15:28:40+05:30",
+      "subject": "fix: align Discord approval buttons with request timeout"
+    },
+    {
+      "sha": "ee7e0f517232fb619c72e49d7e648436bddc598e",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "fix(desktop): a stale-target retry that sends nothing leaves a turn started meanwhile running"
+    },
+    {
+      "sha": "3248aa237e6f87f506aa65353d35f0669ecd13aa",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "test(desktop): the regenerate-after-switch test counts its confirm"
+    },
+    {
+      "sha": "7828ab375b804c94727ebf6e33b44fd33204ae28",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "perf(desktop): an older backend's deep-confirm rejection is remembered for the rest of the submit"
+    },
+    {
+      "sha": "7bb244217980df8079ed87b40a691cf02510d62b",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "test(desktop): pin each condition of the older-backend deep-confirm fallback"
+    },
+    {
+      "sha": "91832ef012e5806925d1b5a834cbc0962d3fa702",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "fix(desktop): a stale-target retry with no stored session restores the original history"
+    },
+    {
+      "sha": "c9c343c379136f4e3ab67c03d75a5b0aea625430",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "fix(desktop): an edit that fails after a runtime recovery leaves the composer idle"
+    },
+    {
+      "sha": "bb6ef0152e247761d26e50378ad1f98399cb9d40",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "test(desktop): cancel tests prove the refreshed history survives, row ids included"
+    },
+    {
+      "sha": "3380ab0ddfe410a046b9d40bd7bff432922881f3",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "fix(desktop): a stale-target retry warns when the turn moved and reports a rebound runtime"
+    },
+    {
+      "sha": "1df95a89434aa29101e0715efb308ef0138d2d96",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "refactor(desktop): a stale-target edit retry re-plans through planEditAfterConfirm"
+    },
+    {
+      "sha": "7d3ec73e85176f5122e7d537577bf8055765f04c",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "fix(desktop): the second deep confirm reads the session slice, and a cancel keeps the refreshed history"
+    },
+    {
+      "sha": "d17904cce6afdd0c4dddacf9883edb0f3d3f1188",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "test(desktop): pin deep-rewind ownership and retry consent"
+    },
+    {
+      "sha": "77e41501008e0d346a973d226c3b1e5c39daebf7",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "test(desktop): cover legacy deep-confirm fallback"
+    },
+    {
+      "sha": "05af6caef0e68e07ef10b12ed98545dd522659e2",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "fix(desktop): re-confirm expanded edit retries"
+    },
+    {
+      "sha": "7426fb7a5d846c77eaa4f0affcfd3ee73366ab64",
+      "date": "2026-10-28T12:20:29+05:30",
+      "subject": "fix(desktop): preserve rewinds on older backends"
+    },
+    {
+      "sha": "5938f04aacee521c07e6e896f68b9e33f33a3697",
+      "date": "2026-10-27T22:41:37-07:00",
+      "subject": "chore(catalog): review disclosure for severian"
+    },
+    {
+      "sha": "0d9afb4109f9fd71686267c571ae0c5d69cba0be",
+      "date": "2026-10-27T22:41:37-07:00",
+      "subject": "severian: re-pin to 0.3.13 (PyPI publication, secret-scope credentials, requires_env)"
+    },
+    {
+      "sha": "f88e83e90354e77ff0268ab7da2e9e88b6ac3c6f",
+      "date": "2026-10-27T22:41:37-07:00",
+      "subject": "Add severian to the plugin catalog (memory provider, community tier, v0.3.10)"
+    },
+    {
+      "sha": "07f075c291bac85a3ae0746ffbb9730b26b0ddc1",
+      "date": "2026-10-27T21:25:51-07:00",
+      "subject": "fix(webapp): a corrupt desktop-half marker timestamp is stale metadata, not an outage"
+    },
+    {
+      "sha": "c4173b0731d0f6a69bfd043a3dddfd8cf024f1b9",
+      "date": "2026-10-27T21:25:51-07:00",
+      "subject": "test(webapp): keep two invariants for the server-side desktop-half copy"
+    },
+    {
+      "sha": "a48dc5d24164f03618e15719a14e1dabf7925977",
+      "date": "2026-10-27T21:25:51-07:00",
+      "subject": "fix(webapp): stamp a desktop half's source mtime the way Node does"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "agent/codex_runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/message_metadata.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/message_sanitization.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/moa_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/prompt_builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/session_persistence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/skill_utils.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/transcript_repair.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_finalizer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "agent/turn_response_intake.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/e2e/connection-version-label.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/e2e/core/oracle.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/e2e/core/provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/e2e/core/reattach-running-turn.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/e2e/core/reply-tail-after-reconnect.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/e2e/core/tail-resync-merge.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/app-relaunch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/app-relaunch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/app-version.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-plugin-install.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-uninstall.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/desktop-uninstall.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/entry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/fs-probes.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/handoff-result.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/linux-gpu-fallback.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/linux-sandbox-relaunch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/linux-sandbox-relaunch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/local-runtime-version.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/local-runtime-version.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/local-skin.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/packaged-working-directory.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/packaged-working-directory.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/preload-version-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/preload.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/relaunch-target.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/relaunch-target.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/release-holder-consent.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/release-holder-consent.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/renderer-heap-flags.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/ui-preferences-ipc.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/ui-preferences.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/ui-preferences.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/update-handoff-report.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/update-handoff-report.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/update-stop-remedy.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/update-stop-remedy.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/updater-process.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/updater/checkout-handoff.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/updater/checkout-source.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/updater/checkout.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/updater/state-db-preflight.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/updater/state-db-preflight.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/updater/system-proxy-env.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/updater/system-proxy-env.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/updater/update-hosts.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/electron/url-filename.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/window-connection-route.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/electron/window-connection-route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/api/plugins.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/api/system.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/api/webapp-access.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/controls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-composer-draft.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-composer-metrics.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-composer-queue.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-composer-submit.send-then-close.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-composer-submit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/hooks/use-mic-recorder.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/composer/index.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/composer/touch-text-entry.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/composer/touch-text-entry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/new-session-tab.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/new-session-tab.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/reuse-draft-tab.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/reuse-draft-tab.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/right-rail/preview-artifact.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/right-rail/preview-pane.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/profile-dropdown-switcher.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/profile-switcher.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/sidebar/unserved-profiles.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/chat/transcript-backfill.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/transcript-receipt-turns.local-rows.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/transcript-receipt-turns.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/chat/transcript-receipt-turns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/command-center/maintenance.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/context-menu/app-context-menu.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/contrib/hooks/use-background-sync.stopped-turn.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/contrib/hooks/use-background-sync.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/contrib/wiring.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/gateway/hooks/use-gateway-boot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/hooks/use-keybinds-browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/hooks/use-keybinds.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/terminal-input-bindings.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/terminal-input-bindings.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/right-sidebar/terminal/terminal-session-attempt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/reconnect-resume-barrier.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/reload-resume-stream-target.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/resume-reattach-arming.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-background-queue-drain.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/settled-during-resume.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/interrupted-reply.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/receipt-user-rows.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/segment-identity-replay.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-message-stream/segment-identity.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-owner-queue-reconcile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/browser-manage-refusal.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/index.deep-cut.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/prompt-actions-harness.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/rewind.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/rewind.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/submit-admitted-conflict.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/submit.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-prompt-actions/utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-resume-reattach.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-resume-reattach.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-route-resume.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/committed-reply.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/committed-reply.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/message-equivalence.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/resume-barrier-reread.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/resume-latches.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/resume-reconcile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/settled-turns.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/utils-overlay-tool-calls.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/session/hooks/use-session-actions/utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/about-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/config-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/gateway-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/helpers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/helpers.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/memory/connect.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/settings/memory/memory-layers.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/settings/memory/memory-layers.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/memory/provider-config-panel.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/other-subpages.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-details.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/settings/plugin-install-modal.browser.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-modal.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/plugin-install-run.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/sessions-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/app/settings/use-plugin-probe.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/use-plugin-probe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/web-access-settings.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/settings/web-access-settings.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/shell/titlebar-controls.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/shell/use-touch-titlebar.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/types.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/app/updates-overlay.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "apps/desktop/src/components/assistant-ui/clarify/clarify-one-card-per-question.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/assistant-ui/clarify/clarify-tool.test.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "apps/desktop/src/components/assistant-ui/clarify/index.tsx",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

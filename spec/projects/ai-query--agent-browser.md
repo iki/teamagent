@@ -39,6 +39,18 @@ Evidence: [cli/src/native/auth.rs:57-175](https://github.com/vercel-labs/agent-b
 
 **Scope and limits:** Static scoped review of key-generation refusal and inspect-proxy origin/lifecycle within the 210-path comparison; selected embedded fixture bodies read. Full profile persistence, CDP transport, browser/TLS behavior and operating-system permissions were not audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Mock response CORS is origin-specific unless the caller supplies its own headers.** Reviewed commit `5801a50d262a4d3e1a2381996a962b22000d8289` (commit date `2026-10-27T20:33:32-03:00`), compared with `edb40f1878864f90e14f6c11e26fdafd3fecc8dc`. The complete no-rename Git path inventory contains 24 changed paths.
+
+The new response builder infers JSON content type only when no explicit type exists, adds generated CORS headers only for the configured allowed origin, and handles its preflight with an empty 204 response. Header lookup is case-insensitive. Explicit caller CORS headers remain authoritative, including a wildcard; therefore this helper is not a universal restriction on caller-specified headers. Its new fixtures cover unrelated origins and duplicate-header avoidance.
+
+Evidence: [cli/src/native/actions.rs:12152-12233](https://github.com/vercel-labs/agent-browser/blob/5801a50d262a4d3e1a2381996a962b22000d8289/cli/src/native/actions.rs#L12152-L12233) · [cli/src/native/actions.rs:19010-19151](https://github.com/vercel-labs/agent-browser/blob/5801a50d262a4d3e1a2381996a962b22000d8289/cli/src/native/actions.rs#L19010-L19151).
+
+**Harness consequence:** Scope browser test mocks to the intended origin and disclose explicit overrides. Mock CORS behavior is not authorization for external requests, nor evidence that a real target permits a cross-origin action.
+
+**Scope and limits:** Reviewed the new mock-response helper and selected in-file fixtures; browser execution and the entire native action surface were not tested. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-browser](https://github.com/vercel-labs/agent-browser); analyzed commit `edb40f1878864f90e14f6c11e26fdafd3fecc8dc`; commit date 2026-10-26T17:16:54-03:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--agent-browser.md).
+Analysis metadata: source [agent-browser](https://github.com/vercel-labs/agent-browser); analyzed commit `5801a50d262a4d3e1a2381996a962b22000d8289`; commit date 2026-10-27T20:33:32-03:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--agent-browser.md).
 <!-- teamagent-analysis:end -->

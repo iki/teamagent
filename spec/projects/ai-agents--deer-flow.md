@@ -36,6 +36,18 @@ The [channel base](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd
 
 The [sandbox detector](https://github.com/bytedance/deer-flow/blob/fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7/scripts/sandbox-mode.sh#L1-L43) openly supports only a narrow block-mapping syntax and defaults missing/unknown configurations to local mode. It does not validate URLs, YAML aliases or actual isolation. Teamagent should retain explicit unsupported attachments, bounded intake and real task ownership, while separately validating channel identity/binding, durable receipt semantics and runtime enforcement. No channel, shell script, provider, attachment transfer or upstream test was executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `f79debed59ca6b1a31628e6b5ce55c8507793a4c` (commit date `2026-10-28T14:00:34+08:00`), compared with `fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7`. Earlier findings remain historical evidence.
+
+**Scope:** DingTalk card token acquisition adapter. The complete changed-path inventory contains 26 paths; the assessment below is limited to the cited branches.
+
+Card creation and streaming now obtain the channel's access token before invoking the SDK replier. A narrow client serves only that already acquired value, preventing the replier from taking its own synchronous token-refresh path on the gateway event loop. See [backend/app/channels/dingtalk.py](https://github.com/bytedance/deer-flow/blob/f79debed59ca6b1a31628e6b5ce55c8507793a4c/backend/app/channels/dingtalk.py#L1250-L1292) and [backend/app/channels/dingtalk.py](https://github.com/bytedance/deer-flow/blob/f79debed59ca6b1a31628e6b5ce55c8507793a4c/backend/app/channels/dingtalk.py#L1321-L1338).
+
+For Teamagent, keep authentication acquisition under the host's asynchronous resource owner instead of allowing hidden SDK refresh behavior. This adapter does not itself establish a bounded card-send lifetime, authenticated delivery or credential-generation fencing. The existing channel token provider, MCP changes and artifact preview loaders were not re-audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `fb553747d1d6fa9fd0d5f55729895cfe2e8d15f7`; commit date 2026-10-27T22:19:33+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
+Analysis metadata: source [deer-flow](https://github.com/bytedance/deer-flow); analyzed commit `f79debed59ca6b1a31628e6b5ce55c8507793a4c`; commit date 2026-10-28T14:00:34+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deer-flow.md).
 <!-- teamagent-analysis:end -->

@@ -39,6 +39,18 @@ Evidence: [go/store/nbs/store.go:2083-2127](https://github.com/dolthub/dolt/blob
 
 **Scope and limits:** Static selected chunk-validation, node-value assembly and Git-fetch implementation/diff review within the 259-path comparison, including two fixture bodies. Complete NBS admission call graph, byte-reuse implementation, database correctness and performance were not audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Unique-key preparation is moved into validation and mutable builders are reset between rows.** Reviewed commit `59a0910c01389983554fead8982347c13c6b3c77` (commit date `2026-10-27T18:41:10-04:00`), compared with `19e0999a01bafac851ba7a80aa03a2d96879070a`. The complete no-rename Git path inventory contains 6 changed paths.
+
+The keyless secondary writer now performs unique checks through ValidateKeyViolations, recycles key/prefix builders before preparing fields, and reuses prepared fields for insertion. Deletion resets its builder after a rejected validation; update explicitly validates the new row before insertion. The foreign-key delta corrects a comment and adds tests showing that names participate in equality while table/index names do not. This source read does not establish transactional rollback across the writer stack.
+
+Evidence: [go/libraries/doltcore/sqle/writer/prolly_index_writer_keyless.go:243-296](https://github.com/dolthub/dolt/blob/59a0910c01389983554fead8982347c13c6b3c77/go/libraries/doltcore/sqle/writer/prolly_index_writer_keyless.go#L243-L296) · [go/libraries/doltcore/sqle/writer/prolly_index_writer_keyless.go:377-435](https://github.com/dolthub/dolt/blob/59a0910c01389983554fead8982347c13c6b3c77/go/libraries/doltcore/sqle/writer/prolly_index_writer_keyless.go#L377-L435) · [go/libraries/doltcore/doltdb/foreign_key_coll_test.go:47-93](https://github.com/dolthub/dolt/blob/59a0910c01389983554fead8982347c13c6b3c77/go/libraries/doltcore/doltdb/foreign_key_coll_test.go#L47-L93).
+
+**Harness consequence:** A reusable mutable encoder needs explicit reset and prepare/commit sequencing. Validate conflicts before mutation and test failure followed by reuse; do not infer transaction atomicity solely from a local validation method.
+
+**Scope and limits:** Reviewed keyless writer changes and foreign-key equality fixtures in the six-path delta; the updated SQL-engine dependency was not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [dolt](https://github.com/dolthub/dolt); analyzed commit `19e0999a01bafac851ba7a80aa03a2d96879070a`; commit date 2026-10-27T12:38:25Z; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--dolt.md).
+Analysis metadata: source [dolt](https://github.com/dolthub/dolt); analyzed commit `59a0910c01389983554fead8982347c13c6b3c77`; commit date 2026-10-27T18:41:10-04:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--dolt.md).
 <!-- teamagent-analysis:end -->

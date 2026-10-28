@@ -1,0 +1,880 @@
+{
+  "id": "ai-agents-mem--beads",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/gastownhall/beads",
+  "report": "spec/projects/ai-agents-mem--beads.md",
+  "analyzedSha": "43f41374a34d82ecf40903451eea277fbb4f1e75",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T09:51:28Z",
+  "observedSha": "93531223bb96262627c864cdbab4a6bc8be7c53d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "93531223bb96262627c864cdbab4a6bc8be7c53d",
+      "date": "2026-10-28T10:00:15Z",
+      "subject": "feat(storage): retaining sweeps retire ids with permanent tombstones (BD-6) (#7931)"
+    },
+    {
+      "sha": "e46de42b3c598661a5e2f40e68401c17d85f3564",
+      "date": "2026-10-28T07:33:31Z",
+      "subject": "fix(create): read a --file batch's ### Deps with the --deps grammar (#7508) (#7928)"
+    },
+    {
+      "sha": "5a3b72034112629634ec0e6ff453cfb6ff616219",
+      "date": "2026-10-28T07:21:30Z",
+      "subject": "fix(mcp): report reopen of an issue that is not closed (#7927)"
+    },
+    {
+      "sha": "fda3ccb59b615009e6753f7852f4041739318e62",
+      "date": "2026-10-28T07:09:58Z",
+      "subject": "fix(security): pass-3 dependency and toolchain updates (eMudhra follow-up + Oct-27 advisories) (#7925)"
+    },
+    {
+      "sha": "e1ad3a934d9e42ffee58daf7b5a3f4871bcdaf62",
+      "date": "2026-10-28T06:02:14Z",
+      "subject": "fix(storage): list and count dependency edges once across wisp plane states (#7776)"
+    },
+    {
+      "sha": "2f7699c49a19bcbbab7c52f2e28004976014a6b2",
+      "date": "2026-10-28T05:48:52Z",
+      "subject": "fix(storage): stop the close-gate walk reading a closed or pinned parent's stale bit (#7924)"
+    },
+    {
+      "sha": "a3b525802b44fea1b068fd81bfbdbc377361d1cc",
+      "date": "2026-10-28T05:46:18Z",
+      "subject": "fix(dolt): explain Dolt's remote dangling-reference refusal on bd dolt push, bd sync and auto-push (#7910)"
+    },
+    {
+      "sha": "ce8fe248a3fe698c0c5be62ad7b8b443742b20d2",
+      "date": "2026-10-28T05:42:57Z",
+      "subject": "test(list): pin bd commands alongside an embedded bd list --watch --parent (#7911)"
+    },
+    {
+      "sha": "8977ea1beaf068da28e11f2a774f3dc136274be2",
+      "date": "2026-10-28T05:42:26Z",
+      "subject": "test(bd): pin the reworded dolt start help in the command-tree golden (#7904)"
+    },
+    {
+      "sha": "7833e4efc5fc17126a927913c9f6c4eda3fb4985",
+      "date": "2026-10-28T05:40:56Z",
+      "subject": "docs(config): state no-git-ops scope; document dolt.local-only (GH#3463) (#7908)"
+    },
+    {
+      "sha": "5011528b3ad551eefcd744f8f80e55d1fbc6c09d",
+      "date": "2026-10-27T19:17:28Z",
+      "subject": "feat(storage): commit-stamped create sequence (arrival_seq) on every backend (BD-5) (#7912)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/scripts/embedded-cmd-test-shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/embedded-storage-test-shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/proxied-cmd-test-shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/scripts/server-storage-test-shards.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/bazel.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/test-pypi.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/conformance.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/descendants_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/id_retention_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "backend/conformance/journal_arrival_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/journal_contract.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/role_bundle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/conformance/role_bundle_cases.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "backend/errors_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "beads.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/arrival_seq_json_e2e_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/auto_import_upgrade.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/auto_import_upgrade_embedded_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/auto_import_upgrade_unit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/create.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/create_markdown_batch_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/create_proxied_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/create_proxied_server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/create_retired_id.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/doctor/dolt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/doctor/integrity_cycles_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/dolt.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/dolt_autopush.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/dolt_autopush_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/dolt_help_auth_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/dolt_push_dangling_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/events_journal_construction_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/export.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/export_auto.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/export_clone_local_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/import.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/import_proxied_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/import_shared.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/import_shared_unit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/list.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/list_embedded_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/list_input.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/list_parent_descendants_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/list_proxied_server.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/list_show_filter_modes.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/list_watch_embedded_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/list_watch_loop_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/markdown.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/prune.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/purge.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/purge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/retain_ids_embedded_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "cmd/bd/retain_ids_proxied_integration_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/shared_store_migrate_gate_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/show_display.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/show_watch_loop_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/store_factory.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/store_factory_nocgo.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/store_factory_server_mode.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/sync.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "cmd/bd/testdata/command_tree/tree.golden",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "default.nix",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/core-concepts/dependencies.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/recovery/sync-failures.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/configuration.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/reference/events-journal.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/workflows/wisps.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "engdocs/design/http-divergence-ledger.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/bd-example-extension-go/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/bd-example-extension-go/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/library-usage/go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/library-usage/go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/src/beads_mcp/bd_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/src/beads_mcp/models.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/src/beads_mcp/server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/src/beads_mcp/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/tests/test_bd_client.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/tests/test_mcp_server_integration.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/tests/test_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "integrations/beads-mcp/uv.lock",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/apigen/types.gen.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/httpapi/arrival_seq_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/batch_apply.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/batch_apply_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/create.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/create_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/problem.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/routes.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/server_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/spec/openapi.v0.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/sweep.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/sweep_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpapi/wireshape/testdata/golden.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/bulk_roles_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/encode/ledger.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/encode/parentwalk.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/encode/parentwalk_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/lifecycle.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/resolve.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/served_bridge_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/served_bulk_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/httpclient/served_id_retention_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/served_journal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/sweeper.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/wire/handshake.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/wire/problem.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/wire/problem_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/wire/vocabulary_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/httpclient/write_ledger_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/migration/legacysqlite/reader.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/batch.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/createbatchequiv/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/createbatchequiv/createbatchequiv.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/createbatchequiv/golden/retired.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/createbatchequiv/golden/settled.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/createbatchequiv/scenario_retired.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/createbatchequiv/scenario_settled.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dberrors/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dberrors/pushrefusal.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dberrors/pushrefusal_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/descendants.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/BUILD.bazel",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/blocked_consistency_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/counts.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dolt/demote_coordination_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/dependencies.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/ephemeral_routing.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dolt/id_retention_contract_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/issues.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/iter_dependents.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/journal_contract_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/large_batch_apply_measure_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dolt/migration_0073_rollback_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/queries.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dolt/readable_schema_open_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/ready_claimer.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/schema_parity_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/store.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/store_unit_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/sweeper.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/sweeper_contract_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dolt/sweeper_retry_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/versioned.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "internal/storage/dolt/wisp_plane_states_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "internal/storage/dolt/wisps.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

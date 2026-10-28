@@ -60,6 +60,14 @@ Validation: inspected pinned Git objects, implementation branches and the cited 
 
 Related: [agents](../agents.md), [models](../models.md), [decisions](../decisions.md), [channels](../channels.md), [evolution](../evolution.md), [media processing](../media-processing.md).
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `b3a29f1111114fac696e2cfcd65acdb382a6ed5e` to `9628c84809ab657ff47237bc63e3052cac4587fa`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [packages/durable/src/session/transaction.ts](https://github.com/earendil-works/pi/blob/9628c84809ab657ff47237bc63e3052cac4587fa/packages/durable/src/session/transaction.ts#L1178-L1197), Durable document publication now discriminates kind:retire from kind:change. A retirement contains identity/record fields without invented value/version/operation fields; a change carries its actual version, value and operations. Held-operation publication in the same delta attaches operations only to changes.
+
+**Harness implication and limits:** Represent tombstones and updates as distinct event variants. Replaying a retirement as a null update can retain an invalid incarnation or fabricate operations; consumers and stored schema migrations need explicit exhaustive handling. This producer inspection does not establish all subscriber behavior, transaction durability or backward compatibility. No Pi runtime, persistence fixture or provider call was executed. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [pi](https://github.com/earendil-works/pi); analyzed commit `b3a29f1111114fac696e2cfcd65acdb382a6ed5e`; commit date 2026-10-27T16:57:59Z; review date 2026-10-27T18:19:07.717Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--pi.md).
+Analysis metadata: source [pi](https://github.com/earendil-works/pi); analyzed commit `9628c84809ab657ff47237bc63e3052cac4587fa`; commit date 2026-10-28T12:12:19+02:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--pi.md).
 <!-- teamagent-analysis:end -->

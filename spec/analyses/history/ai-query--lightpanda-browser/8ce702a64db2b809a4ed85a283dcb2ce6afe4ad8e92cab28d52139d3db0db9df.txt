@@ -1,0 +1,52 @@
+# lightpanda-browser
+
+Source: [lightpanda-browser](https://github.com/lightpanda-io/browser) · Category: [ai-query](../categories/ai-query.md)
+
+Review depth: **inventory / README screening only**. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `6fbbeeec369b1ff293374d45a3799bdbc7551a44`; commit timestamp `2026-10-03T16:02:42+08:00`; 1,213 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/lightpanda-io/browser/blob/6fbbeeec369b1ff293374d45a3799bdbc7551a44/README.md)):
+
+> The headless browser built from scratch for AI agents and automation. Not a Chromium fork. Not a WebKit patch. A new browser, written in Zig.
+
+Build/package evidence: [src/rust/Cargo.toml](https://github.com/lightpanda-io/browser/blob/6fbbeeec369b1ff293374d45a3799bdbc7551a44/src/rust/Cargo.toml); [src/rust/ffi/Cargo.toml](https://github.com/lightpanda-io/browser/blob/6fbbeeec369b1ff293374d45a3799bdbc7551a44/src/rust/ffi/Cargo.toml); [src/rust/html5ever/Cargo.toml](https://github.com/lightpanda-io/browser/blob/6fbbeeec369b1ff293374d45a3799bdbc7551a44/src/rust/html5ever/Cargo.toml); [src/rust/render/Cargo.toml](https://github.com/lightpanda-io/browser/blob/6fbbeeec369b1ff293374d45a3799bdbc7551a44/src/rust/render/Cargo.toml)
+
+License evidence: [LICENSE](https://github.com/lightpanda-io/browser/blob/6fbbeeec369b1ff293374d45a3799bdbc7551a44/LICENSE) Classification hint: AGPL; inspect version. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-query**. Its category places it in the candidate set for memory, import-generation, decisions; those associations are navigational and have not been individually validated as implemented capabilities. See [memory](../memory.md) · [import-generation](../import-generation.md) · [decisions](../decisions.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+
+## Change review - 2026-10-28
+
+**WebMCP interaction callbacks do not provide consent and model catalogs remain advisory.** Reviewed commit `92eb451400b589e5bcd2c0fa362504c14afc0db2` (commit date `2026-10-27T16:52:13+01:00`). Compared with `6fbbeeec369b1ff293374d45a3799bdbc7551a44`; the complete Git comparison contains 1079 changed paths.
+
+ModelContext registration validates tool-name syntax/length, rejects duplicate names and empty descriptions, supports pre-aborted no-op registration and dispatches removal notifications when a tool's signal fires. It retains caller-provided inputSchema and annotations without validating their semantics or bounding tool count/description size here. In this headless implementation, requestUserInteraction directly invokes the supplied JavaScript callback and resolves its result. This is an execution convenience, not observed human permission; readOnlyHint and autoSubmitHint are stored hints.
+
+The provider auth store bounds reads to 64 KiB and atomically replaces a 0600 JSON file, but maps unreadable/malformed state to empty and performs read-modify-write without cross-process serialization. Refresh preserves the displaced access token for borrowers, tolerates refresh errors while the old token is valid and continues after persistence failure with a warning. The models.dev adapter uses a 24-hour disk cache and filters catalog entries by tool_call; refresh failures silently return stale IDs. Its HTTP catalog body has no explicit size/deadline bound in this function. Catalog membership cannot prove account access, actual model capabilities or current availability.
+
+Evidence: [src/agent/auth/auth.zig:1-296](https://github.com/lightpanda-io/browser/blob/92eb451400b589e5bcd2c0fa362504c14afc0db2/src/agent/auth/auth.zig#L1-L296) · [src/agent/auth/models_dev.zig:1-114](https://github.com/lightpanda-io/browser/blob/92eb451400b589e5bcd2c0fa362504c14afc0db2/src/agent/auth/models_dev.zig#L1-L114) · [src/browser/webapi/ModelContext.zig:1-234](https://github.com/lightpanda-io/browser/blob/92eb451400b589e5bcd2c0fa362504c14afc0db2/src/browser/webapi/ModelContext.zig#L1-L234).
+
+**Harness consequence:** Keep deterministic host authorization outside page tool hints and browser callback APIs. Bound registry growth, decode tool schemas and attach scope/origin identity before exposing page tools. Treat subscription credentials as sensitive host state with serialized updates and explicit persistence degradation; keep model catalog age/source separate from measured capability and entitlement checks.
+
+**Scope and limits:** Scoped static review of three complete cached auth/catalog/WebMCP files and their embedded fixtures in the 1,079-path comparison. OAuth provider implementation, actual invocation policy, browser compatibility, network cache and platform permission behavior were not audited or run. No login, model or network request was made.
+
+## Follow-up change review — 2026-10-28
+
+**Selector changes affect both matching cost and semantic compatibility.** Reviewed commit `c1869f404889bd8f1037f25f533e010cba69d96c` (commit date `2026-10-28T16:47:36+08:00`), compared with `92eb451400b589e5bcd2c0fa362504c14afc0db2`. The complete no-rename Git path inventory contains 92 changed paths.
+
+The subsequent-sibling matcher now stops after the first qualifying sibling when the preceding combinator does not require testing each candidate's own neighbor. Required/optional pseudo-classes no longer reduce to raw attribute presence: required checks applicable input types or select/textarea, and optional excludes unrelated elements. These source changes do not establish broad Chromium parity.
+
+Evidence: [src/browser/webapi/selector/List.zig:303-343](https://github.com/lightpanda-io/browser/blob/c1869f404889bd8f1037f25f533e010cba69d96c/src/browser/webapi/selector/List.zig#L303-L343) · [src/browser/webapi/selector/List.zig:580-605](https://github.com/lightpanda-io/browser/blob/c1869f404889bd8f1037f25f533e010cba69d96c/src/browser/webapi/selector/List.zig#L580-L605) · [src/browser/webapi/selector/List.zig:642-651](https://github.com/lightpanda-io/browser/blob/c1869f404889bd8f1037f25f533e010cba69d96c/src/browser/webapi/selector/List.zig#L642-L651).
+
+**Harness consequence:** Treat browser backend compatibility as fixture-specific. Exercise the exact selectors a task uses, and keep semantic regressions separate from performance claims when choosing a fast headless backend.
+
+**Scope and limits:** Reviewed the complete changed selector hunks against the target blob; no browser, conformance suite or performance benchmark was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.

@@ -1,0 +1,195 @@
+{
+  "id": "ai-agents--adk-go",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/google/adk-go",
+  "report": "spec/projects/ai-agents--adk-go.md",
+  "analyzedSha": "19707a2660a8dd7b8ffb32837027253ed2f29dd1",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T13:06:04+01:00",
+  "observedSha": "4bd9638d01cfe49df79c196d3322b2b451e34ed8",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "4bd9638d01cfe49df79c196d3322b2b451e34ed8",
+      "date": "2026-10-28T10:19:21+01:00",
+      "subject": "fix(agentanalytics): pause run-end uploads when any batch's upload stalls (#1955)"
+    },
+    {
+      "sha": "59042e5565ff5595eecbf9df01ebbf13d7e5874c",
+      "date": "2026-10-28T10:08:01+01:00",
+      "subject": "docs(artifact): deprecate SaveRequest.Version (#1985)"
+    },
+    {
+      "sha": "e0407070d6bc213624e76eedf2f777910c901c4a",
+      "date": "2026-10-28T09:56:15+01:00",
+      "subject": "feat(model/anthropicmodel): add Anthropic Claude model support (#1866)"
+    },
+    {
+      "sha": "b7049b87a9e6878912b8a116a370497ee65190ed",
+      "date": "2026-10-27T21:29:24+01:00",
+      "subject": "fix(agentanalytics): report the right terminal row in more failure cases (#1952)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "artifact/service.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/anthropic/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/anthropic/main.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.mod",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "go.sum",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/anthropicmodel.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/anthropicmodel_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/cache.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/doc.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/errors.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/request.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/response.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/stream.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/testdata/TestAgentRunner_MultiTurnImageAndTool.httprr",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/testdata/TestGenerate_Anthropic.httprr",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/testdata/TestGenerate_Vertex.httprr",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/thinking.go",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "model/anthropicmodel/tools.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/batch_processor.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/batch_processor_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/bigquery_agent_analytics_plugin.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/config.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/gcs_offloader.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/gcs_offloader_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/json_formatter.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/late_callbacks_test.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/trace_manager.go",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugin/agentanalytics/trace_manager_test.go",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

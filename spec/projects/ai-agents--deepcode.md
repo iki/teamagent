@@ -38,6 +38,18 @@ The [completion-evidence option](https://github.com/HKUDS/DeepCode/blob/cd7ab47d
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `b017ea3e097fdb8375574ccd39d6cdb7caf4c986` (commit date `2026-10-28T13:01:03+08:00`), compared with `cd7ab47d09cf059cca391f84b900234baff6b3d3`. Earlier findings remain historical evidence.
+
+**Scope:** Agent-preset deny-list parsing, composition and runtime identity. The complete changed-path inventory contains 15 paths; the assessment below is limited to the cited branches.
+
+Preset deny lists are subtracted from an optional allowlist and included in the snapshot fingerprint. All supported deny-key spellings are merged; unsupported wildcard or argument-pattern restrictions make the preset broken rather than disappearing. Denying a file-writing tool also denies apply_patch. See [core/agent_presets/__init__.py](https://github.com/HKUDS/DeepCode/blob/b017ea3e097fdb8375574ccd39d6cdb7caf4c986/core/agent_presets/__init__.py#L160-L188), [core/agent_presets/__init__.py](https://github.com/HKUDS/DeepCode/blob/b017ea3e097fdb8375574ccd39d6cdb7caf4c986/core/agent_presets/__init__.py#L197-L216) and [core/agent_presets/__init__.py](https://github.com/HKUDS/DeepCode/blob/b017ea3e097fdb8375574ccd39d6cdb7caf4c986/core/agent_presets/__init__.py#L390-L427).
+
+For Teamagent, imported skills must state which restrictions the host can enforce, reject unsupported constraints and invalidate cached execution context when those restrictions change. Name-level filtering is not complete authorization of effects reachable through other tools, and metadata deserialization still coerces list entries to strings. Provider cache-marker changes and the runtime effect gate were not fully audited.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [deepcode](https://github.com/HKUDS/DeepCode); analyzed commit `cd7ab47d09cf059cca391f84b900234baff6b3d3`; commit date 2026-10-27T02:07:15+08:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepcode.md).
+Analysis metadata: source [deepcode](https://github.com/HKUDS/DeepCode); analyzed commit `b017ea3e097fdb8375574ccd39d6cdb7caf4c986`; commit date 2026-10-28T13:01:03+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--deepcode.md).
 <!-- teamagent-analysis:end -->

@@ -17,6 +17,18 @@ Evidence: [README.md:1-44](https://github.com/helixdb/helix-foundry/blob/9d7fda4
 
 **Scope and limits:** Initial scoped architecture review of graph-job persistence, proxy admission and related fixtures within a 1,026-path tree. No Go tests, MySQL/HelixDB deployment, local Docker setup, connector sync, ontology quality or live authorization test. Graph query semantics, extraction prompts and complete cross-store atomicity remain outside this pass.
 
+## Follow-up change review — 2026-10-28
+
+**Model discovery distinguishes a found configuration from proven readiness only partially.** Reviewed commit `ed93e1580adb5f938647f58b8a15d3714a74ac27` (commit date `2026-10-27T20:44:25Z`), compared with `9d7fda40af9ac9685777676052e23e3b76786224`. The complete no-rename Git path inventory contains 62 changed paths.
+
+The new detector serializes overlapping discovery, caps an overall attempt at 15 seconds, individual calls at two/four seconds, model detail count at 64 and response decoding at 4 MiB. It prefers configured Anthropic/OpenAI keys, then probes local Ollama/LM Studio candidates and optionally applies a deployment Check. A rejected key changes the explanation but still returns that provider/key as the default; a network failure is likewise not a refusal. This behavior is useful discovery evidence but cannot be adopted as authenticated readiness or non-training policy verification.
+
+Evidence: [backend/ai/detect/detect.go:60-69](https://github.com/helixdb/helix-foundry/blob/ed93e1580adb5f938647f58b8a15d3714a74ac27/backend/ai/detect/detect.go#L60-L69) · [backend/ai/detect/detect.go:128-178](https://github.com/helixdb/helix-foundry/blob/ed93e1580adb5f938647f58b8a15d3714a74ac27/backend/ai/detect/detect.go#L128-L178) · [backend/ai/detect/detect.go:181-232](https://github.com/helixdb/helix-foundry/blob/ed93e1580adb5f938647f58b8a15d3714a74ac27/backend/ai/detect/detect.go#L181-L232) · [backend/ai/detect/detect.go:579-604](https://github.com/helixdb/helix-foundry/blob/ed93e1580adb5f938647f58b8a15d3714a74ac27/backend/ai/detect/detect.go#L579-L604).
+
+**Harness consequence:** Keep passive discovery, authenticated diagnostics, model compatibility and effective account policy as separate states. Discovery must not upload task content or select a route before mandatory policy gates, and an unusable key must remain visibly unready.
+
+**Scope and limits:** Reviewed detector selection, limits and HTTP decoding; no local server or provider was contacted, and the full deployment validator was not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [helix-foundry](https://github.com/helixdb/helix-foundry); analyzed commit `9d7fda40af9ac9685777676052e23e3b76786224`; commit date 2026-10-27T17:12:10Z; review date 2026-10-28T09:45:33.667Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--helix-foundry.md).
+Analysis metadata: source [helix-foundry](https://github.com/helixdb/helix-foundry); analyzed commit `ed93e1580adb5f938647f58b8a15d3714a74ac27`; commit date 2026-10-27T20:44:25Z; review date 2026-10-28T14:52:35.205Z; depth reviewed. [Maintenance record](../repos/ai-agents-mem--helix-foundry.md).
 <!-- teamagent-analysis:end -->

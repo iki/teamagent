@@ -42,6 +42,14 @@ The [budget handoff recheck](https://github.com/paperclipai/paperclip/blob/50b93
 
 The [CLI approval page](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/ui/src/pages/CliAuth.tsx#L24-L69) retries only rate-limited challenge reads, with retry count and expiry/window limits; approve/cancel are explicit mutations. It carries the challenge token in the URL, query key and encoded sign-in return path. The [approval explanation](https://github.com/paperclipai/paperclip/blob/50b932a142216331b8d476042b454bc123739c40/ui/src/pages/CliAuth.tsx#L147-L208) says the client requests full board access and labels the organization as audit context, which must not be misread as an organization-scoped grant. Server token expiry, one-time consumption, identity checks and URL/log privacy were not established here. Teamagent should keep sensitive approval state outside public URLs and independently enforce grants. No upstream/browser/database tests or provider calls were run.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `50b932a142216331b8d476042b454bc123739c40` to `cff331f6ca0a652b5e41641c68dfa5fa584c22ae`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [server/src/services/budgets.ts](https://github.com/paperclipai/paperclip/blob/cff331f6ca0a652b5e41641c68dfa5fa584c22ae/server/src/services/budgets.ts#L255-L305), Budget-driven approval updates now notify approval work before recording the status. Company pause/resume paths also notify retention work alongside lifecycle/skill-source queues. The service explicitly requires its caller to hold the company accounting transaction lock.
+
+**Harness implication and limits:** Budget and approval transitions must wake all affected workers through transaction-aware delivery rather than relying on polling alone. The call order does not prove durable notification or commit ordering: the notification helpers, enclosing transaction and consumers were not audited. Verify rollback, duplicate wakeups and workers observing only committed state before adopting this pattern. No database workload or upstream test was run. This static review does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `50b932a142216331b8d476042b454bc123739c40`; commit date 2026-10-27T12:30:50-05:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
+Analysis metadata: source [paperclip](https://github.com/paperclipai/paperclip); analyzed commit `cff331f6ca0a652b5e41641c68dfa5fa584c22ae`; commit date 2026-10-28T02:05:36-05:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--paperclip.md).
 <!-- teamagent-analysis:end -->

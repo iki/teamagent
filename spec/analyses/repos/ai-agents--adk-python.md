@@ -2,12 +2,11 @@
 
 Source: [adk-python](https://github.com/google/adk-python) · [Analysis](../../projects/ai-agents--adk-python.md) · [agents](../../agents.md), [models](../../models.md), [channels](../../channels.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **observation-stale**. Reviewed SHA: `0e5d6c963cb6935ff1c28535f167c96a96746ad4`; commit date: 2026-10-27T10:54:12-07:00; review date: 2026-10-28T08:47:42.123Z; observed SHA: `0e5d6c963cb6935ff1c28535f167c96a96746ad4`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `1d81896aa081e7b2e50b3a4a227f7c6933805752`; commit date: 2026-10-27T23:24:57-07:00; review date: 2026-10-28T14:29:27.414Z; observed SHA: `1d81896aa081e7b2e50b3a4a227f7c6933805752`.
 
-This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/adk-python/compare/0e5d6c963cb6935ff1c28535f167c96a96746ad4...0e5d6c963cb6935ff1c28535f167c96a96746ad4). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
+This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/google/adk-python/compare/1d81896aa081e7b2e50b3a4a227f7c6933805752...1d81896aa081e7b2e50b3a4a227f7c6933805752). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: updated; source lifecycle: active; upstream availability: available.
-- Checkout HEAD differs from discovery manifest; rerun discovery.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

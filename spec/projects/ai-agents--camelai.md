@@ -38,6 +38,18 @@ The [public auth layout](https://github.com/qaml-ai/camelAI/blob/f4108141d856ede
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35` (commit date `2026-10-27T18:31:12-05:00`), compared with `f4108141d856edef72cc282ac5c4646c27caf621`. Earlier findings remain historical evidence.
+
+**Scope:** Stored-model replacement and Pi model-ID normalization. The complete changed-path inventory contains 5 paths; the assessment below is limited to the cited branches.
+
+Raw legacy Claude IDs are recognized by a regex and family substring, then mapped to a current picker entry; OpenRouter-style IDs are deliberately left to that route. The Pi mapping now uses this same helper. See [src/lib/llm-provider-config.ts](https://github.com/qaml-ai/camelAI/blob/c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35/src/lib/llm-provider-config.ts#L43-L75) and [workers/main/src/pi-model-resolution.ts](https://github.com/qaml-ai/camelAI/blob/c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35/workers/main/src/pi-model-resolution.ts#L137-L146). This avoids one class of unintended default-provider substitution but still changes the effective model.
+
+For Teamagent, preserve requested and resolved model IDs and the migration reason, then re-evaluate account access, cost and data policy before execution. A family-name replacement or source comment about compatible keys is not authenticated entitlement evidence. No named model availability or quality was independently verified.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [camelai](https://github.com/qaml-ai/camelAI); analyzed commit `f4108141d856edef72cc282ac5c4646c27caf621`; commit date 2026-10-26T16:52:12-05:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--camelai.md).
+Analysis metadata: source [camelai](https://github.com/qaml-ai/camelAI); analyzed commit `c1bcd2d81a6d8a06e0ddcedd3fb14bb12915aa35`; commit date 2026-10-27T18:31:12-05:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--camelai.md).
 <!-- teamagent-analysis:end -->

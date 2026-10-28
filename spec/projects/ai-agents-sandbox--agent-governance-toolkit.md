@@ -32,6 +32,14 @@ The [core crate](https://github.com/microsoft/agent-governance-toolkit/blob/9bfd
 
 The [production-artifact tests](https://github.com/microsoft/agent-governance-toolkit/blob/9bfdd5f4ade7998ca3f0068e7b88764eab132911/policy-engine/sdk/node/test/production-artifact.mjs) load built distribution code, exercise two contract versions, reject implicit bundled annotators and verify that an explicit custom dispatcher receives restored source metadata. The custom fixture returns a constant safe label, so it establishes dispatch plumbing rather than classifier accuracy, URL trust or host action blocking. The shim itself says local manifests, custom dispatchers and network destinations need a host trust decision. Adapt explicit opt-in side effects and tests against packaged artifacts; no dependency, native runtime, policy evaluation, network or tests were executed.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `9bfdd5f4ade7998ca3f0068e7b88764eab132911` to `4eca1f5b44d30ebe5e9745ac36ca394f887e617b`. Earlier findings above remain historical evidence; this review is limited to the cited source, selected fixtures and delta.
+
+In [agent-governance-python/agent-sre/src/agent_sre/delivery/gitops.py](https://github.com/microsoft/agent-governance-toolkit/blob/4eca1f5b44d30ebe5e9745ac36ca394f887e617b/agent-governance-python/agent-sre/src/agent_sre/delivery/gitops.py#L60-L77), GitOps serialization now emits the CRD names durationSeconds, manualGate and operator instead of internal Python field names. The reconciler also preserves each analysis comparator. The added round-trip fixture exercises nondefault duration, a manual gate, a zero-duration final step, a latency lte criterion and a success-rate lt rollback condition.
+
+**Harness implication and limits:** Test policy serialization through its actual reader, using values that differ from defaults and opposite comparator directions. A structurally accepted manifest can otherwise silently weaken promotion gates. The fixture was inspected but not executed, and no Kubernetes deployment, controller timing or manual-approval enforcement was validated. No upstream code or live service was executed for this review.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit); analyzed commit `9bfdd5f4ade7998ca3f0068e7b88764eab132911`; commit date 2026-10-27T08:46:34-07:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agent-governance-toolkit.md).
+Analysis metadata: source [agent-governance-toolkit](https://github.com/microsoft/agent-governance-toolkit); analyzed commit `4eca1f5b44d30ebe5e9745ac36ca394f887e617b`; commit date 2026-10-28T01:30:29-07:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-sandbox--agent-governance-toolkit.md).
 <!-- teamagent-analysis:end -->

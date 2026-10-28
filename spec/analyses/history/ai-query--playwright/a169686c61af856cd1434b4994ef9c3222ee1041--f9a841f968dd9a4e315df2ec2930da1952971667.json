@@ -1,0 +1,195 @@
+{
+  "id": "ai-query--playwright",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/microsoft/playwright",
+  "report": "spec/projects/ai-query--playwright.md",
+  "analyzedSha": "a169686c61af856cd1434b4994ef9c3222ee1041",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T13:19:01Z",
+  "observedSha": "f9a841f968dd9a4e315df2ec2930da1952971667",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "f9a841f968dd9a4e315df2ec2930da1952971667",
+      "date": "2026-10-27T16:11:56-07:00",
+      "subject": "fix(mcp): do not mark test tools that run code or write files as read-only (#43692)"
+    },
+    {
+      "sha": "11f9e0269270015c0d3d4af5a8830cfd93649410",
+      "date": "2026-10-27T16:11:39-07:00",
+      "subject": "fix(trace-viewer): only open http and https links from attachments (#43689)"
+    },
+    {
+      "sha": "b851907f34a7b43f67a5c7f364e1518bd905d6c9",
+      "date": "2026-10-27T16:11:12-07:00",
+      "subject": "fix(zip): reject on malformed archives instead of crashing (#43688)"
+    },
+    {
+      "sha": "0726df3130b0972faa267c0fb38df904a39150ef",
+      "date": "2026-10-27T21:25:33Z",
+      "subject": "fix(chromium): detach from targets without browserContextId instead of asserting (#43674)"
+    },
+    {
+      "sha": "63fb731cb0a02286f1151a8a735e8ed2edb99419",
+      "date": "2026-10-27T21:24:43Z",
+      "subject": "test(chromium): fixme tests for requests cut off by a navigation (#43670)"
+    },
+    {
+      "sha": "6d2b35b58fb3cd1aabd8a96fda874222c152fe1b",
+      "date": "2026-10-27T21:22:19Z",
+      "subject": "chore(chromium): link the crbug for detaching without resuming (#43667)"
+    },
+    {
+      "sha": "7a048a9c54fab39159f32f003a73e6e5117f1b41",
+      "date": "2026-10-27T21:20:51Z",
+      "subject": "test(chromium): subresources of an about:blank popup when the opener has routes (#43666)"
+    },
+    {
+      "sha": "83c4ec5cbdcbfb2a10be584ac9187e883b0ef526",
+      "date": "2026-10-27T20:49:37Z",
+      "subject": "fix(install): fail fast on browser cache permission errors (#43613)"
+    },
+    {
+      "sha": "468f21bc4bc98234adc8086888b8052a5c076a9a",
+      "date": "2026-10-27T20:46:41Z",
+      "subject": "fix(trace-viewer): handle out-of-order screencast frames (#43648)"
+    },
+    {
+      "sha": "ad5210f22217b64149459c58abfa6069f4b203cc",
+      "date": "2026-10-27T12:12:00-07:00",
+      "subject": "devops: triage skill takes next steps itself instead of suggesting them (#43684)"
+    },
+    {
+      "sha": "d05e1c41f68869866f7219abe35bc01a4712a91b",
+      "date": "2026-10-27T11:54:20-07:00",
+      "subject": "devops: triage reports browser bugs to crbug.com and playwright-browsers (#43682)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-triage/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/playwright-triage/triage.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/triage.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/isomorphic/trace/snapshotRenderer.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/chromium/crBrowser.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/chromium/crConnection.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/chromium/crPage.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright-core/src/server/registry/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/mcp/test/generatorTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/mcp/test/plannerTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/playwright/src/mcp/test/testTools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/third_party/lockfile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/utils/zipFile.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/web/src/components/codeMirrorWrapper.tsx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/installation/playwright-cli-install-should-work.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/browsercontext-har.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/chromium/connect-over-cdp.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/popup.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/library/snapshot-renderer.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/mcp/generator.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/page/page-event-network.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/playwright-test/ui-mode-test-attachments.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/registry.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

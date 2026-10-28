@@ -44,6 +44,14 @@ The [capture hook](https://github.com/HKUDS/nanobot/blob/b07b3eac244ff7faa7eeb2d
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2` to `8f7a7d17590de7ab187650381894dba2b9e060ab`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [nanobot/process_runtime.py](https://github.com/HKUDS/nanobot/blob/8f7a7d17590de7ab187650381894dba2b9e060ab/nanobot/process_runtime.py#L720-L782), Windows process inspection moves FILETIME/ctypes pointer definitions to module scope and caches only the kernel32 bindings. Each identity request still opens the PID, reads its creation time and exit status, rejects failed/nonrunning queries, and closes the native handle in finally.
+
+**Harness implication and limits:** Cache stable native bindings rather than live process identity. Pair a PID with fresh birth identity before lifecycle operations to reduce PID-reuse mistakes, and treat unavailable identity as unknown. The shown function does not itself authorize termination or eliminate the race between inspection and a later action. No Windows native process test or memory benchmark was run. This review is static and does not certify other changed subsystems.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [nanobot](https://github.com/HKUDS/nanobot); analyzed commit `b07b3eac244ff7faa7eeb2d4777fe54dbae1b6d2`; commit date 2026-10-27T21:05:32+08:00; review date 2026-10-28T08:47:42.123Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--nanobot.md).
+Analysis metadata: source [nanobot](https://github.com/HKUDS/nanobot); analyzed commit `8f7a7d17590de7ab187650381894dba2b9e060ab`; commit date 2026-10-28T17:28:59+08:00; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--nanobot.md).
 <!-- teamagent-analysis:end -->

@@ -39,6 +39,18 @@ Evidence: [packages/client/src/client/auth.ts:255-275](https://github.com/modelc
 
 **Scope and limits:** Static scoped review of OAuth compatibility, legacy audience middleware and selected notification/HTTP changes within the 184-path comparison. Mocked auth fixture bodies read; browser redirects, real identity providers, subscription router and complete SDK conformance were not executed or exhaustively audited.
 
+## Follow-up change review — 2026-10-28
+
+**Bundled URI-parser changes can alter schema-reference semantics.** Reviewed commit `39ae8e6192cf43273aaaf2de4169dfa9f7216e28` (commit date `2026-10-27T18:05:49Z`), compared with `b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2`. The complete no-rename Git path inventory contains 3 changed paths.
+
+The lockfile moves bundled fast-uri to 3.1.9, and the declaration shim's provenance comment follows it. The changeset describes stricter handling of encoded schemes/invalid host braces and corrected relative dot-segment references. Those are upstream release claims in this review; the transitive parser implementation and resulting bundled SDK were not executed. The shim itself is declaration-only and does not implement runtime URI validation.
+
+Evidence: [.changeset/bundled-fast-uri-3-1-9.md:1-6](https://github.com/modelcontextprotocol/typescript-sdk/blob/39ae8e6192cf43273aaaf2de4169dfa9f7216e28/.changeset/bundled-fast-uri-3-1-9.md#L1-L6) · [packages/core-internal/src/validators/fastUriShim.d.ts:10-18](https://github.com/modelcontextprotocol/typescript-sdk/blob/39ae8e6192cf43273aaaf2de4169dfa9f7216e28/packages/core-internal/src/validators/fastUriShim.d.ts#L10-L18) · [pnpm-lock.yaml:5085-5093](https://github.com/modelcontextprotocol/typescript-sdk/blob/39ae8e6192cf43273aaaf2de4169dfa9f7216e28/pnpm-lock.yaml#L5085-L5093).
+
+**Harness consequence:** Include transitive schema/URI parser versions in compatibility fixtures. Test malformed references and relative-resolution behavior at the boundary instead of treating a type declaration or dependency bump as validation proof.
+
+**Scope and limits:** Reviewed the complete three-path dependency/shim/changeset delta; no parser conformance experiment was run. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [mcp-sdk-typescript](https://github.com/modelcontextprotocol/typescript-sdk); analyzed commit `b415e60bdf0e8dd5d6cbe7e6353abfb982b06dd2`; commit date 2026-10-26T14:29:44Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-typescript.md).
+Analysis metadata: source [mcp-sdk-typescript](https://github.com/modelcontextprotocol/typescript-sdk); analyzed commit `39ae8e6192cf43273aaaf2de4169dfa9f7216e28`; commit date 2026-10-27T18:05:49Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-query--mcp-sdk-typescript.md).
 <!-- teamagent-analysis:end -->

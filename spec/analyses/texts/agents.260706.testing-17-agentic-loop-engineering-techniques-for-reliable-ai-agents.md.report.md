@@ -6,15 +6,46 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://levelup.gitconnected.com/testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents-7966adad5835>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-28T07:07:39.056Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **failed**. Content validation: **failed**.
+Mode: **static**. Last remote attempt: 2026-10-28T14:33:55.032Z. Local validation: 2026-10-28T14:56:36.677Z. Import: **pinned**. Content validation: **partial**.
 
-First captured: unknown. Source creation/publication date: unknown. Date evidence: unknown. Filename dates and Last-Modified are not treated as creation dates.
+First captured: 2026-10-28T14:33:55.176Z. Source creation/publication date: 2026-07-06. Date evidence: configured (published= source-list assertion). Filename dates and Last-Modified are not treated as creation dates.
 
 Source revision: not supplied.
 
-Original bytes: 0. Extracted Markdown characters: 0. Captured images: 0.
+Original bytes: 76844. Extracted Markdown characters: 68476. Captured images: 2.
 
-Memory source: `none`. Version: `none`. Content SHA-256: `none`.
+Memory source: `4d9ae7d0-ce1c-43c8-831e-f1f16f7f9939`. Version: `e84c6c52-8681-45ee-8374-c31776827e84`. Content SHA-256: `e4f3a64d895ff6319034ec79502777fdc84db292d6f5366ba0d4dc907181af39`.
 
-- Import failed &#40;invalid&#41;&#59; no current content was validated&#46;
+[Version evidence and assets](../../../.cache/text/exports/4d9ae7d0-ce1c-43c8-831e-f1f16f7f9939/e84c6c52-8681-45ee-8374-c31776827e84/manifest.json). Export manifests retain exact locators; treat the cache as private.
+
+- Rendered article text and DOM image inventory&#44; not original HTTP HTML&#46;
+- Image inventory does not establish saved image coverage&#46;
+- No authentication&#44; paywall bypass or challenge interaction&#46;
+- 61 article image elements &#47; 60 distinct displayed image URLs were inventoried&#59; two assets were saved&#44; including the author avatar&#46; Remaining images are missing&#46;
+- Rendered text preserves visible wording and code indentation&#59; original DOM structure&#44; links and visual layout are not retained&#46; Saved assets are appended without claiming original placement&#46;
+- Image count is measured&#59; visual fidelity and completeness are unverified&#46;
+- Static snapshot checked locally&#59; no remote freshness check&#44; conversion or export rewrite was performed&#46;
+
+Extracted heading sample (up to 20; source text, not an endorsed analysis):
+
+- Testing 17 Agentic Loop Engineering Techniques for Reliable AI Agents
+- Testing 17 Agentic Loop Engineering Techniques for Reliable AI Agents
+- PR Babysitter&#44; CI Sweeper&#44; Maker&#45;Checker&#44; Daily Triage&#44; and more
+- GitHub &#45; FareedKhan&#45;dev&#47;agentic&#45;loop&#45;engineering&#45;course&#58; An 18 notebook course that isolates and…
+- An 18 notebook course that isolates and measures each component of agentic loop engineering on real&#44; industry standard…
+- Table of Contents
+- What loop engineering is&#44; the anatomy of a loop
+- Setting up the project&#44; the shared library
+- The engine and a scorer we can trust
+- The loop&#44; run until done
+- Skills and context engineering
+- Sub&#45;agents&#44; the maker and the checker
+- Memory and state with retrieval
+- Worktrees&#44; parallel isolation
+- Connectors and tools
+- Coordinating many loops
+- Budget&#44; cost&#44; and observability
+- Safety and guardrails
+- Pattern&#58; daily triage
+- Pattern&#58; duplicate detection
 

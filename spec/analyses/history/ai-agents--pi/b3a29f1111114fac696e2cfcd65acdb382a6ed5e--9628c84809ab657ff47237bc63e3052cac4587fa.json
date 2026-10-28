@@ -1,0 +1,900 @@
+{
+  "id": "ai-agents--pi",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/earendil-works/pi",
+  "report": "spec/projects/ai-agents--pi.md",
+  "analyzedSha": "b3a29f1111114fac696e2cfcd65acdb382a6ed5e",
+  "analyzedAt": "2026-10-27T18:19:07.717Z",
+  "analyzedCommitDate": "2026-10-27T16:57:59Z",
+  "observedSha": "9628c84809ab657ff47237bc63e3052cac4587fa",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "9628c84809ab657ff47237bc63e3052cac4587fa",
+      "date": "2026-10-28T12:12:19+02:00",
+      "subject": "feat(coding-agent): add prompt template documentation eval (#10261)"
+    },
+    {
+      "sha": "2e0f175bd58752ad4123aa12c2f3979839003dc7",
+      "date": "2026-10-28T11:06:10+01:00",
+      "subject": "feat(ai): refactor provider definitions (#11368)"
+    },
+    {
+      "sha": "068e972c7baefac2db3a245f1a634ce21a90a2d9",
+      "date": "2026-10-28T10:37:22+01:00",
+      "subject": "fix(ai): remove adaptive thinking metadata test that duplicated generator logic"
+    },
+    {
+      "sha": "fa16851520f8c5edf930d14ca04cdb4cb71d7a67",
+      "date": "2026-10-28T10:11:40+01:00",
+      "subject": "fix(tui): stop bare URLs at CJK punctuation (#10934)"
+    },
+    {
+      "sha": "e509d7edc78a51e241f7525c451012db17818179",
+      "date": "2026-10-28T10:10:44+01:00",
+      "subject": "docs(quickstart): add Windows installer tab (#11231)"
+    },
+    {
+      "sha": "b9e3eef6c2e192f69f387c8f95245639c413d549",
+      "date": "2026-10-28T10:09:41+01:00",
+      "subject": "fix(coding-agent): keep active tool order when the same tools are set again (#11514)"
+    },
+    {
+      "sha": "f6ee9ce9c16a6f2765a39728f3fbd601a9a83967",
+      "date": "2026-10-28T09:58:20+01:00",
+      "subject": "fix(coding-agent): summarize union and multi-line codemode output types in tool descriptions (#11513)"
+    },
+    {
+      "sha": "7391dbb0f849bc8d08fc070a8cc5acba0866f7b3",
+      "date": "2026-10-28T09:54:06+01:00",
+      "subject": "fix(coding-agent): show model scope in the fullscreen header instead of the shell (#11512)"
+    },
+    {
+      "sha": "88ffcdc734605d80bc383476950856b1242081fa",
+      "date": "2026-10-28T09:51:39+01:00",
+      "subject": "fix(coding-agent): report a deleted working directory instead of crashing on startup (#11511)"
+    },
+    {
+      "sha": "44f6851b7f27ad5c18ccc94f6b4321650e757e3e",
+      "date": "2026-10-28T09:45:28+01:00",
+      "subject": "fix(ai): use Anthropic Messages for OpenRouter ~anthropic latest aliases"
+    },
+    {
+      "sha": "a92283056d915c758799fcd904948ff0cb42628c",
+      "date": "2026-10-27T23:46:11Z",
+      "subject": "fix(chord): Delta's tracker holds its one open change without a WeakRef"
+    },
+    {
+      "sha": "85c2ee3e761e4fc4f901ff0ed584fb2465aa552e",
+      "date": "2026-10-28T00:31:24+02:00",
+      "subject": "docs(coding-agent): restore the full extensions guide, corrected against current source (#11498)"
+    },
+    {
+      "sha": "bb65e3e49710fbd14f10c7792d0eaa6e2b2c5923",
+      "date": "2026-10-27T21:31:47Z",
+      "subject": "fix(durable): import toCodemodeIdentifier from pi-codemode/declarations"
+    },
+    {
+      "sha": "5f312dac4c4b18ad6b4af05dbd751d2668a4d6d9",
+      "date": "2026-10-27T20:38:08Z",
+      "subject": "feat(chord,durable): failures are watch calls; one vocabulary for watches, observers and reports"
+    },
+    {
+      "sha": "d3398f826ae2654b52a7988830d533a354754c13",
+      "date": "2026-10-27T20:27:30+01:00",
+      "subject": "fix(ai): detect LiteLLM ContextWindowExceededError as context overflow (#11494)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".pi/skills/add-llm-provider.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "biome.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/build.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/define.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/families/anthropic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/families/deepseek.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/families/google.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/families/kimi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/families/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/generate.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/amazon-bedrock.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/ant-ling.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/anthropic.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/azure.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/baseten.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/cerebras.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/cloudflare-ai-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/cloudflare-workers-ai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/deepseek.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/fireworks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/github-copilot.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/google-vertex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/google.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/groq.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/huggingface.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/kimi-coding.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/meta.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/minimax-cn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/minimax.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/mistral.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/moonshotai-cn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/moonshotai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/nvidia.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/openai-codex.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/openai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/opencode-go.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/opencode.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/openrouter.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/qwen-token-plan-cn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/qwen-token-plan-individual.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/qwen-token-plan.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/radius.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/together.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/typesafe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/vercel-ai-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/xai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/xiaomi-token-plan-ams.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/xiaomi-token-plan-cn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/xiaomi-token-plan-sgp.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/xiaomi.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/zai-coding-cn.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/providers/zai.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R079",
+      "path": "packages/ai/catalog/reasoning.ts",
+      "previousPath": "packages/ai/scripts/models-dev-reasoning-options.ts"
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/sources/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/sources/models-dev.ts",
+      "previousPath": null
+    },
+    {
+      "status": "R063",
+      "path": "packages/ai/catalog/sources/openrouter.ts",
+      "previousPath": "packages/ai/scripts/openrouter-catalog.ts"
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/catalog/sources/vercel-ai-gateway.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/scripts/ai-gateway-pricing.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/scripts/generate-models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/scripts/openrouter-reasoning-options.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/models.generated.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/amazon-bedrock.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/ant-ling.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/anthropic.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/azure.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/baseten.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cerebras.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cloudflare-ai-gateway.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/cloudflare-workers-ai.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/deepseek.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/fireworks.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/github-copilot.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google-vertex.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/google.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/groq.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/huggingface.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/kimi-coding.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/meta.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/minimax-cn.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/minimax.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/mistral.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/moonshotai-cn.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/moonshotai.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/nvidia.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai-codex.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openai.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/opencode-go.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/opencode.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/openrouter.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/qwen-token-plan-cn.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/qwen-token-plan-individual.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/qwen-token-plan.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/radius.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/together.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/typesafe.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/vercel-ai-gateway.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/xai.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/xiaomi-token-plan-ams.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/xiaomi-token-plan-cn.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/xiaomi-token-plan-sgp.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/xiaomi.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/zai-coding-cn.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/providers/zai.models.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/src/utils/overflow.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/test/anthropic-adaptive-thinking-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/catalog-generation-utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/fireworks-model-generation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/generate-models-strict.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/image-model-data.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/model-cost-tiers.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/ai/test/opencode-model-generation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "packages/ai/test/openrouter-cache-control-models.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/openrouter-reasoning-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/overflow.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/test/reasoning-options.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/delta/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/delta/tracker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/src/watch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/delta-tracker/retention.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/delta-tracker/retention.worker.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/delta-tracker/tracker.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/chord/test/watch.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/docs/extensions.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/docs/quickstart.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/examples/extensions/reload-runtime.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/core/agent-session.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/extensions/codemode/tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/main.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/coding-agent/test/deleted-cwd.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "packages/coding-agent/test/interactive-mode-model-scope.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/suite/agent-session-codemode.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/coding-agent/test/system-prompt-updates.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/docs/spec.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/codemode/codemode.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/env/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/env/node-watch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/env/node.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/compaction.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/generation.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/harness.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/live.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/scheduler.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/submissions.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/task-graph.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/telemetry.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/tool.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/durable/src/harness/types.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -6,7 +6,7 @@ Generated structural extraction report. Text length and file hashes do not estab
 
 [Original source](<https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents>) (query parameters withheld from public reports).
 
-Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T07:07:39.056Z. Import: **pinned**. Content validation: **usable-text**.
+Mode: **static**. Last remote attempt: 2026-10-27T17:26:12.068Z. Local validation: 2026-10-28T14:56:36.677Z. Import: **pinned**. Content validation: **usable-text**.
 
 First captured: 2026-10-24T05:50:56.982Z. Source creation/publication date: 2025-11-26T00:00:00.000Z. Date evidence: publisher-html-meta (article:published_time). Filename dates and Last-Modified are not treated as creation dates.
 

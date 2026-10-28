@@ -1,0 +1,525 @@
+{
+  "id": "ai-agents--odysseus",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/pewdiepie-archdaemon/odysseus",
+  "report": "spec/projects/ai-agents--odysseus.md",
+  "analyzedSha": "339c6886cbbb2f5cf897b2b6795da448c02c8f20",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T16:35:16Z",
+  "observedSha": "57a1859f081f5877373e4aaf96435eb3ed513793",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "57a1859f081f5877373e4aaf96435eb3ed513793",
+      "date": "2026-10-27T22:50:35-06:00",
+      "subject": "fix(security): stop the agent from re-enabling tools an admin disabled (#6357)"
+    },
+    {
+      "sha": "a646b591107edb738f2056ed1ff7cce4f302943f",
+      "date": "2026-10-28T01:09:22Z",
+      "subject": "Merge pull request #6738 from odysseus-dev/codex/review-7011-harness-20261015"
+    },
+    {
+      "sha": "4079f12ae6f1534702e4cfe10e6ccce47aeaf64b",
+      "date": "2026-10-28T00:31:42Z",
+      "subject": "fix(editor): resolve preview authorization and CI regressions"
+    },
+    {
+      "sha": "091364f7e6cd294c25246998d299c1bbe70361b3",
+      "date": "2026-10-27T18:12:05Z",
+      "subject": "Merge branch 'dev' into review/pewds-pr6738-terra-20261027"
+    },
+    {
+      "sha": "0133de6f0edb2f3e27968719866b74a045820cee",
+      "date": "2026-10-27T17:25:25Z",
+      "subject": "feat(security): apply audited PR #6738 remediations and test hardening"
+    },
+    {
+      "sha": "3246ae5d9c4e66b7ceb2868f62ee2dc36d4e6edd",
+      "date": "2026-10-26T16:57:01Z",
+      "subject": "Keep streamed-chat module identity consistently cache-busted"
+    },
+    {
+      "sha": "03baea77002b0309f88d6384d5ac7e7cb017a261",
+      "date": "2026-10-26T16:54:10Z",
+      "subject": "Preserve owner-scoped compaction and the web-only routing boundary"
+    },
+    {
+      "sha": "8865c975aaab5d5d755503d2d09e3a75d9eabd88",
+      "date": "2026-10-26T16:53:52Z",
+      "subject": "Keep chat-editor integration and shutdown checks with the runtime review"
+    },
+    {
+      "sha": "a58a5e6632b534c2db3de6435b71941c0e677196",
+      "date": "2026-10-26T16:53:52Z",
+      "subject": "Merge backend ownership checks and test ownership cleanup"
+    },
+    {
+      "sha": "e67cb8bbb97c099baf2ced49640a15803b6fd6db",
+      "date": "2026-10-26T16:50:08Z",
+      "subject": "Merge recolor cleanup regression coverage"
+    },
+    {
+      "sha": "ff1d7df8b00ece407c1e0024f39e67f058d2d00b",
+      "date": "2026-10-26T16:49:01Z",
+      "subject": "Merge backend prompt hardening and scoped tests"
+    },
+    {
+      "sha": "871c0c0687a59f7fa64374c896bbc566e8e9bbe2",
+      "date": "2026-10-26T16:36:59Z",
+      "subject": "Align the shared stream watchdog with the UI review"
+    },
+    {
+      "sha": "5c6bb9798b4f84612cb28c6e60249d2499a7ca84",
+      "date": "2026-10-26T16:34:56Z",
+      "subject": "Preserve completion gating and handle explicit idle stream status safely"
+    },
+    {
+      "sha": "ae28501e7f8c19151a41226af957eeec3014db68",
+      "date": "2026-10-26T16:31:23Z",
+      "subject": "Normalize final newlines in integrated review files"
+    },
+    {
+      "sha": "aa91e69b2a95dd2593aa9223e1ec871ee3a28e9e",
+      "date": "2026-10-26T16:27:32Z",
+      "subject": "Merge the verified editor-server foundation into the runtime review"
+    },
+    {
+      "sha": "e8551e9cbc8dfed7703a699795e864e4caeb5cd1",
+      "date": "2026-10-26T16:23:29Z",
+      "subject": "Use explicit editor endpoints in backend regression fixtures"
+    },
+    {
+      "sha": "444b60d14ef9fb7c9b46a84bc41fc86912a22ca8",
+      "date": "2026-10-26T16:21:22Z",
+      "subject": "Merge current dev and refresh PR #6738 from the 7011 integration"
+    },
+    {
+      "sha": "30430acfeaf81e5c4857aaacef5c1e6abb0d8765",
+      "date": "2026-10-25T17:04:43Z",
+      "subject": "fix(harness): ignore dotted email local parts in artifact inference"
+    },
+    {
+      "sha": "9bdea753ae99533eed31eb8c92362f0d879c04b8",
+      "date": "2026-10-13T13:59:04Z",
+      "subject": "fix(harness): ship coherent vendor harness cluster"
+    },
+    {
+      "sha": "364229f2dc75f59b36ea97acc4f2f8cd5879dd81",
+      "date": "2026-10-13T13:41:53Z",
+      "subject": "feat(harness): authority, turn contract, tools, clean_agent_preview"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "mcp_servers/email_server.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/chat_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/chat_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/document/document_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/email/email_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/mcp/mcp_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/model_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/research/research_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/session_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "routes/shell_routes.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate_env_reference.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "services/memory/memory_extractor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent_loop.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent_runtime/effect_adapters.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/agent_tools/admin_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/agent_tools/web_tools_prewave3.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtin_actions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/chat_handler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/chat_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/clean_agent_preview.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/context_compactor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/document_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/email_task_intent.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/jeff_decision.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/private_browser_legacy_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/session_actions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/spec_driver.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/spec_router.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/task_endpoint.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/task_scheduler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tool_capabilities.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tool_execution.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tool_index.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tool_schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/system.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/turn_contract.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/js/chat.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "static/sw.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_agent_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_auth_regressions.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_auth_session_persistence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_caldav_redirect_hardening.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_chat_helpers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_clean_agent_preview.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_containment_enforcement.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_context_compactor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_email_list_stale_while_revalidate.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_email_reader_completion_regression.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_foreground_model_routing.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_headless_completion_consumers.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_jeff_decision.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_legacy_browser_authority.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_manage_settings_denylist_hard.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_memory_extraction_evidence.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_memory_extractor_vector_cross_tenant.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_memory_extractor_vector_degraded.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_model_picker_refresh_timeout.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_photo_editor_family.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_request_authority.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_review_endpoint_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_review_regressions.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_scheduler_prompt_cache_time.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_session_load_404s.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_shutdown_signal.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_spec_contract_security.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_spec_direct_notools.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_spec_driver_mode.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_spec_route_policy_conflict.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_spec_router_request_scope.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_stream_disconnect_middleware.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_task_mcp_delivery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_task_scheduler_endpoint_authority.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_task_shell_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_tool_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/test_utility_reasoning_effort.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_vision_inline.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/test_web_history_retention.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "website/configuration-reference.md",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

@@ -2,11 +2,11 @@
 
 Source: [optimize-caveman](https://github.com/JuliusBrussee/caveman) · [Analysis](../../projects/ai-skills--optimize-caveman.md) · [skills](../../skills.md)
 
-Generated: 2026-10-28T11:33:23.190Z. Status: **current**. Reviewed SHA: `9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4`; commit date: 2026-10-25T08:57:37+01:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4`.
+Generated: 2026-10-28T15:22:43.264Z. Status: **current**. Reviewed SHA: `9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4`; commit date: 2026-10-25T08:57:37+01:00; review date: 2026-10-28T09:45:33.667Z; observed SHA: `9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4`.
 
 This generated packet is a bounded change locator, not a source review or a quality measurement. [Source comparison](https://github.com/JuliusBrussee/caveman/compare/9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4...9b68f7ed12b05e7efaff18e65c5a3fc2849fd0a4). Working-tree changes: false; shallow history: false; report changed since recorded review: false.
 
-- Git discovery: unchanged; source lifecycle: active; upstream availability: available.
+- Git discovery: inspected; source lifecycle: active; upstream availability: available.
 
 ## Recent commits
 

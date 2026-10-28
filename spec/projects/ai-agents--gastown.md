@@ -36,6 +36,18 @@ This supports a Teamagent adapter-catalog requirement: negotiated capabilities a
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `466aa41c83ee73b1fa0eb79eb9d172fb1eca9476` (commit date `2026-10-28T05:20:19Z`), compared with `de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1`. Earlier findings remain historical evidence.
+
+**Scope:** Four-path dependency/build-lock maintenance delta. The complete changed-path inventory contains 4 paths; the assessment below is limited to the cited branches.
+
+The Go module updates platform, terminal, text, crypto/network and related dependency versions, while Nix refreshes its lock and vendor hash. See [go.mod](https://github.com/gastownhall/gastown/blob/466aa41c83ee73b1fa0eb79eb9d172fb1eca9476/go.mod#L29-L38), [go.mod](https://github.com/gastownhall/gastown/blob/466aa41c83ee73b1fa0eb79eb9d172fb1eca9476/go.mod#L238-L252) and [flake.nix](https://github.com/gastownhall/gastown/blob/466aa41c83ee73b1fa0eb79eb9d172fb1eca9476/flake.nix#L25-L37). There is no changed application implementation file in this inventory.
+
+Keep the previous registry-copy/ownership analysis as historical runtime evidence. These dependency updates may affect behavior but were not installed, audited transitively or tested here; version movement alone establishes neither a security fix nor compatibility. Preserve both source SHA and dependency/build-lock identity for future reproducibility.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [gastown](https://github.com/gastownhall/gastown); analyzed commit `de2ce8efa7aa3b1ca942b39319c5f4bd5aeac1b1`; commit date 2026-10-25T21:39:22Z; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gastown.md).
+Analysis metadata: source [gastown](https://github.com/gastownhall/gastown); analyzed commit `466aa41c83ee73b1fa0eb79eb9d172fb1eca9476`; commit date 2026-10-28T05:20:19Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--gastown.md).
 <!-- teamagent-analysis:end -->

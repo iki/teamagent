@@ -34,6 +34,18 @@ Source: [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter); i
 
 The [authentication session](https://github.com/Awarexone/Agentic-Bug-Hunter/blob/16dabf0cea8a43ad9d42733283e0fd8ed74313c0/bughunter/tools/auth_session.py) rejects CR/LF injection, merges sources by header name, clears stale exported authentication on an empty session and keeps raw values out of repr/describe. These are useful boundaries, but the malformed-header exception includes the first 40 input characters, the redacted view exposes a value prefix/suffix, curl_args returns credentials in process arguments, and env_overlay can propagate them to children. The helper has no origin-bound credential policy; that must exist at the request adapter. Its truncated deterministic header hash is correlation data, not an authenticated identity or access grant. Teamagent should bind secrets to approved destinations, keep them out of process arguments and error text, and record command-scoped injection separately from authentication verification.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `8060af0c1b0b6ecc6595ee3261f50aa613038620` (commit date `2026-10-28T16:38:51+08:00`), compared with `16dabf0cea8a43ad9d42733283e0fd8ed74313c0`. Earlier findings remain historical evidence.
+
+**Scope:** The only changed file: URL canonicalization used by scope checking. The complete changed-path inventory contains 1 paths; the assessment below is limited to the cited branches.
+
+The parser now uses urlsplit with a fast authority path, preserves the prior semicolon path separation, validates explicit ports, canonicalizes IPv4/IPv6 and refuses numeric or hex-like ambiguous hosts. It retains the initial rejection of backslashes, whitespace and control characters. See [bughunter/tools/scope_checker.py](https://github.com/Awarexone/Agentic-Bug-Hunter/blob/8060af0c1b0b6ecc6595ee3261f50aa613038620/bughunter/tools/scope_checker.py#L103-L189).
+
+For Teamagent, a shared canonicalizer is preferable to different parsers on approval and execution paths, but lexical scope is not network containment. This function still ignores URL query/fragment and extracts host from userinfo-bearing authorities; adapters needing credential-free download URLs must reject those fields separately. DNS resolution, redirects, rebinding and equivalence with the actual transport were not verified, and no speed claim is inferred from the optimization.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter); analyzed commit `16dabf0cea8a43ad9d42733283e0fd8ed74313c0`; commit date 2026-10-23T16:02:42+08:00; review date 2026-10-28T09:45:33.667Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentic-bug-hunter.md).
+Analysis metadata: source [agentic-bug-hunter](https://github.com/Awarexone/Agentic-Bug-Hunter); analyzed commit `8060af0c1b0b6ecc6595ee3261f50aa613038620`; commit date 2026-10-28T16:38:51+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--agentic-bug-hunter.md).
 <!-- teamagent-analysis:end -->

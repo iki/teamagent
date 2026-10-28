@@ -38,6 +38,18 @@ The [SAML purge activity](https://github.com/future-agi/future-agi/blob/14ba8a44
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `b544357d026d428d90ec73be6dd8990934edab33` (commit date `2026-10-28T01:12:07+05:30`), compared with `14ba8a4474e9901b3f917d1d6e89cf6808aec58f`. Earlier findings remain historical evidence.
+
+**Scope:** Collector project-type resolution, scoped cache insertion and resource stamping. The complete changed-path inventory contains 232 paths; the assessment below is limited to the cited branches.
+
+Resolvers that support typed projects now preserve trace type alongside project identity; older resolvers leave it unknown. Cache insertion checks organization/workspace scope. The resource stamp fills project_type=observe only when the incoming value is absent/empty and the resolved project is known to be Observe; it does not overwrite a sender-provided value. See [fi-collector/pkg/auth/auth.go](https://github.com/future-agi/future-agi/blob/b544357d026d428d90ec73be6dd8990934edab33/fi-collector/pkg/auth/auth.go#L276-L311), [fi-collector/pkg/auth/cache.go](https://github.com/future-agi/future-agi/blob/b544357d026d428d90ec73be6dd8990934edab33/fi-collector/pkg/auth/cache.go#L102-L120) and [fi-collector/pkg/auth/stamp.go](https://github.com/future-agi/future-agi/blob/b544357d026d428d90ec73be6dd8990934edab33/fi-collector/pkg/auth/stamp.go#L89-L110).
+
+For Teamagent, distinguish authenticated resource identity from a compatibility hint and retain unknown metadata rather than inferring it from a project name. Preserving sender metadata also means it cannot become trusted authorization evidence downstream. Failure to retain this hint does not fail a request; credential admission, revocation timing and the converter's final identity behavior were outside this review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [future-agi](https://github.com/future-agi/future-agi); analyzed commit `14ba8a4474e9901b3f917d1d6e89cf6808aec58f`; commit date 2026-10-27T15:53:26+05:30; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--future-agi.md).
+Analysis metadata: source [future-agi](https://github.com/future-agi/future-agi); analyzed commit `b544357d026d428d90ec73be6dd8990934edab33`; commit date 2026-10-28T01:12:07+05:30; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--future-agi.md).
 <!-- teamagent-analysis:end -->

@@ -30,6 +30,16 @@ Reviewed commit `ec7ae694479aaed73f4a655e3c346dde5e61b8c4` (commit date `2026-10
 
 The [directory](https://github.com/VoltAgent/awesome-agent-skills/blob/ec7ae694479aaed73f4a655e3c346dde5e61b8c4/README.md) adds social publishing, source-linked learning, testing, privacy, rendering and voice candidates and corrects source paths. No linked implementation is present in this delta. A Fish Audio skill listing establishes neither training exclusion nor a supported Teamagent route. Keep immutable source review before activation; verify identity/history for URL renames. Messaging, publishing, calls and payments require distinct effect scopes. Linked tools and quality/token claims were not validated.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `47c4880c4a24611a6982b93a0d4b27c4928591ae` (commit date `2026-10-27T22:15:14+03:00`), compared with `ec7ae694479aaed73f4a655e3c346dde5e61b8c4`. Earlier findings remain historical evidence.
+
+**Scope:** Complete README-only delta adding catalogue entries. The complete changed-path inventory contains 1 paths. Citations below identify current lines visible in the captured committed diff; this is a scoped assessment, not a whole-repository audit.
+
+The list adds discovery entries for cached local transcription, coverage generation and workflow skills. Their descriptions belong to the catalogue; the linked repositories, dependency chains, data handling and advertised checks were not imported or verified by this delta review. Preserve these entries as research candidates with a separate review state, rather than auto-installing or ranking them as validated backends. [README.md](https://github.com/VoltAgent/awesome-agent-skills/blob/47c4880c4a24611a6982b93a0d4b27c4928591ae/README.md#L1589-L1597); [README.md](https://github.com/VoltAgent/awesome-agent-skills/blob/47c4880c4a24611a6982b93a0d4b27c4928591ae/README.md#L1708-L1718).
+
+**Verification limit:** static committed-source inspection only; no upstream code, tests, deployments or provider calls were executed. Imported instructions remain research data, and this review does not establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [list.voltagent](https://github.com/VoltAgent/awesome-agent-skills); analyzed commit `ec7ae694479aaed73f4a655e3c346dde5e61b8c4`; commit date 2026-10-25T16:18:50+03:00; review date 2026-10-28T08:26:04.502Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--list.voltagent.md).
+Analysis metadata: source [list.voltagent](https://github.com/VoltAgent/awesome-agent-skills); analyzed commit `47c4880c4a24611a6982b93a0d4b27c4928591ae`; commit date 2026-10-27T22:15:14+03:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-skills--list.voltagent.md).
 <!-- teamagent-analysis:end -->

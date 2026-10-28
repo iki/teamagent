@@ -177,3 +177,16 @@ Records source-version and extraction-status changes. Unchanged checks update so
 - agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md: created, usable-text; version 3882bc7a-579c-4af0-80d5-38c30a85c5cb; content abd27c4e1c79a46650c61afa4f4cdc2c91849de5e2b691ba92bcd927837ee353.
 - cx.260408.memento.pdf: created, partial; version 60c06d9f-d037-4995-a6c9-09c84ad65e5f; content e6d92826080f8c8c46eaafab48f0231b64af93747c64550ed3fd69e4ec569a95.
 - tools.260624.tanstack-ai-code-mode-with-skills.md: created, usable-text; version 1942316c-4d07-47ab-9f72-d401ae75acba; content a3b223a361c92e375e1be8fb54c889d6ea8d1552f9460ddca746eb72a62b17a1.
+
+## 2026-10-28T14:33:55.032Z
+
+- agents.260311.equip-responses-api-computer-environment.md: created, partial; version 808ced5c-8d21-4ebf-8b62-d438e7e3f022; content 6d8550a9db962394c94fca36d42cb4f269a7351391c5ab64f0d1931c027f5cda.
+- agents.260706.testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents.md: created, partial; version e84c6c52-8681-45ee-8374-c31776827e84; content e4f3a64d895ff6319034ec79502777fdc84db292d6f5366ba0d4dc907181af39.
+- agents.260731.qm-is-trying-to-solve-the-company-agent-problem.md: pinned, usable-text; version 3882bc7a-579c-4af0-80d5-38c30a85c5cb; content abd27c4e1c79a46650c61afa4f4cdc2c91849de5e2b691ba92bcd927837ee353.
+- cx.260408.memento.pdf: pinned, partial; version 60c06d9f-d037-4995-a6c9-09c84ad65e5f; content e6d92826080f8c8c46eaafab48f0231b64af93747c64550ed3fd69e4ec569a95.
+- tools.260624.tanstack-ai-code-mode-with-skills.md: pinned, usable-text; version 1942316c-4d07-47ab-9f72-d401ae75acba; content a3b223a361c92e375e1be8fb54c889d6ea8d1552f9460ddca746eb72a62b17a1.
+
+## 2026-10-28T14:56:36.677Z
+
+- agents.260311.equip-responses-api-computer-environment.md: pinned, partial; version 808ced5c-8d21-4ebf-8b62-d438e7e3f022; content 6d8550a9db962394c94fca36d42cb4f269a7351391c5ab64f0d1931c027f5cda.
+- agents.260706.testing-17-agentic-loop-engineering-techniques-for-reliable-ai-agents.md: pinned, partial; version e84c6c52-8681-45ee-8374-c31776827e84; content e4f3a64d895ff6319034ec79502777fdc84db292d6f5366ba0d4dc907181af39.

@@ -1,0 +1,495 @@
+{
+  "id": "ai-agents--claude.ruflo",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/ruvnet/ruflo",
+  "report": "spec/projects/ai-agents--claude.ruflo.md",
+  "analyzedSha": "b49078cc40945d2a81ab1dd9d0faeccd04f827f5",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T10:39:12-04:00",
+  "observedSha": "5ae2d6527b24f1ae6d907a29b91d320cdc447d2d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5ae2d6527b24f1ae6d907a29b91d320cdc447d2d",
+      "date": "2026-10-28T06:08:24-04:00",
+      "subject": "fix(hooks): build-agents writes under the project, validates outputDir, drops fake stats (#4562)"
+    },
+    {
+      "sha": "49f9a313ea9f8979b1cf3fd9517b8ba23c8c0462",
+      "date": "2026-10-28T05:39:48-04:00",
+      "subject": "chore(marketplace): pin agentic-qe-fleet to v3.15.16 (#4560)"
+    },
+    {
+      "sha": "6c0d58d01098a9458a00b391ae06926263919070",
+      "date": "2026-10-28T04:52:11-04:00",
+      "subject": "fix(performance): report recorded latency/throughput, not fixed figures (#4556)"
+    },
+    {
+      "sha": "44675e8fd50614bc91fbf6bceacc9831913625b4",
+      "date": "2026-10-28T03:50:50-04:00",
+      "subject": "test(skills): check that every CLI command a shipped skill runs exists (#4552) (#4553)"
+    },
+    {
+      "sha": "c5808c29ef4eab3588849a566f42abdc59bf1766",
+      "date": "2026-10-28T03:50:45-04:00",
+      "subject": "fix(skills): use registered MCP tools in the GitHub skills (#4141) (#4541)"
+    },
+    {
+      "sha": "bd19b6f984fb0b4465e333c5e24cc5333784f410",
+      "date": "2026-10-27T21:11:12-04:00",
+      "subject": "fix(session): read hook-written session records in session_info and session_current (#4548)"
+    },
+    {
+      "sha": "a4547c04593d64cf75bfc4612e74650304e97a49",
+      "date": "2026-10-27T17:47:13-04:00",
+      "subject": "release: 3.63.6 (#4546)"
+    },
+    {
+      "sha": "af091d5ffc5aa3ee7178026dc4ad214e587b1aba",
+      "date": "2026-10-27T17:42:05-04:00",
+      "subject": "fix(claims): stop claims_rebalance from overfilling the first underloaded agent (#4547)"
+    },
+    {
+      "sha": "7d679ab425cf54b84b47f74a7208c696b516fe86",
+      "date": "2026-10-27T17:22:26-04:00",
+      "subject": "fix(console): let Claude ack Project Anatole alerts via console_run (0.49.7) (#4545)"
+    },
+    {
+      "sha": "f5602c009192637adf14e0a3307a66b4d010734a",
+      "date": "2026-10-27T16:26:02-04:00",
+      "subject": "fix(cli): declare @claude-flow/aidefence as an optional dependency (#4445)"
+    },
+    {
+      "sha": "9e65711ae9d7db537876bf127626994643e9304e",
+      "date": "2026-10-27T15:05:11-04:00",
+      "subject": "fix(skills): use the hooks command and the real MCP tools in hooks-automation (#4538) (#4540)"
+    },
+    {
+      "sha": "d635d422d8f8524c47eae15fff37c9f8c365c0b3",
+      "date": "2026-10-27T15:03:57-04:00",
+      "subject": "release: 3.63.5 (#4544)"
+    },
+    {
+      "sha": "ee75b7020177922fadff77b2157147de807c44b4",
+      "date": "2026-10-27T14:37:17-04:00",
+      "subject": "dream(intelligence): #4531 wire real Fisher-information estimation into SONAManager's EWC++ path (evaluated, ACCEPT-scoped) (#4532)"
+    },
+    {
+      "sha": "065089344d415de2395c466c6d9d5713523e1ca0",
+      "date": "2026-10-27T14:22:25-04:00",
+      "subject": "fix(ruflo-console): offer to create a mission for a new goal once the active mission is over (0.49.6) (#4537)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".claude-plugin/marketplace.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-multi-repo/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-project-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-release-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/github-workflow-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".claude/skills/hooks-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/no-cli-optdep-bloat-2561.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dream-cycle/LEDGER.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/dream-cycle/dream-gist-2026-10-27.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/.claude-plugin/plugin.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/anatole.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/dispatch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/mission-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/model-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/state.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/version.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/views/mission-control.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/hooks/views/mission-launch.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/scripts/smoke.sh",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "plugins/ruflo-console/tests/anatole.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "plugins/ruflo-console/tests/mission-after-finish.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "ruflo/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/__tests__/audit-skill-cli-commands.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "scripts/audit-skill-cli-commands.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/external-plugins.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/github-multi-repo/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/github-project-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/github-release-management/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/github-workflow-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/.claude/skills/hooks-automation/SKILL.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/claims-rebalance-target-capacity.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/hooks-build-agents-4558.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/performance-metrics-samples-4554.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/cli/__tests__/session-hook-record-shape.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/commands/hooks.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/claims-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/hooks-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/performance-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/cli/src/mcp-tools/session-tools.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "v3/@claude-flow/neural/__tests__/sona-ewc-consolidation.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/neural/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/balanced.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/balanced.d.ts.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/balanced.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/balanced.js.map",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/neural/src/modes/balanced.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/neural/src/modes/base.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/batch.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/batch.d.ts.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/batch.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/batch.js.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/edge.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/edge.d.ts.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/edge.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/edge.js.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/index.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/index.d.ts.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/index.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/index.js.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/real-time.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/real-time.d.ts.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/real-time.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/real-time.js.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/research.d.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/research.d.ts.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/research.js",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/research.js.map",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "v3/@claude-flow/neural/src/modes/tmp.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/@claude-flow/neural/src/sona-manager.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/docs/adr/ADR-484-external-marketplace-plugins.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "v3/pnpm-lock.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "verification/skill-cli-command-baseline.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "verification/skill-mcp-tool-baseline.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

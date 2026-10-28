@@ -39,6 +39,18 @@ Evidence: [internal/ingestion/task/task_context.go:31-171](https://github.com/in
 
 **Scope and limits:** Static scoped task identity, ingestor assembly and embedding recovery/accounting review within the 2,476-path comparison. Queue settlement implementation, tokenizer/calibration helpers, provider driver validation and actual shutdown behavior were not audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Parser configuration changes are explicitly separate from re-ingestion.** Reviewed commit `d4d130187af838cb81655cfd5bfd72258b277610` (commit date `2026-10-28T18:08:51+08:00`), compared with `5966db46ab4abc849a2ad668795ee9cb2e5417ef`. The complete no-rename Git path inventory contains 335 changed paths.
+
+The new apply-parser-config service locks the dataset, verifies update/dependency permissions, validates the selected pipeline version and walks documents in batches of 200. It locks document tasks in a defined order and refuses a nonterminal ingestion task. The transaction changes parser/config/version fields while preserving parsed content; the HTTP response explicitly requests a manual reparse. The first service fixture spans 205 documents and checks that content hashes, counts, thumbnail and progress remain unchanged. A bounded page size does not bound the total transaction duration or lock footprint.
+
+Evidence: [internal/handler/document_apply_parser_config.go:11-29](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/handler/document_apply_parser_config.go#L11-L29) · [internal/service/document/document_apply_parser_config.go:30-109](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/service/document/document_apply_parser_config.go#L30-L109) · [internal/service/document/document_apply_parser_config.go:133-175](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/service/document/document_apply_parser_config.go#L133-L175) · [internal/service/document/document_apply_parser_config_test.go:15-65](https://github.com/infiniflow/ragflow/blob/d4d130187af838cb81655cfd5bfd72258b277610/internal/service/document/document_apply_parser_config_test.go#L15-L65).
+
+**Harness consequence:** Version intended parser settings separately from the parser version that produced existing evidence. Make reprocessing explicit, fence concurrent import work and preserve the last valid artifacts until a new extraction succeeds.
+
+**Scope and limits:** Reviewed the new handler/service and the content-preservation fixture; broader document deletion, agent and UI changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [ragflow](https://github.com/infiniflow/ragflow); analyzed commit `5966db46ab4abc849a2ad668795ee9cb2e5417ef`; commit date 2026-10-27T19:49:36+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--ragflow.md).
+Analysis metadata: source [ragflow](https://github.com/infiniflow/ragflow); analyzed commit `d4d130187af838cb81655cfd5bfd72258b277610`; commit date 2026-10-28T18:08:51+08:00; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--ragflow.md).
 <!-- teamagent-analysis:end -->

@@ -1,0 +1,215 @@
+{
+  "id": "ai-agents--fx",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/vercel-labs/fx",
+  "report": "spec/projects/ai-agents--fx.md",
+  "analyzedSha": "404b5ed7b7da357b889996bf2446846bb906f1a9",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T13:53:54-04:00",
+  "observedSha": "fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "fb3a0865e6f2f1f04e210cb9a65d255c1c4c1e9e",
+      "date": "2026-10-27T23:35:02-04:00",
+      "subject": "Merge pull request #1481 from vercel-labs/fazxes/load-linked-global-agents"
+    },
+    {
+      "sha": "4388eb89b50f007209ccfe1ab1c777a05cffbb7e",
+      "date": "2026-10-27T22:11:01-04:00",
+      "subject": "Load a symlinked global AGENTS.md that points elsewhere in home"
+    },
+    {
+      "sha": "9b558ed78577655269df71223946db825a3e1ce8",
+      "date": "2026-10-27T22:09:01-04:00",
+      "subject": "Merge pull request #1477 from vercel-labs/fazxes/fuzzy-model-search"
+    },
+    {
+      "sha": "63540de785378b2d87153e3569b20acd4a53223d",
+      "date": "2026-10-27T21:14:26-04:00",
+      "subject": "Merge pull request #1414 from vercel-labs/fazxes/consolidate-provider-and-session-code"
+    },
+    {
+      "sha": "f9ddaff82893e242c2a90adf98bff67778e37e70",
+      "date": "2026-10-27T21:01:23-04:00",
+      "subject": "Make model search fuzzy across provider and model names"
+    },
+    {
+      "sha": "7f2383af70984197ac29f6f5ab3240efc25f8e1c",
+      "date": "2026-10-27T14:17:34-04:00",
+      "subject": "Merge pull request #1471 from vercel-labs/prepare-v0.0.15-refresh-20261027"
+    },
+    {
+      "sha": "ec872b150f892398e7e6e64fe4f2e4838d8bb1d2",
+      "date": "2026-10-27T14:09:55-04:00",
+      "subject": "Prepare v0.0.15 release"
+    },
+    {
+      "sha": "d072810a68454cd408938480a9fbb71016eb25cc",
+      "date": "2026-10-22T12:44:20-04:00",
+      "subject": "Use camelCase names for the OAuth helpers"
+    },
+    {
+      "sha": "fd726cc0d35a92e01ba23f10100793fddddfca58",
+      "date": "2026-10-22T12:44:20-04:00",
+      "subject": "Reject wrong-type grep_files and glob_files arguments"
+    },
+    {
+      "sha": "aad62a74c29e1afbd56062abab8a68998ecfa1aa",
+      "date": "2026-10-22T12:44:19-04:00",
+      "subject": "Check the ChatGPT account ID before saving a login"
+    },
+    {
+      "sha": "a4b04c7f976e5401442b6be971e6346b8c10b0be",
+      "date": "2026-10-22T12:44:19-04:00",
+      "subject": "Share one session store between ChatGPT and Grok"
+    },
+    {
+      "sha": "ad0f58c3b71edda5670e973977abda01eb167ef8",
+      "date": "2026-10-22T12:44:19-04:00",
+      "subject": "Remove the unused failing allocator from the terminal store tests"
+    },
+    {
+      "sha": "89746a2874907454773bc134e9eaa817d0c2cc80",
+      "date": "2026-10-22T12:44:19-04:00",
+      "subject": "Classify provider HTTP failures in one place"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/context.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/builtins/gateway.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/runtime/tests/support.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/agent/stream_provider.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/app/model_cache_runtime.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/auth/chatgpt_oauth.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/auth/chatgpt_session.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/auth/credentials.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/auth/grok_oauth.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/auth/grok_session.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/auth/login_flow.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/auth/oauth.zig",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "src/core/auth/subscription_session.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/slack/install.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/core/terminal/store.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gateway/chat_completions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gateway/host_chat_completions.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gateway/host_openai_codex.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gateway/host_stream_provider.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gateway/host_xai_grok.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gateway/openai_codex.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/gateway/xai_grok.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/filesystem/glob_files.zig",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "src/tools/filesystem/grep_files.zig",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": false,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

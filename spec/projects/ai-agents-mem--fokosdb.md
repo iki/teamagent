@@ -39,6 +39,18 @@ Evidence: [packages/fokosdb/src/server/materialization/materialization-store.ts:
 
 **Scope and limits:** Static scoped review of new materialization primitives, selected Cloudflare fixture bodies and topology-routing changes within the 288-path comparison. Ingest caller validation, transaction orchestration, topology cache codec, complete migration protocol and real workerd behavior were not fully audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Topology cache identity includes the source scope, not only the shard group.** Reviewed commit `3ec80287b0b30251245c72212e0de2b23b9bf9d1` (commit date `2026-10-27T23:06:49Z`), compared with `bc71c29c6d7fe33e219b8f019219491019ac7964`. The complete no-rename Git path inventory contains 27 changed paths.
+
+Hash and range cache keys now include a JSON-encoded scope, representing the admin binding/jurisdiction that supplies topology. The WeakMap memo also checks scope when the same topology object is reused. A fixture gives two explicit scopes and the default scope different versions and verifies six independent hash/range fetches. The option remains optional, so callers that omit distinct ownership scopes still share the default namespace.
+
+Evidence: [packages/fokosdb/src/sharding/topology-cache.ts:27-39](https://github.com/lambrospetrou/fokosdb/blob/3ec80287b0b30251245c72212e0de2b23b9bf9d1/packages/fokosdb/src/sharding/topology-cache.ts#L27-L39) · [packages/fokosdb/src/sharding/topology-cache.ts:90-139](https://github.com/lambrospetrou/fokosdb/blob/3ec80287b0b30251245c72212e0de2b23b9bf9d1/packages/fokosdb/src/sharding/topology-cache.ts#L90-L139) · [packages/fokosdb/src/sharding/topology-cache.test.ts:213-241](https://github.com/lambrospetrou/fokosdb/blob/3ec80287b0b30251245c72212e0de2b23b9bf9d1/packages/fokosdb/src/sharding/topology-cache.test.ts#L213-L241).
+
+**Harness consequence:** Include tenant, backend/account and deployment boundary in cache identity. Make required scope explicit at the Teamagent adapter boundary; a source-level optional string is not an authorization mechanism.
+
+**Scope and limits:** Reviewed topology key construction and scope-separation fixtures; the separate materialization-target changes were not audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [fokosdb](https://github.com/lambrospetrou/fokosdb); analyzed commit `bc71c29c6d7fe33e219b8f019219491019ac7964`; commit date 2026-10-26T14:57:46Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--fokosdb.md).
+Analysis metadata: source [fokosdb](https://github.com/lambrospetrou/fokosdb); analyzed commit `3ec80287b0b30251245c72212e0de2b23b9bf9d1`; commit date 2026-10-27T23:06:49Z; review date 2026-10-28T14:52:35.205Z; depth screened. [Maintenance record](../analyses/repos/ai-agents-mem--fokosdb.md).
 <!-- teamagent-analysis:end -->

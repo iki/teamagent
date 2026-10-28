@@ -1,0 +1,895 @@
+{
+  "id": "ai-agents--sage",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/ZHangZHengEric/Sage",
+  "report": "spec/projects/ai-agents--sage.md",
+  "analyzedSha": "358f925822e07035c35e610af19bea14de3e01df",
+  "analyzedAt": "2026-10-28T09:45:33.667Z",
+  "analyzedCommitDate": "2026-10-27T17:41:30+08:00",
+  "observedSha": "5e66cbc8cc931155802c84e29d1cfd32d68a2c30",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "5e66cbc8cc931155802c84e29d1cfd32d68a2c30",
+      "date": "2026-10-28T16:48:46+09:00",
+      "subject": "Merge pull request #321 from xiaozhang112/main"
+    },
+    {
+      "sha": "79b15a7ec8fed21b4ecc2ddf74b15c3de4c76fe6",
+      "date": "2026-10-28T15:46:12+08:00",
+      "subject": "test(server): retain historical budget defaults in package fixture"
+    },
+    {
+      "sha": "804893c6b7d62e3499a92923e22b37f12c8af2d3",
+      "date": "2026-10-28T15:35:38+08:00",
+      "subject": "fix(context): preserve archive identity after retiring token budgets"
+    },
+    {
+      "sha": "154c915b62b3e1ba5edd78e7762a5486b089ca8f",
+      "date": "2026-10-28T14:38:12+08:00",
+      "subject": "refactor(context): retire unenforced token budgets; fix docs parity and CI"
+    },
+    {
+      "sha": "7c2eb22ecd2b1c7dfb34f5a6f725ebbe65c672d2",
+      "date": "2026-10-28T14:05:34+08:00",
+      "subject": "fix(desktop): bypass proxies for local sidecar requests"
+    },
+    {
+      "sha": "ab930d13a35d05bb3ef66749b1e2a59188ef27a6",
+      "date": "2026-10-28T13:10:03+08:00",
+      "subject": "feat(tests): add tests for filesystem store attribute overrides and ensure proper session state handling"
+    },
+    {
+      "sha": "218e266154114be78d541c099f0f8501c9677f04",
+      "date": "2026-10-28T13:08:11+08:00",
+      "subject": "feat: Enhance IM notification handling with approval cancellation and delivery management"
+    },
+    {
+      "sha": "3c01259cbb72c381f2c8e252a4cf9bab8ec9eb69",
+      "date": "2026-10-28T12:38:34+08:00",
+      "subject": "feat: Implement IM notifications system with binding, tracking, and delivery features"
+    },
+    {
+      "sha": "800a994016a4b7811271a1e3fa33522d10554943",
+      "date": "2026-10-28T12:05:49+08:00",
+      "subject": "Merge branch 'main' of github.com:ZHangZHengEric/Sage"
+    },
+    {
+      "sha": "a56a244c770bc2b256d16b52b563ab96c3d7b5b8",
+      "date": "2026-10-28T12:02:25+08:00",
+      "subject": "feat: add Feishu connection management components and functionality"
+    },
+    {
+      "sha": "0e4c2664dafccac303cdc1d8441ea0189c8cba7b",
+      "date": "2026-10-28T11:59:27+08:00",
+      "subject": "feat(rsi): isolate dataset Python runtimes and document setup"
+    },
+    {
+      "sha": "f560c26520aaf6da9de53a2129fbfdbad9e7dc64",
+      "date": "2026-10-28T11:20:55+08:00",
+      "subject": "Merge branch 'main' of github.com:ZHangZHengEric/Sage"
+    },
+    {
+      "sha": "c4ea26c5b3f0852342001d63bfaf4a470219ea0f",
+      "date": "2026-10-28T11:20:51+08:00",
+      "subject": "feat: Implement IM management API with Feishu integration"
+    },
+    {
+      "sha": "3cbead4f1decc388143d1e74cbdf0b6ca920c5b3",
+      "date": "2026-10-28T11:09:55+08:00",
+      "subject": "fix(desktop): preserve session history across deletion and upgrades"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".env.example",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".gitignore",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/app.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/catalog_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/rsi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/rsi_evaluation.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/rsi_test_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/rsi_user_simulator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/run_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/schemas.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/settings_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/backend/workspace_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/api/v2_api.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/localization/app_localizations.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/models.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/lib/src/services/scorer_import.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/state/workspace_controller.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/ui/rsi_screen.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/lib/src/ui/workspace/composer.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/desktop/test/scorer_import_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/test/v2_api_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/desktop/test/widget_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/bootstrap.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/conversations/agui/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/conversations/runs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/database/schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/feishu.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/notification_store.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/notifications.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/orm.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/repository.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/im/tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/packages/builder.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/packages/tool_policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/routers/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/routers/conversations.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/routers/im.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/routers/schemas/conversations.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/routers/schemas/im.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/runtime/policy.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/runtime/sdk_plugins.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/App.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/agent-presentation.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/agui/session.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/api.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/components/AgentEditor.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/FeishuConnectionDetail.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/FeishuConnectionForm.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/FeishuConnections.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/FeishuDeliveryList.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/components/IMNotificationSelect.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/config-schema.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/im-connections.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/router.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/use-im-connection.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/src/views/Chat.vue",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/src/views/IM.vue",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/tests/admin-pages.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/tests/agent-presentation.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/tests/conversation-pages.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "app/v2/server/web/tests/im-connections.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "app/v2/server/web/tests/session-contract.test.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "change_log.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/ENV_VARS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/api/HTTP_API_REFERENCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/applications/RSI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/architecture/SERVER_V2_IM_PLUGIN_DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/en/architecture/rsi-evaluation-tuning-loop-proposal.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/en/architecture/sagents-manifest-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/ENV_VARS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/api/HTTP_API_REFERENCE.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/applications/RSI.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/architecture/SERVER_V2_IM_PLUGIN_DESIGN.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/architecture/rsi-evaluation-tuning-loop-proposal.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/zh/architecture/sagents-manifest-reference.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/agentbench_db/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/agentbench_db/mcp.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/agentbench_db/scorer.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/alfworld/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/alfworld/mcp.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/alfworld/scorer.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/alfworld/vendor/alfworld/env/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/alfworld/vendor/alfworld/env/reward.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/alfworld/vendor/alfworld/env/tasks.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/alfworld/vendor/alfworld/env/thor_env.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/bfcl/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/bfcl/mcp.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/bfcl/scorer.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/scienceworld/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/scienceworld/mcp.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/scienceworld/scorer.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/tau_bench/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/tau_bench/mcp.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/tau_bench/scorer.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/tau_bench/user_simulator.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/toolsandbox/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "evaluation_datasets/toolsandbox/mcp.example.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "evaluation_datasets/toolsandbox/scorer.runtime.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/v2/desktop_optimization_mirror.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "pyproject.toml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/agent/engine.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/agent/factory.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/agent/management/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/agent/step_request.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/context/assembler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/context/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/i18n.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/contracts.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/observer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/python_scorer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/python_scorer_worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/python_user_simulator_worker.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/optimization/scorer_dependencies.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/package/manifest/agents.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/package/manifest/legacy_budgets.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/package/manifest/resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/package/manifest/root.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/package/manifest/runtime.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/runtime/session/migration.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "sagents/v2/runtime/session/plugins/_shared/facade.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/runtime/session/plugins/ephemeral.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/runtime/session/plugins/filesystem/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/runtime/session/plugins/mysql/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "sagents/v2/runtime/session/plugins/mysql/redis.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/desktop/test_agent_deletion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_external_rsi.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/desktop/test_legacy_local_session_access.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_main.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/desktop/test_project_sources.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_rsi.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_rsi_python_scorer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_rsi_user_simulator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/desktop/test_service.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/conftest.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_credentials.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_feishu.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_gateway.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_http.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_notification_http.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_notification_lifecycle.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_notification_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_notifications.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/app/v2/server/im/test_recovery.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/server/test_catalog_packages.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/server/test_file_downloads.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/app/v2/server/test_startup_schema.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/fixtures/retired_budget_archives.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_agent_step_request_matrix.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "tests/sagents/v2/test_approval_cancel.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_context_composition.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_context_efficiency.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "tests/sagents/v2/test_context_pipeline_matrix.py",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

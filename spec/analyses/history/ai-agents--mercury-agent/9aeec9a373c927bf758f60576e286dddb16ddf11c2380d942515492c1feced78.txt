@@ -1,0 +1,47 @@
+# mercury-agent
+
+Source: [mercury-agent](https://github.com/cosmicstack-labs/mercury-agent) · Category: [ai-agents](../categories/ai-agents.md)
+
+Original review depth: **inventory / README screening only**. The dated update review below has its own explicit scope. This is an individual coverage record, not a source-code correctness audit or adoption recommendation.
+
+Snapshot: `26f4b155754d17be318db8a4c192a6d744eb66f3`; commit timestamp `2026-10-03T15:12:06+05:30`; 724 tracked paths.
+
+## Scope and evidence
+
+Upstream description excerpt (a project claim, automatically extracted from [README](https://github.com/cosmicstack-labs/mercury-agent/blob/26f4b155754d17be318db8a4c192a6d744eb66f3/README.md)):
+
+> Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Remembers what matters. Asks before it acts. Runs 24/7 from CLI, Telegram, or Web. 31 built-in tools, Kanban boards, extensible skills, SQLite-backed Second Brain memory.
+
+Build/package evidence: [package.json](https://github.com/cosmicstack-labs/mercury-agent/blob/26f4b155754d17be318db8a4c192a6d744eb66f3/package.json); [ui/package.json](https://github.com/cosmicstack-labs/mercury-agent/blob/26f4b155754d17be318db8a4c192a6d744eb66f3/ui/package.json); [website/package.json](https://github.com/cosmicstack-labs/mercury-agent/blob/26f4b155754d17be318db8a4c192a6d744eb66f3/website/package.json)
+
+License evidence: [LICENSE](https://github.com/cosmicstack-labs/mercury-agent/blob/26f4b155754d17be318db8a4c192a6d744eb66f3/LICENSE) Classification hint: MIT. A root license does not establish rights for every bundled asset, model, or dependency.
+
+## Harness assessment
+
+This entry was catalogued under **ai-agents**. Its category places it in the candidate set for agents, models, channels; those associations are navigational and have not been individually validated as implemented capabilities. See [agents](../agents.md) · [models](../models.md) · [channels](../channels.md) for the source-reviewed alternatives and proposed integration boundaries.
+
+**Disposition:** retain as a comparison candidate. Before adopting it, inspect the implementation entry point and its tests, verify the required protocol and deployment platform, and reproduce a task from the harness evaluation suite. Popularity, a README feature list, and the presence of a package manifest are insufficient evidence of quality or compatibility.
+
+**Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
+
+## 2026-10-28 scoped update review
+
+Reviewed commit `2bdcca50d102221d2ed21cdb1aeb5acacd110704` (commit date `2026-10-27T12:21:51Z`). The original snapshot above remains historical evidence.
+
+**Scope:** Complete evaluation runner, Web channel and Web-channel fixtures. Oversized core agent source was not captured/read; provider playback, permission enforcement, HTTP authentication and redaction helpers remain outside scope.
+
+The [evaluation runner](https://github.com/cosmicstack-labs/mercury-agent/blob/2bdcca50d102221d2ed21cdb1aeb5acacd110704/src/eval/runner.ts#L122-L173) substitutes recorded tool outputs when present but calls the real tool when absent. Its [construction](https://github.com/cosmicstack-labs/mercury-agent/blob/2bdcca50d102221d2ed21cdb1aeb5acacd110704/src/eval/runner.ts#L248-L302) disables configured live providers and uses scripted ones, yet enables auto-approval and defaults to fake timers that suppress watchdog/provider deadlines. Therefore this is not automatically a side-effect-free replay or evidence of real timeout behavior. Idle detection requires 25 event-loop ticks in an idle state rather than an authoritative turn receipt. The expectations mostly inspect text, counts and provider/tool labels; when no expectation object is supplied, the helper returns before checking script exhaustion. Preserve fixture/real-effect provenance and separate semantic acceptance, deadline behavior and authorization tests. No harness or upstream test ran.
+
+The [Web interaction path](https://github.com/cosmicstack-labs/mercury-agent/blob/2bdcca50d102221d2ed21cdb1aeb5acacd110704/src/channels/web.ts#L143-L208) checks allowed values, one-shot consumption and a two-minute fallback. It binds the target only when a cloud handler exists; a normal SSE-targeted interaction is stored without that binding. The [fixture](https://github.com/cosmicstack-labs/mercury-agent/blob/2bdcca50d102221d2ed21cdb1aeb5acacd110704/src/channels/web.test.ts#L69-L105) demonstrates both unbound SSE resolution and cloud rejection of another request. HTTP authentication and decision-route ownership were not inspected, so this is an adapter scope difference rather than an established external exploit. The prompt is broadcast before the pending interaction is registered, leaving synchronous handler re-entry unable to resolve it. Register owned state before notifying observers and apply equivalent request/principal binding on each transport.
+
+The [delivery path](https://github.com/cosmicstack-labs/mercury-agent/blob/2bdcca50d102221d2ed21cdb1aeb5acacd110704/src/channels/web.ts#L122-L141) retains a cloud terminal handler when it refuses delivery, but SSE enqueue errors are swallowed and no client acknowledgement exists. Client maps, stream accumulation and controller queues have no local bounds. Tool feedback includes argument/result excerpts without the terminal error redactor, so diagnostic projection needs its own confidentiality policy. The choice-timeout fixture with no interactive target resolves immediately and therefore does not exercise its timer despite advancing the fake clock. Adapt explicit delivery receipts and fixture coverage claims, not the test suite's durable-streaming label as proof of durable delivery.
+
+**Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
+
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `2bdcca50d102221d2ed21cdb1aeb5acacd110704` to `7c92d37304262d9182dda940b9f8a06ef9cecd02`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [.github/badges/downloads-breakdown.json](https://github.com/cosmicstack-labs/mercury-agent/blob/7c92d37304262d9182dda940b9f8a06ef9cecd02/.github/badges/downloads-breakdown.json#L1-L6), The complete two-path update changes only download badge data. The breakdown records npm/binary totals and its update timestamp; the other changed file is the aggregate download badge. No runtime or evaluation source changed in this frozen delta.
+
+**Harness implication and limits:** Keep the prior runtime/channel findings and their limitations unchanged. Repository popularity counters are neither quality evaluations nor evidence that previous delivery, authorization or replay concerns were fixed. This is a complete changed-path reconciliation for this two-file delta, not a new runtime audit. No upstream tests, agent execution or provider requests were run.

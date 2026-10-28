@@ -44,6 +44,18 @@ Evidence: [typescript/renderers/angular/src/v0_8/rendering/renderer.ts:1-182](ht
 
 **Scope and limits:** Scoped static review of the Angular v0.8 renderer, its fixtures and one Lit transport sample from the 2,409-path comparison. Other protocol versions, Swift/Dart renderers, sandbox internals and deployed behavior were not audited or executed.
 
+## Follow-up change review — 2026-10-28
+
+**Generated UI data assignments distinguish updates from initial nested construction.** Reviewed commit `ccf5dc20d0b0ed041b03e3913d807420ff45e178` (commit date `2026-10-27T17:04:19-07:00`), compared with `02174297d59451bd293c3c995792274b5d333c58`. The complete no-rename Git path inventory contains 196 changed paths.
+
+The compiler emits per-path updateDataModel messages for updates, while initial surface creation walks typed containers, permits bounded numeric array indexes, pads new array entries with null and rejects traversal through primitives. Root replacement requires a map. Fixtures cover preserving neighboring array objects, null padding, invalid array keys, primitive traversal and an over-limit index.
+
+Evidence: [typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts:100-191](https://github.com/google/A2UI/blob/ccf5dc20d0b0ed041b03e3913d807420ff45e178/typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts#L100-L191) · [typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts:744-805](https://github.com/google/A2UI/blob/ccf5dc20d0b0ed041b03e3913d807420ff45e178/typescript/agents/a2ui_agent/src/inference-formats/express/compiler.ts#L744-L805) · [typescript/agents/a2ui_agent/tests/unit/inference-formats/express/compiler.test.ts:150-220](https://github.com/google/A2UI/blob/ccf5dc20d0b0ed041b03e3913d807420ff45e178/typescript/agents/a2ui_agent/tests/unit/inference-formats/express/compiler.test.ts#L150-L220).
+
+**Harness consequence:** Apply generated UI mutations through a typed, bounded data-path contract. Test create and update semantics separately and preserve existing values; the inspected traversal is not a complete prototype-key or untrusted-UI security audit.
+
+**Scope and limits:** Reviewed assignment/path handling and its focused fixtures; other schema/version and rendering changes were not exhaustively audited. This is a scoped static comparison, not a whole-project correctness or security audit. Upstream tests were read where cited, not run; no upstream code, service, model or provider operation was executed. Historical findings above remain evidence at their own revisions.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [a2ui](https://github.com/google/A2UI); analyzed commit `02174297d59451bd293c3c995792274b5d333c58`; commit date 2026-10-27T13:42:14-04:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--a2ui.md).
+Analysis metadata: source [a2ui](https://github.com/google/A2UI); analyzed commit `ccf5dc20d0b0ed041b03e3913d807420ff45e178`; commit date 2026-10-27T17:04:19-07:00; review date 2026-10-28T14:52:35.205Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-gen--a2ui.md).
 <!-- teamagent-analysis:end -->

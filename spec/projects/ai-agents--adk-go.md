@@ -38,6 +38,18 @@ The [lazy provider](https://github.com/google/adk-go/blob/19707a2660a8dd7b8ffb32
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed commit `4bd9638d01cfe49df79c196d3322b2b451e34ed8` (commit date `2026-10-28T10:19:21+01:00`), compared with `19707a2660a8dd7b8ffb32837027253ed2f29dd1`. Earlier findings remain historical evidence.
+
+**Scope:** Analytics upload deadline, cooldown and deferred-upload ownership changes. The complete changed-path inventory contains 30 paths; the assessment below is limited to the cited branches.
+
+The upload path records its own timeout cause separately from an inherited caller deadline, measures stall time after a concurrency slot is obtained, and pauses later uploads for a shared cooldown. Failed uploads are retained for a later batch only under the explicit caller-cut-short/defer conditions; successful non-GCS locations are not treated as retained failures. See [plugin/agentanalytics/gcs_offloader.go](https://github.com/google/adk-go/blob/4bd9638d01cfe49df79c196d3322b2b451e34ed8/plugin/agentanalytics/gcs_offloader.go#L459-L563).
+
+For Teamagent, preserve phase-specific failure causes and explicit ownership of deferred work. The semaphore acquisition and wait group still depend on the offloader returning: a context deadline is not proof that a non-cooperative upload has stopped. These telemetry retry rules must not be transferred to ambiguous billable or enrollment operations. New model support and terminal trace reporting are outside this review.
+
+**Verification limit:** committed-source inspection only; no upstream code, tests or provider calls were executed. This review does not certify every changed file or establish a Teamagent integration.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [adk-go](https://github.com/google/adk-go); analyzed commit `19707a2660a8dd7b8ffb32837027253ed2f29dd1`; commit date 2026-10-27T13:06:04+01:00; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-go.md).
+Analysis metadata: source [adk-go](https://github.com/google/adk-go); analyzed commit `4bd9638d01cfe49df79c196d3322b2b451e34ed8`; commit date 2026-10-28T10:19:21+01:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--adk-go.md).
 <!-- teamagent-analysis:end -->

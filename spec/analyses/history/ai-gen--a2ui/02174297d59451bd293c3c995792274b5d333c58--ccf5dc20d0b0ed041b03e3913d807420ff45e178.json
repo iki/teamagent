@@ -1,0 +1,890 @@
+{
+  "id": "ai-gen--a2ui",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/google/A2UI",
+  "report": "spec/projects/ai-gen--a2ui.md",
+  "analyzedSha": "02174297d59451bd293c3c995792274b5d333c58",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-27T13:42:14-04:00",
+  "observedSha": "ccf5dc20d0b0ed041b03e3913d807420ff45e178",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "ccf5dc20d0b0ed041b03e3913d807420ff45e178",
+      "date": "2026-10-27T17:04:19-07:00",
+      "subject": "fix(express): emit per-path updateDataModel on surface updates and support list path traversal (#3677)"
+    },
+    {
+      "sha": "f064af3e1921b5097b2b9b018ed2305dceb97e3d",
+      "date": "2026-10-27T16:51:29-07:00",
+      "subject": "fix(core): coerce ValidationResult to DynamicBoolean arguments from the schema (#3653)"
+    },
+    {
+      "sha": "cb98b41e78569966826298f149e5a4a5eff7f94f",
+      "date": "2026-10-27T23:30:31Z",
+      "subject": "docs: fix accessibility attributes in component reference (#3669)"
+    },
+    {
+      "sha": "4c73981c0216d5a2d232d029250cc1877daa31c9",
+      "date": "2026-10-27T16:02:58-07:00",
+      "subject": "test(web_core): use minor GC between timed runs in timing harness (#3664)"
+    },
+    {
+      "sha": "1bd2336c51f167cf12b91ea5f60a8287f0d06dc6",
+      "date": "2026-10-27T15:33:13-07:00",
+      "subject": "fix(web_core): use '@call' in v1.0 function RPC payloads (#3665)"
+    },
+    {
+      "sha": "a4c963a0ad9da316d634d8938bda14c4e5906afa",
+      "date": "2026-10-27T15:18:49-07:00",
+      "subject": "fix(spec): only restrict allowedCallers when requiresUserActivation is true (#3671)"
+    },
+    {
+      "sha": "c824c5b897111a5c93267cad220fbcab7079e3b2",
+      "date": "2026-10-27T14:30:49-07:00",
+      "subject": "revert(agent,core)!: remove cross-catalog $ref resolution across peer catalogs (#3575)"
+    },
+    {
+      "sha": "abdd66beede058f620f9d14ac053b70d150d421a",
+      "date": "2026-10-27T21:06:40Z",
+      "subject": "chore(python,typescript)!: remove the payload fixers (payload_fixer.py, payload-fixer.ts) (#3632)"
+    },
+    {
+      "sha": "80d7f273f25390b17ee69c0d1c4c7b1745f7c7e8",
+      "date": "2026-10-27T15:49:57-04:00",
+      "subject": "fix(swift): send callAgentFunction with @call and no returnType (#3544)"
+    },
+    {
+      "sha": "43847125c6fa6174415c3b9e2825d73de589c9d7",
+      "date": "2026-10-27T12:20:10-07:00",
+      "subject": "fix(python/agent): move Direct JSON protocol schemas into base rules (#3559)"
+    },
+    {
+      "sha": "01e5cf5d0bc78200fcdcd135c14368f28213874f",
+      "date": "2026-10-27T15:12:26-04:00",
+      "subject": "perf(swift): incremental node resolution and leaf-level SwiftUI redraws (#3231)"
+    },
+    {
+      "sha": "1be0838cd039b5acbdd3d39bb52823856d3435a0",
+      "date": "2026-10-27T18:26:56Z",
+      "subject": "feat(a2ui_core,a2ui_flutter)!: support protocol v1.0 (#3619)"
+    },
+    {
+      "sha": "aa3e45fce49526562899a6cd9acd8456cde68c81",
+      "date": "2026-10-27T11:18:18-07:00",
+      "subject": "fix(samples): remove allow-same-origin and allow-popups from inner MCP App sandbox (#3646)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "blueprints/codebases/dart/a2ui_flutter/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/python/a2ui_agent/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/codebases/typescript/agents/a2ui_agent/codebase.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blueprints/modules/a2ui_agent.blueprint.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/compiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/direct_json/prompt_generator.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/compiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/express/decompiler.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/multi_catalog_formats.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/agent/request_processor.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/conformance_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/catalog.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "conformance/core/functions.yaml",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "conformance/test_data/catalogs/cross_ref_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "conformance/test_data/catalogs/peer_matching/alpha/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "conformance/test_data/catalogs/peer_matching/beta/catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "conformance/test_data/catalogs/peer_matching/mcp_catalog.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "conformance/test_data/catalogs/peer_matching/referencing_catalog_v1_0.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "conformance/test_data/prompts/direct_json/cross_ref_catalogs_pruned.txt",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "conformance/test_data/validation_schema/test_v10_cross_catalog_validation_schema.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/direct_json/prompt_generator.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/express/compiler.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/express/decompiler.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/express/prompt_generator.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/inference_formats/express/schema_helper.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/lib/src/utils/catalog_resolver.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/test/express_decompiler_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/test/express_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/test/generator_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/test/protocol_v1_0_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_agent/test/specification_round_trip_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/lib/src/basic_catalog/v1_0/functions.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/lib/src/core/catalog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/lib/src/processing/processor.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/lib/src/resolution/data_context.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/lib/src/resolution/generic_binder.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_core/lib/src/resolution/validation_result_coercion.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/lib/src/validation/schema_resolution.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/lib/src/validation/validator.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/test/basic_catalog_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_core/test/catalog_external_ref_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/test/catalog_json_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/test/conformance/catalog_schema_conformance_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_core/test/node_resolver_bindings_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "dart/a2ui_core/test/peer_catalogs_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_core/test/validation_result_coercion_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/basic_catalog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/basic_catalog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/basic_catalog_v0_9.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/button.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/check_box.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/check_hint.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/choice_picker.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/date_time_input.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/markdown.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/media.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/slider.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/text.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/text_field.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/catalog/basic/video.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/component_props.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/lib/src/node_view.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_flutter/lib/v0_9/basic_catalog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/audio_player_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/basic_catalog_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/button_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/check_box_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/choice_picker_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/date_time_input_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/examples_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/functions_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/icon_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/image_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/layout_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/leaf_components_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/list_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/markdown_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/modal_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/slider_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/tabs_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/text_field_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/theme_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/catalog/basic/video_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/component_props_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/custom_catalog_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/error_listener_set_state_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/problem_delivery_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/support/basic_test_catalog.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "dart/a2ui_flutter/test/support/surface_harness.dart",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "dart/a2ui_flutter/test/v1_0_test.dart",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/public/concepts/catalogs.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/public/reference/components.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/agent_development.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/inference_formats/_shared/catalogs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/inference_formats/_shared/schema_helper.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/inference_formats/direct_json/prompt_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/inference_formats/direct_json/schema_prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/inference_formats/express/compiler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/inference_formats/express/decompiler.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/parser/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/a2ui_agent/src/a2ui/parser/payload_fixer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/utils/catalog_resolver.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/src/a2ui/utils/renderer_state.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/conformance/test_conformance.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/express/test_catalogs_and_updates.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/express/test_cli_tools.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/express/test_parser_decompile.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/express/test_round_trip.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/a2ui_agent/tests/parser/test_payload_fixer.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/skill/test_skill_generator.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/a2ui_agent/tests/test_catalog_resolver_peers.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/test_catalog_schema_helper.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/test_formats.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_agent/tests/test_schema_prompt.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/src/a2ui/core/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/src/a2ui/core/catalog/__init__.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/src/a2ui/core/catalog/catalog.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/src/a2ui/core/processing/message_processor.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/src/a2ui/core/resolution/data_context.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/a2ui_core/src/a2ui/core/resolution/validation_result_coercion.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/src/a2ui/core/validation/schema_validator.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/tests/test_catalog_json.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/tests/test_conformance.py",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "python/a2ui_core/tests/test_peer_catalogs.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "python/a2ui_core/tests/test_resolution.py",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "python/a2ui_core/tests/test_schema_validator_network.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/community/agent/adk/file_upload_summarizer/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/community/agent/adk/mcp_app_proxy/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/community/agent/adk/rizzcharts/python/agent.py",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/community/client/lit/mcp-apps-in-a2ui-sample/ui/custom-components/mcp-apps-component.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/community/client/shared/mcp_apps_inner_iframe/sandbox.spec.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "samples/community/client/shared/mcp_apps_inner_iframe/sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specification/proposals/express/a2ui_express.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specification/v1_0/docs/a2ui_protocol.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specification/v1_0/docs/evolution_guide.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "specification/v1_0/json/catalog_definition.json",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "specification/v1_0/test/cases/function_definitions.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Models/CallFunctionPayload.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Models/Node.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Models/ResolvedAction.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Models/SurfaceViewModel.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Processing/Adapters/V10VersionAdapter.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Processing/InternalCallRendererFunctionOp.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Processing/MessageProcessor.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/RPC/RPCHandler.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/Resolution/NodeResolver.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/State/DataModel.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Sources/A2UICore/State/SurfaceComponentsModel.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Tests/A2UIConformanceTests/RPCConformanceTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Tests/A2UICoreTests/NodeResolverTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/core/Tests/A2UICoreTests/RendererToAgentMessageTests.swift",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "swift/swiftui/Sources/A2UISwiftUI/A2UIAccessibilityModifier.swift",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

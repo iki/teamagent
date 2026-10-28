@@ -1,0 +1,985 @@
+{
+  "id": "ai-query--office-parser",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/harshankur/officeParser",
+  "report": "spec/projects/ai-query--office-parser.md",
+  "analyzedSha": "57f2d144916191ef0cca8677f40cf169195a66d7",
+  "analyzedAt": "2026-10-28T09:27:32.685Z",
+  "analyzedCommitDate": "2026-10-26T23:11:44+01:00",
+  "observedSha": "15f1f22d668f631859440f916b252b4879edcf3b",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "15f1f22d668f631859440f916b252b4879edcf3b",
+      "date": "2026-10-28T08:24:38+01:00",
+      "subject": "chore(site): the visualizer shows its own pdf.js folders, and a warning its page and reason"
+    },
+    {
+      "sha": "776718c862a93f12134fb7ff56f23872841cb15f",
+      "date": "2026-10-28T00:45:55+01:00",
+      "subject": "chore(release): 8.4.0 browser bundles rebuilt"
+    },
+    {
+      "sha": "2f79ed4c6716254efc32128e565ad01dd1a776c3",
+      "date": "2026-10-28T00:14:10+01:00",
+      "subject": "docs(pdf): an asset folder keeps a document waiting 15 s in all"
+    },
+    {
+      "sha": "e6684a3f89cb6ac7c95ba89d9bd39d3a4f361bdb",
+      "date": "2026-10-28T00:12:52+01:00",
+      "subject": "fix(pdf): no in-process turn is held over the caller's code, slow asset folders cost a document 15 s, and pdf.js's warnings are told apart"
+    },
+    {
+      "sha": "1cbd7ceed40a99774e7337334d36538fa9a670bc",
+      "date": "2026-10-27T23:40:02+01:00",
+      "subject": "fix(pdf): a browser caller's preloaded pdf.js worker is used, with no Worker started or fetched"
+    },
+    {
+      "sha": "c7cba9b812064ab5fc37373609aa30c307e73980",
+      "date": "2026-10-27T23:28:28+01:00",
+      "subject": "chore(release): 8.4.0 dated 28 October 2026"
+    },
+    {
+      "sha": "254d37579f894e6ee0e19ec4440dac3045934e36",
+      "date": "2026-10-27T23:24:34+01:00",
+      "subject": "chore(site): pdf.js's CMaps and image decoders served beside its worker"
+    },
+    {
+      "sha": "702e33e9b330d6ec23ad9d3d3d1bb45ae550fffb",
+      "date": "2026-10-27T23:22:47+01:00",
+      "subject": "docs(pdf): pdfCMapUrl, pdfDecoderUrl, maxImagePixels and PDF_ASSET_UNAVAILABLE"
+    },
+    {
+      "sha": "4eca3cdb1f0c1862c02985810d6e77a5525ef4df",
+      "date": "2026-10-27T23:22:47+01:00",
+      "subject": "fix(pdf): pdf.js reads CMaps and image decoders, and the pictures it leaves out are reported"
+    },
+    {
+      "sha": "95e16778c5828d45cb99dec75730c84b0dfaed06",
+      "date": "2026-10-27T22:37:55+01:00",
+      "subject": "fix(pdf): a CFF glyph's stack holds 513 operands, and the time budget and a picture's emitting name their page"
+    },
+    {
+      "sha": "86a6890a1e87adb85a93593ab7cebc8f34a10cd5",
+      "date": "2026-10-27T22:19:39+01:00",
+      "subject": "feat(pdf): a PDF warning names its page, and a picture pdf.js cannot decode is reported"
+    },
+    {
+      "sha": "71cb5441699ce7d12f18249a55fc311761961d82",
+      "date": "2026-10-27T21:29:26+01:00",
+      "subject": "feat(blog): the header's chip opens the blog, and its buttons show their names on wider screens"
+    },
+    {
+      "sha": "d25185ef595c5c0d8b1c1df6021b6d972894a9b4",
+      "date": "2026-10-27T21:25:04+01:00",
+      "subject": "feat(blog): a revised post's changes are put away from a button in its header"
+    },
+    {
+      "sha": "c8dbea1eae2dbb4123d7b27cfc3929721a7e5841",
+      "date": "2026-10-27T21:15:45+01:00",
+      "subject": "feat(blog): a revised post's changes can be put away with a switch in its byline"
+    },
+    {
+      "sha": "e327c42b43105b0760e25943082e783cf10c1cd6",
+      "date": "2026-10-27T21:01:47+01:00",
+      "subject": "docs(blog): the 8.3.0 changes to two posts marked as revisions, and the AST post's output count brought up to date"
+    },
+    {
+      "sha": "02faeb79d73ce66ab31f0ea8003773e21221c08a",
+      "date": "2026-10-27T20:53:50+01:00",
+      "subject": "feat(blog): a post's revisions are shown where they were made"
+    },
+    {
+      "sha": "56fcb4d072de3972b55ce2e2d66d222952d30829",
+      "date": "2026-10-27T19:34:49+01:00",
+      "subject": "docs(blog): posts brought up to date with 8.4.0, and what they had wrong corrected"
+    },
+    {
+      "sha": "180e09d9bb9cca733e810d48a447d9524584051e",
+      "date": "2026-10-27T19:34:48+01:00",
+      "subject": "feat(blog): a post's card in the list shows the day it was updated"
+    },
+    {
+      "sha": "9fc68aaf5486cc7d3fa5a896e3176a0e90c8a840",
+      "date": "2026-10-27T19:10:46+01:00",
+      "subject": "chore(release): 8.4.0 changelog, version, docs and site"
+    },
+    {
+      "sha": "4bb1df44628a55b3705c1d1c2eaf45b8e30a12ef",
+      "date": "2026-10-27T19:02:43+01:00",
+      "subject": "fix(pdf): a CFF2 maxstack that is no whole number is the default, not an uncapped stack"
+    },
+    {
+      "sha": "09ec1b214397cf649d8f6df471fddf040c6f1db3",
+      "date": "2026-10-27T18:41:59+01:00",
+      "subject": "fix(pdf): a CFF glyph draws by what its charstring does, not by fontkit's outline of it"
+    },
+    {
+      "sha": "da7f102e61dab02b3dbab8fe3b238076659fc56d",
+      "date": "2026-10-27T17:27:46+01:00",
+      "subject": "fix(pdf): a font's empty glyph is passed over for a font that draws the character, or the character reported lost"
+    },
+    {
+      "sha": "35910f0b0aea63db2e5de0e762ff5046bcf4f344",
+      "date": "2026-10-27T17:26:55+01:00",
+      "subject": "docs(site): RAG chunks a format of their own, and the read and written stats show their formats"
+    },
+    {
+      "sha": "a140289bcf8321dbc1e37a519b422a71bae6e9cf",
+      "date": "2026-10-27T17:24:29+01:00",
+      "subject": "fix(pdf): the row above each table is found by halving the page's baselines, not by reading every line for each table"
+    },
+    {
+      "sha": "26a9cdc3f85b2b574cb5ac20b4a5705ecf3f682c",
+      "date": "2026-10-27T17:17:45+01:00",
+      "subject": "docs(site): the home page says how many formats are read and how many written"
+    },
+    {
+      "sha": "686824a9a9fa0025802836ab06c05e9c436751c7",
+      "date": "2026-10-27T17:02:02+01:00",
+      "subject": "docs: a table of invisible text in slides has no rules, its cells placed where the page gave them"
+    },
+    {
+      "sha": "f179a3005821740c82bd6988be958c7273c5255a",
+      "date": "2026-10-27T16:25:47+01:00",
+      "subject": "fix(pdf): no prose read as a table, Type 3 fonts keep their names, turned invisible text is marked"
+    },
+    {
+      "sha": "635528326fcea52bc80b3ffd1f1ce48cb01f5a3b",
+      "date": "2026-10-27T16:00:58+01:00",
+      "subject": "fix: invisible text hides only itself, a table of it draws no rules, and slide lines stand on their body's baseline"
+    },
+    {
+      "sha": "38ffdec9b9800f75cd94d0114ed8fd7d891f0865",
+      "date": "2026-10-27T15:47:54+01:00",
+      "subject": "fix(pdf): fonts unpacked and checked in linear time, and a font's empty glyph is its blank"
+    },
+    {
+      "sha": "582c5a769664d4fa6464211794d13bdfeae8afde",
+      "date": "2026-10-27T14:43:46+01:00",
+      "subject": "test: baselines for invisible text, baselines, page breaks and the ODP namespace"
+    },
+    {
+      "sha": "987433b693ee9410b211c2ea66a929d6dbcd675e",
+      "date": "2026-10-27T14:42:54+01:00",
+      "subject": "docs: PDF table spans from a cell set between its rows, and the site's copy of the README"
+    },
+    {
+      "sha": "c27183730ec9fadd720b0d374e0f2cba23e5e807",
+      "date": "2026-10-27T14:42:42+01:00",
+      "subject": "test(pdf): tables as a browser and LibreOffice print them"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": "CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/assets/blog.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/assets/blog.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts/drawing-hindi-in-a-pdf.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts/from-text-extraction-to-ast-and-round-trip.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/posts/where-officeparser-is-the-wrong-tool.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/templates/layout.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/templates/list.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "blog/templates/post.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/blog.css",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/blog.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/drawing-hindi-in-a-pdf.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/feed.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/from-text-extraction-to-ast-and-round-trip.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/how-pptx-stores-a-slide.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/laying-out-a-page-around-a-floating-frame.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/rag-document-chunking-done-right.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/reading-the-spreadsheet-you-see.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/search.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/security-war-stories-zip-bombs-and-ssrf.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/what-is-actually-inside-a-docx.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/where-officeparser-is-the-wrong-tool.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/blog/why-pdf-text-extraction-is-hard.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.iife.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.slim.iife.js",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/dist/officeparser.browser.slim.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/index.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/repo/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/repo/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/sitemap.xml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/ast_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/cli_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/config_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/debugging_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/specs/generator_config_fragment.html",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/cjk_ccitt_jpx.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/indic_words_libreoffice.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/invisible_text.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/mixed_size_line.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/page_sizes.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/prose_not_tables_chrome.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/tables_borderless_chrome.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/tables_borderless_libreoffice.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/tables_tagged_chrome.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/tables_tagged_libreoffice.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/tesseract_text_layer.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/test/files/pdf/two_columns_not_tables_chrome.pdf",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "docs/vendor/SOURCES.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78-RKSJ-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78ms-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/78ms-RKSJ-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/83pv-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/90ms-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/90ms-RKSJ-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/90msp-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/90msp-RKSJ-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/90pv-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/90pv-RKSJ-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Add-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Add-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Add-RKSJ-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Add-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-0.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-1.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-3.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-4.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-5.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-6.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-CNS1-UCS2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-GB1-0.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-GB1-1.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-GB1-2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-GB1-3.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-GB1-4.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-GB1-5.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-GB1-UCS2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-0.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-1.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-3.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-4.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-5.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-6.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Japan1-UCS2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Korea1-0.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Korea1-1.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Korea1-2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Adobe-Korea1-UCS2.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/B5pc-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/B5pc-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/CNS-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/CNS-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/CNS1-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/CNS1-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/CNS2-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/CNS2-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/ETHK-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/ETHK-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/ETen-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/ETen-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/ETenms-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/ETenms-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Ext-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Ext-RKSJ-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Ext-RKSJ-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Ext-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GB-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GB-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GB-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GB-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBK-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBK-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBK2K-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBK2K-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBKp-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBKp-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBT-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBT-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBT-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBT-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBTpc-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBTpc-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBpc-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/GBpc-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKdla-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKdla-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKdlb-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKdlb-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKgccs-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKgccs-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKm314-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKm314-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKm471-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKm471-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKscs-B5-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/HKscs-B5-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Hankaku.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/Hiragana.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/KSC-EUC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/KSC-EUC-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/KSC-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/KSC-Johab-H.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/KSC-Johab-V.bcmap",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "docs/vendor/pdfjs-dist-6.2.108/cmaps/KSC-V.bcmap",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

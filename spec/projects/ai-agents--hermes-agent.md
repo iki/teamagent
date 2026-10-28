@@ -45,6 +45,14 @@ The [platform registry](https://github.com/NousResearch/hermes-agent/blob/e5ea5f
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6` to `8acb7f65801fa7548b223244dee57465adfda8ec`. Earlier findings above remain historical evidence; this is a focused review of the cited boundary, not a whole-repository audit.
+
+In [tools/approval.py](https://github.com/NousResearch/hermes-agent/blob/8acb7f65801fa7548b223244dee57465adfda8ec/tools/approval.py#L179-L242), The gateway approval store now exposes an observer registration separate from the existing settlement hook. Both are registered under a lock against the exact session/request pair; a missing pending request returns false. Withdrawal removes the pending entry, records a cancellation cause and wakes its waiter, while acknowledgement merely records receipt. Those are distinct lifecycle events and should remain distinct in channel/UI contracts.
+
+**Harness implication and limits:** Use one authoritative approval state with multiple presentation observers. A channel card disappearing or being acknowledged must not authorize an effect. A late observer must handle the already-settled case explicitly. This inspection does not establish callback invocation, timeout races, Discord delivery or durability across process restart; those call sites were outside this scoped review. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `e5ea5fd9ccdf2913c0b21b24eb3d22b321d2e2a6`; commit date 2026-10-27T08:02:46-07:00; review date 2026-10-28T09:27:32.685Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
+Analysis metadata: source [hermes-agent](https://github.com/NousResearch/hermes-agent); analyzed commit `8acb7f65801fa7548b223244dee57465adfda8ec`; commit date 2026-10-28T15:28:40+05:30; review date 2026-10-28T14:29:27.414Z; depth source-reviewed. [Maintenance record](../analyses/repos/ai-agents--hermes-agent.md).
 <!-- teamagent-analysis:end -->

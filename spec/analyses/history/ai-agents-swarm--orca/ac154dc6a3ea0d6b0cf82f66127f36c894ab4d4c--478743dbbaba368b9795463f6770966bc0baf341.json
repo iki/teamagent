@@ -1,0 +1,985 @@
+{
+  "id": "ai-agents-swarm--orca",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/stablyai/orca",
+  "report": "spec/projects/ai-agents-swarm--orca.md",
+  "analyzedSha": "ac154dc6a3ea0d6b0cf82f66127f36c894ab4d4c",
+  "analyzedAt": "2026-10-28T08:26:04.502Z",
+  "analyzedCommitDate": "2026-10-27T10:36:03-07:00",
+  "observedSha": "478743dbbaba368b9795463f6770966bc0baf341",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "478743dbbaba368b9795463f6770966bc0baf341",
+      "date": "2026-10-28T03:17:25-07:00",
+      "subject": "perf(skills): target WSL install verification discovery (#28750)"
+    },
+    {
+      "sha": "72fad1af6d0fa3add1419078d8adafd765a56c8d",
+      "date": "2026-10-28T03:15:23-07:00",
+      "subject": "fix: release dictation when renderer documents retire (#34886)"
+    },
+    {
+      "sha": "30e75d94d3e4dd01a262c5c5a26f22e8f747da1d",
+      "date": "2026-10-28T03:14:19-07:00",
+      "subject": "feat(wsl): say WSL hosts are paused in serve-only (kill switch 3) (#34868)"
+    },
+    {
+      "sha": "9e9b54524802c563251f6fc85d8a489ee5d415f9",
+      "date": "2026-10-28T03:10:08-07:00",
+      "subject": "fix: retire automatic PR refresh with renderer documents (#34879)"
+    },
+    {
+      "sha": "448ef93938e2dd77f52f2fd029f066b1c8686fdf",
+      "date": "2026-10-28T03:06:24-07:00",
+      "subject": "test(e2e): retry the PTY write spy's main-process evaluates on transient CDP failures (#34912)"
+    },
+    {
+      "sha": "36d295628ebd9fa835c04f2cc09a75cfff96f409",
+      "date": "2026-10-28T02:56:45-07:00",
+      "subject": "fix: cancel cleanup scans with retired renderer documents (#34896)"
+    },
+    {
+      "sha": "84059825e3cbcfe2cc698e6dc45bcdee9c70d172",
+      "date": "2026-10-28T02:56:26-07:00",
+      "subject": "fix(export): cancel PDF work when requesting document retires (#34907)"
+    },
+    {
+      "sha": "b050ac28f9a122bf86849b3c1972855053858455",
+      "date": "2026-10-28T02:43:59-07:00",
+      "subject": "fix(main): drop stray tr.json keys and split runtime-file-read-client under max-lines (#34929)"
+    },
+    {
+      "sha": "31f3c5242210729c009e244d75d88b9a49bbc645",
+      "date": "2026-10-28T02:38:02-07:00",
+      "subject": "perf(renderer): hash drafts only for published Markdown sources (#34775)"
+    },
+    {
+      "sha": "83771490707c61c79fd09426447b59d2f2b0e4e3",
+      "date": "2026-10-28T02:31:00-07:00",
+      "subject": "Preserve terminal exit queries across snapshot restore (#34723)"
+    },
+    {
+      "sha": "2d3e7e452000c26433650d75422e79a06be80684",
+      "date": "2026-10-28T02:18:37-07:00",
+      "subject": "perf(renderer): cache structured chat presence by snapshot identity (#34774)"
+    },
+    {
+      "sha": "471330cd659b3e4b9e764e9c0ebb4dbf9585a9f0",
+      "date": "2026-10-28T02:18:25-07:00",
+      "subject": "Keep automation sends working during phone terminal control (#34675)"
+    },
+    {
+      "sha": "0458c5d21f899e144e75871d44feac866927e399",
+      "date": "2026-10-28T02:16:59-07:00",
+      "subject": "fix(i18n): drop the dashboardPopout.terminal.closed key #34650 removed (#34914)"
+    },
+    {
+      "sha": "0cca424b5150885c6ba9c094d50caa3a43e85c9a",
+      "date": "2026-10-28T02:15:57-07:00",
+      "subject": "feat(wsl): admit no new WSL host or move in serve-only (kill switch 2/2) (#34694)"
+    },
+    {
+      "sha": "9c7654600a2d620d0db9024cdbb8dc6ee6f1d8e9",
+      "date": "2026-10-28T02:15:30-07:00",
+      "subject": "perf(browser): throttle idle guests between active operations (#34776)"
+    },
+    {
+      "sha": "14ab7f0c5ec824dad440259c6122ed9437d199cf",
+      "date": "2026-10-28T02:12:00-07:00",
+      "subject": "Native chat: file: images and outside-workspace host images show and open on the chat's host (#31781)"
+    },
+    {
+      "sha": "21ad2d9dc54a1839f64d4b5a1d9cff98fe7f0e7a",
+      "date": "2026-10-28T02:10:24-07:00",
+      "subject": "fix(wsl-mover): settle an interrupted move automatically, and hold the host's server update during a move (#34823)"
+    },
+    {
+      "sha": "fa5284aca2e6e7f109aedad81c395470216dc7b9",
+      "date": "2026-10-28T02:09:49-07:00",
+      "subject": "feat: edit queued messages inline with the full chat composer (#31180)"
+    },
+    {
+      "sha": "b220644d31b37f0c6be314618c035022425fa712",
+      "date": "2026-10-28T02:09:38-07:00",
+      "subject": "perf(browser): bound completed command replay payload bytes (#34773)"
+    },
+    {
+      "sha": "d6918c7a1d3603d64b4c99b81631d2d64f2fd612",
+      "date": "2026-10-28T02:01:16-07:00",
+      "subject": "fix(remote-files): cap search replies, say when a diff is too large, and measure a 100 MB read on WSL (#34882)"
+    },
+    {
+      "sha": "e7f9a914d910ec4b08c11b02083317a19dde950b",
+      "date": "2026-10-28T01:59:36-07:00",
+      "subject": "perf(renderer): retire model-catalog reconnect observers with removed hosts (#34865)"
+    },
+    {
+      "sha": "78b49689f949d3367a0f8b756d322374bee34023",
+      "date": "2026-10-28T01:57:24-07:00",
+      "subject": "feat(terminal): offer Close tab in the right-click menu of a single-pane terminal (#31815)"
+    },
+    {
+      "sha": "780ab3d71d5bd371a124df645a312856417426eb",
+      "date": "2026-10-28T01:57:10-07:00",
+      "subject": "fix(bitbucket): canonicalize ssh.bitbucket.org remotes in review links and Gitea detection (#30808)"
+    },
+    {
+      "sha": "19ecde24a02fb00b15273bfbe676cbac4033c20b",
+      "date": "2026-10-28T01:52:45-07:00",
+      "subject": "fix: retire terminal previews with renderer documents (#34863)"
+    },
+    {
+      "sha": "fac8a7454a514369ceaf43459f253ebd336cd29e",
+      "date": "2026-10-28T01:51:57-07:00",
+      "subject": "fix(wsl-mover): a moved project's chat opens and answers here; a fenced terminal names its host (#34880)"
+    },
+    {
+      "sha": "ce595faadcafe14376df80969956b979befa1692",
+      "date": "2026-10-28T01:51:52-07:00",
+      "subject": "fix(rate-limits): keep Claude OAuth credits through live statusline updates (#29759)"
+    },
+    {
+      "sha": "5e345ffa75e51a33f120b7841d3817c9d766ceee",
+      "date": "2026-10-28T01:51:24-07:00",
+      "subject": "feat(links): add copy file path action to the link popover (#21257)"
+    },
+    {
+      "sha": "1a0ce3a55c920ea5684f1ce6cb9e7b277b92a190",
+      "date": "2026-10-28T01:50:41-07:00",
+      "subject": "feat(editor): highlight Groovy files and Jenkinsfiles (#26792)"
+    },
+    {
+      "sha": "86f9b369d8f5aafe3ac8a79e80856f1d4cd2d7c6",
+      "date": "2026-10-28T01:50:15-07:00",
+      "subject": "fix(settings): show the default word separators as an editable value (#28336)"
+    },
+    {
+      "sha": "55b26f814b3fe71d88bcf167a9a7623375be11f9",
+      "date": "2026-10-28T01:49:47-07:00",
+      "subject": "fix: recover companion renderers on reopen after a crash (#34763)"
+    },
+    {
+      "sha": "bd4702fbb536a8034d647116efe0064cf3b13f24",
+      "date": "2026-10-28T01:40:40-07:00",
+      "subject": "fix(managed-server): let a forced update or rollback cross mixed daemon generations (#34664)"
+    },
+    {
+      "sha": "612febdadde1b92ef5908a9cb33b1cd62ff003a0",
+      "date": "2026-10-28T01:39:00-07:00",
+      "subject": "Open existing agent chats and retained panes from their rows (#34650)"
+    }
+  ],
+  "files": [
+    {
+      "status": "M",
+      "path": ".github/CONTRIBUTING.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/install-node-dependencies/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/prepare-native-runtime/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/prepare-windows-agent-hook/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/actions/prepare-windows-cli-launcher/action.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/adhoc-mac-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/ci-branch-cache-sweep.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-cache-warmup-platform-jobs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-cache-warmup-platforms.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-cache-warmup.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-closed-pr-caches.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-runner-demand.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci-xterm-cache.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/cloud-verify.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/computer-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/computer-macos-native.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/daily-mac-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dependency-security.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dev-channel-win-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/dev-channel-win-publish.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/docs.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/hourly-mac-build.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/mobile.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-next-compat.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/node-server-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/packaged-browser-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/performance-contracts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pi-owner-runtime.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pi-provider-runtime.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr-test-loc.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/pr.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/preflight-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/preflight-cli-platforms.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/preflight-critical-path-benchmark.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/qualified-orcad-template.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-cut.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-policy.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/release-ref-validation.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ssh-hostile-hosts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ssh-windows-hosts.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/terminal-perf.yml",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".github/workflows/unit-module-cache.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit-plan.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit-selection-evidence.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/unit-tests.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/win-orcad-serve-switch-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-signing-rehearsal.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/windows-typecheck-parity.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/wsl-orcad-e2e-frozen-runner-retry.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/wsl-orcad-e2e.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/zcode-credential-contract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/zcode-transcript-contract.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".oxlintrc.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "AGENTS.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/build-plugins/browser-extension-worker-shim.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/build-plugins/main-build-entry-points.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/build-plugins/main-locale-subset.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/build-plugins/plain-node-entry-guard.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/daemon-blocking-call-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/electron-builder.config.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/flaky-test-pattern-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/focus-setting-read-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/i18n-russian.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/i18n-traditional-chinese.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/i18n-turkish.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/localization-coverage-allowlist.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/main-layout-writer-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/main-sync-spawn-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/mobile-ci.vitest.config.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/oxlint-js-plugins.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/oxlint-performance-audit.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/oxlint-plugins/app-store-performance.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/patches/node-pty@1.1.0.patch",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/patches/vitest@5.0.5.patch",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/performance-audit.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/process-host-direct-import-baseline.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/reliability-gates.jsonc",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/app-store-performance-plugin.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/apply-translation-delta.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/benchmark-ci-preflight-critical-path.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/browser-session-startup-metadata-benchmark.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/build-mac-notarization-overlap.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/build-orcad.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-changed-selection.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-changed.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/check-daemon-blocking-call-ratchet.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/check-daemon-blocking-call-ratchet.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-job-log-consumer-oracles.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-main-sync-spawn-ratchet.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-process-host-imports.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/check-process-host-imports.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/ci-branch-cache-sweep.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-dependency-download-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-native-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-pnpm-store-mode.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-shard-timings.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-files.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-module-cache-contents.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-module-cache.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ci-unit-module-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/dev-channel-orcad-template-workflow.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/dev-rolldown-runtime-env.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ensure-native-runtime-job-ownership.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ensure-native-runtime.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/gated-call-use-collector.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/generate-bundled-skill-guides.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/generate-bundled-skill-guides.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/hourly-preflight-workflow.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/linux-package-fixture-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-cross-locale-key-overrides.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-ja-key-overrides.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-key-overrides.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-ko-key-overrides.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-phrase-fixes.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-translation-policy.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-translation-policy.zh-round5.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/locale-zh-value-overrides.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/mac-notarization-builder-contract.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/mobile-release-check-scope.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/mobile-test-change-scope.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/mobile-typecheck-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/native-chat-compaction-pagination.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/native-dependency-lock-digest.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/native-dependency-lock-digest.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/node-pty-job-ownership.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/node-server-fast-runners.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/orcad-entry-build.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/orcad-linear-sdk-package.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/orcad-windows-prebuild-cache.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/orcad-windows-prebuild-cache.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/pr-code-change-scope.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/pr-e2e-route-contracts.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/pr-e2e-source-routing.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/pr-package-test-paths.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/pr-preflight-gates.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/pr-test-loc-summary.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/project-catalog-read-boundary.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/qualified-orcad-template.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/rebuild-native-deps-test-fixtures.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/rolldown-thread-limit.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/run-lint.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/ssh-windows-mobile-bundle.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/verify-localization-catalog.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/verify-localization-catalog.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/verify-localization-extraction.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/verify-localization-extraction.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/verify-packaged-node-pty-job-ownership.cjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/verify-packaged-node-pty-job-ownership.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/vitest-affected-tests.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/vitest-module-cache-resolution-key.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/vitest-module-cache-resolution-key.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/vitest-node-runtime-files.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/vitest-run-temp-directory.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/scripts/vitest-runtime-boundary.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "config/scripts/windows-rust-build-scope.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "config/scripts/windows-signing-rehearsal-orcad-template.test.mjs",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/tsconfig.node.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "config/vitest.config.ts",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": true,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

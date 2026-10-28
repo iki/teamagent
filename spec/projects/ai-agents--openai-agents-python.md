@@ -38,6 +38,14 @@ The reviewed tool delta returns a deep copy of [MCP annotations](https://github.
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `bc4c6e124d39626f9ad77c58cb136c67e66c4cf7` to `cd26bbbc52847845fde73b9952b51e62e2bcbdc0`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [src/agents/util/_asyncio_tasks.py](https://github.com/openai/openai-agents-python/blob/cd26bbbc52847845fde73b9952b51e62e2bcbdc0/src/agents/util/_asyncio_tasks.py#L106-L156), gather_with_cancel distinguishes sibling failure from parent cancellation and recognizes children whose cleanup is already owned by the caller. On sibling failure it gives those children the configured grace period, then cancels pending tasks and drains them. Parent cancellation cancels unfinished children immediately. Generator closure is explicitly left to the owner because it cannot suspend.
+
+**Harness implication and limits:** Give cleanup one owner and distinguish a grace period from a hard shutdown deadline. The final gather has no timeout and still depends on child cooperation, so this helper alone cannot guarantee bounded process termination. Test cancellation during cleanup, cancellation-resistant children and callback failures at the host boundary. No upstream tests or provider calls were run. No upstream runtime or live provider behavior was verified.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [openai-agents-python](https://github.com/openai/openai-agents-python); analyzed commit `bc4c6e124d39626f9ad77c58cb136c67e66c4cf7`; commit date 2026-10-27T17:34:02Z; review date 2026-10-28T08:47:42.123Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-python.md).
+Analysis metadata: source [openai-agents-python](https://github.com/openai/openai-agents-python); analyzed commit `cd26bbbc52847845fde73b9952b51e62e2bcbdc0`; commit date 2026-10-27T19:22:01Z; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--openai-agents-python.md).
 <!-- teamagent-analysis:end -->

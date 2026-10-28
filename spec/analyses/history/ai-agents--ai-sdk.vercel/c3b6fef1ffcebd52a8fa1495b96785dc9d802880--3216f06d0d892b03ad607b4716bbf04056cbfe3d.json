@@ -1,0 +1,895 @@
+{
+  "id": "ai-agents--ai-sdk.vercel",
+  "generatedAt": "2026-10-28T13:23:37.883Z",
+  "observedAt": "2026-10-28T13:15:42.3457578+00:00",
+  "source": "https://github.com/vercel/ai",
+  "report": "spec/projects/ai-agents--ai-sdk.vercel.md",
+  "analyzedSha": "c3b6fef1ffcebd52a8fa1495b96785dc9d802880",
+  "analyzedAt": "2026-10-28T08:47:42.123Z",
+  "analyzedCommitDate": "2026-10-27T09:26:11-07:00",
+  "observedSha": "3216f06d0d892b03ad607b4716bbf04056cbfe3d",
+  "status": "changed",
+  "shallow": false,
+  "dirty": false,
+  "reportModified": false,
+  "commits": [
+    {
+      "sha": "3216f06d0d892b03ad607b4716bbf04056cbfe3d",
+      "date": "2026-10-27T21:52:49-07:00",
+      "subject": "chore(examples): use sandbox packages instead of local adapters (#24142)"
+    },
+    {
+      "sha": "50da4c5b04cf9fd39c51d60808127c72b2adfd80",
+      "date": "2026-10-27T20:48:44-04:00",
+      "subject": "fix(anthropic): preserve workflow serialization for synchronous credentials (#24140)"
+    },
+    {
+      "sha": "60c29b9d3fc54bcabda47eb6cc151e70b0c4a676",
+      "date": "2026-10-27T23:09:15Z",
+      "subject": "Version Packages (#24138)"
+    },
+    {
+      "sha": "38a5b842b113a5083c72227745d986dc5bd2a9b7",
+      "date": "2026-10-27T15:36:34-07:00",
+      "subject": "fix(google-vertex): bump google-auth-library to ^11.3.1 (#23870) (#23950)"
+    },
+    {
+      "sha": "1f3cdbb3c6df3078c13e31e10afe9d8671e80797",
+      "date": "2026-10-27T19:27:29Z",
+      "subject": "Version Packages (#24084)"
+    },
+    {
+      "sha": "436374eb36897d6a6264f9a1a6a011475b36e107",
+      "date": "2026-10-27T19:15:08Z",
+      "subject": "fix(openai): report unfinished web searches as tool errors (#24121)"
+    },
+    {
+      "sha": "599a97f9bfd9cd95a0ca1bc8efab0a7f6422880d",
+      "date": "2026-10-27T19:07:32Z",
+      "subject": "fix(openai): gpt-transcribe REST response format and duration (#24110)"
+    },
+    {
+      "sha": "8375141ef491f5e98cd6dcded40dbc497ee4fd17",
+      "date": "2026-10-27T11:49:30-07:00",
+      "subject": "feat(openai): support streaming transcription with gpt-live-transcribe and gpt-transcribe (#24109)"
+    },
+    {
+      "sha": "0eb8de60dcb9a83d377135ea1d0f5058ccec4a8d",
+      "date": "2026-10-27T18:47:13Z",
+      "subject": "fix(xai): emit each streamed citation once (#24117)"
+    },
+    {
+      "sha": "7a9386493257782f230ff0716301c55b8a4de7b3",
+      "date": "2026-10-27T18:35:37Z",
+      "subject": "fix(cohere): decode base64 document data (#24037)"
+    },
+    {
+      "sha": "6978d98a772b8d3b16926865261f2b0856c4bee8",
+      "date": "2026-10-27T18:12:30Z",
+      "subject": "chore(docs): align Angular package readme and add verifier script for `README.md` conventions (#24114)"
+    },
+    {
+      "sha": "7eac05724161fb624fa2ec52c8ed1f4c670bb530",
+      "date": "2026-10-27T10:58:17-07:00",
+      "subject": "fix(openai): strip propertyNames schemas that omit type (#24115)"
+    },
+    {
+      "sha": "68db1af7fc468f25e82bb0bfbe9a805a48c75a02",
+      "date": "2026-10-27T10:58:12-07:00",
+      "subject": "fix(harness-codex): enable standalone web search for OpenAI backends (#24102)"
+    },
+    {
+      "sha": "9026c7de7975826f45caba47450b060d040d7581",
+      "date": "2026-10-27T10:57:57-07:00",
+      "subject": "fix(openai): only default transcription response format and timestamps when needed (#24099)"
+    }
+  ],
+  "files": [
+    {
+      "status": "D",
+      "path": ".changeset/anthropic-refreshable-auth.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/azure-speech-remove-voice-reset-workaround.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/bedrock-unique-document-names.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/beige-peaches-fail.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/calm-otters-explain.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/chatty-badgers-invent.md",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": ".changeset/fix-anthropic-workflow-serialization.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/forty-mangos-battle.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/fresh-terras-arrive.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/perplexity-search-queries.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/proud-beers-compare.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/quiet-beds-think.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/remove-type-redundant-validation.md",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": ".changeset/tidy-rivers-serve.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": ".github/workflows/ci.yml",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/01-xai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "content/providers/01-ai-sdk-providers/03-openai.mdx",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-e2e-next/app/api/chat/sandbox/route.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-e2e-next/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/ai-e2e-next/sandbox/stream-utils.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/ai-e2e-next/sandbox/vercel-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-e2e-next/tsconfig.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "examples/ai-functions/src/generate-text/cohere/citations.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/generate-text/openai/tool-call-record-input.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/reproduction/cohere-base64-document.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/ai-functions/src/sandbox/just-bash-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "D",
+      "path": "examples/ai-functions/src/sandbox/vercel-sandbox.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/stream-transcribe/openai/gpt-live-transcribe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/stream-transcribe/openai/gpt-transcribe.ts",
+      "previousPath": null
+    },
+    {
+      "status": "A",
+      "path": "examples/ai-functions/src/transcribe/openai/prompt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/ai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/alibaba/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/amazon-bedrock/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/angular/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/angular/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/angular/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic-aws/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic-aws/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/src/anthropic-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/anthropic/src/anthropic-provider.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/assemblyai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/assemblyai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/azure/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/azure/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/azure/src/__fixtures__/azure-web-search-preview-tool.1.chunks.txt",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/azure/src/__fixtures__/azure-web-search-preview-tool.1.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/azure/src/__snapshots__/azure-openai-provider.test.ts.snap",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/azure/src/azure-openai-provider.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/baseten/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/baseten/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/black-forest-labs/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/black-forest-labs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bytedance/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/bytedance/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cartesia/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cartesia/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cerebras/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cerebras/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-mode/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-mode/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/code-mode/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cohere/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cohere/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cohere/src/cohere-chat-language-model.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cohere/src/convert-to-cohere-chat-prompt.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/cohere/src/convert-to-cohere-chat-prompt.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/deepgram/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/deepgram/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/deepinfra/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/deepinfra/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/deepseek/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/deepseek/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/devtools/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/devtools/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/devtools/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/elevenlabs/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/elevenlabs/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fal/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fal/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fireworks/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fireworks/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fish-audio/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/fish-audio/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gateway/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gateway/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gladia/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gladia/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gmicloud/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/gmicloud/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/google-vertex/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/google-vertex/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/google/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/google/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/groq/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/groq/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-acp/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-acp/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-acp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-claude-code/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-claude-code/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-cline/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-cline/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-codex/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-codex/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-codex/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-codex/src/bridge/index.test.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-codex/src/bridge/index.ts",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-cursor/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-cursor/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-deepagents/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-deepagents/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-deepagents/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-fx/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-fx/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-github-copilot/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-github-copilot/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-grok-build/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-grok-build/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-opencode/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-opencode/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-opencode/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-pi/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness-pi/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/harness/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/heygen/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/heygen/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/huggingface/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/huggingface/README.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/huggingface/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/hume/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/hume/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/klingai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/klingai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/langchain/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/langchain/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/llamaindex/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/llamaindex/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/luma/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/luma/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mcp/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/minimax/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/minimax/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mistral/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/mistral/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/moonshotai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/moonshotai/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/open-responses/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/open-responses/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/openai-compatible/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/openai-compatible/package.json",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/openai/CHANGELOG.md",
+      "previousPath": null
+    },
+    {
+      "status": "M",
+      "path": "packages/openai/package.json",
+      "previousPath": null
+    }
+  ],
+  "commitsTruncated": false,
+  "filesTruncated": true,
+  "notes": [
+    "Git discovery: inspected; source lifecycle: active; upstream availability: available.",
+    "Exhaustive file-rename detection is limited to 1,000 candidates; excess unmatched paths remain additions/deletions."
+  ]
+}

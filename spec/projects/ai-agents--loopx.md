@@ -38,6 +38,14 @@ The [authentication fixture](https://github.com/huangruiteng/loopx/blob/fff09ead
 
 **Verification limit:** source inspection only; no upstream tests or provider calls were executed. This scoped review does not certify every file in the repository.
 
+## 2026-10-28 follow-up source review
+
+Reviewed the frozen update from `fff09ead9b17190d9cc8385f0c4da70669a4f272` to `0cfbf11dcea4ba7bc8fb13f06f1c915b63ce8fad`. Earlier findings above remain historical evidence; this review is limited to the cited source and delta.
+
+In [loopx/control_plane/todos/provider_update.py](https://github.com/huangruiteng/loopx/blob/0cfbf11dcea4ba7bc8fb13f06f1c915b63ce8fad/loopx/control_plane/todos/provider_update.py#L247-L319), Claim progress is now carried by a separate claim_operation_id in the v6 update request, alongside provider/registry revisions and lease identity/version. The helper refuses combining a claim with validation revision, monitor observation or an exact lowercased done status. Completion uses a separate declaration path.
+
+**Harness implication and limits:** Keep progress authority separate from completion evidence. Reuse stable operation/lease IDs across reconciliation rather than granting completion through a generic progress field. One local normalization inconsistency deserves a fixture: the claim guard lowercases status without trimming, while the subsequent completion branch trims it. The native validator may reject that mismatch, but it was not inspected, so this helper alone does not establish enforcement for whitespace variants. No upstream tests, agent execution or provider requests were run.
+
 <!-- teamagent-analysis:start -->
-Analysis metadata: source [loopx](https://github.com/huangruiteng/loopx); analyzed commit `fff09ead9b17190d9cc8385f0c4da70669a4f272`; commit date 2026-10-28T01:50:26+08:00; review date 2026-10-28T09:27:32.685Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--loopx.md).
+Analysis metadata: source [loopx](https://github.com/huangruiteng/loopx); analyzed commit `0cfbf11dcea4ba7bc8fb13f06f1c915b63ce8fad`; commit date 2026-10-28T18:01:55+08:00; review date 2026-10-28T14:29:27.414Z; depth screened. [Maintenance record](../analyses/repos/ai-agents--loopx.md).
 <!-- teamagent-analysis:end -->
