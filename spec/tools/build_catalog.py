@@ -2,6 +2,7 @@
 from pathlib import Path
 import json,re,collections
 from urllib.parse import quote
+from text_output import configure_output, write_utf8_lf
 
 BASE=Path(__file__).resolve().parents[1]
 
@@ -26,6 +27,7 @@ def description(text):
     return ' '.join(lines)[:550].replace('[','').replace(']','') or 'No concise purpose statement extracted; inspect the upstream README.'
 
 def main():
+    configure_output()
     projects=json.loads((BASE/'data/inventory.json').read_text(encoding='utf-8'))
     reviews={}
     for f in (BASE/'data').glob('*-review.json'):
@@ -64,13 +66,13 @@ This entry was catalogued under **{p['category']}**. Its category places it in t
 
 **Unresolved:** runtime behavior, security boundaries, performance, API/subscription eligibility, dependency health, maintenance status, and fit to the proposed harness were not independently established for this entry. No repository code was executed as part of this screening.
 '''
-        path.write_text(text,encoding='utf-8')
+        write_utf8_lf(path,text)
     catalog=[]
     for p in projects:
         review=reviews.get(p['id'])
         depth=('design-reviewed' if review.get('evidence_kind')=='design-source' else review.get('depth','source-reviewed')) if review else 'screened'
         catalog.append({k:p[k] for k in ('id','category','name','github','revision','commit_date','report')} | {'depth':depth,'topics':review['topics'] if review else p['topics'],'summary':review['summary'] if review else 'Inventory / README only; implementation not independently established.'})
-    (BASE/'data/coverage.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    write_utf8_lf(BASE/'data/coverage.json',json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
     notes_path=BASE/'data/category-notes.json'
     category_notes=json.loads(notes_path.read_text(encoding='utf-8')) if notes_path.exists() else {}
     for category in dict.fromkeys(p['category'] for p in projects):
@@ -86,7 +88,7 @@ This entry was catalogued under **{p['category']}**. Its category places it in t
         text+='\n## Project catalogue\n\n| Project source | Individual report | Depth | Harness relevance / finding |\n|---|---|---|---|\n'
         for p in rows:
             text+=f"| [{p['name']}]({p['github']}) | [Report](../{p['report']}) | {p['depth']} | {p['summary'].replace('|','/')} |\n"
-        (BASE/'categories'/f'{category}.md').write_text(text,encoding='utf-8')
+        write_utf8_lf(BASE/'categories'/f'{category}.md',text)
     readme=BASE/'README.md'
     if readme.exists():
         content=readme.read_text(encoding='utf-8')
@@ -96,7 +98,7 @@ This entry was catalogued under **{p['category']}**. Its category places it in t
             table+=f"| [{category}](categories/{category}.md) | {len(rows)} | {sum(p['depth']!='screened' for p in rows)} |\n"
         table+='<!-- categories:end -->'
         content=re.sub(r'<!-- categories:start -->.*?<!-- categories:end -->',lambda _:table,content,flags=re.S)
-        readme.write_text(content,encoding='utf-8')
+        write_utf8_lf(readme,content)
     # Rebuild these bounded generated sections as authored topics become available.
     for topic in sorted({t for p in catalog for t in p['topics']}):
         path=BASE/f'{topic}.md'
@@ -106,7 +108,7 @@ This entry was catalogued under **{p['category']}**. Its category places it in t
         content+='\n\n<!-- coverage:start -->\n## Project coverage\n\nEvery associated project has its own report. Source-reviewed associations reflect the inspected scope; screened associations derive from the input category and are not capability claims.\n\n| Source | Report | Depth |\n|---|---|---|\n'
         for p in rows:content+=f"| [{p['name']}]({p['github']}) | [Report]({p['report']}) | {p['depth']} |\n"
         content+='<!-- coverage:end -->\n'
-        path.write_text(content,encoding='utf-8')
+        write_utf8_lf(path,content)
     print(json.dumps({'catalogued':len(projects),'source_reviewed':len(reviews),'screened':len(projects)-len(reviews)}))
 
 if __name__=='__main__':main()

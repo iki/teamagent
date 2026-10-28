@@ -3,12 +3,25 @@ $ErrorActionPreference='Stop'
 . (Join-Path $ProjectRoot 'app/research/git-sync.ps1')
 $fixture=Join-Path $ProjectRoot ('.cache/research/fixtures-'+[Guid]::NewGuid().ToString('N'))
 [void][IO.Directory]::CreateDirectory($fixture)
-function Assert-That([bool]$Condition,[string]$Name) { if (-not $Condition) { throw ('assertion_failed: '+$Name) }; [Console]::WriteLine('PASS '+$Name) }
+function Assert-That([bool]$Condition,[string]$Name) { if (-not $Condition) { throw ('assertion_failed: '+$Name) }; [Console]::Write('PASS '+$Name+"`n") }
 function Put([string]$Path,[string]$Text) { [IO.File]::WriteAllText($Path,$Text,[Text.UTF8Encoding]::new($false)) }
 function Git([string]$Directory,[string[]]$Arguments) { $r=Invoke-ResearchGit $Directory $Arguments '' 15; if ($r.exitCode -ne 0) { throw ('fixture_git_failed: '+($Arguments -join ' ')+' '+$r.stderr) }; return $r.stdout.Trim() }
 function Rejects([scriptblock]$Operation,[string]$Name) { $rejected=$false; try { & $Operation | Out-Null } catch { $rejected=$true }; Assert-That $rejected $Name }
 $root=Join-Path $fixture 'project';$source=Join-Path $fixture 'source';$remote=Join-Path $fixture 'remote.git';$work=Join-Path $fixture 'work'
 foreach ($dir in @($root,$source,$work)) { [void][IO.Directory]::CreateDirectory($dir) }
+# Serialized formatting is normalized; escaped CR in JSON string values stays data.
+$lfTextPath=Join-Path $fixture 'lf-output.txt'
+Write-ResearchTextFile $lfTextPath "Žluťoučký`r`nsecond`rthird`n"
+Assert-That ([Convert]::ToBase64String([IO.File]::ReadAllBytes($lfTextPath)) -eq [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("Žluťoučký`nsecond`nthird`n"))) 'generated text is exact UTF-8 LF without BOM'
+$lfJsonPath=Join-Path $fixture 'lf-output.json'
+$lfValue=@{label='Žluťoučký';sourceText="first`r`nsecond`rthird"}
+Write-ResearchJson $lfJsonPath $lfValue
+Assert-That (-not ([IO.File]::ReadAllBytes($lfJsonPath) -contains 13) -and (ConvertFrom-Json (Read-ResearchText $lfJsonPath)).sourceText -ceq $lfValue.sourceText) 'JSON formatting uses LF while escaped source string remains unchanged'
+$lfConsole=[IO.StringWriter]::new();$lfConsole.NewLine="`r`n";$savedConsole=[Console]::Out
+try { [Console]::SetOut($lfConsole); Write-ResearchJsonOutput $lfValue } finally { [Console]::SetOut($savedConsole) }
+Assert-That (-not $lfConsole.ToString().Contains("`r") -and $lfConsole.ToString().EndsWith("`n") -and (ConvertFrom-Json $lfConsole.ToString()).label -ceq 'Žluťoučký') 'CLI JSON output overrides writer newline without altering data'
+$lfConsole.Dispose()
+
 Put (Join-Path $root '.env') "TEAMAGENT_GIT_SOURCES_DIR=../source`nTEAMAGENT_GIT_CACHE=cache`n"
 Put (Join-Path $root '.env.local') "TEAMAGENT_GIT_CACHE=cache local`n"
 $settings=Get-ResearchSettings $root
@@ -66,6 +79,9 @@ Put (Join-Path $source '.git-sources') ($url+"`n")
 $entries=Read-ResearchSourceList $settings -Import
 Assert-That ($entries.Count -eq 2 -and $entries[0].url -eq $entries[1].url) 'category filtering preserves duplicate identities'
 Write-ResearchLists $settings $entries
+foreach ($lfExport in @('.git-clone','.git-sources','git-sources.json')) {
+    Assert-That (-not ([IO.File]::ReadAllBytes((Join-Path $root $lfExport)) -contains 13)) ('generated source export uses LF: '+$lfExport)
+}
 Assert-That ((Read-ResearchText (Join-Path $root '.git-clone')).StartsWith($header.TrimEnd())) 'source loader header retained'
 $publishedExports=Join-Path $fixture 'published-exports';[void][IO.Directory]::CreateDirectory($publishedExports)
 Put (Join-Path $publishedExports '.git-clone') (Read-ResearchText (Join-Path $root '.git-clone'))

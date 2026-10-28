@@ -38,3 +38,28 @@ await test("archive errors cannot skip the root verification gate", () => {
   );
   assert.deepEqual(child, {});
 });
+
+await test("a thrown verification timeout still archives and permits only one repair continuation", () => {
+  for (const alreadyContinued of [false, true]) {
+    const calls: string[] = [];
+    const result = completeHook(
+      "Stop",
+      alreadyContinued,
+      () => {
+        calls.push("archive");
+        return true;
+      },
+      () => {
+        calls.push("verify");
+        throw new Error("Verification timeout");
+      },
+    );
+    assert.deepEqual(calls, ["archive", "verify"]);
+    if (alreadyContinued) {
+      assert.equal(result.decision, undefined);
+      assert.match(result.systemMessage ?? "", /still fails/u);
+    } else {
+      assert.equal(result.decision, "block");
+    }
+  }
+});

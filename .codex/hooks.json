@@ -8,7 +8,7 @@
             "type": "command",
             "command": "runtime=$(git config --local --get teamagent.bunPath || printf bun); exec \"$runtime\" \"$(git rev-parse --show-toplevel)/app/hooks/stop.ts\"",
             "commandWindows": "$runtime = git config --local --get teamagent.bunPath; if (-not $runtime) { $runtime = 'bun' }; & $runtime (Join-Path (git rev-parse --show-toplevel) 'app/hooks/stop.ts')",
-            "timeout": 360,
+            "timeout": 420,
             "statusMessage": "Saving conversation and checking codebase"
           }
         ]

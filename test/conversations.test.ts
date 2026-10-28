@@ -24,6 +24,21 @@ const record: RecordInput = {
   processingLog: ["Ran checks."],
 };
 
+await test("conversation output and retry identity normalize CRLF and lone CR to LF", async () => {
+  const root = await temporaryRoot();
+  const file = await archive(root, {
+    ...record,
+    prompt: "first\r\nsecond\rthird",
+    response: "done\r\nnext\rlast",
+    processingLog: ["step one\r\nstep two\rstep three"],
+  });
+  const body = await readFile(join(root, "spec/.conversations", file), "utf8");
+  assert.equal(body.includes("\r"), false);
+  assert.ok(body.includes("first\nsecond\nthird"));
+  assert.ok(body.includes("done\nnext\nlast"));
+  assert.equal(await archive(root, { ...record, response: "done\nnext\nlast" }), file);
+});
+
 await test("file references stay portable while URLs, relative paths, and slash commands stay intact", () => {
   const root = "C:/_/project";
   assert.equal(

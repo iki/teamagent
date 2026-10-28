@@ -36,7 +36,7 @@ try {
         stdio: ["ignore", 2, 2],
         shell: false,
         windowsHide: true,
-        timeout: 240_000,
+        timeout: 300_000,
       });
       return !check.error && check.status === 0;
     },

@@ -7,6 +7,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Effect, Schema } from "effect";
 import { openMemory, memoryLayer } from "../app/memory/index.ts";
+import { MemoryExportManifestSchema, verifyExportFile } from "../app/memory/export.ts";
 import {
   MemoryError,
   MemoryService,
@@ -87,6 +88,66 @@ async function fixture(
 }
 
 describe("source memory", () => {
+  test("exports LF text with exact raw hashes while keeping historical versions and opaque bytes", async () => {
+    const content = "\uFEFFAlpha\r\nBeta\rGamma\n";
+    const bytes = new TextEncoder().encode(content);
+    const binary = new Uint8Array([137, 80, 78, 71, 13, 10, 0, 255]);
+    const opaque = new Uint8Array([0, 13, 10]);
+    const invalidUtf8 = new Uint8Array([255, 13, 10]);
+    const svg = new TextEncoder().encode("<svg>\r\n<text>Evidence</text>\r</svg>");
+    const { store, root } = await fixture(() =>
+      Effect.succeed({
+        ...captured(content),
+        files: [
+          ...captured(content).files,
+          { path: "image.png", role: "image", mediaType: "image/png", bytes: binary },
+          { path: "opaque.txt", role: "original", mediaType: "text/plain", bytes: opaque },
+          { path: "invalid.txt", role: "original", mediaType: "text/plain", bytes: invalidUtf8 },
+          { path: "image.svg", role: "image", mediaType: "image/svg+xml", bytes: svg },
+        ],
+      }),
+    );
+    const receipt = await Effect.runPromise(store.get({ locator: "sample.txt" }));
+    const exported = await Effect.runPromise(
+      store.export(receipt.source.id, join(root, "lf-export")),
+    );
+    const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(MemoryExportManifestSchema))(
+      readFileSync(join(exported.directory, "manifest.json"), "utf8"),
+    );
+    expect(manifest.version).toEqual(receipt.version);
+    if (manifest.format !== "teamagent-memory-export-v2") throw new Error("Expected v2 export.");
+    expect(manifest.normalization.files).toHaveLength(3);
+    const file = receipt.version.files.find((candidate) => candidate.path === "index.md");
+    if (file === undefined) throw new Error("Missing Markdown fixture.");
+    const normalized = readFileSync(join(exported.directory, "files/index.md"));
+    const raw = readFileSync(join(exported.directory, "raw", file.sha256));
+    expect(normalized.toString("utf8")).toBe("\uFEFFAlpha\nBeta\nGamma\n");
+    expect(new Uint8Array(raw)).toEqual(bytes);
+    expect(new Uint8Array(readFileSync(join(exported.directory, "files/image.png")))).toEqual(
+      binary,
+    );
+    expect(new Uint8Array(readFileSync(join(exported.directory, "files/opaque.txt")))).toEqual(
+      opaque,
+    );
+    expect(new Uint8Array(readFileSync(join(exported.directory, "files/invalid.txt")))).toEqual(
+      invalidUtf8,
+    );
+    expect(readFileSync(join(exported.directory, "files/image.svg"), "utf8")).toBe(
+      "<svg>\n<text>Evidence</text>\n</svg>",
+    );
+    const svgHash = createHash("sha256").update(svg).digest("hex");
+    expect(new Uint8Array(readFileSync(join(exported.directory, "raw", svgHash)))).toEqual(svg);
+    expect(() => verifyExportFile(manifest, file, normalized, raw)).not.toThrow();
+    expect(() => verifyExportFile(manifest, file, normalized, normalized)).toThrow();
+    const retained = await Effect.runPromise(
+      store.read(receipt.source.id, file.path, receipt.version.id),
+    );
+    expect(retained.bytes).toEqual(bytes);
+    expect(retained.version.contentHash).toBe(receipt.version.contentHash);
+    const same = await Effect.runPromise(store.sync(receipt.source.id));
+    expect(same.version.id).toBe(receipt.version.id);
+  });
+
   test("natural questions and identifier words retrieve inflected evidence without requiring grammar words", async () => {
     const { store } = await fixture(() =>
       Effect.succeed(
@@ -244,7 +305,7 @@ describe("source memory", () => {
     expect(
       Schema.is(
         Schema.Struct({
-          format: Schema.Literal("teamagent-memory-export-v1"),
+          format: Schema.Literal("teamagent-memory-export-v2"),
           source: MemorySourceSchema,
           version: SourceVersionSchema,
         }),

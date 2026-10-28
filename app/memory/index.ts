@@ -21,6 +21,11 @@ import {
 import { basename, dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { Effect, Layer, Predicate, Schema } from "effect";
 import {
+  exportFileRepresentation,
+  textNormalizationPolicy,
+  type NormalizedExportFile,
+} from "./export.ts";
+import {
   InputKindSchema,
   LocatorSchema,
   MemoryError,
@@ -835,16 +840,34 @@ export const openMemory = (options: MemoryOptions): Effect.Effect<MemoryApi, Mem
           const destination = join(parent, basename(target));
           const temporary = mkdtempSync(join(parent, ".teamagent-export-"));
           try {
+            const normalized: NormalizedExportFile[] = [];
+            const retained = new Set<string>();
             for (const file of version.files) {
               const safePath = checkedPath(file.path);
               const output = join(temporary, "files", safePath);
+              const raw = readBlob(file);
+              const representation = exportFileRepresentation(file, raw);
               mkdirSync(dirname(output), { recursive: true });
-              writeFileSync(output, readBlob(file), { flag: "wx", mode: 0o600 });
+              writeFileSync(output, representation.bytes, { flag: "wx", mode: 0o600 });
+              if (representation.normalization !== undefined) {
+                normalized.push(representation.normalization);
+                if (!retained.has(file.sha256)) {
+                  const original = join(temporary, "raw", file.sha256);
+                  mkdirSync(dirname(original), { recursive: true });
+                  writeFileSync(original, raw, { flag: "wx", mode: 0o600 });
+                  retained.add(file.sha256);
+                }
+              }
             }
             writeFileSync(
               join(temporary, "manifest.json"),
               JSON.stringify(
-                { format: "teamagent-memory-export-v1", source: selected, version },
+                {
+                  format: "teamagent-memory-export-v2",
+                  source: selected,
+                  version,
+                  normalization: { policy: textNormalizationPolicy, files: normalized },
+                },
                 null,
                 2,
               ) + "\n",

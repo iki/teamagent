@@ -1,0 +1,14 @@
+root = true
+
+[*]
+end_of_line = lf
+
+# Retained original bytes are provenance, not editable text.
+[spec/archive/line-endings/originals/*.bin]
+end_of_line = unset
+
+[.cache/line-endings/originals/*.bin]
+end_of_line = unset
+
+[spec/analyses/history/**]
+end_of_line = unset

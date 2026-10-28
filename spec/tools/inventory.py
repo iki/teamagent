@@ -2,6 +2,7 @@
 from pathlib import Path
 import json, re, subprocess, collections, concurrent.futures, argparse
 from build_catalog import description
+from text_output import configure_output, write_utf8_lf
 
 ROOT = Path(__file__).resolve().parents[2]
 CATEGORIES = 'ai-agents ai-agents-mem ai-agents-proxy ai-agents-sandbox ai-agents-skills ai-agents-swarm ai-agents-tokens ai-eval ai-gen ai-info ai-media ai-model-edit ai-model-run ai-operate ai-prompts ai-query ai-security ai-skills ai-spec'.split()
@@ -43,6 +44,7 @@ def inspect(p):
        topics=TOPICS[p.parent.name],report='projects/'+slug+'.md',files=files)
 
 if __name__=='__main__':
+    configure_output()
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--full',action='store_true',help='Include raw README text and full file lists for further investigation')
     args=parser.parse_args()
@@ -56,5 +58,5 @@ if __name__=='__main__':
             del p['files']
     out=ROOT/'spec/data'
     out.mkdir(parents=True,exist_ok=True)
-    (out/'inventory.json').write_text(json.dumps(projects,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    write_utf8_lf(out/'inventory.json',json.dumps(projects,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'projects':len(projects),'categories':dict(collections.Counter(p['category'] for p in projects)), 'missing_remotes':[p['id'] for p in projects if not p['github']]}))

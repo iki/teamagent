@@ -2,6 +2,18 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $script:ResearchCategories = @('ai-agents','ai-agents-mem','ai-agents-proxy','ai-agents-sandbox','ai-agents-skills','ai-agents-swarm','ai-agents-tokens','ai-eval','ai-gen','ai-info','ai-media','ai-model-edit','ai-model-run','ai-operate','ai-prompts','ai-query','ai-security','ai-skills','ai-spec')
+function ConvertTo-ResearchLfText {
+    param([string]$Text)
+    return $Text.Replace("`r`n","`n").Replace("`r","`n")
+}
+function Write-ResearchTextFile {
+    param([string]$Path,[string]$Text)
+    [IO.File]::WriteAllText($Path,(ConvertTo-ResearchLfText $Text),[Text.UTF8Encoding]::new($false))
+}
+function Write-ResearchJsonOutput {
+    param([object]$Value)
+    [Console]::Out.Write((ConvertTo-ResearchLfText ($Value | ConvertTo-Json -Depth 20))+"`n")
+}
 function Read-ResearchText {
     param([string]$Path, [int]$MaxBytes = 16777216)
     $item = Get-Item -LiteralPath $Path -Force
@@ -107,7 +119,7 @@ function Get-ResearchBaseName {
 }
 function Get-ResearchSourceHeader {
     # Executable output comes only from repository-owned code, never an imported header.
-    return (Read-ResearchText (Join-Path $PSScriptRoot 'git-clone-header.sh') 65536).Replace("`r`n","`n").TrimEnd()+"`n"
+    return (ConvertTo-ResearchLfText (Read-ResearchText (Join-Path $PSScriptRoot 'git-clone-header.sh') 65536)).TrimEnd()+"`n"
 }
 function Read-ResearchSourceConfiguration {
     param([hashtable]$Settings)
@@ -202,7 +214,7 @@ function Write-ResearchJson {
     param([string]$Path,[object]$Value)
     $temporary=$Path+'.tmp-'+[Guid]::NewGuid().ToString('N')
     try {
-        [IO.File]::WriteAllText($temporary,($Value | ConvertTo-Json -Depth 20)+"`n",[Text.UTF8Encoding]::new($false))
+        Write-ResearchTextFile $temporary (($Value | ConvertTo-Json -Depth 20)+"`n")
         [IO.File]::Move($temporary,$Path,$true)
     } finally { if (Test-Path -LiteralPath $temporary) { Remove-Item -LiteralPath $temporary } }
 }

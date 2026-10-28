@@ -16,7 +16,15 @@ Either Aube or Bun may dispatch package scripts; Aube alone installs JavaScript 
 
 Any missing dependency, nonzero result, timeout or missing backend is a failure. Repair the cause before advancing. Do not turn off type-aware lint, relax strictness, add blanket suppressions or silently skip checks. Research documents in `spec/` and imported material in `data/research/texts/` and historical output in `spec/archive/legacy-research/` remain source evidence; formatting covers owned implementation files and the new development specifications without wholesale research rewrites.
 
-Tool launches have a 120-second cap; the complete test subprocess has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 240 seconds. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
+Tool launches have a 120-second cap; the complete test subprocess has a 240-second cap. The root Stop hook separately caps its assembled verification subprocess at 300 seconds. Its outer command budget is 420 seconds, allowing the unchanged 60-second archive operation and cleanup overhead. SubagentStop retains its 90-second outer budget. A timeout is a failed gate, not a skipped check; longer specialized integration/benchmark jobs need explicit separately bounded tasks.
+
+The 2026-10-28 assembled step check passed 358 tests with 1,321 assertions: the
+test subprocess took 223.44 seconds and the full check took 266.94 seconds, including
+about 38 seconds for the LF inventory and text-export verification. Citation
+validation was running concurrently, so this is an observed combined run, not an
+isolated performance baseline. The former 240-second assembled limit was below
+that successful run; the 300-second budget accommodates the added LF work without
+changing check content or the individual tool/test timeouts.
 
 ## Automated architecture checks
 
@@ -46,3 +54,37 @@ Codex's [official hook documentation](https://learn.chatgpt.com/docs/hooks) defi
 Cover observable success, typed failures, malformed boundaries, cancellation/resource cleanup, bounded queues/caches and authorization constraints when those behaviors change. Test browser workers in a real browser and Worker deployments against workerd. Native builds require SDK/device or simulator evidence for every claimed platform; record build-only, browser-only and untested states explicitly.
 
 Validate local/HTTP data parity, sizes/hashes/versioning, schema coverage and missing-result semantics where applicable. Keep private values out of logs and public URLs. Benchmarks record actual Bun/browser/native runtime versions, hardware, fixture/source hashes, first-call behavior, warmups, serial samples and spread. Never relabel old evidence or compare mixed methods as a speedup.
+
+## LF text and retained originals
+
+The normal gate checks LF line endings in tracked and untracked nonignored files
+plus explicitly owned ignored output roots. Oxfmt formatting remains scoped, but
+active research evidence also follows LF. The checker rejects CRLF and lone CR,
+fails malformed authored UTF-8, and reports opaque binary/invalid-UTF-8 inputs
+without rewriting them. It never follows directory links or traverses installed
+dependencies, nested Git checkouts/object stores, or named temporary byte-fixture
+roots. Cache metadata receives the same LF check; `.cache/text/exports` is checked
+through its export manifests and exact raw/output hashes. The immutable source
+blob/DB store retains original input bytes under the memory adapter's version
+contract. The public/private line-ending migration manifests bind every retained
+historical exception to its exact path and SHA-256; unlisted history receives the
+ordinary LF check. The private manifest can separately name narrow historical
+opaque inputs: each declaration must name an allowed evidence path, explain the
+exception and bind the input and its retained `.bin` original to the same verified
+hash. The bytes must actually contain NUL or fail UTF-8 decoding; ordinary valid
+text and authored source/configuration cannot acquire this exception.
+`.gitattributes` preserves original history bytes across
+platform Git settings, while active reports use LF. Explicit binary-extension
+attributes also preserve ASCII-only document/media containers; a real-Git fixture
+checks every supported extension in both letter cases, active LF text and retained
+originals with `core.autocrlf` enabled and disabled. The private `.env.local` file
+receives the LF check without logging its contents; any future migration must
+retain local settings privately. New owned cache/output roots
+must be registered with the checker; no directory-wide imported-text waiver is
+created. The owned cache inventory includes benchmark/extractor outputs, web
+evidence, launcher probes, immediate cache helper/receipt files and `media-smoke-*`
+directories. Installed PyYAML, virtualenvs, compiled third-party packages, models,
+benchmark memory stores and explicit document-input fixtures remain outside it;
+binary/media files are counted without text decoding. Bounds are 100,000 selected files, 25,000 visited output directories,
+32 path segments, 64 MiB per inspected file and 2 GiB per scan. Exceeding a bound
+fails explicitly rather than silently skipping files.

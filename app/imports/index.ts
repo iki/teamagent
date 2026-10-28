@@ -29,19 +29,24 @@ export interface CaptureOptions {
   readonly extractor?: ExtractorProfile;
 }
 
+// The wire policy also identifies LF export views; adapters keep their own pure operation.
+const textNormalizationPolicy = "utf8-lf-v1";
+const normalizeLf = (text: string): string => text.replace(/\r\n?/g, "\n");
+
 const handlerVersions = {
-  text: "teamagent-import/text/1",
+  text: "teamagent-import/text/2",
   image: "teamagent-import/image/1",
   raw: "teamagent-import/raw/1",
 } as const;
 
 /** This fingerprint is known before retrieval, including versions of fallback handlers. */
 function routingPolicy(convert: boolean, extractor: ExtractorProfile | undefined): string {
-  return `teamagent-routing/1;${digest(
+  return `teamagent-routing/2;${digest(
     JSON.stringify({
       convert,
       builtin: parserVersion,
       handlers: handlerVersions,
+      textNormalization: textNormalizationPolicy,
       external:
         convert && extractor !== undefined && extractor.engine !== "builtin"
           ? extractorProfileIdentity(extractor)
@@ -461,7 +466,7 @@ async function representations(
             path: `${prefix}/document.md`,
             role: "markdown",
             mediaType: "text/markdown",
-            bytes: new TextEncoder().encode(markdown),
+            bytes: new TextEncoder().encode(normalizeLf(markdown)),
             origin,
           });
       } catch (error) {
@@ -490,7 +495,7 @@ async function representations(
           path: `${prefix}/document.md`,
           role: "markdown",
           mediaType: "text/markdown",
-          bytes: original.bytes,
+          bytes: new TextEncoder().encode(normalizeLf(content)),
           origin,
         });
         parsers.add(handlerVersions.text);

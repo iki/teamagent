@@ -45,7 +45,10 @@ export async function archive(root: string, value: RecordInput): Promise<string>
     throw new Error("Invalid UTC completion date");
   }
   const clean = (text: string): string =>
-    redact(relativeReferences(text, root, input.previousRoot), input.redactions);
+    redact(relativeReferences(text, root, input.previousRoot), input.redactions).replace(
+      /\r\n?/gu,
+      "\n",
+    );
   const response = clean(input.response);
   const identity = createHash("sha256")
     .update(JSON.stringify([input.sessionId, input.turnId, input.agent, response]))
@@ -101,7 +104,7 @@ export async function archive(root: string, value: RecordInput): Promise<string>
       `Model: ${clean(input.model)}`,
       `Reasoning level: ${clean(input.reasoning)}`,
       "",
-      "Public transcript only. Recognized credentials and requested literal redactions are replaced with [redacted] markers.",
+      "Public transcript only. Recognized credentials and requested literal redactions are replaced with [redacted] markers. Text line endings are normalized to LF.",
       "",
       "## Prompt",
       "",

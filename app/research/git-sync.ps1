@@ -100,7 +100,7 @@ function Write-ResearchLists {
             $prior=if (Test-Path -LiteralPath $path) { Read-ResearchText $path } else { $null }
             $record=@{path=$path;temporary=$temporary;prior=$prior;changed=$false}
             [void]$transaction.Add($record)
-            [IO.File]::WriteAllText($temporary,$item.text,[Text.UTF8Encoding]::new($false))
+            Write-ResearchTextFile $temporary $item.text
         }
         foreach ($record in $transaction) {
             [void](Get-ResearchSafePath $Settings.ProjectRoot ([IO.Path]::GetRelativePath($Settings.ProjectRoot,$record.path)))
@@ -115,6 +115,7 @@ function Write-ResearchLists {
                 [void](Get-ResearchSafePath $Settings.ProjectRoot ([IO.Path]::GetRelativePath($Settings.ProjectRoot,$record.path)))
                 if ($null -eq $record.prior) { [IO.File]::Delete($record.path) }
                 else {
+                    # Restore prior text verbatim; its normalization requires a separate provenance migration.
                     [IO.File]::WriteAllText($record.temporary,$record.prior,[Text.UTF8Encoding]::new($false))
                     [IO.File]::Move($record.temporary,$record.path,$true)
                 }
@@ -132,7 +133,7 @@ function Write-ResearchSourceConfiguration {
     $path=Get-ResearchSafePath $Settings.ProjectRoot 'git-sources.json'
     $temporary=$path+'.tmp-'+[Guid]::NewGuid().ToString('N')
     try {
-        [IO.File]::WriteAllText($temporary,($configuration | ConvertTo-Json -Depth 6)+"`n",[Text.UTF8Encoding]::new($false))
+        Write-ResearchTextFile $temporary (($configuration | ConvertTo-Json -Depth 6)+"`n")
         [void](Get-ResearchSafePath $Settings.ProjectRoot 'git-sources.json')
         Move-ResearchListFile $temporary $path
     } finally {
@@ -463,7 +464,7 @@ function Invoke-ResearchGitSync {
             Invoke-ResearchRepository $_.entry $_.previous $using:settings $using:Now $using:token $using:login $using:TimeoutSeconds
         } -ThrottleLimit $Concurrency | ForEach-Object {
             [void]$results.Add($_)
-            [Console]::Error.WriteLine(('Repository {0}/{1}: {2} ({3})' -f ($results.Count),$entries.Count,$_.id,$_.status))
+            [Console]::Error.Write(('Repository {0}/{1}: {2} ({3})' -f ($results.Count),$entries.Count,$_.id,$_.status)+"`n")
             Write-ResearchJson (Join-Path $directory 'git-sync.json') @{schemaVersion=1;generatedAt=$Now.ToString('o');discoveryComplete=$false;status='running';config=$config;repositories=$results.ToArray()}
         }
         $token=''
@@ -478,13 +479,14 @@ function Invoke-ResearchGitSync {
     }
 }
 if ($MyInvocation.InvocationName -ne '.') {
+    [Console]::OutputEncoding=[Text.UTF8Encoding]::new($false)
     try {
         $result=Invoke-ResearchGitSync -ProjectRoot $ProjectRoot -Action $Action -Limit $Limit -Category $Category -TimeoutSeconds $TimeoutSeconds -Concurrency $Concurrency -Repository $Repository -NoAutoStash:$NoAutoStash -UsePrimaryBranch:$UsePrimaryBranch
-        $result | ConvertTo-Json -Depth 20
+        Write-ResearchJsonOutput $result
         if ($result.status -eq 'partial') { exit 1 }
     } catch {
         $known=@('source_config_missing_run_sources_import','source_config_invalid','repository_url_invalid','repository_protocol_unsupported','research_input_invalid_or_oversized','source_list_limit','source_lists_disagree','source_loader_unverified','source_executable_line_rejected','source_lists_copy_failed_rolled_back','source_lists_rollback_failed','source_list_empty','clone_declaration_invalid','repository_path_collision','repository_path_invalid','category_invalid','repository_filter_invalid','auto_stash_invalid','git_state_missing','git_state_invalid','dotenv_unknown_teamagent_key','dotenv_invalid_assignment','dotenv_duplicate_key','dotenv_invalid_value','dotenv_unclosed_quote','dotenv_nested_quote_unsupported','dotenv_invalid_quote','cache_path_required','outdated_threshold_invalid','rename_prefix_invalid','rename_prefix_collision','backup_account_invalid','reparse_path_rejected','reparse_cache_rejected','path_outside_cache')
         $message=if ($_.Exception.Message -in $known) { $_.Exception.Message } else { 'git_maintenance_failed_or_locked' }
-        [Console]::Error.WriteLine($message); exit 1
+        [Console]::Error.Write($message+"`n"); exit 1
     }
 }

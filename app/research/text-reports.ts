@@ -1,13 +1,8 @@
-import { createHash, randomUUID } from "node:crypto";
-import { lstat, mkdir, readFile, rename, unlink, writeFile } from "node:fs/promises";
+import { randomUUID } from "node:crypto";
+import { lstat, mkdir, open, opendir, readFile, rename, unlink, writeFile } from "node:fs/promises";
 import { dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { Effect, Schema } from "effect";
-import {
-  MemorySourceSchema,
-  SourceVersionSchema,
-  type ImportResult,
-  type MemoryApi,
-} from "@/memory";
+import { type ImportResult, type MemoryFile, type MemoryApi } from "@/memory";
 import {
   redactSourceUrls,
   displaySource,
@@ -19,6 +14,14 @@ import {
 } from "./text-contracts.ts";
 import { safeRelative } from "../imports/limits.ts";
 import { memoryManifestHash } from "../memory/index.ts";
+import {
+  MemoryExportManifestSchema,
+  exportNormalizationFor,
+  normalizeLf,
+  validateExportNormalization,
+  verifyExportFile,
+  type MemoryExportManifest,
+} from "../memory/export.ts";
 import { inspectPublication, PublicationDateSchema, type MetadataDocument } from "./text-dates.ts";
 
 export async function boundedText(path: string, limit: number): Promise<string | undefined> {
@@ -58,7 +61,7 @@ export async function atomicText(path: string, text: string): Promise<void> {
     throw new Error("Research report exceeds its byte limit.");
   const temporary = `${path}.${randomUUID()}.tmp`;
   try {
-    await writeFile(temporary, text, { flag: "wx", mode: 0o600 });
+    await writeFile(temporary, normalizeLf(text), { flag: "wx", mode: 0o600 });
     await rename(temporary, path);
   } finally {
     await unlink(temporary).catch((error: unknown) => {
@@ -122,12 +125,6 @@ export async function readTextState(path: string): Promise<TextState> {
   };
 }
 
-const ExportSchema = Schema.Struct({
-  format: Schema.Literal("teamagent-memory-export-v1"),
-  source: MemorySourceSchema,
-  version: SourceVersionSchema,
-});
-
 export async function ensureTextExport(
   memory: MemoryApi,
   receipt: ImportResult,
@@ -142,9 +139,12 @@ export async function ensureTextExport(
     return directory;
   }
   await safeDirectory(directory);
-  const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(ExportSchema))(existing, {
-    onExcessProperty: "error",
-  });
+  const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(MemoryExportManifestSchema))(
+    existing,
+    {
+      onExcessProperty: "error",
+    },
+  );
   if (
     manifest.source.id !== receipt.source.id ||
     manifest.version.id !== receipt.version.id ||
@@ -152,22 +152,8 @@ export async function ensureTextExport(
     JSON.stringify(manifest.version.files) !== JSON.stringify(receipt.version.files)
   )
     throw new Error("Cached export does not match its immutable memory version.");
-  for (const file of receipt.version.files) {
-    const path = resolve(directory, "files", file.path);
-    const suffix = relative(directory, path);
-    if (isAbsolute(suffix) || suffix.startsWith(".."))
-      throw new Error("Export path escapes its directory.");
-    await safeDirectory(dirname(path));
-    const info = await lstat(path);
-    if (!info.isFile() || info.isSymbolicLink() || info.size !== file.size)
-      throw new Error("Cached export file has changed.");
-    const bytes = await readFile(path);
-    if (
-      bytes.byteLength !== file.size ||
-      createHash("sha256").update(bytes).digest("hex") !== file.sha256
-    )
-      throw new Error("Cached export checksum does not match memory.");
-  }
+  validateExportNormalization(manifest);
+  for (const file of receipt.version.files) await readExportFile(directory, manifest, file);
   return directory;
 }
 
@@ -177,6 +163,59 @@ async function existingDirectory(directory: string): Promise<void> {
   const info = await lstat(directory);
   if (!info.isDirectory() || info.isSymbolicLink())
     throw new Error("Pinned cache directory is missing or unsafe.");
+}
+
+async function readExportFile(
+  directory: string,
+  manifest: MemoryExportManifest,
+  file: MemoryFile,
+): Promise<Uint8Array> {
+  if (!safeRelative(file.path)) throw new Error("Pinned export file path is unsafe.");
+  const normalization = exportNormalizationFor(manifest, file);
+  async function read(relativePath: string, size: number): Promise<Uint8Array> {
+    const path = resolve(directory, relativePath);
+    const suffix = relative(directory, path);
+    if (
+      isAbsolute(suffix) ||
+      suffix === ".." ||
+      suffix.startsWith("../") ||
+      suffix.startsWith("..\\")
+    )
+      throw new Error("Pinned export path escapes its directory.");
+    await existingDirectory(dirname(path));
+    const info = await lstat(path);
+    if (!info.isFile() || info.isSymbolicLink() || info.size !== size)
+      throw new Error("Pinned export file is missing or changed.");
+    const handle = await open(path, "r");
+    try {
+      const current = await handle.stat();
+      if (
+        !current.isFile() ||
+        current.size !== size ||
+        current.dev !== info.dev ||
+        current.ino !== info.ino
+      )
+        throw new Error("Pinned export changed while opening.");
+      const bytes = new Uint8Array(size + 1);
+      let offset = 0;
+      while (offset < bytes.length) {
+        const result = await handle.read(bytes, offset, bytes.length - offset, offset);
+        if (result.bytesRead === 0) break;
+        offset += result.bytesRead;
+      }
+      if (offset !== size) throw new Error("Pinned export changed during reading.");
+      return bytes.subarray(0, offset);
+    } finally {
+      await handle.close();
+    }
+  }
+  const bytes = await read(`files/${file.path}`, normalization?.size ?? file.size);
+  const raw =
+    normalization === undefined
+      ? undefined
+      : await read(`raw/${normalization.sourceSha256}`, normalization.sourceSize);
+  verifyExportFile(manifest, file, bytes, raw);
+  return bytes;
 }
 
 /** Local-only integrity inspection: never exports, creates directories, invokes conversion or fetches. */
@@ -200,10 +239,14 @@ export async function inspectTextExport(
   await existingDirectory(directory);
   const text = await boundedText(join(directory, "manifest.json"), textLimits.stateBytes);
   if (text === undefined) throw new Error("Pinned export manifest is missing.");
-  const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(ExportSchema))(text, {
-    onExcessProperty: "error",
-  });
+  const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(MemoryExportManifestSchema))(
+    text,
+    {
+      onExcessProperty: "error",
+    },
+  );
   const { source, version } = manifest;
+  validateExportNormalization(manifest);
   if (
     new URL(source.inputLocator).href !== expectedLocator ||
     displaySource(source.inputLocator) !== record.source ||
@@ -224,25 +267,7 @@ export async function inspectTextExport(
   const metadata: MetadataDocument[] = [];
   const metadataWarnings: string[] = [];
   for (const file of version.files) {
-    if (!safeRelative(file.path)) throw new Error("Pinned export file path is unsafe.");
-    const path = resolve(directory, "files", file.path);
-    const suffix = relative(directory, path);
-    if (
-      isAbsolute(suffix) ||
-      suffix === ".." ||
-      suffix.startsWith(`..${process.platform === "win32" ? "\\" : "/"}`)
-    )
-      throw new Error("Pinned export path escapes its directory.");
-    await existingDirectory(dirname(path));
-    const info = await lstat(path);
-    if (!info.isFile() || info.isSymbolicLink() || info.size !== file.size)
-      throw new Error("Pinned export file is missing or changed.");
-    const bytes = await readFile(path);
-    if (
-      bytes.byteLength !== file.size ||
-      createHash("sha256").update(bytes).digest("hex") !== file.sha256
-    )
-      throw new Error("Pinned export file checksum differs.");
+    const bytes = await readExportFile(directory, manifest, file);
     if (file.role === "markdown")
       markdown.push(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
     if (
@@ -275,6 +300,106 @@ export async function inspectTextExport(
     firstCapturedAt: Schema.decodeUnknownSync(PublicationDateSchema)(source.createdAt),
     publication: { ...publication, warnings: [...publication.warnings, ...metadataWarnings] },
   };
+}
+
+/** Bounded, read-only gate for the managed text cache; no source store, network or converters run. */
+export async function inspectTextExports(root: string) {
+  const directory = resolve(root, ".cache", "text", "exports");
+  const info = await lstat(directory).catch((error: unknown) => {
+    if (error instanceof Error && "code" in error && error.code === "ENOENT") return undefined;
+    throw error;
+  });
+  if (info === undefined) return { exports: 0, files: 0, normalizedFiles: 0, retainedRawFiles: 0 };
+  await existingDirectory(directory);
+  const counts = { exports: 0, files: 0, normalizedFiles: 0, retainedRawFiles: 0 };
+  let sourceCount = 0;
+  const sources = await opendir(directory);
+  for await (const source of sources) {
+    sourceCount += 1;
+    if (sourceCount > 2000 || !source.isDirectory() || source.isSymbolicLink())
+      throw new Error("Text export source inventory is unsafe or exceeds its limit.");
+    const sourceDirectory = join(directory, source.name);
+    await existingDirectory(sourceDirectory);
+    const versions = await opendir(sourceDirectory);
+    let versionCount = 0;
+    for await (const version of versions) {
+      versionCount += 1;
+      counts.exports += 1;
+      if (
+        versionCount > 1000 ||
+        counts.exports > 4096 ||
+        !version.isDirectory() ||
+        version.isSymbolicLink()
+      )
+        throw new Error("Text export version inventory is unsafe or exceeds its limit.");
+      const exported = join(sourceDirectory, version.name);
+      await existingDirectory(exported);
+      const text = await boundedText(join(exported, "manifest.json"), textLimits.stateBytes);
+      if (text === undefined || text.includes("\r"))
+        throw new Error("Text export manifest is missing or not LF.");
+      const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(MemoryExportManifestSchema))(
+        text,
+        {
+          onExcessProperty: "error",
+        },
+      );
+      if (
+        manifest.source.id !== source.name ||
+        manifest.version.id !== version.name ||
+        manifest.version.sourceId !== source.name ||
+        manifest.version.workspaceId !== manifest.source.workspaceId ||
+        memoryManifestHash(manifest.version.files, manifest.version.provenance) !==
+          manifest.version.contentHash ||
+        manifest.version.files.reduce((total, file) => total + file.size, 0) > 67108864 ||
+        new Set(manifest.version.files.map((file) => file.path.toLowerCase())).size !==
+          manifest.version.files.length
+      )
+        throw new Error(
+          "Text export identity or file coverage differs from its immutable manifest.",
+        );
+      validateExportNormalization(manifest);
+      const expected = new Set(["manifest.json"]);
+      for (const file of manifest.version.files) {
+        await readExportFile(exported, manifest, file);
+        counts.files += 1;
+        expected.add(`files/${file.path}`);
+        const normalization = exportNormalizationFor(manifest, file);
+        if (normalization !== undefined) {
+          counts.normalizedFiles += 1;
+          expected.add(`raw/${normalization.sourceSha256}`);
+        }
+      }
+      counts.retainedRawFiles += [...expected].filter((path) => path.startsWith("raw/")).length;
+      // Reject unmanifested text instead of allowing it to hide under a blanket cache exclusion.
+      const pending = [{ path: exported, relative: "", depth: 0 }];
+      let visited = 0;
+      while (pending.length > 0) {
+        const current = pending.pop();
+        if (current === undefined) break;
+        visited += 1;
+        if (visited > 4096 || current.depth > 256)
+          throw new Error("Text export directory inventory exceeds its limit.");
+        const entries = await opendir(current.path);
+        for await (const entry of entries) {
+          const relativePath = `${current.relative}${entry.name}`;
+          if (entry.isSymbolicLink())
+            throw new Error("Text exports cannot contain symbolic links.");
+          if (entry.isDirectory()) {
+            if (![...expected].some((path) => path.startsWith(`${relativePath}/`)))
+              throw new Error("Text export contains an unmanifested directory.");
+            pending.push({
+              path: join(current.path, entry.name),
+              relative: `${relativePath}/`,
+              depth: current.depth + 1,
+            });
+          } else if (!entry.isFile() || !expected.delete(relativePath))
+            throw new Error("Text export contains an unmanifested file.");
+        }
+      }
+      if (expected.size !== 0) throw new Error("Text export coverage is incomplete.");
+    }
+  }
+  return counts;
 }
 
 function plain(text: string): string {

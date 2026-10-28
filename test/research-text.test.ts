@@ -5,14 +5,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile, stat } from "node:fs/promises"
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { Effect, Schema } from "effect";
-import {
-  MemoryError,
-  MemorySourceSchema,
-  SourceVersionSchema,
-  type CaptureResult,
-  type MemoryApi,
-  type SourceCapture,
-} from "@/memory";
+import { MemoryError, type CaptureResult, type MemoryApi, type SourceCapture } from "@/memory";
 import { openMemory } from "../app/memory/index.ts";
 import {
   displaySource,
@@ -20,7 +13,12 @@ import {
   textQuality,
   LegacyTextStateSchema,
 } from "../app/research/text-contracts.ts";
-import { readTextState, textSourceReport } from "../app/research/text-reports.ts";
+import {
+  inspectTextExports,
+  readTextState,
+  textSourceReport,
+} from "../app/research/text-reports.ts";
+import { MemoryExportManifestSchema } from "../app/memory/export.ts";
 import { syncTextResources } from "../app/research/text-sync.ts";
 
 const roots: string[] = [];
@@ -79,6 +77,62 @@ async function fixture(capture: SourceCapture, config = "source.md https://examp
 }
 
 describe("repeatable research text imports", () => {
+  test("validates LF views and retained raw hashes offline, rejects hidden files and accepts clean v1 exports", async () => {
+    let captures = 0;
+    const { root, store } = await fixture((request) => {
+      captures += 1;
+      return Effect.succeed(captured(request.locator, substantive.replaceAll("\n", "\r\n")));
+    });
+    const first = await syncTextResources({ root }, { memory: store });
+    const record = first.records[0];
+    if (!record?.exportDirectory) throw new Error("Missing export fixture.");
+    const directory = resolve(root, "spec/analyses/texts", record.exportDirectory);
+    const counts = await inspectTextExports(root);
+    expect(counts).toEqual({ exports: 1, files: 2, normalizedFiles: 2, retainedRawFiles: 2 });
+    const pinned = await syncTextResources({ root }, { memory: store });
+    expect(captures).toBe(1);
+    expect(pinned.records[0]?.status).toBe("pinned");
+    expect(pinned.records[0]?.contentHash).toBe(record.contentHash);
+    await writeFile(join(directory, "unmanifested.md"), "untracked\r\n");
+    await rejects(inspectTextExports(root), /unmanifested/);
+    await rm(join(directory, "unmanifested.md"));
+    const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(MemoryExportManifestSchema))(
+      await readFile(join(directory, "manifest.json"), "utf8"),
+    );
+    if (manifest.format !== "teamagent-memory-export-v2") throw new Error("Expected v2 manifest.");
+    const changed = manifest.normalization.files[0];
+    if (changed === undefined) throw new Error("Missing normalization record.");
+    await writeFile(join(directory, "raw", changed.sourceSha256), "tampered");
+    await rejects(inspectTextExports(root), /missing or changed|checksum/);
+    const clean = await fixture((request) =>
+      Effect.succeed(captured(request.locator, substantive)),
+    );
+    const cleanRun = await syncTextResources({ root: clean.root }, { memory: clean.store });
+    const cleanRecord = cleanRun.records[0];
+    if (!cleanRecord?.exportDirectory) throw new Error("Missing clean export.");
+    const cleanPath = resolve(
+      clean.root,
+      "spec/analyses/texts",
+      cleanRecord.exportDirectory,
+      "manifest.json",
+    );
+    const cleanManifest = Schema.decodeUnknownSync(
+      Schema.fromJsonString(MemoryExportManifestSchema),
+    )(await readFile(cleanPath, "utf8"));
+    await writeFile(
+      cleanPath,
+      JSON.stringify({
+        format: "teamagent-memory-export-v1",
+        source: cleanManifest.source,
+        version: cleanManifest.version,
+      }) + "\n",
+    );
+    expect((await inspectTextExports(clean.root)).normalizedFiles).toBe(0);
+    expect(
+      (await syncTextResources({ root: clean.root }, { memory: clean.store })).records[0]?.status,
+    ).toBe("pinned");
+  });
+
   test("parses groups, quoted URLs and comments without executable syntax or ambiguous aliases", () => {
     expect(
       parseTextSources(
@@ -360,15 +414,9 @@ describe("repeatable research text imports", () => {
     expect(corrupted.records[0]?.status).toBe("failed");
     expect(corrupted.records[0]?.warnings.join(" ")).toContain("No network fetch");
     expect(captures).toBe(1);
-    const manifest = Schema.decodeUnknownSync(
-      Schema.fromJsonString(
-        Schema.Struct({
-          format: Schema.Literal("teamagent-memory-export-v1"),
-          source: MemorySourceSchema,
-          version: SourceVersionSchema,
-        }),
-      ),
-    )(originalManifest);
+    const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(MemoryExportManifestSchema))(
+      originalManifest,
+    );
     const forged = {
       ...manifest,
       version: {
@@ -556,15 +604,9 @@ describe("repeatable research text imports", () => {
       record.exportDirectory,
       "manifest.json",
     );
-    const manifest = Schema.decodeUnknownSync(
-      Schema.fromJsonString(
-        Schema.Struct({
-          format: Schema.Literal("teamagent-memory-export-v1"),
-          source: MemorySourceSchema,
-          version: SourceVersionSchema,
-        }),
-      ),
-    )(await readFile(manifestPath, "utf8"));
+    const manifest = Schema.decodeUnknownSync(Schema.fromJsonString(MemoryExportManifestSchema))(
+      await readFile(manifestPath, "utf8"),
+    );
     await writeFile(
       manifestPath,
       JSON.stringify({

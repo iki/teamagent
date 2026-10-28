@@ -1,6 +1,8 @@
 import { spawnSync } from "node:child_process";
 import { Effect } from "effect";
 import { inspectModuleLayout } from "@/lint";
+import { inspectTextExports } from "../research/text-reports.ts";
+import { inspectLineEndings } from "./line-endings.ts";
 import { root, runTool, type Tool } from "./tools.ts";
 
 const args = process.argv.slice(2);
@@ -52,4 +54,19 @@ if (!process.exitCode) {
   });
   if (result.error) throw result.error;
   process.exitCode = result.status ?? 1;
+}
+
+if (!process.exitCode) {
+  process.stderr.write("Checking LF text\n");
+  const inspection = inspectLineEndings(root);
+  const exports = await inspectTextExports(root);
+  process.stderr.write(
+    `LF inventory: ${inspection.textFiles} text, ${inspection.opaqueFiles} opaque (${inspection.verifiedOpaqueInputs} hash-verified historical inputs), ${inspection.retainedOriginals} retained originals, ${inspection.missingOrLinked} missing/linked; ${exports.exports} text exports / ${exports.files} files verified\n`,
+  );
+  if (inspection.violations.length) {
+    process.stderr.write(`${inspection.violations.slice(0, 100).join("\n")}\n`);
+    if (inspection.violations.length > 100)
+      process.stderr.write(`${inspection.violations.length - 100} additional LF violations\n`);
+    process.exitCode = 1;
+  }
 }

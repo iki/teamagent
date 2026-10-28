@@ -265,6 +265,33 @@ meaning. The [extractor benchmark protocol](benchmarks/extractors-methodology.md
 defines quality, timing, option-set comparisons and their limitations; measured
 recommendations are recorded beside the applicable profiles in the config.
 
+## LF text derivatives and exports
+
+New import captures normalize generated Markdown to LF before computing its
+derivative hash. The routing fingerprint records the `utf8-lf-v1` policy;
+plain-text conversion uses handler version two. Original input bytes remain
+unchanged, including BOMs and source line endings. This policy change can create
+a new version on an explicitly requested capture; opening or inspecting a
+historical version does not rewrite it or fetch its source.
+
+Memory export version two keeps the original source/version manifest and its
+content hash. Active `files/` representations normalize declared UTF-8 text
+without NUL, including SVG XML, by replacing CRLF and lone CR with LF. Each changed path records
+original/export SHA-256 values and sizes in `normalization.files`, and its exact
+original bytes are retained at `raw/<sourceSha256>`. Binary media, invalid UTF-8
+and NUL-containing inputs remain opaque and byte-exact. Existing LF text does
+not acquire a redundant raw copy. Export normalization preserves all other text,
+including a UTF-8 BOM and whether a final newline exists.
+
+Research export validation accepts verified LF version-one exports and
+version-two exports. It checks immutable source hashes, retained raw hashes,
+derived hashes and the exact LF transformation; new hashes alone cannot justify
+changed content. A bounded local inventory rejects missing, extra or unsafe
+export files without running converters, opening the store, or making network
+requests. Static text sync continues to validate existing exports without
+rewriting them. Historical non-LF exports require a separately published derived
+export, retaining their original manifests and bytes.
+
 ## MCP and installation
 
 ```sh

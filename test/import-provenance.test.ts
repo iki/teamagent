@@ -163,6 +163,39 @@ afterAll(async () => {
 });
 
 describe("source extraction provenance", () => {
+  test("normalizes plain and external Markdown derivatives without altering source bytes", async () => {
+    const text = "\uFEFFFirst\r\nSecond\rThird\n";
+    await writeFile(join(workspace, "line-endings.txt"), text);
+    const plain = captured(
+      await Effect.runPromise(createSourceCapture()(request("line-endings.txt"))),
+    );
+    const original = plain.files.find((file) => file.role === "original");
+    const derivative = plain.files.find((file) => file.role === "markdown");
+    if (original === undefined || derivative === undefined)
+      throw new Error("Missing text representation.");
+    expect(new TextDecoder("utf-8", { ignoreBOM: true }).decode(original.bytes)).toBe(text);
+    expect(new TextDecoder("utf-8", { ignoreBOM: true }).decode(derivative.bytes)).toBe(
+      "\uFEFFFirst\nSecond\nThird\n",
+    );
+    expect(plain.provenance.extraction?.parsers).toEqual(["teamagent-import/text/2"]);
+    const externalWorker = join(directory, "line-endings-extractor.mjs");
+    await writeFile(externalWorker, 'process.stdout.write("# External\\r\\nSecond\\rThird\\n");\n');
+    const external = captured(
+      await Effect.runPromise(
+        createSourceCapture({
+          extractor: profile({
+            args: [externalWorker, "{input}"],
+            outputMode: "stdout",
+          }),
+        })(request("sample.pdf")),
+      ),
+    );
+    const markdown = external.files.find((file) => file.role === "markdown");
+    if (markdown === undefined) throw new Error("Missing external Markdown.");
+    expect(new TextDecoder().decode(markdown.bytes)).toBe("# External\nSecond\nThird\n");
+    expect(external.provenance.extraction?.policy).toMatch(/^teamagent-routing\/2;/);
+  });
+
   test("accepts legacy metadata and rejects excessive, duplicate, unsorted or unknown parser details", () => {
     expect(Schema.is(ProvenanceSchema)(legacyProvenance)).toBe(true);
     for (const extraction of [
@@ -192,7 +225,7 @@ describe("source extraction provenance", () => {
       const result = captured(await Effect.runPromise(capture(request(name))));
       expect(result.provenance.extraction?.parsers).toEqual([parserVersion]);
       expect(result.provenance.parserVersion).toMatch(/^teamagent-capture\/1;[a-f0-9]{64}$/);
-      expect(result.provenance.extraction?.policy).toMatch(/^teamagent-routing\/1;[a-f0-9]{64}$/);
+      expect(result.provenance.extraction?.policy).toMatch(/^teamagent-routing\/2;[a-f0-9]{64}$/);
       const text = result.files
         .filter((file) => file.role === "markdown")
         .map((file) => new TextDecoder().decode(file.bytes))
